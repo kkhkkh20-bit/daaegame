@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D13_B_P01",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "after",
+        "MS14_D13_B_L0005",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_B",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D13_B_L0005",
+      "when": null,
+      "speaker": "판돌",
+      "kind": "dialogue",
+      "text": "여기가…… 대피소요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2597,
+          "label": "r13_v111_partial13",
+          "guards": []
+        }
+      ],
+      "scene_title": "대체 장면 13-B. 멈췄지만 끝내지 못한 밤",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "5d168db2179771ea9e8ff65688dabf39cd752eb9f9f2dd1414c636fd4ca98322",
+      "uid": "7c74b37d73750e77b209042c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_B|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_AUD_D10_02",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "before",
+        "MS14_D10_S04P_L0001",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S04P",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D10_S04P_L0001",
+      "when": "records_lose",
+      "speaker": null,
+      "kind": "narration",
+      "text": "학교로 돌아와 다람이 쥐고 온 종이를 함께 편다. ‘옛 펌프집 아래 통, 셋째 말뚝.’ 마지막으로 쓴 날짜는 6일이다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1843,
+          "label": "r13_v111_prevent_return10",
+          "guards": []
+        }
+      ],
+      "scene_title": "반드시 실장할 짧은 대체 대사",
+      "source_hash": "662dca5b8bc468185010c09a7dfb1668b1ea5e32eb2c8731e681e5c8ee9106df",
+      "baseline_hash": "102c178716b733e2ed4dc0cd1741794d23def253061516cdcb6ca5d2c77ff5b6",
+      "uid": "1a01da42386aab2db565e13c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S04P|patch|before|records_lose",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

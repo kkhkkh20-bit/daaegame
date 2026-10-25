@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13.rpy:549:26",
+      "file": "game/room13.rpy",
+      "path": [
+        30149,
+        30214
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_first_night",
+      "block": "r13_first_night",
+      "placement": "literal",
+      "ref": "game/room13.rpy:549:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "식당 현관문을 일정한 박자로 둔탁하게 두드리는 소리가 이어졌다. 식사하던 손님 한 명이 말없이 창문 커튼을 쳤다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 549,
+          "label": "r13_first_night",
+          "guards": []
+        }
+      ],
+      "line": 549,
+      "scene_title": "r13_first_night",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "a05cff0ce854cffbd0d2943b310dc19fbf30eed503ef681e669626768bdb7547",
+      "uid": "c7a7fee1f2f8a059027d62ae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_first_night|rpy_literal|r13_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

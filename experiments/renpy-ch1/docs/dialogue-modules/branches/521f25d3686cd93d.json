@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "nubi_children_receipt7:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "nubi_children_receipt7",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 7,
+      "scene": "nubi_children_receipt7",
+      "block": "nubi_children_receipt7",
+      "placement": "binding",
+      "ref": "nubi_children_receipt7:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "누비 씨의 아이 셋 인수를 확인한다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "school",
+        "person": "resident_teacher",
+        "object": null
+      },
+      "scene_title": "nubi_children_receipt7",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "bd0462724faf5b2bc43d7df25c356f8024aec53b70342882a8fd5663d7dcf10a",
+      "uid": "eee60124c25232cb67777066",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|nubi_children_receipt7|choice|nubi_children_receipt7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "nubi_children_receipt7:1",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "nubi_children_receipt7",
+        "options",
+        1,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 7,
+      "scene": "nubi_children_receipt7",
+      "block": "nubi_children_receipt7",
+      "placement": "binding",
+      "ref": "nubi_children_receipt7:1",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "막내가 네 가방만 보고 있네.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "grand_snack_ready7",
+            true
+          ]
+        ],
+        "location": "school",
+        "person": "daram",
+        "object": null
+      },
+      "scene_title": "nubi_children_receipt7",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "751884b4d926e2cf8482efa83ce4490b96951efb5c2928bd79f7717beef72f1a",
+      "uid": "7d0e98aabc38b553ed509f2b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|nubi_children_receipt7|choice|nubi_children_receipt7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

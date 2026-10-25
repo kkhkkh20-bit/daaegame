@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/ms14_story.rpy:277:23",
+      "file": "game/ms14_story.rpy",
+      "path": [
+        14829,
+        14838
+      ],
+      "origin": "rpy_inventory",
+      "day": 3,
+      "scene": "ms14_proof",
+      "block": "ms14_proof",
+      "placement": "literal",
+      "ref": "game/ms14_story.rpy:277:23",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "자료를 고른다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/ms14_story.rpy",
+          "line": 277,
+          "label": "ms14_proof",
+          "guards": []
+        }
+      ],
+      "line": 277,
+      "scene_title": "ms14_proof",
+      "source_hash": "4532fcb1f112e5860e4ce3e37219337a5840d5fc429a92390df4893681171b9a",
+      "baseline_hash": "b3d83f535b0757189c038bbb6db3c6af599ad0e9d0de0fcae74674728ca2c75a",
+      "uid": "89d9331a6200c533ee06780a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|ms14_proof|rpy_inventory|ms14_proof|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

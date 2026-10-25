@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:342:67",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        20497,
+        20508
+      ],
+      "origin": "rpy_inventory",
+      "day": 7,
+      "scene": "r13_wf_ruins",
+      "block": "r13_wf_ruins",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:342:67",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "안쪽 구석을 본다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 342,
+          "label": "r13_wf_ruins",
+          "guards": [
+            "while _wf_left:"
+          ]
+        }
+      ],
+      "line": 342,
+      "scene_title": "r13_wf_ruins",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "b8013002c466d200b468bda8e00d253f68def1b5551db92f36ef1634788468d7",
+      "uid": "2385b1e95a589d6307482f4f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_wf_ruins|rpy_inventory|r13_wf_ruins|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/ms14_story.rpy:279:31",
+      "file": "game/ms14_story.rpy",
+      "path": [
+        14935,
+        14945
+      ],
+      "origin": "rpy_inventory",
+      "day": 1,
+      "scene": "ms14_proof",
+      "block": "ms14_proof",
+      "placement": "literal",
+      "ref": "game/ms14_story.rpy:279:31",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "힌트를 생각한다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/ms14_story.rpy",
+          "line": 279,
+          "label": "ms14_proof",
+          "guards": [
+            "if ms14_node.get(\"hint\"):"
+          ]
+        }
+      ],
+      "line": 279,
+      "scene_title": "ms14_proof",
+      "source_hash": "4532fcb1f112e5860e4ce3e37219337a5840d5fc429a92390df4893681171b9a",
+      "baseline_hash": "a60bc04f907c75b9af940d793c5631b5511f23942fa019e01674b58b3d7fc0e8",
+      "uid": "f799b7ffbcf4c31f6dcb54cb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|ms14_proof|rpy_inventory|ms14_proof|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

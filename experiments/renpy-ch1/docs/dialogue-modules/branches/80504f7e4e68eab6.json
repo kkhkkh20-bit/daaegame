@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/winter.rpy:213:64",
+      "file": "game/winter.rpy",
+      "path": [
+        9685,
+        9698
+      ],
+      "origin": "rpy_inventory",
+      "day": 4,
+      "scene": "winter_action_run",
+      "block": "winter_action_run",
+      "placement": "literal",
+      "ref": "game/winter.rpy:213:64",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "\n마치고 돌아오면 ",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 213,
+          "label": "winter_action_run",
+          "guards": [
+            "if winter_action[\"cost\"]:"
+          ]
+        }
+      ],
+      "line": 213,
+      "scene_title": "winter_action_run",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "4e0e88b4c335d330c65503b9afdd4a6c7e22f263268225a20caad0f55c48eb97",
+      "uid": "101481cd640a5878af8ea47a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|winter_action_run|rpy_inventory|winter_action_run|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:258:34",
+      "file": "game/winter.rpy",
+      "path": [
+        12105,
+        12130
+      ],
+      "origin": "rpy_inventory",
+      "day": 4,
+      "scene": "winter_action_run",
+      "block": "winter_action_run",
+      "placement": "literal",
+      "ref": "game/winter.rpy:258:34",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "누비의 번호도 있어. 추출은 이미 끝났어.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 258,
+          "label": "winter_action_run",
+          "guards": [
+            "if winter_action_id==\"death\" and winter[\"witness\"]==\"dead\":"
+          ]
+        }
+      ],
+      "line": 258,
+      "scene_title": "winter_action_run",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "595d8a4f4adf01b537913b4827386dddfa28c7f01d5b5c58cb9d68d3e6fb4ccf",
+      "uid": "4683d3901b193125e8c72c80",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|winter_action_run|rpy_inventory|winter_action_run|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

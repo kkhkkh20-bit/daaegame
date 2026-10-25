@@ -1,0 +1,1253 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D02_S02_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S02_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S02_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "우편 도장이 연달아 찍힌다. 세련은 장부의 줄을 종이로 가리며 읽는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a0fbd4ef1a9772604250d72a5e1807dbd87782a0f89afe663bbc68522bafa828",
+      "uid": "1eadcfc2a6944f01c6ec1edf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S02_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S02_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S02_L0002",
+      "when": null,
+      "speaker": "세련",
+      "kind": "dialogue",
+      "text": "받을 것입니까, 보낼 것입니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 500,
+          "label": "r13_v111_post",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6733b97adb991b9c9ebdf1184b4eb2a6c25eb097d258cf239733ed751a97e3a6",
+      "uid": "d74642d7094d27944629b73e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S02_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S02_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S02_L0003",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "받은 편지를 확인하고 싶습니다. 누가 부쳤는지요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 500,
+          "label": "r13_v111_post",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bf8721082e0326474f209f0032ffeb932d0b825b3ad6b5f67ae87f37de3a93a2",
+      "uid": "6b33ec7f2a00791988805a61",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S02_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S02_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S02_L0004",
+      "when": null,
+      "speaker": "세련",
+      "kind": "dialogue",
+      "text": "봉투도 있나요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 500,
+          "label": "r13_v111_post",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5e9492c559ee7b902df7b7be16cc42f85478f1e1bb1bc87ff0dd0c2ee3cefeb4",
+      "uid": "b8c87c22ee6f6f33fb139c22",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S02_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S02_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S02_L0005",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "조작: 초대 편지의 봉투 제시. 소인 날짜와 우체국 접수번호를 장부에서 대조한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7685e24f854f8da4e2ce0564d7da48253f477596e6b0afd1aabc9cd382280d37",
+      "uid": "64576d21b5a1fb6cf061f82a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S02_L9101",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S02_L9101",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S02_L9101",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "초대 봉투: 소인 날짜·접수번호가 장부와 맞는다. 접수 묶음은 여관. 개별 작성자·전달자 이름은 기록되지 않았다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 516,
+          "label": "r13_v111_post_checked",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "196c44e7d9d4f46fa0ad885ee1a408a63007ca4f4987930eed5fd3f6684ced15",
+      "uid": "81ded9d6ac6eb0af808d1aeb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S02_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S02_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S02_L0006",
+      "when": null,
+      "speaker": "세련",
+      "kind": "dialogue",
+      "text": "여기서 나갔습니다. 이 날짜, 이 번호. 받는 곳도 맞고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 516,
+          "label": "r13_v111_post_checked",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "029b70c03c604cf1343ef8b5283c392888d8461dcb464034cc871cf381deb159",
+      "uid": "2dc68d90cb7108546e9a1d0a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S02_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S02_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S02_L0007",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아내가 직접 가져왔습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 516,
+          "label": "r13_v111_post_checked",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c870e7517f8f32b8e848d42d2302cd67b5355a2092b0cd72a12df434c1bd12a7",
+      "uid": "7e18915cbdd0460b78882512",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S02_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S02_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S02_L0008",
+      "when": null,
+      "speaker": "세련",
+      "kind": "dialogue",
+      "text": "여관 묶음으로 받았어요. 부인이 가져온 건지까지는 못 봤고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 516,
+          "label": "r13_v111_post_checked",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "be552b15e746c56fbfab2a1f72772606b72bc8e124d724d04b9b9733956f23eb",
+      "uid": "ede42cc575ef6e0eb1256ef9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S02_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S02_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S02_L0009",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "보내는 사람 이름은 아내인데요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 516,
+          "label": "r13_v111_post_checked",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "708ff6d6275f980074d6b3c3e0bac034b588e966e35fdc96964aa1f33e28d811",
+      "uid": "6ade6ea12a6ebb9c1f511623",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S02_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S02_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S02_L0010",
+      "when": null,
+      "speaker": "세련",
+      "kind": "dialogue",
+      "text": "봉투에 적힌 이름이죠. 도장은 접수했다는 뜻이고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 516,
+          "label": "r13_v111_post_checked",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "24a3060f1d052111095eb5c9730d6a6860b461ccc7a3bdaf47841efd4c7bdeb3",
+      "uid": "d8a6efcc7f845927824e2b21",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S02_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S02_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S02_L0011",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "여관에서는 누가 가져왔습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 516,
+          "label": "r13_v111_post_checked",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fcdfa0228532cad5dcca205340f5828cb397992995548610044be8d4f4bc7cfa",
+      "uid": "c30e84e4275003300b3984d4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S02_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S02_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S02_L0012",
+      "when": null,
+      "speaker": "세련",
+      "kind": "dialogue",
+      "text": "그날 인수 칸에는 ‘여관 묶음’만 있어요. 이름을 받아 두지 않았네요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 516,
+          "label": "r13_v111_post_checked",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "938b6ba87b066b0ff3d81f73b8ee4a6920f227983ca314384dfce38d070ed34d",
+      "uid": "82947a5b288485a8e7dbf271",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S02_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S02_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S02_L0013",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "여기선 누가 썼는지 모르는 거군요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 516,
+          "label": "r13_v111_post_checked",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f2e80318e9e1d7096b6a8460a617ac20290c7e2ffdb320fb5bd9da399a6345fa",
+      "uid": "e5182b984c552ca4e7fd758b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S02_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S02_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S02_L0014",
+      "when": null,
+      "speaker": "세련",
+      "kind": "dialogue",
+      "text": "누가 썼는지, 접수 장부엔 없습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 516,
+          "label": "r13_v111_post_checked",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3b02cc8a0c6a822853705cb86a04f4269bbd48a149b6bb601e71e8de3d5992aa",
+      "uid": "4e395bd2da87fcc36b7edba4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S02_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S02_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S02_L0015",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "더 물을까?",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 516,
+          "label": "r13_v111_post_checked",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2d8ab8af88d6fa19eb5a9eb20e06e0e3d286b1dab13a040f4322762ecee85e16",
+      "uid": "08d2f41ae068eafc642de237",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S02_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S02_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S02_L0016",
+      "when": null,
+      "speaker": "세련",
+      "kind": "dialogue",
+      "text": "부탁받으면 해요. 이 편지는 제가 쓰지 않았습니다. 다른 사람이 써 줬는지는 모르죠.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 534,
+          "label": "r13_v111_post_scribe",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d7d146722515c119f446a497b4b3eb61175871098e3c41cd72b2f22835a622cb",
+      "uid": "21438caab8faa0de2241af12",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S02_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S02_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S02_L0017",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그럼 누가 부쳤는지 아무도 모른다는 겁니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 540,
+          "label": "r13_v111_post_return",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4514b3af5719ff27bbfbeb5549ca3c6ebf7c8c8ebfb69544288ca3dee789281e",
+      "uid": "5f0976dce4c6d807f4ac5cc9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S02_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S02_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S02_L0018",
+      "when": null,
+      "speaker": "세련",
+      "kind": "dialogue",
+      "text": "제가 못 봤다는 말입니다. 장부에 없는 이름을 써 드릴 수는 없어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 540,
+          "label": "r13_v111_post_return",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "359dfb4a8e2cb5cbb69fff7b046866589e0c56caeae527f50f7335040754c654",
+      "uid": "8b4e2b03e860daa344e693e0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S02_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S02_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S02_L0019",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 장부를 끌어당기려던 손을 멈췄다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 540,
+          "label": "r13_v111_post_return",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1d08cf6228051bea54f3bf4481ac424835f40a8b6cf32acdd565d048f297c9b1",
+      "uid": "3822c83de527e2f31dc0f687",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S02_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S02_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S02_L0020",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "……줄 번호라도 적어 주십시오. 제가 다시 확인하게요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 540,
+          "label": "r13_v111_post_return",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f06565ad7aa707bc64c512649bc25e24a5408875ab524f5f493b9e2e0f9b0e68",
+      "uid": "f404fe7d037598add3fcd3c5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S02_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S02_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S02_L0021",
+      "when": null,
+      "speaker": "세련",
+      "kind": "dialogue",
+      "text": "네. 그건 해 드릴 수 있어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 540,
+          "label": "r13_v111_post_return",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4d8dfbf8a17a6a78c1a9b38239063976846002b35f8c9a3717afc52eeb4a35a3",
+      "uid": "166f9538901beb2f5c01ef5a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S02_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S02_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S02_L0022",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마가 다른 편지도 보냈어요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 540,
+          "label": "r13_v111_post_return",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ebab24ea6478b51d3132965e7592bc51497e03d48281d6d90f6ea57dc2a6d92a",
+      "uid": "cd5589f544d46bce545fd116",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S02_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S02_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S02_L0023",
+      "when": null,
+      "speaker": "세련",
+      "kind": "dialogue",
+      "text": "이름만으로 지금 여기서 다 찾기는 어려워요. 그건 따로 찾아봐야 합니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 540,
+          "label": "r13_v111_post_return",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e8ad73c6548a8852cfd500349102a65ceff23427845c16d4eb1faf90c914a163",
+      "uid": "6bda0bf55a11d4976e97b001",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S02_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S02_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S02_L0024",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "부탁드리겠습니다. 우선 이 편지는 돌려주십시오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 540,
+          "label": "r13_v111_post_return",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bc155348652125d6262aaccd0a979c712385b8a30684dfaa6b378cd1b5868c11",
+      "uid": "18614c0a887c559bd40d42e9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S02_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S02_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S02_L0025",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "세련이 먼저 원래 봉투와 편지를 모두 반환한다. 추가 우편 검색은 미확인으로 남는다. 다른 가족의 반송물이나 소포가 대화의 결론을 대신하지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "da81744c1f0a124c8c881bc0ca96837e85d7a2f3567e3be561d0ddd21a9f2cdb",
+      "uid": "8233daf95ca72f2eaa474ecd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S02_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S02_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S02_L0026",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마가 안 썼을 수도 있어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 542,
+          "label": "r13_v111_post_return",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cfb6d7df937ee56d359490a449335a00b24bc5c014eda0bffc2bde9d187beb3b",
+      "uid": "07ed8a6b923e25ff3c1edb27",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S02_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S02_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S02_L0027",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아직 몰라. 엄마를 아는 사람이 글씨만 도와줬을 수도 있고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 542,
+          "label": "r13_v111_post_return",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "233f41fef52af0435a8ec3efa4fb44a326da303724cbb07589dcf66cf0b261e5",
+      "uid": "1646eaede345fb16c770770a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S02_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S02_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S02_L0028",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그럼 얼굴을 보여 주고 물어보자. 아빠가 설명하면 자꾸 할머니인 줄 알아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 542,
+          "label": "r13_v111_post_return",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c3624cc39a881d78f9a559ccfda3fc0b2414cfcd42389dda1fb9dd52270842e9",
+      "uid": "211337e5bce068d50a86d926",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,865 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D09_S01_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S01_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S01_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "따닥이 벽을 두드리고 분필로 선을 긋는다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1116,
+          "label": "r13_v111_passage_walk9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d010f6a90baf581b9b379dce03c0a6087ac46eb3c98a08a4d70391594945e8b4",
+      "uid": "a6534ec19ac1e3a665670a82",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S01_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S01_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S01_L0002",
+      "when": null,
+      "speaker": "따닥",
+      "kind": "dialogue",
+      "text": "이 안은 빈 데요. 내일 새벽에 혼자 재면 금방 끝나요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1117,
+          "label": "r13_v111_passage_walk9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b033927e5a88ab66263ccc48d7b90448438931db83d7c4c106a81d24f0cd2895",
+      "uid": "a57ef6b97e9efe99b85c9fbc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S01_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S01_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S01_L0003",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "혼자 들어가지 마십시오. 밖에서 여닫는 장치부터 확인하죠.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1118,
+          "label": "r13_v111_passage_walk9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a4725a71ed339c11cde32fd51fc64e4c7640f2114d73c6d1a7b7ecac45612ef3",
+      "uid": "975d7b45ba156ede74a4a6b2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S01_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S01_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S01_L0004",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "오래된 빨래 길이야. 별것도 아닌데 사람을 여럿 부르는구나.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1119,
+          "label": "r13_v111_passage_walk9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3702c811abf4a1975388415a115dcb9b4424a4a9e08f7f67045cde8f29aea3d7",
+      "uid": "fb0428cb79821c161f5a59c3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S01_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S01_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S01_L0005",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그날 밤에는 한 사람 길도 못 열었습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1120,
+          "label": "r13_v111_passage_walk9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "eb5aecbf9902b3f2faa3d7eca8a11adf6385f62262a76b5623f8757680acbd35",
+      "uid": "867041a79dabbdd092de1fa2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S01_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S01_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S01_L0006",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[조작] 도토가 주방 레버를 맡고 아빠와 따닥이 13호 책장을 본다. 소리로 신호를 맞춘 뒤 레버를 올리고 아래 책을 당긴다. 책장 뒤 좁은 문이 열린다. 문 안쪽에는 여는 손잡이가 없다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "28f0e999f997c25384ae9f19be2b50c9c276e9643163eb7a22f235178b79811a",
+      "uid": "5c1a14cde3e897958972a00a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S01_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S01_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S01_L0007",
+      "when": null,
+      "speaker": "따닥",
+      "kind": "dialogue",
+      "text": "멈춰요. 제가 쐐기부터 박겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1121,
+          "label": "r13_v111_passage_walk9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1384537ed32ee2f9c9cfe3b7638a46f0176c70ad6aba1999c12ed988e8a039f6",
+      "uid": "1ffd42f9f0635cda51e062c4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S01_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S01_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S01_L0008",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "쐐기와 안전줄을 설치하고 문밖 성인이 남은 것을 확인한 뒤 들어간다. 주방과 13호가 연결된다. 따닥은 길을 재고 밖으로 돌아온 다음에야 레버를 내리게 한다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1122,
+          "label": "r13_v111_passage_walk9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d71aed66d80493a994383753ad0863b92a1b3b5d99f759197e9976799552c03e",
+      "uid": "d7426c182c5c5fd9d1ccafff",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S01_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S01_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S01_L0009",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "전 이 길은 몰랐습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1123,
+          "label": "r13_v111_passage_walk9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ee9ab74c250081ce7485e419d748f1b33dd62be3ff0f2048a8236b5b6ea529ab",
+      "uid": "bb7b5b1ecb50af1ff8498782",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S01_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S01_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S01_L0010",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "저도요.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1124,
+          "label": "r13_v111_passage_walk9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3a1955b19498fcdda4d08b733c711574ab0a354b1e44dae72ad95efd224ca0d7",
+      "uid": "896c85fe195f55da37fbed8d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S01_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S01_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S01_L0011",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "제가 지킨 건……",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1125,
+          "label": "r13_v111_passage_walk9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0777a08429d9f9cd289c407b0a0d10753d8667f63293753f87aec2bc215dc6eb",
+      "uid": "8d78423a5ef383c3ee741c20",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S01_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S01_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S01_L0012",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "복도 문입니다. 그 말은 틀리지 않았습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1126,
+          "label": "r13_v111_passage_walk9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "090dcc527e7e4e4cfdd280f30b4502fff090625f243ab2f3482c2506ac7bab9e",
+      "uid": "43ef1ba5382dc7a934fba25d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S01_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S01_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S01_L0013",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[기록] 실제 걸어 확인한 통로, 양 끝 위치, 외부 개폐, 문틀 강제 개방 중에도 다른 출입이 가능했다는 점. 통로를 안다는 사실만으로 할머니를 살인자로 확정하지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "64458f57fce5508685ca105db43aa8e886212927b57ef0aa17ade0e1e2417ee7",
+      "uid": "c9299bf1fa4c53437f30d01b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S01_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S01_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S01_L0014",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: E09_PASSAGE=safe_walk_completed; TTADAK_ALIVE=true; D09_S01_main_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "be62f8d55f68afb05c114efb7b70d11ca57adae60b4ce032eda3920ec51d7b0b",
+      "uid": "d7542df908f043a537278186",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S01_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S01_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S01_L0015",
+      "when": null,
+      "speaker": "따닥",
+      "kind": "dialogue",
+      "text": "아직 들어오지 마세요. 안에서 열 손잡이가 없어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1111,
+          "label": "r13_v111_passage_safety_hint9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "98c2682c9df6f62938a4cd1153948332a5524ddc6311fc57c5a60663289b6a20",
+      "uid": "505c4e387f5c678fcaaa95eb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S01_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S01_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S01_L0016",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "쐐기하고 줄부터 고정합시다. 도토 씨는 밖에 계시고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1112,
+          "label": "r13_v111_passage_safety_hint9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fbd8eb68defd66c3987f97c971fa827edd93889c2b28267716318537d2a450f1",
+      "uid": "ec7a41170e7111da8aa65f44",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S01_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S01_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S01_L0017",
+      "when": null,
+      "speaker": "따닥",
+      "kind": "dialogue",
+      "text": "제가 잰 건 실제로 걸어 나온 길이에요. 양쪽 문부터 보세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1139,
+          "label": "r13_v111_passage_measured_hint9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5a59cc6a3afbb2c21bf2933c26fff8e7b741e3f098a91185ceb99c948fa319cb",
+      "uid": "18e77505a284411fa99db10b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S01_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S01_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S01_L0018",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: time_cost=0",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "451e183e78ad687c8dbdb27d0b91e15d9de947a8f4a717fdcf37c0d4dab74de9",
+      "uid": "95674b1dd8821691389418ae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S01_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S01_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S01_L0019",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[이미 획득한 사실과 읽은 발화만 재열람한다. 현재 생사·위치와 다른 과거 증언은 기록으로 표시하고 인물을 새로 현장에 출현시키지 않는다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e4047cc80b769f2f77ad98a244e6c771def19c3e354355926f66719bef6b47dd",
+      "uid": "0e8373c3fa6610a9821be7d1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S01_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S01_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S01_L0020",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "적어 둔 것부터 다시 보겠습니다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bd1227da2b99009eeb0fd6b304bfb6ad9beb3e1371024ffecf107cb589a8b8c6",
+      "uid": "caf25fd459c9576f4341ab35",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S01_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S01_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S01_L0021",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: time_cost=0",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "451e183e78ad687c8dbdb27d0b91e15d9de947a8f4a717fdcf37c0d4dab74de9",
+      "uid": "1441e84d1aa0d34bf9e9c195",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

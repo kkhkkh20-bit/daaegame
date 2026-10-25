@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D13_S01_V01",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "before",
+        "MS14_D13_S01_L0002",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D13_S01_L0002",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "판돌이 숟가락을 꼭 쥐고 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1794,
+          "label": "r13_v111_day13",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "3c778b1c0307c273244a6174bbc0b66d604659ae0b06dace59f23790ead8cbe8",
+      "uid": "95548cb893678f0c380ed4c4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D13_S01_V02",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "before",
+        "MS14_D13_S01_L0005",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D13_S01_L0005",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "까로가 짐칸을 뒤적이며 투덜거린다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1798,
+          "label": "r13_v111_day13",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "d7063badd0e89d87651b11531f2d54c2ed1fd56e86d0e0dd415b53f85d528e06",
+      "uid": "4620e34b7f782112094bf73a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_meeting_flow.rpy:288:61",
+      "file": "game/systems/room13_meeting_flow.rpy",
+      "path": [
+        17180,
+        17202
+      ],
+      "origin": "rpy_inventory",
+      "day": 1,
+      "scene": "r13_debate_present_record",
+      "block": "r13_debate_present_record",
+      "placement": "literal",
+      "ref": "game/systems/room13_meeting_flow.rpy:288:61",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "반쯤 무너졌다. 하나가 더 필요하다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_meeting_flow.rpy",
+          "line": 288,
+          "label": "r13_debate_present_record",
+          "guards": [
+            "elif presentation_result==\"half\":"
+          ]
+        }
+      ],
+      "line": 288,
+      "scene_title": "r13_debate_present_record",
+      "source_hash": "4ad71b4c4541a0e179f45708d38b40d14daddf1a3964344defe921a06f253f19",
+      "baseline_hash": "898fdc24a05ce1ca846f6c206c143aeba799a96a0b36d794b32fe4fbe29b9659",
+      "uid": "7db12d7029f639c4fcd2359a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_debate_present_record|rpy_inventory|r13_debate_present_record|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

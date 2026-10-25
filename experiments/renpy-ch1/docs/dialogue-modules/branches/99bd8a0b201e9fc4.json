@@ -1,0 +1,47 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_CP_CROWD_SPACE_CART13_0",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "crowd_space_cart13",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "crowd_space_cart13",
+      "block": "crowd_space_cart13",
+      "placement": "blocks",
+      "ref": "crowd_space_cart13",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "수레 옆의 짐을 옮겨 기록을 읽을 자리와 하차 통로를 나눈다. 바퀴 곁에는 사람이 몰려들지 않도록 공간을 남긴다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2617,
+          "label": "r13_v111_crowd_prepare_wait13",
+          "guards": [
+            "elif _return==1:"
+          ]
+        }
+      ],
+      "scene_title": "crowd_space_cart13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "8f763a23c07762258c0ce7dc2934916d7e0ca94b7a653200fbf6d35f26d0242c",
+      "uid": "50c8f5433f5e42353eb4aeba",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|crowd_space_cart13|patch|crowd_space_cart13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

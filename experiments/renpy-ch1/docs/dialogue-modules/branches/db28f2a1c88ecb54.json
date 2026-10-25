@@ -1,0 +1,129 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_SP_BOTTLE12_0",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "sp_bottle12",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "sp_bottle12",
+      "block": "sp_bottle12",
+      "placement": "blocks",
+      "ref": "sp_bottle12",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "선반에 넣은 병의 마개 옆으로 찢긴 종이가 보인다. 아까 마개와 병목 사이를 잇던 종이가 지금은 갈라져 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1253,
+          "label": "r13_v111_meal_inspect12",
+          "guards": [
+            "elif _return==2:"
+          ]
+        }
+      ],
+      "scene_title": "sp_bottle12",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "47d227a471427e60c103c5251084b0e1e2d119af0f5bf059a529c417a62319ca",
+      "uid": "75203ae9401c51c660ab9191",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|sp_bottle12|patch|sp_bottle12|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_SP_BOTTLE12_1",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "sp_bottle12",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "sp_bottle12",
+      "block": "sp_bottle12",
+      "placement": "blocks",
+      "ref": "sp_bottle12",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아까 본 그 병이네. 열었다가 다시 놓은 건가.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1253,
+          "label": "r13_v111_meal_inspect12",
+          "guards": [
+            "elif _return==2:"
+          ]
+        }
+      ],
+      "scene_title": "sp_bottle12",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "ac06db07c2ef60f56fa7054825a8dde1294fba7d98aaf2c9d186b45536e39fbb",
+      "uid": "d02b5b5d579b4918e2da38b2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|sp_bottle12|patch|sp_bottle12|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_SP_BOTTLE12_2",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "sp_bottle12",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "sp_bottle12",
+      "block": "sp_bottle12",
+      "placement": "blocks",
+      "ref": "sp_bottle12",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "병의 봉인이 지금 갈라져 있다는 것만 적는다. 누가 무엇을 넣었는지는 이 자리에서 보지 못했다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1253,
+          "label": "r13_v111_meal_inspect12",
+          "guards": [
+            "elif _return==2:"
+          ]
+        }
+      ],
+      "scene_title": "sp_bottle12",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "07e8eac3a7cb6db38bffdc4ead20968eadf75a428928c5bea1b1ccd40d7acd41",
+      "uid": "a1878929f67c3f16ddd3e7c8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|sp_bottle12|patch|sp_bottle12|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

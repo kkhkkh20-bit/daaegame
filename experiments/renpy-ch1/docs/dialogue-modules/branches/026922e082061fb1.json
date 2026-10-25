@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:170:33",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        11742,
+        11747
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_finale",
+      "block": "r13_finale",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:170:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "아빠!",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 170,
+          "label": "r13_finale",
+          "guards": [
+            "if room13[\"daram_state\"]==\"held\":"
+          ]
+        }
+      ],
+      "line": 170,
+      "scene_title": "r13_finale",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "8a52a4fe129649f1c5fd0ca41a84ea565f4ee589db8823cbe219acaea520b074",
+      "uid": "8d427f9c3f90dba77aecbef3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_finale|rpy_literal|r13_finale|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:177:33",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        12013,
+        12041
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_finale",
+      "block": "r13_finale",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:177:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "저 아저씨도 이름 있어. 아까 나랑 이야기했어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 177,
+          "label": "r13_finale",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 177,
+      "scene_title": "r13_finale",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "b4e6e8434714253269188f2e68d5fe496a5a192acde5b41a404c78d6df1ea93b",
+      "uid": "36f9f94fa78a109e493c81c9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_finale|rpy_literal|r13_finale|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

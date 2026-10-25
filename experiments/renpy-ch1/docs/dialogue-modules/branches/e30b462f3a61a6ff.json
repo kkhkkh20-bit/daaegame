@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D11_S03_A13",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "blocks",
+        "mural_names11",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "mural_names11",
+      "block": "mural_names11",
+      "placement": "blocks",
+      "ref": "mural_names11",
+      "when": "guldol_absent",
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "달래…… 촌장님 손녀 이름이에요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 406,
+          "label": "r13_v111_heat_seen11",
+          "guards": []
+        }
+      ],
+      "scene_title": "mural_names11",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "7d2732b77df66f5b1592b95a03900106e300eea28203ab05bf48bb40681eb583",
+      "uid": "a5009a5afec37fb372659f21",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|mural_names11|patch|mural_names11|guldol_absent",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

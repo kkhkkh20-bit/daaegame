@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:119:24",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        7900,
+        7921
+      ],
+      "origin": "rpy_inventory",
+      "day": 4,
+      "scene": "r13_reunion",
+      "block": "r13_reunion",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:119:24",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "엄마가 보관한 연구 원본 직접 확인",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 119,
+          "label": "r13_reunion",
+          "guards": []
+        }
+      ],
+      "line": 119,
+      "scene_title": "r13_reunion",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "69efee94906cd0a975f2fb377ae68d98db560740d8dd104d85e83326288fd220",
+      "uid": "433f3b8f28bc947d8fa05159",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_reunion|rpy_inventory|r13_reunion|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

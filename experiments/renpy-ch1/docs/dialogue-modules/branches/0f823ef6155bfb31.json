@@ -1,0 +1,125 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:99:119",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        6065,
+        6087
+      ],
+      "origin": "rpy_literal",
+      "day": 9,
+      "scene": "r13_reunion",
+      "block": "r13_reunion",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:99:119",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "이번엔 셋이 같이 나갈 방법을 찾자.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 99,
+          "label": "r13_reunion",
+          "guards": [
+            "if r13_has(\"mother_intervened\"):"
+          ]
+        }
+      ],
+      "line": 99,
+      "scene_title": "r13_reunion",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "d749d439fb5e7d5fca461c2b4b2f86af803f2a35886d5ebd9f61ff01f77b5b39",
+      "uid": "9b90281395be6f7384648659",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_reunion|rpy_literal|r13_reunion|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:110:69",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        6913,
+        6923
+      ],
+      "origin": "rpy_literal",
+      "day": 9,
+      "scene": "r13_reunion",
+      "block": "r13_reunion",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:110:69",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "그래. 잘했어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 110,
+          "label": "r13_reunion",
+          "guards": [
+            "else:",
+            "if room13[\"case_state\"]==\"prevented\":"
+          ]
+        }
+      ],
+      "line": 110,
+      "scene_title": "r13_reunion",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "76483c5f094581acd912d604be0a4a82692f814ea18b4e15cfbf5e00a29551dc",
+      "uid": "fd2c69021315aeb8553fdefd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_reunion|rpy_literal|r13_reunion|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:113:159",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        7215,
+        7264
+      ],
+      "origin": "rpy_literal",
+      "day": 9,
+      "scene": "r13_reunion",
+      "block": "r13_reunion",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:113:159",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "나는 할머니에게 다시는 돌아오지 않겠다고 말했어. 너희한테는 오지 말라고 따로 썼고.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 113,
+          "label": "r13_reunion",
+          "guards": []
+        }
+      ],
+      "line": 113,
+      "scene_title": "r13_reunion",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "cc2c2233e37d858260f49f663f8edf1662ae9a219bbfb52f1c092962d256e3a4",
+      "uid": "bf72310c88bc096bd63eef09",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_reunion|rpy_literal|r13_reunion|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

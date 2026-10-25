@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_new_cast.rpy:216:39",
+      "file": "game/systems/room13_new_cast.rpy",
+      "path": [
+        14616,
+        14633
+      ],
+      "origin": "rpy_literal",
+      "day": 9,
+      "scene": "r13_hyeoni_song",
+      "block": "r13_hyeoni_song",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_cast.rpy:216:39",
+      "when": null,
+      "speaker": "resident_hyeoni",
+      "kind": "dialogue",
+      "text": "그럼 오늘 소문으로 한 곡.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_cast.rpy",
+          "line": 216,
+          "label": "r13_hyeoni_song",
+          "guards": []
+        }
+      ],
+      "line": 216,
+      "scene_title": "r13_hyeoni_song",
+      "source_hash": "1ca2e2ca3bfab19cf96bff538f9165f970ad4d6405095ae9a5862a44f44e94db",
+      "baseline_hash": "7b78e979af5528a0834f28640f71603bff89b1a40e8685947134e27ae0406826",
+      "uid": "686674a5fa29f583d647c999",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_hyeoni_song|rpy_literal|r13_hyeoni_song|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

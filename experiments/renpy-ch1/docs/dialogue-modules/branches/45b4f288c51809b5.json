@@ -1,0 +1,123 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_KL_05",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "blanket_lost13",
+        5,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "blanket_lost13",
+      "block": "blanket_lost13",
+      "placement": "blocks",
+      "ref": "blanket_lost13",
+      "when": "daram_departs13",
+      "speaker": null,
+      "kind": "narration",
+      "text": "짐칸 끝에서 다람이 나를 돌아본다. 손목의 흰 끈이 고리에 묶여 있다. 나는 끈을 잡으려고 뛰지만 바퀴가 더 빠르다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2007,
+          "label": "r13_v111_mending_wrong13",
+          "guards": []
+        }
+      ],
+      "scene_title": "blanket_lost13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "821031b68c4e86fbf47fedd57bd4627484120a993e7217c26cd7fb6efda52a01",
+      "uid": "e5a61b67f94c3ac19b2423a3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|blanket_lost13|patch|blanket_lost13|daram_departs13",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_KL_06",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "blanket_lost13",
+        6,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "blanket_lost13",
+      "block": "blanket_lost13",
+      "placement": "blocks",
+      "ref": "blanket_lost13",
+      "when": "daram_departs13",
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠!",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2007,
+          "label": "r13_v111_mending_wrong13",
+          "guards": []
+        }
+      ],
+      "scene_title": "blanket_lost13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "8a52a4fe129649f1c5fd0ca41a84ea565f4ee589db8823cbe219acaea520b074",
+      "uid": "f315f9e55c6afaf47b76cc2c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|blanket_lost13|patch|blanket_lost13|daram_departs13",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_KL_07",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "blanket_lost13",
+        7,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "blanket_lost13",
+      "block": "blanket_lost13",
+      "placement": "blocks",
+      "ref": "blanket_lost13",
+      "when": "daram_departs13",
+      "speaker": null,
+      "kind": "narration",
+      "text": "엄마가 내 팔을 붙잡는다. 엄마도 아무 말을 하지 못한다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2007,
+          "label": "r13_v111_mending_wrong13",
+          "guards": []
+        }
+      ],
+      "scene_title": "blanket_lost13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "e1e8d7dd575858fa4c08f9c42ca96b464a49247b1a35a5ddb1eb49ac0e29c705",
+      "uid": "3dec16f2bc737dedf8d16814",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|blanket_lost13|patch|blanket_lost13|daram_departs13",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

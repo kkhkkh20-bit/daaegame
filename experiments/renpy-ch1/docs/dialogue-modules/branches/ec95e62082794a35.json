@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_q1_arguments.rpy:273:15",
+      "file": "game/systems/room13_q1_arguments.rpy",
+      "path": [
+        16691,
+        16710
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_q1_receipt",
+      "block": "r13_q1_receipt",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_arguments.rpy:273:15",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "정산한 기록을 봐도 되겠습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_arguments.rpy",
+          "line": 273,
+          "label": "r13_q1_receipt",
+          "guards": []
+        }
+      ],
+      "line": 273,
+      "scene_title": "r13_q1_receipt",
+      "source_hash": "8289e6e0adc4c6de94e5f0acadafcaced13c74af938b712712356a7bd5a6fa22",
+      "baseline_hash": "5e1c12a3a649dc8d864ab9160cff838e4c3cf4d2d42693cb815e8d55850e092e",
+      "uid": "288810fdbb962bd862dc5a81",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_q1_receipt|rpy_literal|r13_q1_receipt|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D12_S02_L0034",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "replace",
+        "MS14_D12_S02_L0034",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S02",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D12_S02_L0034",
+      "when": "prep12_seat_only",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "자리는 마련됐어요. 다만 약장은…… 아직 확인 못 했습니다. 옮길 사람도 아직이고요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1219,
+          "label": "r13_v111_medicine_missing12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-2. 배식 전의 손",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "09318181c19e907365856bcef4f16e6422270730d1633e46f4ee0e5e1d804be5",
+      "uid": "e9b07902295fa2d72d0191fe",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S02|patch|replace|prep12_seat_only",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

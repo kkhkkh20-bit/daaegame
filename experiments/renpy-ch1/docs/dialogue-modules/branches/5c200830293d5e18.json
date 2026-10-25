@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:490:31",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        28914,
+        28952
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_wf_decision",
+      "block": "r13_wf_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:490:31",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "누비네 아이도, 창고 아이들도 학교에서 겨울을 나게 해 주십시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 490,
+          "label": "r13_wf_decision",
+          "guards": [
+            "elif _wf_pick==\"shelter\":"
+          ]
+        }
+      ],
+      "line": 490,
+      "scene_title": "r13_wf_decision",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "0fb9498334636e74dfc4d719423e8fc92c0fd90b4cafd27c3cd161f987095d8c",
+      "uid": "065b67a745a613645b2a5474",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_wf_decision|rpy_literal|r13_wf_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:495:31",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        29202,
+        29265
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_wf_decision",
+      "block": "r13_wf_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:495:31",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "약속은 여기서 끝냅니다. 누비 씨는 창고를 다시 짓는 일로 갚고, 그 집 아이 셋은 나비가 부엌에서 맡습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 495,
+          "label": "r13_wf_decision",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 495,
+      "scene_title": "r13_wf_decision",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "c5f1e303081c97db5ce820cafb36e0b98ff294efb42b776926480062b4ffa809",
+      "uid": "eeb3a704aadb5a65968f33b5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_wf_decision|rpy_literal|r13_wf_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

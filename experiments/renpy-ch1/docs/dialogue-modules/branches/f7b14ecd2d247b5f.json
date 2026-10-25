@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D14_S04_A01",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "before",
+        "MS14_D14_S04_L0009",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D14_S04_L0009",
+      "when": "gate_daram_unlisted",
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이 이름판 옆 산 사람 칸에 자기 이름을 쓴다. ‘다람.’ 입구 기록에는 끝내 없던 이름이다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3363,
+          "label": "r13_v111_pandol_news14",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "6edfdcece7cb9d947d8707ef82495d612ad195c6797e088403967d2cf15c0016",
+      "uid": "d00c6560926cd0c5e7f4fa89",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|patch|before|gate_daram_unlisted",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

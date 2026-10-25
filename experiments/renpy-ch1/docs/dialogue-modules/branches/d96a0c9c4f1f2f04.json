@@ -1,0 +1,129 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_LA_LA_CORD2_0",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_cord2",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "la_cord2",
+      "block": "la_cord2",
+      "placement": "blocks",
+      "ref": "la_cord2",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "초롱 씨, 남은 끈 좀 써도 될까요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 8,
+          "label": "r13_lamp_prep2",
+          "guards": [
+            "if _return==1:"
+          ]
+        }
+      ],
+      "scene_title": "la_cord2",
+      "source_hash": "1f8d4bedb33f10201a3ffe6e822492a7cb7ec3d826a133f6d7683d7013245e9b",
+      "baseline_hash": "49a351c874792e2e99db5211bf55166458c48feb6654e8fb565bbcae270ce612",
+      "uid": "910bc3139145cf1865f6019f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|la_cord2|patch|la_cord2|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_LA_LA_CORD2_1",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_cord2",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "la_cord2",
+      "block": "la_cord2",
+      "placement": "blocks",
+      "ref": "la_cord2",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "잘라 놓은 건 가져가세요. 긴 줄은 아직 써요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 8,
+          "label": "r13_lamp_prep2",
+          "guards": [
+            "if _return==1:"
+          ]
+        }
+      ],
+      "scene_title": "la_cord2",
+      "source_hash": "1f8d4bedb33f10201a3ffe6e822492a7cb7ec3d826a133f6d7683d7013245e9b",
+      "baseline_hash": "e1857111911a3e06145571b8bc9614c96cbd68f671c35ee166ac41405d17d74b",
+      "uid": "f719d6788256349ba78b9333",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|la_cord2|patch|la_cord2|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_LA_LA_CORD2_2",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_cord2",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "la_cord2",
+      "block": "la_cord2",
+      "placement": "blocks",
+      "ref": "la_cord2",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "짧은 끈을 접어 주머니에 넣는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 8,
+          "label": "r13_lamp_prep2",
+          "guards": [
+            "if _return==1:"
+          ]
+        }
+      ],
+      "scene_title": "la_cord2",
+      "source_hash": "1f8d4bedb33f10201a3ffe6e822492a7cb7ec3d826a133f6d7683d7013245e9b",
+      "baseline_hash": "a254845131fb41d862b8f4c5859a9718f8958273eb9b8356a83b28a3013d21ec",
+      "uid": "c0a996a1a1cde5363ca4b7c2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|la_cord2|patch|la_cord2|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

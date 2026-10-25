@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_AR_D12_01",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "after",
+        "MS14_D12_S01_L0023",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D12_S01_L0023",
+      "when": "guard_ready",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "돌목 씨, 이송 예정 칸은 어디로 보내는 겁니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1075,
+          "label": "r13_v111_morning_notice12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "26fba4fd28aec0df6c99cdedc85f61f94d0d14a41f761e9a5efd02d9a78d72c8",
+      "uid": "58cd88ce602e2feedc8d6249",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|patch|after|guard_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AR_D12_02",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "after",
+        "MS14_D12_S01_L0023",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D12_S01_L0023",
+      "when": "guard_ready",
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "산길 쪽이라고만 들었소. 받는 사람 이름은 적혀 오지 않소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1075,
+          "label": "r13_v111_morning_notice12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "6df4fcb6746b726d70864f7dc61d230bbc65802a3a3a41ef1b83f4e9c2513c85",
+      "uid": "f2a7a5fb50115109a6d27508",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|patch|after|guard_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

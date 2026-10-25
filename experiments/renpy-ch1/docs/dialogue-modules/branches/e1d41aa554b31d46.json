@@ -1,0 +1,100 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D10_P01_P01",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_P01_L0086",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_P01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_P01_L0086",
+      "when": "records_partial",
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "초대장을 누가 썼는지…… 오늘은 못 가리겠소. 할머니 말도, 아버지 말도 그대로 두겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1822,
+          "label": "r13_v111_writing_wrong10",
+          "guards": [
+            "if r13_nw_retry(\"records\",['E01', 'E07', 'E09_MAIL'],'슬링이 고개를 젓는다. 편지와 봉투, 필사본을 함께 놓아야 한다.'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1825,
+          "label": "r13_v111_writing_wrong10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-P. 예방 대체 / 그 종이를 넘기기 전에",
+      "source_hash": "662dca5b8bc468185010c09a7dfb1668b1ea5e32eb2c8731e681e5c8ee9106df",
+      "baseline_hash": "a22e37d65a5cdd7e3bebc04f662a0b674315afa6431f07dd6a0b34d972066407",
+      "uid": "0f11e37694d659c331ac9362",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_P01|patch|after|records_partial",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_P01_P03",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_P01_L0086",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_P01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_P01_L0086",
+      "when": "records_partial",
+      "speaker": "부엉이",
+      "kind": "dialogue",
+      "text": "……그러게.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1822,
+          "label": "r13_v111_writing_wrong10",
+          "guards": [
+            "if r13_nw_retry(\"records\",['E01', 'E07', 'E09_MAIL'],'슬링이 고개를 젓는다. 편지와 봉투, 필사본을 함께 놓아야 한다.'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1825,
+          "label": "r13_v111_writing_wrong10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-P. 예방 대체 / 그 종이를 넘기기 전에",
+      "source_hash": "662dca5b8bc468185010c09a7dfb1668b1ea5e32eb2c8731e681e5c8ee9106df",
+      "baseline_hash": "888bf699b55ec5652f6f346d9a37a62a264c0ae6e555af6d81453d4c058a751a",
+      "uid": "6e7d511b61ad8e9316ab46f7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_P01|patch|after|records_partial",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

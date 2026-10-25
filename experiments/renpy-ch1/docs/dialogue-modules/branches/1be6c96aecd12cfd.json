@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:278:30",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        16283,
+        16324
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_long_night",
+      "block": "r13_ws_long_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:278:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "노부부 둘이 서로 기댄 채였다. 그 곁에서 네로가 숨을 붙이고 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 278,
+          "label": "r13_ws_long_night",
+          "guards": [
+            "if _ws_dead<=2:"
+          ]
+        }
+      ],
+      "line": 278,
+      "scene_title": "r13_ws_long_night",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "b69125e52ae8cf063d0948d9ea3e47189f3a79957630368777a7e6c91d6fa114",
+      "uid": "b06c72c8e0bdfee38f9c291b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_long_night|rpy_literal|r13_ws_long_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:282:30",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        16530,
+        16580
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_long_night",
+      "block": "r13_ws_long_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:282:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "맨 앞에 앉은 흰 늑대의 품에 천 꾸러미 하나. 이름표들이다. 이름마다 삐뚤한 바느질.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 282,
+          "label": "r13_ws_long_night",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 282,
+      "scene_title": "r13_ws_long_night",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "c9d4f9916a08e4524e3142f522b6cf99d6d4ae164f3cc2c432c65745baecbbc4",
+      "uid": "c4f415b3889404626dd85c1f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_long_night|rpy_literal|r13_ws_long_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

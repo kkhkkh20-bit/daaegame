@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D01_S03_R04",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "after",
+        "MS14_D01_S03_L0025",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D01_S03_L0025",
+      "when": "gate_retry",
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "다른 자료가 있으면 다시 보이시오. 아직 정한 건 없소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 256,
+          "label": "r13_v111_gate_wrong",
+          "guards": []
+        }
+      ],
+      "scene_title": "3. 초소 / 둘이 들어갈 근거",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "d2fe93ecc07779a04314c9060560cd0fae108f188a9b7287281a66ac2cbb68ef",
+      "uid": "4ad0b4e4a85bb966c5557f49",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S03|patch|after|gate_retry",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

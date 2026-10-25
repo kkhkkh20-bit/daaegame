@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:305:34",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        18731,
+        18770
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_wf_morning",
+      "block": "r13_wf_morning",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:305:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "천을 걷어 보니 두 손바닥이 벌겋게 데어 있었다. 손등은 멀쩡했다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 305,
+          "label": "r13_wf_morning",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 305,
+      "scene_title": "r13_wf_morning",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "8c4918f424cbfc1334da2b508779b75b415be26464eb2d21b0585dc7c31277d7",
+      "uid": "c5b9fdf521ee9108a11c15d8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_wf_morning|rpy_literal|r13_wf_morning|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

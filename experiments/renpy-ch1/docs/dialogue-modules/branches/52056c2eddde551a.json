@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_bundle3.rpy:211:30",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        12754,
+        12800
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_pages",
+      "block": "r13_b3_pages",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:211:30",
+      "when": null,
+      "speaker": "resident_librarian",
+      "kind": "dialogue",
+      "text": "……돌에 관한 기록은 이제 아무도 안 읽어요. 팔아서라도 굶지 않는 게 낫지요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 211,
+          "label": "r13_b3_pages",
+          "guards": []
+        }
+      ],
+      "line": 211,
+      "scene_title": "r13_b3_pages",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "f717c2eb9d2fcae77d844d1e94664f2e9c69e812e8598eee8fb9411f3e229786",
+      "uid": "7693d3006a2f2c74ed5781b4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_pages|rpy_literal|r13_b3_pages|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:214:50",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        12911,
+        12950
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_pages",
+      "block": "r13_b3_pages",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:214:50",
+      "when": null,
+      "speaker": "resident_librarian",
+      "kind": "dialogue",
+      "text": "보시려면 지금 보세요. 오후면 이 장부는 도시로 가는 짐에 실려요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 214,
+          "label": "r13_b3_pages",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 214,
+      "scene_title": "r13_b3_pages",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "5ad2956f7b15ea0ae047a4a3ce2deb74c74d18c50a64731901a1913d7ebb08d8",
+      "uid": "9a55c8bba31c9b5126795dbf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_pages|rpy_literal|r13_b3_pages|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

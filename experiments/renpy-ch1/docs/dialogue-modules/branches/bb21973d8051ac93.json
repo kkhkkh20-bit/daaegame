@@ -1,0 +1,47 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_GW_D13_04",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "listed_void13",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "listed_void13",
+      "block": "listed_void13",
+      "placement": "blocks",
+      "ref": "listed_void13",
+      "when": "guard_ready",
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "이 칸은 어제 무효로 적었소. 그 칸으로 오른 사람은 내리시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_grand_win.rpy",
+          "line": 119,
+          "label": "r13_v111_listed_void13",
+          "guards": [
+            "if r13_gw_void_people():"
+          ]
+        }
+      ],
+      "scene_title": "listed_void13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "6e60d623f5d95b30f1d392ec02fcb8749fc311bb4007b71cf50b3fa477523dfd",
+      "uid": "8e77863d8dafe0e82293fb49",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|listed_void13|patch|listed_void13|guard_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:418:34",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        24813,
+        24853
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_wf_choice",
+      "block": "r13_wf_choice",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:418:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나비가 작은 보따리를 싸고 있었다. 할머니가 팔짱을 끼고 서 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 418,
+          "label": "r13_wf_choice",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 418,
+      "scene_title": "r13_wf_choice",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "53acd9871771f81767547eee4a708cb24544f1ccdddb4ce0ee9a378c35b437b0",
+      "uid": "bb1bd187ded49c68ecc16ae5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_wf_choice|rpy_literal|r13_wf_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:425:34",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        25276,
+        25318
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_wf_choice",
+      "block": "r13_wf_choice",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:425:34",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "……등잔은 돌아왔으니 됐어요. 이번만은 넘어가지요. 품삯도 그대로 주고.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 425,
+          "label": "r13_wf_choice",
+          "guards": [
+            "menu:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 425,
+      "scene_title": "r13_wf_choice",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "764064a5639007783bdd2afd461257d19281ec580f214a7b10957a0d952286dd",
+      "uid": "b33e30fbe2d65a0d1936d925",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_wf_choice|rpy_literal|r13_wf_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

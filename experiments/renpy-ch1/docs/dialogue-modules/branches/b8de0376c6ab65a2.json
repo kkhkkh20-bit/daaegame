@@ -1,0 +1,213 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events2.rpy:244:30",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        12773,
+        12794
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_a_siluk",
+      "block": "r13_ev_a_siluk",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:244:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "실룩은 선금을 챙겨 자리를 떠났다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 244,
+          "label": "r13_ev_a_siluk",
+          "guards": [
+            "while _ep_loop:",
+            "menu:",
+            "if _siluk_paid:"
+          ]
+        }
+      ],
+      "line": 244,
+      "scene_title": "r13_ev_a_siluk",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "52336a61cf83e4cf2f681de2e2181e75a5b0efd11b66b5069fe359deb4d0bf41",
+      "uid": "3b3284824c10d756580ee917",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_a_siluk|rpy_literal|r13_ev_a_siluk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:249:30",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        13063,
+        13089
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_a_siluk",
+      "block": "r13_ev_a_siluk",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:249:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "실룩은 내가 건넨 돈을 챙겨 자리를 떠났다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 249,
+          "label": "r13_ev_a_siluk",
+          "guards": [
+            "while _ep_loop:",
+            "menu:",
+            "if _siluk_paid:"
+          ]
+        }
+      ],
+      "line": 249,
+      "scene_title": "r13_ev_a_siluk",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "9745a4089534a34534a29655ed52f109a43cf665371f9fdd4d9b7f830d69a402",
+      "uid": "e478711411fa3ddac1a92a46",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_a_siluk|rpy_literal|r13_ev_a_siluk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:251:50",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        13179,
+        13209
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_a_siluk",
+      "block": "r13_ev_a_siluk",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:251:50",
+      "when": null,
+      "speaker": "resident_siluk",
+      "kind": "dialogue",
+      "text": "후회하실 텐데요. 되돌아온 짐은 오래 두면 젖어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 251,
+          "label": "r13_ev_a_siluk",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 251,
+      "scene_title": "r13_ev_a_siluk",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "eb50788c64c0d2ee7df1801c7c4a4029c715413890bf702fb0fc6bc514f02f0b",
+      "uid": "d78722029df65cce54a9bc78",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_a_siluk|rpy_literal|r13_ev_a_siluk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:253:50",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        13312,
+        13344
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_a_siluk",
+      "block": "r13_ev_a_siluk",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:253:50",
+      "when": null,
+      "speaker": "resident_siluk",
+      "kind": "dialogue",
+      "text": "짐 받아 온 다음에 주신다고요? 저도 돈이 급하다고요!",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 253,
+          "label": "r13_ev_a_siluk",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 253,
+      "scene_title": "r13_ev_a_siluk",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "88af602afcad59fce4ba899d6c1aa997d120740d8286b65117aa255dcd99a949",
+      "uid": "9395b710c3d40c7355efaceb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_a_siluk|rpy_literal|r13_ev_a_siluk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:270:50",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        14555,
+        14576
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_a_siluk",
+      "block": "r13_ev_a_siluk",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:270:50",
+      "when": null,
+      "speaker": "resident_siluk",
+      "kind": "dialogue",
+      "text": "……제 빚 얘기를 어떻게 알았어요?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 270,
+          "label": "r13_ev_a_siluk",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 270,
+      "scene_title": "r13_ev_a_siluk",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "ca0909f93382088519321c22ae7ae4577dcefb631426d9229f3dcd8d1def65b6",
+      "uid": "fb8c48dc9d8ea7d9599e9e4f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_a_siluk|rpy_literal|r13_ev_a_siluk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

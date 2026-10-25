@@ -1,0 +1,3588 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D02_S04_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠와 다람은 식당으로 들어가 나비에게 빈자리를 묻는다. 바깥 햇빛이 광장 바닥 끝에 닿아 있다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c318ce712721cb654d12015f7f15faf97540251098f5f25215b2e1b2bb671e25",
+      "uid": "7f4b71689fe85ea30383f6a0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0002",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "밤에 빈자리가 있습니까? 광장에서 그림 그리는 피코 씨가 잘 곳이 없어서요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 637,
+          "label": "r13_v111_diner_offer",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2872e3540e9ba7c945d30e72173bd293eb27c9142251dab70b6e64c6d4203634",
+      "uid": "abfc6f693eb48feb72822f4b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0003",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "여기는 식당이에요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 637,
+          "label": "r13_v111_diner_offer",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f7844187481cbd105f026ba939e437b66e9e406f075fadcf86de9dd03fca52cb",
+      "uid": "137f0795ea939230f8bf76f6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0004",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "하룻밤만이라도.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 637,
+          "label": "r13_v111_diner_offer",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d1eb39e7e53138a6a86d4f63d8215b0c49df3faff9ecd3e9f7d2791c359750f2",
+      "uid": "98340f926f3a2e891356c363",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0005",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "지난번엔 물감이 묻었어요. 내일 아침 준비할 자리도 없고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 637,
+          "label": "r13_v111_diner_offer",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1bba0701e614969c8a97486bc3fe0b4d32eba5f8a9f398c1e838383d07800756",
+      "uid": "3f94b4f65ba3a048d71a8a2d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0006",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "우리가 천 깔면 돼요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 637,
+          "label": "r13_v111_diner_offer",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f4bc3162e830b6ddb89365a2d6145980babb9214861d26923a0ec4c226037a98",
+      "uid": "1a1fcd0faeede126278c5a97",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0007",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "네가 내일 빨아 줄 건 아니잖니.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 637,
+          "label": "r13_v111_diner_offer",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "44ef53b1e0d70044358f5b1db9df705fd8183948653540d6be8deba187317941",
+      "uid": "0c932570377889cb2ba63d2f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0008",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이가 입을 다물었다. 나는 아이 대신 고개를 끄덕였다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 637,
+          "label": "r13_v111_diner_offer",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cbef674a347c10425f29be6d9b8743e82a34eb3573a3aae209aacc0923ca6e26",
+      "uid": "185325e580201f750d583ac6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0009",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "천을 가져오고, 포대 옮기는 것도 돕겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 637,
+          "label": "r13_v111_diner_offer",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f6991bafe283ee29e5c1761c459caabcd730385eca6f9aca44a4e6add260ea04",
+      "uid": "0c31b69b3860014d895c126c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0010",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "지금 포대 옮기면 벤치는 비워요. 야간 배식 나가기 전에 피코 씨도 데려오세요. 나가고 나면 문 못 열어 줘요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 637,
+          "label": "r13_v111_diner_offer",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "316dcd142776c8c1a3899057e56a928061e353a1c02f442ee39f3793c1182ec0",
+      "uid": "597ccd940ed1b4b7fccc17d5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0011",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "창밖. 초롱이 반대쪽 외곽 순회를 나서며 아빠에게 손을 든다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c843c05c01445ef22ca1acf5d14e36f2e40694a94b5ed506742e75590abb48ac",
+      "uid": "8fe7d289c1259a439b2604a1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0012",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "네로를 만나러 갈 거면 지금이에요. 교환함도 다시 보고 오면 해 져요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 637,
+          "label": "r13_v111_diner_offer",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bf8b37fd0cd90dcc70eebc292689b09aab47f0d7a186d61453e4484e5f002186",
+      "uid": "44cfdcf9f39c757db5f88f58",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0013",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이쪽을 먼저 끝내면요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 637,
+          "label": "r13_v111_diner_offer",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "05b1879e5238ecaf0a0d743fb66050274d051f582068b3747c6762d580bd21fa",
+      "uid": "50a5a82d59eb6c0e3ae728a2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0014",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "어두워진 숲길로 아이 데려가지는 마세요. 내일 날 밝으면 갈 수 있어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 637,
+          "label": "r13_v111_diner_offer",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ae74f416857f9ba4ba0f11889531ba3eb94c2f06438ca390796a01b4f40bbe48",
+      "uid": "ea004b1d3a9ee6a01ce01172",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0015",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠가 식당의 옮길 포대와 북쪽 길을 번갈아 본다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c4dd74ba281691b273f7d0a6c7ff6cb68f689af1406bebd2033666e7b42e759d",
+      "uid": "9a5f66c0e8c24a8d82321fe7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0016",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "네로 아저씨가 엄마 있는 데 알면 어떡해?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 637,
+          "label": "r13_v111_diner_offer",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f96f3ab37a85c6c8e57f98ffba8b45cf1beb9946f59d828f8b7e7cc0132e489a",
+      "uid": "bd14d3586d081df1d68401a3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0017",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "나도 그게 알고 싶어. 식량은 건넸다는데, 어디까지 아는지는…… 만나 봐야지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 637,
+          "label": "r13_v111_diner_offer",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e56ea6dcc6a4cec33f683e5c6189d11bbed930ab97d4dc0786dbc941ee34e3a6",
+      "uid": "9795d60f0c93944d1dcaa065",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0018",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "피코는?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 637,
+          "label": "r13_v111_diner_offer",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5dc84ac212d514104cb2f9c7bef062db231539f17617545a3cc7877ca34b5e89",
+      "uid": "9670d4f45f55b92a63160e1f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0019",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "그 등 하나 믿고 자는 거예요. 꺼지면 담요 한 장으로 오늘 밤 못 견딜 수도 있어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 637,
+          "label": "r13_v111_diner_offer",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4f797a9961395bfea2e4916989f7dee4965cb3b1a679f9b6648930248084d933",
+      "uid": "900ff83c4868bc3f288a116b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0020",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "해가 지기 전에 한쪽만 끝낼 수 있다. 피코를 도우면 오늘 네로 면담과 교환함 재확인을 놓친다. 네로를 만나 물자 일을 도우면 내일 담요 두 장을 받지만 피코는 오늘 광장에 남는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0eeaeeaa5eeab71eb93816e99e91c6f01122c02b96adf213bb022ef2d4ce8f86",
+      "uid": "cb4506d915de06625b94759c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0021",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "오늘은 여기부터 할게. 네로 씨는 다음에 따로 찾아야겠어. 엄마가 답을 놓았으면 내일 아침 받자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 674,
+          "label": "r13_v111_shelter_choice",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "038945239835c315766916955fe30116fd870c2526d3b4c05e8f361c490d5cd4",
+      "uid": "fa3abb168699a0c95074ee55",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0022",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "……알았어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 674,
+          "label": "r13_v111_shelter_choice",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4ef09007d7cf0c8afe9a3445bbd74cc2cc220815c828b00e6c96a28c4dcd6ff8",
+      "uid": "e8e70f66e487103398b56fd3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0023",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "조작: 포대를 옮겨 벤치를 비움 → 여관에서 마른 천 빌리기 → 피코에게 자리와 조건 전달. 준비하는 동안 해가 낮아지는 것을 창밖으로 보여 준다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7ba7813777d5dcc13517e66f494414ba5ac78c08a8e7526aaabf18d3e0f265fd",
+      "uid": "7ab781de6849368bf828b1c2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0024",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "나를 밀가루 옆에 세워 놓는다고?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 696,
+          "label": "r13_v111_shelter_prepare",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c9e130aa1e286706b053e3026dee09a84c962513dee174c712f52a3e5b1c455d",
+      "uid": "f0cfc08a25e0a1269f5323ab",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0025",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "벤치입니다. 눕는 곳이에요. 그림도 세울 자리를 비웠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 696,
+          "label": "r13_v111_shelter_prepare",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ed7a53b6eabc08e0028c1c8bde1ca50c2e4035bae6d8a890e1a43424d390fdf3",
+      "uid": "be2479d3fe2ea9db92881dde",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0026",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "그럼 가야죠. 자리를 비웠다는데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 696,
+          "label": "r13_v111_shelter_prepare",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "369ff6a15f35b89dacbc9447d68c12c6b10eea10ff4a745f35bb3b49ed503e60",
+      "uid": "c646eb44de90e51f83e55d9d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0027",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그림 내가 들게. 안 눌리게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 696,
+          "label": "r13_v111_shelter_prepare",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b9487d3ede7308d66df39a7e2907f34f825266c1fd0e061c165c1a4de8d5a654",
+      "uid": "2dd3b18408eaf5608a686837",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0028",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "그건 내가 들어. 네가 담요 가져.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 696,
+          "label": "r13_v111_shelter_prepare",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9538aa56259f1065f01f66e72eb37b3889a15b94d5ee98d72d30c1c0f8671de6",
+      "uid": "818e24efcca47eb93be2baf1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0029",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "식당 안. 실제 입실. 피코가 벤치에 앉아 신발을 벗는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2507a9c0ece6ab3852d4bf237368393bd981a5623549e61acb4e1011a8136d1e",
+      "uid": "88996da62a428172b8bfe3ea",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0030",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "아침 첫 손님 오기 전에 치우세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 710,
+          "label": "r13_v111_shelter_done",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "18ec258f9ed851bb0761157df5a0ff322497ddafb7cab6917941e14bf641fb3f",
+      "uid": "80c3e0e5ae3584389c4e2ff9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0031",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "그 손님 초상 그려 주면 늦어도 됩니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 710,
+          "label": "r13_v111_shelter_done",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "24ea4ad06a96ab833e1e12196d426f05b7e35d44ba8f423e39930688daf45063",
+      "uid": "0430286b1ede38b95ffab910",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0032",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "안 돼요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 710,
+          "label": "r13_v111_shelter_done",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "86d7264f97266f91e0f45738b7a6ef984253511e372123f616bcac32da7f253c",
+      "uid": "7ec5f27a9e328038cd8bfca9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0033",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "물어는 봐야지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 710,
+          "label": "r13_v111_shelter_done",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "66e6b9521eff2e7cc4b5f3e545efd5dae9efcaab0832ee59c0868c06d66707d4",
+      "uid": "bf89617481adaa61c03f4002",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0034",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "첫 손님 오기 전에 저희가 와서 치우겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 710,
+          "label": "r13_v111_shelter_done",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "963954a658ea58d9c11fd2d73d88d78f6566b9632be30b26a7ba5130f0c0a235",
+      "uid": "bac68e22725ac83cb49a8ec5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0035",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "포대도 제자리로요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 710,
+          "label": "r13_v111_shelter_done",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "17397c6dc713ef531f1e65ee1dbe24824566fcdb8c618471e890637dcc8e355d",
+      "uid": "552c7a9b20ebba65a3b417f3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0036",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "네.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 710,
+          "label": "r13_v111_shelter_done",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8445741d7d6a831276e8794b874cebee94940ba0e963d4f109bf72f437426789",
+      "uid": "1426b5c128e910bfe4d33447",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0037",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0037",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0037",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "창밖 북쪽 길이 어두워졌다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "392c7e0ba638a8c79790f0ae582b7d06d78c5ef96e75a1da1ac8ed57509d023c",
+      "uid": "53dbb5bcc07216edaa269a38",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0038",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0038",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0038",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "네로를 놓쳤다. 내일도 그 길에 있으리란 보장은 없다. 아내가 어디로 갔는지, 오늘은 묻지 못했다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 710,
+          "label": "r13_v111_shelter_done",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5d4681f7e2f6967b22192d32f1486db39a0cf4d9d41d5bc4b9f06701f8b15844",
+      "uid": "99a96cf5b716528b446a2cd5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0039",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0039",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0039",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아내를 직접 본 사람이면 지금 만나야겠습니다. 오늘은 그쪽으로 가겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 719,
+          "label": "r13_v111_nero_choice",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6bea82d8440c49b87742a7a9f0dc88f717f9bff23cec14380fcf9d13fb651510",
+      "uid": "74f4633f0cae3f80d3f1a78d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0040",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0040",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0040",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "그러면 오늘 자리는 못 비워요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 719,
+          "label": "r13_v111_nero_choice",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "piko_sacks2",
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "eff481854f824f584984b8799149d5f6a4bb923007ed221c457aa3480be6b707",
+      "uid": "34e350f264962f97c94e243f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0041",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0041",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0041",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "……네. 압니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 719,
+          "label": "r13_v111_nero_choice",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "236018a0455e97874fd300ade6b6cd6ef9b6151f632f0a7a67412cdb55a30300",
+      "uid": "8d4814238f6bd943554b9247",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0042",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0042",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0042",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "광장에서 피코에게 직접 알린다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b0607c18eb16c75cab9178f4c6ca3d5e6f4ff030c64a3599873b52eef2250890",
+      "uid": "ce365b0ff4e721bfa1763d7e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0043",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0043",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0043",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아내를 본 사람이 있다니 가 봐야겠습니다. 식당 자리는…… 오늘 못 마련했습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 721,
+          "label": "r13_v111_nero_choice",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "52a621b7e2cfaaab6156c711e05af6f4b2b686dd9b9b53250cf5e0687474169d",
+      "uid": "502d9f5d9e3f48d47aa8442b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0044",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0044",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0044",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "사람 찾으러 온 거잖아요. 가 봐요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 721,
+          "label": "r13_v111_nero_choice",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ba4f99e4f6ab5ca512c22c35f3330624d2e60bc61b9f31f582f8bb0ce1f72ef4",
+      "uid": "371fbf8ee89ce548a51f0e69",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0045",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0045",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0045",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "등 꺼지면 식당으로 가면 안 돼요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 721,
+          "label": "r13_v111_nero_choice",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9c3248c4813a38e35823264c96b34eef96ab70d4f1f30566c7bb7e728712b08b",
+      "uid": "e5b129ab79f46c23487dbe5e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0046",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0046",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0046",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "오늘은 문 닫는다며. 초롱이 돌아오면 얘기는 해 볼게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 721,
+          "label": "r13_v111_nero_choice",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "be87d5d5291c9eac0a91b4effa1e1dbca90f12d3c11e782ba343032c940d04c7",
+      "uid": "988f728d47441c9ec4c38da7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0047",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0047",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0047",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "초롱 씨도 밤새는 못 본답니다. 이 등만 믿고 계시면…… 마음이 안 놓입니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 721,
+          "label": "r13_v111_nero_choice",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7a00e465cbf2fe293ec52200d339db3c5bede4d1cf420b022623a0f3939ace89",
+      "uid": "280bda07b01758ea8eeb3208",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0048",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0048",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0048",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "알아요. 내 잠자리니까.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 721,
+          "label": "r13_v111_nero_choice",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5a271fa7eef314fc3985f5a314cdaedd959c8873f7e1e3544daa804be623023d",
+      "uid": "bc13fde3a137702ca921e8fb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0049",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0049",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0049",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "다람과 함께 북쪽 길을 다시 걷는다. 갈림길에서 빈 식량 포대를 메고 나오는 네로와 실제 만난다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "424bd95b8e647165fc46e42e783c655895cc246d9220c4827a08c095f68e7c13",
+      "uid": "a3cc1fddf37e86ed11f2f140",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0050",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0050",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0050",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "네로 씨입니까? 피코 씨에게 들었습니다. 이분께 식량을 건네셨습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 723,
+          "label": "r13_v111_nero_choice",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0c0620a2997f02fc7712ea7e84b61d859d527167b6000458de6cf360c7f7c590",
+      "uid": "deed9b4a0e8600d488104202",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0051",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0051",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0051",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "그랬는데요. 누구십니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 723,
+          "label": "r13_v111_nero_choice",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "30658e163ffce044d5670b26afcfc38d570b52c39af36a9393217874377a574e",
+      "uid": "f6f092e2eed23ff411102b5f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0052",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0052",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0052",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "남편입니다. 딸이고요. 아내가 어디로 갔는지 찾고 있습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 723,
+          "label": "r13_v111_nero_choice",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d4f610e4a4bd5c46e5a7ef5275c0fe959f6424a0169537057e8b4caa54f688f1",
+      "uid": "acff2a6274aea7887e496114",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0053",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0053",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0053",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "함 옆에서 한 번 만났어요. 그날은 혼자였고. 어디 가느냐니까 안 가르쳐 주더군요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 723,
+          "label": "r13_v111_nero_choice",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4698a2fcdc7b5b8ee6eef62d8ec69c814a7b71647ead7e3adf3b3a71e98acf34",
+      "uid": "88db0b1aa8ebc2d976bd003b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0054",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0054",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0054",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "따라가 보지는 않으셨습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 723,
+          "label": "r13_v111_nero_choice",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1938b6d6d60ef87bf0031ff649a089e6f29e336bdbc6f21f0848efc8f3d8deb0",
+      "uid": "33ff01fb8d905f827bd8dc38",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0055",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0055",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0055",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "싫다는데 왜 따라갑니까.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 723,
+          "label": "r13_v111_nero_choice",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a330bcca8e2dbb2fd22d86302d09ac6ec418e9cf31682d87b2af5ad783fac775",
+      "uid": "4a16d35362af2d89ce6a5e5c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0056",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0056",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0056",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠가 숨을 고른다. 네로가 어깨에서 미끄러지는 포대를 당긴다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e818ba912b992d794827d3f1e7b7e484673edb79b03be409ada641a3831654f1",
+      "uid": "2715065e08ecf9336ad7daa7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0057",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0057",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0057",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "짐은 제가 받겠습니다. 침구 묶는 걸 도와드리면 가족 몫을 받을 수 있다고 들었습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 723,
+          "label": "r13_v111_nero_choice",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "85f87eb9b86ff83e222caaeb6fe34883440963912c7d4b5301a81a01c76fb316",
+      "uid": "f451470e85eedcd78a6c012a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0058",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0058",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0058",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "마른 걸 젖은 포대에 안 닿게 옮겨야 해요. 오늘 안 묶으면 내일 못 나가요. 마지막 한 묶음, 그 일손 몫으로 남겨 놨고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 723,
+          "label": "r13_v111_nero_choice",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ca6645152dbdba632ccef022c34384681988ebc26f2880ec690b8cd7197a84bd",
+      "uid": "610b0550c7ea99795fe455fa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0059",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0059",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0059",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "담요가 몇 장입니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 723,
+          "label": "r13_v111_nero_choice",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "965c55d249f8130811bc5d588b51b909b7d64f25b8da44130f2e748ccafa45fb",
+      "uid": "514b03ed8bbfc5ad33600f44",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0060",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0060",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0060",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "두 장. 오늘 밤 건조 끝나면 내일 광장으로 가져옵니다. 지금은 못 써요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 723,
+          "label": "r13_v111_nero_choice",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "feb6f1bb6c2c3ac377419f098cf3d1e773ee35b8fa67305feb723f10ca07167e",
+      "uid": "10d10ed84c1231c15203bbe8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0061",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0061",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0061",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "하겠습니다. 옮기면서 아내 이야기도 조금만 들려주십시오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 723,
+          "label": "r13_v111_nero_choice",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fe4a464e3ef080fed6d971b0e509d089b79783a8046a9f5b6aec26de062b5bbf",
+      "uid": "e0f71e3238067b311e3f884c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0062",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0062",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0062",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "조작: 네로와 함께 물자 길 바로 옆 공동 건조 처마에서 젖은 빈 포대를 분리한다 → 마른 받침 위에 침구 묶음을 옮긴다 → 끈을 묶고 운반표에 다돌 이름을 적는다. 어머니 위치를 알려 주는 비밀 종이는 없다. 다람은 젖은 천이 바닥에 놓인 마른 짐에 닿지 않게 걷어 든다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "74a521238319251e3bcf2dbb20c6f4102fdb93d245d3136f2394b266044275b7",
+      "uid": "c9ee37ca39d57c89de486bd9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0063",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0063",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0063",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "됐어요. 내일 저녁, 광장에서 받아 가요. 여기 이름 적었으니 다른 데 보내지 않을게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 738,
+          "label": "r13_v111_nero_done",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "38ff2ea854f2b1ca95a5e79f55ad379fe514cc4e0b31e8fe357b02839f13f86d",
+      "uid": "b48358c35fd635e62112de98",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0064",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0064",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0064",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "겉은 말랐지만 겹친 속이 아직 눅눅한 침구를 네로가 펼쳐 보여 준다. 내일 건조 완료 뒤 인계한다. 일을 완료하고 예약을 확인해야 nero_bedding_reserved=true. 예약만으로 소지 담요가 생기지 않는다. 이후 대화는 함께 끈을 정리하며 이어진다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8883e61be4d57a8147c9e0386a11a1d21065a7f679cb829a5fe97a18cc5357d4",
+      "uid": "7aca5a339f3a36bb4ae02a54",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0065",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0065",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0065",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다음에 물자를 보내려면 어디서 받아야 합니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 738,
+          "label": "r13_v111_nero_done",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a6e62b4cf54663a93b7582040bb1c095705f6e0155caaa75c001c1cd70af6b94",
+      "uid": "3cabc46e1766e8024a60320c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0066",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0066",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0066",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "학교 옆 창고요. 빵하고 마른 천, 같은 포대에 넣지 말아요. 저번엔 다 젖었으니까. 함 너머는 부인이 알아서 가져가더군요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 738,
+          "label": "r13_v111_nero_done",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "748a3ed716fe8f5596a58e78fd4b13d9a6e6646b6512a71ad924502d3624b8c0",
+      "uid": "39c104eea090ba33354dce17",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0067",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0067",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0067",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마 밥 먹었어요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 738,
+          "label": "r13_v111_nero_done",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3fa4fad44341bd797841b6c3d984b54f1c3f38a25291499201734208d98f4533",
+      "uid": "7d192a30c1d61d94971e5efb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0068",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0068",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0068",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "그 앞에 앉아서 한 조각 먹었어. 남은 건 싸 갔고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 738,
+          "label": "r13_v111_nero_done",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "be811170771231ec3a9944e3125f86163c81703c117c30a9ca5d716b02c57f83",
+      "uid": "d9b624e64fbf538be8d9e6e1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0069",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0069",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0069",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이가 내 소매를 조금 놓았다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 738,
+          "label": "r13_v111_nero_done",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "49db743edce5c14d9306088ce3141c9e08ea1145205db03957aff89f590b41d8",
+      "uid": "4c878a11ac0b17b4032fadb8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0070",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0070",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0070",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "오늘 밤은 내가 솜이네 할아버지를 돌볼 차례예요. 다시 말할 거면 그 집으로 와요. 문 세게 두드리지 말고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 738,
+          "label": "r13_v111_nero_done",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6ee3033597490d3b9f33ed91edf41415c7a39298ee0ef0fa7eef5a857dfc5619",
+      "uid": "af14ad801f678e3695aa4de5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0071",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0071",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0071",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "알겠습니다. 오늘 말씀 감사합니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 738,
+          "label": "r13_v111_nero_done",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8fea362d55f03ff93c952a5093507aa705aa2564e8b04a62aceff8e1f8f13216",
+      "uid": "2d9e992e076667fb29704059",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0072",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0072",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0072",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "네로 이름·솜이네 방문 허락, 학교 창고→교환함의 제한된 공급 구간 확보. 엄마 은신처는 여전히 모른다. 그 뒤 교환함을 직접 확인한다. 아침 쪽지는 그대로이고 답장 칸도 비어 있다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cf2a6cee5ee8b6c4df7936f28d002da135bc56318e3183e80d71ec34d0c395bb",
+      "uid": "e2f8bd741896731f0f511e1e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0073",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0073",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0073",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "안 왔네.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 738,
+          "label": "r13_v111_nero_done",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bc7ad2299c45b5bc76d940f8d53d7d09e81d90d474f3b985f3bc89ba18dbe898",
+      "uid": "5af41bcbe994a9db3019f276",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0074",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0074",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0074",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아직 못 읽었나 봐.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 738,
+          "label": "r13_v111_nero_done",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "79f60f97a691fc9216d8d0c1accc1ec898744a81862da520ccfddac11cb98dfa",
+      "uid": "5a6a199f5d883bdb807d9ec0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0075",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0075",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0075",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그러면 피코한테 돌아가자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 738,
+          "label": "r13_v111_nero_done",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "515e6bfca5cec4b3d63bf11ffd5c3f9cee8918bd4f048c2e6c53a70d244fa514",
+      "uid": "b1e90c9d1fc538d1f1be92bc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0076",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0076",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0076",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "곧장 돌아왔지만 이미 해가 지고 식당 문은 닫혀 있다. 노크에도 답이 없다. 광장의 피코는 따뜻한 받침 곁에서 초상을 그리고 있다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c18537bb753de459488547efb4327ec94e60f11f26b2a7c2c496ef21d45455f3",
+      "uid": "3bbda189a41adb8ec532fd3f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0077",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0077",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0077",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "죄송합니다. 답도 없었습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 740,
+          "label": "r13_v111_nero_done",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "484dd18310b44f1f45cd6e0c326a4d468791d45109f31057310b20e450ef7e67",
+      "uid": "fb066315df9ebfdb8742d19a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0078",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0078",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0078",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "당신한테 미안하라고 그림 그리는 건 아니에요. 내일 와요. 코는 아직 못 그렸어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 740,
+          "label": "r13_v111_nero_done",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c76289c98c9fe0a419bad5e57b7dfa5f692ce2a855e97cd058c1d9b94aeb42bf",
+      "uid": "133996f9d2a0841b2f730b1d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0079",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0079",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0079",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠가 여관에 피코의 빈방을 문의한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e1ae7e1bb49a5846a3265daab3e76eaaf2e78eafbe6888a2eaeef0ed13c6ea0e",
+      "uid": "86a51cba6f7111540fc4b53e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0080",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0080",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0080",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "광장 화가가 오늘 묵을 빈방이 있습니까? 저희 방에 자리라도 더 놓을 수 있을까요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 742,
+          "label": "r13_v111_nero_done",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9d3fa7269ce0d130d41dcece03ea0d1f68dc3801d480eea5e860824834b575ff",
+      "uid": "471af75b9bdd460d6248cdaf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0081",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0081",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0081",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "남은 침구도 없어요. 다른 사람 들이는 건 미리 이야기를 해 줬어야지. 오늘은 안 돼요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 742,
+          "label": "r13_v111_nero_done",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5ed6261be401138b92be75bd7ecc89952147f32fc69658736b328dff7edbf16c",
+      "uid": "c8f6a05d77e10b299d59472c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0082",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0082",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0082",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "더 알아볼 장소가 없는 이 늦은 시각에 위험을 모른 척했다는 대사를 쓰지 않는다. 아빠가 빈손으로 창밖 등을 확인한다. 이 거절은 할머니의 범인 증거가 아니다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d3f4cfefa36462238149856bc14b6710270737f562d105c97205d0f5ed983b92",
+      "uid": "2a5e45f392507010cffc21cc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0083",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L0083",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L0083",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "두 경로 다음: 아빠와 다람은 여관 방으로 돌아간다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "15b19738f2474bb7640c0455177dd6984ea441d8d275b76b580b990697b91c65",
+      "uid": "ff396f63f35e41dd8896c69e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L9101",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L9101",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L9101",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "네로: 엄마에게 교환함 옆에서 식량을 줬다. 엄마는 혼자였고 빵 한 조각을 먹고 남은 것을 싸 갔다. 물자는 학교 옆 공동 창고에서 받는다. 함 너머의 거처는 모른다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 745,
+          "label": "r13_v111_nero_done",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "04db860ab4f47e42b85ea2894a6e387802ca22f500be94e2e05f27962c1e9993",
+      "uid": "df5781f1070dc64beb2e0fdc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L9102",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S04_L9102",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S04_L9102",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "다돌 가족 침구: 마른 담요 두 장. 예약과 실제 수령은 구별한다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 745,
+          "label": "r13_v111_nero_done",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "214ea87e5bab25218fe169f2b160098f84efe92efb31f1b6a641eb115fa779c2",
+      "uid": "fce40963c80a049246dea734",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

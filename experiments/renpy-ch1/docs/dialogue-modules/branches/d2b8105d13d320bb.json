@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:326:20",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        18427,
+        18475
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_cv_decision",
+      "block": "r13_cv_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:326:20",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "여니가 판돌 영감의 손을 끌었다. \"한 사람 말고, 이분도요. 제 단골이에요.\"",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 326,
+          "label": "r13_cv_decision",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 326,
+      "scene_title": "r13_cv_decision",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "7aed3e0e29e0e56d41b3ade1546fe727f1d4a85ef70e2bdcc2a59a5f41974de9",
+      "uid": "dc08aeaf00c152cd57064fc7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_decision|rpy_inventory|r13_cv_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

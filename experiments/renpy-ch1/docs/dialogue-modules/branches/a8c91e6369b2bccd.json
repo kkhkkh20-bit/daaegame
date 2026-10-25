@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:154:8",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        9066,
+        9078
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "r13_nt_dawn8",
+      "block": "r13_nt_dawn8",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:154:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "“같이 찾아보자.”",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 154,
+          "label": "r13_nt_dawn8",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 154,
+      "scene_title": "r13_nt_dawn8",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "d0bfda14cd5c7fe6d3d8d15f8351042e9eec8826394db54e2bc36860e5f1131f",
+      "uid": "c5b62b621fce634fde3e2e0c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_dawn8|rpy_menu|r13_nt_dawn8|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:157:8",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        9197,
+        9210
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "r13_nt_dawn8",
+      "block": "r13_nt_dawn8",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:157:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "“다람이는 아니야.”",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 157,
+          "label": "r13_nt_dawn8",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 157,
+      "scene_title": "r13_nt_dawn8",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "ca4d4c9cdd7944cc65a9b1137d08373c7a42f93924dfd57b0eb87ecadaea40e0",
+      "uid": "f1d3da63f73372937395e3c9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_dawn8|rpy_menu|r13_nt_dawn8|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

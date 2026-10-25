@@ -1,0 +1,126 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/winter_world.rpy:201:370",
+      "file": "game/winter_world.rpy",
+      "path": [
+        12917,
+        12964
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_talk",
+      "block": "winter_talk",
+      "placement": "literal",
+      "ref": "game/winter_world.rpy:201:370",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "복도 끝이에요. 열세 번째 침대. 다른 사람 앞에서는 그분 이름부터 꺼내지 마요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_world.rpy",
+          "line": 201,
+          "label": "winter_talk",
+          "guards": [
+            "if winter_target_id==\"granny\" and not winter_has(winter,\"inn_registered\"):"
+          ]
+        }
+      ],
+      "line": 201,
+      "scene_title": "winter_talk",
+      "source_hash": "ff8cbdb71b750feb8e520f298fe41851a94441ed8da76ec6008f6dc30ae61602",
+      "baseline_hash": "161012099897fe65abbc01282162fb7573116e10923821570befd86c47af846c",
+      "uid": "a74c607b0c855b85bdb654de",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_talk|rpy_inventory|winter_talk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_world.rpy:201:490",
+      "file": "game/winter_world.rpy",
+      "path": [
+        13037,
+        13052
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_talk",
+      "block": "winter_talk",
+      "placement": "literal",
+      "ref": "game/winter_world.rpy:201:490",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "어디서 온 사람들입니까?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_world.rpy",
+          "line": 201,
+          "label": "winter_talk",
+          "guards": [
+            "if winter_target_id==\"granny\" and not winter_has(winter,\"inn_registered\"):"
+          ]
+        }
+      ],
+      "line": 201,
+      "scene_title": "winter_talk",
+      "source_hash": "ff8cbdb71b750feb8e520f298fe41851a94441ed8da76ec6008f6dc30ae61602",
+      "baseline_hash": "05ad7f123d50aa177ba01208d5233bdcccdb0a622b4245e96a5a5946f0c95dde",
+      "uid": "40aff91988ddadcc3506582f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_talk|rpy_inventory|winter_talk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_world.rpy:201:550",
+      "file": "game/winter_world.rpy",
+      "path": [
+        13097,
+        13115
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_talk",
+      "block": "winter_talk",
+      "placement": "literal",
+      "ref": "game/winter_world.rpy:201:550",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "아빠. 우리 짐도 거기 놓자.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_world.rpy",
+          "line": 201,
+          "label": "winter_talk",
+          "guards": [
+            "if winter_target_id==\"granny\" and not winter_has(winter,\"inn_registered\"):"
+          ]
+        }
+      ],
+      "line": 201,
+      "scene_title": "winter_talk",
+      "source_hash": "ff8cbdb71b750feb8e520f298fe41851a94441ed8da76ec6008f6dc30ae61602",
+      "baseline_hash": "8f2fcd5c95146a99f0e6f8eac16ad547c80e33203e950bb510f859755a1e5c03",
+      "uid": "cb5b1884804d5b6a1f278320",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_talk|rpy_inventory|winter_talk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

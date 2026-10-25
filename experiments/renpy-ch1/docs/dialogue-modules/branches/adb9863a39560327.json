@@ -1,0 +1,1689 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D09_S04_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "세련이 내가 가져온 초대장을 보관용 종이 위에 놓는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1317,
+          "label": "r13_v111_postal9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "839f561a27ca0baa836afde5c08631307cd965237c65f4b616bf560c630f47cd",
+      "uid": "a21e49ecff15d88ba876415d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0002",
+      "when": null,
+      "speaker": "세련",
+      "kind": "dialogue",
+      "text": "먼저, 지난번에 부탁하신 부인 이름의 추가 우편부터 말씀드릴게요. 접수대장과 여기 남은 미배달 우편을 확인했지만, 그 범위에서는 새로 도착한 편지는 없었습니다. 다른 곳에 맡긴 편지까지 없다는 뜻은 아니고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1318,
+          "label": "r13_v111_postal9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "323dd79a5ac0d026fbc6f1797bebaa0158d029fd5efa639b62fae22196ad81e9",
+      "uid": "847d38fdf38bdbf9bfe66396",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0003",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "찾아봐 주셔서 감사합니다. 새로 온 편지는 없고, 예전 기록은 따로 있다는 거지요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1319,
+          "label": "r13_v111_postal9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "443230657657b101908164efc3cafce309abc0f6faf188e6b2b2b3a403e45bd3",
+      "uid": "39b376ae908ae3a5221c7796",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0004",
+      "when": null,
+      "speaker": "세련",
+      "kind": "dialogue",
+      "text": "네. 우체국에 예전부터 있던 자료예요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1320,
+          "label": "r13_v111_postal9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "54896a2c790277702428d81287af59ad10b69b6e3f06a7b9deac3112b6cfe271",
+      "uid": "5aec38de21c3f90f14de4899",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0005",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[상태] 2일의 추가 우편 검색 부탁에 결과를 회신했다. `pending_post_search=false`, `post_search_status=complete_no_new_mail_in_checked_scope`. 뒤에 나오는 보조표·반송물은 새로 도착한 엄마 편지가 아니라 기존 보관 자료다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6c1ee0a90a0bd41e253f2f5c2e31e273dd4ca446d55716110e127e8e9bef6dec",
+      "uid": "31fd750acb627c668675c257",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0006",
+      "when": null,
+      "speaker": "세련",
+      "kind": "dialogue",
+      "text": "전에 본 장부에는 누가 썼는지 없었죠. 오늘은 누가 우체국에 맡겼는지 적힌 표를 찾았어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1321,
+          "label": "r13_v111_postal9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "dc1d7382eb79032155db891c258ab4547228e9dfa93a0941295f536ced56e7f7",
+      "uid": "1c958268bab50e079ce7a85d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0007",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "누가 맡겼는지부터 보죠. 그리고 이 편지, 누가 쓴 건지도 알고 싶습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1322,
+          "label": "r13_v111_postal9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d1b21e5abd6ad690fdd6a2fc601b1f9ce1268e6b892f9944bfe83a54de84091e",
+      "uid": "b09a915b09926f6b78399d67",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0008",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "세련이 당시 여관 묶음 장부 옆에 보조 인수표를 놓는다. 발송 뒤 비용을 정산하며 별도 철에 보관한 표다. 세련이 여관 묶음 번호로 정산철을 대조해 찾았다. 보조표의 맡긴 사람 칸에는 여관 이름과 할머니의 인계 표시가 있다. 이것만으로 대필인지 위조인지는 정해지지 않는다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1323,
+          "label": "r13_v111_postal9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6666373247676d357fcf40c7e2c508b369765cd02edc873e3c22dd76e9d14b7d",
+      "uid": "8676c0a9b44fb2f14d472311",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0009",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "할머니가 아내 대신 부쳤을 수도 있겠군요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1324,
+          "label": "r13_v111_postal9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "47bca051342a5538dd32457a973ac321bbbb159fe3d6fc6fdfcc1ae89355fa13",
+      "uid": "9dec840319c015f921111fd4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0010",
+      "when": null,
+      "speaker": "세련",
+      "kind": "dialogue",
+      "text": "그래서 이것도 보세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1325,
+          "label": "r13_v111_postal9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "519b00963cc648b4ea1ae9096f5dbe31f45fb50ca220c1b9b7d23cb8ec6a3d74",
+      "uid": "8b2b3f18ec8bf72945149ab4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0011",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "슬링이 서랍에서 접힌 본보기 종이를 꺼낸다. 엄마의 옛 편지 문장 일부를 여러 번 옮겨 쓴 종이다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1326,
+          "label": "r13_v111_postal9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "282a334c867ba6f16744b990434db220d9998f8cf1042c50df1e3a3a6b5fba17",
+      "uid": "52f1906c3a305430caa63237",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0012",
+      "when": null,
+      "speaker": "슬링",
+      "kind": "dialogue",
+      "text": "오래된 글씨를 읽기 쉽게 해 달라고 했어요. 손님이 편지 흉내를 내는 건 별일 아니니까……",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1327,
+          "label": "r13_v111_postal9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9c0beb23b897c937f0830408298d076fd675d3a62ac6868b575a14cd846c6317",
+      "uid": "80eb25677b84948c59ccad53",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0013",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "누구의 부탁이었습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1328,
+          "label": "r13_v111_postal9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f3eda1b9f5e49c17cd4689b21e72e3300e3ca61942a260d19a291622aafb3392",
+      "uid": "1b4364d69e245d8056989314",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0014",
+      "when": null,
+      "speaker": "슬링",
+      "kind": "dialogue",
+      "text": "할머니요. 가족에게 보낼 거라고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1329,
+          "label": "r13_v111_postal9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9fc88c007bd2fd75a7d2f13eec24fb95281fa0ab03db3ea02544991703db4c29",
+      "uid": "f6cf5081e92f739141e4b936",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0015",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "슬링이 본보기 아래의 작업 날짜를 짚는다. 세련은 반송 접수 날짜와 초대 발송 날짜를 나란히 놓는다. 순서는 반송 접수, 본보기 작업, 초대 발송이다. 원래의 경고 편지가 이미 보관 중이던 때 글씨 본보기가 만들어졌다는 뜻이며, 할머니가 경고를 읽었다는 증거는 아니다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ef1820038558f57dd72acfb7e60a1858201c073869f5ac762848680463a00f75",
+      "uid": "e79a9a57e4c8d2ba84ee8293",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0016",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "제가 받은 초대장을 직접 쓴 것도 봤습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1330,
+          "label": "r13_v111_postal9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "437008961621fab508d35551657a0b372c7051daaec86bc7f35dde7dcc7b3626",
+      "uid": "9d1aa400de9c024b2a478cec",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0017",
+      "when": null,
+      "speaker": "슬링",
+      "kind": "dialogue",
+      "text": "아니요. 그건 못 봤어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1331,
+          "label": "r13_v111_postal9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c3840eca3dca7f2269eaa6581773f3986238880b4940d1adab74e7ced2b6d995",
+      "uid": "c4709d3cc43fcb3df535a579",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0018",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "아빠는 ‘할머니가 직접 작성’이라고 쓰려던 펜을 멈춘다. 발송 관여, 글씨 본보기 의뢰, 엄마의 ‘부른 적 없다’는 경고를 나란히 놓는다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1332,
+          "label": "r13_v111_postal9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "437ea1d6ed195c9099e04877dd149a8c704370df31ab0741d782bcd9d6ca5356",
+      "uid": "8541e03bc929bf3e5399ecd0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0019",
+      "when": null,
+      "speaker": "세련",
+      "kind": "dialogue",
+      "text": "부인 이름의 반송물이 하나 더 있어요. 맡긴 날짜가 초대장보다 앞입니다. 주소가 맞는데도 돌아왔어요. 되돌아온 까닭은 여기엔 안 적혔어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1333,
+          "label": "r13_v111_postal9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9812f6da81a782ed2d79e26f6cb105f71e71bd480413c25a0e3e7e528be13c6c",
+      "uid": "ffc2be6b02b0b35a7281ca44",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0020",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "동봉 쪽지에는 오지 말라는 말, 겉포장에는 물자 배달에 쓰는 ‘옛 펌프집’ 표식이 있다. 어제 초롱에게 받은 편지에도 같은 작은 표식이 있음을 확인한다. 표식이 현재 은신처라는 확정은 하지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4aaf8da0f60ac280072c11ed0ae051f03feb4e2e0a2e18e58178865d9e533a8d",
+      "uid": "4a42cb9d050fcf1cf7038ccb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0021",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이걸 내일 증언해 주실 수 있습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1334,
+          "label": "r13_v111_postal9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fa0f0d3becba5d2945b210d48562aa7aa7fc0a394423b01b1e04f76b63424f15",
+      "uid": "90c16757b00b91d9d33e3472",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0022",
+      "when": null,
+      "speaker": "슬링",
+      "kind": "dialogue",
+      "text": "제가 썼다고 하실 거잖아요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1335,
+          "label": "r13_v111_postal9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "79af3ad90057df5e2013906a95f33066e313eb67fc02f781b319306272bec6b3",
+      "uid": "56f575df411c21987dedafea",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0023",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "직접 쓰신 건 본보기라고 말하겠습니다. 초대장 쓰는 건 못 보셨다는 말도 빼지 않고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1336,
+          "label": "r13_v111_postal9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "134f3029b562505e21695bbc7d9ff33f4f4228af250fafb40c51a051d6ebf605",
+      "uid": "1c97cba75145e17856f015a8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0024",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: pending_post_search=false; post_search_status=complete_no_new_mail_in_checked_scope; E09_MAIL=sender_sample_return_separated; D09_S04_postal_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8a35cf745eda7942e2489284c9800fa0bfc4b91a3987dd3234173e7848cd22a3",
+      "uid": "85b84e40e7b03315fdc55b4a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0025",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[마지막 화면] 보호실 창가. 아빠는 다람에게 종이를 들이밀지 않고 내일 입을 옷을 건넨다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c17f6025b58c94e61137a39b6613f5be88bce4c24a6798c4fcf4f0b8c9056969",
+      "uid": "5c9a412bc193dc96dd9f3711",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0026",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "내가 친 것도 말할 거야?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1346,
+          "label": "r13_v111_custody_night9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ec2f90783bab7ef10ef5f785c5343a5a38fd7e5f7fd1cfc288048b2a999788a2",
+      "uid": "22cc402651d664fd42f7adce",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0027",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1347,
+          "label": "r13_v111_custody_night9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8025c713f26164a6787608a6cbce1b8ac0cfe963a42e1416578db60193e95224",
+      "uid": "64f2bb4c1763073d4798ca9b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0028",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그럼 사람들이 싫어할 텐데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1348,
+          "label": "r13_v111_custody_night9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c7a3ff20d07de19e78e42e1b0455dd312a75d7c2a33aef53d52414500d31ca6c",
+      "uid": "d51f11417ac715ce7ec80971",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0029",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그래도 네가 하지 않은 일까지 네 일이 되게 두지 않을 거야.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1349,
+          "label": "r13_v111_custody_night9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f0144c321aef98d39e977ae81d76795d0ee807b162dfeeccfa11c8adf8578cb9",
+      "uid": "0e7bac0be5b7e0eea5a4172f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0030",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: D09_S04_custody_night_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a3e7129200e03788bb9c9d6de41d472f48f1ee998a4b2c8bc207ef0e20fee08c",
+      "uid": "3bec28364f0f0a634ca17626",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0031",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[학교. 다람이 내일 입을 옷을 접는다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7792b160e41d1624948ab768af4f2bdc8bd2c26ae6d07971d1f40ffa55798e09",
+      "uid": "2ed4a2ebbb0bbe93a62470ae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0032",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "내일 할머니한테 직접 물어봐?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1355,
+          "label": "r13_v111_school_night9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e4a1a429031f7d01b8306b2861134ec5bb92298b4743a1d633e1d70ef17fefec",
+      "uid": "2354cc3ad4ac8b49458b8516",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0033",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어른들이 보는 데서. 엄마 이름으로 누가 편지를 보냈는지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1356,
+          "label": "r13_v111_school_night9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ad0477057eebfd8dc2e1aad501a36dfab16cdcad90773626a3e1662dd58df946",
+      "uid": "6a6db8c4862eb940c67c4fc6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0034",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마가 안 불렀어도, 우리 보고 싶기는 했겠지?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1357,
+          "label": "r13_v111_school_night9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5f217b6a046c67d1475e9596db64a87abbc4a3b2384ea1672fd896ecd6b62cf5",
+      "uid": "bf57378bb2a889f1f6b976bd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0035",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그건 만나서 네가 직접 물어보자. 아빠도 묻고 싶어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1358,
+          "label": "r13_v111_school_night9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "378f4653fc59fa71d5d1c22f82fe5ad33358e99d477cae9a88c5fd46250243df",
+      "uid": "f60d2889eb162c9537bd0587",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0036",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: D09_S04_school_night_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "94993b81bcb30cdcb4d0466362cc8254f96d5f1ebbdc4fad4aa0be771b36fb52",
+      "uid": "a0ec74c005930e49ab0a6df0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0037",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0037",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0037",
+      "when": null,
+      "speaker": "세련",
+      "kind": "dialogue",
+      "text": "맡긴 사람과 쓴 사람은 다를 수 있어요. 표부터 보시죠.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "adb1cf75664833b7f8be8bf91dc551f1c72ff3ce80e341c5b4f48b65e90a9be9",
+      "uid": "a7aad0a4ceb5aaeea93798ea",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0038",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0038",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0038",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: time_cost=0",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "451e183e78ad687c8dbdb27d0b91e15d9de947a8f4a717fdcf37c0d4dab74de9",
+      "uid": "674446b823c8901e5fb2b2ab",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0039",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0039",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0039",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[이미 획득한 사실과 읽은 발화만 재열람한다. 현재 생사·위치와 다른 과거 증언은 기록으로 표시하고 인물을 새로 현장에 출현시키지 않는다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e4047cc80b769f2f77ad98a244e6c771def19c3e354355926f66719bef6b47dd",
+      "uid": "37c90e5d386a7ce7edd81ab3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0040",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0040",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0040",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "적어 둔 것부터 다시 보겠습니다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bd1227da2b99009eeb0fd6b304bfb6ad9beb3e1371024ffecf107cb589a8b8c6",
+      "uid": "a8a09da38b1f2b21fff6f67e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S04_L0041",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S04_L0041",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S04_L0041",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: time_cost=0",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "451e183e78ad687c8dbdb27d0b91e15d9de947a8f4a717fdcf37c0d4dab74de9",
+      "uid": "66c8f7f1309c9c99cc7239de",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

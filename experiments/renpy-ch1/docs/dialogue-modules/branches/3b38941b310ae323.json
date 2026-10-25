@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_livelihood_flow.rpy:67:81",
+      "file": "game/systems/room13_livelihood_flow.rpy",
+      "path": [
+        3524,
+        3551
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_livelihood_start",
+      "block": "r13_livelihood_start",
+      "placement": "literal",
+      "ref": "game/systems/room13_livelihood_flow.rpy:67:81",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "세어 보니 장부에 적힌 것보다 한 개 적구나.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_livelihood_flow.rpy",
+          "line": 67,
+          "label": "r13_livelihood_start",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 67,
+      "scene_title": "r13_livelihood_start",
+      "source_hash": "8199753cfb17291d0932587c49c966b0e3e549fdf6af097673d3ee5348ee0559",
+      "baseline_hash": "bd8cc7c795384afc243bf9e7342728e98162d7ed6f2cd04d9ea878f5e72cc746",
+      "uid": "13b1d02268234b5f59fddcd1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_livelihood_start|rpy_literal|r13_livelihood_start|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_evening.rpy:170:12",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        9265,
+        9278
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_ev_night_visit",
+      "block": "r13_ev_night_visit",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:170:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "구운 밤을 넣어 준다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 170,
+          "label": "r13_ev_night_visit",
+          "guards": [
+            "while _visit_turns>0:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 170,
+      "scene_title": "r13_ev_night_visit",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "6a955ea1b7d482add3fad328ecb690af377b527679df57055a774bb9b5114542",
+      "uid": "8503f103266ae3c6a3313e6f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_ev_night_visit|rpy_menu|r13_ev_night_visit|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:175:12",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        9534,
+        9551
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_ev_night_visit",
+      "block": "r13_ev_night_visit",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:175:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "담요를 넣어 달라고 부탁한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 175,
+          "label": "r13_ev_night_visit",
+          "guards": [
+            "while _visit_turns>0:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 175,
+      "scene_title": "r13_ev_night_visit",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "d50759acbad00f332c69064481d23ac540021fa49d62066e6d2ff18d5a4ae3c6",
+      "uid": "51cde8d3ecbd6a1c0cfc6a08",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_ev_night_visit|rpy_menu|r13_ev_night_visit|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:184:12",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        10152,
+        10170
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_ev_night_visit",
+      "block": "r13_ev_night_visit",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:184:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "창살 너머로 이야기를 해 준다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 184,
+          "label": "r13_ev_night_visit",
+          "guards": [
+            "while _visit_turns>0:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 184,
+      "scene_title": "r13_ev_night_visit",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "c020a02e9a5d9f0dd84696f3b8289d49d9a231d2be53b9ad21e296d96b405b1b",
+      "uid": "36280688cf0c613e1b2be531",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_ev_night_visit|rpy_menu|r13_ev_night_visit|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:190:12",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        10482,
+        10504
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_ev_night_visit",
+      "block": "r13_ev_night_visit",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:190:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "내일 재판이 어떻게 되는지 알려 준다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 190,
+          "label": "r13_ev_night_visit",
+          "guards": [
+            "while _visit_turns>0:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 190,
+      "scene_title": "r13_ev_night_visit",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "c07a4a5ee470a791aaff9f1e213470e6abc4a21305902dba892419878f1b3a2f",
+      "uid": "aa780e063359f93f6dd57ac4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_ev_night_visit|rpy_menu|r13_ev_night_visit|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:195:12",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        10815,
+        10829
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_ev_night_visit",
+      "block": "r13_ev_night_visit",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:195:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "창 걸쇠를 몰래 살핀다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 195,
+          "label": "r13_ev_night_visit",
+          "guards": [
+            "while _visit_turns>0:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 195,
+      "scene_title": "r13_ev_night_visit",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "682ee4a64f2d09d5a257d2fd62889acd80b75e745c6977991d5ce19eea20a0e4",
+      "uid": "a689dd6569afe15b1a9df245",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_ev_night_visit|rpy_menu|r13_ev_night_visit|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

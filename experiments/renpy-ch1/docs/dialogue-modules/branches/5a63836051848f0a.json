@@ -1,0 +1,561 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D14_END_PARTIAL_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_PARTIAL_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_PARTIAL",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_PARTIAL_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "14일 아침까지 현장 정지를 유지한 경로. 멈춘 수레 옆에서 아빠가 빈 침상 하나가 생겼다는 말을 듣는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "부분 구조 결말 — 남은 인계표",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e4ab27c1b2424d0be89e75b30edf892757795a3a8b61ecf11311abcc9e02246e",
+      "uid": "c5b03c6cdc810b595fc6d3d8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_PARTIAL|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_PARTIAL_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_PARTIAL",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_PARTIAL_L0002",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "한 자리 났어. 먼저 누운 사람 옮기자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3469,
+          "label": "r13_v111_partial_ending14",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "부분 구조 결말 — 남은 인계표",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4776c394b017c9f0b8c9f6c49fc56a75a9368c5efdd41a05ffb211662cb611ed",
+      "uid": "b70cbc8ef8d54418ce35b46f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_PARTIAL|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_PARTIAL_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_PARTIAL",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_PARTIAL_L0003",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이 사람부터요. 감독은 남아 주실 수 있죠?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3470,
+          "label": "r13_v111_partial_ending14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "부분 구조 결말 — 남은 인계표",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "afccf3d77ea98ec094fbe65fdf3cae0d5dfc8f13bdeb652f228304cc84554b6d",
+      "uid": "2dab6f2af2fb46eca4ef8159",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_PARTIAL|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_PARTIAL_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_PARTIAL",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_PARTIAL_L0004",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "남겠소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3472,
+          "label": "r13_v111_partial_ending14",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "부분 구조 결말 — 남은 인계표",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2139a6b1ffcd542a14755ea08eb143ce34333a471f3280f046ba7b170eae894c",
+      "uid": "e7b9be21de0c4e444abe55d5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_PARTIAL|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_PARTIAL_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_PARTIAL",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_PARTIAL_L0005",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠는 제단 방문 대신 실제로 남은 인계에 참여한다. 전날 구한 사람을 다시 태우지 않는다. 확인 못 한 과거는 그대로 남긴다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "부분 구조 결말 — 남은 인계표",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "df0759ce4b84457e417ff97393718c213aa396b15ca224a12cf20710568e1033",
+      "uid": "ceb0e7ff258c56225808fcac",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_PARTIAL|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_PARTIAL_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_PARTIAL",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_PARTIAL_L0006",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "오늘도 안 끝났어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3473,
+          "label": "r13_v111_partial_ending14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "부분 구조 결말 — 남은 인계표",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cb8ff9150517f23c8ac3f084f3e27d8802966ac5c9080c7d90c25f4b40afae81",
+      "uid": "a458d92f761caa40e73d881f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_PARTIAL|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_PARTIAL_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_PARTIAL",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_PARTIAL_L0007",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응. 그래도 어제 내린 사람은 내려와 있어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3474,
+          "label": "r13_v111_partial_ending14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "부분 구조 결말 — 남은 인계표",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "819875f0be175d78a99cdc12490bd7408dd5b2b1c6f3fbef3b2dcca35b9471dd",
+      "uid": "5cdba33de46415a73b2a0366",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_PARTIAL|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_PARTIAL_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_PARTIAL",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_PARTIAL_L0008",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "밤에 인계가 전부 끝나면 대표의 가족 결말로 간다. 여전히 남으면 대기자의 보온·감독·다음 인수 책임자가 실제 정해진 상태를 마지막으로 보여 준다. ‘전원 구출’ 자막 없음.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "부분 구조 결말 — 남은 인계표",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4433fcbb82c80eb581e94df78d8be6268bf1a174d3724664a0d4da21b2ef313b",
+      "uid": "1c43f3228aea9df879dfc00f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_PARTIAL|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_PARTIAL_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_PARTIAL",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_PARTIAL_L0009",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "이제 마지막 사람이야. 안에서 받았어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3509,
+          "label": "r13_v111_partial_received14",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "부분 구조 결말 — 남은 인계표",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e3d1707b188122aca912fb02830b89b2736bdba59f4dae03d5f9a93bec90240b",
+      "uid": "1395722c59bdcc1636cef6ba",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_PARTIAL|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_PARTIAL_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_PARTIAL",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_PARTIAL_L0010",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "수레에 남은 사람은 없고요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3510,
+          "label": "r13_v111_partial_received14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "부분 구조 결말 — 남은 인계표",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "23739be156e8ec45d2ee1c4d2fae739ac7c9cbb38b464e8206cbcd2c5ba0c5c0",
+      "uid": "e06ede5cf44861c112f59832",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_PARTIAL|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_PARTIAL_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_PARTIAL",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_PARTIAL_L0011",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "없어. 직접 보고 왔어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3512,
+          "label": "r13_v111_partial_received14",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "부분 구조 결말 — 남은 인계표",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7e430dd203317314c08414d4df2105e218f7f5833f0ab1e6916632db0cf0ee2b",
+      "uid": "50653d6975218a2b0697472c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_PARTIAL|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_PARTIAL_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_PARTIAL",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_PARTIAL_L0012",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이 덮개는 두고 가요. 교대할 때까지 자리를 비우지 말아 주세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3519,
+          "label": "r13_v111_partial_wait14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "부분 구조 결말 — 남은 인계표",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "013ea103d7f65eebc7db0d3fc0355d8c7e3d36c5816a5e3f93ce84ec0b4a83cd",
+      "uid": "f0d5098187d32b46e57119fd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_PARTIAL|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_PARTIAL_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_PARTIAL",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_PARTIAL_L0013",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "내가 남겠소. 다음 자리가 나면 먼저 부르겠소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3521,
+          "label": "r13_v111_partial_wait14",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "부분 구조 결말 — 남은 인계표",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "68da669d8c0f5e3182ee34240bfae60cdb20c4c6beecc838b6e8f9723f6bf126",
+      "uid": "afbc5326a1195f6fe68395d3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_PARTIAL|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/story.rpy:108:21",
+      "file": "game/story.rpy",
+      "path": [
+        4120,
+        4140
+      ],
+      "origin": "rpy_inventory",
+      "day": 1,
+      "scene": "local_interaction",
+      "block": "local_interaction",
+      "placement": "literal",
+      "ref": "game/story.rpy:108:21",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "수프? 그릇은 딱 두 개 남았네.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/story.rpy",
+          "line": 108,
+          "label": "local_interaction",
+          "guards": [
+            "if stage == \"arrival\":",
+            "elif person == \"nabi\":",
+            "if \"nabi_arrival\" not in inspected:"
+          ]
+        }
+      ],
+      "line": 108,
+      "scene_title": "local_interaction",
+      "source_hash": "f80d7c11bcc5cbd41c2c14cdcbbd42a9dd944b4719a4552fdd392a29341d5aed",
+      "baseline_hash": "180727a18a3218ae855a5b451c28a9ae0c43dc3cd5622bb599340b7560d2fc52",
+      "uid": "58aa2436f31eddcdbbd9f0eb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|local_interaction|rpy_inventory|local_interaction|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/story.rpy:110:21",
+      "file": "game/story.rpy",
+      "path": [
+        4213,
+        4233
+      ],
+      "origin": "rpy_inventory",
+      "day": 1,
+      "scene": "local_interaction",
+      "block": "local_interaction",
+      "placement": "literal",
+      "ref": "game/story.rpy:110:21",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "그건 큰 거 네가 달라는 말이지?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/story.rpy",
+          "line": 110,
+          "label": "local_interaction",
+          "guards": [
+            "if stage == \"arrival\":",
+            "elif person == \"nabi\":",
+            "if \"nabi_arrival\" not in inspected:"
+          ]
+        }
+      ],
+      "line": 110,
+      "scene_title": "local_interaction",
+      "source_hash": "f80d7c11bcc5cbd41c2c14cdcbbd42a9dd944b4719a4552fdd392a29341d5aed",
+      "baseline_hash": "0c8730f28e59353b4918ba7f84b94379165c4dd5004483b5a43bb8b897527413",
+      "uid": "8be710c1ce2430a6f8d9c1f0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|local_interaction|rpy_inventory|local_interaction|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/story.rpy:112:21",
+      "file": "game/story.rpy",
+      "path": [
+        4284,
+        4318
+      ],
+      "origin": "rpy_inventory",
+      "day": 1,
+      "scene": "local_interaction",
+      "block": "local_interaction",
+      "placement": "literal",
+      "ref": "game/story.rpy:112:21",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "창가 쥐들은 깨우지 마. 첫눈 오면 자러 오는 손님들이야.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/story.rpy",
+          "line": 112,
+          "label": "local_interaction",
+          "guards": [
+            "if stage == \"arrival\":",
+            "elif person == \"nabi\":",
+            "if \"nabi_arrival\" not in inspected:"
+          ]
+        }
+      ],
+      "line": 112,
+      "scene_title": "local_interaction",
+      "source_hash": "f80d7c11bcc5cbd41c2c14cdcbbd42a9dd944b4719a4552fdd392a29341d5aed",
+      "baseline_hash": "99a20993525eb46bd0488efd7c0340272eb7de443c967c0944ce5118282be531",
+      "uid": "5efb33cdb729d091b0d228e3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|local_interaction|rpy_inventory|local_interaction|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/story.rpy:114:21",
+      "file": "game/story.rpy",
+      "path": [
+        4371,
+        4393
+      ],
+      "origin": "rpy_inventory",
+      "day": 1,
+      "scene": "local_interaction",
+      "block": "local_interaction",
+      "placement": "literal",
+      "ref": "game/story.rpy:114:21",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "겨울잠 들면 그래. 수건만 덮어 줘.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/story.rpy",
+          "line": 114,
+          "label": "local_interaction",
+          "guards": [
+            "if stage == \"arrival\":",
+            "elif person == \"nabi\":",
+            "if \"nabi_arrival\" not in inspected:"
+          ]
+        }
+      ],
+      "line": 114,
+      "scene_title": "local_interaction",
+      "source_hash": "f80d7c11bcc5cbd41c2c14cdcbbd42a9dd944b4719a4552fdd392a29341d5aed",
+      "baseline_hash": "daba9ef5917ead90a7a3fc4c686b50224cc1092be405688ed1fceea8e691ca78",
+      "uid": "c15616b95e1e32768d7a65ee",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|local_interaction|rpy_inventory|local_interaction|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/story.rpy:117:21",
+      "file": "game/story.rpy",
+      "path": [
+        4477,
+        4503
+      ],
+      "origin": "rpy_inventory",
+      "day": 1,
+      "scene": "local_interaction",
+      "block": "local_interaction",
+      "placement": "literal",
+      "ref": "game/story.rpy:117:21",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "수프는 더 줄 수 있어. 그릇은 네가 씻어.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/story.rpy",
+          "line": 117,
+          "label": "local_interaction",
+          "guards": [
+            "if stage == \"arrival\":",
+            "elif person == \"nabi\":",
+            "else:"
+          ]
+        }
+      ],
+      "line": 117,
+      "scene_title": "local_interaction",
+      "source_hash": "f80d7c11bcc5cbd41c2c14cdcbbd42a9dd944b4719a4552fdd392a29341d5aed",
+      "baseline_hash": "55ccf13389cc9ce5b515cc6ee8a8de415a2a14556aea0fc205a59787aa9713bd",
+      "uid": "df91028f8cf60941868e7b90",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|local_interaction|rpy_inventory|local_interaction|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

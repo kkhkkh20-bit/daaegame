@@ -1,0 +1,1813 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D14_S03_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "오후. 할머니가 구금됐다면 감독 장소의 면회 자리. 돌목이 문을 지키며 할머니는 자유롭게 일어나 나가지 못한다. 자유 상태라면 동행자와 출입을 확보한 공적 면담 자리. 토실이 들어올지는 자신이 고르게 하고, 듣지 않겠다면 보호자와 밖에서 기다린다. 대표는 토실이 문 옆 의자에 앉는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "48bb98f497b5d1099c061f7fe56a9a5b7cd7d19cc94b69055f372b0b9cda6155",
+      "uid": "0d070ae1100b70cf400b8c42",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0002",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그곳에는 오늘 아무도 없었습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3268,
+          "label": "r13_v111_granny_interview14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "27670cb124427aaed207c1d85328ffa3046bb74e47d7008af7833545798412eb",
+      "uid": "3339fdce5173c495a17e2add",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0003",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "언제까지 비워 둘 수 있을까요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3269,
+          "label": "r13_v111_granny_interview14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e1b1b0a21890e1046871c7283292458c985a439376d7a1710b3c864882019b76",
+      "uid": "8ef121cd80736fec5e998478",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0004",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "지금 쓰는 양하고 남은 양을 보고 있어요. 모자란다고 사람을 보내진 않을 거예요.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3270,
+          "label": "r13_v111_granny_interview14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3673ee9a41ef8f9a9ce3a668504679d87565a7c02d5725929924c982bbbe5a5b",
+      "uid": "3e529283c74409085215b2ec",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0005",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "겨울이 말로 끝나나요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3271,
+          "label": "r13_v111_granny_interview14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4f48b42e2e7972f55173c2fc91458bc79eac0ff700b3c356c86ae655ac6ba122",
+      "uid": "5128302bee1ab8afe39d32e0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0006",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "끝나지 않아요. 그래서 얼마나 남았는지 숨기지 말자는 겁니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3272,
+          "label": "r13_v111_granny_interview14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2ecc2017d3550038afa99c7f5198821c5f8ba536fd292b46261316857decaf68",
+      "uid": "ca4d2a69899ce430c52144de",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0007",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "할머니가 테이블의 컵을 두 손으로 감싼다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "00ad695ac127f4fe4f4ed30650badce47ec8ecf453b315e93a46624eb352cae0",
+      "uid": "2b5c86313844e59dd3b6fd62",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0008",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "보미 씨에 대해서는 직접 말씀하실 수 있습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3273,
+          "label": "r13_v111_granny_interview14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "480da6df278bacd877f497c0307e51f1f2ee2b5843aafe8d1b216506585ed8e5",
+      "uid": "3b90d6cb34ba6a43e08a5c31",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0009",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "그 이름을 어디서…….",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3274,
+          "label": "r13_v111_granny_interview14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cfb89351996589f14ed327221988e364646b016c1bb67b5e15797cc00a46cf6c",
+      "uid": "75046831dc5f9b1538447656",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0010",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "토실에게 들었습니다. 그분을 데려간 일을 묻는 겁니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3275,
+          "label": "r13_v111_granny_interview14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6234814268b20c0a89e2099186c7efd042f0182b7546a6396daaf8115fd72dd0",
+      "uid": "06fdd0b280a4a8c4c58be6bc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0011",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "보미 이름과 가족 관계는 11-1 토실이 직접 전했다. 이 대면 전까지 아빠는 보미의 죽음이나 할머니가 끝까지 현장에 있었다는 사실을 확정하지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e240b1da8258e5d4a1156d339160070dfc4641ec04814d0d8fa635bbe1e78e1d",
+      "uid": "ac854f6106763a0f048a3084",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0012",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "보미가 자꾸 물었어요. 오늘이 며칠이냐고. 방금 한 말을 또 물었어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3287,
+          "label": "r13_v111_tosil_inside14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "91baec282afbb5f5a1da9d11a67a75a3fde12d0b76c9920505cbe62700470065",
+      "uid": "ef71bfd14cc31c2734f1309c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0013",
+      "when": null,
+      "speaker": "토실",
+      "kind": "dialogue",
+      "text": "나는 안 물었는데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3289,
+          "label": "r13_v111_tosil_inside14",
+          "guards": [
+            "if r13_v111_value('tosil_listen')=='inside' and r13_v111_actor_ready('resident_tosil'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d1030c3a932a3eae5f1fe3049bcc89835393db694ed4c896edc496033fd2649c",
+      "uid": "1ac1ec1ec709cddb425e727b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0014",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "할머니가 토실을 본다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d8029333795223c88d99667ea3847fcce1ae1a9d7df15059d3ab46e837970680",
+      "uid": "b7bad432ebb7ffea22cf54c8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0015",
+      "when": null,
+      "speaker": "토실",
+      "kind": "dialogue",
+      "text": "나는 언제 오는지만 물었어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3291,
+          "label": "r13_v111_tosil_inside14",
+          "guards": [
+            "if r13_v111_value('tosil_listen')=='inside' and r13_v111_actor_ready('resident_tosil'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2082ce2bb07469b8e58cec8358ef8bed40e48a57dcce578e1fbcd920fba4b7b0",
+      "uid": "1df9fa7247903c17792796ad",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0016",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "보호받는다고 해야 네가…….",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3292,
+          "label": "r13_v111_tosil_inside14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "97772796319aadb61094c834c11246ca855fbb199fecbbc9a1cc5a4b7da90667",
+      "uid": "0d34cbcd40940f43145666bc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0017",
+      "when": null,
+      "speaker": "토실",
+      "kind": "dialogue",
+      "text": "그래서 기다렸어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3294,
+          "label": "r13_v111_tosil_inside14",
+          "guards": [
+            "if r13_v111_value('tosil_listen')=='inside' and r13_v111_actor_ready('resident_tosil'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "94cf177ccd87cadf06482596167d6f7ea29d4b6681e14e2067159682c38d5064",
+      "uid": "8584631abd062bd8a90c306f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0018",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "할머니가 컵을 내려놓는다. 받침에 제대로 놓이지 않아 한쪽이 기운다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "84eb937a7988fad4f7d2248685bf91b53cd6f67ccd87fda8a952f09332053e52",
+      "uid": "0518ceb0e15385425acdcc95",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0019",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "내가 데려갔어. 세 해 전에. 내가 거기까지 같이 갔어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3295,
+          "label": "r13_v111_tosil_inside14",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3318,
+          "label": "r13_v111_tosil_outside14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d9c648313ad8bf72bb8741633beca32779d44857341589d114a1fce000b06703",
+      "uid": "f43d3153eefdd399c03d41a4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0020",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "돌아오는 걸 보셨습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3296,
+          "label": "r13_v111_tosil_inside14",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3319,
+          "label": "r13_v111_tosil_outside14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c6839acc836529bf9debc680a67b1d659466b2e1bdbcefdfe92cae027260c429",
+      "uid": "caf331ecf767db59fb3d92e9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0021",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "아니요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3297,
+          "label": "r13_v111_tosil_inside14",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3320,
+          "label": "r13_v111_tosil_outside14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "76731555bc6eccd9a5a1267537848ac216b28c623b8a4c579225c6ba7ecc0cc3",
+      "uid": "9d5b2410126fb118636bedc6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0022",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "무엇을 보셨는지 말씀하세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3298,
+          "label": "r13_v111_tosil_inside14",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3321,
+          "label": "r13_v111_tosil_outside14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e7020793214a417b63d33ada82fbf21c46fab49fa26201308025ac21ae48f8dc",
+      "uid": "eee163af8d528961b3f2c5cb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0023",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "끝날 때까지 있었어요. 보미는 돌아오지 못했어요. 내가 그걸 보고도…… 보호소에 있다고 했어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3299,
+          "label": "r13_v111_tosil_inside14",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3322,
+          "label": "r13_v111_tosil_outside14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b13642e64a2ec63c9fea6431a4819e63ea6b84e24d5d04e5bac4f298803fc2ae",
+      "uid": "211e133bd0e5e4ff88b35558",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0024",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "직접 참여자의 진술로 보미의 결말이 확인되는 장면이다. 이미 확보한 당시 이동 기록은 함께 확인하되, 이 진술 하나로 모과·다른 모든 이송자의 결말까지 확장하지 않는다. 자백을 초능력적 과거 영상으로 바꾸지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "44b1f42d70dc8b52b18750fea0db9921b5cc1257148e22eda6cf267f03d87610",
+      "uid": "233eeaf01a257891bcc8139b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0025",
+      "when": null,
+      "speaker": "토실",
+      "kind": "dialogue",
+      "text": "엄마가 나 찾았어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3301,
+          "label": "r13_v111_tosil_inside14",
+          "guards": [
+            "if r13_v111_value('tosil_listen')=='inside' and r13_v111_actor_ready('resident_tosil'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "43921b874b494d63aadcbb114e835405a9a3307914ff3fb8db3918b7f5047dc6",
+      "uid": "9543dfd6c99f22d06b86f92b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0026",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "할머니는 입을 열었다가 닫는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4bbb26eccfdd2763c9f71a7c4a7fc79448934bc3c21a5e66cd89e62a0b3c6d4a",
+      "uid": "74909b600323c0e774c2debc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0027",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "기억이…….",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3302,
+          "label": "r13_v111_tosil_inside14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9431c42fbacdc181cb0cf810017c998073b3db6dfe56c50a98a2d65e59bd0d12",
+      "uid": "70ee0964cf5a6728e4049a1c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0028",
+      "when": null,
+      "speaker": "토실",
+      "kind": "dialogue",
+      "text": "모르면 말하지 마.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3304,
+          "label": "r13_v111_tosil_inside14",
+          "guards": [
+            "if r13_v111_value('tosil_listen')=='inside' and r13_v111_actor_ready('resident_tosil'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ae56e27facc6ebd03c889dc9a46a1740c0226af7561ba043444dabbc7500cf4e",
+      "uid": "4c83e843e4741fb747dfc88e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0029",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "다람이 손을 뻗지만 토실이 바로 잡지는 않는다. 잠깐 뒤 토실이 다람의 손가락 하나를 잡는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c61d9001a94afaacb6df93ca59888d49a4d64c405a2e25f028ae22818458493a",
+      "uid": "16496edf0e5022ee166976dc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0030",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "그게 마을을 살렸다고 믿어야 했어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3305,
+          "label": "r13_v111_tosil_inside14",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3323,
+          "label": "r13_v111_tosil_outside14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "df609eb38c8eeaf27fd752e693d76dbfefbf5e29462d0f0651c57037c30feccc",
+      "uid": "6f1ed4cd602236102a03465e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0031",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "그 말을 보미 씨한테 물어볼 수는 없잖아요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3306,
+          "label": "r13_v111_tosil_inside14",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3324,
+          "label": "r13_v111_tosil_outside14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8ad5dbbe79447376f6573316b7aed2b949e47ad1691f2fc1a73de6fc1f4bc83a",
+      "uid": "952496713f60782b1b153984",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0032",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "당신 방법이 진작 있었으면…….",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3307,
+          "label": "r13_v111_tosil_inside14",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3325,
+          "label": "r13_v111_tosil_outside14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9b9762ca40687083d25cf6338e73b41c09dd9b27be8c42e772e04a71a2037efb",
+      "uid": "f10b4b64f9e9628a22f36cc2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0033",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "엄마는 대답 대신 토실이 의자에서 내려오는 것을 기다린다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "809691f39c8e75a7972cdb6fe26e5435a65372f95b25a5a48cf637977751daf8",
+      "uid": "2be22e93be7341e6dd074c88",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0034",
+      "when": null,
+      "speaker": "토실",
+      "kind": "dialogue",
+      "text": "나 나갈래.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3309,
+          "label": "r13_v111_tosil_inside14",
+          "guards": [
+            "if r13_v111_value('tosil_listen')=='inside' and r13_v111_actor_ready('resident_tosil'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3b4d268f7f2734a91b50300b48aa72cc4023f95a7b4d91ecc7672945c470d8a7",
+      "uid": "24cd0ad517a02fba1fdb4230",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0035",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그래.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3310,
+          "label": "r13_v111_tosil_inside14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "47dd1707211c7354d813fcd6c66319369aef44dca3d28aedf2278035f5fb055c",
+      "uid": "2b370050ce086777e70906cd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0036",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "면회 종료. 할머니의 구금은 유지된다. 고백이 용서·자유·자살 허가로 바뀌지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "11687319bccaa0e715f6bc58c581368c7cb4c566d39faf25fac323cc49dc9d13",
+      "uid": "5400650be21fedec4df11c48",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0037",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0037",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0037",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "네 엄마가 돌아오지 못한 걸 할머니가 보고도 말하지 않았대.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3328,
+          "label": "r13_v111_tosil_outside14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ef319ba6a6ee7bccc79708252dbb7170ce9a9c33c5d1c048bda4d11a0089d511",
+      "uid": "1e0b6cd00dd980575e25a791",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0038",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0038",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0038",
+      "when": null,
+      "speaker": "토실",
+      "kind": "dialogue",
+      "text": "오늘은 더 안 들을래.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3330,
+          "label": "r13_v111_tosil_outside14",
+          "guards": [
+            "if r13_v111_value('tosil_listen')=='outside' and r13_v111_value('adult_interview_done'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "adc22aafc2d7fffe7f487d06dedaaaf9c2879c7127a0f325abdf84d95c4af194",
+      "uid": "e6cf66682522ee441272cde9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0039",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0039",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0039",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그래. 네가 물어볼 때 확인한 것부터 말할게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3331,
+          "label": "r13_v111_tosil_outside14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a609a710ff8d4a839320d3fb6653f4d1d84897ca2ef56fb1611604fcab26d7c2",
+      "uid": "738b7f6999d44ca8fde15bfe",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0040",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0040",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0040",
+      "when": null,
+      "speaker": "토실",
+      "kind": "dialogue",
+      "text": "오늘은 안 쓸래.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3358,
+          "label": "r13_v111_tosil_no_name14",
+          "guards": [
+            "if r13_v111_value('tosil_listen')=='inside' and r13_v111_actor_ready('resident_tosil'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f71c160ee9997cbd93e98cec5df9dcdae3e539f04f1a509fd53f537e38c456f2",
+      "uid": "d150d83dffb03a21710a70c6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0041",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0041",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0041",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그래. 지금 안 써도 돼.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3359,
+          "label": "r13_v111_tosil_no_name14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5983f08c63b749562602acedb52f162773768e5b2bb1779882aecb698a9dbdf4",
+      "uid": "fc02e09182ffeb4095b14a7f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S03_L0042",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S03_L0042",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S03_L0042",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "토실이 문 앞에 멈춘다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "047b75dac80897a9d50620d527bf3c0a9ce1d3a8d9f5b564cfd10691d0a2b66d",
+      "uid": "2ab222c9aa905946b71f63d3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

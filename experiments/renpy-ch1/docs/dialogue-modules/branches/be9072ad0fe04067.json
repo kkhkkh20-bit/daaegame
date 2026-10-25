@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:395:33",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        23349,
+        23382
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_nt_after_trial",
+      "block": "r13_nt_after_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:395:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "아빠, 이거 내가 읽어 줄게. 보호실에서 백 번 읽었어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 395,
+          "label": "r13_nt_after_trial",
+          "guards": [
+            "if room13.get(\"daram_state\")==\"with_dad\":"
+          ]
+        }
+      ],
+      "line": 395,
+      "scene_title": "r13_nt_after_trial",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "d7231ad780aef63c3f691977a90bb46ff527f0b1002588a76db85d0762442e2a",
+      "uid": "9ec3f8af1df5a39713fec146",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_nt_after_trial|rpy_literal|r13_nt_after_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

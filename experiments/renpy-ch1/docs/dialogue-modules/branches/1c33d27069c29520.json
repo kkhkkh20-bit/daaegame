@@ -1,0 +1,47 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_episodes.rpy:231:34",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        13933,
+        13983
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_ep1_morning",
+      "block": "r13_ep1_morning",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:231:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "새벽에 처마 쪽에서 너울의 목소리가 들렸다. 잠시 뒤, 발소리는 처마를 그냥 지나갔다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 231,
+          "label": "r13_ep1_morning",
+          "guards": [
+            "if r13_has(\"bami_safe\"):",
+            "if r13_has(\"bami_at_eaves\") and r13_has(\"patrol_suspicious\"):"
+          ]
+        }
+      ],
+      "line": 231,
+      "scene_title": "r13_ep1_morning",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "fae69c50531fc897a15be96488a5011a1998d86ea29ed111518476b25cc81b8a",
+      "uid": "01707c98de42ab6d5b20302d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_ep1_morning|rpy_literal|r13_ep1_morning|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

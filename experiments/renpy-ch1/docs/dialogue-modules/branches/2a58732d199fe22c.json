@@ -1,0 +1,85 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_bundle3.rpy:174:26",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        10678,
+        10723
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_b3_firewood",
+      "block": "r13_b3_firewood",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:174:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "학교 뒤 대피소 장작더미 옆에서 누군가 장작을 끈으로 묶고 있었다. 보리였다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 174,
+          "label": "r13_b3_firewood",
+          "guards": []
+        }
+      ],
+      "line": 174,
+      "scene_title": "r13_b3_firewood",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "e363308200a30fe11bd8a4a1bd83f47d93ab533b1b71144f64c55ae2da3e52a8",
+      "uid": "b3bd93e27b1ed701e2130bea",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_b3_firewood|rpy_literal|r13_b3_firewood|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:189:26",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        11500,
+        11539
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_b3_firewood",
+      "block": "r13_b3_firewood",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:189:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "보리는 장작을 내려놓았다. 그러고는 뒤도 돌아보지 않고 가 버렸다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 189,
+          "label": "r13_b3_firewood",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 189,
+      "scene_title": "r13_b3_firewood",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "8232361bc591fbafe63f82832335d64f5d741d0b4e2c078f8ec17fc16985abb3",
+      "uid": "26cb4ddff319edb713750f57",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_b3_firewood|rpy_literal|r13_b3_firewood|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

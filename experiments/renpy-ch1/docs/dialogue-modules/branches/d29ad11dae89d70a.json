@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_week1_cases.rpy:218:34",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        12604,
+        12643
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_w1c_letters_after",
+      "block": "r13_w1c_letters_after",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:218:34",
+      "when": null,
+      "speaker": "resident_sling",
+      "kind": "dialogue",
+      "text": "……네. 편지는 열지 않을게요. 이 일은 여기서만 이야기해 주세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 218,
+          "label": "r13_w1c_letters_after",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 218,
+      "scene_title": "r13_w1c_letters_after",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "06060cfccd685d95feb6b33c9a6e0beb06cd20fbe5323fa3a17835d9c58add81",
+      "uid": "6b652b3963b932678e4a0653",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_w1c_letters_after|rpy_literal|r13_w1c_letters_after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

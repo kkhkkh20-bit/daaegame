@@ -1,0 +1,1384 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D05_S04_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "초소 앞. 초롱이 아빠를 찾는다. 봉투는 젖지 않게 기름종이에 싸여 있다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9dfc7a329e9f75cbe061b806421564e5d28b8fb3e13d6c110f66bfd057a5d7ee",
+      "uid": "1a623a4e047355fc690c1df1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L0002",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "오늘은 답이 있었습니다. 당신 쪽지가 없어지고 이게 있었어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 538,
+          "label": "r13_v111_warning5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "469ebff74f061842499fbedb4ecfd84bf10e8fcdde5bfe9e9b0b7974ce1925cd",
+      "uid": "b13f6ec08a32bae80ceb465f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L0003",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "누가 넣는 걸 봤습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 539,
+          "label": "r13_v111_warning5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "16a17932d5c42207778096b27ec387f35f91ddf37539f7f7d98af47177244817",
+      "uid": "8889ed4db393133053ca9bbf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L0004",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "아니요. 어제까지 비어 있던 답장 칸에요. 봉인은 안 열었습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 540,
+          "label": "r13_v111_warning5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "55189910ba2f30096f8f4b07f1db1959f2b6fefb793e39551ec99a484ad7ba27",
+      "uid": "4ba359d3ef4dfb6c33b41918",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L0005",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠가 다람과 바람 없는 곳으로 옮겨 봉투를 연다. 메모의 도토리와 익숙한 글씨.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "398ebbcfb2d0b15c1b67949357cd1745fe207d7be245c4a4021fd1e6640dde63",
+      "uid": "e10196a4e9faf9b069ce99bc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L0006",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "“당신과 다람이를 부른 적 없어. 그 편지는 내가 쓴 게 아니야. 나를 찾는 곳이나 이 편지 이야기를 여관에 말하지 마. 당장 만나러 내려갈 수 없어. 초롱에게 답을 맡겨 줘. 먹을 것과 마른 천이 필요해. 다람이 손은 괜찮아? 겨울이면 또 트는데.”",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3291c7701d46c3c40c0615770542340dc2b1898cd4f34ad9ee8b05fcc85dee12",
+      "uid": "38ea0b88b9192f174a52aac0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L0007",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마잖아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 555,
+          "label": "r13_v111_warning_read5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0d326dfa35017a3e1dc627b3f175681bc6b38ad877bc4626bd38ed2e8d1d4617",
+      "uid": "41e365483f2f5104fabfc490",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L0008",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "아이는 갈라진 엄지 옆을 주머니 안에 감췄다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 556,
+          "label": "r13_v111_warning_read5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5e9a123f4aed1d96badbbbd58547523012ad103c292edab3d06872fbab98905e",
+      "uid": "278008eb224fd954157daca2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L0009",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응. 엄마가 보낸 것 같아.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 557,
+          "label": "r13_v111_warning_read5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "914de4479c74530c23b06d36c9b74b6de54eecb25d29018fa83ae69cce52f70f",
+      "uid": "788421037a08566b11fe9d9d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L0010",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그럼 왜 안 와?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 558,
+          "label": "r13_v111_warning_read5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2dd4d53e0e66816fc78dbcdd9e361ce4cc5e415d28bdea04ca4fda77dd9d9e3f",
+      "uid": "d79b9d87622cc54cea5a2077",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L0011",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "못 내려오는 이유가 있나 봐. 물어볼게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 559,
+          "label": "r13_v111_warning_read5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "48a1b5ed207619bb797218c2f63eb02b46571f5ca5cfe02288e4814ebc365622",
+      "uid": "de9682358d232a2c49290fb1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L0012",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠가 가면 되잖아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 560,
+          "label": "r13_v111_warning_read5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3a6c806ff4db0e04abf00d3b1daea8a3cdfc16cf6a38094d8cf55478ffb917ed",
+      "uid": "8ad6ce6f2c792369bc985998",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L0013",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어디로 가야 할지가 없어. 이 편지에도.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 561,
+          "label": "r13_v111_warning_read5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b656697253e12444246dda69338cf076be2a49803183d587f728fd4714c99652",
+      "uid": "26723e2652c56d2c4ba9f946",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L0014",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "조작: 초대 편지와 경고 비교. ‘다람이를 데리고 와 줘’ / ‘부른 적 없어’.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f02bf4880ad0f1b536ec05bbc4813c76c60fafd01822b56576fbec34d47c1656",
+      "uid": "5a615badd2f57371e8d5b09b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L0015",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "도토리가 빠진 것 때문이 아니다. 아내가 직접 초대한 적 없다고 썼다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 575,
+          "label": "r13_v111_warning_compared5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2cc3ea41013abb0cd4823b761ad06a7a4b1c8bcec92095d617b6b9f81ae7af18",
+      "uid": "51fc767deac1e4420b07d3d3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L0016",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "앞서 여관에서 들은 말도 다시 볼까?",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "18eb30299513ed400396d3b75cdc9e8670dced2dc0ae8711786c1b8bb29e1b8e",
+      "uid": "232b545dcb7dc468d69e02cb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L0017",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "편지는 여관 묶음으로 왔다. 할머니는 소식을 알려 달랬고, 너울도 여관에 연락하라고 했다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 608,
+          "label": "r13_v111_review5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4c0035435671db1ed05100a0322e1cb178c18bf066148f6aa80ff5562ddbae05",
+      "uid": "5a4a59cf0e994c8ccc16edd4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L0018",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "여관에서 보낸 거니까 할머니가 쓴 거야?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 581,
+          "label": "r13_v111_warning_compared5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9daeb25823c26e224ad6d33c3cb2e6ee4255ca08c97189e61009be77bc6541c9",
+      "uid": "ee65de3280e8300503839a89",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L0019",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "묶음에 넣었다고 쓴 사람인 건 아니지. 누가 썼는진 몰라.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 582,
+          "label": "r13_v111_warning_compared5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "310abfce81241abe272e55b3b0d765db7df93c715b3da5708f936c0402f713c6",
+      "uid": "705cf21c5039fe78d501ddc7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L0020",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그럼 왜 말하지 말래?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 583,
+          "label": "r13_v111_warning_compared5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0c9bf1054db450b8cb62e528bb66d675f947a53f79326ae372573ae2420c3871",
+      "uid": "34c609653187c285c56b286f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L0021",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "몰라. 엄마가 안 불렀는데 우린 여기까지 왔어. 누가 불렀는지도 모르고. ……우리 얘기는 이제 함부로 하지 말자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 584,
+          "label": "r13_v111_warning_compared5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4fa5f55a5b2f9d235b9d9e77f6a7fad70e8d7d220043db344fbe786308c76c6e",
+      "uid": "1982b703f2c08388d9cf82fb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L0022",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 초롱에게 주려던 답장을 뒤집었다. 여관에서 언제 나갈지까지 쓰려던 줄을 지웠다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 585,
+          "label": "r13_v111_warning_compared5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f0b33ae0e66156bcefdef28a05ce5e2e1abc8230bc7201d4bb81460b7130add2",
+      "uid": "a7b68b443a99ed82a2a91be0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L0023",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이 편지를 다른 데 보여 줬습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 586,
+          "label": "r13_v111_warning_compared5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "aa472e228af4ceb0014937e3b67edab3f46abe78a05e027554ac5d7dd4d0f5c6",
+      "uid": "5c2b18e7dad1c96696ec2c1b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L0024",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "당신한테 곧장 왔어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 587,
+          "label": "r13_v111_warning_compared5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "15ed3900abfd9dc637c6e6d6feba0f9494b1dd93e2cb96fe7cabf8a950de1cf3",
+      "uid": "b8f8ea101bef27547d6e01d6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L0025",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "여관엔 말하지 말아 주세요. 답장에 물자 받는 법도 물을 겁니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 588,
+          "label": "r13_v111_warning_compared5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "176925c084ee9896d1272883db4797ddbfea15ec1e3504f1b792575f1e5039f8",
+      "uid": "e0bd80ba26292f2d25bc4718",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L0026",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "함은 계속 볼게요. 답 있으면 바로 가져올게요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 589,
+          "label": "r13_v111_warning_compared5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a27882c88132be541fcb7d6ae42669be8a00f7642952c39b46c9d0943b1b8833",
+      "uid": "9a6bb068cba0d14993298e45",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L0027",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠가 쓴 답을 화면에서 직접 확인한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "96fb08d8cd27e17667a09d16f383f7ce4feb7d6138114cce341e3c506a75f4d4",
+      "uid": "91725cbae4fcf0aa46a40759",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L0028",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "“편지 받았어. 다람이는 나와 함께 있어. 여관에 말하지 않을게. 먹을 것과 천을 준비할게. 안전하게 만날 방법과 지금 있는 곳을 알려 줘. 답은 초롱에게.”",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 591,
+          "label": "r13_v111_warning_compared5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4f6c28f2c0a81d32543102ceaa1ab2879059a2b1d6f7d4e92b5f8e06e376902f",
+      "uid": "f35bae72f238bcb2df73d639",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L0029",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "나도 써.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 592,
+          "label": "r13_v111_warning_compared5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2f748075b4763486e707c69960c8eb9840118c58897e1b37956b61096650dc15",
+      "uid": "328832d50cae2faa617affb3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L0030",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "다람이 아래에 덧쓴다. “과자 아직 있어. 빨리 와.”",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "648e433d494880e1b8590682b81acfc72fb51cc882100653271f7d258536008c",
+      "uid": "d84cc23ae2cf62dfa1bb80f5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L9501",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L9501",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L9501",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "다람이 쓴 줄까지 접어 봉투에 넣고 초롱에게 직접 건넨다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4b27ff653524b2bb3327bbf2f12f2d0d3d38d96368682c9931cefdafb7405fe8",
+      "uid": "aa6307a852448c6bf741dfb4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L9502",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L9502",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L9502",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이것도 함에 부탁드립니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 603,
+          "label": "r13_v111_reply_done5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2050f523d48b2f16aa6b52acf8ab2f117724ace96e688ce299c6e84b005bfb8d",
+      "uid": "9b3200448ba07a5c06138ca7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S04_L9503",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S04_L9503",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S04_L9503",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "네. 여관에는 말하지 않을게요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 604,
+          "label": "r13_v111_reply_done5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ceddfb534e3f73a6c363551cad12b698a390d708bd6db82a20165bf9215dd19a",
+      "uid": "260bc6e10b85e65234d00921",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

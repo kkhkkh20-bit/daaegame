@@ -1,0 +1,252 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/winter_opening.rpy:67:12",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        4306,
+        4326
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:67:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "여관에서 받은 종이를 함께 찾는다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 67,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"permit\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 67,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "35ac46b77cb8645baa5a925d0b998e1a136ca889479bb15f1c3d6c81a1599d83",
+      "uid": "3e6b7839cbb6cf6f933d645c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|winter_entry_loop|rpy_menu|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:70:12",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        4651,
+        4669
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:70:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "마차를 고칠 수 있는지 묻는다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 70,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"permit\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 70,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "ecac4e9c4e06e26f2afa382848adc0979564cfb821bc889c556366da1ce81aba",
+      "uid": "6519b600bce939abb45c0f67",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|winter_entry_loop|rpy_menu|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:72:12",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        4842,
+        4853
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:72:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "잠깐 더 둘러본다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 72,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"permit\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 72,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "3ceea718421190d06512a0695139fb5a84fc34bf4a053adcadfc9ad173ddf4dc",
+      "uid": "3c5b18e71c790988dd9a4c18",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|winter_entry_loop|rpy_menu|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:77:12",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        4978,
+        5002
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:77:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "우리 이름이 적힌 줄을 보여 달라고 한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 77,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"ledger\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 77,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "fef9d875c99d6c65aa30daf90cb3ada9b247f9b864852e7c6191d62acb041d35",
+      "uid": "e410283bc332473f34c32bab",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|winter_entry_loop|rpy_menu|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:80:12",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        5315,
+        5336
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:80:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "아이도 여기서 기다리면 안 되나요?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 80,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"ledger\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 80,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "3beb7df6b0a46ca66a65d55dc972df0eb2bc0ca8d85e706c948ee9edea0d8b50",
+      "uid": "6dd40c30ec81a5e667b9dc97",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|winter_entry_loop|rpy_menu|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:82:12",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        5505,
+        5517
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:82:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "다른 곳을 살펴본다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 82,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"ledger\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 82,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "932b7e72f1b41e26827a12b37242f1e15e4f864fd925d58472afab8b0e6b5c5e",
+      "uid": "6dffc7974cd187c531a24414",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|winter_entry_loop|rpy_menu|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

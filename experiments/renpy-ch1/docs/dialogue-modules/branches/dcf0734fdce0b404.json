@@ -1,0 +1,82 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_q1_arguments.rpy:263:27",
+      "file": "game/systems/room13_q1_arguments.rpy",
+      "path": [
+        16170,
+        16189
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_q1_buri",
+      "block": "r13_q1_buri",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_arguments.rpy:263:27",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "그날 밤, 광장에서 무얼 봤니?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_arguments.rpy",
+          "line": 263,
+          "label": "r13_q1_buri",
+          "guards": []
+        }
+      ],
+      "line": 263,
+      "scene_title": "r13_q1_buri",
+      "source_hash": "8289e6e0adc4c6de94e5f0acadafcaced13c74af938b712712356a7bd5a6fa22",
+      "baseline_hash": "9f456889590591815dc40d200e9a29cd313109c4ddb13b72bddc6abd7b8ae6c3",
+      "uid": "794f99f1240e75ac16b21a24",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_q1_buri|rpy_literal|r13_q1_buri|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_q1_arguments.rpy:265:37",
+      "file": "game/systems/room13_q1_arguments.rpy",
+      "path": [
+        16310,
+        16359
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_q1_buri",
+      "block": "r13_q1_buri",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_arguments.rpy:265:37",
+      "when": null,
+      "speaker": "buri",
+      "kind": "dialogue",
+      "text": "네. 바로 앞에서요. 그 뒤 실룩 씨가 3번 등 앞에서 일하고 내려올 때까지 봤어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_arguments.rpy",
+          "line": 265,
+          "label": "r13_q1_buri",
+          "guards": []
+        }
+      ],
+      "line": 265,
+      "scene_title": "r13_q1_buri",
+      "source_hash": "8289e6e0adc4c6de94e5f0acadafcaced13c74af938b712712356a7bd5a6fa22",
+      "baseline_hash": "adc9c5a8577600016e9572be783fe2a107f1c6df77c1938db93aa62421bac51e",
+      "uid": "82046ec07bff44b8fe891438",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_q1_buri|rpy_literal|r13_q1_buri|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_life.rpy:198:12",
+      "file": "game/room13_life.rpy",
+      "path": [
+        11123,
+        11151
+      ],
+      "origin": "rpy_inventory",
+      "day": 12,
+      "scene": "r13_topic_choice",
+      "block": "r13_topic_choice",
+      "placement": "literal",
+      "ref": "game/room13_life.rpy:198:12",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "기록을 고치는 일에 어디까지 책임을 지겠습니까?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_life.rpy",
+          "line": 198,
+          "label": "r13_topic_choice",
+          "guards": [
+            "if key==\"w2_erased\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 198,
+      "scene_title": "r13_topic_choice",
+      "source_hash": "ff6367277bd80f51605a562a690b9994a298289796fb1dd7f1222258428131b7",
+      "baseline_hash": "03df85242618f41aab2c1936dab602523a11617e2931e210cc662e8804171174",
+      "uid": "703990571d84cd4d3e377c1e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_topic_choice|rpy_inventory|r13_topic_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_life.rpy:216:12",
+      "file": "game/room13_life.rpy",
+      "path": [
+        12390,
+        12410
+      ],
+      "origin": "rpy_inventory",
+      "day": 12,
+      "scene": "r13_topic_choice",
+      "block": "r13_topic_choice",
+      "placement": "literal",
+      "ref": "game/room13_life.rpy:216:12",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "창고를 열 조건을 어떻게 정할까?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_life.rpy",
+          "line": 216,
+          "label": "r13_topic_choice",
+          "guards": [
+            "if key==\"w2_eunho\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 216,
+      "scene_title": "r13_topic_choice",
+      "source_hash": "ff6367277bd80f51605a562a690b9994a298289796fb1dd7f1222258428131b7",
+      "baseline_hash": "3565e264bf04265737792cb4a81080e6c6800fd5ec715cfc40d02fc5e1dbfb1d",
+      "uid": "ec2e083e826976889eee33ba",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_topic_choice|rpy_inventory|r13_topic_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

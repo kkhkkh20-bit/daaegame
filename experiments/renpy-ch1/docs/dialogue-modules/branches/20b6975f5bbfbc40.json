@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_EL14_04",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "ending_last14",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "ending_last14",
+      "block": "ending_last14",
+      "placement": "blocks",
+      "ref": "ending_last14",
+      "when": "end_partial_done",
+      "speaker": null,
+      "kind": "narration",
+      "text": "나비가 건넨 인수 확인서를 접어 품에 넣었다. 받은 이름이 거기 적혀 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3617,
+          "label": "r13_v111_cookie_scene14",
+          "guards": []
+        }
+      ],
+      "scene_title": "ending_last14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "1e1700643115587b10c6650efed9a5d6821fa5271c4741adba6e1a0dd2d1aa76",
+      "uid": "7bd0ad75304c677e3e926d65",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|ending_last14|patch|ending_last14|end_partial_done",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

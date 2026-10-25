@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_carryover.rpy:80:28",
+      "file": "game/systems/room13_carryover.rpy",
+      "path": [
+        5240,
+        5300
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_carry_sled",
+      "block": "r13_carry_sled",
+      "placement": "literal",
+      "ref": "game/systems/room13_carryover.rpy:80:28",
+      "when": null,
+      "speaker": "karo",
+      "kind": "dialogue",
+      "text": "썰매는 마차 바퀴 대신 쓰려고 둔 거예요. 열 냥이면 일주일 빌려 드리죠. 끄는 건 직접 하셔야 합니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_carryover.rpy",
+          "line": 80,
+          "label": "r13_carry_sled",
+          "guards": []
+        }
+      ],
+      "line": 80,
+      "scene_title": "r13_carry_sled",
+      "source_hash": "f10306dfce96df81431a8d3c357b4d31023a0ef3afd42beef4d1a8184ca40d9d",
+      "baseline_hash": "db949efa29860c3d5402b8a6f1c5339cfb9c18dfd8eb29770fb004fb13e52148",
+      "uid": "0af88dd5cbb939154d0c5017",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_carry_sled|rpy_literal|r13_carry_sled|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

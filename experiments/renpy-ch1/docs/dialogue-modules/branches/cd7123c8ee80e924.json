@@ -1,0 +1,82 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "wild_square14:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "wild_square14",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 14,
+      "scene": "wild_square14",
+      "block": "wild_square14",
+      "placement": "binding",
+      "ref": "wild_square14:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "바둑이와 잠긴 문을 연다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "square",
+        "person": "resident_badook",
+        "object": null
+      },
+      "scene_title": "wild_square14",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "6953672d4f8188ef189f44b048abadc91e8e275bc5c89e2a176b40f47bbb297a",
+      "uid": "7670d7fb1042a0322be3e603",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|wild_square14|choice|wild_square14|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "wild_square14:1",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "wild_square14",
+        "options",
+        1,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 14,
+      "scene": "wild_square14",
+      "block": "wild_square14",
+      "placement": "binding",
+      "ref": "wild_square14:1",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "다람과 산길 쪽으로 간다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "forest",
+        "person": null,
+        "object": null
+      },
+      "scene_title": "wild_square14",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "89c701f20b6d0fde37a22290951f6acc7b065cdf04ced8f15c9729ea5c42126c",
+      "uid": "bcf0e5a1cff3a274dad1ba49",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|wild_square14|choice|wild_square14|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

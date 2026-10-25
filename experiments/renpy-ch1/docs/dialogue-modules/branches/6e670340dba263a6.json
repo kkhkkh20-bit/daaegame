@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_OP_D08_11",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "blocks",
+        "neoul_list8",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "neoul_list8",
+      "block": "neoul_list8",
+      "placement": "blocks",
+      "ref": "neoul_list8",
+      "when": "prevention_stone",
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "같은 말을 두 번씩 묻는 노인이라 들었소. 남의 방에 앉아 종이를 지킨다지. 명단에 올려야겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1001,
+          "label": "r13_v111_missing_pages8",
+          "guards": []
+        }
+      ],
+      "scene_title": "neoul_list8",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "45e03d6834567acf0d9533801ca3cfd8348b9698db0008e185bf1ec9a9f3f9cc",
+      "uid": "9245dc9b0056997c3a49ad4d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|neoul_list8|patch|neoul_list8|prevention_stone",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OP_D08_12",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "blocks",
+        "neoul_list8",
+        5,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "neoul_list8",
+      "block": "neoul_list8",
+      "placement": "blocks",
+      "ref": "neoul_list8",
+      "when": "prevention_stone",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "같은 말을 두 번 묻는 건 저도 그럽니다. 그걸로 사람을 보내진 마십시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1001,
+          "label": "r13_v111_missing_pages8",
+          "guards": []
+        }
+      ],
+      "scene_title": "neoul_list8",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "d1d89f1f89bc7b3b15a9fb292e32a9b254afe79a148b12be196cd13fca94ee6c",
+      "uid": "4f652fdef189e181711dbd09",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|neoul_list8|patch|neoul_list8|prevention_stone",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

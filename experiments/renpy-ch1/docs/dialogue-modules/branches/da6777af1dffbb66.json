@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/winter_opening.rpy:49:125",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        2532,
+        2552
+      ],
+      "origin": "rpy_inventory",
+      "day": 5,
+      "scene": "winter_arrival",
+      "block": "winter_arrival",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:49:125",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "이건 남겨. 엄마 것도 있어야지.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 49,
+          "label": "winter_arrival",
+          "guards": []
+        }
+      ],
+      "line": 49,
+      "scene_title": "winter_arrival",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "e9d6ebb6a728c689767ba8f8bce5316e9aef513f43399c10df2281c5f4eab65b",
+      "uid": "48586493c921c2f6b797252e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|winter_arrival|rpy_inventory|winter_arrival|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

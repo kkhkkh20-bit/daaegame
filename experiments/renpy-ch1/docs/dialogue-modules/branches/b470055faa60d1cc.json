@@ -1,0 +1,1533 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D07_S04_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[소리] 눈을 밟는 두 사람의 발소리. 지름길 계단은 통행막대로 막혀 있다. 까로가 길을 돌아간다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a634791a039c64c32314f3c32fde7edaeabc79512107ed6d8483797b4c3d8038",
+      "uid": "54c96a40cc0fbcc2a787b209",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0002",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "낮에 얼음이 무너졌습니다. 이쪽으로요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 748,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c1c502bae866b667b43589e007ae8229974bd39dcffb91e6de1db4b2ffb560d3",
+      "uid": "0e7d30ca5306dfeca7d5b9f4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0003",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "서쪽 초소에서 서리는 환자의 다리를 고정 중이다. 아빠가 부엉이의 증상을 전하자 도구 가방을 닫고 다른 성인에게 환자 곁을 맡긴다. 같은 길로 돌아간다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 749,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2956a2e33beaa2f1f57b26ece34319418603832cdcc994b10655723408cb1101",
+      "uid": "b3ee61a4f4ac47edd88b9df1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0004",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "여관 현관에 들어서자 두드리는 소리가 난다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 752,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8a004e7928f2c79dd6ed914f9cae9662be1f81fb9fa847f4063ecc29a43ededb",
+      "uid": "91a225064478a848154e933f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0005",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "부엉이 어르신! 안에서 빗장을 빼십시오! 다람아, 문에서 떨어져 있어!",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 753,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3a87d67ef0fab7f594e2e67a7676b67c74d9b7a0cf00e56cd25255174c49c75d",
+      "uid": "c53da7def6211f311788df47",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0006",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다람아!",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 754,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ebb2962b5e8558396d42baedeaaad3b83fa1105364281bff68710a7801e8a3e6",
+      "uid": "c87ee8d6a371e43e04954d46",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0007",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "제 손 잡고 있습니다. 억지로 당기지 마세요. 몸은 아직 못 나옵니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 755,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "51dc613f1cdf1659d6f35e76d69d33955edde8e72fc183c26ff50f892994e853",
+      "uid": "168e84854d38aece0674d7e6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0008",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "도토가 문틀 아래 벌어진 틈에 한 손을 뻗고 있다. 틈 너머 작은 손가락이 보인다. 다른 손으로는 문이 다시 닫히지 않게 받친다. 도토의 어깨에 옷감이 찢어져 있다. 열린 맞은편 방에는 엎어진 의자가 놓여 있다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 756,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5c5025e89a4ebfc6b22b6bb9e4479464179b05d579214fb55476c03d765b3b0f",
+      "uid": "8a1c5937ab52f60d2c0f3447",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0009",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "안쪽 빗장입니다. 첫 소리 나자마자 밀었는데 안 열립니다. 창문은 바깥에서 닿지를 못해요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 757,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "021ca3abe3db2221f44801c886f9fd3c9127e1c53660caf1c1964e0cb28d0954",
+      "uid": "76662b773d42f7cc963005a8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0010",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "비명이 언제 났습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 774,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9ab1e84a48715937a0ccfda17646a6b32fe6be84df42dd9f8ec60ae3b7052648",
+      "uid": "903ba2b032b6c209c73c4e5a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0011",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "얼마 안 돼서…… 지금은 못 세겠습니다. 제가 계속 두드려서 안쪽 소리가 잘—",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 775,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8c5e20269e617f47f6b91b6f0a0b8429d6fd435d588119aa6956b33746c0d580",
+      "uid": "109691bbfcbff5647d0f62f8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0012",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "다람아, 아빠 왔어. 듣고 있니?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 758,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c9e5438d1e3a1c7bac8028d616eccc91a53690ab7c7bf2ce775504b4ee1c706a",
+      "uid": "3cfb7fd07b63f8a973b4536c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0013",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "……아빠?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 761,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "61e6beca8ecb736ee3c73240a166dcf61320fc66e0d2b10595034b35d7c551d6",
+      "uid": "c3242bf37c3e828ad46d7988",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0014",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "문에서 떨어져. 아빠 여기 있어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 763,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c9cecab36b5a4b4394f39d486a75c5a0a7d1f0e9ed78fa2cb09d1f0826b468fc",
+      "uid": "596af1a6d6286b720d895544",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0015",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[조작] 문틀의 틈 찾기 → 도토와 어깨 밀기. 맨손으로는 빗장이 버틴다. 할머니가 주방 쪽 계단에서 쇠 지렛대를 들고 올라온다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4accc867e5f52b77907a6a1ebedd167ed3b536cedee18882bbc6920122a5fcc6",
+      "uid": "eb2eb3d3e3ebf5a11c735d0e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0016",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "이걸 찾느라고. 오래된 걸 구석에 넣었지 뭐니.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 764,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "528cb9549f01b9425eed32e86c818e5202ea7d0a495df5a011c864ea3415319b",
+      "uid": "cf325b63542e6c67cf5ed17e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0017",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "주세요!",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 765,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "561add79b258b7d749f4a6e6ed7912d06cd188973132aa33f0c0f307eaad57d5",
+      "uid": "bc7ff4d5379369de2a04fe2e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0018",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "아빠가 틈으로 손을 넣어 다람의 왼손을 감싼다. 도토는 아빠 손이 아이 손을 잡은 것을 확인한 뒤에만 놓는다. 너울과 도토가 문틀을 받치고 까로가 지렛대를 당긴다. 서리가 아이 손이 끼지 않는 쪽을 확인한다. 나무가 쪼개진다. 서리가 먼저 바닥을 살피며 들어간다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 767,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ac4a45da7a5c4c0645225905b44235cd0dfc9433881d53122af63a3aa17fab11",
+      "uid": "0182b8d44d4f326f33eb47cc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0019",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[화면] 엎어진 촛대, 두 조각. 책상 옆에 쓰러진 부엉이. 문 가까운 침대 끝 아래에서 다람이 아빠의 손을 따라 기어 나온다. 손에는 촛대 아랫부분이 들려 있다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "46283415f1817588a376db58be1a86503511d58c9053f0b3afca34299475b3e7",
+      "uid": "0d1d14247de64767c9d1e77f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0020",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠, 내가……",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 769,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f66680cb4eb5eadc82f8e004a1c3bb7c43971a812336c8bcf28996f3d31d75b5",
+      "uid": "8b97518c528ba06b33495edb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0021",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "내려놔. 다치니까. 이리 와.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 770,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6a5b14235db8f3051de0a5104e961ee42034ca1a26ff57141a476e44df3be2cb",
+      "uid": "6b1578af8b91db9a3533ae0e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0022",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "서리가 부엉이에게 손을 댔다가 천천히 고개를 든다. 나는 다람을 품 안으로 끌어당긴다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 771,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7f917332dab96c9ea068336eecfa809c44d6e0f8a1a5639bd56d7666c5536e8a",
+      "uid": "d76aeac9c70c0096987b7fde",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0023",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "아이 손에 든 걸 보셨지요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 776,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5e8ce5345064696efe46d9c92b41bedd78b198cb21b283057d78605b4ba36535",
+      "uid": "59841bc075f8de0ba904ad9f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0024",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "내려놓으라고 한 건 접니다. 아이부터 진료하십시오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 777,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "09d6b5f3bf78c8a9661d63ca005ad4379e8a64e207277a510ace2063147fa9bb",
+      "uid": "5b1696db46d71b3b015d18b7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0025",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "보호실로 데려가겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 778,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4b87f6247ed934b335efc9d662f7e6f132658dad24d9b976eb7af9a8fa0cc278",
+      "uid": "f996bc89c31b595ec593e3b7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0026",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "혼자 두지 마십시오. 제가 같이—",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 779,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4bbd43b6b2e33a06a2a8e111f16fbb0bdd3c666863ef684b0ea037f97de78e70",
+      "uid": "ea8ce8dc34da588efeac6007",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0027",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "아버지는 남으시오. 까로와 어디 있었는지부터 듣겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 780,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1402c54936a10a7587ec4733801ae27a3da83d01a029e33604ceaeb9cdfbaa0a",
+      "uid": "b35ecff9baf954cab861f2f6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0028",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "까로가 앞으로 나온다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 781,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f3dd13ce789a5ac06408f502b794a26f4f1eb1164835d7dbea18cc2b52ed0045",
+      "uid": "fbc82019fb409d53ee56047b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0029",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "처음부터 저와 있었습니다. 의료진을 데리러 왔어요. 말부터 듣고—",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 782,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "726991ba02f338598c4d035570056dac1bd918eef571823ce13269fb72462825",
+      "uid": "bf1105e2401e13034790654e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0030",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "너울이 문밖 사람을 부른다. 다람이 내 소매를 놓지 않는다. 나는 손을 억지로 떼는 사람의 손목을 잡는다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 783,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d91a66217dffdd66d770a739e403eb2404659254dd6834274cd7e84da77ec379",
+      "uid": "679e7116f9b14d6d9547fa04",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0031",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이름. 아이 데려가는 당신 이름부터 말해요. 어디에 두는지도.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 784,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "507c316f4e90e12c39d6eb240df46c2c1fd8e09b583c596569ae844bc3457323",
+      "uid": "553c964a717482b3f8211551",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0032",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[화면] 이름과 보호실 위치가 기록된다. 강제로 떨어지는 순간 다람이 묻는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9882ab2b4964bcaf851e365dd8e56341a7c3a70d9e7902ab3c37b95f2bf36e17",
+      "uid": "b93a066cb90ff3216ea66795",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0033",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠는 내가 그런 줄 알아?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 785,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2ab61d9dc4710074edff22e6e833137e86c9960519e36c2fefe8e3e6d1653174",
+      "uid": "47b71b9e75d3f3c8c3b9daec",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0034",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "네 얘기를 들을 거야. 꼭.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 786,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bf7c5e5f29c114521fe5c767baec73eac37d833c0415f2c1d7f1ee9c1ff4872c",
+      "uid": "7ab0582c5c272e44944958ee",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0035",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "아이가 모퉁이를 돌 때까지 눈을 떼지 못한다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 787,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "764c6b083157c8ce5f5db1aa5c9d710bf56f94e223af02796991c1258ca89002",
+      "uid": "24df5ed84a11ba6f55519147",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S04_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S04_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S04_L0036",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: OWL_ALIVE=false; DARAM_DETAINED=true; DARAM_location=custody_room; father_knows_attack_scene=false; D07_S04_main_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3a0a5dec597d232a15246cd4783a76de013d587a3d467a7e339990b8f2b15b2c",
+      "uid": "b2491b54cea45c3dcb5ec5a4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

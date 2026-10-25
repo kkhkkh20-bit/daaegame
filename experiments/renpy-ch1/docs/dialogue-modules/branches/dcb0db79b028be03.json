@@ -1,0 +1,126 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:10:30",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        420,
+        463
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_week2_opening",
+      "block": "r13_week2_opening",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:10:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "접수대가 비어 있었다. 할머니 대신 나비가 열쇠를 들고 손님 수를 세었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 10,
+          "label": "r13_week2_opening",
+          "guards": [
+            "if room13[\"granny_state\"]==\"detained\":"
+          ]
+        }
+      ],
+      "line": 10,
+      "scene_title": "r13_week2_opening",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "d332e4c550691028ad080fd4d0f83a957d40d947c9b6c9f807047f1116f287c0",
+      "uid": "70948e1d06b2c035a1925243",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_week2_opening|rpy_literal|r13_week2_opening|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:12:30",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        574,
+        620
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_week2_opening",
+      "block": "r13_week2_opening",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:12:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "아래층 난방관에서 소리가 멎었다. 할머니는 불 꺼진 방들의 열쇠를 따로 챙겼다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 12,
+          "label": "r13_week2_opening",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 12,
+      "scene_title": "r13_week2_opening",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "8cc32bf8da3d2de6ce0d3d59ad08b74bf804fdb22d86ced061eac31981c54679",
+      "uid": "b428b2909bd2d6200c1cdf15",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_week2_opening|rpy_literal|r13_week2_opening|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:14:90",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        772,
+        794
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_week2_opening",
+      "block": "r13_week2_opening",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:14:90",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "다람이도 옮겨지는 환자에 포함됩니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 14,
+          "label": "r13_week2_opening",
+          "guards": [
+            "if room13[\"daram_state\"]==\"held\":"
+          ]
+        }
+      ],
+      "line": 14,
+      "scene_title": "r13_week2_opening",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "d1b39d01e5de8ca115a94d03a82f07f6896ae91691affdd775e2449a26af92d3",
+      "uid": "55bae3082e9ca0f16c3d365d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_week2_opening|rpy_literal|r13_week2_opening|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

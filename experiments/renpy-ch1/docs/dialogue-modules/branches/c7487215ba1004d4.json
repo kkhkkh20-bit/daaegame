@@ -1,0 +1,174 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events2.rpy:273:20",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        14716,
+        14739
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_ev_a_siluk",
+      "block": "r13_ev_a_siluk",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:273:20",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "빚을 갚아 주고 마차를 맡긴다 (8냥)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 273,
+          "label": "r13_ev_a_siluk",
+          "guards": [
+            "while _ep_loop:",
+            "menu:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 273,
+      "scene_title": "r13_ev_a_siluk",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "efbc50654715d5c5ae1d02751b0c427230aa588942fd707cb23e6e2ed0d16ea6",
+      "uid": "cf4f7a649ff7c0936291c60e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_a_siluk|rpy_menu|r13_ev_a_siluk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:277:20",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        15019,
+        15044
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_ev_a_siluk",
+      "block": "r13_ev_a_siluk",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:277:20",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "백 부인 장부에서 빚을 지워 주겠다고 한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 277,
+          "label": "r13_ev_a_siluk",
+          "guards": [
+            "while _ep_loop:",
+            "menu:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 277,
+      "scene_title": "r13_ev_a_siluk",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "53b5022fa118b2d333db2bd7e804ab8b214c1e63748250d8889b52a612bacd18",
+      "uid": "b9662d7626f06081a46e0258",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_a_siluk|rpy_menu|r13_ev_a_siluk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:281:20",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        15398,
+        15417
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_ev_a_siluk",
+      "block": "r13_ev_a_siluk",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:281:20",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "입막음 값으로 여덟 냥을 받는다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 281,
+          "label": "r13_ev_a_siluk",
+          "guards": [
+            "while _ep_loop:",
+            "menu:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 281,
+      "scene_title": "r13_ev_a_siluk",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "38e5f5173e0df18ca86916b66b13c21bdf12fe41945a60c37195757f30bf5599",
+      "uid": "9a058afb66e309acdb7bf355",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_a_siluk|rpy_menu|r13_ev_a_siluk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:286:20",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        15724,
+        15734
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_ev_a_siluk",
+      "block": "r13_ev_a_siluk",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:286:20",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "그냥 보내 준다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 286,
+          "label": "r13_ev_a_siluk",
+          "guards": [
+            "while _ep_loop:",
+            "menu:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 286,
+      "scene_title": "r13_ev_a_siluk",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "b12b7d0672985aa348d614266f12d8f148b403c074639d09ed743bce7c988012",
+      "uid": "4b05ef50d41e024b0c9ef06d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_a_siluk|rpy_menu|r13_ev_a_siluk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

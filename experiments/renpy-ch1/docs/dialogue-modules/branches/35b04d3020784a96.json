@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_LA_LA_LATCH2_0",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_latch2",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "la_latch2",
+      "block": "la_latch2",
+      "placement": "blocks",
+      "ref": "la_latch2",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "3번 등 덮개의 걸쇠가 반쯤 떠 있다. 덮개를 누르면 맞지만 손을 떼면 다시 벌어진다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 11,
+          "label": "r13_lamp_prep2",
+          "guards": [
+            "elif _return==2:"
+          ]
+        }
+      ],
+      "scene_title": "la_latch2",
+      "source_hash": "1f8d4bedb33f10201a3ffe6e822492a7cb7ec3d826a133f6d7683d7013245e9b",
+      "baseline_hash": "182bf59322017ed223d69381c71ba63d785d6f6409d7edd7cfef23518c24aa8c",
+      "uid": "7b99ff77664e757d365e2667",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|la_latch2|patch|la_latch2|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_LA_LA_LATCH2_1",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_latch2",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "la_latch2",
+      "block": "la_latch2",
+      "placement": "blocks",
+      "ref": "la_latch2",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "닫아도 다시 달그락거리네.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 11,
+          "label": "r13_lamp_prep2",
+          "guards": [
+            "elif _return==2:"
+          ]
+        }
+      ],
+      "scene_title": "la_latch2",
+      "source_hash": "1f8d4bedb33f10201a3ffe6e822492a7cb7ec3d826a133f6d7683d7013245e9b",
+      "baseline_hash": "d80da574a98a495c756c3dfda4eb668445f1a7e126bd6134ffa0b3188f7099bb",
+      "uid": "23ddfe76a74cc255168fc105",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|la_latch2|patch|la_latch2|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

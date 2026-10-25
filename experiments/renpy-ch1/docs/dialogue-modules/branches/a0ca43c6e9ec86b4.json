@@ -1,0 +1,123 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_GW_D12_11",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "soup_list_won12",
+        9,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "soup_list_won12",
+      "block": "soup_list_won12",
+      "placement": "blocks",
+      "ref": "soup_list_won12",
+      "when": "grand_soup",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "돌아오는 건 이 그릇뿐이군요. 어제 까로 씨의 빈 수레가 시설에서 싣고 온 겁니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1563,
+          "label": "r13_v111_list_won12",
+          "guards": []
+        }
+      ],
+      "scene_title": "soup_list_won12",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "dab870ace6bbe9bcbe59aca3c38c7335e6cb62fdb913b73c8a2afe7574c53a62",
+      "uid": "253fe6119b1a0690e026b9bd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|soup_list_won12|patch|soup_list_won12|grand_soup",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_GW_D12_12",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "soup_list_won12",
+        10,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "soup_list_won12",
+      "block": "soup_list_won12",
+      "placement": "blocks",
+      "ref": "soup_list_won12",
+      "when": "grand_soup",
+      "speaker": null,
+      "kind": "narration",
+      "text": "주머니에서 꺼낸 흰 그릇을 배식대의 흰 그릇 옆에 놓는다. 바닥 표시가 같다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1563,
+          "label": "r13_v111_list_won12",
+          "guards": []
+        }
+      ],
+      "scene_title": "soup_list_won12",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "c75d7f8a269cb6c28def40760eb2ae5b53ac7102df77348701fc53a7e044090f",
+      "uid": "22cfaa757bff1876a240528d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|soup_list_won12|patch|soup_list_won12|grand_soup",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_GW_D12_13",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "soup_list_won12",
+        11,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "soup_list_won12",
+      "block": "soup_list_won12",
+      "placement": "blocks",
+      "ref": "soup_list_won12",
+      "when": "grand_soup",
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "……빈 수레가 오면 그 그릇만 내려요. 실려 간 사람 몫이던 그릇만.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1563,
+          "label": "r13_v111_list_won12",
+          "guards": []
+        }
+      ],
+      "scene_title": "soup_list_won12",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "946add8f56902a80c4feebed008e6b1ebf353ead4b8ebd4ab994362fda3f8252",
+      "uid": "7dc0dc39ea34212c93757274",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|soup_list_won12|patch|soup_list_won12|grand_soup",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:448:30",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        25562,
+        25608
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_after",
+      "block": "r13_ws_after",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:448:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이 판자 하나를 엄마 앞에 내밀었다. 엄마 얼굴. 코만 크레용으로 삐뚤빼뚤.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 448,
+          "label": "r13_ws_after",
+          "guards": [
+            "if r13_has(\"portrait_finished_by_daram\") and r13_has(\"mom_reunited\") and r13_ws_daram():"
+          ]
+        }
+      ],
+      "line": 448,
+      "scene_title": "r13_ws_after",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "c54f92436f0e06e7f42f9620b2fc3e41de00373141776e7f0825753316451e56",
+      "uid": "819c1c502d2206d586845414",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_after|rpy_literal|r13_ws_after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:454:30",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        25970,
+        26020
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_after",
+      "block": "r13_ws_after",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:454:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "보리가 대피소 구석에 앉아 있었다. 무릎에 깜이, 양옆에 몽이와 방울이 잠들어 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 454,
+          "label": "r13_ws_after",
+          "guards": [
+            "if r13_has(\"ws_some_alive\"):"
+          ]
+        }
+      ],
+      "line": 454,
+      "scene_title": "r13_ws_after",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "ffb83bd8e73e9022c0cf739d08f3ab2a2e1d55a875a0943f8df8660de6f57ef3",
+      "uid": "62de1ad00eb84e4b13fd3f08",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_after|rpy_literal|r13_ws_after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:458:30",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        26287,
+        26347
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_after",
+      "block": "r13_ws_after",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:458:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "보리가 대피소 구석에 앉아 있었다. 무릎에 도담이 잠들어 있었고, 맡은 아이 셋이 그 옆에 붙어 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 458,
+          "label": "r13_ws_after",
+          "guards": [
+            "elif r13_has(\"bori_adopts\") and r13_has(\"ws_kids_alive\"):"
+          ]
+        }
+      ],
+      "line": 458,
+      "scene_title": "r13_ws_after",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "7d7b19b62ccdef511ff46249ee86313ac7cbb8968934ace269e81213749f0d6f",
+      "uid": "f19533aba2b912c942a52969",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_after|rpy_literal|r13_ws_after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:462:30",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        26589,
+        26647
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_after",
+      "block": "r13_ws_after",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:462:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "보리는 아무 말도 하지 않았다. 도담의 작은 신발 한 짝을 손에 쥐고, 밤새 난로 옆에 앉아 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 462,
+          "label": "r13_ws_after",
+          "guards": [
+            "elif r13_has(\"soup_kids_dead\"):"
+          ]
+        }
+      ],
+      "line": 462,
+      "scene_title": "r13_ws_after",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "6e993b7900ea14ceabcdb0914914b72ea69cabf5e1a0586bb8840bc83f58013a",
+      "uid": "26203852b526cdefb2555d1b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_after|rpy_literal|r13_ws_after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

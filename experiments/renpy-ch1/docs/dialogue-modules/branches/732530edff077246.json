@@ -1,0 +1,128 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:416:30",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        23864,
+        23900
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_meeting",
+      "block": "r13_ws_meeting",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:416:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "너울이 선생님의 팔을 잡았다. 사람들은 수레를 벌로만 알았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 416,
+          "label": "r13_ws_meeting",
+          "guards": [
+            "if _ws_pick==\"hand\":"
+          ]
+        }
+      ],
+      "line": 416,
+      "scene_title": "r13_ws_meeting",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "07b9788c69b2153d666838067f9fd769770b33c65d24c205f8608175384ce8b9",
+      "uid": "d2c4cf250f1956fa121b10e6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_meeting|rpy_literal|r13_ws_meeting|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:435:40",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        24889,
+        24904
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_meeting",
+      "block": "r13_ws_meeting",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:435:40",
+      "when": null,
+      "speaker": "resident_teacher",
+      "kind": "dialogue",
+      "text": "도담아. 선생님 왔어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 435,
+          "label": "r13_ws_meeting",
+          "guards": [
+            "menu:",
+            "if r13_has(\"ws_some_alive\"):"
+          ]
+        }
+      ],
+      "line": 435,
+      "scene_title": "r13_ws_meeting",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "5bbbe5db35c098164a80610e7cef4c52897685c7fd4dc3af42fba3da023c1db4",
+      "uid": "db8c19d34976c114dc9be7d7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_meeting|rpy_literal|r13_ws_meeting|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:440:40",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        25221,
+        25247
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_meeting",
+      "block": "r13_ws_meeting",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:440:40",
+      "when": null,
+      "speaker": "resident_teacher",
+      "kind": "dialogue",
+      "text": "깜이, 몽이, 방울, 도담. 선생님 왔어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 440,
+          "label": "r13_ws_meeting",
+          "guards": [
+            "menu:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 440,
+      "scene_title": "r13_ws_meeting",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "234807ab6f8ee023b4489027c7ed98c6735dfad65e9e88bbd9ae15e53aaac94a",
+      "uid": "66641cf2b968c59b6cd8964a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_meeting|rpy_literal|r13_ws_meeting|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

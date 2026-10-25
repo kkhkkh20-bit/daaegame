@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:261:30",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        14499,
+        14503
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_night",
+      "block": "r13_cv_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:261:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "쿵.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 261,
+          "label": "r13_cv_night",
+          "guards": [
+            "if r13_has(\"cv_bell\"):"
+          ]
+        }
+      ],
+      "line": 261,
+      "scene_title": "r13_cv_night",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "a072135dd602ad3adf97adad728fc652f5b3fe5053effbe37f633c1f60f9c434",
+      "uid": "bf9e347b74fd7feb80ef67c7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_night|rpy_literal|r13_cv_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:280:30",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        15717,
+        15782
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_night",
+      "block": "r13_cv_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:280:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "대피소에 있던 얼굴들이 수레를 빙 둘러섰다. 보리가 맨 앞이었다. 화상 자국이 남은 손으로 수레 바퀴를 붙잡았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 280,
+          "label": "r13_cv_night",
+          "guards": [
+            "if r13_has(\"ws_cart_truth\"):"
+          ]
+        }
+      ],
+      "line": 280,
+      "scene_title": "r13_cv_night",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "5489dc6d8684c47015dc68709e1c14fb49461f3c1bde09c8db90d4b78b929327",
+      "uid": "fc11bb3224de4ad9060d2cde",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_night|rpy_literal|r13_cv_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

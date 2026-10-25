@@ -1,0 +1,82 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/arrival.rpy:263:25",
+      "file": "game/arrival.rpy",
+      "path": [
+        10783,
+        10791
+      ],
+      "origin": "rpy_inventory",
+      "day": 5,
+      "scene": "arrival_topic",
+      "block": "arrival_topic",
+      "placement": "literal",
+      "ref": "game/arrival.rpy:263:25",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "대화 마치기",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/arrival.rpy",
+          "line": 263,
+          "label": "arrival_topic",
+          "guards": []
+        }
+      ],
+      "line": 263,
+      "scene_title": "arrival_topic",
+      "source_hash": "af44ba03258afcb2df492fceb033025264d71a22371f03bafa6875a5012294f8",
+      "baseline_hash": "5703418321b02660175c9fb94d2109122a40babe2a22d92097b85afcc826a6fc",
+      "uid": "51ebb5ef8171d897fd276fc3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|arrival_topic|rpy_inventory|arrival_topic|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/arrival.rpy:362:15",
+      "file": "game/arrival.rpy",
+      "path": [
+        15396,
+        15405
+      ],
+      "origin": "rpy_inventory",
+      "day": 5,
+      "scene": "arrival_topic",
+      "block": "arrival_topic",
+      "placement": "literal",
+      "ref": "game/arrival.rpy:362:15",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "거리 살펴보기",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/arrival.rpy",
+          "line": 362,
+          "label": "arrival_topic",
+          "guards": []
+        }
+      ],
+      "line": 362,
+      "scene_title": "arrival_topic",
+      "source_hash": "af44ba03258afcb2df492fceb033025264d71a22371f03bafa6875a5012294f8",
+      "baseline_hash": "90184cdf913556d10a2b68cc6513bcc2fdc87939fa2f6ead02b9f35932a5da5a",
+      "uid": "a66e78900e910344a0fc2b7e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|arrival_topic|rpy_inventory|arrival_topic|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

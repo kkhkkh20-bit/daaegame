@@ -1,0 +1,240 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D13_B_L0002",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_B_L0002",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_B",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_B_L0002",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "더 태울 자리가 없어요. 먼저 실은 사람 내려놓고 와야 해요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2593,
+          "label": "r13_v111_partial13",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "scene_title": "대체 장면 13-B. 멈췄지만 끝내지 못한 밤",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "87b46578c64d85ecf2b67136cc93a077476ec29e7f12ae88d49001c9abca2b92",
+      "uid": "fb70d1064ee76ffa8b65b67d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_B|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_B_L0003",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_B_L0003",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_B",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_B_L0003",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "나는…… 이 사람 두고 못 가오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2595,
+          "label": "r13_v111_partial13",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "scene_title": "대체 장면 13-B. 멈췄지만 끝내지 못한 밤",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "111ca26cc5b7ed78e502e2d99cf9a4bc2f0db0fcb77be9353898da5e8425f70e",
+      "uid": "336d1c078ea99a522ac0635f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_B|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_B_L0004",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_B_L0004",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_B",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_B_L0004",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그럼 수레는 여기 둡시다. 우선 담요부터 가져와요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2596,
+          "label": "r13_v111_partial13",
+          "guards": []
+        }
+      ],
+      "scene_title": "대체 장면 13-B. 멈췄지만 끝내지 못한 밤",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "a52b5cc0db45cd67fa8bc85cf924573e1da7c3bcbd0f896162f9b789fc984a10",
+      "uid": "e44cfb3450572c3946702933",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_B|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_B_L0006",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_B_L0006",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_B",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_B_L0006",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "아직은 출발지도 아니오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2599,
+          "label": "r13_v111_partial13",
+          "guards": [
+            "if r13_v111_actor_ready('resident_badook'):"
+          ]
+        }
+      ],
+      "scene_title": "대체 장면 13-B. 멈췄지만 끝내지 못한 밤",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "0dfa8426ec7df738a8ca014c170d49547e686fb9392db6575665d5f0e4a5d9d5",
+      "uid": "5490e550d4ba0cd394448420",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_B|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_B_L0008",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_B_L0008",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_B",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_B_L0008",
+      "when": null,
+      "speaker": "판돌",
+      "kind": "dialogue",
+      "text": "나는 여기 앉아도 되오. 저 사람 눕힐 자리부터 만드시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2600,
+          "label": "r13_v111_partial13",
+          "guards": []
+        }
+      ],
+      "scene_title": "대체 장면 13-B. 멈췄지만 끝내지 못한 밤",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "653c709a68109972596062bd0e7815d493bac9e195f984139125fc9fc89560a2",
+      "uid": "b6030827c31f2afeeccd382a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_B|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_B_L0009",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_B_L0009",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_B",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_B_L0009",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "수레가 떠나지 않도록…… 제가 옆에 있겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2601,
+          "label": "r13_v111_partial13",
+          "guards": []
+        }
+      ],
+      "scene_title": "대체 장면 13-B. 멈췄지만 끝내지 못한 밤",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "52d2c06b738bc12fe533bb1229d210d2b7e34ef53e6976067ad4f8f1352e8444",
+      "uid": "a9c6496ce240aa443969253e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_B|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

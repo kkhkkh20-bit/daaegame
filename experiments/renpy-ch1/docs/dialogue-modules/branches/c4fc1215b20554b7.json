@@ -1,0 +1,211 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_OP_D14_01",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "altar1_won_alt14",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "altar1_won_alt14",
+      "block": "altar1_won_alt14",
+      "placement": "blocks",
+      "ref": "altar1_won_alt14",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "학교 장작 묶음은 선생님이 받아 갔습니다. 그 인수 기록입니다. 학교는 이걸로 버텼습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2941,
+          "label": "r13_v111_altar1_won14",
+          "guards": [
+            "if \"V111:NW_NEOUL_LEDGER\" not in (r13_v111_value(\"proof_given:희생의 숫자와 장부를 대조한다\") or []):"
+          ]
+        }
+      ],
+      "scene_title": "altar1_won_alt14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "a1428464aeee39ef136ee47881083c40c5bfa8cf930e3754fa57174e2a477059",
+      "uid": "77851afb88c786b52f77fba2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|altar1_won_alt14|patch|altar1_won_alt14|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OP_D14_02",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "altar1_won_alt14",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "altar1_won_alt14",
+      "block": "altar1_won_alt14",
+      "placement": "blocks",
+      "ref": "altar1_won_alt14",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "6일, 장작 창고 아이들은 표도 돌도 없이 기름 등잔으로 지냈습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2941,
+          "label": "r13_v111_altar1_won14",
+          "guards": [
+            "if \"V111:NW_NEOUL_LEDGER\" not in (r13_v111_value(\"proof_given:희생의 숫자와 장부를 대조한다\") or []):"
+          ]
+        }
+      ],
+      "scene_title": "altar1_won_alt14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "eee8483f4ba3d1181894aadc1ea20aa95910c045c25c2f25213c7087343b3529",
+      "uid": "09ff378d27081285c7189cb7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|altar1_won_alt14|patch|altar1_won_alt14|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OP_D14_03",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "altar1_won_alt14",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "altar1_won_alt14",
+      "block": "altar1_won_alt14",
+      "placement": "blocks",
+      "ref": "altar1_won_alt14",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그 아이들 이름엔 꽃 표시가 하나도 없습니다. 표시는 돌을 많이 받은 큰 집 아이들한테만 붙었어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2941,
+          "label": "r13_v111_altar1_won14",
+          "guards": [
+            "if \"V111:NW_NEOUL_LEDGER\" not in (r13_v111_value(\"proof_given:희생의 숫자와 장부를 대조한다\") or []):"
+          ]
+        }
+      ],
+      "scene_title": "altar1_won_alt14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "c2eaab68010a7079e1043fe24d2db17b2aeb852bb78dd25bcb1f9ea6f80568a8",
+      "uid": "f27fc7f56057e666b01f4461",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|altar1_won_alt14|patch|altar1_won_alt14|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OP_D14_04",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "altar1_won_alt14",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "altar1_won_alt14",
+      "block": "altar1_won_alt14",
+      "placement": "blocks",
+      "ref": "altar1_won_alt14",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "숫자로 보자고 하셨지요. 사람 하나로 열흘을 사는 게 아닙니다. 돌 불을 끄면, 보낼 사람이 생기지 않습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2941,
+          "label": "r13_v111_altar1_won14",
+          "guards": [
+            "if \"V111:NW_NEOUL_LEDGER\" not in (r13_v111_value(\"proof_given:희생의 숫자와 장부를 대조한다\") or []):"
+          ]
+        }
+      ],
+      "scene_title": "altar1_won_alt14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "84d565c2a67d6cddb56c49f03da965dc3f71daf7b518bdc2cd0f31f376968d5a",
+      "uid": "18fd75b4348760fdbf506c4c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|altar1_won_alt14|patch|altar1_won_alt14|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OP_D14_05",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "altar1_won_alt14",
+        4,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "altar1_won_alt14",
+      "block": "altar1_won_alt14",
+      "placement": "blocks",
+      "ref": "altar1_won_alt14",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "…….",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2941,
+          "label": "r13_v111_altar1_won14",
+          "guards": [
+            "if \"V111:NW_NEOUL_LEDGER\" not in (r13_v111_value(\"proof_given:희생의 숫자와 장부를 대조한다\") or []):"
+          ]
+        }
+      ],
+      "scene_title": "altar1_won_alt14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "7e428bfac963e979a36c34565ac48fb5ecee5c830adfb7369fe7ce653be4c521",
+      "uid": "4d1aaf433fd9f5dc6d90cc41",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|altar1_won_alt14|patch|altar1_won_alt14|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

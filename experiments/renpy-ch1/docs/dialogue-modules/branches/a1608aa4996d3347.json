@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_gate_inspection.rpy:75:143",
+      "file": "game/room13_gate_inspection.rpy",
+      "path": [
+        4340,
+        4351
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_inspect_gate_documents",
+      "block": "r13_inspect_gate_documents",
+      "placement": "literal",
+      "ref": "game/room13_gate_inspection.rpy:75:143",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "여기 아빠 이름.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_gate_inspection.rpy",
+          "line": 75,
+          "label": "r13_inspect_gate_documents",
+          "guards": []
+        }
+      ],
+      "line": 75,
+      "scene_title": "r13_inspect_gate_documents",
+      "source_hash": "db2663f872309906137dd9de8891964d49c440bd0b93a481034e040a507f9918",
+      "baseline_hash": "76c7f447b538b0b200995ac34b1cc6aa27ae1ead9dde568bb40f24760ede94fe",
+      "uid": "9bb1c8ff4a33864952983005",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_inspect_gate_documents|rpy_literal|r13_inspect_gate_documents|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

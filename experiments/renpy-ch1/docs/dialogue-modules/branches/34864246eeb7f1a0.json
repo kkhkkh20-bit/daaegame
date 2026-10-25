@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:101:78",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        6239,
+        6254
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_reunion",
+      "block": "r13_reunion",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:101:78",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "만나 봤어? 직접 봤어?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 101,
+          "label": "r13_reunion",
+          "guards": [
+            "if room13[\"daram_state\"]==\"held\":"
+          ]
+        }
+      ],
+      "line": 101,
+      "scene_title": "r13_reunion",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "e826cb0c0d27e3608a8fec8f3fb0f1c2346148005547fafca567ace7e3547113",
+      "uid": "e8fffb03ccc44c92d83bce28",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_reunion|rpy_literal|r13_reunion|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:108:48",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        6703,
+        6753
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_reunion",
+      "block": "r13_reunion",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:108:48",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "엄마가 손을 뻗다 말고 아이 눈높이에 맞춰 앉았다. 그러자 다람이가 품으로 달려들었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 108,
+          "label": "r13_reunion",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 108,
+      "scene_title": "r13_reunion",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "cf3c3e22cfe74c35babab1ccf0cfdedac5ecbc0d83639faaf9f8958d80d5b67d",
+      "uid": "5faca4bc8b3d7951a1193684",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_reunion|rpy_literal|r13_reunion|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

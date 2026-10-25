@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_RU_D10_E27_01",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_P01_L0034",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_P01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_P01_L0034",
+      "when": "writing_won_with_e27",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "적혀 있습니다. 아내가 제게 쓴 편지예요. ‘그 편지는 내가 쓴 게 아니야.’",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1733,
+          "label": "r13_v111_writing_answer10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-P. 예방 대체 / 그 종이를 넘기기 전에",
+      "source_hash": "662dca5b8bc468185010c09a7dfb1668b1ea5e32eb2c8731e681e5c8ee9106df",
+      "baseline_hash": "ef5c50f9e24aceeabc0b8236b412453629e668fc85943d183dede6beae545017",
+      "uid": "646d71d65cec4e327a1ce6c8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_P01|patch|after|writing_won_with_e27",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_RU_D10_E27_02",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_P01_L0034",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_P01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_P01_L0034",
+      "when": "writing_won_with_e27",
+      "speaker": null,
+      "kind": "narration",
+      "text": "할머니의 눈이 편지의 한 줄에서 멎는다. ‘이 편지 이야기를 여관에 말하지 마.’",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1733,
+          "label": "r13_v111_writing_answer10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-P. 예방 대체 / 그 종이를 넘기기 전에",
+      "source_hash": "662dca5b8bc468185010c09a7dfb1668b1ea5e32eb2c8731e681e5c8ee9106df",
+      "baseline_hash": "57a9d1f1d2fbfd4fab2e86aee432057583f702280805439fb066831b5900bbb2",
+      "uid": "c767bbc41188f33c742e2aba",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_P01|patch|after|writing_won_with_e27",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

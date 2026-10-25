@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_GW_D13_02",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "blanket_lost13",
+        4,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "blanket_lost13",
+      "block": "blanket_lost13",
+      "placement": "blocks",
+      "ref": "blanket_lost13",
+      "when": "list_voided",
+      "speaker": null,
+      "kind": "narration",
+      "text": "무효 칸으로 실렸던 사람들은 떠나기 전에 짐칸에서 내렸다. 남은 이름들이 산길 쪽으로 멀어진다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2007,
+          "label": "r13_v111_mending_wrong13",
+          "guards": []
+        }
+      ],
+      "scene_title": "blanket_lost13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "70f1eb969a734f330f9cc26f96c02caca699101ae1f04ab916803f3f09b03b15",
+      "uid": "ee0d3898e5e61e9614826209",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|blanket_lost13|patch|blanket_lost13|list_voided",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:199:44",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        11197,
+        11218
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_nt_overhear",
+      "block": "r13_nt_overhear",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:199:44",
+      "when": null,
+      "speaker": "resident_lamplighter",
+      "kind": "dialogue",
+      "text": "……할머니가요? 그 할머니가 왜요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 199,
+          "label": "r13_nt_overhear",
+          "guards": [
+            "if not r13_has(\"chorong_dead\"):",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 199,
+      "scene_title": "r13_nt_overhear",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "c7ffe09b55f5229fe6eb87cab25c2eb1d44f62724610ee5474dd9cfdf763584b",
+      "uid": "872371d9242c211e2c89f565",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_nt_overhear|rpy_literal|r13_nt_overhear|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:200:44",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        11265,
+        11315
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_nt_overhear",
+      "block": "r13_nt_overhear",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:200:44",
+      "when": null,
+      "speaker": "resident_lamplighter",
+      "kind": "dialogue",
+      "text": "그래도 편지는 제가 들고 가야 해요. 다른 길은 너무 멀어서, 가다가 등이 다 꺼져요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 200,
+          "label": "r13_nt_overhear",
+          "guards": [
+            "if not r13_has(\"chorong_dead\"):",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 200,
+      "scene_title": "r13_nt_overhear",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "d3a68b37d7ce01d053be491bf3869ecd7c72a2c1c09e58ea79438c5366e8f32c",
+      "uid": "e48527582f423d58cc81aab3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_nt_overhear|rpy_literal|r13_nt_overhear|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

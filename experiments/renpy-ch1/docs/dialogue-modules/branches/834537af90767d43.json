@@ -1,0 +1,82 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep_story.rpy:85:21",
+      "file": "game/systems/room13_ep_story.rpy",
+      "path": [
+        5883,
+        5908
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_st_kkomi_class",
+      "block": "r13_st_kkomi_class",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep_story.rpy:85:21",
+      "when": null,
+      "speaker": "kid_kkomi",
+      "kind": "dialogue",
+      "text": "이게 꼬, 이게 미. 대장 이름부터 외워.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep_story.rpy",
+          "line": 85,
+          "label": "r13_st_kkomi_class",
+          "guards": []
+        }
+      ],
+      "line": 85,
+      "scene_title": "r13_st_kkomi_class",
+      "source_hash": "3e440ff5a7c7edc8e655c4b78b4f673960d544f0bdbed07710a48fa032aef2c8",
+      "baseline_hash": "0977b59428c84e522d2a01916035f1c99180d9745a8c21efd59e274a359dcd77",
+      "uid": "a46f8cf681c077024f54d59e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_st_kkomi_class|rpy_literal|r13_st_kkomi_class|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep_story.rpy:87:21",
+      "file": "game/systems/room13_ep_story.rpy",
+      "path": [
+        5967,
+        5998
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_st_kkomi_class",
+      "block": "r13_st_kkomi_class",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep_story.rpy:87:21",
+      "when": null,
+      "speaker": "kid_kkomi",
+      "kind": "dialogue",
+      "text": "그건 선생님한테 배워. 나도 아직 거기까지밖에 몰라.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep_story.rpy",
+          "line": 87,
+          "label": "r13_st_kkomi_class",
+          "guards": []
+        }
+      ],
+      "line": 87,
+      "scene_title": "r13_st_kkomi_class",
+      "source_hash": "3e440ff5a7c7edc8e655c4b78b4f673960d544f0bdbed07710a48fa032aef2c8",
+      "baseline_hash": "64c60c69e4c4b2381f8633381352b627482ac1278f00e114b40bb51c3805af6c",
+      "uid": "43dc18528cb0130167d71f40",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_st_kkomi_class|rpy_literal|r13_st_kkomi_class|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

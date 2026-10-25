@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/winter_resident_inference.rpy:235:31",
+      "file": "game/winter_resident_inference.rpy",
+      "path": [
+        14245,
+        14313
+      ],
+      "origin": "rpy_inventory",
+      "day": 1,
+      "scene": "winter_buri_approach",
+      "block": "winter_buri_approach",
+      "placement": "literal",
+      "ref": "game/winter_resident_inference.rpy:235:31",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "그분에게 답을 해 준 건 맞아. 하지만 내 이름 걸고 마을 앞에서 떠들면 나도 가만있지 않을 거야. 가족이 여기 있어.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_resident_inference.rpy",
+          "line": 235,
+          "label": "winter_buri_approach",
+          "guards": []
+        }
+      ],
+      "line": 235,
+      "scene_title": "winter_buri_approach",
+      "source_hash": "1ed66ae455193bcb5202f6cf9feb435bb81670119b4bc89cc73e28111c6b0ec3",
+      "baseline_hash": "eafa3cd20d4e8df8fa3bddc5f86d6d34f10b6f90d18d5ac7534f6de4d9f4e630",
+      "uid": "d57003bcb71d4697662c279f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|winter_buri_approach|rpy_inventory|winter_buri_approach|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

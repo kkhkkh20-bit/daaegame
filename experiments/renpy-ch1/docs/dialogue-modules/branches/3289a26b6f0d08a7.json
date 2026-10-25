@@ -1,0 +1,120 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "inspect_gate4:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "inspect_gate4",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 4,
+      "scene": "inspect_gate4",
+      "block": "inspect_gate4",
+      "placement": "binding",
+      "ref": "inspect_gate4:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "울타리 천",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "gate",
+        "person": null,
+        "object": "v111_fence"
+      },
+      "scene_title": "inspect_gate4",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "9325df573541bb770eaf651a5a90acfb1060dd10ed6fcfb4cf19b37063fea605",
+      "uid": "07f8ca407254460bd63d4963",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|inspect_gate4|choice|inspect_gate4|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "inspect_gate4:1",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "inspect_gate4",
+        "options",
+        1,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 4,
+      "scene": "inspect_gate4",
+      "block": "inspect_gate4",
+      "placement": "binding",
+      "ref": "inspect_gate4:1",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "겹친 발자국",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "gate",
+        "person": null,
+        "object": "road"
+      },
+      "scene_title": "inspect_gate4",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "f712ed6d258fe5c76b187ca535fa19c128e1f32830440eca46003f02e276ce05",
+      "uid": "4d7b376e51774d4fcbd8ef6b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|inspect_gate4|choice|inspect_gate4|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "inspect_gate4:2",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "inspect_gate4",
+        "options",
+        2,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 4,
+      "scene": "inspect_gate4",
+      "block": "inspect_gate4",
+      "placement": "binding",
+      "ref": "inspect_gate4:2",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "엎어진 양동이",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "gate",
+        "person": null,
+        "object": "v111_bucket"
+      },
+      "scene_title": "inspect_gate4",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "c3efce06ffcd6cb3f82b2f88fe882293002ae7d09d339cfff29161e35dfbfab2",
+      "uid": "d6962bb8eb8c2d70a023d05d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|inspect_gate4|choice|inspect_gate4|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

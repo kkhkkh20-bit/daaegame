@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_week1_cases.rpy:335:34",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        18698,
+        18730
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_w1c_testimony",
+      "block": "r13_w1c_testimony",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:335:34",
+      "when": null,
+      "speaker": "resident_siluk",
+      "kind": "dialogue",
+      "text": "……마구간에 있었어요. 마구간 장부에 이름도 적었고요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 335,
+          "label": "r13_w1c_testimony",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 335,
+      "scene_title": "r13_w1c_testimony",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "60c12a56f1903f69d0a73b372ac73124cdf51529a6ecb4a853666dc2875f9cf2",
+      "uid": "189b346dbf0701dc4104b6e4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_w1c_testimony|rpy_literal|r13_w1c_testimony|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:337:34",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        18851,
+        18886
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_w1c_testimony",
+      "block": "r13_w1c_testimony",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:337:34",
+      "when": null,
+      "speaker": "resident_siluk",
+      "kind": "dialogue",
+      "text": "……알았어요. 대신 뭐든 하나 도와드릴게요. 썰매든 짐이든.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 337,
+          "label": "r13_w1c_testimony",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 337,
+      "scene_title": "r13_w1c_testimony",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "704196247967359eb8eb66ac1a37b463ca56bf09e51459b77ebb2eab41e221eb",
+      "uid": "f328282d93c9a78695289f18",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_w1c_testimony|rpy_literal|r13_w1c_testimony|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

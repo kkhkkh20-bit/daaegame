@@ -1,0 +1,200 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D07_S02_L0001",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S02_L0001",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S02_L0001",
+      "when": "fire_lose",
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "사정은 들었소. 보리는 장작을 훔치고 불을 냈소. 나비는 금지된 불을 줬고. 다들 책임이 있소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 571,
+          "label": "r13_v111_responsibility7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "77d44d365198f3450fbbc3d87778f03644e49fdf6bbaaaf260387db496d3417b",
+      "uid": "3fad2bea82538cf17ebd770d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|patch|replace|fire_lose",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0008",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S02_L0008",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S02_L0008",
+      "when": "fire_lose",
+      "speaker": null,
+      "kind": "narration",
+      "text": "누비가 창문에 매달려 아이들 얼굴을 찾는다. 붙잡는 사람은 없다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 611,
+          "label": "r13_v111_responsibility_answers7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "e8b78c3948e4a4a184c79910a3245690a1090a7e338b414a40f771d667bc99b8",
+      "uid": "160c75e5c8b1ca9cc155ac95",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|patch|replace|fire_lose",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0022",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S02_L0022",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S02_L0022",
+      "when": "fire_lose",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "엄마는 곧 데리러 올 거야. 오늘은 선생님하고 나비 누나가 같이 있을 거야.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 635,
+          "label": "r13_v111_school_names_done7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "be8295e689552fd5a110fba48448d5f8b1c7346f5b28a8a05d742d5face0871a",
+      "uid": "81a42fb5536f5015e39dc8c6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|patch|replace|fire_lose",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0012",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S02_L0012",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S02_L0012",
+      "when": "fire_lose",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그 말은 아이들한테 직접 해 주세요. 데리러 가실 때요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 615,
+          "label": "r13_v111_responsibility_answers7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "dc420e0b0d4613f2c90bf43a2af722e547f569e845e8d7cc4a6bc8b91c824958",
+      "uid": "54444c3fe4c495f155691304",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|patch|replace|fire_lose",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0002",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S02_L0002",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S02_L0002",
+      "when": "fire_lose",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "보리 씨가 불을 놓는 걸 본 사람은 없습니다. 그런데도…… 그렇게 적으시는 겁니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 572,
+          "label": "r13_v111_responsibility7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "7ec815796705e3f32ca179cbbce4ee163feb2bcbb1ee3e86af7537535ea5a545",
+      "uid": "babd96d95479775185663945",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|patch|replace|fire_lose",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

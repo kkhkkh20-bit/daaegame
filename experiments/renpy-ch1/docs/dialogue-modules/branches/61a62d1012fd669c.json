@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_gimmicks.rpy:82:144",
+      "file": "game/systems/room13_gimmicks.rpy",
+      "path": [
+        5041,
+        5047
+      ],
+      "origin": "rpy_inventory",
+      "day": 4,
+      "scene": "r13_gm_package",
+      "block": "r13_gm_package",
+      "placement": "literal",
+      "ref": "game/systems/room13_gimmicks.rpy:82:144",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "돌아간다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_gimmicks.rpy",
+          "line": 82,
+          "label": "r13_gm_package",
+          "guards": [
+            "while True:"
+          ]
+        }
+      ],
+      "line": 82,
+      "scene_title": "r13_gm_package",
+      "source_hash": "a7934a16c859d49f7210cf9089b5edaccfdf3fba61af94c771454df8f9891eab",
+      "baseline_hash": "d7b36828d73b322876ba5b595ab6ac22812d6628f6f25340a1a8fcf32d873719",
+      "uid": "e1277dd01c9c4f8115abb81b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_gm_package|rpy_inventory|r13_gm_package|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:343:34",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        19459,
+        19514
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_ep1_lamp",
+      "block": "r13_ep1_lamp",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:343:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "조각이 있던 자리에 작은 쪽지가 끼어 있었다. 숫자가 몇 개 적혀 있다. 온도를 잰 숫자 같다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 343,
+          "label": "r13_ep1_lamp",
+          "guards": [
+            "while _e1_loop:",
+            "if _e1_pick==\"inside\":"
+          ]
+        }
+      ],
+      "line": 343,
+      "scene_title": "r13_ep1_lamp",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "b643f8fae5f1af437436d0041a0f8fe7df4c06654c07dd61ab5f7e5a69ddf240",
+      "uid": "f75604cf533d6978ffb3855d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_ep1_lamp|rpy_literal|r13_ep1_lamp|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:348:34",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        19737,
+        19783
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_ep1_lamp",
+      "block": "r13_ep1_lamp",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:348:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "뚜껑 틈에 갈색 노끈 한 가닥이 걸려 있었다. 짐을 묶을 때 쓰는 거친 끈이다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 348,
+          "label": "r13_ep1_lamp",
+          "guards": [
+            "while _e1_loop:",
+            "elif _e1_pick==\"gap\":"
+          ]
+        }
+      ],
+      "line": 348,
+      "scene_title": "r13_ep1_lamp",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "10c1b090d037f9b6ae8754ab37753912be045989c8946ba1ce9345493c487253",
+      "uid": "c4f01f6917790abbc03026eb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_ep1_lamp|rpy_literal|r13_ep1_lamp|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:353:34",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        20033,
+        20071
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_ep1_lamp",
+      "block": "r13_ep1_lamp",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:353:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "숯으로 문지르자 나사 둘레의 흔적이 종이 위에 고스란히 떠올랐다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 353,
+          "label": "r13_ep1_lamp",
+          "guards": [
+            "while _e1_loop:",
+            "elif _e1_pick==\"rub\":"
+          ]
+        }
+      ],
+      "line": 353,
+      "scene_title": "r13_ep1_lamp",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "859e58a7c9423d7d8a97876cb1d02d7c92c514885351ec9d0d449d84a097b430",
+      "uid": "cd6d47851c2a823273118d3b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_ep1_lamp|rpy_literal|r13_ep1_lamp|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

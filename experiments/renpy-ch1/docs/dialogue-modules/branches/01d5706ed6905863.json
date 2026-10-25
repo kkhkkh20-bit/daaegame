@@ -1,0 +1,123 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D07_S02_V01",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "before",
+        "MS14_D07_S02_L0015",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D07_S02_L0015",
+      "when": "kkomi_alive",
+      "speaker": null,
+      "kind": "narration",
+      "text": "사자 선생님이 손뼉을 짝 친다. 아이들이 한꺼번에 고개를 든다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 628,
+          "label": "r13_v111_school_names_done7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "2d031a774a402260e1d180d7e4ebcaf027d68c514ffd391e97d389cb9b351131",
+      "uid": "75ecb7939324402c9e38ad6a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|patch|before|kkomi_alive",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D07_S02_V02",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "before",
+        "MS14_D07_S02_L0015",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D07_S02_L0015",
+      "when": "kkomi_alive",
+      "speaker": "사자 선생님",
+      "kind": "dialogue",
+      "text": "조용! 출석입니다. 아버님이 불러 보시죠.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 628,
+          "label": "r13_v111_school_names_done7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "4529f1353f9841e5fca819b5c1e4d74d10d762764111afe9ab1e4cf75fdfadbd",
+      "uid": "872401f9f5655d49d163eb5e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|patch|before|kkomi_alive",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D07_S02_V03",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "before",
+        "MS14_D07_S02_L0039",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D07_S02_L0039",
+      "when": "kkomi_alive",
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이 손을 번쩍 든다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 650,
+          "label": "r13_v111_school_names_done7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "058c7c2cfe654008dc6dbfa10f67c14e36e932dd27fd8a7d0c3c9f4784ad7b49",
+      "uid": "6cb92a99f55202c25bd3265b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|patch|before|kkomi_alive",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

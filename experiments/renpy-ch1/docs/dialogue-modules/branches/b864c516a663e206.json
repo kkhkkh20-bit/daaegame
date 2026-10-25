@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "teacher_relief_check13:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "teacher_relief_check13",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 13,
+      "scene": "teacher_relief_check13",
+      "block": "teacher_relief_check13",
+      "placement": "binding",
+      "ref": "teacher_relief_check13:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "초소로 가기 전 교사 감독 교대를 확인한다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "school",
+        "person": "guard",
+        "object": null
+      },
+      "scene_title": "teacher_relief_check13",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "aa2abca1d5f8fd6b88dbfbf49d6af010dacab25488e124a82f1fb6bd21b5f4d8",
+      "uid": "f648156853dcda6722113c79",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|teacher_relief_check13|choice|teacher_relief_check13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

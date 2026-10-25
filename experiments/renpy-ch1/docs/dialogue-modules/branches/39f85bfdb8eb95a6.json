@@ -1,0 +1,334 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_gimmicks.rpy:166:19",
+      "file": "game/systems/room13_gimmicks.rpy",
+      "path": [
+        9244,
+        9309
+      ],
+      "origin": "rpy_inventory",
+      "day": 9,
+      "scene": "r13_gm_scale",
+      "block": "r13_gm_scale",
+      "placement": "literal",
+      "ref": "game/systems/room13_gimmicks.rpy:166:19",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "나사 머리 둘레가 반짝이게 긁혀 있다. 오래된 때 위에 난 자국이다. 누가 언제 돌렸는지는 여기 적혀 있지 않다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_gimmicks.rpy",
+          "line": 166,
+          "label": "r13_gm_scale",
+          "guards": [
+            "while True:",
+            "elif _view==\"pivot\":"
+          ]
+        }
+      ],
+      "line": 166,
+      "scene_title": "r13_gm_scale",
+      "source_hash": "a7934a16c859d49f7210cf9089b5edaccfdf3fba61af94c771454df8f9891eab",
+      "baseline_hash": "8f6ad2ccaf77d92e108ba1698d6b2c00ac9ac7921765419a865cebddbf88e812",
+      "uid": "6c1ab6aad098b4dcf2fc4399",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_gm_scale|rpy_inventory|r13_gm_scale|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_gimmicks.rpy:169:19",
+      "file": "game/systems/room13_gimmicks.rpy",
+      "path": [
+        9429,
+        9448
+      ],
+      "origin": "rpy_inventory",
+      "day": 9,
+      "scene": "r13_gm_scale",
+      "block": "r13_gm_scale",
+      "placement": "literal",
+      "ref": "game/systems/room13_gimmicks.rpy:169:19",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "가운데 조정부를 가까이 보았다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_gimmicks.rpy",
+          "line": 169,
+          "label": "r13_gm_scale",
+          "guards": [
+            "while True:",
+            "elif _t==\"pivot\":"
+          ]
+        }
+      ],
+      "line": 169,
+      "scene_title": "r13_gm_scale",
+      "source_hash": "a7934a16c859d49f7210cf9089b5edaccfdf3fba61af94c771454df8f9891eab",
+      "baseline_hash": "79460abec86b2d5ee9f7583b7ddc6200ffa9762b6060ab85f7438741eff455d3",
+      "uid": "504a22f152de8c27d0b74e76",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_gm_scale|rpy_inventory|r13_gm_scale|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_gimmicks.rpy:172:19",
+      "file": "game/systems/room13_gimmicks.rpy",
+      "path": [
+        9600,
+        9647
+      ],
+      "origin": "rpy_inventory",
+      "day": 9,
+      "scene": "r13_gm_scale",
+      "block": "r13_gm_scale",
+      "placement": "literal",
+      "ref": "game/systems/room13_gimmicks.rpy:172:19",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "표준 추를 왼쪽 접시에 올렸다. 같은 모양의 추인데 두 접시 높이가 맞지 않는다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_gimmicks.rpy",
+          "line": 172,
+          "label": "r13_gm_scale",
+          "guards": [
+            "while True:",
+            "elif _tool==\"weight\" and _t==\"pan\":"
+          ]
+        }
+      ],
+      "line": 172,
+      "scene_title": "r13_gm_scale",
+      "source_hash": "a7934a16c859d49f7210cf9089b5edaccfdf3fba61af94c771454df8f9891eab",
+      "baseline_hash": "5dc0e5c9a3e18b5ec56ed0f8ed498f79c425ae3bc259f6a56b868c9c1317325d",
+      "uid": "914a3bed4ede4e8ddd2e6f84",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_gm_scale|rpy_inventory|r13_gm_scale|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_gimmicks.rpy:175:19",
+      "file": "game/systems/room13_gimmicks.rpy",
+      "path": [
+        9777,
+        9799
+      ],
+      "origin": "rpy_inventory",
+      "day": 9,
+      "scene": "r13_gm_scale",
+      "block": "r13_gm_scale",
+      "placement": "literal",
+      "ref": "game/systems/room13_gimmicks.rpy:175:19",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "표준 추를 다시 내려 탁자에 두었다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_gimmicks.rpy",
+          "line": 175,
+          "label": "r13_gm_scale",
+          "guards": [
+            "while True:",
+            "elif _t==\"pan\" and _loaded:"
+          ]
+        }
+      ],
+      "line": 175,
+      "scene_title": "r13_gm_scale",
+      "source_hash": "a7934a16c859d49f7210cf9089b5edaccfdf3fba61af94c771454df8f9891eab",
+      "baseline_hash": "7dfa7351b0f88dc06fee344ed7501b9d37bf57f552deaa9cc190c55467bc4db7",
+      "uid": "5194d3007400db1355f5cea5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_gm_scale|rpy_inventory|r13_gm_scale|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_gimmicks.rpy:177:19",
+      "file": "game/systems/room13_gimmicks.rpy",
+      "path": [
+        9844,
+        9883
+      ],
+      "origin": "rpy_inventory",
+      "day": 9,
+      "scene": "r13_gm_scale",
+      "block": "r13_gm_scale",
+      "placement": "literal",
+      "ref": "game/systems/room13_gimmicks.rpy:177:19",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "가져온 표준 추다. 아래쪽 쓸 물건에서 골라 접시에 올릴 수 있다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_gimmicks.rpy",
+          "line": 177,
+          "label": "r13_gm_scale",
+          "guards": [
+            "while True:",
+            "elif _t==\"test\":"
+          ]
+        }
+      ],
+      "line": 177,
+      "scene_title": "r13_gm_scale",
+      "source_hash": "a7934a16c859d49f7210cf9089b5edaccfdf3fba61af94c771454df8f9891eab",
+      "baseline_hash": "5b0766e8097d47a4255872b4bd4e2ed342b5da6523806edef6b5ec818eb3aceb",
+      "uid": "406dd298f70f0a70d9a7dc5d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_gm_scale|rpy_inventory|r13_gm_scale|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_gimmicks.rpy:177:89",
+      "file": "game/systems/room13_gimmicks.rpy",
+      "path": [
+        9914,
+        9925
+      ],
+      "origin": "rpy_inventory",
+      "day": 9,
+      "scene": "r13_gm_scale",
+      "block": "r13_gm_scale",
+      "placement": "literal",
+      "ref": "game/systems/room13_gimmicks.rpy:177:89",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "표준 추가 없다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_gimmicks.rpy",
+          "line": 177,
+          "label": "r13_gm_scale",
+          "guards": [
+            "while True:",
+            "elif _t==\"test\":"
+          ]
+        }
+      ],
+      "line": 177,
+      "scene_title": "r13_gm_scale",
+      "source_hash": "a7934a16c859d49f7210cf9089b5edaccfdf3fba61af94c771454df8f9891eab",
+      "baseline_hash": "8b5a4f0f48e1ae4886132d2aa0514e4dfecf4117f3c0604725e2111871f8d5e6",
+      "uid": "946a60955258f9073d603e91",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_gm_scale|rpy_inventory|r13_gm_scale|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_gimmicks.rpy:179:19",
+      "file": "game/systems/room13_gimmicks.rpy",
+      "path": [
+        9975,
+        10023
+      ],
+      "origin": "rpy_inventory",
+      "day": 9,
+      "scene": "r13_gm_scale",
+      "block": "r13_gm_scale",
+      "placement": "literal",
+      "ref": "game/systems/room13_gimmicks.rpy:179:19",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "가게 추다. 겉모양은 표준 추와 같다. 실제 무게가 같은지는 이것만 봐서는 모른다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_gimmicks.rpy",
+          "line": 179,
+          "label": "r13_gm_scale",
+          "guards": [
+            "while True:",
+            "elif _t==\"reference\":"
+          ]
+        }
+      ],
+      "line": 179,
+      "scene_title": "r13_gm_scale",
+      "source_hash": "a7934a16c859d49f7210cf9089b5edaccfdf3fba61af94c771454df8f9891eab",
+      "baseline_hash": "3f908ae5992c1d40968d12584f0ae149d2c3cc289e68f234e01fa394584c97a5",
+      "uid": "4392a23aae8448a1781bcbf4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_gm_scale|rpy_inventory|r13_gm_scale|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_gimmicks.rpy:181:19",
+      "file": "game/systems/room13_gimmicks.rpy",
+      "path": [
+        10057,
+        10065
+      ],
+      "origin": "rpy_inventory",
+      "day": 9,
+      "scene": "r13_gm_scale",
+      "block": "r13_gm_scale",
+      "placement": "literal",
+      "ref": "game/systems/room13_gimmicks.rpy:181:19",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "빈 접시다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_gimmicks.rpy",
+          "line": 181,
+          "label": "r13_gm_scale",
+          "guards": [
+            "while True:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 181,
+      "scene_title": "r13_gm_scale",
+      "source_hash": "a7934a16c859d49f7210cf9089b5edaccfdf3fba61af94c771454df8f9891eab",
+      "baseline_hash": "707202b98f6287b6336032baa8a261d2d46ac2d52d75217e5b2aed5d33f24a8b",
+      "uid": "2583da534b72fe54b04c09d6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_gm_scale|rpy_inventory|r13_gm_scale|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

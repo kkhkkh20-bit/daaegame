@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/winter_events.rpy:50:33",
+      "file": "game/winter_events.rpy",
+      "path": [
+        3116,
+        3163
+      ],
+      "origin": "rpy_inventory",
+      "day": 3,
+      "scene": "winter_secret_latch",
+      "block": "winter_secret_latch",
+      "placement": "literal",
+      "ref": "game/winter_events.rpy:50:33",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "분류함 아래 손잡이를 눌렀다. 벽 안 배관이 떨릴 때마다 걸쇠가 바깥으로 밀렸다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_events.rpy",
+          "line": 50,
+          "label": "winter_secret_latch",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 50,
+      "scene_title": "winter_secret_latch",
+      "source_hash": "c243df8d1e60cf0363929033d609f45d8b16e19ec39edab44c858674085e0fd6",
+      "baseline_hash": "a3859c89b65774a19c9f5a06b7f10f972dbd3b79e67fb5479f298f80b58a6ecb",
+      "uid": "8a94069aca195cecdd577b5a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|winter_secret_latch|rpy_inventory|winter_secret_latch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_events.rpy:50:143",
+      "file": "game/winter_events.rpy",
+      "path": [
+        3226,
+        3270
+      ],
+      "origin": "rpy_inventory",
+      "day": 3,
+      "scene": "winter_secret_latch",
+      "block": "winter_secret_latch",
+      "placement": "literal",
+      "ref": "game/winter_events.rpy:50:143",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "작은 점검패에 ‘화요일 저녁, 광장 회수 작업 중 감압’이라고 새겨져 있다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_events.rpy",
+          "line": 50,
+          "label": "winter_secret_latch",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 50,
+      "scene_title": "winter_secret_latch",
+      "source_hash": "c243df8d1e60cf0363929033d609f45d8b16e19ec39edab44c858674085e0fd6",
+      "baseline_hash": "3b4e8dd9129afbbe98090947c7ad6965c1b039111bab227cf306a76876d8ce6b",
+      "uid": "84a31ecc5fb7aca49d674e23",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|winter_secret_latch|rpy_inventory|winter_secret_latch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

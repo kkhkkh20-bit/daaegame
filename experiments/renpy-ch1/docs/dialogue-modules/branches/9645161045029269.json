@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:450:19",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        22386,
+        22409
+      ],
+      "origin": "rpy_literal",
+      "day": 9,
+      "scene": "r13_ep2_book_after",
+      "block": "r13_ep2_book_after",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:450:19",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "틀리지 않았어. 그래서 더 아픈 거야.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 450,
+          "label": "r13_ep2_book_after",
+          "guards": [
+            "if r13_has(\"kd_named\"):"
+          ]
+        }
+      ],
+      "line": 450,
+      "scene_title": "r13_ep2_book_after",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "2a61f63dedfca0b8e0065122299789e2b4f75be8eabf6ca837c66b8a3b7228b2",
+      "uid": "17d96c1280f3610535152bd0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_ep2_book_after|rpy_literal|r13_ep2_book_after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

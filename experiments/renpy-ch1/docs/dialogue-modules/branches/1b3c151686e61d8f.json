@@ -1,0 +1,122 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:91:60",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        5300,
+        5310
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:91:60",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "엄마가 잊었나?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 91,
+          "label": "r13_life_first_night",
+          "guards": [
+            "if r13_has(\"mother_expected_family\"):"
+          ]
+        }
+      ],
+      "line": 91,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "c8b643e349ef49b8d0ce19b11fce15c7a8724a886e12322ae38ab4962df33946",
+      "uid": "80dbd69dc57cd1406150838a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_literal|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:100:30",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        6118,
+        6133
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:100:30",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "엄마가 내일도 안 오면?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 100,
+          "label": "r13_life_first_night",
+          "guards": []
+        }
+      ],
+      "line": 100,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "f483a5cb04e266b4fb5b3fc00cdec03de2453bcebded96ea2b0d992426fb6d2e",
+      "uid": "0e1ef1ac899d8eec6c651a39",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_literal|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:100:370",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        6458,
+        6471
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:100:370",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "엄마 오면 깨워 줘.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 100,
+          "label": "r13_life_first_night",
+          "guards": []
+        }
+      ],
+      "line": 100,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "68040bcaee981dea6206644d7399754cfd1123090bbd1bbfe83b8760a5ad1702",
+      "uid": "b16731a267cd801c8425faf0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_literal|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

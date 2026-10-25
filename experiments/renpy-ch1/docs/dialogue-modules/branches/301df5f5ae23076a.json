@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:327:8",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        19849,
+        19869
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "r13_wf_nabi_blame",
+      "block": "r13_wf_nabi_blame",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:327:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "“잘 때 뚜껑을 닫으라고 했니?”",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 327,
+          "label": "r13_wf_nabi_blame",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 327,
+      "scene_title": "r13_wf_nabi_blame",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "b82f7d4558e9c7399c2eb7b626f98897a216e9524deba36d262ed44ee9457c2e",
+      "uid": "e24d4162e8937fc990c5c724",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_wf_nabi_blame|rpy_menu|r13_wf_nabi_blame|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:331:8",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        20060,
+        20082
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "r13_wf_nabi_blame",
+      "block": "r13_wf_nabi_blame",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:331:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "“나비 잘못이 아닐 수도 있습니다.”",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 331,
+          "label": "r13_wf_nabi_blame",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 331,
+      "scene_title": "r13_wf_nabi_blame",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "01c2b263daf7da6fff9c260989787a2217d942db9614899d1faf49a48d4740fd",
+      "uid": "3d73804a529d005ff8e4dbe0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_wf_nabi_blame|rpy_menu|r13_wf_nabi_blame|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

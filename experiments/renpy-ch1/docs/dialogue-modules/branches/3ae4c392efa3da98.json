@@ -1,0 +1,201 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D09_S02_V01",
+      "file": "game/v111/newworld/d09.json",
+      "path": [
+        "before",
+        "MS14_D09_S02_L0002",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D09_S02_L0002",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "톡이 허리춤의 공구를 짤랑거린다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1159,
+          "label": "r13_v111_tok9",
+          "guards": []
+        }
+      ],
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b6ad6a05d63439df019e5608ab9fea79d40e75b4905df3194c837f0960463bb2",
+      "baseline_hash": "993b7b634032c03f69b1e419362296e4b9a11459584268957ed139afd6b36ab0",
+      "uid": "9ec7083b6242b11310371fb4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D09_S02_V02",
+      "file": "game/v111/newworld/d09.json",
+      "path": [
+        "before",
+        "MS14_D09_S02_L0020",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D09_S02_L0020",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "세련이 말하기 전에 숨을 한 번 고른다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1179,
+          "label": "r13_v111_repair_copy9",
+          "guards": []
+        }
+      ],
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b6ad6a05d63439df019e5608ab9fea79d40e75b4905df3194c837f0960463bb2",
+      "baseline_hash": "8fad75e72339b5c7fff042fcabab21934453a62e5dac506d721060505e3817d8",
+      "uid": "5ad30df42d2b85ed0d5f4914",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_MV_D09_01",
+      "file": "game/v111/newworld/d09.json",
+      "path": [
+        "before",
+        "MS14_D09_S02_L0001",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D09_S02_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "작업대 옆에 까로의 쇠 축이 기대어 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1158,
+          "label": "r13_v111_tok9",
+          "guards": []
+        }
+      ],
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b6ad6a05d63439df019e5608ab9fea79d40e75b4905df3194c837f0960463bb2",
+      "baseline_hash": "e312948bcb5f710064a4b2c2aff01b14404f10139afcad9fa207b32a83b0ab3b",
+      "uid": "eac1115d3b814ae978a40337",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_MV_D09_02",
+      "file": "game/v111/newworld/d09.json",
+      "path": [
+        "before",
+        "MS14_D09_S02_L0001",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D09_S02_L0001",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "축은 어떻게 됐습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1158,
+          "label": "r13_v111_tok9",
+          "guards": []
+        }
+      ],
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b6ad6a05d63439df019e5608ab9fea79d40e75b4905df3194c837f0960463bb2",
+      "baseline_hash": "85bedd0735282a30d53b5c4c30e4419ae975a17e79d61a79dff11b79ee233a8c",
+      "uid": "b22e9cfb4460597758288e73",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_MV_D09_03",
+      "file": "game/v111/newworld/d09.json",
+      "path": [
+        "before",
+        "MS14_D09_S02_L0001",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D09_S02_L0001",
+      "when": null,
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "반쯤요. 쇠가 모자라요. 쓸 만한 쇠 토막이…… 이 마을에 남아 있을까 몰라요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1158,
+          "label": "r13_v111_tok9",
+          "guards": []
+        }
+      ],
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b6ad6a05d63439df019e5608ab9fea79d40e75b4905df3194c837f0960463bb2",
+      "baseline_hash": "debc91d35582d71cd1e9543d58a8dddb1e0a73be74d8b6df6ee206050d007d72",
+      "uid": "034712f4c4ac7796130e8155",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

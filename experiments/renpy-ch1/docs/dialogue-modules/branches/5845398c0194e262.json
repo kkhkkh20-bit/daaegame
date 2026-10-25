@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:177:23",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        10094,
+        10134
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_nt_chorong_signal",
+      "block": "r13_nt_chorong_signal",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:177:23",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(네 해 전 날짜다. 아이 이름 같다. 촌장 집 문패와 성이 같다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 177,
+          "label": "r13_nt_chorong_signal",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 177,
+      "scene_title": "r13_nt_chorong_signal",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "e0e295b95293eee5f85fc14cba69409f5db3f98a8e66b75b4174bd0faf9b054d",
+      "uid": "9ac047c2e06ffb50da0215c6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_nt_chorong_signal|rpy_literal|r13_nt_chorong_signal|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

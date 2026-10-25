@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_H_RE_04",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "blocks",
+        "hyp_result11",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "hyp_result11",
+      "block": "hyp_result11",
+      "placement": "blocks",
+      "ref": "hyp_result11",
+      "when": "hyp_lost1",
+      "speaker": null,
+      "kind": "narration",
+      "text": "초소 불은 그대로 켜져 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 846,
+          "label": "r13_v111_hyp_end11",
+          "guards": []
+        }
+      ],
+      "scene_title": "hyp_result11",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "77d5b5d17c858c76dbd7384386f8a9d4748215f72056bbb83880fa14a5355d3a",
+      "uid": "d463a3747e174073374fb5cd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|hyp_result11|patch|hyp_result11|hyp_lost1",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

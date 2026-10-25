@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:514:37",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        30321,
+        30360
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_wf_aftermath",
+      "block": "r13_wf_aftermath",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:514:37",
+      "when": null,
+      "speaker": "kid_kkomi",
+      "kind": "dialogue",
+      "text": "대장 표시는 탐정단 단장이 갖고 있어. 아지트 새로 지으면 돌려줘.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 514,
+          "label": "r13_wf_aftermath",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 514,
+      "scene_title": "r13_wf_aftermath",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "372092020e342421375db648affdacbea3f98254af12414598e07c7402356820",
+      "uid": "0041f900df0488847bd36aa5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_wf_aftermath|rpy_literal|r13_wf_aftermath|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:526:17",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        31129,
+        31149
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_wf_aftermath",
+      "block": "r13_wf_aftermath",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:526:17",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "마녀네 애들은 이제 누가 밥 줘?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 526,
+          "label": "r13_wf_aftermath",
+          "guards": []
+        }
+      ],
+      "line": 526,
+      "scene_title": "r13_wf_aftermath",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "80055e945b66842609975d7ef07517c795885a7d94e0e3674eca24668de113a7",
+      "uid": "6da34647f67e022861576cdd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_wf_aftermath|rpy_literal|r13_wf_aftermath|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

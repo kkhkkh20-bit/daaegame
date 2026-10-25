@@ -1,0 +1,204 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:369:18",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        18472,
+        18504
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_ep2_decision",
+      "block": "r13_ep2_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:369:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "밤이의 팔이 풀렸다. 솜이가 나를 노려보더니 뛰어갔다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 369,
+          "label": "r13_ep2_decision",
+          "guards": [
+            "if _kd_pick==\"name\":"
+          ]
+        }
+      ],
+      "line": 369,
+      "scene_title": "r13_ep2_decision",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "c23b8669ee6c974bf87b506942b43a0a91a5e73cc2ed2fcc661630049ad29c02",
+      "uid": "8fbdf6711ff7a8cbaf6f36b9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ep2_decision|rpy_literal|r13_ep2_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:373:18",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        18679,
+        18711
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_ep2_decision",
+      "block": "r13_ep2_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:373:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 손바닥에 이름이 빽빽하던 할아버지 이야기를 했다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 373,
+          "label": "r13_ep2_decision",
+          "guards": [
+            "elif _kd_pick==\"seori\":"
+          ]
+        }
+      ],
+      "line": 373,
+      "scene_title": "r13_ep2_decision",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "37a3d4a28497f49db57da227b3c62efa29cc6abb29751d602c270b3cc3d1bfda",
+      "uid": "348d90162dd1f759d935086c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ep2_decision|rpy_literal|r13_ep2_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:376:18",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        18832,
+        18856
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_ep2_decision",
+      "block": "r13_ep2_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:376:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "솜이가 내 손을 잡았다. 손이 차가웠다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 376,
+          "label": "r13_ep2_decision",
+          "guards": [
+            "elif _kd_pick==\"seori\":"
+          ]
+        }
+      ],
+      "line": 376,
+      "scene_title": "r13_ep2_decision",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "b9cad222de1230dc6e629974647405305d64f2c38db5202a656937c6e206710d",
+      "uid": "f2a1c609337ce2c9150185f2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ep2_decision|rpy_literal|r13_ep2_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:381:18",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        19056,
+        19073
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_ep2_decision",
+      "block": "r13_ep2_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:381:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "솜이가 내 손을 꼭 잡았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 381,
+          "label": "r13_ep2_decision",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 381,
+      "scene_title": "r13_ep2_decision",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "6be18d96dc56a083f642a7830494d82dc9476021968c688f67d5afdc6307b627",
+      "uid": "f167434c827cb586ce9440a8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ep2_decision|rpy_literal|r13_ep2_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:383:28",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        19187,
+        19204
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_ep2_decision",
+      "block": "r13_ep2_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:383:28",
+      "when": null,
+      "speaker": "bami",
+      "kind": "dialogue",
+      "text": "……너, 내 친구 해도 돼.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 383,
+          "label": "r13_ep2_decision",
+          "guards": []
+        }
+      ],
+      "line": 383,
+      "scene_title": "r13_ep2_decision",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "98951f9e6855827b514414c7f62b66b84dff16f857eb14c20c3f66f10ee129de",
+      "uid": "8491d517c19ede792a222216",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ep2_decision|rpy_literal|r13_ep2_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

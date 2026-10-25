@@ -1,0 +1,205 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/winter.rpy:341:167",
+      "file": "game/winter.rpy",
+      "path": [
+        17310,
+        17327
+      ],
+      "origin": "rpy_inventory",
+      "day": 7,
+      "scene": "winter_final",
+      "block": "winter_final",
+      "placement": "literal",
+      "ref": "game/winter.rpy:341:167",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "그래서 사람을 데려가겠대요?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 341,
+          "label": "winter_final",
+          "guards": []
+        }
+      ],
+      "line": 341,
+      "scene_title": "winter_final",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "7fa724871e5620c96ff05ca839f869ed5f0edcc8be732327727461872bbf483d",
+      "uid": "916d59cc93e6e80c4dc7c644",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|winter_final|rpy_inventory|winter_final|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:346:117",
+      "file": "game/winter.rpy",
+      "path": [
+        17820,
+        17860
+      ],
+      "origin": "rpy_inventory",
+      "day": 7,
+      "scene": "winter_final",
+      "block": "winter_final",
+      "placement": "literal",
+      "ref": "game/winter.rpy:346:117",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "우리 아이들도 여기 있어요. 돌이 멎으면 그 아이들은 누가 지킵니까?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 346,
+          "label": "winter_final",
+          "guards": [
+            "if all(k in winter[\"marks\"] for k in (\"frame\",\"destination\",\"power\",\"death\")):"
+          ]
+        }
+      ],
+      "line": 346,
+      "scene_title": "winter_final",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "bfd1f029b8216db2cf74404975fcd5b44c7b117c0488f56c55e3ac9f75b25950",
+      "uid": "60c230f124b3b846cdeafabd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|winter_final|rpy_inventory|winter_final|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:350:107",
+      "file": "game/winter.rpy",
+      "path": [
+        18346,
+        18374
+      ],
+      "origin": "rpy_inventory",
+      "day": 7,
+      "scene": "winter_final",
+      "block": "winter_final",
+      "placement": "literal",
+      "ref": "game/winter.rpy:350:107",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "내 난로라도 함께 쓸 거예요. 사람부터 놓아요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 350,
+          "label": "winter_final",
+          "guards": [
+            "if all(k in winter[\"marks\"] for k in (\"frame\",\"destination\",\"power\",\"death\")):",
+            "else:"
+          ]
+        }
+      ],
+      "line": 350,
+      "scene_title": "winter_final",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "624a4e7035a8ca165aa2ea83fbe6d558b2e03eb232ef54a99cf12dfb2a51d234",
+      "uid": "f0159779beafa97936e7f53d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|winter_final|rpy_inventory|winter_final|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:355:127",
+      "file": "game/winter.rpy",
+      "path": [
+        19009,
+        19036
+      ],
+      "origin": "rpy_inventory",
+      "day": 7,
+      "scene": "winter_final",
+      "block": "winter_final",
+      "placement": "literal",
+      "ref": "game/winter.rpy:355:127",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "엄마 손은 내가 잡을게. 아빠는 내 손 잡아.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 355,
+          "label": "winter_final",
+          "guards": [
+            "elif winter[\"ending\"]==\"family\":"
+          ]
+        }
+      ],
+      "line": 355,
+      "scene_title": "winter_final",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "bdd4572dd171f0b86337dd020713a523deea0ecc10fd98d4127ac88b2946127d",
+      "uid": "9b422f9259a356aba9fc3079",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|winter_final|rpy_inventory|winter_final|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:357:127",
+      "file": "game/winter.rpy",
+      "path": [
+        19269,
+        19288
+      ],
+      "origin": "rpy_inventory",
+      "day": 7,
+      "scene": "winter_final",
+      "block": "winter_final",
+      "placement": "literal",
+      "ref": "game/winter.rpy:357:127",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "아빠. 아직 못 찾은 게 있지.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 357,
+          "label": "winter_final",
+          "guards": [
+            "elif winter[\"ending\"]==\"exposure\":"
+          ]
+        }
+      ],
+      "line": 357,
+      "scene_title": "winter_final",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "bdf8361dfef8e0e5b4249c46723cb1092d0f9a9dc4ff2fb820722fe4ad9ee252",
+      "uid": "399ae1cef449347c8b109862",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|winter_final|rpy_inventory|winter_final|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

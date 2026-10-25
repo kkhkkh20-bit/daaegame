@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_week2_events.rpy:98:26",
+      "file": "game/systems/room13_week2_events.rpy",
+      "path": [
+        5349,
+        5405
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_w2e_numbers",
+      "block": "r13_w2e_numbers",
+      "placement": "literal",
+      "ref": "game/systems/room13_week2_events.rpy:98:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "수리점 작업대 위에 우박의 계측 장부가 펼쳐져 있었다. 촌장이 손가락으로 장부의 한 줄을 눌렀다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week2_events.rpy",
+          "line": 98,
+          "label": "r13_w2e_numbers",
+          "guards": []
+        }
+      ],
+      "line": 98,
+      "scene_title": "r13_w2e_numbers",
+      "source_hash": "bd106ab951275b7b2a06d9b6705a142790d202b883e7f2e6d4f37241b21c87c0",
+      "baseline_hash": "bae1776ee3614a58783712cfbb3d23584300641436f8266dcc20b86c647047c4",
+      "uid": "cd178a6d56be2282f3a07396",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_w2e_numbers|rpy_literal|r13_w2e_numbers|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

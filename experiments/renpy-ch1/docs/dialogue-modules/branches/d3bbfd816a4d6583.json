@@ -1,0 +1,82 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_daram_mood.rpy:69:15",
+      "file": "game/systems/room13_daram_mood.rpy",
+      "path": [
+        4326,
+        4355
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_daram_arrival_miss",
+      "block": "r13_daram_arrival_miss",
+      "placement": "literal",
+      "ref": "game/systems/room13_daram_mood.rpy:69:15",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "그랬지. 아빠도 엄마가 문을 열어 줄 줄 알았어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_daram_mood.rpy",
+          "line": 69,
+          "label": "r13_daram_arrival_miss",
+          "guards": []
+        }
+      ],
+      "line": 69,
+      "scene_title": "r13_daram_arrival_miss",
+      "source_hash": "3ab3b28846412526f7e2f0e968c879ca7d95b85438a40e46a92dd358a6b67c6a",
+      "baseline_hash": "81fb1aab096757511d402c178ca57be7c9c0d53b09dc91b290374ffe27daadfe",
+      "uid": "b601e496e96e09992f57ed5a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_daram_arrival_miss|rpy_literal|r13_daram_arrival_miss|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_daram_mood.rpy:71:15",
+      "file": "game/systems/room13_daram_mood.rpy",
+      "path": [
+        4443,
+        4467
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_daram_arrival_miss",
+      "block": "r13_daram_arrival_miss",
+      "placement": "literal",
+      "ref": "game/systems/room13_daram_mood.rpy:71:15",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "잘 갖고 있어. 엄마 만나면 그때 주자.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_daram_mood.rpy",
+          "line": 71,
+          "label": "r13_daram_arrival_miss",
+          "guards": []
+        }
+      ],
+      "line": 71,
+      "scene_title": "r13_daram_arrival_miss",
+      "source_hash": "3ab3b28846412526f7e2f0e968c879ca7d95b85438a40e46a92dd358a6b67c6a",
+      "baseline_hash": "8a3599aaeb3a3e282fa436174043eb10ce25b606d010b0cb6b7879dbeb846ceb",
+      "uid": "078f1b38bedb27f488b98520",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_daram_arrival_miss|rpy_literal|r13_daram_arrival_miss|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

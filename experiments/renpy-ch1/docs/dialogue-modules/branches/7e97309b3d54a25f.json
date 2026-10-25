@@ -1,0 +1,47 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/story.rpy:483:18",
+      "file": "game/story.rpy",
+      "path": [
+        17981,
+        18015
+      ],
+      "origin": "rpy_inventory",
+      "day": 8,
+      "scene": "showdown_loop",
+      "block": "showdown_loop",
+      "placement": "literal",
+      "ref": "game/story.rpy:483:18",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "손님도 옮겼다고 했죠. 그런데 주머니는 못 봤다는 거예요?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/story.rpy",
+          "line": 483,
+          "label": "showdown_loop",
+          "guards": [
+            "elif showdown_issue == \"movement\" and evidence_choice in (\"bami\",\"fur\",\"pouch\"):",
+            "else:"
+          ]
+        }
+      ],
+      "line": 483,
+      "scene_title": "showdown_loop",
+      "source_hash": "f80d7c11bcc5cbd41c2c14cdcbbd42a9dd944b4719a4552fdd392a29341d5aed",
+      "baseline_hash": "a4885809f2901f543ea066ec6f51b6ab195785fe3ed85f709cf2727bbd4b1380",
+      "uid": "9437b2c98a49680d7624f6de",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|showdown_loop|rpy_inventory|showdown_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

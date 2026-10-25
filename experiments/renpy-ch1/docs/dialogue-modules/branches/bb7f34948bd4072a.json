@@ -1,0 +1,1386 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D05_S02_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "솜이가 무쇠에게 다른 겉옷을 입혀 준다. 무쇠가 손목을 잡히자 놀라 팔을 뺀다. 아빠가 즉시 거리를 둔다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f4955c0bbc058041a4c9977b5d91cbd2c684cd8d6b2e9315cd013957b40e7495",
+      "uid": "0a106e685518c33dd65741eb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0002",
+      "when": null,
+      "speaker": "무쇠",
+      "kind": "dialogue",
+      "text": "놓으시오. 집에 간다니까.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 427,
+          "label": "r13_v111_wait_cloth5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "71e4e12d9e8281f5b61168c559004f316d016a6a372542c9637f6544d0b5821d",
+      "uid": "1df1451048094c796c54e34c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0003",
+      "when": null,
+      "speaker": "솜이",
+      "kind": "dialogue",
+      "text": "집이야. 여기 집.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 428,
+          "label": "r13_v111_wait_cloth5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9feeadae465dd74870ee2c8a3edab6af699ef2dc2aaf6ed9a333c751fd40d921",
+      "uid": "e9e3c1969a442ab86d8867e1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0004",
+      "when": null,
+      "speaker": "무쇠",
+      "kind": "dialogue",
+      "text": "문이 저쪽인데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 429,
+          "label": "r13_v111_wait_cloth5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9aa259a4504a09b1cc59a2480d8c2cc58aa62c0269513f248ef3083fa0fee467",
+      "uid": "df75dea835e7e0dbe8c20e6d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0005",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "침묵. 솜이가 문을 가리킨 뒤 자기 옆 의자를 가리킨다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bc2c0ae36d41f505a380c35fc410774d8626b20978d9a2603e714fbaf6cbeafd",
+      "uid": "f9a2237014d7992ff96b013f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0006",
+      "when": null,
+      "speaker": "솜이",
+      "kind": "dialogue",
+      "text": "먼저 앉자. 나도 앉을게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 430,
+          "label": "r13_v111_wait_cloth5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5e1607316a3fc00052656d57418fc40c2cf72d1a8d4966dceb8558bc010e0d8d",
+      "uid": "77d4d17cf1164613cedee00a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0007",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "무쇠가 천천히 앉았다. 나는 손을 주머니 밖으로 꺼낸 채 기다렸다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 431,
+          "label": "r13_v111_wait_cloth5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "693f6f86e679e533277dc93b559d40f092c3375539ce73e951b2f93884c3efae",
+      "uid": "524ffee7afedd12a67c65896",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0008",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어젯밤 누가 붙잡았습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 432,
+          "label": "r13_v111_wait_cloth5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "76e6f1235f03b28e688566bc3f2ec64ecfb8dfbaf409fbbbb0629b59bc9e7f77",
+      "uid": "09b28c0b0e575a0687691c47",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0009",
+      "when": null,
+      "speaker": "무쇠",
+      "kind": "dialogue",
+      "text": "무거운…… 손. 내 팔을. 내가 가야 하는데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 433,
+          "label": "r13_v111_wait_cloth5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ff4d5c47391a13976f9258e034bc640443880df11b2657126d726b6ad9ae6487",
+      "uid": "0e826cf9b1170d8cee9a40af",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0010",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그래서 무셨습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 434,
+          "label": "r13_v111_wait_cloth5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a92cecd611f8a743cbe9820a55f58088093ca25ebbddad3314dbd01ed8f553bd",
+      "uid": "1a30814cd968fc79ad91557d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0011",
+      "when": null,
+      "speaker": "무쇠",
+      "kind": "dialogue",
+      "text": "내가?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 435,
+          "label": "r13_v111_wait_cloth5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ab52b23254debcd1fc5ad3fa8da5960bcdcd2b4a99538bcc25c545efd8b9eec4",
+      "uid": "3cad35f66ffc51bc07214466",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0012",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "그는 자신의 입을 만졌다. 같은 질문을 다시 하지 않았다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 436,
+          "label": "r13_v111_wait_cloth5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "57988a74038693e29664ff274ce82a54a04ff1a13cf213611bd878df53e6eb00",
+      "uid": "2941c934cf071397db773d85",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0013",
+      "when": null,
+      "speaker": "솜이",
+      "kind": "dialogue",
+      "text": "잡아당기지 마세요. 할아버지 옷이니까.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 437,
+          "label": "r13_v111_wait_cloth5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7690119a8d699ad08a3cdb2ad2c179add64bf53b3dc880763f75b69afa230302",
+      "uid": "30fa84a1a7533951f24cd4dc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0014",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "옆에 놓고 보기만 할게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 438,
+          "label": "r13_v111_wait_cloth5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "060c7826f3335c6d1c69fc749706463bb728c77b47d3b77b30b6863ed257048c",
+      "uid": "f0ff720500be256820f21f9a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0015",
+      "when": null,
+      "speaker": "솜이",
+      "kind": "dialogue",
+      "text": "……네.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 439,
+          "label": "r13_v111_wait_cloth5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7c745f046e660e204068f8692000c3bbfe9d188b6b33255b5aca5aaa1f823431",
+      "uid": "81c31ba09b12f84d89cd0a32",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0016",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "조작: 솜이가 허락한 뒤 벗은 겉옷의 찢어진 끝을 보관한 천과 나란히 놓는다. 날카로운 울타리 못에 뜯긴 지그재그 절단선과 두 줄 수선실이 이어진다. 돌목의 진술과 합쳐 이동 경로를 뒷받침하지만 이것만으로 물림을 확정하지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fbfb6c872fb5ca8c5b79eb65017486eeb96dc308a0cc442c037ad82b87f90672",
+      "uid": "66bfaecd09a6850c8c0b7e28",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L9101",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L9101",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L9101",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "울타리 천과 벗은 겉옷의 찢어진 선, 두 줄 수선실이 이어진다. 천만으로 물린 순간은 알 수 없다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6617d2d3767fb96f0fd59d56b6a3f4bc7a6586c2ab5ae12c603671ff5d8e217e",
+      "uid": "87bd221192c306e970de2aa4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0017",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "돌아왔을 때 ‘놓으라는데 안 놓더라’고 했어요. 입에 피가 조금 묻어 있었고. 지금은 그 말도 기억 못 하겠죠.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 450,
+          "label": "r13_v111_cloth_match5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f238ab0572bcb31db031905fba61fbd4e9a412b326ccebcafc0cda55bdf1538b",
+      "uid": "1ea43f381a12b2832b51bb8c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0018",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "돌목 씨에게도 묻겠습니다. 어떻게 붙잡았는지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 451,
+          "label": "r13_v111_cloth_match5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "889f06f56516daa63bf9d5d48e68e40b18e2f2e2a97ff7f9c683ff7e3474fd12",
+      "uid": "a07930c8b3351df32cc30160",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0019",
+      "when": null,
+      "speaker": "솜이",
+      "kind": "dialogue",
+      "text": "밤이 아니라고만 하면 안 돼요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 452,
+          "label": "r13_v111_cloth_match5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a730ac84d50614781b109340cd94f3f6f46ef95ad7ebc7fd5d6fb88a563ff886",
+      "uid": "ec2cf4b13c4bc6c303335e58",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0020",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "밤이 얘기는 해야지. 할아버지 이름까지 광장에 외칠 건 아니야.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 453,
+          "label": "r13_v111_cloth_match5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7f3f67a739b4b5ca1caf1ba1b64b3e57a445471bcf3a096e597d83fd73314f14",
+      "uid": "10b8e577c68a5159fe417837",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0021",
+      "when": null,
+      "speaker": "솜이",
+      "kind": "dialogue",
+      "text": "다람아, 너도 말하지 마.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 454,
+          "label": "r13_v111_cloth_match5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2b06d7b8d9825aca1a9010d55127fb900763430ffa90769dcb9cb7d5feb04338",
+      "uid": "9b7d5c4012d5e44b3cb26134",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0022",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이 나를 보았다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 455,
+          "label": "r13_v111_cloth_match5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "095a2d15d0fad85a3acb9d81ddc62594e7264726a7c9c33b909d27ccc654cfb7",
+      "uid": "7919e22bbc7795e02368fd46",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0023",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "밤이는 풀어 줘야 하잖아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 456,
+          "label": "r13_v111_cloth_match5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "14ffdfb5e7be8dd73aff93c3bfa342a42126d969065ac053f40b204829528cdd",
+      "uid": "3345a9aca1a676f73d4cd31b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0024",
+      "when": null,
+      "speaker": "솜이",
+      "kind": "dialogue",
+      "text": "나도 알아!",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 457,
+          "label": "r13_v111_cloth_match5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "908a601f07b71b9b378ebaef57d83104c6f0273a36c001cc22f691e805b0a2e3",
+      "uid": "17fa58331ba4372dcc08c86d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0025",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "다람이 손을 내밀었다가 내린다. 두 아이가 곧바로 화해하지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "33760754350670b3e72ee67d3b2ccefe52ab344a472295e821abfed10d9a6898",
+      "uid": "5302904f1b26ffc0ab82cc29",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L9102",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L9102",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L9102",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "네로: 어젯밤 나갔다가 소매가 찢어진 채 돌아왔다. 입에 피가 조금 있었다. 공격 장면은 보지 못했다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bfa11e02749a6138e488e26093264647de4b05a2bda98fabdaa2c5f2452b5bd9",
+      "uid": "0e17bc2fd20a7f41f705e1ba",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0026",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "진료소 문 앞까진 내가 같이 갑시다. 솜이도 함께 들어가고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 459,
+          "label": "r13_v111_cloth_match5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7420811c67c636ad2f0859d479a33ab577e61442c852a62ecde822c407e776b7",
+      "uid": "0dbd10d0a07d86f7bb5270ee",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0027",
+      "when": null,
+      "speaker": "솜이",
+      "kind": "dialogue",
+      "text": "나를 내보내면 안 가요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 460,
+          "label": "r13_v111_cloth_match5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e82d65386d9e0ab8e70ae6f2e043b03731fdf5b670266f3c7626b991e2817a35",
+      "uid": "05d2e1c2ee0287e5e83d63ae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0028",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "같이 설명해 달라고 할게. 네로 씨는 이야기 끝나면 이쪽으로 와요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 461,
+          "label": "r13_v111_cloth_match5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "21d41dfd7782c9ecd549cf116efdb904479d33162ad249ba558c162ab14be776",
+      "uid": "4c9a99542f8d60d09dd7bd08",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0029",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "진료소 문 앞.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a8fff8a79adcdf472fdd13c6b0f139adf7c190fc01b7d69f657d6cf4b517c808",
+      "uid": "b496f062f1695563f163b9cc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0030",
+      "when": null,
+      "speaker": "진료 담당자",
+      "kind": "dialogue",
+      "text": "두 분 같이 들어오세요. 먼저 다친 데가 있는지 보겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 463,
+          "label": "r13_v111_cloth_match5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "530a38e7de74b703924ced39ee8b10f149b1791ac7ddd76a80adc78efb4a6e9c",
+      "uid": "c6a4265862bca4e8d0c6a146",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S02_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S02_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S02_L0031",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "솜이와 어르신이 함께 들어간 것을 본다. 아빠·다람·바둑이·네로는 초소로 간다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "61cae30587ea9f56048ec6ee6fa1381cafeaf931756ddcf40f45c9e28c8bf05c",
+      "uid": "b3292f2649ec76729644918b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

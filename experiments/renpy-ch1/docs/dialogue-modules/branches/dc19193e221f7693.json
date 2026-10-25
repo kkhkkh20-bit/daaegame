@@ -1,0 +1,977 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D13_S01_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S01_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S01_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아침. 학교 문 옆 보급 정리대. 판돌이 두 손을 무릎 사이에 넣고 앉아 있다. 바깥에서는 비어 있는 수레가 지나간다. 이때 아빠는 이송 명령이나 탑승 준비를 돕기로 한 상태가 아니다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "deaad5f7afcf408859a36a73dfb83cd6ad029656b2bcd054cc55b1d309e207a5",
+      "uid": "b370e2e87c29058959b33dd7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S01_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S01_L0002",
+      "when": null,
+      "speaker": "판돌",
+      "kind": "dialogue",
+      "text": "문은 닫아 주시오. 잠깐만.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1794,
+          "label": "r13_v111_day13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1bed3f086fc3cb2363af95c929d118c1af7e20a93fbb123c22a51ac9497016a3",
+      "uid": "a12b65c22fce798ce5f72358",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S01_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S01_L0003",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠, 저 아저씨 떨려.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1795,
+          "label": "r13_v111_day13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3f3fef616ef65bc31219db79825a10f63dae39896500279d95c5564f6f9304b8",
+      "uid": "db57073adfdc47311dd550bc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S01_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S01_L0004",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "까로 씨. 덮을 것 하나 남았어요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1796,
+          "label": "r13_v111_day13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f6e54a37c940cdf2ad0f0b069d6be80e26d06c941fe99a9df15987a45b250073",
+      "uid": "8d3f0ead1e2941860b43c6cb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S01_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S01_L0005",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "이게 있는데 끝이 터졌어. 잡아당기면 솜만 나오겠네.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1798,
+          "label": "r13_v111_day13",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b814a935159d77e6be2841eca4df15682eb83597863eebbf5d98318f3531a223",
+      "uid": "2acc14b197cebfedab93e781",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S01_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S01_L0006",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "까로가 판돌에게 둘러 줄 회색 담요를 펼친다. 아빠는 따뜻한 실내 정리대에서 담요를 받는다. 엄마는 옆에서 가족 몫 배급을 확인한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "413e703dca73f233fba59057a4c2a928adb6e23af44259da5f3da19ca5a8935e",
+      "uid": "820a9e439565194be3c4875f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S01_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S01_L0007",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이쪽 좀 대 줄래?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1799,
+          "label": "r13_v111_day13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c2396081dcb25481b7bbd41f7b09f6a4227f89d508b9989c2716f73ec7df6979",
+      "uid": "1df2b7c19d1479915ef258ae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S01_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S01_L0008",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "이 천?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1800,
+          "label": "r13_v111_day13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c46835536f48dd5e2465463fad2e3c2676a411a154de75e0628f2388cc677233",
+      "uid": "86e2e884d1b4e1dd92697aec",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S01_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S01_L0009",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응. 손은 바늘 안 가는 데 잡고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1801,
+          "label": "r13_v111_day13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b82a137932232b168b40f05851ab23468de65245e022a8339a97a52f117c3481",
+      "uid": "77cec70d5e31593d92bd65e3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S01_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S01_L0010",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "입력: 벌어진 곳에 새 그림이 있는 새 천을 댄다. 방향은 정해진 장면으로 유지. 아빠가 실제로 꿰매는 동안 다람이 천을 잡고 있다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6272ab4f7e41793e3f04a754afd285c75f92a7d31ef50abc93cf8d70e679b6c9",
+      "uid": "ebc185d61b021e0003105cc9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S01_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S01_L0011",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "새가 아래를 보는데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1817,
+          "label": "r13_v111_blanket_mended13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9838caf132cec48d85669a67b08e0d341f30875c59a012aadb978d47f2903835",
+      "uid": "6cc8f428d6fc20042481b58c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S01_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S01_L0012",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "먹이 먹는 거야.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1818,
+          "label": "r13_v111_blanket_mended13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f750fd8c3a443dff1260e09da999dbfa51ed408e5cefb14afba9596d3a685677",
+      "uid": "48b32bc8dff028c95616c7df",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S01_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S01_L0013",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아, 먹이.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1819,
+          "label": "r13_v111_blanket_mended13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "99940f6127621f3fc32915949b09aed5d053e8a7ed26da2daee0aee4f63cdcf6",
+      "uid": "cc6058bb874561f7e448e665",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S01_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S01_L0014",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "새도 밥 먹어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1820,
+          "label": "r13_v111_blanket_mended13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bd0b6119d90335b7e54f9e68a6a932f5ab4e2d55ca6273fae8a78d2e693e2f1a",
+      "uid": "92a3c1f408ce49408ed45d47",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S01_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S01_L0015",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "실을 끊는다. 수선 전 벌어진 자리와 지금 완성한 방향이 같은 연속 화면에 남는다. 추리 효과음 없음.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a7d2a4477fc50b17fa3412c1271a8d4beff0cb24a44fc98aebe879712dc0984d",
+      "uid": "6c43a5472cb14d4c6295cb1b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S01_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S01_L0016",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "다 됐으면 줘. 판돌 씨한테 가져갈게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1822,
+          "label": "r13_v111_blanket_mended13",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "57bf7c70ff792fda519eebd9170f91378aa0fb7908b565357ccb4311bfe0d9e8",
+      "uid": "98c46bc023ddea67d1712ee7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S01_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S01_L0017",
+      "when": null,
+      "speaker": "판돌",
+      "kind": "dialogue",
+      "text": "내 거 아니오. 나중에 다른 사람도 써야지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1823,
+          "label": "r13_v111_blanket_mended13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "91659f0c2801ac9156adf20ef9114efa1537e05af1c857a81e28b8096634c114",
+      "uid": "710c5767b350d1f3b144cd2c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S01_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S01_L0018",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "지금 추우시잖아요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1824,
+          "label": "r13_v111_blanket_mended13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8fdd456b4ba0b7738419ed8cbee15e5d5b688ed624dfdb410f371c8bc035ca94",
+      "uid": "5fb5fc74a80191f3ea2824ff",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S01_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S01_L0019",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "까로가 둘러 준다. 판돌이 식사하러 안으로 들어갈 때 담요를 보급대에 잠시 접어 둔다. 아빠가 가족 물자를 챙기는 시야 안에서 촌장이 지나가 담요를 펼쳐 확인한다. 수선 시점을 묻지는 않는다. 까로가 판돌에게 다시 가져간다. 물건을 외부 시설에 왕복시키지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b12345b497dc236e967c58e4cd1f0d72c223ee39b649dd4b83984a0618785eb4",
+      "uid": "c3405b7983c708458eb17f63",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S01_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S01_L0020",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "오늘은 셋이 같이 움직일까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1825,
+          "label": "r13_v111_blanket_mended13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "727ba756a08d37b194307b8490543b817e77b67a6fea66e58fc1115ac003a385",
+      "uid": "e4ef2a74c7130f74b5318c77",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S01_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S01_L0021",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "입구를 먼저 보자. 길 얘기도 물어보고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1826,
+          "label": "r13_v111_blanket_mended13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2cb56a3d96189812854984bfae14385c59298b7747454d29c6fe3c205db464f0",
+      "uid": "938e6b8dec24e084b749dea6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S01_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S01_L0022",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "우리 오늘 가?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1827,
+          "label": "r13_v111_blanket_mended13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4797b3d262f2f7755bb4fc52c38f992b667a4f8fceece8f7fa610bc5079cff05",
+      "uid": "b003abfac416aa85bb98d5cd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S01_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S01_L0023",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "갈 수 있는지부터.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1828,
+          "label": "r13_v111_blanket_mended13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ab82a0b13a2294d736a1eda3a5f030c7e45128065a5fbcee5db009df4594983f",
+      "uid": "b424f76c11e99d4b2b36db70",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

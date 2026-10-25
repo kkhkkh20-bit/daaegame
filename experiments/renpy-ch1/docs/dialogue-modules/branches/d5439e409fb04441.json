@@ -1,0 +1,244 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D12_S01_V01",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "before",
+        "MS14_D12_S01_L0028",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D12_S01_L0028",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "까로가 수레 바퀴를 발로 툭 찬다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1128,
+          "label": "r13_v111_carrier12",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "55f2e0758e6feaa066c95398c2d09051137af269dd05c783b0304032dc7e3159",
+      "uid": "91f4e3f54c96a92084160080",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_DLG_D12_01",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "before",
+        "MS14_D12_S01_L0002",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D12_S01_L0002",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "아랫길 천막. 까로가 먼저 안을 들여다보고 모자를 벗는다. 서로 기대 앉은 사람들 사이, 네로의 손 아래 이름표 꾸러미가 놓여 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1039,
+          "label": "r13_v111_loss_names12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "0ba0f0fea121ecf70a7bc36960474fa1795ba190ac180ee089ad455e3f06b497",
+      "uid": "fe46068c657c361ba38af35f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_DLG_D12_02",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "before",
+        "MS14_D12_S01_L0005",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D12_S01_L0005",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "광장 이름판 앞. 나는 확인된 이름만 옮겨 적는다. 다람이 내가 가져온 이름표를 하나씩 맞춰 보다가 손을 멈춘다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1042,
+          "label": "r13_v111_loss_names12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "704e17871509358277e27b57bcd8c29231de8a915fa9f66fd850cce5eaa014b1",
+      "uid": "1407d0d6969ac56b2f352cde",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_DLG_D12_03",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "before",
+        "MS14_D12_S01_L0011",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D12_S01_L0011",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "학교 문 앞에서 네로가 밤새 데려온 사람들 손목에 이름표를 하나씩 묶어 준다. 다람이 그 매듭을 빤히 본다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1052,
+          "label": "r13_v111_living_names12",
+          "guards": [
+            "if r13_v111_actor_ready('resident_nero'):"
+          ]
+        }
+      ],
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "68e09a9e8d4e22d26f1e791d23be7f5811340f8f2a6c06d917b7ca62af965e20",
+      "uid": "de89c9d80c3cab06342dec09",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D12_SR01",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "before",
+        "MS14_D12_S01_L0024",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D12_S01_L0024",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "며칠 전 복도 끝에서, 서리 씨가 선생님께 작은 병을 건네는 걸 봤습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1107,
+          "label": "r13_v111_medicine12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "87f6d1da992d77937e8684ecd59c3e95ef133b4f723168ee59a13d38e8c91352",
+      "uid": "e2e1cb232eed4907c9c69cae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D12_SR02",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "before",
+        "MS14_D12_S01_L0024",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D12_S01_L0024",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "……그건, 나중에 따로 말씀드릴게요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1107,
+          "label": "r13_v111_medicine12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "fbe48382a298e6fb10dd177489c264e05ec193d56db007e947eb462857ed742d",
+      "uid": "0462c1e5cec1fa2e0f3f2b05",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

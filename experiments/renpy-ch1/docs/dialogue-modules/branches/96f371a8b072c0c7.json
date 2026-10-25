@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D07_S02_V04",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "before",
+        "MS14_D07_S02_L0036",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D07_S02_L0036",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "보리가 꼬미 앞에 빈 그릇을 하나씩 내려놓는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 675,
+          "label": "r13_v111_living_child7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "485d41cf3367709a00f26c5cbdcf8e8af356b5ff693e5d8a961f3b7a7b603d3d",
+      "uid": "86a04dd18158fd092f4a9e05",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

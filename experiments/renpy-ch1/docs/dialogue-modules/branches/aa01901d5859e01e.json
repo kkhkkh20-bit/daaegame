@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_q1_difficulty.rpy:294:30",
+      "file": "game/systems/room13_q1_difficulty.rpy",
+      "path": [
+        15971,
+        16040
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_q1_hard_rules",
+      "block": "r13_q1_hard_rules",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_difficulty.rpy:294:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "자료 열람과 질문은 자유롭다. 발언에 맞지 않는 자료를 근거로 내거나, 상대의 반론에 잘못된 답을 확정하면 오답이 된다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_difficulty.rpy",
+          "line": 294,
+          "label": "r13_q1_hard_rules",
+          "guards": [
+            "if r13_q1_hard():"
+          ]
+        }
+      ],
+      "line": 294,
+      "scene_title": "r13_q1_hard_rules",
+      "source_hash": "9a354ff6a98b8cac565ba817f440cdf209f2fbe11dd7b9392b809128818ad3a3",
+      "baseline_hash": "b225db49e02b833fcacb83a09120485c0702f0b00787e07d3a0e6080fe90f0d2",
+      "uid": "1f84a1d6dda2e3808370c9d4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_q1_hard_rules|rpy_literal|r13_q1_hard_rules|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

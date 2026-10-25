@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/winter.rpy:153:37",
+      "file": "game/winter.rpy",
+      "path": [
+        6855,
+        6889
+      ],
+      "origin": "rpy_inventory",
+      "day": 7,
+      "scene": "winter_day",
+      "block": "winter_day",
+      "placement": "literal",
+      "ref": "game/winter.rpy:153:37",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "누비가 오늘 오지 않았어요. 집에는 구금 통지가 붙었대요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 153,
+          "label": "winter_day",
+          "guards": [
+            "if winter[\"day\"]==6 and winter[\"witness\"]==\"detained\":"
+          ]
+        }
+      ],
+      "line": 153,
+      "scene_title": "winter_day",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "c5d3c942012c62eb4d737aa074ec8d494716fa8e70575687ea381e4e29f2a708",
+      "uid": "bcca0e354942fdaa3b407a0f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|winter_day|rpy_inventory|winter_day|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:155:37",
+      "file": "game/winter.rpy",
+      "path": [
+        7025,
+        7062
+      ],
+      "origin": "rpy_inventory",
+      "day": 7,
+      "scene": "winter_day",
+      "block": "winter_day",
+      "placement": "literal",
+      "ref": "game/winter.rpy:155:37",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "누비 집의 통지가 없어졌어요. 누가 데려갔는지도 말을 안 해요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 155,
+          "label": "winter_day",
+          "guards": [
+            "if winter[\"day\"]==8 and winter[\"witness\"]==\"dead\":"
+          ]
+        }
+      ],
+      "line": 155,
+      "scene_title": "winter_day",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "2f2969ba94b55a2574122858a67f25f18f70df7903575a653399813bbfe1bc2b",
+      "uid": "6500ee712a5f4f9317851aa8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|winter_day|rpy_inventory|winter_day|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

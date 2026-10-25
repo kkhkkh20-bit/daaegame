@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "nabi_beds13:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "nabi_beds13",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 13,
+      "scene": "nabi_beds13",
+      "block": "nabi_beds13",
+      "placement": "binding",
+      "ref": "nabi_beds13:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "침상과 인수를 부탁합니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "school",
+        "person": "nabi",
+        "object": null
+      },
+      "scene_title": "nabi_beds13",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "5baeaea00c0fc590fc253faa334feab4011f666fb4130f74959b1c72f8494ab6",
+      "uid": "759d65b53b3b75bf1c5d777d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|nabi_beds13|choice|nabi_beds13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

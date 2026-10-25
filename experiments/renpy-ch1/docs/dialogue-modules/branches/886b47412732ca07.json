@@ -1,0 +1,345 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D06_S03P_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S03P_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S03P",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S03P_L0001",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "애들은!",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 262,
+          "label": "r13_v111_empty_fire6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_S03P — 빈 창고의 불",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "092ac1dd29182763c5dcd7df487626ae5ef18a8823ce5cd154ef2f016a2b60f6",
+      "uid": "eb3d66cf3d1b4855e00cfea8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03P|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S03P_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S03P_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S03P",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S03P_L0002",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "학교에 있습니다. 네 명 다 확인했습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 263,
+          "label": "r13_v111_empty_fire6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_S03P — 빈 창고의 불",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a150d51befb338772024dc48f3875e293ebc7ee245e541a7db2b652b200a5bec",
+      "uid": "581bb07f858107496bd93f82",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03P|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S03P_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S03P_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S03P",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S03P_L0003",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "꼬미도?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 264,
+          "label": "r13_v111_empty_fire6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_S03P — 빈 창고의 불",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9de540c151c2b063a0d3cf0f2e1bb0f7482098527e84112e75b4b529d2e3e2d1",
+      "uid": "839622039606738c0a21e296",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03P|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S03P_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S03P_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S03P",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S03P_L0004",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "꼬미도요.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 265,
+          "label": "r13_v111_empty_fire6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_S03P — 빈 창고의 불",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a8cfdbf66140723296b6d7376a98fed50a44aac15b59f8d6dbe8f8a6b7ebb92b",
+      "uid": "000f7100e78ac3a97370f020",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03P|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S03P_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S03P_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S03P",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S03P_L0005",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "보리가 한 번 안으로 뛰려다 발을 멈춘다. 아빠와 도토는 주변 장작을 떼어 불의 확산을 막는다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 266,
+          "label": "r13_v111_empty_fire6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_S03P — 빈 창고의 불",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a454a9eeec58bb6811e50edbc543f7b1789b48567c8127d4d865c794b75043bb",
+      "uid": "15b171a4d2be516467c3a840",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03P|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S03P_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S03P_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S03P",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S03P_L0006",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "장작…… 저건 제가 가져간 겁니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 267,
+          "label": "r13_v111_empty_fire6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_S03P — 빈 창고의 불",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5bec25a5bbd417a7efe547ae310572d7dc3e42fed1169e0c05c433ffcde89fc6",
+      "uid": "6aaf2fe41fa0ac9230bcd213",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03P|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S03P_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S03P_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S03P",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S03P_L0007",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그 얘기는 사람부터 확인하고 하죠.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 268,
+          "label": "r13_v111_empty_fire6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_S03P — 빈 창고의 불",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f0270d3b6dcef238f6437734188086287cba66d13c9996215c96bad4de7c227b",
+      "uid": "a279a58198281149afd5a232",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03P|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S03P_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S03P_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S03P",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S03P_L0008",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: fire_result=empty_warehouse; warehouse_children_location=school; D06_S03P_empty_fire_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_S03P — 빈 창고의 불",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c46234c7a70a7006b6c457a99d6ca839eecf85e4c1a8543c3d5abd8f3dc98b8c",
+      "uid": "e38908c4d0e502ad915555a5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03P|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

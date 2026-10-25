@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13.rpy:216:165",
+      "file": "game/room13.rpy",
+      "path": [
+        11312,
+        11375
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_entry_karo_menu",
+      "block": "r13_entry_karo_menu",
+      "placement": "literal",
+      "ref": "game/room13.rpy:216:165",
+      "when": null,
+      "speaker": "karo",
+      "kind": "dialogue",
+      "text": "마차만 고친다고 갈 수 있는 게 아닙니다. 고갯길도 폭설로 막혔거든요. 길이 열리면 가장 먼저 알려 드릴게요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 216,
+          "label": "r13_entry_karo_menu",
+          "guards": [
+            "if r13_entry_karo_choice==\"road\":"
+          ]
+        }
+      ],
+      "line": 216,
+      "scene_title": "r13_entry_karo_menu",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "a3d43b0402fe3cda985e0b180ce90c38fd73677d8058643591513434b181750f",
+      "uid": "d2ebb6b257661bd502a8f0e2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_entry_karo_menu|rpy_literal|r13_entry_karo_menu|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:219:325",
+      "file": "game/room13.rpy",
+      "path": [
+        11798,
+        11835
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_entry_karo_menu",
+      "block": "r13_entry_karo_menu",
+      "placement": "literal",
+      "ref": "game/room13.rpy:219:325",
+      "when": null,
+      "speaker": "karo",
+      "kind": "dialogue",
+      "text": "저는 여기서 짐을 지키고 있을게요. 확인이 끝나면 불러 주세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 219,
+          "label": "r13_entry_karo_menu",
+          "guards": [
+            "elif r13_entry_karo_choice==\"witness\":"
+          ]
+        }
+      ],
+      "line": 219,
+      "scene_title": "r13_entry_karo_menu",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "2746239234e3f63ade4653fa5fd76841b4e99ee27c61558de70ec649203c55fe",
+      "uid": "a321b0ace73fece3e10072e1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_entry_karo_menu|rpy_literal|r13_entry_karo_menu|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_evening.rpy:254:27",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        14360,
+        14397
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_ev_eve_trial",
+      "block": "r13_ev_eve_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:254:27",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(남은 건 오늘 밤뿐이다. 자기 전에 할 수 있는 일을 하자.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 254,
+          "label": "r13_ev_eve_trial",
+          "guards": []
+        }
+      ],
+      "line": 254,
+      "scene_title": "r13_ev_eve_trial",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "58457d8a9ae0db0d7dccecb31a0b2e028fe6678377cb733038903a0d01d15b02",
+      "uid": "6753cdaf356e9c4dd5be6fcf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_ev_eve_trial|rpy_literal|r13_ev_eve_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

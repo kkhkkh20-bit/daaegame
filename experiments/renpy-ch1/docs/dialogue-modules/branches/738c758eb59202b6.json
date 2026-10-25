@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:190:15",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        10622,
+        10639
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_nt_overhear",
+      "block": "r13_nt_overhear",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:190:15",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(할머니가? 엄마 편지를?)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 190,
+          "label": "r13_nt_overhear",
+          "guards": []
+        }
+      ],
+      "line": 190,
+      "scene_title": "r13_nt_overhear",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "016dcbdc4f52ef6bfddcac4332d5472ec9522cdbc2a9b0231226e75e497198b5",
+      "uid": "228175bd539e830ce7286b9e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_nt_overhear|rpy_literal|r13_nt_overhear|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:202:55",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        11491,
+        11515
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_nt_overhear",
+      "block": "r13_nt_overhear",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:202:55",
+      "when": null,
+      "speaker": "resident_badook",
+      "kind": "dialogue",
+      "text": "무슨 일이에요? ……너울 씨가 그랬어요?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 202,
+          "label": "r13_nt_overhear",
+          "guards": [
+            "if not r13_has(\"chorong_dead\"):",
+            "menu:",
+            "if r13_has(\"badook_doubt\") and (r13_has(\"kd_solved\") or r13_has(\"badook_ally\")):"
+          ]
+        }
+      ],
+      "line": 202,
+      "scene_title": "r13_nt_overhear",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "fd596b6cf6c0def7f299794ed1b81dfc5358e4f9d2ce20fb1a7ca3fab618ff34",
+      "uid": "371b19c207ef5eb0197ce4a4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_nt_overhear|rpy_literal|r13_nt_overhear|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_HP_CONSENT11_00",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_consent11",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "hp_consent11",
+      "block": "hp_consent11",
+      "placement": "blocks",
+      "ref": "hp_consent11",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "학교에서 남는 장작을 허락받아 가져왔습니다. 먼저 놓고 돌을 꺼내도 되겠습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 99,
+          "label": "r13_hp_house11_pick",
+          "guards": [
+            "elif n==2 and r13_hp_value('wood_reserved') and r13_hp_value('stove_seen') and not r13_hp_value('consent'):"
+          ]
+        }
+      ],
+      "scene_title": "hp_consent11",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "705b4e844c80e7a94170dc120e025b36fbae393038f7e9629d0ffc4717e7f009",
+      "uid": "fb7bf1ff81de39e92ce2ba82",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|hp_consent11|patch|hp_consent11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HP_CONSENT11_01",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_consent11",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "hp_consent11",
+      "block": "hp_consent11",
+      "placement": "blocks",
+      "ref": "hp_consent11",
+      "when": null,
+      "speaker": "판돌",
+      "kind": "dialogue",
+      "text": "장작을 먼저 놓으시오. 누나가 추워하면 나는 또 돌부터 찾을 것 같소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 99,
+          "label": "r13_hp_house11_pick",
+          "guards": [
+            "elif n==2 and r13_hp_value('wood_reserved') and r13_hp_value('stove_seen') and not r13_hp_value('consent'):"
+          ]
+        }
+      ],
+      "scene_title": "hp_consent11",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "7c28d6d54f5ebbea5bf7105db5e6720d71981e48fe0561bddb376685e607c3ab",
+      "uid": "df809af05155ac1fc7080f83",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|hp_consent11|patch|hp_consent11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HP_CONSENT11_02",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_consent11",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "hp_consent11",
+      "block": "hp_consent11",
+      "placement": "blocks",
+      "ref": "hp_consent11",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "네. 불 끄는 것만 하고 가 버리지는 않겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 99,
+          "label": "r13_hp_house11_pick",
+          "guards": [
+            "elif n==2 and r13_hp_value('wood_reserved') and r13_hp_value('stove_seen') and not r13_hp_value('consent'):"
+          ]
+        }
+      ],
+      "scene_title": "hp_consent11",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "980a67faa91f9461c39e79a7cd3c48af11eaa0bd1f1c20a6b97c891088f41bf3",
+      "uid": "ede19a5f43c8d137c4f77ea1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|hp_consent11|patch|hp_consent11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

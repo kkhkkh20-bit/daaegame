@@ -1,0 +1,48 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_GW_D07_41",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "laundry_talk_rebut7",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "laundry_talk_rebut7",
+      "block": "laundry_talk_rebut7",
+      "placement": "blocks",
+      "ref": "laundry_talk_rebut7",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "손님이 담 뒤에서 들은 말을 회의 기록에 적으라는 거요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 593,
+          "label": "r13_v111_responsibility_wrong7",
+          "guards": [
+            "if r13_nw_retry(\"fire\",[\"E06_FIRE\",\"E06_EMPTY\",\"E07_NUBI\"] if r13_v111_value(\"FIRE_EVACUATED\") else [\"E06_FIRE\",\"E06_RESCUE\",\"E07_NUBI\"],\"너울이 고개를 젓는다. 불의 원인과 그날 밤 일을 함께 묶어야 한다.\"):",
+            "if \"V111:NW_LAUNDRY_TALK\" in (v111_last_presented or []) and \"V111:NW_NUBI_TICKET\" not in (v111_last_presented or []):"
+          ]
+        }
+      ],
+      "scene_title": "laundry_talk_rebut7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "8b862565622ea82a67484eb2009c0957e7c0f4ab6d4f375d53bb617eb64c0cf4",
+      "uid": "31bb1f64ac99893cd906c452",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|laundry_talk_rebut7|patch|laundry_talk_rebut7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

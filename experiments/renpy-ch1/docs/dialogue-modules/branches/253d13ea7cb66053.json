@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/council_issue.rpy:117:30",
+      "file": "game/council_issue.rpy",
+      "path": [
+        5352,
+        5359
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "council_open_issue",
+      "block": "council_open_issue",
+      "placement": "literal",
+      "ref": "game/council_issue.rpy:117:30",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "여관 원탁",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/council_issue.rpy",
+          "line": 117,
+          "label": "council_open_issue",
+          "guards": []
+        }
+      ],
+      "line": 117,
+      "scene_title": "council_open_issue",
+      "source_hash": "75101b1a3fdac648a2d081c61f6d6641e1bb93d9be94605bc39e707c5de0142b",
+      "baseline_hash": "6be21b774b27423257fd6344e0f6252c5b22355a773d9b4ed7fb67a3103981c1",
+      "uid": "4dec69184444d6452d5be712",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|council_open_issue|rpy_inventory|council_open_issue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/council_issue.rpy:167:100",
+      "file": "game/council_issue.rpy",
+      "path": [
+        7980,
+        7994
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "council_open_issue",
+      "block": "council_open_issue",
+      "placement": "literal",
+      "ref": "game/council_issue.rpy:167:100",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "다른 기록도 확인하죠.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/council_issue.rpy",
+          "line": 167,
+          "label": "council_open_issue",
+          "guards": [
+            "while not council_resolved():",
+            "elif council_action == \"present\":",
+            "if council_source_key == \"physical\":",
+            "if council_ev != \"cancel\":",
+            "else:"
+          ]
+        }
+      ],
+      "line": 167,
+      "scene_title": "council_open_issue",
+      "source_hash": "75101b1a3fdac648a2d081c61f6d6641e1bb93d9be94605bc39e707c5de0142b",
+      "baseline_hash": "d3d3f6e8e21f5adf52b782be46044f774c6d2d97bb2a1d71742e02d862577308",
+      "uid": "5bbf1efaf1002389f2fa8ca0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|council_open_issue|rpy_inventory|council_open_issue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

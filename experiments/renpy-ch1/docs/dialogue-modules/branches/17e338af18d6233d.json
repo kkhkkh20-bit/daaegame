@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:457:14",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        22642,
+        22683
+      ],
+      "origin": "rpy_literal",
+      "day": 14,
+      "scene": "r13_ep2_clinic_note",
+      "block": "r13_ep2_clinic_note",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:457:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "빈 침상 위에 삐뚤한 글씨로 '고마웠소'라고 적힌 종이가 놓여 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 457,
+          "label": "r13_ep2_clinic_note",
+          "guards": []
+        }
+      ],
+      "line": 457,
+      "scene_title": "r13_ep2_clinic_note",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "65996d9c04ee32e28959df6aa59a437b785e6937238797a22da0ec018409c363",
+      "uid": "e9397354c7c4d21791bf920c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|r13_ep2_clinic_note|rpy_literal|r13_ep2_clinic_note|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

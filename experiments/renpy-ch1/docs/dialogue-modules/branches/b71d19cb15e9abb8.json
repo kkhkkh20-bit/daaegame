@@ -1,0 +1,129 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D13_FV01",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "fever13",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "fever13",
+      "block": "fever13",
+      "placement": "blocks",
+      "ref": "fever13",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람의 이마는 아직 뜨겁다. 엄마가 젖은 수건을 짜서 얹는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1793,
+          "label": "r13_v111_day13",
+          "guards": [
+            "if r13_v111_value('daram_fever12') and r13_v111_actor_ready('daram'):"
+          ]
+        }
+      ],
+      "scene_title": "fever13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "c3a7491637db7b96cdd59ebe493068fa1e23e961e746e2b1162adf97fb154348",
+      "uid": "7ffd84a1f6dfb08ae2d3eb70",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|fever13|patch|fever13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D13_FV02",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "fever13",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "fever13",
+      "block": "fever13",
+      "placement": "blocks",
+      "ref": "fever13",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "오늘은 나도 갈 거야. 탐정단 대장이니까.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1793,
+          "label": "r13_v111_day13",
+          "guards": [
+            "if r13_v111_value('daram_fever12') and r13_v111_actor_ready('daram'):"
+          ]
+        }
+      ],
+      "scene_title": "fever13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "618a5fee8ab9782936684e35be7e4f172ed3b37d2fa307aea23145d8a03bcb99",
+      "uid": "e16d3d7216ad4f17e3ff6a27",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|fever13|patch|fever13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D13_FV03",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "fever13",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "fever13",
+      "block": "fever13",
+      "placement": "blocks",
+      "ref": "fever13",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "대장은 오늘 누워 있는 거야.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1793,
+          "label": "r13_v111_day13",
+          "guards": [
+            "if r13_v111_value('daram_fever12') and r13_v111_actor_ready('daram'):"
+          ]
+        }
+      ],
+      "scene_title": "fever13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "a0ef296c7332bae136e3aa8b62a99c23815b85b9c5273f4684e9a248d3f28f2b",
+      "uid": "2fe38dce7f6c2567faea7ec6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|fever13|patch|fever13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

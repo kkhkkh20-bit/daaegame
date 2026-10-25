@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_AUD_D13_03",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "after",
+        "MS14_D13_C_L0003",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_C",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D13_C_L0003",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "누군가 너울의 팔을 잡아당긴다. 너울이 수레 바퀴 쪽으로 넘어지고, 주먹 하나가 올라간다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2641,
+          "label": "r13_v111_crowd13",
+          "guards": []
+        }
+      ],
+      "scene_title": "대체 장면 13-C. 사람을 끌어내리는 손",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "41a1b02278081e5c52570007c25eb917e036b3f14a472682f693c357dc5d904d",
+      "uid": "bd8cf1f946ff9e50ab3c84c9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_C|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

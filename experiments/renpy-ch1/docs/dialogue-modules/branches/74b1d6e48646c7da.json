@@ -1,0 +1,211 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_K2_CAN_PACK6_0",
+      "file": "game/v111/newworld/d06.json",
+      "path": [
+        "blocks",
+        "can_pack6",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 6,
+      "scene": "can_pack6",
+      "block": "can_pack6",
+      "placement": "blocks",
+      "ref": "can_pack6",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이 줄, 풀어도 되니? 도토리는 쏟아지기 전에 챙겨 두고.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 145,
+          "label": "r13_v111_afternoon6",
+          "guards": [
+            "if v111_answer==81:"
+          ]
+        }
+      ],
+      "scene_title": "can_pack6",
+      "source_hash": "34df23f41d57916ce5b839de420f86f588f2b883338565904ffc098b14cca2db",
+      "baseline_hash": "60c419d7c8566a41adbc1a4956e0cf032f4f7a347823c409dc623069eb9402f8",
+      "uid": "ac511a39faec5c764597b045",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|can_pack6|patch|can_pack6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_K2_CAN_PACK6_1",
+      "file": "game/v111/newworld/d06.json",
+      "path": [
+        "blocks",
+        "can_pack6",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 6,
+      "scene": "can_pack6",
+      "block": "can_pack6",
+      "placement": "blocks",
+      "ref": "can_pack6",
+      "when": null,
+      "speaker": "꼬미",
+      "kind": "dialogue",
+      "text": "깡통도 가져갈 거야.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 145,
+          "label": "r13_v111_afternoon6",
+          "guards": [
+            "if v111_answer==81:"
+          ]
+        }
+      ],
+      "scene_title": "can_pack6",
+      "source_hash": "34df23f41d57916ce5b839de420f86f588f2b883338565904ffc098b14cca2db",
+      "baseline_hash": "141cc47929246a0eced1a3b10ee9351eeb09cffdddf6a6bd6dabcea7285ada3e",
+      "uid": "53c1a8259aa4b93b0db9cbc5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|can_pack6|patch|can_pack6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_K2_CAN_PACK6_2",
+      "file": "game/v111/newworld/d06.json",
+      "path": [
+        "blocks",
+        "can_pack6",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 6,
+      "scene": "can_pack6",
+      "block": "can_pack6",
+      "placement": "blocks",
+      "ref": "can_pack6",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "꼬미가 도토리를 주머니에 넣는다. 줄을 풀어 빈 깡통 둘레에 감아 주자 꼬미가 품에 안는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 145,
+          "label": "r13_v111_afternoon6",
+          "guards": [
+            "if v111_answer==81:"
+          ]
+        }
+      ],
+      "scene_title": "can_pack6",
+      "source_hash": "34df23f41d57916ce5b839de420f86f588f2b883338565904ffc098b14cca2db",
+      "baseline_hash": "6f553fd7994fc45135ee362b88946f75922f297b414ba36baf9d20bd980ac0d3",
+      "uid": "609c36731096a5cfe3e37ae0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|can_pack6|patch|can_pack6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_K2_CAN_PACK6_3",
+      "file": "game/v111/newworld/d06.json",
+      "path": [
+        "blocks",
+        "can_pack6",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 6,
+      "scene": "can_pack6",
+      "block": "can_pack6",
+      "placement": "blocks",
+      "ref": "can_pack6",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "이제 문 열어도 안 울려?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 145,
+          "label": "r13_v111_afternoon6",
+          "guards": [
+            "if v111_answer==81:"
+          ]
+        }
+      ],
+      "scene_title": "can_pack6",
+      "source_hash": "34df23f41d57916ce5b839de420f86f588f2b883338565904ffc098b14cca2db",
+      "baseline_hash": "ca9ccc629427dbd8c536f478797346bebffdeb1af276b2ef288e9c06aad299b0",
+      "uid": "5e27c72fa87db50eef9079a8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|can_pack6|patch|can_pack6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_K2_CAN_PACK6_4",
+      "file": "game/v111/newworld/d06.json",
+      "path": [
+        "blocks",
+        "can_pack6",
+        4,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 6,
+      "scene": "can_pack6",
+      "block": "can_pack6",
+      "placement": "blocks",
+      "ref": "can_pack6",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응. 문은 잠깐 조용히 있어도 돼.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 145,
+          "label": "r13_v111_afternoon6",
+          "guards": [
+            "if v111_answer==81:"
+          ]
+        }
+      ],
+      "scene_title": "can_pack6",
+      "source_hash": "34df23f41d57916ce5b839de420f86f588f2b883338565904ffc098b14cca2db",
+      "baseline_hash": "34f1b27deedbb4b2651291d2e2462af8073425aa44609e160c4283eb4964df95",
+      "uid": "12cbd6210b798c23b942bfcc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|can_pack6|patch|can_pack6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

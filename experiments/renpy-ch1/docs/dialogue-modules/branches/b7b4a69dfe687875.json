@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:360:40",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        18021,
+        18044
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_ep2_decision",
+      "block": "r13_ep2_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:360:40",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "“……무쇠 할아버지야. 아파서 그래.”",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 360,
+          "label": "r13_ep2_decision",
+          "guards": [
+            "if r13_has(\"K05\"):"
+          ]
+        }
+      ],
+      "line": 360,
+      "scene_title": "r13_ep2_decision",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "23f3933ad29847168558de118e292e5d07199ca7d39703b2e8fb146ceb510094",
+      "uid": "dab522f02f6e2395b28eca68",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_decision|rpy_inventory|r13_ep2_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:364:40",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        18235,
+        18259
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_ep2_decision",
+      "block": "r13_ep2_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:364:40",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "“누군지는 몰라. 근데 밤이는 아니야.”",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 364,
+          "label": "r13_ep2_decision",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 364,
+      "scene_title": "r13_ep2_decision",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "979152a170a908d8825b96111ef77f88332a90fa0d9320e26c4121ad4550d176",
+      "uid": "75444193550a4744e92443b8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_decision|rpy_inventory|r13_ep2_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

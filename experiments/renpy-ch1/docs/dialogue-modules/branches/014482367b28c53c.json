@@ -1,0 +1,93 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "blanket_mend13:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "blanket_mend13",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 13,
+      "scene": "blanket_mend13",
+      "block": "blanket_mend13",
+      "placement": "binding",
+      "ref": "blanket_mend13:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "회색 담요를 실제로 수선한다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "school",
+        "person": null,
+        "object": "blankets"
+      },
+      "scene_title": "blanket_mend13",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "55fd1ce992af0c2fcf2aa086aba9c0973a2a8c94a5d0941a5a44c0ef851d29b2",
+      "uid": "909e4519531a57ba02e3c180",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|blanket_mend13|choice|blanket_mend13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "blanket_mend13:80",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "blanket_mend13",
+        "options",
+        1,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 13,
+      "scene": "blanket_mend13",
+      "block": "blanket_mend13",
+      "placement": "binding",
+      "ref": "blanket_mend13:80",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "누나의 돌봄 인계를 확인한다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "hidden_pandol:heat_replaced",
+            true
+          ],
+          [
+            "state",
+            "hidden_pandol:care_handed",
+            null
+          ]
+        ],
+        "location": "school",
+        "person": null,
+        "object": "desks"
+      },
+      "scene_title": "blanket_mend13",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "a2bd44d9c990fdf2beb985ef061d84614d694d874b2d0a58074fc1384d88b49c",
+      "uid": "72f29d8ebc11cc109da9cb2d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|blanket_mend13|choice|blanket_mend13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

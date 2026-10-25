@@ -1,0 +1,127 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_return_recovery.rpy:29:27",
+      "file": "game/systems/room13_return_recovery.rpy",
+      "path": [
+        1942,
+        1978
+      ],
+      "origin": "rpy_inventory",
+      "day": 7,
+      "scene": "r13_return_lost",
+      "block": "r13_return_lost",
+      "placement": "literal",
+      "ref": "game/systems/room13_return_recovery.rpy:29:27",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "하던 장면을 이어 갈 수 없어 오늘 아침부터 다시 시작했어요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_return_recovery.rpy",
+          "line": 29,
+          "label": "r13_return_lost",
+          "guards": [
+            "if r13_v111_active():",
+            "if room13.get(\"day\",1) in r13_morning_days():"
+          ]
+        }
+      ],
+      "line": 29,
+      "scene_title": "r13_return_lost",
+      "source_hash": "16c0bf912136a38fc287332d16550c3c5961e89ebf484dab7d37ceab4ecb7494",
+      "baseline_hash": "8fe14c121dba0683597904d1e81b2bc560039d5dfe209de392fd2ff4e0c89f48",
+      "uid": "16454e29da485086f6b601bb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_return_lost|rpy_inventory|r13_return_lost|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_return_recovery.rpy:31:97",
+      "file": "game/systems/room13_return_recovery.rpy",
+      "path": [
+        2132,
+        2141
+      ],
+      "origin": "rpy_inventory",
+      "day": 7,
+      "scene": "r13_return_lost",
+      "block": "r13_return_lost",
+      "placement": "literal",
+      "ref": "game/systems/room13_return_recovery.rpy:31:97",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "메인 화면으로",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_return_recovery.rpy",
+          "line": 31,
+          "label": "r13_return_lost",
+          "guards": [
+            "if r13_v111_active():"
+          ]
+        }
+      ],
+      "line": 31,
+      "scene_title": "r13_return_lost",
+      "source_hash": "16c0bf912136a38fc287332d16550c3c5961e89ebf484dab7d37ceab4ecb7494",
+      "baseline_hash": "4c3e53a98448fb58fa4ac8f9d92253c639e602673c5f2c3393b4dfffde26f56b",
+      "uid": "f82c33d73a5174654c5c3ff2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_return_lost|rpy_inventory|r13_return_lost|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_return_recovery.rpy:31:107",
+      "file": "game/systems/room13_return_recovery.rpy",
+      "path": [
+        2142,
+        2151
+      ],
+      "origin": "rpy_inventory",
+      "day": 7,
+      "scene": "r13_return_lost",
+      "block": "r13_return_lost",
+      "placement": "literal",
+      "ref": "game/systems/room13_return_recovery.rpy:31:107",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "메인 화면으로",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_return_recovery.rpy",
+          "line": 31,
+          "label": "r13_return_lost",
+          "guards": [
+            "if r13_v111_active():"
+          ]
+        }
+      ],
+      "line": 31,
+      "scene_title": "r13_return_lost",
+      "source_hash": "16c0bf912136a38fc287332d16550c3c5961e89ebf484dab7d37ceab4ecb7494",
+      "baseline_hash": "4c3e53a98448fb58fa4ac8f9d92253c639e602673c5f2c3393b4dfffde26f56b",
+      "uid": "f149a75b3bccf4838a9547d7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_return_lost|rpy_inventory|r13_return_lost|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

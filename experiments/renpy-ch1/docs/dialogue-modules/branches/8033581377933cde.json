@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_meeting_flow.rpy:344:62",
+      "file": "game/systems/room13_meeting_flow.rpy",
+      "path": [
+        19878,
+        19881
+      ],
+      "origin": "rpy_inventory",
+      "day": 2,
+      "scene": "r13_meeting_public_vote",
+      "block": "r13_meeting_public_vote",
+      "placement": "literal",
+      "ref": "game/systems/room13_meeting_flow.rpy:344:62",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "명",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_meeting_flow.rpy",
+          "line": 344,
+          "label": "r13_meeting_public_vote",
+          "guards": [
+            "for index,name in enumerate(R13_DEBATE_STANCE[vote[\"session\"]]):"
+          ]
+        }
+      ],
+      "line": 344,
+      "scene_title": "r13_meeting_public_vote",
+      "source_hash": "4ad71b4c4541a0e179f45708d38b40d14daddf1a3964344defe921a06f253f19",
+      "baseline_hash": "9f96b8e22cc06bfafc548ef472e33b60548b190f17dbc04b1da176a50d2c6d2c",
+      "uid": "28f3cefda3cc7f9ea4a6e4f3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_meeting_public_vote|rpy_inventory|r13_meeting_public_vote|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

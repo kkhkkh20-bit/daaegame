@@ -1,0 +1,230 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "meal_inspect12:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "meal_inspect12",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 12,
+      "scene": "meal_inspect12",
+      "block": "meal_inspect12",
+      "placement": "binding",
+      "ref": "meal_inspect12:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "작은 냄비와 국자 자리를 살핀다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "soup_smallpot_seen12",
+            null
+          ]
+        ],
+        "location": "school",
+        "person": null,
+        "object": "desks"
+      },
+      "scene_title": "meal_inspect12",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "972d01936083d50608aaeeb8f6c3bfbf265aab7f373790519c7a040fe1a19447",
+      "uid": "5ccab49754a28a0c03d4c77d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|meal_inspect12|choice|meal_inspect12|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "meal_inspect12:1",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "meal_inspect12",
+        "options",
+        1,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 12,
+      "scene": "meal_inspect12",
+      "block": "meal_inspect12",
+      "placement": "binding",
+      "ref": "meal_inspect12:1",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "흰 그릇이 놓인 자리를 살핀다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "soup_bowls_seen12",
+            null
+          ]
+        ],
+        "location": "school",
+        "person": null,
+        "object": "v111_bowl_table"
+      },
+      "scene_title": "meal_inspect12",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "8c368439bac3dbe7e767952333ad377a5022f7c0c538ed5d53fbcedaca7210f7",
+      "uid": "031fd2b0ed3c139d5910a309",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|meal_inspect12|choice|meal_inspect12|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "meal_inspect12:2",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "meal_inspect12",
+        "options",
+        2,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 12,
+      "scene": "meal_inspect12",
+      "block": "meal_inspect12",
+      "placement": "binding",
+      "ref": "meal_inspect12:2",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "선반에 놓인 병의 봉인을 살핀다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "soup_bottle_seen12",
+            null
+          ]
+        ],
+        "location": "school",
+        "person": null,
+        "object": "desks"
+      },
+      "scene_title": "meal_inspect12",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "391a4441fe74498dc3beadb15defb6219a02825b5b37a056da7bae7bc77d5e34",
+      "uid": "62d1b6d97952351b5ccae909",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|meal_inspect12|choice|meal_inspect12|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "meal_inspect12:3",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "meal_inspect12",
+        "options",
+        3,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 12,
+      "scene": "meal_inspect12",
+      "block": "meal_inspect12",
+      "placement": "binding",
+      "ref": "meal_inspect12:3",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "흰 그릇을 옆으로 옮기고 작은 냄비를 연다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "soup_smallpot_seen12",
+            true
+          ],
+          [
+            "state",
+            "soup_bowls_seen12",
+            true
+          ],
+          [
+            "state",
+            "soup_bottle_seen12",
+            true
+          ]
+        ],
+        "location": "school",
+        "person": null,
+        "object": "v111_bowl_table"
+      },
+      "scene_title": "meal_inspect12",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "2a1f8764bab6042c9a611b549ad0c1e518626011c02ef2e17cabaf3c483b805f",
+      "uid": "4fbdca8fff6de7aed3e47c9b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|meal_inspect12|choice|meal_inspect12|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "meal_inspect12:4",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "meal_inspect12",
+        "options",
+        4,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 12,
+      "scene": "meal_inspect12",
+      "block": "meal_inspect12",
+      "placement": "binding",
+      "ref": "meal_inspect12:4",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "장작을 받을 일을 다시 살핀다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "school",
+        "person": null,
+        "object": "desks"
+      },
+      "scene_title": "meal_inspect12",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "2464da8df68bee33be19cd5039816e630c7697866c0c78706b9037a4b0be796d",
+      "uid": "2bc77cd5829aa620fd79d418",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|meal_inspect12|choice|meal_inspect12|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

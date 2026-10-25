@@ -1,0 +1,884 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_VIOLENCE",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "너울 폭행을 막지 못한 경로. 진료 공간. 구조된 사람들의 자리 옆에 다친 너울이 누워 있다. 돌목이 감독한다. 서리는 보존한 증거·정당한 조사와 치료를 섞지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "군중 폭력 결말 — 한 명의 자리가 더 필요하다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ebcbf03c44e29d2e87c31c6443ba4e6b35d6d147848bb73638d6392904e92d4c",
+      "uid": "c466734b15e28dc589910b1b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_VIOLENCE|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_VIOLENCE",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0002",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "여긴 다친 사람 보는 곳이에요. 질문은 나중에 해요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3535,
+          "label": "r13_v111_violence_ending14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "군중 폭력 결말 — 한 명의 자리가 더 필요하다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b1e5bce9f59dba2e251bea1dde397f13464aa05e97603e6a235ed060f2bd86e7",
+      "uid": "7824d3619efd49d974cbd89b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_VIOLENCE|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_VIOLENCE",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0003",
+      "when": null,
+      "speaker": "주민",
+      "kind": "dialogue",
+      "text": "저 사람 때문에 우리 집이…….",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3536,
+          "label": "r13_v111_violence_ending14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "군중 폭력 결말 — 한 명의 자리가 더 필요하다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c6566b0607740edfb031a58a5b2d8791e99595d4fefcbed318ec09ab2346edb5",
+      "uid": "95c5f76099b5253db80ae470",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_VIOLENCE|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_VIOLENCE",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0004",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "알아야 하는 일은 없어지지 않아요. 지금은 비켜 주세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3537,
+          "label": "r13_v111_violence_ending14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "군중 폭력 결말 — 한 명의 자리가 더 필요하다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "26d3508b9a884e670232d3d2205d1e857e715f4527586fb70df17bd7f5e7f918",
+      "uid": "66c3341d75ba3a4edd3ad0c6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_VIOLENCE|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_VIOLENCE",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0005",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠가 문 앞 사람들을 물린다. 다람은 너울의 얼굴을 보지 않고 아빠의 손을 본다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "군중 폭력 결말 — 한 명의 자리가 더 필요하다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "80dc9512fbf9cd497833ff273365f551e6511ac20d57b771d97a00b2ae685013",
+      "uid": "c4aef3792fdd32433ec23e6e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_VIOLENCE|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_VIOLENCE",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0006",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "다람이 전날 현장에 있었다면.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "군중 폭력 결말 — 한 명의 자리가 더 필요하다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b8959578c43b780944cc954e9889431db1192273fb7a99884a9972c5cfd17987",
+      "uid": "2548a731c7676d5380c2cbc0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_VIOLENCE|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_VIOLENCE",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0007",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "어제 아빠가 막을 줄 알았어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3549,
+          "label": "r13_v111_crowd_child_saw14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "군중 폭력 결말 — 한 명의 자리가 더 필요하다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "06a2a319d771f4060ee77df7c0461e1924ec81bef0c4c0a93b1f48bbb54411c9",
+      "uid": "50f4bb3c666e7ae134848991",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_VIOLENCE|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_VIOLENCE",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0008",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "다람이 학교에 있었다면 먼저 아빠가 설명한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "군중 폭력 결말 — 한 명의 자리가 더 필요하다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "46de906047d86998da532dfde5b971754b41434eaf6a51a5e1d16826dac0eed6",
+      "uid": "3e6a1bdf89710ccdb7de042b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_VIOLENCE|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_VIOLENCE",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0009",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어제 수레 앞에서 사람들이 너울 씨를 때렸어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3553,
+          "label": "r13_v111_crowd_child_away14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "군중 폭력 결말 — 한 명의 자리가 더 필요하다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5158a496aa5cfc0cd6844ac2645140ddec23c63f2565007dea606c2772ec7ae5",
+      "uid": "bc919f18c32ab17e8a0e8276",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_VIOLENCE|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_VIOLENCE",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0010",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠도 거기 있었어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3554,
+          "label": "r13_v111_crowd_child_away14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "군중 폭력 결말 — 한 명의 자리가 더 필요하다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cc82780efa77027a579d9d4f51f924735aeb3cffe7190b18e6e779a472498c9d",
+      "uid": "23a6e5fce98534c283e5ab23",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_VIOLENCE|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_VIOLENCE",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0011",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3555,
+          "label": "r13_v111_crowd_child_away14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "군중 폭력 결말 — 한 명의 자리가 더 필요하다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8025c713f26164a6787608a6cbce1b8ac0cfe963a42e1416578db60193e95224",
+      "uid": "311949264da3e0bb38559f7f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_VIOLENCE|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_VIOLENCE",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0012",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠는 뭐 했어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3556,
+          "label": "r13_v111_crowd_child_away14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "군중 폭력 결말 — 한 명의 자리가 더 필요하다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "30f6d8bee589559e249e6afbd9f2bd5ceb5401310876c05f2e85114bcdaf1360",
+      "uid": "496800d6df16e3f9d3bf8b03",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_VIOLENCE|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_VIOLENCE",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0013",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠가 불개입했다면.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "군중 폭력 결말 — 한 명의 자리가 더 필요하다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "14e031e0265c7f187d029cb7c37c99815f5ba0bbacd83ca7fbc9b5cb45453b91",
+      "uid": "61633db3111fbb4314150d52",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_VIOLENCE|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_VIOLENCE",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0014",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "내가 막지 않았어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3565,
+          "label": "r13_v111_crowd_no_action14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "군중 폭력 결말 — 한 명의 자리가 더 필요하다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b2ba59b299733036f2fa3f1e181ef03a4168794a15a5040fbd963826045a9e3b",
+      "uid": "601ad427bb85c2819ec9c39c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_VIOLENCE|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_VIOLENCE",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0015",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그래.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3566,
+          "label": "r13_v111_crowd_no_action14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "군중 폭력 결말 — 한 명의 자리가 더 필요하다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "47dd1707211c7354d813fcd6c66319369aef44dca3d28aedf2278035f5fb055c",
+      "uid": "9910151bac949e3267778e1a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_VIOLENCE|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_VIOLENCE",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0016",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠가 개입했으나 실패했다면.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "군중 폭력 결말 — 한 명의 자리가 더 필요하다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "eb3184c9d197409aad69a53f72f9f3f2f0e6f1c183166ee273ec43206fe3067d",
+      "uid": "bd61d46d666d2e8ed18a4153",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_VIOLENCE|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_VIOLENCE",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0017",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "막으려고 갔는데, 못 막았어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3560,
+          "label": "r13_v111_crowd_failed14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "군중 폭력 결말 — 한 명의 자리가 더 필요하다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6fae5b9751c54d4d97f9cd8ca549ce20808f1582d2229a85a145e78eb50eca8f",
+      "uid": "757a56394dc212490c83b50d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_VIOLENCE|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_VIOLENCE",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0018",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "다음에는 사람 더 불러.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3561,
+          "label": "r13_v111_crowd_failed14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "군중 폭력 결말 — 한 명의 자리가 더 필요하다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "019d5c693713c07f1273b9e12d98d54499ebccf7a7d7788970417a765bb09cb2",
+      "uid": "8953870b5e561bcd02f3d3d0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_VIOLENCE|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_VIOLENCE",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0019",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "짧은 반성 연설로 다람의 표정이 즉시 풀리지 않는다. 너울에 대한 책임 조사와 폭행에 대한 확인이 둘 다 남는다. 수레에서 구한 사람은 계속 안전하며, 폭력 결과를 이유로 그 구조를 취소하지 않는다. 과자는 나누지만 다람이 아빠에게 먼저 봉투를 밀지는 않는 작은 차이만 남긴다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "군중 폭력 결말 — 한 명의 자리가 더 필요하다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3d4c76b73142c761ddd3616061ba65695d4233eabe504ffdad25fbb499c4612b",
+      "uid": "3eed43bc977d4146f1297863",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_VIOLENCE|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_VIOLENCE",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0020",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어제는 다치기 전에 떼어 놨어.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "군중 폭력 결말 — 한 명의 자리가 더 필요하다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "77a651a317d134263b2d8c27358fb0e053fde9abd7577b880927f70738c0cc8f",
+      "uid": "c67b54f09c0303500bc2f26f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_VIOLENCE|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_VIOLENCE",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0021",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "다시 때리면?",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "군중 폭력 결말 — 한 명의 자리가 더 필요하다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "85d7a4546398d51bf3192258a880044d68efa53a8b5df87cdafeae7081749ff4",
+      "uid": "2e88f8170f429197ce7c7daf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_VIOLENCE|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_END_VIOLENCE",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0022",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "돌목 씨가 곁에 있어. 나도 그냥 두진 않을게.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "군중 폭력 결말 — 한 명의 자리가 더 필요하다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "526adeea24d4fb44540610bd75840174ede6b6ccab05cf13ce30b40f097918c4",
+      "uid": "756ab09d76b0c04a10101a5c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_VIOLENCE|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:300:75",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        18879,
+        18896
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:300:75",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "엄마한테 연락은 남겨 뒀어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 300,
+          "label": "r13_ending",
+          "guards": [
+            "if r13_ending_id in (\"E0\",\"E2\"):",
+            "if r13_ending_id==\"E0\":"
+          ]
+        }
+      ],
+      "line": 300,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "1488ad8096c1c7f8f109a2f07376b86f9d620ad4b97d05770f275bccf8c39f5d",
+      "uid": "c3f4c7f72bf17ee61c571687",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_ending|rpy_literal|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:308:105",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        19607,
+        19620
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:308:105",
+      "when": null,
+      "speaker": "resident_eunho",
+      "kind": "dialogue",
+      "text": "오늘은 따뜻하겠구려.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 308,
+          "label": "r13_ending",
+          "guards": [
+            "elif r13_ending_id==\"E3\":"
+          ]
+        }
+      ],
+      "line": 308,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "2fee7747807fa3bfb387e50195148f028507505b7ecea00510f256d113741116",
+      "uid": "b0d8928fb52d32f3d831e51d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_ending|rpy_literal|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:322:95",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        20899,
+        20934
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:322:95",
+      "when": null,
+      "speaker": "buri",
+      "kind": "dialogue",
+      "text": "그날 기록은 돌려받을게요. 함께 보관할 사본은 남겨 두고요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 322,
+          "label": "r13_ending",
+          "guards": [
+            "else:",
+            "if room13[\"victim_state\"]==\"dead\":"
+          ]
+        }
+      ],
+      "line": 322,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "3ff0942011a378bdfaa2cef2a025fe253ecea238d092fa4f8ae0a42138dc556a",
+      "uid": "160b4e0e38b67a94a46c2959",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_ending|rpy_literal|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

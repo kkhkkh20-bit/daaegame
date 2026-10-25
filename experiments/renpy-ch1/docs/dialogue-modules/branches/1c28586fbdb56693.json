@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:416:8",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        24702,
+        24715
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "r13_wf_choice",
+      "block": "r13_wf_choice",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:416:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "주방의 나비에게 간다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 416,
+          "label": "r13_wf_choice",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 416,
+      "scene_title": "r13_wf_choice",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "e5c0312cb6ce057e83c4e5b27c50c9796f3b991b119cda7fbd83e42d9f715ba5",
+      "uid": "bb6a0898d2b5b1a2ce440103",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_wf_choice|rpy_menu|r13_wf_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:431:8",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        25656,
+        25670
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "r13_wf_choice",
+      "block": "r13_wf_choice",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:431:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "빨래터의 누비에게 간다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 431,
+          "label": "r13_wf_choice",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 431,
+      "scene_title": "r13_wf_choice",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "578213f084260aee4a7dc0855947ffcadcc84d046bcd5f2269976100da59d0a4",
+      "uid": "f3554257197542b2fee7b634",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_wf_choice|rpy_menu|r13_wf_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

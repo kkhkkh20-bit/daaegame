@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_H5_R_01",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "blocks",
+        "hyp5_reason11",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "hyp5_reason11",
+      "block": "hyp5_reason11",
+      "placement": "blocks",
+      "ref": "hyp5_reason11",
+      "when": "owl_dead",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "한 방의 돌이 바뀌자, 한 사람이 한 저녁 사이에 무너졌습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 816,
+          "label": "r13_v111_hyp5_reason11",
+          "guards": []
+        }
+      ],
+      "scene_title": "hyp5_reason11",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "0248e15e8eebb951e07641a1bbf0c40468d537e0485c93db8dc1638c55ca382c",
+      "uid": "34e176182afdb618d111c454",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|hyp5_reason11|patch|hyp5_reason11|owl_dead",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

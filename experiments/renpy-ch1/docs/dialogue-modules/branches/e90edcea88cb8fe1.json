@@ -1,0 +1,166 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_q1_review.rpy:187:8",
+      "file": "game/systems/room13_q1_review.rpy",
+      "path": [
+        9328,
+        9340
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "r13_q1_review_menu",
+      "block": "r13_q1_review_menu",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_review.rpy:187:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "이 결과로 계속한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_review.rpy",
+          "line": 187,
+          "label": "r13_q1_review_menu",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 187,
+      "scene_title": "r13_q1_review_menu",
+      "source_hash": "51dcc7e0e65d83314ee167c79b5a474f29d05946b65650187256bc616d676842",
+      "baseline_hash": "d3230bc386227ebded9d90888b49d7a92fd4af9e759031ce3c82fecdcdc6e9ef",
+      "uid": "19fe0453d648380167c012c1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_q1_review_menu|rpy_menu|r13_q1_review_menu|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_q1_review.rpy:189:8",
+      "file": "game/systems/room13_q1_review.rpy",
+      "path": [
+        9369,
+        9382
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "r13_q1_review_menu",
+      "block": "r13_q1_review_menu",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_review.rpy:189:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "남은 논점을 생각한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_review.rpy",
+          "line": 189,
+          "label": "r13_q1_review_menu",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 189,
+      "scene_title": "r13_q1_review_menu",
+      "source_hash": "51dcc7e0e65d83314ee167c79b5a474f29d05946b65650187256bc616d676842",
+      "baseline_hash": "34b7172a7cbd2c09ec53feaa991d65dac8b1633adba5dc447c97cf4ff8156361",
+      "uid": "cbf8da5988c292e54cf345f5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_q1_review_menu|rpy_menu|r13_q1_review_menu|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_q1_review.rpy:191:8",
+      "file": "game/systems/room13_q1_review.rpy",
+      "path": [
+        9473,
+        9491
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "r13_q1_review_menu",
+      "block": "r13_q1_review_menu",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_review.rpy:191:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "같은 자료로 회의를 다시 한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_review.rpy",
+          "line": 191,
+          "label": "r13_q1_review_menu",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 191,
+      "scene_title": "r13_q1_review_menu",
+      "source_hash": "51dcc7e0e65d83314ee167c79b5a474f29d05946b65650187256bc616d676842",
+      "baseline_hash": "7a1290f15dcd4427286e4e0cd877da8f9a949a5483f39097ee4d2379353bcadf",
+      "uid": "f4b2c0ee6c6934238c806245",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_q1_review_menu|rpy_menu|r13_q1_review_menu|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_q1_review.rpy:193:8",
+      "file": "game/systems/room13_q1_review.rpy",
+      "path": [
+        9603,
+        9616
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "r13_q1_review_menu",
+      "block": "r13_q1_review_menu",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_review.rpy:193:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "조사를 다시 살펴본다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_review.rpy",
+          "line": 193,
+          "label": "r13_q1_review_menu",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 193,
+      "scene_title": "r13_q1_review_menu",
+      "source_hash": "51dcc7e0e65d83314ee167c79b5a474f29d05946b65650187256bc616d676842",
+      "baseline_hash": "e203a2160e5478420d11cfd5b5922627876c1f6a61b712c14eb984e17b03c5d0",
+      "uid": "5b29f88bde1e716660a1fb68",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_q1_review_menu|rpy_menu|r13_q1_review_menu|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

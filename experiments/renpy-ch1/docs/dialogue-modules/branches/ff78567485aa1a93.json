@@ -1,0 +1,123 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_AR_D13_01",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "after",
+        "MS14_D13_S02_L0011",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D13_S02_L0011",
+      "when": "guard_ready",
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "광장에 이송 수레가 섰소. 너울이 명단을 부르고 있소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1874,
+          "label": "r13_v111_gate_bench13",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "3654f1cdc8aa530586c3adc331fcc6338befd3d0038370ab5df518e348b6b97a",
+      "uid": "4793536245eb83fb6d2c6623",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|patch|after|guard_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AR_D13_02",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "after",
+        "MS14_D13_S02_L0011",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D13_S02_L0011",
+      "when": "guard_ready",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "명단이요? ……누구 이름입니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1874,
+          "label": "r13_v111_gate_bench13",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "504117310368b1f9deb7a5ece390b8716ef5465d819bdab9c5b0c0ca7866ee9b",
+      "uid": "2a6b0c9ba059c8b83470bdd1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|patch|after|guard_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AR_D13_03",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "after",
+        "MS14_D13_S02_L0011",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D13_S02_L0011",
+      "when": "guard_ready",
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "가 보면 아시오. 나도 서류를 들고 가야 하오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1874,
+          "label": "r13_v111_gate_bench13",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "d058fe5938c00c8a374b6bc93959b12af555ea4f72e58236e58bb16a5cf9da14",
+      "uid": "f2cf88a29804b93ef7c72b8c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|patch|after|guard_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

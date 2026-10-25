@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_lamp_attempt.rpy:59:24",
+      "file": "game/room13_lamp_attempt.rpy",
+      "path": [
+        2538,
+        2558
+      ],
+      "origin": "rpy_inventory",
+      "day": 4,
+      "scene": "MS14_D03_S05",
+      "block": "r13_lamp_attempt_repair3",
+      "placement": "literal",
+      "ref": "game/room13_lamp_attempt.rpy:59:24",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "수리 뒤 새로 생긴 파손을 가린다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 59,
+          "label": "r13_lamp_attempt_repair3",
+          "guards": []
+        }
+      ],
+      "line": 59,
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "d7e604230a7ccb977373be44bcdbbd3b0ff9e38e6729baedbcafb56d18b67e74",
+      "baseline_hash": "1a340e877059389937366a8a9ebd75d3c195989dfd3a890d21d4a37e8a888902",
+      "uid": "12177e6eae36004da830b1a1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D03_S05|rpy_inventory|r13_lamp_attempt_repair3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

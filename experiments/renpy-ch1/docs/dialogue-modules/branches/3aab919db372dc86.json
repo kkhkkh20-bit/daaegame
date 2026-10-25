@@ -1,0 +1,201 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D09_S04_A01",
+      "file": "game/v111/newworld/d09.json",
+      "path": [
+        "after",
+        "MS14_D09_S04_L0014",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D09_S04_L0014",
+      "when": null,
+      "speaker": "세련",
+      "kind": "dialogue",
+      "text": "그 식권은 식당에서 나비 씨가 나눠 줘요. 여관 사람이면 누구나 한두 장은 있어요. 그 점도 봐 주세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1329,
+          "label": "r13_v111_postal9",
+          "guards": []
+        }
+      ],
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b6ad6a05d63439df019e5608ab9fea79d40e75b4905df3194c837f0960463bb2",
+      "baseline_hash": "e79fc065e6804210e2a0b6e59fb19c0a278e74f30d40961c875c5b6d790a0a99",
+      "uid": "9f684646765fd9c69e92ab10",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D09_S04_V01",
+      "file": "game/v111/newworld/d09.json",
+      "path": [
+        "after",
+        "MS14_D09_S04_L0023",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D09_S04_L0023",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "thought",
+      "text": "아내 이름으로 온 초대장…… 이 글씨에서 눈을 뗄 수가 없다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1336,
+          "label": "r13_v111_postal9",
+          "guards": []
+        }
+      ],
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b6ad6a05d63439df019e5608ab9fea79d40e75b4905df3194c837f0960463bb2",
+      "baseline_hash": "941afe23c66bc6370a45e2cb3412dbfbff048bfc880c3b2dec88190159721f3e",
+      "uid": "37317bd4b9674be025253934",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D09_S04_V02",
+      "file": "game/v111/newworld/d09.json",
+      "path": [
+        "after",
+        "MS14_D09_S04_L0035",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D09_S04_L0035",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "thought",
+      "text": "나도 묻고 싶다. 대답이 무서운 것까지.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1358,
+          "label": "r13_v111_school_night9",
+          "guards": []
+        }
+      ],
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b6ad6a05d63439df019e5608ab9fea79d40e75b4905df3194c837f0960463bb2",
+      "baseline_hash": "64a0ee153d6bf18df28b1fc5d3d95d6467b0a845c46dbd3311cdb395b4a1e44f",
+      "uid": "99ef0ebf747a28e9cb0de187",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AUD_D09_03",
+      "file": "game/v111/newworld/d09.json",
+      "path": [
+        "after",
+        "MS14_D09_S04_L0019",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D09_S04_L0019",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "세련이 반송 봉투를 연다. 안에는 오지 말라는 짧은 쪽지가 들어 있다. 겉포장 귀퉁이에는 물자를 나를 때 쓰는 작은 표식이 찍혀 있다. 어제 초롱에게 받은 편지에도 같은 표식이 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1333,
+          "label": "r13_v111_postal9",
+          "guards": []
+        }
+      ],
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b6ad6a05d63439df019e5608ab9fea79d40e75b4905df3194c837f0960463bb2",
+      "baseline_hash": "0accdbc68fd2bea461acf146359b4cd970b3552f941ab93d9a8e32a3b080bf82",
+      "uid": "76b95f95d6d52dcd28d6a893",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AUD_D09_04",
+      "file": "game/v111/newworld/d09.json",
+      "path": [
+        "after",
+        "MS14_D09_S04_L0019",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D09_S04_L0019",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "슬링이 본보기 아래의 작업 날짜를 짚는다. 세련이 반송 접수 날짜와 초대장 발송 날짜를 나란히 놓는다. 반송 접수, 본보기 작업, 초대장 발송. 날짜는 그 순서다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1333,
+          "label": "r13_v111_postal9",
+          "guards": []
+        }
+      ],
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b6ad6a05d63439df019e5608ab9fea79d40e75b4905df3194c837f0960463bb2",
+      "baseline_hash": "2eac8423fed262e8dcf552ab45d13bc03f6869012f028bf6f65c440153d5add8",
+      "uid": "8f9ccba091531b2a098502b1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

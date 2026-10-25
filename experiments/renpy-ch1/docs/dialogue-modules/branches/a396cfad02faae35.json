@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_CN_NABI",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "cart_names13",
+        4,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "cart_names13",
+      "block": "cart_names13",
+      "placement": "blocks",
+      "ref": "cart_names13",
+      "when": "listed:nabi",
+      "speaker": null,
+      "kind": "narration",
+      "text": "나비가 앞치마를 두른 채 앉아 있다. 이쪽을 보지 않는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2045,
+          "label": "r13_v111_cart_observed13",
+          "guards": []
+        }
+      ],
+      "scene_title": "cart_names13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "54cf1b6114d2c13fadc9d4c3af110fb2fdeef73c977acd6425c998b06b0255fe",
+      "uid": "6880f265bbbe33645eca4ff2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|cart_names13|patch|cart_names13|listed:nabi",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

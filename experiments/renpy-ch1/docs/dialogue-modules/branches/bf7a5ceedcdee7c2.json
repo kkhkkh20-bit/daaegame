@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_episodes.rpy:432:27",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        24773,
+        24814
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_ep4_ubak",
+      "block": "r13_ep4_ubak",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:432:27",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "광장 등 나사에 계측기 집게 자국이 있었어. 종이 눈금도 끼어 있었고.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 432,
+          "label": "r13_ep4_ubak",
+          "guards": []
+        }
+      ],
+      "line": 432,
+      "scene_title": "r13_ep4_ubak",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "0e582ad9bd974ce05c0f0c83270827df64506f100099abcb72960123cef534cf",
+      "uid": "4b5ed4164692649e2d735a39",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_ep4_ubak|rpy_literal|r13_ep4_ubak|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_episodes.rpy:437:37",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        25064,
+        25104
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_ep4_ubak",
+      "block": "r13_ep4_ubak",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:437:37",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "검사원 조수가? ……됐소. 톡은 풀어 주겠소. 조수는 내가 데려가오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 437,
+          "label": "r13_ep4_ubak",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 437,
+      "scene_title": "r13_ep4_ubak",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "42fac8145fd8de7931e46108b6a6246a5fc9d093956b6a2ba05c60b0c5894178",
+      "uid": "6ec6452aad6c4d5d04298a6c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_ep4_ubak|rpy_literal|r13_ep4_ubak|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

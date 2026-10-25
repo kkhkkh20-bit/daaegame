@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13.rpy:625:31",
+      "file": "game/room13.rpy",
+      "path": [
+        36065,
+        36117
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_trial",
+      "block": "r13_trial",
+      "placement": "literal",
+      "ref": "game/room13.rpy:625:31",
+      "when": null,
+      "speaker": "seryeon",
+      "kind": "dialogue",
+      "text": "부엉이 어르신이 발견된 13호는 안에서 잠겨 있었습니다. 그 안에는 다람 양이 있었습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 625,
+          "label": "r13_trial",
+          "guards": []
+        }
+      ],
+      "line": 625,
+      "scene_title": "r13_trial",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "bf61699c173394cb0115baeb49ddb75d136bddb4bb5d70fb7df5491769ce970e",
+      "uid": "24b0f5b987ef2f677443553a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_trial|rpy_literal|r13_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

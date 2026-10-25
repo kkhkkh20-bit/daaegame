@@ -1,0 +1,208 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:308:30",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        19532,
+        19587
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:308:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "불이 돌아오자 사람들이 안도의 숨을 내쉬었다. 그 뒤편에서 누군가 한 사람 몫의 그릇을 치웠다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 308,
+          "label": "r13_ending",
+          "guards": [
+            "elif r13_ending_id==\"E3\":"
+          ]
+        }
+      ],
+      "line": 308,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "5eeafc05cb888bf656e8069da9887da274123978f1e9d32be1b4a797c8abdea3",
+      "uid": "741dd8bea153e600471ce5bf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ending|rpy_literal|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:320:30",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        20543,
+        20603
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:320:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "할머니의 자리는 비어 있었다. 나비가 장부를 펼쳤고 주민들이 제 몫을 적었다. 불은 일부만 켜져 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 320,
+          "label": "r13_ending",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 320,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "5acaf9657e83d6e2a1ef27524993e9e0ae9c45d87e6c63e59baee507bdeb7566",
+      "uid": "cd03bd05d74053f3e4b585db",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ending|rpy_literal|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:325:60",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        21155,
+        21167
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:325:60",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "길 열리기 전에는?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 325,
+          "label": "r13_ending",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 325,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "b6c4cbec38c9a31e00df8b7f157bbcea3d0bb9814716b8001dcd8c8cc0cb876c",
+      "uid": "d8096cf63fdc14c3fe2ac3c4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ending|rpy_literal|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:328:200",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        21529,
+        21558
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:328:200",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "이 부분이 달라. 고대 장치에 있던 선이 아니야.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 328,
+          "label": "r13_ending",
+          "guards": [
+            "else:",
+            "if r13_ending_id==\"E6\":"
+          ]
+        }
+      ],
+      "line": 328,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "9fbe249e9779f24eaab5c9e8b131c6c9545c87e542a59e7d6e3575fc6251b226",
+      "uid": "e30e3e91b74fc58918b1fba4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ending|rpy_literal|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:328:400",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        21729,
+        21775
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:328:400",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이가 창에 친 두꺼운 천을 걷었다. 이번에는 누군가를 숨기려는 게 아니었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 328,
+          "label": "r13_ending",
+          "guards": [
+            "else:",
+            "if r13_ending_id==\"E6\":"
+          ]
+        }
+      ],
+      "line": 328,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "c95404d1141085859e999039782235719cb467658d68098239cba41c8f6c6018",
+      "uid": "6815ae7b1ed82769b46ca557",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ending|rpy_literal|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

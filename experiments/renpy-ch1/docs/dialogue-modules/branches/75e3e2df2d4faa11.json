@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:320:30",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        18747,
+        18771
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_lab",
+      "block": "r13_ws_lab",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:320:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "솜이가 유리관 앞에 쪼그려 앉아 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 320,
+          "label": "r13_ws_lab",
+          "guards": [
+            "if r13_has(\"kd_farewell_seen\"):"
+          ]
+        }
+      ],
+      "line": 320,
+      "scene_title": "r13_ws_lab",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "8550f4208012cea7431e0d00ef53afa225b5df6d9f542c3c70357af5f1cf7156",
+      "uid": "918942e67f810d899315bc5b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_lab|rpy_literal|r13_ws_lab|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

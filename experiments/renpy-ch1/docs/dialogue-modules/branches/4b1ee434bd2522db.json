@@ -1,0 +1,128 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:193:30",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        10784,
+        10811
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_nt_overhear",
+      "block": "r13_nt_overhear",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:193:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "해 질 녘, 초롱이 회관 앞 등을 켜러 왔다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 193,
+          "label": "r13_nt_overhear",
+          "guards": [
+            "if not r13_has(\"chorong_dead\"):"
+          ]
+        }
+      ],
+      "line": 193,
+      "scene_title": "r13_nt_overhear",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "a68469397245e8be2ad7a16333ffa5a7bda0b8ace185f884f81993219364fa22",
+      "uid": "70758f9dce64ccd8ed73f1a8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nt_overhear|rpy_literal|r13_nt_overhear|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:206:60",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        11779,
+        11798
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_nt_overhear",
+      "block": "r13_nt_overhear",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:206:60",
+      "when": null,
+      "speaker": "resident_lamplighter",
+      "kind": "dialogue",
+      "text": "……알았어요. 먼 길로 갈게요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 206,
+          "label": "r13_nt_overhear",
+          "guards": [
+            "if not r13_has(\"chorong_dead\"):",
+            "menu:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 206,
+      "scene_title": "r13_nt_overhear",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "875310803b70e5bd65081c66417e6ccdf800942a0195f491fe57c125a00f5e81",
+      "uid": "c654a8715c4892837dc8237e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nt_overhear|rpy_literal|r13_nt_overhear|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:211:30",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        12064,
+        12096
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_nt_overhear",
+      "block": "r13_nt_overhear",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:211:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "회관 안. 촌장이 모레 회의에 쓸 의자를 세고 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 211,
+          "label": "r13_nt_overhear",
+          "guards": [
+            "if not r13_has(\"fair_hearing\"):"
+          ]
+        }
+      ],
+      "line": 211,
+      "scene_title": "r13_nt_overhear",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "e243e566e14a63b84b5c7c280dc8d11f3a8110e9b164b5cff8e968a7ce82f569",
+      "uid": "864835e6aab55ce2e2cd4b7e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nt_overhear|rpy_literal|r13_nt_overhear|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

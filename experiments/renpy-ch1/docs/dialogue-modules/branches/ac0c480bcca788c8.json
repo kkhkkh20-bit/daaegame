@@ -1,0 +1,211 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_LA_LA_KNIFE3_0",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_knife3",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "la_knife3",
+      "block": "la_knife3",
+      "placement": "blocks",
+      "ref": "la_knife3",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "실룩 씨, 이 조각과 칼을 맞춰 봐도 될까요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 37,
+          "label": "r13_lamp_attempt_field3",
+          "guards": [
+            "elif _return==2:"
+          ]
+        }
+      ],
+      "scene_title": "la_knife3",
+      "source_hash": "1f8d4bedb33f10201a3ffe6e822492a7cb7ec3d826a133f6d7683d7013245e9b",
+      "baseline_hash": "a234d2439724a8cf55a3736d693058424b4f12ed4ad21670a9e4090d08fafc78",
+      "uid": "f1d77cf1e07fad5a4e4e06c3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|la_knife3|patch|la_knife3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_LA_LA_KNIFE3_1",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_knife3",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "la_knife3",
+      "block": "la_knife3",
+      "placement": "blocks",
+      "ref": "la_knife3",
+      "when": null,
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "걸쇠만 닫아 준 거예요. 돌은 못…… 안 꺼냈어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 37,
+          "label": "r13_lamp_attempt_field3",
+          "guards": [
+            "elif _return==2:"
+          ]
+        }
+      ],
+      "scene_title": "la_knife3",
+      "source_hash": "1f8d4bedb33f10201a3ffe6e822492a7cb7ec3d826a133f6d7683d7013245e9b",
+      "baseline_hash": "845a5e3d55b004dbfb18291eadf7de38365fb9b24f903b1d124df4ffe5a4f769",
+      "uid": "5be499a68a9bb74e83e71bee",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|la_knife3|patch|la_knife3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_LA_LA_KNIFE3_2",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_knife3",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "la_knife3",
+      "block": "la_knife3",
+      "placement": "blocks",
+      "ref": "la_knife3",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "꺼냈다는 말부터 하지는 않겠습니다. 어디에 칼을 댔는지 보죠.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 37,
+          "label": "r13_lamp_attempt_field3",
+          "guards": [
+            "elif _return==2:"
+          ]
+        }
+      ],
+      "scene_title": "la_knife3",
+      "source_hash": "1f8d4bedb33f10201a3ffe6e822492a7cb7ec3d826a133f6d7683d7013245e9b",
+      "baseline_hash": "a535f6d38b8a53d5c7ae149fb65079f1191d413203ce76ad17fcbebd481b443f",
+      "uid": "9135307e8e86617e659017d6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|la_knife3|patch|la_knife3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_LA_LA_KNIFE3_3",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_knife3",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "la_knife3",
+      "block": "la_knife3",
+      "placement": "blocks",
+      "ref": "la_knife3",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "실룩이 칼을 내민다. 조각의 깨진 면과 갈아 낸 선이 칼끝에 이어진다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 37,
+          "label": "r13_lamp_attempt_field3",
+          "guards": [
+            "elif _return==2:"
+          ]
+        }
+      ],
+      "scene_title": "la_knife3",
+      "source_hash": "1f8d4bedb33f10201a3ffe6e822492a7cb7ec3d826a133f6d7683d7013245e9b",
+      "baseline_hash": "89be4391deb66d464cd0c175d269a434fbe8207dd4bec4897a17d0e6aa067254",
+      "uid": "2ea9ff4ee5fcd0cbab72fc82",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|la_knife3|patch|la_knife3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_LA_LA_KNIFE3_4",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_knife3",
+        4,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "la_knife3",
+      "block": "la_knife3",
+      "placement": "blocks",
+      "ref": "la_knife3",
+      "when": null,
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "바깥 걸쇠에 대는 방향으로는 저 안쪽까지 안 닿아요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 37,
+          "label": "r13_lamp_attempt_field3",
+          "guards": [
+            "elif _return==2:"
+          ]
+        }
+      ],
+      "scene_title": "la_knife3",
+      "source_hash": "1f8d4bedb33f10201a3ffe6e822492a7cb7ec3d826a133f6d7683d7013245e9b",
+      "baseline_hash": "7ef8dc6cec6e77a1b8b1901e3c9dbe39ddeaee5d66a6d5702560f60008a7d5f8",
+      "uid": "d339bd4c4650a032546bafcf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|la_knife3|patch|la_knife3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

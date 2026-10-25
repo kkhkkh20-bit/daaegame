@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events.rpy:222:37",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        12117,
+        12161
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_ev_b_store",
+      "block": "r13_ev_b_store",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:222:37",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "도둑이오? 바로 경비들을 풀겠습니다. 이런 때일수록 본보기가 있어야 합니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 222,
+          "label": "r13_ev_b_store",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 222,
+      "scene_title": "r13_ev_b_store",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "cd9b24597140560d68f6e405af8d9fb22d296ff12b8005a20f7273212137d8d2",
+      "uid": "60804a9dd2a8b44746dcbacc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_ev_b_store|rpy_literal|r13_ev_b_store|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

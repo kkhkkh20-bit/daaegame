@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_tool_discovery.rpy:175:21",
+      "file": "game/room13_tool_discovery.rpy",
+      "path": [
+        9110,
+        9143
+      ],
+      "origin": "rpy_inventory",
+      "day": 1,
+      "scene": "r13_tool_inspect",
+      "block": "r13_tool_inspect",
+      "placement": "literal",
+      "ref": "game/room13_tool_discovery.rpy:175:21",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "현장에서 돋보기로 살피고 메모를 남기면 여기에 모입니다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_tool_discovery.rpy",
+          "line": 175,
+          "label": "r13_tool_inspect",
+          "guards": [
+            "if not r13_tool_notes():"
+          ]
+        }
+      ],
+      "line": 175,
+      "scene_title": "r13_tool_inspect",
+      "source_hash": "5b774cf695d168f5e27b635cc11bdcd8d7358de55477983cd7d41b8bebf1af8d",
+      "baseline_hash": "7de64fedc9a92780f3c9e0d4aae2a10b0561e9c2a740cb607e8773987c74c118",
+      "uid": "ea5f5526ca20fe1a81025753",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_tool_inspect|rpy_inventory|r13_tool_inspect|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

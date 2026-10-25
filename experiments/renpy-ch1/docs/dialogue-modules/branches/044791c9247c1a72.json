@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:314:14",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        18107,
+        18141
+      ],
+      "origin": "rpy_literal",
+      "day": 14,
+      "scene": "r13_nt_dawn9",
+      "block": "r13_nt_dawn9",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:314:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "할머니가 돌아서며 목도리를 여몄다. 목도리에 핀이 없었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 314,
+          "label": "r13_nt_dawn9",
+          "guards": []
+        }
+      ],
+      "line": 314,
+      "scene_title": "r13_nt_dawn9",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "293d55e1d40ed3bb40180e0896238fd1fa930c81cd16cf1c4340f1ca222fa726",
+      "uid": "65c3d46113217137e6888173",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|r13_nt_dawn9|rpy_literal|r13_nt_dawn9|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

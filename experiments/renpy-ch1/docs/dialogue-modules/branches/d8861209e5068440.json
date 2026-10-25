@@ -1,0 +1,48 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_life_closeups.rpy:166:38",
+      "file": "game/systems/room13_life_closeups.rpy",
+      "path": [
+        9225,
+        9279
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_life_door",
+      "block": "r13_life_door",
+      "placement": "literal",
+      "ref": "game/systems/room13_life_closeups.rpy:166:38",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "천을 길게 말아 문 아래 틈에 대었다. 문을 열어 보니 천이 함께 밀렸다가 제자리로 돌아왔다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_life_closeups.rpy",
+          "line": 166,
+          "label": "r13_life_door",
+          "guards": [
+            "while True:",
+            "else:",
+            "if _return[1]==\"cloth\" and _return[2] in (\"draft_gap\",\"door\") and not _dr_sealed:"
+          ]
+        }
+      ],
+      "line": 166,
+      "scene_title": "r13_life_door",
+      "source_hash": "ff9e09dda506d96806b7e62ed92cf7d8c9b9dca5fa0547afc1d000e4ca902e0b",
+      "baseline_hash": "fa71c377d7758204bddb2499b786d317948323327cbd707461fd01e28a3af3cf",
+      "uid": "85d8281bb0bf715f1f8160f7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_life_door|rpy_literal|r13_life_door|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

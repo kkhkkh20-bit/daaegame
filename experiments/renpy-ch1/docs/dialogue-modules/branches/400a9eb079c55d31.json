@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_memory.rpy:121:31",
+      "file": "game/systems/room13_memory.rpy",
+      "path": [
+        7407,
+        7440
+      ],
+      "origin": "rpy_inventory",
+      "day": 1,
+      "scene": "r13_grudge_fix",
+      "block": "r13_grudge_fix",
+      "placement": "literal",
+      "ref": "game/systems/room13_memory.rpy:121:31",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "(지금 가진 돈으로는 모자라다. %d냥이 있어야 한다.)",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_memory.rpy",
+          "line": 121,
+          "label": "r13_grudge_fix",
+          "guards": [
+            "if _gcost and r13_cash_now()<_gcost:"
+          ]
+        }
+      ],
+      "line": 121,
+      "scene_title": "r13_grudge_fix",
+      "source_hash": "fb1ce4b10a4990d33456645a7f1034acb2b1d784277adfbd097754ebaf87e2ea",
+      "baseline_hash": "6fc5744d1bdf501edbfb3b6d552f5e5b81ab52f251c9ed17314ae7ece29e0b62",
+      "uid": "a5de433153af4bd39ffd5593",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_grudge_fix|rpy_inventory|r13_grudge_fix|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

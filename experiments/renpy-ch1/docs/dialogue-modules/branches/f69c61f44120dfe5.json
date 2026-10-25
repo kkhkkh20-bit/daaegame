@@ -1,0 +1,90 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D07_S01_V01",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "before",
+        "MS14_D07_S01_L0021",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D07_S01_L0021",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "빨래터 귀퉁이에서 행주를 짜던 나비가 손을 닦고 일어선다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 470,
+          "label": "r13_v111_children_school7",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 481,
+          "label": "r13_v111_children_here7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "82446039335685dd0c4148c677f7e2ef4ca99622455d63a3a6000a5db51ebfc3",
+      "uid": "94d5cddca44b77c3e3a30f6e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AUD_D07_01",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "before",
+        "MS14_D07_S01_L0002",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D07_S01_L0002",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "젖은 빨랫감 아래로 아이 셋이 줄지어 앉아 있다. 솥 옆에는 반쯤 빈 등유 통이 놓여 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 443,
+          "label": "r13_v111_day7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "a9fd0476da0b170f3450a692469ee0eb184dddfad62f8b1366312b30586f904e",
+      "uid": "943286b4571ca792bb059651",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

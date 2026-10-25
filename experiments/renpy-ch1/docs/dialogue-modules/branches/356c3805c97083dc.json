@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "sleep5:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "sleep5",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 5,
+      "scene": "sleep5",
+      "block": "sleep5",
+      "placement": "binding",
+      "ref": "sleep5:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "아침 일정을 정하고 잔다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "room13",
+        "person": null,
+        "object": "bed"
+      },
+      "scene_title": "sleep5",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "c122028f8291f1bca53f39c9b40511a157901b8f2d2f7ca8211414fb06c82116",
+      "uid": "bbe8811f2e2cb341e8add95c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|sleep5|choice|sleep5|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

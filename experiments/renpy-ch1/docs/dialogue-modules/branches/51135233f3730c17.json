@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D10_S01_A01",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "before",
+        "MS14_D10_S01_L0002",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S01",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D10_S01_L0002",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "회관 복도 끝에서 서리가 선생님에게 작은 병 하나를 건넨다. 선생님이 그것을 앞치마 속에 넣는다. 둘 다 이쪽을 보지 않는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1388,
+          "label": "r13_v111_waiting10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-1. 아침 / 회관 대기실 — 아빠 말부터 고치기",
+      "source_hash": "662dca5b8bc468185010c09a7dfb1668b1ea5e32eb2c8731e681e5c8ee9106df",
+      "baseline_hash": "b9bc3ed5ae0d9ab82fdb56403ebd0100e7200508dd6d67ce84d1ff3a62cf6c65",
+      "uid": "529d8fb901c1cd9205e0b860",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S01|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AUD_D10_04",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "before",
+        "MS14_D10_S01_L0011",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S01",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D10_S01_L0011",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "문가에 부리가 서 있다. 다람이 그쪽으로 고개를 돌린다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1396,
+          "label": "r13_v111_waiting10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-1. 아침 / 회관 대기실 — 아빠 말부터 고치기",
+      "source_hash": "662dca5b8bc468185010c09a7dfb1668b1ea5e32eb2c8731e681e5c8ee9106df",
+      "baseline_hash": "abd1461a8e6dd1c2182f4886f26c0739d2a41fabeb9eb4895aadfaeaad357cd6",
+      "uid": "8bcff22f38824d6b8152fa33",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S01|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

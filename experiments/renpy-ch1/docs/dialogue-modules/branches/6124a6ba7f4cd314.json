@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_revision.rpy:76:8",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        3502,
+        3520
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "r13_case_interview",
+      "block": "r13_case_interview",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:76:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "어디를 어떻게 때렸는지 묻는다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 76,
+          "label": "r13_case_interview",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 76,
+      "scene_title": "r13_case_interview",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "7e2610b0b8e6d6bd265078c8bba9d986e7af3f377b649e688c64db9124b7b8f2",
+      "uid": "cc271460b9c1053e0db74cb2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_case_interview|rpy_menu|r13_case_interview|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:78:8",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        3727,
+        3749
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "r13_case_interview",
+      "block": "r13_case_interview",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:78:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "침대 아래로 들어간 뒤의 일을 묻는다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 78,
+          "label": "r13_case_interview",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 78,
+      "scene_title": "r13_case_interview",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "1ffcd76f8ee87a66d8d570b82dbf593896818ec5e84610e980223aae0bcc7867",
+      "uid": "933f0f466ed598890a754bbf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_case_interview|rpy_menu|r13_case_interview|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

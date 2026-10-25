@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D11_LE01",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "blocks",
+        "lower_elder11",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "lower_elder11",
+      "block": "lower_elder11",
+      "placement": "blocks",
+      "ref": "lower_elder11",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "무너진 눈 더미 끝에 네로의 장갑이 보인다. 그 옆으로 낡은 지팡이 하나가 비어져 나와 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 999,
+          "label": "r13_v111_late_road11",
+          "guards": []
+        }
+      ],
+      "scene_title": "lower_elder11",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "3072b3f1da82058262131c10e7d54675be0a4c1a768ca84307a2ebcfa9d5d103",
+      "uid": "b598b9b6802f9622312eb0f3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|lower_elder11|patch|lower_elder11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_BD_D11_E01",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "blocks",
+        "lower_elder11",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "lower_elder11",
+      "block": "lower_elder11",
+      "placement": "blocks",
+      "ref": "lower_elder11",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "thought",
+      "text": "……솜이네 처마 밑에서 다람이 헝겊을 감아 주던 그 지팡이다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 999,
+          "label": "r13_v111_late_road11",
+          "guards": []
+        }
+      ],
+      "scene_title": "lower_elder11",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "77c606f349d07df3247b2bdbf47d66501d2f4e40563f848ee1bd6cfeb5cec80e",
+      "uid": "9c09760ee8b811dcee2d90b3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|lower_elder11|patch|lower_elder11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:300:37",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        18841,
+        18870
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:300:37",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "엄마한테 우리가 이 마을에 왔다 갔다고 전해질까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 300,
+          "label": "r13_ending",
+          "guards": [
+            "if r13_ending_id in (\"E0\",\"E2\"):",
+            "if r13_ending_id==\"E0\":"
+          ]
+        }
+      ],
+      "line": 300,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "69fe6b6af5c038f0e7901a0c2d623b01f4046eb3c5b2d442eda42b2fdbc05a31",
+      "uid": "4b4f3f028bd064a75c5cbb4c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_ending|rpy_literal|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:302:37",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        19009,
+        19024
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:302:37",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "뒤에 마을 불이 꺼졌어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 302,
+          "label": "r13_ending",
+          "guards": [
+            "if r13_ending_id in (\"E0\",\"E2\"):",
+            "else:"
+          ]
+        }
+      ],
+      "line": 302,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "683635a8ed340e7e68fa0c60320501908f2b3d7727c87609544e543e02701893",
+      "uid": "0bde77430a0e6ea8e643e79b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_ending|rpy_literal|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:328:267",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        21596,
+        21625
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:328:267",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "누군가 같은 방법으로 다른 곳도 바꿨을 수 있어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 328,
+          "label": "r13_ending",
+          "guards": [
+            "else:",
+            "if r13_ending_id==\"E6\":"
+          ]
+        }
+      ],
+      "line": 328,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "cef497bf82db4ade5408d12f85ef6b96152aedb6e79ac1e4f815ea0846f5cb88",
+      "uid": "79ffd3fc6da09a825fec9b5d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_ending|rpy_literal|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

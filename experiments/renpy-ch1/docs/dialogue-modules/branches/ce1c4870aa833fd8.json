@@ -1,0 +1,123 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_BD_D03_O09",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "blocks",
+        "owl_tongs3",
+        8,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "owl_tongs3",
+      "block": "owl_tongs3",
+      "placement": "blocks",
+      "ref": "owl_tongs3",
+      "when": "daram_ready",
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "할아버지도 탐정이에요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 981,
+          "label": "r13_v111_owl_tongs3",
+          "guards": []
+        }
+      ],
+      "scene_title": "owl_tongs3",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "24807211609eba90ed4a2da34aa8cbb7e660553799dd9cfbd6da627a19157ca7",
+      "uid": "4d4748f879e37aa97cc53e57",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|owl_tongs3|patch|owl_tongs3|daram_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_BD_D03_O10",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "blocks",
+        "owl_tongs3",
+        9,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "owl_tongs3",
+      "block": "owl_tongs3",
+      "placement": "blocks",
+      "ref": "owl_tongs3",
+      "when": "daram_ready",
+      "speaker": "부엉이",
+      "kind": "dialogue",
+      "text": "그 일은 그만뒀네. 지금은 내 수첩이나 다시 읽지.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 981,
+          "label": "r13_v111_owl_tongs3",
+          "guards": []
+        }
+      ],
+      "scene_title": "owl_tongs3",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "40185e4fcf9e950657646301adaca8a61b7cfc9702e8f6847bdb8495aa685118",
+      "uid": "ce64ca5ec5b448ad1c45a3fd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|owl_tongs3|patch|owl_tongs3|daram_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_BD_D03_O11",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "blocks",
+        "owl_tongs3",
+        10,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "owl_tongs3",
+      "block": "owl_tongs3",
+      "placement": "blocks",
+      "ref": "owl_tongs3",
+      "when": "daram_ready",
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이 제 수첩을 펴서 한가운데에 세로줄을 하나 긋는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 981,
+          "label": "r13_v111_owl_tongs3",
+          "guards": []
+        }
+      ],
+      "scene_title": "owl_tongs3",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "4ed8042ce67c7f2af386fc3332407170f2022e53815e6fc37d44319fd0ae7c3a",
+      "uid": "8a725447243dc6aa5435b481",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|owl_tongs3|patch|owl_tongs3|daram_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

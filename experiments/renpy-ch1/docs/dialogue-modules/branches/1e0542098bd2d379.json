@@ -1,0 +1,47 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_A4_U01",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "altar4_cannot14",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "altar4_cannot14",
+      "block": "altar4_cannot14",
+      "placement": "blocks",
+      "ref": "altar4_cannot14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "벽의 이름과 그해 집별 배급 기록을 함께 놓아야 한다. 지금 내 손에는 다 없다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3011,
+          "label": "r13_v111_altar4_proof14",
+          "guards": [
+            "if not (r13_v111_owned(\"NW_NAMES\") and (r13_v111_owned(\"NW_NEOUL_LEDGER\") or r13_v111_owned(\"NW_OLD_RATIONS\"))):"
+          ]
+        }
+      ],
+      "scene_title": "altar4_cannot14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "4e62b85b1c49d9d01f70e016b6e30c0d591b5a2a51a76cd787162b8d86a5339d",
+      "uid": "492c9b3d1c1373fd5c96cafb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|altar4_cannot14|patch|altar4_cannot14|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

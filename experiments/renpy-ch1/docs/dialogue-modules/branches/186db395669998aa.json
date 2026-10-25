@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/council_issue.rpy:129:37",
+      "file": "game/council_issue.rpy",
+      "path": [
+        5752,
+        5787
+      ],
+      "origin": "rpy_inventory",
+      "day": 7,
+      "scene": "council_open_issue",
+      "block": "council_open_issue",
+      "placement": "literal",
+      "ref": "game/council_issue.rpy:129:37",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "주인부터 확인하겠습니다. 다른 의견이 있으면 지금 말하세요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/council_issue.rpy",
+          "line": 129,
+          "label": "council_open_issue",
+          "guards": [
+            "if \"opened\" not in council_history:"
+          ]
+        }
+      ],
+      "line": 129,
+      "scene_title": "council_open_issue",
+      "source_hash": "75101b1a3fdac648a2d081c61f6d6641e1bb93d9be94605bc39e707c5de0142b",
+      "baseline_hash": "b0d3bf7e0e641f24eb4af6e18318e1a534dd87912b4f49d41be7764905b9b2bc",
+      "uid": "c1daa066a5b3e53f7366c852",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|council_open_issue|rpy_inventory|council_open_issue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

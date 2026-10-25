@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:73:50",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        4779,
+        4825
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_special_activity",
+      "block": "r13_special_activity",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:73:50",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "쓰는 힘이 모은 힘보다 적은 동안만 버팁니다. 손실량과 멈춘 시점도 적겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 73,
+          "label": "r13_special_activity",
+          "guards": [
+            "if key==\"w2_measure2\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 73,
+      "scene_title": "r13_special_activity",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "ee3a1df4723c2cdad79b2e329e896f5bc8e7b7d651a956ed5ae94081fcb728c7",
+      "uid": "79dd0c1b0646636f8bb656a7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_special_activity|rpy_literal|r13_special_activity|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:76:50",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        5036,
+        5086
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_special_activity",
+      "block": "r13_special_activity",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:76:50",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "그 숫자만 떼어 놓으면 반대쪽 주장에도 쓰일 수 있습니다. 앞뒤 기록을 함께 보십시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 76,
+          "label": "r13_special_activity",
+          "guards": [
+            "if key==\"w2_measure2\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 76,
+      "scene_title": "r13_special_activity",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "e8fe2141fd7f1f390e4e14537f31688d023cf98eeabc17700fb8a38f097134e7",
+      "uid": "41d2ce3ff64aa85ce5035426",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_special_activity|rpy_literal|r13_special_activity|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

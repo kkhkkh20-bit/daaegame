@@ -1,0 +1,211 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_week1_cases.rpy:116:12",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        6885,
+        6903
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_w1c_portrait",
+      "block": "r13_w1c_portrait",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:116:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "가짜라고 모모 관장에게 알린다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 116,
+          "label": "r13_w1c_portrait",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 116,
+      "scene_title": "r13_w1c_portrait",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "7945a4d147076369d6994e908a0212d6b02c71ff0d60f5fb3610d8898f66516d",
+      "uid": "c28436cfef84cdeed66b795e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_w1c_portrait|rpy_menu|r13_w1c_portrait|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:121:12",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        7170,
+        7178
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_w1c_portrait",
+      "block": "r13_w1c_portrait",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:121:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "모른 척한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 121,
+          "label": "r13_w1c_portrait",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 121,
+      "scene_title": "r13_w1c_portrait",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "a37b84cf7c02f9a4a88cdb0532e45eacd165f1b5c4c71076527cdc31aee54714",
+      "uid": "ac1c60a5f4f2a513b5af7f14",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_w1c_portrait|rpy_menu|r13_w1c_portrait|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:123:12",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        7213,
+        7236
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_w1c_portrait",
+      "block": "r13_w1c_portrait",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:123:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "아내 초상을 그려 달라고 한다 (5냥)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 123,
+          "label": "r13_w1c_portrait",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 123,
+      "scene_title": "r13_w1c_portrait",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "2a8f44d54ace6f6c9dd97f6ae7817b8f0677094b7533e92bbf44e8dbe5bd6a6a",
+      "uid": "71c779533b44b58ad62b9bc5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_w1c_portrait|rpy_menu|r13_w1c_portrait|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:132:12",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        7866,
+        7879
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_w1c_portrait",
+      "block": "r13_w1c_portrait",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:132:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "구운 밤을 건네 준다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 132,
+          "label": "r13_w1c_portrait",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 132,
+      "scene_title": "r13_w1c_portrait",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "b744e1cd57458026e738a588c411d3053936e13b4477ec7debb9cd5f51d4fbc6",
+      "uid": "f7b45ed983e24e5e827ac276",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_w1c_portrait|rpy_menu|r13_w1c_portrait|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:137:12",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        8141,
+        8148
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_w1c_portrait",
+      "block": "r13_w1c_portrait",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:137:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "그만 간다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 137,
+          "label": "r13_w1c_portrait",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 137,
+      "scene_title": "r13_w1c_portrait",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "4624ab9836f3a27e05ec2d81b3966722b0bfd6925e3ab19684af5a348d0c284d",
+      "uid": "2ff2787203f3c5534e2399fe",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_w1c_portrait|rpy_menu|r13_w1c_portrait|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

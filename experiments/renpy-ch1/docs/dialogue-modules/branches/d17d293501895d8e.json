@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_poc_route.rpy:169:65",
+      "file": "game/systems/room13_poc_route.rpy",
+      "path": [
+        11306,
+        11354
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_poc_night_review",
+      "block": "r13_poc_night_review",
+      "placement": "literal",
+      "ref": "game/systems/room13_poc_route.rpy:169:65",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "응. 엄마는 우리가 올 걸 알았는데 왜 기다리지 않았을까. 그게 계속 마음에 걸려.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_poc_route.rpy",
+          "line": 169,
+          "label": "r13_poc_night_review",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 169,
+      "scene_title": "r13_poc_night_review",
+      "source_hash": "6fc5903b31e5eecbac36010074326a6723e9305ca010e781eb3ff1f1c4324234",
+      "baseline_hash": "6ad1e1db1d6ab2ebde0eed425b6c74d55bd1b04b411fed3b3d1e009f73d428c7",
+      "uid": "a03be8f23b4e5f0afc5e384c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_poc_night_review|rpy_literal|r13_poc_night_review|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

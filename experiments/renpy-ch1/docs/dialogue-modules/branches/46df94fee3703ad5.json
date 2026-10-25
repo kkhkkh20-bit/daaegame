@@ -1,0 +1,253 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events2.rpy:372:27",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        19761,
+        19775
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_ev_q_nubi",
+      "block": "r13_ev_q_nubi",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:372:27",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "신고요? 대체 누가……",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 372,
+          "label": "r13_ev_q_nubi",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 372,
+      "scene_title": "r13_ev_q_nubi",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "30525161636c1f9c22474aaacc32840639b1c48efebefe0f37eaa98e6ff53c4b",
+      "uid": "ff22bc882b02e822a08f75da",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_ev_q_nubi|rpy_literal|r13_ev_q_nubi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:384:27",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        20413,
+        20446
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_ev_q_nubi",
+      "block": "r13_ev_q_nubi",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:384:27",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "방에 식사까지 내주시는데, 저희에게 바라는 건 없습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 384,
+          "label": "r13_ev_q_nubi",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 384,
+      "scene_title": "r13_ev_q_nubi",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "b7f01322f6833e5575f71741bca43f5df8d7fd279d5c4fe935d914f2d80ffad5",
+      "uid": "850de81093b9e2d86b8f3ca3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_ev_q_nubi|rpy_literal|r13_ev_q_nubi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:385:37",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        20486,
+        20538
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_ev_q_nubi",
+      "block": "r13_ev_q_nubi",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:385:37",
+      "when": null,
+      "speaker": "resident_nubi",
+      "kind": "dialogue",
+      "text": "……너울이 외지 사람을 데려오면 장작을 줘요. 열병 검사한다고 하루 가둬 두는 것뿐이에요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 385,
+          "label": "r13_ev_q_nubi",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 385,
+      "scene_title": "r13_ev_q_nubi",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "2cfac7fdfe41485250642c6bb90c167d6b7fe40504681248f003181d609ee521",
+      "uid": "db4de42278a6bae2b19e10fd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_ev_q_nubi|rpy_literal|r13_ev_q_nubi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:386:37",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        20578,
+        20615
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_ev_q_nubi",
+      "block": "r13_ev_q_nubi",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:386:37",
+      "when": null,
+      "speaker": "resident_nubi",
+      "kind": "dialogue",
+      "text": "우리 집 난로가 꺼지면 애들이 이 겨울을 못 버텨요. 미안해요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 386,
+          "label": "r13_ev_q_nubi",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 386,
+      "scene_title": "r13_ev_q_nubi",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "a64200475dd3fcd70f1eb086aa14962cb76fe904e1172a07360bcd3de971a9e2",
+      "uid": "b6f9524122e17efef7f6246a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_ev_q_nubi|rpy_literal|r13_ev_q_nubi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:390:57",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        20808,
+        20849
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_ev_q_nubi",
+      "block": "r13_ev_q_nubi",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:390:57",
+      "when": null,
+      "speaker": "resident_nubi",
+      "kind": "dialogue",
+      "text": "……고마워요. 별채는 그냥 쓰셔도 돼요. 이번엔 문도 잠그지 않을게요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 390,
+          "label": "r13_ev_q_nubi",
+          "guards": [
+            "while _ep_loop:",
+            "menu:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 390,
+      "scene_title": "r13_ev_q_nubi",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "98e9e9a6771f0f68dd9cc6eb81bc2ab2cfb69c797148e6c88ba33935115faf33",
+      "uid": "a3af7daca55818bf9e1ea80f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_ev_q_nubi|rpy_literal|r13_ev_q_nubi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:404:37",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        21784,
+        21834
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_ev_q_nubi",
+      "block": "r13_ev_q_nubi",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:404:37",
+      "when": null,
+      "speaker": "resident_nubi",
+      "kind": "dialogue",
+      "text": "그 신고, 너울이 시킨 거였어요. 미안해요. 방은 그냥 쓰세요. 문도 잠그지 않을게요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 404,
+          "label": "r13_ev_q_nubi",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 404,
+      "scene_title": "r13_ev_q_nubi",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "469cbb07c81879a429f367c75eb5f79b32885daed1e7eb63672714a37ed74cf4",
+      "uid": "27717aae456349b5e0bdc7a2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_ev_q_nubi|rpy_literal|r13_ev_q_nubi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

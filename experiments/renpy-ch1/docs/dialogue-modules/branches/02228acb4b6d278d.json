@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D07_S04_A02",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "before",
+        "MS14_D07_S04_L0016",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D07_S04_L0016",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "할머니가 주방 쪽 계단에서 쇠 지렛대를 들고 올라온다. 한 손으로 목도리 끝을 쥐고 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 764,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "a635588ee5c8cd4d55cbe7e5f40b651b4f539a3ac4ea09a2b8f9433dc1cd3391",
+      "uid": "6a8dd1d8ea2ef3170210299e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AUD_D07_02",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "before",
+        "MS14_D07_S04_L0020",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S04",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D07_S04_L0020",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "엎어진 촛대가 두 조각으로 부러져 있다. 책상 옆에 부엉이가 쓰러져 있다. 문 가까운 침대 끝 아래에서 다람이 내 손을 따라 기어 나온다. 다람의 오른손에 촛대 아랫부분이 들려 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 769,
+          "label": "r13_v111_incident7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-4. 밤 / 초소에서 13호까지 — 열리지 않는 문",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "d7073e70c5a75d016e8a67f814dc764cac3f01a4316781e8e7bc99e877fe8065",
+      "uid": "324ad9d8037387afa6848bf0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S04|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

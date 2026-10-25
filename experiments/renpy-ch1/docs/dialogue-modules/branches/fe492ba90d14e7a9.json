@@ -1,0 +1,204 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:222:21",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        14343,
+        14358
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_wf_hideout",
+      "block": "r13_wf_hideout",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:222:21",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "나 다람이야. 탐정이야.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 222,
+          "label": "r13_wf_hideout",
+          "guards": [
+            "if not r13_has(\"wf_kkomi_met\"):"
+          ]
+        }
+      ],
+      "line": 222,
+      "scene_title": "r13_wf_hideout",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "e47954b1a54133e46d5787425384d1db8770e54778c20b244098b99f616498f6",
+      "uid": "a8c6c0d0faac50b7d0af0855",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_wf_hideout|rpy_literal|r13_wf_hideout|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:227:21",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        14700,
+        14723
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_wf_hideout",
+      "block": "r13_wf_hideout",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:227:21",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "이거 줄게. 도토리. 내 탐정 표시야.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 227,
+          "label": "r13_wf_hideout",
+          "guards": [
+            "if not r13_has(\"wf_kkomi_met\"):"
+          ]
+        }
+      ],
+      "line": 227,
+      "scene_title": "r13_wf_hideout",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "475fdd07f759ed668f57b6deaa91c57de3398135714054db88b2041f6ca458ca",
+      "uid": "b35aa210e3e75231021964a8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_wf_hideout|rpy_literal|r13_wf_hideout|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:230:21",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        14865,
+        14873
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_wf_hideout",
+      "block": "r13_wf_hideout",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:230:21",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "응! 약속!",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 230,
+          "label": "r13_wf_hideout",
+          "guards": [
+            "if not r13_has(\"wf_kkomi_met\"):"
+          ]
+        }
+      ],
+      "line": 230,
+      "scene_title": "r13_wf_hideout",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "e61f6770acc9bd4429bf6b6ad652d4a8aaaaa819d859aeb664ab97eaf13df68b",
+      "uid": "f3859e33e84fa7d78ba57838",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_wf_hideout|rpy_literal|r13_wf_hideout|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:234:21",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        15091,
+        15141
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_wf_hideout",
+      "block": "r13_wf_hideout",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:234:21",
+      "when": null,
+      "speaker": "kid_kkomi",
+      "kind": "dialogue",
+      "text": "학교는 표 있는 애들 데잖아. 거기 가면 어른들이 이름 물어보고, 그러다 보호소 보내.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 234,
+          "label": "r13_wf_hideout",
+          "guards": []
+        }
+      ],
+      "line": 234,
+      "scene_title": "r13_wf_hideout",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "e75f48f7998bee8c0f6f30af8469bc260aa7fb3866e200d62ab07256c18b88d1",
+      "uid": "669de8d361622e2b5ffc7c37",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_wf_hideout|rpy_literal|r13_wf_hideout|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:244:41",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        15730,
+        15761
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_wf_hideout",
+      "block": "r13_wf_hideout",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:244:41",
+      "when": null,
+      "speaker": "kid_kkomi",
+      "kind": "dialogue",
+      "text": "어른이 우리 없애려 한다고? 그럼 더 꼭꼭 숨어야지.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 244,
+          "label": "r13_wf_hideout",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 244,
+      "scene_title": "r13_wf_hideout",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "bfd533b80c3e63341b9b836c92227f464f66ecdbd651587b92e2a84800cad3ac",
+      "uid": "2abc8e149b2175ab2765e4c0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_wf_hideout|rpy_literal|r13_wf_hideout|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

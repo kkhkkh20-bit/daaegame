@@ -1,0 +1,2333 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D10_S02_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[회관. 다람이 아빠 옆 의자에 앉아 있다. 촛대 두 조각과 처음 현장을 확인한 기록이 탁자에 놓인다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e6ae2cb845dc5bf7461026398056200426040b81ff1a27045db5e3ba392a3227",
+      "uid": "911477345893b283eaa67d05",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0002",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "부엉이는 죽었고 아이는 촛대를 들고 있었소. 더 들을 말이 있습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1412,
+          "label": "r13_v111_hearing10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "feadf12193a00c79e354d98aa0e715436900c6082c16d094db910e3f4adf3671",
+      "uid": "79bf8fd445b148a0cf786abb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0003",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "있습니다. 제 딸이 어디를 쳤는지부터 들으세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1413,
+          "label": "r13_v111_hearing10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "588934a5e02c7801b970e9b851b91dcdd07ae9df354d55e6cb9bcbf2037706dd",
+      "uid": "f01ace384341e1cca135264a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0004",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "쳤다는 건 인정하시는군.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1414,
+          "label": "r13_v111_hearing10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7a685e3b088e610b3d317ea56efbb4bf120f33c1306fd7f71e104e346b3c259a",
+      "uid": "20761815f115c4ab83fef960",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0005",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "손목입니다. 붙잡힌 손을 놓아 달라고 했는데 안 놨답니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1415,
+          "label": "r13_v111_hearing10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2a8903450c2e42a90858c784447a2e709b8a0c98c6a6540c44ee15fc77240c4f",
+      "uid": "7487b53a7f1e9a594680856e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0006",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "머리도 쳤을 수 있지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1416,
+          "label": "r13_v111_hearing10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c357b37bbe14576d69f7ea133b51298f79b27d12a017adca34765986357b98b6",
+      "uid": "6fa988f26fe22abdaa9ce81f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0007",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그 ‘수도 있다’는 말로 애를 계속 붙잡아 둘 겁니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1417,
+          "label": "r13_v111_hearing10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e99266900fe26ca90dd71b61eeb36cfd90413b3c0ef56236eed9857fe31c66bd",
+      "uid": "78401a141a7c992a87e6636c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0008",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "제가 본 상처부터 말씀드리겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1418,
+          "label": "r13_v111_hearing10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "653f6cc613519a3975c6ccc27acaa1e22042090917f6f985c427b19698d831f5",
+      "uid": "37e79ef928188a23231df9f3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0009",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[플레이어 조작: 두 상처와 촛대 파손 자료를 함께 제시한다. 다람의 진술만 내면 너울은 “아이 말만 듣고 끝내자는 겁니까?”라고 반박한다. 침대 밑 흔적만 내면 숨은 사실은 보탤 수 있지만 계속 거기 있었다고 확정되지는 않는다. 아빠: “그 흔적만으로는 부족하겠죠. 다른 것도 보세요.” 자료 목록은 그대로 열린다. 맞는 묶음을 제시하면 서리가 두 상처 기록을 펼친다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bb0ed90bc82d0fb09725cb6f06d410643a95eb3951b07e71ec925aa7e769f0e2",
+      "uid": "6ad609dee5eeb1677521aba5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0010",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: D10_S02_opening_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f26ecd5386a21920b8c5cf4fdf6b7cfc8993a1f7f5242afc6875180120262858",
+      "uid": "38c4c673901cbc25e5ba59a3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0011",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "손목과 머리는 상처 모양이 다릅니다. 머리 상처는 여기, 부러진 윗조각의 면과 맞습니다. 온전한 촛대에 맞아서 난 모양이 아닙니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1428,
+          "label": "r13_v111_wound_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8e79916aba80c678c8ab5cb428b52e8abd1df16c8e56de11ed4445f2b1ef02b2",
+      "uid": "1e088e1bae112b0c64e41895",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0012",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그러면 머리를 맞은 건 촛대가 부러진 다음이군요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1429,
+          "label": "r13_v111_wound_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "da52a82eb67662267ad02d5eae1d57674cda9b27cb14840b3ddcf67ec6b4d502",
+      "uid": "75c6888fd65f29c69930fb1b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0013",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "네. 하지만 한 사람이 손목을 친 뒤, 부러진 조각을 다시 들었을 가능성은 남습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1430,
+          "label": "r13_v111_wound_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8b6df172d56f3362fce8a076b111b0b249b7bdf072652e18577e035e6aa77e21",
+      "uid": "edb6f1e6c90050f8b2f72896",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0014",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "아이가 부러뜨린 다음 다시 집었으면?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1431,
+          "label": "r13_v111_wound_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a351ccaa411c318f0521cd2677d997f923f7d14c857467164bf9f0833ac5b7a4",
+      "uid": "20a7d69ce53fbbb6e2443fe6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0015",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그 뒤에 무슨 일이 있었는지 보자는 겁니다. 도토 씨, 다람이 소리를 듣고 뭘 하셨습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1432,
+          "label": "r13_v111_wound_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a33593217e0d709b7b61e7a3e4e32d40fb7a7a7ed6440f74376d11117153a79f",
+      "uid": "edfc9ecbc09087db0d5c490a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0016",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "문 바로 밖에서 물수건을 적시고 있었습니다. 그사이 어르신이 문을 잠갔어요. 아이가 소리를 질러서 바로 문을 밀었습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1433,
+          "label": "r13_v111_wound_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ff56af6b01d3cc115ac77a4537196439e6d3454e168edd76b0e883f38508b832",
+      "uid": "b998ca472174a4e83d1fbf59",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0017",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그 뒤에 들은 말도 말씀해 주세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1434,
+          "label": "r13_v111_wound_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "869a4387d0ac4e258eec2368a6dce4c306e3078311f193ed7ac33133c9eace2d",
+      "uid": "f5601bc42c2733390c287fd1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0018",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "어르신이 “내 종이 놔”라고 하셨습니다. 처음 비명이 난 다음에요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1435,
+          "label": "r13_v111_wound_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "568dc650b1408107cb57c5444d4740dac28cf7389a3c9086bed84e545f6cd3c7",
+      "uid": "d6e4f1b59dee351e41daa690",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0019",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다람이가 소리를 질렀을 때 곧바로 돌아가신 건 아니네요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1436,
+          "label": "r13_v111_wound_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2dd32f615726355b3441203291205069a2703c9418bc6c8c4b4328dd00fc5a21",
+      "uid": "e1294c59386d173e25d89ddb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0020",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "네. 그 뒤에도 말씀하셨어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1437,
+          "label": "r13_v111_wound_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7a807582ed66c635dfc00efb21400b045cb91dd91b4b4ca566c5efa19ee4e9d1",
+      "uid": "df7958facef88b91322fb8ca",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0021",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "그래도 그 문으로 들어간 사람은 없었잖소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1438,
+          "label": "r13_v111_wound_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "900f4bba680e2fd985629435699c102fa9eaef6f96c969ba17bec29d5177a52a",
+      "uid": "035923cdbb442af2db00d4c2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0022",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "강제로 문을 열 때까지 없었습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1439,
+          "label": "r13_v111_wound_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4b96f4629976866eacd0df0c6e7495ae3aa42c6dfbdeecb11932e8fa7cfa4fd1",
+      "uid": "0a7b23e9386c89a9be74b40c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0023",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그 문 말고 들어갈 길이 있었습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1440,
+          "label": "r13_v111_wound_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e2b0de201d9335660210a0e61ca076c1bc1deb36288598a1fed73603c8cfd47e",
+      "uid": "ca0d1c9298ace9521786659e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0024",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그 뒤 아이 손을 잡은 때는 나비 씨가 올라온 다음이지요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1441,
+          "label": "r13_v111_wound_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a77591befb33786a3c8e39dbcd16e8aac88c48dae95319093f93acd04612f840",
+      "uid": "133be583d72558a51caf8e25",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0025",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "예. 나비 씨가 문을 받쳐 주고, 저는 틈으로 아이 왼손을 잡았습니다. 오른손에는 아랫조각이 보였고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1442,
+          "label": "r13_v111_wound_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6dc5b1b01a3b54c1b0ca2c0a605c61873abc13ddcd7a6d6c46f4c7d7b9f0e40a",
+      "uid": "c1aa3471cda371b3d0da41df",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0026",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "핀을 채워 드리고 할머니하고 같이 올라왔어요. 도토 씨가 아이 손을 잡았을 때도 할머니는 계단참에 계셨고요. 그때 핀이 목도리에 붙어 있는 걸 봤습니다. 공구를 찾으러 내려가신 건 그 뒤예요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1443,
+          "label": "r13_v111_wound_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c340d2c13cb68a24437eb87185d7b2fa417003dd0fb806b3cd9c35f285b33ee2",
+      "uid": "36982ee3670a68a6e8ce3b66",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0027",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[플레이어가 핀 재착용 → 두 사람 계단 도착 → 도토의 양손 확인과 계단참 핀 착용 동시 확인 → 할머니 주방 이동 → 뒤 충격음 → 아빠 귀환의 확인된 순서를 연결한다. 먼저 답을 말하지 않는다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d32193cc6efa9aa20ac059aab80d43203047a8788a26ab1e01cc40e3d95e758f",
+      "uid": "422a84e7a6dfded04641663a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0028",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "도토 씨가 다람이 두 손을 보고 있을 때도 핀은 계단참의 할머니 목도리에 있었습니다. 그다음 할머니가 주방으로 내려가셨고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1444,
+          "label": "r13_v111_wound_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f1da318ca9b05fb25065025db839b29ff97e2485a445c01472879797c5319cd8",
+      "uid": "51893ec02f2d3bf1ec680bbd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0029",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "그다음 쿵 하는 소리가 났을 때도요. 문을 열 때까지 놓지 않았습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1445,
+          "label": "r13_v111_wound_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "066f7d86515b068ab6de35354316c5359b75c6e1697b6380f9d593a60a5ef4eb",
+      "uid": "afc5fbbd0903d9c175d89b65",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0030",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "손 하나 잡고 있었다면서?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1446,
+          "label": "r13_v111_wound_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "90cd14160698f3cb6618836d2ca27358961638716f8152e2a41e5c89ca6361fd",
+      "uid": "5e7e501aa00bdab9ea8acf9e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0031",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "왼손은 제가 잡았고 오른손의 아랫조각도 보였습니다. 방 안쪽을 본 건 아닙니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1447,
+          "label": "r13_v111_wound_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1a6bf179ee46c53abb45dbd4fb650d7ce3edc468b992cad95f52b103b4db2767",
+      "uid": "f5e19a0a63dcf1b42dc8591d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0032",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다람이가 그 상태로 저 책상까지 가서 윗조각을 집을 수는 없습니다. 직접 확인한 거리를 보십시오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1448,
+          "label": "r13_v111_wound_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8403cda67f494c526c23a5861e48d5cdb5553c17db203cb19de05faf7f3eb881",
+      "uid": "82599eb4053d0aa0a99f16df",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0033",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: wounds_distinct=true; two_attackers_proven=false; postcry_alive_testimony=true; postcry_head_uninjured=unproven; D10_S02_two_wounds_completed=true; child_upper_reuse_after_pin_refasten=refuted_by_continuous_hands_and_position; D10_S02_two_wounds_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "58f66ae3e49cf8c5b7adc863d574d4e0054987378975e4abd178194ae9a701f3",
+      "uid": "91e6468e109714719adbf032",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0034",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[플레이어 조작: 직접 확인한 평면도에 도토의 위치를 놓고 복도 문과 주방 출입을 각각 선택한다. 따닥의 실측과 도토의 작동 확인이 있어야 두 번째 길을 제시할 수 있다. 추측 지도나 미확보 자료로 대사를 진행하지 않는다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d99e4e2df71aef9088dcc362a436a7a268f5a149b4d87cd1c984a77551a14568",
+      "uid": "b04535caa7b0fd2197671162",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0035",
+      "when": null,
+      "speaker": "따닥",
+      "kind": "dialogue",
+      "text": "주방에서 이 장치를 올리면 책장 뒤 문이 열립니다. 아버지하고 제가 직접 지나가 봤어요. 도토 씨도 밖에서 지켰고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1457,
+          "label": "r13_v111_passage_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d82a3080a37f66e5601549ab707e895af170f061516182342f29dd5a87374205",
+      "uid": "e5804c79cf2a2d1ab0cf0f8b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0036",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "저는 복도 문만 보고 있었습니다. 저쪽으로 드나드는 건 못 봤어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1458,
+          "label": "r13_v111_passage_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9ff49c09e09b9ceb5ee894213265b35a85ca1a9df8526f1f9d380356d7c730b4",
+      "uid": "13afe1ce5c08835b2d814ea7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0037",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0037",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0037",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "그래, 그 길은 있어. 내가 집주인이니 알고 있지. 그게 내가 사람을 죽였다는 말이니?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1459,
+          "label": "r13_v111_passage_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "aa56ca516a06eef83b3f3faa3a0ad36f19053581834cfa7c758d9972ac342fcb",
+      "uid": "2770a8d0f7820437175332b7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0038",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0038",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0038",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "길을 안다고 범인이라고 하지는 않겠습니다. 그렇다고 제 딸밖에 들어갈 수 없었다는 말도 거두십시오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1460,
+          "label": "r13_v111_passage_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "61d60544ad7a5d5a287922d11635d728f198602cf836adec06b848d4850ed908",
+      "uid": "e7cb11bda000d66eca5bbe43",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0039",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0039",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0039",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "나비야. 비명 났을 때 내가 어디 있었니?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1461,
+          "label": "r13_v111_passage_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a8bcc5c20136709940aa9e8c1414b5ad7a1f103b13caea15c09009f14f71d2a5",
+      "uid": "a5be6dc935d029367a8eb59e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0040",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0040",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0040",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "식당에서 저하고 계셨어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1462,
+          "label": "r13_v111_passage_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9d5b614b0b7b19e316668d2ebd24a982f4b867916d617da08157c155763dc88b",
+      "uid": "ae3a782faf68477074283bb0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0041",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0041",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0041",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "들었지?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1463,
+          "label": "r13_v111_passage_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "29d75764e6459dba6bc0dfbfdf2b7c18c825fd15980f1cca552925490682b077",
+      "uid": "5ad8e4cedc5e9d4cf7169e92",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0042",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0042",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0042",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그때 함께 계셨다는 말은 들었습니다. 그 뒤에도 부엉이 어르신은 살아서 말씀하셨고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1464,
+          "label": "r13_v111_passage_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "06a3a0f0bda4fe0988974f786089ac059938654622d3dea1e3f8b7b40b2389db",
+      "uid": "e7658f948a8f550795fd8be2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0043",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0043",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0043",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "첫 비명 때 식당에 함께 있었던 건 맞아요. 그 뒤 같이 올라왔고요. 주방으로 내려가신 뒤에는 못 봤습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1465,
+          "label": "r13_v111_passage_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "88e7f65373088b740c586a83206ef37e33bc55c4f48ffb09323694ea6f48951c",
+      "uid": "67858250dc84f0c323f108ad",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0044",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0044",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0044",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다람이는 그 뒤 침대 아래에서 다시 쿵 소리를 들었습니다. 누가 낸 소린지는 못 봤다고 했고요. 그래서 이것도 가져왔습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1466,
+          "label": "r13_v111_passage_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "62a541b92ab95d3f06e53c191f3542d84944709b96689cfbbf82d7e07578c69e",
+      "uid": "bf0758a1d252507dfb2be785",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0045",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0045",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0045",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[촛대 윗조각의 고리에 낀 핀을 보여 준다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d21be8d2faea5a851de3a737b2f308dd449f8a72a5972576fbefaaf64e75643e",
+      "uid": "e7a33b3baa45e20acd814545",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0046",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0046",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0046",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: sole_access_assumption=refuted; D10_S02_second_door_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "db7b934f588208c1e281880839a16e7bcf6bd2da7a1ca4b40191592c6c6d8921",
+      "uid": "ad62c341220e812fad12aaa9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0047",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0047",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0047",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "아이 말만 듣고 끝내자는 겁니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1472,
+          "label": "r13_v111_hearing_wrong10",
+          "guards": [
+            "if r13_nw_retry(\"room13\",['E08_CHILD_ACCOUNT', 'E08_TOOL'],'너울이 고개를 젓는다. 아이의 말과 촛대 조각을 함께 놓아야 한다.'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1476,
+          "label": "r13_v111_hearing_wrong10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "883eba7673c9aa9a2d56185096f649d7e80dba6a338bd1e1550ae53f802f1783",
+      "uid": "9d098a8ed6754ec6bea16257",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0048",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0048",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0048",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다른 자료도 보세요. 아이 말로만 끝내자는 게 아닙니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1472,
+          "label": "r13_v111_hearing_wrong10",
+          "guards": [
+            "if r13_nw_retry(\"room13\",['E08_CHILD_ACCOUNT', 'E08_TOOL'],'너울이 고개를 젓는다. 아이의 말과 촛대 조각을 함께 놓아야 한다.'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1477,
+          "label": "r13_v111_hearing_wrong10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "14ff90eedd13cec2cb1ad38291e004ab6c6d66a02d1d43e5a1ba447dac222969",
+      "uid": "3ecdad71ccf9f8609c3385ba",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0049",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0049",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0049",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그 흔적만으로는 부족하겠죠. 다른 것도 보세요.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "22f717d508dffc5a79c664d72d89349239afbfcdb1320d7a5506bc9c112a033c",
+      "uid": "96e3aef15cbff34c1dfe5fc7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0050",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0050",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0050",
+      "when": null,
+      "speaker": "따닥",
+      "kind": "dialogue",
+      "text": "제가 잰 길하고 맞춰 보세요. 짐작으로 그린 길은 아닙니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1483,
+          "label": "r13_v111_passage_wrong10",
+          "guards": [
+            "if r13_nw_retry(\"room13\",['E09_PASSAGE', 'E08_ROOM'],'따닥이 고개를 젓는다. 직접 걸어 본 길과 현장 배치를 함께 놓아야 한다.'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1487,
+          "label": "r13_v111_passage_wrong10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6dbd28919bb03bd9389f62ce5858cb3375d7212fdbbdb3e22312f58e9d21d4f1",
+      "uid": "156ad8670fd98c6677e36fac",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0051",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0051",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0051",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "도토 씨가 지킨 곳부터 다시 짚어 보겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1492,
+          "label": "r13_v111_hearing_hint10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "25e7b1f89a8a1e69d339d963d739855279a7a85b0d3bb8359c2f79eac869e67a",
+      "uid": "a9372e77d7679464ab2d3ad7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0052",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0052",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0052",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: time_cost=0",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "451e183e78ad687c8dbdb27d0b91e15d9de947a8f4a717fdcf37c0d4dab74de9",
+      "uid": "61c72f26edff67a0eaa3a1b1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0053",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0053",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0053",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[이미 획득한 사실과 읽은 발화만 재열람한다. 현재 생사·위치와 다른 과거 증언은 기록으로 표시하고 인물을 새로 현장에 출현시키지 않는다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e4047cc80b769f2f77ad98a244e6c771def19c3e354355926f66719bef6b47dd",
+      "uid": "abf11cbb0d2710a681124269",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0054",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0054",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0054",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "적어 둔 것부터 다시 보겠습니다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bd1227da2b99009eeb0fd6b304bfb6ad9beb3e1371024ffecf107cb589a8b8c6",
+      "uid": "69494f212891df4607ff9918",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S02_L0055",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S02_L0055",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S02_L0055",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: time_cost=0",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-2. 오전 / 회관 — 문 하나의 증언",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "451e183e78ad687c8dbdb27d0b91e15d9de947a8f4a717fdcf37c0d4dab74de9",
+      "uid": "fac56253fb3822d016bcc848",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

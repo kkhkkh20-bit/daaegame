@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_v111_days610.rpy:1791:38",
+      "file": "game/room13_v111_days610.rpy",
+      "path": [
+        99675,
+        99706
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "MS14_D10_P01",
+      "block": "r13_v111_owl_invitation10",
+      "placement": "literal",
+      "ref": "game/room13_v111_days610.rpy:1791:38",
+      "when": null,
+      "speaker": "resident_owlgp",
+      "kind": "dialogue",
+      "text": "부인이 직접 준 게 아니네. 편지는 할머니가 전했지.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1791,
+          "label": "r13_v111_owl_invitation10",
+          "guards": []
+        }
+      ],
+      "line": 1791,
+      "scene_title": "10-P. 예방 대체 / 그 종이를 넘기기 전에",
+      "source_hash": "f011b8f5c19d05730644cea78bfeca82c00f7397382ee04ae91de01865360dde",
+      "baseline_hash": "d2a0674b27f25883b67fafa23f664e92b9aa0589e9098f7f49330c1c45538307",
+      "uid": "ca869db13eb09685966d6171",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D10_P01|rpy_literal|r13_v111_owl_invitation10|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

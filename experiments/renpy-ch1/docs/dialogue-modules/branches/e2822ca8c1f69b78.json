@@ -1,0 +1,123 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_episodes.rpy:400:17",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        23084,
+        23132
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_ep4_accused",
+      "block": "r13_ep4_accused",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:400:17",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "광장 등의 돌 조각이 없어졌소. 그 등을 열고 만지는 사람은 이 마을에 당신뿐이오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 400,
+          "label": "r13_ep4_accused",
+          "guards": []
+        }
+      ],
+      "line": 400,
+      "scene_title": "r13_ep4_accused",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "37cfb777cbd6e3aa095928a99f2c3688849b7ef5ee825182385a4be599d9240d",
+      "uid": "d1c7fd1ed69a006e36505b31",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_ep4_accused|rpy_literal|r13_ep4_accused|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_episodes.rpy:402:17",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        23232,
+        23260
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_ep4_accused",
+      "block": "r13_ep4_accused",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:402:17",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "모레까지 돌 조각이 안 나오면 당신을 가두겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 402,
+          "label": "r13_ep4_accused",
+          "guards": []
+        }
+      ],
+      "line": 402,
+      "scene_title": "r13_ep4_accused",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "b4610a559b2732a42a10875ca59499d498527899aa1bc19943140c2d4ea7c5ef",
+      "uid": "609b202ffc92f1bc013373ca",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_ep4_accused|rpy_literal|r13_ep4_accused|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_episodes.rpy:419:27",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        24127,
+        24169
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_ep4_accused",
+      "block": "r13_ep4_accused",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:419:27",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(톡의 공구 자국이 아니다. 누군가 무언가를 재려고 등 뚜껑을 열었다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 419,
+          "label": "r13_ep4_accused",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 419,
+      "scene_title": "r13_ep4_accused",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "610281da1d9cb3aa12f39db07e918433373d9da7bebb48b67616776701649d32",
+      "uid": "798e4357e0ec704077635753",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_ep4_accused|rpy_literal|r13_ep4_accused|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

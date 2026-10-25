@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/story.rpy:529:18",
+      "file": "game/story.rpy",
+      "path": [
+        19739,
+        19757
+      ],
+      "origin": "rpy_inventory",
+      "day": 8,
+      "scene": "aftermath_talk",
+      "block": "aftermath_talk",
+      "placement": "literal",
+      "ref": "game/story.rpy:529:18",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "…사진 다시 꺼내 줘, 아빠.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/story.rpy",
+          "line": 529,
+          "label": "aftermath_talk",
+          "guards": [
+            "if person == \"granny\":",
+            "if not mother_clue:"
+          ]
+        }
+      ],
+      "line": 529,
+      "scene_title": "aftermath_talk",
+      "source_hash": "f80d7c11bcc5cbd41c2c14cdcbbd42a9dd944b4719a4552fdd392a29341d5aed",
+      "baseline_hash": "525e93769147ed0f520d2dc6cfaec47217d6161f31aa18a4927f921e6d75c9e2",
+      "uid": "613d25412b42341f2c07dbd9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|aftermath_talk|rpy_inventory|aftermath_talk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/story.rpy:533:18",
+      "file": "game/story.rpy",
+      "path": [
+        19915,
+        19947
+      ],
+      "origin": "rpy_inventory",
+      "day": 8,
+      "scene": "aftermath_talk",
+      "block": "aftermath_talk",
+      "placement": "literal",
+      "ref": "game/story.rpy:533:18",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "내일 우체국부터 가자. 오늘은 할머니 손님 자게 두고.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/story.rpy",
+          "line": 533,
+          "label": "aftermath_talk",
+          "guards": [
+            "if person == \"granny\":",
+            "if not mother_clue:"
+          ]
+        }
+      ],
+      "line": 533,
+      "scene_title": "aftermath_talk",
+      "source_hash": "f80d7c11bcc5cbd41c2c14cdcbbd42a9dd944b4719a4552fdd392a29341d5aed",
+      "baseline_hash": "2418a2b61cc9f67a40d7f93f66de8d4bac09ed07df65a9adec4fa1d72d9ec98f",
+      "uid": "141704adc3f476f6af45b8ed",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|aftermath_talk|rpy_inventory|aftermath_talk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

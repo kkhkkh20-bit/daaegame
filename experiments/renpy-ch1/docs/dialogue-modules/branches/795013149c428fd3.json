@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D06_S02_L0030",
+      "file": "game/v111/newworld/d06.json",
+      "path": [
+        "replace",
+        "MS14_D06_S02_L0030",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D06_S02_L0030",
+      "when": "kkomi_seat6",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "선생님 허락은 받아 뒀습니다. 아이들은 내일 아침 일찍 데리러 오지요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 192,
+          "label": "r13_v111_permission6",
+          "guards": []
+        }
+      ],
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "34df23f41d57916ce5b839de420f86f588f2b883338565904ffc098b14cca2db",
+      "baseline_hash": "26486ab3dc457cb594b8697adc2cd6df0b64f09eb496e05bca560b7b77026ed8",
+      "uid": "3b225bb7fdb20eb8e11bfe20",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|patch|replace|kkomi_seat6",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

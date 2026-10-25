@@ -1,0 +1,224 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "crowd_prepare13:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "crowd_prepare13",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 13,
+      "scene": "crowd_prepare13",
+      "block": "crowd_prepare13",
+      "placement": "binding",
+      "ref": "crowd_prepare13:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "기록 읽을 자리를 수레에서 떼어 놓는다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "crowd_records_spaced13",
+            null
+          ]
+        ],
+        "location": "square",
+        "person": null,
+        "object": "cart"
+      },
+      "scene_title": "crowd_prepare13",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "dce86da1e370838bb9992cc0fc906dad77aa4a3a3e7eb7ab02d1c4aa817ec7d1",
+      "uid": "e688be0b9a77db9d307366e0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|crowd_prepare13|choice|crowd_prepare13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "crowd_prepare13:1",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "crowd_prepare13",
+        "options",
+        1,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 13,
+      "scene": "crowd_prepare13",
+      "block": "crowd_prepare13",
+      "placement": "binding",
+      "ref": "crowd_prepare13:1",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "수레 옆 짐을 옮겨 통로를 나눈다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "crowd_cart_spaced13",
+            null
+          ]
+        ],
+        "location": "square",
+        "person": null,
+        "object": "cart"
+      },
+      "scene_title": "crowd_prepare13",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "bc0c39b02e17fdc61883609885331315b9d77494912c0118d4bfc0de0655594d",
+      "uid": "2555f79457dfdf5d8d7671c1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|crowd_prepare13|choice|crowd_prepare13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "crowd_prepare13:2",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "crowd_prepare13",
+        "options",
+        2,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 13,
+      "scene": "crowd_prepare13",
+      "block": "crowd_prepare13",
+      "placement": "binding",
+      "ref": "crowd_prepare13:2",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "돌목에게 기록 읽는 동안 너울을 맡아 달라고 한다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "crowd_records_spaced13",
+            true
+          ],
+          [
+            "state",
+            "crowd_cart_spaced13",
+            true
+          ],
+          [
+            "state",
+            "crowd_supervisor_placed13",
+            null
+          ]
+        ],
+        "location": "square",
+        "person": "guard",
+        "object": null
+      },
+      "scene_title": "crowd_prepare13",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "79f4a7c39e60bc2d6bdf944b0cb9c8a157741ef057b4d9f63bd9f5ac633af30b",
+      "uid": "96eb9a82ce2cec83fff4a3a4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|crowd_prepare13|choice|crowd_prepare13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "crowd_prepare13:3",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "crowd_prepare13",
+        "options",
+        3,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 13,
+      "scene": "crowd_prepare13",
+      "block": "crowd_prepare13",
+      "placement": "binding",
+      "ref": "crowd_prepare13:3",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "검증한 기록을 소리 내어 읽는다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "square",
+        "person": null,
+        "object": "cart"
+      },
+      "scene_title": "crowd_prepare13",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "d9359b4622516d30d7ed30a3d4a2dcd41911986278463256f718870abda20366",
+      "uid": "86291aed312edcb9c5cf3c5a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|crowd_prepare13|choice|crowd_prepare13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "crowd_prepare13:4",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "crowd_prepare13",
+        "options",
+        4,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 13,
+      "scene": "crowd_prepare13",
+      "block": "crowd_prepare13",
+      "placement": "binding",
+      "ref": "crowd_prepare13:4",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "공개를 미루고 인계부터 확인한다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "square",
+        "person": null,
+        "object": "cart"
+      },
+      "scene_title": "crowd_prepare13",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "8cdb08f4260cfc2f58e60a89c86e9b842ab7a67a26acef2c0db2dde2b1ffe270",
+      "uid": "b192c4d7ddecad52bb7c3f64",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|crowd_prepare13|choice|crowd_prepare13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

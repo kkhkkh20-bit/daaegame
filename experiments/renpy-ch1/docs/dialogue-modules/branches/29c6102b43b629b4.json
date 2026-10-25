@@ -1,0 +1,124 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_bundle3.rpy:245:26",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        14658,
+        14717
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_b3_buy_pages",
+      "block": "r13_b3_buy_pages",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:245:26",
+      "when": null,
+      "speaker": "resident_eunho",
+      "kind": "dialogue",
+      "text": "도시로 가는 짐은 모레 떠납니다. 사시려면 열두 냥입니다. 제가 치른 감자 값에 운반비를 얹은 겁니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 245,
+          "label": "r13_b3_buy_pages",
+          "guards": []
+        }
+      ],
+      "line": 245,
+      "scene_title": "r13_b3_buy_pages",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "bf5ae8cc8e6e376c39914bd0053a36017e7749aa0d7be94c21d5acd28fdbf3b0",
+      "uid": "02daacc04a15c2d02579287c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_b3_buy_pages|rpy_literal|r13_b3_buy_pages|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:249:46",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        14874,
+        14889
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_b3_buy_pages",
+      "block": "r13_b3_buy_pages",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:249:46",
+      "when": null,
+      "speaker": "resident_eunho",
+      "kind": "dialogue",
+      "text": "서로 좋은 거래였습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 249,
+          "label": "r13_b3_buy_pages",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 249,
+      "scene_title": "r13_b3_buy_pages",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "32a691a861ef2c2e03f5eafb5d2a1adb8cfd8d8d8420a44ccb71fa4ffbbceea1",
+      "uid": "1af01050e125b7f8e104324e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_b3_buy_pages|rpy_literal|r13_b3_buy_pages|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:255:46",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        15280,
+        15319
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_b3_buy_pages",
+      "block": "r13_b3_buy_pages",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:255:46",
+      "when": null,
+      "speaker": "resident_eunho",
+      "kind": "dialogue",
+      "text": "베낀 사본은 사서 선생님한테 있을 거요. 나한테는 원본만 있습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 255,
+          "label": "r13_b3_buy_pages",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 255,
+      "scene_title": "r13_b3_buy_pages",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "235df399290075e4b8b894e1e487126f85fa3bfa75f4ddefff3f9e070011fb48",
+      "uid": "8d96685f7483e013fd9855f3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_b3_buy_pages|rpy_literal|r13_b3_buy_pages|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

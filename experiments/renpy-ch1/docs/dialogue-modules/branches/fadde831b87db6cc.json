@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_PD_03B",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "partial_departed14",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "partial_departed14",
+      "block": "partial_departed14",
+      "placement": "blocks",
+      "ref": "partial_departed14",
+      "when": "reader_tosil",
+      "speaker": null,
+      "kind": "narration",
+      "text": "내리지 못한 이름들은 학교 명단 종이에 그대로 남는다. 엄마가 그 종이를 접으려 하자 다람이 손으로 누른다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3478,
+          "label": "r13_v111_partial_departed14",
+          "guards": []
+        }
+      ],
+      "scene_title": "partial_departed14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "2b5d56eee5e211852e7928ea99cec91c22aa753efb850873589fb3eee0004fe7",
+      "uid": "3bd55c3436b5add5be2d94ce",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|partial_departed14|patch|partial_departed14|reader_tosil",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_HB_PLATE_RIGHT14_01",
+      "file": "game/v111/newworld/hidden_base.json",
+      "path": [
+        "blocks",
+        "hidden_base_plate_right14",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "hidden_base_plate_right14",
+      "block": "hidden_base_plate_right14",
+      "placement": "blocks",
+      "ref": "hidden_base_plate_right14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "표시한 면을 바깥으로 두고 판을 밀어 넣는다. 끝까지 들어가며 안에서 짧게 딸깍 소리가 난다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_base.rpy",
+          "line": 104,
+          "label": "r13_hidden_base_door14",
+          "guards": [
+            "elif _return==2:"
+          ]
+        }
+      ],
+      "scene_title": "hidden_base_plate_right14",
+      "source_hash": "6e9232db54dc86c540d07513a1c200c4a0397d9f5aaf68a365716856e872c4c1",
+      "baseline_hash": "b1c4c339d1f4b334133d32559f09a1866fb557a4654c7882fa5105fecf4ff687",
+      "uid": "70e1304a374d6a560605ac53",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|hidden_base_plate_right14|patch|hidden_base_plate_right14|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

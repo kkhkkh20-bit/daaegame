@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:383:26",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        22909,
+        22979
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_wf_nubi",
+      "block": "r13_wf_nubi",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:383:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "솥 밑 불은 꺼져 있었다. 누비 아주머니가 손을 젖은 천으로 감은 채 빨래를 개고 있었다. 등에는 막내, 옆에는 아이 둘.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 383,
+          "label": "r13_wf_nubi",
+          "guards": []
+        }
+      ],
+      "line": 383,
+      "scene_title": "r13_wf_nubi",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "49dd0f3631d8ccd821232dc6f30865c90b5dc8c92e119e2801509bf22a867a25",
+      "uid": "1355bd0aec49b259dc2d29c9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_wf_nubi|rpy_literal|r13_wf_nubi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

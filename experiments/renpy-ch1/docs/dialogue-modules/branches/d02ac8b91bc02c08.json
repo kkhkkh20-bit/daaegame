@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_new_cast.rpy:298:8",
+      "file": "game/systems/room13_new_cast.rpy",
+      "path": [
+        19160,
+        19173
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "r13_nc_dalgeurak_news",
+      "block": "r13_nc_dalgeurak_news",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_cast.rpy:298:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "한 냥을 내고 듣는다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_cast.rpy",
+          "line": 298,
+          "label": "r13_nc_dalgeurak_news",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 298,
+      "scene_title": "r13_nc_dalgeurak_news",
+      "source_hash": "1ca2e2ca3bfab19cf96bff538f9165f970ad4d6405095ae9a5862a44f44e94db",
+      "baseline_hash": "ce58df95741716a8663340975d73388e7109a8ddbfc35646e788fd38584d2315",
+      "uid": "a48015876ffeec8589c5b983",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nc_dalgeurak_news|rpy_menu|r13_nc_dalgeurak_news|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_cast.rpy:304:8",
+      "file": "game/systems/room13_new_cast.rpy",
+      "path": [
+        19581,
+        19589
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "r13_nc_dalgeurak_news",
+      "block": "r13_nc_dalgeurak_news",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_cast.rpy:304:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "지금은 됐다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_cast.rpy",
+          "line": 304,
+          "label": "r13_nc_dalgeurak_news",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 304,
+      "scene_title": "r13_nc_dalgeurak_news",
+      "source_hash": "1ca2e2ca3bfab19cf96bff538f9165f970ad4d6405095ae9a5862a44f44e94db",
+      "baseline_hash": "89fa013bc20877b13dae3e76c95a6827fed9782d8756d1b9aeb8c4ab5d19bd80",
+      "uid": "f5b3692c5e6e389450645ddd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nc_dalgeurak_news|rpy_menu|r13_nc_dalgeurak_news|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

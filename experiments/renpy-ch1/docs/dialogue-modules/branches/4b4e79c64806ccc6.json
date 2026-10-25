@@ -1,0 +1,1093 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D14_END_PARTIAL_L0011",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_PARTIAL_L0011",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_PARTIAL_L0011",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "없어요. 내 눈으로 직접 보고 왔어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3512,
+          "label": "r13_v111_partial_received14",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "2e2f80211d14849973db54b722900acf7b824f9389dccd8e7412be333ef94f4c",
+      "uid": "365389772eba9ff1404c9520",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0002",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_PARTIAL_L0002",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_PARTIAL_L0002",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "한 자리 났어요. 먼저 누운 사람부터 옮겨요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3469,
+          "label": "r13_v111_partial_ending14",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "d0947da0a527937ce27183866a11585ae277cec0407b7ac3de25ddc3a74274ac",
+      "uid": "e6fb7b4e1a75ad3124b9ee63",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0009",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_PARTIAL_L0009",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_PARTIAL_L0009",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "이제 마지막 사람이에요. 안에서 받아 줬어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3509,
+          "label": "r13_v111_partial_received14",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "6a43981d93c10b18d13b40470df7d0fdcb1c09161e06c0ffd436d7f75eb6889b",
+      "uid": "eeb0714aae85e40b32cafd04",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_FAMILY_L0002",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_FAMILY_L0002",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_FAMILY_L0002",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "수레는 새벽에 떠났소. 명단에서 부인은 빠졌소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3447,
+          "label": "r13_v111_family_ending14",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "5e7511732bda3846dafc9d81b9711a882d2c15a5c7999f86b71dd0c5d282dc85",
+      "uid": "7c9fd0916310dd2af02e6344",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_FAMILY_L0003",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_FAMILY_L0003",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_FAMILY_L0003",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "도착한 건…… 확인됐습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3448,
+          "label": "r13_v111_family_ending14",
+          "guards": []
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "80509c76e5b683bd085b1eeac0d846183930e70645a55a90eb59432bc4e07db2",
+      "uid": "476096e86bb2c7c0808c6dd0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_FAMILY_L0004",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_FAMILY_L0004",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_FAMILY_L0004",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "아직 아니오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3450,
+          "label": "r13_v111_family_ending14",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "523ec3fde7d45ff479e8b74d67dcb41dccac28bb88e4aaedde7920a1397ac4aa",
+      "uid": "c9acf49e2ac903e61d8a5ef4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_FAMILY_L0006",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_FAMILY_L0006",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_FAMILY_L0006",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그 아저씨…… 담요는 가져갔지?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3451,
+          "label": "r13_v111_family_ending14",
+          "guards": []
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "7b9c2bbf810b7db1589631993f784a6e43f4cb645abf6f6b77be1184c1f79fff",
+      "uid": "4542ef44af89508876739634",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_FAMILY_L0007",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_FAMILY_L0007",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_FAMILY_L0007",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응. 가져갔어.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3452,
+          "label": "r13_v111_family_ending14",
+          "guards": []
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "b3977fc255dbdf690d2864832543a82d37f392dd3c84957747e8764f1d8ffd3a",
+      "uid": "c40f1ebdc6a104d979ffdafc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_FAMILY_L0008",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_FAMILY_L0008",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_FAMILY_L0008",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그래도…… 추우면?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3453,
+          "label": "r13_v111_family_ending14",
+          "guards": []
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "6788307f52e1e35e3a62b3f2c9b0f1e9cdca3bb7d649ecb462cf93011e94a6a4",
+      "uid": "5196d1fd8c0726054b29291e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_FAMILY_L0010",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_FAMILY_L0010",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_FAMILY_L0010",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "먹고 나서 다시 물어보자. 우리가 확인할 수 있는 데부터.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3454,
+          "label": "r13_v111_family_ending14",
+          "guards": []
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "220e8d5e1c4bcba99f0e9a591fe75211da7fbecfc09bb3160fe7428904d05b5b",
+      "uid": "6f91fe21ee1bf6988ddeff56",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0003",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_PARTIAL_L0003",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_PARTIAL_L0003",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이 사람부터요. 감독하실 분은 남아 주실 수 있죠?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3470,
+          "label": "r13_v111_partial_ending14",
+          "guards": []
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "c993c5732fa3a99a2bdb6951b11e3ec133429bf13cfbc9db9b6e8fa45bee8cd9",
+      "uid": "5e32201aec1787297ea6f4f9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0004",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_PARTIAL_L0004",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_PARTIAL_L0004",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "내가 남겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3472,
+          "label": "r13_v111_partial_ending14",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "abb36c04e91a766898c39fd27aff59c1b7628e33986aca0b826717db2ed6bcee",
+      "uid": "b881734dd7ca83d90139d83b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0006",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_PARTIAL_L0006",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_PARTIAL_L0006",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "오늘도…… 안 끝났어?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3473,
+          "label": "r13_v111_partial_ending14",
+          "guards": []
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "5ea16009dbccd312253e4450edcdf3e581315692146d10a21a0b787838e89e26",
+      "uid": "74b953a9703b0dc6a28a0c16",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0010",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_PARTIAL_L0010",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_PARTIAL_L0010",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "수레에 남은 사람은요? 없고요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3510,
+          "label": "r13_v111_partial_received14",
+          "guards": []
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "58c06288bc8186f6f9f76632a3473067b8e4b92f3bee03676c4e6a5b7c7eb1be",
+      "uid": "cf495853e9f242ff6191b90f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0012",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_PARTIAL_L0012",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_PARTIAL_L0012",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이 덮개는 두고 가요. 다음 사람이 올 때까지 자리를 비우지 말아 주세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3519,
+          "label": "r13_v111_partial_wait14",
+          "guards": []
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "8117f34d5d758cec0b1b72dbe9b9b94066158b7377ae9372ceb67876ff55c78c",
+      "uid": "6bea4da465a46cf416a234e1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0013",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_PARTIAL_L0013",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_PARTIAL_L0013",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "내가 남겠소. 다음 자리가 나면…… 먼저 부르겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3521,
+          "label": "r13_v111_partial_wait14",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "db874a4558aff5e9e338950e364206ea782148142492c656651da9ecf1e394fb",
+      "uid": "5f9b5b0e8d9cbb833e4d0e2a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0002",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_VIOLENCE_L0002",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_VIOLENCE_L0002",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "여긴 다친 사람 보는 곳이에요. 따질 거면 나중에 해요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3535,
+          "label": "r13_v111_violence_ending14",
+          "guards": []
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "602bf32dfabd753a1b4bddf6532aad09aece68ae8787c1486e50369deab23ca9",
+      "uid": "aee75be5e3f22da90c2a92d9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0003",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_VIOLENCE_L0003",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_VIOLENCE_L0003",
+      "when": null,
+      "speaker": "주민",
+      "kind": "dialogue",
+      "text": "그 사람 때문에 우리 집이…….",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3536,
+          "label": "r13_v111_violence_ending14",
+          "guards": []
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "ebf0a34d5515c7761eaf0d177f22ba9a3035ed3471f72894e892103667e36590",
+      "uid": "c41c0fda004d65c0e1b3cff1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0004",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_VIOLENCE_L0004",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_VIOLENCE_L0004",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "물을 사람이 없어도 물을 일은 남아요. 지금은 비켜 주세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3537,
+          "label": "r13_v111_violence_ending14",
+          "guards": []
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "c469a970b7ee27216dcf308eb76a72df70d6a45a9cc9949493e76988a7097f86",
+      "uid": "a7d3c1d05c5e2bd9970c96d4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0007",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_VIOLENCE_L0007",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_VIOLENCE_L0007",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "어제는…… 아빠가 막을 줄 알았어.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3549,
+          "label": "r13_v111_crowd_child_saw14",
+          "guards": []
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "f952b71d5c96762f5744ea9f4bf5c6301a8413356753c4cd4646384600d9e28e",
+      "uid": "efb087d0c4ba4390923571be",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0009",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_VIOLENCE_L0009",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_VIOLENCE_L0009",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어제 수레 앞에서…… 사람들이 너울 씨를 때렸어. 너울 씨는 일어나지 못했어.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3553,
+          "label": "r13_v111_crowd_child_away14",
+          "guards": []
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "a24fcd6a13685b1064fbe7c8f6968a953e67798927f44e155e558fb5bf4bd27b",
+      "uid": "70630e6224104f8eab81442f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0010",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_VIOLENCE_L0010",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_VIOLENCE_L0010",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠도…… 거기 있었어?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3554,
+          "label": "r13_v111_crowd_child_away14",
+          "guards": []
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "f274fa375ddf4f715226d3b7abd0198a1d8fe1a9ba0460f65c514731e2383925",
+      "uid": "bb5edb91d521e91da643adc6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0011",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_VIOLENCE_L0011",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_VIOLENCE_L0011",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "……응.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3555,
+          "label": "r13_v111_crowd_child_away14",
+          "guards": []
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "1b3ea2cb30cbe787f53cabd2a311c240917f2759c8b9b4bc6606d20fb5948f35",
+      "uid": "8168ec5085625373c80a0670",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0012",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_VIOLENCE_L0012",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_VIOLENCE_L0012",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠는 뭐 했어?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3556,
+          "label": "r13_v111_crowd_child_away14",
+          "guards": []
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "30f6d8bee589559e249e6afbd9f2bd5ceb5401310876c05f2e85114bcdaf1360",
+      "uid": "82e65cd84d0248679208be17",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0017",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_VIOLENCE_L0017",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_VIOLENCE_L0017",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "막으려고 갔어. 그런데…… 못 막았어.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3560,
+          "label": "r13_v111_crowd_failed14",
+          "guards": []
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "24d1bcdef148abf8c0b18d942c8eb37915ac68f3ea661fd1820ff9119fe3ce4c",
+      "uid": "3d40dec09adf111b2e33bed0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0018",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_VIOLENCE_L0018",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_VIOLENCE_L0018",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "……아빠 무릎, 아직 아파?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3561,
+          "label": "r13_v111_crowd_failed14",
+          "guards": []
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "cd285e2bdad84a246b4eeb9e9ba950b2f1178fc6a6a7c24abeaaffa6f58bef29",
+      "uid": "0ddd9c0f0551599c35e11d4d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0014",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_VIOLENCE_L0014",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_VIOLENCE_L0014",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "……내가 막지 않았어.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3565,
+          "label": "r13_v111_crowd_no_action14",
+          "guards": []
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "eb218ea78e500ff79c4a57a030b72ea32a7ef9a198f8f0b1f60693aec1097da7",
+      "uid": "ce864788264a67bd7b88175f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0015",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_VIOLENCE_L0015",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_VIOLENCE_L0015",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "……그래.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3566,
+          "label": "r13_v111_crowd_no_action14",
+          "guards": []
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "7cfdf3723e4e48a020e4083e5e83f949bfb70ac00dc1475c6e59062c257551e3",
+      "uid": "33fa90e1feffdb0e6b227c91",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0007",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_PARTIAL_L0007",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_PARTIAL_L0007",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응. 그래도 어제 수레에서 내린 사람들은 아직 학교에 있어.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3474,
+          "label": "r13_v111_partial_ending14",
+          "guards": []
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "dd2eeb3b8a9d08ecab2d9670cbd0a20ab3d90ef7386b6f625c8d7760f6117cc1",
+      "uid": "70b0905d94733785a20b40fd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_episodes.rpy:401:24",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        23159,
+        23212
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_ep4_accused",
+      "block": "r13_ep4_accused",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:401:24",
+      "when": null,
+      "speaker": "resident_tok",
+      "kind": "dialogue",
+      "text": "저는 안 가져갔어요! 그 조각이 없으면 등이 식는다는 걸 누구보다 잘 아는 사람이 저라고요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 401,
+          "label": "r13_ep4_accused",
+          "guards": []
+        }
+      ],
+      "line": 401,
+      "scene_title": "r13_ep4_accused",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "23711efa4de99c33fd9658ab11667e38a5629904538b6cd8014953806e87cbac",
+      "uid": "be6243ac759eb3c968f7d58c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_ep4_accused|rpy_literal|r13_ep4_accused|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

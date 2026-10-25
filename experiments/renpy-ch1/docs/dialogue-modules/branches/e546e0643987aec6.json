@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_RU_D13_E35",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "after",
+        "MS14_D13_S03_L0019",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D13_S03_L0019",
+      "when": "blanket_won_with_e35",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "우리 가족 몫은 마른 담요 두 장뿐입니다. 이 회색 담요는 오늘 아침 학교 정리대에 있던 거예요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1957,
+          "label": "r13_v111_mending_answer13",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 13-3. 아내가 불렀다는 말",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "4478667cd4b4e70c6d744b721966ce26d69a96ef34b8c48c54138e89118875f6",
+      "uid": "1947c3f5b24940e73807ccdc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S03|patch|after|blanket_won_with_e35",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

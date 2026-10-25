@@ -1,0 +1,132 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:400:37",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        23938,
+        23963
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_wf_nubi",
+      "block": "r13_wf_nubi",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:400:37",
+      "when": null,
+      "speaker": "resident_nubi",
+      "kind": "dialogue",
+      "text": "솥에 데었어요. 빨래하다 보면 늘 그래요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 400,
+          "label": "r13_wf_nubi",
+          "guards": [
+            "while _wf_left:",
+            "else:",
+            "elif _wf_pick==\"hand\":"
+          ]
+        }
+      ],
+      "line": 400,
+      "scene_title": "r13_wf_nubi",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "53870c2a5e56e0812f4c66abac61cf5365c54c853a73c0943c29b12276e7807e",
+      "uid": "c0869abb577fc9cdd7fb7f38",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_wf_nubi|rpy_literal|r13_wf_nubi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:401:27",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        23993,
+        24044
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_wf_nubi",
+      "block": "r13_wf_nubi",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:401:27",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(솥에 데면 손바닥이나 팔이다. 손등은, 확 피어오르는 불 앞에 손을 뻗었을 때 덴다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 401,
+          "label": "r13_wf_nubi",
+          "guards": [
+            "while _wf_left:",
+            "else:",
+            "elif _wf_pick==\"hand\":"
+          ]
+        }
+      ],
+      "line": 401,
+      "scene_title": "r13_wf_nubi",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "476e45d381da6283d29e79ec22ade7253f7a8584e9366030520bad49d7b7c9ca",
+      "uid": "43396c89bf43482428cc0f41",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_wf_nubi|rpy_literal|r13_wf_nubi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:407:37",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        24410,
+        24428
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_wf_nubi",
+      "block": "r13_wf_nubi",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:407:37",
+      "when": null,
+      "speaker": "resident_nubi",
+      "kind": "dialogue",
+      "text": "(아이 입을 막는다) ……쉿.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 407,
+          "label": "r13_wf_nubi",
+          "guards": [
+            "while _wf_left:",
+            "else:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 407,
+      "scene_title": "r13_wf_nubi",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "4ad81a5ce470319b603b2ff8514e4def22cf9ea98748bc6e02cad19f46987131",
+      "uid": "8e53208685ed17b3b6ee6d96",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_wf_nubi|rpy_literal|r13_wf_nubi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

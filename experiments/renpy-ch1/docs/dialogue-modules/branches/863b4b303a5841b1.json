@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_H1_Q_01",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "blocks",
+        "hyp1_q11",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "hyp1_q11",
+      "block": "hyp1_q11",
+      "placement": "blocks",
+      "ref": "hyp1_q11",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "그럼 왜 아르카를 날마다 만지는 초롱은 멀쩡하오?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 630,
+          "label": "r13_v111_hyp1_q11",
+          "guards": []
+        }
+      ],
+      "scene_title": "hyp1_q11",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "90204d24d1a94a53783550e5f1690eb2cab11874479afb07ab344b4f7e8e4681",
+      "uid": "2c8bf2b8ad5771aa122589a6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|hyp1_q11|patch|hyp1_q11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

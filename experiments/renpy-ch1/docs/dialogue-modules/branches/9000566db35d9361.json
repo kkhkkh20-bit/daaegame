@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_OWL_REPAIR_OWL_LATCH_LOOK7_0",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "owl_latch_look7",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "owl_latch_look7",
+      "block": "owl_latch_look7",
+      "placement": "blocks",
+      "ref": "owl_latch_look7",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "문 안쪽 빗장을 받이에 밀어 넣으니 끝이 걸린다. 문을 조금 들어 올려야 들어간다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 130,
+          "label": "r13_v111_owl_repair_pick7",
+          "guards": [
+            "if n==110:"
+          ]
+        }
+      ],
+      "scene_title": "owl_latch_look7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "f0a9e5ea06b0d9af92feeb225c7bebc9624a900a0d15b90bbcb82f11cc00b1ca",
+      "uid": "71aadda4c06ea19886c2e0ca",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|owl_latch_look7|patch|owl_latch_look7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OWL_REPAIR_OWL_LATCH_LOOK7_1",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "owl_latch_look7",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "owl_latch_look7",
+      "block": "owl_latch_look7",
+      "placement": "blocks",
+      "ref": "owl_latch_look7",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "문이 내려앉았나. 힘으로 닫다가는 더 걸리겠네.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 130,
+          "label": "r13_v111_owl_repair_pick7",
+          "guards": [
+            "if n==110:"
+          ]
+        }
+      ],
+      "scene_title": "owl_latch_look7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "5716a40177abfbda550593fdec123d23a7d886a1663fad933ab45fa82ef598c2",
+      "uid": "4119da3f539f2554ebfc6380",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|owl_latch_look7|patch|owl_latch_look7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

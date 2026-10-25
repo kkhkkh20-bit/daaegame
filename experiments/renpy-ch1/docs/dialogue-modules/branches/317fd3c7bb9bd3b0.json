@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_revision.rpy:79:136",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        3887,
+        3943
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_case_interview",
+      "block": "r13_case_interview",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:79:136",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "침대 밑이라 이불밖에 안 보였어. 바닥은 연기 때문에 매웠고. 누가 문 두드릴 때마다 눈 감았어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 79,
+          "label": "r13_case_interview",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 79,
+      "scene_title": "r13_case_interview",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "e6c9ac084b33649af65814024de603ab9bcc9d50faef91fb16a022fb1fe40cbe",
+      "uid": "0f684b29b4228e3a90eaa3c7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_case_interview|rpy_literal|r13_case_interview|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

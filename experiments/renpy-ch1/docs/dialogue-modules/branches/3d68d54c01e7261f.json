@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/winter_opening.rpy:85:190",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        5768,
+        5782
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:85:190",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "이 문장도 남겨 두자.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 85,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"rule\":"
+          ]
+        }
+      ],
+      "line": 85,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "e1c2486999e2ca90feceda01bd744475b9c32fc5dbfbcfb336c2a691967662ad",
+      "uid": "f8a1c4646e4f0d038fd104a0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

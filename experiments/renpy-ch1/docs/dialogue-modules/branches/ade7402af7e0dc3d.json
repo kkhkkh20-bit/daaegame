@@ -1,0 +1,244 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_week2_events.rpy:65:25",
+      "file": "game/systems/room13_week2_events.rpy",
+      "path": [
+        3440,
+        3483
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_w2e_bell",
+      "block": "r13_w2e_bell",
+      "placement": "literal",
+      "ref": "game/systems/room13_week2_events.rpy:65:25",
+      "when": null,
+      "speaker": "resident_seol",
+      "kind": "dialogue",
+      "text": "그럼 불 꺼진 집 사람들은 어떻게 알아요? 오늘 밤에 또 두 집이 꺼져요!",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week2_events.rpy",
+          "line": 65,
+          "label": "r13_w2e_bell",
+          "guards": []
+        }
+      ],
+      "line": 65,
+      "scene_title": "r13_w2e_bell",
+      "source_hash": "bd106ab951275b7b2a06d9b6705a142790d202b883e7f2e6d4f37241b21c87c0",
+      "baseline_hash": "4567564be78495371527414bd86d70cb1d1c41ae560a32935d76b067eafa720a",
+      "uid": "0ea6100a67e1b12b04075596",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_w2e_bell|rpy_literal|r13_w2e_bell|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week2_events.rpy:69:45",
+      "file": "game/systems/room13_week2_events.rpy",
+      "path": [
+        3699,
+        3718
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_w2e_bell",
+      "block": "r13_w2e_bell",
+      "placement": "literal",
+      "ref": "game/systems/room13_week2_events.rpy:69:45",
+      "when": null,
+      "speaker": "resident_seol",
+      "kind": "dialogue",
+      "text": "아저씨도 치라고 하면, 칠게요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week2_events.rpy",
+          "line": 69,
+          "label": "r13_w2e_bell",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 69,
+      "scene_title": "r13_w2e_bell",
+      "source_hash": "bd106ab951275b7b2a06d9b6705a142790d202b883e7f2e6d4f37241b21c87c0",
+      "baseline_hash": "a94968ec03db224847a6dcb3da173ec9b4a93842de99cb71b513a4a1a55a36aa",
+      "uid": "73904474dd88551224b00331",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_w2e_bell|rpy_literal|r13_w2e_bell|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week2_events.rpy:71:25",
+      "file": "game/systems/room13_week2_events.rpy",
+      "path": [
+        3806,
+        3833
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_w2e_bell",
+      "block": "r13_w2e_bell",
+      "placement": "literal",
+      "ref": "game/systems/room13_week2_events.rpy:71:25",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "……사람들 줄은 내가 세우겠소. 밀지 마시오!",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week2_events.rpy",
+          "line": 71,
+          "label": "r13_w2e_bell",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 71,
+      "scene_title": "r13_w2e_bell",
+      "source_hash": "bd106ab951275b7b2a06d9b6705a142790d202b883e7f2e6d4f37241b21c87c0",
+      "baseline_hash": "e0aa1483bf4ef8d95b963e4f56e39b378651823e4a3d8362fbd9351fa9b05429",
+      "uid": "acaeca80bf3eb9b44287ae4a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_w2e_bell|rpy_literal|r13_w2e_bell|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week2_events.rpy:74:45",
+      "file": "game/systems/room13_week2_events.rpy",
+      "path": [
+        4038,
+        4069
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_w2e_bell",
+      "block": "r13_w2e_bell",
+      "placement": "literal",
+      "ref": "game/systems/room13_week2_events.rpy:74:45",
+      "when": null,
+      "speaker": "resident_ppul",
+      "kind": "dialogue",
+      "text": "내가 치겠소. 촌장이 친 종이면 다툼은 덜 날 거요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week2_events.rpy",
+          "line": 74,
+          "label": "r13_w2e_bell",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 74,
+      "scene_title": "r13_w2e_bell",
+      "source_hash": "bd106ab951275b7b2a06d9b6705a142790d202b883e7f2e6d4f37241b21c87c0",
+      "baseline_hash": "2930755306907662a13ec3fde115e5648418616a786a45730e2284341678939a",
+      "uid": "961e23e1f326ff070de18474",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_w2e_bell|rpy_literal|r13_w2e_bell|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week2_events.rpy:79:25",
+      "file": "game/systems/room13_week2_events.rpy",
+      "path": [
+        4359,
+        4392
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_w2e_bell",
+      "block": "r13_w2e_bell",
+      "placement": "literal",
+      "ref": "game/systems/room13_week2_events.rpy:79:25",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "당신이오? 소란을 피운 값으로 오늘은 초소에서 지내시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week2_events.rpy",
+          "line": 79,
+          "label": "r13_w2e_bell",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 79,
+      "scene_title": "r13_w2e_bell",
+      "source_hash": "bd106ab951275b7b2a06d9b6705a142790d202b883e7f2e6d4f37241b21c87c0",
+      "baseline_hash": "5bcd62bc790e957239d5d145aa7c3a83fe4d43922495f699a5356f4b1bbae883",
+      "uid": "1f9df37928936aaa4f2f6772",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_w2e_bell|rpy_literal|r13_w2e_bell|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week2_events.rpy:84:45",
+      "file": "game/systems/room13_week2_events.rpy",
+      "path": [
+        4697,
+        4730
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_w2e_bell",
+      "block": "r13_w2e_bell",
+      "placement": "literal",
+      "ref": "game/systems/room13_week2_events.rpy:84:45",
+      "when": null,
+      "speaker": "resident_seol",
+      "kind": "dialogue",
+      "text": "……알겠어요. 아저씨까지 기다리자고 하면 어쩔 수 없죠.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week2_events.rpy",
+          "line": 84,
+          "label": "r13_w2e_bell",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 84,
+      "scene_title": "r13_w2e_bell",
+      "source_hash": "bd106ab951275b7b2a06d9b6705a142790d202b883e7f2e6d4f37241b21c87c0",
+      "baseline_hash": "076327cd8d8acd99bde14299cdf3e1a2fb7dadf21bf7b9cc0ec093fa57150bf4",
+      "uid": "af54085a4fb94f832b5f6bf2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_w2e_bell|rpy_literal|r13_w2e_bell|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

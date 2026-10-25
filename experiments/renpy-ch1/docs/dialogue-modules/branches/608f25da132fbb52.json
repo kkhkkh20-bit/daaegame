@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13.rpy:651:81",
+      "file": "game/room13.rpy",
+      "path": [
+        37386,
+        37423
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_argument",
+      "block": "r13_argument",
+      "placement": "literal",
+      "ref": "game/room13.rpy:651:81",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "복도에 있던 분들이 지켜본 문이 어느 문인지 확인하고 싶습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 651,
+          "label": "r13_argument",
+          "guards": [
+            "if claim==\"C1\":"
+          ]
+        }
+      ],
+      "line": 651,
+      "scene_title": "r13_argument",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "59f42505881daea2e580b60098ee7d4cb56cc2f000c0ff83d85983788445d1e5",
+      "uid": "be43e8f3b66cb04fe76a7322",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_argument|rpy_literal|r13_argument|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:653:41",
+      "file": "game/room13.rpy",
+      "path": [
+        37507,
+        37550
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_argument",
+      "block": "r13_argument",
+      "placement": "literal",
+      "ref": "game/room13.rpy:653:41",
+      "when": null,
+      "speaker": "resident_ppul",
+      "kind": "dialogue",
+      "text": "아이가 겁을 먹은 건 알겠습니다. 하지만 아이에게 맞은 사람이 죽었습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 653,
+          "label": "r13_argument",
+          "guards": [
+            "elif claim==\"C2\":"
+          ]
+        }
+      ],
+      "line": 653,
+      "scene_title": "r13_argument",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "040a9eeb0eb7151c22fede38e9a74fc30db8dcef06f0b753024e471760da4138",
+      "uid": "494157cf50650c8be0e31a96",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_argument|rpy_literal|r13_argument|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

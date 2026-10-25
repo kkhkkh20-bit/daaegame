@@ -1,0 +1,206 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13.rpy:216:32",
+      "file": "game/room13.rpy",
+      "path": [
+        11179,
+        11206
+      ],
+      "origin": "rpy_literal",
+      "day": 2,
+      "scene": "r13_entry_karo_menu",
+      "block": "r13_entry_karo_menu",
+      "placement": "literal",
+      "ref": "game/room13.rpy:216:32",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "아까 보신 마차 바퀴 축은 수리가 되겠습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 216,
+          "label": "r13_entry_karo_menu",
+          "guards": [
+            "if r13_entry_karo_choice==\"road\":"
+          ]
+        }
+      ],
+      "line": 216,
+      "scene_title": "r13_entry_karo_menu",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "7cd6650e8d4070299305525e5f1908cdb72dacd60ec7238171058594ed2ab89b",
+      "uid": "4af3b34584fb582b81751057",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_entry_karo_menu|rpy_literal|r13_entry_karo_menu|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:219:32",
+      "file": "game/room13.rpy",
+      "path": [
+        11505,
+        11562
+      ],
+      "origin": "rpy_literal",
+      "day": 2,
+      "scene": "r13_entry_karo_menu",
+      "block": "r13_entry_karo_menu",
+      "placement": "literal",
+      "ref": "game/room13.rpy:219:32",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "까로 씨, 저희 두 사람을 태워 오셨다고 증언해 주실 수 있습니까? 명단에서 아이 이름이 빠져서요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 219,
+          "label": "r13_entry_karo_menu",
+          "guards": [
+            "elif r13_entry_karo_choice==\"witness\":"
+          ]
+        }
+      ],
+      "line": 219,
+      "scene_title": "r13_entry_karo_menu",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "598f76ff2bbaca1071c9c87890052f76a8ac12a9457008d378aaeb687faaccf4",
+      "uid": "2cea55706515b1fbb8015db9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_entry_karo_menu|rpy_literal|r13_entry_karo_menu|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:219:222",
+      "file": "game/room13.rpy",
+      "path": [
+        11695,
+        11723
+      ],
+      "origin": "rpy_literal",
+      "day": 2,
+      "scene": "r13_entry_karo_menu",
+      "block": "r13_entry_karo_menu",
+      "placement": "literal",
+      "ref": "game/room13.rpy:219:222",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "알겠습니다. 그럼 원본 서류부터 찾아보겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 219,
+          "label": "r13_entry_karo_menu",
+          "guards": [
+            "elif r13_entry_karo_choice==\"witness\":"
+          ]
+        }
+      ],
+      "line": 219,
+      "scene_title": "r13_entry_karo_menu",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "284302613678832b9a86262bf442db7b08833150a68014c99ada1fc3a937610a",
+      "uid": "c8aefe6eb92e182d65cfc4e9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_entry_karo_menu|rpy_literal|r13_entry_karo_menu|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:219:262",
+      "file": "game/room13.rpy",
+      "path": [
+        11735,
+        11786
+      ],
+      "origin": "rpy_literal",
+      "day": 2,
+      "scene": "r13_entry_karo_menu",
+      "block": "r13_entry_karo_menu",
+      "placement": "literal",
+      "ref": "game/room13.rpy:219:262",
+      "when": null,
+      "speaker": "karo",
+      "kind": "dialogue",
+      "text": "아, 손님 예약 서류는 아까 제가 초소에 넘겼어요. 선반 금요일 묶음에 끼워 두더라고요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 219,
+          "label": "r13_entry_karo_menu",
+          "guards": [
+            "elif r13_entry_karo_choice==\"witness\":"
+          ]
+        }
+      ],
+      "line": 219,
+      "scene_title": "r13_entry_karo_menu",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "bb7281c3c851b80ced22175d1007ed0d00d7e97d29aead681c9b79d4ae76eb92",
+      "uid": "d1256a3253f9eb37b55bd12b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_entry_karo_menu|rpy_literal|r13_entry_karo_menu|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:221:32",
+      "file": "game/room13.rpy",
+      "path": [
+        11935,
+        11983
+      ],
+      "origin": "rpy_literal",
+      "day": 2,
+      "scene": "r13_entry_karo_menu",
+      "block": "r13_entry_karo_menu",
+      "placement": "literal",
+      "ref": "game/room13.rpy:221:32",
+      "when": null,
+      "speaker": "karo",
+      "kind": "dialogue",
+      "text": "가방은 이 담요 밑에 넣어 둘게요. 눈에 젖으면 방에 가서도 한참 말려야 하니까요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 221,
+          "label": "r13_entry_karo_menu",
+          "guards": [
+            "elif r13_entry_karo_choice==\"bags\":"
+          ]
+        }
+      ],
+      "line": 221,
+      "scene_title": "r13_entry_karo_menu",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "f9702dfffef5b9c4087dc109a9456fffa41688b5f5ebe946315a21b84e8d36d5",
+      "uid": "df60e2f3c91a0da1a9aebd7a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_entry_karo_menu|rpy_literal|r13_entry_karo_menu|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

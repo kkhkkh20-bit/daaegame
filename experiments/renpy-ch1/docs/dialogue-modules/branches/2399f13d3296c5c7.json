@@ -1,0 +1,550 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D13_C_L0002",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_C_L0002",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_C",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_C_L0002",
+      "when": null,
+      "speaker": "주민",
+      "kind": "dialogue",
+      "text": "우리 아버지도…… 네가 태웠지.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2640,
+          "label": "r13_v111_crowd13",
+          "guards": []
+        }
+      ],
+      "scene_title": "대체 장면 13-C. 사람을 끌어내리는 손",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "e29cfcfc890f0842e7c607161ad763a470f91bdf6707ccf2b53f4690a712984d",
+      "uid": "b2faf2156245519da07a3f85",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_C|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_C_L0003",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_C_L0003",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_C",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_C_L0003",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "손 놔.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2641,
+          "label": "r13_v111_crowd13",
+          "guards": []
+        }
+      ],
+      "scene_title": "대체 장면 13-C. 사람을 끌어내리는 손",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "ce4fe7ef4e25a47b86839e003b2bf181dfaf4db13c321247875c1dfd08bb1ab5",
+      "uid": "7ecda0387c31560c7123da21",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_C|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_C_L0006",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_C_L0006",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_C",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_C_L0006",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠…… 저 사람, 지금 때려.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2672,
+          "label": "r13_v111_daram_crowd13",
+          "guards": [
+            "if r13_v111_actor_ready('daram') and room13['location']=='square':"
+          ]
+        }
+      ],
+      "scene_title": "대체 장면 13-C. 사람을 끌어내리는 손",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "b3ea352f22e4f11670afa937568a201ae836fbfc33f7c7259bd7de173945930a",
+      "uid": "18a3d41928142acaf2cffa03",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_C|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_C_L0009",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_C_L0009",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_C",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_C_L0009",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "손 놓으세요. 아직 이 사람한테 물어볼 게 있어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2678,
+          "label": "r13_v111_crowd_block13",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2694,
+          "label": "r13_v111_crowd_block_old13",
+          "guards": []
+        }
+      ],
+      "scene_title": "대체 장면 13-C. 사람을 끌어내리는 손",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "3f024fc9db968618a0e442915f2ceb459e525a30af9b496783cb4e7a6e688d6f",
+      "uid": "6ede63d4ac5850ca16cf4ead",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_C|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_C_L0010",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_C_L0010",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_C",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_C_L0010",
+      "when": null,
+      "speaker": "주민",
+      "kind": "dialogue",
+      "text": "우리한테는 물어봤어? 누구를 데려갈지.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2679,
+          "label": "r13_v111_crowd_block13",
+          "guards": []
+        }
+      ],
+      "scene_title": "대체 장면 13-C. 사람을 끌어내리는 손",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "218b31ba4d1d7a5406bdf45d0a03970be6cd973518452531968b6844f9028640",
+      "uid": "0993ae3ff751e9b1ff69d6fb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_C|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_C_L0011",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_C_L0011",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_C",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_C_L0011",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그래도 여기서 때리진 마요. 비켜요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2680,
+          "label": "r13_v111_crowd_block13",
+          "guards": []
+        }
+      ],
+      "scene_title": "대체 장면 13-C. 사람을 끌어내리는 손",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "aa7f895896088fea782494b8196fed3a06af070c54f90c0a088ab2f0f298a18b",
+      "uid": "831d2a83d899f6ce3223110c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_C|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_C_L0013",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_C_L0013",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_C",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_C_L0013",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "비켜요. 다람아, 엄마 옆에 있어.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2696,
+          "label": "r13_v111_crowd_block_old13",
+          "guards": [
+            "if r13_v111_actor_ready('daram') and room13['location']=='square':"
+          ]
+        }
+      ],
+      "scene_title": "대체 장면 13-C. 사람을 끌어내리는 손",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "b2aedf9c22164ce9820d830c2e8ee6242d710c5743b36cd154a0dfe6a155e2b3",
+      "uid": "a80d3af2896dbbf7fb17b8c5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_C|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_C_L0015",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_C_L0015",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_C",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_C_L0015",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "놓으라니까…….",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2699,
+          "label": "r13_v111_crowd_block_old13",
+          "guards": []
+        }
+      ],
+      "scene_title": "대체 장면 13-C. 사람을 끌어내리는 손",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "abe47b99bc7644ba11e9d2b13668475dc250850b4134abde2918ee3764594689",
+      "uid": "857fdc4b40a94f0c5b04bdd9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_C|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_C_L0016",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_C_L0016",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_C",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_C_L0016",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "묻는 말에 대답할 때까지…… 여기 있어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2700,
+          "label": "r13_v111_crowd_block_old13",
+          "guards": []
+        }
+      ],
+      "scene_title": "대체 장면 13-C. 사람을 끌어내리는 손",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "a3c3ad0eaa8467b82b1316947ea97b722d950dac2f678b324af1d5029c888d8c",
+      "uid": "805d3d1f15ce1f8b79efc42c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_C|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_C_L0017",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_C_L0017",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_C",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_C_L0017",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "돌목 씨. 이 사람부터 막아 주세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2709,
+          "label": "r13_v111_crowd_guard13",
+          "guards": []
+        }
+      ],
+      "scene_title": "대체 장면 13-C. 사람을 끌어내리는 손",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "5225f3c53aa839695921da991d130c38e62e78768e71a3f326aacbe41fc591b1",
+      "uid": "45f8152c3a463dc85aba1e91",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_C|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_C_L0018",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_C_L0018",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_C",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_C_L0018",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "물러서시오. 때리지 마시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2711,
+          "label": "r13_v111_crowd_guard13",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "scene_title": "대체 장면 13-C. 사람을 끌어내리는 손",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "b6cb52f242f2d44917c2572a37221c0bd8378600fa8d55f65dfb68c3f1b104f8",
+      "uid": "5ed8e360665b8acdc69c45c0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_C|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_C_L0020",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_C_L0020",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_C",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_C_L0020",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "놔. 손 놓으라고.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2721,
+          "label": "r13_v111_crowd_watch13",
+          "guards": []
+        }
+      ],
+      "scene_title": "대체 장면 13-C. 사람을 끌어내리는 손",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "f69eeb873300c76b1e267dad86141a452a6a908f6826cd1aaa63de70bea4df58",
+      "uid": "a29a1006ddc9d30daacf0fbe",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_C|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_C_L0021",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_C_L0021",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_C",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_C_L0021",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "밀지 마요. 아이도 있어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2738,
+          "label": "r13_v111_crowd_failed13",
+          "guards": []
+        }
+      ],
+      "scene_title": "대체 장면 13-C. 사람을 끌어내리는 손",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "c57aff6820ea11539e5efd5cc0e0c8bf0e152c753781bbca5d994b7ab8301a56",
+      "uid": "c9487b2235f2cfa887b40b32",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_C|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_C_L0022",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_C_L0022",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_C",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_C_L0022",
+      "when": null,
+      "speaker": "주민",
+      "kind": "dialogue",
+      "text": "비켜.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2739,
+          "label": "r13_v111_crowd_failed13",
+          "guards": []
+        }
+      ],
+      "scene_title": "대체 장면 13-C. 사람을 끌어내리는 손",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "4ff3c3d6f158d5e8fdfeb62135d8ca9eb8325af9c5f585fe6832f6ed1e95f990",
+      "uid": "0e8a08d0813d9f038d6be068",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_C|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

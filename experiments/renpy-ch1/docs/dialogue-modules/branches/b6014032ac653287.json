@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:284:30",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        17485,
+        17524
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_morning",
+      "block": "r13_wf_morning",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:284:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "창고는 검은 기둥 몇 개만 남았다. 눈이 녹아 시커먼 물이 고였다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 284,
+          "label": "r13_wf_morning",
+          "guards": [
+            "if r13_has(\"kkomi_dead\"):"
+          ]
+        }
+      ],
+      "line": 284,
+      "scene_title": "r13_wf_morning",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "40a21738ec67c746d9a0619f8195f93c9ed172e4897ab2a483222dbbaf3aaf63",
+      "uid": "2e087c47f035e7a071e4758d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_morning|rpy_literal|r13_wf_morning|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:292:30",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        17873,
+        17894
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_morning",
+      "block": "r13_wf_morning",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:292:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "창고는 검은 기둥 몇 개만 남았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 292,
+          "label": "r13_wf_morning",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 292,
+      "scene_title": "r13_wf_morning",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "6c0ebbe56266fdf5e2c693f8e59d69a4753e56d42d10f05c0d58465bb07d2804",
+      "uid": "2c71a83619062f2d9be1565e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_morning|rpy_literal|r13_wf_morning|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

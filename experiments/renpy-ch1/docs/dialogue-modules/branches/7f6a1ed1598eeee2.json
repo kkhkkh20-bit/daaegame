@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_polish3.rpy:261:34",
+      "file": "game/systems/room13_polish3.rpy",
+      "path": [
+        11763,
+        11768
+      ],
+      "origin": "rpy_inventory",
+      "day": 4,
+      "scene": "r13_rebuttal_cutin_play",
+      "block": "r13_rebuttal_cutin_play",
+      "placement": "literal",
+      "ref": "game/systems/room13_polish3.rpy:261:34",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "%d일",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_polish3.rpy",
+          "line": 261,
+          "label": "r13_rebuttal_cutin_play",
+          "guards": [
+            "for day in range(1,15):"
+          ]
+        }
+      ],
+      "line": 261,
+      "scene_title": "r13_rebuttal_cutin_play",
+      "source_hash": "4f91f1e7cbd89f605b6a61bb1a932f84babb3a62bad0d067ad8e64575a248d2d",
+      "baseline_hash": "c7d5a07afb977e9057c71af725b8f3197f8c72d680f86625b4dbe11a1d340998",
+      "uid": "714abc7016f6e06dde3ea787",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_rebuttal_cutin_play|rpy_inventory|r13_rebuttal_cutin_play|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_polish3.rpy:262:94",
+      "file": "game/systems/room13_polish3.rpy",
+      "path": [
+        11943,
+        11950
+      ],
+      "origin": "rpy_inventory",
+      "day": 4,
+      "scene": "r13_rebuttal_cutin_play",
+      "block": "r13_rebuttal_cutin_play",
+      "placement": "literal",
+      "ref": "game/systems/room13_polish3.rpy:262:94",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "기록 없음",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_polish3.rpy",
+          "line": 262,
+          "label": "r13_rebuttal_cutin_play",
+          "guards": [
+            "for day in range(1,15):"
+          ]
+        }
+      ],
+      "line": 262,
+      "scene_title": "r13_rebuttal_cutin_play",
+      "source_hash": "4f91f1e7cbd89f605b6a61bb1a932f84babb3a62bad0d067ad8e64575a248d2d",
+      "baseline_hash": "852bf68e8e0bc74c9d890808cc83030eb9a76d404035dbdeadf24dfa695a1364",
+      "uid": "e8050e48ef1e48a05e3a47d4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_rebuttal_cutin_play|rpy_inventory|r13_rebuttal_cutin_play|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,513 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D01_S01_A01",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "after",
+        "MS14_D01_S01_L0022",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D01_S01_L0022",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "창밖으로 길을 따라 등이 줄지어 서 있다. 바람이 부는데도 불빛이 하나도 흔들리지 않는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 88,
+          "label": "r13_v111_carriage_end",
+          "guards": []
+        }
+      ],
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "7175fd87ecabbae596e74688e314bd714074d0f2ea05c31d125ce88b7c713e29",
+      "uid": "66aaccd5f1e588282bb0202e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D01_S01_A02",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "after",
+        "MS14_D01_S01_L0022",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D01_S01_L0022",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "예쁘다. 꼭 별 같아. 불이 하나도 안 떨려.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 88,
+          "label": "r13_v111_carriage_end",
+          "guards": []
+        }
+      ],
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "11047096f736dfd2994c2915fa150baff178db4ff5e6cf5336031317759984fd",
+      "uid": "e416164e7895218d2a8976fd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D01_S01_A03",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "after",
+        "MS14_D01_S01_L0022",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D01_S01_L0022",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "저 등에는 기름 대신 돌이 들어 있대. 엄마도 그 돌 때문에 여기 온 거야.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 88,
+          "label": "r13_v111_carriage_end",
+          "guards": []
+        }
+      ],
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "ee15322f1bdc49e2d57fd989f92c16c3af32c8d3b6b3a5da75a056c56111e199",
+      "uid": "1c4061ddd975bcbfdff5a265",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D01_S01_A04",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "after",
+        "MS14_D01_S01_L0022",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D01_S01_L0022",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "우리 동네는 기계 난로로 불 때잖아.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 88,
+          "label": "r13_v111_carriage_end",
+          "guards": []
+        }
+      ],
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "3a2fa0018a08ad10f4adde6036ec1cf7a03d1b2863eaacd64f20f2ce1c44b020",
+      "uid": "158bd04ceef2caea3991fd93",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D01_S01_P02",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "after",
+        "MS14_D01_S01_L0013",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D01_S01_L0013",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "네, 네. 쉬운 거 시켜 줘서 고맙습니다, 탐정님.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 27,
+          "label": "r13_v111_letter_read",
+          "guards": []
+        }
+      ],
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "2b281bf5ee62d74ce620d0feb58504cdb6079c91a57bbce0c49e596f9b16d741",
+      "uid": "517b171e4590364c4fc32476",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D01_S01_P03",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "after",
+        "MS14_D01_S01_L0021",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D01_S01_L0021",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "과자 하나 남은 건 알지.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 88,
+          "label": "r13_v111_carriage_end",
+          "guards": []
+        }
+      ],
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "23aa12d6d5ec5d71ba6150c63883585de21b019f7b16cae916b725c950a61396",
+      "uid": "61a5306517ff833addebc366",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D01_S01_P04",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "after",
+        "MS14_D01_S01_L0021",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D01_S01_L0021",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그건 엄마 거고! 잘 때는 내가 가운데야.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 88,
+          "label": "r13_v111_carriage_end",
+          "guards": []
+        }
+      ],
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "973d37515f8838428698b6780bc07fd15b46f2ba7b218865b790c54c55f26466",
+      "uid": "79ed862d68730ec77670c1d2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D01_S01_P05",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "after",
+        "MS14_D01_S01_L0021",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D01_S01_L0021",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아빠 자리는?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 88,
+          "label": "r13_v111_carriage_end",
+          "guards": []
+        }
+      ],
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "bcad1a97a88e7a02f51e28ae1f4649f0a60426c28aab00ad2d871a4bbe9ce924",
+      "uid": "cdc826aa08f879663b772b83",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D01_S01_P06",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "after",
+        "MS14_D01_S01_L0021",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D01_S01_L0021",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "옆에. 코 골면 좀 더 옆에.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 88,
+          "label": "r13_v111_carriage_end",
+          "guards": []
+        }
+      ],
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "7e62a579602e9cdb4788707c879f26b3f54685630e19ecb096739c74cbea1ca1",
+      "uid": "271efceca8762753654993d4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D01_S01_P07",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "after",
+        "MS14_D01_S01_L0021",
+        4,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D01_S01_L0021",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그러다 아빠 떨어지겠다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 88,
+          "label": "r13_v111_carriage_end",
+          "guards": []
+        }
+      ],
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "f060a27183a827adc138994c73f10e3ce41d0ea2d7255adfb835dd46b214b809",
+      "uid": "7c8a752bc4b4081f8c3e29f9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D01_S01_P08",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "after",
+        "MS14_D01_S01_L0021",
+        5,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D01_S01_L0021",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그러니까 골지 마!",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 88,
+          "label": "r13_v111_carriage_end",
+          "guards": []
+        }
+      ],
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "087d6a7f32cecca31e4ef100f80a334cab6b005cf0645ca424493b2308d00223",
+      "uid": "059a070e213f14f72020d1d9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D01_S01_P09",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "after",
+        "MS14_D01_S01_L0021",
+        6,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D01_S01_L0021",
+      "when": null,
+      "speaker": null,
+      "kind": "dialogue",
+      "text": "가운데에 다람이, 양옆에 우리. 편지 어디에도 없는 잠자리를 나는 벌써 그리고 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 88,
+          "label": "r13_v111_carriage_end",
+          "guards": []
+        }
+      ],
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "329894d29c3955f885137507fb14cb6de34753eeb668982f3b27f1951b5a0c9c",
+      "uid": "5a00480212d1b3be66b37385",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D01_S01_A90",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "after",
+        "MS14_D01_S01_L0015",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D01_S01_L0015",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠, 또 ‘기다릴게’ 읽었지?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 51,
+          "label": "r13_v111_letter_last",
+          "guards": []
+        }
+      ],
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "230e592d0979580ecd930534c1e60669e6a83d2e9d8684a17f8864e6a6d87429",
+      "uid": "6c926142d78b267079385db4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

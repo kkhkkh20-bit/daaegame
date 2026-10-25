@@ -1,0 +1,184 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_AUD_D03_03",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "after",
+        "MS14_D03_S05_L0072",
+        11,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D03_S05_L0072",
+      "when": "lamp_partial_stone",
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "칼끝이 돌 밑에서 부러진 건 알겠소. 하지만 그 돌이 장부에 적힌 돌이라는 건 잇지 못했소. 그걸로는 사람을 붙잡아 둘 수 없소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1263,
+          "label": "r13_v111_trial_wrong",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1268,
+          "label": "r13_v111_trial_wrong",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1281,
+          "label": "r13_v111_trial_wrong_sale",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1285,
+          "label": "r13_v111_trial_wrong_sale",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1298,
+          "label": "r13_v111_trial_wrong_latch",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1302,
+          "label": "r13_v111_trial_wrong_latch",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1315,
+          "label": "r13_v111_trial_wrong_stone",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1319,
+          "label": "r13_v111_trial_wrong_stone",
+          "guards": []
+        }
+      ],
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "f43ad68845bed3826dd8c9f9b5bd2cf16022f50ad1f424cb546535f5b09136c3",
+      "uid": "9dc2150cea304ee13d79e6a3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|patch|after|lamp_partial_stone",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AUD_D03_04",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "after",
+        "MS14_D03_S05_L0072",
+        12,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D03_S05_L0072",
+      "when": "lamp_partial_stone",
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "거봐요. 내가 판 돌이 그 돌인지는 모르잖아요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1263,
+          "label": "r13_v111_trial_wrong",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1268,
+          "label": "r13_v111_trial_wrong",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1281,
+          "label": "r13_v111_trial_wrong_sale",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1285,
+          "label": "r13_v111_trial_wrong_sale",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1298,
+          "label": "r13_v111_trial_wrong_latch",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1302,
+          "label": "r13_v111_trial_wrong_latch",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1315,
+          "label": "r13_v111_trial_wrong_stone",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1319,
+          "label": "r13_v111_trial_wrong_stone",
+          "guards": []
+        }
+      ],
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "c23a8961d7c570b2e1aa42c77b88e5303860745f95e422e02ae6164c963f431f",
+      "uid": "6fc6df69aa06fed904a2d269",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|patch|after|lamp_partial_stone",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

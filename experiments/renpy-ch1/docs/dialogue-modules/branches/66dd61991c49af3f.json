@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_H3_Q_01",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "blocks",
+        "hyp3_q11",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "hyp3_q11",
+      "block": "hyp3_q11",
+      "placement": "blocks",
+      "ref": "hyp3_q11",
+      "when": null,
+      "speaker": "판돌",
+      "kind": "dialogue",
+      "text": "옛날부터 아르카를 써 왔소. 그런데 왜 요 몇 해 사이에 이리 늘었소? 옛날엔 늙어서야 아르카 곁으로 갔소. 그건 복이었지.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 712,
+          "label": "r13_v111_hyp3_q11",
+          "guards": []
+        }
+      ],
+      "scene_title": "hyp3_q11",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "437f197002588c8381d4d872065137b87a9f2054655b172f0fac99e88e6fd45f",
+      "uid": "362f68e85a13efe5552acd5f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|hyp3_q11|patch|hyp3_q11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

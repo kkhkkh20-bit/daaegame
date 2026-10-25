@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:450:14",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        26874,
+        26930
+      ],
+      "origin": "rpy_literal",
+      "day": 14,
+      "scene": "r13_wf_meeting",
+      "block": "r13_wf_meeting",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:450:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "사람들 틈에 누비 아주머니. 막내를 업고, 두 아이 손을 잡고 있었다. 나비는 문가에 서 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 450,
+          "label": "r13_wf_meeting",
+          "guards": []
+        }
+      ],
+      "line": 450,
+      "scene_title": "r13_wf_meeting",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "420d20145aa64a5aa2990e3619a6aae3450a1262a87494ed860a877cd2717b4b",
+      "uid": "a600a1687486d672bc13a1e0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|r13_wf_meeting|rpy_literal|r13_wf_meeting|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

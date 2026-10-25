@@ -1,0 +1,850 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "free_day7:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "free_day7",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 7,
+      "scene": "free_day7",
+      "block": "free_day7",
+      "placement": "binding",
+      "ref": "free_day7:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "다람아, 이제 13호에 가 보자.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "school",
+        "person": "daram",
+        "object": null
+      },
+      "scene_title": "free_day7",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "c824558f0d2af290542e3089d1b9afb20bb8fc257d2e5e179131305d8299d8ee",
+      "uid": "8a20f00d890d918aad7fdbee",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|free_day7|choice|free_day7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "free_day7:1",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "free_day7",
+        "options",
+        1,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 7,
+      "scene": "free_day7",
+      "block": "free_day7",
+      "placement": "binding",
+      "ref": "free_day7:1",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "돌 바구니가 무거워 보입니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "hall",
+        "person": "doto",
+        "object": null
+      },
+      "scene_title": "free_day7",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "c2068065de40c8ccf580754e8ecb697427a99e0c169337b1dc16637442717a46",
+      "uid": "248bff8bb294c82a4d4b558d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|free_day7|choice|free_day7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "free_day7:2",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "free_day7",
+        "options",
+        2,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 7,
+      "scene": "free_day7",
+      "block": "free_day7",
+      "placement": "binding",
+      "ref": "free_day7:2",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "아래서 누가 부르면 어떻게 하십니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "doto_promise7",
+            null
+          ]
+        ],
+        "location": "hall",
+        "person": "doto",
+        "object": null
+      },
+      "scene_title": "free_day7",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "d882935bf700e456880ca93ef4f46f59c645eb1980ce5fcc72dc05c2cfc5f0cd",
+      "uid": "b9a536bf31d90fa149bdd34e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|free_day7|choice|free_day7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "free_day7:3",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "free_day7",
+        "options",
+        3,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 7,
+      "scene": "free_day7",
+      "block": "free_day7",
+      "placement": "binding",
+      "ref": "free_day7:3",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "난로를 살핀다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "room13",
+        "person": null,
+        "object": "v111_stove"
+      },
+      "scene_title": "free_day7",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "ba00c861a6271ec720cbf342a8a71c77af559c398ea8704b61bc14950523693a",
+      "uid": "085c346e935f7c7ae1a48f04",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|free_day7|choice|free_day7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "free_day7:4",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "free_day7",
+        "options",
+        4,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 7,
+      "scene": "free_day7",
+      "block": "free_day7",
+      "placement": "binding",
+      "ref": "free_day7:4",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "재받이를 들여다본다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "pocket_ration7",
+            null
+          ],
+          [
+            "state",
+            "stove13_7",
+            null
+          ]
+        ],
+        "location": "room13",
+        "person": null,
+        "object": "v111_ashbin"
+      },
+      "scene_title": "free_day7",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "013468cf5086fee5e29a391c972db7dbace6570b0b4c7e7e18ce63f94a16f50a",
+      "uid": "79aeedf81872854633953b21",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|free_day7|choice|free_day7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "free_day7:5",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "free_day7",
+        "options",
+        5,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 7,
+      "scene": "free_day7",
+      "block": "free_day7",
+      "placement": "binding",
+      "ref": "free_day7:5",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "집게로 돌을 꺼내고, 주머니의 배급 돌을 넣는다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "tongs7",
+            true
+          ],
+          [
+            "state",
+            "pocket_ration7",
+            true
+          ],
+          [
+            "state",
+            "stove13_7",
+            null
+          ]
+        ],
+        "location": "room13",
+        "person": null,
+        "object": "v111_stove"
+      },
+      "scene_title": "free_day7",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "2b25a0b91b6ed30c702e28e3f01ebb995636ec2fe5bca104a40718b07f90657b",
+      "uid": "4801c81b45f7bb605966d446",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|free_day7|choice|free_day7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "free_day7:6",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "free_day7",
+        "options",
+        6,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 7,
+      "scene": "free_day7",
+      "block": "free_day7",
+      "placement": "binding",
+      "ref": "free_day7:6",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "집게 하나만 빌릴 수 있을까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "tongs7",
+            null
+          ]
+        ],
+        "location": "workshop",
+        "person": "buri",
+        "object": null
+      },
+      "scene_title": "free_day7",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "a8ef3ff4e884fdbe1fd2266ba7ef4c90632e01cc4ac3f3bb94c5c5cc4edc42e5",
+      "uid": "61c32f3958920aa02186f020",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|free_day7|choice|free_day7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "free_day7:7",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "free_day7",
+        "options",
+        7,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 7,
+      "scene": "free_day7",
+      "block": "free_day7",
+      "placement": "binding",
+      "ref": "free_day7:7",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "집게로 돌을 꺼낸다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "tongs7",
+            true
+          ],
+          [
+            "state",
+            "pocket_ration7",
+            null
+          ],
+          [
+            "state",
+            "stove13_7",
+            null
+          ]
+        ],
+        "location": "room13",
+        "person": null,
+        "object": "v111_stove"
+      },
+      "scene_title": "free_day7",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "07ca29a99506d330a8fc60defac856efeea842e50431788adad3a00fb3bf74d6",
+      "uid": "a508e1263f6d382102b3ca4d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|free_day7|choice|free_day7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "free_day7:80",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "free_day7",
+        "options",
+        8,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 7,
+      "scene": "free_day7",
+      "block": "free_day7",
+      "placement": "binding",
+      "ref": "free_day7:80",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "문고리 부품을 살핀다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "hidden_pandol:spoon_seen",
+            true
+          ],
+          [
+            "state",
+            "hidden_pandol:pin_seen",
+            null
+          ]
+        ],
+        "location": "workshop",
+        "person": null,
+        "object": "bolts"
+      },
+      "scene_title": "free_day7",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "d65ed2a77f7f08f5b693cc8c6e61f0c2b5f2795750855f5c3b43e6bcdcff1592",
+      "uid": "1d64b39476964347a3cbf0ae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|free_day7|choice|free_day7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "free_day7:81",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "free_day7",
+        "options",
+        9,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 7,
+      "scene": "free_day7",
+      "block": "free_day7",
+      "placement": "binding",
+      "ref": "free_day7:81",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "숟가락에 맞는 핀일까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "hidden_pandol:met",
+            true
+          ],
+          [
+            "state",
+            "hidden_pandol:pin_seen",
+            true
+          ],
+          [
+            "state",
+            "hidden_pandol:pin_fitted",
+            null
+          ]
+        ],
+        "location": "workshop",
+        "person": "buri",
+        "object": null
+      },
+      "scene_title": "free_day7",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "af536f7b85bb91e5539487e11a367aeea78804ff5b858bbb28474f1c7abd9aa5",
+      "uid": "c365e6e5a5ec72ed34a76a43",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|free_day7|choice|free_day7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "free_day7:82",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "free_day7",
+        "options",
+        10,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 7,
+      "scene": "free_day7",
+      "block": "free_day7",
+      "placement": "binding",
+      "ref": "free_day7:82",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "숟가락을 가져오셨습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "hidden_pandol:pin_fitted",
+            true
+          ],
+          [
+            "state",
+            "hidden_pandol:visit_allowed",
+            null
+          ]
+        ],
+        "location": "dining",
+        "person": "npc_pandol",
+        "object": null
+      },
+      "scene_title": "free_day7",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "0dd2f42d98300309233391a3adf4afde9e49183a8ec7d389d29662b8ad3e7455",
+      "uid": "45430bf1f571d89c56db77b8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|free_day7|choice|free_day7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "free_day7:83",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "free_day7",
+        "options",
+        11,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 7,
+      "scene": "free_day7",
+      "block": "free_day7",
+      "placement": "binding",
+      "ref": "free_day7:83",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "손잡이를 고쳐 쟁반에 놓는다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "hidden_pandol:visit_allowed",
+            true
+          ],
+          [
+            "state",
+            "hidden_pandol:family_seen",
+            null
+          ]
+        ],
+        "location": "hidden_pandol",
+        "person": null,
+        "object": "hp_table"
+      },
+      "scene_title": "free_day7",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "3cdc3d810d450f731fc26f835476bf7d4efdee127d56c67a633f1c68c0f23e93",
+      "uid": "606bcee44f25e279c654ab65",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|free_day7|choice|free_day7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "free_day7:84",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "free_day7",
+        "options",
+        12,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 7,
+      "scene": "free_day7",
+      "block": "free_day7",
+      "placement": "binding",
+      "ref": "free_day7:84",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "안쪽 난로를 살핀다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "hidden_pandol:family_seen",
+            true
+          ]
+        ],
+        "location": "hidden_pandol",
+        "person": null,
+        "object": "hp_stove"
+      },
+      "scene_title": "free_day7",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "ba4edc5615c166a2d9fd278c5c62a99c6cc43af7e6a020940a7bf58615bb087a",
+      "uid": "53741171835d619eb209c015",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|free_day7|choice|free_day7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "free_day7:100",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "free_day7",
+        "options",
+        13,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 7,
+      "scene": "free_day7",
+      "block": "free_day7",
+      "placement": "binding",
+      "ref": "free_day7:100",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "버리는 문고리 부품을 살핀다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "hidden_base:plate_seen",
+            null
+          ]
+        ],
+        "location": "workshop",
+        "person": null,
+        "object": "bolts"
+      },
+      "scene_title": "free_day7",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "cc42680030b1856e384414ef0c645cb5ddbd27bcba1da8c018a32fc7b64e00ce",
+      "uid": "85cb9c9aa4384c9efab6b75b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|free_day7|choice|free_day7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "free_day7:101",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "free_day7",
+        "options",
+        14,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 7,
+      "scene": "free_day7",
+      "block": "free_day7",
+      "placement": "binding",
+      "ref": "free_day7:101",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "이 작은 판은 가져가도 될까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "hidden_base:plate_seen",
+            true
+          ],
+          [
+            "state",
+            "hidden_base:plate",
+            null
+          ]
+        ],
+        "location": "workshop",
+        "person": "buri",
+        "object": null
+      },
+      "scene_title": "free_day7",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "60223272b362245f65e990dcf5edc201a65fa5489d7de21e38a198c72c30aa6e",
+      "uid": "0a70bca990c74646476910d3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|free_day7|choice|free_day7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "free_day7:110",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "free_day7",
+        "options",
+        15,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 7,
+      "scene": "free_day7",
+      "block": "free_day7",
+      "placement": "binding",
+      "ref": "free_day7:110",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "13호 빗장 받이를 살핀다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "owl_latch_seen7",
+            null
+          ]
+        ],
+        "location": "room13",
+        "person": null,
+        "object": "v111_latch7"
+      },
+      "scene_title": "free_day7",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "10eb14fcb074cd40cfbb35c9fdb9008efb8061d23ec69196adb88313ca241650",
+      "uid": "4bfcc930416f1e590369fe76",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|free_day7|choice|free_day7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "free_day7:111",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "free_day7",
+        "options",
+        16,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 7,
+      "scene": "free_day7",
+      "block": "free_day7",
+      "placement": "binding",
+      "ref": "free_day7:111",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "빗장 받이를 봐 주실 수 있습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "owl_latch_seen7",
+            true
+          ],
+          [
+            "state",
+            "owl_tok_agreed7",
+            null
+          ],
+          [
+            "state",
+            "TOK_ALIVE",
+            true
+          ]
+        ],
+        "location": "workshop",
+        "person": "resident_tok",
+        "object": null
+      },
+      "scene_title": "free_day7",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "b941ba4823ef1edad1a39551b1c79c601b78d280c5fc68678c84cb97a676645b",
+      "uid": "b42e7c3b887bfdd3ae9ab476",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|free_day7|choice|free_day7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "free_day7:112",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "free_day7",
+        "options",
+        17,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 7,
+      "scene": "free_day7",
+      "block": "free_day7",
+      "placement": "binding",
+      "ref": "free_day7:112",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "빗장 받이 작업을 함께 확인한다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "owl_tok_agreed7",
+            true
+          ],
+          [
+            "state",
+            "owl_tok_work7",
+            null
+          ]
+        ],
+        "location": "room13",
+        "person": null,
+        "object": "v111_latch7"
+      },
+      "scene_title": "free_day7",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "4540deb5a88bb6fc8aed5878dd76d32f6ff83981aeb9108e1922de49fd98b3b8",
+      "uid": "048396f936bf4a1a84e48811",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|free_day7|choice|free_day7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

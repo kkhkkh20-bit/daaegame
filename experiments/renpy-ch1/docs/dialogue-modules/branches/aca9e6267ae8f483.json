@@ -1,0 +1,123 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_RL_02",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "rein_ledger13",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "rein_ledger13",
+      "block": "rein_ledger13",
+      "placement": "blocks",
+      "ref": "rein_ledger13",
+      "when": null,
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "……너울 씨가 시켰어요. 처음엔 돌이 아니었어요. 3번 등 아래 벤치에서 자는 화가가 품고 다니는 판자를 가져오라고요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2113,
+          "label": "r13_v111_rein_ledger13",
+          "guards": []
+        }
+      ],
+      "scene_title": "rein_ledger13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "5bf9bb31e8b4b1f8f00a10f1b6fd49348e40baccc5314d98d69e9717df096f4b",
+      "uid": "fc048220a9b8ad69dc840a5d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|rein_ledger13|patch|rein_ledger13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_RL_03",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "rein_ledger13",
+        13,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "rein_ledger13",
+      "block": "rein_ledger13",
+      "placement": "blocks",
+      "ref": "rein_ledger13",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "도둑의 말이오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2113,
+          "label": "r13_v111_rein_ledger13",
+          "guards": []
+        }
+      ],
+      "scene_title": "rein_ledger13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "9181480141dcb3c280db19e7bf943075eab6be39888064155eddd3cba9f84e33",
+      "uid": "e725fab3fa708e5d447ba34e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|rein_ledger13|patch|rein_ledger13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_RL_04",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "rein_ledger13",
+        14,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "rein_ledger13",
+      "block": "rein_ledger13",
+      "placement": "blocks",
+      "ref": "rein_ledger13",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "너울이 장부를 탁 덮는다. 덮는 소리가 평소보다 크다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2113,
+          "label": "r13_v111_rein_ledger13",
+          "guards": []
+        }
+      ],
+      "scene_title": "rein_ledger13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "df513a21057fbf236329673282dc1fa8beb6fda4a4ac36e73307f6587c795f38",
+      "uid": "3d0845c9eab90805a47402da",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|rein_ledger13|patch|rein_ledger13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

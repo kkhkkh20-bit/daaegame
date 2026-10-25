@@ -1,0 +1,2047 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D06_S04_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나비가 학교 담요를 꺼낸다. 나는 옆에서 수를 센다. 나비는 수량과 내 이름을 적고 함을 잠근다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 326,
+          "label": "r13_v111_after_fire6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "890a4d9a33e8e8c3dbdaf71cf2d22ea245ccb8d6eb3fceb04c716893fa461c9b",
+      "uid": "0ed150b2920c0c1da9c0f4d2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0002",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "돌려놓을 때도 같이 세 주세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 327,
+          "label": "r13_v111_after_fire6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e3ed14e4ffebcce81bcda5cdbe3cfa5e3298c3075e61703ce4347e44afb2b984",
+      "uid": "39b0a0521d3ad54e067e0656",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0003",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "예.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 328,
+          "label": "r13_v111_after_fire6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4011389a2cd3c3315b1b1c54bcad9f475093031aab0df8dad804f9e881cf22bb",
+      "uid": "0604ee6984eaeb0d980ab054",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0004",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[열쇠는 나비 보관. 가족 담요는 이동·소모하지 않는다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2e73800cca78578916d5cb8a73d8e50b6eec681c167fefc28b427dd74ff1ee6e",
+      "uid": "03a34f2e589bca7e12c11157",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0005",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: D06_S04_supplies_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0d2107b7d41be4fe97a177699bc518800fe1c213c48bf5a64be19162c1d32781",
+      "uid": "e4b16b9a3a26e740b3e471b9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0006",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나비가 등잔 손잡이만 남은 줄 알았는지 빈손을 쥐었다 편다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 330,
+          "label": "r13_v111_after_fire6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ddf260d5b275435d5cc8468f2536ea171f5a5d21939df447b291427db82e64de",
+      "uid": "4815abb0afecf6c25a0da856",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0007",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "내가 불을 놓고 왔어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 331,
+          "label": "r13_v111_after_fire6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c1a8b568def7d651d52c397234fa64d5850143f25773efb4ef8fa27952a3d4af",
+      "uid": "b4b2c6721f31364817c0946e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0008",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어느 불이요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 332,
+          "label": "r13_v111_after_fire6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "22f3058c76a565db86862415532039b1afdb5b98319aaad736178085955f3406",
+      "uid": "e514ed67711c1656aa082b98",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0009",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "등잔. 애들이 무섭대서. 제가……",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 333,
+          "label": "r13_v111_after_fire6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "14fa44cb9c6872519cf29632099c4a9a05960775267a9b3cce34466fca413021",
+      "uid": "996d2d0bda85e4cf6c9a5935",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0010",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: D06_S04_nabi_lamp_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c607e64b0d21f7444348b182666be3b85d78c890a31ad7765d049af9afaa0349",
+      "uid": "e67791a22806f879e636616e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0011",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "보리는 손을 찬물에 담그지 못하고 대야 가장자리에 걸친다. 학교에서 기다리던 도담이 물잔을 아빠 입까지 들어 준다. 창고에서 구조된 아이 셋은 반대쪽 담요에 앉아 있다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 363,
+          "label": "r13_v111_bori_burned6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fa69010de1fcdde4f24c8958f495ee19259781a501eeee688cc6cf7370fb9add",
+      "uid": "bc90cf0d6219736a9e6db05b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0012",
+      "when": null,
+      "speaker": "도담",
+      "kind": "dialogue",
+      "text": "내가 들게. 아빠 손 안 써도 돼.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 364,
+          "label": "r13_v111_bori_burned6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "33712a371889edcb18d7d1487426540a3e23b85ae3d12d8745a1d5b4615f3a33",
+      "uid": "e377656e5dd8784d96d4abad",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0013",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "무거우면 내려놔.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 365,
+          "label": "r13_v111_bori_burned6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "30cc01ae3a0c9a45bf6f0e6bc9d6e75b97d1c4ccf6fb25ef3693f49118f1b197",
+      "uid": "d8a65632361452c27ea12ae1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0014",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: BORI_hands=burned; KKOMI_ALIVE=false; D06_S04_burns_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0282176c9f471e7b9749d9c1c5383bf985f68e09705840873fcd267fa9e1c39c",
+      "uid": "d3f3f2fb4cd5fe978b4e751e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0015",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "보리가 그을린 소매를 턴다. 도담이 학교 문에서 아빠를 부른다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 356,
+          "label": "r13_v111_bori_unhurt6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c6bc4f84bae0b6267febcf0acec0d9a2a711f38c12b2c1d9e8c32d39bf78b8dc",
+      "uid": "d7edd6a069df3c51c03e61c0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0016",
+      "when": null,
+      "speaker": "도담",
+      "kind": "dialogue",
+      "text": "아빠, 밥 남겨 놨어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 357,
+          "label": "r13_v111_bori_unhurt6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1db12e77e4cf744d2abb9a5d7f94e382f8b6d6b6562f0eae51f516effcd89840",
+      "uid": "7e5f8d59168f5bf07c1efad7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0017",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "손 씻고 갈게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 358,
+          "label": "r13_v111_bori_unhurt6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0d91babb212ca83ce18ba998ea79b6ac03117c3766b6d9aba28225b17ef18ae4",
+      "uid": "cdc9bf102c00bd0de6530d11",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0018",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: BORI_hands=not_rescue_burned; D06_S04_no_burns_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d58863ff7259398146019fcab74ba9958672ef68a725eb5370f29f0ebb377475",
+      "uid": "d01986f63af2360deb1a4013",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0019",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "너울이 수레에서 여관 장작을 꺼내 바닥에 내려놓는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 339,
+          "label": "r13_v111_after_fire6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0f18e69ecff324d56149ce91aa6c660df4f96857e0769790f905fd069e39cbbf",
+      "uid": "2d4b323c38bfca18be0531b2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0020",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "훔친 건 맞군.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 340,
+          "label": "r13_v111_after_fire6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "51f4bb270aa2f0e1de1c87a236d0a7bc41050ff2d6634ec4ce10f25653f58452",
+      "uid": "69b7153be675e8051676764d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0021",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "맞아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 341,
+          "label": "r13_v111_after_fire6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ee90d69ce404d47b1db13d966e96c79018e78353cdebf00ec627fc21a6dd4498",
+      "uid": "2f38a8f4b7dd480f56fe4de0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0022",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "불에 태우면 장부에서 없어질 줄 알았나?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 342,
+          "label": "r13_v111_after_fire6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "97d8d5424d292c80f3f557a8161e1fd368f28e7565579d3273b81c722320d997",
+      "uid": "0c7658e41e8f7e8e32301120",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0023",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "그걸 태우려고 불을 놨다는 거요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 343,
+          "label": "r13_v111_after_fire6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ffaae1af528cbb3cace500ff00dabce58f1ce3d7db28ab56eeaf528d5a2f23e5",
+      "uid": "256452c5eccaf1d3a43806eb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0024",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: D06_S04_accusation_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "118ff54aeb6861174d29d2c37b3a2f81d9c3d34da32b4209b5158a453faf6855",
+      "uid": "a429a9675e886e3a60a477c5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0025",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아이들부터 재우십시오. 보리가 안고 나온 아이들, 제 눈으로 봤습니다. 장작을 훔쳤다고 불까지 놓았다는 겁니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 376,
+          "label": "r13_v111_rescue_testimony6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "62f23c71ffd5a66d76bc3bd0e0eaccd9e29e317afd21649194056529f0c9d361",
+      "uid": "c255ad9a7c9824bd59311bde",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0026",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "내일 다시 부르겠소. 그때까지 마을을 떠나지 마시오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 377,
+          "label": "r13_v111_rescue_testimony6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "881c7950846a978d460473b9d985f742dd607c5b497b298fc61fc3e892493fa4",
+      "uid": "22ec9c8a6af22049c3ca7e70",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0027",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: D06_S04_rescue_testimony_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "904205ab9f1f0cb46c0345232b9c0f2ce664d7827644d4c90159f6099330eef9",
+      "uid": "5676ad7721ebb48187ae145d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0028",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아이 넷은 학교에 있습니다. 보리가 불을 끄려 한 것도 봤고요. 훔친 장작 얘기에 불까지 한데 묶지는 마십시오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 370,
+          "label": "r13_v111_empty_testimony6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a9cfcecdb0295fd0406e416b4411ea4dc6f6f3f04f8ba55e854fd5455847f609",
+      "uid": "0e8fd708e1b8d3d7a3031db1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0029",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "내일 다시 부르겠소. 그때까지 마을을 떠나지 마시오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 371,
+          "label": "r13_v111_empty_testimony6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "881c7950846a978d460473b9d985f742dd607c5b497b298fc61fc3e892493fa4",
+      "uid": "f47b6fd2558d0444517e3ee1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0030",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: D06_S04_empty_testimony_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1465ba5e3749689139a7061bf63ae231359da57b0bd16c60943d130e9e6e50cf",
+      "uid": "592c4292809a6c9b8b76a681",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0031",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "제 등잔도 가져가요. 제가 잘못했으니까.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 349,
+          "label": "r13_v111_after_fire6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "81803fc8796f81a52ef210158efee2463a3c550af04b2fb96bd077c03a965e9a",
+      "uid": "b1203477067c22f50d45663e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0032",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "등잔은 어디 있었죠?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 350,
+          "label": "r13_v111_after_fire6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "74bd1b08eb6de9262e5e330f55b1a27bdb9c05aed73f43a71754dbda98822daa",
+      "uid": "bea0848e2247a7d23d9000c5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0033",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "뒷벽. 물통 옆에.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 351,
+          "label": "r13_v111_after_fire6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7be282956eb7cd6c3679cc778ea34b85c9e732205b12d30539a94489c8fe5533",
+      "uid": "0cd8edb852235d0e10b9217c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0034",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 타지 않은 뒷벽 쪽을 가리켜 도토에게 부탁한다. 도토가 나와 함께 식은 가장자리만 살피고, 뚜껑이 닫힌 등잔을 집게로 건져 낸다. 안에는 기름이 남아 있다. 문턱 바깥에서 주운 천은 코를 가까이 대지 않아도 기름 냄새가 난다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 388,
+          "label": "r13_v111_fire_record6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "fire_evacuated",
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7da34851d36c8afd2ae9f848991c8226b701d80e955933ac58130d4ab5e8f06d",
+      "uid": "6243f46f0de3703a0c0b4c81",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0035",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "이건 따로 싸죠. 손으로 만지지 말고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 389,
+          "label": "r13_v111_fire_record6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "fire_evacuated",
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "30bcd30d2f6bd561bb620038cab95da68409074032806046b9401d03b8c359db",
+      "uid": "da7fa828c8c6d1277f35ff04",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0036",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[기록] 등잔 발견 위치, 문 쪽 탄 자국, 기름 묻은 천을 구분해 보관한다. 등잔이 멀쩡하다는 사실만으로 발화 원인을 최종 확정하지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "de5fc86e55a77d121c0727b8b8dfb66f0f1f708d1711be0c0a0e56dd2870d462",
+      "uid": "8d60c7e912c2291ceab029ee",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0037",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0037",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0037",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: E06_FIRE=lamp_location_oily_cloth_burn_origin_separate; D06_S04_fire_evidence_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c0d321c0ce09bd6fcca1b12dc8723b0b44bfec1ac8633d37125a505d438cf5d3",
+      "uid": "9aec280b92939744015dfcbf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0038",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0038",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0038",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "학교로 돌아오자 다람은 자기 밥그릇 옆에 빈 그릇을 하나 놓고 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 408,
+          "label": "r13_v111_empty_bowl6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "545615d229fab441721e30149edbd159d460d0febe57a67093aac91e0d15de38",
+      "uid": "d808ecc0ede3df0574d6defa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0039",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0039",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0039",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다람아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 409,
+          "label": "r13_v111_empty_bowl6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "702c40b12f8949985d42a1bffe86e5862ab2d1219513bf730d034483b3e5233d",
+      "uid": "3b96d073f5a842393af2f60f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0040",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0040",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0040",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "꼬미 거야. 알아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 410,
+          "label": "r13_v111_empty_bowl6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1c8a8c5b3ad839a5baa0654756b0e479cb5ecf5e9cd8ae18478726479b1c0377",
+      "uid": "6b4d7beb58c915c2410c4e27",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0041",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0041",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0041",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 그릇을 치우지 못한다. 다람이 먼저 그것을 엎는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 411,
+          "label": "r13_v111_empty_bowl6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4883d2dfddc0584e56755024766c51685575a4341ae3f1e64965002715f5157e",
+      "uid": "69f4865d82b78f69d3e73372",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0042",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0042",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0042",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "먼지 들어가니까.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 412,
+          "label": "r13_v111_empty_bowl6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "486aa77fccde3f5acb38926055231da91c2ae760e5261890ba8ed85fb98a0f0e",
+      "uid": "2d94bacc3a51114bd7468810",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0043",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0043",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0043",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: D06_S04_empty_bowl_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a3cea4594cc3808aa99d97b73a5dd70c5e2ce886cecc971f2921cb03b300a201",
+      "uid": "5b9774e2793f89973448636a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0044",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0044",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0044",
+      "when": null,
+      "speaker": "꼬미",
+      "kind": "dialogue",
+      "text": "깡통은?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 399,
+          "label": "r13_v111_four_bowls6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "kkomi_can_carried6",
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "05de24bc35e853a21c940102981e33840764d55d8a291754e0255fc2f9a3d8c7",
+      "uid": "9068c454ec1a6a8b31b05873",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0045",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0045",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0045",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "못 가져왔어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 400,
+          "label": "r13_v111_four_bowls6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "kkomi_can_carried6",
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0f5e91b022f5d79b33d858884836f1159c43f2b36a7c75d55b79103fdd1d54c1",
+      "uid": "5bceb358a208df2b66af0d73",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0046",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0046",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0046",
+      "when": null,
+      "speaker": "꼬미",
+      "kind": "dialogue",
+      "text": "다람이 도토리도 거기 넣어 두려다가 말았는데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 401,
+          "label": "r13_v111_four_bowls6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "kkomi_can_carried6",
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "89c175919dc93b17be79f67ae59bb42f9d95c6c4a88788098745a3e19cc668bb",
+      "uid": "372b86c487ca986e395edfd8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0047",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0047",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0047",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "잘했네.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 402,
+          "label": "r13_v111_four_bowls6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "25a10a164131d81f8a4c2b0d65d62bc7aef49cd7ec1070ff3f26a22fc82fc10f",
+      "uid": "f7dd9d3828f080563d3b776e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0048",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0048",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0048",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이 꼬미 손의 도토리를 자기 그릇 옆에 놓는다. 네 아이가 먹는 소리가 난다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 403,
+          "label": "r13_v111_four_bowls6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "15f235da99a6ff4e2e9f404966f6e921d704dcd2db5ad0b6fa3663c984874381",
+      "uid": "766db4c7cc1818dfe4a63037",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S04_L0049",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S04_L0049",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S04_L0049",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: D06_S04_full_bowls_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-4. 밤 / 학교 난로 곁 — 세 가지 잘못",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e4af6a154ed72c60db98096da4e3c35d3d6afcb2734cceea79a66109f62720c8",
+      "uid": "d985ce45ebd77406229ad42a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

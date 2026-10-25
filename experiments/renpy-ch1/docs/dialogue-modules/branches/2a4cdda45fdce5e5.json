@@ -1,0 +1,48 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events2.rpy:278:47",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        15123,
+        15182
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_ev_a_siluk",
+      "block": "r13_ev_a_siluk",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:278:47",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "백 부인이 배급 물자를 쌓아 둔 기록이 장부에 남아 있습니다. 그 사람은 빚을 받을 처지가 못 됩니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 278,
+          "label": "r13_ev_a_siluk",
+          "guards": [
+            "while _ep_loop:",
+            "menu:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 278,
+      "scene_title": "r13_ev_a_siluk",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "de624671a3a533e3427f04ae13b146ea9634714baa7fb6493282ed3593ab47fe",
+      "uid": "353132762264f2617746a076",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_ev_a_siluk|rpy_literal|r13_ev_a_siluk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

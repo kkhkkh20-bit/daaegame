@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D04_S04_V01",
+      "file": "game/v111/newworld/d04.json",
+      "path": [
+        "before",
+        "MS14_D04_S04_L0061",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D04_S04_L0061",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "초롱이 등 끈을 손에 감은 채로 말한다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 344,
+          "label": "r13_v111_cloth4",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "3498ca2f17801632f3caaaf64580b0d2b16a45c98cf1c99b69eab5af4b51ba32",
+      "baseline_hash": "3592a43f174a8ed5ea03df574d65864cf849ef88f7f6fa6e5417979fc8080771",
+      "uid": "914d5af174ca9f241d828203",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AUD_D04_04",
+      "file": "game/v111/newworld/d04.json",
+      "path": [
+        "before",
+        "MS14_D04_S04_L0020",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D04_S04_L0020",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나비 심부름으로 물 주전자를 든 콩이가 문가에서 멈춰 선다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 252,
+          "label": "r13_v111_bami_night4",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "3498ca2f17801632f3caaaf64580b0d2b16a45c98cf1c99b69eab5af4b51ba32",
+      "baseline_hash": "2d05dfa40b490cf0695c542a9d74b10e4a2c5ed65582bee9dc95bf5e5f6381e0",
+      "uid": "3e60661171f154975c295acc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

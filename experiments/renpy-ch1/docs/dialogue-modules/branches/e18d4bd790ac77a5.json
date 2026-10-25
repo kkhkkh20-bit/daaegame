@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:321:28",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        18644,
+        18662
+      ],
+      "origin": "rpy_inventory",
+      "day": 8,
+      "scene": "r13_nt_dawn9",
+      "block": "r13_nt_dawn9",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:321:28",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "쐐기에 걸린 레버와 따닥의 말",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 321,
+          "label": "r13_nt_dawn9",
+          "guards": [
+            "if r13_has(\"nt_ttadak_safe\"):"
+          ]
+        }
+      ],
+      "line": 321,
+      "scene_title": "r13_nt_dawn9",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "8a50e3d8c0e929ffe81ff249bc7ead18e9886110e6acb4d830deab6fcdb5bc61",
+      "uid": "b911f19d9534567d55fe874a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_dawn9|rpy_inventory|r13_nt_dawn9|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

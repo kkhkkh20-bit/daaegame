@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_RL_01",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "rein_ledger13",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "rein_ledger13",
+      "block": "rein_ledger13",
+      "placement": "blocks",
+      "ref": "rein_ledger13",
+      "when": "lamp_stolen",
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "두 배를 왜 줬겠어요. 3번이니까요. 그 아래 누가 자는지 마을 사람 다 알아요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2113,
+          "label": "r13_v111_rein_ledger13",
+          "guards": []
+        }
+      ],
+      "scene_title": "rein_ledger13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "eea9d0d6795288eda92132aeaba2f0b25d0d9a0e329b685dfc0ed81c61aaec1b",
+      "uid": "51527c11cd3ea414c02a9d46",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|rein_ledger13|patch|rein_ledger13|lamp_stolen",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_RL_02B",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "rein_ledger13",
+        4,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "rein_ledger13",
+      "block": "rein_ledger13",
+      "placement": "blocks",
+      "ref": "rein_ledger13",
+      "when": "lamp_stolen",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "판자를요? 그런데 왜 등의 돌을 뺐습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2113,
+          "label": "r13_v111_rein_ledger13",
+          "guards": []
+        }
+      ],
+      "scene_title": "rein_ledger13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "eae129df1651ae19d7902cea35eeb0b943e34492f104cc85c471c55e92e99da4",
+      "uid": "d3db7f0c206af969df8892e4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|rein_ledger13|patch|rein_ledger13|lamp_stolen",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

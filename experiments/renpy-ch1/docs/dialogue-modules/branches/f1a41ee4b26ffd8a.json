@@ -1,0 +1,205 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_episodes.rpy:141:17",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        8924,
+        8964
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_ep1_patrol",
+      "block": "r13_ep1_patrol",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:141:17",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "이 근처 처마 밑에 사는 박쥐를 본 적 있소? 등록되지 않은 아이요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 141,
+          "label": "r13_ep1_patrol",
+          "guards": []
+        }
+      ],
+      "line": 141,
+      "scene_title": "r13_ep1_patrol",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "fc92c667ff5f4868b864838213642064288a2cbad108a49b035b92f5dd86f541",
+      "uid": "1b8c999a11018c4f04122bfe",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_ep1_patrol|rpy_literal|r13_ep1_patrol|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_episodes.rpy:142:17",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        8984,
+        9028
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_ep1_patrol",
+      "block": "r13_ep1_patrol",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:142:17",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "그 아이가 밤마다 돌아다닌다는 신고가 들어왔소. 그래서 검사를 받아야 하오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 142,
+          "label": "r13_ep1_patrol",
+          "guards": []
+        }
+      ],
+      "line": 142,
+      "scene_title": "r13_ep1_patrol",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "314fce855879799a46bd24f96c0b7b098c63690fa63f2cf250f1171e4e48d7b5",
+      "uid": "ef1ff23c4f034f7b0154123b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_ep1_patrol|rpy_literal|r13_ep1_patrol|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_episodes.rpy:153:27",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        9491,
+        9510
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_ep1_patrol",
+      "block": "r13_ep1_patrol",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:153:27",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(내 말을 믿지 않는 눈치다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 153,
+          "label": "r13_ep1_patrol",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 153,
+      "scene_title": "r13_ep1_patrol",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "7e4c626ed8075c9d555a301b0c2925bceda85500e680a18d24e2ddcc63b7b4ec",
+      "uid": "f7ee30093f6bb600a19d24d0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_ep1_patrol|rpy_literal|r13_ep1_patrol|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_episodes.rpy:158:27",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        9839,
+        9860
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_ep1_patrol",
+      "block": "r13_ep1_patrol",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:158:27",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "보호소에서 돌아온 사람은 있습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 158,
+          "label": "r13_ep1_patrol",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 158,
+      "scene_title": "r13_ep1_patrol",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "313967b79b0f4d33500a1cdf43f249019d479875b1e9e44a5911ca1275679272",
+      "uid": "570fdb7864ac5761e8df232a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_ep1_patrol|rpy_literal|r13_ep1_patrol|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_episodes.rpy:167:27",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        10336,
+        10374
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_ep1_patrol",
+      "block": "r13_ep1_patrol",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:167:27",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(서리 검사원의 확인서. 그 확인서라면 너울도 무시하지 못한다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 167,
+          "label": "r13_ep1_patrol",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 167,
+      "scene_title": "r13_ep1_patrol",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "7b519f8a6b09db78e6981400d131aa013d0b12988404da156e43bac1ac611930",
+      "uid": "69b32cfbff036a75611ce7e7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_ep1_patrol|rpy_literal|r13_ep1_patrol|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

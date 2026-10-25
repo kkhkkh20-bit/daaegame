@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13.rpy:607:30",
+      "file": "game/room13.rpy",
+      "path": [
+        34873,
+        34932
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_prevented",
+      "block": "r13_prevented",
+      "placement": "literal",
+      "ref": "game/room13.rpy:607:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 나비에게 아이를 부탁했다. 그리고 어르신에게 통로를 알고 있다고 말했다. 방문은 열어 둔 채였다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 607,
+          "label": "r13_prevented",
+          "guards": [
+            "if r13_has(\"route_watched\"):"
+          ]
+        }
+      ],
+      "line": 607,
+      "scene_title": "r13_prevented",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "592f94e7960f900866fb0695a6b13945cb9b454a9e367c7e226b6161d5841e70",
+      "uid": "77d49b5e4e9de8bae8a74226",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_prevented|rpy_literal|r13_prevented|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:610:30",
+      "file": "game/room13.rpy",
+      "path": [
+        35344,
+        35387
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_prevented",
+      "block": "r13_prevented",
+      "placement": "literal",
+      "ref": "game/room13.rpy:610:30",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "다들 여기 계셨네요. 아이 곁에 있어 주려고 올라왔어요. 차라도 내올까요?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 610,
+          "label": "r13_prevented",
+          "guards": []
+        }
+      ],
+      "line": 610,
+      "scene_title": "r13_prevented",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "a94c14c36e7270faf9d0844b37b174061a1fd8ea1fb810a61555a66d3260933a",
+      "uid": "9fcb74b2fdb274626a774ab7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_prevented|rpy_literal|r13_prevented|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

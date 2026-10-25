@@ -1,0 +1,82 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13.rpy:248:27",
+      "file": "game/room13.rpy",
+      "path": [
+        13081,
+        13110
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_entry_done",
+      "block": "r13_entry_done",
+      "placement": "literal",
+      "ref": "game/room13.rpy:248:27",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "여관에 들어간 뒤 묵는 곳을 옮기면 알려 주시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 248,
+          "label": "r13_entry_done",
+          "guards": []
+        }
+      ],
+      "line": 248,
+      "scene_title": "r13_entry_done",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "44486ca48507898b17eceba36ffa0b8829d61d0b75671fbf16e43dd26a482f59",
+      "uid": "3bb1f7ace5c8315ded533a1b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_entry_done|rpy_literal|r13_entry_done|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:248:67",
+      "file": "game/room13.rpy",
+      "path": [
+        13121,
+        13137
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_entry_done",
+      "block": "r13_entry_done",
+      "placement": "literal",
+      "ref": "game/room13.rpy:248:67",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "아내 만나고 정하겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 248,
+          "label": "r13_entry_done",
+          "guards": []
+        }
+      ],
+      "line": 248,
+      "scene_title": "r13_entry_done",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "8f13f60a5a39a5d0ea5fd686ae708122084055191ad8053d83679610f2c2a58b",
+      "uid": "6e586eef705a8bf31a7d416c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_entry_done|rpy_literal|r13_entry_done|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:148:27",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        8346,
+        8353
+      ],
+      "origin": "rpy_inventory",
+      "day": 7,
+      "scene": "r13_ep2_bite",
+      "block": "r13_ep2_bite",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:148:27",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "지난밤, ",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 148,
+          "label": "r13_ep2_bite",
+          "guards": []
+        }
+      ],
+      "line": 148,
+      "scene_title": "r13_ep2_bite",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "ed46d07da5c402b09f316b66346abd74b5053fcbaed255cb1ae2bafeafc2895b",
+      "uid": "0a2217c033f98cd7755a1e7d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_ep2_bite|rpy_inventory|r13_ep2_bite|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:156:27",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        8803,
+        8822
+      ],
+      "origin": "rpy_inventory",
+      "day": 7,
+      "scene": "r13_ep2_bite",
+      "block": "r13_ep2_bite",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:156:27",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "입구에서 너울·바둑이와 나눈 말",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 156,
+          "label": "r13_ep2_bite",
+          "guards": [
+            "if not r13_has(\"W1\"):"
+          ]
+        }
+      ],
+      "line": 156,
+      "scene_title": "r13_ep2_bite",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "f6725710963b7e030f6b27bf0c9a24d31d1b8a8155b9fd2d1bc353beca58928c",
+      "uid": "8b0321962d94f8067778ee01",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_ep2_bite|rpy_inventory|r13_ep2_bite|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

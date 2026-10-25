@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_AUD_D06_03",
+      "file": "game/v111/newworld/d06.json",
+      "path": [
+        "before",
+        "MS14_D06_S03_L0002",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 6,
+      "scene": "MS14_D06_S03",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D06_S03_L0002",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "학교 문을 나서자 눈 위로 붉은 빛이 번진다. 창고 쪽이다. 다람이 내 팔을 세게 잡는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 279,
+          "label": "r13_v111_fire6",
+          "guards": []
+        }
+      ],
+      "scene_title": "6-3. 해 질 무렵 / 창고 바깥 — 먼저 꺼낼 것",
+      "source_hash": "34df23f41d57916ce5b839de420f86f588f2b883338565904ffc098b14cca2db",
+      "baseline_hash": "a96a30a20dbf118f5d96ea3b212f63ba3289f6659ffd00711dcdb5d612cf9903",
+      "uid": "30c80a15d054db8342d11b24",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

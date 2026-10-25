@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_bundle3.rpy:93:30",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        5885,
+        5907
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_b3_whispers",
+      "block": "r13_b3_whispers",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:93:30",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "지나가는 사람들이 낮게 수군댔다. ‘",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 93,
+          "label": "r13_b3_whispers",
+          "guards": [
+            "while _rumors:"
+          ]
+        }
+      ],
+      "line": 93,
+      "scene_title": "r13_b3_whispers",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "eb587747ec416414857b5618ad8de01bdddd32692027c28e0281584358e89aab",
+      "uid": "5e44b130cfa06c8ba42a4635",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_whispers|rpy_inventory|r13_b3_whispers|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:94:20",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        5957,
+        6017
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_b3_whispers",
+      "block": "r13_b3_whispers",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:94:20",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "(좋은 말도 빨리 돈다. 듣기만 한 사람은 판단을 미루겠지. 직접 겪은 사람 마음까지 바뀌지는 않는다.)",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 94,
+          "label": "r13_b3_whispers",
+          "guards": [
+            "while _rumors:"
+          ]
+        }
+      ],
+      "line": 94,
+      "scene_title": "r13_b3_whispers",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "b94002768189a5c73a8ef5cca12031da212602aeecdf21bff5ef0ddd8bacf7cd",
+      "uid": "0c99add93a86aa4f5a0f470d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_whispers|rpy_inventory|r13_b3_whispers|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D04_SL02",
+      "file": "game/v111/newworld/d04.json",
+      "path": [
+        "blocks",
+        "silluk_lamp4",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 4,
+      "scene": "silluk_lamp4",
+      "block": "silluk_lamp4",
+      "placement": "blocks",
+      "ref": "silluk_lamp4",
+      "when": "lamp_stolen",
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "5번 등이요. 어젯밤에 또 비었어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 136,
+          "label": "r13_v111_eaves4",
+          "guards": [
+            "if r13_v111_value('silluk_status')=='reporting_obligation' and not r13_v111_value('bami_cold4'):"
+          ]
+        }
+      ],
+      "scene_title": "silluk_lamp4",
+      "source_hash": "3498ca2f17801632f3caaaf64580b0d2b16a45c98cf1c99b69eab5af4b51ba32",
+      "baseline_hash": "9ad5d58f2432ec4e07669be89c7a03e089c9af92a3c5a912100d8f6cbfef6f79",
+      "uid": "e8ee30e64e404943814e9fa4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|silluk_lamp4|patch|silluk_lamp4|lamp_stolen",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D04_SL03",
+      "file": "game/v111/newworld/d04.json",
+      "path": [
+        "blocks",
+        "silluk_lamp4",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 4,
+      "scene": "silluk_lamp4",
+      "block": "silluk_lamp4",
+      "placement": "blocks",
+      "ref": "silluk_lamp4",
+      "when": "lamp_stolen",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "……3번 등처럼요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 136,
+          "label": "r13_v111_eaves4",
+          "guards": [
+            "if r13_v111_value('silluk_status')=='reporting_obligation' and not r13_v111_value('bami_cold4'):"
+          ]
+        }
+      ],
+      "scene_title": "silluk_lamp4",
+      "source_hash": "3498ca2f17801632f3caaaf64580b0d2b16a45c98cf1c99b69eab5af4b51ba32",
+      "baseline_hash": "acbfb522035ea71ba12e1271f8042f8269773d64fdaa9fd1bd6bc186604400c4",
+      "uid": "5eea0463c9be13deacfe1353",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|silluk_lamp4|patch|silluk_lamp4|lamp_stolen",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D04_SL04",
+      "file": "game/v111/newworld/d04.json",
+      "path": [
+        "blocks",
+        "silluk_lamp4",
+        5,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 4,
+      "scene": "silluk_lamp4",
+      "block": "silluk_lamp4",
+      "placement": "blocks",
+      "ref": "silluk_lamp4",
+      "when": "lamp_stolen",
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "덮개 연 솜씨가 똑같아요. 걸쇠 하나 안 다치고.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 136,
+          "label": "r13_v111_eaves4",
+          "guards": [
+            "if r13_v111_value('silluk_status')=='reporting_obligation' and not r13_v111_value('bami_cold4'):"
+          ]
+        }
+      ],
+      "scene_title": "silluk_lamp4",
+      "source_hash": "3498ca2f17801632f3caaaf64580b0d2b16a45c98cf1c99b69eab5af4b51ba32",
+      "baseline_hash": "e43ca7e8f8886c478cf944cb16164b47f8aab29e1ae5f9e87aba7a72a70bfb08",
+      "uid": "bb80c42d44c8028bff101f91",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|silluk_lamp4|patch|silluk_lamp4|lamp_stolen",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

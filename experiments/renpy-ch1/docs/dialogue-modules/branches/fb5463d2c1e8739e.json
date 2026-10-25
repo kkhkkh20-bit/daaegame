@@ -1,0 +1,839 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D12_S03_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S03_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S03_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "저녁. 아빠가 운반 상자를 문 안에 내린다. 노래가 중간에서 끊겨 있다. 새미는 숟가락을 그릇 위에 가로놓았고, 보리는 6일 학교 앞에서 기다리던 자기 아이 도담을 흔들어 부르고 있다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-3. 돌아온 냄비",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8727ce5efe279ce4571b9bbf38938efc01282817ead33fd124d6fb75e651e3d2",
+      "uid": "c8156c8d5d2f14041f204960",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S03_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S03_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S03_L0002",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "도담아. 눈 좀 떠 봐. 밥 먹다 왜 그래.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1309,
+          "label": "r13_v111_late_meal12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-3. 돌아온 냄비",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ff2ae80d5cbaf9984918ee784ca01bd2ba017b61dfa067af6c28ecf2a183a432",
+      "uid": "f350a56639357f2219774aff",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S03_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S03_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S03_L0003",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "먹는 거 멈춰요. 다 내려놔요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1310,
+          "label": "r13_v111_late_meal12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-3. 돌아온 냄비",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e42f6f58fa6884cf992f795891842676b86b570c17116e39a0b9ba2c45a1ed31",
+      "uid": "fc3d4c5891c71e69fb89e2fa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S03_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S03_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S03_L0004",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "새미야, 옆에 것도. 천천히.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1311,
+          "label": "r13_v111_late_meal12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-3. 돌아온 냄비",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "73d6c58f6f7b703d40c5114fe46ec543a9a556506ebedadaa6cb995006ea9176",
+      "uid": "ee8437096aa404a6af3f8123",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S03_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S03_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S03_L0005",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "서리 씨 불러 주세요. 아이들 상태가 이상하다고. 먹은 것도 그대로 둬야 해요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1312,
+          "label": "r13_v111_late_meal12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-3. 돌아온 냄비",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d2bec7a4b328434dca274027313cfd9cc7aa0881ff07a9e65ef6c31c56b3e958",
+      "uid": "66bb553617646a931b9eaf61",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S03_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S03_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S03_L0006",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "구조 요청은 원인 추리보다 먼저 실행한다. 현장 성인 한 명이 의료 도움을 부르러 나가는 모습을 보여 준다. 한 사람이 동시에 증언석과 심부름에 존재하지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-3. 돌아온 냄비",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5c94edcc2ea42d5fc8f1292d5058b56bfd48d3a71ccd85c4f2e5605e3f321a70",
+      "uid": "c8d26e83e03e56413ba2fbbc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S03_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S03_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S03_L0007",
+      "when": null,
+      "speaker": "새미",
+      "kind": "dialogue",
+      "text": "써서 그만 먹었어. 근데 버리진 않았어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1318,
+          "label": "r13_v111_late_meal12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-3. 돌아온 냄비",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "aa4875274a6e20c19f4030026ad3c388505d13c2f0320af9704198ed656a625f",
+      "uid": "7890f467cbf80421ad2e9684",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S03_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S03_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S03_L0008",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "지금은 더 먹지 마. 그대로 두자.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1319,
+          "label": "r13_v111_late_meal12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-3. 돌아온 냄비",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "379166c9970f1a555e456f0331458439e906bbac83cd5dea5cfae32440667eb8",
+      "uid": "4b7018161e59956f334a8ebe",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S03_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S03_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S03_L0009",
+      "when": null,
+      "speaker": "새미",
+      "kind": "dialogue",
+      "text": "이따 배고프면 먹으려고 뒀는데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1320,
+          "label": "r13_v111_late_meal12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-3. 돌아온 냄비",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "51ad4d3eba0e166b48b783626d570e65a2417313bf3b9530d1f31093b1a61e1f",
+      "uid": "8c564a5f605eaf955b1a6de6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S03_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S03_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S03_L0010",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어디서 받았어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1321,
+          "label": "r13_v111_late_meal12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-3. 돌아온 냄비",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d080d40232915feb2d04925fb55e1586322122b833870738e53f062447758347",
+      "uid": "f2a88de596546b60f32aa457",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S03_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S03_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S03_L0011",
+      "when": null,
+      "speaker": "새미",
+      "kind": "dialogue",
+      "text": "작은 거. 선생님 앞에.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1322,
+          "label": "r13_v111_late_meal12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-3. 돌아온 냄비",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ee9560a6fe726caf627474e37524132dc6518d1830361da111f348a314befc4e",
+      "uid": "31d8e0785407f51f430537f1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S03_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S03_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S03_L0012",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "입력: 작은 냄비의 남은 수프. 반짝이는 작은 조각. 아빠는 맛보지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-3. 돌아온 냄비",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "42f6c77966074e4c1dbb576efc969337a90018413e4ba0ea8f7d1fe93b6f171c",
+      "uid": "2247f50151cda0bd875edfba",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S03_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S03_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S03_L0013",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "깨진 게 있어요. 큰 냄비도 멈춰요. 받은 그릇 전부 그대로 두세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1334,
+          "label": "r13_v111_fragment_seen12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-3. 돌아온 냄비",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1ab4cc4047cd7547c6651384edf38261a702afa4e88e0c30a60ba3556b6d2748",
+      "uid": "55c02198aa3d45b07954aaa4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S03_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S03_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S03_L0014",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "왜 거기에…….",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1335,
+          "label": "r13_v111_fragment_seen12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-3. 돌아온 냄비",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "692706585fe54ecdf11d380297c7571ede26d8351723d585d79852cc3de31b78",
+      "uid": "8be3a906d4a2c9f35473c581",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S03_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S03_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S03_L0015",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "선생님이 선반의 천 꾸러미에 손을 뻗는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-3. 돌아온 냄비",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c9c939ac62f5038e14d1ed38cdf4558ea9d3ffbb536952e43b005a919f3b7105",
+      "uid": "e2a637dab8acdec6767f1f18",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S03_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S03_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S03_L0016",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그건 잠깐 두세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1336,
+          "label": "r13_v111_fragment_seen12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-3. 돌아온 냄비",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c5f6f37b360f021906607ca7bc56a559ed8fa8121519385b395f81dd32c5d674",
+      "uid": "e96be927b9b25fedaa144543",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S03_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S03_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S03_L0017",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "제 물건이에요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1337,
+          "label": "r13_v111_fragment_seen12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-3. 돌아온 냄비",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1e9f9d247afd006f1b8f121aadaff32bb32a671df8e2c222e4df3b1d7124be86",
+      "uid": "c92ac6166dfd22ef24530fb2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S03_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S03_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S03_L0018",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "깨진 게 더 있는지만 봐요. 아이들 먹던 데서 나왔잖아요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1338,
+          "label": "r13_v111_fragment_seen12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-3. 돌아온 냄비",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8f10fdf531d4e84e5d4ceb2067d8ed5273aa756b45ff32d0c1d38523a8a0b74f",
+      "uid": "4f43327e621cf1866e3f04cd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S03_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S03_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S03_L0019",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "물병이에요. 보세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1339,
+          "label": "r13_v111_fragment_seen12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-3. 돌아온 냄비",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "087e669ec7357be5762a8266b56b5bd26862f8e75caf1da6b20865b30be32933",
+      "uid": "4acaa32cd3447acd88fd2640",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S03_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S03_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S03_L0020",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "선생님이 꺼내 보여 준 병 입구의 작은 부분이 비어 있다. 적절한 도구로 회수·보존한 파편과 병의 확대 화면을 연다. 맨손으로 맞추지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-3. 돌아온 냄비",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f4d5ac19f4508eb6f5a86625bf435b70d7b37873a76d24c0fd0aa24b9bc6968a",
+      "uid": "581a9e662e3edef220f360f0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_episodes.rpy:250:14",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        14793,
+        14842
+      ],
+      "origin": "rpy_literal",
+      "day": 14,
+      "scene": "r13_ep2_kitchen",
+      "block": "r13_ep2_kitchen",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:250:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "문밖에는 다 해진 신발을 신은 아이 둘이 서 있었다. 아이들은 나를 보자 얼어붙었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 250,
+          "label": "r13_ep2_kitchen",
+          "guards": []
+        }
+      ],
+      "line": 250,
+      "scene_title": "r13_ep2_kitchen",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "c7a9a78a82db3f504d510d2981e6ee3757ae0457c158e410f8d343d6ca7e5bb7",
+      "uid": "85136265d9b41826e6aef6d3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|r13_ep2_kitchen|rpy_literal|r13_ep2_kitchen|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

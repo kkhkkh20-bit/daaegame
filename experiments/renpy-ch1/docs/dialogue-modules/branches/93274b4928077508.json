@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D14_S01_V01",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "before",
+        "MS14_D14_S01_L0002",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S01",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D14_S01_L0002",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "아이가 주걱으로 솥뚜껑을 두드리며 박자를 맞춘다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2840,
+          "label": "r13_v111_morning_safe14",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 14-1. 아침에도 살아 있는 사람",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "439b580ea551d9f334833b4ebc1bec45b333ff242821bed185889eee7aa6e940",
+      "uid": "9b73980009f1b2e16f67f2d5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S01|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D14_S01_V02",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "before",
+        "MS14_D14_S01_L0006",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S01",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D14_S01_L0006",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "판돌이 숟가락을 쥔 채 담요의 새를 들여다본다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2843,
+          "label": "r13_v111_morning_safe14",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 14-1. 아침에도 살아 있는 사람",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "995ab7f3856195db20fdd1b0305a11aa19c67a8faefd22212303f8faad5f7f70",
+      "uid": "5865a2722c4a3a7ac2330d20",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S01|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,293 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_HP_MEET6_00",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_meet6",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 6,
+      "scene": "hp_meet6",
+      "block": "hp_meet6",
+      "placement": "blocks",
+      "ref": "hp_meet6",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "저 숟가락, 손잡이가 헐겁네요. 고쳐 드려도 될까요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 42,
+          "label": "r13_hp_meal6_wait",
+          "guards": [
+            "elif _return==2:"
+          ]
+        }
+      ],
+      "scene_title": "hp_meet6",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "e499ff9401cd65053554955c1415b26468629c4cfb8047328211423809e3f23c",
+      "uid": "98ab645930e0dd660196e2a2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|hp_meet6|patch|hp_meet6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HP_MEET6_01",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_meet6",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 6,
+      "scene": "hp_meet6",
+      "block": "hp_meet6",
+      "placement": "blocks",
+      "ref": "hp_meet6",
+      "when": null,
+      "speaker": "판돌",
+      "kind": "dialogue",
+      "text": "판돌이오. 돌 일 하던 늙은이요. 고쳐 주겠다면 좋지. 맞은편 숟가락은 그냥 두시오. 모과 자리요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 42,
+          "label": "r13_hp_meal6_wait",
+          "guards": [
+            "elif _return==2:"
+          ]
+        }
+      ],
+      "scene_title": "hp_meet6",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "15ebdfec55b556aca7d7427df24b5270b950e8a320b3ad66c1fab96dc476aa8a",
+      "uid": "caceccd46640359767350b34",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|hp_meet6|patch|hp_meet6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HP_MEET6_02",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_meet6",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 6,
+      "scene": "hp_meet6",
+      "block": "hp_meet6",
+      "placement": "blocks",
+      "ref": "hp_meet6",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다돌입니다. 이 아이는 다람이고요. 그럼 보따리에 있는 것만 볼게요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 42,
+          "label": "r13_hp_meal6_wait",
+          "guards": [
+            "elif _return==2:"
+          ]
+        }
+      ],
+      "scene_title": "hp_meet6",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "bc37f21ecd13bd832eb00370888bb42d374f02af5aba65d3fa0f5ccfed8b1719",
+      "uid": "9c6e0ee39138fd6784d7e9eb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|hp_meet6|patch|hp_meet6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HP_MEET6_03",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_meet6",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 6,
+      "scene": "hp_meet6",
+      "block": "hp_meet6",
+      "placement": "blocks",
+      "ref": "hp_meet6",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "숟가락도 자리가 있어?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 42,
+          "label": "r13_hp_meal6_wait",
+          "guards": [
+            "elif _return==2:"
+          ]
+        }
+      ],
+      "scene_title": "hp_meet6",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "0abfc268f51eb3708caf03940fd8967f4ef34b73a259933df86663def94fa82f",
+      "uid": "ecee2db4cd92490e852be7d3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|hp_meet6|patch|hp_meet6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HP_MEET6_04",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_meet6",
+        4,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 6,
+      "scene": "hp_meet6",
+      "block": "hp_meet6",
+      "placement": "blocks",
+      "ref": "hp_meet6",
+      "when": null,
+      "speaker": "판돌",
+      "kind": "dialogue",
+      "text": "있지. 사람보다 잘 지키오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 42,
+          "label": "r13_hp_meal6_wait",
+          "guards": [
+            "elif _return==2:"
+          ]
+        }
+      ],
+      "scene_title": "hp_meet6",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "8671335d92ef136148b940fa00377b19b9a980b9036e479f587b50566842cd28",
+      "uid": "84a563ccaf5048b7ce6881cd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|hp_meet6|patch|hp_meet6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HP_MEET6_05",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_meet6",
+        5,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 6,
+      "scene": "hp_meet6",
+      "block": "hp_meet6",
+      "placement": "blocks",
+      "ref": "hp_meet6",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다람아, 우리도 앉자. 숟가락한테 자리 뺏기겠다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 42,
+          "label": "r13_hp_meal6_wait",
+          "guards": [
+            "elif _return==2:"
+          ]
+        }
+      ],
+      "scene_title": "hp_meet6",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "89e60e5594fa06f5c6d4c5f6c662f31eedc6361fb128e627126865ac99262d63",
+      "uid": "c39553931ce6e8a76ca8de05",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|hp_meet6|patch|hp_meet6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HP_MEET6_06",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_meet6",
+        6,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 6,
+      "scene": "hp_meet6",
+      "block": "hp_meet6",
+      "placement": "blocks",
+      "ref": "hp_meet6",
+      "when": null,
+      "speaker": "판돌",
+      "kind": "dialogue",
+      "text": "그 손잡이는 굵어야 하오. 가는 건 누…… 손에서 자꾸 빠져서. 핀만 맞춰 주시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 42,
+          "label": "r13_hp_meal6_wait",
+          "guards": [
+            "elif _return==2:"
+          ]
+        }
+      ],
+      "scene_title": "hp_meet6",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "1fb4841a45283f112e0daeef2e32ee1f83cb6af2b8380b55f826f416beb9b57b",
+      "uid": "db617f37e370216206cbb6f1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|hp_meet6|patch|hp_meet6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

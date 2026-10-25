@@ -1,0 +1,166 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:305:82",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        19334,
+        19396
+      ],
+      "origin": "rpy_literal",
+      "day": 2,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:305:82",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "돌려받은 장갑은 한 짝뿐이었다. 수첩에는 마지막으로 확인한, 끌고 간 시각과 바뀐 경비 순서가 남아 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 305,
+          "label": "r13_ending",
+          "guards": [
+            "elif r13_ending_id==\"E1\":"
+          ]
+        }
+      ],
+      "line": 305,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "70684ac64e5a4c03b48ba3e3210936e1b06f471a110f24625af514a1ffdcba6e",
+      "uid": "fa3bd16d7a5f91f55c22cc7c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_ending|rpy_literal|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:311:32",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        19817,
+        19846
+      ],
+      "origin": "rpy_literal",
+      "day": 2,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:311:32",
+      "when": null,
+      "speaker": "nabi",
+      "kind": "dialogue",
+      "text": "이쪽 방은 닫아야 해요. 다들 한 곳으로 모여요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 311,
+          "label": "r13_ending",
+          "guards": [
+            "elif r13_ending_id==\"E4\":"
+          ]
+        }
+      ],
+      "line": 311,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "38e291388ec2d13a7ffbb3b3869a005b3a08ce34bdfb70a85654ef71bf398265",
+      "uid": "1f711a3cd27a1c5c0197a730",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_ending|rpy_literal|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:311:102",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        19887,
+        19919
+      ],
+      "origin": "rpy_literal",
+      "day": 2,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:311:102",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "이름부터 적어요. 누구를 어디로 옮겼는지 남겨야 해요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 311,
+          "label": "r13_ending",
+          "guards": [
+            "elif r13_ending_id==\"E4\":"
+          ]
+        }
+      ],
+      "line": 311,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "6ac749a4ae976dcf6bc3678f73e57b5b4aef1f09534df716be1b6bf4e1978278",
+      "uid": "21d02b489795a0e83d7789d8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_ending|rpy_literal|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:311:142",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        19927,
+        19981
+      ],
+      "origin": "rpy_literal",
+      "day": 2,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:311:142",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "억지로 힘을 뽑아내는 일은 멈췄다. 그래도 모두가 안전하게 지낼 조건을 끝내 갖추지는 못했다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 311,
+          "label": "r13_ending",
+          "guards": [
+            "elif r13_ending_id==\"E4\":"
+          ]
+        }
+      ],
+      "line": 311,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "c6cbb468e491039877f3521688385c4a0afd6ec0696c8eacb32aa0f2246b0a8f",
+      "uid": "2d92269679ff4372c25d593f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_ending|rpy_literal|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

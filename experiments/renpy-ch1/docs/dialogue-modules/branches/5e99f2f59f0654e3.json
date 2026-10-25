@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_new_places.rpy:204:8",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        12281,
+        12293
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "r13_ancient_crack",
+      "block": "r13_ancient_crack",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:204:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "계단을 내려가 본다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 204,
+          "label": "r13_ancient_crack",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 204,
+      "scene_title": "r13_ancient_crack",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "6666ba96a2da10abac0396b7feca4061c7515eb5d68314e1342f65974e2357c5",
+      "uid": "21426129b057fa9cd9480bd8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ancient_crack|rpy_menu|r13_ancient_crack|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_places.rpy:208:8",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        12427,
+        12441
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "r13_ancient_crack",
+      "block": "r13_ancient_crack",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:208:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "지금은 표시만 해 둔다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 208,
+          "label": "r13_ancient_crack",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 208,
+      "scene_title": "r13_ancient_crack",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "fdb3a92841335f70e72aafe359ddf25c6b369eb2279f6bb5a06992ff406ad172",
+      "uid": "e443a40f533e89f6e8461529",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ancient_crack|rpy_menu|r13_ancient_crack|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

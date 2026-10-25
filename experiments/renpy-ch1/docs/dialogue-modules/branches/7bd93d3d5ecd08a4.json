@@ -1,0 +1,87 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13.rpy:718:140",
+      "file": "game/room13.rpy",
+      "path": [
+        42081,
+        42094
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_verdict",
+      "block": "r13_verdict",
+      "placement": "literal",
+      "ref": "game/room13.rpy:718:140",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "할머니, 일어나시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 718,
+          "label": "r13_verdict",
+          "guards": [
+            "if \"C2\" in room13[\"propositions\"]:",
+            "if \"C4\" in room13[\"propositions\"]:"
+          ]
+        }
+      ],
+      "line": 718,
+      "scene_title": "r13_verdict",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "f9a4c1f50b099655790c13984aff30b2d33093030bfccdb99e13f16a9c299d09",
+      "uid": "94f29d1a07a6363d497a94d7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_verdict|rpy_literal|r13_verdict|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:722:230",
+      "file": "game/room13.rpy",
+      "path": [
+        42575,
+        42589
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_verdict",
+      "block": "r13_verdict",
+      "placement": "literal",
+      "ref": "game/room13.rpy:722:230",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "오늘은 여기까지입니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 722,
+          "label": "r13_verdict",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 722,
+      "scene_title": "r13_verdict",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "24d8d95e04c9384a730c7158a885afe9adcc4d7ef482f8f4b7640e81d7aa1f2d",
+      "uid": "18e32dcd18506c7562154565",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_verdict|rpy_literal|r13_verdict|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

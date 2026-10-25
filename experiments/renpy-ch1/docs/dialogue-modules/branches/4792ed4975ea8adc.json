@@ -1,0 +1,204 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:408:29",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        20228,
+        20245
+      ],
+      "origin": "rpy_literal",
+      "day": 9,
+      "scene": "r13_ep2_night",
+      "block": "r13_ep2_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:408:29",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "아빠, 나 오늘 탐정이었어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 408,
+          "label": "r13_ep2_night",
+          "guards": []
+        }
+      ],
+      "line": 408,
+      "scene_title": "r13_ep2_night",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "386f56af2457e7a1e7989d013691a57598e6083ee9182f8c66dce3df82cc1731",
+      "uid": "289b8c12015187b4e14addca",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_ep2_night|rpy_literal|r13_ep2_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:415:29",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        20563,
+        20579
+      ],
+      "origin": "rpy_literal",
+      "day": 9,
+      "scene": "r13_ep2_night",
+      "block": "r13_ep2_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:415:29",
+      "when": null,
+      "speaker": "resident_somi",
+      "kind": "dialogue",
+      "text": "할아버지가…… 집에 없어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 415,
+          "label": "r13_ep2_night",
+          "guards": [
+            "if r13_has(\"kd_somi_warned\"):"
+          ]
+        }
+      ],
+      "line": 415,
+      "scene_title": "r13_ep2_night",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "da3fce1c082688941bbb069b287807f94cb6a69fd4a133be51af0b4ad08d7df0",
+      "uid": "2f86145edcabdefa6c14242f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_ep2_night|rpy_literal|r13_ep2_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:421:29",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        20967,
+        20974
+      ],
+      "origin": "rpy_literal",
+      "day": 9,
+      "scene": "r13_ep2_night",
+      "block": "r13_ep2_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:421:29",
+      "when": null,
+      "speaker": "resident_somi",
+      "kind": "dialogue",
+      "text": "할아버지!",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 421,
+          "label": "r13_ep2_night",
+          "guards": [
+            "if r13_has(\"kd_somi_warned\"):"
+          ]
+        }
+      ],
+      "line": 421,
+      "scene_title": "r13_ep2_night",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "69f4ca363c95b3df4c38d77d69c5fadb302d3989bb63fa7677b086de4b9c0b1d",
+      "uid": "439b5755ca83fb86d493cc64",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_ep2_night|rpy_literal|r13_ep2_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:425:29",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        21174,
+        21183
+      ],
+      "origin": "rpy_literal",
+      "day": 9,
+      "scene": "r13_ep2_night",
+      "block": "r13_ep2_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:425:29",
+      "when": null,
+      "speaker": "resident_somi",
+      "kind": "dialogue",
+      "text": "가지 마…….",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 425,
+          "label": "r13_ep2_night",
+          "guards": [
+            "if r13_has(\"kd_somi_warned\"):"
+          ]
+        }
+      ],
+      "line": 425,
+      "scene_title": "r13_ep2_night",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "a6894247eda3069fecedea9f598eccb0ee51ff785f80ee4522c7f84650da6578",
+      "uid": "e68d2aeb373109a788ca9713",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_ep2_night|rpy_literal|r13_ep2_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:430:29",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        21431,
+        21443
+      ],
+      "origin": "rpy_literal",
+      "day": 9,
+      "scene": "r13_ep2_night",
+      "block": "r13_ep2_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:430:29",
+      "when": null,
+      "speaker": "resident_somi",
+      "kind": "dialogue",
+      "text": "너는…… 잊지 마.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 430,
+          "label": "r13_ep2_night",
+          "guards": [
+            "if r13_has(\"kd_somi_warned\"):"
+          ]
+        }
+      ],
+      "line": 430,
+      "scene_title": "r13_ep2_night",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "2ed6e3f9e597d8d05827ed9843766ddc7a9af4e9d913b3db279eafd7b1bc809d",
+      "uid": "753f408557db3cb94153df3f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_ep2_night|rpy_literal|r13_ep2_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

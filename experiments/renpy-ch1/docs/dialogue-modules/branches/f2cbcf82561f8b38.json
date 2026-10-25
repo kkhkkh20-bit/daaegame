@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D06_ST01",
+      "file": "game/v111/newworld/d06.json",
+      "path": [
+        "blocks",
+        "seat_done6",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 6,
+      "scene": "seat_done6",
+      "block": "seat_done6",
+      "placement": "blocks",
+      "ref": "seat_done6",
+      "when": null,
+      "speaker": "사자 선생님",
+      "kind": "dialogue",
+      "text": "좋아요! 창가 쪽 네 자리, 비워 둘게요. 데려오시면 이름부터 적는 겁니다!",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 172,
+          "label": "r13_v111_seat6",
+          "guards": []
+        }
+      ],
+      "scene_title": "seat_done6",
+      "source_hash": "34df23f41d57916ce5b839de420f86f588f2b883338565904ffc098b14cca2db",
+      "baseline_hash": "3d01bc351a5db2ebbf2d6cfc9ae50ed283514a19fe0aaa835434a555c36ac82e",
+      "uid": "cea0b973d09e9a96c4e74e1b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|seat_done6|patch|seat_done6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

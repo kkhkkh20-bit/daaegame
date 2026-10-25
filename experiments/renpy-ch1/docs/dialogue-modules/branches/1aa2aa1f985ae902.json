@@ -1,0 +1,211 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D06_KG01",
+      "file": "game/v111/newworld/d06.json",
+      "path": [
+        "blocks",
+        "kongi_after4_6",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 6,
+      "scene": "kongi_after4_6",
+      "block": "kongi_after4_6",
+      "placement": "blocks",
+      "ref": "kongi_after4_6",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "콩이가 숨을 몰아쉬며 뛰어 들어온다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 33,
+          "label": "r13_v111_day6",
+          "guards": [
+            "if r13_v111_value('alive:resident_kongi') is not False and not r13_v111_value('listed:resident_kongi') and r13_v111_actor_ready('daram'):"
+          ]
+        }
+      ],
+      "scene_title": "kongi_after4_6",
+      "source_hash": "34df23f41d57916ce5b839de420f86f588f2b883338565904ffc098b14cca2db",
+      "baseline_hash": "e6cec49c31a91ffd308ce704f33ff4649c2cad1b57c0b7d4e240cfedb32522ec",
+      "uid": "e72f823d68e44658debc3590",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|kongi_after4_6|patch|kongi_after4_6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D06_KG02",
+      "file": "game/v111/newworld/d06.json",
+      "path": [
+        "blocks",
+        "kongi_after4_6",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 6,
+      "scene": "kongi_after4_6",
+      "block": "kongi_after4_6",
+      "placement": "blocks",
+      "ref": "kongi_after4_6",
+      "when": null,
+      "speaker": "콩이",
+      "kind": "dialogue",
+      "text": "다람아! 장작 창고 문이 밤새 열려 있었대!",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 33,
+          "label": "r13_v111_day6",
+          "guards": [
+            "if r13_v111_value('alive:resident_kongi') is not False and not r13_v111_value('listed:resident_kongi') and r13_v111_actor_ready('daram'):"
+          ]
+        }
+      ],
+      "scene_title": "kongi_after4_6",
+      "source_hash": "34df23f41d57916ce5b839de420f86f588f2b883338565904ffc098b14cca2db",
+      "baseline_hash": "5b0665ae754764f5cd65cf1bb40c3c5a92edd5d5a47664fcc2f8a6f8bae3f060",
+      "uid": "dd88f6e123883330fe2169dc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|kongi_after4_6|patch|kongi_after4_6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D06_KG03",
+      "file": "game/v111/newworld/d06.json",
+      "path": [
+        "blocks",
+        "kongi_after4_6",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 6,
+      "scene": "kongi_after4_6",
+      "block": "kongi_after4_6",
+      "placement": "blocks",
+      "ref": "kongi_after4_6",
+      "when": null,
+      "speaker": "콩이",
+      "kind": "dialogue",
+      "text": "……아, 내가 본 건 아니야. 들은 거야.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 33,
+          "label": "r13_v111_day6",
+          "guards": [
+            "if r13_v111_value('alive:resident_kongi') is not False and not r13_v111_value('listed:resident_kongi') and r13_v111_actor_ready('daram'):"
+          ]
+        }
+      ],
+      "scene_title": "kongi_after4_6",
+      "source_hash": "34df23f41d57916ce5b839de420f86f588f2b883338565904ffc098b14cca2db",
+      "baseline_hash": "5953cfb8829bb1674c04f134ae78d233b256a110b870f9de0606509118c55173",
+      "uid": "64da4768711e07440d890be7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|kongi_after4_6|patch|kongi_after4_6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D06_KG04",
+      "file": "game/v111/newworld/d06.json",
+      "path": [
+        "blocks",
+        "kongi_after4_6",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 6,
+      "scene": "kongi_after4_6",
+      "block": "kongi_after4_6",
+      "placement": "blocks",
+      "ref": "kongi_after4_6",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이 가방에서 도토리 하나를 꺼내 콩이 손바닥에 올린다. 콩이가 눈을 동그랗게 뜬다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 33,
+          "label": "r13_v111_day6",
+          "guards": [
+            "if r13_v111_value('alive:resident_kongi') is not False and not r13_v111_value('listed:resident_kongi') and r13_v111_actor_ready('daram'):"
+          ]
+        }
+      ],
+      "scene_title": "kongi_after4_6",
+      "source_hash": "34df23f41d57916ce5b839de420f86f588f2b883338565904ffc098b14cca2db",
+      "baseline_hash": "14386102701600ed90d0c493e7dfb809a49f6dbfdab8ca732cc1527bc97d6535",
+      "uid": "c099ef4c5d2a7cc63849ed65",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|kongi_after4_6|patch|kongi_after4_6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D06_KG05",
+      "file": "game/v111/newworld/d06.json",
+      "path": [
+        "blocks",
+        "kongi_after4_6",
+        4,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 6,
+      "scene": "kongi_after4_6",
+      "block": "kongi_after4_6",
+      "placement": "blocks",
+      "ref": "kongi_after4_6",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "들은 걸 들었다고 말했잖아. 그것도 도토리 하나야.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 33,
+          "label": "r13_v111_day6",
+          "guards": [
+            "if r13_v111_value('alive:resident_kongi') is not False and not r13_v111_value('listed:resident_kongi') and r13_v111_actor_ready('daram'):"
+          ]
+        }
+      ],
+      "scene_title": "kongi_after4_6",
+      "source_hash": "34df23f41d57916ce5b839de420f86f588f2b883338565904ffc098b14cca2db",
+      "baseline_hash": "36a1540c218798aeea03f5f05039296a9fa53ecc5961553e539e9a7df5183e83",
+      "uid": "05f0dc5d67ae87f55932e905",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|kongi_after4_6|patch|kongi_after4_6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

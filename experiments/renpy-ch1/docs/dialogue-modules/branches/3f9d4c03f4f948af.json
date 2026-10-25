@@ -1,0 +1,1794 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D03_S06_L0043",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0043",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0043",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "조건을 만족하는 다음 블록으로 진행한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fcff34e55d9bfec494fe81e2f2790dca27c3b738b9e9c6f38165c55b19b55973",
+      "uid": "225734769c952a83e05a45ba",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "톡과 초롱이 3번 돌 하나를 원래 받침에 놓고 덮개를 닫는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "189c54b0ff2e49fd60a422239b45f4331b56334513c51704a1109d9fa148d28e",
+      "uid": "cd26ddfa6cb91b37b5b15436",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0002",
+      "when": null,
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "됐어요. 받침 쪽으로 손 대 봐요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1353,
+          "label": "r13_v111_restore3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": [
+          "lamp_lose",
+          "lamp_lose"
+        ]
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0fcbc66034ccf1d89828e66e3cc7c55495fb0bc7c997983aaa561fe697b088ed",
+      "uid": "b6f32a0a677605a2d3ce771a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0003",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "따뜻해.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1353,
+          "label": "r13_v111_restore3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "591b5425e3e17b20bbcfac8ce382180b0e0a6348cf981e046e34628a99aebbc9",
+      "uid": "2fdc7277bf7d8c07dad39fe0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0004",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "오늘 밤도 돌겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1353,
+          "label": "r13_v111_restore3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2ceaced775f818e6479d49e4264fef62bc44a107d55ea9fe9b23b3aaddf1ec00",
+      "uid": "abddbafdbcfc166c2366ef8c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0005",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "빈 등 앞에 차단 표지와 실내 대피 안내를 세운다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c8ad347088ef49e4352312b9f22c1c74e9d8666e98b7850a3e54ff7c04652987",
+      "uid": "118c1ff5925e1e5ab634126f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0006",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "오늘도 안 켜져?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1363,
+          "label": "r13_v111_restore_defer",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9f4b5cedfd56dfca02a4c795eafecddd0dfa50479e16b24fc96541de2e9d5e18",
+      "uid": "85bec4faa96db061c727e428",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0007",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "돌을 아직 못 받아 왔어. 여기서 자면 안 돼.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1363,
+          "label": "r13_v111_restore_defer",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a5b25e58d86e130c91818f12d250edd5593f0923ab2d92bee3709157b4abd37f",
+      "uid": "853ba502e171597ead4af2ea",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0008",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "식당 쪽으로 가라고 적어 둘게요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1363,
+          "label": "r13_v111_restore_defer",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3150cadc51c2fc06ce52d207bec718b2246ea24bfcb9d871d413938a18d4e5cd",
+      "uid": "1d0ac0991a8c7cc0e48b9244",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0009",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "나머지 등도 확인하겠습니다. 교환함에는 아직 답이 없었어요. 아침에 다시 봐요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1371,
+          "label": "r13_v111_box_news3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3ab59f949b00e3cfa21b8799b2d2e56cf6111768e7c623a547cbde0cb94ffa77",
+      "uid": "7017954d13476406aaba8d89",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0010",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "제 쪽지는 없어졌습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1371,
+          "label": "r13_v111_box_news3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a901d5c76a7d214a4333c5571c49784e6883ec33e37f1340d80c6dd8d64226e6",
+      "uid": "277872e43701900c2cb6b347",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0011",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "그대로예요. 접힌 자리도요. 답이 없으니 나도 답답하네요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1371,
+          "label": "r13_v111_box_news3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "af9e8ff09c6ddc8781009dc7a802a59422b843da941fa1e9ac34af169105688a",
+      "uid": "1d772b5296c7f38c67a37a12",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0012",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "피코 사망 경로. 광장 한쪽 작은 추모 자리. 초상은 다람 무릎 위.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3a7f8f9c1610cc9d117217f55e426ebbd875f62237f4030ca93f9d1817c3d4df",
+      "uid": "09792db6218dd2a1018322e9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0013",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "코는 내가 그려도 돼?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1392,
+          "label": "r13_v111_piko_memorial",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5c32c03d21c0a926bdccce6d950dc047bbb86f22380a2ea2c8cc5e42a00b3a50",
+      "uid": "557ce315cafe20577d9f5903",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0014",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "네가 그리고 싶으면.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1392,
+          "label": "r13_v111_piko_memorial",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8c1a3da19e8f953b766cf930dabc15caf7df1eae9fd373a0077154918130b20d",
+      "uid": "fdf3cdffc4ab82b0ebeed102",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0015",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "틀릴 수도 있어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1392,
+          "label": "r13_v111_piko_memorial",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e4d3c41fc3580f5873ba15139bb4625b808bdd161e7828e1d3fe79a6fc170682",
+      "uid": "37ad57447f4a653d03356acf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0016",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그럼 엄마한테 고쳐 달라고 하자.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1392,
+          "label": "r13_v111_piko_memorial",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4cf0c2337cf9d7c23062b656093e6d97847eacabb4b1e7aa4ce9c4d195409088",
+      "uid": "8b2d092bd8d6776dea3b38a4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0017",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "다람이 짧은 선을 긋는다. 첫 선은 지우지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c07ad1feeafff25c8375e097c4b11278561ea37ccdda8bc6e05607a057d347ff",
+      "uid": "7a8bfb0e0258949f0d9e5772",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0018",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "약속은 내가 했는데, 피코는 못 왔네.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1392,
+          "label": "r13_v111_piko_memorial",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7a0d76a69dc94fb3304909a226c6b308782d775e7b5d8795e6ef39421068fdf8",
+      "uid": "27511c578f8985069bb34cac",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0019",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "네 잘못은 아니야.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1392,
+          "label": "r13_v111_piko_memorial",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "61be494dc5e0f8a87f662962672fdf7f8df80aede23df1deae75a2badc86c0e1",
+      "uid": "03b3ad992a8fde4cf199bd43",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0020",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그런 말 안 했어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1392,
+          "label": "r13_v111_piko_memorial",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "305f3ecf2bc17266d961d0d1b46a8957d7b8694780be45884b9ee4c0d865028d",
+      "uid": "1e40aa8d88ecd5823d8b4b72",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0021",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "……응.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1392,
+          "label": "r13_v111_piko_memorial",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1b3ea2cb30cbe787f53cabd2a311c240917f2759c8b9b4bc6606d20fb5948f35",
+      "uid": "731de17944194a32069a78ff",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0022",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 더 말하지 않고 판자가 흔들리지 않게 받쳤다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1392,
+          "label": "r13_v111_piko_memorial",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d59af362253a538362bc7e325e0365228ddd93c21b237971061df9ac1fbd5e9a",
+      "uid": "c27dceade7f84aefbc0eb363",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0023",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "피코 생존 경로의 대체. 진료소에서 나오는 피코.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "59ae1fb24a38ef86d4029a11cd3bebe0fe94b73f6416d1646be4b8512b0cd24e",
+      "uid": "4b48f4ded87c2f8835de9768",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0024",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "사람들이 나만 보면 손부터 만지네. 이제 괜찮다니까.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1384,
+          "label": "r13_v111_piko_evening",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fa20f9a86189a4f69b64141c12176159f128196afd706721752717fb9b7001fb",
+      "uid": "1f4d15d6aa87386e0397bd5c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0025",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그림 잘 보여 줬어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1384,
+          "label": "r13_v111_piko_evening",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d0fa9c9165d2436b8354f45a24249d1ad7c59be394d5f26f54d564cde8c97750",
+      "uid": "bb2524ea4ee7cbf94f63154f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0026",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "찾았어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1384,
+          "label": "r13_v111_piko_evening",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4b5e170cfc1019c3630c37bc467191caffe4103e3a77930057e2fec656fc7ec9",
+      "uid": "a76d025727624027ddc1c69e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0027",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아직.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1384,
+          "label": "r13_v111_piko_evening",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9e15843a1dd3a2cd3e0b41ca23ddfe1b8ce012376ab48be298b94af05ec518f0",
+      "uid": "c28a96ccf563c19e8a2169b0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0028",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "그럼 잘 보관해. 젖으면 또 그려야 하니까.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1384,
+          "label": "r13_v111_piko_evening",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3dd3d785c64262d8ba9a7906807c51dbb4793337f418970f72993e789909489c",
+      "uid": "c5c241cae7c72d639926d3f9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0029",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "새 종이를 사 드리겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1384,
+          "label": "r13_v111_piko_evening",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "07b5269db19ffd6a33fd49dea942b51ab51dcfda22341ac8f22dd9b25429732b",
+      "uid": "d9e7228880facd9843971709",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0030",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "사 주는 건 좋죠. 살아 있는 사람한테는 그게 쓸모 있어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1384,
+          "label": "r13_v111_piko_evening",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "697e7a6f44a2fe0fe5d034dd92321aef708d7a541b8c95c0aba3763c4bc2e57f",
+      "uid": "256b3bca7802b688822e57bf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0031",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "두 경로 공통. 초상으로 엄마를 알아본 초롱이 이전 접촉 인물을 떠올린다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7ec24d49516462c1fb9b11da0b49eea6d300efe64bf0bbd9ad2ea4399a30394f",
+      "uid": "f6908fd67dab60023ba3a84d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0032",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "부인이 솜이네 할아버지 책도 봐 줬대요. 글자가 잘 안 읽힌다고요. 네로가 오가는 걸 도왔으니 물어봐요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1400,
+          "label": "r13_v111_somi_lead",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3502f818bfdd77adaa3d3f2970899a495fab326d5447c461206ed4777e42e9d6",
+      "uid": "0028f2bc601d97050fd49168",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0033",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "내일 찾아가겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1400,
+          "label": "r13_v111_somi_lead",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6f95908c55e26749900f5e6b8d110a9407576f7a69b9b25f2da4c26336b4cf99",
+      "uid": "91a4809fa4ba241125fb866f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0034",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "2일 네로의 물자 작업을 실제 끝내 예약한 경우만. 광장에서 네로가 약속한 침구 묶음을 건넨다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "187f1605fa96cb4536df63ab54636aa973aeae5f17a63dc78c6d9f23f0ab0694",
+      "uid": "6746a895056a4fa4f0f4345a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0035",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "다돌 씨. 어제 같이 묶은 거요. 두 장 맞는지 봐요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1420,
+          "label": "r13_v111_blankets3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "35a24519c541e14110b2801b2c9820644f743d6d06a0004b6d121e3eda87269c",
+      "uid": "ec34f4880a9a71404b83ba8f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0036",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠가 묶음을 열어 마른 담요 두 장을 확인한 뒤 큰 여행가방에 넣는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5c9b8d1a32fa812465a54af3be845674396ee3364c021f010817dc860cf0a4ff",
+      "uid": "a81e4049bbbeeb15a2809d76",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0037",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0037",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0037",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "맞습니다. 오늘은 마른 채로 받네요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1420,
+          "label": "r13_v111_blankets3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f425e7796e9bae3d060ba2ba965ee35fa480630d494b16a20cca3dcb50683334",
+      "uid": "b3f8597c0bbeb46e615cc2ae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0038",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0038",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0038",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "같이 들었으니 내 허리도 좀 살았죠. 젖지 않게 싸 둬요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1420,
+          "label": "r13_v111_blankets3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d9f87c7e2f3b5def58b219a9f55270982bae4c70528f142232c0054d04bed8ff",
+      "uid": "f05e8e895b30eba92905bf8a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0039",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0039",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0039",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마 오면 같이 덮어도 돼?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1420,
+          "label": "r13_v111_blankets3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a621ea9018869326650c5d0cc4d4de4cd640a31bfccf425f1ef400d2ad874f3a",
+      "uid": "958a19a95c8dafaf5524d442",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0040",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0040",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0040",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응. 우리 셋이 쓸 거야.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1420,
+          "label": "r13_v111_blankets3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d87dc3a91ebfc0faa6713e6a1562df09f6fb208a077263a70c6f280df4553162",
+      "uid": "6151182f1a33cbabc6aacd82",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0041",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0041",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0041",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "nero_bedding_reserved=false로 예약 종료, carried_dry_blankets=2. 피코의 생사·등 절도 결과를 바꾸지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7993c9c5cb70b08334f1a80f2524a9a1cab9029efef9978b090a6a00e6e74d68",
+      "uid": "79fa291b41abaaf90532a9dc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S06_L0042",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S06_L0042",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S06",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S06_L0042",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "방으로 돌아가는 계단. 다람이 그림을 자기보다 높은 곳에 세워 달라고 한다. 다음 목적: 솜이네를 아는 네로에게 엄마의 방문을 확인한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6. 저녁 / 그려지지 않은 얼굴",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b7e2c06239484255cb548eec984ca4d8b9d30ccd42eb639327ae6e4bade0cdbc",
+      "uid": "5f760a2c16a32339449848e0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S06|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

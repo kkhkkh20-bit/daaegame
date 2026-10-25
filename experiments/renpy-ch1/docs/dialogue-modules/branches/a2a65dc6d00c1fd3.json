@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D09_P01_L0011",
+      "file": "game/v111/newworld/d09.json",
+      "path": [
+        "replace",
+        "MS14_D09_P01_L0011",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D09_P01_L0011",
+      "when": "prevention_stone",
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "어르신이 13호에서 기다리시던 그날 저녁에요. 할머니가 주방 장치 앞에 계신 건 봤어요. 들어가시는 건…… 못 봤어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1283,
+          "label": "r13_v111_prevent_walk9",
+          "guards": []
+        }
+      ],
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b6ad6a05d63439df019e5608ab9fea79d40e75b4905df3194c837f0960463bb2",
+      "baseline_hash": "04aa571295f48715ed81128ff908254fcc9b03dadca79b4fc36f5435b8cd93ab",
+      "uid": "8f0335d97a45a28e969e6fa4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|patch|replace|prevention_stone",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0015",
+      "file": "game/v111/newworld/d09.json",
+      "path": [
+        "replace",
+        "MS14_D09_P01_L0015",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D09_P01_L0015",
+      "when": "prevention_stone",
+      "speaker": "부엉이",
+      "kind": "dialogue",
+      "text": "내가 깜빡하는 건 사실이지. 그러니 종이도 잃어버렸을 거다…… 참 편리한 말이군.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1297,
+          "label": "r13_v111_papers_done9",
+          "guards": []
+        }
+      ],
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b6ad6a05d63439df019e5608ab9fea79d40e75b4905df3194c837f0960463bb2",
+      "baseline_hash": "a36914d8ef1649017ca61aec6b7f389d301e0c86625a56dd516a212e49967f36",
+      "uid": "a1618ddca213e578a074873a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|patch|replace|prevention_stone",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

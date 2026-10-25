@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_MV_D03_01",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "before",
+        "MS14_D03_S02_L0002",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D03_S02_L0002",
+      "when": "piko_alive",
+      "speaker": null,
+      "kind": "narration",
+      "text": "광장 어귀에서 까로가 쇠 축을 어깨에 멘 채 서 있다. 수리점 쪽이 아니라 광장 쪽을 보고 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 841,
+          "label": "r13_v111_lamp3",
+          "guards": []
+        }
+      ],
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "1c0599c89e45abd777cf3f46154a0afa68f08886299824427109f898817c0aa7",
+      "uid": "4f0694bdc6a098c858c4d925",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|patch|before|piko_alive",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D03_S02_A01",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "before",
+        "MS14_D03_S02_L0002",
+        9,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D03_S02_L0002",
+      "when": "piko_alive",
+      "speaker": null,
+      "kind": "narration",
+      "text": "광장으로 가는 길에 짐수레를 끌던 짐꾼이 먼저 다가온다. 수레 손잡이 옆에 칼자루가 꽂혀 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 841,
+          "label": "r13_v111_lamp3",
+          "guards": []
+        }
+      ],
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "ff48064ccfbd5b189f2d39f480e78fc7340aca76e447726bb1ff1352c52eaf76",
+      "uid": "8f5fca9b20ffe55273aa7e05",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|patch|before|piko_alive",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

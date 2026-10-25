@@ -1,0 +1,123 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_RU_D10_E09_01",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_P01_L0032",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_P01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_P01_L0032",
+      "when": "writing_won_with_e09",
+      "speaker": "아빠",
+      "kind": "thought",
+      "text": "바늘을 쥔 아내의 손이다. 하지만 이 그림만으로 누가 편지를 보냈는지까지 알 수는 없어.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1731,
+          "label": "r13_v111_writing_answer10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-P. 예방 대체 / 그 종이를 넘기기 전에",
+      "source_hash": "662dca5b8bc468185010c09a7dfb1668b1ea5e32eb2c8731e681e5c8ee9106df",
+      "baseline_hash": "8f2a7300cc5dbc27e55a59ddcda57dd9e93121f97ed4cbd94d73a10ae29d772e",
+      "uid": "a6636be897071d58c378f70c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_P01|patch|after|writing_won_with_e09",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_RU_D10_E09_02",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_P01_L0032",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_P01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_P01_L0032",
+      "when": "writing_won_with_e09",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이 초상만으로 아내가 글씨를 부탁했는지까지 알 수는 없습니다. 실제 편지와 필사본도 함께 확인하겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1731,
+          "label": "r13_v111_writing_answer10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-P. 예방 대체 / 그 종이를 넘기기 전에",
+      "source_hash": "662dca5b8bc468185010c09a7dfb1668b1ea5e32eb2c8731e681e5c8ee9106df",
+      "baseline_hash": "3ee4a87f2ec27d0b6a85f478a9fbed82448ff273f1f34b968cced1ae21cfe31e",
+      "uid": "d1529eea9dc224ab61fb2806",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_P01|patch|after|writing_won_with_e09",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_RU_D10_E09_03",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_P01_L0032",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_P01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_P01_L0032",
+      "when": "writing_won_with_e09",
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "그건…… 그림이잖아요. 그림이야 좋게 그리죠.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1731,
+          "label": "r13_v111_writing_answer10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-P. 예방 대체 / 그 종이를 넘기기 전에",
+      "source_hash": "662dca5b8bc468185010c09a7dfb1668b1ea5e32eb2c8731e681e5c8ee9106df",
+      "baseline_hash": "9e5a5a654c3de8ddf181eac492ff72a46e6a813a2617305c64d5e592c828046d",
+      "uid": "0b51246cc28dcbfb063b7c91",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_P01|patch|after|writing_won_with_e09",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

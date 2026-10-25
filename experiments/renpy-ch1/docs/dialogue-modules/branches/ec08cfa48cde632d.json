@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_RU_RL_E34",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "rein_ledger13",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "rein_ledger13",
+      "block": "rein_ledger13",
+      "placement": "blocks",
+      "ref": "rein_ledger13",
+      "when": "piko_ledger_with_e34",
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "끝나는 날도 안 적힌 작업표네요. 그럼 나도 더 아낄 게 없지요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2113,
+          "label": "r13_v111_rein_ledger13",
+          "guards": []
+        }
+      ],
+      "scene_title": "rein_ledger13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "d901ebc1e11b95aaa169debf45a2e8228de9313fb67aa808f7435a8af285c9e8",
+      "uid": "0aac7677fd62cc6c77a64406",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|rein_ledger13|patch|rein_ledger13|piko_ledger_with_e34",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

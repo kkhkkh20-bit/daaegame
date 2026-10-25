@@ -1,0 +1,2193 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D11_S01_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아침. 전나무 뿌리 아래. 아빠가 먼저 구멍을 들여다본다. 접힌 외투 대신 눌린 풀만 남아 있다. 다람은 아빠의 소매를 잡고 입구에서 기다린다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "aedd9005b533812656eb99f07c2dee842cb5f09bc582ca2566f4330c930e63d5",
+      "uid": "fbcdd0c86a11d34223636f71",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0002",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "여기서 잤어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 66,
+          "label": "r13_v111_root11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1f226a0a5bfa30f70c52e3c3bad31e341bd46272a23ea271c07a1e380c211bd1",
+      "uid": "1d7150222b164c3baaf924fe",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0003",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그랬던 것 같아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 67,
+          "label": "r13_v111_root11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f27757dd43b0352a5299470fb14af3e37c17290c67c74cc6c46d55d88423fedb",
+      "uid": "41975ae143f1007869ddf5a8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0004",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "누우면 발이 나오는데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 68,
+          "label": "r13_v111_root11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3b98ffb7cf292ffa52174f57b916a52c48936f4a3e594ad1aa4bcef8e329f524",
+      "uid": "5f0135b10e478d5835b382b1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0005",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "입력: 답장대로 눌러 둔 돌을 들어 풀자리 옆 쪽지를 편다. ‘여기는 들켰다. 폐온실 아래로 옮긴다. 낮은 문 옆 등 표식을 두 번 두드려.’ 앞서 연락함에서 얻은 이동 시 메시지 약속과 연결한다. 여기서 처음 폐온실 위치·접촉 방식을 얻는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "27a57eb0dfec4ac4e306280fd2116d94d66d40906f01a2aeb99a53953bb06cd0",
+      "uid": "5f78a6e921b5bbba9c8e55aa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0006",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "옮겼대. 잠깐, 다음 주소가 있어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 79,
+          "label": "r13_v111_root_read11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "de679b0684da627eacb925a8865b2db927553d2b62ae2fdd0d8f0c7b2233ed63",
+      "uid": "117f274f72a623d4eb8e2d70",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0007",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "눈을 밟는 작은 소리가 멎는다. 돌아보면 토실의 귀가 나무 뒤로 들어간다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5d0d40667998edee5a12f5c3ab2a1040cfa91a2ae3b8150db7247066ab60ffe2",
+      "uid": "cc335b70d5d67b06eb446f04",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0008",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "토실아. 거기서 뭐 하니?",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 80,
+          "label": "r13_v111_root_read11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "25d72996b81a8a254f4f85317a7d1198f452996a5c597a2b42232eda288e53e8",
+      "uid": "be449dc3964143cfa35d1c0e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0009",
+      "when": null,
+      "speaker": "토실",
+      "kind": "dialogue",
+      "text": "나도…… 길.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 81,
+          "label": "r13_v111_root_read11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4f7be493311862a9a9a0f601f4661cbc7c9622f377591136aad76e1f4864bdc8",
+      "uid": "37b654314fb49c7db2cf5c2d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0010",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "이 길 막혔어. 우리 발자국만 있잖아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 82,
+          "label": "r13_v111_root_read11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ce399265fda34f94917e60bb859550eb89ddc4edc18042fc96125df3fccf92d0",
+      "uid": "35b04ca808a078dc522dc3d0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0011",
+      "when": null,
+      "speaker": "토실",
+      "kind": "dialogue",
+      "text": "알아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 83,
+          "label": "r13_v111_root_read11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4167bd50bea30dc931bd2a3cac3a7f3498d488493e0a3a582aff497aac71c39e",
+      "uid": "7621cddbc5f63d216c6a3e63",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0012",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠가 다가가지 않고 장갑 낀 손을 편다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "dc77378bbf5d20ef1b580d7c440fc8e320b446eab84cfc529c98479dde5e5d73",
+      "uid": "bd799c7e87186e9c4596866b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0013",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "누가 어디로 가는지 보라고 했어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 84,
+          "label": "r13_v111_root_read11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f3ac749b200bc590fc7f9cad4cefd8b936ed084e0c5fc648a6ede12cf27f9b2b",
+      "uid": "3f42e8d4016d8edca9dea81e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0014",
+      "when": null,
+      "speaker": "토실",
+      "kind": "dialogue",
+      "text": "아저씨가 만나면 돌아와서 말하래.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 85,
+          "label": "r13_v111_root_read11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2cd06d6732fb5fdc03bbe8ef2a3089def5cd63c7383fc86b6c4efd01b95564c4",
+      "uid": "3bd5cd507198679284c96901",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0015",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "누가?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 86,
+          "label": "r13_v111_root_read11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7d4f7dc4071c96b8cda5404a5d613662a8785543325dd6bc1ea132f1dcaf8235",
+      "uid": "01f77e172e8a0416202dbb2e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0016",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "할머니가 자유인 경로.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4d1d5fd4e3570eda8b9ae5d50a04fa1d5251f98eb7a373deaf9c77fb22162b81",
+      "uid": "1d29d9c0cca5a68050230d30",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0017",
+      "when": null,
+      "speaker": "토실",
+      "kind": "dialogue",
+      "text": "할머니. 찾으면 엄마 있는 데도 말해 준댔어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 118,
+          "label": "r13_v111_tosil_free11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "290fc0690dc5fcd8c34ea6c7806c658a7fe2b1a67aed7348e2ea63a803dbb36e",
+      "uid": "149ac223605ab27e455fee65",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0018",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "네 엄마?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 119,
+          "label": "r13_v111_tosil_free11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3d9ac177ebbb4cf97132f633d01b557fb11c067bc23f675357268d612b8a04ea",
+      "uid": "0548a8c346570b88fb5f0bce",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0019",
+      "when": null,
+      "speaker": "토실",
+      "kind": "dialogue",
+      "text": "보호소. 자꾸 물으면 안 된대.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 120,
+          "label": "r13_v111_tosil_free11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cb69cd86a1a14f825b9cf0187e20dea98da942bc48b7c94a92f0f95bfa95b069",
+      "uid": "0826352a13c23f7ebbbb9966",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0020",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "할머니 구금 경로의 교체 대사.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2b3e77efe82d0c85a1b1bc20b9bccd71bffe83535e1dd030b4e00862c6c3f93f",
+      "uid": "05986992b57fa375cc9c3a54",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0021",
+      "when": null,
+      "speaker": "토실",
+      "kind": "dialogue",
+      "text": "할머니가 잡혀가기 전에. 아직 못 찾았다고 하면…… 계속 못 물어보잖아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 112,
+          "label": "r13_v111_tosil_detained11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3ba16b9ef361d1b4a9ee1a265cd04dd17bf15d8f7551187bfa4122c085f6800e",
+      "uid": "32bbc66c8689d4ecd39e549f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0022",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "잡힌 뒤에 또 만났니?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 113,
+          "label": "r13_v111_tosil_detained11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "755f6881ea10fad5279ef55ddcc189ffb335b0c12ddb0721c3b0e4a70fe7bf05",
+      "uid": "0dcf7ee065007c7ca7c05614",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0023",
+      "when": null,
+      "speaker": "토실",
+      "kind": "dialogue",
+      "text": "아니. 못 들어갔어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 114,
+          "label": "r13_v111_tosil_detained11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a5187ac942aa5e20bbb93c40d8682d4f26369dd97f9f2338a5a57dbce30468d2",
+      "uid": "af686673ed065938e959d962",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0024",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "공통. 아빠는 토실의 손에 지도나 위치를 쥐여 주지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5ed93392bbaa57dd3116839b3662ecda090ea903b914af7ccb29587e46024e48",
+      "uid": "9124f1a09fa5f413f3812222",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0025",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "너 우리 엄마 찾으러 온 거야, 네 엄마 찾으러 온 거야?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 92,
+          "label": "r13_v111_root_read11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5b245503895810d56589930e681392a58d79c7c3aa39713c450f26f3f0f3b8bd",
+      "uid": "f7e27b74affe00ec07647297",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0026",
+      "when": null,
+      "speaker": "토실",
+      "kind": "dialogue",
+      "text": "몰라.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 93,
+          "label": "r13_v111_root_read11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d4281ad8d24d75dc20390726878e75db6b761b1c7381d5388ac8f94c3d4ca907",
+      "uid": "3b3f04030c0c96aa9008bc1c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0027",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "네 엄마 이름이 뭐니?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 94,
+          "label": "r13_v111_root_read11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b44240f4aa1d1f17977f7a8a2750d6ae656676c0f117e39bb40c7b96317d539f",
+      "uid": "a98a0840727cbba5e77b8dba",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0028",
+      "when": null,
+      "speaker": "토실",
+      "kind": "dialogue",
+      "text": "보미.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 95,
+          "label": "r13_v111_root_read11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "80b2e71ec4c7c5926d43d2925867b14aebcfc2583726ee6c58070f163fc47150",
+      "uid": "5c2d89734a610ac5e8576827",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0029",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "할머니하고는 어떻게 지내?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 96,
+          "label": "r13_v111_root_read11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e61d68d5fcf6a1e6b15840edb5a81030c0d460e5752a7e0ce1122ab2e2571712",
+      "uid": "7779f55c34c27b98c26c5567",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0030",
+      "when": null,
+      "speaker": "토실",
+      "kind": "dialogue",
+      "text": "우리 엄마 엄마야. 나한텐 할머니고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 97,
+          "label": "r13_v111_root_read11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8ec945924a4d98708ddb00a5fb7134f6c67c80f06413c6f8a769846e92c30952",
+      "uid": "50d4a4e58188fd07e32b5602",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0031",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠가 이동 쪽지를 소리 내 읽지 않고 접어 안주머니에 넣는다. 토실에게 폐온실 위치나 두드리는 법을 말하지 않는다. 아이가 추적 지시를 받았다는 사실을 안 채 은신처로 데려가지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a7b7a7524b0675e3084159afe09a0d39d89199dda999319c0ff95486d804a1e4",
+      "uid": "5f2064b51c91f25b03eb0bb0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0032",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "토실아. 너는 학교로 먼저 가자. 내가 데려다줄게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 98,
+          "label": "r13_v111_root_read11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d875a06face5084656336b3c0675ca1af32d5726b4505112c084cfa1e829a35b",
+      "uid": "feb1a62cad8362cf13cf674f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0033",
+      "when": null,
+      "speaker": "토실",
+      "kind": "dialogue",
+      "text": "나 버리고 가려고?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 99,
+          "label": "r13_v111_root_read11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "554ccd6a8f50a398c28ec0670e664e1ee71ff854c91855c442bf60511861c786",
+      "uid": "fef2ebdfdc6bd2f4e25e5476",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0034",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "혼자 두지는 않을 거야. 하지만 누가 찾으라고 시킨 곳까지 같이 갈 수는 없어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 100,
+          "label": "r13_v111_root_read11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3d929d89994739c33b3c620e94f935736c2bef9fa38c4df25aac5047eb04ef37",
+      "uid": "84ef49c9c359bc97a102ccd1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0035",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "토실이가 나쁘려고 그런 거 아니잖아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 101,
+          "label": "r13_v111_root_read11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c9ff1177eec595e11246133690bcf6e8ae89d8a291eab47bb01580b8100fd6e1",
+      "uid": "dc06e731b121b3d72cd70b56",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0036",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "알아. 그래도 엄마 있는 데를 또 들키게 할 순 없어. 학교까진 같이 갈게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 102,
+          "label": "r13_v111_root_read11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ece8777e44c065cd5d429ddeeb0ffcde3d68468167b17060939f55ddad09ba91",
+      "uid": "148f4faf0eba74c5bb45a766",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0037",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0037",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0037",
+      "when": null,
+      "speaker": "토실",
+      "kind": "dialogue",
+      "text": "우리 엄마 찾으면 말해 줘?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 103,
+          "label": "r13_v111_root_read11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4d644375d6a333d345ec13939e2af40029a469bb2c2b9439d65bfe0302e42260",
+      "uid": "efecc2064ce0f417763ddd66",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0038",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0038",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0038",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응. 소식 알게 되면 말해 줄게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 104,
+          "label": "r13_v111_root_read11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9092d9e42f8dc9025405dea652edc7d793cab9b699abb8e14651f1181423d534",
+      "uid": "0db35918449ec835f4959234",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0039",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0039",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0039",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠와 다람이 토실과 함께 학교로 돌아간다. 실제 이동 시간이 들고 폐온실 접촉이 그만큼 뒤로 간다. 길을 듣지 않은 토실이 자동으로 새 위치를 누설하는 분기 없음.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "14bb45ae3caaf01c8c7c3fa3c52f634d42898e83a931fc96d451551c44267d4c",
+      "uid": "a2ecb86abbfab2802eaee625",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0040",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0040",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0040",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "학교 부엌. 앞선 대피 과정에서 신뢰를 확인한 나비가 현재 아이들 배식을 맡고 있다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "93a3eaad7092b1331e5913dc46030066771f6f6d4f58161325104f1ef47da7b3",
+      "uid": "bdb6d1149e85f7d86dcbf81b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0041",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0041",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0041",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "나비 씨. 토실을 맡아 주실 수 있습니까? 누가 우리 뒤를 따라가라고 시켰답니다. 아이를 벌주진 마세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 137,
+          "label": "r13_v111_nabi_arrival11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "96f5b1973fc4c431c49c31d01ce5291d8d4257c9216e8ac9ed572fce55f7cb2b",
+      "uid": "012cdb03eab0f56fbf6daf8e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0042",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0042",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0042",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "갈 곳도 없는데 밖에 둘 수는 없죠. 토실아, 여기 앉아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 138,
+          "label": "r13_v111_nabi_arrival11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ef89929d1360fea384d09482abaefe4e77f1802a8397dd0efd18c94cb0ef19cc",
+      "uid": "3b189ef3dfd7ee2836916a92",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0043",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0043",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0043",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "누가 데리러 오면 바로 보내지 말고 저하고 확인해 주세요. 돌아와서 직접 데리고 갈게요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 139,
+          "label": "r13_v111_nabi_arrival11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5d2280a5548917467ff9c0064b969a369211042982017d571bc2e84630a0079e",
+      "uid": "f07b6c69457045353decf924",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0044",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0044",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0044",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "알겠어요. 나는 오늘 이 부엌에 있습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 140,
+          "label": "r13_v111_nabi_arrival11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "deef2421fcfdf0b9d120574a2075097d26fb0e9ea056ce3333b7bb52d9946bc9",
+      "uid": "eee0227eefe208fec921ab8d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0045",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0045",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0045",
+      "when": null,
+      "speaker": "토실",
+      "kind": "dialogue",
+      "text": "여기서 기다려?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 141,
+          "label": "r13_v111_nabi_arrival11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "423d56a0a8386cf714f007fb6a294bbc4b782be9a6b3484922239fffc1dfabe2",
+      "uid": "9f8807c17192f24cb6dd6938",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0046",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0046",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0046",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "응. 배고프면 말하고. 심부름은 안 해도 돼.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 142,
+          "label": "r13_v111_nabi_arrival11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "49648bf07d149a2e0117f16d66108978876fcf0d4ee8cbf2e0c6341bfa171f85",
+      "uid": "a33c6fdfab40747e82c6d69c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0047",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0047",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0047",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "나비가 토실의 젖은 겉옷을 의자에 걸고 자리를 준다. 아빠는 아이가 앉은 것과 나비의 수락을 확인한 뒤 다람과 출발한다. 나비가 아직 학교에 도착하지 않은 상태라면 가족도 학교에서 기다렸다가 실제 도착·수락을 확인한다. 보호자를 목록에서 선택했다고 순간 인계되지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0e0ec91a1e3cef4e3385957fbdd940332c68630d6726bf21da7bf43afb6019eb",
+      "uid": "0a5d1b3a4ef3d062b12d090f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0048",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0048",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0048",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "여기서 기다리자. 토실이만 놓고 갈 순 없어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 124,
+          "label": "r13_v111_nabi_waiting11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2d7a3cc1770386bcf3f3c1d91f1aa3d45e0150105e93da5ce067b07d813d42b3",
+      "uid": "08ce8c47b1929e2ce5260813",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0049",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0049",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0049",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "나비 아줌마 오면 가?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 125,
+          "label": "r13_v111_nabi_waiting11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7c50192bc8ee71a366f6a44cf80e35c3acad03e1d64d8c1e9da8499afda062e3",
+      "uid": "9891869241c07ef8c74ee7ce",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0050",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0050",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0050",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응. 부탁하고 나서.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 126,
+          "label": "r13_v111_nabi_waiting11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5a1d03c3c71ab35bdfdace6ff26c901b5c07219596b5cdfd34e486a42c1a52ea",
+      "uid": "b0e43c211c962fa4f3b9cfa2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0051",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0051",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0051",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "토실아, 젖은 겉옷은 여기 걸자. 난 부엌에 있을게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 152,
+          "label": "r13_v111_tosil_safe11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ceaea3c13830cddd8ea98b2a88e1d3a8a1b91e8cf812cba70c8c75fcd81fa117",
+      "uid": "a80c047f104118b09768b8fd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S01_L0052",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S01_L0052",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S01_L0052",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다녀와서 다시 들르겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 153,
+          "label": "r13_v111_tosil_safe11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f943bf9005652b77b261b7ee3d7c77fda45829ac1c4416d19be10d6ff7d1a286",
+      "uid": "c6acd3607a41043970121390",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

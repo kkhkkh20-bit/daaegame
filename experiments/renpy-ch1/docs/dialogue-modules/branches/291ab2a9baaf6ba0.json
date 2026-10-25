@@ -1,0 +1,90 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:405:33",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        24257,
+        24298
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_wf_nubi",
+      "block": "r13_wf_nubi",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:405:33",
+      "when": null,
+      "speaker": "kid_nubi1",
+      "kind": "dialogue",
+      "text": "엄마한테 빨래터 기름 냄새 났어. 엄마가 막 손 씻었어. 계속 씻었어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 405,
+          "label": "r13_wf_nubi",
+          "guards": [
+            "while _wf_left:",
+            "else:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 405,
+      "scene_title": "r13_wf_nubi",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "a0ed06db778102709e187c348e3a7336d2916298234c742baac06262336e5b1d",
+      "uid": "dbdd54c587a9374104ad1a69",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_wf_nubi|rpy_literal|r13_wf_nubi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:406:33",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        24334,
+        24370
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_wf_nubi",
+      "block": "r13_wf_nubi",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:406:33",
+      "when": null,
+      "speaker": "kid_nubi2",
+      "kind": "dialogue",
+      "text": "엄마, 이제 밥 많이 먹을 수 있어? 너울 아저씨가 그랬잖아.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 406,
+          "label": "r13_wf_nubi",
+          "guards": [
+            "while _wf_left:",
+            "else:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 406,
+      "scene_title": "r13_wf_nubi",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "10ea7305f22b2370142a9706d9de19f8a2b1a14593d4451f0e071a5b67fb4936",
+      "uid": "ad2522d07e0d61b50b90b0c6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_wf_nubi|rpy_literal|r13_wf_nubi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

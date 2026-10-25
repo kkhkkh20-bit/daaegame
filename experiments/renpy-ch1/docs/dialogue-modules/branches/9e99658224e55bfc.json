@@ -1,0 +1,122 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_map_b.rpy:109:8",
+      "file": "game/room13_map_b.rpy",
+      "path": [
+        5922,
+        5973
+      ],
+      "origin": "rpy_inventory",
+      "day": 8,
+      "scene": "=",
+      "block": "=",
+      "placement": "literal",
+      "ref": "game/room13_map_b.rpy:109:8",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "그림이 실제로 보이는 곳과 이름표만 누를 수 있게 한다(투명한 귀퉁이는 빠진다).",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_map_b.rpy",
+          "line": 109,
+          "label": "=",
+          "guards": []
+        }
+      ],
+      "line": 109,
+      "scene_title": "=",
+      "source_hash": "02ed13c09b8d575556a1851a1f1c92a8cc441b5b00fe73e8c9745a952cb09409",
+      "baseline_hash": "750f11df7564acc9db7a94991fbe0e25f91e325cbf3addd210077a2bbd16951c",
+      "uid": "6f807814ed7a9ad6fe02b160",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|=|rpy_inventory|=|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_map_b.rpy:136:8",
+      "file": "game/room13_map_b.rpy",
+      "path": [
+        7193,
+        7263
+      ],
+      "origin": "rpy_inventory",
+      "day": 8,
+      "scene": "=",
+      "block": "=",
+      "placement": "literal",
+      "ref": "game/room13_map_b.rpy:136:8",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "가림판: 숨은 장소가 지도에 드러나지 않았을 때만. 판정은 기존 r13_cart_cover_visible 과 같다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_map_b.rpy",
+          "line": 136,
+          "label": "=",
+          "guards": []
+        }
+      ],
+      "line": 136,
+      "scene_title": "=",
+      "source_hash": "02ed13c09b8d575556a1851a1f1c92a8cc441b5b00fe73e8c9745a952cb09409",
+      "baseline_hash": "78362d598b92560c6d9b7ad6542d56871af1505a431c52fa3e05890ac9847d82",
+      "uid": "57e8ac292fcf53332d1e1dfe",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|=|rpy_inventory|=|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_map_b.rpy:142:78",
+      "file": "game/room13_map_b.rpy",
+      "path": [
+        7610,
+        7649
+      ],
+      "origin": "rpy_inventory",
+      "day": 8,
+      "scene": "=",
+      "block": "=",
+      "placement": "literal",
+      "ref": "game/room13_map_b.rpy:142:78",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "흐린 곳은 지금 갈 수 없습니다 · 장소를 고른 뒤 이동을 누르세요",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_map_b.rpy",
+          "line": 142,
+          "label": "=",
+          "guards": [
+            "if region == \"mountain\" and r13_map_locked_nodes(region):"
+          ]
+        }
+      ],
+      "line": 142,
+      "scene_title": "=",
+      "source_hash": "02ed13c09b8d575556a1851a1f1c92a8cc441b5b00fe73e8c9745a952cb09409",
+      "baseline_hash": "68a814da3c2162d51715d9cab3266bf632300ecc4559b497e99be46578417c06",
+      "uid": "ca7128b56c070da614491a0d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|=|rpy_inventory|=|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

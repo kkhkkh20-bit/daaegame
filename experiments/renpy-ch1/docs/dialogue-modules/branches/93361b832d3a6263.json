@@ -1,0 +1,246 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events.rpy:310:8",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        16929,
+        16935
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "r13_ev_c_offer",
+      "block": "r13_ev_c_offer",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:310:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "거절한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 310,
+          "label": "r13_ev_c_offer",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 310,
+      "scene_title": "r13_ev_c_offer",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "7672c6ed8b68f406032277c6accc7a66a3cf0e280df5611277bf5e9991190fcf",
+      "uid": "038b9642a91739a0ab2314bc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ev_c_offer|rpy_menu|r13_ev_c_offer|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:314:8",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        17098,
+        17105
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "r13_ev_c_offer",
+      "block": "r13_ev_c_offer",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:314:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "받아들인다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 314,
+          "label": "r13_ev_c_offer",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 314,
+      "scene_title": "r13_ev_c_offer",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "72660e1c6850b39f78d67b71ea08fc66f10324c457575eae818b21af44c429b1",
+      "uid": "cb0224f77ce3db7abcc4abd4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ev_c_offer|rpy_menu|r13_ev_c_offer|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:317:8",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        17180,
+        17200
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "r13_ev_c_offer",
+      "block": "r13_ev_c_offer",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:317:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "다람이에게 방을 맡기고 받아들인다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 317,
+          "label": "r13_ev_c_offer",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 317,
+      "scene_title": "r13_ev_c_offer",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "1b0d992bfc0395e6acc9fe60d68ad90fe9a6078d9ebeb0cd2ad66a46e32bbf51",
+      "uid": "5f1aff143d813e7df059a15d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ev_c_offer|rpy_menu|r13_ev_c_offer|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:322:8",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        17499,
+        17524
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "r13_ev_c_offer",
+      "block": "r13_ev_c_offer",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:322:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "서리 검사원에게 미리 말해 두고 받아들인다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 322,
+          "label": "r13_ev_c_offer",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 322,
+      "scene_title": "r13_ev_c_offer",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "3dd96ffe7b6197d8c3e3ed311d07cad7437665c671ccf0737df8a2bf8783ec9e",
+      "uid": "49e7621726308a0716aaecfa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ev_c_offer|rpy_menu|r13_ev_c_offer|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:325:8",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        17590,
+        17611
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "r13_ev_c_offer",
+      "block": "r13_ev_c_offer",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:325:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "받는 척하고 13호에 숨어 기다린다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 325,
+          "label": "r13_ev_c_offer",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 325,
+      "scene_title": "r13_ev_c_offer",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "50d657221a0fe46cfc4bd1911f4e2dbade20eb9d515dbba552483bb49f859c49",
+      "uid": "bf7286dc1f524ade66e6311e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ev_c_offer|rpy_menu|r13_ev_c_offer|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:328:8",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        17679,
+        17702
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "r13_ev_c_offer",
+      "block": "r13_ev_c_offer",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:328:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "거절하고, 밤에 지붕 길로 창고에 간다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 328,
+          "label": "r13_ev_c_offer",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 328,
+      "scene_title": "r13_ev_c_offer",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "788aefefb83fde67f2b169aa5293cef992d74f061ee0d4ae33e6b6b3659702af",
+      "uid": "455e443abdfdf95c50f9c6df",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ev_c_offer|rpy_menu|r13_ev_c_offer|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

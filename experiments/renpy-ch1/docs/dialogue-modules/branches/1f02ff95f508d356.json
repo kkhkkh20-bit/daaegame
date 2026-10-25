@@ -1,0 +1,82 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:202:14",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        11044,
+        11103
+      ],
+      "origin": "rpy_literal",
+      "day": 14,
+      "scene": "r13_cv_hall",
+      "block": "r13_cv_hall",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:202:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "명령서. '보호소 이송을 명함.' 아래에 촌장의 뿔 도장. 'ㄹ'의 꼬리가 둥글게 한 바퀴 말려 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 202,
+          "label": "r13_cv_hall",
+          "guards": []
+        }
+      ],
+      "line": 202,
+      "scene_title": "r13_cv_hall",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "205cb1b304097683dcf05a92a111cbb0ae1da8f95237ea7f3e673231636a2a69",
+      "uid": "3e2b87de2700380172e27dbc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|r13_cv_hall|rpy_literal|r13_cv_hall|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:203:14",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        11120,
+        11172
+      ],
+      "origin": "rpy_literal",
+      "day": 14,
+      "scene": "r13_cv_hall",
+      "block": "r13_cv_hall",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:203:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "가방에서 이 마을로 우리를 부른 초대 편지를 꺼냈다. 'ㄹ'의 꼬리가 똑같이 말려 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 203,
+          "label": "r13_cv_hall",
+          "guards": []
+        }
+      ],
+      "line": 203,
+      "scene_title": "r13_cv_hall",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "70f09041fa160e78a561bcae88b039c91c783cbad3eff2a238925886c9c841d0",
+      "uid": "087df74e4800a92e025c969b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|r13_cv_hall|rpy_literal|r13_cv_hall|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

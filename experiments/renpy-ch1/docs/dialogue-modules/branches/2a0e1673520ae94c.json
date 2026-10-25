@@ -1,0 +1,204 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:191:25",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        12840,
+        12893
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_wf_laundry",
+      "block": "r13_wf_laundry",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:191:25",
+      "when": null,
+      "speaker": "resident_nubi",
+      "kind": "dialogue",
+      "text": "아이고, 손님. 빨래 맡기시게요? ……오늘은 솥이 덜 데워져서요. 기름도 아껴 써야 하고요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 191,
+          "label": "r13_wf_laundry",
+          "guards": []
+        }
+      ],
+      "line": 191,
+      "scene_title": "r13_wf_laundry",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "9ffd216d4921a16225be4848f3628cc2fc67eda0d38616b7e2c840e84100ddab",
+      "uid": "95f37ad9b99c44398fd2c401",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_wf_laundry|rpy_literal|r13_wf_laundry|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:198:25",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        13189,
+        13222
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_wf_laundry",
+      "block": "r13_wf_laundry",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:198:25",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "학교 뒤 장작 창고에 표 없는 애들이 산다는 건 아시오?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 198,
+          "label": "r13_wf_laundry",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 198,
+      "scene_title": "r13_wf_laundry",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "8dbc591f9d32cf0eaa9615fe4cfb9dc6fb507e2d4919b43dac37b0c4dab4184d",
+      "uid": "b97fa253c7e3f139d44c6895",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_wf_laundry|rpy_literal|r13_wf_laundry|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:199:25",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        13250,
+        13287
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_wf_laundry",
+      "block": "r13_wf_laundry",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:199:25",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "그 애들이 먹는 밥, 그 애들이 때는 장작. 다 누구 몫이겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 199,
+          "label": "r13_wf_laundry",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 199,
+      "scene_title": "r13_wf_laundry",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "096b91759e0f4bbff4ec1503e13367dbd7c9e5e9975b5fb2890cec647fb4c593",
+      "uid": "d791d46fa079dd00dd973d4d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_wf_laundry|rpy_literal|r13_wf_laundry|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:200:25",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        13315,
+        13357
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_wf_laundry",
+      "block": "r13_wf_laundry",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:200:25",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "그 애들이 【줄면】, 그 몫은 당신 집으로 가오. 명단은 내가 손보겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 200,
+          "label": "r13_wf_laundry",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 200,
+      "scene_title": "r13_wf_laundry",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "72423374aa603311df72d7217b48369f8e0474b0f30c4e18dc9cf96fd8ab8bf2",
+      "uid": "8dc0d89d2c442861b90cf182",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_wf_laundry|rpy_literal|r13_wf_laundry|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:202:25",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        13438,
+        13463
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_wf_laundry",
+      "block": "r13_wf_laundry",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:202:25",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "그건 내 알 바 아니오. 이번 주 안이오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 202,
+          "label": "r13_wf_laundry",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 202,
+      "scene_title": "r13_wf_laundry",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "c95e0411be8dda4506fd5cf18e0d152e3d87208c8a8f1171c5b7f0ada10da19c",
+      "uid": "669beddeb8e65745ab9c0d00",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_wf_laundry|rpy_literal|r13_wf_laundry|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

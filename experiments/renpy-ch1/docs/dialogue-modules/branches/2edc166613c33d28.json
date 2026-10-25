@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events.rpy:471:22",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        24763,
+        24807
+      ],
+      "origin": "rpy_literal",
+      "day": 2,
+      "scene": "r13_ev_yeoni_goods",
+      "block": "r13_ev_yeoni_goods",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:471:22",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "목도리와 장갑은 돌아왔다. 하지만 여니는 그 뒤로 내 쪽을 쳐다보지 않았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 471,
+          "label": "r13_ev_yeoni_goods",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 471,
+      "scene_title": "r13_ev_yeoni_goods",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "a88ee07da41e1123c6342cf05a3f7dc2262901401b49846920f4da9cea145ff7",
+      "uid": "b2fa5dfab1245f2b6ced67c0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_ev_yeoni_goods|rpy_literal|r13_ev_yeoni_goods|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:475:22",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        25022,
+        25052
+      ],
+      "origin": "rpy_literal",
+      "day": 2,
+      "scene": "r13_ev_yeoni_goods",
+      "block": "r13_ev_yeoni_goods",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:475:22",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "광장 쪽에서 누군가 혀를 끌끌 차는 소리가 들렸다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 475,
+          "label": "r13_ev_yeoni_goods",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 475,
+      "scene_title": "r13_ev_yeoni_goods",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "99c04af3b50229c695313673ede2dc18d3fafb7dddb7a1f839dfae9e0d269f89",
+      "uid": "269f5040bdecf40ac5432188",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_ev_yeoni_goods|rpy_literal|r13_ev_yeoni_goods|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

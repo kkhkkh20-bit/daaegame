@@ -1,0 +1,129 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_OP_D07_14",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "buri_tongs7",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "buri_tongs7",
+      "block": "buri_tongs7",
+      "placement": "blocks",
+      "ref": "buri_tongs7",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "부리야, 집게 하나만 빌릴 수 있을까? 학교 난로 재를 좀 치우려고.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 68,
+          "label": "r13_v111_free_day7_pick",
+          "guards": [
+            "elif n==6:"
+          ]
+        }
+      ],
+      "scene_title": "buri_tongs7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "3f1522b2e155ddab7679533f64f67a3371a2b84faf2d38496f890c0483155b54",
+      "uid": "154b5813140c4c83ed27f228",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|buri_tongs7|patch|buri_tongs7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OP_D07_15",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "buri_tongs7",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "buri_tongs7",
+      "block": "buri_tongs7",
+      "placement": "blocks",
+      "ref": "buri_tongs7",
+      "when": null,
+      "speaker": "부리",
+      "kind": "dialogue",
+      "text": "할아버지 집게예요. ……오늘 안에만 돌려주세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 68,
+          "label": "r13_v111_free_day7_pick",
+          "guards": [
+            "elif n==6:"
+          ]
+        }
+      ],
+      "scene_title": "buri_tongs7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "166c2786b7fbbdb08e67a5e335e4c5522e0b1cadc87a7055e787e7337626a3a2",
+      "uid": "c66c30ebfd8ab84bb9e9f64d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|buri_tongs7|patch|buri_tongs7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OP_D07_16",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "buri_tongs7",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "buri_tongs7",
+      "block": "buri_tongs7",
+      "placement": "blocks",
+      "ref": "buri_tongs7",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "부리가 공구판에서 집게를 내린다. 손잡이에 감은 천이 닳아 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 68,
+          "label": "r13_v111_free_day7_pick",
+          "guards": [
+            "elif n==6:"
+          ]
+        }
+      ],
+      "scene_title": "buri_tongs7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "19d10543029685304651e3d71b366719f8eaabdc7c806d622bde23afeb5dc036",
+      "uid": "96f511ffb0f80f0f29060920",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|buri_tongs7|patch|buri_tongs7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,1011 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D12_S05_L0014",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "replace",
+        "MS14_D12_S05_L0014",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D12_S05_L0014",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "문 앞 난로엔 불이 붙었어. 안쪽으로 옮길 장작은…….",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1705,
+          "label": "r13_v111_lights12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-5. 너무 밝은 창문",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "e91cc44010f01b852a833c7d004fdb6f4e8348569a211795950927712d0de02f",
+      "uid": "7fca130c96dc0ccbdf04bf01",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S05_L0027",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "replace",
+        "MS14_D12_S05_L0027",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D12_S05_L0027",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "장작은 왔어. ……아직 불 붙일 사람이 필요해.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1646,
+          "label": "r13_v111_pre_no_lights12",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1711,
+          "label": "r13_v111_no_lights12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-5. 너무 밝은 창문",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "8e179cd2b29bbb7f3bb91d16fa270594512d28c9f8f1fe7fa35a960fabd510a8",
+      "uid": "04a29cb019518ff91d969870",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S05_L0028",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "replace",
+        "MS14_D12_S05_L0028",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D12_S05_L0028",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "지금은 안쪽부터 봐 줘. ……여기 일이 생겼어.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1647,
+          "label": "r13_v111_pre_no_lights12",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1712,
+          "label": "r13_v111_no_lights12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-5. 너무 밝은 창문",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "d779aac7fc4ae619618afb2a3ee67414def977f6209c83329beef5dd56c7f9cc",
+      "uid": "0e8393df3d5c8007d37ced07",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S05_L0002",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "replace",
+        "MS14_D12_S05_L0002",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D12_S05_L0002",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "……그건 안 됩니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1658,
+          "label": "r13_v111_aftermath_late12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-5. 너무 밝은 창문",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "bcaa24101fb1fe4e629689317a09345e8b0db925c4fc3600c876a77800d743b8",
+      "uid": "82d4757b41ee0ced47b4cdf4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S05_L0003",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "replace",
+        "MS14_D12_S05_L0003",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D12_S05_L0003",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "그럼 나는…….",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1659,
+          "label": "r13_v111_aftermath_late12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-5. 너무 밝은 창문",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "5aeecea29d341b1886f0d0ac074808ebbf2e582134802636f81c8dd67bdd3abf",
+      "uid": "f904436e55d5c3844cf52855",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S05_L0004",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "replace",
+        "MS14_D12_S05_L0004",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D12_S05_L0004",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "앉아요. ……거기 말고, 문 옆에.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1660,
+          "label": "r13_v111_aftermath_late12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-5. 너무 밝은 창문",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "3898015243b452d5eba8b6a87184c3135d3812ff67fa9e51f1145495bfbb2ca0",
+      "uid": "7739875c9e46ab43c17428e2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S05_L0006",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "replace",
+        "MS14_D12_S05_L0006",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D12_S05_L0006",
+      "when": null,
+      "speaker": "새미",
+      "kind": "dialogue",
+      "text": "선생님.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1661,
+          "label": "r13_v111_aftermath_late12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-5. 너무 밝은 창문",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "488812dbd9bbfef5392eb3fa97e27d639e94866406c4202ed58fb282ac0132fd",
+      "uid": "11f258ddd09ba3b583edb27d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S05_L0007",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "replace",
+        "MS14_D12_S05_L0007",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D12_S05_L0007",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "응.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1662,
+          "label": "r13_v111_aftermath_late12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-5. 너무 밝은 창문",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "8025c713f26164a6787608a6cbce1b8ac0cfe963a42e1416578db60193e95224",
+      "uid": "f11d78248d9c78917d4d7e7c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S05_L0008",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "replace",
+        "MS14_D12_S05_L0008",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D12_S05_L0008",
+      "when": null,
+      "speaker": "새미",
+      "kind": "dialogue",
+      "text": "나…… 남겼다고 혼내려고 했어?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1663,
+          "label": "r13_v111_aftermath_late12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-5. 너무 밝은 창문",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "c2aff716eac7dc80705f3813721e4f2705f729c6b45f168364eef9024fb4615d",
+      "uid": "08211c127099edf17641822b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S05_L0009",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "replace",
+        "MS14_D12_S05_L0009",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D12_S05_L0009",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "아니.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1664,
+          "label": "r13_v111_aftermath_late12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-5. 너무 밝은 창문",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "f05525bb2385ed4397718fde4e64cfb5e0cd4a6ecaaf74e5f1f5f23fdf63599f",
+      "uid": "26bebf6ecf0947c3f34c7cb3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S05_L0010",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "replace",
+        "MS14_D12_S05_L0010",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D12_S05_L0010",
+      "when": null,
+      "speaker": "새미",
+      "kind": "dialogue",
+      "text": "써서 못 먹었어. 이따 배고프면 먹으려고 뒀는데. ……내일도 밥 줘?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1665,
+          "label": "r13_v111_aftermath_late12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-5. 너무 밝은 창문",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "07381925e5b1be5544d27b2631d106d000a86ce4b57dc168c9d4ed1f4f0e86a3",
+      "uid": "9fb20b052e83a726f149083a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S05_L0012",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "replace",
+        "MS14_D12_S05_L0012",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D12_S05_L0012",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "응. 내가 줄게.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1666,
+          "label": "r13_v111_aftermath_late12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-5. 너무 밝은 창문",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "dc2209e2db46cf26fb1082e55cd9567ca3c38ae0633eda4af75621d21134e3ee",
+      "uid": "5719a7613dc3d387d5b38681",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S05_L0018",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "replace",
+        "MS14_D12_S05_L0018",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D12_S05_L0018",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "저 의자…… 창가 말고 안쪽으로요. 바람 들어오니까.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1672,
+          "label": "r13_v111_aftermath_late12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-5. 너무 밝은 창문",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "2b7334c630f2cdb111af94d5ef32a28786ae33a149c58b0998e90ce37b6c41b2",
+      "uid": "dc57e50708e214ee2d76ad43",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S05_L0019",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "replace",
+        "MS14_D12_S05_L0019",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D12_S05_L0019",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "……내가 옮길게요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1673,
+          "label": "r13_v111_aftermath_late12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-5. 너무 밝은 창문",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "bb9b7abed3e3d00409e266ae1ddcc2f223813c9c0e38760deb5d51e98bc3fa83",
+      "uid": "72975172e4bc7e72244911b0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S05_L0020",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "replace",
+        "MS14_D12_S05_L0020",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D12_S05_L0020",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "얇은 담요는 밑에 깔고. 그 애는 바닥이 차면…….",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1674,
+          "label": "r13_v111_aftermath_late12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-5. 너무 밝은 창문",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "0f6aaf6d117275a5600fbeedc799a8a377157423940f2b61fa049f1cc5b24f6a",
+      "uid": "354121b98a6b001fb4ba8b5d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S05_L0030",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "replace",
+        "MS14_D12_S05_L0030",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D12_S05_L0030",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "내가 맡으면 여기서 지켜보겠소. 아이들 곁엔 못 가게 하겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1680,
+          "label": "r13_v111_aftermath_late12",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "scene_title": "장면 12-5. 너무 밝은 창문",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "ead7857e709c17500c9c7a434be26e86f591eb59eee3ad5f7b5f8cd4ee90b757",
+      "uid": "d90813236397820db1c1007b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S05_L0031",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "replace",
+        "MS14_D12_S05_L0031",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D12_S05_L0031",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "내게 넘기면 공동 이송 명단에 올리겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1681,
+          "label": "r13_v111_aftermath_late12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-5. 너무 밝은 창문",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "78b346ccb16292ea4bead72730fafd2c450658d263ec0ac8ab6541402c72888c",
+      "uid": "b02d0c3e1ad52cfa11db8127",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S05_L0033",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "replace",
+        "MS14_D12_S05_L0033",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D12_S05_L0033",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "아이들 진료하는 곳 바깥에서, 내가 맡겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1691,
+          "label": "r13_v111_teacher_guard_late12",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "scene_title": "장면 12-5. 너무 밝은 창문",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "13ce7285625ef0a92d599804d284decee037026bffd86276f83b1b8f04a1d87c",
+      "uid": "57aa6b463efad06d19026ee4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S05_L0036",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "replace",
+        "MS14_D12_S05_L0036",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D12_S05_L0036",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "……어디로요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1698,
+          "label": "r13_v111_teacher_neoul_late12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-5. 너무 밝은 창문",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "a1933e3b1f741ba362d37f17e4062b3ff4c4fe3a7e898a34917d9908476be26c",
+      "uid": "eeee61acea89d29573309558",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S05_L0016",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "replace",
+        "MS14_D12_S05_L0016",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D12_S05_L0016",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "도담아. 불 켜졌어. ……일어나 봐. 저기 좀 봐.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1706,
+          "label": "r13_v111_lights12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-5. 너무 밝은 창문",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "e7a6a4224f7c120a404973943879ce56e091f829e00a252cc7de2a801cedc714",
+      "uid": "4a19dc3a7cafa66a66480d4c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S05_L0022",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "replace",
+        "MS14_D12_S05_L0022",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D12_S05_L0022",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "……불이 먼저 왔으면 좋았는데.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1716,
+          "label": "r13_v111_child_light12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-5. 너무 밝은 창문",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "be49fe4111ee3473495ef580b0378f93f19093af3acc3fba8d728263a9857717",
+      "uid": "14db6a55627daf0c808911c4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S05_L0024",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "replace",
+        "MS14_D12_S05_L0024",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D12_S05_L0024",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마가…… 늦어서 그런 거야?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1718,
+          "label": "r13_v111_child_light12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-5. 너무 밝은 창문",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "68453dbd50ef2b58d8897963f900e27b0cb94abc0e1676e7149b3270ef66de19",
+      "uid": "b8a3d18a9268f60180e52c1f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S05_L0025",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "replace",
+        "MS14_D12_S05_L0025",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D12_S05_L0025",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아니야. 약을 넣은 건 선생님이야.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1719,
+          "label": "r13_v111_child_light12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-5. 너무 밝은 창문",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "4d5d2f76b30cc72e03203e391381aa09a37b94d53508387f8e923c8a1e5087ed",
+      "uid": "625e7463d9da977dc99e7dae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S05_L0039",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "replace",
+        "MS14_D12_S05_L0039",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D12_S05_L0039",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "도담아. 아빠 여기 있어. ……눈 좀 떠 봐.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1723,
+          "label": "r13_v111_child_dark12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-5. 너무 밝은 창문",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "aee7f8484c20f5533240b1778413f0a8c74a1188477a796b5d380102db0bf48b",
+      "uid": "0115963c2cade8e2073c4a74",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S05_L0040",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "replace",
+        "MS14_D12_S05_L0040",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D12_S05_L0040",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마가…… 늦어서 그런 거야?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1724,
+          "label": "r13_v111_child_dark12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-5. 너무 밝은 창문",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "68453dbd50ef2b58d8897963f900e27b0cb94abc0e1676e7149b3270ef66de19",
+      "uid": "5c9edcda4bf28e1dd359ae84",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S05_L0041",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "replace",
+        "MS14_D12_S05_L0041",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D12_S05_L0041",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아니야. 약을 넣은 건 선생님이야.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1725,
+          "label": "r13_v111_child_dark12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-5. 너무 밝은 창문",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "4d5d2f76b30cc72e03203e391381aa09a37b94d53508387f8e923c8a1e5087ed",
+      "uid": "c01b2475d5e60fb210c7587f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

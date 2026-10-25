@@ -1,0 +1,3471 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D03_S05_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "너울, 초롱, 톡, 우박, 실룩, 백 부인이 모인다. 실룩의 아이들은 부리와 공방 안에 있다. 다람은 아빠 곁.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "aef480f30c33cdc411ef8d7227b3a66917a060789eefad5990361a80ea5c5468",
+      "uid": "91c0225cd2a4b12238d461a9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0002",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "등을 연 사람이 톡이라는 건 변하지 않소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1082,
+          "label": "r13_v111_trial_open",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "82b409400b4424cd5f638a590fb1254f1c0ef94c5c42cc3685b0eda65a2d0e1d",
+      "uid": "1f4395fcd349722f86875a26",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0074",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0074",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0074",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "조건을 만족하는 다음 블록으로 진행한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fcff34e55d9bfec494fe81e2f2790dca27c3b738b9e9c6f38165c55b19b55973",
+      "uid": "9e1fd18d520099dfe4adde63",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0003",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "반박: 수리와 반출을 분리한다. 공구 대여와 점검 시각 제시.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "14480d53ea71a7d6f35541baecdcc0e20399635f74ab3281274cc988fa51191f",
+      "uid": "886733f0cc1b96ceb7a8c63a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0004",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "톡 씨가 고치고 우박 씨가 잰 뒤에도 돌은 있었습니다. 초롱 씨가 봤어요. 톡 씨만 잡아선 안 끝납니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1095,
+          "label": "r13_v111_trial_repair_ok",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a4e32913d6a3cefcc53f2c8b28afcd3cf4d5f31e2a68f3fac48d845227b04d04",
+      "uid": "d6d13351c35c80d53ac74253",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0005",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "그럼 마지막으로 연 사람이 누군데?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1095,
+          "label": "r13_v111_trial_repair_ok",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "repair_won_with_e10",
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2e4786a0f7135d695a3908a7a227dae78790d6dc3a3eb1450106a5d34f32ae30",
+      "uid": "f7f4fbe90ac88e2526ff22af",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0075",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0075",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0075",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "조건을 만족하는 다음 블록으로 진행한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fcff34e55d9bfec494fe81e2f2790dca27c3b738b9e9c6f38165c55b19b55973",
+      "uid": "6b931f2515701504ff91779b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0006",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "제시: 백 부인에게서 확인한 3번 돌과 매입 장부.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1c22a1b9a66795e9c94ad6110971a9367dc3ac9b5e1c59fd2f493b0e76e9b26b",
+      "uid": "02e262eae6e92dbbff92066b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0007",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이 돌은 실룩 씨가 팔았습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1106,
+          "label": "r13_v111_trial_sale_ok",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8edb73048350831a3f7ca04fc72b086a67135a5a97f3b15e084adb051f212bc5",
+      "uid": "b9b3cdfe1b847c866238433e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0008",
+      "when": null,
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "주워서 팔았을 수도 있잖아요. 등에서 꺼낸 사람을 잡아야지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1106,
+          "label": "r13_v111_trial_sale_ok",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d287adba5f2beae4a85f51f5b34826169767f9aa9aabee088927354de932f7f5",
+      "uid": "935e0369844140068bd42ba9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0009",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 매입 장부를 내려놓았다. 아까 우박에게 소리를 지를 때처럼, 말이 먼저 달려 나가려 했다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1106,
+          "label": "r13_v111_trial_sale_ok",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3016ef023b90e9aa635f52965eec204abf6acc7f0998b7ea0b8e543f37928138",
+      "uid": "705b842cdef33f04163c5fab",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0010",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "추리 목표 표시: ‘실룩이 팔았다’와 ‘실룩이 등 안에서 가져갔다’를 구별한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cf760172c8c46399395707db1cdf5bf2a52a13eef021f0184d155902d4f801da",
+      "uid": "19ab7aaa22bd2c5c6a91322e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0076",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0076",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0076",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "조건을 만족하는 다음 블록으로 진행한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fcff34e55d9bfec494fe81e2f2790dca27c3b738b9e9c6f38165c55b19b55973",
+      "uid": "1e3c597dfe08e6370194525f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0011",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "첫 연결: 안쪽 받침 파편 ↔ 실룩 칼의 깨진 끝.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5dfa10c7313d5c9f831fe149af6951290fecfee3f3ca1d4054610b238221d234",
+      "uid": "c52ea716872ed6a315ad7132",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0012",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "칼을 다시 보여 주십시오. 이 조각이 나왔던 곳은 덮개가 아니라 돌받침 아래입니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1133,
+          "label": "r13_v111_knife_fit",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6c74beafd1e6079b2dfa242b35ede23849acc81a9c4acfc9279fbcb0fde323ec",
+      "uid": "0e1c01ad60ff07ad6cc03a36",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0013",
+      "when": null,
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "같은 칼은 얼마든지…….",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1133,
+          "label": "r13_v111_knife_fit",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d50372efda3fa71005fc08140700db03748bf29381d0fecd7e0215998e1f95f2",
+      "uid": "a0e718db376f8c82897e4f62",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0014",
+      "when": null,
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "같은 제품인지 말고, 깨진 자리를 봐요. 거기까지 같을까.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1133,
+          "label": "r13_v111_knife_fit",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a790b71dd3b64edc3a2bc514f8200ca84d2d4b1b5b8d6ed5eb25c74ce6658216",
+      "uid": "ce522d1bb5778488f564c41f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0015",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "실룩이 탁자에 칼을 놓는다. 톡이 양쪽을 확대해 보이고, 파편을 결손부에 가볍게 맞춘다. 들쭉날쭉한 파단면과 날의 연마선이 연속된다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "24b0dc2534a5decffd839b45739cff1d8e1bf6d997e75bd728cbb5d30a4d6956",
+      "uid": "16a02ca093f64f6cc627c5ec",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0016",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "맞습니다. 돌받침 안쪽에서 나온 게 이 칼끝이에요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1133,
+          "label": "r13_v111_knife_fit",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b53d27b4d83241e8fc2a73458345d29c861021270f8aebebc19787443255e8da",
+      "uid": "6dae127c74aa87e8a136b19d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0017",
+      "when": null,
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "그날 새벽, 초롱이 지나간 뒤에 내가 거기 간 건 맞아요. 바깥 걸쇠가 벌어져서 이 칼로 밀어 닫아 줬어요. 돌은 길에서 주웠고. 닫아 준 게 죄예요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1133,
+          "label": "r13_v111_knife_fit",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "96a248badf8808fb279d04752bf0ee13ecbdf8d7cb4d62ef86590b79098e7053",
+      "uid": "f67d9d5ae32fde0b78c38ac2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0018",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "진술 고정: ‘그 새벽 초롱 순회 뒤 3번 등에서 직접 이 칼로 바깥 걸쇠만 밀어 닫음. 안의 돌은 건드리지 않음.’",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f9e1c950cd991e21b82ce411e9a6d03188503e4bdb0be5da34c071307d7721ed",
+      "uid": "3f1b473f7c0f9cc3a37df735",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L9101",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L9101",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L9101",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "동의받고 실룩 칼과 파편을 맞췄다. 깨진 단면과 날의 연마선이 이어진다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1135,
+          "label": "r13_v111_knife_fit",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0ae993942821128b5f7ae1c61d2b603605976422eaf840f54a7b5bd6d386c556",
+      "uid": "f4719c7753b8e73797b2c38a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L9102",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L9102",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L9102",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "실룩: 초롱 순회 뒤 이 칼로 3번 등의 바깥 걸쇠만 닫았다. 안의 돌은 건드리지 않았고 길에서 주웠다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1135,
+          "label": "r13_v111_knife_fit",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b6f6a83ce28ebbe43789c2744e47dfa5959a5e49321929d8f84ff103b526c3ee",
+      "uid": "513b321986fb0398447737a7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0077",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0077",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0077",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "조건을 만족하는 다음 블록으로 진행한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fcff34e55d9bfec494fe81e2f2790dca27c3b738b9e9c6f38165c55b19b55973",
+      "uid": "ae82e908aa3350bea2e89f3c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0019",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "반박 조작: 바깥 걸쇠 자리와 D03S02에서 확인한 안쪽 돌받침 파편 위치를 구별한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9e3f949446332504883e802a1619a8b8a2ac4ca1faf28054d8dcbe8b0c60c7b0",
+      "uid": "55b736efaad17e3a2767a648",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0020",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "여기, 바깥 걸쇠에 칼을 댔다고 하셨습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1156,
+          "label": "r13_v111_trial_latch_ok",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c979eebb986641c42cccc9f5d75ae22e6063d02d5c35f54fd3e2805ea1cf0035",
+      "uid": "a9a22600522fd1cf2488e233",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0021",
+      "when": null,
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "걸쇠를 닫을 땐 날 끝이 이 바깥 판에 막혀요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1156,
+          "label": "r13_v111_trial_latch_ok",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c18f5c24566d7abbff1098ab51eb380d822117ccd473daa89bed3fd272bbe529",
+      "uid": "8c8a6657c906b6d170604c02",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0022",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "톡이 빈 등 앞에서 넓고 무딘 공구를 바깥 걸쇠에 대 본다. 내부 받침에 닿지 않는다. 이어 돌받침 옆 지렛대 틈을 가리킨다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "34ef069d407680071cc9053406f48a8372743c6ff555c98a8d8da0c71138938b",
+      "uid": "cb3aa99efcd632acb29a6698",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0023",
+      "when": null,
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "파편이 박힌 곳은 안쪽입니다. 덮개를 열고, 돌 밑으로 날을 넣어 이쪽으로 젖혀야 해요. 닫는 힘으로는 이 흠이 안 나요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1156,
+          "label": "r13_v111_trial_latch_ok",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b682a4664292b527e05592db84dfe37e16d217b1b6efc181c1cc710c4c2fa769",
+      "uid": "eb44ba6834746df8ac41ccb6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0024",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "초롱 씨가 받침을 털었을 땐 조각이 없었어요. 그 뒤에 이 칼끝이 돌 밑에서 부러졌습니다. 그때 칼을 쓴 건 본인이라고 하셨죠.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1156,
+          "label": "r13_v111_trial_latch_ok",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "57cf60dcf210085f5be260614e0359a9628daee845f6a66c29f5875e1c9f6c04",
+      "uid": "90cd9937e407e05e31c3394e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0025",
+      "when": null,
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "그래도 내가 판 돌이 그 돌이라는 건…….",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1156,
+          "label": "r13_v111_trial_latch_ok",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "659ed195c541d7f013b950d649671e9a1e67b2fbf068dae103595a0c7f17bcd7",
+      "uid": "ec808a3f3e22cbf5c70bee6e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0078",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0078",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0078",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "조건을 만족하는 다음 블록으로 진행한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fcff34e55d9bfec494fe81e2f2790dca27c3b738b9e9c6f38165c55b19b55973",
+      "uid": "6855f0e2ccf5b7bb771a86fb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0026",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "마지막 연결: 돌 3의 각인·금 방향 표시 ↔ 백 부인이 인수한 실제 돌.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fbfe06c36d6b63b015e1bab56ad0493b2193865e9f707985a75c9673f483ced2",
+      "uid": "ea96b91fc8a0a72f9bb782b2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0027",
+      "when": null,
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "번호와 금 방향 표시 둘 다 내가 새긴 거예요. 이 받침의 돌입니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1167,
+          "label": "r13_v111_trial_stone_ok",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "70fcb03518c47b18209632703456179f763e990a10a3cd40bf5401079ff13811",
+      "uid": "7217d6664cf75c1a94fbcba5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0028",
+      "when": null,
+      "speaker": "백 부인",
+      "kind": "dialogue",
+      "text": "그날 새벽 실룩 씨가 가져온 걸 그대로 보관했어요. 다른 돌하고 바꾸지 않았습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1167,
+          "label": "r13_v111_trial_stone_ok",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "55570954c98f3e69f3110b92e350d15ea153338baa7eda4098ac6580fea8b7ec",
+      "uid": "7accb5d109e72c56828ecf45",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0029",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "걸쇠만 닫았다는데 칼끝은 돌 밑에 있고, 그 돌을 판 장부도 있습니다. 길에서 주웠다는 말이 어떻게 맞습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1167,
+          "label": "r13_v111_trial_stone_ok",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3b4d33edddf68071e7ed003aa299cd0ec7ec2e88b4de83359192d3106cd7cdc1",
+      "uid": "6df3799e408b8eb46c4af373",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0030",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "초소 쪽에서 온 사람이 탁자 앞에 섰다. 실룩이 칼을 집으려 하자, 그가 천을 접어 칼과 파편 앞을 가렸다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1175,
+          "label": "r13_v111_badugi_arrives",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4aa024a23afc293cedf05674893fa93f7fef403b6f05f3fc92570ced26f96d97",
+      "uid": "807bf74c03753cd073d8007a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0031",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "바둑이의 이름표를 표시한다. 강제 자기소개는 없다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ac57115f8d88fbde2b3418a536c34bf5356634f8c93b5afa3b92dff190bf185d",
+      "uid": "62eb22bc78ea40c275fb5316",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0032",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "확인 끝날 때까지 여기 둡시다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1175,
+          "label": "r13_v111_badugi_arrives",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "656b29eb84cc97b09bbdd68b7828ece531e23ad165e9076a9bf7b2bfa2b257f1",
+      "uid": "6171f81fcfc1955c372d0a9f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0033",
+      "when": null,
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "……아이들 앞에서는 하지 마요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1175,
+          "label": "r13_v111_badugi_arrives",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b2e86ddf5ef5f1d85bfd29f8adc3970bdf828a04068d51a922f89d6702db01d3",
+      "uid": "e0b4c948143aaa04bef14bd8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0034",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아이들은 공방에 있습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1175,
+          "label": "r13_v111_badugi_arrives",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4848463446662f8bb9e7e6d3fb0694c851f6198b41472c9a82c22848169fe3c1",
+      "uid": "8aaa12983ab20a613f9e3d2b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0035",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "실룩의 자백 없이 반출 행위 증거가 성립한다. 뒤의 감정 대사는 인정 여부와 별개다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d0538455ff0ab785798a9d5ae1a5fc96ab753da0cf1b6175144d4e83b5e938b1",
+      "uid": "60bb59fcd9cfae9fc35aa576",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0036",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "자던 사람은 등 안을 못 봅니다. 따뜻한지 믿고 누워 있는 거예요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1175,
+          "label": "r13_v111_badugi_arrives",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "999e5d8b8768533d8a65449fb64c5f2512316f20c9e6e371bb6444e82d6e65ff",
+      "uid": "5e32ddf04aadaf749d62d2a0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0037",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0037",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0037",
+      "when": null,
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "죽을 줄은 몰랐어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1192,
+          "label": "r13_v111_trial_dead",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3aeb2e9cc2047c7e9cd95cab545e10045c509cb569133789532698b34f71e716",
+      "uid": "a1bb2ebdac569c8952baf87f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0038",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0038",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0038",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "피코 씨는 자고 있었습니다. 돌이 없어진 뒤에도.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1192,
+          "label": "r13_v111_trial_dead",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0ab88d080b5836911e9cf549fc7d3619a37a93f960b19480e06869960f7abac3",
+      "uid": "539972111c6f66e3e44ff7d2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0039",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0039",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0039",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "피코 씨는 다른 데서 잤습니다. 하지만 당신이 옮겨 준 건 아닙니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1186,
+          "label": "r13_v111_trial_alive",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1416459230e57794836403c02742226988a7f711ed2c5c7030951b6848e7315c",
+      "uid": "2aeac4f03ed915f5c40c673b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0040",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0040",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0040",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "실룩은 공방 문만 보았다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1198,
+          "label": "r13_v111_trial_choices",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": [
+          "lamp_lose"
+        ]
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2e9446a221472905d9479a58a50c91ed6fb0dbd4581f20d306af225c4f7d96f6",
+      "uid": "90901d0d54b7498cf2842f76",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0041",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0041",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0041",
+      "when": null,
+      "speaker": "백 부인",
+      "kind": "dialogue",
+      "text": "훔친 사람도 나왔으니 내 거래까지 늘어놓지는 맙시다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1198,
+          "label": "r13_v111_trial_choices",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "lamp_partial",
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e2536310e2838ec2c6056000caaddbc24592a799a6e62256750c177050aedcaa",
+      "uid": "bc18ec31d93015d21eaec100",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0042",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0042",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0042",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "3번 돌은 돌려주세요. 나머지 둘은 어디 것인지 모르니 두겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1198,
+          "label": "r13_v111_trial_choices",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "90ae961f7fd3246c9754b66ffefd1694f3edfde2165ba4ebd5c5b82c5b66898e",
+      "uid": "8dd046d21e273729d1b24624",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0043",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0043",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0043",
+      "when": null,
+      "speaker": "백 부인",
+      "kind": "dialogue",
+      "text": "내 돈은요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1198,
+          "label": "r13_v111_trial_choices",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5b0bbe045c13d539fc5f60cff758bd516d52ae51f2e19f0751d0197d406b9f4e",
+      "uid": "50251b6d8ecf1d2eae1d34cc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0044",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0044",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0044",
+      "when": null,
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "갚을게요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1198,
+          "label": "r13_v111_trial_choices",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": [
+          "lamp_lose",
+          "lamp_lose"
+        ]
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2e5e5f73d9032847a92b4e2ca6664304c0796529cd722e6daff799c308bccfad",
+      "uid": "d16b318fe2e39f4fa99ae24b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0045",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0045",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0045",
+      "when": null,
+      "speaker": "백 부인",
+      "kind": "dialogue",
+      "text": "언제?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1198,
+          "label": "r13_v111_trial_choices",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": [
+          "lamp_lose"
+        ]
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b040d1090ce14c1d6d1804fbd5d1b10218013f1abead0ac5914f572d46c8b32d",
+      "uid": "38b96f685de38b9bb65320e1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0046",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0046",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0046",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "아무도 바로 말하지 않았다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1198,
+          "label": "r13_v111_trial_choices",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "65346d6f91105b49d8ff99bc1bbc2ec513fbd5a255adfa1b5876174a8c075a41",
+      "uid": "9457c53f68b3f033df867375",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0047",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0047",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0047",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "선택 결정. 공공 돌 반환 요구와 실룩 신병 처리를 별도로 고른다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "aad036b8bc993118b1fc67e54b9a3e0ff8b71a3af447c01db09b086779bc9a9a",
+      "uid": "ac9e2f33e4fe95eb9bd85345",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0048",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0048",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0048",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "3번 돌은 어떻게 할까?",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1198,
+          "label": "r13_v111_trial_choices",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "74c948c625f0e7ed3f016e9fe0bd81813dbf58002444768960ff73373a912e22",
+      "uid": "d79e9598eb66c68f05141e27",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0049",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0049",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0049",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "확인된 3번 돌은 돌려놓읍시다. 누가 주고받았는지도 적어 주세요. 돌값은 따로 따지고요.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1216,
+          "label": "r13_v111_stone_return",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f75519dd3f1f030a8255685527ad125d59e00624153814b095c3e86554418a77",
+      "uid": "41caac3790eee06433d163ba",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0050",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0050",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0050",
+      "when": null,
+      "speaker": "백 부인",
+      "kind": "dialogue",
+      "text": "하나요. 나머지 두 개까지 손대지 말아요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1216,
+          "label": "r13_v111_stone_return",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4bffcacb8d0c4b2178c73fcb2cbd2a45448c4347dfcca9457530e308bc0ac599",
+      "uid": "63632c71129014df70417b40",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0051",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0051",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0051",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "3번 돌 하나. 내가 적었소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1216,
+          "label": "r13_v111_stone_return",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "163fdc82112fc267e2b155130ace4d1ab02f95311dcb8f538d236a0fe82d8f24",
+      "uid": "5b4abe2c6201f2da7b7a79b2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0052",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0052",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0052",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "백 부인이 3번 돌 하나만 인계한다. 나머지 둘은 창고에 남으며 소유·출처는 미확인이다. 등 복구는 S06에서 직접 완료한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c1a7e02559ab0891e552e69c35df6fb0c6c2b45831cc89e97d4320788097ec44",
+      "uid": "a53494983ffae66af5eb5f5d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0053",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0053",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0053",
+      "when": null,
+      "speaker": "백 부인",
+      "kind": "dialogue",
+      "text": "결론이 날 때까지 상자는 내가 보관합니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1223,
+          "label": "r13_v111_stone_defer",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "751a48a043cec44106d5f188f7c3a3a039af7225e4a72b718df9cd55c4c84134",
+      "uid": "fe4a0e98f84a71dcce8b795e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0054",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0054",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0054",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "그러면 오늘 밤도 3번 등은 비어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1223,
+          "label": "r13_v111_stone_defer",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1ceaa275c16521a744e5381386d784d1ef8b372211002c845bc1b18964ece331",
+      "uid": "43e2ffd8fd0308515364102e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0055",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0055",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0055",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "불이 당장 돌아오지 않는다. 공공 돌의 위치 증거는 사라지지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "989839b4c488691ab151bc259617c840d11e401de04a5f93bbc4b7b1400333ee",
+      "uid": "1f21776a5e1da5eb211cfe8d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0056",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0056",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0056",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "실룩을 지금 데려가겠다는 너울에게",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "20ced571580d7140720ffa44bb58ba910a7d42903e9ce2318f41e49f0b56701f",
+      "uid": "10fbd95096465707e4484e3f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0057",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0057",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0057",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "훔친 일과 이름은 적으십시오. 하지만 어디로 데려갈지도 모르는데 넘길 수는 없어요. 저 아이들은 어쩌고요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1246,
+          "label": "r13_v111_silluk_report",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fe96500d0254645334a2074e93c97606901a60d686de5b0f882c0ac61cb6e8ea",
+      "uid": "31443c31ce7c4ae8f6301f3f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0058",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0058",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0058",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "당신에게 처분할 권한이 있소?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1246,
+          "label": "r13_v111_silluk_report",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "23fe8c58592a6b1b79416f341ede68af589b80e9958a7a4c23bc90de4227a5e6",
+      "uid": "d6678e4e2b404f3eb80fbc26",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0059",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0059",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0059",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "없죠. 데려가는 분이 어디로 가는지 쓰라는 겁니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1246,
+          "label": "r13_v111_silluk_report",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6c40b87583423d1bfc2993f5f83952954a2b8f77129778d9987125cb0ad79ce0",
+      "uid": "34103fc93b5ce532576b141d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0060",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0060",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0060",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "내일 다시 나오는지는 내가 확인하겠습니다. 오늘은 주소와 서명을 남기죠.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1246,
+          "label": "r13_v111_silluk_report",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b8b59601c7121447ee2d60a776c8bd5f02b3d6d5184d5c0d7e22c33fe6cc83e3",
+      "uid": "833c892182a13066aea5d698",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0061",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0061",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0061",
+      "when": null,
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "도망 안 갑니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1246,
+          "label": "r13_v111_silluk_report",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d362199130d417281e1f278aa9e1867ee5f4149689ea0f750c49ab4a71c435c1",
+      "uid": "229f7123af191951afcf5cff",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0062",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0062",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0062",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "그건 내일 보면 알겠고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1246,
+          "label": "r13_v111_silluk_report",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0ceeecbb088317c420ac21583e98a9757c170713196d6a06d6f45856722f5d1d",
+      "uid": "16ceb2f41de2469ba2ada242",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0063",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0063",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0063",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "확인한 증거와 진술을 넘기겠습니다. 어디로 데려가는지 남겨 주십시오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1253,
+          "label": "r13_v111_silluk_transfer",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "834fe3f9946cb2901eb47b716cb571de43dbd9606bb8ba40581ea9fe807b49cc",
+      "uid": "1d3dcc6d40c8088893d69466",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0064",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0064",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0064",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "작업 대기소에서 조사하오.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1253,
+          "label": "r13_v111_silluk_transfer",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "982be0e89ad58f38bea4bbbbf7952c04dc076e48c4784873e7af07c29ca6f8e2",
+      "uid": "0eb853578b21ec08640509fa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0065",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0065",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0065",
+      "when": null,
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "아이들은요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1253,
+          "label": "r13_v111_silluk_transfer",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e0eb46ad98408c1453b1c02626b146c3a2a633e5f211f3f9fbbbab38de33599d",
+      "uid": "f1b432f677b5d325f245c791",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0066",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0066",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0066",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "부리 씨와 식당에 오늘 먹을 것부터 부탁하겠습니다. 아이들을 같이 잡아가라는 뜻은 아닙니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1253,
+          "label": "r13_v111_silluk_transfer",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "03014bf90d80337a0b831b8a45ed8c313c8428000e0788bb4554d361409fcd6d",
+      "uid": "9abfcd75f521e64ccb3ae08c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0067",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0067",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0067",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "너울이 기록에 목적지를 남기고 실룩을 데려간다. 이후 노동 명단 전환 여부는 별도 후속 사실이며 이 장면에서 확정하지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ae22bc6567c35ad222c83d82074a7cd53bac4cfb04738588a6452607275bb41e",
+      "uid": "7d010045097addd903dd6440",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0068",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0068",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0068",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "실룩 씨 칼끝이 이 자국과 닮았습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1143,
+          "label": "r13_v111_knife_wrong",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1146,
+          "label": "r13_v111_knife_wrong",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6f940365da50e9b2b6a837bd7c06d83219d24d51dfaa19e96f88d0ab66543ef3",
+      "uid": "01cc7bb1cf699c050de8e40c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0069",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0069",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0069",
+      "when": null,
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "같은 칼 쓰는 사람이 나뿐이에요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1143,
+          "label": "r13_v111_knife_wrong",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1146,
+          "label": "r13_v111_knife_wrong",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1d596b180e58f4e3385e4dfcf8988c791353776f78d9d5ea0ef85076ea74c482",
+      "uid": "b7500515cf73f30661c491d1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0070",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0070",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0070",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그것만으로는 부족합니다. 이 조각이 그 칼에서 떨어졌는지부터 보겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다. 조건부 replace/drop 이후 원문 fallback이며 무조건 표시된다는 뜻이 아니다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1143,
+          "label": "r13_v111_knife_wrong",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1146,
+          "label": "r13_v111_knife_wrong",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "lamp_partial"
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fc53ff6f66275f80f54804cf29686f31a3c1ed7d4198ff17fa2f7abce5fb791d",
+      "uid": "60b7ca85caf2bbf0f6b5e04b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0071",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0071",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0071",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "그걸로 누가 가져갔는지 알 수 있소?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1263,
+          "label": "r13_v111_trial_wrong",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1268,
+          "label": "r13_v111_trial_wrong",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1281,
+          "label": "r13_v111_trial_wrong_sale",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1285,
+          "label": "r13_v111_trial_wrong_sale",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1298,
+          "label": "r13_v111_trial_wrong_latch",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1302,
+          "label": "r13_v111_trial_wrong_latch",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1315,
+          "label": "r13_v111_trial_wrong_stone",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1319,
+          "label": "r13_v111_trial_wrong_stone",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "lamp_stage_stone",
+          "lamp_stage_latch",
+          "lamp_stage_sale",
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1e590b19a3cc6112d0283343ddb1cab8e89aa0dddaf11cfb889e394e3bef3064",
+      "uid": "8750c02f2b8b0efdd59d761f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0072",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0072",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0072",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "잠깐만요. 어느 때 생긴 흔적인지부터 다시 보겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다. 조건부 replace/drop 이후 원문 fallback이며 무조건 표시된다는 뜻이 아니다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1263,
+          "label": "r13_v111_trial_wrong",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1268,
+          "label": "r13_v111_trial_wrong",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1281,
+          "label": "r13_v111_trial_wrong_sale",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1285,
+          "label": "r13_v111_trial_wrong_sale",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1298,
+          "label": "r13_v111_trial_wrong_latch",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1302,
+          "label": "r13_v111_trial_wrong_latch",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1315,
+          "label": "r13_v111_trial_wrong_stone",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1319,
+          "label": "r13_v111_trial_wrong_stone",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "lamp_not_win"
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "03aae688686caa079fbfde1ac549816410fad8881eef3606012028384f126fec",
+      "uid": "fe228a6ea005d76316dfce6f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0073",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S05_L0073",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S05_L0073",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "돌 밑에서 나온 조각, 바깥만 닫았다는 말. 같은 자리인지 다시 보자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1274,
+          "label": "r13_v111_trial_hint",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1291,
+          "label": "r13_v111_trial_hint_sale",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1308,
+          "label": "r13_v111_trial_hint_latch",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1325,
+          "label": "r13_v111_trial_hint_stone",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "lamp_stage_stone",
+          "lamp_stage_latch",
+          "lamp_stage_sale",
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7eef31b8b6da0da7a677c53683a683a32bc0b384e64d1dcc2f7c493ad211f354",
+      "uid": "7453810c35659ee48b683091",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

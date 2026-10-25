@@ -1,0 +1,1317 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D03_S02_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "두 경로 합류. 톡이 열린 덮개를 만지려다 너울에게 제지당한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e802df5892b9f30ac66170da3eca2bc023a6e2624e41e7838498cc8ecc1c0ae1",
+      "uid": "f1f1b7d887697c15148f118a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S02_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L0002",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "손대지 마시오. 이걸 여는 공구는 당신 것이지?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 841,
+          "label": "r13_v111_lamp3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1f6dccaf6a98e8fc1b9587c3aa0df84feecca76d7d0afd3636324051f8a7f009",
+      "uid": "ffa7dced008b06073dcf8aa1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S02_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L0003",
+      "when": null,
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "내 공구로 내가 고치죠. 돌도 없는데 덮개만 닫으면 뭐가 따뜻해집니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 841,
+          "label": "r13_v111_lamp3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d46e5fc3305ab57fa9462190b3044ced6c85731e896cefb955665e7b90d5c525",
+      "uid": "64119ccbf00a701413ffe49c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S02_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L0004",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "어젯밤에 열었소, 안 열었소?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 841,
+          "label": "r13_v111_lamp3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0754ab2db52416b4d8e4168e8092ca98fd9bd9f1a4b8104205fa43f702c4baf4",
+      "uid": "d78cf01e01e47ef728a3ff00",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S02_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L0005",
+      "when": null,
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "걸쇠 고치러 열었어요. 그래서 내가 돌까지 가져갔다는 겁니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 841,
+          "label": "r13_v111_lamp3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2ceec794fbe8df425dd5c4bd4ec4b29b7245b05fe5a2e57b969eab2a089d9c93",
+      "uid": "07d04eae53cd34d12cd98102",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S02_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L0006",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이 내 옷자락을 당겼다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 841,
+          "label": "r13_v111_lamp3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "98499593152d8039019e94791d6fff55ff5f44e262631cc65187d2bcd7532de7",
+      "uid": "3d530f9919dc2083fe07f278",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S02_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L0007",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "어제 고친다고 했잖아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 841,
+          "label": "r13_v111_lamp3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2a0c4d1d894827c0ec017c1c75a81ecc8b2309b13fbd259086488e2c9751fbee",
+      "uid": "9346b9e7fe6880337a3d3765",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S02_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L0008",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "들었어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 841,
+          "label": "r13_v111_lamp3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4a81a45bf83ef074a1e13b1ef146701d0adbef703b7eef93886cfa170e6f7e3f",
+      "uid": "5a493d92ea428ec3fbab2d7a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S02_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L0009",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "고치라고 맡겼다면서요. 돌까지 가져갔는지는 안부터 봅시다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 841,
+          "label": "r13_v111_lamp3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c29bed08d677aea99dd775645415ad4635c4b67de3812b4c7b5a29ef37f921d1",
+      "uid": "69cd953ed55de03b36384f58",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S02_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L0010",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "당신이 왜요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 841,
+          "label": "r13_v111_lamp3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3ea18a26c95dd8049bc30ca8d90aafc7777c65bdc2aab4e2d7bd4bada0d75706",
+      "uid": "1059eb6d7e709e8f46435cc8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S02_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L0011",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이 등 아래서 자는 사람을 어제 만났습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 841,
+          "label": "r13_v111_lamp3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e48a1eb93de714a09232c37aaa78e1828563a59ca15ac934ce136c96ee461697",
+      "uid": "a7a909c48d9261ac31a39767",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S02_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L0012",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "조사: 번호판 3 / 돌받침의 빈자리 / 덮개 테두리의 둥근 압흔 / 걸쇠 안쪽의 새 곧은 긁힘. 초롱 허락 아래 종이를 대고 자국을 옮긴다. 빈 돌받침 아래 좁은 틈에는 작은 금속 파편이 박혀 있다. 돌이 빠진 지금에야 보이는 위치다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7da37c30edf500476cff4abc105dff5654df716ea4a43ffe1681f0387d5612a5",
+      "uid": "e0d5c7ee36666b8014e5dfe7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S02_L9101",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L9101",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L9101",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "3번 등은 비어 있다. 테두리에는 둥근 압흔, 안쪽에는 새 곧은 긁힘이 있다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 857,
+          "label": "r13_v111_lamp_interior3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f6df52a29c24e6fabec4df5e894a461b87d27c8fcc512e894ee7f024bb0654d3",
+      "uid": "97b91c52650efae03305d6ff",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S02_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L0013",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "저거도 그려? 안쪽 반짝이는 거.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 857,
+          "label": "r13_v111_lamp_interior3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0b8a942dae24c28d8bdd038a1b75cb00ef830c36fdb10954079b2199b2c89c47",
+      "uid": "d9d76ca9ba0409d33a257c80",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S02_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L0014",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "손대지 마. 톡 씨, 이건 원래 있던 겁니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 857,
+          "label": "r13_v111_lamp_interior3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0c2b9022177fa8f5a0936a2a93af3571316d52b38b3072670e0f2df993ab0ff6",
+      "uid": "2c495143d160b6c59fdc3966",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S02_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L0015",
+      "when": null,
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "내 받침엔 이런 부품 안 써요. 부러진 날 끝 같은데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 857,
+          "label": "r13_v111_lamp_interior3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "41ad05849fe1e4f3b18b50abf8223102d3c2f980dc9a743991fbe4ee69dd97af",
+      "uid": "2ee58280cfd23cb844b157a9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S02_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L0016",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "톡이 모두 보는 앞에서 파편을 집어 천 위에 놓는다. 안쪽 틈에서 꺼낸 위치도 그림에 남긴다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b276cee9da922b0e79f2fe7e83a8f3495770b42946612126547a4621ea36514a",
+      "uid": "82fc97e7824a54e5548614bb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S02_L9102",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L9102",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L9102",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "돌받침 안쪽 틈에서 나온 칼끝 파편. 바깥 걸쇠를 닫는 자리에서는 이 안쪽에 닿지 않는다. 위치와 들어 올리는 방향을 현장에서 확인했다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 873,
+          "label": "r13_v111_lamp_fragment3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ccf9fff1945f773a0a8d5456f44380f64c425ecbe95b8bc66167bc8a8a310ac2",
+      "uid": "3113b9c42044a0040c04fb3d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S02_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L0017",
+      "when": null,
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "돌이 끼워져 있으면 이 틈에 날을 넣어 들어 올릴 수 있어요. 덮개를 여는 자리하고 달라요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 873,
+          "label": "r13_v111_lamp_fragment3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3b1aee6f932338c2755a5649bf5f6e5c41e959c8f2518c2672985a0147c384b0",
+      "uid": "a4a5fdf0e03a09983dcff75e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S02_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L0018",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "톡이 무딘 공구 끝을 빈 홈 입구에 대고 들어 올리는 방향만 보여 준다. 이어 바깥 걸쇠에 대면 내부 받침에는 닿지 않는 것을 보여 준다. 새 자국을 만들지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "db33396a877a269a3e7265c9715974c066461e3c5c31fb67e54b9f72d89d26ef",
+      "uid": "d9be62d53851d0229c33248e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S02_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L0019",
+      "when": null,
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "저 둥근 건 집게예요. 내 드라이버는 납작하고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 873,
+          "label": "r13_v111_lamp_fragment3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "tok_round_asked",
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b13ed807431b34c7ff9a63523b17bedaee7a1740436e93516bb6f96ec89aaaf7",
+      "uid": "e88d76d4436ea6011529844f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S02_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L0020",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "톡 씨가 다른 공구를 썼을 수도 있잖습니까.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 873,
+          "label": "r13_v111_lamp_fragment3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5a5d722f73f40a3744cf4f7774b81a544e9165b410fccfe29d16035a5d6c5f3e",
+      "uid": "f30e12e09d7f56396fe36a81",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S02_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L0021",
+      "when": null,
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "……쓸 수야 있죠. 내 손부터 의심할 거면 왜 불렀어요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 873,
+          "label": "r13_v111_lamp_fragment3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8356c8239d8fd0f8e77af6754e9d2a8eab5e2ead9996f6a6e89b8b001cc8c483",
+      "uid": "5c6c003d6e5a3462cb8d89f1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S02_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L0022",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "지금은 누구 말을 믿어야 할지 모르겠어요. 어제까진 다 괜찮다고 했는데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 873,
+          "label": "r13_v111_lamp_fragment3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d4efd52031b3b461324e1762645817befce5f9087607f92ed7a576e7d2276e87",
+      "uid": "928e8743d8c2467b433bd92f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S02_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L0023",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "돌은 마지막 순회 때 있었어요. 새벽 종 치기 직전. 안쪽 숫자를 확인하고, 돌을 잠깐 들어 받침의 가루도 털었어요. 저 파편은 그때 없었어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 873,
+          "label": "r13_v111_lamp_fragment3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "770ed0bce8c67146e114eff9b0d1bbeb79e35bd7b4356077932eddb61e250ba7",
+      "uid": "efeba32195c63f73dfa41824",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S02_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L0024",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "기록에도 그 일이 적혀 있습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 873,
+          "label": "r13_v111_lamp_fragment3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9fdf8349e6271b8176e584ad337e333b758933730eb9a72ce03db914c9fe04c9",
+      "uid": "22d34f0138637fd487966d2a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S02_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L0025",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "아니, 종이엔 숫자뿐이죠. 늘 하는 걸 전부 적지는 않아요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 873,
+          "label": "r13_v111_lamp_fragment3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b79b6eb72454315a0308074fc38148643f7cfdbeb7af64a4169cf688d68ab05b",
+      "uid": "e24612a030b65e0e61cab354",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S02_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L0026",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "기록창은 ‘번호·시각: 점검장’, ‘받침 청소·파편 없음: 초롱 진술’로 출처를 나눈다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "92f90d5667697721876689a8e82695dae58745b08726f8e0f4e3814f37be7a67",
+      "uid": "96a5b5a4d68b502a85c6e37a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S02_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L0027",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "조작: ‘3번 / 돌 3 / 점검 완료’와 초롱의 시각 기록 확보.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d8b932d7b855a4714095143529559758ab501a34b9b3841aaab9813f24b87d80",
+      "uid": "935e74ca60d68d21d63ed788",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S02_L9103",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L9103",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L9103",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "점검장: 3번 / 돌 3 / 새벽 종 직전 점검 완료. 받침 청소와 당시 파편이 없었다는 것은 초롱의 별도 말이다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 889,
+          "label": "r13_v111_lamp_log3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "be7eee24ea40099d7a2a38dec0e8110710ce465890bafee641810081be49edb5",
+      "uid": "e918f7e5a20e44b99b9b70f3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S02_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S02_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S02_L0028",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "종 치기 전엔 있었고, 아침엔 없고. 그 사이 쓴 공구를 보죠.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 889,
+          "label": "r13_v111_lamp_log3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "de50d0cf70ab20938c6f6e5351e8e38d0fa9b971f73c70619383077a6096f7a3",
+      "uid": "c7a7ee09279c28aa39139d27",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

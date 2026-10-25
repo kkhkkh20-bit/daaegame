@@ -1,0 +1,47 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/winter.rpy:187:39",
+      "file": "game/winter.rpy",
+      "path": [
+        8495,
+        8521
+      ],
+      "origin": "rpy_inventory",
+      "day": 9,
+      "scene": "winter_field",
+      "block": "winter_field",
+      "placement": "literal",
+      "ref": "game/winter.rpy:187:39",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "%s → %s\n다음 시간대까지 기다릴까요?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 187,
+          "label": "winter_field",
+          "guards": [
+            "if winter_choice==\"wait\":",
+            "if winter_period(winter)<3:"
+          ]
+        }
+      ],
+      "line": 187,
+      "scene_title": "winter_field",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "b249b9a0e63c1db1c6f0da960dc759282a18675a8be9d3335be6a0ddfe468358",
+      "uid": "1e5354b7dc0796f0c11ea7bd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|winter_field|rpy_inventory|winter_field|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D02_SW01",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "blocks",
+        "shelter_work_done2",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "shelter_work_done2",
+      "block": "shelter_work_done2",
+      "placement": "blocks",
+      "ref": "shelter_work_done2",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "포대를 날라 한쪽에 쌓는다. 벤치 하나가 빈다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 648,
+          "label": "r13_v111_afternoon",
+          "guards": [
+            "if v111_answer==0:"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 682,
+          "label": "r13_v111_shelter_work",
+          "guards": []
+        }
+      ],
+      "scene_title": "shelter_work_done2",
+      "source_hash": "a0e7c79e30fb555f98b2adc0f92923428943a0f7146f1d40f1f3348a9b3d6cb5",
+      "baseline_hash": "4502565c2afc6a52fb171d71fee1c876ec0af56945acd4f026ee00e45c602079",
+      "uid": "afe6b62db362836548679762",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|shelter_work_done2|patch|shelter_work_done2|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

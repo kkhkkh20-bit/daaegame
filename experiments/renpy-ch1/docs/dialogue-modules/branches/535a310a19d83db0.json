@@ -1,0 +1,47 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D13_RD01",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "relief_done13",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "relief_done13",
+      "block": "relief_done13",
+      "placement": "blocks",
+      "ref": "relief_done13",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "선생님 곁은 순찰대원이 이어 맡았소. 나는 초소로 가겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1847,
+          "label": "r13_v111_teacher_relief_done13",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "scene_title": "relief_done13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "741d2d242325d6daf553048a5a7b8b9c1bc8f89c122065cde3a060417df49805",
+      "uid": "2287505df958fd5154a56c2a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|relief_done13|patch|relief_done13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

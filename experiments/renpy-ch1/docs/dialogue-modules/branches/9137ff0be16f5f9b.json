@@ -1,0 +1,2307 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D01_S05_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0001",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "다돌 씨죠? 아이구, 손이 빨갛네. 난로부터 쬐어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 320,
+          "label": "r13_v111_inn",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0b932727419f9754941880ae109a28d045f8350960159d2e2f708dacbcba5e9b",
+      "uid": "2d703698f33347bfa49aacb7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0002",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "할머니가 젖은 수건을 치우고 마른 천을 다람 앞에 놓는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "abd96002c968b9624d6d21bc4b7c226eb3cafa1ac0d2af6560274aef9304fa0a",
+      "uid": "eba10afd98a41843a4515b9f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0003",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "손 바로 대면 아파. 이걸로 감싸고 천천히.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 320,
+          "label": "r13_v111_inn",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b6a8b250a772472ae820ef9a4a8cf68e11cc507beb35fd3f17698ed49c08ed0f",
+      "uid": "02ee5c149dba4a8743adb1f5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0004",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "고맙습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 324,
+          "label": "r13_v111_inn",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "35640463217803b43a7b50c4ee80c263852939f244e045a751dc874643882a26",
+      "uid": "e88f8cc69c1deae1d990e9f8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0005",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "나는 아이 손이 풀리는 걸 보고서야 편지를 꺼냈다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 324,
+          "label": "r13_v111_inn",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d501e366b31a6c6a0136fdffe6204c5a04eb88126485f0e776c23fed96b8e87a",
+      "uid": "593a9a8a4323bdd3b54be943",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0006",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아내는 어디 있습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 324,
+          "label": "r13_v111_inn",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b3b1998c0c61de24bccb1355ad15a651aaaf843ff53272fe48cc105929e85826",
+      "uid": "7d658787684ab565eb098980",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0007",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "며칠째 안 보여요. 조사하러 나가면 밤낮이 없던 사람이라.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 324,
+          "label": "r13_v111_inn",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "020eaff29e476e3e6dc62c152e6c6348e6e1cc58be3c8bda6ea6c91500ae7a80",
+      "uid": "4b5db63f5e40f00abe08d1fd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0008",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "기다린댔는데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 324,
+          "label": "r13_v111_inn",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6696f86ce1c24c6af30f0821a50970bad6b783d385af7cf0e3fc3ec221ddf080",
+      "uid": "51a3239f848250fc273a11d4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0009",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "방은 그대로 뒀지. 올라가 봐요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 324,
+          "label": "r13_v111_inn",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0a4566abedbb88a485b2b55469e4a5d02e151201d966449ead4d22fb7f9dd0eb",
+      "uid": "1a21e5da8bbc25b386cc1970",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0010",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "마지막으로 어디 간다고 했습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 324,
+          "label": "r13_v111_inn",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "75236e8ba2ea3a8b6c77186bdb1a930d38b0cb459264225a60acde432d3e89c0",
+      "uid": "50df4bd18fe381e6028bde0a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0011",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "내게 일일이 말하진 않았어요. 밥도 식혀 놓고 들어오던걸.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 324,
+          "label": "r13_v111_inn",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "339c26e3dadf90db3b9bb961f17ca37540630751d449a55aa620041f3ce8aa81",
+      "uid": "c0417de6eab25ccae17a9fe4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0012",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "마지막으로 돌아온 날은 기억하십니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 324,
+          "label": "r13_v111_inn",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e5f9cd2fd9966c5bf4d504dc3afdfaad5156ce427af7d5d95766a7d014ba87e6",
+      "uid": "13132e378667d170b35f1f22",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0013",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "밥상은 매일 차렸죠. 어느 날부터 안 왔더라…… 방부터 보세요. 아이가 떨고 있잖아요.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다. 조건부 replace/drop 이후 원문 fallback이며 무조건 표시된다는 뜻이 아니다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 324,
+          "label": "r13_v111_inn",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "room13_checked_d1",
+          "room13_unchecked_d1"
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1a833f0b65658dfa19561c851b9f3265122d92377e666bee24a21f5b6bda7485",
+      "uid": "4274ea279cb2e6065e68858d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0014",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "할머니는 다람의 작은 가방을 받아 난로에서 떨어진 마른 자리에 놓는다. 내가 물은 날짜는 아직 듣지 못했다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "923f2d2ba7f62b92f1eb724ed383ef32dcef8653e66717f8a5f95620d817eb66",
+      "uid": "65a479d269a2ea9d4cd6f358",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0015",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "13호 문이 열린다. 침대, 먼지가 앉은 찻잔, 접힌 메모. 먼저 빈방 전체를 확인하고 메모를 집는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "22115dc47dd5bab1bae2fdefa6de40e243aff91b2db71844cf6bb6924669d591",
+      "uid": "9f678d4befefb952af7b80ec",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0016",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마?",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 342,
+          "label": "r13_v111_room_empty",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "dda7680fb4b6f3a3fcc0b9014e0916d72d05ef3ff2ed610b4a60380261b50691",
+      "uid": "9092a1ae8d0c07e284d3e998",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0017",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "옷장 문을 열었다. 다람이는 침대 아래를 보았다. 내가 찾으려던 곳이라서, 하지 말라고 하지 못했다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 342,
+          "label": "r13_v111_room_empty",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "757b994c7a4451d4430fb79fe9f1c413b762ce74fd76878eb53c73591755fff5",
+      "uid": "3f90a86431b50fd0b09218ac",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0018",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "메모: “내가 자리를 비웠으면 광장 등의 초롱에게 소식을 물어봐. 물건은 책상 아래에 두었어.” 끝에 작은 도토리.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 357,
+          "label": "r13_v111_room_note",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a28ae0c823f3507f67189256d866031b1b23fe61cfd47242abfdbf43ee8cf22d",
+      "uid": "b40a036b1dc3ee4fb2d8546a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0019",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "메모: “내가 자리를 비웠으면 광장 등의 초롱에게 소식을 물어봐. 물건은 책상 아래에 두었어.” 끝에 작은 도토리.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a28ae0c823f3507f67189256d866031b1b23fe61cfd47242abfdbf43ee8cf22d",
+      "uid": "ef82695f95699eb8c4f56233",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L9101",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L9101",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L9101",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "내가 자리를 비웠으면 광장 등의 초롱에게 소식을 물어봐. 물건은 책상 아래에 두었어. (끝의 작은 도토리)",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 359,
+          "label": "r13_v111_room_note",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5b01baf1544b6027306b4d9920a2b7faee2e24c9dcb52919e4406a8c8a915c60",
+      "uid": "5ddc175826b2164f035a54c3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0020",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "이건 엄마 거다. 도토리 삐뚤어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 359,
+          "label": "r13_v111_room_note",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fec39a25c1f2cac102d7f62f11a20479e18e4df5a4e9ff7fc5a8853077dedf13",
+      "uid": "a5e86bae2d59bae2d02a3f64",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0021",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "책상 아래라고 했지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 359,
+          "label": "r13_v111_room_note",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "32a7af5390d27e3e59c1e5fd8edc091f76d63ac7be406a971135a41b7d4de025",
+      "uid": "cccfee9849686fa42adc6ac1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0022",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "조작: 책상 아래 천 보따리 열기. 여벌 목도리, 연필 두 자루, 다람이 집에서 그려 준 가족 그림. 숨은 봉투나 주소는 없다. 아빠가 밑바닥까지 직접 확인한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "90931fd8c4cc58f7c50a50411cd8fec662f6f8cc220c16b4db3c3e611a835510",
+      "uid": "6a829a8342db6d9f0abab818",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L9102",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L9102",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L9102",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "책상 아래: 여벌 목도리, 연필 두 자루, 다람의 가족 그림. 밑바닥까지 보았으나 주소나 다른 봉투는 없다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 378,
+          "label": "r13_v111_bundle",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "30a38c69439c0db486fe381357fd7032fd391ca8a27784986e0b68b85ef3df6f",
+      "uid": "911c740a6e49772acfa55d68",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0023",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "이 그림 가져왔네. 나 팔 세 개 그린 거.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 378,
+          "label": "r13_v111_bundle",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3933fe72ed45db024e1b9601d27d16fdeb043378b4f15635a6ea54f4e9788fbf",
+      "uid": "40b6c97bcd9b029ad5cd898b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0024",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "엄마가 좋아했잖아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 378,
+          "label": "r13_v111_bundle",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "eb123e0e1cf7434e11cfce8c75b343d9753b5515a764621ad54c12a57966e808",
+      "uid": "65a845e847a683654dd44134",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0025",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "왜 두고 갔지?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 378,
+          "label": "r13_v111_bundle",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6e3b24d6f2cc60220849291d073925c55efa15657bd92cacd494daf574edadf5",
+      "uid": "7f85b0860b51f6364b9bedf8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0026",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 목도리 속까지 풀었다. 아무것도 떨어지지 않았다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 378,
+          "label": "r13_v111_bundle",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "42ecb7e50c9cd659c9dc0ddf679f33a0d44f2556d7e9b994b7d78eb5229064f0",
+      "uid": "9d0c9b50bc3bca38f13f88fd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0027",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "급해서 놓고 갔나…… 모르겠다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 378,
+          "label": "r13_v111_bundle",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "32b1bf5d95dffc649cbdbf484cbb341d5fc21abf59e030c82dcd2f41124c9640",
+      "uid": "cff0b54f8363f32c3b37f241",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0028",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "다시 와서 가져가려고 그런 거면?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 378,
+          "label": "r13_v111_bundle",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "23ee835f54a5c07d813fdbbfe6196863ceb03407567e28b788ea068b4e3affb2",
+      "uid": "758dd128ab41438da75e9431",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0029",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그랬으면 좋겠다. 그대로 두자. 메모만 가져갈게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 378,
+          "label": "r13_v111_bundle",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9476acf549b9e8f1ed548fd2c37d66c362d1bf3062ef7e8e07adacb3b0a017b0",
+      "uid": "7e203ade3fcec98c7ce4edcb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0030",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "편지도 봐.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 378,
+          "label": "r13_v111_bundle",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "77562bab28a67433e9022d4cf7049cc74b8d2eaf40697ae1222fe67f4ca88610",
+      "uid": "8115b3dac9e62a9bd405e22e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0031",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "조작: 초대 편지와 방의 메모 비교. 마차에서 관찰을 건너뛰었어도 지금 두 종이를 직접 볼 수 있다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bfdb13a76fd0324d599046dc0e583a00540a258c290e29198c5b7445ea64e4b2",
+      "uid": "7fc08ad4b2318732fc34ea10",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0032",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "편지에는 도토리가 없네.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 396,
+          "label": "r13_v111_room_compare",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1d63f3f0b0580d84008a5d6354ce4971f2995b82efe83dcbccb93ab268ee30c0",
+      "uid": "243b24fc60ed32bda9abf818",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0033",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마가 잊었나?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 396,
+          "label": "r13_v111_room_compare",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c8b643e349ef49b8d0ce19b11fce15c7a8724a886e12322ae38ab4962df33946",
+      "uid": "0b98c049a3aca225144259c7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0034",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그럴 수도 있고, 누가 대신 써 줬을 수도 있어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 396,
+          "label": "r13_v111_room_compare",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4763add320e6c6cd6b592dbcd98ef93036e9f9b005154a2d9eb085d48f87e90f",
+      "uid": "3e2d53fd90b04ba3b5dc68f6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0035",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그럼 초롱한테 물어보자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 396,
+          "label": "r13_v111_room_compare",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7bdf6411f76325581aa57fc46a07655706127d01689481d6a4c3d9373dd7406a",
+      "uid": "ac262b4a0bb8dbe958f20d74",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0036",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아래층으로 내려가 광장 위치를 묻는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a8415b3ee8d05809c4e149abdaeb9ae7b9a0fb4e42305e8f2b889319b5b714a4",
+      "uid": "bc56b86ce31c9d84e10f1dea",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0037",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0037",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0037",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "초롱은 오늘 외곽 등을 보고 돌아와요. 내일 아침이면 광장에 있지. 무슨 소식이 있으면 내게도 알려 줘요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 401,
+          "label": "r13_v111_room_compare",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1c9018b8aff30e488a67fcf720444b4cd62335b3643543a0c8f19d44d881425a",
+      "uid": "6d999dc5a16e24c55c2e2776",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0038",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0038",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0038",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "만나 보겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 401,
+          "label": "r13_v111_room_compare",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2c19d1ecdcb55e63f1938fe8cb729d8deb9afcc3768a7ee57ebc40a3b1996406",
+      "uid": "896e2bd1368d9a5271acf5fa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0039",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0039",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0039",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "밤, 방. 다람이 큰 과자를 봉지째 접시에 놓는다. 엄마가 들어오면 보이는 책상 앞이다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "71c9bc1b81f4b488e6a8bff081f7e82f2727ec7f635f8804999d412ffb5bf3b0",
+      "uid": "eda89fc2a79dac805b744dac",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0040",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0040",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0040",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마가 내일도 안 오면?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 403,
+          "label": "r13_v111_room_compare",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f483a5cb04e266b4fb5b3fc00cdec03de2453bcebded96ea2b0d992426fb6d2e",
+      "uid": "f5c9537bb77a8676667f4f0f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0041",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0041",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0041",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 방금 펴 놓은 침구를 다시 눌렀다. 마차에서 가운데 자리를 달라던 아이였다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 403,
+          "label": "r13_v111_room_compare",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d2e54758156691d692855e89116a498d674a67437c156b7601e8f970ac70d301",
+      "uid": "69f113e0eb20b42bca38beae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0042",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0042",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0042",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아침에 초롱 만나고, 돌아갈 차도 알아볼게. 여기 앉아 기다리기만 하진 않을 거야.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 403,
+          "label": "r13_v111_room_compare",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "260f5d6b1279cf0875378076a24415d0c401eb8eb84399492a372a4ce86dbcf9",
+      "uid": "45ec9bcaaf652d44436397d3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0043",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0043",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0043",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "차도 없으면?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 403,
+          "label": "r13_v111_room_compare",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f0e5dc481e1dd6294f6ee579facbe5fd6db0c5f8d02b6797ef691e425fc0333d",
+      "uid": "aad0042802224c0054027052",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0044",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0044",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0044",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그다음 방법을 알아봐야지. 너 혼자 남겨 두지는 않아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 403,
+          "label": "r13_v111_room_compare",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bfea5f993caed9699a3ec9cf3a3b83b2c1cd9f3a43d17cde7f78435827daf4be",
+      "uid": "6608d7ac40e2a876358c37f5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0045",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0045",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0045",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이가 과자 봉지 끝을 두 번 접었다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 403,
+          "label": "r13_v111_room_compare",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "eee825ab487efc8ba539b6a23a35ae5594fc5fdacf342242ad2164457f3158fe",
+      "uid": "7762048f15cc57c13482bc43",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0046",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0046",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0046",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "눅눅해지겠다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 403,
+          "label": "r13_v111_room_compare",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a30fd069d948c27f0a0c6a4cd5770aa90bfaa3b0f6b72f262d0c6e1f7c34b367",
+      "uid": "e83b3f77134f9f729a697c29",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0047",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0047",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0047",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "잘 싸 두자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 403,
+          "label": "r13_v111_room_compare",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "15cb9c0a5667cc4f2d70f2ab9784bdf51d41c25f2c1464857c07015182367f95",
+      "uid": "b7ddada60f1d28e353bf2c4d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0048",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0048",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0048",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "여기 놓을래. 엄마가 먼저 올 수도 있잖아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 403,
+          "label": "r13_v111_room_compare",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6aac5d14c0ff0784e7211653b23a61a75e3cf8d2edaccb34e29e8421ceac2b52",
+      "uid": "9b44a0c1c1d84869ea9fce2f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0049",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0049",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0049",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그래.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 405,
+          "label": "r13_v111_room_compare",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "47dd1707211c7354d813fcd6c66319369aef44dca3d28aedf2278035f5fb055c",
+      "uid": "0cc7f4d5216c4f90208096cf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0050",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0050",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0050",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마 오면 깨워 줘.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 408,
+          "label": "r13_v111_room_compare",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "68040bcaee981dea6206644d7399754cfd1123090bbd1bbfe83b8760a5ad1702",
+      "uid": "13272a5d92dd0379811e1c6f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0051",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0051",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0051",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 408,
+          "label": "r13_v111_room_compare",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8025c713f26164a6787608a6cbce1b8ac0cfe963a42e1416578db60193e95224",
+      "uid": "95c607749d9c7c57fbae884a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0052",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S05_L0052",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S05_L0052",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "문밖에서 발소리가 멈췄다. 노크하고 들어온 사람은 침구를 가져온 종업원이었다. 나는 한참 문손잡이를 놓지 못했다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 408,
+          "label": "r13_v111_room_compare",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "83be35c8eef3a79366d1f1e805204140debafccfe95ab4f6ccac992e556ea680",
+      "uid": "9d43e71a44abaaf50b861a73",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

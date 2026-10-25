@@ -1,0 +1,210 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_materials.rpy:110:78",
+      "file": "game/systems/room13_materials.rpy",
+      "path": [
+        5447,
+        5474
+      ],
+      "origin": "rpy_inventory",
+      "day": 8,
+      "scene": "r13_show_catalog_object",
+      "block": "r13_show_catalog_object",
+      "placement": "literal",
+      "ref": "game/systems/room13_materials.rpy:110:78",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "제게 보여 주셔도 따로 아는 이야기는 없어요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_materials.rpy",
+          "line": 110,
+          "label": "r13_show_catalog_object",
+          "guards": [
+            "if not r13_offer_topic:"
+          ]
+        }
+      ],
+      "line": 110,
+      "scene_title": "r13_show_catalog_object",
+      "source_hash": "73f6126938bd63c8da9c96c46aaaee4f4bf0171f23ab8d7270375478564ae68f",
+      "baseline_hash": "b0fff24f4129a16271bf9d68feec1e3acf71ca98f99af00f11e5fcb113598ada",
+      "uid": "3c95737145e785829486b534",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_show_catalog_object|rpy_inventory|r13_show_catalog_object|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_materials.rpy:115:28",
+      "file": "game/systems/room13_materials.rpy",
+      "path": [
+        5801,
+        5810
+      ],
+      "origin": "rpy_inventory",
+      "day": 8,
+      "scene": "r13_show_catalog_object",
+      "block": "r13_show_catalog_object",
+      "placement": "literal",
+      "ref": "game/systems/room13_materials.rpy:115:28",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "돌려준다 · ",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_materials.rpy",
+          "line": 115,
+          "label": "r13_show_catalog_object",
+          "guards": [
+            "else:",
+            "if r13_offer_topic.startswith(\"return:\"):"
+          ]
+        }
+      ],
+      "line": 115,
+      "scene_title": "r13_show_catalog_object",
+      "source_hash": "73f6126938bd63c8da9c96c46aaaee4f4bf0171f23ab8d7270375478564ae68f",
+      "baseline_hash": "b4afcfdbb0bef6b1a7715ce3cd5fea193348b00925b436288a1bf889566d4f3b",
+      "uid": "7902cfc204bcd53c01086284",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_show_catalog_object|rpy_inventory|r13_show_catalog_object|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_materials.rpy:118:28",
+      "file": "game/systems/room13_materials.rpy",
+      "path": [
+        5990,
+        6001
+      ],
+      "origin": "rpy_inventory",
+      "day": 8,
+      "scene": "r13_show_catalog_object",
+      "block": "r13_show_catalog_object",
+      "placement": "literal",
+      "ref": "game/systems/room13_materials.rpy:118:28",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "함께 먹는다 · ",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_materials.rpy",
+          "line": 118,
+          "label": "r13_show_catalog_object",
+          "guards": [
+            "else:",
+            "elif r13_offer_topic==\"life:snack\":"
+          ]
+        }
+      ],
+      "line": 118,
+      "scene_title": "r13_show_catalog_object",
+      "source_hash": "73f6126938bd63c8da9c96c46aaaee4f4bf0171f23ab8d7270375478564ae68f",
+      "baseline_hash": "05d63a1618fbad9a1bcd4b53fe8d463bf3cf996c369414e671c896acee83904a",
+      "uid": "5c403723e6b437a9a5ff9608",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_show_catalog_object|rpy_inventory|r13_show_catalog_object|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_materials.rpy:121:28",
+      "file": "game/systems/room13_materials.rpy",
+      "path": [
+        6189,
+        6200
+      ],
+      "origin": "rpy_inventory",
+      "day": 8,
+      "scene": "r13_show_catalog_object",
+      "block": "r13_show_catalog_object",
+      "placement": "literal",
+      "ref": "game/systems/room13_materials.rpy:121:28",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "엽서를 함께 쓴다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_materials.rpy",
+          "line": 121,
+          "label": "r13_show_catalog_object",
+          "guards": [
+            "else:",
+            "elif r13_offer_topic==\"item:postcard\":"
+          ]
+        }
+      ],
+      "line": 121,
+      "scene_title": "r13_show_catalog_object",
+      "source_hash": "73f6126938bd63c8da9c96c46aaaee4f4bf0171f23ab8d7270375478564ae68f",
+      "baseline_hash": "f28835376217a3ee8c3e93114cf198e762af2abda99e7faeb2f17e31a92e9885",
+      "uid": "44ddadca1ec8e0b8adb55c46",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_show_catalog_object|rpy_inventory|r13_show_catalog_object|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_materials.rpy:124:28",
+      "file": "game/systems/room13_materials.rpy",
+      "path": [
+        6410,
+        6418
+      ],
+      "origin": "rpy_inventory",
+      "day": 8,
+      "scene": "r13_show_catalog_object",
+      "block": "r13_show_catalog_object",
+      "placement": "literal",
+      "ref": "game/systems/room13_materials.rpy:124:28",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "건넨다 · ",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_materials.rpy",
+          "line": 124,
+          "label": "r13_show_catalog_object",
+          "guards": [
+            "else:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 124,
+      "scene_title": "r13_show_catalog_object",
+      "source_hash": "73f6126938bd63c8da9c96c46aaaee4f4bf0171f23ab8d7270375478564ae68f",
+      "baseline_hash": "26019f05333f2311a20d26a6aa59581467f5a84ab7ae8aa423696d23d0b7eb62",
+      "uid": "4c8ad265f1cd3e4aa485d9d6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_show_catalog_object|rpy_inventory|r13_show_catalog_object|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

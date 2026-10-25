@@ -1,0 +1,162 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D09_S04_A02",
+      "file": "game/v111/newworld/d09.json",
+      "path": [
+        "before",
+        "MS14_D09_S04_L0032",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D09_S04_L0032",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "학교 복도 끝에서 서리가 선생님에게 작은 병 하나를 건넨다. 선생님이 그것을 앞치마 속에 넣는다. 둘 다 이쪽을 보지 않는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1355,
+          "label": "r13_v111_school_night9",
+          "guards": []
+        }
+      ],
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b6ad6a05d63439df019e5608ab9fea79d40e75b4905df3194c837f0960463bb2",
+      "baseline_hash": "2286fdfdc30bc3849d5e91f46e32a98e985b702a1c9fe43a379805ca58402129",
+      "uid": "a589515550f71f4f37acf9e8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D09_S04_R01",
+      "file": "game/v111/newworld/d09.json",
+      "path": [
+        "before",
+        "MS14_D09_S04_L0011",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D09_S04_L0011",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "우체국 옆에서 편지를 대신 써 주는 사람이 다가온다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1326,
+          "label": "r13_v111_postal9",
+          "guards": []
+        }
+      ],
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b6ad6a05d63439df019e5608ab9fea79d40e75b4905df3194c837f0960463bb2",
+      "baseline_hash": "13d64eaa628249a8b729cd3e28760a29624788d6df3d38d74a281936acd31411",
+      "uid": "29d1938dca53629316615762",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D09_HW01",
+      "file": "game/v111/newworld/d09.json",
+      "path": [
+        "before",
+        "MS14_D09_S04_L0018",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D09_S04_L0018",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 초대장과 본보기에서 같은 글자를 찾아 손을 얹었다가 거둔다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1332,
+          "label": "r13_v111_postal9",
+          "guards": []
+        }
+      ],
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b6ad6a05d63439df019e5608ab9fea79d40e75b4905df3194c837f0960463bb2",
+      "baseline_hash": "b1899cceef7d3653454a2c0aa8fd062214afe7bf5c8205baf0cef7c2fbcfce79",
+      "uid": "a228b39bedf6298d65915356",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D09_HW02",
+      "file": "game/v111/newworld/d09.json",
+      "path": [
+        "before",
+        "MS14_D09_S04_L0018",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 9,
+      "scene": "MS14_D09_S04",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D09_S04_L0018",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "thought",
+      "text": "이 글씨를 보고 여기까지 왔는데.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1332,
+          "label": "r13_v111_postal9",
+          "guards": []
+        }
+      ],
+      "scene_title": "9-4. 저녁 / 우체국 — 누가 부쳤는지, 누가 썼는지",
+      "source_hash": "b6ad6a05d63439df019e5608ab9fea79d40e75b4905df3194c837f0960463bb2",
+      "baseline_hash": "315575c054390cf066f843e430d5b7e17f13eb0b855a4a6c225e1264d2d6ca69",
+      "uid": "efe6e5ec63b42be8cf909210",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S04|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

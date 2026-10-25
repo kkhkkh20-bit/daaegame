@@ -1,0 +1,586 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D11_S00_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S00_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S00",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S00_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아침. 학교 앞. 까로가 아빠를 불러 세운다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-0. 셋째 말뚝 아래",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5fea4abeb3014bc72ec6ada6b670b453a930f4864f2452d8a0f3b6c8201cf378",
+      "uid": "d1f7eb55defac091f1c4bc3d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S00|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S00_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S00_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S00",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S00_L0002",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "전에 돌아갈 마차 알아봐 달랬지. 운전수들한테 확인했어. 바퀴 고쳐도 지금은 못 나가. 바깥 고개가 막혔고, 길 다시 확인할 때까지 운행 안 한대.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 33,
+          "label": "r13_v111_day11",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-0. 셋째 말뚝 아래",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9f046023dcd89561ff2696fcdbac5eccc2f1cf6d51881a5288d58e8317d6433d",
+      "uid": "40b3866e56cd47fae4d2d5bb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S00|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S00_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S00_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S00",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S00_L0003",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "걸어서 갈 수 있는 길도요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 34,
+          "label": "r13_v111_day11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-0. 셋째 말뚝 아래",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a7e59a102d6c63be28b98b76ddab3f042ec4696e472c4f9437b101d0ac973403",
+      "uid": "9c53feaf4fb101dd6b32f19e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S00|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S00_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S00_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S00",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S00_L0004",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "안전하다고 확인한 길이 없어. 아이 데리고 보내 줄 수는 없다는 답이야.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 36,
+          "label": "r13_v111_day11",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-0. 셋째 말뚝 아래",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9241612f4f09d66895f342a9434a4b3b1a83fe7ca4a92f45f1438d7f4f65e41a",
+      "uid": "d7ab90944cee532fcbab0103",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S00|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S00_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S00_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S00",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S00_L0005",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "고맙습니다. ……걸어서도 안 된다니.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 37,
+          "label": "r13_v111_day11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-0. 셋째 말뚝 아래",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "68e13da49aac7e83c87dd90a8760f7fa5a277d9df536aa0c7533c92abf9ff5ec",
+      "uid": "92fb6c8542e8ef0a99ae429e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S00|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S00_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S00_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S00",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S00_L0006",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아침. 옛 펌프집. 전날 얻은 위치 단서대로 아빠가 셋째 말뚝을 센다. 다람은 첫째 말뚝 옆에 서서 함께 센다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-0. 셋째 말뚝 아래",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1fca806b40fd572c90e8e12763ea188ff5df147d9b2fd0bdc7d10234ff2d7e4c",
+      "uid": "66ec37368562f39eef4629a6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S00|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S00_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S00_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S00",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S00_L0007",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "하나. 둘. 여기가 셋.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 40,
+          "label": "r13_v111_day11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-0. 셋째 말뚝 아래",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5e49832d7799136b3ed5dd7744c35a943f6ab646dd9ee9b5619e387edc7f0257",
+      "uid": "9f70c2fd3f79b61598c06685",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S00|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S00_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S00_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S00",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S00_L0008",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "통은 밑에 있다더라.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 41,
+          "label": "r13_v111_day11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-0. 셋째 말뚝 아래",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1dd927a1badcda65cdf30f1c8996d2ac38531dce489b60d6fe8484ab49d8be21",
+      "uid": "66a215def1d4bd187909fabc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S00|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S00_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S00_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S00",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S00_L0009",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "입력: 말뚝 아래 통의 뚜껑을 열어 접힌 답장을 꺼낸다. 실제 도토리 표식과 가족만 아는 앞선 문답이 이어져 있다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-0. 셋째 말뚝 아래",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "37bf19528d98de2483d6b8dde8fe4b498fb67dd6db39da6bca8cfd3f721cdd33",
+      "uid": "92cdda564e57c941cf753bc0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S00|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S00_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S00_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S00",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S00_L0010",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "과자 남겨 뒀다는 말 읽었어. 여관 뒤 전나무 뿌리 집으로 와. 내려가는 길이 보이는 쪽이야. 나를 못 만나면 눌러 둔 돌 밑을 봐. 다른 곳으로 옮길 때 거기에 남길게.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 51,
+          "label": "r13_v111_pump_reply11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-0. 셋째 말뚝 아래",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fff46779030c1c1903c51deb0979cb5a276f1b2fba18e34a45d45cbc7532e537",
+      "uid": "a319b1060ff9da90812233df",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S00|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S00_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S00_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S00",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S00_L0011",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "여기로 오라고 했어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 52,
+          "label": "r13_v111_pump_reply11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-0. 셋째 말뚝 아래",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ab23bfc80724780bfce3db21515350b601ceb928358605bb2993c5ebd12b8cdc",
+      "uid": "abb3f3d0806640bbb459310b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S00|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S00_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S00_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S00",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S00_L0012",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마 글씨야?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 53,
+          "label": "r13_v111_pump_reply11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-0. 셋째 말뚝 아래",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b956cded9aca4151b89b3e1794e1d16643bf39668754405eea1b738f06d0f85f",
+      "uid": "738d0264ca56a8262585b5c0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S00|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S00_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S00_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S00",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S00_L0013",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "초롱 씨한테 왔던 답하고 이어져. 가서 확인하자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 54,
+          "label": "r13_v111_pump_reply11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-0. 셋째 말뚝 아래",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0c66b90b2c818e66a44402fa05d94b601fa42d7aad8b6a63f2d93cc3e439616a",
+      "uid": "6d30e8dd5c97a207d28c3eef",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S00|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S00_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S00_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S00",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S00_L0014",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "연락함을 닫고 전나무 길로 이동. 이때까지 폐온실의 위치는 모른다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-0. 셋째 말뚝 아래",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5f6b705a55c9ffc1b8ac197d82dfdcfaddbf72af1734d0ad8b5dc9e6b0dc2870",
+      "uid": "762230e8f90620f9cb7525fb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S00|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

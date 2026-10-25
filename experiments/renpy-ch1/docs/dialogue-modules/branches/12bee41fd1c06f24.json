@@ -1,0 +1,1191 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D01_S02_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S02_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S02_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "마차가 멈춘다. 까로가 얼어 있는 발판을 가리킨다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 초소 / 한 사람의 허가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3aa7f7474c25c5db056fd8bb7ce7f7d17957b6a5ca7777043ef43d9dc2dfaaba",
+      "uid": "03494a26f7f72665cd1fa808",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S02_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S02_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S02_L0002",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "안아 주지는 마.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 104,
+          "label": "r13_v111_gate_arrival",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 초소 / 한 사람의 허가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ebb67d7864e009649249e7b442369bedb763bf697f5d92f6f90db82b70ad2b3d",
+      "uid": "5675f25ea0cf29eaa46a862b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S02_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S02_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S02_L0003",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "손만 잡을게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 104,
+          "label": "r13_v111_gate_arrival",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 초소 / 한 사람의 허가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2e1ffd8d04e8c6818a1b7ba94b54a3fb4989c1e4d91aa1227e60183eddbaba2a",
+      "uid": "94949df6d653da29ec08f961",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S02_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S02_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S02_L0004",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "마지막 발을 내리는 아이의 허리를 받친다. 다람은 모른 척한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 초소 / 한 사람의 허가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "975f476e972eb72e291a8bf102ab52704fd676c51aca661c0bbb8d88e111e0a0",
+      "uid": "311393c61ef2175f7625621a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S02_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S02_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S02_L0005",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "큰 짐은 두고 가세요. 축에 금이 갔네. 돌아가는 건 수리부터 해야겠어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 104,
+          "label": "r13_v111_gate_arrival",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 초소 / 한 사람의 허가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9cc1772fa427dc532b4e2e7e3afce4d240062b2f02aaaefd7b61bee006e94470",
+      "uid": "7fda3fa45d49daf41e3824f9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S02_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S02_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S02_L0006",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어디로 가면 됩니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 104,
+          "label": "r13_v111_gate_arrival",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 초소 / 한 사람의 허가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "28fc328ffe78101273caa1ff199c9a27088981051d4a4e12792175b314f75c53",
+      "uid": "3945181907f927329b953368",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S02_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S02_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S02_L0007",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "초소요. 방문 확인 먼저.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 104,
+          "label": "r13_v111_gate_arrival",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 초소 / 한 사람의 허가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d917e741e21f01aae826a1251b3dfaf230f7321247f960645839a954c9cceff0",
+      "uid": "a91369187e4511e099ad41f4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S02_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S02_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S02_L0008",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "작은 가방을 멘 다람과 초소로 간다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 초소 / 한 사람의 허가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "026692a1e187e2fdbf394f9b9980151860871b9053c3d5909b3a28f7be4d8728",
+      "uid": "fc1754a37aff00a92b76956e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S02_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S02_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S02_L0009",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "성함.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 104,
+          "label": "r13_v111_gate_arrival",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 초소 / 한 사람의 허가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a38b5325674d7892a901a196c41ce1f559e873a74e5375655ffcc445573b4243",
+      "uid": "b91b4e68a3350cb3236ee4e1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S02_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S02_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S02_L0010",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다돌입니다. 딸하고 왔습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 104,
+          "label": "r13_v111_gate_arrival",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 초소 / 한 사람의 허가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "db3614f39662871a85e61eef981ea7687b8da065ce50e397076106fa4a760726",
+      "uid": "7c846c006d9c7a48fa2cbea2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S02_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S02_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S02_L0011",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "아버지만 들어가실 수 있소. 아이는 일꾼으로 받을 수 없소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 104,
+          "label": "r13_v111_gate_arrival",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 초소 / 한 사람의 허가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c0c18e37ad0c4f0311de1d6b6553c6eedd9b2d5b68507c24911269e672a4da2b",
+      "uid": "b18ea78e2411e4ea0d06ad78",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S02_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S02_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S02_L0012",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "일꾼이요? 아내 만나러 왔는데요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 104,
+          "label": "r13_v111_gate_arrival",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 초소 / 한 사람의 허가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "de060671ed14f410554a50408c5589f27bd66143747afafdb2c1a6b216544393",
+      "uid": "4244dfa8d7e544f9ba611709",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S02_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S02_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S02_L0013",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "내게 온 종이엔 그렇게 적혀 있소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 104,
+          "label": "r13_v111_gate_arrival",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 초소 / 한 사람의 허가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "68979e0352d6a46a19832ed3b151b4e688a6d6f6f2051f363595efe862dbf52b",
+      "uid": "76298ebea85df4564d4acc43",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S02_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S02_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S02_L0014",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그럼 얘는 어쩌고요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 104,
+          "label": "r13_v111_gate_arrival",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 초소 / 한 사람의 허가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f3f7e25637b086c66a354fe0e0f424fb52a4e7deb0339d123fda6791a4e3e2ca",
+      "uid": "81ccee9c2ff03273eb92abd8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S02_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S02_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S02_L0015",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "혼자 두라는 말 아니오. 둘 다 여기서 기다리시오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 104,
+          "label": "r13_v111_gate_arrival",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 초소 / 한 사람의 허가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "54ebdb25d4654ca844266083b6f2b08552a38b6cee07d08015cbff6801b49db3",
+      "uid": "2042b3e3b8f0f1e25abd29c9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S02_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S02_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S02_L0016",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "다람이 외투를 당긴다. 아이를 내 옆으로 붙인다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 초소 / 한 사람의 허가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3cf75dbc8bc6227f7bcc396d196d453bd1d8d4645573c508351bc045fb2845a6",
+      "uid": "df5dd6aecea6a522f4b78595",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S02_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S02_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S02_L0017",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠, 나 때문에 못 들어가?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 104,
+          "label": "r13_v111_gate_arrival",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 초소 / 한 사람의 허가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e6be2e9eabbbd047747bf45b2ad707371168a086ae25ed9f8aa32c48b65b8d03",
+      "uid": "816600ea1ede07f67c6c5b22",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S02_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S02_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S02_L0018",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아니야. 잘못 적힌 게 있나 봐. 같이 보자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 104,
+          "label": "r13_v111_gate_arrival",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 초소 / 한 사람의 허가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1901f97928ae01ede96709c8812f10001b9dc5df7b0b258c607ee4d13d9181cd",
+      "uid": "a26260ce64724fc1206bdccd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S02_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S02_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S02_L0019",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "초소 입장 명단: 같은 도착일 / 다돌 / 신청 2명 / 신규 일꾼 본인 1명 / 동행 아동 모집 제외 / 내일부터 장작 운반 / 처리 너울.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 118,
+          "label": "r13_v111_gate_list",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 초소 / 한 사람의 허가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7f440f1347219204fa93810049ab088b6188c3449dde3b03dfa7f9e7dd04c60d",
+      "uid": "2f357dba173df92df17aecd8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S02_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S02_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S02_L0020",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "장작이요? 그런 신청 안 했습니다. 제가 낸 종이부터 보여 주세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 120,
+          "label": "r13_v111_gate_list",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 초소 / 한 사람의 허가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c92a37bc99f5ded3584b43ef7faedf5a5ce244ca70a4e752d0dfc7b85e445b58",
+      "uid": "629032644a0c47303d6f7b62",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S02_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S02_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S02_L0021",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "날짜와 이름을 찾으면 되오. 잠깐 기다리시오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 120,
+          "label": "r13_v111_gate_list",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 초소 / 한 사람의 허가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "eb544f06537f0663cb9399d6d808d3c8df8c09ba3f334b11e54861686494ad8c",
+      "uid": "374b6f3bb9ab7d04b302e0a3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S02_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S02_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S02_L0022",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "어떤 자료부터 보여 줄까?",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 120,
+          "label": "r13_v111_gate_list",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 초소 / 한 사람의 허가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e8713912ce28f170142f1780bfed283af45c6287a623162b7c785788a2f002c9",
+      "uid": "f0443063e4076b7dd5f1d323",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S02_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S02_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S02_L0023",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이 편지도 있습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 138,
+          "label": "r13_v111_gate_letter",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 초소 / 한 사람의 허가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "af088eb028898a7dfc8e50ac3ccb8f20ccbbef76de69f1d1b14446188b0726d9",
+      "uid": "2abcb5664df4e2856dbeec6c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S02_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S02_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S02_L0024",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "초대받은 건 알겠소. 두 사람이 묵을 방도 확인해야 하오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 138,
+          "label": "r13_v111_gate_letter",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 초소 / 한 사람의 허가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bfbedc9e98504a8a7c06e07990837b9248e6480d6d36d164c40a7d3eec7057b1",
+      "uid": "2d1416237d8bd9f337111392",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S02_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S02_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S02_L0025",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "여관으로 신청했습니다. 원본을 찾아 주십시오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 138,
+          "label": "r13_v111_gate_letter",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 초소 / 한 사람의 허가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "176e3c9ccaf71db88b09034c1f0b21cd7fa999ead0d3440a90c8ce74c352f6dc",
+      "uid": "36695a110acdc424157d1e66",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S02_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S02_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S02_L0026",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "가족 방문으로 낸 신청서를 봐 주십시오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 144,
+          "label": "r13_v111_gate_original",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 초소 / 한 사람의 허가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0fb9b80bca6ae425ed8495f1951398e7ec0e1934df8699122c6936b2599622b2",
+      "uid": "99d587c18896db19852207cf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S02_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S02_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S02_L0027",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "여기 있소. 이름부터 보시오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 144,
+          "label": "r13_v111_gate_original",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 초소 / 한 사람의 허가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "792972997d575353bc3b1908cb6942d6a9f459a68761d61d07ff43ef4ff7ba30",
+      "uid": "64e2b36a458d1f15fc889d8f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S02_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S02_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S02_L0028",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "돌목이 같은 날짜의 원본을 꺼낸다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 초소 / 한 사람의 허가",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "405b075dc0da9ae33eed3a5d54caa5b036ccb3339cb2d8257173fbea63437dc3",
+      "uid": "8b0743f23ff3d363715404b4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

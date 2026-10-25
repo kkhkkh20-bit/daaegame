@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_episodes.rpy:442:46",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        25402,
+        25438
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ep4_ubak",
+      "block": "r13_ep4_ubak",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:442:46",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "제가 시켰습니다. 촌장의 출력 보고가 측정값과 맞지 않아서요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 442,
+          "label": "r13_ep4_ubak",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 442,
+      "scene_title": "r13_ep4_ubak",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "1ed9dbda0ed418ce3ae3a4c5b1f88d5e774e9e0d99445ded48209ff764f0571f",
+      "uid": "79e89fe7021af2d784e68cad",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ep4_ubak|rpy_literal|r13_ep4_ubak|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_dialogue_openings_20261013.rpy:77:81",
+      "file": "game/room13_dialogue_openings_20261013.rpy",
+      "path": [
+        3668,
+        3677
+      ],
+      "origin": "rpy_inventory",
+      "day": 1,
+      "scene": "r13_notice_before_talk",
+      "block": "r13_notice_before_talk",
+      "placement": "literal",
+      "ref": "game/room13_dialogue_openings_20261013.rpy:77:81",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "에게 말 걸기",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_dialogue_openings_20261013.rpy",
+          "line": 77,
+          "label": "r13_notice_before_talk",
+          "guards": []
+        }
+      ],
+      "line": 77,
+      "scene_title": "r13_notice_before_talk",
+      "source_hash": "890bed91ceb4b4cf8324c73391aa6e9042f270678377f6d3617df682504bc986",
+      "baseline_hash": "0c54e45099b034fa952c561d9b54aae7403fd4ccf6a7168dbfba327c9aed2442",
+      "uid": "d2b2fc238627b2b2aad44583",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_notice_before_talk|rpy_inventory|r13_notice_before_talk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_dialogue_openings_20261013.rpy:108:31",
+      "file": "game/room13_dialogue_openings_20261013.rpy",
+      "path": [
+        4874,
+        4904
+      ],
+      "origin": "rpy_inventory",
+      "day": 1,
+      "scene": "r13_notice_before_talk",
+      "block": "r13_notice_before_talk",
+      "placement": "literal",
+      "ref": "game/room13_dialogue_openings_20261013.rpy:108:31",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "부리는 할아버지의 공구와 자기 부품을 따로 놓았다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_dialogue_openings_20261013.rpy",
+          "line": 108,
+          "label": "r13_notice_before_talk",
+          "guards": [
+            "if person == \"buri\" and s[\"case_state\"] == \"prevented\" and phase == \"after_trial\":"
+          ]
+        }
+      ],
+      "line": 108,
+      "scene_title": "r13_notice_before_talk",
+      "source_hash": "890bed91ceb4b4cf8324c73391aa6e9042f270678377f6d3617df682504bc986",
+      "baseline_hash": "b408ac7d356b4b72da1950aab076f9ba1b861b35794e2654154738ace87d195f",
+      "uid": "b61c947706cebcde8bcaec7a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_notice_before_talk|rpy_inventory|r13_notice_before_talk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_dialogue_openings_20261013.rpy:117:31",
+      "file": "game/room13_dialogue_openings_20261013.rpy",
+      "path": [
+        5464,
+        5514
+      ],
+      "origin": "rpy_inventory",
+      "day": 1,
+      "scene": "r13_notice_before_talk",
+      "block": "r13_notice_before_talk",
+      "placement": "literal",
+      "ref": "game/room13_dialogue_openings_20261013.rpy:117:31",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "밤이는 문을 살핀 뒤 자리에 앉았다. 전처럼 내 발소리에 곧바로 몸을 숨기지는 않았다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_dialogue_openings_20261013.rpy",
+          "line": 117,
+          "label": "r13_notice_before_talk",
+          "guards": [
+            "if person == \"bami\" and r13_has(\"bami_protected\"):"
+          ]
+        }
+      ],
+      "line": 117,
+      "scene_title": "r13_notice_before_talk",
+      "source_hash": "890bed91ceb4b4cf8324c73391aa6e9042f270678377f6d3617df682504bc986",
+      "baseline_hash": "de64ea2f5b48b8b514e413d23019cef64f60d1cb58856fa260001feaeb824506",
+      "uid": "34c9fd27915979334394b486",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_notice_before_talk|rpy_inventory|r13_notice_before_talk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_dialogue_openings_20261013.rpy:123:31",
+      "file": "game/room13_dialogue_openings_20261013.rpy",
+      "path": [
+        5856,
+        5890
+      ],
+      "origin": "rpy_inventory",
+      "day": 1,
+      "scene": "r13_notice_before_talk",
+      "block": "r13_notice_before_talk",
+      "placement": "literal",
+      "ref": "game/room13_dialogue_openings_20261013.rpy:123:31",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "밤이는 내 뒤를 확인했다. 나는 복도 쪽으로 몸을 비켰다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_dialogue_openings_20261013.rpy",
+          "line": 123,
+          "label": "r13_notice_before_talk",
+          "guards": [
+            "elif person == \"bami\" and r13_has(\"bami_pressured\"):"
+          ]
+        }
+      ],
+      "line": 123,
+      "scene_title": "r13_notice_before_talk",
+      "source_hash": "890bed91ceb4b4cf8324c73391aa6e9042f270678377f6d3617df682504bc986",
+      "baseline_hash": "ecf97afca81ac66ac5c6038cd06ccbd4ade68817074b8ceb6ad90b0a2acddee8",
+      "uid": "dde11784ce5019cae657e39d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_notice_before_talk|rpy_inventory|r13_notice_before_talk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_dialogue_openings_20261013.rpy:262:61",
+      "file": "game/room13_dialogue_openings_20261013.rpy",
+      "path": [
+        13383,
+        13387
+      ],
+      "origin": "rpy_inventory",
+      "day": 1,
+      "scene": "r13_notice_before_talk",
+      "block": "r13_notice_before_talk",
+      "placement": "literal",
+      "ref": "game/room13_dialogue_openings_20261013.rpy:262:61",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "저녁",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_dialogue_openings_20261013.rpy",
+          "line": 262,
+          "label": "r13_notice_before_talk",
+          "guards": [
+            "if key in s.get(\"read_topics\", []):"
+          ]
+        }
+      ],
+      "line": 262,
+      "scene_title": "r13_notice_before_talk",
+      "source_hash": "890bed91ceb4b4cf8324c73391aa6e9042f270678377f6d3617df682504bc986",
+      "baseline_hash": "8d3c547011f433e6d2598716709084516328fb6db2e03abeb4a6b686bc8e59f6",
+      "uid": "48e5168915f9dd30d58a4b53",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_notice_before_talk|rpy_inventory|r13_notice_before_talk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

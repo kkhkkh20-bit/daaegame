@@ -1,0 +1,167 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_reinspect.rpy:41:38",
+      "file": "game/systems/room13_reinspect.rpy",
+      "path": [
+        2871,
+        2899
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_seal_look",
+      "block": "r13_seal_look",
+      "placement": "literal",
+      "ref": "game/systems/room13_reinspect.rpy:41:38",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "봉인은 풀지 않고 보세요. 손은 대지 마시고요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_reinspect.rpy",
+          "line": 41,
+          "label": "r13_seal_look",
+          "guards": []
+        }
+      ],
+      "line": 41,
+      "scene_title": "r13_seal_look",
+      "source_hash": "925f5636795b050f9825ef43480d0c8746711baa5084d7db9933328b44c45d44",
+      "baseline_hash": "d002b6d7f4b05b70b87a81f0c9defd78a269cdb64e29ad8f99841c15a5cd14d9",
+      "uid": "a278df19a12bf2ee86b3e11e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_seal_look|rpy_literal|r13_seal_look|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_reinspect.rpy:46:38",
+      "file": "game/systems/room13_reinspect.rpy",
+      "path": [
+        3031,
+        3083
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_seal_look",
+      "block": "r13_seal_look",
+      "placement": "literal",
+      "ref": "game/systems/room13_reinspect.rpy:46:38",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "생각보다 무겁다. 윗부분 끝에 검게 굳은 얼룩이 있다. 받침과 윗부분은 따로 봉해져 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_reinspect.rpy",
+          "line": 46,
+          "label": "r13_seal_look",
+          "guards": [
+            "while _sl_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 46,
+      "scene_title": "r13_seal_look",
+      "source_hash": "925f5636795b050f9825ef43480d0c8746711baa5084d7db9933328b44c45d44",
+      "baseline_hash": "abc20c2ef02fb9c640c6a63adbed44e2187fc62bab18ef25edbb618abe996db2",
+      "uid": "2fbeb8a9cb615fb96ab11f14",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_seal_look|rpy_literal|r13_seal_look|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_reinspect.rpy:48:38",
+      "file": "game/systems/room13_reinspect.rpy",
+      "path": [
+        3165,
+        3208
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_seal_look",
+      "block": "r13_seal_look",
+      "placement": "literal",
+      "ref": "game/systems/room13_reinspect.rpy:48:38",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "윗부분의 갈라진 면은 안쪽이 날카롭게 드러나 있다. 받침 쪽 면은 무디다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_reinspect.rpy",
+          "line": 48,
+          "label": "r13_seal_look",
+          "guards": [
+            "while _sl_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 48,
+      "scene_title": "r13_seal_look",
+      "source_hash": "925f5636795b050f9825ef43480d0c8746711baa5084d7db9933328b44c45d44",
+      "baseline_hash": "c557331acbd5813b7ecbdbe965281c19e5a9065623190734ec86190ed6b70f4e",
+      "uid": "da9ebf69450c66a0aeede05e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_seal_look|rpy_literal|r13_seal_look|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_reinspect.rpy:50:38",
+      "file": "game/systems/room13_reinspect.rpy",
+      "path": [
+        3290,
+        3340
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_seal_look",
+      "block": "r13_seal_look",
+      "placement": "literal",
+      "ref": "game/systems/room13_reinspect.rpy:50:38",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "윗부분 옆의 장식 고리가 한쪽으로 눌려 있다. 고리 안에 가는 금속 조각이 끼어 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_reinspect.rpy",
+          "line": 50,
+          "label": "r13_seal_look",
+          "guards": [
+            "while _sl_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 50,
+      "scene_title": "r13_seal_look",
+      "source_hash": "925f5636795b050f9825ef43480d0c8746711baa5084d7db9933328b44c45d44",
+      "baseline_hash": "73e24d6bd6da94b3e04f30df10979ba0a29479f2f70005cd827939a086a649b5",
+      "uid": "cfff9e8afd639472f8d237e8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_seal_look|rpy_literal|r13_seal_look|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

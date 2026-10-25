@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "silluk_supervision13:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "silluk_supervision13",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 13,
+      "scene": "silluk_supervision13",
+      "block": "silluk_supervision13",
+      "placement": "binding",
+      "ref": "silluk_supervision13:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "하차 전 감독 교대를 확인합니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "square",
+        "person": "guard",
+        "object": null
+      },
+      "scene_title": "silluk_supervision13",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "186e668dedc878265094278be2de1d50e1e0683a5bff8dcc939917b9211d520b",
+      "uid": "da329aeaa9ce792231ab388e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|silluk_supervision13|choice|silluk_supervision13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

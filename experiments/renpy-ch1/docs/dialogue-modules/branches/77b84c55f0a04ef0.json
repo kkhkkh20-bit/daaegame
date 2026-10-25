@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_AUD_D05_02",
+      "file": "game/v111/newworld/d05.json",
+      "path": [
+        "before",
+        "MS14_D05_S02_L0002",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D05_S02_L0002",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "솜이가 무쇠에게 다른 겉옷을 입혀 준다. 솜이 손에 손목이 잡히자 무쇠가 놀라 팔을 뺀다. 나는 얼른 한 걸음 물러선다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 427,
+          "label": "r13_v111_wait_cloth5",
+          "guards": []
+        }
+      ],
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "a9e760da50ee60c0891a0f3223c23267f704e9da058eb484a3ffcf4ed70b3f1c",
+      "baseline_hash": "db1ca1f6987cd541f5497ec91db128e27ff1fa9b61dffef4fbaddd44fb188a68",
+      "uid": "735a09f5d19a3b498371d282",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_DLG_D05_01",
+      "file": "game/v111/newworld/d05.json",
+      "path": [
+        "before",
+        "MS14_D05_S02_L0026",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D05_S02_L0026",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "문간에 바둑이가 와 있다. 순찰 길에 들른 참이다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 459,
+          "label": "r13_v111_cloth_match5",
+          "guards": []
+        }
+      ],
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "a9e760da50ee60c0891a0f3223c23267f704e9da058eb484a3ffcf4ed70b3f1c",
+      "baseline_hash": "1656eaf736e3c4a08cdf9fd6dbb0274bd432b49edd96db1502aedf41209c29f6",
+      "uid": "76bd767008c69e2f2a753f8f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

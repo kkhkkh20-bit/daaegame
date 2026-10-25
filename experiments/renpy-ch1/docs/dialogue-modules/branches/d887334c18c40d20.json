@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D12_S04_V06",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "before",
+        "MS14_D12_S04_L0039",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D12_S04_L0039",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나비가 행주를 꽉 쥔다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1460,
+          "label": "r13_v111_handling_late12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "a204c022f796693e96d2b08ac40e7694b515dc50ba6b2c253c4c69bc19a7f0a8",
+      "uid": "02b4005caf7ba94370d5f1ce",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D12_S04_V07",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "before",
+        "MS14_D12_S04_L0078",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D12_S04_L0078",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나비가 행주를 두 손으로 비튼다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1475,
+          "label": "r13_v111_handling_pre12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "56fe6bad2492b2d5688f25616c6305784817d27668166e26e846b0c73dd4aec5",
+      "uid": "807a7017dc57e29b6ce9f2e3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

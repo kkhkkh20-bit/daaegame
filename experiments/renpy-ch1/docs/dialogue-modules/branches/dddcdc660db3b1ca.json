@@ -1,0 +1,164 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:414:58",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        23759,
+        23774
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_ws_meeting",
+      "block": "r13_ws_meeting",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:414:58",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "선생님을 너울에게 넘긴다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 414,
+          "label": "r13_ws_meeting",
+          "guards": []
+        }
+      ],
+      "line": 414,
+      "scene_title": "r13_ws_meeting",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "d422aaf1260136f6b6c7dc1a34dc8d8bf01d0ec9c31f9c0a1e32ae820bb1a13b",
+      "uid": "defed3ec171ac93f05234765",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ws_meeting|rpy_literal|r13_ws_meeting|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:422:28",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        24169,
+        24199
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_ws_meeting",
+      "block": "r13_ws_meeting",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:422:28",
+      "when": null,
+      "speaker": "resident_teacher",
+      "kind": "dialogue",
+      "text": "아이들만 보낼 수는 없지요. 선생이 같이 가야지요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 422,
+          "label": "r13_ws_meeting",
+          "guards": []
+        }
+      ],
+      "line": 422,
+      "scene_title": "r13_ws_meeting",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "7f3e35fbf18e624964c617fc931d80fe5701443d638e4042d2967e5dd1b974d3",
+      "uid": "5fb9a97dbb799a63b902d346",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ws_meeting|rpy_literal|r13_ws_meeting|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:434:38",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        24757,
+        24794
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_ws_meeting",
+      "block": "r13_ws_meeting",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:434:38",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "선생님이 냄비를 비웠다. 도담 옆에 눕고, 담요를 끌어 덮었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 434,
+          "label": "r13_ws_meeting",
+          "guards": [
+            "menu:",
+            "if r13_has(\"ws_some_alive\"):"
+          ]
+        }
+      ],
+      "line": 434,
+      "scene_title": "r13_ws_meeting",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "d08afacbb79cc32f68250f06ade7924b10e76194ffd5675e45114f36d2b5eb7d",
+      "uid": "7056cc6913b98066388b61c3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ws_meeting|rpy_literal|r13_ws_meeting|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:439:38",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        25085,
+        25123
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_ws_meeting",
+      "block": "r13_ws_meeting",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:439:38",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "선생님이 냄비를 비웠다. 아이들 옆에 눕고, 담요를 끌어 덮었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 439,
+          "label": "r13_ws_meeting",
+          "guards": [
+            "menu:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 439,
+      "scene_title": "r13_ws_meeting",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "84e398f46ef1e07383d88a271290e0020f2582c2991b8d9dd6bd046e2075638a",
+      "uid": "9b3d9ca113d8f91812e1b8d2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ws_meeting|rpy_literal|r13_ws_meeting|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

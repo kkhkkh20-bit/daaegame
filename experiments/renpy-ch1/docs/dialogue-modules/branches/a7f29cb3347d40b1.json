@@ -1,0 +1,396 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D14_END_PARTIAL_L0011",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_PARTIAL_L0011",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_END_PARTIAL",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_PARTIAL_L0011",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "없어요. 내 눈으로 직접 보고 왔어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3512,
+          "label": "r13_v111_partial_received14",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "scene_title": "부분 구조 결말 — 남은 인계표",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "2e2f80211d14849973db54b722900acf7b824f9389dccd8e7412be333ef94f4c",
+      "uid": "365389772eba9ff1404c9520",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_PARTIAL|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0002",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_PARTIAL_L0002",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_END_PARTIAL",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_PARTIAL_L0002",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "한 자리 났어요. 먼저 누운 사람부터 옮겨요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3469,
+          "label": "r13_v111_partial_ending14",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "scene_title": "부분 구조 결말 — 남은 인계표",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "d0947da0a527937ce27183866a11585ae277cec0407b7ac3de25ddc3a74274ac",
+      "uid": "e6fb7b4e1a75ad3124b9ee63",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_PARTIAL|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0009",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_PARTIAL_L0009",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_END_PARTIAL",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_PARTIAL_L0009",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "이제 마지막 사람이에요. 안에서 받아 줬어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3509,
+          "label": "r13_v111_partial_received14",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "scene_title": "부분 구조 결말 — 남은 인계표",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "6a43981d93c10b18d13b40470df7d0fdcb1c09161e06c0ffd436d7f75eb6889b",
+      "uid": "eeb0714aae85e40b32cafd04",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_PARTIAL|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0003",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_PARTIAL_L0003",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_END_PARTIAL",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_PARTIAL_L0003",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이 사람부터요. 감독하실 분은 남아 주실 수 있죠?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3470,
+          "label": "r13_v111_partial_ending14",
+          "guards": []
+        }
+      ],
+      "scene_title": "부분 구조 결말 — 남은 인계표",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "c993c5732fa3a99a2bdb6951b11e3ec133429bf13cfbc9db9b6e8fa45bee8cd9",
+      "uid": "5e32201aec1787297ea6f4f9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_PARTIAL|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0004",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_PARTIAL_L0004",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_END_PARTIAL",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_PARTIAL_L0004",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "내가 남겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3472,
+          "label": "r13_v111_partial_ending14",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "scene_title": "부분 구조 결말 — 남은 인계표",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "abb36c04e91a766898c39fd27aff59c1b7628e33986aca0b826717db2ed6bcee",
+      "uid": "b881734dd7ca83d90139d83b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_PARTIAL|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0006",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_PARTIAL_L0006",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_END_PARTIAL",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_PARTIAL_L0006",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "오늘도…… 안 끝났어?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3473,
+          "label": "r13_v111_partial_ending14",
+          "guards": []
+        }
+      ],
+      "scene_title": "부분 구조 결말 — 남은 인계표",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "5ea16009dbccd312253e4450edcdf3e581315692146d10a21a0b787838e89e26",
+      "uid": "74b953a9703b0dc6a28a0c16",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_PARTIAL|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0010",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_PARTIAL_L0010",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_END_PARTIAL",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_PARTIAL_L0010",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "수레에 남은 사람은요? 없고요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3510,
+          "label": "r13_v111_partial_received14",
+          "guards": []
+        }
+      ],
+      "scene_title": "부분 구조 결말 — 남은 인계표",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "58c06288bc8186f6f9f76632a3473067b8e4b92f3bee03676c4e6a5b7c7eb1be",
+      "uid": "cf495853e9f242ff6191b90f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_PARTIAL|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0012",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_PARTIAL_L0012",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_END_PARTIAL",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_PARTIAL_L0012",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이 덮개는 두고 가요. 다음 사람이 올 때까지 자리를 비우지 말아 주세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3519,
+          "label": "r13_v111_partial_wait14",
+          "guards": []
+        }
+      ],
+      "scene_title": "부분 구조 결말 — 남은 인계표",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "8117f34d5d758cec0b1b72dbe9b9b94066158b7377ae9372ceb67876ff55c78c",
+      "uid": "6bea4da465a46cf416a234e1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_PARTIAL|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0013",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_PARTIAL_L0013",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_END_PARTIAL",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_PARTIAL_L0013",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "내가 남겠소. 다음 자리가 나면…… 먼저 부르겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3521,
+          "label": "r13_v111_partial_wait14",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "scene_title": "부분 구조 결말 — 남은 인계표",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "db874a4558aff5e9e338950e364206ea782148142492c656651da9ecf1e394fb",
+      "uid": "5f9b5b0e8d9cbb833e4d0e2a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_PARTIAL|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0007",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_END_PARTIAL_L0007",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_END_PARTIAL",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_END_PARTIAL_L0007",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응. 그래도 어제 수레에서 내린 사람들은 아직 학교에 있어.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3474,
+          "label": "r13_v111_partial_ending14",
+          "guards": []
+        }
+      ],
+      "scene_title": "부분 구조 결말 — 남은 인계표",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "dd2eeb3b8a9d08ecab2d9670cbd0a20ab3d90ef7386b6f625c8d7760f6117cc1",
+      "uid": "70b0905d94733785a20b40fd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_END_PARTIAL|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

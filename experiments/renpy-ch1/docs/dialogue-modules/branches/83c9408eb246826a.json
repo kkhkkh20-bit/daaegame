@@ -1,0 +1,127 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/winter_opening.rpy:81:76",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        5414,
+        5426
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:81:76",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "함께 온 가족도요?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 81,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"ledger\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 81,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "a169b52acf85670a2034b7c497bafbfb4d2667d584cb3c1e9cb779860d3706f5",
+      "uid": "045e4047a5d57f99be728903",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:85:36",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        5614,
+        5635
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:85:36",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "아래가 접혔어. 여기 글씨도 있네.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 85,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"rule\":"
+          ]
+        }
+      ],
+      "line": 85,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "1fe2242f1ed7dbd0f974dfb64c4cc855ce0aef159dd17856c9a413010983424d",
+      "uid": "9c48e2d52b9a15220397d640",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:85:66",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        5644,
+        5661
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:85:66",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "종이 젖었으니 살살 펴 봐.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 85,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"rule\":"
+          ]
+        }
+      ],
+      "line": 85,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "04206020edbf9c3bea662262494ee5186dc70bb9b1aef098096f9ce979d04170",
+      "uid": "08f2e27cfb4c54170865deb0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

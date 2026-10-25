@@ -1,0 +1,236 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D03_S05_C07",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "after",
+        "MS14_D03_S05_L0072",
+        13,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D03_S05_L0072",
+      "when": "lamp_partial",
+      "speaker": null,
+      "kind": "narration",
+      "text": "톡은 풀려난다. 그러나 3번 등에서 돌을 꺼낸 손이 누구 것인지는 끝내 대지 못했다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1263,
+          "label": "r13_v111_trial_wrong",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1268,
+          "label": "r13_v111_trial_wrong",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1281,
+          "label": "r13_v111_trial_wrong_sale",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1285,
+          "label": "r13_v111_trial_wrong_sale",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1298,
+          "label": "r13_v111_trial_wrong_latch",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1302,
+          "label": "r13_v111_trial_wrong_latch",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1315,
+          "label": "r13_v111_trial_wrong_stone",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1319,
+          "label": "r13_v111_trial_wrong_stone",
+          "guards": []
+        }
+      ],
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "5aa47a7e4a27de08d50a68343b22fcd9b5632f0e10fe9356acc98fd3e655d7b6",
+      "uid": "72e985b51ba048bc5518a547",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|patch|after|lamp_partial",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D03_S05_C08",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "after",
+        "MS14_D03_S05_L0070",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D03_S05_L0070",
+      "when": "lamp_partial",
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "칼이 닮았다, 돌을 팔았다. 그것뿐이오. 주운 돌을 판 걸로 사람을 붙잡아 둘 순 없소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1143,
+          "label": "r13_v111_knife_wrong",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1146,
+          "label": "r13_v111_knife_wrong",
+          "guards": []
+        }
+      ],
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "4597f80e5e80693ea5ef6182a489fa579a47ecdf0aaeccc2daa22679fe0331e2",
+      "uid": "7d294ee520592ab402e04309",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|patch|after|lamp_partial",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D03_S05_C09",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "after",
+        "MS14_D03_S05_L0070",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D03_S05_L0070",
+      "when": "lamp_partial",
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "거봐요. 주웠다니까요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1143,
+          "label": "r13_v111_knife_wrong",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1146,
+          "label": "r13_v111_knife_wrong",
+          "guards": []
+        }
+      ],
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "c587bd97d6925bd07765d1515840a0d21ccb7dafa1ac98d3a1bb654087246271",
+      "uid": "fceb4cb27348d4fa6813d19c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|patch|after|lamp_partial",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D03_S05_C10",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "after",
+        "MS14_D03_S05_L0070",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D03_S05_L0070",
+      "when": "lamp_partial",
+      "speaker": null,
+      "kind": "narration",
+      "text": "톡의 손은 풀린다. 하지만 돌을 꺼낸 사람은 끝내 밝혀내지 못했다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1143,
+          "label": "r13_v111_knife_wrong",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1146,
+          "label": "r13_v111_knife_wrong",
+          "guards": []
+        }
+      ],
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "e182eb3f4798a9892ba5fff4b31f0784e33a09ad999a8fdfc9744f8a5fbff1a0",
+      "uid": "e2c586a00e59c95972b27c8a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|patch|after|lamp_partial",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

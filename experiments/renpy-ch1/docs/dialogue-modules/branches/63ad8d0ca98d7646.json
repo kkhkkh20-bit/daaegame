@@ -1,0 +1,2459 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D11_S03_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "여관 아래 옛 시설. 자유 상태 할머니의 출입은 이미 확보한 동행자와 함께 통제하고, 구금 상태라면 돌목의 입회 아래 기록·시설만 연다. 아빠 가족만 적대자의 잠긴 집에 무방비로 들어가지 않는다. 굴돌이 실제 동행 가능한 경로에서는 벽 글자 앞에 선다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5d6235affe8fa69e6795277697cd1f89ba2233f647c4567a4aa88ae038554768",
+      "uid": "33a9ed60f65ca6ee0a7de3b7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0002",
+      "when": null,
+      "speaker": "굴돌",
+      "kind": "dialogue",
+      "text": "이 획은 불이 아니오. 갈라지는 쪽.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 366,
+          "label": "r13_v111_guldol_heat11",
+          "guards": [
+            "if r13_v111_actor_ready('resident_guldol'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8dee2757dc691432718df1c23ede1d83a818b57f15768d5e704706458c21f1a9",
+      "uid": "ad97838275c884311f7c87f5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0003",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "여기 연결되는 자리가 있어요. 하나가 다 먹는 게 아니라 남은 데서 옮기는 거예요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 367,
+          "label": "r13_v111_guldol_heat11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3c0dab50d8737df4ea1a88c68dcce8d7975f602b9c75a6b00300948fad0a61cf",
+      "uid": "5eb0fe3f04d482557f524dc6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0004",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "학교까지 갈 수 있어? 다람이 잘 자리까지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 368,
+          "label": "r13_v111_guldol_heat11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e3040fff86419c97fac64e98a51e1428e40936104dd8b2e3bd22cf1361e2086b",
+      "uid": "87635b701ef1361119eb7dac",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0005",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "켜기만 해서는 안 돼. 남은 조각을 모아야 해. 옮길 사람도 필요하고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 369,
+          "label": "r13_v111_guldol_heat11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fa95ef34b0aab51154394a0f6df5b1c300073b92b97b35d7e75190d4a67f9d62",
+      "uid": "4277b4409fc268fee902b5b9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0006",
+      "when": null,
+      "speaker": "굴돌",
+      "kind": "dialogue",
+      "text": "이거 비었다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 371,
+          "label": "r13_v111_guldol_heat11",
+          "guards": [
+            "if r13_v111_actor_ready('resident_guldol'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f582dc03d54865c1d45b25a1ef857f5e5d1bcf4675e567627a375b95b3394f65",
+      "uid": "7750428a2b5bd66ba9660abb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0007",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "굴돌이 관 하나를 두드린다. 돌이 들어 있지 않은 관에서는 빈 소리만 난다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1caa7523cd779e58a1069eebfe1b49d8aea33cb377f2567fe3b4c6734b64e7bc",
+      "uid": "84fcd7b20b2a50e75fcdce83",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0008",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "이건?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 372,
+          "label": "r13_v111_guldol_heat11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "dd30b50275c0571c5a541b1d718485b19642f65e910ada58b63be4255c3c10d4",
+      "uid": "1f0e42c056178534bde04c9e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0009",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "손 대지 마. 겉만 보고는 몰라.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 373,
+          "label": "r13_v111_guldol_heat11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8839bc1f355d8021687d3f0d58040d80ec3c2d7b6cad5be25218230e7c335a2d",
+      "uid": "d2c8fd6f39831345cbbded86",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0010",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "조작: 실제 회수한 조각, 남아 있는 등 조각, 시설의 잔열을 받침대별로 확인한다. 이미 돌려놓은 필수 난방 조각은 가져오면 그 자리가 식는다는 표시를 먼저 보여 준다. 무한 생산 버튼 없음.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f27e9f86387802b1e50ce6ce11c8133a1d4c8154af2c8ae119030135c88d33fa",
+      "uid": "12e14956361da18456e2cd15",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0011",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "광장 등부터 빼자고?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 392,
+          "label": "r13_v111_heat_seen11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "dc3920c17098f3739a1e3fdf950fe23973d6632fdb706fb3f9bfd2a677b1688d",
+      "uid": "5c45a90f754beab882429f77",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0012",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "길 찾는 등은 남겨야 해요. 아랫길 문까지 어두워지면 사람을 못 데려와요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 394,
+          "label": "r13_v111_heat_seen11",
+          "guards": [
+            "if r13_v111_actor_ready('resident_lamplighter'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "671c2907d5a4956ecf3776c2442c48c1b2ef8894c372870df2c1911cff340fd4",
+      "uid": "53dfd28e1b3a65fc545c5c65",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0013",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "밝기 줄일 수 있는 것부터요. 집 안 난방 것은 지금 빼면 안 돼요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 395,
+          "label": "r13_v111_heat_seen11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "798e1c285e7776615112adcc5f4c2edebc003d8a92c0e2e65a8e968e9912f3f6",
+      "uid": "70c2e59af38061ea96f769c9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0014",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "얼마나 버텨?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 396,
+          "label": "r13_v111_heat_seen11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e1a2a9e0bbf0d227a54ee16ba1bc05440b42ba3290726cc0a0200ea2479e01dd",
+      "uid": "777b73afd6f8c77ab2803115",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0015",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "이만큼 모으면 오늘 밤 버틸 자리는 만들 수 있어. 멀리까지 한꺼번에 보내면 중간에서 잃어. 학교부터.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 397,
+          "label": "r13_v111_heat_seen11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f61299ec95f7ddb6746c78b02c0724d30915342ed03c53250d1bc02c3f30c4a3",
+      "uid": "62df3dfcb89198ff8e721faa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0016",
+      "when": null,
+      "speaker": "굴돌",
+      "kind": "dialogue",
+      "text": "겨울 끝까지라곤 못 하오. 쓸수록 줄어드는 건 같소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 399,
+          "label": "r13_v111_heat_seen11",
+          "guards": [
+            "if r13_v111_actor_ready('resident_guldol'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "48aa38f519e94aa5a0023b4c6542f7232e959294d8d37785e0a6a0642c4f3629",
+      "uid": "febcfaff840ccd41dee0672f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0017",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "입력: 실제 확보한 운반 인력과 목적지를 연결한다. 까로에게 학교 운반을 맡기면 같은 시간 아랫길 구조 인원에서 빠진다. 아빠가 직접 옮기면 가족은 엄마와 이미 확인한 대피 자리에서 기다린다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "50f563c826f78558032e08cd36f8636ba5ae8bfb50d3390f5946238ef0dbd693",
+      "uid": "72a1b64fc7c931f7ac69b475",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0018",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "우리 것도 줘야 해?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 400,
+          "label": "r13_v111_heat_seen11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "57fde9384027018165b7e653e77f161dd51a5c1c6064fdc2377ca4b1a05224ca",
+      "uid": "cdd47a118a90931507f9a6c2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0019",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "우리한테 남을 것부터 보자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 401,
+          "label": "r13_v111_heat_seen11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9b38389123030435e49e57a2d84831b12ab5730ebd402725f9a74c6d5fd612a7",
+      "uid": "85b6317e3fc4b75fd0381c7b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0020",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "가족 마른 담요가 실제 남은 경로.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bcca4d576301dd19e7a8b8bd3f304068dad593fc7b64094b14100a1cd47bbd7b",
+      "uid": "97ff646b6f03420814261893",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0021",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "셋이 덮을 건 남기자. 다 내놓으면 다람이 또 젖은 옷 덮고 자야 해.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 423,
+          "label": "r13_v111_family_blankets11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "01a2df442435654c3401d311243a2f00ee651ecd6a9236371ca4cd9bb36e4ce2",
+      "uid": "36cfbeb198e5ef6bc117b08f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0022",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "가족 마른 담요가 없는 경로.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "12122ddd87bed48c1639a3e9d215d9c3848e958cebbea979838e4c3d871f2efd",
+      "uid": "86776419aecd17c76e60ac49",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0023",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "우리 셋이 덮을 것도 아직 없잖아. 여기서 쓸 자리를 먼저 확인하자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 427,
+          "label": "r13_v111_no_blankets11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "458aa7e1d524baf2f49b1380c276fa7222bc671b58263898b97a8d817be8c509",
+      "uid": "69021b9f3ead6c9c6f3032ad",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0024",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "대표 경로. 낮에 확보한 조각을 담은 상자를 아빠와 까로가 학교 문턱 너머까지 옮긴다. 선생님이 문을 잡는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "26b9a4a29967faebce115aa8c1cc929eccec07e2d20c428da2a7c34e5ffdc533",
+      "uid": "a57e1c315b847415e3264273",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0025",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "온다더니 정말 가져오셨네.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 520,
+          "label": "r13_v111_supply_school11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "dede8387cf92fc5ff7585254f46f77aeff958fc7a9d736f3bfe2ea3f3c3c531c",
+      "uid": "965b8d4f42aac575bcae0938",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0026",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "상자는 이게 전부예요. 오늘 밤 전부를 데울 양은 아닙니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 521,
+          "label": "r13_v111_supply_school11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "144fad340f6dfc83f77d299968ff28beba723903eaecf3ee2414dddcfd8c32a5",
+      "uid": "9c4a3ed3f3432c111817ce7e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0027",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "그럼 제일 안쪽부터요. 애들 발이 젖었어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 522,
+          "label": "r13_v111_supply_school11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1f40c5f2bc661e5c2ed3cdd8ced59b35bbd40b3080c9d01ae0255a5adc1bb454",
+      "uid": "d3b371c686e4eb6c5fbca2c9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0028",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "물자 인계를 마치고 학교 부엌에 들른다. 토실은 나비 옆에서 자기 그릇을 씻고 있다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "998be9105a1f8f6e3e7b7fb2daa292e7ac9e3485695da7f35a89989b5881c5bd",
+      "uid": "a4e83e2539f7e2ba0119a2a3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0029",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "토실아, 나 돌아왔어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 530,
+          "label": "r13_v111_school_visit11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a44e8beed807296adc2e4f40e4d7971174564755d8a7b6ba5393945faf8454e7",
+      "uid": "c3f275ea74057e03401c42c5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0030",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "여기 잘 있었어요. 누가 데리러 오지도 않았고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 531,
+          "label": "r13_v111_school_visit11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3e45476b70b5863383b7c73f957451ff43de0d2ab0bdb2779cf47d246639c317",
+      "uid": "0797b21f10abbb4e9b014532",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0031",
+      "when": null,
+      "speaker": "토실",
+      "kind": "dialogue",
+      "text": "다람이 엄마 만났어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 532,
+          "label": "r13_v111_school_visit11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "30d5bcf640c0d29fa9c89c77ed3fb6cfcfdc78ffc08ba7d06d89685df82210d4",
+      "uid": "b1a667e324b80ad4703b9a2f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0032",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응. 지금 함께 있어. 네 엄마 얘기는 확인한 게 더 생기면 말해 줄게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 533,
+          "label": "r13_v111_school_visit11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d83399d53febdbfedfc043941459eff4f3089deff37542d9d725a32bbc20ac0a",
+      "uid": "e6264c5769726d4f49ba1787",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0033",
+      "when": null,
+      "speaker": "토실",
+      "kind": "dialogue",
+      "text": "알았어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 534,
+          "label": "r13_v111_school_visit11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "59f8af9f919215b6e9eba049ba0eb5233fda272ea66e980e3c8860c644c1c75c",
+      "uid": "870b0dd548e515186f8a226c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0034",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "엄마는 학교 공용 공간에서 토실에게 인사한다. 이제 가족이 함께 학교로 나왔다는 사실만 보이며, 비워 온 은신처 주소나 연락 방식은 전하지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fd739da477cf25f18d838ae7a95c611c96e74ab17403f9e58a5e252645105bca",
+      "uid": "563650bd86ce206ec289af75",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0035",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "오늘은 여기서 같이 밥 먹자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 535,
+          "label": "r13_v111_school_visit11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "60abcf5e4b59ed6528db2440d332723c6c3035f9bc6d0c46ff3c69acf9214386",
+      "uid": "f803b23b51fbbb9c5de92a9c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0036",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "학교 물자 인계 뒤, 가족 마른 담요가 남아 있을 때만 선택 가능: ‘가족 짐으로 보관한다’ / ‘한 장을 토실에게 건넨다’. 학교 차용 담요를 내 물건처럼 건네지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "010d341dcc266742aa1663c0309706cb56563ae7c1d5c939305e7ce1c329f9a6",
+      "uid": "30f792f68c7fb455b4906826",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0037",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0037",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0037",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "한 장 건네기. 아빠가 가족 짐에서 실제 담요 한 장을 꺼내 토실에게 건넨다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6811e31b5422db1a98a8b58b5c99f16526cf1a752fd517e3c045b0666cfd7642",
+      "uid": "eb4c339e0ea50b326c51a702",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0038",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0038",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0038",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이건 오늘 네가 써. 나비 씨, 여기 두겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 568,
+          "label": "r13_v111_tosil_blanket11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "423ad9279282e452041077f1f5a1fca814ee98afe0f2e5b4e1267814bf78d817",
+      "uid": "d2d049be377c6bcd0399382e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0039",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0039",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0039",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "토실 자리 걸로 적어 둘게요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 569,
+          "label": "r13_v111_tosil_blanket11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "08275e238390933233d98ff1d7fbef25820b39481e83f5f89fdef0e8764f5f9a",
+      "uid": "b929accea3d8f762e72ab30a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0040",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0040",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0040",
+      "when": null,
+      "speaker": "토실",
+      "kind": "dialogue",
+      "text": "다람이는?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 570,
+          "label": "r13_v111_tosil_blanket11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a36cfe320286448431f6afab2b07d8689dd700d6753893d53e9bb748ffb25120",
+      "uid": "1aef30abb2060425b9c5341d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0041",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0041",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0041",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "우린 한 장 남았어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 579,
+          "label": "r13_v111_tosil_blanket_remaining11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "20acabe4995056b3970c3248eb011839af1708ca36a6916252214485975ac9ee",
+      "uid": "550e3371067c788b51851511",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0042",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0042",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0042",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "마지막 한 장을 건네는 경우 다람의 대사는 “아빠하고 엄마 옆에 앉을 거야.”로 바뀐다. 가족의 남은 마른 담요 수가 실제로 하나 줄고 토실 자리 물자로 이동한다. 되찾는 별도 인계 없이 가족 장면에 재등장시키지 않는다. 이미 학교 침상에 덮개가 있어도 추가 보온일 뿐 토실 생존 보너스를 생성하지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9208f09d3c0976b5cc04ed7d4a15281b542858e44c14452e510ab6459b350fbd",
+      "uid": "d3d12230f984ff7465582b4f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0043",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0043",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0043",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "갈라지는 표시야. 여기 연결되는 자리하고 맞아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 377,
+          "label": "r13_v111_mother_heat11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f722f4fc97cb72e3f7ad9a4256843e8839c75740d5775040ae0f87e1724b61f1",
+      "uid": "4ccd908c7e302cd4fc0626fd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0044",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0044",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0044",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "겨울 내내 버티는 건 아니고?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 378,
+          "label": "r13_v111_mother_heat11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0943603b830e760f15f00b7334c1e7796a0c7e304bda7a2f111d99d0cceac28d",
+      "uid": "91bf0c6b5686f76df7bc18d4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0045",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0045",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0045",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "응. 쓸수록 줄어드는 건 같아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 379,
+          "label": "r13_v111_mother_heat11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "293b6074fe022c2e73dcde5735ef280844021d7eadec5b0f2a45241160077bf1",
+      "uid": "9f11e54c41184c757e14854c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0046",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0046",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0046",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "길 찾는 등은 남겨야 해. 아랫길 문까지 어두워지면 사람을 못 데려와.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ed99a7c91810142953d818a570c4b3061e3cc1fc9237cf2b25e65c89bbfb9d9a",
+      "uid": "3ef739e86fc885abdd5cf81c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0047",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0047",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0047",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "밝기를 줄일 수 있는 것부터 가져오자. 집 안 난방 것은 지금 빼면 안 돼.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d1def96bf6b130a6b30047109b45399c766952283380ec90870600e2858713af",
+      "uid": "4dae3dd3a26149a33006f947",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0048",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0048",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0048",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다람이하고 아내 앉을 자리부터 보겠습니다. 둘을 여기 세워 놓고는 못 가요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 431,
+          "label": "r13_v111_family_place11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a79258966445b8b945387dc394a27b9e43fb0635b6c9f9a4eac5d6698bea0a22",
+      "uid": "38580292ff785b0902f9eede",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0049",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0049",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0049",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "확인하고 와. 난 다람이하고 여기 있을게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 432,
+          "label": "r13_v111_family_place11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "477566764e75b5244508c57165c57f284eb61202156a82569aff668b56d2bf90",
+      "uid": "4a9a3d8e94018f28c369d94d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0050",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0050",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0050",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어두워지기 전에 모시고 올게요. 학교 자리 비워 주세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 495,
+          "label": "r13_v111_day_rescue11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "24788c4196613548dffa57ba0fcd3ecf2486df389fa95c7ef68ad6668ff2443f",
+      "uid": "576dddb2e9ddb7ed84811240",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0051",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0051",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0051",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "내가 안내할게요. 아직 길이 넓어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 497,
+          "label": "r13_v111_day_rescue11",
+          "guards": [
+            "if r13_v111_actor_ready('resident_nero'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a7a44d9772ae9ce8172758ed57e24f0ed00be23d80d46e6b4b8d5896054b3cf6",
+      "uid": "dfd7ee699a741b73c5c52721",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0052",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0052",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0052",
+      "when": null,
+      "speaker": "아랫길 주민",
+      "kind": "dialogue",
+      "text": "학교로 가는 거요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 498,
+          "label": "r13_v111_day_rescue11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4fc3387c858bd9d260adfe8bdeb1e332aa17a092775f56d5b0f0460106270806",
+      "uid": "3bee3c3c641cdf7be0717fb3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0053",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0053",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0053",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "네. 문 앞에서 받기로 했어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 499,
+          "label": "r13_v111_day_rescue11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "98be54fce7534db6e9ff18fb7a7e8dc867eba4ec8322c3f9617954d5ed3d8419",
+      "uid": "f13bf16cb9d703c9b1f5b8d7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0054",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0054",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0054",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이건 우리 짐에 둘게요. 다람이가 아직 추워해서요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 563,
+          "label": "r13_v111_blanket_store11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ddec4e0483780cabb015a2c332119d3d0b5121553a593dc2ef938c9ea68c97d5",
+      "uid": "b0f08bac45f4d1580031b8df",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0055",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0055",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0055",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "네. 토실 자리는 여기 있는 걸로 살필게요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 564,
+          "label": "r13_v111_blanket_store11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "87da79b42544f9593d5b504850913329db824a907afea72aa1fcac58463e8a91",
+      "uid": "4c1274cc9872da0b7c9770c3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0056",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0056",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0056",
+      "when": null,
+      "speaker": "토실",
+      "kind": "dialogue",
+      "text": "다람이는?",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a36cfe320286448431f6afab2b07d8689dd700d6753893d53e9bb748ffb25120",
+      "uid": "8dc859ab581f36e2c43bad4f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0057",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0057",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0057",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠하고 엄마 옆에 앉을 거야.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 583,
+          "label": "r13_v111_tosil_blanket_last11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6313e7bdfc65b41c7070041214904162ba1dcf6eaab63b24cf77c08c7faf3175",
+      "uid": "eb967ea4630598d3224e4051",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0058",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0058",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0058",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "먼저 챙길 곳을 고른다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9d200fce93e874876c2f22d0545f591e96619a15ac788b4b8120f55425209769",
+      "uid": "66796eb1bda171cae798cf04",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S03_L0059",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S03_L0059",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S03_L0059",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "가족 담요를 어떻게 할까?",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "34b00be58461ccb354cde0c9a40cb19370b598f0e5fbcce17f9ca0e5717dff7d",
+      "uid": "7c19b9b6f1d9da779ca7592b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,1794 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D05_S03_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "초소. 바둑이·돌목·너울이 기다린다. 아빠·다람·네로가 들어온다. 솜이와 무쇠는 진료소에서 함께 진료받는 중이다. 증거 제출 전에는 확인 결과를 설명하지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "84374e7fcdbc39e05e5079ab7432410be63048f3fd23137afb8f3f3d15072787",
+      "uid": "054aefde9b25844cd6aa010e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0002",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "콩이가 바둑이 옆으로 와서 어제 퍼뜨린 말부터 바로잡는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d1b56112190f2133fa23fbdc9fe6fa99662adec5495a7e43749f5d357b8d7387",
+      "uid": "4189bdfe6d9a3291fd1d8fbb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0003",
+      "when": null,
+      "speaker": "콩이",
+      "kind": "dialogue",
+      "text": "저번에 내가…… 밤이 봤다는 거요. 낮에 본 거예요. 문 건 아니고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 474,
+          "label": "r13_v111_hearing5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f57b25d9f03d4807dc7cf66e5295ae230b21889dffd213d668b97fa2a2ac6be0",
+      "uid": "97fcde5f818c1e33b31192b2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0004",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "콩이가 바둑이의 소매를 잡은 채 덧붙인다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0a6bf0ccf29870fa79b6b2afbf8ba36b0003512401b9202176c5ea4151f8320d",
+      "uid": "c2611130e28c388c049c56d0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0005",
+      "when": null,
+      "speaker": "콩이",
+      "kind": "dialogue",
+      "text": "그때는 못 봤어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 475,
+          "label": "r13_v111_hearing5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "663d2ee771ce811ce0a90fd8ba917484b907c7056338007ceee474978973212f",
+      "uid": "2793ce3db3b34e922d204745",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0006",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "애들 말이야 늘 바뀌지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 476,
+          "label": "r13_v111_hearing5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6d56d6aef45d03c7198b5232071e5ebd7fed23ad48be059329f0b90ab2f33cfb",
+      "uid": "5116e69ea0d4878165b1a37d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0007",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그럼 처음 말도 증거로 쓰면 안 되죠.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 477,
+          "label": "r13_v111_hearing5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "72c70830c1824cae8bf4261302ae09d9fd7eeb442687a84b09b27db4938d55f2",
+      "uid": "fca01b02d46b8e9b21adbb07",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0008",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "콩이는 바둑이 옆에 앉아 끝까지 듣는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7a1f712f6c98d8bd67c7dca83a1569e5d3421e80a6d023ae1aa0256a0ef6d26b",
+      "uid": "fe4b305550799d79f1aa9486",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0009",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "키가 맞으면 밤이일 수도 있소. 달아나기도 빠르고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 478,
+          "label": "r13_v111_hearing5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1dc338a3edab4b0d73e0eb2e8a85b3094f6d37cf3e42cf1fa150eb309bc78477",
+      "uid": "192b320c659332785cb7d244",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0041",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0041",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0041",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "조건을 만족하는 다음 블록으로 진행한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fcff34e55d9bfec494fe81e2f2790dca27c3b738b9e9c6f38165c55b19b55973",
+      "uid": "8f5035b67ccf372322339961",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0010",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "반박 선택: ‘밤이는 작으므로 불가능’은 불충분.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6239d41321dd7a1302df04555a0667a8efdc475644bbc3047f193bc07b9e25cc",
+      "uid": "685d4aaa5067aecb4732be2b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0011",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "내가 허리를 숙였다고 했소. 키만 재서는 안 되오.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "45fbd505d2d050649204cdc94abc3fc5e78d966525003caf011ff6161a478786",
+      "uid": "9e265e7ecb8fcef361eb8cea",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0012",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "올바른 제시: 얼굴을 못 봤다는 최초 진술, 맨발 관찰, 울타리 천과 겉옷, 네로의 귀가 목격.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f4a82f8ccaf4b2d3ef44559b0a55ff2de993d576b783302bb635b591d9c3e989",
+      "uid": "6f8e1db31538711c2fe219bf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0013",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "밤이가 문 걸 본 사람은 없습니다. 천은 어르신 옷에 맞고, 돌아오신 건 네로 씨가 봤습니다. 그래도 밤이를 잡아 두겠습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 507,
+          "label": "r13_v111_bami_clear5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "gate_post_won_with_sketch_only",
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2b7a45dc68f5f569366eddd9d3c8e3df11cb8923c543566796278d5fd0decd36",
+      "uid": "d0f8c40fd818693381156094",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0014",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "그럼 무쇠가 물었다는 거요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 508,
+          "label": "r13_v111_bami_clear5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "gate_post_won_with_sketch_only",
+          "gate_post_won_with_e21",
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "367a8471e9a97df5fbaabb3de7db5dbb581ec2e97c1cb8d739f499d727353c52",
+      "uid": "bc618ee24183fcaa48197e4f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0015",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "기억도 못 하시는데 그 말만 받아 적고 끝내려고요? 옷하고 네로 씨 얘기도 보십시오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 509,
+          "label": "r13_v111_bami_clear5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "655fcae2d01c65c06d062fd9cca3dacd48b8f2bac2942fd96a14da77a3965fa6",
+      "uid": "6de22a6e70e8c3ddd0e7af1e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0016",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "뒤에서 팔을 잡았소. 멈추라는데 계속 가서. 돌아서다가 물었소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 510,
+          "label": "r13_v111_bami_clear5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f86b256718eacbeb7a067ebeb077df54eb77290431cebd351a208e44f1fb44e2",
+      "uid": "9f1bb5f84f932471fe9b60c2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0017",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "못 알아들었을 거예요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 511,
+          "label": "r13_v111_bami_clear5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ea597b5782a587a7d76d8801f9bdc717c9ae5b0cb957ec7a5980c8faaf9207cd",
+      "uid": "5e5ece0d6b1b041ff7731b4d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0018",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "그러면 내 팔은 안 다친 게 되오?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 512,
+          "label": "r13_v111_bami_clear5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "65f8c6f9ed11f70cad17e7d30acdca1d447d87c694e0fc5ec0396844610c46e2",
+      "uid": "25b611601b9f28111bb44c62",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0019",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "그 말은 아니잖아요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 513,
+          "label": "r13_v111_bami_clear5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "eff31c12cd99af1dba3a207f4c99a78e7acd3c327095ac0e2ac73d57fc9131ee",
+      "uid": "01e1c8ffacebb31f0739dbec",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0020",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠가 두 사람 사이에 서되 붙잡지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d4c2f18893188a9975fc12939acb262e9218d680c7b91fd74806eea0ce2124c6",
+      "uid": "ab2c77c3fef93ec856375990",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0021",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "팔을 다치셨죠. 치료받으셔야 합니다. 밤에 어르신 곁에 누가 있을지도 정해야죠. 그렇다고 밤이를 잡아 두면 뭐가 달라집니까.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 514,
+          "label": "r13_v111_bami_clear5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b6e2e44ac92c1ec16bde0eb854566ec4c75153c667382aab009dc6946a02fa43",
+      "uid": "a3ff95a1b9dbcf8a9c2e5725",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0022",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "보호소로 보내면 밤에도 사람이 붙지 않소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 515,
+          "label": "r13_v111_bami_clear5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7aaba90022145fd130282f181956f9cdaab4c2d5baaa02342fd89b9a7b1b7b83",
+      "uid": "a7af2be7fba7eab7dda6f609",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0023",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "어디 방에 누가 붙습니까? 가족은 언제 만나고?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 516,
+          "label": "r13_v111_bami_clear5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6d7156ca0d446cdfef7c68265413af2e0a52e88ac67a0142f23fd09c01f1695f",
+      "uid": "3eaf1ade73b6c7bfbc68968e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0024",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "그건 보내서 정하는 거요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 517,
+          "label": "r13_v111_bami_clear5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a48d4f2b5d80864ddf75e04774ec8a26d615f9874130a73afe4b529e311aa4e0",
+      "uid": "6150c84de6d0e90207b4361b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0025",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "어디로 가는지도 모르는데 오늘은 못 넘깁니다. 진료소에서 내가 모셔 오죠. 오늘 밤은 네로와 교대로 있고, 내일 다시 정합시다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 518,
+          "label": "r13_v111_bami_clear5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "244ce6cef6b2b42df0841fcb94f2795854947091297ea2e59adce5ab56db38a1",
+      "uid": "80c28559d32e8df4cae77f8d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0026",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "초소 뒤쪽 문에도 종을 달겠소. 사람을 보고 부르지, 손부터 대지 않겠소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 519,
+          "label": "r13_v111_bami_clear5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7bc471ad01812f5ca143248fabca3370c60ef47527aa299163cd6425938284ef",
+      "uid": "d27157a238417000aeb5b4e4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0027",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "밤이가 바깥에서 들어온다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "003723d830d073063db84ea023fe62ff1e8a0e9d7e6075b53423f24f3704a383",
+      "uid": "99ba434e65caa50533d2e724",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0028",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "오늘은 가도 된다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 520,
+          "label": "r13_v111_bami_clear5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1b2096c5efc4a7b5c5952aafd5271d66736b4be56da6f7d899ab1d1effd631de",
+      "uid": "e3544e88e56da297e9470f61",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0029",
+      "when": null,
+      "speaker": "밤이",
+      "kind": "dialogue",
+      "text": "오늘만요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 521,
+          "label": "r13_v111_bami_clear5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9f8750b9b86dcdbb474de4ed47d7b380ef717adbca01628528eecd67c9048362",
+      "uid": "4c8cc9e51441ec4844fd706b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0030",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "오늘만이라뇨. 목격자도 없고 다른 사람 옷까지 맞췄는데. 그걸 적어 주세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 522,
+          "label": "r13_v111_bami_clear5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "086d1f05063cf317acbf9e1f138f742d3ed9f877602caf6dcdf512609c7fe88c",
+      "uid": "68299ce79303f80cf790586f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0031",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "내가 적었소. 밤이, 보고 싶으면 봐.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 523,
+          "label": "r13_v111_bami_clear5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6692e88986ead1386e4cd5836299e1bc344a536cba04d44074532d533cf9c61f",
+      "uid": "7b6ea510e0e1caa588d07aa4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0032",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "밤이가 종이에 손가락을 얹었다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 524,
+          "label": "r13_v111_bami_clear5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1450429783987d935af6a05c3194d1446199fec81cd767922e4ccf0a77b7e829",
+      "uid": "bf7382da58baa396d142e6d9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0033",
+      "when": null,
+      "speaker": "밤이",
+      "kind": "dialogue",
+      "text": "읽어 줘요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 525,
+          "label": "r13_v111_bami_clear5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "deac65fbce68100374ccc07812cd3d67703aa333f8dc20c55fbdae9f01cdd8ab",
+      "uid": "00457e41578bc84a35d1eb32",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0034",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "밤이가 물었다는 걸 본 사람은 없다. 울타리에서 나온 천은 다른 사람 옷과 맞는다. 밤이를 붙잡아 두지 않는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 526,
+          "label": "r13_v111_bami_clear5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "43857529179728ccbc975a367fd65a6911c4a1d85246576d48b6a16fc021a004",
+      "uid": "a802facb279032ac6973a09f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0035",
+      "when": null,
+      "speaker": "밤이",
+      "kind": "dialogue",
+      "text": "내 이름 맞게 썼죠?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 527,
+          "label": "r13_v111_bami_clear5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "352c9d927b0df5c1a0d5eb1eea79781adc97846c0a08eb169d66938be2455c5a",
+      "uid": "48989d426b7240d10f58beb6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0036",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "밤이. 여기.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 528,
+          "label": "r13_v111_bami_clear5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "46ee0aa9fb50565e2161869c1d6239bbbee3fc3a61253e5af9784f7fa231dfaa",
+      "uid": "9673fd7d88dd163abd32de4c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0037",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0037",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0037",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "밤이가 기록을 끝까지 듣고 나간다. 다람은 아빠가 볼 수 있는 문 앞에 머문다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "018c4af8e8db11c9c65f9d93e2cf51bcba448d884b3aa8543f3602534a507761",
+      "uid": "9c4fac597403165d4a255e71",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L9101",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L9101",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L9101",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "돌목: 뒤에서 팔을 잡았고, 멈추지 않아 붙잡고 있었다. 돌아서다가 물렸다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "47313da730713fd6e9f88c6942a27d898ac29c55ea1ca5b4a801b724c9ce271f",
+      "uid": "ac08a7c804e841b3c19e318c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L9102",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L9102",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L9102",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "밤이가 물었다는 걸 본 사람은 없다. 다른 사람의 옷이 울타리 천과 맞는다. 밤이를 붙잡아 두지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "838be6c5af24647b4e7246017d00d8aa400aaa72659ae44b8d8acda7cd6c91c3",
+      "uid": "a98a6c7914ffe164025e6ce1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0038",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0038",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0038",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "그 얘기로 밤이가 아니라고 할 수 있소?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 492,
+          "label": "r13_v111_wrong5",
+          "guards": [
+            "if r13_nw_retry(\"gate_post\",[\"E20\",\"E22\",\"E23\",\"E24\"],\"돌목이 고개를 젓는다. 천과 겉옷, 진술을 함께 놓아야 한다.\"):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 497,
+          "label": "r13_v111_wrong5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5c4bfbc4fc92ff6843f8649ddf63b41665c814c5b341f5e672ff4ec39c8c5f59",
+      "uid": "2d28fb919d2b422d9c929c34",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0039",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0039",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0039",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다른 사람 이름부터 댈 생각은 없습니다. 누가 뭘 봤는지 다시 보죠.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다. 조건부 replace/drop 이후 원문 fallback이며 무조건 표시된다는 뜻이 아니다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 492,
+          "label": "r13_v111_wrong5",
+          "guards": [
+            "if r13_nw_retry(\"gate_post\",[\"E20\",\"E22\",\"E23\",\"E24\"],\"돌목이 고개를 젓는다. 천과 겉옷, 진술을 함께 놓아야 한다.\"):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 498,
+          "label": "r13_v111_wrong5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "gate_post_lose"
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "50cb34587c403af9c8f8472bd1caaa3fb957b13d5c6acf8fba3c3ef338d398a6",
+      "uid": "c73c8cc3a9c67ce6116a7ccb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S03_L0040",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S03_L0040",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S03_L0040",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "얼굴을 봤다는 사람은 없다. 울타리에 남은 천과 그날 밤 돌아온 모습을 함께 보자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 502,
+          "label": "r13_v111_hint5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "43c3a0a54598bcd35c77101cc2ce57cbf138bb3e67a25de00274ba3a1fb63fd9",
+      "uid": "0b62897976c7a5459cd78519",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

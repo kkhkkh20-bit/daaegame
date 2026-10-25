@@ -1,0 +1,98 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "heat_check11:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "heat_check11",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 11,
+      "scene": "heat_check11",
+      "block": "heat_check11",
+      "placement": "binding",
+      "ref": "heat_check11:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "벽 그림과 돌판을 확인한다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "facility",
+        "person": null,
+        "object": "v111_mural"
+      },
+      "scene_title": "heat_check11",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "fdcfd0c91641b202287ad5f04ac689f94335d10e3acc38d58ee5638535f95e87",
+      "uid": "a9c5fa72374901e029fa01c7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|heat_check11|choice|heat_check11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "heat_check11:100",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "heat_check11",
+        "options",
+        1,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 11,
+      "scene": "heat_check11",
+      "block": "heat_check11",
+      "placement": "binding",
+      "ref": "heat_check11:100",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "종이와 벽의 자국을 맞춰 본다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "hidden_base:paper",
+            true
+          ],
+          [
+            "state",
+            "hidden_base:plate",
+            true
+          ],
+          [
+            "state",
+            "hidden_base:marks_copied",
+            null
+          ]
+        ],
+        "location": "facility",
+        "person": null,
+        "object": "v111_mural"
+      },
+      "scene_title": "heat_check11",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "63ca6a51a27ee2e603d3f957f2cf356fd24daf69235460b351c05ff12a674637",
+      "uid": "e0fd55555612cd4b454be551",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|heat_check11|choice|heat_check11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

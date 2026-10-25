@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/winter_resident_inference.rpy:239:94",
+      "file": "game/winter_resident_inference.rpy",
+      "path": [
+        14493,
+        14517
+      ],
+      "origin": "rpy_inventory",
+      "day": 4,
+      "scene": "winter_buri_approach",
+      "block": "winter_buri_approach",
+      "placement": "literal",
+      "ref": "game/winter_resident_inference.rpy:239:94",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "……그날 질문은 내 수리표에 적어 뒀어.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_resident_inference.rpy",
+          "line": 239,
+          "label": "winter_buri_approach",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 239,
+      "scene_title": "winter_buri_approach",
+      "source_hash": "1ed66ae455193bcb5202f6cf9feb435bb81670119b4bc89cc73e28111c6b0ec3",
+      "baseline_hash": "90f98c4b2eda434ef87a9cb744d9f4c9f0858ebb9a32982544e7108b76fc2e25",
+      "uid": "ad445a31268c25bb871305c4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|winter_buri_approach|rpy_inventory|winter_buri_approach|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

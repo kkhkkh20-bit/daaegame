@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_H_LO_01",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "blocks",
+        "hyp_lose11",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "hyp_lose11",
+      "block": "hyp_lose11",
+      "placement": "blocks",
+      "ref": "hyp_lose11",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "아르카를 모독한 손님이오. 마을 불에 손대지 마시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 840,
+          "label": "r13_v111_hyp_lost_gate11",
+          "guards": []
+        }
+      ],
+      "scene_title": "hyp_lose11",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "6fd21939224513c9fe07f4f9bbf1ca14fedbca83c85b1c47e6d5c3983257ec65",
+      "uid": "b8c0926ee766e2b0503054f9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|hyp_lose11|patch|hyp_lose11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_H_LO_03",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "blocks",
+        "hyp_lose11",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "hyp_lose11",
+      "block": "hyp_lose11",
+      "placement": "blocks",
+      "ref": "hyp_lose11",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 끝내 마을을 설득하지 못했다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 840,
+          "label": "r13_v111_hyp_lost_gate11",
+          "guards": []
+        }
+      ],
+      "scene_title": "hyp_lose11",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "c4c8928ee99a6446dc40a8c8576de615888ed108ae76c749e5747ae123a01cd5",
+      "uid": "7e22a55da409bdda5b57cbf1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|hyp_lose11|patch|hyp_lose11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

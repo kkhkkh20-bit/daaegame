@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_use_knowledge.rpy:75:38",
+      "file": "game/systems/room13_use_knowledge.rpy",
+      "path": [
+        5419,
+        5433
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_granny_letter_ask",
+      "block": "r13_granny_letter_ask",
+      "placement": "literal",
+      "ref": "game/systems/room13_use_knowledge.rpy:75:38",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "그래요. 바쁘시겠지요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_use_knowledge.rpy",
+          "line": 75,
+          "label": "r13_granny_letter_ask",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 75,
+      "scene_title": "r13_granny_letter_ask",
+      "source_hash": "ed57493544805bb109f813298a02a73868d7c6c91a7fe6b3cb718d6acac0b5f6",
+      "baseline_hash": "1f876dca495b260cda27fe38cf99a914b89f5bcf074cc1ce50b6c2bd0d5f3566",
+      "uid": "3678e8b9b3b2cde55ebfb8f0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_granny_letter_ask|rpy_literal|r13_granny_letter_ask|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

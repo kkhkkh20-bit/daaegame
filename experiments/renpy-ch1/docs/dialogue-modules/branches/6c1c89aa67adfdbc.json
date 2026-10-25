@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D14_EF_A01",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "after",
+        "MS14_D14_END_FAMILY_L0010",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D14_END_FAMILY_L0010",
+      "when": "daram_deal_freed",
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람의 이름은 명단에서 지워져 있다. 다른 이름들은 남아 있다. 다람이 그 이름들을 하나씩 손바닥에 적는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3454,
+          "label": "r13_v111_family_ending14",
+          "guards": []
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "adfa4d20284d0b7c051435cf968c1bb00ffcb48701ccd12b700b07e1e70d9b52",
+      "uid": "60406d4b0157940d8462ef36",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|after|daram_deal_freed",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

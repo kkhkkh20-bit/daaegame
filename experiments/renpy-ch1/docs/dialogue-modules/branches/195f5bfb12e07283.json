@@ -1,0 +1,82 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep_story.rpy:75:21",
+      "file": "game/systems/room13_ep_story.rpy",
+      "path": [
+        5363,
+        5386
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_st_dodam",
+      "block": "r13_st_dodam",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep_story.rpy:75:21",
+      "when": null,
+      "speaker": "kid_dodam",
+      "kind": "dialogue",
+      "text": "아빠, 나 안 아파. 노래 불러 줄까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep_story.rpy",
+          "line": 75,
+          "label": "r13_st_dodam",
+          "guards": []
+        }
+      ],
+      "line": 75,
+      "scene_title": "r13_st_dodam",
+      "source_hash": "3e440ff5a7c7edc8e655c4b78b4f673960d544f0bdbed07710a48fa032aef2c8",
+      "baseline_hash": "88e81f10d77c2780de53a8203063027f3d4195dd784aa652af17b131abe536a8",
+      "uid": "ac7d8fd000e3b4c763167ba9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_st_dodam|rpy_literal|r13_st_dodam|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep_story.rpy:76:21",
+      "file": "game/systems/room13_ep_story.rpy",
+      "path": [
+        5410,
+        5444
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_st_dodam",
+      "block": "r13_st_dodam",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep_story.rpy:76:21",
+      "when": null,
+      "speaker": "kid_dodam",
+      "kind": "dialogue",
+      "text": "(작게) 휘휘 저어라 겨울 수프, 감자 하나 당근 하나……",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep_story.rpy",
+          "line": 76,
+          "label": "r13_st_dodam",
+          "guards": []
+        }
+      ],
+      "line": 76,
+      "scene_title": "r13_st_dodam",
+      "source_hash": "3e440ff5a7c7edc8e655c4b78b4f673960d544f0bdbed07710a48fa032aef2c8",
+      "baseline_hash": "22c5704d03e535d7a74aa50df2bab31dacabc790591208d43767d69de41311e5",
+      "uid": "47c656f6d5387dd66602a38b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_st_dodam|rpy_literal|r13_st_dodam|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

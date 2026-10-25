@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:42:84",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        3239,
+        3288
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_week2_events",
+      "block": "r13_week2_events",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:42:84",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "갖고 있던 기록은 그대로 남아 있다. 하지만 지금 내려진 명령은 다시 확인해야 한다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 42,
+          "label": "r13_week2_events",
+          "guards": [
+            "if r13_has(\"convoy_changed\") and \"convoy_changed_notice\" not in room13[\"events\"]:"
+          ]
+        }
+      ],
+      "line": 42,
+      "scene_title": "r13_week2_events",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "d34b714769a955921857f1c37ddc47cadf4055900c52a327f622f6b620c5654e",
+      "uid": "765139996a3cf68422779e6b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_week2_events|rpy_literal|r13_week2_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:46:184",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        3683,
+        3736
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_week2_events",
+      "block": "r13_week2_events",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:46:184",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "옮길 사람 명단에 붉은 줄이 그어졌다. 치료하러 옮긴다기에는 준비해 둔 장비가 맞지 않았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 46,
+          "label": "r13_week2_events",
+          "guards": [
+            "if room13[\"day\"]>=r13_tl(11) and \"day11_warning\" not in room13[\"events\"]:"
+          ]
+        }
+      ],
+      "line": 46,
+      "scene_title": "r13_week2_events",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "e7399383cfde092af0bfe0ab5ab058006556fe509d4cf84b7d20831627dc7162",
+      "uid": "9f046c1c7afdb769b6d473d1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_week2_events|rpy_literal|r13_week2_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

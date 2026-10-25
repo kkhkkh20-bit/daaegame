@@ -1,0 +1,170 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events2.rpy:369:12",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        19583,
+        19594
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_ev_q_nubi",
+      "block": "r13_ev_q_nubi",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:369:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "그 방으로 옮긴다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 369,
+          "label": "r13_ev_q_nubi",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 369,
+      "scene_title": "r13_ev_q_nubi",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "7bac69a78fac417084f35884ba3702ac6773459b8906148a1c907289740b8ae4",
+      "uid": "09c205c75dede7797571db92",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_ev_q_nubi|rpy_menu|r13_ev_q_nubi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:380:12",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        20175,
+        20181
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_ev_q_nubi",
+      "block": "r13_ev_q_nubi",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:380:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "거절한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 380,
+          "label": "r13_ev_q_nubi",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 380,
+      "scene_title": "r13_ev_q_nubi",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "7672c6ed8b68f406032277c6accc7a66a3cf0e280df5611277bf5e9991190fcf",
+      "uid": "9c07dd4da2587e574ffcafaf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_ev_q_nubi|rpy_menu|r13_ev_q_nubi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:382:12",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        20286,
+        20309
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_ev_q_nubi",
+      "block": "r13_ev_q_nubi",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:382:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "낯선 사람에게 왜 방을 내주는지 묻는다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 382,
+          "label": "r13_ev_q_nubi",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 382,
+      "scene_title": "r13_ev_q_nubi",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "022fb21590277f902860ad9290badc3b7d11f2ce8fdbce8ac6f4f7115312cc1f",
+      "uid": "4a3171367c3b5419beb03204",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_ev_q_nubi|rpy_menu|r13_ev_q_nubi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:400:12",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        21518,
+        21537
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_ev_q_nubi",
+      "block": "r13_ev_q_nubi",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:400:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "건강 확인서를 받아 두고 옮긴다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 400,
+          "label": "r13_ev_q_nubi",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 400,
+      "scene_title": "r13_ev_q_nubi",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "85d02d19d3e5bd450e05f9baa6a6a2d69b17e40717fb6b4079935632d4613e15",
+      "uid": "98ee82a74817e6293ed90643",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_ev_q_nubi|rpy_menu|r13_ev_q_nubi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

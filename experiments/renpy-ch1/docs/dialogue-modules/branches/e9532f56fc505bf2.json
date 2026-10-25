@@ -1,0 +1,47 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_intro_clues.rpy:151:80",
+      "file": "game/systems/room13_intro_clues.rpy",
+      "path": [
+        9961,
+        9986
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_entry_daram_menu",
+      "block": "r13_entry_daram_menu",
+      "placement": "literal",
+      "ref": "game/systems/room13_intro_clues.rpy:151:80",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "우리 오늘 왔잖아. 오늘이 무슨 요일이지?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_intro_clues.rpy",
+          "line": 151,
+          "label": "r13_entry_daram_menu",
+          "guards": [
+            "if r13_entry_daram_choice==\"look\":",
+            "else:"
+          ]
+        }
+      ],
+      "line": 151,
+      "scene_title": "r13_entry_daram_menu",
+      "source_hash": "22ee3df201e25763c171558cd48d62a5b63f09ef0cb695d7223e40cc7109f91f",
+      "baseline_hash": "a8d9f560aa60f3bce9792b358390db8f68b04937b59ef951e6f4473b63c41e47",
+      "uid": "6815f7d42166aa87d571184e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_entry_daram_menu|rpy_literal|r13_entry_daram_menu|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

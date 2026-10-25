@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "box_inspect:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "box_inspect",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": null,
+      "scene": "box_inspect",
+      "block": "box_inspect",
+      "placement": "binding",
+      "ref": "box_inspect:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "함과 주변을 직접 확인한다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "forest",
+        "person": null,
+        "object": "v111_box"
+      },
+      "scene_title": "box_inspect",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "58ca4571894b41a6402e17d5f79caf320ead64ba508313d37ace3a2f9b04fc98",
+      "uid": "a48c36f7ad8d267f71b8504e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|box_inspect|choice|box_inspect|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

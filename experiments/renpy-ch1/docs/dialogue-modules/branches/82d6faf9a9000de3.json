@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_episodes.rpy:318:14",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        18293,
+        18340
+      ],
+      "origin": "rpy_literal",
+      "day": 14,
+      "scene": "r13_ep3_bell",
+      "block": "r13_ep3_bell",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:318:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "종탑 아래에서 설이가 종 줄을 붙잡고 서 있었다. 너울이 그 손목을 잡고 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 318,
+          "label": "r13_ep3_bell",
+          "guards": []
+        }
+      ],
+      "line": 318,
+      "scene_title": "r13_ep3_bell",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "ff8cc6f62efb30e0061db5ea951655f3ac1f5f87d78e46935b19d2f5617f39bd",
+      "uid": "b62dcd3aa9539fc3c3a8d7cc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|r13_ep3_bell|rpy_literal|r13_ep3_bell|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

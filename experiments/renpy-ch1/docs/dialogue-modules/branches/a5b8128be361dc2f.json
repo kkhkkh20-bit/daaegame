@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/winter_events.rpy:26:182",
+      "file": "game/winter_events.rpy",
+      "path": [
+        1411,
+        1424
+      ],
+      "origin": "rpy_inventory",
+      "day": 2,
+      "scene": "winter_timed_cart",
+      "block": "winter_timed_cart",
+      "placement": "literal",
+      "ref": "game/winter_events.rpy:26:182",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "아빠, 안에 누가……",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_events.rpy",
+          "line": 26,
+          "label": "winter_timed_cart",
+          "guards": [
+            "if winter_cart_available(winter):"
+          ]
+        }
+      ],
+      "line": 26,
+      "scene_title": "winter_timed_cart",
+      "source_hash": "c243df8d1e60cf0363929033d609f45d8b16e19ec39edab44c858674085e0fd6",
+      "baseline_hash": "28a523c752bf85539b178e3e528bdd91afdf9c6773dc7661b5ff9a3fc9989070",
+      "uid": "64f69eedb894c201f59cabdd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|winter_timed_cart|rpy_inventory|winter_timed_cart|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

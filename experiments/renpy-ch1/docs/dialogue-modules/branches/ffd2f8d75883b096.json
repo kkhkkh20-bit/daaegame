@@ -1,0 +1,429 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D10_S03C_P01",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_S03_L0092",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_S03_L0092",
+      "when": "room13_partial_accident",
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "통로로 들어간 건 할머니가 인정했소. 쓰러진 노인 곁에서 그 조각을 든 것도…… 인정했소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1639,
+          "label": "r13_v111_contact_wrong10",
+          "guards": [
+            "if r13_nw_retry(\"room13\",['E08_CONTACT_ASSEMBLY', 'E08_WOUND_WIRE', 'E08_CHILD_POSITION', 'E08_ROOM_REACH', 'E09_SCARF'],'할머니가 목도리를 여민다. 천과 핀, 상처, 아이의 자리를 함께 놓아야 한다.'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1644,
+          "label": "r13_v111_contact_wrong10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "662dca5b8bc468185010c09a7dfb1668b1ea5e32eb2c8731e681e5c8ee9106df",
+      "baseline_hash": "6e2fc6bb19ecf136ff38f4cf5d066470d8dabcac1126362651325bced0d86318",
+      "uid": "9b60c6ed0ea500adec429ab9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|patch|after|room13_partial_accident",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_S03C_Q01",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_S03_L0092",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_S03_L0092",
+      "when": "room13_partial_accident",
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "그 노인이 날 붙들고 안 놨어요. 놓으라고 뿌리친 것뿐이에요. 그러다 손에 든 게 어디 닿았대도…… 일부러 그런 건 아니에요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1639,
+          "label": "r13_v111_contact_wrong10",
+          "guards": [
+            "if r13_nw_retry(\"room13\",['E08_CONTACT_ASSEMBLY', 'E08_WOUND_WIRE', 'E08_CHILD_POSITION', 'E08_ROOM_REACH', 'E09_SCARF'],'할머니가 목도리를 여민다. 천과 핀, 상처, 아이의 자리를 함께 놓아야 한다.'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1644,
+          "label": "r13_v111_contact_wrong10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "662dca5b8bc468185010c09a7dfb1668b1ea5e32eb2c8731e681e5c8ee9106df",
+      "baseline_hash": "bb29d98ce205e6d5095d3c9041cb706d2402d8180ad9423b8be374c88059da78",
+      "uid": "e26af35efe9c8c277ea65342",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|patch|after|room13_partial_accident",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_S03C_Q02",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_S03_L0092",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_S03_L0092",
+      "when": "room13_partial_accident",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아까는 들어가 보니 이미 쓰러져 있었다고 하셨습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1639,
+          "label": "r13_v111_contact_wrong10",
+          "guards": [
+            "if r13_nw_retry(\"room13\",['E08_CONTACT_ASSEMBLY', 'E08_WOUND_WIRE', 'E08_CHILD_POSITION', 'E08_ROOM_REACH', 'E09_SCARF'],'할머니가 목도리를 여민다. 천과 핀, 상처, 아이의 자리를 함께 놓아야 한다.'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1644,
+          "label": "r13_v111_contact_wrong10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "662dca5b8bc468185010c09a7dfb1668b1ea5e32eb2c8731e681e5c8ee9106df",
+      "baseline_hash": "720323f2916cfa5230a4601c8fc988e6a564004bb1f0875fe5c5f7f5c85a7c96",
+      "uid": "ff66caba7192f0b9b55fea1f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|patch|after|room13_partial_accident",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_S03C_Q03",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_S03_L0092",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_S03_L0092",
+      "when": "room13_partial_accident",
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "정신이 없었다니까요! 늙은이 말을 하나하나 따져요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1639,
+          "label": "r13_v111_contact_wrong10",
+          "guards": [
+            "if r13_nw_retry(\"room13\",['E08_CONTACT_ASSEMBLY', 'E08_WOUND_WIRE', 'E08_CHILD_POSITION', 'E08_ROOM_REACH', 'E09_SCARF'],'할머니가 목도리를 여민다. 천과 핀, 상처, 아이의 자리를 함께 놓아야 한다.'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1644,
+          "label": "r13_v111_contact_wrong10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "662dca5b8bc468185010c09a7dfb1668b1ea5e32eb2c8731e681e5c8ee9106df",
+      "baseline_hash": "81bedc8836c91fbb5de798d3823a6f5712b7c4ba0afd3d4c078ce63a037de847",
+      "uid": "a537963ec5164e4eb1875353",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|patch|after|room13_partial_accident",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_S03C_P02",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_S03_L0092",
+        4,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_S03_L0092",
+      "when": "room13_partial_accident",
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "더 가릴 자료가 없소. 일부러 내리쳤는지는 모르겠소. 할머니 말대로…… 붙들려 뿌리치다 닿았다고 적겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1639,
+          "label": "r13_v111_contact_wrong10",
+          "guards": [
+            "if r13_nw_retry(\"room13\",['E08_CONTACT_ASSEMBLY', 'E08_WOUND_WIRE', 'E08_CHILD_POSITION', 'E08_ROOM_REACH', 'E09_SCARF'],'할머니가 목도리를 여민다. 천과 핀, 상처, 아이의 자리를 함께 놓아야 한다.'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1644,
+          "label": "r13_v111_contact_wrong10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "662dca5b8bc468185010c09a7dfb1668b1ea5e32eb2c8731e681e5c8ee9106df",
+      "baseline_hash": "7cac46152fc70036548c5b7b17e1cc1bd2e78aa484b406e51544f43f146636b0",
+      "uid": "b0cb4fbef8fedff54fa0d750",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|patch|after|room13_partial_accident",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_S03C_P03",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_S03_L0092",
+        5,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_S03_L0092",
+      "when": "room13_partial_accident",
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "넘어질 줄은…… 몰랐다니까요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1639,
+          "label": "r13_v111_contact_wrong10",
+          "guards": [
+            "if r13_nw_retry(\"room13\",['E08_CONTACT_ASSEMBLY', 'E08_WOUND_WIRE', 'E08_CHILD_POSITION', 'E08_ROOM_REACH', 'E09_SCARF'],'할머니가 목도리를 여민다. 천과 핀, 상처, 아이의 자리를 함께 놓아야 한다.'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1644,
+          "label": "r13_v111_contact_wrong10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "662dca5b8bc468185010c09a7dfb1668b1ea5e32eb2c8731e681e5c8ee9106df",
+      "baseline_hash": "f6aa6244779afbf3505a1074bf6318a8f8fdd4bf043986e979d440be5743bb10",
+      "uid": "53cac89189c95759e9cf3244",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|patch|after|room13_partial_accident",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_S03C_P04",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_S03_L0092",
+        6,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_S03_L0092",
+      "when": "room13_partial_accident",
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "아이는 풀어 주시오. 할머니는 집으로 돌아가시오. 대신 13호에는 들어가지 마시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1639,
+          "label": "r13_v111_contact_wrong10",
+          "guards": [
+            "if r13_nw_retry(\"room13\",['E08_CONTACT_ASSEMBLY', 'E08_WOUND_WIRE', 'E08_CHILD_POSITION', 'E08_ROOM_REACH', 'E09_SCARF'],'할머니가 목도리를 여민다. 천과 핀, 상처, 아이의 자리를 함께 놓아야 한다.'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1644,
+          "label": "r13_v111_contact_wrong10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "662dca5b8bc468185010c09a7dfb1668b1ea5e32eb2c8731e681e5c8ee9106df",
+      "baseline_hash": "c1433ce71a79bbb73ec494c7fab4cee6d0b226b9a18850acad17de8357375bb5",
+      "uid": "d8856bf6805f3189911538ad",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|patch|after|room13_partial_accident",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_S03C_P05",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_S03_L0092",
+        7,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_S03_L0092",
+      "when": "room13_partial_accident",
+      "speaker": null,
+      "kind": "narration",
+      "text": "슬링은 회관 뒤쪽에서 고개를 숙인 채 아무 말도 하지 않는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1639,
+          "label": "r13_v111_contact_wrong10",
+          "guards": [
+            "if r13_nw_retry(\"room13\",['E08_CONTACT_ASSEMBLY', 'E08_WOUND_WIRE', 'E08_CHILD_POSITION', 'E08_ROOM_REACH', 'E09_SCARF'],'할머니가 목도리를 여민다. 천과 핀, 상처, 아이의 자리를 함께 놓아야 한다.'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1644,
+          "label": "r13_v111_contact_wrong10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "662dca5b8bc468185010c09a7dfb1668b1ea5e32eb2c8731e681e5c8ee9106df",
+      "baseline_hash": "ce6bfba65acae8f6b7a276d74056a6d2d661adf20a0d87fa8197cdd76f13af3b",
+      "uid": "7cd27f37355175f3e716c8a5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|patch|after|room13_partial_accident",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_S03C_P06",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_S03_L0092",
+        8,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_S03_L0092",
+      "when": "room13_partial_accident",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다람이 데리고…… 나가겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1639,
+          "label": "r13_v111_contact_wrong10",
+          "guards": [
+            "if r13_nw_retry(\"room13\",['E08_CONTACT_ASSEMBLY', 'E08_WOUND_WIRE', 'E08_CHILD_POSITION', 'E08_ROOM_REACH', 'E09_SCARF'],'할머니가 목도리를 여민다. 천과 핀, 상처, 아이의 자리를 함께 놓아야 한다.'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1644,
+          "label": "r13_v111_contact_wrong10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "662dca5b8bc468185010c09a7dfb1668b1ea5e32eb2c8731e681e5c8ee9106df",
+      "baseline_hash": "a1e57905a9b6af7cc7bc25e40909d99d549681de0c1f64311e7da7056a672856",
+      "uid": "1ed0eff880d2469a714a7eac",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|patch|after|room13_partial_accident",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

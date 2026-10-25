@@ -1,0 +1,1171 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D10_S04_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S04_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S04_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이 햇빛 쪽으로 눈을 가린다. 나는 언제부터 목이 말랐는지 잊고 있던 물병을 연다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1655,
+          "label": "r13_v111_bench10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-4. 오후 / 우체국 옆 벤치 — 다음에 갈 곳",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6d274670e5b52da3a209e341deab4ddd70af573ad0d90395d1e6536e9cf7eb82",
+      "uid": "716de145d32e216ded565c2e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S04_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S04_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S04_L0002",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "천천히 마셔.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1656,
+          "label": "r13_v111_bench10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-4. 오후 / 우체국 옆 벤치 — 다음에 갈 곳",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4d1be4cee664008e350faa177d17716407e48142d6f036ff6b624aa0e4a57812",
+      "uid": "c76390bfedcee2732bef79aa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S04_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S04_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S04_L0003",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠도.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1657,
+          "label": "r13_v111_bench10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-4. 오후 / 우체국 옆 벤치 — 다음에 갈 곳",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c922a8f1305389b307968954aadb69f6025ccb26d0ef53c7a2fb7a904077600b",
+      "uid": "fe722a647dd523d5fd061877",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S04_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S04_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S04_L0004",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "우리는 같은 병을 번갈아 든다. 부리가 회관에서 나와 길 반대편으로 간다. 다람이 손을 들다 내린다. 나는 억지로 불러 세우지 않는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1658,
+          "label": "r13_v111_bench10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-4. 오후 / 우체국 옆 벤치 — 다음에 갈 곳",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "491b81a31e7e129c1874b0b987da16484cfd478427ace09408be2d66bce3cc8e",
+      "uid": "d0bfedfdc8d4bb3311b08432",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S04_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S04_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S04_L0005",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "세련이 봉인된 서류 봉투를 가지고 온다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다. 조건부 replace/drop 이후 원문 fallback이며 무조건 표시된다는 뜻이 아니다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1659,
+          "label": "r13_v111_bench10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": [
+          "room13_not_win",
+          "room13_not_win"
+        ]
+      },
+      "scene_title": "10-4. 오후 / 우체국 옆 벤치 — 다음에 갈 곳",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4cb39742a1a43f1b94eed7c9691fc7cb01e66ff7aa5cd451e2d46bc885eab3ca",
+      "uid": "8b7cad0d48eea58eba73c2b9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S04_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S04_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S04_L0006",
+      "when": null,
+      "speaker": "세련",
+      "kind": "dialogue",
+      "text": "편지 건은 따로 확인했습니다. 할머니가 가족을 부르려고 부인 글씨를 본떴다고 인정했어요. ‘돌아오게 하려면 가족이 와야 했다’고요. 제가 그 말을 받아 적었고, 슬링 씨의 본보기 원본도 넣었습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1660,
+          "label": "r13_v111_bench10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": [
+          "room13_not_win",
+          "room13_not_win"
+        ]
+      },
+      "scene_title": "10-4. 오후 / 우체국 옆 벤치 — 다음에 갈 곳",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9ee49c30c2d50fa0d60a279be5d26c9c294f951d6ea66a41ca892c0fff9c1302",
+      "uid": "4ec8ff58423b4df57ff05afd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S04_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S04_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S04_L0007",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그 말은 살인 기록과 나눠 보관해 주세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1661,
+          "label": "r13_v111_bench10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": [
+          "room13_not_win",
+          "room13_not_win"
+        ]
+      },
+      "scene_title": "10-4. 오후 / 우체국 옆 벤치 — 다음에 갈 곳",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "86695ad0f006ffb6e4feb492b6d5b14e0b9e75e10d8d082f1757f7a3fad13520",
+      "uid": "360a536010f0fd696ae69e9c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S04_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S04_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S04_L0008",
+      "when": null,
+      "speaker": "세련",
+      "kind": "dialogue",
+      "text": "그렇게 했습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1662,
+          "label": "r13_v111_bench10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": [
+          "room13_not_win",
+          "room13_not_win"
+        ]
+      },
+      "scene_title": "10-4. 오후 / 우체국 옆 벤치 — 다음에 갈 곳",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cf7d4f233cd585c527735d64011acddbb5db074163eb99212eaadbcb3b3ec94b",
+      "uid": "160055adbd7fdf38d0de84d3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S04_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S04_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S04_L0009",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "할머니가 모든 사건을 꾸몄다는 결론은 나오지 않는다. 위조 초대의 목적과 이 밤의 기록 탈취는 확인된 말·자료의 범위만 묶는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-4. 오후 / 우체국 옆 벤치 — 다음에 갈 곳",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1f1ef739a4d6b756938886cb930c10214fe19f4fd16f32b052dca15c85d7baba",
+      "uid": "7e4e0fa1f4770d53e210fe8e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S04_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S04_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S04_L0010",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "부리가 다시 돌아온다. 수첩에서 접힌 작은 장을 조심히 뺀다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1663,
+          "label": "r13_v111_bench10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-4. 오후 / 우체국 옆 벤치 — 다음에 갈 곳",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0e985c03b0a60f8c83efe5ecaac549f105c61d1c5dedf14c09b82a05e02938dc",
+      "uid": "9f4384df5514868302534869",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S04_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S04_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S04_L0011",
+      "when": null,
+      "speaker": "부리",
+      "kind": "dialogue",
+      "text": "이건 회의에 안 냈어요. 할아버지가 책등에 넣었어요. 제가 숨긴 건 아니고…… 아까 책을 세게 잡다가 나왔어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1664,
+          "label": "r13_v111_bench10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-4. 오후 / 우체국 옆 벤치 — 다음에 갈 곳",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5b58de882d2d9865452c4dfff1be099cd7674c253775ed3816f5ed1c914aed3a",
+      "uid": "0f198cb9873c4f9b96342033",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S04_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S04_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S04_L0012",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "종이에는 물자 인수 날짜, 소금·수건 수량, ‘옛 펌프집 아래 통, 셋째 말뚝’이 적혀 있다. 6일의 인수 표식이 학교에 남겨진 표식과 같다. 종이 아래에 ‘옮길 때만 답을 둔다. 사람은 기다리지 않는다’라는 메모가 있다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1665,
+          "label": "r13_v111_bench10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-4. 오후 / 우체국 옆 벤치 — 다음에 갈 곳",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "228c39d5f2195d2c5c172fb5b3dd9dc6e1793a4db373da2f0d7960ff4e5af467",
+      "uid": "a2464cae0a29886fb0da4ec2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S04_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S04_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S04_L0013",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이걸 가져가도 되겠니? 확인하면 돌려줄게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1666,
+          "label": "r13_v111_bench10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-4. 오후 / 우체국 옆 벤치 — 다음에 갈 곳",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "feb0b63f9ae2907bf243d1b84b6a49e9622d2c2da969d09354b870e5684dd91f",
+      "uid": "df0adb0876a541460cde255f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S04_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S04_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S04_L0014",
+      "when": null,
+      "speaker": "부리",
+      "kind": "dialogue",
+      "text": "원본은 제가 가져갈래요. 베껴요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1667,
+          "label": "r13_v111_bench10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-4. 오후 / 우체국 옆 벤치 — 다음에 갈 곳",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "75d61acfe6b25dc4aedcb42a08ebd84d4398d121feabddd452b8365f803f4384",
+      "uid": "f2a169619f2b2a4e0a2e00c0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S04_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S04_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S04_L0015",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그래.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1668,
+          "label": "r13_v111_bench10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-4. 오후 / 우체국 옆 벤치 — 다음에 갈 곳",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "47dd1707211c7354d813fcd6c66319369aef44dca3d28aedf2278035f5fb055c",
+      "uid": "c5b87d8990e0fdaa31878ff1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S04_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S04_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S04_L0016",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[조작] 실제 좌표 문구와 최신 인수 날짜를 옮겨 적고 부리에게 확인받는다. 지도에는 ‘엄마’가 아니라 ‘물자 연락함, 마지막 사용 6일’이라는 표시가 생긴다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-4. 오후 / 우체국 옆 벤치 — 다음에 갈 곳",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "08afe153023c104466c002607dab107643440e333e91ccee762130569bb94039",
+      "uid": "42b794f7edd8195eb57a425c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S04_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S04_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S04_L0017",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "거기 엄마 있어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1669,
+          "label": "r13_v111_bench10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-4. 오후 / 우체국 옆 벤치 — 다음에 갈 곳",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7a3dfcac4432cc2f9761dbb1cae1eb48e7aac844e39e03566df9a9f5897dd28a",
+      "uid": "5d56214891b73e2b31387579",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S04_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S04_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S04_L0018",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "엄마가 있는 곳인지는 아직 몰라. 답이 와 있을 수는 있어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1670,
+          "label": "r13_v111_bench10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-4. 오후 / 우체국 옆 벤치 — 다음에 갈 곳",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9019c1f76ffabdbe39e796afdf8bbb8470e600a7f365d534fcde425310a4e7f1",
+      "uid": "64aaa79cf51ebf0d4bb5d747",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S04_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S04_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S04_L0019",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "오늘 갈 거야?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1671,
+          "label": "r13_v111_bench10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-4. 오후 / 우체국 옆 벤치 — 다음에 갈 곳",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f0575700cfad4dea6246747bce859a14b0ece6e59dcb606f1f5ad58fb49c2872",
+      "uid": "301c96a6da803ac8f2195386",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S04_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S04_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S04_L0020",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "오늘은 문 닫히기 전에 학교로 돌아가자. 네가 쉬고, 내일 밝을 때 같이 갈지 정하자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1672,
+          "label": "r13_v111_bench10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-4. 오후 / 우체국 옆 벤치 — 다음에 갈 곳",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f81c3542223215060a7f741f8e912804f83de79da3058f2d0165d13496b3d6d4",
+      "uid": "7698d2daa8a0fe5a4f9b8696",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S04_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S04_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S04_L0021",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "같이 갈래. 그런데 오늘은…… 아빠가 문 쪽에서 자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1673,
+          "label": "r13_v111_bench10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-4. 오후 / 우체국 옆 벤치 — 다음에 갈 곳",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "17d1918d2df3dcfe6c99823a2b270b5c7e005fd4db7da43ac69fba966c94d53c",
+      "uid": "2c256b9aa3d653684afad632",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S04_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S04_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S04_L0022",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그럴게. 문은 잠그지 말고, 우리가 열 수 있게 두자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1674,
+          "label": "r13_v111_bench10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-4. 오후 / 우체국 옆 벤치 — 다음에 갈 곳",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "00b39875a99b3a718c5fb254b6a3585e9181d6e78c0a7f443bcdf6b0df33fc47",
+      "uid": "27cf15da980e1ef57c027ad2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S04_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S04_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S04_L0023",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나비가 학교에서 빌린 담요를 들고 온다. 다람에게 바로 둘러 주려다 멈춘다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1675,
+          "label": "r13_v111_bench10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-4. 오후 / 우체국 옆 벤치 — 다음에 갈 곳",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "467cd025957d4df846d32fcd2120b22b5f96d8085a61a1920d88eb4bcc407690",
+      "uid": "aa6c1c48a0c65c2e066eff26",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S04_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S04_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S04_L0024",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "덮어 줄까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1676,
+          "label": "r13_v111_bench10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-4. 오후 / 우체국 옆 벤치 — 다음에 갈 곳",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f738febc8b8ac749b0387908a7a41bc158680c851241aa19e33ba52210b7801e",
+      "uid": "c0daefd6c2234112ea8426b4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S04_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S04_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S04_L0025",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "응.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1677,
+          "label": "r13_v111_bench10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-4. 오후 / 우체국 옆 벤치 — 다음에 갈 곳",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8025c713f26164a6787608a6cbce1b8ac0cfe963a42e1416578db60193e95224",
+      "uid": "36e710adcb641a56e594f302",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S04_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S04_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S04_L0026",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "담요 아래로 다람의 손이 내 손을 다시 찾는다. 회관에서 들었던 말들이 사라지지는 않는다. 그래도 이번에는 손을 놓으라는 사람이 없다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다. 조건부 replace/drop 이후 원문 fallback이며 무조건 표시된다는 뜻이 아니다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1678,
+          "label": "r13_v111_bench10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "room13_lose"
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-4. 오후 / 우체국 옆 벤치 — 다음에 갈 곳",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "118385c5bc86fb8b4e1fe617f0e0d280995938d10876e63a4b58704468f041a5",
+      "uid": "c11d7060a016e71f2c625e7b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S04_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S04_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S04_L0027",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: E10_PUMP=contact_box_last_used_day6; FAMILY_BASE=school; mother_location=unknown; D10_S04_main_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-4. 오후 / 우체국 옆 벤치 — 다음에 갈 곳",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "090f233c3f4069e4d573fcdfe4c5b22cca68b356afffe70d51106036ac670363",
+      "uid": "7f788e43d6282d363025994a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

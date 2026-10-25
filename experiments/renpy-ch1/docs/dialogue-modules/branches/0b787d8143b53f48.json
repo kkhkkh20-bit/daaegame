@@ -1,0 +1,206 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/winter.rpy:279:149",
+      "file": "game/winter.rpy",
+      "path": [
+        13506,
+        13548
+      ],
+      "origin": "rpy_inventory",
+      "day": 9,
+      "scene": "winter_night",
+      "block": "winter_night",
+      "placement": "literal",
+      "ref": "game/winter.rpy:279:149",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "작은 배식구가 열렸다. 그릇이 바닥에 닿는 소리 뒤로 발소리가 멀어졌다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 279,
+          "label": "winter_night",
+          "guards": [
+            "if winter[\"day\"]==1:"
+          ]
+        }
+      ],
+      "line": 279,
+      "scene_title": "winter_night",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "5bbf22b8447ff2a87c24001454d4f5bbf3be05c0be805da77b95c4c1868dc38f",
+      "uid": "ed3268f941dc27f9039401d8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|winter_night|rpy_inventory|winter_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:280:109",
+      "file": "game/winter.rpy",
+      "path": [
+        13677,
+        13692
+      ],
+      "origin": "rpy_inventory",
+      "day": 9,
+      "scene": "winter_night",
+      "block": "winter_night",
+      "placement": "literal",
+      "ref": "game/winter.rpy:280:109",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "여기서도 이름을 확인해?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 280,
+          "label": "winter_night",
+          "guards": [
+            "if winter[\"day\"]==1:"
+          ]
+        }
+      ],
+      "line": 280,
+      "scene_title": "winter_night",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "a96035efd73407698b7896d306e3206b05c4ad14a1691da0ea3fee31f5cc800b",
+      "uid": "65af849e66db23e6eb153c4e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|winter_night|rpy_inventory|winter_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:282:69",
+      "file": "game/winter.rpy",
+      "path": [
+        13807,
+        13829
+      ],
+      "origin": "rpy_inventory",
+      "day": 9,
+      "scene": "winter_night",
+      "block": "winter_night",
+      "placement": "literal",
+      "ref": "game/winter.rpy:282:69",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "그렇게 못 하게 기록을 가져갈 거야.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 282,
+          "label": "winter_night",
+          "guards": [
+            "elif winter[\"day\"]==2:"
+          ]
+        }
+      ],
+      "line": 282,
+      "scene_title": "winter_night",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "89ff46607dabebd49ed4405c0d84734c36c65ed7482a6a3ae0b3582a66f9fe82",
+      "uid": "de0656008b4f11679eab03d9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|winter_night|rpy_inventory|winter_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:284:79",
+      "file": "game/winter.rpy",
+      "path": [
+        14025,
+        14038
+      ],
+      "origin": "rpy_inventory",
+      "day": 9,
+      "scene": "winter_night",
+      "block": "winter_night",
+      "placement": "literal",
+      "ref": "game/winter.rpy:284:79",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "밤에 그랬다고 했지.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 284,
+          "label": "winter_night",
+          "guards": [
+            "elif winter[\"day\"]==4:"
+          ]
+        }
+      ],
+      "line": 284,
+      "scene_title": "winter_night",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "96f8cdfc978ffe697ccf34d49c8553a2154aee823ae0b619f15db5efc840302a",
+      "uid": "1c52c486aadb52b3731819a6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|winter_night|rpy_inventory|winter_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:286:69",
+      "file": "game/winter.rpy",
+      "path": [
+        14175,
+        14187
+      ],
+      "origin": "rpy_inventory",
+      "day": 9,
+      "scene": "winter_night",
+      "block": "winter_night",
+      "placement": "literal",
+      "ref": "game/winter.rpy:286:69",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "아빠, 문 잠갔지?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 286,
+          "label": "winter_night",
+          "guards": [
+            "elif winter[\"day\"]==7:"
+          ]
+        }
+      ],
+      "line": 286,
+      "scene_title": "winter_night",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "ad285a7c8c59b0a41563f84c0a9f2c5264e81f1d5b112e0b68257ba640bea0af",
+      "uid": "45fad09d299ed973240f2417",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|winter_night|rpy_inventory|winter_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

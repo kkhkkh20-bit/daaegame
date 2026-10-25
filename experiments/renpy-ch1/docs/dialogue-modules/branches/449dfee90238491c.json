@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_evening.rpy:60:26",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        3129,
+        3196
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_evening_auto",
+      "block": "r13_evening_auto",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:60:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "하루 일이 끝났다. 저녁에는 일이 없지만, 오늘 밤에만 할 수 있는 일이 있다. 자기 전까지는 시간이 흐르지 않는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 60,
+          "label": "r13_evening_auto",
+          "guards": []
+        }
+      ],
+      "line": 60,
+      "scene_title": "r13_evening_auto",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "c6f3ec8cd6dfb712cd6038d5ba06bf70e2999f112dfd6dc089150d1244e43dc2",
+      "uid": "d959278b326d3acbb3b189a0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_evening_auto|rpy_literal|r13_evening_auto|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

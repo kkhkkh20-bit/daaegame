@@ -1,0 +1,1358 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D04_S02_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "광장으로 돌아가는 길. 콩이가 토실에게 밤에 봤다는 이야기를 한다. 아빠는 가까이에서 초상에 묻은 물기를 닦고 있다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4f5b1ea705058e6f860807c1aa3914b904ab4d5a0b4cc52283123131557571a8",
+      "uid": "14846b33ce5f61f773af150b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0002",
+      "when": null,
+      "speaker": "콩이",
+      "kind": "dialogue",
+      "text": "밤이가 또 남의 식량 훔쳤대. 내가 다 알아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 137,
+          "label": "r13_v111_eaves4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "30cc5b36d71cee2e29e4428ecc4edd21060eab7b8bc4fb1743b872777bd4d51a",
+      "uid": "b2d4190c2876bb46f62573c7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0003",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "네가 봤어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 138,
+          "label": "r13_v111_eaves4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a1ff6cbe86f6e08cc290bde561b484a207c7b153c5915bde56bc55b86a5725ab",
+      "uid": "bf3ec050024f4c70efb1b990",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0004",
+      "when": null,
+      "speaker": "콩이",
+      "kind": "dialogue",
+      "text": "아랫길에서 그러던데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 139,
+          "label": "r13_v111_eaves4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7010b214b078ecf8d104447f1468d821f3238988fdc312f3edc890365f318553",
+      "uid": "a028b5716997231ca6a2cea7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0005",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그러면 들은 거잖아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 140,
+          "label": "r13_v111_eaves4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "95a10a0b75984e6e64655947c215a2ebb9fbd737a377cfce7dff66a7f0238abf",
+      "uid": "75d08e8d9f83563636020156",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0006",
+      "when": null,
+      "speaker": "콩이",
+      "kind": "dialogue",
+      "text": "들은 걸 팔면 안 돼?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 141,
+          "label": "r13_v111_eaves4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ac5044eccd22bb72fc17b3af301e26883662e2946055ac1b7c855b8cb205d747",
+      "uid": "568b393b10903b1b9a4e525e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0007",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "팔지 말고 말해.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 142,
+          "label": "r13_v111_eaves4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "299273644b63481114335e20ba62384cd17631e76bb0f7e5ca7c3e64442fd222",
+      "uid": "3326593e762831afbd951c05",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0008",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "다람이 가방에서 도토리 세 개를 꺼낸다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "95fee55d03628553afab2ef981a247076eca839ce60856b188e4a98492a64ff2",
+      "uid": "c48440757494b16b6e164c23",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0009",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마 찾는 거 도와주면 하나씩.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 143,
+          "label": "r13_v111_eaves4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0e33719466a400fd8ae1d8a496d1398104046574486dd74d4f4a16c74c3d89c3",
+      "uid": "3842e5e84f65fc4720c945ba",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0010",
+      "when": null,
+      "speaker": "토실",
+      "kind": "dialogue",
+      "text": "모르는 걸 어떻게 도와?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 144,
+          "label": "r13_v111_eaves4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bd77ca29e4ceb26212e5330c03fb1ccff9c9250a93f747479a5eab00397321d8",
+      "uid": "793a71c33a716a5c675ac1d6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0011",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그럼 모른다고 해. 봤으면 봤다고 하고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 145,
+          "label": "r13_v111_eaves4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ad2fd6ae7093abc54075ffa13f43e2cc0b8f5ced0f47c2160b8da06411299120",
+      "uid": "bfa5a6f61ace72a8fe4af5bc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0012",
+      "when": null,
+      "speaker": "콩이",
+      "kind": "dialogue",
+      "text": "모른다는 말도 한 개야?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 146,
+          "label": "r13_v111_eaves4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "508c97e2e3e0d88995efb3168c253d4c3d15f9bf2902ab36c604dbae1d496995",
+      "uid": "1911a08165dffe9e0a1adc97",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0013",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "처마 끝에서 작은 돌 하나가 굴러 내려왔다. 밤이가 그림을 보고 있었다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 147,
+          "label": "r13_v111_eaves4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3a14beec5bf4c8e7c108a0724676786c976143d971acf0b51258da8ad2aaf3dc",
+      "uid": "9c6788dfb5ac9bbbec3c9932",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0014",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "가까이서 볼래?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 148,
+          "label": "r13_v111_eaves4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "68be93147ae6bf985620d5796eb564d65d728429e2c388068a69cc8ed0369d6a",
+      "uid": "3fb47c3fe17ef080b477e7fa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0015",
+      "when": null,
+      "speaker": "밤이",
+      "kind": "dialogue",
+      "text": "거기 두면 볼게요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 149,
+          "label": "r13_v111_eaves4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b46f4e06bd5068cb960f2130a642f4b74974af3c91632375e971b6852ddd0adb",
+      "uid": "28bec4424f167c80f401ca56",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0016",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠가 판자를 벽에 기대고 두 걸음 물러난다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5e665816ebfe92fba2cd07ef50d34f7b88a8f5dd11057b5ef95c5e7db3c91123",
+      "uid": "ebd384b44576eadaecb85e95",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0017",
+      "when": null,
+      "speaker": "밤이",
+      "kind": "dialogue",
+      "text": "이 사람, 강 쪽에서 봤어요. 전에요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 159,
+          "label": "r13_v111_bami_mother4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0b7647e442926f87c6514118e2a98d3d118f758447d0bc08629c9690fe8e23e4",
+      "uid": "e1aa06445ab22741bd8abcb0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0018",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어제니?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 160,
+          "label": "r13_v111_bami_mother4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "24d810adb7fd489dfd184e245a0efef093172315cfe7dea2e7993c7457bfec83",
+      "uid": "bc591565d2e6594c21a08d4a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0019",
+      "when": null,
+      "speaker": "밤이",
+      "kind": "dialogue",
+      "text": "아니요. 전에.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 161,
+          "label": "r13_v111_bami_mother4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7909cb1d621f128d9f7939973acabc2101aef0c596ae6f9eaef0eb61fd14e0b6",
+      "uid": "55cff532c5fc73dbca90760f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0020",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어디로 갔는지는?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 162,
+          "label": "r13_v111_bami_mother4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4510d76aeae796ea754ae6a7fbb0d72eb958d0f0866daa213732b67cd9aecb9f",
+      "uid": "669aa1370cc66d53f8c89837",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0021",
+      "when": null,
+      "speaker": "밤이",
+      "kind": "dialogue",
+      "text": "안 따라갔어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 163,
+          "label": "r13_v111_bami_mother4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "327269af88a4bca2aee89bfd1655b628c3a3e6f562d7cefeab5aad4f1cc8f84f",
+      "uid": "26b3a457c9afafaeb1cb8827",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0022",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그럼 그건 모르는 거네.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 164,
+          "label": "r13_v111_bami_mother4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "970ce2b5afcfceef982d05482477ee1e823c673a0c55f4003838ad5f0b116b7d",
+      "uid": "74ac8fd6a2950b25134b41a5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0023",
+      "when": null,
+      "speaker": "밤이",
+      "kind": "dialogue",
+      "text": "내가 안다고 했어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 165,
+          "label": "r13_v111_bami_mother4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "47832ea6d562f4223e35197476aa911babcd37abd44a84e02a2549194099cc89",
+      "uid": "a810aa65486f94755cd38281",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0024",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아니. 적으려고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 166,
+          "label": "r13_v111_bami_mother4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "31be6f4868fb56918d92b3c8de20799ffe40942fa634917fe4bff72d71c47adf",
+      "uid": "41167300e82fa14216e9a2be",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0025",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "다람이 수첩에 쓰다가 ‘강’ 자를 아빠에게 묻는다. 아빠가 작은 종이에 써 준다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b4eac4d7f61cda37c18d6e0024aac1b3b344105650a3584534670be58aa98b1b",
+      "uid": "6814f3b394e978e6fd40e4d6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L9101",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L9101",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L9101",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "밤이: 전에 강 쪽에서 엄마를 봤다. 언제 어디로 갔는지는 모른다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "956c9e22799a081e0fc11cef29d7fb4ceec949fdbb59f53d05b248a67a6012fb",
+      "uid": "76aca92677090e5bff5ab4b7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0026",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "네가 혼자 찾으러 가진 마. 우리가 물어볼게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 168,
+          "label": "r13_v111_bami_mother4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7114fa33e1a64153ec827822176492be49b87dac90dac6541ab4fc093f174b73",
+      "uid": "96f08379eecf166f57dd8f80",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0027",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "나도 가는데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 169,
+          "label": "r13_v111_bami_mother4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "23cc2d174899af3fce6b893471fb1e23e650b177c14df97ff8315fd4906a0ed5",
+      "uid": "873f6918697e8f6e0fc59303",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0028",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "같이. 혼자 말고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 170,
+          "label": "r13_v111_bami_mother4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "732475fa0f74db61b8507ff2daa210468cd5f94106a3289b814061dbe1a387c9",
+      "uid": "527dd2d2e47b55c917536081",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0029",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "오후, 솜이네 문 앞.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "41645cbf848bf85973c1ea8f5d91b3209774f34ce2682ff4fd3da3dda5305d2b",
+      "uid": "e9fd7afe91d9aae8bba942be",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0030",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "지금 잠들었어요. 아침에 와요. 깨우면 오늘 밤 더 힘들어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 172,
+          "label": "r13_v111_bami_mother4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3f5edb1ea2c52783f505312537cfa6e3a0c1744b1f9e6afc7913eb4468743caf",
+      "uid": "310a03f9701868aaa8a83f25",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S02_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S02_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S02_L0031",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그럼 내일 아침에요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 173,
+          "label": "r13_v111_bami_mother4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "2. 처마 / 도토리 세 개",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2435b1dc10375d7789c6ba7d96b1da74046422a069a5217c6b366852bfa82e1f",
+      "uid": "fb7e82b47b8bdfbf635b44ee",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

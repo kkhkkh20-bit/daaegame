@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:224:26",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        13162,
+        13212
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ws_lowroad",
+      "block": "r13_ws_lowroad",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:224:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "아랫길. 마을 장부에 이름이 없는 사람들의 천막 여섯 채. 천막 사이에 작은 불 하나.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 224,
+          "label": "r13_ws_lowroad",
+          "guards": []
+        }
+      ],
+      "line": 224,
+      "scene_title": "r13_ws_lowroad",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "198176195c4f523f97d463c1154b729360a464f96ec9fa1d150c2c25a9e286f5",
+      "uid": "6740248dfa7dff99ffcc6d5f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ws_lowroad|rpy_literal|r13_ws_lowroad|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

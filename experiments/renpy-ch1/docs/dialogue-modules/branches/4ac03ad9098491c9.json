@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_LA_LA_LOSE3_0",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_lose3",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "la_lose3",
+      "block": "la_lose3",
+      "placement": "blocks",
+      "ref": "la_lose3",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "톡의 혐의를 풀 근거가 부족하오. 이름을 적으시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 71,
+          "label": "r13_lamp_attempt_wrong3",
+          "guards": []
+        }
+      ],
+      "scene_title": "la_lose3",
+      "source_hash": "1f8d4bedb33f10201a3ffe6e822492a7cb7ec3d826a133f6d7683d7013245e9b",
+      "baseline_hash": "fef3107cdc69c6b5658e99d219d007008ee1788d75b3355c4f771ac85d450c9c",
+      "uid": "2a80c6d31f13ccc7cc3f00b9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|la_lose3|patch|la_lose3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

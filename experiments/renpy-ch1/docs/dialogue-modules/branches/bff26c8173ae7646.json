@@ -1,0 +1,279 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D03_S05_A01",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "after",
+        "MS14_D03_S05_L0023",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D03_S05_L0023",
+      "when": null,
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "……걸쇠, 끝까지 못 조였어요. 품삯은 하나 몫이라…… 서둘렀어요. 그 틈으로 칼이 들어간 거예요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1156,
+          "label": "r13_v111_trial_latch_ok",
+          "guards": []
+        }
+      ],
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "28c4ad41e5cead4a08ca7d02910b9adecb8b61fa1e5ff839f3f5d94552d7728a",
+      "uid": "e61f45103a474558a55f37ef",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D03_S05_A02",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "after",
+        "MS14_D03_S05_L0024",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D03_S05_L0024",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아침에 그러셨죠. 톡이 칼로 ‘받침 밑 안벽’을 ‘한 줄로’ 긁더라고요. 그 자리는 받침을 들어내야 보입니다. 덮개 밖에서는 손도 안 보이는 곳이고요. 거기 난 줄 모양을…… 어떻게 아셨습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1156,
+          "label": "r13_v111_trial_latch_ok",
+          "guards": []
+        }
+      ],
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "1d8c20d0855a7789b6288bddd567bd6a1346e9e100bfffe82e299f75118264b8",
+      "uid": "5567555bf8eb10df78fa6b21",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D03_S05_R02",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "after",
+        "MS14_D03_S05_L0024",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D03_S05_L0024",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "실룩이 입꼬리를 올리려다 멈춘다. 웃음이 얼굴에 붙은 채로 굳는다. 주머니 속 손은 나오지 않는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1156,
+          "label": "r13_v111_trial_latch_ok",
+          "guards": []
+        }
+      ],
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "4999b339bbbb7879aa9a9fa8980b3180be27b43aaca8d106ab02638a47f113a7",
+      "uid": "d2140063451869deb42acdaa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AR_D03_07",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "after",
+        "MS14_D03_S05_L0032",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D03_S05_L0032",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "누구십니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1175,
+          "label": "r13_v111_badugi_arrives",
+          "guards": []
+        }
+      ],
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "a755e68604b1c0b6f353ce642cc07791711bf614995d8c18b6b981e494d07b68",
+      "uid": "4d8216f2599a5ba2f3d2ebb5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AR_D03_08",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "after",
+        "MS14_D03_S05_L0032",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D03_S05_L0032",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "순찰대 바둑이요. 누가 무엇을 내놨는지 적는 게 내 일이오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1175,
+          "label": "r13_v111_badugi_arrives",
+          "guards": []
+        }
+      ],
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "8b353ca5dc5eb8e326fd20b9005bcacbae32a66ee93d2c96ed6ec3ca1538d194",
+      "uid": "147c521ab4115478be34a025",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AR_D03_09",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "after",
+        "MS14_D03_S05_L0032",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D03_S05_L0032",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "thought",
+      "text": "너울 씨 장부 말고, 적는 사람이 하나 더 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1175,
+          "label": "r13_v111_badugi_arrives",
+          "guards": []
+        }
+      ],
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "d4037209c1f93c94e328cc7fe54582abb3b0f92a50261256c77a517577f5002b",
+      "uid": "cf759e98eb91e5d54ee8ba7f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D03_S05_V02",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "after",
+        "MS14_D03_S05_L0032",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D03_S05_L0032",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "초소에서 온 사람은 차렷 자세로 선다. 경례하려던 손이 반쯤 올라가다 멈춘다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1175,
+          "label": "r13_v111_badugi_arrives",
+          "guards": []
+        }
+      ],
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "12567da67cf07d8fca6d13c08fa507d9bad678deaaf5a8fcaa64b17e287bfd99",
+      "uid": "823fd555d77c312dfa668b02",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

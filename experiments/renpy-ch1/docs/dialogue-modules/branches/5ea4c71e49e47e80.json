@@ -1,0 +1,170 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_HP_REPLACE11_00",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_replace11",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "hp_replace11",
+      "block": "hp_replace11",
+      "placement": "blocks",
+      "ref": "hp_replace11",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "집게로 안쪽 돌을 꺼내 재통에 넣는다. 판돌이 뚜껑을 덮고, 나는 난로에 장작을 넣는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 105,
+          "label": "r13_hp_house11_pick",
+          "guards": [
+            "elif n==4 and r13_hp_heat_ready():"
+          ]
+        }
+      ],
+      "scene_title": "hp_replace11",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "2297d9b907b070feae0d3ebd8dcc667b83759cc389615fb559f2ceaa60a4fca0",
+      "uid": "430f11df289bdd1b71efa01f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|hp_replace11|patch|hp_replace11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HP_REPLACE11_01",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_replace11",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "hp_replace11",
+      "block": "hp_replace11",
+      "placement": "blocks",
+      "ref": "hp_replace11",
+      "when": null,
+      "speaker": "판돌",
+      "kind": "dialogue",
+      "text": "이러면 오늘 날짜를 덜 물을까요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 105,
+          "label": "r13_hp_house11_pick",
+          "guards": [
+            "elif n==4 and r13_hp_heat_ready():"
+          ]
+        }
+      ],
+      "scene_title": "hp_replace11",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "a5b4fa9a12492c2d9facd2b4949ae7f58bc96069640d1c1cc00a0f12ebd22816",
+      "uid": "3ffae61a52edad8628225bf7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|hp_replace11|patch|hp_replace11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HP_REPLACE11_02",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_replace11",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "hp_replace11",
+      "block": "hp_replace11",
+      "placement": "blocks",
+      "ref": "hp_replace11",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "오늘 바로 달라질지는 모르겠습니다. 그래도 돌을 더 태우지는 말죠.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 105,
+          "label": "r13_hp_house11_pick",
+          "guards": [
+            "elif n==4 and r13_hp_heat_ready():"
+          ]
+        }
+      ],
+      "scene_title": "hp_replace11",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "e42565b2f8f849bef8f0567b058f19dfb9cc5ed3764fe5c0b297aa494f767ec9",
+      "uid": "b5a1aad47a1ac5796778f1b0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|hp_replace11|patch|hp_replace11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HP_REPLACE11_03",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_replace11",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "hp_replace11",
+      "block": "hp_replace11",
+      "placement": "blocks",
+      "ref": "hp_replace11",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "누나는 그대로 앉아 숟가락 손잡이를 만진다. 판돌은 빈 돌 바구니를 문에서 먼 쪽으로 옮긴다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 105,
+          "label": "r13_hp_house11_pick",
+          "guards": [
+            "elif n==4 and r13_hp_heat_ready():"
+          ]
+        }
+      ],
+      "scene_title": "hp_replace11",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "4402fd890a6622cb62aabe6899801625f351ad0b7786a43d4bd188a433a748ed",
+      "uid": "76f4832b660a195722fd8124",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|hp_replace11|patch|hp_replace11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

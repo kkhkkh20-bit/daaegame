@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13.rpy:264:340",
+      "file": "game/room13.rpy",
+      "path": [
+        14748,
+        14787
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_day",
+      "block": "r13_day",
+      "placement": "literal",
+      "ref": "game/room13.rpy:264:340",
+      "when": null,
+      "speaker": "resident_owlgp",
+      "kind": "dialogue",
+      "text": "물건만 먼저 전해 두리다. 자세한 이야기는 다 같이 모여서 합시다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 264,
+          "label": "r13_day",
+          "guards": [
+            "if room13[\"day\"]==R13_CASE_DAY and not r13_has(\"elder_appointment\"):"
+          ]
+        }
+      ],
+      "line": 264,
+      "scene_title": "r13_day",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "0f8c6077c8dcf35e254bb64d0eec04cf985ab4c49c0818d7593dd91809503a22",
+      "uid": "1d5fe04f9e08f8c32fcc760c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_day|rpy_literal|r13_day|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:268:100",
+      "file": "game/room13.rpy",
+      "path": [
+        15109,
+        15141
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_day",
+      "block": "r13_day",
+      "placement": "literal",
+      "ref": "game/room13.rpy:268:100",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "범인인지 밝혀지지도 않았는데 아이를 가두기부터 합니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 268,
+          "label": "r13_day",
+          "guards": [
+            "if room13[\"day\"]==R13_CASE_DAY+1 and room13[\"case_state\"]==\"occurred\" and not r13_has(\"trial_notice\"):"
+          ]
+        }
+      ],
+      "line": 268,
+      "scene_title": "r13_day",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "06ebe25335f9a9ed16ce25377064051d5af866e6d6c9eb1e8d481173141e086f",
+      "uid": "9a864f3b922503b898a3a434",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_day|rpy_literal|r13_day|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

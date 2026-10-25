@@ -1,0 +1,123 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_LA_LA_FINAL3_0",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_final3",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "la_final3",
+      "block": "la_final3",
+      "placement": "blocks",
+      "ref": "la_final3",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "칼끝은 돌 밑에서 나왔고, 실룩 씨 칼에 맞습니다. 바깥 걸쇠만 닫았다는 설명과는 방향이 다릅니다. 돌은 남아 있으니 훔쳐 갔다고 하진 않겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 84,
+          "label": "r13_lamp_attempt_win3",
+          "guards": []
+        }
+      ],
+      "scene_title": "la_final3",
+      "source_hash": "1f8d4bedb33f10201a3ffe6e822492a7cb7ec3d826a133f6d7683d7013245e9b",
+      "baseline_hash": "a46dc505e10b45f353386c0443e0d48bbedd908799a0f944a99737459296852a",
+      "uid": "e292fef918015c64ceace08b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|la_final3|patch|la_final3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_LA_LA_FINAL3_1",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_final3",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "la_final3",
+      "block": "la_final3",
+      "placement": "blocks",
+      "ref": "la_final3",
+      "when": null,
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "덮개가 묶여 있었어요. 돌이 조금 들리다 걸려서…… 칼만 부러졌어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 84,
+          "label": "r13_lamp_attempt_win3",
+          "guards": []
+        }
+      ],
+      "scene_title": "la_final3",
+      "source_hash": "1f8d4bedb33f10201a3ffe6e822492a7cb7ec3d826a133f6d7683d7013245e9b",
+      "baseline_hash": "2349e071c3b38cd9f14591391439d1c33fb9ed0e8ad291f59a97ae5b0f01527a",
+      "uid": "bc85f1d803ac5bdaa9e33b0d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|la_final3|patch|la_final3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_LA_LA_FINAL3_2",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_final3",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "la_final3",
+      "block": "la_final3",
+      "placement": "blocks",
+      "ref": "la_final3",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그럼 돌을 빼려다 멈춘 일이군요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 84,
+          "label": "r13_lamp_attempt_win3",
+          "guards": []
+        }
+      ],
+      "scene_title": "la_final3",
+      "source_hash": "1f8d4bedb33f10201a3ffe6e822492a7cb7ec3d826a133f6d7683d7013245e9b",
+      "baseline_hash": "5bd766e79861abb141d5167eb48cac6822417d374660aef530888dd73a85e3f3",
+      "uid": "e7a809539d4083a839daccf8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|la_final3|patch|la_final3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

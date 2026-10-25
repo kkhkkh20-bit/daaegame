@@ -1,0 +1,211 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_OWL_REPAIR_OWL_LATCH_WORK7_0",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "owl_latch_work7",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "owl_latch_work7",
+      "block": "owl_latch_work7",
+      "placement": "blocks",
+      "ref": "owl_latch_work7",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "톡이 빗장을 밀어 보고 받이 아래에 나무 조각을 댄다. 나사를 풀자 빗장이 반쯤 빠진다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 137,
+          "label": "r13_v111_owl_repair_pick7",
+          "guards": [
+            "elif n==112 and r13_v111_value('owl_tok_agreed7') and r13_owl_tok_available7():"
+          ]
+        }
+      ],
+      "scene_title": "owl_latch_work7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "549f5a5366d8c75b746e2121c404fd736f4c8861467d86adaa1b38b8527ae42c",
+      "uid": "e4d983fd6b16b2bf96273da8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|owl_latch_work7|patch|owl_latch_work7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OWL_REPAIR_OWL_LATCH_WORK7_1",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "owl_latch_work7",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "owl_latch_work7",
+      "block": "owl_latch_work7",
+      "placement": "blocks",
+      "ref": "owl_latch_work7",
+      "when": null,
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "아직 조, 조이지 마세요. 문이 닫힌 상태에서도 맞는지 봐야 해요. 저녁에 계시면 마저 할게요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 137,
+          "label": "r13_v111_owl_repair_pick7",
+          "guards": [
+            "elif n==112 and r13_v111_value('owl_tok_agreed7') and r13_owl_tok_available7():"
+          ]
+        }
+      ],
+      "scene_title": "owl_latch_work7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "5c035d53afcd4991d1b2884fc8478a582595531a4da06d7f4bb9db3d0f1f8a77",
+      "uid": "dd1f787ca87447d74db371cc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|owl_latch_work7|patch|owl_latch_work7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OWL_REPAIR_OWL_LATCH_WORK7_2",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "owl_latch_work7",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "owl_latch_work7",
+      "block": "owl_latch_work7",
+      "placement": "blocks",
+      "ref": "owl_latch_work7",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "알겠습니다. 이 나사는 제가 맡을까요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 137,
+          "label": "r13_v111_owl_repair_pick7",
+          "guards": [
+            "elif n==112 and r13_v111_value('owl_tok_agreed7') and r13_owl_tok_available7():"
+          ]
+        }
+      ],
+      "scene_title": "owl_latch_work7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "08ccbd6544118a461357cec954fd245d60285c0be990bb83c27a2af564759d4d",
+      "uid": "7039fb5e743606a44eda85a1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|owl_latch_work7|patch|owl_latch_work7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OWL_REPAIR_OWL_LATCH_WORK7_3",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "owl_latch_work7",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "owl_latch_work7",
+      "block": "owl_latch_work7",
+      "placement": "blocks",
+      "ref": "owl_latch_work7",
+      "when": null,
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "아뇨. 제 주, 주머니에 넣어 주세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 137,
+          "label": "r13_v111_owl_repair_pick7",
+          "guards": [
+            "elif n==112 and r13_v111_value('owl_tok_agreed7') and r13_owl_tok_available7():"
+          ]
+        }
+      ],
+      "scene_title": "owl_latch_work7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "a45e246970efac1e83335d6fe6e3ebc8582edaf5c4e880f448347ab7b88bee60",
+      "uid": "c67f484882735f265ffe96fb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|owl_latch_work7|patch|owl_latch_work7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OWL_REPAIR_OWL_LATCH_WORK7_4",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "owl_latch_work7",
+        4,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "owl_latch_work7",
+      "block": "owl_latch_work7",
+      "placement": "blocks",
+      "ref": "owl_latch_work7",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그럼 저는 문만 잡고 있겠습니다. 나사까지 잡으면 손이 모자라서요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 137,
+          "label": "r13_v111_owl_repair_pick7",
+          "guards": [
+            "elif n==112 and r13_v111_value('owl_tok_agreed7') and r13_owl_tok_available7():"
+          ]
+        }
+      ],
+      "scene_title": "owl_latch_work7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "62ab79bf55fe44edaec96ecbb96d859644031869fe0b4c8210ebb1a157c792f1",
+      "uid": "ffcac46bb7c5d49c7a217742",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|owl_latch_work7|patch|owl_latch_work7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

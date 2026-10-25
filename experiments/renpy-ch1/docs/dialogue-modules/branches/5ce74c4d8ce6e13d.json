@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_new_cast.rpy:300:50",
+      "file": "game/systems/room13_new_cast.rpy",
+      "path": [
+        19288,
+        19328
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_nc_dalgeurak_news",
+      "block": "r13_nc_dalgeurak_news",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_cast.rpy:300:50",
+      "when": null,
+      "speaker": "resident_dalgeurak",
+      "kind": "dialogue",
+      "text": "고개 마차는 눈이 녹아야 와. 내 짐작엔 【보름째】나 돼야 할 거요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_cast.rpy",
+          "line": 300,
+          "label": "r13_nc_dalgeurak_news",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 300,
+      "scene_title": "r13_nc_dalgeurak_news",
+      "source_hash": "1ca2e2ca3bfab19cf96bff538f9165f970ad4d6405095ae9a5862a44f44e94db",
+      "baseline_hash": "3b4fb2c797856df5daa61f2f593246efc96604dd85cd545f324d67b4459c14fe",
+      "uid": "6e76db2c607bcb9ea630e9a6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nc_dalgeurak_news|rpy_literal|r13_nc_dalgeurak_news|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_cast.rpy:305:50",
+      "file": "game/systems/room13_new_cast.rpy",
+      "path": [
+        19641,
+        19671
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_nc_dalgeurak_news",
+      "block": "r13_nc_dalgeurak_news",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_cast.rpy:305:50",
+      "when": null,
+      "speaker": "resident_dalgeurak",
+      "kind": "dialogue",
+      "text": "에이, 소식은 상하지도 않는데. 다음에 또 오시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_cast.rpy",
+          "line": 305,
+          "label": "r13_nc_dalgeurak_news",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 305,
+      "scene_title": "r13_nc_dalgeurak_news",
+      "source_hash": "1ca2e2ca3bfab19cf96bff538f9165f970ad4d6405095ae9a5862a44f44e94db",
+      "baseline_hash": "494d5a112a706282d9d8e1657dd0ac374630d3366d01dfa3be977fb82fae73dc",
+      "uid": "bd49e03ebeae379fc4eaf039",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nc_dalgeurak_news|rpy_literal|r13_nc_dalgeurak_news|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

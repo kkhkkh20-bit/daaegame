@@ -1,0 +1,169 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:333:21",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        18998,
+        19012
+      ],
+      "origin": "rpy_inventory",
+      "day": 1,
+      "scene": "r13_ep1_lamp",
+      "block": "r13_ep1_lamp",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:333:21",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "꺼진 3번 등을 살핀다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 333,
+          "label": "r13_ep1_lamp",
+          "guards": [
+            "while _e1_loop:"
+          ]
+        }
+      ],
+      "line": 333,
+      "scene_title": "r13_ep1_lamp",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "f5f5c0b63d36ba50382ca4986d5180ea4e1295a26dc81d3e5ffe84828b5a4f10",
+      "uid": "471e5aa68fafbc07ffaf1b4c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_ep1_lamp|rpy_inventory|r13_ep1_lamp|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:335:31",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        19082,
+        19091
+      ],
+      "origin": "rpy_inventory",
+      "day": 1,
+      "scene": "r13_ep1_lamp",
+      "block": "r13_ep1_lamp",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:335:31",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "등 안을 본다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 335,
+          "label": "r13_ep1_lamp",
+          "guards": [
+            "while _e1_loop:",
+            "if not r13_has(\"L03\"):"
+          ]
+        }
+      ],
+      "line": 335,
+      "scene_title": "r13_ep1_lamp",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "4c01157baf0e43a4e90224a2f82a86975fe2af42648f12303fd806503a897ea9",
+      "uid": "8fb90b3fde79fc2285767650",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_ep1_lamp|rpy_inventory|r13_ep1_lamp|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:337:31",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        19165,
+        19175
+      ],
+      "origin": "rpy_inventory",
+      "day": 1,
+      "scene": "r13_ep1_lamp",
+      "block": "r13_ep1_lamp",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:337:31",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "뚜껑 틈을 본다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 337,
+          "label": "r13_ep1_lamp",
+          "guards": [
+            "while _e1_loop:",
+            "if not r13_has(\"L04\"):"
+          ]
+        }
+      ],
+      "line": 337,
+      "scene_title": "r13_ep1_lamp",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "ebd4b78bc254f47603354580b32da2ad83ae02f32f1197695a008afbe66d3be5",
+      "uid": "e6bbb7f71bcff3ad02940f17",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_ep1_lamp|rpy_inventory|r13_ep1_lamp|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:339:31",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        19273,
+        19293
+      ],
+      "origin": "rpy_inventory",
+      "day": 1,
+      "scene": "r13_ep1_lamp",
+      "block": "r13_ep1_lamp",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:339:31",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "탁본 종이로 나사 둘레를 떠 둔다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 339,
+          "label": "r13_ep1_lamp",
+          "guards": [
+            "while _e1_loop:",
+            "if r13_has(\"own:rubbing\") and not r13_has(\"L14\"):"
+          ]
+        }
+      ],
+      "line": 339,
+      "scene_title": "r13_ep1_lamp",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "4f81a4074f75abfc9c1bbd1b775c165d24967a6648c2eb310e46fedc13298af1",
+      "uid": "d822e9badeaad939fda79751",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_ep1_lamp|rpy_inventory|r13_ep1_lamp|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

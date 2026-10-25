@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:421:16",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        24971,
+        24988
+      ],
+      "origin": "rpy_menu",
+      "day": 6,
+      "scene": "r13_wf_choice",
+      "block": "r13_wf_choice",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:421:16",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "뚜껑 닫힌 등잔을 보여 준다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 421,
+          "label": "r13_wf_choice",
+          "guards": [
+            "menu:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 421,
+      "scene_title": "r13_wf_choice",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "1f2d6e525d60092367e87c9c71d881018b3b9b6c9d87eeae1d1320d5d3b554c3",
+      "uid": "f5ba7f54b001e939f7d74b3b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_wf_choice|rpy_menu|r13_wf_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:427:16",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        25427,
+        25445
+      ],
+      "origin": "rpy_menu",
+      "day": 6,
+      "scene": "r13_wf_choice",
+      "block": "r13_wf_choice",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:427:16",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "“그 아이 잘못이 아닙니다.”",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 427,
+          "label": "r13_wf_choice",
+          "guards": [
+            "menu:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 427,
+      "scene_title": "r13_wf_choice",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "b7ebf026de69fa55415509a5b587ddea42fce8081e330dc14d44f88e2552a52d",
+      "uid": "0ea483788393268737ce4913",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_wf_choice|rpy_menu|r13_wf_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

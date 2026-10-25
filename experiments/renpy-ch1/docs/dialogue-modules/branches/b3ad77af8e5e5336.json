@@ -1,0 +1,47 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_HP_NO_WOOD11_00",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_no_wood11",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "hp_no_wood11",
+      "block": "hp_no_wood11",
+      "placement": "blocks",
+      "ref": "hp_no_wood11",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "학교에서 받은 장작부터 확인해야겠다. 누구 몫인지도 모르고 들고 갈 수는 없지.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 67,
+          "label": "r13_hp_wood11",
+          "guards": [
+            "if not r13_hp_wood_ready():"
+          ]
+        }
+      ],
+      "scene_title": "hp_no_wood11",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "af57dc653c96586fa5b378c7d1ecef784b08b430f012d5557671a18bf00909b0",
+      "uid": "d7f2f31a1f7596266db2b4b6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|hp_no_wood11|patch|hp_no_wood11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

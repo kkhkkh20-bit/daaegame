@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:307:32",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        18919,
+        18936
+      ],
+      "origin": "rpy_inventory",
+      "day": 2,
+      "scene": "r13_wf_morning",
+      "block": "r13_wf_morning",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:307:32",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "광장에서 직접 본 보리의 손",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 307,
+          "label": "r13_wf_morning",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 307,
+      "scene_title": "r13_wf_morning",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "caeb869e6f0ecd6359f0303137248f9f8093a8a851a5291677ecd81f3731dfdc",
+      "uid": "9c12853ad7497c1e6600dcf3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_wf_morning|rpy_inventory|r13_wf_morning|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

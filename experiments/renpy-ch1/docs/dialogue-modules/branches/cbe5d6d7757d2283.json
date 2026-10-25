@@ -1,0 +1,314 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D11_S00_L0002",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "replace",
+        "MS14_D11_S00_L0002",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S00",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D11_S00_L0002",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "돌아갈 마차, 알아봐 달라셨죠. 마부들한테 물어봤어요. 내 축이…… 아니, 바퀴를 고쳐도 지금은 못 나가요. 바깥 고개가 막혔대요. 길을 다시 살펴볼 때까진 마차를 안 몬다네요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 33,
+          "label": "r13_v111_day11",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "scene_title": "장면 11-0. 셋째 말뚝 아래",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "4d3e12068d3b8a7934e890854eb739918c9548a0ff0d2ee45206922abada01d4",
+      "uid": "6671ebf106cb307a5c3a8bee",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S00|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S00_L0004",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "replace",
+        "MS14_D11_S00_L0004",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S00",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D11_S00_L0004",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "괜찮다고 확인된 길이 하나도 없대요. 아이 데리고는 못 보낸다네요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 36,
+          "label": "r13_v111_day11",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "scene_title": "장면 11-0. 셋째 말뚝 아래",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "2a4f5b22b27585ee2162bf256506f4828b34f7037d05005fc36a30f048679cf5",
+      "uid": "0656cc70b68652794dd5a215",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S00|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S00_L0003",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "replace",
+        "MS14_D11_S00_L0003",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S00",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D11_S00_L0003",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "걸어서라도 갈 길은…… 없답니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 34,
+          "label": "r13_v111_day11",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 11-0. 셋째 말뚝 아래",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "9ca3f03c8cb54f5f649260bdf963a6cc124d3361714b183de4f2c3052ca1a67b",
+      "uid": "6684da20137219f39cbbf299",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S00|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S00_L0007",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "replace",
+        "MS14_D11_S00_L0007",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S00",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D11_S00_L0007",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "하나, 둘…… 여기가 셋.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 40,
+          "label": "r13_v111_day11",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 11-0. 셋째 말뚝 아래",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "426aa47192cb0b1976927f9f9f820d1d3b7e3afc47998d8791ca5005ab85854d",
+      "uid": "a31e38e17c65d9db23424ccf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S00|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S00_L0008",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "replace",
+        "MS14_D11_S00_L0008",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S00",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D11_S00_L0008",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "통은 셋째 말뚝 밑에 있다더라. 한번 보자.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 41,
+          "label": "r13_v111_day11",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 11-0. 셋째 말뚝 아래",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "2edeff5f6796ee056491be58b01211d5fc726f148fe4ffbd87d0aa64c5dbd6af",
+      "uid": "a3bf3abebb9bb262db37af0b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S00|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S00_L0011",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "replace",
+        "MS14_D11_S00_L0011",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S00",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D11_S00_L0011",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "여관 뒤라니…… 우리가 여관에서 기다리는 동안, 바로 뒤에 있었단 말이야?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 52,
+          "label": "r13_v111_pump_reply11",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 11-0. 셋째 말뚝 아래",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "6d65f565077814a71c8d3056ae54d68975f958306422d1147859dff367462dae",
+      "uid": "e7cf393af53d8c772358e5d6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S00|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S00_L0012",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "replace",
+        "MS14_D11_S00_L0012",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S00",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D11_S00_L0012",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "이거…… 엄마 글씨야?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 53,
+          "label": "r13_v111_pump_reply11",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 11-0. 셋째 말뚝 아래",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "9f26cd2efabf39f0bd920ef20cc3f983b37fd2585d262df213446982c0cb462c",
+      "uid": "47b43e9deee7d9c8eb2d7e8f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S00|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S00_L0013",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "replace",
+        "MS14_D11_S00_L0013",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S00",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D11_S00_L0013",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "초롱 씨한테 왔던 답장하고 내용이 이어져. 가서 확인해 보자.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 54,
+          "label": "r13_v111_pump_reply11",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 11-0. 셋째 말뚝 아래",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "f839511c096018e90f63d3af37ea319924d74a428fef3a90b6eb37712c88eb7f",
+      "uid": "7588f6fe39334e710b42245f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S00|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

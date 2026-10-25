@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_new_cast.rpy:285:40",
+      "file": "game/systems/room13_new_cast.rpy",
+      "path": [
+        18512,
+        18566
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_nc_solbang_herbs",
+      "block": "r13_nc_solbang_herbs",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_cast.rpy:285:40",
+      "when": null,
+      "speaker": "resident_solbang",
+      "kind": "dialogue",
+      "text": "진료소 약초가 다 떨어졌어요. 숲 안쪽까지 가야 하는데, 혼자는 길 표식 천을 다 못 봐서요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_cast.rpy",
+          "line": 285,
+          "label": "r13_nc_solbang_herbs",
+          "guards": []
+        }
+      ],
+      "line": 285,
+      "scene_title": "r13_nc_solbang_herbs",
+      "source_hash": "1ca2e2ca3bfab19cf96bff538f9165f970ad4d6405095ae9a5862a44f44e94db",
+      "baseline_hash": "6a0dfdc69c900c3b09f9867a5545d9dc94e619a053b752868c3769017f4c7ed2",
+      "uid": "b28003cbcf8679f101747911",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nc_solbang_herbs|rpy_literal|r13_nc_solbang_herbs|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

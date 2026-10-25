@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:269:20",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        15967,
+        15996
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_nabi_shelter",
+      "block": "r13_ep1_nabi_shelter",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:269:20",
+      "when": null,
+      "speaker": "nabi",
+      "kind": "dialogue",
+      "text": "죄송해요. 저도 여기서 쫓겨나면 갈 데가 없어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 269,
+          "label": "r13_ep1_nabi_shelter",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 269,
+      "scene_title": "r13_ep1_nabi_shelter",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "356f8b6ef2732ada8522645352ef07f600982a7d181ef2bfc73e83edf5632c7a",
+      "uid": "2f781f3a794d9a97f24e1feb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_nabi_shelter|rpy_literal|r13_ep1_nabi_shelter|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

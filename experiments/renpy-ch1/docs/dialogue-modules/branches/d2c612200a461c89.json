@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D13_A_A01",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "after",
+        "MS14_D13_A_L0003",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_A",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D13_A_L0003",
+      "when": "daram_deal_freed",
+      "speaker": null,
+      "kind": "narration",
+      "text": "순찰대원이 짐칸 고리에서 다람의 끈을 푼다. 다람이 내게 뛰어온다. 손목에는 끈 자국이 남아 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2564,
+          "label": "r13_v111_family_exit13",
+          "guards": []
+        }
+      ],
+      "scene_title": "대체 장면 13-A. 가족 셋의 하룻밤",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "8a6f65cf6ac51f045d4158e40892ad52a6c21002fed98adc8835e3d2c57913f6",
+      "uid": "fe2e21b0e8deb06dd956a367",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_A|patch|after|daram_deal_freed",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

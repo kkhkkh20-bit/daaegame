@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:188:26",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        12636,
+        12696
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_wf_laundry",
+      "block": "r13_wf_laundry",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:188:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "여관 뒤 빨래터. 큰 솥 밑에서 등유 불이 약하게 탔다. 솥 옆에 기름통 하나. 뚜껑까지 꽉 차 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 188,
+          "label": "r13_wf_laundry",
+          "guards": []
+        }
+      ],
+      "line": 188,
+      "scene_title": "r13_wf_laundry",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "b4cb39388eb14a462b8baf699a10dee00bb78e780faed819a9a85342764d8549",
+      "uid": "bd09dca58c90b4ffdb63d9d8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_wf_laundry|rpy_literal|r13_wf_laundry|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

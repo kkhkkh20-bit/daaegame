@@ -1,0 +1,1513 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D08_S03_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "서리가 촛대 두 조각을 천 위에 놓는다. 아랫부분 손잡이에는 다람이 잡았던 자리와 넘어지며 찍힌 흔적이 있다. 윗부분의 깨진 가장자리에 얼룩이 남아 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 919,
+          "label": "r13_v111_wounds8",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "604e6cfe5f0490c8a47fd79bd975ef5b88c2ecdfa3fceab71bd4cfcbecefefa5",
+      "uid": "3c8fa81534250ff8af375801",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0002",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "손목 부근 상처와 머리의 상처는 따로 적었습니다. 아이가 말한 것은 손목이고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 920,
+          "label": "r13_v111_wounds8",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ea59e9673fc05d131788a8e5a7bfe9a95af720b3469d4a7a3db8476ba8ed1fcf",
+      "uid": "1d354da757dda09dc5a6e1f8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0003",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그럼 다람이가 한 건 손목까지라고 봐도 됩니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 921,
+          "label": "r13_v111_wounds8",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ad65f18d3a486d143d5f29978b0555e0e383ec4b44e7613ac08e8ff9b07814ad",
+      "uid": "3aa909e98b75a99de62318ef",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0004",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "손목을 친 사람이 다시 머리를 쳤을 가능성은 아직 남아 있습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 922,
+          "label": "r13_v111_wounds8",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cbb149fd168c2df67bf4cc9d97feaca494ea26a64d4a94f500480c547841f338",
+      "uid": "cd44b83e5d1d322660e0f67d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0005",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이를 데려갈 수 있겠다는 말이 목까지 올라왔다가 멎는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 923,
+          "label": "r13_v111_wounds8",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4724ef3ba4505340ff412caa92ee1b303485968be2b07ad50d637a0744aef4a8",
+      "uid": "5126f04a253ac8959b01e2d1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0006",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "다만 머리의 상처와 맞는 건 온전한 촛대 끝이 아니라, 부러진 윗조각의 날카로운 면입니다. 바닥에 떨어져 깨진 뒤에 그 조각이 다시 쓰였다는 쪽을 확인해야 합니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 924,
+          "label": "r13_v111_wounds8",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f464017c61e4a4424163ee8d487594980054178d1fb34e2fe579755cd5e87592",
+      "uid": "20053c4ee075c6062dc6bffa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0007",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[조작] 손잡이·파단면·장식 고리를 각각 확대한다. 장식 고리에는 접힌 천 조각이 핀으로 잠겨 있다. 핀 뒤 구리선 끝 한 조각이 비어 있다. 천과 핀은 빼지 않고 처음 상태대로 살핀다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5ea4a0ec12e305855d24d76c91ff78a82cd6ac2f09863dd5c78b393786bce315",
+      "uid": "8bf33dd488cad6c47c19233b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0008",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이 천하고 핀도 원래 촛대에 달렸습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 934,
+          "label": "r13_v111_tool_faces_seen8",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5385fa7c1962cdd5c55badb02d6315c4c5e61852b9f366643e1f716e09a60f21",
+      "uid": "787a29ac9aa104d3e3d3230d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0009",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "아니요. 수거할 때 이 상태였습니다. 억지로 빼지 않았고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 935,
+          "label": "r13_v111_tool_faces_seen8",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d5a11323750f83ae0fec5fbe633eec5a50b67f68337a76fda28f0e242df5965d",
+      "uid": "b29826714d707c8ec82bcdbb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0010",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "서리가 최초 현장 스케치에서 핀 위치를 가리킨다. 누가 나중에 끼웠다는 가정을 줄이는 자료다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 936,
+          "label": "r13_v111_tool_faces_seen8",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ccb1d291c4ff01ce114f51f846a44d13cd52bcee4f1d37988d8eaddb650b7b0e",
+      "uid": "24acbcf1da5c8e49ae773de1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0011",
+      "when": null,
+      "speaker": "부리",
+      "kind": "dialogue",
+      "text": "할아버지가 다람이한테 왜 그랬을까요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 937,
+          "label": "r13_v111_tool_faces_seen8",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d6eea245e8f476db714727e1f8f377c58438c15f5c49c86c8a8c7aafab5c4672",
+      "uid": "759d02ee2544d63b0a485c79",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0012",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "그 순간 정확히 무엇을 알아봤는지는 할아버지께 물을 수 없게 됐구나.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 938,
+          "label": "r13_v111_tool_faces_seen8",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9c0ae4c2137c704523528430e8ee6d60e19f49c8c7cc871c274524d0bbf4b70e",
+      "uid": "2b32f3055d5e8809591e3a64",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0013",
+      "when": null,
+      "speaker": "부리",
+      "kind": "dialogue",
+      "text": "아픈 건 알고 있었어요. 그래도……",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 939,
+          "label": "r13_v111_tool_faces_seen8",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2591058b20de656a96c47c3aeae3749da6616e3458bde463ef909c32aa454ad2",
+      "uid": "0e057ed7aeb052fc18bf467e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0014",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "아빠가 수첩을 돌려주려 하자 부리가 물러난다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 940,
+          "label": "r13_v111_tool_faces_seen8",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "692683211c3b10cda82392d2179baebcdb9e12860c9447d5f5bea2012a5e81a6",
+      "uid": "083fd82c930b399e76d515a9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0015",
+      "when": null,
+      "speaker": "부리",
+      "kind": "dialogue",
+      "text": "다 보고 줘요. 지금 받으면 찢을 것 같아요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 941,
+          "label": "r13_v111_tool_faces_seen8",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5c417ee566f30f5709d6ebc77ebffec073045c9f37b817346e35afb43de2b2ef",
+      "uid": "684dc14b528be5efbc4ca42a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0016",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "서리가 작은 종이 받침을 따로 놓는다. 짧고 구부러진 구리선 조각이다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 942,
+          "label": "r13_v111_tool_faces_seen8",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "be34789810154dfbd007d316640ddb619d6d7cd1334b81ffd4a2f2e09f983a7d",
+      "uid": "18677125e641cfe7527f207c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0017",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "머리 상처 가장자리에서 확인한 겁니다. 처음 진료 기록에 위치도 그렸습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 943,
+          "label": "r13_v111_tool_faces_seen8",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6bbb8eb3a640118a37ffbc39d570fc752bdc1ca29616f4222a75feaa698b64bd",
+      "uid": "68a8ab850f62bf5fcdee0f5b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0018",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "촛대에서 나온 겁니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 944,
+          "label": "r13_v111_tool_faces_seen8",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c3c6cd529b5c9bbf5a11255dfe0168ae4fde4d80c3bd77c669102dac4e0429a7",
+      "uid": "24ad094b2d13d57fd26c9997",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0019",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "아직 어디서 떨어졌는지부터 맞춰 봐야 합니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 945,
+          "label": "r13_v111_tool_faces_seen8",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c0cec49560006a14d3908b1b96bf9c547c87dc758d7a83e634096800bea04b43",
+      "uid": "b4889ab1fdfb08149120016b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0020",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[플레이어가 상처에서 분리 보관한 구리 조각과 핀에 남은 구리선 끝을 확대 대조한다. 끊긴 굴곡과 두 번 꺾인 선의 연속 모양이 맞는다. 색만 같다는 정답은 허용하지 않는다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ca8d7f13038992ec98b7814f74b82e384c40548a3b6dea3e25abf1af1cc20664",
+      "uid": "f936c78c4af52de98bef7649",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0021",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "여기 끊긴 끝하고 이어집니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 955,
+          "label": "r13_v111_wire_curve_seen8",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a195f1f00de9f44f83cb94cdcc5d8ea299ff1b6c83ca240d624fa6986daad646",
+      "uid": "cb223805b6a277ab86685b03",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0022",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "네. 구리선에서 떨어진 조각으로 맞습니다. 상처 가장자리 안에 박혀 있던 방향도 적어 뒀고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 956,
+          "label": "r13_v111_wire_curve_seen8",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fcc3b1c80a08a4e250d57d4062c6194e0225af7edc77ddaf962d0083b582866d",
+      "uid": "87a63434290d0198fe10040d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0023",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[원본 형상 고정: 윗조각은 작은 촛농 받침과 짧은 부러진 목. 목의 뒤쪽에는 접힌 천이 감겨 있고, 천을 고정한 닫힌 핀이 기존 장식 고리를 함께 통과한다. 앞으로 노출된 깨진 면과 핀의 돌출 구리 끝이 같은 접촉면을 이룬다. 손잡이 아래조각과 혼동하지 않는다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ac584dba7478b2722985ad2d337a6e2c27e56b6690e3c6bf7447361e6369a027",
+      "uid": "636c1adf6bc81d40a7c8dec1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0024",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "천이 깨진 면을 덮은 건 아니군요. 뒤를 감고 있고, 깨진 데는 앞에 나와 있습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 957,
+          "label": "r13_v111_wire_curve_seen8",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "00440388113aa69695c06669ef49a8eaa5c11e4c7d3077303b4364e56a89f919",
+      "uid": "6d8a2baf8dc8948b42c922ae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0025",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "손으로 잡는 쪽과 닿는 쪽을 나눠 보세요. 핀만 떨어져 고리에 걸린 모양은 아닙니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 958,
+          "label": "r13_v111_wire_curve_seen8",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3f5c38ecd8e636a507739f209b6c5c46ebe9af799462f89f945803bbca12aeb1",
+      "uid": "6442df641852a1c8f761d358",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0026",
+      "when": null,
+      "speaker": "부리",
+      "kind": "dialogue",
+      "text": "그걸 누가 감았는데요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 959,
+          "label": "r13_v111_wire_curve_seen8",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3699ceeaa7f1e395fba16bff6df93ec8734cac1ad0594a9cad89bc4bd3560534",
+      "uid": "bc762788c9c221024971c5f3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0027",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그건 더 찾아봐야 해. 지금 남은 모양부터 볼게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 960,
+          "label": "r13_v111_wire_curve_seen8",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b5aa9a20d317caf7062439d3cd115b51805531e4e56b7a3c67c8c3125f751c79",
+      "uid": "f018b0cf5042f18386c4bfcf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0028",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: E08_TOOL=handle_break_ring_first_sketch; D08_S03_main_completed=true; E08_CONTACT_ASSEMBLY=closed_pin_through_folded_cloth_and_ring; E08_WOUND_WIRE=fragment_from_same_wound_edge_matches_missing_pin_repair_end; pin_owner=unknown_until_D09",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4663ec06f67f6f7b46d1d47dd61aa8c522217773da2efeccad7bf4a329b252d6",
+      "uid": "587ed347ca9eec5679715c73",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0029",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "손잡이, 깨진 면, 고리. 따로 놓고 보세요.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ca54196c72137b9aeb97d918b01e27c4a2e497ac6dfd7b6d800960d69a3add66",
+      "uid": "bce65ae3cba2d1bb5c4b050c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0030",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: time_cost=0",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "451e183e78ad687c8dbdb27d0b91e15d9de947a8f4a717fdcf37c0d4dab74de9",
+      "uid": "d67087df8c7eab3352ae05d2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0031",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[이미 획득한 사실과 읽은 발화만 재열람한다. 현재 생사·위치와 다른 과거 증언은 기록으로 표시하고 인물을 새로 현장에 출현시키지 않는다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e4047cc80b769f2f77ad98a244e6c771def19c3e354355926f66719bef6b47dd",
+      "uid": "de35e0050488f6dd408f2721",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0032",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "적어 둔 것부터 다시 보겠습니다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bd1227da2b99009eeb0fd6b304bfb6ad9beb3e1371024ffecf107cb589a8b8c6",
+      "uid": "a4cab3cda7507b07349c90c4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0033",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: time_cost=0",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "451e183e78ad687c8dbdb27d0b91e15d9de947a8f4a717fdcf37c0d4dab74de9",
+      "uid": "c2fbb3720bbb21a4b2df685c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0034",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "별도 보관한 짧은 구리선 조각. 머리 상처 가장자리에서 확인. 핀의 구리 수리 끝에 비어 있는 부분과 끊긴 굴곡이 이어진다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4361df512f28fa2ffad9a8c155fd7805ed341b26e65b57150a42a99bd1e973a9",
+      "uid": "0a7db8f2d46a835b55b46780",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0035",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: time_cost=0",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "451e183e78ad687c8dbdb27d0b91e15d9de947a8f4a717fdcf37c0d4dab74de9",
+      "uid": "a3f3f7509e370e1a32a8961e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0036",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "접힌 천과 닫힌 핀. 핀은 천과 기존 장식 고리를 함께 통과한다. 뒤쪽은 천으로 감겼고 앞쪽 깨진 면과 구리 끝은 드러나 있다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c3b59a3536fbd20309314486ce2e2bcb7b7fcb20a253712eac414b2c1250a6d6",
+      "uid": "97b3d1481b1acf852f98b1a2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S03_L0037",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D08_S03_L0037",
+        "text"
+      ],
+      "origin": "base",
+      "day": 8,
+      "scene": "MS14_D08_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D08_S03_L0037",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: time_cost=0",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "8-3. 오후 / 진료실 — 부러진 다음",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "451e183e78ad687c8dbdb27d0b91e15d9de947a8f4a717fdcf37c0d4dab74de9",
+      "uid": "ef38887b43c0f009b8e9519f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

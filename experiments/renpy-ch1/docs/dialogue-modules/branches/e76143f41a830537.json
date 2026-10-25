@@ -1,0 +1,1296 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D07_S01_L0047",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0047",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0047",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "천만으로는 누구라고 못 하겠군요. 어제 그 통에 마지막으로 손댄 사람이 누굽니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 532,
+          "label": "r13_v111_nubi_wrong7",
+          "guards": [
+            "if r13_nw_retry(\"fire\"):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 537,
+          "label": "r13_v111_nubi_wrong7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "2384e70871af95920201aced7c574dadf9718f7f0e35efa2863f2cfb78e7708c",
+      "uid": "2bd8eeebc17ab6ab96ae06a1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0004",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0004",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0004",
+      "when": null,
+      "speaker": "누비",
+      "kind": "dialogue",
+      "text": "빨래터 천이요? 마을에 그런 천이 얼마나 많은데요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 445,
+          "label": "r13_v111_day7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "0459589825fbcf1e360d39de95ee21c09efeb4a305324ac6cd3d1e8c32767bf1",
+      "uid": "8624344754435e2be658cb46",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0007",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0007",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0007",
+      "when": null,
+      "speaker": "누비",
+      "kind": "dialogue",
+      "text": "내가 써요. 애들도 물 데울 때 쓰고요. 그래서요? 빨래 다 얼어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 447,
+          "label": "r13_v111_day7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "b8bd57c0084d79fea9748f7e17fb4014b5d442b97bea41245374968237cad382",
+      "uid": "0cc86554c0f32a9d281251e6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0021",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0021",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0021",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "선생님께 데려다주고 올게요. 얘들아, 가자.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 470,
+          "label": "r13_v111_children_school7",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 481,
+          "label": "r13_v111_children_here7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "449fae8a8ade32be247b0955120a1ef690c87b6b946136f5df3859c12784643a",
+      "uid": "aea07cebadcb42612e258fa6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0002",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0002",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0002",
+      "when": null,
+      "speaker": "누비",
+      "kind": "dialogue",
+      "text": "빨래 맡길 거면 내일 와요. 누비네 빨래터는 지금 바빠요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 443,
+          "label": "r13_v111_day7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "112c8408b590301d1ae226b80efcfebaa46b5a6e5615a5e8f28df2040bfa033e",
+      "uid": "4857022ccf6bcec6f1d03e32",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0003",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0003",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0003",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어젯밤 창고 문 앞에서 주운 천입니다. 좀 봐 주십시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 444,
+          "label": "r13_v111_day7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "48629defa1f36bf9b8a0663b380fd7587b8f9da58c92156c85674cec09124b2d",
+      "uid": "65495ff982c12c559c9e0e00",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0006",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0006",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0006",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그럼 이 등유 통은요? 누가 씁니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 446,
+          "label": "r13_v111_day7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "6691f675fe280dfe01622799283e202a980c3531f36145318e07faa1f55f049d",
+      "uid": "d35385d1e830efda03053167",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0008",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0008",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0008",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어제 저녁에도 그 통으로 물을 데웠습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 448,
+          "label": "r13_v111_day7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "8ed8b4984aacdcffc343ad3e175d50b8545709713ec369e4e146d724cc01b1cc",
+      "uid": "31d8dc0199728a0be69b921c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0009",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0009",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0009",
+      "when": null,
+      "speaker": "누비",
+      "kind": "dialogue",
+      "text": "데웠죠. 왜요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 449,
+          "label": "r13_v111_day7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "2eb16817a93e110121d9c8aa9a051be70b8c7f76bab30c3194c0b01d9b3233fb",
+      "uid": "3a9ebafd525625ad68fff1d4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0011",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0011",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0011",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "어제 솥은 차가웠소. 해 지기 전에 내가 물 한 바가지 달라고 했잖소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 451,
+          "label": "r13_v111_day7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "1de0d299ca9d5901c5fd6d0d92a10590f54687666ac43a99986ad3759c677ef8",
+      "uid": "61ad650be384b881e1e70182",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0012",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0012",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0012",
+      "when": null,
+      "speaker": "누비",
+      "kind": "dialogue",
+      "text": "당신은 훔친 장작이나 내놔요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 452,
+          "label": "r13_v111_day7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "dcf16e2c71890adb2d8679c57bf3a10b262412f3c55c23baff76484f1062f321",
+      "uid": "a48752e037119cfda92985c6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0013",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0013",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0013",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "그건 벌써 내놨소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 453,
+          "label": "r13_v111_day7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "f0c286a660c0a7e3733887ae647736eab0913dfedb951183ab7abd804f591673",
+      "uid": "973f2fb7da3d996b0d2e7f0e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0015",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0015",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0015",
+      "when": null,
+      "speaker": "아이",
+      "kind": "dialogue",
+      "text": "엄마, 어제는 오늘 데워 준댔잖—",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 455,
+          "label": "r13_v111_day7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "e20a635811f1426f623af19af1664d90c2c42b20749840ca160210f8b2ebef87",
+      "uid": "f2509c198435f6a1129cc26a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0016",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0016",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0016",
+      "when": null,
+      "speaker": "누비",
+      "kind": "dialogue",
+      "text": "가만있어.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 456,
+          "label": "r13_v111_day7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "bea9dc1bc2de99ab897828562ca56b3ba9afee7bc0d58116a374e1c12d865f1d",
+      "uid": "78e418ef3f96bf76594a1932",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0020",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0020",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0020",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "나비 씨, 아이들을 학교까지 데려다주시겠습니까? 부탁합니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 469,
+          "label": "r13_v111_children_school7",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 480,
+          "label": "r13_v111_children_here7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "4a466b8d064823083a42465e9ae8c8e66e48ef3e752c1108870464738da1c726",
+      "uid": "84b15e64fa3d7d1f56e355c7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0022",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0022",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0022",
+      "when": null,
+      "speaker": "누비",
+      "kind": "dialogue",
+      "text": "셋 다 같이 가. 막내 손은 놓지 마. 알았지?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 471,
+          "label": "r13_v111_children_school7",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 482,
+          "label": "r13_v111_children_here7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "7fc88c75f63be06d2648d3861ae09c9f627ec1ecc84ceaf227d4fe2156b95bc1",
+      "uid": "623a2ff7288434c182999392",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0025",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0025",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0025",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이제부터는 누비 씨에게 묻겠습니다. 아이들에게는 더 묻지 않겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 475,
+          "label": "r13_v111_children_here7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "d9d322acc2e4d9fc745054fb5d74ca5cc457b1b14d941252bf67a06ad754a255",
+      "uid": "1bb63fbcf7c30198b7ac14f2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0026",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0026",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0026",
+      "when": null,
+      "speaker": "누비",
+      "kind": "dialogue",
+      "text": "학교에서도 다 알게 되는 거 아니에요? 꼭 지금 이래야 해요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 476,
+          "label": "r13_v111_children_here7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "6b742539b9d377cdb21a30250534868cb6dcdbc2107d75754a217f23010c8f82",
+      "uid": "b73c30546e456bf08e56ba96",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0027",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0027",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0027",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어젯밤 창고 문 앞에 계셨을 때 무슨 일이 있었습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 477,
+          "label": "r13_v111_children_here7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "876a9f99ad7da12938f4f2c58ea1a968c1449f6c207e8fb70c44bcb01889d0df",
+      "uid": "f1bf7b45ae04ab809c3b11ac",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0028",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0028",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0028",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "아이들한테 대답시키지 마시오. 당신한테 묻고 있소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 478,
+          "label": "r13_v111_children_here7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "0a691ace6640339d924adf11e5ae54ad3d1f10a4c0b67a2778d15f190d2bd0b7",
+      "uid": "18d285c71aaacddb80e373e0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0046",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0046",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0046",
+      "when": null,
+      "speaker": "누비",
+      "kind": "dialogue",
+      "text": "빨래터 천이 여기만 있는 줄 알아요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 532,
+          "label": "r13_v111_nubi_wrong7",
+          "guards": [
+            "if r13_nw_retry(\"fire\"):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 536,
+          "label": "r13_v111_nubi_wrong7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "71c8c9ffc3ea40e2caf20a740fe74497e35c108ab9f8dcaa8d967c8353a9354e",
+      "uid": "9ef002a303714e6f21b8ac4e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0030",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0030",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0030",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "보리 씨가 불이 번지기 전에 창고 문 앞에서 누비 씨를 봤답니다. 아니라면…… 그 통을 누구에게 빌려줬습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 546,
+          "label": "r13_v111_nubi_admission7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "5287da6968d2695960a441f4dd83ba9cb1824782fc675f936d4ce0933d22d3d4",
+      "uid": "c4e862a865b2b323145f678d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0032",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0032",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0032",
+      "when": null,
+      "speaker": "누비",
+      "kind": "dialogue",
+      "text": "나가라고…… 하려고 했어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 548,
+          "label": "r13_v111_nubi_admission7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "cce8fbb21877444ad93ae67e44969cb51de2154170f5ab96bf87eaa8e59decce",
+      "uid": "9dcd19f3e370e33f229410d4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0033",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0033",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0033",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "누구를.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 549,
+          "label": "r13_v111_nubi_admission7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "bfcb409ab8d139a6fbe9176ee1a08d3e69867480b5025e4ac00556ba2c29d93b",
+      "uid": "336ac9d1fc168f8f57329088",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0034",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0034",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0034",
+      "when": null,
+      "speaker": "누비",
+      "kind": "dialogue",
+      "text": "창고에 사는 애들요. 불이 보이면 나올 줄 알았어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 550,
+          "label": "r13_v111_nubi_admission7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "f5b2377a517a448527e967f9e976ce5ac021b0e08cf2d8cf1c8ac5196bfbff3f",
+      "uid": "a92d98ac9035f52c500b1fe0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0035",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0035",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0035",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "문 앞에다?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 551,
+          "label": "r13_v111_nubi_admission7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "920a74b9cd5513f1db5a879a81fc0e37e967d520cc287432e46d11a690e7dd95",
+      "uid": "b7eb4f703cbb1c6328778c24",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0036",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0036",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0036",
+      "when": null,
+      "speaker": "누비",
+      "kind": "dialogue",
+      "text": "등유는…… 조금만 부었어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 552,
+          "label": "r13_v111_nubi_admission7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "84a2c42915ecda17e928ed8b17c284ef2912851d60cccaa7f1533633ec8e65cc",
+      "uid": "18c418d1e1c3380a87727afc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0037",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0037",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0037",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "문 앞에다 부었냐고 묻잖소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 553,
+          "label": "r13_v111_nubi_admission7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "3493b21fe71dca808b23c01591aecd1cfe33ae1a2d1e1c29c5caa34a3b7366b6",
+      "uid": "48d78363f3a4864c03b4637a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0039",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0039",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0039",
+      "when": null,
+      "speaker": "누비",
+      "kind": "dialogue",
+      "text": "너울 씨가 그랬어요. 저 애들 몫이 남으면 우리 집에 온다고. 우리 애들은 이름도 있는데…… 늘 뒤로 밀려요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 555,
+          "label": "r13_v111_nubi_admission7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "d4a5d6c8be88406a83301a4cfa9080d4d6141c07af6715e0a5f31ca8b4233354",
+      "uid": "cb16bf0e08f0ec5769180c1f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0040",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0040",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0040",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그 약속은 따로 확인하겠습니다. 불을 놓은 건…… 누비 씨입니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 556,
+          "label": "r13_v111_nubi_admission7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "0971fa5465d1306cb3207ad952d9f4cb225b85abc5ead97c9c2bad133989a80b",
+      "uid": "330102a5feab8422ece866cb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0041",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0041",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0041",
+      "when": null,
+      "speaker": "누비",
+      "kind": "dialogue",
+      "text": "……예.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 557,
+          "label": "r13_v111_nubi_admission7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "94f4e7b542da5901366b73ce4490b7b7cd03386f264935cfc999e226ff9ec627",
+      "uid": "543307a488795460bf5bc023",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0042",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0042",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0042",
+      "when": null,
+      "speaker": "누비",
+      "kind": "dialogue",
+      "text": "죽이려고 했다고는 쓰지 마세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 558,
+          "label": "r13_v111_nubi_admission7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "f6c11936b528115693eda05a24d09b86bd642de0b9437a0415a8b125a3733762",
+      "uid": "93b5dd6af3c2a43dc4b303d5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S01_L0044",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "replace",
+        "MS14_D07_S01_L0044",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D07_S01_L0044",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그렇게는 안 썼습니다. 창고 문 앞에 불을 놓았다, 그렇게만 적었습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 560,
+          "label": "r13_v111_nubi_admission7",
+          "guards": []
+        }
+      ],
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "4e6c1041f9a751f131a9987855522ff2b30ca65bfcedab721d6ed1f796673781",
+      "uid": "2378a8833fcd7ae255bc65b9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

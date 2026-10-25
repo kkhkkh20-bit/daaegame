@@ -1,0 +1,47 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D13_S04_L0004",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_S04_L0004",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_S04_L0004",
+      "when": "blanket_partial",
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "……판돌 씨가 내리겠다고 하지 않았소. 확인할 때까진 못 가오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2082,
+          "label": "r13_v111_stop_cart13",
+          "guards": [
+            "if r13_v111_actor_ready('resident_badook'):"
+          ]
+        }
+      ],
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "a3cd1caf5c5c0a3af0b157a591103e61fc75fe3253f6773d6aea105e8afbcd30",
+      "uid": "2bad3cc357f383a547fa0d47",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|patch|replace|blanket_partial",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

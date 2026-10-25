@@ -1,0 +1,2822 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D05_S05_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠와 다람은 먼저 솜이네에 들른다. 무쇠가 깨어 있고, 네로가 밤 교대 시간을 바둑이와 확인한다. 출입문 작은 종은 솜이 동의 아래 달려 있다. 문을 잠가 가두지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "122b9b2a2ac41924c8739745ebbdc07e5f9ccb77f570a3414b6697ece79ab00f",
+      "uid": "2019d753114ba982ac5d51fd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0002",
+      "when": null,
+      "speaker": "솜이",
+      "kind": "dialogue",
+      "text": "왜 또 왔어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 618,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b378aabb5a3adf43477454c312a886735527cbe82cd75be8f4ea5ff2732306ee",
+      "uid": "a0d86a389c54b69f36ff88eb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0003",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "이거. 아까 네가 두고 갔어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 619,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "24a2c5e420b7208fdcaf92a689160555127ff3477aa043c89ba35ca3d152b6f1",
+      "uid": "01beb1daed3391a083a897bd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0004",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "다람이 솜이의 물통을 문턱에 놓는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3937a19a74f54f1e991bf9a6e5a1c5054ccd72568b1af0ca01fd0bb2d7714303",
+      "uid": "891e6fd9cf9a7d24e2059930",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0005",
+      "when": null,
+      "speaker": "솜이",
+      "kind": "dialogue",
+      "text": "우리 할아버지 이름 다 알아?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 620,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b77b312a9d812cb8cd23eb8d6139dec42a6fa80045c1ef8cafed37b0c32dc360",
+      "uid": "44a304477f538050d2072aad",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0006",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "사람들한테 내가 말한 건 아니야.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 621,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d7aee55b425bf60834a578fdfe33148275f3ab90c9791b9b06ef4cffb20b8ae2",
+      "uid": "68d9af2244ea104e0ee14258",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0007",
+      "when": null,
+      "speaker": "솜이",
+      "kind": "dialogue",
+      "text": "그래도 알잖아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 622,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b20a43f3ac819b3eb9a7dd5ce0d5f49d652486b85b9bf569fb64bfe427d74bef",
+      "uid": "ff19f4361d18571a63e9a33d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0008",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "……응.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 623,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1b3ea2cb30cbe787f53cabd2a311c240917f2759c8b9b4bc6606d20fb5948f35",
+      "uid": "ca19f4be340542ad7902cf51",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0009",
+      "when": null,
+      "speaker": "무쇠",
+      "kind": "dialogue",
+      "text": "솜아, 손님 물 줘야지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 624,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4cae40aa6419483317edce4695ca1640358e7572f4a11eb0c6ec6f9f6d87dd13",
+      "uid": "838de8f0ab69e0f5bc52a1fe",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0010",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "솜이가 빠르게 할아버지를 보았다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 625,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e09d179a558e04a299c16460ac64da778e81436358f247670cc5937a2a72afbb",
+      "uid": "1fc2393788bda301d755a94c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0011",
+      "when": null,
+      "speaker": "솜이",
+      "kind": "dialogue",
+      "text": "나 알아?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 626,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0ee864e3744477229911bce3700125e4ab8eaddb1edfcc39356a36804f557782",
+      "uid": "32eb565fec6c779181c4293e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0012",
+      "when": null,
+      "speaker": "무쇠",
+      "kind": "dialogue",
+      "text": "물부터 줘. 먼 길 왔는데.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 627,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "12e71bd4361a2ac8233db172c943c60c0b8104ba2fe18dd2667b9c9a1a141e39",
+      "uid": "a489175a4ac5b19eb85a5f22",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0013",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "솜이는 대답을 더 묻지 않았다. 물 두 잔을 가져와 하나는 다람에게 내밀었다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 628,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "aae07190ed7d57970531f2ff1f068d2e0f0a39b6fac7c31df880020e412299a7",
+      "uid": "c6127bc60af1f20d2fc3dace",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0014",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "먼저 내가 있을게요. 순찰 끝나면 와요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 629,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8eeeee8ac305a4946cfd02c0e81498719c959b24e557dbf82be73162e16eab2b",
+      "uid": "d1e79e840e3795795a54857a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0015",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "얼굴 보고 바꿉시다. 내가 오기 전에 나가지 마시오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 631,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "165275840aa7a8de8dfc95740c7078dac6ec397f381d65b31e156ed4db145123",
+      "uid": "928074beeaa5deb1183d2105",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0016",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "알아요. 솜이 혼자 두고 안 가요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 632,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "88541ffe314c50703f97e782ae0b8fcf725fc0768bc5867a4865cc940f8bafac",
+      "uid": "0aaf4e871c41b736cd5a54fd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0017",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "바둑이가 아빠·다람과 식당으로 가고 네로는 무쇠 곁에 남는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a288cc1e0d2ce504c7ebee4952d8ae05c419e0b0fe4bec8b094671bd101a4d64",
+      "uid": "d6447dc5caf8e8a5c1f7fdce",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0018",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "여관으로 돌아오는 길. 아빠는 다람과 함께 식당에 들러 나비·바둑이에게 다음 날 잠깐의 동행을 직접 묻는다. 엄마 편지나 거처는 공개하지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9874dba7c17fcefe725b18e6090b8dcfc50f5e22ff86f644e364f838b44a9910",
+      "uid": "a9d0a3993674208c411b2533",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0019",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "내일 물자 알아볼 동안 다람이 곁에 있어 주실 수 있습니까? 혼자는 못 두겠습니다. 둘 중 한 분만이라도.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 637,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a774421ac8952ba64edcad4420ecc3f663c5d606fc3cb9e61d03fd15f8214bc5",
+      "uid": "a56bf841a62020be3c4a1347",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0020",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "손님 받는 동안 뒤쪽까지 볼 수는 없어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 638,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8ddc993fd60aa2749754c5cc16c7ef484e6fb8aadee8feb13b7f0382157ad701",
+      "uid": "5523ea1da8bf2f7f50daeb67",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0021",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "식당 앞자리에서 아침 먹는 동안은 내가 있겠소. 그 뒤엔 나도 순찰이오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 639,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f82f42a3a7aaba55fb3e91136a5d02220859dc439fc73fc5251e927255952d98",
+      "uid": "6ad2db5550051804c0bb3b35",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0022",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그 전에 오겠습니다. 늦으면 다람이도 초소로 데려가 주세요. 여관엔 혼자 보내지 마시고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 640,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1bfd3a5d12ced64f9b09f8596b47f8d2bb7383b0064a77d9b87f4d21544fa02a",
+      "uid": "1cf3e679b5b0b6bc3030d198",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0023",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "나한테도 말해야지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 641,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7191b08dcbdec6311f7be6edd9825f32fae7b864f97c8ac9d6adc0101ca17986",
+      "uid": "a54ef8ca16ba733745b0677a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0024",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아, 너한테 먼저 물어야지. 아저씨랑 여기서 기다릴 수 있겠어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 642,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "aff31f72cdaaa40a803a00c0220c28d3975c058937b260f340e9c29080329916",
+      "uid": "6c357cd2ed869af525c4edf4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0025",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "창문 보이는 자리에 앉을래.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 643,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "26bad04bfe1a7abcb80c9e8001232c59da5645703442825b804b758aeffa35cc",
+      "uid": "ce5c82193862a4a84609d7b9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0026",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "그 자리는 내가 먼저 앉으면 네가 옮기라고 해.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 644,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "41bc161fd5d628eacadc5308ede38f5ef1f8c100c7bb398b84d26a6a26d0909d",
+      "uid": "5d895970cf67907c619c07c1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L9501",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L9501",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L9501",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "난 이제 교대하러 갑니다. 내일 아침에 여기서 봅시다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 645,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "14f76c877c84fad65825f85ed7356e7c1cd343af1455b9e81af33a832beddab3",
+      "uid": "b96676b038b9624b67ceb065",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L9502",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L9502",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L9502",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "바둑이는 솜이네 밤 교대로 돌아간다. 아빠와 다람만 여관으로 간다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fad70dd93bf56b6a8a56ad4f4d12c755bc77d26111c6b4982a1d52cabb618a97",
+      "uid": "d2cdda38243392a7f11e903d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0027",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "여관 입구. 할머니가 다람의 작은 가방을 받으려 손을 내민다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0c80b4cc7bb8d766f4c6aca9ffcd811cf943c7b3584bb7aae1e80ee67b76140b",
+      "uid": "54323e33e5c5c81bf328fa58",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L9101",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L9101",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L9101",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "내일 아침, 식당 앞자리에서 바둑이와 다람이 함께 기다린다. 순찰 전까지 아빠가 안 오면 둘이 초소로 간다. 종일 보호 약속은 아니다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b3528088dc197cebe51b7bb51740bedc5bc73691dc6d223837f86d5e56885e3d",
+      "uid": "dede2e65e53941968c9a1a22",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0028",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "내일은 아이 두고 다녀요. 내가 보고 있을 테니.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 657,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "94fe009d2f626c92b5e910d9d52ae5a690ef1fb355543bea04549da4c131dbea",
+      "uid": "689f687e51f4311b6311cc77",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0029",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "내일도 같이 나가겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 658,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "da3453ffd541b8d5fa1fcaec102f0ad4479d95685fa5bbc48b661033434e23f8",
+      "uid": "bf69446ebb79f487caeef7f3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0030",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "둘 다 고생할 것 없는데. 어디까지 가려고요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 659,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cb1b8e916d8e41ffa2295597b704a021570dce626a70ee9606939e4e64b0f6ac",
+      "uid": "2b4e8ac4993cfd868700b56f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0031",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "필요한 물건을 좀 구하려고요. 저녁은 돌아와 먹겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 660,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "81c0efda6be024a6839f8bee24435efde5a9c9c1a809253719aacd832fa0ad8a",
+      "uid": "dda81e4486538bb1a8d78efd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0032",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 가방을 내가 받았다. 다람이는 빈손으로 내 소매를 잡았다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 661,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7b54747aaa8f88f641c1a3e9b2d85085801a60393533ad57be005f0412b65e6f",
+      "uid": "f8d25c7b2447db89989481a6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0033",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "같은 13호 복도. 첫날 침구를 들고 왔던 종업원이 빈 대야를 들고 지나간다. 발소리가 문 앞에서 잠깐 멈춘다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "783b6dcfc0d7d00cf731700b9824d643c9490ea82f33de906a8ee3176540fd76",
+      "uid": "358685ed41471b91266c0e1a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0034",
+      "when": null,
+      "speaker": "종업원",
+      "kind": "dialogue",
+      "text": "대야 수거할까요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 663,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3b47979705a1ed2fa4b9a4355926681f69a1ad5a5a6e67f723fa16283913be66",
+      "uid": "9aa3ebad14ba99f2b6ef611e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0035",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "문밖에 내놓겠습니다. 잠깐만요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 664,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2179b4ed6d252a3cbd9074e333c9635d1bb772833c7206e93983c5785f1669ee",
+      "uid": "8998125fc722c1d4b501f4c9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0036",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠가 다람에게 문에서 물러나라고 말하고 대야를 건넨 뒤 닫는다. 종업원은 그대로 계단을 내려간다. 미확인 발소리나 새 용의자를 만들지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0ecafb51fdf20d865aff734946451b4246adb0ba088330551cebed9672fcbcdd",
+      "uid": "3e93bc3fbc63724535ffc9dc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0037",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0037",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0037",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "첫날에는 문소리가 날 때마다 아내가 왔나 싶었다. 오늘은 아이가 내 뒤에 있는지 먼저 보았다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 665,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "02b2d005d536ac6c0a5b271c06a851c9db73cea47cce300f371ac51262407b60",
+      "uid": "f30838019229b1e73490a5fa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0038",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0038",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0038",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "방에 들어가 출입문 걸쇠와 창문 잠금을 직접 확인한다. 숨은 통로나 범인을 안다는 독백은 없다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b4277781bc54d4bc560423e35b745336cada53bb3bcae2aedc0f249055a5e8bd",
+      "uid": "7860f47f3c6020ac723a0a36",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0039",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0039",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0039",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "내일부터는 어디 갈 때 서로 말하기. 모르는 사람이 엄마가 보냈다고 해도 바로 따라가지 말고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 690,
+          "label": "r13_v111_safety5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "85c5c2290d0b925d3fca70fbc0c4c6b6b66b7596623312fd16fff36dd3d93b95",
+      "uid": "5b0546b91733a0044070ee1b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0040",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0040",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0040",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마가 진짜 보냈으면?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 691,
+          "label": "r13_v111_safety5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f0a806eb9231e5527bd5cedbb8c0cb73d4d908ad99d4daf9c4e59f10f4fbe050",
+      "uid": "076db5d43a8fe5b2c383ed38",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0041",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0041",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0041",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아빠하고 같이 확인하자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 692,
+          "label": "r13_v111_safety5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ea09896ed9bf8413d48d329f55a196fabc68cb2cc8fb804ce38a1ee28534475f",
+      "uid": "f192ca5622e66b84f390e7a5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0042",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0042",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0042",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠도 혼자 따라가지 마.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 693,
+          "label": "r13_v111_safety5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9e26cd6f93bfed9f31339b5764e683cd05c0822590c8733738dbe539797450b0",
+      "uid": "021736c44a4df8236a5e2944",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0043",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0043",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0043",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응. 나도.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 694,
+          "label": "r13_v111_safety5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9b8f34a02effc026af88a4dc39c9086edcde8649976cc6340284b113cbcfa10c",
+      "uid": "af7519a54c9d065b7cd92287",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0044",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0044",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0044",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "편지는 가방 깊숙이 넣고, 물자 목록에는 먹을 것·마른 천·아이 손에 바를 것을 적는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1fd0dcaadde71e5fa42df06d9339e80d066b32923c745a39a8f8377c78b0eb6d",
+      "uid": "462bcb982a34c6f731d50396",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0045",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0045",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0045",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "담요는 내일도 같이 가져가자. 방에 돌아오지 못해도 덮을 수 있게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 702,
+          "label": "r13_v111_packed5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5cc9ea11484f4a45f6f6d1b033ea1f1959bf57ea20f16c8edd34a07148576821",
+      "uid": "566b40696662f4b1f6529c9c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0046",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0046",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0046",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "두 개 다?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 703,
+          "label": "r13_v111_packed5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "397c9d80917732a53fbda7bca674d8140a7219422688d8eb79a99e69ff5b2405",
+      "uid": "bc1ab135d3e812b037654ed8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0047",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0047",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0047",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응. 네가 들 건 아니고. 아빠 큰 가방에.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 704,
+          "label": "r13_v111_packed5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2be2f09aabc4f03a70cdaf69023199e30dd7ba2241c954a357362ebca91d72ad",
+      "uid": "da1091aab4b78e480be346a6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0048",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0048",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0048",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠가 마른 담요 두 장을 다시 싸 큰 가방에 고정한다. 아직 누구에게도 기부·소모하지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f1578c096833e2f11fb7a370262d9fc78e4f16abc1a641c594a4f8556989b14f",
+      "uid": "da99e44a2dc0f85488179c72",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0049",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0049",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0049",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "밖에서 쉴 데를 구하면 덮을 것도 같이 부탁해야겠다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 708,
+          "label": "r13_v111_empty_bag5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "420e741da7727a00c8335b5c52eaec8353386e9be797d73fc4fda944c39fb886",
+      "uid": "d5bc57b6f4cbc4cc962cbd68",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0050",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0050",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0050",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "방 이불 가져가면 안 돼?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 709,
+          "label": "r13_v111_empty_bag5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "97b7595cd94126aec551960b44fcc62a1736c19418f539b071f19eeb129430f9",
+      "uid": "b4efa3d9cc2e55be7c20935e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0051",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0051",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0051",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "빌린 걸 그냥 가져갈 순 없지. 내일 덮을 것도 물어보자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 710,
+          "label": "r13_v111_empty_bag5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f41341fcce1f5afe8864d338e4cadc926ee4b55dc801fc602e9cf969c243ff38",
+      "uid": "4fa60eca3c35c3bea53c3dd5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0052",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0052",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0052",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "없는 담요를 생성하지 않는다. 학교 차용·물자 확보는 이후 별도 행동이다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "09531b2f0c22daae74301bfc2f00dc94db4e27bcaab7bcc737ff9c11c1442500",
+      "uid": "d630cd8e42fb1caff02a2e36",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0053",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0053",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0053",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "여관에 말하지 말랬지?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 714,
+          "label": "r13_v111_last5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9aab5a4b853a43df16add73da5c9b0b3c61ffd685f12c42e8a634305fb6c4c06",
+      "uid": "87d831976de0d9f445d546f1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0054",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0054",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0054",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 715,
+          "label": "r13_v111_last5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8025c713f26164a6787608a6cbce1b8ac0cfe963a42e1416578db60193e95224",
+      "uid": "38c6a3aaafed47529e2b5cd4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0055",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0055",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0055",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마가 그랬으니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 716,
+          "label": "r13_v111_last5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1c00f7a56e02df304fffbe9d088fd659f3aa3a9811545543d81fe5439aebe599",
+      "uid": "d4b22ea8cd9bcd87f5cb8eb2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0056",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0056",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0056",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그 말도 있고. 누가 엄마 이름으로 우리를 불렀는지 모르니까.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 717,
+          "label": "r13_v111_last5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0deb9e579151e7f8305514e49dcb0e691ab24d0e081aca5bcd08548b9aeac8b0",
+      "uid": "ee931725585d4c0a5091d03b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0057",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0057",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0057",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "나도 알아야 안 말하지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 718,
+          "label": "r13_v111_last5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fc73e624a7a690327428da73c88b6b5874ec619678a9f9ca7b9f3d37f0733613",
+      "uid": "464e791aca257ba493347a5f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0058",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0058",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0058",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "너도 알아야지. 알아내면 숨기지 않을게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 719,
+          "label": "r13_v111_last5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a256483c97c17d9a66b77dcb82d6a2a91001562beb89fc683f6e34f736286ab6",
+      "uid": "c7c92c8b372993f5424247f4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0059",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0059",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0059",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "다람이 책상 접시에서 과자 봉지를 가져와 작은 가방에 넣는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "82393b887102f4292aa35509de518b56b560ca94f6b926483610a015f2d13e0a",
+      "uid": "295a4bb0aff623bdf1794fcd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0060",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0060",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0060",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이제 가지고 다니게?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 721,
+          "label": "r13_v111_last5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": [
+          "snack_unbagged5"
+        ]
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a4748ff07630d984f9a6f4b8ff3131a57e7545196cbdd57262f4c4c84cdb9aee",
+      "uid": "294cd35b231370abd8e84c18",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0061",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0061",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0061",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마가 우리가 어디 있는지 모르잖아. 만나면 바로 줘야지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 722,
+          "label": "r13_v111_last5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": [
+          "snack_unbagged5"
+        ]
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "38b694911ee7656ea3ef7b216b164cf6d3a93df9f5c3e887b7ae7bf466607e03",
+      "uid": "dd18f7b16e21513f262d42af",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0062",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0062",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0062",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그래. 눌리지 않는 데 넣자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 723,
+          "label": "r13_v111_last5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": [
+          "snack_unbagged5"
+        ]
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9ee547c1429bdb94813799e8fd4ef4771c3e27227722f348789c9a87e32c48f3",
+      "uid": "d32dabe82fa90e2863759792",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0063",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0063",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0063",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이가 봉지 속 큰 과자를 한 번 만졌다. 나는 종이에 쓰던 ‘내일’을 지우고 아침에 나갈 시간을 적었다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 724,
+          "label": "r13_v111_last5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "snack_unbagged5",
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bb56fa182a8f86094c7be9e2e98d020dde0dd13839b4181274d316f0882c3b30",
+      "uid": "77d23f17638cb5e0245a5004",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S05_L0064",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S05_L0064",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S05_L0064",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠와 다람이 함께 잠자리에 든다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a0f13800c774113dc2495b4aef507cadd3b7f69c429afbae97614ed5a6ba1990",
+      "uid": "8b1fa6d7ba2605b25c65a7f4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

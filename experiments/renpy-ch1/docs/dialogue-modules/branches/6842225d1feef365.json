@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "reply_handoff5:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "reply_handoff5",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 5,
+      "scene": "reply_handoff5",
+      "block": "reply_handoff5",
+      "placement": "binding",
+      "ref": "reply_handoff5:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "답장을 맡기겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "gate",
+        "person": "resident_lamplighter",
+        "object": null
+      },
+      "scene_title": "reply_handoff5",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "3576edce5363980a34ff0b79afc956f368841df16780a5623bb682140ace8cd8",
+      "uid": "aba08f956ee1a5ef81067baf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|reply_handoff5|choice|reply_handoff5|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_LA_LA_REPAIR_OK3_0",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_repair_ok3",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "la_repair_ok3",
+      "block": "la_repair_ok3",
+      "placement": "blocks",
+      "ref": "la_repair_ok3",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "점검 때는 조각이 없었고 돌도 그대로였습니다. 어제 수리한 사람이 마지막으로 안쪽을 건드렸다는 주장은 맞지 않습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 63,
+          "label": "r13_lamp_attempt_repair_ok3",
+          "guards": []
+        }
+      ],
+      "scene_title": "la_repair_ok3",
+      "source_hash": "1f8d4bedb33f10201a3ffe6e822492a7cb7ec3d826a133f6d7683d7013245e9b",
+      "baseline_hash": "0de0016ebe0ead252f485e6c64ae5bedb44e13d207c5aaf4676729453551119b",
+      "uid": "81a914c6654105efbc8f0af4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|la_repair_ok3|patch|la_repair_ok3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_LA_LA_REPAIR_OK3_1",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_repair_ok3",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "la_repair_ok3",
+      "block": "la_repair_ok3",
+      "placement": "blocks",
+      "ref": "la_repair_ok3",
+      "when": null,
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "그 말부터 좀 들어 달라니까요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 63,
+          "label": "r13_lamp_attempt_repair_ok3",
+          "guards": []
+        }
+      ],
+      "scene_title": "la_repair_ok3",
+      "source_hash": "1f8d4bedb33f10201a3ffe6e822492a7cb7ec3d826a133f6d7683d7013245e9b",
+      "baseline_hash": "c42ff14d78a2338fff9e4ae649a7ce9e83b7ca5ed588085ca2e621ee27f55a9d",
+      "uid": "c3dc0c7d78796a76976d90c4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|la_repair_ok3|patch|la_repair_ok3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

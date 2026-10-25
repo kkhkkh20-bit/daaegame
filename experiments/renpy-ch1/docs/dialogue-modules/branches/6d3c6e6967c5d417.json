@@ -1,0 +1,163 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:257:17",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        14213,
+        14220
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_cv_night",
+      "block": "r13_cv_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:257:17",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "출발하오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 257,
+          "label": "r13_cv_night",
+          "guards": []
+        }
+      ],
+      "line": 257,
+      "scene_title": "r13_cv_night",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "df0acfc4806feca6b4ad35fb6928ad81333532e5f6bb733cb240bc3691ea07ce",
+      "uid": "f7cc973f7d1281fb94ed830f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_cv_night|rpy_literal|r13_cv_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:259:27",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        14334,
+        14371
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_cv_night",
+      "block": "r13_cv_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:259:27",
+      "when": null,
+      "speaker": "resident_badook",
+      "kind": "dialogue",
+      "text": "못 갑니다. 명령서를 봤습니다. 이 수레는 보호소에 안 갑니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 259,
+          "label": "r13_cv_night",
+          "guards": []
+        }
+      ],
+      "line": 259,
+      "scene_title": "r13_cv_night",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "03b590f162f2bfe6cbca572d564bcc5ba595bfd3c63cc664326618e585a5930c",
+      "uid": "ad191bc84d79db6b4a9d4680",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_cv_night|rpy_literal|r13_cv_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:268:47",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        15111,
+        15157
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_cv_night",
+      "block": "r13_cv_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:268:47",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "순찰대원들이 바둑이를 밀었다. 바둑이가 얼어붙은 돌바닥에 쓰러졌다. 숨은 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 268,
+          "label": "r13_cv_night",
+          "guards": [
+            "elif r13_has(\"cv_badook_witness\"):"
+          ]
+        }
+      ],
+      "line": 268,
+      "scene_title": "r13_cv_night",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "86c2f1f05c23b79d456d8c85240f3109a25dd5fb82b660e031d318968b7a3ae5",
+      "uid": "472a8df5799a8889f01295e0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_cv_night|rpy_literal|r13_cv_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:289:37",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        16269,
+        16292
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_cv_night",
+      "block": "r13_cv_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:289:37",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "(작게) ……할아버지 손녀 이름 뭐야?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 289,
+          "label": "r13_cv_night",
+          "guards": [
+            "if _return:",
+            "if r13_cv_daram():"
+          ]
+        }
+      ],
+      "line": 289,
+      "scene_title": "r13_cv_night",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "0b5b621023105dcc95f6492a587f1c5be11e09252b56d898b4f5d552c5411204",
+      "uid": "921c2f6795046f038e334734",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_cv_night|rpy_literal|r13_cv_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/winter.rpy:341:71",
+      "file": "game/winter.rpy",
+      "path": [
+        17214,
+        17247
+      ],
+      "origin": "rpy_inventory",
+      "day": 1,
+      "scene": "winter_final",
+      "block": "winter_final",
+      "placement": "literal",
+      "ref": "game/winter.rpy:341:71",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "장작불까지 꺼진 건 아니에요. 다들 난로 가까이 앉아요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 341,
+          "label": "winter_final",
+          "guards": []
+        }
+      ],
+      "line": 341,
+      "scene_title": "winter_final",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "6d9ea5dc15756e1049f4b2eaf40a757e7069339657688edd47319c63fa72ed6f",
+      "uid": "a6546bd3179d7342f7498fd4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|winter_final|rpy_inventory|winter_final|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:346:81",
+      "file": "game/winter.rpy",
+      "path": [
+        17784,
+        17807
+      ],
+      "origin": "rpy_inventory",
+      "day": 1,
+      "scene": "winter_final",
+      "block": "winter_final",
+      "placement": "literal",
+      "ref": "game/winter.rpy:346:81",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "사람을 죽였다는 말에 대답부터 해야죠.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 346,
+          "label": "winter_final",
+          "guards": [
+            "if all(k in winter[\"marks\"] for k in (\"frame\",\"destination\",\"power\",\"death\")):"
+          ]
+        }
+      ],
+      "line": 346,
+      "scene_title": "winter_final",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "0469e1dff955436dc75f1034b2d8aec1da28b591aee74181dffdd45de7563664",
+      "uid": "c4517c8a3d46713ece9496b5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|winter_final|rpy_inventory|winter_final|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:361:101",
+      "file": "game/winter.rpy",
+      "path": [
+        19700,
+        19715
+      ],
+      "origin": "rpy_inventory",
+      "day": 1,
+      "scene": "winter_final",
+      "block": "winter_final",
+      "placement": "literal",
+      "ref": "game/winter.rpy:361:101",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "아빠 손 안 놓을 거야.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 361,
+          "label": "winter_final",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 361,
+      "scene_title": "winter_final",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "20e1a255cd9828b614ef0ba7dad6b453b9d9133f18a3b3d7b6f08fa2ff300538",
+      "uid": "a0a25b74bc7ae910fe1d2183",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|winter_final|rpy_inventory|winter_final|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

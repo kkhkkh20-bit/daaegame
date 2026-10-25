@@ -1,0 +1,87 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13.rpy:503:256",
+      "file": "game/room13.rpy",
+      "path": [
+        27174,
+        27209
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_talk_dispatch",
+      "block": "r13_talk_dispatch",
+      "placement": "literal",
+      "ref": "game/room13.rpy:503:256",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "나도 우리 아이가 그 방에서 왜 다쳤는지 진실을 알아야 해.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 503,
+          "label": "r13_talk_dispatch",
+          "guards": [
+            "if r13_topic==\"buri_consent\":"
+          ]
+        }
+      ],
+      "line": 503,
+      "scene_title": "r13_talk_dispatch",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "be8d19573a1d52550e81b50b9c2a2726e984fb471186fbdd5d045cba5dcd9755",
+      "uid": "1fcdedd66cee33893b0c3836",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_talk_dispatch|rpy_literal|r13_talk_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:514:256",
+      "file": "game/room13.rpy",
+      "path": [
+        28244,
+        28297
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_talk_dispatch",
+      "block": "r13_talk_dispatch",
+      "placement": "literal",
+      "ref": "game/room13.rpy:514:256",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "부리가 작업대 한쪽의 공구들을 치워 자리를 비웠다. 사람 한 명이 걸터앉을 만한 공간이었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 514,
+          "label": "r13_talk_dispatch",
+          "guards": [
+            "if r13_topic==\"buri_consent\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 514,
+      "scene_title": "r13_talk_dispatch",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "74ee6a684a5edebde9125688af98bdce22086ca05464a95976c9ac838d65c976",
+      "uid": "89c254121b9cfe96b49600e3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_talk_dispatch|rpy_literal|r13_talk_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

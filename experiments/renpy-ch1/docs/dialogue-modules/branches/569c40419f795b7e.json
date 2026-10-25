@@ -1,0 +1,126 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:101:53",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        6214,
+        6230
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_reunion",
+      "block": "r13_reunion",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:101:53",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "아직 보호시설 안에 있어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 101,
+          "label": "r13_reunion",
+          "guards": [
+            "if room13[\"daram_state\"]==\"held\":"
+          ]
+        }
+      ],
+      "line": 101,
+      "scene_title": "r13_reunion",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "8d8f06c34ba0c94b1e0ad3aa96392a4516367373ac24ef4d7f5d6d24d2cacfe4",
+      "uid": "62dcd3f96a659f6f8bd7afec",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_reunion|rpy_literal|r13_reunion|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:108:33",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        6688,
+        6695
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_reunion",
+      "block": "r13_reunion",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:108:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "……엄마?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 108,
+          "label": "r13_reunion",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 108,
+      "scene_title": "r13_reunion",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "dc9fb4ec455d3c147b48dcf8f40b7861fd70f9a642deedcf195c741a561eded4",
+      "uid": "caad6afab9322a84518662e9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_reunion|rpy_literal|r13_reunion|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:115:73",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        7498,
+        7576
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_reunion",
+      "block": "r13_reunion",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:115:73",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "가족에게 연락하겠다는 말은 들었어. 혹시 네가 다람이와 오면 초롱에게 내 소식을 묻게 하려고 남겼지. 내가 어디로 가는지는 쓰지 않았어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 115,
+          "label": "r13_reunion",
+          "guards": [
+            "if room13.get(\"life_poc\"):"
+          ]
+        }
+      ],
+      "line": 115,
+      "scene_title": "r13_reunion",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "7dd52b41876f6147d57a662a50f9c0146ff3cf9d58426fa6006f504244864a11",
+      "uid": "5f54c13e8a643926fd1917db",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_reunion|rpy_literal|r13_reunion|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

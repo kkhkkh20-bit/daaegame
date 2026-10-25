@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep_story.rpy:89:15",
+      "file": "game/systems/room13_ep_story.rpy",
+      "path": [
+        6078,
+        6101
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_st_kkomi_class",
+      "block": "r13_st_kkomi_class",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep_story.rpy:89:15",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(아지트 대장이 교실 대장이 되었다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep_story.rpy",
+          "line": 89,
+          "label": "r13_st_kkomi_class",
+          "guards": []
+        }
+      ],
+      "line": 89,
+      "scene_title": "r13_st_kkomi_class",
+      "source_hash": "3e440ff5a7c7edc8e655c4b78b4f673960d544f0bdbed07710a48fa032aef2c8",
+      "baseline_hash": "01f1ce2fc162a4c33feb26cd0ba6fd291e79a18acb67bd6abdcc8479b1af9eb2",
+      "uid": "ba44058e6f79b98715a0f0e9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_st_kkomi_class|rpy_literal|r13_st_kkomi_class|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

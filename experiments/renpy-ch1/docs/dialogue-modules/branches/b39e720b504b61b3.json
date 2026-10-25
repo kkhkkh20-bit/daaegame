@@ -1,0 +1,321 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_MV_D03_20",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "blocks",
+        "tok_axle3",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "tok_axle3",
+      "block": "tok_axle3",
+      "placement": "blocks",
+      "ref": "tok_axle3",
+      "when": "tok_freed3",
+      "speaker": null,
+      "kind": "narration",
+      "text": "사람들이 공방을 빠져나간다. 톡이 공구 띠를 다시 허리에 두르고 내 쪽으로 온다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 90,
+          "label": "r13_lamp_attempt_after3",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1332,
+          "label": "r13_v111_restore_route",
+          "guards": []
+        }
+      ],
+      "scene_title": "tok_axle3",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "d5aa1181057eaa6878cd78e4e09ee6aef552c3881521979484a86f4cd6d8babd",
+      "uid": "3ed47c62df9d642147225e13",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|tok_axle3|patch|tok_axle3|tok_freed3",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_MV_D03_21",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "blocks",
+        "tok_axle3",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "tok_axle3",
+      "block": "tok_axle3",
+      "placement": "blocks",
+      "ref": "tok_axle3",
+      "when": "tok_freed3",
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "까, 까로 씨 축 말이에요. 아까 맡기고 가셨어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 90,
+          "label": "r13_lamp_attempt_after3",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1332,
+          "label": "r13_v111_restore_route",
+          "guards": []
+        }
+      ],
+      "scene_title": "tok_axle3",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "7a201118f46131cff41077d84f44b3bc2e9871e92ec71ee1670e4904adb54e99",
+      "uid": "29a8e7256b365165834807f9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|tok_axle3|patch|tok_axle3|tok_freed3",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_MV_D03_22",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "blocks",
+        "tok_axle3",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "tok_axle3",
+      "block": "tok_axle3",
+      "placement": "blocks",
+      "ref": "tok_axle3",
+      "when": "tok_freed3",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "고칠 수 있겠습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 90,
+          "label": "r13_lamp_attempt_after3",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1332,
+          "label": "r13_v111_restore_route",
+          "guards": []
+        }
+      ],
+      "scene_title": "tok_axle3",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "ed267ac748bd4abb213921bc6a54de5901e9879d89a9dbf992ab95efb5a6245d",
+      "uid": "cf79a297161e2908d92cd5dc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|tok_axle3|patch|tok_axle3|tok_freed3",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_MV_D03_23",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "blocks",
+        "tok_axle3",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "tok_axle3",
+      "block": "tok_axle3",
+      "placement": "blocks",
+      "ref": "tok_axle3",
+      "when": "tok_freed3",
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "고칠 수는 있어요. 근데 쇠가 모자라요. 쓸 만한 쇠 토막을…… 구해 와야 해요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 90,
+          "label": "r13_lamp_attempt_after3",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1332,
+          "label": "r13_v111_restore_route",
+          "guards": []
+        }
+      ],
+      "scene_title": "tok_axle3",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "b00f4e00f97d4364839ae39f71d14d247113b4dac31760f7fb803b734c9996a1",
+      "uid": "d2b5551444b86b0ea6443ef9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|tok_axle3|patch|tok_axle3|tok_freed3",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_MV_D03_24",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "blocks",
+        "tok_axle3",
+        4,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "tok_axle3",
+      "block": "tok_axle3",
+      "placement": "blocks",
+      "ref": "tok_axle3",
+      "when": "tok_freed3",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "얼마나 합니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 90,
+          "label": "r13_lamp_attempt_after3",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1332,
+          "label": "r13_v111_restore_route",
+          "guards": []
+        }
+      ],
+      "scene_title": "tok_axle3",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "297b3645008fe38177fcdc24719d5e22089f5a5278c4aaa83840dac638887cf0",
+      "uid": "e1fbd4f5c422d94439a93cb1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|tok_axle3|patch|tok_axle3|tok_freed3",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_MV_D03_25",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "blocks",
+        "tok_axle3",
+        5,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "tok_axle3",
+      "block": "tok_axle3",
+      "placement": "blocks",
+      "ref": "tok_axle3",
+      "when": "tok_freed3",
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "그, 그건 쇠를 구해 봐야 알죠.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 90,
+          "label": "r13_lamp_attempt_after3",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1332,
+          "label": "r13_v111_restore_route",
+          "guards": []
+        }
+      ],
+      "scene_title": "tok_axle3",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "ca17ae3bd8bf14527851dff1b5783cf05da840da6f6ad407704d6d5a33c0a34b",
+      "uid": "472fd5bdd12e1c998b30f420",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|tok_axle3|patch|tok_axle3|tok_freed3",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_MV_D03_26",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "blocks",
+        "tok_axle3",
+        6,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "tok_axle3",
+      "block": "tok_axle3",
+      "placement": "blocks",
+      "ref": "tok_axle3",
+      "when": "tok_freed3",
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "……오늘 일은, 고마워서요. 품삯은 안 받을게요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 90,
+          "label": "r13_lamp_attempt_after3",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1332,
+          "label": "r13_v111_restore_route",
+          "guards": []
+        }
+      ],
+      "scene_title": "tok_axle3",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "161ed5250048841516363bc70ddd8257dc1206217a0b0787595857c26005db45",
+      "uid": "13b628e6b22a09d6de39bcbd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|tok_axle3|patch|tok_axle3|tok_freed3",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

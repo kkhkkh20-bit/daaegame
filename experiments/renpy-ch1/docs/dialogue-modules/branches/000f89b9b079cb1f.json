@@ -1,0 +1,1035 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D05_S01_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S01_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S01_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아침. 네로가 문을 반쯤 열고 선다. 아빠가 먼저 조사 목적을 낮은 목소리로 말한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 / 손바닥",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fa7d3080ac18e616fa48dc8513498bd207fb75c4db738100a178cefc767066f5",
+      "uid": "314ea622745ed21de1ea01cb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S01_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S01_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S01_L0002",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어젯밤 초소에서 사람이 다쳤습니다. 어르신이 밤에 나가셨는지 아십니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 394,
+          "label": "r13_v111_somi5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 / 손바닥",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "23878e66b09e29ee1c017421ebbe95ac9aa8b796f0e3bb366a2c5d0c5efbe43d",
+      "uid": "f0e94d5f9a9cdc233300fb91",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S01_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S01_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S01_L0003",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "무쇠 어르신요? 저 집 애를 잡겠다더니, 이젠 이 집이에요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 395,
+          "label": "r13_v111_somi5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 / 손바닥",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f07ade26aca005e1bf76c4f057ab6375db4f737d5df49b8e393110c6bb36f9de",
+      "uid": "3a693c975eed062629238a90",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S01_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S01_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S01_L0004",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "누군지 몰라서 온 겁니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 396,
+          "label": "r13_v111_somi5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 / 손바닥",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "437752600b1ad04898d3bed98ea42af219b7456dd64d493646eb91274007f4e2",
+      "uid": "d95167f0c0e82a4af021fac5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S01_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S01_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S01_L0005",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "정하지 않은 사람 얼굴이 왜 그래요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 397,
+          "label": "r13_v111_somi5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 / 손바닥",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fb3cfd83242ddd2e6f5abb88e152a41464327cd3fdedddb8805a6019ef8eb1f6",
+      "uid": "b72a8350564c5c3f6bf6a443",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S01_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S01_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S01_L0006",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 들고 온 수첩을 닫았다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 398,
+          "label": "r13_v111_somi5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 / 손바닥",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1e295f8e78478e6355eef971065bcab22a91fb3e81618af5b9b1ecd684a2d81e",
+      "uid": "666648340e096fa4fb808b16",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S01_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S01_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S01_L0007",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "안에서 이야기해도 되겠습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 399,
+          "label": "r13_v111_somi5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 / 손바닥",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c820dba9a7a5ee319be3d3a5dd8125d9bec1a797a3f1ecec461ee79f5f3c5ca6",
+      "uid": "569c9fd9ea15eb7a37f57598",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S01_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S01_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S01_L0008",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "솜이가 안에서 고개를 끄덕인다. 아빠와 다람이 들어간다. 무쇠가 창가에서 손바닥을 펴고 있다. 잉크로 ‘솜이’. 그 아래 지워 쓴 흔적들.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 / 손바닥",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2ed6e06b11b97a9a5165fe3f21c896688da2d00f80603078a6b3e6fd1e7e4093",
+      "uid": "b0e1d66ab6ea971deb926fdf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S01_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S01_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S01_L0009",
+      "when": null,
+      "speaker": "무쇠",
+      "kind": "dialogue",
+      "text": "물이…… 손님 왔나?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 402,
+          "label": "r13_v111_somi5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 / 손바닥",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "21ea19c6dbb8933d8eaf01968242ab9645af5610ccb337a29079cfc343cc9036",
+      "uid": "77c7982bb11a5a54ea76717a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S01_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S01_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S01_L0010",
+      "when": null,
+      "speaker": "솜이",
+      "kind": "dialogue",
+      "text": "할아버지, 다람이야. 어제 왔던 애.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 403,
+          "label": "r13_v111_somi5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 / 손바닥",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "70ba30ea4ba1f214dcb0442daa933bba69d9bccf5531cba8cbba0cefe6724616",
+      "uid": "eee49b739c6ccba2cfbf12b3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S01_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S01_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S01_L0011",
+      "when": null,
+      "speaker": "무쇠",
+      "kind": "dialogue",
+      "text": "우리 손녀랑 닮았네.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 404,
+          "label": "r13_v111_somi5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 / 손바닥",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f6faf012f4c06649c3d7865ad28cbb089f3845cd9208c175577a10ad4f0b1c26",
+      "uid": "2ccbf99ce0cde93d36816744",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S01_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S01_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S01_L0012",
+      "when": null,
+      "speaker": "솜이",
+      "kind": "dialogue",
+      "text": "걔는 다람이고. 나는 솜이.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 405,
+          "label": "r13_v111_somi5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 / 손바닥",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d28c9c449876343527acee0c635ff82cb069d47ef91b94ba7a9a21bcc7977ebd",
+      "uid": "7b62106922bf33bf8d06da92",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S01_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S01_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S01_L0013",
+      "when": null,
+      "speaker": "무쇠",
+      "kind": "dialogue",
+      "text": "그래. 솜이. 손 씻으면 안 되는데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 406,
+          "label": "r13_v111_somi5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 / 손바닥",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "45d227f690f6300131a28edc946a3012f57753de8055094c7895140c867f5675",
+      "uid": "99968cf79f286a6a626cd78c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S01_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S01_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S01_L0014",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "솜이가 무쇠의 젖은 소매를 걷어 준다. 팔꿈치 아래 회색 겉옷 가장자리가 찢어져 있다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 / 손바닥",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "74ae8a84c0f321a5d129db03966308e88dbc0c309cf939d79c5090a64589330b",
+      "uid": "8edac58215ca2ab94241e989",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S01_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S01_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S01_L0015",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이 옷을 어제 입으셨습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 407,
+          "label": "r13_v111_somi5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 / 손바닥",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "18985e2e73654f922859d97681b1cfec98662499dc724f25948576df8440db9f",
+      "uid": "364b6181c1aa25b56d36b139",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S01_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S01_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S01_L0016",
+      "when": null,
+      "speaker": "솜이",
+      "kind": "dialogue",
+      "text": "제가 입혔어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 408,
+          "label": "r13_v111_somi5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 / 손바닥",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "778c760fac70d237a866edb459fb93634146e1aa4d82c5de6c9cf6d86d7007ec",
+      "uid": "efc301d9d867c429f5d311b7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S01_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S01_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S01_L0017",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "울타리에서 이 천이 나왔어. 옷 벗으시면 옆에 대 봐도 될까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 409,
+          "label": "r13_v111_somi5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 / 손바닥",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "521145f8577426d7ef8e8c7374b30e42fd9f771eac8d09b4fe9b1b67823e9fce",
+      "uid": "00d7439ec333e7a87fa62bb4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S01_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S01_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S01_L0018",
+      "when": null,
+      "speaker": "솜이",
+      "kind": "dialogue",
+      "text": "그러면 데려가요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 410,
+          "label": "r13_v111_somi5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 / 손바닥",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "880da6bc7457e8e5671a28303c49b5b515b80637a39a3c49e91afdf9d36f7a59",
+      "uid": "799996bbf25b74caa302b9f4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S01_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S01_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S01_L0019",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "옷부터 보려는 거야. 안 데려간단 약속은 못 해도, 너 몰래 넘기진 않을게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 411,
+          "label": "r13_v111_somi5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 / 손바닥",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "02b243653c894f1297e9362e4fb37b5f33cb1d4e797e189a8232d76de86967f6",
+      "uid": "ddf2180b6d521765ce547b17",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S01_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S01_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S01_L0020",
+      "when": null,
+      "speaker": "솜이",
+      "kind": "dialogue",
+      "text": "그럼 싫어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 412,
+          "label": "r13_v111_somi5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 / 손바닥",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9d492448b9fe9851f95ca3edef9233744e08f6a21b239b9120fee3d91c777a37",
+      "uid": "2beebe36732cb8c3cca1916c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S01_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S01_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S01_L0021",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "네로가 자기 장갑을 벗어 탁자 위에 놓았다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 413,
+          "label": "r13_v111_somi5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 / 손바닥",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fa8b8239ea7078af70c01223bf506018f717989c5c0a878e61e4494a550af83d",
+      "uid": "cf1f55c00550785f232ce71f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S01_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S01_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S01_L0022",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "어젯밤 나갔어요. 내가 늦게 봤어. 돌아올 때 소매가 이랬고. 애한테 계속 묻지 마요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 414,
+          "label": "r13_v111_somi5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 / 손바닥",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "318ad11730f9fb4aa15b4324ac9be8afc0a1000f0e3f8fa64a0f5a1531f569d0",
+      "uid": "88f64fe3e2e46381b8710f19",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S01_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S01_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S01_L0023",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "왜 처음에 말씀하지 않으셨습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 415,
+          "label": "r13_v111_somi5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 / 손바닥",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "03757f8433b5725bb7552fdaf8409c8288f5c72ad5e4e24a674c852c3a0b31ee",
+      "uid": "112da84d93aaaa4ae33ecd62",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D05_S01_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D05_S01_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 5,
+      "scene": "MS14_D05_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D05_S01_L0024",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "말하면 내가 돌보는 게 아니라 넘기는 게 되니까.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 416,
+          "label": "r13_v111_somi5",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 / 손바닥",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b19e1a941ce5eeb7dbfe40f20f7d3e6d5dcad29f7d3d9dc4993200366c701a24",
+      "uid": "0038e5848a4aafa49f13afee",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

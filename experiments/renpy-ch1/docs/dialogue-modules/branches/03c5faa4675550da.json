@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events.rpy:208:18",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        11366,
+        11419
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_ev_b_store",
+      "block": "r13_ev_b_store",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:208:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "창고 지붕 끝에서 작은 그림자가 미끄러지듯 넘어갔다. 그림자가 사라진 곳은 수리점 쪽이었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 208,
+          "label": "r13_ev_b_store",
+          "guards": [
+            "if room13[\"period\"]==1:"
+          ]
+        }
+      ],
+      "line": 208,
+      "scene_title": "r13_ev_b_store",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "93907a5801ebca975c2e54ed6bd609f10672dab84b1fcfc8fa6136e479ccb11d",
+      "uid": "9adea9e24bbfe44b314e73b1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ev_b_store|rpy_literal|r13_ev_b_store|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:212:18",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        11635,
+        11675
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_ev_b_store",
+      "block": "r13_ev_b_store",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:212:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "창고 지붕 위 눈에 찍힌 작은 발자국이 수리점 쪽으로 이어져 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 212,
+          "label": "r13_ev_b_store",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 212,
+      "scene_title": "r13_ev_b_store",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "7cb7ca4e0fbb258f262e324e1f989fdf17270f78ee78ffcc849e0ff1029bf2a5",
+      "uid": "2503581d562ac4dafa6d6c49",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ev_b_store|rpy_literal|r13_ev_b_store|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

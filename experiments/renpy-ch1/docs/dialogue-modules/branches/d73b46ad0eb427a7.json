@@ -1,0 +1,208 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:308:126",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        19628,
+        19685
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:308:126",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "며칠 뒤 힘을 재는 바늘이 다시 흔들렸다. 이번에 장치에 이어 붙인 사람의 이름은 돌아오지 않았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 308,
+          "label": "r13_ending",
+          "guards": [
+            "elif r13_ending_id==\"E3\":"
+          ]
+        }
+      ],
+      "line": 308,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "20d067f7223c861d6b0bcf33fd4b3005a76c45abdfe10422c85bfeb339aa804c",
+      "uid": "8383f9d612c7fa84032b65a2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ending|rpy_literal|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:320:126",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        20639,
+        20668
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:320:126",
+      "when": null,
+      "speaker": "nabi",
+      "kind": "dialogue",
+      "text": "오늘 밥 먹을 사람 이름. 안 적으면 또 모자라.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 320,
+          "label": "r13_ending",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 320,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "51099270b386fc6e4f076dca26d071540d3bc60225a9f406695cf34ad40d7343",
+      "uid": "a3d87712c3bb0f814674d64b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ending|rpy_literal|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:320:166",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        20679,
+        20692
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:320:166",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "엄마 이름도 적을게.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 320,
+          "label": "r13_ending",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 320,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "fb777406d66cff6ad7298d463e9ed4eabb59f15032f06979ec751994a2ace9a0",
+      "uid": "9050f03779d2c0321855678d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ending|rpy_literal|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:324:46",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        21018,
+        21067
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:324:46",
+      "when": null,
+      "speaker": "resident_owlgp",
+      "kind": "dialogue",
+      "text": "옛 조사에서 내가 놓친 것도 적겠소. 살아 있다고 해서 잘못까지 없어지는 건 아니오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 324,
+          "label": "r13_ending",
+          "guards": [
+            "else:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 324,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "0c61e14b3f1a098652addad6767108e30fab8d0f750581985302a30db629468d",
+      "uid": "ab37f231baf1fb85d907fe23",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ending|rpy_literal|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:328:366",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        21695,
+        21708
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:328:366",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "이제 천 걷어도 돼?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 328,
+          "label": "r13_ending",
+          "guards": [
+            "else:",
+            "if r13_ending_id==\"E6\":"
+          ]
+        }
+      ],
+      "line": 328,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "ae0c13770b03bd3e8c94400b266037fad5942ffd1b45b5cc379767809813b5f3",
+      "uid": "5f81df0ff05941dbb89c9c40",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ending|rpy_literal|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

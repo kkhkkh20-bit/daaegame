@@ -1,0 +1,1630 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D11_S02A_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "폐온실 안쪽. 엄마가 젖은 외투를 접고 시설로 내려갈 짐을 묶는다. 다람의 양말이 젖었다. 남겨 둔 작은 온기 받침에 마른 천을 펴지만 세 사람 옷을 한꺼번에 올릴 자리는 없다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "06c5f8144029d17dc68b22d0f7fb1e440445fa413cc2faa139aec58c060aff85",
+      "uid": "73f2bd3b2f3426c719d4c422",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0002",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "양말 먼저 벗자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 190,
+          "label": "r13_v111_dry11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9c167a0732af6fd008e2374ac9cd4cd00bdf04102ca557596f059f124223dcd5",
+      "uid": "e1f452bab4870f7fb4ecfcd6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0003",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "내가 할게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 191,
+          "label": "r13_v111_dry11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7b3191fd2665ab730fc7c77a85dfc0a05d4f45aeab45982290f59b91c87cbf5d",
+      "uid": "65d14b697760c04be8c41c0c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0004",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "엄마가 내민 손을 거둔다. 다람은 젖은 양말 뒤꿈치를 당기다 잘 못 벗긴다. 아빠가 다가가자 고개를 젓는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "19d80138f8400731956401aa5372bb0c0118cfa4cb324e7c6fb3bfa1d6e5f3b2",
+      "uid": "5b62bd045f1767d55ee3d969",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0005",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "내가 한다고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 192,
+          "label": "r13_v111_dry11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8030bcd7c1d0eacaa465d54943a19d43e0a0f1799f8a2d481a7c6d398b4e601c",
+      "uid": "bfdd7d4bd74b488b2147497d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0006",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 193,
+          "label": "r13_v111_dry11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8025c713f26164a6787608a6cbce1b8ac0cfe963a42e1416578db60193e95224",
+      "uid": "bc0c7756cec75d002c64a527",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0007",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "다람이 끝내 벗는다. 엄마는 말없이 마른 천만 건넨다. 다람은 천을 받아 자기 발을 닦는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f589eaa4c533084ce727caa0fc55560f11fd7ac9b2ed426266714a64ead3b4ba",
+      "uid": "d2f13fe088d98a8a901f4602",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0008",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "그동안 아빠가 머리도 묶어 줬어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 194,
+          "label": "r13_v111_dry11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3988e093af2c2924714a6337d932775de11596872d474937af9ff093269f345a",
+      "uid": "c11cdbef22ff5473f3134bcd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0009",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "응. 이상하게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 195,
+          "label": "r13_v111_dry11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e680ea8d768bcd101abf0cb2fa676ad84a1c7cc129a7ce4e519355fa941262ff",
+      "uid": "b6766357c0fe4e0755f72de2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0010",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "나아지고 있었어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 196,
+          "label": "r13_v111_dry11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a96014f3d11f0727bbc418d9aa2237c50c553beca21a02a928e9dab990184ebb",
+      "uid": "db56a0ade71222d4b06c63af",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0011",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "맨날 한쪽만 당겨.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 197,
+          "label": "r13_v111_dry11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4766c7d00e75ae06aa3c5705dfe2721d2139535a698365504eee06c3b8e1e31c",
+      "uid": "169f5066e5d37ef0a9aa7ecf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0012",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "엄마가 웃으려다 다람의 얼굴을 보고 멈춘다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "430b3ca4f2b14e232f56c1233605cd1776f802d1fe2beb2ac640ad11929b515f",
+      "uid": "9d2d8a120fc40deeddaaa8e6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0013",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "웃긴 얘기 아니야.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 198,
+          "label": "r13_v111_dry11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "65bfe7efc940083b5732c062305107b5154f992cf845078193ff2a55fc23aa9e",
+      "uid": "fe77c8316b4639c2d8e0cdad",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0014",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "응. 미안.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 199,
+          "label": "r13_v111_dry11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "edc148acddfb75d5b4a0a01ffe4750d53fcf8faa7ecf29d924cd55332780766d",
+      "uid": "160d962ca7737b5822d2608a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0015",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "온기 받침에서 수증기가 조금 오른다. 아빠가 자신의 젖은 장갑을 뒤로 빼서 다람 양말 자리를 만든다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a0b5af9a474ecb3dccbc9167c2571d0a347ae21317be3b58d2d372f7926a5ded",
+      "uid": "c653f7156fe2cb382da76636",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0016",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마 것도 젖었잖아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 200,
+          "label": "r13_v111_dry11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "147a7c8f700d48af91b68d87aed39dd842bc2cef18e2c9ad01d266864432732b",
+      "uid": "337aa794e969b022f5c133c2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0017",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "네 거 마르고 나면.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 201,
+          "label": "r13_v111_dry11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "643ece5c35e2fa4d619bcb34d7f3785be309be1117e2bf1e305b22e826ba911c",
+      "uid": "368867201374557daaf57a8d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0018",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "옆에 반만 놔.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 202,
+          "label": "r13_v111_dry11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "42b362fef1f0d88be59a48ed66638be64ec61185e1e4b1a118ccc55ff0adf519",
+      "uid": "9908dc8e4f294e415f9644d1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0019",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "다람이 자기 양말을 조금 옮긴다. 엄마가 장갑 끝만 곁에 둔다. 손을 잡거나 화해 선언을 하지 않아도 둘의 물건이 나란히 있다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "349f374228b5930d2349276da586424f926642eb5ec3587f5ef464651b2f97ec",
+      "uid": "7bedcd003a950ceb9bdbf952",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0020",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "가족 짐에 3일 실제 인수한 마른 담요 두 장이 남아 있을 때 선택: ‘지금 꺼내 덮는다’ / ‘짐에 둔다’. 물자가 없으면 선택을 만들지 않는다. 이 담요는 네로 작업 교환으로 받은 가족 침구이며 13일 판돌의 회색 수선 담요와 다른 물건이다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7af134c35b30ba40c44fb4da45221c95eb93c2d53d72209ffd19b2769560e5b0",
+      "uid": "951c1805935d97ce8f787bf8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0021",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "꺼내 덮기. 아빠가 담요 두 장을 꺼낸다. 한 장은 다람의 어깨와 무릎, 다른 한 장은 엄마와 아빠의 무릎에 걸친다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a9423a7773f0d1e58db403b7261c95c507a08574638210b88fd0a23f1f78f952",
+      "uid": "aa9f2313624b56ff1e0ea9bf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0022",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "네로 아저씨한테 받은 거네.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 216,
+          "label": "r13_v111_blanket_use11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2860113e88aedfac8e847a1053c964328f508c38c6bb9478683247cdd2c85771",
+      "uid": "7d14e1726d0de48fc42a3f57",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0023",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응. 같이 짐 날랐던 날 맡아 뒀다가 가져왔지.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 217,
+          "label": "r13_v111_blanket_use11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c82197e4fcdf0c93a7224001213a31397d9263643aef09dedc01850ac5f17f17",
+      "uid": "b238c028720679c3cd6b3c5e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0024",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "안 젖었어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 218,
+          "label": "r13_v111_blanket_use11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2aea6ff6d88fec0f550d92cefcbd26efe514ba9958d6d3fe2592d9edee29353d",
+      "uid": "ba052136fa097b64007ccdf2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0025",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "안쪽에 싸 놨어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 219,
+          "label": "r13_v111_blanket_use11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "abd53418702947b87c2d2114adf340d3aabc5e96b55bdc0533c6a89c5c358f37",
+      "uid": "5072c2db920f95c0cb3ebcee",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0026",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "다람이 어깨를 오므리던 힘을 조금 푼다. 엄마가 담요 끝을 다람 발 쪽으로 넘기려 하자 다람이 자기 담요를 보여 준다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a668eaaf888f9453b6836a63c22180692376dceec6755c58b7b40406ac0a071e",
+      "uid": "e661eba89a4c697658b9c30d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0027",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "내 건 여기 있어. 엄마가 덮어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 220,
+          "label": "r13_v111_blanket_use11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ab270c4689bf46156de27ae73f50e36306c407914ad6089b06d23bddc5f0ca11",
+      "uid": "dd5602f8c6fcaf0b4ee2e3df",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0028",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "마른 담요가 없거나 꺼내지 않은 경로. 다람이 팔을 끼고 앉는다. 아빠는 자신의 외투 안쪽을 함께 덮게 하고, 젖은 겉감이 닿지 않도록 편다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f18852d87a395bb112eca0118dc4455c5e53353daa7ea882c65451c54369ea24",
+      "uid": "44076d6da9f80d4d4012042f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0029",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아직도 추워.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 230,
+          "label": "r13_v111_blanket_keep11",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 239,
+          "label": "r13_v111_coat_use11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "94e6fc49092ddc548b33324c5c97f3f5350414c35e602b83a676102e49bd8e59",
+      "uid": "566c2cd670574983727f27ed",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0030",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "양말 마르는 동안 여기 붙어 있자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 231,
+          "label": "r13_v111_blanket_keep11",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 240,
+          "label": "r13_v111_coat_use11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "252b4a2c4003f4ea5378b7e0bc8f2d6bc389b2ff130a928efcadeebddfd1e79b",
+      "uid": "6ee5fd1554e8a57cdc7340fa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0031",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "내 장갑은 뒤에 말릴게. 다람이 발부터.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 232,
+          "label": "r13_v111_blanket_keep11",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 241,
+          "label": "r13_v111_coat_use11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0b8cde0f40b1704839520a0a7ee79ded8b3d28463b12ffbb1ac15fe865e0388e",
+      "uid": "3c1f177eb6de9c8f1101a3e4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0032",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "마른 침구 사용은 이 대기 시간의 추위와 피로를 덜어 준다. 돌의 남은 열을 늘리지 않으며 새로운 생존 점수나 NPC 자동 구조를 주지 않는다. 출발할 때 사용한 담요는 다시 가족 짐으로 접어 넣는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9ff2b642f38e43bf1619d989c090a3bfa4dc69d3eff7c41eee2cbaec69b33787",
+      "uid": "a2a67f6f3a16ab41de37e6a3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0033",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이건 안쪽에 두자. 나갈 때 젖으면 안 돼.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 233,
+          "label": "r13_v111_blanket_keep11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6daed0134cbcae1dc13ab14259a7659e34279726b0b5c232d52755071159272f",
+      "uid": "9b5c8d95214a962fb938d50d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0034",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그럼 외투 좀 더 줘.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 234,
+          "label": "r13_v111_blanket_keep11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4179c534d7b33010e1d14c247fdf40e5a98846945390cfb1bd613013a51ae0ba",
+      "uid": "d58c9d3937a0fae02fb35a90",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0035",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이리 붙어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 235,
+          "label": "r13_v111_blanket_keep11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "559a095d4e4c23a79ac953a56cc89aa008f040657c9d7d1528ce6c7f5528cbe6",
+      "uid": "f32149b463ca232fa2ce7a20",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0036",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이 한 장은 둘이 덮어. 나는 외투 입고 있을게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 224,
+          "label": "r13_v111_blanket_one11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a5b0706e3df970ef4b6614efdaf968deba3d9891bb580d6ce08b10cb0cbc7a7c",
+      "uid": "d6c4afae601292c7c2f96feb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0037",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0037",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0037",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마, 발 이쪽으로.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 225,
+          "label": "r13_v111_blanket_one11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "66abbd6d47373ca05ca4bb9320d2176a0e3b95a073a855db582dd7f78a9a114d",
+      "uid": "1ef097c2515bb56058482579",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0038",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0038",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0038",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "응. 네 양말 닿지 않게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 226,
+          "label": "r13_v111_blanket_one11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "88fe7a0e698ab0c80c59a182952ab25360482173a2ef474f1018c047ee932fef",
+      "uid": "62e4ba8b1afb168035efc828",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02A_L0039",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02A_L0039",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02A_L0039",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "담요를 꺼낼까?",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2A. 마를 때까지",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "164eda9d0e799c0687315f1a016bee13bf61cf0a6d0ea10f39908f720371de2e",
+      "uid": "d5aab007dfeb671e13d9149f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

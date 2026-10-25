@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D14_EP_A01",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "after",
+        "MS14_D14_END_PARTIAL_L0013",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D14_END_PARTIAL_L0013",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "내리지 못한 이름이 학교 명단 종이에 그대로 남는다. 다람이 종이를 접지 못하게 손으로 누른다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3521,
+          "label": "r13_v111_partial_wait14",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "72db7c61cabc2a11f1b30180b2292fb525df8cfeb6d28b31b1c2c42bb7a8d215",
+      "uid": "bd3a3ac560736cb9f7010744",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D14_EV_A01",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "after",
+        "MS14_D14_END_VIOLENCE_L0004",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D14_END_VIOLENCE_L0004",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "짓밟힌 장부의 낱장이 눈 위에 흩어져 있다. 숫자를 읽을 수 있는 사람은 엄마뿐이다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3537,
+          "label": "r13_v111_violence_ending14",
+          "guards": []
+        }
+      ],
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "231f30b4c5b7edfdf5b9a614fab183f9f6f64140353589baf050964fbb2a96ab",
+      "uid": "3d97d401fe7854287e94ec55",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

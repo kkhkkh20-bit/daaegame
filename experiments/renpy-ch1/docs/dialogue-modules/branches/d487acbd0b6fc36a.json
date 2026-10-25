@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_A1_W01L",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "altar1_won14",
+        4,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "altar1_won14",
+      "block": "altar1_won14",
+      "placement": "blocks",
+      "ref": "altar1_won14",
+      "when": "hyp_lose",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "너울 씨 장부입니다. 11일, 아랫길 등을 끊었다고 적혀 있습니다. 그날부터 그 길은 돌 불 없이 지냈습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2943,
+          "label": "r13_v111_altar1_won14",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "scene_title": "altar1_won14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "8d5912df49cfd29c28197661675eeb2e2f91a73ca13bd066c2c16beb9b042909",
+      "uid": "64cf02ca70fc5a3865ed11ee",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|altar1_won14|patch|altar1_won14|hyp_lose",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_A1_W02L",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "altar1_won14",
+        5,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "altar1_won14",
+      "block": "altar1_won14",
+      "placement": "blocks",
+      "ref": "altar1_won14",
+      "when": "hyp_lose",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그 길에서는 새로 야생화가 온 사람이 없습니다. 마을 전체를 본 건 아닙니다. 그래도 너울 씨가 직접 적은 숫자입니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2943,
+          "label": "r13_v111_altar1_won14",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "scene_title": "altar1_won14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "f953b4f7f9507f05033afdfa526f223575fcebb73b4d01331b6fb00ff1a62afd",
+      "uid": "3af4aeac562ec608567cdf45",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|altar1_won14|patch|altar1_won14|hyp_lose",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

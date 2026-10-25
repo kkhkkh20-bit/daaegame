@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "sale_check:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "sale_check",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": null,
+      "scene": "sale_check",
+      "block": "sale_check",
+      "placement": "binding",
+      "ref": "sale_check:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "매입 기록을 본다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "store",
+        "person": null,
+        "object": "ledger"
+      },
+      "scene_title": "sale_check",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "6242c33e92931073d9237c2ed5b40d8641c18569ebd9dc68735e39b0faff2c2b",
+      "uid": "f09029188fc6199b856828ab",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|sale_check|choice|sale_check|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

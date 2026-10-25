@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_DLG_D14_B03",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "name_board_intro14",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "name_board_intro14",
+      "block": "name_board_intro14",
+      "placement": "blocks",
+      "ref": "name_board_intro14",
+      "when": "tosil_inside",
+      "speaker": null,
+      "kind": "narration",
+      "text": "토실이 붓을 쥔 손을 내 쪽으로 조금 내민다. 나는 말없이 붓 아래의 종이를 받아 든다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3342,
+          "label": "r13_v111_name_board14",
+          "guards": []
+        }
+      ],
+      "scene_title": "name_board_intro14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "13284022c823c4e803f290aa5d6f8daa0352b55ad29daa7c65813bc9a1c8d98f",
+      "uid": "20369e4fe92bcd73f37daf05",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|name_board_intro14|patch|name_board_intro14|tosil_inside",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

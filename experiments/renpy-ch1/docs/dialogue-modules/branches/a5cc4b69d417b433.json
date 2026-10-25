@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:398:14",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        22261,
+        22276
+      ],
+      "origin": "rpy_literal",
+      "day": 14,
+      "scene": "r13_ep1_funeral",
+      "block": "r13_ep1_funeral",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:398:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "아무도 대답하지 않았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 398,
+          "label": "r13_ep1_funeral",
+          "guards": []
+        }
+      ],
+      "line": 398,
+      "scene_title": "r13_ep1_funeral",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "8a76f2f4690a7f5a258070ea8f85c2969a954a35055b759c92952433ee05bbdf",
+      "uid": "3a519650aa1dc35dbc1cc744",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|r13_ep1_funeral|rpy_literal|r13_ep1_funeral|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

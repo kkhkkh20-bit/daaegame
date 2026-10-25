@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_bundle3.rpy:119:38",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        7597,
+        7657
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_b3_scale",
+      "block": "r13_b3_scale",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:119:38",
+      "when": null,
+      "speaker": "resident_eunho",
+      "kind": "dialogue",
+      "text": "백 부인의 부탁이었습니다. 배급이 가벼우면 부인 창고 물건이 팔리고, 그 물건을 나르는 일은 내가 맡소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 119,
+          "label": "r13_b3_scale",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 119,
+      "scene_title": "r13_b3_scale",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "ed6d1e0d5af1541a5fec7cad5e92d1f4a0eb8de65223ec27b5e095b3f9858d49",
+      "uid": "97c8d7432c650ac0ba6a2586",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_b3_scale|rpy_literal|r13_b3_scale|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:120:38",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        7698,
+        7751
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_b3_scale",
+      "block": "r13_b3_scale",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:120:38",
+      "when": null,
+      "speaker": "resident_eunho",
+      "kind": "dialogue",
+      "text": "하지만 배급소 저울은 이제 내가 손댈 수 없습니다. 저울 열쇠를 너울이 갖고 있기 때문이오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 120,
+          "label": "r13_b3_scale",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 120,
+      "scene_title": "r13_b3_scale",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "e68b3f14a3125a8509c266df2cce2bf948ae52768b26f480fbcb994774cd2f4f",
+      "uid": "622e035f04149942ff924767",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_b3_scale|rpy_literal|r13_b3_scale|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

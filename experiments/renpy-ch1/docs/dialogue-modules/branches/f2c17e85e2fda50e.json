@@ -1,0 +1,211 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:197:12",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        11018,
+        11030
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_nt_overhear",
+      "block": "r13_nt_overhear",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:197:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "너울의 말을 전한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 197,
+          "label": "r13_nt_overhear",
+          "guards": [
+            "if not r13_has(\"chorong_dead\"):",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 197,
+      "scene_title": "r13_nt_overhear",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "2f6cc44d4d416bddf71d08f2dc31469c61d40112a6cf21d5945dd124dcc0447b",
+      "uid": "bbe7de4b803d258325bb2925",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_nt_overhear|rpy_menu|r13_nt_overhear|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:208:12",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        11881,
+        11896
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_nt_overhear",
+      "block": "r13_nt_overhear",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:208:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "“오늘은 가지 마세요.”",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 208,
+          "label": "r13_nt_overhear",
+          "guards": [
+            "if not r13_has(\"chorong_dead\"):",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 208,
+      "scene_title": "r13_nt_overhear",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "e4b30767cf4e6db1ebdbd5582f16c93833b8ac32ef8af35f8ac61ced85197424",
+      "uid": "29fdeb59e1a437d7d40da29d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_nt_overhear|rpy_menu|r13_nt_overhear|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:215:12",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        12265,
+        12286
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_nt_overhear",
+      "block": "r13_nt_overhear",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:215:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "이름 판 맨 아래 이름을 보여 준다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 215,
+          "label": "r13_nt_overhear",
+          "guards": [
+            "if not r13_has(\"fair_hearing\"):",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 215,
+      "scene_title": "r13_nt_overhear",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "7118141818c2fcf26a06d966dbe99303a4491f9753cb9ed4027daae75876a0d5",
+      "uid": "b86db234c72e39b5b53dcab3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_nt_overhear|rpy_menu|r13_nt_overhear|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:217:12",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        12430,
+        12446
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_nt_overhear",
+      "block": "r13_nt_overhear",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:217:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "식어 가는 돌을 보여 준다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 217,
+          "label": "r13_nt_overhear",
+          "guards": [
+            "if not r13_has(\"fair_hearing\"):",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 217,
+      "scene_title": "r13_nt_overhear",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "5b8769e8b6ee01e1ff25eb43b3f3643aa115104ef4a9da3ae34d97f754f041f8",
+      "uid": "dcc1cb50bf5affa7379cf9ca",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_nt_overhear|rpy_menu|r13_nt_overhear|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:220:12",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        12649,
+        12659
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_nt_overhear",
+      "block": "r13_nt_overhear",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:220:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "오늘은 물러선다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 220,
+          "label": "r13_nt_overhear",
+          "guards": [
+            "if not r13_has(\"fair_hearing\"):",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 220,
+      "scene_title": "r13_nt_overhear",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "d6a43c1f58319fd1704c8683eb0e605aa98e6aae3a4b11d730acbb0c59ab7594",
+      "uid": "9bb907a37203e0c8047a3bac",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_nt_overhear|rpy_menu|r13_nt_overhear|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

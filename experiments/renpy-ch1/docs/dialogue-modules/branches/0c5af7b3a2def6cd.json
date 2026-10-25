@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_week1_cases.rpy:118:37",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        7043,
+        7047
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_w1c_portrait",
+      "block": "r13_w1c_portrait",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:118:37",
+      "when": null,
+      "speaker": "resident_piko",
+      "kind": "dialogue",
+      "text": "……",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 118,
+          "label": "r13_w1c_portrait",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 118,
+      "scene_title": "r13_w1c_portrait",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "a7f878b8ced1a7957c560d573e30ddbbc1696e38c370513aacbbf4bff12e7f43",
+      "uid": "6b66cbbf41167b98a1f5d614",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_w1c_portrait|rpy_literal|r13_w1c_portrait|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:129:37",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        7662,
+        7704
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_w1c_portrait",
+      "block": "r13_w1c_portrait",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:129:37",
+      "when": null,
+      "speaker": "resident_piko",
+      "kind": "dialogue",
+      "text": "약속. 진짜 사람을 그리는 건 오랜만이네요. 내일 아침까지 그려 둘게요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 129,
+          "label": "r13_w1c_portrait",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 129,
+      "scene_title": "r13_w1c_portrait",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "72211e6d775c24b617c9deee8ee7e65ff4b13c71c5bee6dc7793a3c7c7f6eb7e",
+      "uid": "92de3b39606a823a0b8e4d8b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_w1c_portrait|rpy_literal|r13_w1c_portrait|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

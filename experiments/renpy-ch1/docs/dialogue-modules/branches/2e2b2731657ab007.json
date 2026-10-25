@@ -1,0 +1,82 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:82:27",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        4683,
+        4749
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_mother_note",
+      "block": "r13_mother_note",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:82:27",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "메모: “내가 자리를 비웠으면 광장 등의 초롱에게 소식을 물어봐. 물건은 책상 아래에 두었어.” 끝에 작은 도토리.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 82,
+          "label": "r13_mother_note",
+          "guards": []
+        }
+      ],
+      "line": 82,
+      "scene_title": "r13_mother_note",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "a28ae0c823f3507f67189256d866031b1b23fe61cfd47242abfdbf43ee8cf22d",
+      "uid": "47bf2a31791b8a2c64204248",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_mother_note|rpy_literal|r13_mother_note|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:82:137",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        4793,
+        4806
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_mother_note",
+      "block": "r13_mother_note",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:82:137",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "책상 아래라고 했지.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 82,
+          "label": "r13_mother_note",
+          "guards": []
+        }
+      ],
+      "line": 82,
+      "scene_title": "r13_mother_note",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "32a7af5390d27e3e59c1e5fd8edc091f76d63ac7be406a971135a41b7d4de025",
+      "uid": "d242f9baf852936073c7d35c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_mother_note|rpy_literal|r13_mother_note|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

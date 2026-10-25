@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_carryover.rpy:75:38",
+      "file": "game/systems/room13_carryover.rpy",
+      "path": [
+        5032,
+        5075
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_carryover_events",
+      "block": "r13_carryover_events",
+      "placement": "literal",
+      "ref": "game/systems/room13_carryover.rpy:75:38",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(지난주에 내가 한 일 때문에 이 길은 막혔다. 다른 길을 찾아야 한다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_carryover.rpy",
+          "line": 75,
+          "label": "r13_carryover_events",
+          "guards": [
+            "while _refuse:"
+          ]
+        }
+      ],
+      "line": 75,
+      "scene_title": "r13_carryover_events",
+      "source_hash": "f10306dfce96df81431a8d3c357b4d31023a0ef3afd42beef4d1a8184ca40d9d",
+      "baseline_hash": "1c855779e66cd2a68737b7c65bca7c5bbf168b5afb52319f0d1fdc6881323feb",
+      "uid": "5c335b29ee62a5b4866c94a2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_carryover_events|rpy_literal|r13_carryover_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

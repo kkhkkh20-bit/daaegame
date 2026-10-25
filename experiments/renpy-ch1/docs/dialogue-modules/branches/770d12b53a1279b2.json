@@ -1,0 +1,123 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D05_S02_A01",
+      "file": "game/v111/newworld/d05.json",
+      "path": [
+        "after",
+        "MS14_D05_S02_L0017",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D05_S02_L0017",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그 시각에…… 네로 씨는 어디 계셨습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 450,
+          "label": "r13_v111_cloth_match5",
+          "guards": []
+        }
+      ],
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "a9e760da50ee60c0891a0f3223c23267f704e9da058eb484a3ffcf4ed70b3f1c",
+      "baseline_hash": "766b08362cbff28a5b05bd7de9252a8fb5627483853e8981bd94ee4cf92c3536",
+      "uid": "c44bd041356a11ec38b35ce7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D05_S02_A02",
+      "file": "game/v111/newworld/d05.json",
+      "path": [
+        "after",
+        "MS14_D05_S02_L0017",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D05_S02_L0017",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "……그건 왜요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 450,
+          "label": "r13_v111_cloth_match5",
+          "guards": []
+        }
+      ],
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "a9e760da50ee60c0891a0f3223c23267f704e9da058eb484a3ffcf4ed70b3f1c",
+      "baseline_hash": "32d01a91f8b86cac79d7069966ad9013e1dc9ed377fd31dc9be55c94fc79da6f",
+      "uid": "14027a0f860b8b2dea3e2858",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D05_S02_A03",
+      "file": "game/v111/newworld/d05.json",
+      "path": [
+        "after",
+        "MS14_D05_S02_L0017",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 5,
+      "scene": "MS14_D05_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D05_S02_L0017",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "네로는 더 대답하지 않는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 450,
+          "label": "r13_v111_cloth_match5",
+          "guards": []
+        }
+      ],
+      "scene_title": "2. 문턱 / 숨긴 것과 일어난 것",
+      "source_hash": "a9e760da50ee60c0891a0f3223c23267f704e9da058eb484a3ffcf4ed70b3f1c",
+      "baseline_hash": "e80f905d47006c296f48887402fbc87154f4657de80d677b68a26ceb1f7e1c57",
+      "uid": "5b344629f961d8192fa41fe3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

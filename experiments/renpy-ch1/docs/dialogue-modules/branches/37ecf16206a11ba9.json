@@ -1,0 +1,129 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_SP_BOWLS12_0",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "sp_bowls12",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "sp_bowls12",
+      "block": "sp_bowls12",
+      "placement": "blocks",
+      "ref": "sp_bowls12",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "아까 옮긴 흰 그릇이 작은 냄비 쪽에 모여 있다. 다른 색 그릇은 큰 냄비 앞에 놓였다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1250,
+          "label": "r13_v111_meal_inspect12",
+          "guards": [
+            "elif _return==1:"
+          ]
+        }
+      ],
+      "scene_title": "sp_bowls12",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "9227f2988b535f398f4e78f68335aa0eda4eeee2bd1a7ffb2eaab26000caa1c5",
+      "uid": "64286ec5df845fc4cf45b037",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|sp_bowls12|patch|sp_bowls12|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_SP_BOWLS12_1",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "sp_bowls12",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "sp_bowls12",
+      "block": "sp_bowls12",
+      "placement": "blocks",
+      "ref": "sp_bowls12",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "흰 건 여기 줄이야. 나도 아까 여기 놨어.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1250,
+          "label": "r13_v111_meal_inspect12",
+          "guards": [
+            "elif _return==1:"
+          ]
+        }
+      ],
+      "scene_title": "sp_bowls12",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "c5432135029041c616579bc8de22828d7700791de884d5be034b5035c047a766",
+      "uid": "b08e108436e8ca02c5407c6c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|sp_bowls12|patch|sp_bowls12|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_SP_BOWLS12_2",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "sp_bowls12",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "sp_bowls12",
+      "block": "sp_bowls12",
+      "placement": "blocks",
+      "ref": "sp_bowls12",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그릇 색에 따라 받는 냄비도 다르구나.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1250,
+          "label": "r13_v111_meal_inspect12",
+          "guards": [
+            "elif _return==1:"
+          ]
+        }
+      ],
+      "scene_title": "sp_bowls12",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "7c8f159b84a67ddb9f29aa65f0f504952171ade2563e05ed7306e778e34f27b4",
+      "uid": "7f72b1e6c4d5b85f5fc360f6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|sp_bowls12|patch|sp_bowls12|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

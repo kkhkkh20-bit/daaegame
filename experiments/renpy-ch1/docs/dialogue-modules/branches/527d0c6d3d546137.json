@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "portrait_ask:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "portrait_ask",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": null,
+      "scene": "portrait_ask",
+      "block": "portrait_ask",
+      "placement": "binding",
+      "ref": "portrait_ask:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "스케치를 보여 주고 부탁한다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "square",
+        "person": "resident_piko",
+        "object": null
+      },
+      "scene_title": "portrait_ask",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "f74c910192496e15d6094368b4d8ced951a4d5fb688cf7fd2dedf322241957f2",
+      "uid": "5f9c5bc0cddf6b32f4371178",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|portrait_ask|choice|portrait_ask|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,326 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:375:18",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        21923,
+        21963
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_nt_after_trial",
+      "block": "r13_nt_after_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:375:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "부리가 모자를 다람 머리에 씌워 주었다. 너무 커서 눈까지 내려왔다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 375,
+          "label": "r13_nt_after_trial",
+          "guards": [
+            "if r13_has(\"nt_buri_together\") and room13.get(\"daram_state\")==\"with_dad\":"
+          ]
+        }
+      ],
+      "line": 375,
+      "scene_title": "r13_nt_after_trial",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "c6dfcbc7ecb52aaed7d9f4b23fa7046593c116282eb4f0c9051be92c2d3fe586",
+      "uid": "7a5db16e8167c9de95b45ddd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_after_trial|rpy_literal|r13_nt_after_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:384:18",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        22441,
+        22496
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_nt_after_trial",
+      "block": "r13_nt_after_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:384:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "판 앞에 등이 하나 놓여 있었다. 그 곁에 늙은 토끼 한 분이 서 있었다. 초롱을 닮은 귀였다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 384,
+          "label": "r13_nt_after_trial",
+          "guards": [
+            "if r13_has(\"nt_lit_lamps\"):"
+          ]
+        }
+      ],
+      "line": 384,
+      "scene_title": "r13_nt_after_trial",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "c3152e908fd5d70baad56366b3af10f98f5532a59ae83ae57b19fa475fac7be5",
+      "uid": "1cc0f5d54fa6df59639532bd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_after_trial|rpy_literal|r13_nt_after_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:385:18",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        22566,
+        22648
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_nt_after_trial",
+      "block": "r13_nt_after_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:385:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "초롱의 어머니가 말했다. \"그저께 밤에 그 애 대신 켜 주셨다지요. 동쪽 등 셋. 우리 집 창에서 보였어요. 그 애가 돌아온 줄 알았어요.\"",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 385,
+          "label": "r13_nt_after_trial",
+          "guards": [
+            "if r13_has(\"nt_lit_lamps\"):"
+          ]
+        }
+      ],
+      "line": 385,
+      "scene_title": "r13_nt_after_trial",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "009db94b28e3545b95e6247f03875f65de111cf2d77de3d9722ca2e73c91a160",
+      "uid": "67c1edf0a75d87937aa41f6f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_after_trial|rpy_literal|r13_nt_after_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:386:18",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        22718,
+        22770
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_nt_after_trial",
+      "block": "r13_nt_after_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:386:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "\"그 애가 늘 말했어요. 남의 소식을 전하는 건 그 사람 하루를 지켜 주는 일이라고.\"",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 386,
+          "label": "r13_nt_after_trial",
+          "guards": [
+            "if r13_has(\"nt_lit_lamps\"):"
+          ]
+        }
+      ],
+      "line": 386,
+      "scene_title": "r13_nt_after_trial",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "1daa9de53dfc3511f628f5842793dc3991eca9728316882e05a5030261db03d4",
+      "uid": "ac3a65f911b0f650bcbd2d6b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_after_trial|rpy_literal|r13_nt_after_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:392:48",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        23090,
+        23106
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_nt_after_trial",
+      "block": "r13_nt_after_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:392:48",
+      "when": null,
+      "speaker": "resident_lamplighter",
+      "kind": "dialogue",
+      "text": "오늘은 다람이가 켜 볼래?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 392,
+          "label": "r13_nt_after_trial",
+          "guards": [
+            "elif r13_has(\"nt_chorong_safe\"):"
+          ]
+        }
+      ],
+      "line": 392,
+      "scene_title": "r13_nt_after_trial",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "0651e40c038431fb0cf7a4589ea03c8b869cadcd8e962d6a6f989edf07b6cbdc",
+      "uid": "bf327c67d37ecfe86c10cf5c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_after_trial|rpy_literal|r13_nt_after_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:393:18",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        23127,
+        23142
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_nt_after_trial",
+      "block": "r13_nt_after_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:393:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이 등을 하나 켰다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 393,
+          "label": "r13_nt_after_trial",
+          "guards": [
+            "elif r13_has(\"nt_chorong_safe\"):"
+          ]
+        }
+      ],
+      "line": 393,
+      "scene_title": "r13_nt_after_trial",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "19b656e4352cb62aa073114742a1eff5606072411d2c79f6f1d04698238c080b",
+      "uid": "f689a0b7b030d75cff22c135",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_after_trial|rpy_literal|r13_nt_after_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:396:18",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        23403,
+        23435
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_nt_after_trial",
+      "block": "r13_nt_after_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:396:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "(그림책) 빨간 모자는 숲을 지나 할머니 집에 갔어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 396,
+          "label": "r13_nt_after_trial",
+          "guards": [
+            "if room13.get(\"daram_state\")==\"with_dad\":"
+          ]
+        }
+      ],
+      "line": 396,
+      "scene_title": "r13_nt_after_trial",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "a1b87ed15f3095f838d6dfa66a1d3be86e4704c4e858e20cbdd9927b0d24ad52",
+      "uid": "72dcca8fd17d28ca625a8804",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_after_trial|rpy_literal|r13_nt_after_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:397:18",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        23479,
+        23534
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_nt_after_trial",
+      "block": "r13_nt_after_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:397:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "(그림책) \"할머니, 손이 왜 그렇게 커요?\" \"우리 아가를 꼭 안아 주려고 그렇단다.\"",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 397,
+          "label": "r13_nt_after_trial",
+          "guards": [
+            "if room13.get(\"daram_state\")==\"with_dad\":"
+          ]
+        }
+      ],
+      "line": 397,
+      "scene_title": "r13_nt_after_trial",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "d7f9114b03a86eda44a337355eae1be3427bc32df7211e5a2d3c6a2d691cfb35",
+      "uid": "6041da4bd4790098b65daa6b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_after_trial|rpy_literal|r13_nt_after_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

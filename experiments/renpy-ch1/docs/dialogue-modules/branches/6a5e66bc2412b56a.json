@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_evening.rpy:163:93",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        9007,
+        9032
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_ev_night_visit",
+      "block": "r13_ev_night_visit",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:163:93",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "면회는 잠깐이오. 물건은 내가 먼저 보오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 163,
+          "label": "r13_ev_night_visit",
+          "guards": []
+        }
+      ],
+      "line": 163,
+      "scene_title": "r13_ev_night_visit",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "e0b05713d7efdf8432a39e5a94cb4c55a3b688735dd42769a6686ad958e8778c",
+      "uid": "f18a4deecc8e21ff9fa433e2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_ev_night_visit|rpy_literal|r13_ev_night_visit|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:179:33",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        9849,
+        9869
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_ev_night_visit",
+      "block": "r13_ev_night_visit",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:179:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "담요에서 바둑이 아저씨 냄새 나.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 179,
+          "label": "r13_ev_night_visit",
+          "guards": [
+            "while _visit_turns>0:",
+            "menu:",
+            "if r13_has(\"badook_doubt\") or r13_has(\"badook_ally\"):"
+          ]
+        }
+      ],
+      "line": 179,
+      "scene_title": "r13_ev_night_visit",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "f9b0ea41354fe5666816770f2ad17bbacd7d83b33741e315714e8e3343d31b62",
+      "uid": "c0f8721bf099e90fef78e5f6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_ev_night_visit|rpy_literal|r13_ev_night_visit|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

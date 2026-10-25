@@ -1,0 +1,120 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "mother_questions11:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "mother_questions11",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 11,
+      "scene": "mother_questions11",
+      "block": "mother_questions11",
+      "placement": "binding",
+      "ref": "mother_questions11:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "어떻게 지냈어?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "greenhouse",
+        "person": "mom",
+        "object": null
+      },
+      "scene_title": "mother_questions11",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "f16a7f8a200d345d1babc4f4eb6fed59cc5ca7bd9a2c3c5eb0d483c4dea6463c",
+      "uid": "69cfc3122e6f43bbb5956b18",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|mother_questions11|choice|mother_questions11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "mother_questions11:1",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "mother_questions11",
+        "options",
+        1,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 11,
+      "scene": "mother_questions11",
+      "block": "mother_questions11",
+      "placement": "binding",
+      "ref": "mother_questions11:1",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "왜 우리를 부르지 않았어?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "greenhouse",
+        "person": "mom",
+        "object": null
+      },
+      "scene_title": "mother_questions11",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "d82785da170cf9fec8a631aed09a018633e6d1876d421c47a7f33a3d1dd18644",
+      "uid": "1d16e21ef839ff9ee4dfcd33",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|mother_questions11|choice|mother_questions11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "mother_questions11:2",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "mother_questions11",
+        "options",
+        2,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 11,
+      "scene": "mother_questions11",
+      "block": "mother_questions11",
+      "placement": "binding",
+      "ref": "mother_questions11:2",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "왜 돌아오지 못했어?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "greenhouse",
+        "person": "mom",
+        "object": null
+      },
+      "scene_title": "mother_questions11",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "032b8e34b1a547b153ff2c821513e274706b75e396fc80a77606992f2af5e418",
+      "uid": "74b0d037cdd5f353d1b23193",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|mother_questions11|choice|mother_questions11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

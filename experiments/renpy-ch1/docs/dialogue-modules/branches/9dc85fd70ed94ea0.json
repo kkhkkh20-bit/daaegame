@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_debate.rpy:674:104",
+      "file": "game/systems/room13_debate.rpy",
+      "path": [
+        40701,
+        40712
+      ],
+      "origin": "rpy_inventory",
+      "day": 4,
+      "scene": "r13_debate_dispatch",
+      "block": "r13_debate_dispatch",
+      "placement": "literal",
+      "ref": "game/systems/room13_debate.rpy:674:104",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "여기까지 정리한다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_debate.rpy",
+          "line": 674,
+          "label": "r13_debate_dispatch",
+          "guards": [
+            "elif r13_debate_action[0]==\"leave\":",
+            "if r13_debate_dad_broken(r13_claim):"
+          ]
+        }
+      ],
+      "line": 674,
+      "scene_title": "r13_debate_dispatch",
+      "source_hash": "e522a9da5723c7f36391b949f7859938b3d15bb6b924594f6878838b865736be",
+      "baseline_hash": "90115f64a05119897bfd26af1b4a13dbb89a46f375bdd07fd6a09bc54b4dfc57",
+      "uid": "f3b1b6e02bfec9815e0d8b9f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_debate_dispatch|rpy_inventory|r13_debate_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_debate.rpy:696:84",
+      "file": "game/systems/room13_debate.rpy",
+      "path": [
+        42203,
+        42215
+      ],
+      "origin": "rpy_inventory",
+      "day": 4,
+      "scene": "r13_debate_dispatch",
+      "block": "r13_debate_dispatch",
+      "placement": "literal",
+      "ref": "game/systems/room13_debate.rpy:696:84",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "그래서, 있습니까?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_debate.rpy",
+          "line": 696,
+          "label": "r13_debate_dispatch",
+          "guards": [
+            "elif r13_debate_action[0]==\"press\":",
+            "if r13_debate_st.get(\"ready_flags\") and not all(r13_has(f) for f in r13_debate_st[\"ready_flags\"]):"
+          ]
+        }
+      ],
+      "line": 696,
+      "scene_title": "r13_debate_dispatch",
+      "source_hash": "e522a9da5723c7f36391b949f7859938b3d15bb6b924594f6878838b865736be",
+      "baseline_hash": "9767391231fa0c34bb8f53a07f7cb5978592fce6767727e93b0655e95ad81075",
+      "uid": "001cbb4148e6797584c1d531",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_debate_dispatch|rpy_inventory|r13_debate_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

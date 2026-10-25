@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events.rpy:211:32",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        11560,
+        11614
+      ],
+      "origin": "rpy_literal",
+      "day": 2,
+      "scene": "r13_ev_b_store",
+      "block": "r13_ev_b_store",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:211:32",
+      "when": null,
+      "speaker": "resident_mungchi",
+      "kind": "dialogue",
+      "text": "부인 약초 꾸러미가 없어졌어요. 누가 지붕으로 들고 갔대요. 도둑을 잡아 오면 열 냥 준대요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 211,
+          "label": "r13_ev_b_store",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 211,
+      "scene_title": "r13_ev_b_store",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "4e28d08e9c638cce099c7c0b723f2010f4a9b435e6a85ee2847d1df8dd932c04",
+      "uid": "c1a5036b130df8d44477da94",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_ev_b_store|rpy_literal|r13_ev_b_store|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:223:22",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        12186,
+        12245
+      ],
+      "origin": "rpy_literal",
+      "day": 2,
+      "scene": "r13_ev_b_store",
+      "block": "r13_ev_b_store",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:223:22",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "다음 날 아침, 솜이가 광장 기둥 옆에 세워져 있었다는 이야기를 들었다. 약초는 백 부인에게 돌아갔다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 223,
+          "label": "r13_ev_b_store",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 223,
+      "scene_title": "r13_ev_b_store",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "8f17f9fd9a764b457abf5889aa24033e4e17c54976d8bc8039c6f90b3a6ff029",
+      "uid": "9296c6417da71921f2741ef6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_ev_b_store|rpy_literal|r13_ev_b_store|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

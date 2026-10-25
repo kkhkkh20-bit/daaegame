@@ -1,0 +1,251 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:302:94",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        19066,
+        19078
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:302:94",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "아빠 손 놓지 마.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 302,
+          "label": "r13_ending",
+          "guards": [
+            "if r13_ending_id in (\"E0\",\"E2\"):",
+            "else:"
+          ]
+        }
+      ],
+      "line": 302,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "35c808c01eaab5ca5af751a4e0faa374a246a27dc8497219fae8fec73ef541b2",
+      "uid": "81b5b646a71ff9067ae9506d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_ending|rpy_literal|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:305:54",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        19306,
+        19326
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:305:54",
+      "when": null,
+      "speaker": "guard",
+      "kind": "dialogue",
+      "text": "여기 남은 기록은 거기까지입니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 305,
+          "label": "r13_ending",
+          "guards": [
+            "elif r13_ending_id==\"E1\":"
+          ]
+        }
+      ],
+      "line": 305,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "c422c1450a515adbd25103ca1be225b8bb88c6d8e2f2b8bf3cc267fffc6784ca",
+      "uid": "6fb973111ce3f41c48384d3f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_ending|rpy_literal|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:313:34",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        20073,
+        20148
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:313:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "가장 먼저 식량이 모자랐다. 창고에서 실제로 꺼내 오지 못한 곡물은 수첩에만 적혀 있었다. 그 곡물로는 아무의 배도 채우지 못했다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 313,
+          "label": "r13_ending",
+          "guards": [
+            "elif r13_ending_id==\"E4\":",
+            "if not r13_has(\"supplies_ready\"):"
+          ]
+        }
+      ],
+      "line": 313,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "3d105e655c7d66660f4eaad6fca0de6936508968c30016a3b1846b3fa6e76860",
+      "uid": "41bf46951aed21bc2d0514be",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_ending|rpy_literal|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:315:34",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        20251,
+        20309
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:315:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "스스로 걷지 못하는 사람을 옮길 손이 부족했다. 낮은 길이 열린 뒤에도 빈 집들을 다시 돌아야 했다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 315,
+          "label": "r13_ending",
+          "guards": [
+            "elif r13_ending_id==\"E4\":",
+            "if not r13_has(\"patient_transport\"):"
+          ]
+        }
+      ],
+      "line": 315,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "55acd20727bbfd92ea6d9489398cebaaf96dcd5a96daa2bf6c435854bd18827a",
+      "uid": "ca3e57bcc3ce2ed2141f13ba",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_ending|rpy_literal|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:322:34",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        20838,
+        20889
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:322:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "부리는 어르신의 수첩을 덮었다. 아무도 그 빈 의자를 다른 사람의 자리라고 하지 않았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 322,
+          "label": "r13_ending",
+          "guards": [
+            "else:",
+            "if room13[\"victim_state\"]==\"dead\":"
+          ]
+        }
+      ],
+      "line": 322,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "78d731350930b00200652780a73d016e7562db6235a15e1229c880055f8acc19",
+      "uid": "297e6f2abd16b4e019801ca1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_ending|rpy_literal|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:328:304",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        21633,
+        21684
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:328:304",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "자료를 여러 부 복사해 나눠 보관했다. 이 마을에서 벌어진 일의 책임은 지워지지 않았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 328,
+          "label": "r13_ending",
+          "guards": [
+            "else:",
+            "if r13_ending_id==\"E6\":"
+          ]
+        }
+      ],
+      "line": 328,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "d3aad60010fc71b7e58a0215bff78b97983190f4368f431f76a63ef185a6652e",
+      "uid": "52ae9c6851b39eb0b0e99698",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_ending|rpy_literal|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

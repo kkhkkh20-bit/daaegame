@@ -1,0 +1,602 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D02_S05_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S05_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S05_L0001",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "그림까지 맡겼어요? 그렇게 멀리 가진 않았을 텐데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 753,
+          "label": "r13_v111_evening2",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 / 설명할 수 없는 빈칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "11db11d15eb53e900ca4c29f1d0b4d98137b931db5bbe3d99f9a3212845c2506",
+      "uid": "29d70850709b089d46a7f9e2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S05_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S05_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S05_L0002",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "얼굴을 보여 드리는 편이 낫겠어서요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 753,
+          "label": "r13_v111_evening2",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 / 설명할 수 없는 빈칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "75d023d866775dc831c608ba7f931e81aee73814ab7a8e40b1e7fea33a91bd14",
+      "uid": "06b353a7b4739b7b0a2fb002",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S05_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S05_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S05_L0003",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "초롱은 뭐래요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 753,
+          "label": "r13_v111_evening2",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 / 설명할 수 없는 빈칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3cba3ee96c2e86f739c05186af822d78e096c42af2db5d51ee8ca4bbe0ea42a5",
+      "uid": "05f9c4d918814c081bc5146e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S05_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S05_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S05_L0004",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "마지막으로 본 날만 들었습니다. 지금 어디 있는지는 모른답니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 753,
+          "label": "r13_v111_evening2",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 / 설명할 수 없는 빈칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "dc3d04b76f91ffa0e432197627b1fdc7d555597fb0a22ba7398f983fe1e4c2d0",
+      "uid": "fcb365b9cf2ddc0e2fd68389",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S05_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S05_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S05_L0005",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "그 아이도 참 바쁘지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 753,
+          "label": "r13_v111_evening2",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 / 설명할 수 없는 빈칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "34a70e7d2dfc0a20bfdd6c81ea23afaf0f2b55f5e79dc3eb6cc4a5319ec7cfdc",
+      "uid": "e317eab5035ed1919806def8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S05_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S05_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S05_L0006",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "방. 아빠가 봉투, 방의 메모, 피코의 약속 시간을 수첩에 놓는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 / 설명할 수 없는 빈칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "99f582e7fe478979b5c7c7a8b8cb25300e4d3f6e7673da8e9eb3265be8c55832",
+      "uid": "937fe15840eaf184fe1260df",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S05_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S05_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S05_L0007",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마한테 줄 그림인데, 엄마 찾는 데 쓰네.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 755,
+          "label": "r13_v111_evening2",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 / 설명할 수 없는 빈칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c187ab6c12f64412438994ab5106ab30b6fe8698eae2de7af24c07bea62cec85",
+      "uid": "b6b85874a74e92d80c12c997",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S05_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S05_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S05_L0008",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "찾으면 네가 줘.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 755,
+          "label": "r13_v111_evening2",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 / 설명할 수 없는 빈칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f6d8b674ca3a7abbeab4cf91bd8e837d9ae0dd7df174033f8b47cd8abaf7048c",
+      "uid": "ab3b663ccd490beeee955520",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S05_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S05_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S05_L0009",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "먼저 보여 주기만 할 거야. 엄마 얼굴이랑 맞는지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 755,
+          "label": "r13_v111_evening2",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 / 설명할 수 없는 빈칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "149e04a269a90b4e277cdf14aab6efe708bd27e5d83dba997169ec8224c2c445",
+      "uid": "f1647e60bd4f49d3de58ed56",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S05_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S05_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S05_L0010",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "내일 일찍 가야 돼. 아빠가 치운댔어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 766,
+          "label": "r13_v111_evening2_alive",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 / 설명할 수 없는 빈칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d983e027e79c3999e31a07e36f885cd2c8e32c6938da185733bed59c474d286f",
+      "uid": "8b79c84734349729f14b77d1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S05_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S05_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S05_L0011",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "기억하고 있어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 766,
+          "label": "r13_v111_evening2_alive",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 / 설명할 수 없는 빈칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b72165a67fc83e178209bc8315864cf9a6a35f3d89557a58dbb77d9e7227cd08",
+      "uid": "28480ecb1b3307ab6af9e97e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S05_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S05_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S05_L0012",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "등 꺼지면 피코가 깨겠지?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 772,
+          "label": "r13_v111_evening2_outside",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 / 설명할 수 없는 빈칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "89a3bf6614bd1534499172e2cbe2c85cf56c8071966e0aa17163a636d32e401c",
+      "uid": "190d04870a44acbf7eaa5f68",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S05_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S05_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S05_L0013",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "……아침에 일찍 가 보자.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 772,
+          "label": "r13_v111_evening2_outside",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 / 설명할 수 없는 빈칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bba9e92430a8f81f81d51012b19da7f9495b55f2aac85d5c4072e9a0c821ac34",
+      "uid": "072967a0a4b09fac1b8fe64c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S05_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S05_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S05",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S05_L0014",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "창밖 광장 등 하나가 벽 모서리에 가려 보이지 않는다. 꺼진 것으로 단정하는 독백 없이 암전.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "5. 여관 / 설명할 수 없는 빈칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f02ec163513e1d4316e3562ddf83da0167c39f58035d6bf7c08404ec6e340b68",
+      "uid": "119cf7470db2bcf25699f4ae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S05|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

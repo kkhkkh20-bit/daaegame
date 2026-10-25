@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_GW_D12_18",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "soup_list_won12",
+        16,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "soup_list_won12",
+      "block": "soup_list_won12",
+      "placement": "blocks",
+      "ref": "soup_list_won12",
+      "when": "grand_soup_noguard",
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 이송 예정 칸 옆에 그릇 이야기를 적는다. 회의 기록을 맡은 사람이 그 칸을 무효로 옮겨 적는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1563,
+          "label": "r13_v111_list_won12",
+          "guards": []
+        }
+      ],
+      "scene_title": "soup_list_won12",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "ec6a851b2a8338e8ee67e01af3dc15782e9e6d4cb022aaf33276a408b00fe69d",
+      "uid": "dd41b415d273bf7d25790688",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|soup_list_won12|patch|soup_list_won12|grand_soup_noguard",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

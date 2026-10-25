@@ -1,0 +1,694 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D13_S01_L0005",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_S01_L0005",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_S01_L0005",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "담요가 하나 있긴 한데…… 에휴, 끝이 터졌어요. 당기면 솜만 나오겠네.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1798,
+          "label": "r13_v111_day13",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "73720243cbecd2e172e4289d228a3593a9153077fee14996ca575358540ee4d7",
+      "uid": "02405e3ab3e4f1d79ea7a4cd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0016",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_S01_L0016",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_S01_L0016",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "다 됐으면 주세요. 판돌 씨한테 가져갈게요. 아이고, 허리야…….",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1822,
+          "label": "r13_v111_blanket_mended13",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "67e27081b9f2a4fee3e41b401444132c83d9ad2384b3b1918f37dbf3bb2f24c6",
+      "uid": "2e621f9298d30dca32a5741c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0017",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_S01_L0017",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_S01_L0017",
+      "when": null,
+      "speaker": "판돌",
+      "kind": "dialogue",
+      "text": "응? 이게 내 거요? 내 거 아니오. 나중에 다른 사람도 써야지.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1823,
+          "label": "r13_v111_blanket_mended13",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "39791117fd13229b4d750889b29bee3e9aaf15ff8e1e1d8a57a9b489fea840f3",
+      "uid": "941a3b178c88a96d1039a394",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0002",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_S01_L0002",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_S01_L0002",
+      "when": null,
+      "speaker": "판돌",
+      "kind": "dialogue",
+      "text": "문 좀 닫아 주시오. 잠깐이면 되오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1794,
+          "label": "r13_v111_day13",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "dbdb98289b532fd61047fe9aec8c80f14a177da8ca4dc719e7e141ba8ad5c51e",
+      "uid": "69bf3119162f26646f4815fa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0003",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_S01_L0003",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_S01_L0003",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠, 저 아저씨 몸이 떨려.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1795,
+          "label": "r13_v111_day13",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "ab9d8797a84116b7720a43b3fc84cfca898885e8e703a2e3dd3d63a75ac0c21c",
+      "uid": "4a41ee17ae27d9746983f2c8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0004",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_S01_L0004",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_S01_L0004",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "까로 씨. 덮을 것, 하나라도 남았어요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1796,
+          "label": "r13_v111_day13",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "696d065b26af9cc825e87b0556aa88396870330d5e28455c3837141ad72f3cd2",
+      "uid": "8969959dc3a28d5218dbee40",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0007",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_S01_L0007",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_S01_L0007",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다람아, 이 터진 자리 좀 같이 막아 줄래?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1799,
+          "label": "r13_v111_day13",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "0851320fb4e117ad658da47a72039b884b24c4eadb7beac8c6789eecd1faa9c9",
+      "uid": "c9b0e7e40fcdbecab6adf0dc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0008",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_S01_L0008",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_S01_L0008",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "이 천? 여기 대면 돼?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1800,
+          "label": "r13_v111_day13",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "e12812205dfa898622f4e08f26675410873e52c6513231293a183eba49a02add",
+      "uid": "7660f98b1e4a3f2c4ee01e79",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0009",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_S01_L0009",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_S01_L0009",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응. 바늘 안 닿는 쪽으로 잡고.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1801,
+          "label": "r13_v111_day13",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "028be48a5cf2a68eb3707eb56b1cae93f25a236845466e2e90def5ccf5346d28",
+      "uid": "39aaffe1b9f9ba4a6426f134",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0011",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_S01_L0011",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_S01_L0011",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어라, 천에 붙인 새가 아래를 보는데?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1817,
+          "label": "r13_v111_blanket_mended13",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "c23fa8bdaaf5aba2f43edaf08f31e9415947329f6633b4caacb232a4dcd565af",
+      "uid": "2ee3a1e3cf84375693bfd935",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0012",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_S01_L0012",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_S01_L0012",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "먹이 먹는 거야!",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1818,
+          "label": "r13_v111_blanket_mended13",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "1c99af28e4a7cc620a3c319365b361081c2069d4e88b7f4e516b65b3623db895",
+      "uid": "467ff13ccbabd46e0febb508",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0013",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_S01_L0013",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_S01_L0013",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아아, 먹이. 아빠가 몰랐네.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1819,
+          "label": "r13_v111_blanket_mended13",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "7cc8e946ce05a345740d18d6a22c81ae074062dbc84116b0b7d39740b82e28fc",
+      "uid": "754701006dcc23aec86c2e26",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0014",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_S01_L0014",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_S01_L0014",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "새도 밥 먹어. 아빠만 먹는 줄 알아?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1820,
+          "label": "r13_v111_blanket_mended13",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "cbe4709fcb771d7ce8f6fe8bb41ae1386ae41c0c4f94f963e1a9fe877720ad9e",
+      "uid": "fcb7e43abf4498a516e7719c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0018",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_S01_L0018",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_S01_L0018",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "지금은 판돌 씨가 추우시잖아요. 덮고 계세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1824,
+          "label": "r13_v111_blanket_mended13",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "1b43c0f15f9093ab3d49c9dfbaaac0b6264b6c9357109114876895cda05564f7",
+      "uid": "2bf4e5a5eb90ab38700e5fed",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0020",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_S01_L0020",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_S01_L0020",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "오늘은 우리 셋, 같이 움직일까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1825,
+          "label": "r13_v111_blanket_mended13",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "2db9f5bbe09ed2d61e98380eb2289e85bede84fd29d0a0edce7c04d596c6d903",
+      "uid": "56caeea75daba4f0d1fc2bd2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0021",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_S01_L0021",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_S01_L0021",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그래. 입구부터 가 보자. 길 얘기도 물어보고.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1826,
+          "label": "r13_v111_blanket_mended13",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "d9d40aa3239a57d03e05a2775f310b54c57ed1acca315bd245bfb1421b51f9c6",
+      "uid": "84cc1f720e6acfb478ea7c55",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0022",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_S01_L0022",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_S01_L0022",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "우리 오늘 가? 진짜?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1827,
+          "label": "r13_v111_blanket_mended13",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "b5155ead9063aaf93c74fe89afb6580c8587e544b3c57d5b71b4d82ab13060c3",
+      "uid": "9a2c29c0bed52aec698a8669",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S01_L0023",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "replace",
+        "MS14_D13_S01_L0023",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D13_S01_L0023",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "갈 수 있는지부터 물어보자.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1828,
+          "label": "r13_v111_blanket_mended13",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "b63656780d76f8097ee9bbd92ed6ae4b09d292a224dbd3a7582ccd07b5c5086f",
+      "uid": "3fc909f2cc69200a564faae9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

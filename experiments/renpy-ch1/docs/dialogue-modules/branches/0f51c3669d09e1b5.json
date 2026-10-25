@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "wet_cloth6:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "wet_cloth6",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 6,
+      "scene": "wet_cloth6",
+      "block": "wet_cloth6",
+      "placement": "binding",
+      "ref": "wet_cloth6:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "물에 적신 천을 건넨다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "v111_fire",
+        "person": null,
+        "object": "v111_water"
+      },
+      "scene_title": "wet_cloth6",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "1de9338065252b0090ec7820bc27f01d74c14c56d32c58ca2b0d22faa15a6c89",
+      "uid": "246670fb19de6ee839dc1f52",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|wet_cloth6|choice|wet_cloth6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

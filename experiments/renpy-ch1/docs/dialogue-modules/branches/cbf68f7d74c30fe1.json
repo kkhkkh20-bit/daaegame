@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D11_S04_V01",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "after",
+        "MS14_D11_S04_L0007",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D11_S04_L0007",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "thought",
+      "text": "오늘 밤엔 마을 사람들 앞에서 말해야 해. 내가 본 것부터, 순서대로.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 874,
+          "label": "r13_v111_rest_blanket11",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "08bb9557b4931120761f90be6c9efcb5bc5a9fbcc62fbe9c82f1a2132587576b",
+      "uid": "c486861365f1d4fb5c663155",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13.rpy:506:12",
+      "file": "game/room13.rpy",
+      "path": [
+        27367,
+        27393
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_talk_dispatch",
+      "block": "r13_talk_dispatch",
+      "placement": "literal",
+      "ref": "game/room13.rpy:506:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "확인한 상처만 말하고, 병은 가족에게 맡긴다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 506,
+          "label": "r13_talk_dispatch",
+          "guards": [
+            "if r13_topic==\"buri_consent\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 506,
+      "scene_title": "r13_talk_dispatch",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "d9697f73c4bb6e906902b7a729b2791db7b3758c143ab16ca2fe9ff4d4b84fde",
+      "uid": "ee195b1a7da5ba181701a2cd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_talk_dispatch|rpy_menu|r13_talk_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:516:12",
+      "file": "game/room13.rpy",
+      "path": [
+        28417,
+        28439
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_talk_dispatch",
+      "block": "r13_talk_dispatch",
+      "placement": "literal",
+      "ref": "game/room13.rpy:516:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "아이를 위해 어르신의 위험을 공개한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 516,
+          "label": "r13_talk_dispatch",
+          "guards": [
+            "if r13_topic==\"buri_consent\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 516,
+      "scene_title": "r13_talk_dispatch",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "e7bd476559d46db8f6ed16049d7ab8d9b6f95162582296a3ad04ad8f87e16e4f",
+      "uid": "ae547a1902a536bb52bacb06",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_talk_dispatch|rpy_menu|r13_talk_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:520:12",
+      "file": "game/room13.rpy",
+      "path": [
+        28810,
+        28830
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_talk_dispatch",
+      "block": "r13_talk_dispatch",
+      "placement": "literal",
+      "ref": "game/room13.rpy:520:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "더 말하지 않고 자리를 비켜 준다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 520,
+          "label": "r13_talk_dispatch",
+          "guards": [
+            "if r13_topic==\"buri_consent\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 520,
+      "scene_title": "r13_talk_dispatch",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "bfb32522d4416d71c523f9099c062a25fe2b9a151bf0aff17797270789c43c74",
+      "uid": "77c5da8810090615b254662c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_talk_dispatch|rpy_menu|r13_talk_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

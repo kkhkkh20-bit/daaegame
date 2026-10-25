@@ -1,0 +1,123 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_BD_D12_D01",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "after",
+        "MS14_D12_S02_L0005",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D12_S02_L0005",
+      "when": "dodam_spoon_lent",
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "도담아, 그때 빌린 숟가락 아직 나한테 있어. 깜빡했어.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1169,
+          "label": "r13_v111_meal12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-2. 배식 전의 손",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "482f90b8a4787bb96e6bd6fb3a18487a6d5584bba4a446419764dc76c8344e23",
+      "uid": "2214498f36ebda473d4f7dcb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S02|patch|after|dodam_spoon_lent",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_BD_D12_D02",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "after",
+        "MS14_D12_S02_L0005",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D12_S02_L0005",
+      "when": "dodam_spoon_lent",
+      "speaker": "도담",
+      "kind": "dialogue",
+      "text": "그럼 그건 우리 아빠 자리에 놔 줘.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1169,
+          "label": "r13_v111_meal12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-2. 배식 전의 손",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "2ca2f6f51ecab29ee15e26369ac0be5c89bb32fcffd1ccc5af8e69b51a3e95a3",
+      "uid": "026a1f0a85bc18489a6eb4e8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S02|patch|after|dodam_spoon_lent",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_BD_D12_D03",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "after",
+        "MS14_D12_S02_L0005",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D12_S02_L0005",
+      "when": "dodam_spoon_lent",
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이 보리 옆자리에 숟가락을 내려놓는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1169,
+          "label": "r13_v111_meal12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-2. 배식 전의 손",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "1c785a9f70b934a8369739a054e31248d7cc8f476b395b221db0e0fd963a343c",
+      "uid": "bd6f4c4a34844bd65cd3f989",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S02|patch|after|dodam_spoon_lent",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

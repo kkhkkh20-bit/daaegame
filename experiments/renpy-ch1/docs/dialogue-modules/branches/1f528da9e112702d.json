@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:142:33",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        7970,
+        7989
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_ep2_bite",
+      "block": "r13_ep2_bite",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:142:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "아빠, 오늘은 내가 읽어 줄게.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 142,
+          "label": "r13_ep2_bite",
+          "guards": [
+            "if not late and room13[\"location\"] in (\"room13\",\"guestroom\"):"
+          ]
+        }
+      ],
+      "line": 142,
+      "scene_title": "r13_ep2_bite",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "fc4aac4040df2ef337b01e3c0dd21496e17b0c38c692002b6e7d52a443583686",
+      "uid": "225dbcf9a3136023711d7117",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_ep2_bite|rpy_literal|r13_ep2_bite|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

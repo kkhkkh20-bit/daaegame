@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:298:17",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        18220,
+        18264
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_wf_morning",
+      "block": "r13_wf_morning",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:298:17",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "이 자가 밤마다 학교 장작 창고에서 장작을 훔쳤소. 어젯밤에도 거기 있었소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 298,
+          "label": "r13_wf_morning",
+          "guards": []
+        }
+      ],
+      "line": 298,
+      "scene_title": "r13_wf_morning",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "8628b8b279c4f84bced32e1476133fb49200c6b3f36bd7fe63e9244885af707d",
+      "uid": "0ae709bf17262e54d9d62138",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_wf_morning|rpy_literal|r13_wf_morning|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:310:37",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        19046,
+        19066
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_wf_morning",
+      "block": "r13_wf_morning",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:310:37",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "그럼 내일까지 증거를 가져오시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 310,
+          "label": "r13_wf_morning",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 310,
+      "scene_title": "r13_wf_morning",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "9305992521693feca0132affbe90c16baa13d0bd04e307a80c65c04d8214b4c1",
+      "uid": "3f1a6d233c1e49ffb8050872",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_wf_morning|rpy_literal|r13_wf_morning|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

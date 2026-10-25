@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_GW_D11_03",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "blocks",
+        "bowl_cart11",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "bowl_cart11",
+      "block": "bowl_cart11",
+      "placement": "blocks",
+      "ref": "bowl_cart11",
+      "when": "karo_ready11",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "까로 씨, 이 그릇들은 뭡니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_grand_win.rpy",
+          "line": 79,
+          "label": "r13_v111_bowl_cart11",
+          "guards": []
+        }
+      ],
+      "scene_title": "bowl_cart11",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "0e61b2bebd06c144276b29938ac770bf5b24f161625838b8b1065a68737b7a5c",
+      "uid": "07b86e26bb8ef45767d540d6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|bowl_cart11|patch|bowl_cart11|karo_ready11",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_GW_D11_04",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "blocks",
+        "bowl_cart11",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "bowl_cart11",
+      "block": "bowl_cart11",
+      "placement": "blocks",
+      "ref": "bowl_cart11",
+      "when": "karo_ready11",
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "시설에서 빈 수레로 돌아올 때 싣고 온 거예요. 학교로 돌려보내는 그릇이에요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_grand_win.rpy",
+          "line": 79,
+          "label": "r13_v111_bowl_cart11",
+          "guards": []
+        }
+      ],
+      "scene_title": "bowl_cart11",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "1a4d589d62eeeb35302791289dda0b33b9c078002f775550165df32c525da595",
+      "uid": "da84a909211ee03be64411f7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|bowl_cart11|patch|bowl_cart11|karo_ready11",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

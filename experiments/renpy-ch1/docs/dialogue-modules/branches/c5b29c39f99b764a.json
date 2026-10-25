@@ -1,0 +1,82 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:187:17",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        10480,
+        10525
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_nt_overhear",
+      "block": "r13_nt_overhear",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:187:17",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "종탑 길에서 기다리시오. 소리 내지 말고. 다치게 하지는 마시오. 편지만이오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 187,
+          "label": "r13_nt_overhear",
+          "guards": []
+        }
+      ],
+      "line": 187,
+      "scene_title": "r13_nt_overhear",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "35ba98642ff69553ff39a66c7c7bb4fed159ad24a27082a54d98e1cb426ec0de",
+      "uid": "4cca0e98b37c9a68a49f8024",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_nt_overhear|rpy_literal|r13_nt_overhear|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:189:17",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        10588,
+        10604
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_nt_overhear",
+      "block": "r13_nt_overhear",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:189:17",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "……안 주게 두지 마시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 189,
+          "label": "r13_nt_overhear",
+          "guards": []
+        }
+      ],
+      "line": 189,
+      "scene_title": "r13_nt_overhear",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "e964bb2fb20a518c2a7c131c14ea4ed05b8065733515d28d57afb6a3dfad0252",
+      "uid": "7371aa9dc4219fbd93b7ca74",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_nt_overhear|rpy_literal|r13_nt_overhear|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

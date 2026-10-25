@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_q1_review.rpy:170:26",
+      "file": "game/systems/room13_q1_review.rpy",
+      "path": [
+        8708,
+        8759
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_q1_preflight",
+      "block": "r13_q1_preflight",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_review.rpy:170:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "회의에서는 지금 가진 자료로 이야기한다. 회의는 4일 오후가 끝나기 전까지 열 수 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_review.rpy",
+          "line": 170,
+          "label": "r13_q1_preflight",
+          "guards": []
+        }
+      ],
+      "line": 170,
+      "scene_title": "r13_q1_preflight",
+      "source_hash": "51dcc7e0e65d83314ee167c79b5a474f29d05946b65650187256bc616d676842",
+      "baseline_hash": "2ac3fb43771aeeef30aa669466d18f9147194a674b46433ba0d3e9bdbd4dcff8",
+      "uid": "4bccf90fd9a0e2b003df868f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_q1_preflight|rpy_literal|r13_q1_preflight|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

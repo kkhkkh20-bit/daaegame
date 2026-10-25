@@ -1,0 +1,435 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_OP_D07_52",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "promise_room7",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "promise_room7",
+      "block": "promise_room7",
+      "placement": "blocks",
+      "ref": "promise_room7",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "13호 문은 열려 있다. 도토가 문 바로 안쪽 의자에 앉아 있고, 다람이 그 옆에 무릎을 끌어안고 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 105,
+          "label": "r13_v111_promise_night7",
+          "guards": []
+        }
+      ],
+      "scene_title": "promise_room7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "eb671dc7b5e856c4c40e138703422de44e49940b39a12e2ad66cd1e4679d983a",
+      "uid": "c6871188d429df903e1dc389",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|promise_room7|patch|promise_room7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OP_D07_53",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "promise_room7",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "promise_room7",
+      "block": "promise_room7",
+      "placement": "blocks",
+      "ref": "promise_room7",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠!",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 105,
+          "label": "r13_v111_promise_night7",
+          "guards": []
+        }
+      ],
+      "scene_title": "promise_room7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "8a52a4fe129649f1c5fd0ca41a84ea565f4ee589db8823cbe219acaea520b074",
+      "uid": "958f403d1cf04df5cb0d4ede",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|promise_room7|patch|promise_room7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OP_D07_54",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "promise_room7",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "promise_room7",
+      "block": "promise_room7",
+      "placement": "blocks",
+      "ref": "promise_room7",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "아까 계단 아래서 누가 저를 불렀어요. 학교 애가 다쳤다고요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 105,
+          "label": "r13_v111_promise_night7",
+          "guards": []
+        }
+      ],
+      "scene_title": "promise_room7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "77180c016d90513770bb696a45b65a82df4b0aefd646707d35036fcbd4492fdf",
+      "uid": "82cc9b67441d296833de168b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|promise_room7|patch|promise_room7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OP_D07_55",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "promise_room7",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "promise_room7",
+      "block": "promise_room7",
+      "placement": "blocks",
+      "ref": "promise_room7",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "……내려가셨습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 105,
+          "label": "r13_v111_promise_night7",
+          "guards": []
+        }
+      ],
+      "scene_title": "promise_room7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "dfddd453c585edb410f7bc7161dbcdd055d9f60f37dde299da10d8aef22aa3d2",
+      "uid": "7e8ddb1aecdca22a1c0471a4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|promise_room7|patch|promise_room7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OP_D07_56",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "promise_room7",
+        4,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "promise_room7",
+      "block": "promise_room7",
+      "placement": "blocks",
+      "ref": "promise_room7",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "아뇨. 낮에 말씀하셨잖아요. 문간에서 대답만 했더니, 조용해졌어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 105,
+          "label": "r13_v111_promise_night7",
+          "guards": []
+        }
+      ],
+      "scene_title": "promise_room7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "43d5f1f82bfe34da5f0634dec6714e863a7789b113e331aea029c78682989ace",
+      "uid": "d77f7ba425141e59ef5af2cf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|promise_room7|patch|promise_room7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OP_D07_57",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "promise_room7",
+        5,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "promise_room7",
+      "block": "promise_room7",
+      "placement": "blocks",
+      "ref": "promise_room7",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "어르신은 빗장을 거시겠다는 걸, 제가 있으니 괜찮다고 말씀드렸습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 105,
+          "label": "r13_v111_promise_night7",
+          "guards": []
+        }
+      ],
+      "scene_title": "promise_room7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "c3ac9b6ccc5e49b924cb168b14b7ce2bbad8eaba4b2ab2ba92f5567156b98b99",
+      "uid": "5274a36cb2d3733f6020783b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|promise_room7|patch|promise_room7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OP_D07_58",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "promise_room7",
+        6,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "promise_room7",
+      "block": "promise_room7",
+      "placement": "blocks",
+      "ref": "promise_room7",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "서리가 부엉이 곁에 무릎을 꿇는다. 방 안은 여전히 차고, 난로 불빛만 푸르다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 105,
+          "label": "r13_v111_promise_night7",
+          "guards": []
+        }
+      ],
+      "scene_title": "promise_room7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "9d9fd43286a0738cacbe4b225570863c48069544097a92a04b08115926065ab4",
+      "uid": "a76d1dde17855f7260dfc2ce",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|promise_room7|patch|promise_room7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OP_D07_63",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "promise_room7",
+        7,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "promise_room7",
+      "block": "promise_room7",
+      "placement": "blocks",
+      "ref": "promise_room7",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "의자 팔걸이에 얹힌 부엉이의 손이 떨린다. 다람이 그 손등에 제 장갑 낀 손을 가만히 올린다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 105,
+          "label": "r13_v111_promise_night7",
+          "guards": []
+        }
+      ],
+      "scene_title": "promise_room7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "d101d780cd806f53eecf98f7f56b9d689120a7a1ee707d35e37b95c47a3f0243",
+      "uid": "075234b204b810bad2728236",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|promise_room7|patch|promise_room7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_BD_D07_O07",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "promise_room7",
+        8,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "promise_room7",
+      "block": "promise_room7",
+      "placement": "blocks",
+      "ref": "promise_room7",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "thought",
+      "text": "그저께 다람의 장갑을 꿰매 주던 손이다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 105,
+          "label": "r13_v111_promise_night7",
+          "guards": []
+        }
+      ],
+      "scene_title": "promise_room7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "1f8b7967edfad7ea23303d1e3aeb5c96ae60ed266310f02fd4338d6fbd70c1c0",
+      "uid": "78f870537bc84d16916a2341",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|promise_room7|patch|promise_room7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OP_D07_59",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "promise_room7",
+        9,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "promise_room7",
+      "block": "promise_room7",
+      "placement": "blocks",
+      "ref": "promise_room7",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "밖에서 잠시 기다려 주세요. 아이도 같이요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 105,
+          "label": "r13_v111_promise_night7",
+          "guards": []
+        }
+      ],
+      "scene_title": "promise_room7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "96f1d8c45d27e61c315a918ef3037a472846a30680c0e8c79bc32c30069b89ed",
+      "uid": "d18fe2248ae9f278bc128975",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|promise_room7|patch|promise_room7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OP_D07_60",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "promise_room7",
+        10,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "promise_room7",
+      "block": "promise_room7",
+      "placement": "blocks",
+      "ref": "promise_room7",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "복도로 나서자 계단 아래 주방 쪽에서, 쇠붙이를 내려놓는 소리가 한 번 난다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 105,
+          "label": "r13_v111_promise_night7",
+          "guards": []
+        }
+      ],
+      "scene_title": "promise_room7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "150c4b07ecdc0222fea2a95fbf5ed3191852fbf944efd59628a99e8384a35ae3",
+      "uid": "fe1702f11b7c001931b55328",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|promise_room7|patch|promise_room7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

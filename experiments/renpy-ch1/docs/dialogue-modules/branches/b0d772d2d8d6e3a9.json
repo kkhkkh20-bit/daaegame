@@ -1,0 +1,1488 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D14_S04_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "해 질 무렵. 광장. 빈 칸이 남은 이름판. 오래전 희생자의 확인된 이름과 이번 진행에서 실제로 사망한 사람의 이름만 적혀 있다. 예방해 살아 있는 사람을 추모판에 올리지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d2dcd76428bd166a141942e3afebfa8d9941e92553f91e33bcaf5acd0af8e152",
+      "uid": "de42c4c63bc9dfd186d1ce5d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0002",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "부엉이가 살아 있는 경로에서는 멀리서 자기 걸음으로 다가와 기록을 건네고, 사망 경로에서는 그가 쓰던 종이를 실제 보관자가 가져온다. 피코·사서·네로·아이들도 각 생존 상태에 맞는 행동만 한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "91b44c963f847a13c26ee7c67ebb16dc8ffd1cf99c6aece8fb74e7d6e64ae0dd",
+      "uid": "a7f71e11750f5203ec6e6ef6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0003",
+      "when": null,
+      "speaker": "토실",
+      "kind": "dialogue",
+      "text": "내가 쓸래.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3350,
+          "label": "r13_v111_tosil_name14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "16dca6a5c9d4a4bc975c0ce110f8d9a3167a720fb54b40825fc66844395fcd29",
+      "uid": "cd7948e30b7253dc0e97c482",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0004",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "여기 잡아 줄게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3351,
+          "label": "r13_v111_tosil_name14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "93f6c2ac47233fae6453712dcf015d00f820288ecfbd2ab01fedcb2f984996d2",
+      "uid": "6bbd6cb46cf258bb3b209bc3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0005",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "토실이 보미 이름을 쓴다. 다람은 종이 아래쪽만 누른다. 잘못 쓴 획을 대신 고치지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f914ef6acad5d6b635469faf7e3fb214fc35eb8badc5df257dc7d9f8b63e5ebf",
+      "uid": "b7cf463ac0a7cced9b871712",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0006",
+      "when": null,
+      "speaker": "토실",
+      "kind": "dialogue",
+      "text": "삐뚤어졌어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3352,
+          "label": "r13_v111_tosil_name14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8fafcf3194970c34be784cf0c9db05732dfbe24de7e6bf05a0dff5e4e8fd048a",
+      "uid": "79c63844281101c952e56129",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0007",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "읽을 수 있어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3353,
+          "label": "r13_v111_tosil_name14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "668091f467e75f032af611302c105a4df3bd35045d04290972827761c7864891",
+      "uid": "c1904d0781a47b61bd8f35da",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0008",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "살아남은 판돌이 조금 떨어진 벤치에 있다. 아빠가 다가가 촌장의 정확한 답을 전한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ca11f7f60a0f8300e6618c64e8178f9685a85e73587e4c7970b160547950c590",
+      "uid": "e9a7bf4de24967a7af1ea908",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0009",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그제 밤 학교 등이 켜지기 전, 모과 씨를 만나지 않았다고 했습니다. 지금 계신 곳은 확인해 주지 못했고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3363,
+          "label": "r13_v111_pandol_news14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3a26e5a4b5da4eb5f95e477fc767ac0e20df1b5938149d9924f863e0cc3cb0dd",
+      "uid": "af4925ee6dead34f79583e6a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0010",
+      "when": null,
+      "speaker": "판돌",
+      "kind": "dialogue",
+      "text": "내가 타게 하려고?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3364,
+          "label": "r13_v111_pandol_news14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "34d37e131a9290147a2d67ddc68c900d387a5dafcc693d3270c8dd8f3ed72e24",
+      "uid": "02feae8e09d3175ddc9983ea",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0011",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그렇다고 말했습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3365,
+          "label": "r13_v111_pandol_news14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6bf7710e543469382b1cb68e32cdd15c3c212925befdb0066fc57f52149f4810",
+      "uid": "865c3509082ff04584cbd8cc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0012",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "판돌이 손에 쥔 담요를 구기다가 천천히 편다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9685906cd9e9bb3bd19c51ef951cc9bf4a046a77143e2ea27bf70ceaec7bea0d",
+      "uid": "248393e3b50a51c4f4d7fb86",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0013",
+      "when": null,
+      "speaker": "판돌",
+      "kind": "dialogue",
+      "text": "알았소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3366,
+          "label": "r13_v111_pandol_news14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c801a6c4b28ea1025b20fc02a0ed65187cc642f497c679583e519b3cf8aaedf3",
+      "uid": "0b956452c7bc5109b4510b41",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0014",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "확인하지 않은 이름을 여기에 적지는 않겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3367,
+          "label": "r13_v111_pandol_news14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b161f160e5ed870fc964adadc0a29736287b45c44a52140b5f876e83434e2f8e",
+      "uid": "496b7f618583dc0d5c043a2e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0015",
+      "when": null,
+      "speaker": "판돌",
+      "kind": "dialogue",
+      "text": "그건…… 고맙소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3368,
+          "label": "r13_v111_pandol_news14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8b15b1e6ebf6de9dce3619ab6a0e3bc2d8ec4136571ecfb26b64bbc9a40d770d",
+      "uid": "14d4a3fc675ec7b60a64ae41",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0016",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "학교 인계대. 엄마가 아직 쓰지 않은 돌 조각과 이미 사용 중인 받침의 표를 나눠 놓는다. 숫자는 실제 회수·소모·인계 상태에서 계산한다. 사라진 물자를 새 숫자로 채우지 않는다. 사용 중인 학교 돌을 빼서 전시하지 않고 해당 자리로 함께 가 확인한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2e4de481a27082d188895fb613ce53de970721d70c7a4d9cb714820b09000b38",
+      "uid": "b46beffdf0cf6a614cff4154",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0017",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "여기는 남은 것. 저쪽 표는 지금 쓰는 것. 빈 받침은 따로 놓을게요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3380,
+          "label": "r13_v111_supply_inventory_done14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "442ebc9a0610f511fabc13ac72fd4d05b113d95815c92924c159a0590cd9c2f4",
+      "uid": "663b8780a6d873900b548ec9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0018",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "오늘 밤 아이들 자리는 어느 것입니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3381,
+          "label": "r13_v111_supply_inventory_done14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bb611cc651c0451d76e4f730c3bd2742400214edd4f505c1feb44f76ff292b45",
+      "uid": "6a248c333b6b7aa464eacbee",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0019",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "이 몫을 학교에 인계할게요. 다 쓰고 나면 여기서 빼고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3382,
+          "label": "r13_v111_supply_inventory_done14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e7362c8d062d598814088d0a106a146e4eecf64904055d67b4e678abb1276f92",
+      "uid": "2449952ff2020582cdc5060d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0020",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "엄마가 실제 조각 상자를 나비에게 건넨다. 나비는 학교 몫을 받아 표에 표시하고, 돌목은 경비 몫을 확인한다. 초롱 생존·협력 시 등 몫은 초롱이 받는다. 부재 시 엄마가 해당 몫을 직접 관리하고 새 관리자를 자동 생성하지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6f8528cc2c8da21e488c58a0d536d2ff17739f06a26b6011766ff1947d132307",
+      "uid": "e80d7277d619e68c26a6fc4c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0021",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "앞서 참관한 백 부인이 있으면 표의 학교 몫을 직접 확인한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3263d40af5193d1509a4fd16b83f325418d5f336cc1ac58fa6a3a4886d93e499",
+      "uid": "d28f689bacc80fba1bab84d5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0022",
+      "when": null,
+      "speaker": "백 부인",
+      "kind": "dialogue",
+      "text": "오늘 밤은 이만큼. 내일 몫은 비었다는 거죠?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3395,
+          "label": "r13_v111_madam_inventory14",
+          "guards": [
+            "if r13_v111_actor_ready('resident_madam'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ff5831a278baaf3fe6043f214cdb94808f39e0c45e64932bf83b611b7a463a67",
+      "uid": "49baaf34a368691bfb98509a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0023",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "네. 빈칸으로 두는 게 맞아요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3396,
+          "label": "r13_v111_madam_inventory14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "34287fd201da42a0e5db1fc590abcdac550405883beb31ce6d848bfb262aa6d7",
+      "uid": "f09301a700771954a731da5d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0024",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "나비가 학교 몫 실물 상자를 받아 들고, 돌목이 경비 몫 표에 표시한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "39103f968e6306a26c24c8630e9db9cc7e17ffbece8f430746cad5d87ce484e1",
+      "uid": "06a63c18d5103fabffa3c181",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0025",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "경비 몫은 여기. 모자라면 빈칸으로 남기겠소. 사람 이름으로 메우진 않겠소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3386,
+          "label": "r13_v111_supply_inventory_done14",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1ee44f0ed5b2ece4f473ee96f11204883115db09822cb2e35b8e2a5212d19723",
+      "uid": "3df174e18896d3e673d21968",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0026",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "백 부인은 아직 못마땅하지만 빈칸을 지우라 하지 않는다. 추가 물자 약속을 강제로 받지 않는다. 아빠는 표를 출입문 안에 붙이는 손을 돕는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ce5eef5063a3f7f4d491cd47fee58e429d356af8301736593020c5f2529bed29",
+      "uid": "e97ea396d6006263bd2a8b43",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0027",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "남은 양·현재 사용처·실제 인수자·다음 확인 시점을 학교 출입문 안쪽에 게시한다. ‘겨울 전체 안전’이라는 글은 없다. 부족이 생겨도 사람을 연료로 삼는 결정을 통과시킬 명령·운반·장비가 지금은 중지된 상태다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b13627cf572d77bd1b9b2781fb901a7de815321d9ececcd98a9de7f4ff24b0a6",
+      "uid": "ffac036375aed2626474b05c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0028",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "대피소 쪽에서 남은 배급을 나누는 소리. 엄마와 실제 등 관리자가 밤에 켤 등 수를 줄여 남은 온기를 배분한다. 하나를 줄이면 그 길이 어두워져 안내자가 필요한 실제 변화가 있다. 모든 등이 영원히 켜진 축제 화면 없음.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b9f25ea0f4933fe3e7b44d37de8cfbd6155fcc91f7412430eb852bb7ebff28d9",
+      "uid": "25543093a7b89e557e36c0f2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0029",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "학교 앞은 남기고, 여기 둘은 줄입니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3413,
+          "label": "r13_v111_chorong_lamps14",
+          "guards": [
+            "if r13_v111_actor_ready('resident_lamplighter'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cf674a216544b8f6ea163fa96972d76fc7b9972fd11f8a2debddc8e9b801fbab",
+      "uid": "c3bc0a79f7938dd014b0736f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0030",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "밖에서 오는 사람 있으면 먼저 알려 주세요. 길 안내가 필요해요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3414,
+          "label": "r13_v111_chorong_lamps14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "61adc9e683ea65754e4d93954afd42d6b4fd765bdd4a4ae5e48a90bd8c14e794",
+      "uid": "76916fa4ff7ce5ab572202d1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0031",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "산길은 아직 못 여오. 내일 다시 확인하겠소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3416,
+          "label": "r13_v111_chorong_lamps14",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "df8ccaa9840979b5003fc427ecf6f52767942196e62b7bb6b47f03bf2cdfafb4",
+      "uid": "084078dce90a1644c8726749",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0032",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "학교 앞은 남기고, 여기 둘은 줄일게요. 들어오는 사람이 있으면 길을 같이 안내해 주세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3421,
+          "label": "r13_v111_mother_lamps14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8667d807b77519763fbf6de5ec5f9d518b5e0aee1366da05793fd7ca16f514c0",
+      "uid": "8bc01ec9a5e58f509869de69",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0033",
+      "when": null,
+      "speaker": "부엉이",
+      "kind": "dialogue",
+      "text": "내가 갖고 있던 기록이오. 읽을 수 있는 것부터 가져왔소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3427,
+          "label": "r13_v111_owl_alive14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "da5fa640aa2e978a747ccd5ab0f4216569fd8a3c36b78fcefaa476211fca01b9",
+      "uid": "80bde31deff3f89c640dc717",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0034",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "여기 두겠습니다. 이름은 확인하고 적을게요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3428,
+          "label": "r13_v111_owl_alive14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fb79f0de890da7be7c88be9ac50b8a6934401670d885f3cb26c6c984e3c5bf53",
+      "uid": "0c196241ef52cc940dabcb2e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0035",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "사람은 내려왔지만 아직 남은 일이 있어요. 안 한 것까지 끝났다고 쓰진 맙시다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3432,
+          "label": "r13_v111_unfinished_operation14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "30c507a635c52d66ef10d7613e492fef78552cb34b85e0fa3595fda592617623",
+      "uid": "6079f4f2db279a8934d1bebc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S04_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S04_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S04_L0036",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "응. 오늘 맡은 것부터 적어 둘게.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3433,
+          "label": "r13_v111_unfinished_operation14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "abb8c2d5061311cee781a440046dc5cd903d588bfd2bda2a9709e442c69efc3b",
+      "uid": "9cb9809eebbed503e6b09096",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_materials.rpy:114:36",
+      "file": "game/systems/room13_materials.rpy",
+      "path": [
+        5688,
+        5711
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_show_catalog_object",
+      "block": "r13_show_catalog_object",
+      "placement": "literal",
+      "ref": "game/systems/room13_materials.rpy:114:36",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "빌려 드린 물건, 이제 돌려주시려고요?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_materials.rpy",
+          "line": 114,
+          "label": "r13_show_catalog_object",
+          "guards": [
+            "else:",
+            "if r13_offer_topic.startswith(\"return:\"):"
+          ]
+        }
+      ],
+      "line": 114,
+      "scene_title": "r13_show_catalog_object",
+      "source_hash": "73f6126938bd63c8da9c96c46aaaee4f4bf0171f23ab8d7270375478564ae68f",
+      "baseline_hash": "8b3d6f33af62796fa5ca181b37e32f33ded2cf480117b023a0a669ef70fab140",
+      "uid": "1cc8044d634dd813733ee94a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_show_catalog_object|rpy_literal|r13_show_catalog_object|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

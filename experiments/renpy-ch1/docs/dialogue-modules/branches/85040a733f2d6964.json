@@ -1,0 +1,129 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D03_CR01",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "blocks",
+        "clinic_returned3",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "clinic_returned3",
+      "block": "clinic_returned3",
+      "placement": "blocks",
+      "ref": "clinic_returned3",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다시 넣으신 건…… 확실합니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 926,
+          "label": "r13_v111_clinic3",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "scene_title": "clinic_returned3",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "57ca14cf2b0ae653526c724fd1cc4aa990159b7328ebdbfa54f222d66be6ed35",
+      "uid": "c5e9b114c4e1c03634c866b7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|clinic_returned3|patch|clinic_returned3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D03_CR02",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "blocks",
+        "clinic_returned3",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "clinic_returned3",
+      "block": "clinic_returned3",
+      "placement": "blocks",
+      "ref": "clinic_returned3",
+      "when": null,
+      "speaker": "우박",
+      "kind": "dialogue",
+      "text": "넣고 덮개까지 닫았어요. 새벽 종 치기보다 한참 전이에요. 기록도 있어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 926,
+          "label": "r13_v111_clinic3",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "scene_title": "clinic_returned3",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "cded562dcf1e7a8496e56201fd8b980d2b87bada7afbcb91de9ce7059985d6b1",
+      "uid": "41bd74833715e93eb248b352",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|clinic_returned3|patch|clinic_returned3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D03_CR03",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "blocks",
+        "clinic_returned3",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "clinic_returned3",
+      "block": "clinic_returned3",
+      "placement": "blocks",
+      "ref": "clinic_returned3",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "죄송합니다. 그 기록, 보여 주시겠습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 926,
+          "label": "r13_v111_clinic3",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "scene_title": "clinic_returned3",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "8206f5b40254ba0288bb4165a154017530990eb8d6618058d2976fbb112952e2",
+      "uid": "84f18281a995aed3cde417ec",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|clinic_returned3|patch|clinic_returned3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

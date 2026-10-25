@@ -1,0 +1,2508 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D11_S02B_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "짐을 싸는 동안 엄마의 소매 단추가 떨어진다. 다람이 주워 준다. 아빠가 길에서 쓰던 작은 바느질 주머니를 꺼낸다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ab2a29313160de924394ec73be0778f7c707bdb9a94965d931e9294dd69be381",
+      "uid": "1a579fc86b704e7e3d3db01f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0002",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "내가 달게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 255,
+          "label": "r13_v111_button11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "04be438fb3d4fdf86933f058f64b4843bce9bae32848c9dce8001076344c33b1",
+      "uid": "7e8fc668d5ea5bc356dcedd4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0003",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "이거 아직 갖고 다녔어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 256,
+          "label": "r13_v111_button11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a01aa242e2100b896a12e61a45e0bc97069101ebb497eadc5625273236f879c2",
+      "uid": "8288982bee06dd98e0de3be5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0004",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다람 주머니가 두 번 터졌어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 257,
+          "label": "r13_v111_button11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c1dd704e030375c57b50c6572ae1488323b4d84045f8a21462ebde3f2e43101f",
+      "uid": "5c83d95a51138d7cbc2abe42",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0005",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "도토리가 뚫은 거야.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 258,
+          "label": "r13_v111_button11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7d8c4a153a72e71149f19360cf88b1d4298462d41d133c27e4857eb09f9eeab0",
+      "uid": "310aeaa5debd00aa9bd33fa3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0006",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠가 바늘에 실을 넣다 실패한다. 엄마가 받으려 하지만 다람이 먼저 실 끝을 잡는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7322425824b2a563fcabd99f116e17d05d223896f23f55d59116af8a717b9294",
+      "uid": "8f54394537a19c883e661534",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0007",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "여기 끝 갈라졌어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 259,
+          "label": "r13_v111_button11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "69ecd0edfa442f4b3b69aee62fb52301c1d3a4782ffde20196c5795027e65c34",
+      "uid": "5fbea093d7609975ef0979d4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0008",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "조금만 잘라.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 260,
+          "label": "r13_v111_button11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7241cc5fc5b876f302c97ecbd4b4915515e1ebf4c0e366897944777e79d92b90",
+      "uid": "75b77f84bdb872e3199666d5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0009",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "다람이 잘라 주고 아빠가 다시 넣는다. 엄마는 팔을 움직이지 않고 기다린다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "44ff48417b82fc3e86caba7fb5e1cdb058ba8c0303b70579b75a2e98c78d608c",
+      "uid": "939c157aea4b4350b0c29034",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0010",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "우리 집에서 달면 안 돼?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 261,
+          "label": "r13_v111_button11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2200d63564baca5f052086f17b46f80ec0b52d232e5e9b1f502822908fede0d6",
+      "uid": "efc159cf31edd3b5b3470109",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0011",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "가는 길에 또 떨어질 수 있으니까.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 262,
+          "label": "r13_v111_button11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3fb8e72532f0a3232887815e63ba4407b5a155161c7d4116aea6bf058d235320",
+      "uid": "efc76ddc945b2f244e2a2520",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0012",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "집에 가서 하자는 말이야.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 263,
+          "label": "r13_v111_button11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e13efb7ace17cf465992a7f0404aad576e42e556c91a185d9e6e7d86b1258846",
+      "uid": "7f1fe2f25dcd14e05b0801a4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0013",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠가 바늘을 멈춘다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7d57e411ab7b233bfb6763bfceca54c723f22ff96566b193a245e69d4af2834f",
+      "uid": "69ac808f23eb640af5ef69ee",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0014",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "나도 집에서 하고 싶어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 264,
+          "label": "r13_v111_button11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f6a4bf4b105842d455c1bfa6fe3da93c650c1d6ced3b58e499c5564419b84e24",
+      "uid": "004ed1075536b1bb24415277",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0015",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그럼 같이 가.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 265,
+          "label": "r13_v111_button11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "af3977e5b2f51e1fe8325e26411f64deda78f36559ced3926c49f831ac1cfc40",
+      "uid": "ff3a31aaf7dc4797e3bab70b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0016",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "응. 오늘 여기서 나갈 때도 따로 안 갈게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 266,
+          "label": "r13_v111_button11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5e8513f20fa7635aa0129d85d536e061c3be61e36b89b738c78fe9bdb1dbd46f",
+      "uid": "2cf046484abfb41f83f90b45",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0017",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "엄마는 다람이 말한 범위를 넘는 영원한 안전을 약속하지 않는다. 단추를 다 달고 다람이 가볍게 당겨 본다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7c8cb7abbac5370783e4e72885d3c3a06517a56cff9b0727791978feda10bed4",
+      "uid": "cbbd25ca7159f8719676e8d6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0018",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "이건 안 빠져.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 267,
+          "label": "r13_v111_button11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "455b1603a4768a3ae15fce2f2bdb63f4fdf64b7afa1004cef4d81fd9369addab",
+      "uid": "2fb46e123336dbd7e509b38e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0019",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "좋아. 양말도 다 마르면 출발하자.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 268,
+          "label": "r13_v111_button11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1efbd5a8ab9f287b27e87c4e1a77f5b85fcfa3ecbf1405e4947deb9af0f0013f",
+      "uid": "76656d6da08e7680b88279f5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0020",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "가족 생활 두 장면은 짐 정리·양말 말림이라는 실제 출발 준비 안에서 일어난다. 시설·수색 질문은 그동안 순서 자유로 열리며, 대사를 읽는 현실 시간으로 구조 가능 시간을 깎지 않는다. 아래 질문도 이 공간에서 이어진다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8bbf62b1ff9a91e06163f27f7b602012771aabd0c3e443d4d0385f262555fa0d",
+      "uid": "677160555e9e05ff36e8b32a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0021",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "입력: 엄마 옆에 앉는다. 아빠의 질문 세 가지는 순서 자유.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "751772c974c138d9f166c0d80e3764fbc0d9ee691b735353d14017122a320330",
+      "uid": "db56ac7d5d8dc1044b293017",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0022",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "우리가 온 건 언제 알았어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 282,
+          "label": "r13_v111_mother_life11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "570ad0426778a62a66cfcd080c00e379652ac586679c8eea4e6b46fba5472e10",
+      "uid": "243b6e2db98dd8ca2df106de",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0023",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "첫날. 너희 마차를 봤어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 283,
+          "label": "r13_v111_mother_life11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "89678d23ab166bdb3a9d94566dfa4b44b75fe31bbed2c4f84b0c1f23f3cbdf28",
+      "uid": "5c6aa4f21b69805c11ad1254",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0024",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "왜 입구에서 못 만났어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 284,
+          "label": "r13_v111_mother_life11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "af675ffd1c6d8e154b236c448e8502d02cb879ac8dd0a3fa1caf35e089ee2ee5",
+      "uid": "2e6fd22846aeea5bdc63e865",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0025",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "도착 종이 울릴 때 숲 끝에 있었어. 길로 내려가려고 했고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 285,
+          "label": "r13_v111_mother_life11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "236c4419af4d0fb3fe2daa4100f0d8a44565dd768eaaf442a676d6f9dd2e0138",
+      "uid": "238030dfe71ac314bd16f042",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0026",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "누가 막았어?",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 286,
+          "label": "r13_v111_mother_life11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fc39cea1f196c0e516324fdf820e1a91373e6fd31ceb3619f33ed942ae55d09e",
+      "uid": "5e01f561efffe82a7cde650f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0027",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "너울이 돌목한테 말했어. 내가 오면 바로 통과시키지 말고 여관에 사람부터 보내라고. 그때 너희 마차는 아직 안쪽에 있었어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 287,
+          "label": "r13_v111_mother_life11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ea847c3b31e989d1bfb0922262c5053d9ef31bd6af2852c67f63a6a581e53095",
+      "uid": "5aa22443803d5f2fd18ab416",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0028",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "너울이 널 봤어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 288,
+          "label": "r13_v111_mother_life11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "312b0f3154fb1a1f690344e66a0ef2ea83f4130116eaeea302452697c338af58",
+      "uid": "f94f9c587937d6277d9869d9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0029",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "아니. 그 지시를 듣고 돌아섰어. 내가 나타나면 너희 앞에서 붙잡히겠다고 생각했어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 289,
+          "label": "r13_v111_mother_life11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b9f7152f9e0bd2a7f319749d4dc7a8cb77157321b9e3c5efb94d87b4e822cabf",
+      "uid": "a21d3e03b5e2d51162233b78",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0030",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그다음은?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 290,
+          "label": "r13_v111_mother_life11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "753e496f9998a0fa7550b294a123cd7e7f30a66dd24129798f700e1cb260a426",
+      "uid": "5266bb7986442be446ada00d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0031",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "그날은 초롱이 점검을 마치고 돌아오는 길로 가려다가 뿌리 집으로 돌아갔어. 다음 날 북쪽 교환함으로 갔는데, 너울이 그 앞에서 내 발자국을 찾고 있었어. 나흘째 밤에야 돌아가서 네 쪽지를 읽었어. 그때 답을 넣었고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 291,
+          "label": "r13_v111_mother_life11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "057d28791cc62bc39b7ba142d12e25f238a922dc13c8d84b4145cd3aa710d808",
+      "uid": "389c8c63aa374518ad652c57",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0032",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "우리가 받았어. 다섯째 날에.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 292,
+          "label": "r13_v111_mother_life11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "67670f4caaa9d5314226e62f54029dc8a4a2d626653f0690458bc88b379405e4",
+      "uid": "e0979a947dcbfb27be2e8134",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0033",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "그 뒤 은신처 앞까지 발소리가 왔어. 폐온실로 옮기고, 다시 접촉할 길을 찾았어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 293,
+          "label": "r13_v111_mother_life11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d6cc602baa27a2f5fdf9579ae5581f12e189acb3d6ded252e82c5a5ef1659adf",
+      "uid": "a826e7c5098c7138f8e6b9f0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0034",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "우린 여관에서 기다렸어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 294,
+          "label": "r13_v111_mother_life11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "16591e264e2ddea004bc9479a127c7727a57a2add1d971f81dee55aca40d1e7b",
+      "uid": "33689d1aa182131b51a48578",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0035",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "알아. 알아서…….",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 295,
+          "label": "r13_v111_mother_life11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "eac1a2a9f609c5e884890f714a08724315779f8af8cd983595dc4033caac197c",
+      "uid": "1b5f13a7182d630dbe6debe7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0036",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "엄마는 다람의 외투 소매가 짧아진 곳을 만진다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "29fe6cbf9d3df9ee3eb347aeaed1a3ecd513c65e156e2cf067054a4f665402d5",
+      "uid": "3f70d934b96e42ea6ac6574c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0037",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0037",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0037",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "너희를 데리고 나올 방법도 없이 얼굴부터 보이면 더 위험해진다고 생각했어. 그 선택이 이렇게 오래 걸릴 줄은 몰랐어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 300,
+          "label": "r13_v111_mother_invitation11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1d4d9c53c9fb00c717eeaa6ba4edd918e4f92b059a3567774d3227604bbdfef0",
+      "uid": "e59b5fece6829d9386f94c83",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0038",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0038",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0038",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "다음엔 나한테도 말해.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 301,
+          "label": "r13_v111_mother_invitation11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "28734a0290b36b9b15fab80f105f83dc8f1199d86d990a7cfc4b75d07d137c6b",
+      "uid": "8e0583b851eeda36af489bce",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0039",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0039",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0039",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "응.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 302,
+          "label": "r13_v111_mother_invitation11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8025c713f26164a6787608a6cbce1b8ac0cfe963a42e1416578db60193e95224",
+      "uid": "08e020af22d268b3e659d623",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0040",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0040",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0040",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠한테만 말하지 말고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 303,
+          "label": "r13_v111_mother_invitation11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c26aedf4521493605b223aa363deeb11ba3385ef287d2560d681ba72c5cbb378",
+      "uid": "1edab6bba8ff336d940777df",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0041",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0041",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0041",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "너한테도.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 304,
+          "label": "r13_v111_mother_invitation11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a716a1fc06a16408829c0c7f08bc35a4c1a9dd35981f05d7f203a091728f828d",
+      "uid": "1c7991131af9a78e9d60ef0a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0042",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0042",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0042",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "질문: 왜 집으로 돌아오지 못했나.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "16a3e14ef6d29c07063b6b20ce9b923967112bdfcabf16d7729a03838e740764",
+      "uid": "f1b125086dc65effa53ef905",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0043",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0043",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0043",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "산길은 먼저 막혔고, 마을 쪽으로 내려가면 날 찾고 있었어. 내가 읽은 기록을 고치겠다고 하니까 방에 두고 얘기하자며 문을 잠갔어. 그날 빠져나왔어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 309,
+          "label": "r13_v111_mother_return11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ed6f64af67fc6a744814ef977410b156f3e169e05262312aa203c81d64069150",
+      "uid": "75d24d65f4f1e4991cc647d8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0044",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0044",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0044",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "할머니가 아래 시설로 날 데려갔어. 사람을 보내야 돌을 살릴 수 있다고 했고. 나는 벽의 글하고 남은 조각을 봤어. 거기 적힌 건 사람을 새로 보내라는 게 아니었어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 310,
+          "label": "r13_v111_mother_return11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1dab65cfe20286f2c80980c0e1fa1db9ef067198705f9c6f6e748e52e44f3a72",
+      "uid": "5205c7663237223f759bdf0a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0045",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0045",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0045",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "사람을 바치지 않아도 된다는 기록?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 311,
+          "label": "r13_v111_mother_return11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "dc481454de0da912bb72d5587b9a6c3133737aea94374030d3a806943d895156",
+      "uid": "3f69fa8b543be87b1769dd52",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0046",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0046",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0046",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "남은 돌을 함께 쓰는 기록. 새 힘을 만드는 건 아니야.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 312,
+          "label": "r13_v111_mother_return11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e4f518953efc73a712160b057cc9acc88586ea0f0015de4353054f3d5d955812",
+      "uid": "124f23bafe22ed44d61480a1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0047",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0047",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0047",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "왜 우리를 불렀을까.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 313,
+          "label": "r13_v111_mother_return11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8653babfb0b2c8759d92d3b5ae9c08afdf1750992d5fdc7ec5d9305791713270",
+      "uid": "798234643b781b4eb0f87c10",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0048",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0048",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0048",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "나를 나오게 하려고. 그 사람이 직접 말한 건 아니야. 내가 보낸 적 없는 편지로 너희가 왔다는 걸 알았을 때 그렇게 생각했어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 314,
+          "label": "r13_v111_mother_return11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0a9c734a5fc4f238acb81dbe01a2bf7763402e446213a97cf22f6f242ec01259",
+      "uid": "3b3f78eaf59dd04d8adf8868",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0049",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0049",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0049",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "위조 책임 확인을 선택하면 이 장면의 실제 필적·전달 확인 발화 블록을 재생한다. 부엉이 생존 증언은 실제 청취한 별도 블록만. 10일에 실제 확인된 물증·도토의 관찰·인물 위치의 결론을 그대로 인수한다. 추가 자백·고의·계획성은 이 장면에서 만들지 않는다. 살인 발생 경로와 부엉이 생존 예방 경로를 합치지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5914ac6927a67cec9cc0ba8b7a44b918057d3f6695a2948e2a776cbddd7bf3cc",
+      "uid": "19ce8385857347593c01dd62",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0050",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0050",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0050",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "그럼 이제 숨는 것만으로는 안 되겠네.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 324,
+          "label": "r13_v111_mother_last11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e026ecd7939f709de5cf4e25ebd9cd870a86ee29def15c97c57572b70415389a",
+      "uid": "ca6aa734abff58b3291ea7e5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0051",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0051",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0051",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "이제 같이 가면 되잖아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 325,
+          "label": "r13_v111_mother_last11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a9c6a53abb29c0a3e21edd965847f6993ee333b8d5ac017d79729a0e9c629303",
+      "uid": "7252a80230e792e71012f9ea",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0052",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0052",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0052",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "같이 갈 거야. 그런데 길이 아직 안 열렸어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 326,
+          "label": "r13_v111_mother_last11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9e55a1b98fa68c8285527567a5df7d72bd58bcbdf4ab9a706f28757feb3357d7",
+      "uid": "431336eef84bb3006a152d34",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0053",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0053",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0053",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "또 여기 있어야 해?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 327,
+          "label": "r13_v111_mother_last11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "91ba3f5cb3a39cfa190148647624005702720649602c1609b389eed9170f0aa0",
+      "uid": "81bcd5bd9aa5d806d35b77aa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0054",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0054",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0054",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "여기 말고. 셋이 있을 자리를 정하자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 328,
+          "label": "r13_v111_mother_last11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "478a879851e26e184a36cc5a1480e6e845393153ecf46ca3cb79e1bc1cc35199",
+      "uid": "b0e6dd2e01cffea99a0f7721",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0055",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0055",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0055",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "네가 쓴 편지가 아니었어. 글씨하고 전달한 말을 대조했어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 336,
+          "label": "r13_v111_forgery_question11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5bbd119cea99857ea196c79a98e25a19516f59df5877436b87707cb8cbacb674",
+      "uid": "cc0f8493bb034f95f2345773",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0056",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0056",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0056",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "내가 보낸 적 없다는 말, 이제 믿어 주겠네.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 337,
+          "label": "r13_v111_forgery_question11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1a7d3afa41ccc8e4b5739fb51c97b47678b3f69841772854fab993bcec2f76eb",
+      "uid": "2b5a2860ab79a4c4648d31e1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0057",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0057",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0057",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "믿지. 그런데 그 종이 때문에 다람이까지 데리고 왔어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 338,
+          "label": "r13_v111_forgery_question11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f6e616a5efe8f59e53d14c5ab9b012e64f78f520d10c0d779eb8bd315cad0ce0",
+      "uid": "cbf69cef0309a27968673144",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0058",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0058",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0058",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "부엉이 씨에게도 물었어. 네가 직접 건넨 게 아니라는 말을 들었어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 342,
+          "label": "r13_v111_owl_question11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d79744169bf1fbd4ec0a03046fb77f584eaeb58986618f47114fda89d785028f",
+      "uid": "398519a2087ef1f03059434e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S02B_L0059",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S02B_L0059",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S02B",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S02B_L0059",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "그분한테도 갔구나. 난 그 얘긴 몰랐어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 343,
+          "label": "r13_v111_owl_question11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-2B. 단추 하나",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "45b36dd78a87ad2857748808f12217ac478d9ce88f82abc06a868220ac6ebfec",
+      "uid": "8bcaa2b508159eac5a239acd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S02B|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

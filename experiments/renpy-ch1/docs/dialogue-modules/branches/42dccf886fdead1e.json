@@ -1,0 +1,123 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13.rpy:730:162",
+      "file": "game/room13.rpy",
+      "path": [
+        43078,
+        43109
+      ],
+      "origin": "rpy_literal",
+      "day": 2,
+      "scene": "r13_prevention_hearing",
+      "block": "r13_prevention_hearing",
+      "placement": "literal",
+      "ref": "game/room13.rpy:730:162",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "낯선 아이를 가족과 따로 떼어 보호하자는 뜻이었어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 730,
+          "label": "r13_prevention_hearing",
+          "guards": []
+        }
+      ],
+      "line": 730,
+      "scene_title": "r13_prevention_hearing",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "5de1d1b43e9592a5b167e61604020af839999b7d4f61a89f8453dc32d53a1bcd",
+      "uid": "4fab68c680f034330e961a12",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_prevention_hearing|rpy_literal|r13_prevention_hearing|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:730:202",
+      "file": "game/room13.rpy",
+      "path": [
+        43118,
+        43163
+      ],
+      "origin": "rpy_literal",
+      "day": 2,
+      "scene": "r13_prevention_hearing",
+      "block": "r13_prevention_hearing",
+      "placement": "literal",
+      "ref": "game/room13.rpy:730:202",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "아이 보호자는 여기 있습니다. 마을 입구 초소에서 함께 등록한 원본도 있고요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 730,
+          "label": "r13_prevention_hearing",
+          "guards": []
+        }
+      ],
+      "line": 730,
+      "scene_title": "r13_prevention_hearing",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "57c2f0da48182519d24b770ed3910351f16d9fe3d6deaf31a8d78a6dec503e92",
+      "uid": "bd73cbbf6f6d1aae6aad2a7e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_prevention_hearing|rpy_literal|r13_prevention_hearing|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:737:102",
+      "file": "game/room13.rpy",
+      "path": [
+        43598,
+        43648
+      ],
+      "origin": "rpy_literal",
+      "day": 2,
+      "scene": "r13_prevention_hearing",
+      "block": "r13_prevention_hearing",
+      "placement": "literal",
+      "ref": "game/room13.rpy:737:102",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "초소 담당자를 불러 원본을 확인했다. 그동안 우리 부녀는 떨어지지 않고 함께 기다렸다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 737,
+          "label": "r13_prevention_hearing",
+          "guards": [
+            "menu:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 737,
+      "scene_title": "r13_prevention_hearing",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "485bd0ec845db19d78a69870065457d1f9437316b946849443ceadac2962c3fc",
+      "uid": "0b87ffe702c1a105465911fe",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_prevention_hearing|rpy_literal|r13_prevention_hearing|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

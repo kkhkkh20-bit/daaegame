@@ -1,0 +1,47 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_debate.rpy:698:97",
+      "file": "game/systems/room13_debate.rpy",
+      "path": [
+        42418,
+        42447
+      ],
+      "origin": "rpy_inventory",
+      "day": 7,
+      "scene": "r13_debate_dispatch",
+      "block": "r13_debate_dispatch",
+      "placement": "literal",
+      "ref": "game/systems/room13_debate.rpy:698:97",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "(저 말을 반박할 자료가 있는지 다시 살펴보자.)",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_debate.rpy",
+          "line": 698,
+          "label": "r13_debate_dispatch",
+          "guards": [
+            "elif r13_debate_action[0]==\"press\":",
+            "else:"
+          ]
+        }
+      ],
+      "line": 698,
+      "scene_title": "r13_debate_dispatch",
+      "source_hash": "e522a9da5723c7f36391b949f7859938b3d15bb6b924594f6878838b865736be",
+      "baseline_hash": "72100b55bbe09f2da7c10b84562172212779a91c3afe6cd82679fd296982df8f",
+      "uid": "3f39e9617255f99108e1748d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_debate_dispatch|rpy_inventory|r13_debate_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

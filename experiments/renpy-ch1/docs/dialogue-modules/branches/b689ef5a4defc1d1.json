@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_v111_days610.rpy:21:40",
+      "file": "game/room13_v111_days610.rpy",
+      "path": [
+        1283,
+        1322
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": "r13_v111_day6",
+      "placement": "literal",
+      "ref": "game/room13_v111_days610.rpy:21:40",
+      "when": null,
+      "speaker": "resident_teacher",
+      "kind": "dialogue",
+      "text": "낮 동안은 이쪽에 앉아 있어도 됩니다. 먹을 건 따로 챙겨 주세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 21,
+          "label": "r13_v111_day6",
+          "guards": []
+        }
+      ],
+      "line": 21,
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "f011b8f5c19d05730644cea78bfeca82c00f7397382ee04ae91de01865360dde",
+      "baseline_hash": "59f9f3d1a6a8eb12d1dcaf86890f0e9ce2ebfa0717f489eb9506aa93d2bbae2f",
+      "uid": "42f33c2eadb8cc4612609aef",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|rpy_literal|r13_v111_day6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

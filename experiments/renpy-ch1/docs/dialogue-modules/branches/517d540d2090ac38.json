@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D12_B_V05",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "before",
+        "MS14_D12_B_L0012",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_B",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D12_B_L0012",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "하나, 둘, 셋, 넷……",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1745,
+          "label": "r13_v111_early12",
+          "guards": []
+        }
+      ],
+      "scene_title": "대체 장면 12-B. 수프 사건이 일어나지 않은 저녁",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "acb2e40db7e47f1999b3078c356ccf524e2ba4aafd3ae8656b56b1d9b4bc5d09",
+      "uid": "414fb2c57dc7e9748655ba6e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_B|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

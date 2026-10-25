@@ -1,0 +1,3656 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D13_S04_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "대사를 확인한 뒤 바퀴가 반 바퀴 돈다. 바둑이가 말 앞쪽의 안전한 거리에 선다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d92caa95823fb1eaaee084e0dba1549e4e7d28f8d774ff246e1dfa603dd56b68",
+      "uid": "05c286b26a996d0ea971c5af",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0002",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "잠깐.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2079,
+          "label": "r13_v111_stop_cart13",
+          "guards": [
+            "if r13_v111_actor_ready('resident_badook'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cf320d0747153955dcc3517a0ba119101cf4b5719ff2d3920afd7a5d0bc41c43",
+      "uid": "772e98f0468101054637a624",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0003",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "비켜.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2080,
+          "label": "r13_v111_stop_cart13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4ff3c3d6f158d5e8fdfeb62135d8ca9eb8325af9c5f585fe6832f6ed1e95f990",
+      "uid": "c21bddf2d0b354ce4a5743a9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0004",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "직접 확인했다며. 그래서 내가 맡았잖소. 확인할 때까지 못 갑니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2082,
+          "label": "r13_v111_stop_cart13",
+          "guards": [
+            "if r13_v111_actor_ready('resident_badook'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "blanket_partial",
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fd8c3616d1eed18bc900154285eb184331479bb84d19431c7a473c682921a743",
+      "uid": "9278eb947937a5bcd2309b8e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0005",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "바둑이가 고삐를 잡고 수레를 세운다. 그는 정지를 유지하므로 환자 부축을 동시에 맡지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "339239b2dee04934fde94746113dd59db43aff2535910d30ce12b7942e14e3e8",
+      "uid": "f89510fe1da921769bcf3a6b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0006",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "내려서 갈 곳까지",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d027b1ac77015c1266107b592bf7e4b2a84782573aee5065785861cda23e2d38",
+      "uid": "16c9321ff1fbbc7d5ce455be",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0007",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "실룩 구금·탑승 경로에서만.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "05dc577273e00caae6ff57e8ec40a182ef90129278da77ac7ada2911b1290f74",
+      "uid": "ec56d219e72b22e1535efa64",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0008",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "돌목 씨, 실룩 씨는 원래 있던 곳으로 데려가 맡을 수 있습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2424,
+          "label": "r13_v111_silluk_down13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ae030d79107477aa34e740c5b0affdee3b70468e7594e198b782943ffc4ec429",
+      "uid": "2e54263fcc36f3c9db170a3d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0009",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "내가 감독하겠소. 대신 지금 다른 환자를 받으러 갈 수는 없소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2426,
+          "label": "r13_v111_silluk_down13",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fa68f4057e0d4cf865535630ccf200b79b9f30619c87105fba97c4cfe623d31d",
+      "uid": "a765539d4ec19f7a076ad99f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0010",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "실룩 비탑승 경로에서는 다음으로 교체한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4e221a6c3c46f2ca571df9966f8ad7cd14aaa5ec11d7998634339bb43855ba83",
+      "uid": "d830f1bb4ded6919cf1a787d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0011",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "돌목 씨, 환자들이 어디로 가는지 함께 확인해 주시겠습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2147,
+          "label": "r13_v111_after_rein13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "517591772b80398089fa4e14db6ca6abb1516060f35104696c70f5f316920702",
+      "uid": "5facaae6a27a5f51b26110f9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0012",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "내가 맡는 분 이름하고 자리부터 확인하겠소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2149,
+          "label": "r13_v111_after_rein13",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "06d131d17b493ccc4b9dc31db6c87bbabf9052dd657b310fd80c0f5ca85d1268",
+      "uid": "a9aebc83b8cd7e03aa1f943f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0013",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "까로 씨가 돌아올 때까지 세워 둘 수 있습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2150,
+          "label": "r13_v111_after_rein13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1e9b379cf0e12d251c1110c14926423f89cf6ff18d2835bc9c8852407db4d520",
+      "uid": "dfb7d045071b13276b2b09ad",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0014",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "내가 여기 있겠소. 내려올 사람부터 받아요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2152,
+          "label": "r13_v111_after_rein13",
+          "guards": [
+            "if r13_v111_actor_ready('resident_badook'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fb88a86227ff95b26e09d3e5c62cc9e0805e63746d8442edb4c41c5c380ed313",
+      "uid": "df761136a5c98604c8571fbc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0015",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "가족 현장 잔류 / 학교 이동 선택. 학교로 간다면 실제 동행자를 정한다. 현장에 있고 생존·협력 조건이 맞는 네로가 동행하거나, 까로가 데려갔다가 돌아온다. 동행자는 다른 일을 동시에 맡지 않는다. 가족이 이미 떠났다면 이후 다람·엄마의 현장 대사는 재생하지 않는다. 확보한 침상과 실제 현장 인력으로 인계한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bf76b6204ddac65f15ea5d3c0965fa11b448c3d247a9dd08a166d596a0215566",
+      "uid": "52a036db36aa975864729dcf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0016",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "판돌 씨, 여기. 제 어깨 놓지 마세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2279,
+          "label": "r13_v111_pandol_down13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9a5a5f20ba3c71cdc003ef0a1897cdf9ad7363c43b6fa4f3519decd51cdcb984",
+      "uid": "0d6778e778f2b70143252f9f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0017",
+      "when": null,
+      "speaker": "판돌",
+      "kind": "dialogue",
+      "text": "발판이 안 보여.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2280,
+          "label": "r13_v111_pandol_down13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "52e2134c9156ad7293b156eefa75dedc14b31b2a6c502631859ffa25e4edba57",
+      "uid": "c63573ee28bb0a97ae7ea9fa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0018",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "여기요. 발 조금만 앞으로.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2281,
+          "label": "r13_v111_pandol_down13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0ffd5bcfc8f58705b349d2aeed68a38e3ad70fda6bf777609411401c233137ce",
+      "uid": "08a25743a68771e2385b6ab4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0019",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "판돌의 발이 발판에 닿는다. 아빠가 무게를 받아 함께 내려온다. 확보한 의자에 앉힌다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "de23d9f2d0558e5b2f3904c120b93f1a1054304a12ea0e8653580a85a003d239",
+      "uid": "2bbbc6d473fcfe24a8699ff3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0020",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "실제로 학교에서 돌봄을 맡기로 한 인물의 이름표로 표시한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "97e0f2181182e1fb44b6c25381c9a01f69c9cfd24c6733462d3eecb6297ca564",
+      "uid": "f21b959e2591a955f9b9991a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0021",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "판돌 씨. 학교 안쪽 자리에 모시겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2285,
+          "label": "r13_v111_pandol_down13",
+          "guards": [
+            "if r13_v111_actor_ready('nabi') and room13['location']=='school':"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "44fb14f7ac2d90b85e0e7a58f7b7e2e85b30a0a178938b1ff0ed19594d6c38ff",
+      "uid": "10f77afa1f239a3d65ea436f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0022",
+      "when": null,
+      "speaker": "판돌",
+      "kind": "dialogue",
+      "text": "이 담요 가져가도 되오?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2286,
+          "label": "r13_v111_pandol_down13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d2105ca05f9b6edc328c2b57d9d777cdce9de679158fdcfc2806bfd4b5883af7",
+      "uid": "371c132131dcfa280c517d4a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0023",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "덮고 계세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2287,
+          "label": "r13_v111_pandol_down13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c6f493321e739b2ac744d5c60fee3ffddc9e760f4bcb249199e8ec8617acf9d1",
+      "uid": "2e846083cdf7647491c6fd27",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0024",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "실제 운반자가 도착한 뒤 다음 하차로 넘어간다. 실룩이 탑승한 경로에서만.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "41f6271d820e9be1f37e4637c1e5552b1fd806946e1c66ea3224a40c194f7834",
+      "uid": "0ba381fb550f0737662fb1d7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0025",
+      "when": null,
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "나도 내린다더니.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2427,
+          "label": "r13_v111_silluk_down13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f8dcf4f108518c9939e5055ab8965d869061e1cf3633c179aefe607d379c0c2e",
+      "uid": "1a81f4f5a02370477171a073",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0026",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "지금. 발판 보고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2429,
+          "label": "r13_v111_silluk_down13",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "352bbb65bd75b149174916b865f6b6d1994e01a278d4805df9f27b2013609433",
+      "uid": "eed9b4082ca2a47be3b39cb7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0027",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "다람이 아직 현장에 있는 경우에만.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "50968a85a2a85b2186a2689456ac42bcb7e4c07f6828afdc6add2c1e6c732ebb",
+      "uid": "d9baf5401e8072d673452719",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0028",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠, 저 아저씨 싫어하잖아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2447,
+          "label": "r13_v111_silluk_family13",
+          "guards": [
+            "if r13_v111_actor_ready('daram') and room13['location']=='square':"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "af70c99a890cb640522e2e5cc1e28003225cf228a23c99f1a8e7131545327ba6",
+      "uid": "e808b7e12673a083141dde0d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0029",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "싫지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2448,
+          "label": "r13_v111_silluk_family13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d2d1f440670ac2b4ec13a84849d0dae7426e154ad3525a7134fae8f9a7837b45",
+      "uid": "c37d3917cb76394ac461afb6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0030",
+      "when": null,
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "다 들리오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2432,
+          "label": "r13_v111_silluk_down13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e24fb2799219659622ad20c88a51723eef7398583e38cac2ab4239b4a91772bc",
+      "uid": "1e4767123d279f1a64077840",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0031",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "손 이쪽으로 주시오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2434,
+          "label": "r13_v111_silluk_down13",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d54e535aba283ae0bba62ab8a76636f58d9e568a24aead56ac5deb6698d6af73",
+      "uid": "de6e2374b8328042295331c1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0032",
+      "when": null,
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "……잡아 주든가.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2435,
+          "label": "r13_v111_silluk_down13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "765e9466cf1f92dc88287ccc9b3e32bd70eca61e6a63eb42df8de525f8286cac",
+      "uid": "4c21f92c3490f3f88a724ea1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0033",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "실룩은 감독 아래 인계한다. 구조했다고 기존 책임이 사라지지 않는다. 모모·굴돌 등 실제 탑승한 사람도 한 명씩 하차하고 목적지 인수를 확인한다. 없는 사람은 추가하지 않는다. 인력이 부족하면 기존 13-B의 보온·감시 대기로 이어지며 전원 완료라고 표시하지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "190f93a9001541f1c6432406c859cee51b0df397725890af1812d8726134446f",
+      "uid": "02c406645f18145211b8b1ab",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0034",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "오늘 밤은 어찌어찌 넘기겠지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2371,
+          "label": "r13_v111_family_still_here13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "336fa75058588d79e1e23fb900bcad25a42a883d9b80ad486055d9fb2a0399ac",
+      "uid": "b7a4a1f062e9d490738b1ff6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0035",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "내일 부족한 건 내일 같이 따져야죠. 지금 사람을 싣는 답 말고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2373,
+          "label": "r13_v111_family_still_here13",
+          "guards": [
+            "if r13_v111_actor_ready('mom') and room13['location']=='square':"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "acff9acaa50c88ca8a2475dca5b20d6b129d5ee511b10685ffa84e66f3abea1d",
+      "uid": "9a88a21c16fcb729dead4727",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0036",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "엄마 학교 이동 시 엄마 발화는 제외하고, 별도 집필한 아빠의 현장 잔류 반응 블록을 재생한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "16288bf151d566640535f34c9df73a1b9042430725045ce1f09c68476bcfec17",
+      "uid": "089c64db97337dc4db1c0fbe",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0037",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0037",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0037",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "그 말을 언제까지 할 수 있을까.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2377,
+          "label": "r13_v111_family_already_school13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a8b5e0999062f856992a324ebeeacbf7c89bef89bf376452542f6e7635295962",
+      "uid": "a385e01c51c0c501adab973e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0038",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0038",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0038",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "내린 사람을 다시 올려놓으라곤 하지 마세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2379,
+          "label": "r13_v111_family_already_school13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "00fb69ba22bc39ec88ea51f5821b5f568d5e65f7005cdbcb40a71a86ec276e61",
+      "uid": "86ef7ca310e74424069e3cd7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0039",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0039",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0039",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "마지막 사람이 안전하게 인계된 뒤에만 낮게 음악이 들어온다. 바둑이가 고삐를 놓는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a853c40e86c32d012f66207c11e3552b669b0f29df5530f0b36f73086a6bbe8d",
+      "uid": "e13db6fda4f8cfca0d025b49",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0040",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0040",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0040",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "내 손 좀 펴 주시오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2363,
+          "label": "r13_v111_last_cart13",
+          "guards": [
+            "if r13_v111_actor_ready('resident_badook'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "74e852cd722751e6717cc9f7c49352633f3e41381128f25a495a1d6147d11b17",
+      "uid": "4de8b914e54787891e5ee2cd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0041",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0041",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0041",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠가 고삐 자국이 남은 손가락을 하나씩 편다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "eb3fe56b0f121d2d61ca5f042853e53af06dfd1c8d31b3393c3dae1f7a04158b",
+      "uid": "cbe933adfb2d1a15f78c71e5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0042",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0042",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0042",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠가 펴 준 손을 바둑이가 천천히 쥐었다 놓는다. 광장에서는 마지막 운반이 끝난 자리를 정리한다. 자유 조사·대화가 계속 열린다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ffed4419e299c9bd46700eced0bb5f3dcc1f57fadc1fabcdaad637ab4c12acd5",
+      "uid": "4f0f712da487576ea492089e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0043",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0043",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0043",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "이후 플레이어가 실제 정지 담당자인 바둑이에게 다시 말을 걸어 앞으로의 호송을 확인한 경우에만. 다른 담당자에게 먼저 가도 된다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "523b5c2717fc8e3367f3c60b88786808956a373952ce08f134d4f172f928958a",
+      "uid": "28e47622036f9cb7f721a0c4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0044",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0044",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0044",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "내일 새 명단을 가져오면 또 태웁니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2482,
+          "label": "r13_v111_escort_refuse13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "48c19a390fe19493c8c8c61ea1f05ed04ca777d7520d9f0a85961b2e25a7bf66",
+      "uid": "15e9a579705cc53c2ddb044d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0045",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0045",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0045",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "난 안 맡겠소. 어디서 보호받는지도 확인 안 하고 사람 데려가는 일은.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2484,
+          "label": "r13_v111_escort_refuse13",
+          "guards": [
+            "if r13_v111_actor_ready('resident_badook'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "80b6fd20a4e3dd5209bd20b950d07b94fc8aae0f34255782fdaa015f3b2ac865",
+      "uid": "15df6dc07ac5111cfe33aafe",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0046",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0046",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0046",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "플레이어는 남은 정리를 계속할 수 있다. 실제로 선택해 처리한 일만 짧은 화면으로 보여 준다. 아래 화면은 모두 처리했을 때의 예이며, 손을 펴 주는 장면 뒤에 자동으로 재생하지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "527f263f8604b087693984eafb953c716b6321b2fa6c83d8a1abe3e8173125a4",
+      "uid": "00111de25415807ea9d48126",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0047",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0047",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0047",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "돌목이 현재 이송 명령에 중지를 적는다. 엄마 한 사람만 빼는 줄이 아니라 명령 전체에 그어진 줄. 사본을 아빠에게 건넨 뒤, 기존에 감독하던 사람의 기록은 그대로 덮어 둔다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8e1ccc1de2f60c3d5dfa00b8ce05eac9da642e33fb8365a8f4e0a6a8638a1251",
+      "uid": "7f38114c70e6241318686942",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0048",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0048",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0048",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "운반에서 돌아온 까로가 강제 이송을 맡지 않겠다는 뜻을 확인한다. 환자와 짐을 옮기던 손은 멈추지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "481de65e5a69c37567381d71b224d3f0f55e4f6089c3b4df08e611fad1254bfa",
+      "uid": "0f910e5dcdd38943ff8962d7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0049",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0049",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0049",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "요청을 받고 도착한 은호 앞에 사람을 묶던 끈과 잠금구가 놓인다. 돌목이 그것들을 명령서와 함께 표시해 남긴다. 담요와 보급 끈은 수레에 그대로 있다. 은호가 이 용도로 다시 빌려주지 않겠다고 확인한 뒤, 까로에게서 빈 수레를 돌려받는다. 바둑이도 호송 장비를 반납한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c32cca4447b0a5e5bf1071645c5cad53206ad7a67941af61af749abbc17992ef",
+      "uid": "441be964d765c37d51d7e574",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0050",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0050",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0050",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "자유 상태의 너울에게 돌목이 중지된 명령서를 직접 보여 준다. 너울이 구금·부상으로 감독 중인 경로에서는 그의 명령 전달 역할을 중지하는 처리 화면으로 바뀐다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c9234d180d5b6715cb4f6d716a6f077556aab93c31569727b405fb5dfbcd7e59",
+      "uid": "7810db1a398ef0de1362c999",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0051",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0051",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0051",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "수레 하나 없으면 끝날 것 같소?",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "129de43484ba9d92a91792dade1671c663fa70e2f75c5ea0bd292066d649f5d3",
+      "uid": "286496f1d71ee19d4f4a779f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0052",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0052",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0052",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "오늘 겨우 내렸어요. 또 데려가겠다고 하지 마요. 내일 저 장치도, 사람 묶는 건 떼어 놓을 겁니다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0bca64d7255d50384b835b9afc19fcf111686fadd9077084ac5922b3efc4019e",
+      "uid": "2660e88ccebbd964b26ff748",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0053",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0053",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0053",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "현재 운반·호송·입구 인수를 모두 중지한 것을 확인한 경우에만, 멈춘 명령서와 반환된 수레를 보여 준다. 아직 처리하지 않은 일은 남아 있다. 제단 장비를 확인하기 전이므로 모든 일이 끝났다는 자막은 없다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "660375714c852cca3edecc80833380c5981720a393ff95cc251af63bca5e9d17",
+      "uid": "4fab3980512c1a20cc577a8f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0054",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0054",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0054",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "판돌 씨가 내리겠답니다. 확인할 때까지 세워 주세요.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5dabae5381a5fd8765a5b425fded7829a1314c2cc212c31a668ba35cfc1dd24d",
+      "uid": "486887e88fc60b96dbd0e8e3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0055",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0055",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0055",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "그 말이 틀렸다면 인수 확인 전에는 못 보내오. 내가 고삐를 맡겠소.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b5388b20f08a175aa91924a6f10bd398eec9882fede5855d01f45c89518c4a0a",
+      "uid": "64f7162bcbcbf84b91365df0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0056",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0056",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0056",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "까로 씨, 둘을 학교까지 부탁합니다. 돌아오실 때까지 여기서 기다릴게요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2184,
+          "label": "r13_v111_family_karo13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "019ebe7f779c83cacb8b78c89ee4a12b97877aea7335455b6faaf3a79edf5cf5",
+      "uid": "8a8a3e04e7f571b7375011b2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0057",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0057",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0057",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "내가 데려다주고 올게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2186,
+          "label": "r13_v111_family_karo13",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6abdb8da6b16965e94541de781bb2a73ebece3cfcce38a84ffcff50431aedda2",
+      "uid": "03785fcf19638cf57fad181c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0058",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0058",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0058",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠도 와.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2188,
+          "label": "r13_v111_family_karo13",
+          "guards": [
+            "if r13_v111_actor_ready('daram') and room13['location']=='square':"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "11cd2932bd5e84d03da2fd896298ae6ff748fb5756fe291930835a94b06727c8",
+      "uid": "2521eed4d2986543008e1de4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0059",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0059",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0059",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응. 여기 일 보고 갈게.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2189,
+          "label": "r13_v111_family_karo13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6536ad6efb99edfec918f77f4c6a22559adac09b6b603ee210ae948c92e1f35e",
+      "uid": "b9d74c5246672941fc05ad8d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0060",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0060",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0060",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "네로 씨, 아내하고 다람이를 학교까지 같이 데려가 주시겠어요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2199,
+          "label": "r13_v111_family_nero13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "81742bf199484e9cc62489720d1e8e0f0a96596edb06efc966ad3d16cc46e23a",
+      "uid": "ba9216ba69530bbb16573d29",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0061",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0061",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0061",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "그러지요. 내가 아는 길로 갑시다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2201,
+          "label": "r13_v111_family_nero13",
+          "guards": [
+            "if r13_v111_actor_ready('resident_nero'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "316e76bc4a58b62e7f28a1f90b9fa4797e6106b469f5ee04cd0065e25ff1bd7d",
+      "uid": "4e6406b2111e7c0adb8f7f9e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0062",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0062",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0062",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "도착해서 기다릴게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2203,
+          "label": "r13_v111_family_nero13",
+          "guards": [
+            "if r13_v111_actor_ready('mom') and room13['location']=='square':"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6ed9e46c58ea1ebba855f26aeff128e2cd808173e01d5b24625e471e4a6c16ff",
+      "uid": "042ddae819268dfa22d84f3a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0063",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0063",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0063",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다람이하고 붙어 있어. 수레 쪽엔 오지 말고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2174,
+          "label": "r13_v111_family_stay13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1ea384d9484d0f59c38e219ef0172c58b51d48020c1e507568cf23fb22547920",
+      "uid": "341db09d104cf1c8fa26ce20",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0064",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0064",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0064",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "응. 나는 여기서 다람이만 볼게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2176,
+          "label": "r13_v111_family_stay13",
+          "guards": [
+            "if r13_v111_actor_ready('mom') and room13['location']=='square':"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4ea62e79e2d0e941ced0855e94092d43487c31d2f3251ade834beb8e219f855b",
+      "uid": "8f008b9f8529fbe5a5d927ce",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0065",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0065",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0065",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "모모 씨, 이제 내려요. 발판에 발부터 놓으세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2304,
+          "label": "r13_v111_momo_school13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "65322098286c62017af5c9f17c405174311539043ce06a72fe5bae63a96bc00d",
+      "uid": "bd573ce84fdd9f6f4def89f4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0066",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0066",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0066",
+      "when": null,
+      "speaker": "모모",
+      "kind": "dialogue",
+      "text": "아래에서 잡고 있어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2305,
+          "label": "r13_v111_momo_school13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0a2c883540b6dea6f8adb5acc23d4c7261ed458895d6991c3582cbed37ec8e55",
+      "uid": "0475bff60f989e2b80caa65f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0067",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0067",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0067",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "네. 놓지 않을게요.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2306,
+          "label": "r13_v111_momo_school13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d0657b6691b82ae12419d897142c122ba3fc6685844a400629a96184f81718fa",
+      "uid": "da80275ba173b3c4a30608c7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0068",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0068",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0068",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "모모 씨 자리 여기예요. 안으로 오세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2312,
+          "label": "r13_v111_momo_school13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "74efc53f573b08baddce6eba32ea772a5a81daf4ff2334682210151b7907970b",
+      "uid": "e9780ba8c5053e4a98999996",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0069",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0069",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0069",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "굴돌 씨도 내려오세요. 학교에 자리가 있습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2330,
+          "label": "r13_v111_guldol_school13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c535ff760dc25eecb82ad53c049d7d7057902b4349c0f0bf4f8b939d521de294",
+      "uid": "1a89df1a2f5a108357659989",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0070",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0070",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0070",
+      "when": null,
+      "speaker": "굴돌",
+      "kind": "dialogue",
+      "text": "이쪽 발을 먼저 놓겠소. 받쳐 주시오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2332,
+          "label": "r13_v111_guldol_school13",
+          "guards": [
+            "if r13_v111_actor_ready('resident_guldol'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "91734d43b5995f73907597aeae67b7ff67ceadcbd42c3d7ed2779b6806c22cbf",
+      "uid": "34c9ab987031c41e2e4f477f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0071",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0071",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0071",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "여기 앉으세요. 젖은 건 벗어 두시고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2337,
+          "label": "r13_v111_guldol_school13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5b716f4ddfb14dc8cb57b040fa4729dd6bd798f56797420118ea74986daaa830",
+      "uid": "b6080e00fe7846902bf692e0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0072",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0072",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0072",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "선생님도 내립니다. 아이들 있는 쪽 말고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2393,
+          "label": "r13_v111_teacher_supervised13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d2fc238a327f514fa309f4b8a287df42653fd630436e5d5e7a6ad1aa1ba26bb2",
+      "uid": "ca5054e9e87b5ebeac536322",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0073",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0073",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0073",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "학교로 가나요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2394,
+          "label": "r13_v111_teacher_supervised13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8eb8008d70f84c8775275a7e6c2d2fc6e2f384ab1579fe63e64fbaba9df8309f",
+      "uid": "72d7db606a0f44a2409c88d3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0074",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0074",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0074",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "따로 마련한 자리로 가오. 감독은 계속하겠소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2396,
+          "label": "r13_v111_teacher_supervised13",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a12b343095aa03213c4e9fd83df347643196ab6ca6e5e45e9ae5f0eb0e29df8b",
+      "uid": "1cc0657bdcebe1eb7b72b64b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0075",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0075",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0075",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "실룩 씨, 이쪽으로 손 주세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2436,
+          "label": "r13_v111_silluk_down13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0a045b74cdb425566c8b284bb4020b2ef8cad9f31dc242f651a9c314962769d4",
+      "uid": "7f3363d107567aca7d283d64",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0076",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0076",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0076",
+      "when": null,
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "늦었소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2437,
+          "label": "r13_v111_silluk_down13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "14d3ce176b97fe60614ddaf3385a3071337cea48ed1b11d5b4ea34a2b528221c",
+      "uid": "8b53aa4c8cf9aa3e312cc8f5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0077",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0077",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0077",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "발판을 보시오. 내려도 감독은 그대로요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2439,
+          "label": "r13_v111_silluk_down13",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c964801d61ca04f5889e02e80c4d84be5819f9598c18fc7d96367179fc630547",
+      "uid": "2555656fbece732f6cb49f35",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0078",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0078",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0078",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "내일 새 명단이 와도 또 태우진 않을 거죠?",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9c04b9699ee41b589c10280f5f6ee7d153f0dcaa828d6ba8a402820a64f1bbcd",
+      "uid": "0fdf444c4ec36c4eb60db71c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0079",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0079",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0079",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "어디서 누가 받는지도 모르는 이송은 맡지 않겠소.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7588a04336b3dc1b9ef400ff25f6416abf923262a0526dc7ffc11b057101d544",
+      "uid": "35da1357e1e677f1dcf2d16d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0080",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0080",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0080",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아내 이름만 빼는 게 아닙니다. 이 명령 전부요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2489,
+          "label": "r13_v111_order_stop13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ea5cb2cf2d10c92ae4cd2917165e9ae22a06549890d794a12edc1fb9351a19b7",
+      "uid": "513a3b188dd9ab36473b8f25",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0081",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0081",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0081",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "전체에 중지를 적겠소. 입구에서도 받지 않겠소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2491,
+          "label": "r13_v111_order_stop13",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bfc988aa451875505f2015eae86bd75eb9ad25ca686b41fa5a0c9e018de4bfcb",
+      "uid": "c37b1a1e673593c46ccfa961",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0082",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0082",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0082",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "또 사람 태워 달라고 하면요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2500,
+          "label": "r13_v111_driver_refuse13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3106aaa74b810424fe8b0a54bc7d55bba284097aa49ea3198fc77ee66d5db954",
+      "uid": "b74d078ba358238e1be45989",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0083",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0083",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0083",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "안 해. 환자나 짐은 옮겨도, 묶어서 데려가는 건 안 맡아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2502,
+          "label": "r13_v111_driver_refuse13",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f5a57844554890c5d1b6e0ba5787a13531cf4bff011b608e40c29afbb2abc1ac",
+      "uid": "229f5b36ff79e679d0edeef1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0084",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0084",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0084",
+      "when": null,
+      "speaker": "은호",
+      "kind": "dialogue",
+      "text": "내 수레 맞소. 이 일에 다시 빌려주지는 않겠소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2511,
+          "label": "r13_v111_cart_return13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e4ca38dc3d9601050a562326019b694e497d2612f754019ba4632d5ad6653b43",
+      "uid": "a72d83d3fe16767f7f7382c2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0085",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0085",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0085",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "비웠어. 여기서 받아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2513,
+          "label": "r13_v111_cart_return13",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "762eceadf7648071ec98df35c04eb7b30fe446a62a490ed800cec21aee5834fb",
+      "uid": "9cfaa5880320dd9fc3d74d48",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0086",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0086",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0086",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "사람 묶던 것만 따로 표시했소. 담요와 보급 끈은 그대로요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2515,
+          "label": "r13_v111_cart_return13",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a05c6f38b1fc55c97f2c2d6e286c123a7c5da6a1f430f2c1d42ed4b86d279199",
+      "uid": "da482c16dcb99ee41d0028de",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0087",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0087",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0087",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "엄마와 다람은 어디에 있을까?",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b442309e0663f7f2c6802781834c0aae71be088d00a4c98b8875671759b3c078",
+      "uid": "4a351a57ed9d5148fde8baba",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S04_L0088",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S04_L0088",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S04_L0088",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "내일 일은 나도 모르겠어요. 그렇다고 오늘 이 사람들을 다시 태울 순 없잖아요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2378,
+          "label": "r13_v111_family_already_school13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "768a079cc0e7a9734284e81e35e4cf08a3e8f65673d5354b650daef0a3ac8894",
+      "uid": "37b323ee2924df8baf1f3411",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

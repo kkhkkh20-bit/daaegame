@@ -1,0 +1,1915 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D02_S01_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아침, 광장으로 가기 전 마구간 앞 까로에게 들른다. 바퀴는 받침 위에 올려져 있다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fd4474073cd1b4e8d78a91374c65efc7d7396fac4435cc7f0a65777e718b2c4a",
+      "uid": "f5f2a4659128d2e195541793",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0002",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아내를 못 만났습니다. 아이부터 데리고 돌아가는 마차는 있습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 424,
+          "label": "r13_v111_day2",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "287077db81aedc9591df552ca55457ed8bfd07ed8e2dea1fbd78511e74f6fa4f",
+      "uid": "3f0da0c50b5c4d02e2a4d4c2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0003",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "오늘 출발하는 건 없어요. 내 축은 아직 못 씁니다. 대체 축 구하는 중이에요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 424,
+          "label": "r13_v111_day2",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4e3f6777d38b64f5b0fd7cad7e56799153e5f9685b85a19f4fcc6dcd7b64b5b5",
+      "uid": "33398aef40057ff311d12089",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0004",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "고갯길은요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 424,
+          "label": "r13_v111_day2",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b08ecda311799aa4f4bd3c0228ee133464a65ebe73e1992e4f2d7d05d8376d28",
+      "uid": "a315357155966913c7bd8bbd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0005",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "고쳐도 고갯길부터 봐야죠. 차가 굴러간다고 길까지 열리는 건 아니니.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 424,
+          "label": "r13_v111_day2",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a800750658bd6a438d250ecf2dfd2772977b292ff6e10a8cd2fcd912016f337f",
+      "uid": "11c8b4a27dcb29a9c8543c14",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0006",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "탈 수 있는 편이 생기면 알려 주십시오. 두 사람, 아내를 찾으면 세 사람입니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 424,
+          "label": "r13_v111_day2",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "43fe4ac2b2fa9c2d75e5d4ede213a8c70aad79517d3f2868f8b6e53abc87eed5",
+      "uid": "4c89fe83021664ec4d667ebd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0007",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "출발 잡기 전에 직접 알려 드릴게요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 424,
+          "label": "r13_v111_day2",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "77e7932fcea2b2ecc154d40386164a87ef218661d2ea7feff9418b8a10aa2ef6",
+      "uid": "d4dd3ce181ff7fec86a1f574",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0008",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠는 출발 문의를 남기고 다람과 광장으로 간다. 귀환 불가능을 영구 확정하거나 수색 외 선택을 없애지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a76794c633938c19d05501c2841f5fe6f8c9df2df7a203198b8d03a42ef8858e",
+      "uid": "48c13c7e4495b7479f0cfd49",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0009",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "등 덮개가 바람에 달그락거린다. 초롱은 장갑 한쪽을 입에 물고 나사를 조인다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "91cc668e4aa19cbc962044fdcc03b7c0d887274fd48a1e037ccef1f33aa16222",
+      "uid": "6cb2a33322f6c79209d55acc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0010",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "초롱 씨입니까? 아내가 남긴 메모를 보고 왔습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 432,
+          "label": "r13_v111_square2",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7c3a7eaffe689d921feb3f12597a303898cd89fe3c2c57e282b4cb122882f99e",
+      "uid": "18cfee56985ee895ee86bf9f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0011",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "잠깐, 이 끈 좀요. 아뇨, 아래를 잡으면 덮개가 떨어져요. 여기.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 432,
+          "label": "r13_v111_square2",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "dcfa3e9ee62811fc5cedbe853bad4d0dc61935abd69f09ba61ae8fbd21948a4f",
+      "uid": "4790b5da7af33cf30631582b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0012",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "조작: 표시된 덮개 지지 끈을 잡는다. 초롱이 고정을 끝낸다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "75c14d03a4ad3591617fcade3ca03c95f3c7df03f91b7ca4f46acd602b6c85af",
+      "uid": "0baa2aa0f3b2505a74c05812",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0013",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "초롱이 장갑 낀 손으로 돌을 잠깐 들어 받침의 젖은 가루를 털고 다시 놓는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 447,
+          "label": "r13_v111_chorong",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "41f5b3769206f3420e56164c2331647650d01a0d3dd9c30b2cb70f012fad23a3",
+      "uid": "e674c1ee851ae1398a488972",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0014",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "밤에도 확인할 때 이걸 털어 줘요. 고인 물 얼면 돌이 받침에 붙거든요. 됐습니다. 어느 분인데요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 447,
+          "label": "r13_v111_chorong",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0e73d5ebeff9e90f65cb86afb3435293a42aabf4a4924f6bbf11c2b56783c385",
+      "uid": "5f828ab65960be497c3359a8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0015",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이 글씨를 아십니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 447,
+          "label": "r13_v111_chorong",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f0f5e8e1338c8d157384005f0b320c5d69e7d8987552933593bb00fe61017244",
+      "uid": "41c10cd320f4b38b4c2cddb4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0016",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "아. 오셨군요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 447,
+          "label": "r13_v111_chorong",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "419616800fb7eba2f74a10607912bb0e47b950c03f07ea5c5a873bf05e9e6dd4",
+      "uid": "a6cc004c7f7134b2304051bb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0017",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어디 있는지 압니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 447,
+          "label": "r13_v111_chorong",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7871c3b901348c97ff2eed3430f8825587ba53524cfeca22314a73bf30bc8cb7",
+      "uid": "55b12df188324c881d788060",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0018",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "마지막으로 본 건 여관을 나오던 날이에요. 식량을 대신 놓아 줄 수 있냐고 했어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 447,
+          "label": "r13_v111_chorong",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "35b0571f0dd8f4ed650c62153a4e3b70ef72a71fdd2cfdba222c27ef95960a0d",
+      "uid": "01dbd69e36973d0880419e26",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0019",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어디에요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 447,
+          "label": "r13_v111_chorong",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "02a17c175ff8c2c1ca177eb2c8fa62ed870f9b29221d8db73cae9b840c6c81c1",
+      "uid": "8a2db3b4a239ee4d193e111d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0020",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "북쪽 물자 길 교환함이요. 거기 산다는 말은 없었어요. 갈 때마다 비어 있었고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 447,
+          "label": "r13_v111_chorong",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b89d90a0ba2b63d4fbd36bc57a5cb8a0a0e84d53f96819e3e58e7b154b584ccc",
+      "uid": "2af1d844fcb41ecbdaf30c8d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0021",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "저희가 온다고 했습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 447,
+          "label": "r13_v111_chorong",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d31c080ec61911dd5bf1e3e12aadf8e9bc14baa5324d63d78f1dfbf7a45db9fd",
+      "uid": "d9aa8a05e6063b325999c679",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0022",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "가족 얘기는 했어요. 온다는 말은 못 들었어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 447,
+          "label": "r13_v111_chorong",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9fa3e0c458edcd59ac7adc7e07640e2ba39b33458b68f8c6bca45569216b67f8",
+      "uid": "49defbeba9254fd8f35492f6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0023",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 편지의 주소를 손가락으로 가렸다가 다시 펼쳤다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 447,
+          "label": "r13_v111_chorong",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8c926ce8004ed9aaa1b2844b867078ebb817686d60e071df45df98a267484479",
+      "uid": "b09d72d86fc7e4d5efc31652",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0024",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이 편지를 보낸 것도 아내입니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 447,
+          "label": "r13_v111_chorong",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1765fda6e7485d6072c41831da945a25fdcf0951c4e80f34e22b71285b95afb3",
+      "uid": "5ee8387dfdd85ad59eccd09b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0025",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "그건 우체국에 물어야겠네요. 제가 옮긴 적은 없어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 447,
+          "label": "r13_v111_chorong",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "63ce43e8455c60ce73c6764064033e0ea8ceff72f4ae4b36fce136a8a4690b51",
+      "uid": "8ac2dac20b850e7916406c17",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0026",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그 교환함으로 갑시다. 지금.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 447,
+          "label": "r13_v111_chorong",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "29dcd091a59194ad2ecab29c8121d4e931322c1d1bc8aad8e3d81fed96bcfde9",
+      "uid": "41bf145fb05817a688b2ca8c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0027",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "부인이 거기 계신다는 뜻은 아니에요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 447,
+          "label": "r13_v111_chorong",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "49d70e5913694bcf0b743e773128776e713ac0c0344592540be3cf644de79b70",
+      "uid": "e6b30c8a7ee5ceebea56b16d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0028",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그래도 마지막으로 닿는 곳 아닙니까. 길만 알려 주세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 447,
+          "label": "r13_v111_chorong",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4160731cc5a63f7b531a1e152d94c08a548b9ce2eae8b07b69e546a7cb6b94c3",
+      "uid": "e81803550eea4500e917e9d6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0029",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "혼자 길 잘못 들면 더 늦어요. 내 순회 길이니까 같이 가요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 447,
+          "label": "r13_v111_chorong",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6c42b4d81617ff3006d0999b71b2bf285e850db5ee49ae34f9b1c13c16ea57c2",
+      "uid": "f6cced2efb9546d5b2066cb5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0030",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "광장에서 북쪽 물자 길로 실제 이동. 아빠가 앞서 걷다가 갈림길에서 멈춘다. 다람의 숨이 거칠다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "37e5caf2cab4067889b676236cea51cdba3e78ded22b04de025dfca782adc812",
+      "uid": "a59818cd6552eb44212f5097",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0031",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠. 손 좀 놓아. 아파.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 461,
+          "label": "r13_v111_box_path",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "44ded89f3955a785eb8b8888284c842fbcce826ab3050c7dda687b137c103e82",
+      "uid": "ae97ceec05341a0b4a555d70",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0032",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "……미안. 내가 너무 빨랐어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 461,
+          "label": "r13_v111_box_path",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c3602e21fdaf6e44592cc3a6e9850be82e4f3731a3889b350bf28ba75c19c62a",
+      "uid": "2536754f4b5dc0f3d350b281",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0033",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "교환함 앞. 초롱이 함의 걸쇠를 연다. 예전에 놓은 빈 천 주머니 하나, 회신 칸에는 아무것도 없다. 주위에 드러난 은신처나 사람은 없다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "53dd15322a1911459e34a70a53cb0c60573d528134fe7a0204ad5f4311850511",
+      "uid": "426384f482e15f928257d340",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0034",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "여보!",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 477,
+          "label": "r13_v111_box_empty",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7ba45e17b55ca95d9e94c50f8911de3a50632901c31489f79aa0c6a553cf291b",
+      "uid": "96909147533a7fcdecd65393",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0035",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 숲 쪽으로 한 번 더 불렀다. 떨어지는 눈 소리만 들렸다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 477,
+          "label": "r13_v111_box_empty",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0f1ff21cba65f8e28be6780dc33966318b1dc6d41ef2c88c48546bf1527f894c",
+      "uid": "e4e56938b9a99b4e1cbfe4c2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0036",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "함에 넣어 둔 식량이 없어질 때는 있었어요. 누가 가져가는 걸 본 적은 없고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 477,
+          "label": "r13_v111_box_empty",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4eaaeadbee60fdd8fc0b691cfad9f259a1a86bd8d3747b370513ad64325b3787",
+      "uid": "7090171ecc80b1d65c91da8a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0037",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0037",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0037",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "여기서 기다리면…….",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 477,
+          "label": "r13_v111_box_empty",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8b2044f751e56cbbca07b329ad8c8bef094c4bb382ce324b3369ffe923ef8863",
+      "uid": "3903ed417e8ba6caf63bf6fa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0038",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0038",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0038",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마도 우리가 기다리는지 모르잖아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 477,
+          "label": "r13_v111_box_empty",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b07f62f231671f225470ebf98ee574f00c941e5ba4c2ab4af2f59c0d7c652d2f",
+      "uid": "cb53cb9f9aa90bf6367aeb87",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0039",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0039",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0039",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "조작: “다돌과 다람 도착. 만나고 싶다. 초롱에게 답을 맡겨 줘.” 쪽지를 직접 작성해 회신 칸 옆에 넣는다. 함 안과 주변을 직접 살핀 뒤 종료.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fa059d6e343abea9e60cb2f60377d61d82a48bc451dc85b8e823b8b688254436",
+      "uid": "e952ea989eecb343b2f6783b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0040",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0040",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0040",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "오후에 다시 오겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 493,
+          "label": "r13_v111_box_written",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d03c7246482fa83fe6b32e291f8b50d7ccaf7eedcbcec38867fc0b3fdfb5ee1b",
+      "uid": "d0d07276c54566442f49263e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0041",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0041",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0041",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "해 지기 전에 왕복하세요. 낮에도 갈림길을 놓쳤잖아요. 저녁엔 전 반대쪽 등을 돌아요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 493,
+          "label": "r13_v111_box_written",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f6514545f23f82ccfea97805a42321b1e6e33a7a358234fc9ba627c4cab17ab7",
+      "uid": "10cf19041c84f0f806cf9768",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0042",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0042",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0042",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 길이 갈라지는 곳을 수첩에 그렸다. 그제야 주머니 속 봉투가 손끝에 걸렸다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 493,
+          "label": "r13_v111_box_written",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "70cce84f7f8f661fecdd3e3f73afc1a622b1669a2531cda400faa14979f6a17c",
+      "uid": "06fb73addce0496e53daab4f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0043",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0043",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0043",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "기다린다던 편지는 있는데, 여기에는 아무도 없네.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 493,
+          "label": "r13_v111_box_written",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fc9c4d0593d23972489893a05a8e15cb83fd465c27b9d467f502b248b8ed4c9e",
+      "uid": "f8ccf3dbf9f8d82f30a0757f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0044",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0044",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0044",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "우체국 가?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 493,
+          "label": "r13_v111_box_written",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a784afabfd44f07df11dcf2886508a9a43f4046388b8bd80228154fb6d98b3ea",
+      "uid": "48b0da0a02eb4f7c24276be0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0045",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S01_L0045",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S01_L0045",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응. 누가 보냈는지 물어보자. 그리고 엄마 얼굴을 보여 줄 그림도 필요해.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 493,
+          "label": "r13_v111_box_written",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a99dfd68811cfcf4034740c41a6ebf3572d704d44b5f3b04257489733bfbdb2a",
+      "uid": "3b8b87165c522724059eccd3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

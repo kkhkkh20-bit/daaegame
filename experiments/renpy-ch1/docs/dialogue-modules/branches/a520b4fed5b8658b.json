@@ -1,0 +1,847 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:257:30",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        14770,
+        14804
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_nt_night8",
+      "block": "r13_nt_night8",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:257:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "밤, 지붕 위. 솜이가 앞장서고, 콩이와 토실이 뒤따랐다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 257,
+          "label": "r13_nt_night8",
+          "guards": [
+            "if r13_has(\"kids_club\"):"
+          ]
+        }
+      ],
+      "line": 257,
+      "scene_title": "r13_nt_night8",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "3d2910a354b4ab3819701aef19cca589567f401a5afb4011baa7c97d034aafaa",
+      "uid": "c8bc8298619a2a654e4c9479",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_night8|rpy_literal|r13_nt_night8|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:259:30",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        14903,
+        14924
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_nt_night8",
+      "block": "r13_nt_night8",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:259:30",
+      "when": null,
+      "speaker": "resident_kongi",
+      "kind": "dialogue",
+      "text": "구운 밤 세 개. 공짜야. 이번만.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 259,
+          "label": "r13_nt_night8",
+          "guards": [
+            "if r13_has(\"kids_club\"):"
+          ]
+        }
+      ],
+      "line": 259,
+      "scene_title": "r13_nt_night8",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "c740e2470b88bb86753635c64a37aad0542947260b91e952ba466f3759332e76",
+      "uid": "8fb6ff1e58df16724d07063d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_night8|rpy_literal|r13_nt_night8|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:260:30",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        14957,
+        14993
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_nt_night8",
+      "block": "r13_nt_night8",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:260:30",
+      "when": null,
+      "speaker": "resident_tosil",
+      "kind": "dialogue",
+      "text": "나도 썼어. \"다람아, 우리 할머니가 너 걱정 많이 해.\"",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 260,
+          "label": "r13_nt_night8",
+          "guards": [
+            "if r13_has(\"kids_club\"):"
+          ]
+        }
+      ],
+      "line": 260,
+      "scene_title": "r13_nt_night8",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "d0b726391764b28f4c87af59e34e9a594fd9311fb6cde328687d8880f480a6f8",
+      "uid": "33cc5938889cd6149d2cf22a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_night8|rpy_literal|r13_nt_night8|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:261:18",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        15014,
+        15040
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_nt_night8",
+      "block": "r13_nt_night8",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:261:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "한참 뒤, 같은 틈으로 접힌 종이가 나왔다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 261,
+          "label": "r13_nt_night8",
+          "guards": [
+            "if r13_has(\"kids_club\"):"
+          ]
+        }
+      ],
+      "line": 261,
+      "scene_title": "r13_nt_night8",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "483d296ed0552610d74b6e8b282412481e172316351850bac49819a75a968764",
+      "uid": "204f8a4e25b2125921e31ab2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_night8|rpy_literal|r13_nt_night8|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:262:18",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        15061,
+        15112
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_nt_night8",
+      "block": "r13_nt_night8",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:262:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "(쪽지) 아빠. 할아버지가 내 팔을 잡았어. 아팠어. 나는 손을 쳤어. 머리는 안 쳤어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 262,
+          "label": "r13_nt_night8",
+          "guards": [
+            "if r13_has(\"kids_club\"):"
+          ]
+        }
+      ],
+      "line": 262,
+      "scene_title": "r13_nt_night8",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "f9cc7fee2801a4cbf64eb8918fad5d0152bba5a5566f06f18bd7fd163aa2284b",
+      "uid": "d3fbaa90c839a000f33586b5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_night8|rpy_literal|r13_nt_night8|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:263:18",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        15133,
+        15181
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_nt_night8",
+      "block": "r13_nt_night8",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:263:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "(쪽지) 촛대가 떨어져서 부러졌어. 나는 침대 밑에 들어갔어. 무서워서 눈 감았어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 263,
+          "label": "r13_nt_night8",
+          "guards": [
+            "if r13_has(\"kids_club\"):"
+          ]
+        }
+      ],
+      "line": 263,
+      "scene_title": "r13_nt_night8",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "3733569402da52c9fe4de6cb08c8fb26f04bf4fde468bb834c26695bf2a85bcf",
+      "uid": "aa3eeb4b4f6e5ebc35d169d9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_night8|rpy_literal|r13_nt_night8|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:264:18",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        15202,
+        15229
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_nt_night8",
+      "block": "r13_nt_night8",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:264:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "(쪽지) 그다음에 쿵 소리 났어. 나 아니야.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 264,
+          "label": "r13_nt_night8",
+          "guards": [
+            "if r13_has(\"kids_club\"):"
+          ]
+        }
+      ],
+      "line": 264,
+      "scene_title": "r13_nt_night8",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "c642f6ea0e3c96750e96e7b6dfc60c9eb31f1a1c4069ce6de18be5095443fe07",
+      "uid": "eb6b7d2303ae69009fed5f5c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_night8|rpy_literal|r13_nt_night8|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:265:18",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        15250,
+        15286
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_nt_night8",
+      "block": "r13_nt_night8",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:265:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "(쪽지) 아빠한테 나 안 무섭다고 해 줘. ……조금만 무서워.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 265,
+          "label": "r13_nt_night8",
+          "guards": [
+            "if r13_has(\"kids_club\"):"
+          ]
+        }
+      ],
+      "line": 265,
+      "scene_title": "r13_nt_night8",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "9bdfffcba0903d1ebe6ac1d4e2f8876d88b1c4715687f6245e0c6af3cb2195c8",
+      "uid": "e6b671f367e472b4b941411e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_night8|rpy_literal|r13_nt_night8|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:271:30",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        15579,
+        15635
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_nt_night8",
+      "block": "r13_nt_night8",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:271:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "보호실 창은 밤새 어두웠다. 창 아래 눈밭에 오래 서 있었다. 안에서는 아무 소리도 나지 않았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 271,
+          "label": "r13_nt_night8",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 271,
+      "scene_title": "r13_nt_night8",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "606d0c16edd646f801abf8e59ca3e6d33dff7ce2636ec309d905a989036f2e4b",
+      "uid": "638a0bc445d9209a7c489d01",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_night8|rpy_literal|r13_nt_night8|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:274:30",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        15787,
+        15829
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_nt_night8",
+      "block": "r13_nt_night8",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:274:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "종탑 길 모퉁이. 그림자 둘이 서 있다가, 바둑이의 등불을 보고 멈췄다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 274,
+          "label": "r13_nt_night8",
+          "guards": [
+            "if r13_has(\"nt_chorong_safe\"):"
+          ]
+        }
+      ],
+      "line": 274,
+      "scene_title": "r13_nt_night8",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "0fa383aa7f865681f3ca3981aca0282f3afcacb2d42210fa33288a57bf328dea",
+      "uid": "29f4e8fd9c399b782672e4d6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_night8|rpy_literal|r13_nt_night8|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:276:18",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        15929,
+        15949
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_nt_night8",
+      "block": "r13_nt_night8",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:276:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "그림자들이 광장 쪽으로 사라졌다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 276,
+          "label": "r13_nt_night8",
+          "guards": [
+            "if r13_has(\"nt_chorong_safe\"):"
+          ]
+        }
+      ],
+      "line": 276,
+      "scene_title": "r13_nt_night8",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "8a1a429d9fec8e49a6188e1a323be2bf5fd86a0f9ea511403102e77070aca52b",
+      "uid": "dd25dc4c13bc6be11483c6ae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_night8|rpy_literal|r13_nt_night8|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:278:18",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        16027,
+        16105
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_nt_night8",
+      "block": "r13_nt_night8",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:278:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "(편지) 다람아, 엄마 여기 있어. 조금만 기다려. 이 마을로 오라는 편지는 엄마가 쓴 게 아니야. 아빠한테 말해 줘. 할머니를 조심해.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 278,
+          "label": "r13_nt_night8",
+          "guards": [
+            "if r13_has(\"nt_chorong_safe\"):"
+          ]
+        }
+      ],
+      "line": 278,
+      "scene_title": "r13_nt_night8",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "8a9c885112000ee87d1d6b707ae150bd6f75f7278e1a80af071d6702e00eab4b",
+      "uid": "66674512b6fbd6976f8b8639",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_night8|rpy_literal|r13_nt_night8|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:282:30",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        16310,
+        16363
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_nt_night8",
+      "block": "r13_nt_night8",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:282:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "강가 쪽 먼 길에서 초롱이 쓰러져 있었다. 이마가 찢기고, 등잔은 깨졌다. 숨은 붙어 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 282,
+          "label": "r13_nt_night8",
+          "guards": [
+            "elif r13_has(\"nt_chorong_half\"):"
+          ]
+        }
+      ],
+      "line": 282,
+      "scene_title": "r13_nt_night8",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "79ab8df72022048bdb0a81b2b14e9dabf83614594033c980ad1cb9280240d626",
+      "uid": "8b6b44f985e5ce96843e3382",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_night8|rpy_literal|r13_nt_night8|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:286:30",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        16581,
+        16631
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_nt_night8",
+      "block": "r13_nt_night8",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:286:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "등이 다 켜질 시간이 지났다. 광장 동쪽 등 셋이 아직 어두웠다. 초롱은 오지 않았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 286,
+          "label": "r13_nt_night8",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 286,
+      "scene_title": "r13_nt_night8",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "270e273ffb66b7df865cdd12a6d361e747c7a155eddb8fb24778ddf6f900e0e1",
+      "uid": "1be5271291129abfb34efc22",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_night8|rpy_literal|r13_nt_night8|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:287:18",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        16652,
+        16699
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_nt_night8",
+      "block": "r13_nt_night8",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:287:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "종탑 계단 아래. 눈 위에 깨진 등잔이 엎어져 있었다. 기름이 눈을 검게 적셨다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 287,
+          "label": "r13_nt_night8",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 287,
+      "scene_title": "r13_nt_night8",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "5e9a916b89ac4478dda54c3bad8f2e89a4eb767c75d7d28040b151fa74e7589e",
+      "uid": "d07869ac853ee18b6e61cea7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_night8|rpy_literal|r13_nt_night8|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:288:18",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        16720,
+        16763
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_nt_night8",
+      "block": "r13_nt_night8",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:288:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "계단 맨 아래에 초롱이 누워 있었다. 두 팔로 가슴을 꼭 끌어안은 채였다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 288,
+          "label": "r13_nt_night8",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 288,
+      "scene_title": "r13_nt_night8",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "f7f549361a5579e3728cbc80b20fc2d6d651440b2c200f5d65950d1b763b5565",
+      "uid": "7143874036bf8bef3f98bfaa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_night8|rpy_literal|r13_nt_night8|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:289:18",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        16817,
+        16855
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_nt_night8",
+      "block": "r13_nt_night8",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:289:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "눈 위로 여러 사람의 발자국이 광장 쪽으로 흩어져 달아나 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 289,
+          "label": "r13_nt_night8",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 289,
+      "scene_title": "r13_nt_night8",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "864f5c394cd4e8ad371923db008ed0a0e44e51e903964339c939c60ad05dbe4e",
+      "uid": "4f558c145e26ceab10a6dcf8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_night8|rpy_literal|r13_nt_night8|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:290:18",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        16876,
+        16880
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_nt_night8",
+      "block": "r13_nt_night8",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:290:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "……",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 290,
+          "label": "r13_nt_night8",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 290,
+      "scene_title": "r13_nt_night8",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "a7f878b8ced1a7957c560d573e30ddbbc1696e38c370513aacbbf4bff12e7f43",
+      "uid": "050bd7952f88a178555fcbf3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_night8|rpy_literal|r13_nt_night8|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:291:18",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        16914,
+        16959
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_nt_night8",
+      "block": "r13_nt_night8",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:291:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "초롱의 팔을 풀자, 품 안에서 젖은 편지 한 장이 나왔다. 남은 건 한 줄뿐.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 291,
+          "label": "r13_nt_night8",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 291,
+      "scene_title": "r13_nt_night8",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "196a7ec4c7b2b724634cc2e239bdeb8a968443e0826bbd7bc2080c0337614a07",
+      "uid": "f37a94ddfd6118d530442647",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_night8|rpy_literal|r13_nt_night8|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:292:18",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        16980,
+        17000
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_nt_night8",
+      "block": "r13_nt_night8",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:292:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "(편지) 다람아, 엄마 여기 있…",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 292,
+          "label": "r13_nt_night8",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 292,
+      "scene_title": "r13_nt_night8",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "583314477e15223374c011b2890fc96b7029e9dea7c5059354ab32d5b512cb78",
+      "uid": "0c468f06d34a6e7913c3d7ae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_night8|rpy_literal|r13_nt_night8|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:299:38",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        17337,
+        17396
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_nt_night8",
+      "block": "r13_nt_night8",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:299:38",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "초롱의 허리춤에서 점검함 열쇠를 꺼냈다. 등 켜는 법은 몰랐다. 초롱이 하던 걸 떠올리며 하나씩 했다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 299,
+          "label": "r13_nt_night8",
+          "guards": [
+            "else:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 299,
+      "scene_title": "r13_nt_night8",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "6136f32c92adf47df4aa1e8b512e11f73772ea255063218709d68439e71429c3",
+      "uid": "b8544f58c0a3366e92544939",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_night8|rpy_literal|r13_nt_night8|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

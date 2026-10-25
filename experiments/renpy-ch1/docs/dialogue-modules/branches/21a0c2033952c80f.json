@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_AUD_D09_01",
+      "file": "game/v111/newworld/d09.json",
+      "path": [
+        "before",
+        "MS14_D09_P01_L0006",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D09_P01_L0006",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "도토가 주방에서 쇠 레버를 올린다. 13호에서 내가 책장 아래 책을 당기자, 책장 뒤로 좁은 문이 열린다. 문 안쪽에는 손잡이가 없다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1279,
+          "label": "r13_v111_prevent_walk9",
+          "guards": []
+        }
+      ],
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b6ad6a05d63439df019e5608ab9fea79d40e75b4905df3194c837f0960463bb2",
+      "baseline_hash": "bb6589ccf391fba388ae1d220fcb9a49e35bf471779da9892a7e44412d6bd5a9",
+      "uid": "02d8767bdbd2bfcf05c4f393",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

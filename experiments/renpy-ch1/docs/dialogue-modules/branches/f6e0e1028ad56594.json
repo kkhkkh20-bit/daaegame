@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_OP_D11_02",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "blocks",
+        "hyp5_won11",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "hyp5_won11",
+      "block": "hyp5_won11",
+      "placement": "blocks",
+      "ref": "hyp5_won11",
+      "when": "prevention_stone",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "7일 낮 13호 난로에 이 돌이 들어 있었습니다. 그 앞에 잠깐 앉았을 뿐인데, 하려던 일을 잊었습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 833,
+          "label": "r13_v111_hyp5_won11",
+          "guards": []
+        }
+      ],
+      "scene_title": "hyp5_won11",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "0a9b2477d897bfe21c587e8428ada638cf65cd4248163c7867874970fe6d7e63",
+      "uid": "7547ba6956ad14070f552abb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|hyp5_won11|patch|hyp5_won11|prevention_stone",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OP_D11_03",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "blocks",
+        "hyp5_won11",
+        5,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "hyp5_won11",
+      "block": "hyp5_won11",
+      "placement": "blocks",
+      "ref": "hyp5_won11",
+      "when": "prevention_stone",
+      "speaker": "부엉이",
+      "kind": "dialogue",
+      "text": "……그날 저녁 나는 바로 그 방에서 기다렸소. 저 돌이 그대로였다면…… 나도 무쇠처럼 되었겠지.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 833,
+          "label": "r13_v111_hyp5_won11",
+          "guards": []
+        }
+      ],
+      "scene_title": "hyp5_won11",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "37b428bd4aff37c5d391009049d09f2733ee46792292926ded04f322d9be4661",
+      "uid": "da22483cb50d0f533251d441",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|hyp5_won11|patch|hyp5_won11|prevention_stone",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

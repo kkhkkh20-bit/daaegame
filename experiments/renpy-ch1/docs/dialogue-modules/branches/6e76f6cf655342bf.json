@@ -1,0 +1,786 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D08_S02_A01",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S02_L0002",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S02_L0002",
+      "when": null,
+      "speaker": "부리",
+      "kind": "dialogue",
+      "text": "할아버지는 새 수첩을 늘 품에 넣고 다녔어요. 남 앞에선 펴지도 않았고요. 그런데…… 그 새 수첩이 없어요. 옷에도, 방에도요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 879,
+          "label": "r13_v111_room_checked8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-2. 오전 / 13호 — 없어진 조각의 자리",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "54470ef594bf662a8541fa3ff917f162709b47dc3d15fabbb4d3425fc74c89ff",
+      "uid": "fcf0fccb8a23db7733f621c0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D08_S02_A02",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S02_L0005",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S02_L0005",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "할머니가 계단 쪽에서 올라와 내 곁에 선다. 부리가 듣지 못하게 목소리를 낮춘다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 882,
+          "label": "r13_v111_room_checked8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-2. 오전 / 13호 — 없어진 조각의 자리",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "4097766654c54d78d8816039062fdafaaafc792f6339d46eff580d5ff386852d",
+      "uid": "908a108e8c7db9314c9e2934",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D08_S02_A03",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S02_L0005",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S02_L0005",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "그 도토 말이에요. 장부를 정리한다더니, 노인 책상에 펼쳐 놓은 수첩만 자꾸 들여다보더라고요. 그러니 도둑 소리를 들었겠지요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 882,
+          "label": "r13_v111_room_checked8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-2. 오전 / 13호 — 없어진 조각의 자리",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "4c6cea5ee0146b3b9833460e3f3faf57c6caa7731d936a04ad8ed6c6500d6dd2",
+      "uid": "461bdd7e794be49a1ff376c9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D08_S02_A04",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S02_L0005",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S02_L0005",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "할머니는 대답을 기다리지 않고 내려간다. 나는 그 말을 수첩 귀퉁이에 그대로 적는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 882,
+          "label": "r13_v111_room_checked8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-2. 오전 / 13호 — 없어진 조각의 자리",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "2eae14d8c5594e1dae7f8d57e57bbba7b20090bf3d6f06281742505533b78583",
+      "uid": "c5aedede3ce0b9cb0c3704ac",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D08_S02_A05",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S02_L0011",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S02_L0011",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "난로 속에 타다 남은 돌이 하나 있다. 아직 검푸른 빛이 돈다. 배급 돌이라면 찍혀 있어야 할 표시가 없다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 886,
+          "label": "r13_v111_room_checked8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-2. 오전 / 13호 — 없어진 조각의 자리",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "19cc418c7d0078fd646a56bc3db54ad2f43628eaf8392018e97b87190bc4890f",
+      "uid": "54791ab2985be49d587c90a0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D08_S02_A06",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S02_L0011",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S02_L0011",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "도토 씨. 13호 난로 돌은 어제 갈았다고 하셨지요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 886,
+          "label": "r13_v111_room_checked8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-2. 오전 / 13호 — 없어진 조각의 자리",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "b4ba574ac18606019bc36489e1bf0a795879094548e1196efe8df225eb9637d7",
+      "uid": "8560de8a6bb34bac7cd3f32e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D08_S02_A07",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S02_L0011",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S02_L0011",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "예, 예. 배급받은 돌로요. 표시가 찍힌 걸 넣었습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 886,
+          "label": "r13_v111_room_checked8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-2. 오전 / 13호 — 없어진 조각의 자리",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "b513747b7f5c2d3b4c04939be1c0312aec9f0c9681c80aa7000fc128a28ef90e",
+      "uid": "a85d436206dab9df5db0593c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D08_S02_A08",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S02_L0011",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S02_L0011",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그런데…… 이 돌엔 표시가 없습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 886,
+          "label": "r13_v111_room_checked8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-2. 오전 / 13호 — 없어진 조각의 자리",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "101dda49a7fc2ba076e98720ab5bc5be10baf02e9e8a9905f3820808b8e8a50d",
+      "uid": "9e577f07c562ee2a2d2e1099",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D08_S02_A09",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S02_L0011",
+        4,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S02_L0011",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "……제가 넣은 돌이 아닙니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 886,
+          "label": "r13_v111_room_checked8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-2. 오전 / 13호 — 없어진 조각의 자리",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "da1dd1e3171116a4d302b178057e039e3bffaa12ab90e8eaabae09dde7eee28b",
+      "uid": "285649b2f9fb2b4abf37d3e3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OP_D08_01",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S02_L0011",
+        5,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S02_L0011",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "난로 옆 재받이를 헤집자 식은 돌 하나가 나온다. 배급 표시가 또렷하고, 거의 타지 않았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 886,
+          "label": "r13_v111_room_checked8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-2. 오전 / 13호 — 없어진 조각의 자리",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "097e0769b93fc0d191a2c1878f439400ca4e2a3e286df69d725367455a98bd6c",
+      "uid": "2e31bc92eb60e0f8d41ebbc3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OP_D08_02",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S02_L0011",
+        6,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S02_L0011",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "……이게 제가 넣은 돌입니다. 누가 꺼내서 재에 묻었네요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 886,
+          "label": "r13_v111_room_checked8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-2. 오전 / 13호 — 없어진 조각의 자리",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "ec0688e3cdd7613cef8d1be72965ac4f8b52b9b14900e8d85bc07eaab10956c1",
+      "uid": "bf29fc184c47066f5f4cece8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D08_S02_A10",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S02_L0014",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S02_L0014",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "대야 곁에 물수건이 걸려 있다. 바싹 말라 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 888,
+          "label": "r13_v111_room_checked8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-2. 오전 / 13호 — 없어진 조각의 자리",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "fe47ef78083ea6119145743270ad013a66d0ce547f3df89c24f620f4e89b78c5",
+      "uid": "cb146a5e932c5e50c1c7ebcc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D08_S02_A11",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S02_L0014",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S02_L0014",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다람이가 그러더군요. 아저씨가 금방 온다고 하고…… 방을 나갔다고요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 888,
+          "label": "r13_v111_room_checked8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-2. 오전 / 13호 — 없어진 조각의 자리",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "094e1473109b4b6607f36d65b7b627f5bfb67e4442b573a899f76487f2efeb80",
+      "uid": "018ed827efbe60241ca6a53b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D08_S02_A12",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S02_L0014",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S02_L0014",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "문 앞에서 물수건을 적셨다고 하셨지요. 그 물수건이…… 이겁니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 888,
+          "label": "r13_v111_room_checked8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-2. 오전 / 13호 — 없어진 조각의 자리",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "8849a2ad5fac945977e2d9430980b21ce603a2d3cbb97944ec6bc49f6f83435a",
+      "uid": "d0373dee947f231d92f4e8bd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D08_S02_V01",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S02_L0021",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S02_L0021",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "‘내 종이 놔.’ 그대로 적어 두겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 895,
+          "label": "r13_v111_room_checked8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-2. 오전 / 13호 — 없어진 조각의 자리",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "f8da88ddafd5eb176a0fcffd1dbbc7b98711eeaacc5968d1c3d05915e940aa47",
+      "uid": "8b7cef89b239bf37d4048d98",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D08_S02_V02",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S02_L0033",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S02_L0033",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "thought",
+      "text": "다람이의 두 손이 다 이 틈 앞에 보였다고 했지.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 907,
+          "label": "r13_v111_room_checked8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-2. 오전 / 13호 — 없어진 조각의 자리",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "c55e70d4d44d1d963590dbea7e0340c4bc2ce866ffb55682c1dc18a38651577d",
+      "uid": "6676ba338b9188a048055d85",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AUD_D08_01",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S02_L0033",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S02_L0033",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "문틈에서 책상 옆, 부엉이가 쓰러져 있던 자리까지 걸음으로 재 본다. 문틈에 엎드린 채로는 손을 뻗어도 닿지 않는 거리다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 907,
+          "label": "r13_v111_room_checked8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-2. 오전 / 13호 — 없어진 조각의 자리",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "4c44ba6917d2f814708c8ba4c08d1a2eccf41178323d6df6513058c0267e78c1",
+      "uid": "c992cd3f059e7f1b910ebc00",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AR_D08_06",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S02_L0029",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S02_L0029",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다람이가 책장 쪽에서 찬 바람이 왔다더군요. 저 책장 벽 너머가 어딥니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 903,
+          "label": "r13_v111_room_checked8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-2. 오전 / 13호 — 없어진 조각의 자리",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "a06cbbf699741c0e21f641ffc14d0cffa97f8bd2a0a94b39e6c92877bea93c3a",
+      "uid": "52b15aad2321503638afa594",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AR_D08_07",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S02_L0029",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S02_L0029",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "거긴…… 주방 아궁이 벽이랑 붙어 있어요. 저도 열어 본 적은 없어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 903,
+          "label": "r13_v111_room_checked8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-2. 오전 / 13호 — 없어진 조각의 자리",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "3247fb175ba32ff040d3105a30f6e7bb645c11b34941ffbcf80ca33641b599a4",
+      "uid": "442ce04634ee5b6bd49baa6d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AR_D08_08",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S02_L0029",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S02_L0029",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그럼 벽을 아는 사람부터 부르죠. 혼자 열진 않겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 903,
+          "label": "r13_v111_room_checked8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-2. 오전 / 13호 — 없어진 조각의 자리",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "91304d28e925a648b5eb633534887f406326bfea598b5a7383d62ec324f07c9b",
+      "uid": "4396776818e37bcb1b1f8882",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

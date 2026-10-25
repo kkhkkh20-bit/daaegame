@@ -1,0 +1,168 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D12_S01_A01",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "after",
+        "MS14_D12_S01_L0018",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D12_S01_L0018",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "학교 문 옆 대피 명단 아래에 ‘보호시설로 이송 예정’ 칸이 있다. 그 칸에 선생님 곁에 선 아이, 새미의 이름이 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1071,
+          "label": "r13_v111_morning_notice12",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "e86cfdc54e772c4f1ffb0dea5b91b2f9671283fa574b805fae8ea956a29078d0",
+      "uid": "e48c3ffa77573fac44da865a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D12_S01_A02",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "after",
+        "MS14_D12_S01_L0018",
+        9,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D12_S01_L0018",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "6일에 학교로 데려온 창고 아이들 이름은 없다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1071,
+          "label": "r13_v111_morning_notice12",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "46f1db12424b9586c6f7aa8f9fb6eeb360025c5dc836d5fde02570bd42a906f0",
+      "uid": "8edf7ca3945a3b9fec4343e3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D12_S01_A03",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "after",
+        "MS14_D12_S01_L0018",
+        10,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D12_S01_L0018",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "선생님이 명단을 한 번 쓸어 보고는, 아무 말 없이 잘 자리 목록을 접어 품에 넣는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1071,
+          "label": "r13_v111_morning_notice12",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "880265737a94454afe21e74bb9142d2bcc202ebf8d5f06278f6082dcd5855bb8",
+      "uid": "71ef44d1184ded7830e34836",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D12_S01_A04",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "after",
+        "MS14_D12_S01_L0025",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D12_S01_L0025",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "서리가 약장 안의 병을 남아 있어야 할 목록과 하나씩 맞춘다. 약장 밖으로 나간 병까지 확인한 것은 아니다. 서리가 목록 위에 손을 멈췄다가 문을 닫는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1108,
+          "label": "r13_v111_medicine12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "b11aa53cdb595b16a9bc00ca9d5c84260e2f67eebbff52d76aff8e5fc95bce14",
+      "uid": "a86fdb2a45f76c263672bf69",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_revision.rpy:19:12",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        709,
+        721
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_object_mechanism",
+      "block": "r13_object_mechanism",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:19:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "2층 객실로 나간다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 19,
+          "label": "r13_object_mechanism",
+          "guards": [
+            "if kind==\"passage_exit\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 19,
+      "scene_title": "r13_object_mechanism",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "06f51764bf9acffd9d84e8a7c7c2fb46168c3fd1fb7aa9dd910a164dffda4563",
+      "uid": "549301155b2e9b6214c803e1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_object_mechanism|rpy_menu|r13_object_mechanism|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:21:12",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        781,
+        792
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_object_mechanism",
+      "block": "r13_object_mechanism",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:21:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "통로를 더 살핀다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 21,
+          "label": "r13_object_mechanism",
+          "guards": [
+            "if kind==\"passage_exit\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 21,
+      "scene_title": "r13_object_mechanism",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "3ca699d4c94526bbba2511b61bf3919f8ffe6097e8b2f0b02e47f11faf00db7b",
+      "uid": "5c2687fb17b8211d90d19a00",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_object_mechanism|rpy_menu|r13_object_mechanism|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:52:12",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        2196,
+        2217
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_object_mechanism",
+      "block": "r13_object_mechanism",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:52:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "책의 아래쪽을 누르고 옆으로 젖힌다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 52,
+          "label": "r13_object_mechanism",
+          "guards": [
+            "if kind==\"book_latch\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 52,
+      "scene_title": "r13_object_mechanism",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "5e03029425ed436e6130ae3fdcc7004cb89c59d79d66d9fbdbac8bdc30963aa8",
+      "uid": "2c0708d764fc38fba7381383",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_object_mechanism|rpy_menu|r13_object_mechanism|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:66:12",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        3081,
+        3092
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_object_mechanism",
+      "block": "r13_object_mechanism",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:66:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "다른 곳을 살핀다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 66,
+          "label": "r13_object_mechanism",
+          "guards": [
+            "if kind==\"book_latch\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 66,
+      "scene_title": "r13_object_mechanism",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "b50b08f72c3a156c5c965b7ac980d9f4e6c00d72b1225b3ac03755a9d81add0f",
+      "uid": "2e73a72322deebfcbab5ed94",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_object_mechanism|rpy_menu|r13_object_mechanism|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

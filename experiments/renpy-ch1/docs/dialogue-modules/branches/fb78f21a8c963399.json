@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_owl_buri.rpy:99:17",
+      "file": "game/systems/room13_owl_buri.rpy",
+      "path": [
+        5797,
+        5804
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_owl_omen",
+      "block": "r13_owl_omen",
+      "placement": "literal",
+      "ref": "game/systems/room13_owl_buri.rpy:99:17",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "장갑이요?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_owl_buri.rpy",
+          "line": 99,
+          "label": "r13_owl_omen",
+          "guards": []
+        }
+      ],
+      "line": 99,
+      "scene_title": "r13_owl_omen",
+      "source_hash": "db5bd71cd78f8a37555c256d5aa1064675f5c6d6a3560b1af22518f20f98d9e9",
+      "baseline_hash": "bb07b90d0c371f99905caed8958aee20ca1ff0fe280695925f83788e5bbe550a",
+      "uid": "02d6fc7345e1d9d61ef2575a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_owl_omen|rpy_literal|r13_owl_omen|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

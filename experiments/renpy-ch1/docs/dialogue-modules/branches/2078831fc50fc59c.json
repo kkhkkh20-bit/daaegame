@@ -1,0 +1,1277 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D12_S01_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S01_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S01_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "상실 경로의 아침. 아랫길 천막. 아빠가 천을 들어 올리기 전에 까로가 안쪽을 보고 모자를 벗는다. 서로 기대 앉은 몸. 네로의 손 아래 이름표 꾸러미가 놓여 있다. 아이에게 시신 확인을 맡기지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f16c4b84368048f4aba2da747a12cdcd1ce1713a6604a1fbfd89f0fd963976fa",
+      "uid": "6e71c9f6941308a6610febbd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S01_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S01_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S01_L0002",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "네로 씨.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1039,
+          "label": "r13_v111_loss_names12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5699008618825e9b00b1f497ac23582b9c9cf4f2157eba46b858ff030e30297d",
+      "uid": "65c328cf522dcc72139107f8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S01_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S01_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S01_L0003",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠가 한 번 더 부른다. 까로는 이번에는 대답하지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "04054cb89cb929bcce60fa49f4853922c094d805cde3df0d03fe6d3a7e0bfe9f",
+      "uid": "2d425c10d1b948f18fca7f34",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S01_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S01_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S01_L0004",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "광장. 확인된 이름만 이름판에 옮긴다. 다람이 오늘 아빠가 가져온 표를 대조하다 멈춘다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5192dba63523b159f2caeb1fd5736ee6443e57e5c906909e8c636d6fdb8c0bd5",
+      "uid": "ee06bc23137f85488c078a64",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S01_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S01_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S01_L0005",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "이 아저씨…… 어제 우리 학교까지 왔었는데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1042,
+          "label": "r13_v111_loss_names12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8dcd9d0e48d318c503fd5738dded6ef605948b252472202cf28af4e2dfa0ec9d",
+      "uid": "dc1f04cb627653ebd76088d9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S01_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S01_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S01_L0006",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1043,
+          "label": "r13_v111_loss_names12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8025c713f26164a6787608a6cbce1b8ac0cfe963a42e1416578db60193e95224",
+      "uid": "1a533507873604fc69b49847",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S01_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S01_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S01_L0007",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그러면 왜 써?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1044,
+          "label": "r13_v111_loss_names12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "837e91391f57d4917148a0b5994c5c00f8264fae01267a3bdd4f9acd61d8e879",
+      "uid": "1195fe50f73b3f1efafc21a0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S01_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S01_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S01_L0008",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "우리가 안 잊으려고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1045,
+          "label": "r13_v111_loss_names12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "83ddf94418aedd7da05188d9d2cf99906af99530e18bea67b2d6b903583b8c34",
+      "uid": "f045c4a4a18f05bfd8a38c30",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S01_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S01_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S01_L0009",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "입력: 아빠가 연필을 받는다. 다람에게 읽기를 끝내도록 강요하지 않는다. 이름을 적은 뒤 남은 표를 가족에게 돌려준다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7433d7135bc4528e5944224c6cef56e5fd7bf6e5bffb6adae7ba4f663389e344",
+      "uid": "f150540454e08b1e30f4bd37",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S01_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S01_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S01_L0010",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "전원 예방 경로의 교체. 학교에서 네로가 이름표를 묶는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d6844a384b943700efe5709c3754dcfa0d939aeaac565667e4044bbee411127d",
+      "uid": "0040ae2fa17d25a55ead2ee0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S01_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S01_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S01_L0011",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "또 잃어버릴까 봐 묶는 거요. 죽은 사람 표가 아니라.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1052,
+          "label": "r13_v111_living_names12",
+          "guards": [
+            "if r13_v111_actor_ready('resident_nero'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7e6c763a070d4ab432bd11ba6641dd52bf13ddd34d05cb9a74994cf2749f4610",
+      "uid": "d5f9fc48f42d3108550295d3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S01_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S01_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S01_L0012",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "알아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1053,
+          "label": "r13_v111_living_names12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4167bd50bea30dc931bd2a3cac3a7f3498d488493e0a3a582aff497aac71c39e",
+      "uid": "93f0f9e68e30e0bf41ecc2cc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S01_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S01_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S01_L0013",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "어제는 고맙다고 못 했네.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1055,
+          "label": "r13_v111_living_names12",
+          "guards": [
+            "if r13_v111_actor_ready('resident_nero'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f265c80a965525ad00fa0bca7860b43246521f271f34d7ef4fc4cfc0ce2dc6b9",
+      "uid": "f108ba7ea1f712f451a2e59f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S01_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S01_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S01_L0014",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "나는 문만 열었어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1056,
+          "label": "r13_v111_living_names12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d58d79b4501088baee6680c5ec0e07a23f1115ab5b1196be2a5410e34bc0a7b9",
+      "uid": "68f152809553895246dba774",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S01_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S01_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S01_L0015",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "그게 닫혀 있었으면 못 들어왔지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1058,
+          "label": "r13_v111_living_names12",
+          "guards": [
+            "if r13_v111_actor_ready('resident_nero'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "15e4b52e33b22f2d83cf8e7e9e05aba01aa0ebbd4bd50c8bb109dd2f97c43e5d",
+      "uid": "5ebe7105118bd38e64a38ed2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S01_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S01_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S01_L0016",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "공통. 학교 문 옆 대피 명단. ‘보호시설로 이송 예정’으로 표시된 칸은 침상 배정에서 빠져 있다. 선생님이 빈 칸에 손가락을 댄다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "96956f6634cc37e1ac07cb7fb1b50bb731295850f50e8363e50298940273b81f",
+      "uid": "7d7907732547712f5bdb62b2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S01_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S01_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S01_L0017",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "이 아이는 여기서 자는데 왜 자리가 없어요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1069,
+          "label": "r13_v111_morning_notice12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "43ab72b037d6f181df0836669014506df6536137889e1d854afd0807b9b53f29",
+      "uid": "cc357c6ae46052758b70fa5e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S01_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S01_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S01_L0018",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "다른 데로 간다고 올라온 이름은 여기 배급에서 뺐다 하오. 내가 정한 것은 아니오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1071,
+          "label": "r13_v111_morning_notice12",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e3727ad0f32e51f30951d8dac95316523b868c8649702b87101f4e3200389e78",
+      "uid": "87da8c4713fe557010d8a8dc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S01_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S01_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S01_L0019",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "여기서 먹었어요. 어제도.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1072,
+          "label": "r13_v111_morning_notice12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5c68c226db36a1226e33943e62e61b1356f8b459d1962d95a5aa979f50d322e1",
+      "uid": "6f2340790c46859744ea82ba",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S01_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S01_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S01_L0020",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어디로 가는지부터 물을게요. 받는 사람 이름도요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1073,
+          "label": "r13_v111_morning_notice12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "68469a04508146683127e7b1ae78bd733eacd4aa3225e8087bbc1d4d45cc7a81",
+      "uid": "b0385a116324d5f2516138d2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S01_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S01_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S01_L0021",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "확인하는 동안은요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1074,
+          "label": "r13_v111_morning_notice12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0378734db0e9b78df1f575d88792d5d8b804656855ad4807d855a1029b358470",
+      "uid": "30bbb31c9fb6515a17cf182a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S01_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S01_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S01_L0022",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "선생님이 명단을 아빠에게 넘기지 않고 자기 품에 접는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "45ccbc7b99e5a6a9d61eaac41e4c4f6c1da794064ef0ae3de9500589bc357ee5",
+      "uid": "c7f16d435415ad0a9864028a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S01_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S01_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S01_L0023",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "밥부터 할게요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1075,
+          "label": "r13_v111_morning_notice12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a5e19cc1fc944d85b61d3d22c04dfbd8ed84aead18552b30d8a2c12b322e2e74",
+      "uid": "070abe8500601d13a2f9c469",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S01_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S01_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S01_L0024",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "약장 열쇠는 직접 갖고 계셔 주세요. 없어진 병도 있는지 봐 주시고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1107,
+          "label": "r13_v111_medicine12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7286078a8a3c7fdeb0badebe572f7c6061e530ef12e20cbe8bce63ab8f13a574",
+      "uid": "c36a37d49cbe7a871afe6386",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S01_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S01_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S01_L0025",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "내가 열고 닫을게요. 반출한 게 있는지도 확인하겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1108,
+          "label": "r13_v111_medicine12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7c9395159064971767770dd75f6449c3ba2536ceed33cad9f902ce0afa6dab74",
+      "uid": "9f89a16522bd9b2e2d7f4515",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S01_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S01_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S01_L0026",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "여기면 아이들이 누울 수 있겠어요. 아직 받침이 안 왔네요.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다. 조건부 replace/drop 이후 원문 fallback이며 무조건 표시된다는 뜻이 아니다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1120,
+          "label": "r13_v111_warm_place12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "warm_support_pending"
+        ],
+        "drop_conditions": [
+          "warm_support_ready"
+        ]
+      },
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ddb66f5dd58dd06d6b751124c97fdbaf94c190742ba9cd85e9fddc78a87bf561",
+      "uid": "1df167bc3b0f1caf385a2a89",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S01_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S01_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S01_L0027",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "자리만요. 받침은 아직이에요. 앉혀 놓고 따뜻하다고 하면 안 돼요.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다. 조건부 replace/drop 이후 원문 fallback이며 무조건 표시된다는 뜻이 아니다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1121,
+          "label": "r13_v111_warm_place12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "warm_support_pending"
+        ],
+        "drop_conditions": [
+          "warm_support_ready"
+        ]
+      },
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "743186449cd158b658bb95754e95bb2cfde9915cecdeabe0567dea3701e47377",
+      "uid": "cdd72ef4c167082a9447a9ec",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S01_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S01_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S01_L0028",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "문 앞까지 가져왔어. 안쪽 어디로 놓을까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1128,
+          "label": "r13_v111_carrier12",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fa278f944049201b5b1f5b2fd7ae971c181b796cc4f5f2de537ab50030c373b6",
+      "uid": "6a22f31e287292113b9d1271",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S01_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S01_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S01_L0029",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "비워 둔 자리로요. 아이들 옮길 때도 여기 있어 주세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1129,
+          "label": "r13_v111_carrier12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "012d37e25b1818b0f2418601762e552d6d59bf357b280bdf2bd6a05439a8b292",
+      "uid": "7a389b8d5187069b4bf3cf3e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S01_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S01_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S01_L0030",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "그래. 이번 운반은 여기 맡을게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1131,
+          "label": "r13_v111_carrier12",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "58b6427950ffd6e39882da45aefdc26aaea22f662ad48ff5ad7fde9994286a2e",
+      "uid": "56b6be0baadda3cb43dcce37",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

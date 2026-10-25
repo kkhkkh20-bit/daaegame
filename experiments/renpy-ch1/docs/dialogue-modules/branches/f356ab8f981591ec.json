@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events2.rpy:343:23",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        18603,
+        18626
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_siluk_advance_followup",
+      "block": "r13_siluk_advance_followup",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:343:23",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "그럼 돌려받을 돈으로 남겨 두겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 343,
+          "label": "r13_siluk_advance_followup",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 343,
+      "scene_title": "r13_siluk_advance_followup",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "863272e9a8d6299adcd9555a8b7e8ebd50ce3679ebec56b937451dab209b6c78",
+      "uid": "445fbfabc8203bdb02313e00",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_siluk_advance_followup|rpy_literal|r13_siluk_advance_followup|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

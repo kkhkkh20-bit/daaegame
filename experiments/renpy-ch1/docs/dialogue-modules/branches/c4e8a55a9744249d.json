@@ -1,0 +1,937 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D10_S01_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S01_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S01_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[회관 대기실. 다람이 갈아입은 옷의 소매를 잡아당긴다. 서리가 의자 두 개를 붙이고 너울에게 한 걸음 물러서라고 한다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-1. 아침 / 회관 대기실 — 아빠 말부터 고치기",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1f4dfdf4af47762381ef611496d3215083994959fe60bfc4d5d55e5a5a84a0aa",
+      "uid": "846a436b43855d62008feaaf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S01_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S01_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S01_L0002",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "나, 할아버지 미워한 적 있어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1388,
+          "label": "r13_v111_waiting10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-1. 아침 / 회관 대기실 — 아빠 말부터 고치기",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3090039057557f21eb26a7697a5fe86cfa3701bce01db61c5a3f94760417db04",
+      "uid": "61095279bf4a0f029f42b200",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S01_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S01_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S01_L0003",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "언제?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1389,
+          "label": "r13_v111_waiting10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-1. 아침 / 회관 대기실 — 아빠 말부터 고치기",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b040d1090ce14c1d6d1804fbd5d1b10218013f1abead0ac5914f572d46c8b32d",
+      "uid": "7eeff2c07f6059ffa344b80f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S01_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S01_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S01_L0004",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "글씨 틀렸다고 자꾸 다시 쓰랬을 때. 없어졌으면 좋겠다고 생각했어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1390,
+          "label": "r13_v111_waiting10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-1. 아침 / 회관 대기실 — 아빠 말부터 고치기",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9dd9e76723c33f7efee214c36a8c53f35b9b097be474839a6bc4679b829c7dfb",
+      "uid": "514d3df0b3be9c0ef2085153",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S01_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S01_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S01_L0005",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그렇게 생각해서 돌아가신 게 아니야.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1391,
+          "label": "r13_v111_waiting10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-1. 아침 / 회관 대기실 — 아빠 말부터 고치기",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "613a13b872965d3e19f09bdbd38d8eae32abde3f2629c7e7bb4962e74ddc779a",
+      "uid": "c3baf6c1261b3608c164aa8d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S01_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S01_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S01_L0006",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "손 친 건?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1392,
+          "label": "r13_v111_waiting10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-1. 아침 / 회관 대기실 — 아빠 말부터 고치기",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f138e1a7298c106e26b5631fe4d6f91eeb573f40b6ac6e2751e9f84ec3ee41ff",
+      "uid": "522ee2a95ee4396c7f6267af",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S01_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S01_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S01_L0007",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "네가 손목을 친 일하고, 할아버지가 돌아가신 건 따로 봐야 해. 오늘 그 얘기 할 거야.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1393,
+          "label": "r13_v111_waiting10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-1. 아침 / 회관 대기실 — 아빠 말부터 고치기",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3b78efee1b125f3aca21029b974448dc353cc47e913fb0797887a82bd76ce5b8",
+      "uid": "81b7421d318f31c83ecd6add",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S01_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S01_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S01_L0008",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "내가 친 것도 말해?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1394,
+          "label": "r13_v111_waiting10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-1. 아침 / 회관 대기실 — 아빠 말부터 고치기",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1cef41f3b34146ab76bceaebf1b671b22cdb836b1b11b49a71dc01f11a649fe4",
+      "uid": "d3e7ad1cb22084895da9b2ef",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S01_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S01_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S01_L0009",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응. 그건 숨기지 않을게. 대신 네가 안 한 일까지 했다고 두지도 않을 거야.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1395,
+          "label": "r13_v111_waiting10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-1. 아침 / 회관 대기실 — 아빠 말부터 고치기",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "87ccef4cb7c78904e7e651f1051f873be0cef1b28b76e07e95c2c4c80cd724af",
+      "uid": "1bbc28f2112663eac6e9b606",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S01_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S01_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S01_L0010",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[부리가 문을 열고 들어온다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-1. 아침 / 회관 대기실 — 아빠 말부터 고치기",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "958e6fedcf8fbe3514c9809eab9725ce7a35c8d87cf9bd1c8c18a517d5c5a2a0",
+      "uid": "d7a8465661ff0a8fc0469b58",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S01_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S01_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S01_L0011",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "미안해. 손을 쳤어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1396,
+          "label": "r13_v111_waiting10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-1. 아침 / 회관 대기실 — 아빠 말부터 고치기",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "292746063e8c4e224e59a9cfa1e6b7f5497737055eb21085645df5f889e10b6d",
+      "uid": "966e99c5a43d8058500bb0ba",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S01_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S01_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S01_L0012",
+      "when": null,
+      "speaker": "부리",
+      "kind": "dialogue",
+      "text": "들었어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1397,
+          "label": "r13_v111_waiting10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-1. 아침 / 회관 대기실 — 아빠 말부터 고치기",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4a81a45bf83ef074a1e13b1ef146701d0adbef703b7eef93886cfa170e6f7e3f",
+      "uid": "b090160b0dd03ccf01c77e3d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S01_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S01_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S01_L0013",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "할아버지가…….",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1398,
+          "label": "r13_v111_waiting10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-1. 아침 / 회관 대기실 — 아빠 말부터 고치기",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c7d479fe179baba9a490a9f6353f1812ee78a248e78b3de9533e86cdbb403ff7",
+      "uid": "99a6ffb596ea76b8b7fdec2e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S01_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S01_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S01_L0014",
+      "when": null,
+      "speaker": "부리",
+      "kind": "dialogue",
+      "text": "지금은 안 들을래.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1399,
+          "label": "r13_v111_waiting10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-1. 아침 / 회관 대기실 — 아빠 말부터 고치기",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d7bce9c5ec5b285ed801e04a6be607c00da3bbc74fe88821b2049c2da5ff9d5f",
+      "uid": "e1d2b39cff2e91e42f387d67",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S01_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S01_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S01_L0015",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[부리가 내민 손에 아빠가 수첩 원본을 돌려준다. 허락받아 옮겨 적은 장만 챙긴다. 부리는 회관으로 들어간다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-1. 아침 / 회관 대기실 — 아빠 말부터 고치기",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "990df71f2456b6866bc15808480386a15e003c46cc037a7a4044220eda865f85",
+      "uid": "7c0c83a7e9f6a6fa743d7676",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S01_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S01_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S01_L0016",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "나 싫어하나 봐.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1400,
+          "label": "r13_v111_waiting10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-1. 아침 / 회관 대기실 — 아빠 말부터 고치기",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b047bd8b48bb6002f2eb3b95c3a0fc03ab440ad77e6b60ca166f5f5b19813028",
+      "uid": "71698dcc4aa1e379080f70bc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S01_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S01_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S01_L0017",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "할아버지가 많이 보고 싶겠지. 지금 바로 괜찮다고 해 주기는 어려울 거야.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1401,
+          "label": "r13_v111_waiting10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-1. 아침 / 회관 대기실 — 아빠 말부터 고치기",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "90df0ae55436326c173aed253ca20f7c24d63a7e8b50d7d3713c38c9227fdbc1",
+      "uid": "35a0a45da00ca5d2a6a7bfb2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S01_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S01_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S01_L0018",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[모은 자료를 확인한다. 없는 증거는 열리지 않는다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-1. 아침 / 회관 대기실 — 아빠 말부터 고치기",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3d5e98fc721cbffbce6743f8828090be7ee4c303c819fe389f6b4656e7518ce1",
+      "uid": "1dfd7f58f8079120f58b85b8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S01_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S01_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S01_L0019",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: BURI_notebook=returned; D10_S01_main_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-1. 아침 / 회관 대기실 — 아빠 말부터 고치기",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "dacb822ebceedc966c2042151a979974fe5c89d9e3135bcf1d293d293f6e1d57",
+      "uid": "6b18f0a2550aec0cb82bf266",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S01_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S01_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S01_L0020",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아직 다 못 살펴봤어. 조금만 기다려 줘.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-1. 아침 / 회관 대기실 — 아빠 말부터 고치기",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d993da97d433c125af5be96670051c07393d4018af872084e6eceac16ddad8da",
+      "uid": "318c7e1cdda5d0dcd26b83e6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S01_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S01_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S01_L0021",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠, 오늘도 올 거지?",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-1. 아침 / 회관 대기실 — 아빠 말부터 고치기",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c7c2ca367f0a2f53bed8a52ca05aa4bac47ee551c4c2e57e8a546714662bbc16",
+      "uid": "65e896573e2e9487060e62f1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S01_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S01_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S01_L0022",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응. 어디 가는지 말하고 갈게.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-1. 아침 / 회관 대기실 — 아빠 말부터 고치기",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "55549fd6143d6ce6babd7ecb77f74b9972f681170d6c9a36101a8b822d185ffc",
+      "uid": "dc374a41d54d3bbb5891fca6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S01_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S01_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S01_L0023",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[미확인 장소·쟁점만 표시. 범인 이름이나 미확보 정답은 표시하지 않는다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-1. 아침 / 회관 대기실 — 아빠 말부터 고치기",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f66b8f1d07934cf5b4061ec71fbdf2da60e6516b8155be389c7e655a5878eb0f",
+      "uid": "a95c931b6596f52cc332d14f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

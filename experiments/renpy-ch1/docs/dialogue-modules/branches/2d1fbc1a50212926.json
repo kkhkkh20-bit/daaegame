@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events.rpy:293:26",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        16177,
+        16244
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ev_b_missed",
+      "block": "r13_ev_b_missed",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:293:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "광장에서 사람들이 수군거렸다. 어제 백 부인 창고에서 약초 꾸러미가 사라졌다고 했다. 범인은 아직 못 잡았다고 했다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 293,
+          "label": "r13_ev_b_missed",
+          "guards": []
+        }
+      ],
+      "line": 293,
+      "scene_title": "r13_ev_b_missed",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "97a0d4dfbbf0ffbd116b6b1260cd5d3fefccb03ee6a0a031b3b2733128d71eff",
+      "uid": "0bb57fbf86dbf4936af9a07b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ev_b_missed|rpy_literal|r13_ev_b_missed|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

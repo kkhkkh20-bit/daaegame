@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "lock_check5:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "lock_check5",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 5,
+      "scene": "lock_check5",
+      "block": "lock_check5",
+      "placement": "binding",
+      "ref": "lock_check5:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "문과 창문 잠금을 확인한다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "room13",
+        "person": null,
+        "object": "window"
+      },
+      "scene_title": "lock_check5",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "38c4a3a0a7dca72260582633cad26fd81e1ea4928a4f6ce2415ae1c7049a7ab5",
+      "uid": "ed01f22192ece7cb7377b3a4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|lock_check5|choice|lock_check5|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "lock_check5:1",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "lock_check5",
+        "options",
+        1,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 5,
+      "scene": "lock_check5",
+      "block": "lock_check5",
+      "placement": "binding",
+      "ref": "lock_check5:1",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "책상 접시를 본다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "snack_bagged5",
+            null
+          ]
+        ],
+        "location": "room13",
+        "person": null,
+        "object": "bread"
+      },
+      "scene_title": "lock_check5",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "4e0419d3681cf74873e1ece2271e8613ea7a6674fbcd74b036a9418a655fdb43",
+      "uid": "855d37994d367d1a432aaa97",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|lock_check5|choice|lock_check5|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

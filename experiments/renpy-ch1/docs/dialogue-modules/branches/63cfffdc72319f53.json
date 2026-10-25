@@ -1,0 +1,91 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D03_S05_L0070",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "replace",
+        "MS14_D03_S05_L0070",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D03_S05_L0070",
+      "when": "lamp_partial",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "……그것만으론 부족하네요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1143,
+          "label": "r13_v111_knife_wrong",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1146,
+          "label": "r13_v111_knife_wrong",
+          "guards": []
+        }
+      ],
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "c371a5b66ab28c4f2df8d3cbd162e617b3fa1facb7abd1582753430007a9ee47",
+      "uid": "bedfb8ce217d1e100def2159",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|patch|replace|lamp_partial",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0041",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "replace",
+        "MS14_D03_S05_L0041",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D03_S05_L0041",
+      "when": "lamp_partial",
+      "speaker": "백 부인",
+      "kind": "dialogue",
+      "text": "누가 꺼냈는지도 못 밝혔잖아요. 내 거래까지 늘어놓진 말아요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1198,
+          "label": "r13_v111_trial_choices",
+          "guards": []
+        }
+      ],
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "cad7055b448d6e03873cf5a738de429e307d0b1d8a9487fcea2a2a2b6d9efbe7",
+      "uid": "042d0a5cc9de158c6dfd4f77",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|patch|replace|lamp_partial",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:74:162",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        4141,
+        4175
+      ],
+      "origin": "rpy_literal",
+      "day": 2,
+      "scene": "r13_first_day_checkin",
+      "block": "r13_first_day_checkin",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:74:162",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "며칠째 안 보여요. 조사하러 나가면 밤낮이 없던 사람이라.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 74,
+          "label": "r13_first_day_checkin",
+          "guards": []
+        }
+      ],
+      "line": 74,
+      "scene_title": "r13_first_day_checkin",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "020eaff29e476e3e6dc62c152e6c6348e6e1cc58be3c8bda6ea6c91500ae7a80",
+      "uid": "9e452139012ce9e41e1b9636",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_first_day_checkin|rpy_literal|r13_first_day_checkin|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:74:232",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        4211,
+        4231
+      ],
+      "origin": "rpy_literal",
+      "day": 2,
+      "scene": "r13_first_day_checkin",
+      "block": "r13_first_day_checkin",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:74:232",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "방은 그대로 뒀지. 올라가 봐요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 74,
+          "label": "r13_first_day_checkin",
+          "guards": []
+        }
+      ],
+      "line": 74,
+      "scene_title": "r13_first_day_checkin",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "0a4566abedbb88a485b2b55469e4a5d02e151201d966449ead4d22fb7f9dd0eb",
+      "uid": "5cd106c62cf416c0384c8e36",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_first_day_checkin|rpy_literal|r13_first_day_checkin|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:74:342",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        4321,
+        4343
+      ],
+      "origin": "rpy_literal",
+      "day": 2,
+      "scene": "r13_first_day_checkin",
+      "block": "r13_first_day_checkin",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:74:342",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "마지막으로 돌아온 날은 기억하십니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 74,
+          "label": "r13_first_day_checkin",
+          "guards": []
+        }
+      ],
+      "line": 74,
+      "scene_title": "r13_first_day_checkin",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "e5f9cd2fd9966c5bf4d504dc3afdfaad5156ce427af7d5d95766a7d014ba87e6",
+      "uid": "ce3537106f00487a7f24d719",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_first_day_checkin|rpy_literal|r13_first_day_checkin|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

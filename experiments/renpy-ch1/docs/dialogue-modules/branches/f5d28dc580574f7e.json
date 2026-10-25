@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:368:26",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        20808,
+        20861
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ep1_ubak",
+      "block": "r13_ep1_ubak",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:368:26",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "제 심부름이었습니다. 그리고 이 아이가 돌려놨다면, 새벽엔 조각이 등 안에 있었어야 합니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 368,
+          "label": "r13_ep1_ubak",
+          "guards": []
+        }
+      ],
+      "line": 368,
+      "scene_title": "r13_ep1_ubak",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "4d71a047fd5b41b02cf9043e91ad5d2b2f7a1592e523b5b0711faf099aa534cb",
+      "uid": "f59bc97bbf89bac7eb59f990",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ep1_ubak|rpy_literal|r13_ep1_ubak|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:380:46",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        21465,
+        21499
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ep1_ubak",
+      "block": "r13_ep1_ubak",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:380:46",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "진짜 범인을 놓칠 겁니다. 이 아이는 돌려놨다고 했습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 380,
+          "label": "r13_ep1_ubak",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 380,
+      "scene_title": "r13_ep1_ubak",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "85ce692cee67dd74ba07fb13a58110329ad1b2e81557d9bb40e45647719a94e2",
+      "uid": "8e970f6acb89c0553def7b96",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ep1_ubak|rpy_literal|r13_ep1_ubak|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/winter.rpy:280:36",
+      "file": "game/winter.rpy",
+      "path": [
+        13604,
+        13627
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "winter_night",
+      "block": "winter_night",
+      "placement": "literal",
+      "ref": "game/winter.rpy:280:36",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "할머니. 장부와 열쇠를 확인하겠습니다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 280,
+          "label": "winter_night",
+          "guards": [
+            "if winter[\"day\"]==1:"
+          ]
+        }
+      ],
+      "line": 280,
+      "scene_title": "winter_night",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "bf3fcce7e8c06a009366f20ecfb900b6ed38bb4fe16bbb9577c22f38ba0fac83",
+      "uid": "71ebeca1af5858f49e46625b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|winter_night|rpy_inventory|winter_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:282:36",
+      "file": "game/winter.rpy",
+      "path": [
+        13774,
+        13798
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "winter_night",
+      "block": "winter_night",
+      "placement": "literal",
+      "ref": "game/winter.rpy:282:36",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "내일 할머니 데려가면 우리도 나가야 해?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 282,
+          "label": "winter_night",
+          "guards": [
+            "elif winter[\"day\"]==2:"
+          ]
+        }
+      ],
+      "line": 282,
+      "scene_title": "winter_night",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "bdd8c0dcdb2ec26b7d6856f17a293709775dc5d8a40fdd099c1fb2efb8c001dc",
+      "uid": "235f58700bb04b8c1187a305",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|winter_night|rpy_inventory|winter_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:284:36",
+      "file": "game/winter.rpy",
+      "path": [
+        13982,
+        14016
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "winter_night",
+      "block": "winter_night",
+      "placement": "literal",
+      "ref": "game/winter.rpy:284:36",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "아침에 도토 씨가 그랬잖아. 자기 이름이 생각 안 났다고.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 284,
+          "label": "winter_night",
+          "guards": [
+            "elif winter[\"day\"]==4:"
+          ]
+        }
+      ],
+      "line": 284,
+      "scene_title": "winter_night",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "3ddea53437e2a21e7564ba821602a2b9b0fea74fff24d3efa7dacd1b607c8b1e",
+      "uid": "e57edd01bbe6250c02ba6e6b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|winter_night|rpy_inventory|winter_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:288:36",
+      "file": "game/winter.rpy",
+      "path": [
+        14266,
+        14286
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "winter_night",
+      "block": "winter_night",
+      "placement": "literal",
+      "ref": "game/winter.rpy:288:36",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "오늘 적은 거, 내가 읽어 줄까?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 288,
+          "label": "winter_night",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 288,
+      "scene_title": "winter_night",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "e50101539b207c6a8897bfe507cb0e42ad3ea54cbfc53a5f0ebd328bcecee74c",
+      "uid": "77bd609b7a875141fdafa119",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|winter_night|rpy_inventory|winter_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_episodes.rpy:216:8",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        13186,
+        13204
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "r13_ep1_eaves_retry",
+      "block": "r13_ep1_eaves_retry",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:216:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "네로에게 부탁해 헛간에 숨긴다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 216,
+          "label": "r13_ep1_eaves_retry",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 216,
+      "scene_title": "r13_ep1_eaves_retry",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "b27f31ce182bcb28fd64e3050f79867424e75daaf0c5a67ad3149633290f0c4f",
+      "uid": "65237090f2ac43362e8ceee6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ep1_eaves_retry|rpy_menu|r13_ep1_eaves_retry|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_episodes.rpy:220:8",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        13479,
+        13501
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "r13_ep1_eaves_retry",
+      "block": "r13_ep1_eaves_retry",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:220:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "서리 검사원에게 관찰 확인서를 받는다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 220,
+          "label": "r13_ep1_eaves_retry",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 220,
+      "scene_title": "r13_ep1_eaves_retry",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "cbccb2767ca9ecb2adb1d348dc6c7da0eb46ec2d67cade6d40de8cfdbd2bc289",
+      "uid": "68adda22f00b29fb94a15374",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ep1_eaves_retry|rpy_menu|r13_ep1_eaves_retry|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_episodes.rpy:223:8",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        13705,
+        13719
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "r13_ep1_eaves_retry",
+      "block": "r13_ep1_eaves_retry",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:223:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "그냥 처마에 있게 둔다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 223,
+          "label": "r13_ep1_eaves_retry",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 223,
+      "scene_title": "r13_ep1_eaves_retry",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "9ffe50544e1b59399865eff4d101a7512a7ed09d19402d6de8cd680b7b1b3b60",
+      "uid": "642c43dc08753e345af5fbe3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ep1_eaves_retry|rpy_menu|r13_ep1_eaves_retry|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

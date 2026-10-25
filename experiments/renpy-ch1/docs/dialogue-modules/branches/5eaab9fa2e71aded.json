@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_WO_D13_11",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "after",
+        "MS14_D13_S02_L0004",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D13_S02_L0004",
+      "when": "wild_omen13_gate_kept",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "초소 불은 밤에도 켜 두십니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1865,
+          "label": "r13_v111_gate_bench13",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "48124c596b5ce38d2e7d97bad00508ecbdfbe46e00252ea5eaa47083d8fc938e",
+      "uid": "e1bddaa0253a98f962c8c202",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|patch|after|wild_omen13_gate_kept",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_WO_D13_12",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "after",
+        "MS14_D13_S02_L0004",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D13_S02_L0004",
+      "when": "wild_omen13_gate_kept",
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "끄라는 결정은 회의에서 안 났소. 경비는 불 없이는 못 서오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1865,
+          "label": "r13_v111_gate_bench13",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "85e90e4c1633e19ecf0e368d2bd5a1719dce488a651c8622447913bc9235521e",
+      "uid": "3d6b813e178a8ba768ef12cc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|patch|after|wild_omen13_gate_kept",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

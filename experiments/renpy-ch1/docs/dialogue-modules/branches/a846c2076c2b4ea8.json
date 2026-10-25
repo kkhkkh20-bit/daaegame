@@ -1,0 +1,129 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_WN_H10",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "wild_hall_help14",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "wild_hall_help14",
+      "block": "wild_hall_help14",
+      "placement": "blocks",
+      "ref": "wild_hall_help14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "바구니 손잡이를 비틀어 빼앗는다. 창밖 눈 속으로 던진다. 도토가 빈손을 쥐었다 편다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3672,
+          "label": "r13_v111_wild_hall14",
+          "guards": [
+            "if _return==0:"
+          ]
+        }
+      ],
+      "scene_title": "wild_hall_help14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "0a1135fc9404656a3a70ef3b067bf01e80a577510f7849a80bb1e6efbe58e2e2",
+      "uid": "2bddb67fff0a43e711c1ee98",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|wild_hall_help14|patch|wild_hall_help14|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_WN_H11",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "wild_hall_help14",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "wild_hall_help14",
+      "block": "wild_hall_help14",
+      "placement": "blocks",
+      "ref": "wild_hall_help14",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "……방마다 갈아야 하는데.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3672,
+          "label": "r13_v111_wild_hall14",
+          "guards": [
+            "if _return==0:"
+          ]
+        }
+      ],
+      "scene_title": "wild_hall_help14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "5e6a44a04f7e60352b6254f1dfdcbf34314f5d8727bd43034f2470d5a1a5d05d",
+      "uid": "1bf7d7f3281108a71bce414e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|wild_hall_help14|patch|wild_hall_help14|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_WN_H12",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "wild_hall_help14",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "wild_hall_help14",
+      "block": "wild_hall_help14",
+      "placement": "blocks",
+      "ref": "wild_hall_help14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "도토가 바닥에 주저앉는다. 그 사이 복도에 연기가 낮게 찬다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3672,
+          "label": "r13_v111_wild_hall14",
+          "guards": [
+            "if _return==0:"
+          ]
+        }
+      ],
+      "scene_title": "wild_hall_help14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "76c50b1342070b9b16b8a8372043dd3942854d171f7aff65de6210133f5707b5",
+      "uid": "54bf8391c47104a30ac14536",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|wild_hall_help14|patch|wild_hall_help14|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

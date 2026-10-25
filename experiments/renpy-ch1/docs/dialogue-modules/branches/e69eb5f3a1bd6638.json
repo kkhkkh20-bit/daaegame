@@ -1,0 +1,166 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:245:41",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        15292,
+        15332
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_crisis_argument",
+      "block": "r13_crisis_argument",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:245:41",
+      "when": null,
+      "speaker": "resident_ppul",
+      "kind": "dialogue",
+      "text": "저분들은 가족도 알아보지 못합니다. 회복할 수 없는 분들로 판단됐소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 245,
+          "label": "r13_crisis_argument",
+          "guards": [
+            "if claim==\"F1\":"
+          ]
+        }
+      ],
+      "line": 245,
+      "scene_title": "r13_crisis_argument",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "a81b42bdf47e0024d6a5619b32e3eef8b3a5bc569c8355f015ead0c108453037",
+      "uid": "bbbc150c6504ec0463119a59",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_crisis_argument|rpy_literal|r13_crisis_argument|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:247:41",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        15446,
+        15478
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_crisis_argument",
+      "block": "r13_crisis_argument",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:247:41",
+      "when": null,
+      "speaker": "resident_ppul",
+      "kind": "dialogue",
+      "text": "지난번에는 불이 돌아왔습니다. 그건 다들 직접 봤잖소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 247,
+          "label": "r13_crisis_argument",
+          "guards": [
+            "elif claim==\"F2\":"
+          ]
+        }
+      ],
+      "line": 247,
+      "scene_title": "r13_crisis_argument",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "eab8c709935751f06eeb570fc1443e181524f44c03913132e8690f220e60d717",
+      "uid": "6287064b5f1db2699567093e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_crisis_argument|rpy_literal|r13_crisis_argument|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:251:41",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        15772,
+        15809
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_crisis_argument",
+      "block": "r13_crisis_argument",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:251:41",
+      "when": null,
+      "speaker": "resident_ppul",
+      "kind": "dialogue",
+      "text": "그럼 오늘 밤은 어디서 잡니까? 불 끄고 서로 껴안으면 삽니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 251,
+          "label": "r13_crisis_argument",
+          "guards": [
+            "elif claim==\"F3\":"
+          ]
+        }
+      ],
+      "line": 251,
+      "scene_title": "r13_crisis_argument",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "634ea70b4396c5f76254a23e6719c4f76ed813db6dad3b89c4164ca763b126b8",
+      "uid": "4743740ad8b7a4946502d099",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_crisis_argument|rpy_literal|r13_crisis_argument|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:253:31",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        15919,
+        15941
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_crisis_argument",
+      "block": "r13_crisis_argument",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:253:31",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "우리를 부른 편지부터 확인하겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 253,
+          "label": "r13_crisis_argument",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 253,
+      "scene_title": "r13_crisis_argument",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "be6a5c38dfe3e97554fe3fbe7ffa06d7483cfb85f12f94ea7494cd3459177b34",
+      "uid": "234f9ec12aced6d52e485800",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_crisis_argument|rpy_literal|r13_crisis_argument|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

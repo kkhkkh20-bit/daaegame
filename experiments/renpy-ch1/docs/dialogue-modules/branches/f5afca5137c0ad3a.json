@@ -1,0 +1,128 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:320:188",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        20701,
+        20715
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:320:188",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "내 이름은 내가 쓸까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 320,
+          "label": "r13_ending",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 320,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "ffcb15936b6ecfeb7a1f580644d771463cf364776bdb4b332b1e429d5d4e1bdf",
+      "uid": "b20a20bb167c664527b4f903",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ending|rpy_literal|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:328:238",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        21567,
+        21587
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:328:238",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "그 선은 나중에 덧붙였다는 거야?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 328,
+          "label": "r13_ending",
+          "guards": [
+            "else:",
+            "if r13_ending_id==\"E6\":"
+          ]
+        }
+      ],
+      "line": 328,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "8445751e669d08fbd2553896ff35832447644aa3044e781d7617691428e0b5b8",
+      "uid": "eb9296b8f38acf9048d8d090",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ending|rpy_literal|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:328:388",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        21717,
+        21721
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:328:388",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "응.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 328,
+          "label": "r13_ending",
+          "guards": [
+            "else:",
+            "if r13_ending_id==\"E6\":"
+          ]
+        }
+      ],
+      "line": 328,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "8025c713f26164a6787608a6cbce1b8ac0cfe963a42e1416578db60193e95224",
+      "uid": "b12a9654bcf87bea0a1bd9bc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ending|rpy_literal|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

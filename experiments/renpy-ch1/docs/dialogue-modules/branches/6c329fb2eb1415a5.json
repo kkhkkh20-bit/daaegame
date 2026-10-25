@@ -1,0 +1,85 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_evening.rpy:161:26",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        8824,
+        8886
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ev_night_visit",
+      "block": "r13_ev_night_visit",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:161:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "입구 옆 보호실 창에 작은 등 하나가 켜져 있었다. 창살 너머에서 다람이가 웅크리고 있었다. 담요도 없었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 161,
+          "label": "r13_ev_night_visit",
+          "guards": []
+        }
+      ],
+      "line": 161,
+      "scene_title": "r13_ev_night_visit",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "0321310db06a7f2ecf7cb7cc4d58f3f8265fd4efcfa72e9133c6533954a56d3b",
+      "uid": "be9e4ded3fcb8c5ccbd1cf58",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ev_night_visit|rpy_literal|r13_ev_night_visit|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:188:26",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        10372,
+        10407
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ev_night_visit",
+      "block": "r13_ev_night_visit",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:188:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이는 이야기가 끝날 때까지 창살을 잡고 있다가 잠들었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 188,
+          "label": "r13_ev_night_visit",
+          "guards": [
+            "while _visit_turns>0:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 188,
+      "scene_title": "r13_ev_night_visit",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "18d2494ec3ea844bfb5339dce166f689a7718db66288f49baab2df536a695ccc",
+      "uid": "8a455620a1c0e7f3353f6412",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ev_night_visit|rpy_literal|r13_ev_night_visit|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

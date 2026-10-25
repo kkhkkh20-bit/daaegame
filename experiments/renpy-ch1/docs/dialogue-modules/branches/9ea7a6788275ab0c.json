@@ -1,0 +1,82 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_q1_arguments.rpy:265:15",
+      "file": "game/systems/room13_q1_arguments.rpy",
+      "path": [
+        16288,
+        16300
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_q1_buri",
+      "block": "r13_q1_buri",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_arguments.rpy:265:15",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "얼굴을 직접 봤니?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_arguments.rpy",
+          "line": 265,
+          "label": "r13_q1_buri",
+          "guards": []
+        }
+      ],
+      "line": 265,
+      "scene_title": "r13_q1_buri",
+      "source_hash": "8289e6e0adc4c6de94e5f0acadafcaced13c74af938b712712356a7bd5a6fa22",
+      "baseline_hash": "b29e76c669cb740f3c51320047f7a37b9278d3b8024ea504fb1c948bb0a6a681",
+      "uid": "575f691ff7f3dc8e7445cbde",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_q1_buri|rpy_literal|r13_q1_buri|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_q1_arguments.rpy:266:15",
+      "file": "game/systems/room13_q1_arguments.rpy",
+      "path": [
+        16377,
+        16402
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_q1_buri",
+      "block": "r13_q1_buri",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_arguments.rpy:266:15",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "중간에 다른 사람이 올라갔을 수도 있을까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_arguments.rpy",
+          "line": 266,
+          "label": "r13_q1_buri",
+          "guards": []
+        }
+      ],
+      "line": 266,
+      "scene_title": "r13_q1_buri",
+      "source_hash": "8289e6e0adc4c6de94e5f0acadafcaced13c74af938b712712356a7bd5a6fa22",
+      "baseline_hash": "93a60d56f637a63dfd8c0964cf2817b26fec9099f876aa431c85a324d57852be",
+      "uid": "536b7b8e10e3ebbae8699425",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_q1_buri|rpy_literal|r13_q1_buri|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

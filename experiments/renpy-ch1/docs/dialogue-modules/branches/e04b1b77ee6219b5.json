@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:39:269",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        2894,
+        2910
+      ],
+      "origin": "rpy_literal",
+      "day": 9,
+      "scene": "r13_week2_events",
+      "block": "r13_week2_events",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:39:269",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "아내가 살아 있다는 거죠?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 39,
+          "label": "r13_week2_events",
+          "guards": [
+            "if r13_has(\"contact_compromised\") and \"contact_relocated\" not in room13[\"events\"]:"
+          ]
+        }
+      ],
+      "line": 39,
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "f40d527dfc3e1a86a8699c2145a5b0107a4f78931a57b4fcc3ef6ff1de0bb850",
+      "uid": "8a2d50a7e27c6ab0ddce08f4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_week2_events|rpy_literal|r13_week2_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

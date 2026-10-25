@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_owl_buri.rpy:81:50",
+      "file": "game/systems/room13_owl_buri.rpy",
+      "path": [
+        4900,
+        4932
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_owl_threshold",
+      "block": "r13_owl_threshold",
+      "placement": "literal",
+      "ref": "game/systems/room13_owl_buri.rpy:81:50",
+      "when": null,
+      "speaker": "resident_owlgp",
+      "kind": "dialogue",
+      "text": "고맙소. ……내일 시간이 나면 내 쪽에서 이야기하리다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_owl_buri.rpy",
+          "line": 81,
+          "label": "r13_owl_threshold",
+          "guards": [
+            "while _ow_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 81,
+      "scene_title": "r13_owl_threshold",
+      "source_hash": "db5bd71cd78f8a37555c256d5aa1064675f5c6d6a3560b1af22518f20f98d9e9",
+      "baseline_hash": "3ebde26b5c46377c4826c78b323e5ab46ae293da979e18283142b2864857a9e1",
+      "uid": "e919508c66f1f03b919b7664",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_owl_threshold|rpy_literal|r13_owl_threshold|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_owl_buri.rpy:84:50",
+      "file": "game/systems/room13_owl_buri.rpy",
+      "path": [
+        5133,
+        5169
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_owl_threshold",
+      "block": "r13_owl_threshold",
+      "placement": "literal",
+      "ref": "game/systems/room13_owl_buri.rpy:84:50",
+      "when": null,
+      "speaker": "resident_owlgp",
+      "kind": "dialogue",
+      "text": "문턱이 들떴소. 아이가 걸려 넘어지기 전에 고쳐 두려는 거요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_owl_buri.rpy",
+          "line": 84,
+          "label": "r13_owl_threshold",
+          "guards": [
+            "while _ow_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 84,
+      "scene_title": "r13_owl_threshold",
+      "source_hash": "db5bd71cd78f8a37555c256d5aa1064675f5c6d6a3560b1af22518f20f98d9e9",
+      "baseline_hash": "1400ff89465d1d802890d2b4409f212d9ef9709b40185eaeee85891047c8606e",
+      "uid": "8e41852c17889ef5d8192ce4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_owl_threshold|rpy_literal|r13_owl_threshold|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

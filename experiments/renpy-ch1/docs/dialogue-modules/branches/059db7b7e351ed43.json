@@ -1,0 +1,1137 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D04_S03_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S03_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S03_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "돌아오는 길, 초소 뒤에서 돌목의 짧은 비명과 양동이 넘어지는 소리가 난다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 저녁 초소 뒤 / 비명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "39df6f758e9f59ec475c35402589c8904ff390e4026de3358283d47cdff297b8",
+      "uid": "8145b151ff6d842408abeb69",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S03_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S03_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S03_L0002",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "놔! 거기 서!",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 184,
+          "label": "r13_v111_cry4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 저녁 초소 뒤 / 비명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "85252a4ae63d9fb5e91c1cb3650a3eb0c0f84837cb97cdf310cf9020252de2a5",
+      "uid": "b9848f20b996fd3ae1a09b3b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S03_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S03_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S03_L0003",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "조작: 다람을 등 뒤에 세우고 밝은 초소 쪽으로 한 걸음 이동한 뒤 현장을 본다. 어두운 골목으로 사람 그림자 하나가 사라진다. 얼굴은 보이지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 저녁 초소 뒤 / 비명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "219efc5703b5f606e5a6ad31bd0cdd47859709db423e76dd001215355ef00a28",
+      "uid": "78a6635e6ed26e6fc8512d85",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S03_L9101",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S03_L9101",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S03_L9101",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "돌목의 첫 말: 얼굴은 못 봤다. 검은 것이 털인지 옷인지도 모른다. 붙잡고 허리를 숙였다가 물렸다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 저녁 초소 뒤 / 비명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ffbb6510913ab64f8fec1da507cffc30564aa9455f5b9942c044ef93ed9ab9b1",
+      "uid": "172b7d47fb28fb65af4bdc9e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S03_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S03_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S03_L0004",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "무슨 일입니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 195,
+          "label": "r13_v111_bite4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 저녁 초소 뒤 / 비명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2b27fec9bcc6dec69513cec11a850a86a065405c7f50c213e97f4ed4f918c580",
+      "uid": "44ad6386e1ecc0c01ab0f5b4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S03_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S03_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S03_L0005",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "물었소. 팔을…… 젠장.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 196,
+          "label": "r13_v111_bite4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 저녁 초소 뒤 / 비명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6bc92e6d35d74cc5df18b963c85559ef9ef08b62df2e553354c18f166f17b1ee",
+      "uid": "786e1b017b79e285783181c4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S03_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S03_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S03_L0006",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "돌목이 어깨 아래 외투를 움켜잡고 있었다. 나는 먼저 초소의 의자를 끌어왔다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 197,
+          "label": "r13_v111_bite4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 저녁 초소 뒤 / 비명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a77d614142234848bc1d93ca94b17133acee19413e207470bce45b14817d7aba",
+      "uid": "775fab6e2f51ecd3334c686c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S03_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S03_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S03_L0007",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "앉으십시오. 진료소에 사람을 보내겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 198,
+          "label": "r13_v111_bite4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 저녁 초소 뒤 / 비명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f5301f4ab8d3c1a83cde494c287c87a348a7114f5022ad52845207b41be1431a",
+      "uid": "b7075bde5727c144e392ffd6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S03_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S03_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S03_L0008",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "누가 물었소?",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 199,
+          "label": "r13_v111_bite4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 저녁 초소 뒤 / 비명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6d39a316f70496aa677bb8562b7133dcabd599d8b8696423b7f78ec52e9c1f82",
+      "uid": "71f97421edac189e2ad88ce4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S03_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S03_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S03_L0009",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "등 뒤에서…… 누가 울타리 옆으로 나가길래 붙잡았는데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 200,
+          "label": "r13_v111_bite4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 저녁 초소 뒤 / 비명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9cedd22d85ca32ac880543fefa0cec708e397168cfde3545b30d4152a8e4c63b",
+      "uid": "e2ace34ec566a7a8cf725658",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S03_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S03_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S03_L0010",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "저기 밤이 아니오?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 201,
+          "label": "r13_v111_bite4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 저녁 초소 뒤 / 비명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0012c323c09615afd4eba56129e49305a96c37538880456f42cd669a49bc5a1e",
+      "uid": "b9b79a9d75440b5b521ea677",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S03_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S03_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S03_L0011",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "처마 위 밤이가 몸을 일으킨다. 너울은 그쪽을 가리킨다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 저녁 초소 뒤 / 비명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b4bf0e9e8d9b042e0bcaecd887062721264b6be39daf139e53ef4335a8f2e0cc",
+      "uid": "e292a240ec7291623997f7dd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S03_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S03_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S03_L0012",
+      "when": null,
+      "speaker": "밤이",
+      "kind": "dialogue",
+      "text": "나 아니에요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 202,
+          "label": "r13_v111_bite4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 저녁 초소 뒤 / 비명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5d24871c63754d3340b0f2dc0c3797a258ed43028491f790f13f6a2ae418f1af",
+      "uid": "518f6d4ee196e94e64b38fba",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S03_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S03_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S03_L0013",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "늘 이 근처 돌아다녔지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 203,
+          "label": "r13_v111_bite4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 저녁 초소 뒤 / 비명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fe820a111c75541bb3b3e1bb7a968b86c165372986ea78cfe255cd5059526ce5",
+      "uid": "1542d9f1cad39179d42a98f0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S03_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S03_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S03_L0014",
+      "when": null,
+      "speaker": "밤이",
+      "kind": "dialogue",
+      "text": "그래서 내가 물었어요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 204,
+          "label": "r13_v111_bite4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 저녁 초소 뒤 / 비명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "29ec5273bb37f5171b9767de113fb2d34e4f27850344dc248e2cbe23375344c5",
+      "uid": "52c7369f2d5efa51c21d6bdb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S03_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S03_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S03_L0015",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이가 앞으로 나가려 했다. 나는 손을 잡았다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 205,
+          "label": "r13_v111_bite4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 저녁 초소 뒤 / 비명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6969bd4fe31d5274d6fcac6549e43a3c9b8830b077ef087da9670ad09559cb46",
+      "uid": "1efc782d16a3e620d82111da",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S03_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S03_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S03_L0016",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "잠깐. 돌목 씨, 얼굴을 보셨습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 206,
+          "label": "r13_v111_bite4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 저녁 초소 뒤 / 비명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5596f3d6a4adf2f04bc8770308db883f7c913727e7ff48b57b04f48d8d884db9",
+      "uid": "95594dfffdbe5d42cd15e686",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S03_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S03_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S03_L0017",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "검었소. 털인지 옷인지…… 어두웠고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 207,
+          "label": "r13_v111_bite4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 저녁 초소 뒤 / 비명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6bc9aefa9b7c50dbc75345d1496e6d1e279d2665ac037683451e6536da534156",
+      "uid": "818e5a7d24f983ecac7b929d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S03_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S03_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S03_L0018",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "그 아이가 검잖소.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 208,
+          "label": "r13_v111_bite4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 저녁 초소 뒤 / 비명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "429c96d4248363161dbacff31ce2b368b3b32e7780415f4cb246cb2f93b5b937",
+      "uid": "327a6fb8ada22889122417fa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S03_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S03_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S03_L0019",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "내 말 끝까지 들으시오. 붙잡고 허리를 숙였다가 물렸소. 키는 제대로 못 봤고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 209,
+          "label": "r13_v111_bite4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 저녁 초소 뒤 / 비명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d6bec6ea54242fc95ea074dcc84f2c77b4e6eff4ba55adce18741d69333dbab1",
+      "uid": "fc76a277a4a5d2d5d334b814",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S03_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S03_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S03_L0020",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "돌목이 진료소로 이동한다. 바둑이가 와서 너울과 밤이 사이에 선다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 저녁 초소 뒤 / 비명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e9b69e6667f925cf03305e47310d0c914e58a3d0a289a877f55446fb8e41ce07",
+      "uid": "1ba72f369e5f213eba6646a7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S03_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S03_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S03_L0021",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "다친 사람부터 보내고요. 아이는 내가 여기서 이야기 듣겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 211,
+          "label": "r13_v111_bite4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 저녁 초소 뒤 / 비명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2de316f6bb0eb85029add57e3ca0c33ca4f8e817c592aee01ffa9e5b08b0448a",
+      "uid": "5fafe57f35b5473166646708",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S03_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S03_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S03_L0022",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "보호소에 보내야 달아나지 않지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 212,
+          "label": "r13_v111_bite4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 저녁 초소 뒤 / 비명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "eb160209acddb0f5a7bab2c860cc31777727034592bc55bf5f2d865c7b48947e",
+      "uid": "4fcb37e16acece31edaba7c3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S03_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S03_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S03_L0023",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "빵 바구니를 안은 사람이 멈췄다. 밤이와 너울을 번갈아 보더니, 가게 안에서 부르는 소리에 다시 걸었다. 바둑이는 자리를 비키지 않았다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 213,
+          "label": "r13_v111_bite4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 저녁 초소 뒤 / 비명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b655047ad8f92b0a53b4118de463e1a04e0e0755039ebac60cc59cf7d228f14f",
+      "uid": "9b7412117caf03feefb49473",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S03_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S03_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S03_L0024",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "돌목 씨도 얼굴을 못 봤잖습니까. 오늘 밤은 데려가지 마세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 214,
+          "label": "r13_v111_bite4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 저녁 초소 뒤 / 비명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a8b8019bd7b65aee22d4f660f6fdc88cca11f0deffa57010ca0189f9f4afadf6",
+      "uid": "43a2d64a04adf6c01d90ae48",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S03_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S03_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S03_L0025",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "책임질 거요?",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 215,
+          "label": "r13_v111_bite4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 저녁 초소 뒤 / 비명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c499de0af3c326e05d3e47d2ab999c607bd7d6809155c132a6eca24f47397b23",
+      "uid": "ae090e8889980eae8dd7602c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S03_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S03_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S03_L0026",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "내가 같이 있겠다고 했소. 진료부터 받아요, 돌목 씨.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 216,
+          "label": "r13_v111_bite4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 저녁 초소 뒤 / 비명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c44fe511ee217954b9caaa433f2e88aa5badf3644ca8e9273005482d36000330",
+      "uid": "cd22a85e4c7a035228022d9c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

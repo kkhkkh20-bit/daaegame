@@ -1,0 +1,870 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D12_A_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_A_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_A_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠가 배식 준비에 남아 병의 파손이나 냄비 속 이물을 발견한 경로.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 12-A. 배식 직전 발견",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d613c72fac6a1a99687a3d1fdbae77ad2f85c8d2bbb5aac0a86d0bf99f16d95f",
+      "uid": "6c5baceb81af1f90e6af8338",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_A_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_A_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_A_L0002",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "잠깐. 이 냄비에서 주지 마세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1353,
+          "label": "r13_v111_premeal12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 12-A. 배식 직전 발견",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "22564bedba7f2675185a41b27a8cde15d01ddb16107bb347402f23f7ac42902a",
+      "uid": "23bcdbb5c2dd2a03448ccde0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_A_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_A_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_A_L0003",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "아직 안 줬어요. 흰 그릇 그대로예요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1354,
+          "label": "r13_v111_premeal12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 12-A. 배식 직전 발견",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0a443b796e7c06bb87a2f27c035189396363afd7304a170ded6d906c5f044646",
+      "uid": "4977dc7fc472d7ab77a8fd4e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_A_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_A_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_A_L0004",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그럼 못 먹어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1355,
+          "label": "r13_v111_premeal12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 12-A. 배식 직전 발견",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1cdccb87209b3de611be3cbd580f1406325c8cfac2b1567baa206222c8224b8c",
+      "uid": "ff6a6882824a9c774d68778c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_A_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_A_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_A_L0005",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이건 못 먹어. 다른 걸 준비하자.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1356,
+          "label": "r13_v111_premeal12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 12-A. 배식 직전 발견",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "da3c7311ea79367891e3f09c4f167ab725665e4d3fa06d6297ce3707a4553231",
+      "uid": "7d912d732e9bc03cb5b112ac",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_A_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_A_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_A_L0006",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "아직 아무 일도 안 났잖아요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1357,
+          "label": "r13_v111_premeal12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 12-A. 배식 직전 발견",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fa4663134c425ac8c005bf2966dad28c3ca0e806b1b3d2659e0338d9586bcb37",
+      "uid": "19d867fd1357f9681e6bb233",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_A_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_A_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_A_L0007",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "네. 아직은요. 그래서 멈춘 겁니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1358,
+          "label": "r13_v111_premeal12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 12-A. 배식 직전 발견",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5042746a6339dfa242be0062979658475b865d1e650d8a6cfb5718c55824ff07",
+      "uid": "9a1f051fc5c8581d9fa172e2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_A_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_A_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_A_L0008",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "보리 씨, 서리 씨를 불러 주세요. 먹기 전 멈췄지만, 병을 확인해 주셔야겠어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1359,
+          "label": "r13_v111_premeal12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 12-A. 배식 직전 발견",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3d6f40eb116ff23913d8fd3e953484aa40f004105e0ac81b82db2232596a7fc7",
+      "uid": "ea66dddd45bc06df0d214cdc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_A_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_A_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_A_L0009",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "보리가 진료소로 다녀오는 실제 이동을 맡는다. 그동안 도담은 다른 아이들과 나비 곁에 있고, 아빠는 배식대 접근을 막는다. 보리는 귀환 전 현장 대사·돌봄 인력에 중복 배치하지 않는다. 서리의 실제 도착 뒤에만 병 확인 대사를 재생한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 12-A. 배식 직전 발견",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5a815610d4946f792bf71cadb9de892e76d8071b2598694254b70731f55f3d20",
+      "uid": "bfac129317560b84f6c22880",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_A_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_A_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_A_L0010",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠는 배식실에 남아 문 옆에서 운반함의 빈 받침을 정리했다. 선생님 상체와 얼굴은 나비에게 보였지만 손은 가림판 뒤다. 아빠가 직접 투입을 본 것은 아니다. 아빠에게도 짧은 딱 소리는 들리며, 돌아섰을 때 선생님이 꾸러미를 선반에 넣는다. 뚜껑을 연 작은 냄비에서 파편을 보고 중단한다. 아이들에게 아직 배식하지 않았다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 12-A. 배식 직전 발견",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1424847bd2a5cdc0da2d28c1fbc9b01c893912061f150c912884d6e7054a2e35",
+      "uid": "2ef50bb01719e6a3728a0e54",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_A_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_A_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_A_L0011",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아이들 이동과 두 냄비·그릇 보존 뒤 12-4의 병·봉인·동선 대결로 이어진다. ‘같이 먹었다’, 새미의 식사 관찰, 증상·쓴맛·사망 대사는 삭제. 시간 대사 세 개를 다음으로 정확히 교체한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 12-A. 배식 직전 발견",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f92d5ebefc24b07e195edeb1dec2db5cc249e678a20cfb3df781330ac4e5bcfe",
+      "uid": "a71ad736dbc47e131d068175",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_A_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_A_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_A_L0012",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "제가 운반함을 정리하기 전에는 이 종이가 마개하고 목에 이어져 있었어요.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 12-A. 배식 직전 발견",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "525e9c31734c05b255a841489f6741a4c90f67c267684fb00f6133edf810940f",
+      "uid": "d6a5f4809698e47e59b51c12",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_A_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_A_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_A_L0013",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "제가 문 옆 운반함을 정리하는 동안 무슨 일이 있었어요?",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 12-A. 배식 직전 발견",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "44edfb17ed1fd94318b3504fe7dafc9b24c681a3e1405d2386890922153f2c0b",
+      "uid": "254ba950a48a4a99a8d6a524",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_A_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_A_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_A_L0014",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "아빠가 운반함을 정리할 때. 그릇을 세라고 할 때.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 12-A. 배식 직전 발견",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4617ac4497902bae4276c5dda49c8db4035b1462ad51e37879d8efd917eaa2da",
+      "uid": "a163fa820644ba605e64631a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_A_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_A_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_A_L0015",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "나비의 ‘내가 건넨 뒤 그 대화 중에는’ 관찰 범위와 세척대 왕복 부재는 같은 구간에 성립한다. 아빠가 못 들은 소리를 회상하는 연출은 없다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 12-A. 배식 직전 발견",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "72a2df099830889b8b77bb5c2a5dcd366437625233b966c646165ce5232a6fc1",
+      "uid": "8116bfd2b77a0a72c9d78e63",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_A_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_A_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_A_L0016",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "배식 전 경로의 최종 추론 첫 문장도 정확히 교체한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 12-A. 배식 직전 발견",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1fd1d833e876491864953ddbe1c0e2c94ad7ffde9ac8f11b01d1f81fbd924bf0",
+      "uid": "d353ea26a59cdddcc3d1f7dd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_A_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_A_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_A_L0017",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아이들에게 줄 작은 냄비에서 선생님 병 조각이 나왔습니다. 병을 오래전부터 물병으로 썼다는 말도, 여기서 새로 물을 담았다는 말도 확인한 것과 맞지 않아요.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 12-A. 배식 직전 발견",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "07ab9a0c32c8666d9c006c6fdef3800134bce7dd20dd4f6511b5f2d0d795a063",
+      "uid": "a8b32a7c5f85ac19aa55cfa7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_A_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_A_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_A_L0018",
+      "when": null,
+      "speaker": "새미",
+      "kind": "dialogue",
+      "text": "선생님, 나 내일 가져올 책 뭐야?",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 12-A. 배식 직전 발견",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "55e4c9c6ef0449c0498d1c6d4249a37574e8e4ed8aabe9629a4e6fbe9d3b2783",
+      "uid": "0995e7cb6c8e735d9096bbc5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_A_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_A_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_A_L0019",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "……책장 맨 아래 거.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 12-A. 배식 직전 발견",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d56156caba81a2c24764eaf2e992384c165775118fc7f9445e248deb14cdc020",
+      "uid": "dc1e93856dd650f41f73c6af",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_A_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_A_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_A_L0020",
+      "when": null,
+      "speaker": "새미",
+      "kind": "dialogue",
+      "text": "못 꺼내. 무거워.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 12-A. 배식 직전 발견",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3ae7b442325f0999cb0e0687f01b103c4fc2d7b72fa930f8a9a4c88f02f13f42",
+      "uid": "43ecb88dff86476ad7c8033e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_A_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_A_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_A_L0021",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "나비 씨. 그 책…….",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 12-A. 배식 직전 발견",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "22b555672c2f9ae0ae012ccdab3148f48866acab8a63d430105cf500ab54741a",
+      "uid": "f072c66097614bc7bde79647",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_A_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_A_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_A_L0022",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "제가 꺼내 줄게요.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 12-A. 배식 직전 발견",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e922a803dd49a3f7df7e8d0c6f27bbd86f2778d4538d4a349d39b3b6cb0a731e",
+      "uid": "56280bd1ad50094d8aa62376",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_A_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_A_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_A_L0023",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "창 밖 등이 켜진다. 아이들은 살아서 창으로 모인다. 교사는 떨어진 자리에서 바라본다. 예방을 벌주기 위한 뒤늦은 중독 없음.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 12-A. 배식 직전 발견",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3888e181e778f95b1ba01c5cda06d242b6f0767c48860382027a7ec67ca51c0a",
+      "uid": "14119893992316e0629520b4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

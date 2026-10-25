@@ -1,0 +1,998 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D01_S01_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S01_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S01_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "나무 바퀴 소리. 다람이 과자 봉지를 외투 안쪽으로 당긴다.",
+      "editable": false,
+      "usage": "dropped",
+      "note": "무조건 drop으로 화면에서 제외됨.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 13,
+          "label": "r13_v111_start_block",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": [
+          null
+        ]
+      },
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2b815081fbb25841cc0a79e972e35a5f8469983395eafdf84539136917795862",
+      "uid": "e488db4b477b646c9f352b64",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S01_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S01_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S01_L0002",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아빠는 안 잡아 줘?",
+      "editable": false,
+      "usage": "dropped",
+      "note": "무조건 drop으로 화면에서 제외됨.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 13,
+          "label": "r13_v111_start_block",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": [
+          null
+        ]
+      },
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "337ddbb463444bb044d0e62d6c5a9a543f6b4ae2f33828b6563d09fcfd1f4e71",
+      "uid": "4c14fa035d892e4e4099ac7d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S01_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S01_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S01_L0003",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠는 안 부서지잖아.",
+      "editable": false,
+      "usage": "dropped",
+      "note": "무조건 drop으로 화면에서 제외됨.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 13,
+          "label": "r13_v111_start_block",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": [
+          null
+        ]
+      },
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ab7e95de27c91c3f3114f9b971ff6860edc0e99d710de457e884811b815027c1",
+      "uid": "17e44f0e081ca95817dafe9a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S01_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S01_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S01_L0004",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "부서질 수도 있는데.",
+      "editable": false,
+      "usage": "dropped",
+      "note": "무조건 drop으로 화면에서 제외됨.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 13,
+          "label": "r13_v111_start_block",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": [
+          null
+        ]
+      },
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0123b1683e432d5d47cf01ea66a47c3f8ce3dc88d63e86eacb27050cd86ba2de",
+      "uid": "2a491b1feee1c03d558a36ab",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S01_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S01_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S01_L0005",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "아이가 내 소매를 붙잡았다. 빈손으로만.",
+      "editable": false,
+      "usage": "dropped",
+      "note": "무조건 drop으로 화면에서 제외됨.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 13,
+          "label": "r13_v111_start_block",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": [
+          null
+        ]
+      },
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fc5ed1f2f12bec87ed21338d94bb267c472b126e9de682326693a55397e4dfef",
+      "uid": "5b62bc9998b50ca03365af74",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S01_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S01_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S01_L0006",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "많이 남았어?",
+      "editable": false,
+      "usage": "dropped",
+      "note": "무조건 drop으로 화면에서 제외됨.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 13,
+          "label": "r13_v111_start_block",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": [
+          null
+        ]
+      },
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6459f2d3eb3dc8079cbebdd6a400bdb4e0148c37a54c51d0c997f807d86149ab",
+      "uid": "b3508ab8fef13c0dba49abe0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S01_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S01_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S01_L0007",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "하나. 엄마 거.",
+      "editable": false,
+      "usage": "dropped",
+      "note": "무조건 drop으로 화면에서 제외됨.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 13,
+          "label": "r13_v111_start_block",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": [
+          null
+        ]
+      },
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b1e0202ee18caa5d1e6d2f98004c7244dd1278b183b13597804fcc96c2b40703",
+      "uid": "546479e485f442d7cfda5e35",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S01_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S01_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S01_L0008",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "제일 큰 거네.",
+      "editable": false,
+      "usage": "dropped",
+      "note": "무조건 drop으로 화면에서 제외됨.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 13,
+          "label": "r13_v111_start_block",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": [
+          null
+        ]
+      },
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f564ab863d879265df147309a41869d47fb651cf8ddb5e0cc93e1255666aa1a8",
+      "uid": "7f68b4ebf552b8d0835d7f40",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S01_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S01_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S01_L0009",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마는 못 먹었잖아.",
+      "editable": false,
+      "usage": "dropped",
+      "note": "무조건 drop으로 화면에서 제외됨.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 13,
+          "label": "r13_v111_start_block",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": [
+          null
+        ]
+      },
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8403676b248988ba92b9d878d742a960eba9db86e67808653a5c545a8fda261a",
+      "uid": "4208ec6c04de60f9e8215415",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S01_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S01_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S01_L0010",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "조작: 편지 펼치기. “다람이를 데리고 와 줘. 여관 13호실에서 기다릴게.”",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "dcac4ea9dbd4b639aeca7583f9653067143afd6a88b51bd25e5a95cbe9cc5949",
+      "uid": "9b2331986f52bd895da03b5a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S01_L9101",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S01_L9101",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S01_L9101",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "다람이를 데리고 와 줘. 여관 13호실에서 기다릴게.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 27,
+          "label": "r13_v111_letter_read",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "60e88f6647bee88e2839813d832e3e12f3cf0adbbf74412ec5fa5b99bee45b80",
+      "uid": "c7c517714243e7feb979d3cb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S01_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S01_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S01_L0011",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "또 읽어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 27,
+          "label": "r13_v111_letter_read",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "332c55e4144d0662eb9d9513673d9b97b4a76336e87cd5d71c9ab979b558ee60",
+      "uid": "9574dbee18566635a085cdc4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S01_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S01_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S01_L0012",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "방 번호.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 27,
+          "label": "r13_v111_letter_read",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e2be9e28764ee00b23d67c97eb2ad12ba54a0e940716e2f8fe72e38a346b4576",
+      "uid": "5d75ce8a2cd1a14697622cfb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S01_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S01_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S01_L0013",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "십삼 호. 내가 외웠어. 아빠는 짐 들어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 27,
+          "label": "r13_v111_letter_read",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bc22cdf93b8ef0b11c8a32baf8b2944ea192705d6c76a7d5a968f058e78e1ae8",
+      "uid": "217a67a4851098bb291ef419",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S01_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S01_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S01_L0014",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "편지를 살펴볼까?",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f8f0d6ca14fc810b4e226ea64ebc18a696f90960f3e6d4bf94d8a636efb8acc2",
+      "uid": "8788c66eb570bb9eb1c6579c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S01_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S01_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S01_L0015",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "늘 그리던 도토리가 없다. 이번에는 그냥 끝냈네.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 51,
+          "label": "r13_v111_letter_last",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bc74344b1f906d7b919ed86debc1d3177bb4a5657e7566af570be817ac9385e9",
+      "uid": "2dc384b480cbbb6431077847",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S01_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S01_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S01_L0016",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "획이 반듯하다. 급히 쓴 편지는 아닌 것 같은데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 58,
+          "label": "r13_v111_letter_hand",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b1d97c3e310e888f3aabef973a5b8f61bb4ae3929acf596e445e7dfcefa85fe8",
+      "uid": "892ae1520d8acd4adbdd5456",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S01_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S01_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S01_L0017",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "누가 대신 써 줬을 수도 있지. 만나면 물어보자.",
+      "editable": false,
+      "usage": "dropped",
+      "note": "무조건 drop으로 화면에서 제외됨.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 76,
+          "label": "r13_v111_letter_any",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": [
+          null
+        ]
+      },
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "90b2a1fcf77783b19dd70b7f7b2448c6071670dac375275dbbd0aed599bac744",
+      "uid": "96f0615045884a4e00d4e60f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S01_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S01_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S01_L0018",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "십삼 호. 도착하면 거기부터.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 82,
+          "label": "r13_v111_letter_none",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6ae79d1f8ff52ac43e565293e658484ae99b9c04380f4ae708195c4cdd2786fd",
+      "uid": "e0ed47715f9740ac14a04f44",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S01_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S01_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S01_L0019",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "오늘은 엄마랑 자?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 88,
+          "label": "r13_v111_carriage_end",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0dbd4ae5cd4aafea132a5486c25a40a5d0362080aea2dfc31665a5441d6d4247",
+      "uid": "a7a6b736f234047cae29b6fe",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S01_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S01_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S01_L0020",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "엄마부터 만나 보자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 88,
+          "label": "r13_v111_carriage_end",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "02ecb7fefb59101b2660d11d3795571befb3cebd3b80ad0b2550fc768fe77150",
+      "uid": "54cc8e65eb417734b75673ec",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S01_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S01_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S01_L0021",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "만나면 내가 가운데야.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 88,
+          "label": "r13_v111_carriage_end",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b6ed24c323ba76bc2638e8293ec398e49c396214059167c2b7546682c303af72",
+      "uid": "11594e4b312ca11ff0f589c6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S01_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S01_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S01_L0022",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "지붕 보입니다. 일어나지 마요. 아직 안 섰어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 88,
+          "label": "r13_v111_carriage_end",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1cab4b6052cfeec954ff1c4b027fc4e5264701b6105b6c241ebc29d2bc830011",
+      "uid": "26b91b7c6b3ed24a215c5905",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

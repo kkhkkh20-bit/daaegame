@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:143:27",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        8458,
+        8501
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_cv_market",
+      "block": "r13_cv_market",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:143:27",
+      "when": null,
+      "speaker": "resident_guseul",
+      "kind": "dialogue",
+      "text": "사장님 장부요? 그건 손님한테 보여 주는 거고요. ……진짜는 따로 있어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 143,
+          "label": "r13_cv_market",
+          "guards": []
+        }
+      ],
+      "line": 143,
+      "scene_title": "r13_cv_market",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "621b9863c314ce233e019409f37e034292be481a857cd114befab345b468c5b7",
+      "uid": "abf10e2afc49213da4acc3c8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_cv_market|rpy_literal|r13_cv_market|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:153:47",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        9030,
+        9050
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_cv_market",
+      "block": "r13_cv_market",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:153:47",
+      "when": null,
+      "speaker": "resident_guseul",
+      "kind": "dialogue",
+      "text": "그건 저도 봤어요. 그게 다예요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 153,
+          "label": "r13_cv_market",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 153,
+      "scene_title": "r13_cv_market",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "c184819cd2d412efaf8272d848a3d1aa0c390265d7b694068c48a9905494474d",
+      "uid": "73f77f940f0d3c36cae2931a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_cv_market|rpy_literal|r13_cv_market|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13.rpy:201:118",
+      "file": "game/room13.rpy",
+      "path": [
+        10662,
+        10690
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_entry_person",
+      "block": "r13_entry_person",
+      "placement": "literal",
+      "ref": "game/room13.rpy:201:118",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "아래에 있네. 다람. 둘이 온다고 제대로 썼어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 201,
+          "label": "r13_entry_person",
+          "guards": [
+            "if person==\"daram\":"
+          ]
+        }
+      ],
+      "line": 201,
+      "scene_title": "r13_entry_person",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "7387b0ec24647ec608d84c3918b410a58c7c8a21eaacf5bcf2885f627415237f",
+      "uid": "4ace6adb058d1d20d0059613",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_entry_person|rpy_literal|r13_entry_person|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

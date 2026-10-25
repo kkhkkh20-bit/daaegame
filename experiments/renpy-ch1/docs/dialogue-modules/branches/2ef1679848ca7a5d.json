@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D03_S03_V01",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "before",
+        "MS14_D03_S03_L0022",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D03_S03_L0022",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "thought",
+      "text": "수첩을 손에 쥐고도…… 펴 보지도 않고 말부터 쏟았구나.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 920,
+          "label": "r13_v111_clinic3",
+          "guards": []
+        }
+      ],
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "f7c760540bd9e799ab841e6e947e69f743048ffcd2a3f31dbd48b3a9d62ad146",
+      "uid": "5d249c78386137b55c0af4fe",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

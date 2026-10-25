@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_LA_LA_MORNING3_0",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_morning3",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "la_morning3",
+      "block": "la_morning3",
+      "placement": "blocks",
+      "ref": "la_morning3",
+      "when": "lamp_attempt_outside",
+      "speaker": null,
+      "kind": "narration",
+      "text": "광장에 3번 등이 켜져 있다. 피코가 받침 곁에서 종이를 말리고 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 25,
+          "label": "r13_lamp_attempt3",
+          "guards": []
+        }
+      ],
+      "scene_title": "la_morning3",
+      "source_hash": "1f8d4bedb33f10201a3ffe6e822492a7cb7ec3d826a133f6d7683d7013245e9b",
+      "baseline_hash": "0dae9db804a3112d088262708cff48f3bf40e934366d5c2d5855b7ba7dd06eb9",
+      "uid": "3cc161cf421c958ddf31848b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|la_morning3|patch|la_morning3|lamp_attempt_outside",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_ET_04B",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "end_true14",
+        4,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "end_true14",
+      "block": "end_true14",
+      "placement": "blocks",
+      "ref": "end_true14",
+      "when": "piko_dead",
+      "speaker": null,
+      "kind": "narration",
+      "text": "첫 길이 열린 날, 까로의 마차. 짐 위에 엄마의 초상이 실려 있었다. 코는 다람이 그려 넣었다. 조금 삐뚤었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3639,
+          "label": "r13_v111_true_epilogue14",
+          "guards": []
+        }
+      ],
+      "scene_title": "end_true14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "838bd1d1b19400eeb5ebd0b755852dddf951007fa58dcc72fad0ecf9e19eb590",
+      "uid": "245b82d5fdd619460c1a142b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|end_true14|patch|end_true14|piko_dead",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

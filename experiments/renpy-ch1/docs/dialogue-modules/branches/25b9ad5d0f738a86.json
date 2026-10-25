@@ -1,0 +1,286 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:221:25",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        14268,
+        14298
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_wf_hideout",
+      "block": "r13_wf_hideout",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:221:25",
+      "when": null,
+      "speaker": "kid_kkomi",
+      "kind": "dialogue",
+      "text": "누구야! ……나비 누나 그릇이네. 누나 심부름이야?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 221,
+          "label": "r13_wf_hideout",
+          "guards": [
+            "if not r13_has(\"wf_kkomi_met\"):"
+          ]
+        }
+      ],
+      "line": 221,
+      "scene_title": "r13_wf_hideout",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "2318d752cb676e6e8d0ef9cee8380db51d26f95127539f86a25a47496301a9ac",
+      "uid": "41cbf4ba8af0de8490c90c79",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_wf_hideout|rpy_literal|r13_wf_hideout|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:223:25",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        14386,
+        14405
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_wf_hideout",
+      "block": "r13_wf_hideout",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:223:25",
+      "when": null,
+      "speaker": "kid_kkomi",
+      "kind": "dialogue",
+      "text": "탐정? 나는 꼬미. 여기 대장.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 223,
+          "label": "r13_wf_hideout",
+          "guards": [
+            "if not r13_has(\"wf_kkomi_met\"):"
+          ]
+        }
+      ],
+      "line": 223,
+      "scene_title": "r13_wf_hideout",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "209647d18ebc0d6033afa641632d7edbad7c6335bd1df26ca940ba79be10f9c2",
+      "uid": "5382295afe261e46c8c6ba5f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_wf_hideout|rpy_literal|r13_wf_hideout|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:225:25",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        14516,
+        14554
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_wf_hideout",
+      "block": "r13_wf_hideout",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:225:25",
+      "when": null,
+      "speaker": "kid_kkomi",
+      "kind": "dialogue",
+      "text": "여긴 비밀 아지트야. 【여긴 우리만 아는 데야.】 어른들은 몰라.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 225,
+          "label": "r13_wf_hideout",
+          "guards": [
+            "if not r13_has(\"wf_kkomi_met\"):"
+          ]
+        }
+      ],
+      "line": 225,
+      "scene_title": "r13_wf_hideout",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "daf5932cd60d0a9e455d92c1e1592961423566e62bd0c0dd2d3364d6e92b819b",
+      "uid": "2f61babc427a6d4865843961",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_wf_hideout|rpy_literal|r13_wf_hideout|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:226:25",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        14607,
+        14676
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_wf_hideout",
+      "block": "r13_wf_hideout",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:226:25",
+      "when": null,
+      "speaker": "kid_kkomi",
+      "kind": "dialogue",
+      "text": "아, 곰 아저씨는 알아. 밤마다 장작 몇 개씩 몰래 가져가. 우리도 못 본 척해 줘. 아저씨도 우리 못 본 척해 주니까.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 226,
+          "label": "r13_wf_hideout",
+          "guards": [
+            "if not r13_has(\"wf_kkomi_met\"):"
+          ]
+        }
+      ],
+      "line": 226,
+      "scene_title": "r13_wf_hideout",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "7e67d1fdc400c29658d5f6aa324ec2a6d4a707fdda812ad675941b8e44f29947",
+      "uid": "bcd5bc36a3403de25d7ad48d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_wf_hideout|rpy_literal|r13_wf_hideout|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:228:25",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        14751,
+        14777
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_wf_hideout",
+      "block": "r13_wf_hideout",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:228:25",
+      "when": null,
+      "speaker": "kid_kkomi",
+      "kind": "dialogue",
+      "text": "우리 탐정단 같은 거네. 아지트 대장 표시.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 228,
+          "label": "r13_wf_hideout",
+          "guards": [
+            "if not r13_has(\"wf_kkomi_met\"):"
+          ]
+        }
+      ],
+      "line": 228,
+      "scene_title": "r13_wf_hideout",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "9db5b78ac35a7780bbabd3c8c6b8626db16d2f100f6fc6bba565be9169332de4",
+      "uid": "e26263a3f8369dd18fda7917",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_wf_hideout|rpy_literal|r13_wf_hideout|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:229:25",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        14805,
+        14841
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_wf_hideout",
+      "block": "r13_wf_hideout",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:229:25",
+      "when": null,
+      "speaker": "kid_kkomi",
+      "kind": "dialogue",
+      "text": "다음엔 너도 와. 밤에 오면 등잔 켜고 무서운 얘기 해 줄게.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 229,
+          "label": "r13_wf_hideout",
+          "guards": [
+            "if not r13_has(\"wf_kkomi_met\"):"
+          ]
+        }
+      ],
+      "line": 229,
+      "scene_title": "r13_wf_hideout",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "b1737cefbb2b00e55c1a1582d6d8433fc8a67d896ea989cbc3e39bebf71e017d",
+      "uid": "4583ecc79ae19456d2b44e54",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_wf_hideout|rpy_literal|r13_wf_hideout|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:237:35",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        15250,
+        15289
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_wf_hideout",
+      "block": "r13_wf_hideout",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:237:35",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "학교 선생님이 너희 이름을 적었어. 오늘 밤부터 너희 자리가 있대.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 237,
+          "label": "r13_wf_hideout",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 237,
+      "scene_title": "r13_wf_hideout",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "feeb99c4a8833f364981372329da37e959bfc0c69603542f89c37a19ff0fc87a",
+      "uid": "7eb797bb21b4b92a6bd47fd8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_wf_hideout|rpy_literal|r13_wf_hideout|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

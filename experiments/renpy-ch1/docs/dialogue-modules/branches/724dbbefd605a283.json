@@ -1,0 +1,170 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:479:35",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        28287,
+        28342
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_wf_decision",
+      "block": "r13_wf_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:479:35",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "누비 씨를 민 건 '그 애들이 줄면 몫을 주겠다'는 말입니다. 빨래터에서 제가 직접 들었습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 479,
+          "label": "r13_wf_decision",
+          "guards": [
+            "elif _wf_pick==\"expose\":",
+            "if r13_has(\"F01\"):"
+          ]
+        }
+      ],
+      "line": 479,
+      "scene_title": "r13_wf_decision",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "49381da8880ef87bb4923b9539e5b00538de0e3e7539689d6fa22d6c1c24ad56",
+      "uid": "1dd96c525eccb71f76dd7056",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_wf_decision|rpy_literal|r13_wf_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:481:25",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        28423,
+        28450
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_wf_decision",
+      "block": "r13_wf_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:481:25",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "……외지 사람이 오래 머물 생각이 없나 보오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 481,
+          "label": "r13_wf_decision",
+          "guards": [
+            "elif _wf_pick==\"expose\":",
+            "if r13_has(\"F01\"):"
+          ]
+        }
+      ],
+      "line": 481,
+      "scene_title": "r13_wf_decision",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "3c53dbacc480d3908d3b5d133997a0c25b1faad2b8947a88cd1e9d59e799bcc1",
+      "uid": "d3b2c1b22019f535216ebc4b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_wf_decision|rpy_literal|r13_wf_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:484:35",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        28578,
+        28606
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_wf_decision",
+      "block": "r13_wf_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:484:35",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "누비 씨는 너울 님의 약속 때문이라고 했습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 484,
+          "label": "r13_wf_decision",
+          "guards": [
+            "elif _wf_pick==\"expose\":",
+            "else:"
+          ]
+        }
+      ],
+      "line": 484,
+      "scene_title": "r13_wf_decision",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "28c55d5e2f2e400bf6fb65c2d3fe7a2f3c492e74e52894834a956f221451cbc3",
+      "uid": "0f7f606920c0cf49764a14a1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_wf_decision|rpy_literal|r13_wf_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:485:25",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        28634,
+        28646
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_wf_decision",
+      "block": "r13_wf_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:485:25",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "저 여자 말뿐이오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 485,
+          "label": "r13_wf_decision",
+          "guards": [
+            "elif _wf_pick==\"expose\":",
+            "else:"
+          ]
+        }
+      ],
+      "line": 485,
+      "scene_title": "r13_wf_decision",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "74b34c0b0908f5c2a72498537a9d5a80c59e69fab47f0d57f43ac3530b079c09",
+      "uid": "441677d8b3f525920ddce4d8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_wf_decision|rpy_literal|r13_wf_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

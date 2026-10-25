@@ -1,0 +1,129 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_LA_LA_BIND2_0",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_bind2",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "la_bind2",
+      "block": "la_bind2",
+      "placement": "blocks",
+      "ref": "la_bind2",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "덮개를 누르고 걸쇠 바깥에 끈을 감는다. 끝을 당겨 묶자 덮개가 들리지 않는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 14,
+          "label": "r13_lamp_prep2",
+          "guards": [
+            "elif _return==3 and r13_v111_value('lamp_cord2') and r13_v111_value('lamp_latch_seen2'):"
+          ]
+        }
+      ],
+      "scene_title": "la_bind2",
+      "source_hash": "1f8d4bedb33f10201a3ffe6e822492a7cb7ec3d826a133f6d7683d7013245e9b",
+      "baseline_hash": "d18ce4edd45ae8a7118d0614be0f1f1c9d2cc45b5fc7bd945ffafd84834d22a9",
+      "uid": "0099933003e0365415504f5b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|la_bind2|patch|la_bind2|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_LA_LA_BIND2_1",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_bind2",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "la_bind2",
+      "block": "la_bind2",
+      "placement": "blocks",
+      "ref": "la_bind2",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "등도 허리띠 해?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 14,
+          "label": "r13_lamp_prep2",
+          "guards": [
+            "elif _return==3 and r13_v111_value('lamp_cord2') and r13_v111_value('lamp_latch_seen2'):"
+          ]
+        }
+      ],
+      "scene_title": "la_bind2",
+      "source_hash": "1f8d4bedb33f10201a3ffe6e822492a7cb7ec3d826a133f6d7683d7013245e9b",
+      "baseline_hash": "719f69d3b9d04d8449092ddbda50c4dfb77f0c6a0e96f12232179c1e28d20770",
+      "uid": "98cfdb7c495510dba15d7dae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|la_bind2|patch|la_bind2|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_LA_LA_BIND2_2",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_bind2",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "la_bind2",
+      "block": "la_bind2",
+      "placement": "blocks",
+      "ref": "la_bind2",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응. 흘러내릴 바지가 없다는 게 다르지.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 14,
+          "label": "r13_lamp_prep2",
+          "guards": [
+            "elif _return==3 and r13_v111_value('lamp_cord2') and r13_v111_value('lamp_latch_seen2'):"
+          ]
+        }
+      ],
+      "scene_title": "la_bind2",
+      "source_hash": "1f8d4bedb33f10201a3ffe6e822492a7cb7ec3d826a133f6d7683d7013245e9b",
+      "baseline_hash": "b0330a398e9d15fa26119ee4651530bd096883113fb5aec0eba83d0413ee57c4",
+      "uid": "89059eba06b2fe303589a78a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|la_bind2|patch|la_bind2|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "rescue_handoff11:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "rescue_handoff11",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 11,
+      "scene": "rescue_handoff11",
+      "block": "rescue_handoff11",
+      "placement": "binding",
+      "ref": "rescue_handoff11:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "세 사람을 맞은 자리와 명단을 확인한다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "school",
+        "person": null,
+        "object": "blankets"
+      },
+      "scene_title": "rescue_handoff11",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "8d91402bd42b36ec4ea9863116a0788dbfbc71c0d2e279b70b0aeda5afd972b7",
+      "uid": "a574399ceac7d71ba7193873",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|rescue_handoff11|choice|rescue_handoff11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "rescue_handoff11:1",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "rescue_handoff11",
+        "options",
+        1,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 11,
+      "scene": "rescue_handoff11",
+      "block": "rescue_handoff11",
+      "placement": "binding",
+      "ref": "rescue_handoff11:1",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "학교 안에서 받을 사람을 기다린다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "school",
+        "person": null,
+        "object": "blankets"
+      },
+      "scene_title": "rescue_handoff11",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "3ec3cca53b3c9630e9a8beeac45c33edf76a583562e38e6fc5e47068158b62b6",
+      "uid": "00a10338cd3cc86c8950125f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|rescue_handoff11|choice|rescue_handoff11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

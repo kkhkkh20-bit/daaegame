@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_week2_events.rpy:116:34",
+      "file": "game/systems/room13_week2_events.rpy",
+      "path": [
+        6523,
+        6559
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_w2e_numbers",
+      "block": "r13_w2e_numbers",
+      "placement": "literal",
+      "ref": "game/systems/room13_week2_events.rpy:116:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "우박이 마지못해 펜을 들었다. 장부에서 숫자 하나가 지워졌다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week2_events.rpy",
+          "line": 116,
+          "label": "r13_w2e_numbers",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 116,
+      "scene_title": "r13_w2e_numbers",
+      "source_hash": "bd106ab951275b7b2a06d9b6705a142790d202b883e7f2e6d4f37241b21c87c0",
+      "baseline_hash": "5d82c055b2fe2ccb3b4c575e05c70c4a5a093373c83f224db8597f9974bbb717",
+      "uid": "57184b6ea30733610204a030",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_w2e_numbers|rpy_literal|r13_w2e_numbers|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

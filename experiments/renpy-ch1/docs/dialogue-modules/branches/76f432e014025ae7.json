@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_carryover.rpy:60:61",
+      "file": "game/systems/room13_carryover.rpy",
+      "path": [
+        3893,
+        3950
+      ],
+      "origin": "rpy_inventory",
+      "day": 1,
+      "scene": "r13_carryover_events",
+      "block": "r13_carryover_events",
+      "placement": "literal",
+      "ref": "game/systems/room13_carryover.rpy:60:61",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "수레를 끌어 달라고요? 배급대 앞에서 다들 구경만 했죠. 그러니 이번엔 저도 우리 집부터 챙길래요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_carryover.rpy",
+          "line": 60,
+          "label": "r13_carryover_events",
+          "guards": [
+            "if (r13_has(\"bori_hostile\") or r13_has(\"bori_punished\")) and not (r13_has(\"bori_ally\") or r13_has(\"bori_cleared\")):"
+          ]
+        }
+      ],
+      "line": 60,
+      "scene_title": "r13_carryover_events",
+      "source_hash": "f10306dfce96df81431a8d3c357b4d31023a0ef3afd42beef4d1a8184ca40d9d",
+      "baseline_hash": "07578f2a1ed86f69f3e978f322bc602814920584261f5f4e28675c9ac9ba111f",
+      "uid": "5b3fe095bf64be76d7bcd5be",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_carryover_events|rpy_inventory|r13_carryover_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

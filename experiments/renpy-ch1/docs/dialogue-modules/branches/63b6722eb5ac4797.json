@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:382:32",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        22863,
+        22873
+      ],
+      "origin": "rpy_inventory",
+      "day": 2,
+      "scene": "r13_wf_nubi",
+      "block": "r13_wf_nubi",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:382:32",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "여관 뒤 빨래터",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 382,
+          "label": "r13_wf_nubi",
+          "guards": []
+        }
+      ],
+      "line": 382,
+      "scene_title": "r13_wf_nubi",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "608b4b0cc930af2333c407ca0469a4e4ef398c45e31716636b10c42a4d505f60",
+      "uid": "2c2dc6abf1a9c7528989f38d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_wf_nubi|rpy_inventory|r13_wf_nubi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:387:132",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        23240,
+        23249
+      ],
+      "origin": "rpy_inventory",
+      "day": 2,
+      "scene": "r13_wf_nubi",
+      "block": "r13_wf_nubi",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:387:132",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "이제 돌아간다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 387,
+          "label": "r13_wf_nubi",
+          "guards": [
+            "while _wf_left:"
+          ]
+        }
+      ],
+      "line": 387,
+      "scene_title": "r13_wf_nubi",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "57f5914277f1f8542ae5826a23f68e6c36ed460ef1f31534c221bf5613994ae3",
+      "uid": "2a96c73862462da26e83b7a8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_wf_nubi|rpy_inventory|r13_wf_nubi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

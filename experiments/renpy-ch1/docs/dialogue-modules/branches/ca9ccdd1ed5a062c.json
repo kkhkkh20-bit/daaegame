@@ -1,0 +1,90 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13.rpy:509:134",
+      "file": "game/room13.rpy",
+      "path": [
+        27612,
+        27671
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_talk_dispatch",
+      "block": "r13_talk_dispatch",
+      "placement": "literal",
+      "ref": "game/room13.rpy:509:134",
+      "when": null,
+      "speaker": "buri",
+      "kind": "dialogue",
+      "text": "그렇게 바로잡은 내용도 기록에 꼭 남겨 주세요. 여기서 저한테만 말로 하시는 거라면 아무 소용 없어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 509,
+          "label": "r13_talk_dispatch",
+          "guards": [
+            "if r13_topic==\"buri_consent\":",
+            "menu:",
+            "if r13_has(\"buri_refused\"):",
+            "if r13_has(\"E08\"):"
+          ]
+        }
+      ],
+      "line": 509,
+      "scene_title": "r13_talk_dispatch",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "699758f653c096046d09f24b5d28f00c1010eebc8e6c208d0da8b8dae82b1e07",
+      "uid": "7ec9e5859b60f5ced28ee461",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_talk_dispatch|rpy_literal|r13_talk_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:517:124",
+      "file": "game/room13.rpy",
+      "path": [
+        28565,
+        28608
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_talk_dispatch",
+      "block": "r13_talk_dispatch",
+      "placement": "literal",
+      "ref": "game/room13.rpy:517:124",
+      "when": null,
+      "speaker": "buri",
+      "kind": "dialogue",
+      "text": "그 마음은 저도 알아요. 제가 그걸 모르는 사람인 것처럼 말씀하지 마세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 517,
+          "label": "r13_talk_dispatch",
+          "guards": [
+            "if r13_topic==\"buri_consent\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 517,
+      "scene_title": "r13_talk_dispatch",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "4865a8b421ead5a1d0ebed586cf66baba1a83e3325c0ce0e843837d00a75aa61",
+      "uid": "8d17aed8e289d6fb88f02026",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_talk_dispatch|rpy_literal|r13_talk_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

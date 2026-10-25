@@ -1,0 +1,174 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_life_closeups.rpy:151:26",
+      "file": "game/systems/room13_life_closeups.rpy",
+      "path": [
+        8429,
+        8475
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "r13_life_door",
+      "block": "r13_life_door",
+      "placement": "literal",
+      "ref": "game/systems/room13_life_closeups.rpy:151:26",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "두꺼운 나무문이다. 문짝은 맞게 닫히는데, 아래쪽만 바닥에서 한 뼘쯤 떠 있다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_life_closeups.rpy",
+          "line": 151,
+          "label": "r13_life_door",
+          "guards": [
+            "while True:",
+            "if _return[0]==\"look\":",
+            "elif _t==\"door\":"
+          ]
+        }
+      ],
+      "line": 151,
+      "scene_title": "r13_life_door",
+      "source_hash": "ff9e09dda506d96806b7e62ed92cf7d8c9b9dca5fa0547afc1d000e4ca902e0b",
+      "baseline_hash": "8d20ce00c09299faa96239323727f08a3b894c4f39beff51b6334319912f7c88",
+      "uid": "f724e1df3fc61bfde982219a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_life_door|rpy_inventory|r13_life_door|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_life_closeups.rpy:161:26",
+      "file": "game/systems/room13_life_closeups.rpy",
+      "path": [
+        8980,
+        8997
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "r13_life_door",
+      "block": "r13_life_door",
+      "placement": "literal",
+      "ref": "game/systems/room13_life_closeups.rpy:161:26",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "천이 문 밑에 덧대어 있다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_life_closeups.rpy",
+          "line": 161,
+          "label": "r13_life_door",
+          "guards": [
+            "while True:",
+            "if _return[0]==\"look\":",
+            "else:"
+          ]
+        }
+      ],
+      "line": 161,
+      "scene_title": "r13_life_door",
+      "source_hash": "ff9e09dda506d96806b7e62ed92cf7d8c9b9dca5fa0547afc1d000e4ca902e0b",
+      "baseline_hash": "4655d214ecc7e07b35d757a0c09977fd146593baedb0ca0826e91977bb125694",
+      "uid": "ad74093fb0ab6df76099f103",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_life_door|rpy_inventory|r13_life_door|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_life_closeups.rpy:168:26",
+      "file": "game/systems/room13_life_closeups.rpy",
+      "path": [
+        9384,
+        9415
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "r13_life_door",
+      "block": "r13_life_door",
+      "placement": "literal",
+      "ref": "game/systems/room13_life_closeups.rpy:168:26",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "문 밑 틈이 천으로 덮였다. 들어오던 바람이 줄었다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_life_closeups.rpy",
+          "line": 168,
+          "label": "r13_life_door",
+          "guards": [
+            "while True:",
+            "else:",
+            "if _return[1]==\"cloth\" and _return[2] in (\"draft_gap\",\"door\") and not _dr_sealed:"
+          ]
+        }
+      ],
+      "line": 168,
+      "scene_title": "r13_life_door",
+      "source_hash": "ff9e09dda506d96806b7e62ed92cf7d8c9b9dca5fa0547afc1d000e4ca902e0b",
+      "baseline_hash": "8053bbc642a6f51c4b4bccf535bfeec2e459ebaf5226e6f3d40aa6c710aeec36",
+      "uid": "f33b9ed22765decce603b6de",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_life_door|rpy_inventory|r13_life_door|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_life_closeups.rpy:170:26",
+      "file": "game/systems/room13_life_closeups.rpy",
+      "path": [
+        9460,
+        9487
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "r13_life_door",
+      "block": "r13_life_door",
+      "placement": "literal",
+      "ref": "game/systems/room13_life_closeups.rpy:170:26",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "거기에는 쓸 데가 없다. 천은 그대로 두었다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_life_closeups.rpy",
+          "line": 170,
+          "label": "r13_life_door",
+          "guards": [
+            "while True:",
+            "else:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 170,
+      "scene_title": "r13_life_door",
+      "source_hash": "ff9e09dda506d96806b7e62ed92cf7d8c9b9dca5fa0547afc1d000e4ca902e0b",
+      "baseline_hash": "27f225bb824da446b7ffb6da54d69f57a9eb0b18667e8043576448d81debd189",
+      "uid": "68cb009bdc620fa526cf2f7d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_life_door|rpy_inventory|r13_life_door|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

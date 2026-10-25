@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:196:37",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        13071,
+        13095
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_wf_laundry",
+      "block": "r13_wf_laundry",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:196:37",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "이번 주 배급이 또 줄었소. 알고 있소?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 196,
+          "label": "r13_wf_laundry",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 196,
+      "scene_title": "r13_wf_laundry",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "d29b09c1fe5530cc5edea73fd14234fd47e6c71db6b889b1d724836994c57bb0",
+      "uid": "abcc12c4702f2809ad867d8e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_wf_laundry|rpy_literal|r13_wf_laundry|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:209:37",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        13856,
+        13884
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_wf_laundry",
+      "block": "r13_wf_laundry",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:209:37",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "아, 여관 손님이오. 빨래 얘기나 하고 있었소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 209,
+          "label": "r13_wf_laundry",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 209,
+      "scene_title": "r13_wf_laundry",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "2e663b7a1285796e0d5b21566466a2144c4d0d92710f366689099e8777adef0f",
+      "uid": "2642e604a7a55e5e3a4ab5aa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_wf_laundry|rpy_literal|r13_wf_laundry|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

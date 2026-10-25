@@ -1,0 +1,1372 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D06_S02_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[소리] 틈새 바람, 얇은 깡통 두드리는 소리. 꼬미가 다람에게 천장 못에 매단 줄을 보여 준다. 문을 열면 깡통이 울린다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6f670c10bec8d94a666da0807395f83a2bdb5624fd6cc8be098ff487316b551f",
+      "uid": "5fbdca74e8e0dd37a40696d2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0002",
+      "when": null,
+      "speaker": "꼬미",
+      "kind": "dialogue",
+      "text": "누가 오면 알아. 그러니까 안전해.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 102,
+          "label": "r13_v111_woodshed6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "94ca16ac8fa685b930c1efddd3764769da150f5adf64e8757710ceb0f9bca0ba",
+      "uid": "58b44f10d218bb4bdae0f162",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0003",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "안에서 못 나가면?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 104,
+          "label": "r13_v111_woodshed6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "692ac511bc2508e6d21b331532d85f7acc4f0ecb1226e60848aa9782607a9c73",
+      "uid": "6917c4a305d97abcd17af8dd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0004",
+      "when": null,
+      "speaker": "꼬미",
+      "kind": "dialogue",
+      "text": "왜 못 나가.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 105,
+          "label": "r13_v111_woodshed6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "12768556940ed0f91f491d3de2e3307d14f3008b915fad11aa3008a742f42df2",
+      "uid": "c342d125c97e66f1b611302a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0005",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[살펴보기] 문 앞 쌓인 젖은 장작 / 작은 뒤창 / 뚜껑 달린 등잔.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cb3cbccf683b19edc4b76331218dd1480fbf6175c864840a4f6c3b357ebfd094",
+      "uid": "f96a64b8fcc5fef3f4ed9f3b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0006",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이 장작은 문에서 옮기자. 안으로 열리는데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 115,
+          "label": "r13_v111_woodshed_seen6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d81f4a30ac963fc74ec5af1fc2cd3e7cc30a3ca7f2e751b289c71ca7acb1549e",
+      "uid": "c59ae3ce432a4f9e0d1815b4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0007",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "내일 나를 시키면 되지. 오늘까지 품삯 못 받았어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 116,
+          "label": "r13_v111_woodshed_seen6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ce740b2ce0c744e7d298f19de1c00e64ca83750a214a4c90bdfc05bf52ccd8ba",
+      "uid": "4f421b8c72d969e1d051d234",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0008",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "지금 아이들이 안에 있습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 117,
+          "label": "r13_v111_woodshed_seen6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "de71a2c469e851a48fdb201fd9bd9c71637c3b28354bef9162ef33f4b01b6094",
+      "uid": "8f05e1e636fc5e2d3ada687b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0009",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "알아. 그래서 내가 이걸 나르는 거잖아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 118,
+          "label": "r13_v111_woodshed_seen6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "559ecefc70146e3062088c01cfd6f94d019eeca82a74c80be2ada7a48389e3f1",
+      "uid": "fbbe5251c49521b37a14f671",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0010",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "학교 가방을 멘 아이가 길 건너에서 손을 흔든다. 창고에 사는 꼬미와 다른 아이이며, 화면 인물 표기는 ‘도담(보리의 아이)’로 고정한다. 기존 아이 슬롯 kid_dodam이며 새 인원이 아니다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c906dfbb1d7c575cb46f5a202a91b7eb4d56a173de3eeee82e44791c58de9fb4",
+      "uid": "0f665921db3abb268a31f596",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0011",
+      "when": null,
+      "speaker": "도담",
+      "kind": "dialogue",
+      "text": "우리 아빠야. 아빠, 학교에서 기다려?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 119,
+          "label": "r13_v111_woodshed_seen6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "03773fc67e45b9028fed0f3f7f2fa55b7cab4cb3a8dd56a7d8316eb23d88ebf5",
+      "uid": "5f4925c731157bb0afb6e965",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0012",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "도담아, 난로 옆에 있어. 끝나면 데리러 갈게.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 120,
+          "label": "r13_v111_woodshed_seen6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "dbeda7e6e7a2df5725621142909fb882af602571f406a3ad2c6149c21a3c9e59",
+      "uid": "f501bf99969e965ec2324313",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0013",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "아이는 학교로 돌아간다. 꼬미가 창고 문을 발로 받치고 보리의 수레를 잡아 준다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 121,
+          "label": "r13_v111_woodshed_seen6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "13d983a160d75c68790ad162a28b2a8c2b4c33eb9e255d682088ac4172eb7bfc",
+      "uid": "651cc54552ac179bf0315d4a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0014",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "보리가 대꾸보다 먼저 장작 두 개를 옆으로 던진다. 갈라진 손바닥에 나무 가시가 박힌다. 그의 수레 아래에는 여관 표가 찍힌 장작이 담요로 덮여 있다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 122,
+          "label": "r13_v111_woodshed_seen6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5255c05488b1c0f0a5c2e09ef85371d7b612ac8b39bca8cc49d31577859602b7",
+      "uid": "cdf78d976a28f9a605ffd6df",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0015",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[살펴보기] 담요를 들려 하면 보리가 팔로 막는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9d08197d3a451a8f97fc2d3fd1f21100d053484aaf8c48bc240bcd1686ef5fc0",
+      "uid": "c809b3c4e8486f7ab572025f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0016",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "아이들 방 구하러 왔소, 도둑 잡으러 왔소?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 123,
+          "label": "r13_v111_woodshed_seen6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "dabcf5fe1fd21b91e3de6e7a8f3738a1e48e66bcacced370cc576217f5e6f776",
+      "uid": "bb5bcbb3882a6ba6ab9b1d68",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0017",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "아빠가 손을 거둔다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 124,
+          "label": "r13_v111_woodshed_seen6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a42c40f6e3939c5d7673cbfc405b5a0f9117e12a5c4ea352de25134898639f19",
+      "uid": "aa452c2e84ad50ee0e38d7ba",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0018",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "꼬미야, 학교로 오면 우리 옆에 앉아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 125,
+          "label": "r13_v111_woodshed_seen6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5ddb89d0b200e933cc5a95430dda77fce516c8d7a752d62e10dca7456e4cbc15",
+      "uid": "4e38b4d58487679df3917287",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0019",
+      "when": null,
+      "speaker": "꼬미",
+      "kind": "dialogue",
+      "text": "선생님한테 물었어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 126,
+          "label": "r13_v111_woodshed_seen6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c911fcaf2a33c103a8f082b2edd1cd3813c7d1e872f83aeadeb99e29a5a2014a",
+      "uid": "e6d221041d31221a1c7454e1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0020",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠가 물을 거야.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 127,
+          "label": "r13_v111_woodshed_seen6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "28d6ae465b6a2f8c1cdd56bcb25c762cc346420d64ea1e3fc174eee031ee8df3",
+      "uid": "7e1a779df16a99feb6870738",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0021",
+      "when": null,
+      "speaker": "꼬미",
+      "kind": "dialogue",
+      "text": "그럼 아직 아니네.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 128,
+          "label": "r13_v111_woodshed_seen6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5ff1002d51d2e64bae15c1fbe968a0f60d7fa0831ec37692600ed51eb343d33b",
+      "uid": "77a83d643263c1e0d2b2bd37",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0022",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "꼬미가 다람이 내민 도토리를 받아 깡통 속에 넣는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 129,
+          "label": "r13_v111_woodshed_seen6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4e499c5c64d859893bb0cb718ab2ea010b17f32d0f5f17f869f6fd8e7dc92abd",
+      "uid": "29f104e476488a2b70669d85",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0023",
+      "when": null,
+      "speaker": "꼬미",
+      "kind": "dialogue",
+      "text": "자리 생기면 이거 들고 와. 비밀 문 열어 줄게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 130,
+          "label": "r13_v111_woodshed_seen6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4ddfc30ae2861f5be35d797dc2fa8a27b54afc95646805ee1e685037a3954ba6",
+      "uid": "ea4acfacc65e0e9a39d6bce5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0024",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: D06_S02_inspect_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "97abe20ded6814e405139c6ad602997c323006e5bdcdef4621832e2e2e660f20",
+      "uid": "2d48926f8209e6fa86187d20",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0025",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "아이들을 언제 옮길까?",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fecfb6e4110724a48a91746d8d31317dd87e6d90e5bb98f034e0a98278e0f0ef",
+      "uid": "3007633327e59fec5cc86a38",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0026",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: D06_S02_evacuation_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0072959d8bd3ae4ff0e2020fed1c9d209ac5e60baab60ebffd69ccd2942c6b14",
+      "uid": "53762edd76344fa1b75b7b28",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0027",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다람아, 같이 가자. 아이들 자리부터 받아야겠다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 186,
+          "label": "r13_v111_today6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2546ca5f5036336b62af8c29b8d0d50efe9b86c5b519b4e366ded844dd3501f2",
+      "uid": "48e6cc7e0c268f1af62c5dfd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0028",
+      "when": null,
+      "speaker": "꼬미",
+      "kind": "dialogue",
+      "text": "허락받고 와. 그냥 들어갔다가 또 쫓겨나기 싫어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 187,
+          "label": "r13_v111_today6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f949e8d267f913f68ad5761a8b324a7de9d9e65c752cab2483f15e41759a0c21",
+      "uid": "39c680eb283f783d525f1778",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0029",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: evacuation_requested=true; D06_S02_today_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "86fef3c2cf2e55e156686183ea28a35ecdbfc19c3f8db5e4e1157ade5fb741e2",
+      "uid": "00d7674d5771a6fdbc9b8d76",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0030",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "먼저 선생님께 묻고 오겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 192,
+          "label": "r13_v111_permission6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "kkomi_seat6",
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9f4599da57ea6f280eeb6f52925483f5cdc3d3c1d695393d95d375e2cb4a9cb9",
+      "uid": "b12b084c571cbd589fce2f5c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0031",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "나는 문 앞부터 비울게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 193,
+          "label": "r13_v111_permission6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1a163f608c61cb25e30f52b21c753c19943b1878a7bec2424616c62106a93efc",
+      "uid": "beb334e661d68b6c8208b51a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0032",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "꼬미야, 기다려.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 194,
+          "label": "r13_v111_permission6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a7764bfb38f72ca6fe503ad6bf36d35d4ea3c688997b53dedd3611c393922bac",
+      "uid": "dc475e4751e11fba33e0f73d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S02_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S02_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S02_L0033",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: FIRE_EVACUATED=false; D06_S02_permission_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-2. 오후 / 장작 창고 — 안전한 곳이라는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1f7a2715e7e00ff811f7b2d8bc1eb96c3d55b86439ca1ca20d691f10f8ea3f84",
+      "uid": "c4546e31bb3bc754aba46340",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

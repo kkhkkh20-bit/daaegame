@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:233:33",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        15042,
+        15067
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_wf_hideout",
+      "block": "r13_wf_hideout",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:233:33",
+      "when": null,
+      "speaker": "kid_kkomi",
+      "kind": "dialogue",
+      "text": "학교? 싫어. 여긴 우리만 아는 데라니까.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 233,
+          "label": "r13_wf_hideout",
+          "guards": []
+        }
+      ],
+      "line": 233,
+      "scene_title": "r13_wf_hideout",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "74a001d594fe4593892f0601dbb76e13e76bc69937fe857412a8b879c8493dbd",
+      "uid": "30008ae3f4dd1a7de262b314",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_wf_hideout|rpy_literal|r13_wf_hideout|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:246:23",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        15835,
+        15861
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_wf_hideout",
+      "block": "r13_wf_hideout",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:246:23",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(겁만 줬다. 숨을 곳을 보여 줘야 했다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 246,
+          "label": "r13_wf_hideout",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 246,
+      "scene_title": "r13_wf_hideout",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "72c56f4fa7bf58720d9d0141b1d9f5170344ee2c6b57bdd179ea7aae5d0c70a2",
+      "uid": "10bdfdab35fd16b8eb7b28bb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_wf_hideout|rpy_literal|r13_wf_hideout|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

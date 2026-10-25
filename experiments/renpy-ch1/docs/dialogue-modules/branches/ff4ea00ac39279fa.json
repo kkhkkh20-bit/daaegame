@@ -1,0 +1,82 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:282:37",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        13945,
+        13990
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_ep2_at_lowroad",
+      "block": "r13_ep2_at_lowroad",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:282:37",
+      "when": null,
+      "speaker": "resident_somi",
+      "kind": "dialogue",
+      "text": "비틀거리던 할아버지면…… 아랫길 천막 사람들일 거야. 거기 이상한 사람 많아.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 282,
+          "label": "r13_ep2_at_lowroad",
+          "guards": []
+        }
+      ],
+      "line": 282,
+      "scene_title": "r13_ep2_at_lowroad",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "c221288d3dc56fd7b42bc23d26ccf52dae2b0bef6f9f8d3a1402f372772c66d4",
+      "uid": "9b8725aa7a8d52f821580e45",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_ep2_at_lowroad|rpy_literal|r13_ep2_at_lowroad|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:286:17",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        14161,
+        14193
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_ep2_at_lowroad",
+      "block": "r13_ep2_at_lowroad",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:286:17",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "(솜이가 이상해. 아까부터 자꾸 여기로만 가자고 해.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 286,
+          "label": "r13_ep2_at_lowroad",
+          "guards": []
+        }
+      ],
+      "line": 286,
+      "scene_title": "r13_ep2_at_lowroad",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "0097293e45cccde4045cbbce4a48b3d7bbaa457dc3ce62ac1727fc93ea7f0f6c",
+      "uid": "50de799d55928b52a8fd7263",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_ep2_at_lowroad|rpy_literal|r13_ep2_at_lowroad|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

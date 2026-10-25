@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_first_mystery.rpy:244:20",
+      "file": "game/room13_first_mystery.rpy",
+      "path": [
+        14585,
+        14595
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_compare_first_plan",
+      "block": "r13_compare_first_plan",
+      "placement": "literal",
+      "ref": "game/room13_first_mystery.rpy:244:20",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "돋보기 내려놓기",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_first_mystery.rpy",
+          "line": 244,
+          "label": "r13_compare_first_plan",
+          "guards": [
+            "if r13_plan_has_lens():"
+          ]
+        }
+      ],
+      "line": 244,
+      "scene_title": "r13_compare_first_plan",
+      "source_hash": "f8485d8677b27568c7189f8ed03e508431a089ba2b6134decfe2c2630abcf8ad",
+      "baseline_hash": "6068f2b280f7b94d434ea02e90bceab34a450fb92ea36721b2c967a2c9c146f6",
+      "uid": "dc0117e8f8fe9f9bdc9317d3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_compare_first_plan|rpy_inventory|r13_compare_first_plan|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

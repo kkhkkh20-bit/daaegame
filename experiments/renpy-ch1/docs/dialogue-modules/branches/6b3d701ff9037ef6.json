@@ -1,0 +1,123 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D13_S01_A01",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "after",
+        "MS14_D13_S01_L0018",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D13_S01_L0018",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "회관 쪽에서 촌장이 지나가다 보급대의 담요를 펼쳐 본다. 새 무늬를 한참 보더니, 언제 꿰맸는지는 묻지 않고 지나간다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1824,
+          "label": "r13_v111_blanket_mended13",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "27ad93ef17daa494db1e0c6200d8ef4c7bce1df664bb2bd3de7ee95d28e7cf53",
+      "uid": "67f21bb1a9bc595cd2e92aca",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D13_S01_V04",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "after",
+        "MS14_D13_S01_L0009",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D13_S01_L0009",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "하나, 둘, 셋…… 아빠! 바늘이 왜 이렇게 느려?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1801,
+          "label": "r13_v111_day13",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "8e208f286814deadcb02f8622eb8174f53d704db09722d6962389ce3560e5399",
+      "uid": "4ececb4c2fd24e2905fd6a73",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D13_S01_V05",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "after",
+        "MS14_D13_S01_L0009",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D13_S01_L0009",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "thought",
+      "text": "느린 건 맞아. 수첩에 글씨 쓰는 것보다 바늘이 더 어렵네.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1801,
+          "label": "r13_v111_day13",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 13-1. 판돌의 어깨",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "41f3f9c6f0cf7852ded49d52b09d0efc20908a2ced784ad1bf6ef315a9425d4d",
+      "uid": "af5cc9d3fa965ca2b01993be",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

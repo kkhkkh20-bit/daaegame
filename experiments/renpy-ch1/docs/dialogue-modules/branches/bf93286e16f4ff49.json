@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D12_KS01",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "kkomi_soup12",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "kkomi_soup12",
+      "block": "kkomi_soup12",
+      "placement": "blocks",
+      "ref": "kkomi_soup12",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "창가 쪽 담요 위에서 꼬미가 그릇을 쥔 채 옆으로 쓰러져 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1315,
+          "label": "r13_v111_late_meal12",
+          "guards": [
+            "if r13_v111_value('KKOMI_ALIVE') is True:"
+          ]
+        }
+      ],
+      "scene_title": "kkomi_soup12",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "c0e6d9ecb68de48fe0e2f867b6439cc5c7873ad6e4c9f698764eca023a0ca766",
+      "uid": "6661e7c04e92e575de16b463",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|kkomi_soup12|patch|kkomi_soup12|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D12_KS03",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "kkomi_soup12",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "kkomi_soup12",
+      "block": "kkomi_soup12",
+      "placement": "blocks",
+      "ref": "kkomi_soup12",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "꼬미의 손에서 도토리 하나가 굴러 나온다. 그릇은 반쯤 비어 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1315,
+          "label": "r13_v111_late_meal12",
+          "guards": [
+            "if r13_v111_value('KKOMI_ALIVE') is True:"
+          ]
+        }
+      ],
+      "scene_title": "kkomi_soup12",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "816ce5fe50912d6f13b5a93f308dff76ccdfc19c21925d93024f097474c12a27",
+      "uid": "0430acfdda0bdab875fb8ce4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|kkomi_soup12|patch|kkomi_soup12|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

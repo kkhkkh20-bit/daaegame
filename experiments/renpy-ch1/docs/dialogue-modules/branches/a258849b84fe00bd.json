@@ -1,0 +1,211 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:72:12",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        4701,
+        4727
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_special_activity",
+      "block": "r13_special_activity",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:72:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "남은 힘·쓰는 양·버티는 시간을 함께 적는다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 72,
+          "label": "r13_special_activity",
+          "guards": [
+            "if key==\"w2_measure2\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 72,
+      "scene_title": "r13_special_activity",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "ce806b150dd2214b1a3b6062e80bf191587e99c0160b96d33d9519d3d64bddec",
+      "uid": "5721603ef789bfd0da461834",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_special_activity|rpy_menu|r13_special_activity|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:75:12",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        4966,
+        4984
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_special_activity",
+      "block": "r13_special_activity",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:75:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "잘 나온 숫자 하나만 기록한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 75,
+          "label": "r13_special_activity",
+          "guards": [
+            "if key==\"w2_measure2\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 75,
+      "scene_title": "r13_special_activity",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "259d0602c7a9c0161f826dc569b194f2ab8d0f447dc8d180901dabd1fbc7e424",
+      "uid": "f8707a6741b153b14a2a1e6b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_special_activity|rpy_menu|r13_special_activity|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:78:12",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        5156,
+        5170
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_special_activity",
+      "block": "r13_special_activity",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:78:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "판단을 미루고 돌아간다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 78,
+          "label": "r13_special_activity",
+          "guards": [
+            "if key==\"w2_measure2\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 78,
+      "scene_title": "r13_special_activity",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "1fac6e1c021259adfe69182c5e2f3456e46906348985680156139e25492ab8f6",
+      "uid": "3dd825c2646459c505dab9e3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_special_activity|rpy_menu|r13_special_activity|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:89:12",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        5641,
+        5650
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_special_activity",
+      "block": "r13_special_activity",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:89:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "가족과 떠난다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 89,
+          "label": "r13_special_activity",
+          "guards": [
+            "if key==\"w2_escape\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 89,
+      "scene_title": "r13_special_activity",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "f21b01b8de378ba5e9020ddc20c4c7fba76fae9b8e7fe328756ac2c947445c6a",
+      "uid": "e550757f62306e11d043db46",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_special_activity|rpy_menu|r13_special_activity|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:92:12",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        5770,
+        5782
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_special_activity",
+      "block": "r13_special_activity",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:92:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "남아서 더 알아본다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 92,
+          "label": "r13_special_activity",
+          "guards": [
+            "if key==\"w2_escape\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 92,
+      "scene_title": "r13_special_activity",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "1f2945149e0873440aceba3f9b7f982f531fbc1986af3d15d678fba72f96d838",
+      "uid": "6b3b1dfcb3f607a49014446f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_special_activity|rpy_menu|r13_special_activity|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

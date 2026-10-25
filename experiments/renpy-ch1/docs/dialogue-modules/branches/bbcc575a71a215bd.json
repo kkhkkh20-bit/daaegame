@@ -1,0 +1,164 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:143:53",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        9782,
+        9799
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:143:53",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "응. 여기서부터는 같이 가.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 143,
+          "label": "r13_rescue",
+          "guards": []
+        }
+      ],
+      "line": 143,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "f34b7a14a42e937e4d3a48d3d83ae4816248e26a5040ff81c08da707f2e6a40a",
+      "uid": "b95e32d27593eb16177dafe1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:147:33",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        10011,
+        10022
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:147:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "엄마도 같이 와?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 147,
+          "label": "r13_rescue",
+          "guards": [
+            "elif r13_has(\"mom_reunited\"):"
+          ]
+        }
+      ],
+      "line": 147,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "5fd574042a4668b4d38cb6ad5c13b9b6e8c91fb6981bd620b8ec6c0b6decafc2",
+      "uid": "00ad09cbcb6c05cdf5656125",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:147:53",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        10031,
+        10043
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:147:53",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "엄마 만나러 가자.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 147,
+          "label": "r13_rescue",
+          "guards": [
+            "elif r13_has(\"mom_reunited\"):"
+          ]
+        }
+      ],
+      "line": 147,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "d33590894966eb020576a2cac4ca72542d3129f1714757bdd29bc2ee4f2e2e6a",
+      "uid": "3fa949dbc42770c99887960a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:149:33",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        10112,
+        10124
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:149:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "엄마는 어디 있어?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 149,
+          "label": "r13_rescue",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 149,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "4c4d1c866196769e01b52a6dda3cebbcfa67a91c4519253191fb797327afb9dc",
+      "uid": "2ed40a2498eaf73a4a499622",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

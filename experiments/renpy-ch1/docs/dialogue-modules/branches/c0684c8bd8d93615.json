@@ -1,0 +1,132 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_NR_SEAT11_0_NABI",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "blocks",
+        "nr_seat_nabi11",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "nr_seat_nabi11",
+      "block": "nr_seat_nabi11",
+      "placement": "blocks",
+      "ref": "nr_seat_nabi11",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아랫길에서 세 분을 모셔 오면 어디로 받으시겠습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 475,
+          "label": "r13_v111_rescue_cart11",
+          "guards": [
+            "elif _return==84 and r13_nero_receiver_ready11():",
+            "else:"
+          ]
+        }
+      ],
+      "scene_title": "nr_seat_nabi11",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "c4bede0a127b52b3978ca658aa185f39256de97d2f60da8d10a6240f98292b62",
+      "uid": "5d395b9c6d2920adfa1bccd2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|nr_seat_nabi11|patch|nr_seat_nabi11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_NR_SEAT11_1_NABI",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "blocks",
+        "nr_seat_nabi11",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "nr_seat_nabi11",
+      "block": "nr_seat_nabi11",
+      "placement": "blocks",
+      "ref": "nr_seat_nabi11",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "문 쪽 통로는 비워 두세요. 이쪽 세 자리를 정리하죠.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 475,
+          "label": "r13_v111_rescue_cart11",
+          "guards": [
+            "elif _return==84 and r13_nero_receiver_ready11():",
+            "else:"
+          ]
+        }
+      ],
+      "scene_title": "nr_seat_nabi11",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "08735aa407618ba3781a76eb2239bcf748b480d8f5fb242c1206455f275ea753",
+      "uid": "886f4f25c92ff9f70acf4c4d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|nr_seat_nabi11|patch|nr_seat_nabi11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_NR_SEAT11_2_NABI",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "blocks",
+        "nr_seat_nabi11",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "nr_seat_nabi11",
+      "block": "nr_seat_nabi11",
+      "placement": "blocks",
+      "ref": "nr_seat_nabi11",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "쌓인 물건을 옮기고 세 사람이 앉을 자리를 비운다. 받을 자리를 나비와 함께 확인한다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 475,
+          "label": "r13_v111_rescue_cart11",
+          "guards": [
+            "elif _return==84 and r13_nero_receiver_ready11():",
+            "else:"
+          ]
+        }
+      ],
+      "scene_title": "nr_seat_nabi11",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "df201694a320fff720e5e61343ba0e53ac8528292b7d0cccc71aacc25a582102",
+      "uid": "e4854ad525d393d51ccbe527",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|nr_seat_nabi11|patch|nr_seat_nabi11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

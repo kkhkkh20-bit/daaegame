@@ -1,0 +1,129 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D13_BK01",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "book_promise13",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "book_promise13",
+      "block": "book_promise13",
+      "placement": "blocks",
+      "ref": "book_promise13",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "교실 구석에서 나비가 책장 앞에 쪼그려 앉아 있다. 맨 아래 칸의 두꺼운 책을 두 손으로 끌어내, 바닥에 펼쳐 둔다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1804,
+          "label": "r13_v111_day13",
+          "guards": [
+            "if r13_v111_value('book_promise12') and r13_v111_value('alive:nabi') is not False and not r13_v111_value('listed:nabi'):"
+          ]
+        }
+      ],
+      "scene_title": "book_promise13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "5e2e17af7748e44afec8dcbf8ee3bfaf4256ceffdaf6d437c22d200da1881706",
+      "uid": "316f071d1fdba9108ff3f1eb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|book_promise13|patch|book_promise13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D13_BK02",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "book_promise13",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "book_promise13",
+      "block": "book_promise13",
+      "placement": "blocks",
+      "ref": "book_promise13",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "새미가 그 옆에 엎드려 한 장씩 넘긴다. 그림이 있는 쪽에서 손가락이 멈춘다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1804,
+          "label": "r13_v111_day13",
+          "guards": [
+            "if r13_v111_value('book_promise12') and r13_v111_value('alive:nabi') is not False and not r13_v111_value('listed:nabi'):"
+          ]
+        }
+      ],
+      "scene_title": "book_promise13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "92e9e81dc9d1c7c1d0fe4276a96c48f26ce09198414e4386200b0ab445063f29",
+      "uid": "e20e91b56b7c215d9f376577",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|book_promise13|patch|book_promise13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D13_BK03",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "book_promise13",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "book_promise13",
+      "block": "book_promise13",
+      "placement": "blocks",
+      "ref": "book_promise13",
+      "when": null,
+      "speaker": "새미",
+      "kind": "dialogue",
+      "text": "여기부터 읽을래.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1804,
+          "label": "r13_v111_day13",
+          "guards": [
+            "if r13_v111_value('book_promise12') and r13_v111_value('alive:nabi') is not False and not r13_v111_value('listed:nabi'):"
+          ]
+        }
+      ],
+      "scene_title": "book_promise13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "733a37b84c274f69d22418454e83bb81a003c964125abab72e2072d16f288d19",
+      "uid": "fb873dfbdd87ea35cff14a76",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|book_promise13|patch|book_promise13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

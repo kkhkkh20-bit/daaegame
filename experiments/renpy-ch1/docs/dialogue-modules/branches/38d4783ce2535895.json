@@ -1,0 +1,120 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events.rpy:362:26",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        19190,
+        19234
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ev_c_locked",
+      "block": "r13_ev_c_locked",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:362:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "창고 안은 생각보다 넓었다. 자루를 세는 사이 등 뒤에서 창고 문이 닫혔다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 362,
+          "label": "r13_ev_c_locked",
+          "guards": []
+        }
+      ],
+      "line": 362,
+      "scene_title": "r13_ev_c_locked",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "ca0ff08addca94069181690b76351f92908e89be5fed50b2ecac23291c05817e",
+      "uid": "acb0b87950d6da1ca2eee9b9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ev_c_locked|rpy_literal|r13_ev_c_locked|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:374:26",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        19730,
+        19775
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ev_c_locked",
+      "block": "r13_ev_c_locked",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:374:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "대답은 없었다. 등잔 기름이 다 탈 때까지 문을 두드렸다. 밤은 길기만 했다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 374,
+          "label": "r13_ev_c_locked",
+          "guards": []
+        }
+      ],
+      "line": 374,
+      "scene_title": "r13_ev_c_locked",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "cc97e9878122541ad4719aab3fc55f8ccbc7f0641e25349390aa5245953a71e1",
+      "uid": "03db432fc4fb7b41a814aabe",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ev_c_locked|rpy_literal|r13_ev_c_locked|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:378:26",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        19975,
+        20010
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ev_c_locked",
+      "block": "r13_ev_c_locked",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:378:26",
+      "when": null,
+      "speaker": "resident_madam",
+      "kind": "dialogue",
+      "text": "재고 세는 일을 다 못 끝냈으니 절반만 드릴게요. 일곱 냥.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 378,
+          "label": "r13_ev_c_locked",
+          "guards": []
+        }
+      ],
+      "line": 378,
+      "scene_title": "r13_ev_c_locked",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "c71bfecddae38c80f4d59829ac937f656d0402360478f5bcae3cf79c1d1b5db0",
+      "uid": "ac3efa70416ba2d65d750272",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ev_c_locked|rpy_literal|r13_ev_c_locked|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

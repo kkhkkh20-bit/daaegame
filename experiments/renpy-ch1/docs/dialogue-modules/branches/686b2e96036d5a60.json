@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:377:71",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        21287,
+        21316
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_ep1_ubak",
+      "block": "r13_ep1_ubak",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:377:71",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "고맙습니다. 저도 도울 일이 있으면 말씀하십시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 377,
+          "label": "r13_ep1_ubak",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 377,
+      "scene_title": "r13_ep1_ubak",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "60011f23e6ed00464cee29b0b2b12c2d4814322c5e0320d63a9dfaba4eb3d744",
+      "uid": "eb34f8041b419e4292f05658",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_ep1_ubak|rpy_literal|r13_ep1_ubak|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

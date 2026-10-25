@@ -1,0 +1,47 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_life.rpy:200:86",
+      "file": "game/room13_life.rpy",
+      "path": [
+        11276,
+        11315
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_topic_choice",
+      "block": "r13_topic_choice",
+      "placement": "literal",
+      "ref": "game/room13_life.rpy:200:86",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "책임까지 없던 일로 만들어 버리면 이 기록도 믿을 수 없게 됩니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_life.rpy",
+          "line": 200,
+          "label": "r13_topic_choice",
+          "guards": [
+            "if key==\"w2_erased\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 200,
+      "scene_title": "r13_topic_choice",
+      "source_hash": "ff6367277bd80f51605a562a690b9994a298289796fb1dd7f1222258428131b7",
+      "baseline_hash": "712d5995c3218b8ee6c2597633b74c183af78acaf260027f52b9ba73374ade1c",
+      "uid": "84eef33e11eb783b71879790",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_topic_choice|rpy_literal|r13_topic_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

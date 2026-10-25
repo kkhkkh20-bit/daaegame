@@ -1,0 +1,47 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13.rpy:706:184",
+      "file": "game/room13.rpy",
+      "path": [
+        41011,
+        41100
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_link_reason",
+      "block": "r13_link_reason",
+      "placement": "literal",
+      "ref": "game/room13.rpy:706:184",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "내려친 방향으로 눌린 고리 안에서 핀도 같이 휘었습니다. 주워 들다가 나중에 끼어든 조각이 아닙니다. 첫 비명 때만 해도 그 핀은 목도리에 달려 있었습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 706,
+          "label": "r13_link_reason",
+          "guards": [
+            "else:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 706,
+      "scene_title": "r13_link_reason",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "e83f27fbad5770bb400d11620eaa7eb21826d5768a8a78f3ddfb6a69e3b0b192",
+      "uid": "f980528d328b6bcb896efc33",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_link_reason|rpy_literal|r13_link_reason|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,749 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D13_A_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_A_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_A_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "거래 수락. 아빠가 명시적으로 말한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 13-A. 가족 셋의 하룻밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e5877c8d42c3e3a28041dbf27e40a97bc69b46cc3a665f4ed9ed5a0f5d223895",
+      "uid": "fd359dc691c3fa0af017307e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_A_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_A_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_A_L0002",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "우리 셋은 물러날게요. 대신 오늘 밤 잘 자리하고 밥 세 몫, 아내는 안 데려간다는 것까지 지금 확인해 주세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2563,
+          "label": "r13_v111_family_exit13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 13-A. 가족 셋의 하룻밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "33f7ff933355b13bb4b84b475c7fb50b062e96b17e09a9cf8e103b35a68169b9",
+      "uid": "fc2dd11191e420579aeff346",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_A_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_A_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_A_L0003",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "돌목. 지금 처리하시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2564,
+          "label": "r13_v111_family_exit13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 13-A. 가족 셋의 하룻밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f8379a81fce232652861aa499421632cca3c0e25208868ed5a78aef4c251a831",
+      "uid": "2aa7c097dcccfa3e8aa9e1b4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_A_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_A_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_A_L0004",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "돌목이 엄마 이름의 집행 중지를 명단에 적어 너울에게 보이고, 실제 배급과 자리표를 건넨다. 까로가 세 사람과 함께 입구로 이동한다. 까로는 수레 운반에 동시에 남지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 13-A. 가족 셋의 하룻밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bbf5b56a548da5f04c79122319351cf128a0a1b090aacf523147e6f4fe5a9b7b",
+      "uid": "c6ede8db208fab23be826b4b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_A_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_A_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_A_L0005",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "저 아저씨는?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2565,
+          "label": "r13_v111_family_exit13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 13-A. 가족 셋의 하룻밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a5b788fbd5498e5eeed15d2764efe57b50248a86a62880a1a30d1c85468320e0",
+      "uid": "c5d7e8815a08c3bf2a111815",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_A_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_A_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_A_L0006",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "여기 남은 사람들이 맡을 거야.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2566,
+          "label": "r13_v111_family_exit13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 13-A. 가족 셋의 하룻밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "163860db34682fc775f007a88dd5e78171deba6599671686bb2f76b5b4debdb9",
+      "uid": "cfbcd7fb2cb7eea0688a732c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_A_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_A_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_A_L0007",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠가 안 맡아?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2567,
+          "label": "r13_v111_family_exit13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 13-A. 가족 셋의 하룻밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e075ec3075a5a6ffed8b784def7d1505b262116b311ca6ab70d7cb33d53f774d",
+      "uid": "52794ef7692cae4717380ecc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_A_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_A_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_A_L0008",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "오늘은 너희하고 갈 거야.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2568,
+          "label": "r13_v111_family_exit13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 13-A. 가족 셋의 하룻밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b8936922042007ac2ec5b0beb6e318969a577870edd4de68c50ef675f69b85bd",
+      "uid": "a474e283f4669c2464cc8e83",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_A_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_A_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_A_L0009",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "입구. 가족이 벤치와 바닥에 담요를 편다. 배급은 실제로 먹는다. 거래를 택했다고 기습 납치·급냉각을 만들지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 13-A. 가족 셋의 하룻밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c57de8f7b59c9c21065dd9f64e05fca1ea33251c6a241fcaeec9d4eb7e7bff55",
+      "uid": "da027a190d885a4f25b30e8d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_A_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_A_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_A_L0010",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "먹어. 네가 먼저.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2571,
+          "label": "r13_v111_family_exit13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 13-A. 가족 셋의 하룻밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "062ddda5be76a4aaf43dcbd61cb001a245f6239cbc63d5e41b7ed44da92795f4",
+      "uid": "acebb1ce88c18fe52db67845",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_A_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_A_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_A_L0011",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다람 주고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2572,
+          "label": "r13_v111_family_exit13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 13-A. 가족 셋의 하룻밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "248023bd29cf1e50ba89fcfe3c516e6fed45a2e43bcff962920dfd354010ebd0",
+      "uid": "21b65f775ac8b33989ae7a1d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_A_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_A_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_A_L0012",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "세 몫이야.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2573,
+          "label": "r13_v111_family_exit13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 13-A. 가족 셋의 하룻밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d0e68cd0b39924058137ff87e9edb0710c384ac3967645a1eca46a2af99866c6",
+      "uid": "d05edf48eef5839dde2736d9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_A_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_A_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_A_L0013",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "엄마가 아빠 몫 그릇을 밀어 준다. 아빠가 받는다. 멀리 바퀴 소리가 들릴 수 있으나, 이미 바둑이가 정지한 뒤 충분한 인수자가 남았다면 수레 출발음을 재생하지 않는다. 구조 완료 인물은 그대로 안전하다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 13-A. 가족 셋의 하룻밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "166679f9f99aad439c8024529339ad0dadf2f81010bfa3ec67267b8e12e47c2d",
+      "uid": "cd05d77b2b60a4dca7ad912f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_A_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_A_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_A_L0014",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "여기는 따뜻해.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2574,
+          "label": "r13_v111_family_exit13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 13-A. 가족 셋의 하룻밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "01db664c0f1fd691dff328a5e61fafa24a988d0ecd667f1ad029a7b9e9dd45c0",
+      "uid": "2c9cabb304759f844b64ea40",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_A_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_A_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_A_L0015",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2575,
+          "label": "r13_v111_family_exit13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 13-A. 가족 셋의 하룻밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8025c713f26164a6787608a6cbce1b8ac0cfe963a42e1416578db60193e95224",
+      "uid": "091273d2b93d6b68f7a433fb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_A_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_A_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_A_L0016",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "우리만?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2576,
+          "label": "r13_v111_family_exit13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 13-A. 가족 셋의 하룻밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6a73ddac7978173a0062e33e131567c6c76df431a15fbf8f3a54f0bc6aa7b509",
+      "uid": "85a10a1f5a92302c7f0ceb2f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_A_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_A_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_A_L0017",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠는 대답 전에 경비 돌의 남은 눈금을 본다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 13-A. 가족 셋의 하룻밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ee7c04543fa620c57499cb007a3fa9336275cc2285711310af97b5db90cf58ad",
+      "uid": "c90c100a484a251bfade6595",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_A_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_A_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_A",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_A_L0018",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "학교에도 있어. 거기까지 데려온 사람들은.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2577,
+          "label": "r13_v111_family_exit13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "대체 장면 13-A. 가족 셋의 하룻밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6af0d56e6e964eaf2262494d1aa49e59ec4803f912cd9dad7d266a06542f4ffe",
+      "uid": "5389ebe640c5b7eb84429034",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_A|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

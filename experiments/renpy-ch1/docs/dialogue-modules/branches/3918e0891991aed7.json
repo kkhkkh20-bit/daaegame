@@ -1,0 +1,208 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_episodes.rpy:399:26",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        23019,
+        23064
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ep4_accused",
+      "block": "r13_ep4_accused",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:399:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "수리점 앞에 사람들이 모여 있었다. 너울이 톡의 작업대를 손바닥으로 내리쳤다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 399,
+          "label": "r13_ep4_accused",
+          "guards": []
+        }
+      ],
+      "line": 399,
+      "scene_title": "r13_ep4_accused",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "c8e629e8c8cd1285ad79a3c48a55a199e8cb3da37e806e8bf4ed8107c5befded",
+      "uid": "52fd5dfe06e0918ce745a290",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ep4_accused|rpy_literal|r13_ep4_accused|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_episodes.rpy:413:26",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        23695,
+        23729
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ep4_accused",
+      "block": "r13_ep4_accused",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:413:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "너울이 톡의 손목을 묶었다. 수리점 문에 판자가 덧대졌다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 413,
+          "label": "r13_ep4_accused",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 413,
+      "scene_title": "r13_ep4_accused",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "1d7282d08dd5bc7f5bd3d52b9bc16fe84babf6abd123a6872a6df80abd36098b",
+      "uid": "1aa4d8832c00e4b0ada0e036",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ep4_accused|rpy_literal|r13_ep4_accused|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_episodes.rpy:414:36",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        23768,
+        23789
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ep4_accused",
+      "block": "r13_ep4_accused",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:414:36",
+      "when": null,
+      "speaker": "resident_tok",
+      "kind": "dialogue",
+      "text": "……손님도 저 사람들이랑 똑같군요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 414,
+          "label": "r13_ep4_accused",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 414,
+      "scene_title": "r13_ep4_accused",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "c66b2d4ed993bf5e2878dd82652973379c4d192b12527ffe1c2ef2ee0df2d7ac",
+      "uid": "2d94d7efdc4b23341b4e0bc5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ep4_accused|rpy_literal|r13_ep4_accused|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_episodes.rpy:418:26",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        24055,
+        24097
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ep4_accused",
+      "block": "r13_ep4_accused",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:418:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "등 안쪽은 차가웠다. 조각이 있던 자리에 종이 눈금 조각이 끼어 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 418,
+          "label": "r13_ep4_accused",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 418,
+      "scene_title": "r13_ep4_accused",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "b4880089af7fd95af37e9b98c1bdd971c2450149360497c652f816c574f84f67",
+      "uid": "725c421df8fa476f947205ce",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ep4_accused|rpy_literal|r13_ep4_accused|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_episodes.rpy:424:36",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        24498,
+        24549
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ep4_accused",
+      "block": "r13_ep4_accused",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:424:36",
+      "when": null,
+      "speaker": "resident_tok",
+      "kind": "dialogue",
+      "text": "조각이 왜 따뜻한지는 저도 몰라요. 요즘은 조각이 예전보다 빨리 식어요. 그게 무서워요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 424,
+          "label": "r13_ep4_accused",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 424,
+      "scene_title": "r13_ep4_accused",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "a0b4799b665036eb367d972853a1785b09aa8efbdae4f0a44bd673e07ba1974a",
+      "uid": "3d68e23b165eb98dbb0d391c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ep4_accused|rpy_literal|r13_ep4_accused|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

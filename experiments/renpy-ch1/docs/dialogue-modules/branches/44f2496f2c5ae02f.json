@@ -1,0 +1,1616 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D11_S04_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "밤. 학교 복도. 장갑과 양말이 의자에 널려 있다. 가족이 잠깐 자기 자리에 앉는다. 가족 마른 담요 두 장을 지켰으면 다람 한 장·부모 한 장을 덮고, 한 장을 건넸으면 셋이 붙어 앉아 남은 한 장을 무릎 위에 나눈다. 가족 담요가 없으면 실제 배정된 학교 침구만 사용할 수 있다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "765fb9e3d6326f6610929364a7facf3bfec4bd345578fa6d618ba7bd7ed7ab96",
+      "uid": "8010d607e12f901f56604a0c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0002",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "마른 가족 침구를 실제 사용하는 경로.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "608805e035fd64cb5fd155e1fb806e78b20bc164a704d24642d2e4362cccb4bb",
+      "uid": "63508b9263dffbdcc537f62a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0003",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "이건 안 축축해.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 871,
+          "label": "r13_v111_rest_blanket11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "28311c9e82494d18d4b68715866e5ac708d3ea758274c57796e16e89aefa81d6",
+      "uid": "ce936d338b8e0c2f29d158f6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0004",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "그대로 덮고 있어. 일어날 땐 내가 접을게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 872,
+          "label": "r13_v111_rest_blanket11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9f8d9c4e88375658675c4c1856aec078798a17087a6c7a34dd67c4e830f13e81",
+      "uid": "8e04336ce8b413d3ad6817ca",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0005",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "가족 짐에 남은 마른 담요를 실제로 덮고 쉰다. 두 장이면 다람 한 장·부모 한 장, 한 장이면 셋의 무릎 위에 나눈다. 다람이 흘러내린 끝을 끌어 올린다. B016의 무침구 반응은 재생하지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "db5413d68d6f3bb2f459637b1d33664da329ece2e03e9882bf8e2cc9100843bc",
+      "uid": "2ad62ac3963626014ba74aee",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0006",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠, 발 쪽에도 조금만.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 873,
+          "label": "r13_v111_rest_blanket11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d38be3529e697509d1411ed68a7fe3b78de062cd872d9f37a0383d59a5cc2b33",
+      "uid": "14a6561517596ebaf92fb28e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0007",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "여기. 잡고 있어, 내가 당기면 또 빠지겠다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 874,
+          "label": "r13_v111_rest_blanket11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ef7575d43252e55fe84f8ac4632a6ef4681fba6c2198ac0840ce471f81e340f4",
+      "uid": "74c04220a06961c1a3fbaade",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0008",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "네로가 돌아와 문에 어깨를 기댄다. 그의 손에 작은 이름표 꾸러미가 있다. 가족의 침구 상태와 아래 아랫길 구조 준비는 별개다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "18335a44a5779d3554fe61fab8fbe46a9094de1806676182bb09f8a9db8a2eb6",
+      "uid": "242ed07eca6bc5f65400357e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0009",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "아랫길…… 아직 남은 사람들은 스스로 못 올라와요. 한 번 더 가야 해요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 889,
+          "label": "r13_v111_request_rescue11",
+          "guards": [
+            "if r13_v111_actor_ready('resident_nero'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ae7f184dab03bd8b17e56204ae7806be30d373fbfbcee7178c1f7639d57acefd",
+      "uid": "f0ec2f422931e669243887fa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0010",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "여기 앉혀요. 지금 바닥 자리 만들게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 890,
+          "label": "r13_v111_request_rescue11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "068db9d193fef94eded36a48a560fe016e0b355becc0ed85b98131a30933cba1",
+      "uid": "280031aec29cf98f2e13d6e4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0011",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "빈 수레는 있어. 나 혼자 끌고 올라오진 못해.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 892,
+          "label": "r13_v111_request_rescue11",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6f9dc0aeb312bffb6d2e56badce5f8ce0ef76fbef06cfe7d1d7acf38c7be4300",
+      "uid": "5fd720ebbe208de22fec13d8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0012",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "길은요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 893,
+          "label": "r13_v111_request_rescue11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d93adf6fd62f3d7add8272831c322ebe4d7a7cecbb0089c33a7b3bd3eb7e31cf",
+      "uid": "917a449e76e06ea8fa832d0f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0013",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "좁아졌어요. 아직은 지나가요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 895,
+          "label": "r13_v111_request_rescue11",
+          "guards": [
+            "if r13_v111_actor_ready('resident_nero'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ea5cf82ecaedab4eef1675244f24dbf98795676cc235b770173470ae60867024",
+      "uid": "34374c33afc1d9d1eadecd38",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0014",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "입력: 가능한 인력·등·덮개를 한 번에 확인한다. 아랫길 방문 약속과 앞선 물자 확보가 실제 조건을 바꾼다. ‘나중에’는 학교 안 다른 일을 먼저 하는 선택임을 명시한다. 선택 문장을 읽는 시간으로 실패시키지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f2ca5f590118dd6f70273dcee445b5178b9424633b08597126b67d6fffc06581",
+      "uid": "ef2824a8c855fec7cf446685",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0015",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "충분히 준비한 구조 경로. 아빠와 까로가 빈 수레를 밀고 네로가 길을 안내한다. 학교에는 엄마·선생님과 다람이 남는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bba51c6d348ae17d1383a1b1103581cabd2d2861d39e7c749970f4e72f07a5a1",
+      "uid": "e729b498fbbadb94a9438f6a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0016",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "이 문이오! 안에서 밀지 마요. 우리가 당길게!",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 919,
+          "label": "r13_v111_night_rescue11",
+          "guards": [
+            "if r13_v111_actor_ready('resident_nero'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2f443e6dabb829ec495406ad7ad3ebe57da49b25ac7e52532e98b25a42adc6ce",
+      "uid": "db870167b29f83a6eb8e1450",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0017",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "손잡이를 당기는 입력. 문 아래 눈이 부서진다. 안쪽 사람이 손을 내민다. 아빠가 이름표 대신 손목을 받는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ca1f861e9128d2581a2ff2f0d0aac8332d1f6cba781c61914571865c53336e72",
+      "uid": "192120c35e79fe633a856828",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0018",
+      "when": null,
+      "speaker": "아랫길 주민",
+      "kind": "dialogue",
+      "text": "저쪽 먼저. 나는 설 수 있어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 929,
+          "label": "r13_v111_night_rescue_done11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "81a8f9dd5ce03ade17e69d8b7118ab87f342ef6410dfe31d7f9bd9583f5c46ba",
+      "uid": "a3f4596696704f674703509c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0019",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "같이 나가요. 수레가 문 앞에 있어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 930,
+          "label": "r13_v111_night_rescue_done11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b86a907fdc15f68d01e89077a0401d5f5b7ba39fe5bdba0809339833144e9a95",
+      "uid": "14184d5d3b463dcb5b676531",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0020",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "학교 문. 선생님이 젖은 짚을 치우고 자리를 낸다. 네로는 마지막 사람이 문 안으로 들어온 뒤 이름표를 주인에게 돌려준다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b4a9b1b99034a05bfbc8382b16d05ecfe9f44e9c4fd883972ddb31a981c6c3d9",
+      "uid": "3eae57e97eca5a8fa913d16a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0021",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "목에 걸어 둬요. 내 주머니에 두니까 누가 누군지…….",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 934,
+          "label": "r13_v111_night_rescue_done11",
+          "guards": [
+            "if r13_v111_actor_ready('resident_nero'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cea2c79e3faac122bbb14825b9762101cd9e1c60221245d76660b79b2c4bdeb4",
+      "uid": "848ab9e10adde90466a94472",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0022",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아저씨 이름은?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 935,
+          "label": "r13_v111_night_rescue_done11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0f7b8cbde59c053ef1af38dea49c5458a79c4147c1e40b0cfe9fe994720e006c",
+      "uid": "12826b725eae1b627227ef7c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0023",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "내 건 내가 알지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 937,
+          "label": "r13_v111_night_rescue_done11",
+          "guards": [
+            "if r13_v111_actor_ready('resident_nero'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bf174585d4b4a80ba054b32350ff131d974827ab530741cdb259bd699f604d67",
+      "uid": "3e54ec5c5cc0aec05a1ba938",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0024",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "우리도 알아야지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 938,
+          "label": "r13_v111_night_rescue_done11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cd3aab118fa3d225290d5de30c2216065c65084127c31a26eca815baf92995c0",
+      "uid": "a2d05dd226a612114200f610",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0025",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "네로가 자기 표를 꺼낸다. 화면에 살아 있는 이름이 보인다. 그 밤을 무사히 넘긴 이들에게 다음 날 강제 사망을 붙이지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "51b3f555c88ba135b2b3fa3834787fc3c01972b9d9eba66e52b94206aea6b75b",
+      "uid": "cd36a31a0a1eecbb9e56958d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0026",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "운반과 선행 대피가 부족한 대표 상실 경로. 아빠가 학교 물자를 인계하고 네로의 요청에 따라 나왔을 때, 굽이의 눈이 무너져 수레 통과가 막혀 있다. 네로는 학교로 돌아오지 않았다. 비바람 속에서 아빠와 까로가 길을 치우지만 진입이 늦어진다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6f7b34523e068345726866a5047023e745756685bfcc6d89f18c4d5181316d8f",
+      "uid": "68184f2f7777c73f2f3522f3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0027",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "저 밑으로 내려가면 올라올 길이 없어. 여기부터 뚫어야 해.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 992,
+          "label": "r13_v111_late_road11",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7a8c15820cbf197f78ae54f11aad6af25e19d43c42c0e9ab207392aab894d8d6",
+      "uid": "478811ba4068f94366e206dc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0028",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "네로 씨!",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 993,
+          "label": "r13_v111_late_road11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a7f3b9e4e2d52e668311ced946617ed4ad4cda0a64ed926913b5652b51055bb8",
+      "uid": "eb3191d5a40ce1d9296e1035",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0029",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "대답 없음. 화면을 검게 끊어 사망만 통보하지 않는다. 치운 눈, 들어낸 가지, 한 사람이 지나갈 틈이 차례로 열린다. 다음 날 아침 장면으로 이어진다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e0c637d2f57999e069cb2a4c8881149b10f1b115ca5d4df21f2f2f85972100b2",
+      "uid": "bab1df09ef3949d7090da501",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0030",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "아래는 비었어요. 셋 다 들어왔으니…… 나도 좀 앉겠소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 880,
+          "label": "r13_v111_lower_safe11",
+          "guards": [
+            "if r13_v111_actor_ready('resident_nero'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "98f6afffc0d9247fe04b32754df4e50c815eb7688e78a99a86265395e32e6b1d",
+      "uid": "9c1fd655fe4bfc63c8adae8e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0031",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아저씨 것도 말려.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 881,
+          "label": "r13_v111_lower_safe11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e2919b9f7c34135dcf3102f8a2b6c6285fbcc10f164b6ace1a9ad230f03d4e4d",
+      "uid": "789ae354968cbba1c94e16b1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0032",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "내 장갑? 그래.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 883,
+          "label": "r13_v111_lower_safe11",
+          "guards": [
+            "if r13_v111_actor_ready('resident_nero'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c74130d9b1f962e126d119530c53b160e4848f1c6641acec196deb0fad2a4f57",
+      "uid": "a9ad9bdfee3e22fa990f4542",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0033",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠, 나 조금만 더 앉았다 갈래.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7eaa1bb9b1c6b604033f6f5996801fd9575c0545b82a1e217daa6b5d782ec54c",
+      "uid": "2ca4e097f5d89d97c1e16967",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0034",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응. 쉬고 가자.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cd933def839e511a299bd51bcbf0846f627cfab2064c468e106eab9302bced62",
+      "uid": "7c9826548755889ec9690493",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0035",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이것부터 내려놓고 갈게요. 문 안에 자리를 만들어야 하니까.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 964,
+          "label": "r13_v111_late_supply11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1b17a94cf830930ff7ff3d4078f6a9407e4ee334f25aa2e62221c9ab9e633faa",
+      "uid": "13f66fdfa607fc94717e58ef",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0036",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "나는 길로 먼저 가 있겠소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 966,
+          "label": "r13_v111_late_supply11",
+          "guards": [
+            "if r13_v111_actor_ready('resident_nero'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b137e662357949ca02ea0e2bcfea69f9fe65e110bcd549259bb35d366f542b1c",
+      "uid": "2c93856922b5de43502c7776",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0037",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0037",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0037",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "손으로는 남은 사람들을 못 옮겨요. 수레부터 찾아올게요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 982,
+          "label": "r13_v111_late_cart11",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ab9ca6aaf620fdb9a3e535a566a5e78c7284579273f35585f1590fccee06cd40",
+      "uid": "218977e226d0027dad3ae261",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0038",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0038",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0038",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "그럼 나는 아래로 가겠소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 984,
+          "label": "r13_v111_late_cart11",
+          "guards": [
+            "if r13_v111_actor_ready('resident_nero'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d58827e50b8e3042c61523c90cf6ec542544eca0909d80928857d666ad50c016",
+      "uid": "0feea5e083e794935ad12795",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D11_S04_L0039",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D11_S04_L0039",
+        "text"
+      ],
+      "origin": "base",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D11_S04_L0039",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "네로가 문에 기대 기다린다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3a43e37da5fa77c3129c4e700aa132f72a4c01e1967f3e64b6851cc0a36bd27a",
+      "uid": "59cbf56ab2d58af562e3eb0a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_life.rpy:195:163",
+      "file": "game/room13_life.rpy",
+      "path": [
+        10966,
+        11016
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_topic_choice",
+      "block": "r13_topic_choice",
+      "placement": "literal",
+      "ref": "game/room13_life.rpy:195:163",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "압니다. 하지만 원본을 내놓으면 사람들이 제가 한 검사도 전부 다시 따지려 들 겁니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_life.rpy",
+          "line": 195,
+          "label": "r13_topic_choice",
+          "guards": [
+            "if key==\"w2_erased\":"
+          ]
+        }
+      ],
+      "line": 195,
+      "scene_title": "r13_topic_choice",
+      "source_hash": "ff6367277bd80f51605a562a690b9994a298289796fb1dd7f1222258428131b7",
+      "baseline_hash": "92816fedc0f144cd506e52c1737c3c865fea548e5f8cac1e969bff4bd7d1d1e4",
+      "uid": "4dd2a5ecb3ebf97c56b79ade",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_topic_choice|rpy_literal|r13_topic_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_life.rpy:207:123",
+      "file": "game/room13_life.rpy",
+      "path": [
+        11954,
+        12002
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_topic_choice",
+      "block": "r13_topic_choice",
+      "placement": "literal",
+      "ref": "game/room13_life.rpy:207:123",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "검사원이 말없이 서류를 접었다. 언성을 높인다고 받아 낼 수 있는 서명이 아니었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_life.rpy",
+          "line": 207,
+          "label": "r13_topic_choice",
+          "guards": [
+            "if key==\"w2_erased\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 207,
+      "scene_title": "r13_topic_choice",
+      "source_hash": "ff6367277bd80f51605a562a690b9994a298289796fb1dd7f1222258428131b7",
+      "baseline_hash": "ce559ed3c422d9bd0bef307fc87862d0bedba2161fe329a4954e13608e7c07ae",
+      "uid": "533d6e823fb3edb3ef4db7f5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_topic_choice|rpy_literal|r13_topic_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

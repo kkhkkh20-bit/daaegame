@@ -1,0 +1,162 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_AR_D14_07",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "end_frozen14",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "end_frozen14",
+      "block": "end_frozen14",
+      "placement": "blocks",
+      "ref": "end_frozen14",
+      "when": "hyp_not_lose",
+      "speaker": null,
+      "kind": "narration",
+      "text": "열나흘째 아침, 입구 경비실 앞. 돌목의 등 곁에 아르카가 다시 켜져 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2821,
+          "label": "r13_v111_frozen_ending14",
+          "guards": []
+        }
+      ],
+      "scene_title": "end_frozen14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "ee1349f4af4e0ccbe9b867b5aa66e8bed9dde7e8c75abf30458929cd11c34368",
+      "uid": "9d647e1e7159b8746fc7797e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|end_frozen14|patch|end_frozen14|hyp_not_lose",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AR_D14_08",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "end_frozen14",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "end_frozen14",
+      "block": "end_frozen14",
+      "placement": "blocks",
+      "ref": "end_frozen14",
+      "when": "hyp_not_lose",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "학교에서 다 같이 끄기로 하지 않았습니까. 왜 다시 돌을 켭니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2821,
+          "label": "r13_v111_frozen_ending14",
+          "guards": []
+        }
+      ],
+      "scene_title": "end_frozen14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "6584a7857332d55aeeb01e95df78a68c850b05c29dbc40ff3e0659b68196cc41",
+      "uid": "a35a61497af13711f6305563",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|end_frozen14|patch|end_frozen14|hyp_not_lose",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AR_D14_09",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "end_frozen14",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "end_frozen14",
+      "block": "end_frozen14",
+      "placement": "blocks",
+      "ref": "end_frozen14",
+      "when": "hyp_not_lose",
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "장작으로 버티는 동안에도 사람이 죽었소. 돌을 끄면 산다던 말을 이제 아무도 안 믿소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2821,
+          "label": "r13_v111_frozen_ending14",
+          "guards": []
+        }
+      ],
+      "scene_title": "end_frozen14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "405a15c88e14e18b53dbc12de842aee8e85601b7ff0f38d705dba3735b763114",
+      "uid": "44109660919e4313ffbc8279",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|end_frozen14|patch|end_frozen14|hyp_not_lose",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AR_D14_10",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "end_frozen14",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "end_frozen14",
+      "block": "end_frozen14",
+      "placement": "blocks",
+      "ref": "end_frozen14",
+      "when": "hyp_not_lose",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "……그분들은 장작 때문에 죽은 게 아닙니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2821,
+          "label": "r13_v111_frozen_ending14",
+          "guards": []
+        }
+      ],
+      "scene_title": "end_frozen14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "e9ac6d11c2f7140db7bafccc36374269217c7927d6fbcd455a9ec3619044eae3",
+      "uid": "f13495be4ba62311307c1b40",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|end_frozen14|patch|end_frozen14|hyp_not_lose",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:236:34",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        14832,
+        14912
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_final_rescue",
+      "block": "r13_final_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:236:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "엄마가 연결을 늦추는 동안 수레를 붙들었다. 경비는 바깥 명령만 되풀이했다. 문을 열 사람도, 다른 명령을 확인해 줄 사람도 구하지 못했다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 236,
+          "label": "r13_final_rescue",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 236,
+      "scene_title": "r13_final_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "47751847bae23d6dd5acec77a3e28787a53a57c79e77cb0a1e2e356240291d3d",
+      "uid": "8971d15bac72262843241eb0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_final_rescue|rpy_literal|r13_final_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

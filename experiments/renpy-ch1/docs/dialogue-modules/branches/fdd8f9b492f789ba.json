@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/story.rpy:311:8",
+      "file": "game/story.rpy",
+      "path": [
+        11420,
+        11430
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "meeting_entry",
+      "block": "meeting_entry",
+      "placement": "literal",
+      "ref": "game/story.rpy:311:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "작은 손님의 숨",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/story.rpy",
+          "line": 311,
+          "label": "meeting_entry",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 311,
+      "scene_title": "meeting_entry",
+      "source_hash": "f80d7c11bcc5cbd41c2c14cdcbbd42a9dd944b4719a4552fdd392a29341d5aed",
+      "baseline_hash": "e7358f94c182d79fffc12c4bccf44deb21daf61eac396ac501399c2cf1bd1cd1",
+      "uid": "d2b5f199a8d851dff8f9538d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|meeting_entry|rpy_menu|meeting_entry|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/story.rpy:313:8",
+      "file": "game/story.rpy",
+      "path": [
+        11457,
+        11466
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "meeting_entry",
+      "block": "meeting_entry",
+      "placement": "literal",
+      "ref": "game/story.rpy:313:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "누가 죽였는지",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/story.rpy",
+          "line": 313,
+          "label": "meeting_entry",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 313,
+      "scene_title": "meeting_entry",
+      "source_hash": "f80d7c11bcc5cbd41c2c14cdcbbd42a9dd944b4719a4552fdd392a29341d5aed",
+      "baseline_hash": "61658f1a9c153b1f17cd3cbf2dd11a09f7dc49c674d1decc592649d8595883be",
+      "uid": "a2b9ed8f90e59783b7b77088",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|meeting_entry|rpy_menu|meeting_entry|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

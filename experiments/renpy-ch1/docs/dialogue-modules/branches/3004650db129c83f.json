@@ -1,0 +1,166 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:252:30",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        12613,
+        12656
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_at_eaves",
+      "block": "r13_ep2_at_eaves",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:252:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "처마 밑에 아빠가 사 둔 담요를 놓자, 낡은 망토가 먼저 고개를 내밀었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 252,
+          "label": "r13_ep2_at_eaves",
+          "guards": [
+            "if r13_has(\"own:blanket\"):"
+          ]
+        }
+      ],
+      "line": 252,
+      "scene_title": "r13_ep2_at_eaves",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "5c08918e17a1f2aca7bfdc5834e007a48b772c4d045cc2ac2e6d279ae3eae5fa",
+      "uid": "dc4fe09adc66e502f3f859b2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_at_eaves|rpy_literal|r13_ep2_at_eaves|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:253:20",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        12679,
+        12701
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_at_eaves",
+      "block": "r13_ep2_at_eaves",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:253:20",
+      "when": null,
+      "speaker": "bami",
+      "kind": "dialogue",
+      "text": "……이거 너네 아빠 거지? 따뜻하다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 253,
+          "label": "r13_ep2_at_eaves",
+          "guards": [
+            "if r13_has(\"own:blanket\"):"
+          ]
+        }
+      ],
+      "line": 253,
+      "scene_title": "r13_ep2_at_eaves",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "6917671ad15d3c7823895725c696f37adbbb5a501d0cbd49070b48cb1c09fb65",
+      "uid": "d14b7bb7a6dc1bf36a4836b6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_at_eaves|rpy_literal|r13_ep2_at_eaves|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:254:20",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        12724,
+        12763
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_at_eaves",
+      "block": "r13_ep2_at_eaves",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:254:20",
+      "when": null,
+      "speaker": "bami",
+      "kind": "dialogue",
+      "text": "나 아니야. 그날 밤 나는 【처마 위】에 있었어. 별 보고 있었어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 254,
+          "label": "r13_ep2_at_eaves",
+          "guards": [
+            "if r13_has(\"own:blanket\"):"
+          ]
+        }
+      ],
+      "line": 254,
+      "scene_title": "r13_ep2_at_eaves",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "7188fe30a47bc1ba057a3bbb69a7022fbf84fd86584ce92d9714a195bf4f507a",
+      "uid": "13e86eb6aba6d069fbc688eb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_at_eaves|rpy_literal|r13_ep2_at_eaves|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:255:20",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        12786,
+        12827
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_at_eaves",
+      "block": "r13_ep2_at_eaves",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:255:20",
+      "when": null,
+      "speaker": "bami",
+      "kind": "dialogue",
+      "text": "할아버지 같은 사람이 비틀비틀 입구 쪽으로 걸어갔어. 신발도 안 신고.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 255,
+          "label": "r13_ep2_at_eaves",
+          "guards": [
+            "if r13_has(\"own:blanket\"):"
+          ]
+        }
+      ],
+      "line": 255,
+      "scene_title": "r13_ep2_at_eaves",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "d169139b2b503beb44034d77d9ca07a357dee6f3f31941eb24a1ac315612b653",
+      "uid": "f82ada5502974abe33ed7c99",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_at_eaves|rpy_literal|r13_ep2_at_eaves|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

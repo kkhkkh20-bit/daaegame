@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:130:35",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        8300,
+        8352
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:130:35",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "너울 씨. 제가 대조해 본 명령서에는 이 아이 이름이 없었습니다. 지금도 같은 명령입니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 130,
+          "label": "r13_rescue",
+          "guards": [
+            "if at_altar:",
+            "if route==\"order\":"
+          ]
+        }
+      ],
+      "line": 130,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "25aa15b7cb0e208c727f8b15f355f0ca852a671d6748734ee2942e9d69f7d53d",
+      "uid": "8a0d487de8cf20a9ff9dc04f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:132:45",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        8579,
+        8618
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:132:45",
+      "when": null,
+      "speaker": "resident_nubi",
+      "kind": "dialogue",
+      "text": "담요 받으러 오면 안쪽 매듭부터 보세요. 제가 수레를 가리겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 132,
+          "label": "r13_rescue",
+          "guards": [
+            "if at_altar:",
+            "elif route==\"laundry\":"
+          ]
+        }
+      ],
+      "line": 132,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "93792872c8c27db60ddad8b3411f8fa75f407fa1e15b79dbc9553429e0070ae7",
+      "uid": "7237c097fe3c728436d4aed5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

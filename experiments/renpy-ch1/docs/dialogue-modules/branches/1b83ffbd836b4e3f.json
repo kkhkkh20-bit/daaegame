@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_gate_inspection.rpy:73:31",
+      "file": "game/room13_gate_inspection.rpy",
+      "path": [
+        4106,
+        4142
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_inspect_gate_documents",
+      "block": "r13_inspect_gate_documents",
+      "placement": "literal",
+      "ref": "game/room13_gate_inspection.rpy:73:31",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(선반의 예약 서류 묶음. 우리 예약 원본은 이미 확인했다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_gate_inspection.rpy",
+          "line": 73,
+          "label": "r13_inspect_gate_documents",
+          "guards": [
+            "if \"G1\" in room13[\"evidence\"]:"
+          ]
+        }
+      ],
+      "line": 73,
+      "scene_title": "r13_inspect_gate_documents",
+      "source_hash": "db2663f872309906137dd9de8891964d49c440bd0b93a481034e040a507f9918",
+      "baseline_hash": "07205346760f0b427f137681d5026d32ff5e5d6e78742b873abba6768077bd77",
+      "uid": "e677ed7c5199c1fa6133f1fd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_inspect_gate_documents|rpy_literal|r13_inspect_gate_documents|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_gate_inspection.rpy:75:191",
+      "file": "game/room13_gate_inspection.rpy",
+      "path": [
+        4388,
+        4413
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_inspect_gate_documents",
+      "block": "r13_inspect_gate_documents",
+      "placement": "literal",
+      "ref": "game/room13_gate_inspection.rpy:75:191",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "‘외 한 명’은 나야? 내 이름도 썼는데.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_gate_inspection.rpy",
+          "line": 75,
+          "label": "r13_inspect_gate_documents",
+          "guards": []
+        }
+      ],
+      "line": 75,
+      "scene_title": "r13_inspect_gate_documents",
+      "source_hash": "db2663f872309906137dd9de8891964d49c440bd0b93a481034e040a507f9918",
+      "baseline_hash": "6cec55f1993c339d3e632df0f62334311533962562cbd3fe61e62322faaa5b66",
+      "uid": "e64ae918079777b2d03b7eb9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_inspect_gate_documents|rpy_literal|r13_inspect_gate_documents|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

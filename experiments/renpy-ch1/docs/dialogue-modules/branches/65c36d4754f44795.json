@@ -1,0 +1,55 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_RR_01",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "rein_retry13",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "rein_retry13",
+      "block": "rein_retry13",
+      "placement": "blocks",
+      "ref": "rein_retry13",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "그게 증거요? 수레는 기다려 주지 않소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2129,
+          "label": "r13_v111_rein_wrong13a",
+          "guards": [
+            "if r13_nw_retry(\"piko\"):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2135,
+          "label": "r13_v111_rein_wrong13b",
+          "guards": [
+            "if r13_nw_retry(\"piko\"):"
+          ]
+        }
+      ],
+      "scene_title": "rein_retry13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "913110ca6aefd6e91e8e68addf5414c0bfd22344890a2fc338013b7d5ddeedeb",
+      "uid": "c05f1783851eeb10a4b52075",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|rein_retry13|patch|rein_retry13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

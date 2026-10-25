@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D11_LE03",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "blocks",
+        "lower_elder11",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "lower_elder11",
+      "block": "lower_elder11",
+      "placement": "blocks",
+      "ref": "lower_elder11",
+      "when": "karo_absent",
+      "speaker": null,
+      "kind": "narration",
+      "text": "지팡이 손잡이가 닳아 반들반들하다. 누군가 오래 짚던 것이다. 이름은 어디에도 없다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 999,
+          "label": "r13_v111_late_road11",
+          "guards": []
+        }
+      ],
+      "scene_title": "lower_elder11",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "e6f4aee850ac76786242a2fe1d89193db7b04304ae7544e0349926a910badcab",
+      "uid": "55ad947b333dbdfa1cf4aad6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|lower_elder11|patch|lower_elder11|karo_absent",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

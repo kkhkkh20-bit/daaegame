@@ -1,0 +1,694 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D14_S05_L0024",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_S05_L0024",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_S05_L0024",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "오늘 밤도 잘 자리 셋과 먹을거리는 확인했소. 내일 몫은 다시 봐야 하오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3573,
+          "label": "r13_v111_family_lodging14",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "scene_title": "장면 14-5. 엄마 몫 과자",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "419e7aa325403cc1fb817f3f90428ad96d0037dab183a5ef51037b6165200a90",
+      "uid": "db01dcceae2569fde9c4489a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S05_L0025",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_S05_L0025",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_S05_L0025",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다람아, 오늘은 여기서 자자.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3574,
+          "label": "r13_v111_family_lodging14",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 14-5. 엄마 몫 과자",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "882a3f0119598138f34267b91f122f3dc83a3a4015ea65b8d8d774aaabc03dd9",
+      "uid": "8b3f515434204ffffcda2d5e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S05_L0002",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_S05_L0002",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_S05_L0002",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마! 눈 감아 봐.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3594,
+          "label": "r13_v111_cookie_scene14",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 14-5. 엄마 몫 과자",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "e0163f6ea4c9b3b81deffa2481e34a4d277c3fd4ab670855c83543b2df68552a",
+      "uid": "d97df32a43e12089e331bd53",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S05_L0003",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_S05_L0003",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_S05_L0003",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "왜? 뭐 하려고?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3595,
+          "label": "r13_v111_cookie_scene14",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 14-5. 엄마 몫 과자",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "8e15196866f07843a1373f8f74ede6552ae50f00790ceaf241a409c4f0b2d6d8",
+      "uid": "88097386a9bfbaaf1603fffe",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S05_L0004",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_S05_L0004",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_S05_L0004",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "잠깐만. 아직이야.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3596,
+          "label": "r13_v111_cookie_scene14",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 14-5. 엄마 몫 과자",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "e6943f2666b5658a10a9511290ac2cbbc921794eb62b759fdb28ff7535d3654e",
+      "uid": "4549d1aec260295444bc8ee1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S05_L0006",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_S05_L0006",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_S05_L0006",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마 거였어. 쭉.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3597,
+          "label": "r13_v111_cookie_scene14",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 14-5. 엄마 몫 과자",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "221cb18be9fdadb34cba747fbc5b153a189787c70512a42cbbe75c9029c5bff9",
+      "uid": "5da8d0940bcbbfe27fe1e0c7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S05_L0007",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_S05_L0007",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_S05_L0007",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "엄마가…… 너무 늦게 먹네.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3598,
+          "label": "r13_v111_cookie_scene14",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 14-5. 엄마 몫 과자",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "da21ac1af2068c2298d9090a52a9a19d52aa18383346d9b80621bdb09e07c8aa",
+      "uid": "225ab4b07c3e8c906b7f166e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S05_L0008",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_S05_L0008",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_S05_L0008",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠가 먹자고도 안 했어.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3599,
+          "label": "r13_v111_cookie_scene14",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 14-5. 엄마 몫 과자",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "4e90819b9251d1b03df4819cc2b06e6621483bb648e2c12cc8ec5e286274d021",
+      "uid": "8bb21652fdda8d30172607d8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S05_L0009",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_S05_L0009",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_S05_L0009",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "했어. 조오금만 먹자고 했지.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3600,
+          "label": "r13_v111_cookie_scene14",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 14-5. 엄마 몫 과자",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "f755c791918bb0cd3c0252dea066c290f41448fde5ea86c2aadf2b24ebf06258",
+      "uid": "355afcfd902e2754a76f2769",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S05_L0010",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_S05_L0010",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_S05_L0010",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그래도 안 먹었잖아!",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3601,
+          "label": "r13_v111_cookie_scene14",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 14-5. 엄마 몫 과자",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "740f6f0d61175761031988e5f319f34849e5b5533055a5c12d0efc3a343764f5",
+      "uid": "6f7403869c7b198376423c1f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S05_L0012",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_S05_L0012",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_S05_L0012",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마 거라니까아.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3602,
+          "label": "r13_v111_cookie_scene14",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 14-5. 엄마 몫 과자",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "916e23f5e4e602e99858cfcb571778c26c74ddc645e2d000dac998b55b1b7496",
+      "uid": "c816a20373fcb4ec3c824135",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S05_L0013",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_S05_L0013",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_S05_L0013",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "알았어, 알았어. 엄마 거.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3603,
+          "label": "r13_v111_cookie_scene14",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 14-5. 엄마 몫 과자",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "45c274e5d72d5cb4b5bf99abe43a52ea2575429163be7c325eb10e1cd639e066",
+      "uid": "51f1d161b4e9582a09f6f552",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S05_L0015",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_S05_L0015",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_S05_L0015",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠도. 같이.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3607,
+          "label": "r13_v111_cookie_scene14",
+          "guards": [
+            "if not r13_v111_value('crowd_injury'):"
+          ]
+        }
+      ],
+      "scene_title": "장면 14-5. 엄마 몫 과자",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "2d2e093f1aeb80c23a8839e207b8147de18692364c4dd6d6415ad2aa30b7131c",
+      "uid": "6c23dfa66abf75b2a94f0841",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S05_L0017",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_S05_L0017",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_S05_L0017",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "우리…… 내일 가?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3608,
+          "label": "r13_v111_cookie_scene14",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 14-5. 엄마 몫 과자",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "85f0e30b8a87df085e2fedb35aef0135f2ac556f109573e5794a800d63f4588f",
+      "uid": "164c39a93e0525188d31ddf6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S05_L0019",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_S05_L0019",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_S05_L0019",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마도…… 같이?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3610,
+          "label": "r13_v111_cookie_scene14",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 14-5. 엄마 몫 과자",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "34517cb1cf0d80bddaa3294e833fba864b2f9610736e0ffd5326cf539954d299",
+      "uid": "11f7e84bf4b17ba5c4d7dc04",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S05_L0020",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_S05_L0020",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_S05_L0020",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "응. 엄마도.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3611,
+          "label": "r13_v111_cookie_scene14",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 14-5. 엄마 몫 과자",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "bf1f2c58a685c27c2077a56f9401201e389809aeaf32a18c049f3711a3f9331e",
+      "uid": "c88135e57be175ac8b3af964",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S05_L0021",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_S05_L0021",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_S05_L0021",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "따로 가지 마. 응?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3612,
+          "label": "r13_v111_cookie_scene14",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 14-5. 엄마 몫 과자",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "2595df1d68a89ac982c8973e21127f2a7b0c258cc08ee47246135b985cb70775",
+      "uid": "64f85eb45627536d980567cc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S05_L0031",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "replace",
+        "MS14_D14_S05_L0031",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D14_S05_L0031",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "여기…… 놓을게.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3627,
+          "label": "r13_v111_cookie_distance14",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 14-5. 엄마 몫 과자",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "ce89354b3b9e70c71c1cae0d341ffbc4bceb10d2bfa864066e9c45fd6b791e70",
+      "uid": "4fb86fddfb16cbd4385804ed",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

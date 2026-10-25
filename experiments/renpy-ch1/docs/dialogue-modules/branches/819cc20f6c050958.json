@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_OP_D07_17",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "stove_look7",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "stove_look7",
+      "block": "stove_look7",
+      "placement": "blocks",
+      "ref": "stove_look7",
+      "when": "stove_untouched7",
+      "speaker": null,
+      "kind": "narration",
+      "text": "벽 쪽 작은 무쇠 난로. 낮인데도 불빛이 푸르스름하다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 58,
+          "label": "r13_v111_free_day7_pick",
+          "guards": [
+            "elif n==3:"
+          ]
+        }
+      ],
+      "scene_title": "stove_look7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "ed8543890ad9b83e73314a53a9b22a01daab2f294eac61372ff42a72ff020e96",
+      "uid": "a315c32642c4ae0557f8462b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|stove_look7|patch|stove_look7|stove_untouched7",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OP_D07_18",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "stove_look7",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "stove_look7",
+      "block": "stove_look7",
+      "placement": "blocks",
+      "ref": "stove_look7",
+      "when": "stove_untouched7",
+      "speaker": "아빠",
+      "kind": "thought",
+      "text": "도토 씨가 벌써 돌을 갈았나 보다. 맨손으로 만질 수는 없겠다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 58,
+          "label": "r13_v111_free_day7_pick",
+          "guards": [
+            "elif n==3:"
+          ]
+        }
+      ],
+      "scene_title": "stove_look7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "14f042ea431043bef92417591b2bb9855eb05a9ba29ca408afb2bd344245f7c2",
+      "uid": "30af130e24a5d15c7570bdc3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|stove_look7|patch|stove_look7|stove_untouched7",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

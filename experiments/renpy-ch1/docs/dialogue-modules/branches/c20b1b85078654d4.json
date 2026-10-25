@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:421:28",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        23340,
+        23351
+      ],
+      "origin": "rpy_inventory",
+      "day": 8,
+      "scene": "r13_ep1_library_dawn",
+      "block": "r13_ep1_library_dawn",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:421:28",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "기록실의 빈 난로",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 421,
+          "label": "r13_ep1_library_dawn",
+          "guards": [
+            "elif r13_has(\"lt_lib_ill\"):"
+          ]
+        }
+      ],
+      "line": 421,
+      "scene_title": "r13_ep1_library_dawn",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "ef4c90c63a8628c1b56b0913fd6949f0b77e03e3afccdeda4dae2bfb55abfc12",
+      "uid": "7478a7d5c69dd2afa7a8a34f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ep1_library_dawn|rpy_inventory|r13_ep1_library_dawn|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:431:28",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        23873,
+        23884
+      ],
+      "origin": "rpy_inventory",
+      "day": 8,
+      "scene": "r13_ep1_library_dawn",
+      "block": "r13_ep1_library_dawn",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:431:28",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "기록실의 빈 난로",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 431,
+          "label": "r13_ep1_library_dawn",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 431,
+      "scene_title": "r13_ep1_library_dawn",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "ef4c90c63a8628c1b56b0913fd6949f0b77e03e3afccdeda4dae2bfb55abfc12",
+      "uid": "1df487708d36add435c44546",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ep1_library_dawn|rpy_inventory|r13_ep1_library_dawn|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_dialogue_openings_20261013.rpy:240:20",
+      "file": "game/room13_dialogue_openings_20261013.rpy",
+      "path": [
+        12297,
+        12323
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_notice_before_talk",
+      "block": "r13_notice_before_talk",
+      "placement": "literal",
+      "ref": "game/room13_dialogue_openings_20261013.rpy:240:20",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "그래서 지금 계신 곳은 말하지 않는 거군요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_dialogue_openings_20261013.rpy",
+          "line": 240,
+          "label": "r13_notice_before_talk",
+          "guards": []
+        }
+      ],
+      "line": 240,
+      "scene_title": "r13_notice_before_talk",
+      "source_hash": "890bed91ceb4b4cf8324c73391aa6e9042f270678377f6d3617df682504bc986",
+      "baseline_hash": "d387db5f8b996f13d5a4bfc05f03588857d6d3c5f7ba8c89e6700695b8b73920",
+      "uid": "7a934e90a6267c47d88f966f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_notice_before_talk|rpy_inventory|r13_notice_before_talk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_dialogue_openings_20261013.rpy:242:20",
+      "file": "game/room13_dialogue_openings_20261013.rpy",
+      "path": [
+        12420,
+        12449
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_notice_before_talk",
+      "block": "r13_notice_before_talk",
+      "placement": "literal",
+      "ref": "game/room13_dialogue_openings_20261013.rpy:242:20",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "장소는 묻지 않겠습니다. 제 답장만 전해 주세요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_dialogue_openings_20261013.rpy",
+          "line": 242,
+          "label": "r13_notice_before_talk",
+          "guards": []
+        }
+      ],
+      "line": 242,
+      "scene_title": "r13_notice_before_talk",
+      "source_hash": "890bed91ceb4b4cf8324c73391aa6e9042f270678377f6d3617df682504bc986",
+      "baseline_hash": "b486c6d77b2b3c421b7e1b5cbc2efbfde4031bff8add819a1bb1e94d5f397308",
+      "uid": "8c01dc65c92c1754ea76d6fc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_notice_before_talk|rpy_inventory|r13_notice_before_talk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_dialogue_openings_20261013.rpy:262:40",
+      "file": "game/room13_dialogue_openings_20261013.rpy",
+      "path": [
+        13362,
+        13367
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_notice_before_talk",
+      "block": "r13_notice_before_talk",
+      "placement": "literal",
+      "ref": "game/room13_dialogue_openings_20261013.rpy:262:40",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "일째 ",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_dialogue_openings_20261013.rpy",
+          "line": 262,
+          "label": "r13_notice_before_talk",
+          "guards": [
+            "if key in s.get(\"read_topics\", []):"
+          ]
+        }
+      ],
+      "line": 262,
+      "scene_title": "r13_notice_before_talk",
+      "source_hash": "890bed91ceb4b4cf8324c73391aa6e9042f270678377f6d3617df682504bc986",
+      "baseline_hash": "fd4754dd7ed7a55d88730051348331c6a292890226a3a57a177a8d884f01904e",
+      "uid": "3e50c3a8f169b2557f0833c1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_notice_before_talk|rpy_inventory|r13_notice_before_talk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events.rpy:389:26",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        20537,
+        20625
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ev_c_wedge",
+      "block": "r13_ev_c_wedge",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:389:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "자루를 세는 사이 등 뒤에서 문이 닫히고, 밖에서 빗장이 걸렸다. 문 아래 나무 조각 때문에 문은 끝까지 닫히지 않았다. 손가락 하나 들어갈 틈이 남았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 389,
+          "label": "r13_ev_c_wedge",
+          "guards": []
+        }
+      ],
+      "line": 389,
+      "scene_title": "r13_ev_c_wedge",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "47a2afd888e5543023833de59b99e55b6fc69c3bb47986e459f1f7439e723b67",
+      "uid": "3222de78e35436bd82f4cad9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ev_c_wedge|rpy_literal|r13_ev_c_wedge|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:398:26",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        21001,
+        21067
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ev_c_wedge",
+      "block": "r13_ev_c_wedge",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:398:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "날짜마다 곡식과 약초의 수가 적혀 있다. 배급이 모자랐다는 날과 같은 날짜들이다. 날짜 옆에는 뭉치의 서명이 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 398,
+          "label": "r13_ev_c_wedge",
+          "guards": [
+            "while _c_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 398,
+      "scene_title": "r13_ev_c_wedge",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "cea2f22e30e4313ec7016b98a975d80a27c44ce782c795580a4aba600113da97",
+      "uid": "4129e1ae94b9bf8f8242d359",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ev_c_wedge|rpy_literal|r13_ev_c_wedge|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:402:26",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        21234,
+        21301
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ev_c_wedge",
+      "block": "r13_ev_c_wedge",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:402:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "새벽이 오기 전에 문틈으로 빗장을 들어 올리고 나왔다. 백 부인은 열려 있는 문을 보고 말없이 열다섯 냥을 내밀었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 402,
+          "label": "r13_ev_c_wedge",
+          "guards": []
+        }
+      ],
+      "line": 402,
+      "scene_title": "r13_ev_c_wedge",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "b846775a05dbdd14a34f5f7a39faa902fd675a73e9f552500f0890954dfb9a76",
+      "uid": "9399faab9050c24f57d34874",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ev_c_wedge|rpy_literal|r13_ev_c_wedge|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

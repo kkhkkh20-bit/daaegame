@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_episodes.rpy:417:38",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        23968,
+        24026
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_ep4_accused",
+      "block": "r13_ep4_accused",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:417:38",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "광장 등 뚜껑 나사에 가느다란 줄 자국이 나 있었다. 공구가 아니라 계측기 집게가 물었던 자국이었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 417,
+          "label": "r13_ep4_accused",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 417,
+      "scene_title": "r13_ep4_accused",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "e850bf3fcfaf5bd41d4f051860b7825f7177ac78e71221dfa4a83d538feab143",
+      "uid": "1c233ccf5cf1bd2d6421656c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ep4_accused|rpy_literal|r13_ep4_accused|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_episodes.rpy:423:48",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        24405,
+        24459
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_ep4_accused",
+      "block": "r13_ep4_accused",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:423:48",
+      "when": null,
+      "speaker": "resident_tok",
+      "kind": "dialogue",
+      "text": "등은 돌에서 떼어 낸 조각으로 빛나요. 손톱만 한 조각인데, 꺼내 들면 사람 손처럼 따뜻해요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 423,
+          "label": "r13_ep4_accused",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 423,
+      "scene_title": "r13_ep4_accused",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "7112f32aa4fbfe0f6b56dfef12890e370a4d3da988844e7eeb29b6b8ca41030a",
+      "uid": "87650cb9d33182f0f3591b63",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ep4_accused|rpy_literal|r13_ep4_accused|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

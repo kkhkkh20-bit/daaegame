@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_gimmicks.rpy:142:11",
+      "file": "game/systems/room13_gimmicks.rpy",
+      "path": [
+        7847,
+        7896
+      ],
+      "origin": "rpy_inventory",
+      "day": 11,
+      "scene": "r13_gm_scale",
+      "block": "r13_gm_scale",
+      "placement": "literal",
+      "ref": "game/systems/room13_gimmicks.rpy:142:11",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "가게의 양팔저울이다. 오른쪽 접시에 가게 추가 올라가 있고, 왼쪽 접시는 비어 있다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_gimmicks.rpy",
+          "line": 142,
+          "label": "r13_gm_scale",
+          "guards": []
+        }
+      ],
+      "line": 142,
+      "scene_title": "r13_gm_scale",
+      "source_hash": "a7934a16c859d49f7210cf9089b5edaccfdf3fba61af94c771454df8f9891eab",
+      "baseline_hash": "d7678e6d73b8260c562a1ac2697079bb995abef5e0276f618c7f5b7cf2eddb98",
+      "uid": "ca2b095b2d431d2010cbe198",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|r13_gm_scale|rpy_inventory|r13_gm_scale|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

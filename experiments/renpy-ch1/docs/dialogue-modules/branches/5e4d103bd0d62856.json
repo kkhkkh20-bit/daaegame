@@ -1,0 +1,170 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_HP_FIT7_00",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_fit7",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "hp_fit7",
+      "block": "hp_fit7",
+      "placement": "blocks",
+      "ref": "hp_fit7",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이 핀, 판돌 씨 숟가락 손잡이에 맞을까? 가져가도 돼?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 51,
+          "label": "r13_hp_pick7",
+          "guards": [
+            "elif n==81 and r13_hp_value('met') and r13_hp_value('pin_seen') and not r13_hp_value('pin_fitted'):"
+          ]
+        }
+      ],
+      "scene_title": "hp_fit7",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "4522ff7ebe72975439f246c0fabb4791344327458ced4021b65a844060756e2d",
+      "uid": "74dc7faedfb30c527b27d722",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|hp_fit7|patch|hp_fit7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HP_FIT7_01",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_fit7",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "hp_fit7",
+      "block": "hp_fit7",
+      "placement": "blocks",
+      "ref": "hp_fit7",
+      "when": null,
+      "speaker": "부리",
+      "kind": "dialogue",
+      "text": "버리는 거예요. 끝만 갈면 돼요. 손 내밀어요. 핀이요, 손가락 말고.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 51,
+          "label": "r13_hp_pick7",
+          "guards": [
+            "elif n==81 and r13_hp_value('met') and r13_hp_value('pin_seen') and not r13_hp_value('pin_fitted'):"
+          ]
+        }
+      ],
+      "scene_title": "hp_fit7",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "4d80803e727a35f6f2728ddf279fd1431de795b1f7ccb1315916e98213583bff",
+      "uid": "c3ea53a9446f854d618af5cf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|hp_fit7|patch|hp_fit7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HP_FIT7_02",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_fit7",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "hp_fit7",
+      "block": "hp_fit7",
+      "placement": "blocks",
+      "ref": "hp_fit7",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "부리가 핀 끝의 거친 부분을 갈아 내 손바닥에 놓는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 51,
+          "label": "r13_hp_pick7",
+          "guards": [
+            "elif n==81 and r13_hp_value('met') and r13_hp_value('pin_seen') and not r13_hp_value('pin_fitted'):"
+          ]
+        }
+      ],
+      "scene_title": "hp_fit7",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "c54f6e2e7bdc4d1547f1e6e0659d4579e8d4a0cf79d0cf238957489272bc4391",
+      "uid": "f514c5e37b0aced91e38b8d2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|hp_fit7|patch|hp_fit7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HP_FIT7_03",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_fit7",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "hp_fit7",
+      "block": "hp_fit7",
+      "placement": "blocks",
+      "ref": "hp_fit7",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "손가락은 오래 쓸 거라서. 고마워.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 51,
+          "label": "r13_hp_pick7",
+          "guards": [
+            "elif n==81 and r13_hp_value('met') and r13_hp_value('pin_seen') and not r13_hp_value('pin_fitted'):"
+          ]
+        }
+      ],
+      "scene_title": "hp_fit7",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "0e2b08be03ef532d8171ba2dffd0116565f31bee9a6c116d0b24d9afd209243e",
+      "uid": "c044f2060b86d4d5db4506f8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|hp_fit7|patch|hp_fit7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_OP_D07_03",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "free_evening7",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "free_evening7",
+      "block": "free_evening7",
+      "placement": "blocks",
+      "ref": "free_evening7",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "해가 기운다. 다람의 손을 잡고 여관으로 간다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 77,
+          "label": "r13_v111_free_evening7",
+          "guards": []
+        }
+      ],
+      "scene_title": "free_evening7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "8b1c03d285d12666f15a613e3028dfc6d9bfa59c207aaaac0e66c62a3a4a678a",
+      "uid": "9db357694887f4cf06fa4e3a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|free_evening7|patch|free_evening7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

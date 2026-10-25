@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D05_CN01",
+      "file": "game/v111/newworld/d05.json",
+      "path": [
+        "blocks",
+        "clinic_next5",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 5,
+      "scene": "clinic_next5",
+      "block": "clinic_next5",
+      "placement": "blocks",
+      "ref": "clinic_next5",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "thought",
+      "text": "다친 데는 맡겼다. 이제 초소로 가서 그날 밤 일을 다시 맞춰 보자.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 465,
+          "label": "r13_v111_cloth_match5",
+          "guards": []
+        }
+      ],
+      "scene_title": "clinic_next5",
+      "source_hash": "a9e760da50ee60c0891a0f3223c23267f704e9da058eb484a3ffcf4ed70b3f1c",
+      "baseline_hash": "60bb96139d491f662decc75ed742392712167a15f15f04bb6efbd2a0ccf23d05",
+      "uid": "21fd944e54b34c53bf9d057d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|clinic_next5|patch|clinic_next5|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,457 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/story.rpy:235:16",
+      "file": "game/story.rpy",
+      "path": [
+        8676,
+        8700
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "room_interaction",
+      "block": "room_interaction",
+      "placement": "literal",
+      "ref": "game/story.rpy:235:16",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "찾을 때 봉인은 끊어지지 않았다고 했지.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/story.rpy",
+          "line": 235,
+          "label": "room_interaction",
+          "guards": [
+            "if target == \"pouch\":",
+            "if \"pouch\" not in inventory:"
+          ]
+        }
+      ],
+      "line": 235,
+      "scene_title": "room_interaction",
+      "source_hash": "f80d7c11bcc5cbd41c2c14cdcbbd42a9dd944b4719a4552fdd392a29341d5aed",
+      "baseline_hash": "843257717775bb74acbb94fa44ff6f91943f0d119e3452d4b9f700200d4102fc",
+      "uid": "43a7b0d2425772ea93f289c0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|room_interaction|rpy_inventory|room_interaction|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/story.rpy:237:16",
+      "file": "game/story.rpy",
+      "path": [
+        8761,
+        8781
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "room_interaction",
+      "block": "room_interaction",
+      "placement": "literal",
+      "ref": "game/story.rpy:237:16",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "팔기로 한 여관은 아니라는 거다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/story.rpy",
+          "line": 237,
+          "label": "room_interaction",
+          "guards": [
+            "if target == \"pouch\":",
+            "if \"pouch\" not in inventory:"
+          ]
+        }
+      ],
+      "line": 237,
+      "scene_title": "room_interaction",
+      "source_hash": "f80d7c11bcc5cbd41c2c14cdcbbd42a9dd944b4719a4552fdd392a29341d5aed",
+      "baseline_hash": "8c88a6ae703c2bf4e2b01c20e28b89c1095c9ec971aa9204edee6d6943793858",
+      "uid": "dc0c22ec05c2f754f7d0f465",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|room_interaction|rpy_inventory|room_interaction|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/story.rpy:240:16",
+      "file": "game/story.rpy",
+      "path": [
+        8843,
+        8872
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "room_interaction",
+      "block": "room_interaction",
+      "placement": "literal",
+      "ref": "game/story.rpy:240:16",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "백 냥과 빈 서명 칸. 봉인은 너울 씨가 열었다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/story.rpy",
+          "line": 240,
+          "label": "room_interaction",
+          "guards": [
+            "if target == \"pouch\":",
+            "else:"
+          ]
+        }
+      ],
+      "line": 240,
+      "scene_title": "room_interaction",
+      "source_hash": "f80d7c11bcc5cbd41c2c14cdcbbd42a9dd944b4719a4552fdd392a29341d5aed",
+      "baseline_hash": "34297543f7d3c52be9fd0464a283dbf9b99e2e287f28f63c4a0eaaf75644d40a",
+      "uid": "302c457bd2d1f34a8f222803",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|room_interaction|rpy_inventory|room_interaction|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/story.rpy:244:16",
+      "file": "game/story.rpy",
+      "path": [
+        8993,
+        9020
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "room_interaction",
+      "block": "room_interaction",
+      "placement": "literal",
+      "ref": "game/story.rpy:244:16",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "씻어 내기 전에 누가 이불을 폈는지 물어보자.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/story.rpy",
+          "line": 244,
+          "label": "room_interaction",
+          "guards": [
+            "elif target == \"flour\":",
+            "if \"flour\" not in inventory:"
+          ]
+        }
+      ],
+      "line": 244,
+      "scene_title": "room_interaction",
+      "source_hash": "f80d7c11bcc5cbd41c2c14cdcbbd42a9dd944b4719a4552fdd392a29341d5aed",
+      "baseline_hash": "48e057630272e209d8e241c0032ba4c845a1aa90a9080a3070f4d427d16561ae",
+      "uid": "0a021be718ad7698f1e8638e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|room_interaction|rpy_inventory|room_interaction|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/story.rpy:255:16",
+      "file": "game/story.rpy",
+      "path": [
+        9360,
+        9375
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "room_interaction",
+      "block": "room_interaction",
+      "placement": "literal",
+      "ref": "game/story.rpy:255:16",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "방 주인에게 먼저 묻자.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/story.rpy",
+          "line": 255,
+          "label": "room_interaction",
+          "guards": [
+            "elif target == \"chest\":",
+            "if not archive_permission:"
+          ]
+        }
+      ],
+      "line": 255,
+      "scene_title": "room_interaction",
+      "source_hash": "f80d7c11bcc5cbd41c2c14cdcbbd42a9dd944b4719a4552fdd392a29341d5aed",
+      "baseline_hash": "67ea34cbb9eac869fdc4da3f0bc4a7cb9ee921c5b9351ed7ea74170d3aeb070f",
+      "uid": "8c7fbdb0087c2ba915457dd9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|room_interaction|rpy_inventory|room_interaction|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/story.rpy:268:16",
+      "file": "game/story.rpy",
+      "path": [
+        9827,
+        9864
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "room_interaction",
+      "block": "room_interaction",
+      "placement": "literal",
+      "ref": "game/story.rpy:268:16",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "작은 손님은 수건에 싸서 나비에게 맡겼다. 자리는 그대로 두자.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/story.rpy",
+          "line": 268,
+          "label": "room_interaction",
+          "guards": [
+            "elif target == \"under\":",
+            "if somsom_found:"
+          ]
+        }
+      ],
+      "line": 268,
+      "scene_title": "room_interaction",
+      "source_hash": "f80d7c11bcc5cbd41c2c14cdcbbd42a9dd944b4719a4552fdd392a29341d5aed",
+      "baseline_hash": "fd708a1d8bca35ae984016b3d44558765479c6c7ed6f404e32adde73437d6987",
+      "uid": "fb3f4f5802297dc528ccd5dc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|room_interaction|rpy_inventory|room_interaction|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/story.rpy:281:16",
+      "file": "game/story.rpy",
+      "path": [
+        10350,
+        10368
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "room_interaction",
+      "block": "room_interaction",
+      "placement": "literal",
+      "ref": "game/story.rpy:281:16",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "뒤로 물러서. 아빠가 꺼낼게.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/story.rpy",
+          "line": 281,
+          "label": "room_interaction",
+          "guards": [
+            "elif target == \"under\":",
+            "else:"
+          ]
+        }
+      ],
+      "line": 281,
+      "scene_title": "room_interaction",
+      "source_hash": "f80d7c11bcc5cbd41c2c14cdcbbd42a9dd944b4719a4552fdd392a29341d5aed",
+      "baseline_hash": "d1aa5d1fc0ec6df9f67bb69c9ae8cc2fe98392e13add1fa2b8318b7a1b9862a5",
+      "uid": "e948f69758c849f8cf2452c3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|room_interaction|rpy_inventory|room_interaction|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/story.rpy:284:16",
+      "file": "game/story.rpy",
+      "path": [
+        10469,
+        10489
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "room_interaction",
+      "block": "room_interaction",
+      "placement": "literal",
+      "ref": "game/story.rpy:284:16",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "아직 몰라. 수건부터 가져와 줘.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/story.rpy",
+          "line": 284,
+          "label": "room_interaction",
+          "guards": [
+            "elif target == \"under\":",
+            "else:"
+          ]
+        }
+      ],
+      "line": 284,
+      "scene_title": "room_interaction",
+      "source_hash": "f80d7c11bcc5cbd41c2c14cdcbbd42a9dd944b4719a4552fdd392a29341d5aed",
+      "baseline_hash": "ebaeb80713883272742f82bb7e7f9dee724d39fdbaa1489c3d84f1b1126f0a53",
+      "uid": "f469ca0cfa6dd77d75cbf996",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|room_interaction|rpy_inventory|room_interaction|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/story.rpy:286:16",
+      "file": "game/story.rpy",
+      "path": [
+        10547,
+        10562
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "room_interaction",
+      "block": "room_interaction",
+      "placement": "literal",
+      "ref": "game/story.rpy:286:16",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "그래. 둘이 받쳐 들자.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/story.rpy",
+          "line": 286,
+          "label": "room_interaction",
+          "guards": [
+            "elif target == \"under\":",
+            "else:"
+          ]
+        }
+      ],
+      "line": 286,
+      "scene_title": "room_interaction",
+      "source_hash": "f80d7c11bcc5cbd41c2c14cdcbbd42a9dd944b4719a4552fdd392a29341d5aed",
+      "baseline_hash": "c32e8de69edbac29a8088d729361f6cac083bdc58c49ab654f0d3fd9d937f511",
+      "uid": "9b5d7675e477022244ba5138",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|room_interaction|rpy_inventory|room_interaction|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/story.rpy:288:16",
+      "file": "game/story.rpy",
+      "path": [
+        10608,
+        10638
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "room_interaction",
+      "block": "room_interaction",
+      "placement": "literal",
+      "ref": "game/story.rpy:288:16",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "작은 손님을 찾았습니다. 상태부터 확인해 주십시오.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/story.rpy",
+          "line": 288,
+          "label": "room_interaction",
+          "guards": [
+            "elif target == \"under\":",
+            "else:"
+          ]
+        }
+      ],
+      "line": 288,
+      "scene_title": "room_interaction",
+      "source_hash": "f80d7c11bcc5cbd41c2c14cdcbbd42a9dd944b4719a4552fdd392a29341d5aed",
+      "baseline_hash": "9d0a689d4fe4a06f39578c9bc72e09bf6eb5e11d95057b4ca01f0157708be2c5",
+      "uid": "e3a3bba0d5b2c4cff6c379a2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|room_interaction|rpy_inventory|room_interaction|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/story.rpy:295:16",
+      "file": "game/story.rpy",
+      "path": [
+        10887,
+        10911
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "room_interaction",
+      "block": "room_interaction",
+      "placement": "literal",
+      "ref": "game/story.rpy:295:16",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "응. 수건으로 덮기 전에 모양을 남기자.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/story.rpy",
+          "line": 295,
+          "label": "room_interaction",
+          "guards": [
+            "elif target == \"under\":",
+            "else:"
+          ]
+        }
+      ],
+      "line": 295,
+      "scene_title": "room_interaction",
+      "source_hash": "f80d7c11bcc5cbd41c2c14cdcbbd42a9dd944b4719a4552fdd392a29341d5aed",
+      "baseline_hash": "9e3b5414bcacc70c81b436355425f28b58b5b29ed298780a09ef70b13147b26a",
+      "uid": "8935e4d59cc42ea44117b28b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|room_interaction|rpy_inventory|room_interaction|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

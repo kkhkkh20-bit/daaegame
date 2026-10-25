@@ -1,0 +1,82 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:233:14",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        12983,
+        13057
+      ],
+      "origin": "rpy_literal",
+      "day": 14,
+      "scene": "r13_cv_tea",
+      "block": "r13_cv_tea",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:233:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "수선집 앞에서 여니와 토리가 빨래 수레를 손보고 있었다. \"새벽마다 빨래 수레가 마을 입구로 나가요. 사람 하나는 들어가요.\"",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 233,
+          "label": "r13_cv_tea",
+          "guards": []
+        }
+      ],
+      "line": 233,
+      "scene_title": "r13_cv_tea",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "dbc75c7228010533ae3bd0d715627aba440cc8007d00a84a56fb7492b2324a1f",
+      "uid": "2151fec99b1281adc99c1e17",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|r13_cv_tea|rpy_literal|r13_cv_tea|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:234:14",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        13074,
+        13106
+      ],
+      "origin": "rpy_literal",
+      "day": 14,
+      "scene": "r13_cv_tea",
+      "block": "r13_cv_tea",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:234:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "종탑 위, 흰 부엉이 설이가 종 줄 옆에 앉아 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 234,
+          "label": "r13_cv_tea",
+          "guards": []
+        }
+      ],
+      "line": 234,
+      "scene_title": "r13_cv_tea",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "b6ee195c87d36f295d4e3b8b4791ebb8a2c56ff31ae3efc318be06590708f86d",
+      "uid": "e646f0824776ecdf4947328b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|r13_cv_tea|rpy_literal|r13_cv_tea|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

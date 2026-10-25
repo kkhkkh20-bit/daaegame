@@ -1,0 +1,1695 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D13_S02_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "낮. 돌목의 입구 경비실. 첫날 까로가 장갑을 말리던 벤치. 한 사람이 일어나면 다른 사람이 다리를 접어야 한다. 경비용 온기 돌과 남은 사용량 표시가 보인다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "aa33250d003a825cdfb4ebd3fe7e7b038dfe5434626c82932210cbbab5a97d3f",
+      "uid": "ac1a68b31696349252155a69",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0002",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "산길은 여전히 닫혔소. 마차는 못 지나가오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1862,
+          "label": "r13_v111_gate_bench13",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ea4bda3962e2155c8c24187beb0c7e66c3f575cd9a97ed9843f81f4dedc3cd39",
+      "uid": "06bae838fd6ab3f5007b3f01",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0003",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "걸어서도요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1863,
+          "label": "r13_v111_gate_bench13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5dddda15582344bc103b5761a046ed5c5a97697ed57669fbe31e5c417a9318a1",
+      "uid": "26841ee80a1a897fc0cc4585",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0004",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "아이 데리고 갈 길은 아니오. 막힌 데까지 직접 보고 왔소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1865,
+          "label": "r13_v111_gate_bench13",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "49e296ef1cd9291093fc82b14acda7d1a48fff8e4257999c674fed09bb2fec2b",
+      "uid": "b46c2196beafb6560196565a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0005",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "여기서 밤을 보낼 수는 있습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1866,
+          "label": "r13_v111_gate_bench13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8d1f5c88ee74744dfa66088ff3d2e92a992a6810e17180a9b93fd84e3cb8383e",
+      "uid": "b5c5bd21e2dc0c7ff75dffb9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0006",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "배정을 받아야 하오. 밤에도 경비가 쓰는 곳이라 온기는 있소. 오늘 밤 몫은 확인했소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1868,
+          "label": "r13_v111_gate_bench13",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4dd49fcf5d4cf37e37f5f48b8d6d0a4eb29bec21a99db7840c4588f6c75f7149",
+      "uid": "5d374d377a1f5f37ec687b4b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0007",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "셋 다 누우면 아저씨는 어디 앉아?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1869,
+          "label": "r13_v111_gate_bench13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bea8bd8934401eb06cabe0430f931c331af9e7430f73972e290468fcd4cf8c22",
+      "uid": "609c6018da583eaad8c41432",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0008",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "나는 저 의자. 너희 아빠는 발을 좀 접어야겠지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1871,
+          "label": "r13_v111_gate_bench13",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d2a0f27968e6956877e02c5fac220e5751a1b5952ac4b8b70a6b53b824680785",
+      "uid": "328848bfc7421d9eeec83014",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0009",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠가 문 쪽과 벤치를 확인한다. 가족이 실제로 쓸 수 있는 크기지만 별도 객실은 아니다. 이미 있는 환자를 내쫓는 공간으로 만들지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7efee9560bdb08254739d7ab00feae193cca3b8ab99cf33a05ce14900da5e7fd",
+      "uid": "5a19fd62a988781415590bc4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0010",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "내일도 약속하는 건 아니오. 그건 비축을 다시 봐야 하오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1873,
+          "label": "r13_v111_gate_bench13",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3eeb1a55bbf4464b2706e23b8b7e0e7bf9f5ea81f8cebe64dfd13eb1b1656541",
+      "uid": "1dbf28d02871ce4c20c491cb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0011",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "알겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1874,
+          "label": "r13_v111_gate_bench13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "31ed163142377e5da9a129edb7c078710db5f96062f71485607a1f8aa0b9d91b",
+      "uid": "5e3cac0fe14283d08b027119",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0012",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "저녁. 광장으로 돌아가는 길. 판돌이 탄 수레를 본다. 회색 담요 끝에서 아침의 새 천이 보인다. 엄마는 아빠 옆에 있으며 수레에 타 있지 않다. 너울이 엄마 이름이 있는 명단을 들고 다가온다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "61601c623d87277e4c2a8f21db56eef704d3f397da5c3081abc4f77ff5c22790",
+      "uid": "d6eacda1a417a22b9341ed50",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0013",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "부인도 명단에 있습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1877,
+          "label": "r13_v111_gate_bench13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "22ef7551df39d524c59682533b06f03928afd8cd20fc501e9d0dcaf406bdf92f",
+      "uid": "7118d09c6c8a9f7d0bdca743",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0014",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "나는 가겠다고 한 적 없어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1878,
+          "label": "r13_v111_gate_bench13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f64ae17e3d4c3d039b2e472e307f24a5688337563e36cc3455666090a7df4333",
+      "uid": "31b88425696722394dcd6963",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0015",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "신청 명단이 아니오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1879,
+          "label": "r13_v111_gate_bench13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2e48db59c7eca4aafb20709a95353477d7913b3a0a4e60c2258f258138474dcb",
+      "uid": "7cad5335ccba06ca6d0045d1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0016",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "촌장이 너울을 손으로 물린다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bd490c57a97faacbaaa7ff21de74053633b1d5af63744e5ba13fe4dae9cc531f",
+      "uid": "b5dd999c8a62336799fa97ea",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0017",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "얘기할 수 있소. 입구 자리를 내주겠소. 세 사람 배급도. 부인 이름은 내가 빼지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1880,
+          "label": "r13_v111_gate_bench13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cf48bbef32de63ca45a5863a024b68bd029d79a1b7a31b5d40b9c232484c9e7c",
+      "uid": "85ac01245a095350715b1ec8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0018",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "길을 열어 준다는 겁니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1881,
+          "label": "r13_v111_gate_bench13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "00498f8d138a360b47154eef16cbb6f31452d65ac78823e6d602b81ad1047dc0",
+      "uid": "cb8457d5c5750cff4a3457b3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0019",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "그 말은 아니오. 셋이 함께 물러나 기다리라는 거요. 오늘 밤은 보장하겠소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1882,
+          "label": "r13_v111_gate_bench13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3056b735db092da1d804b19c915e6fece7be414ee361c527cf96d1d1d28efc85",
+      "uid": "5fe69240869c55c6bec8ec11",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0020",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "실제로 누가 지킵니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1883,
+          "label": "r13_v111_gate_bench13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c23ad65ed72b4b13ca3f6aa50f6e58a28969d86697d85fbda4a7c36d10100fbe",
+      "uid": "d62362ba6a26ab9661a3b997",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0021",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "내가 출입을 맡소. 배급도 세 몫 있소. 부인에 대한 집행 중지는 여기서 명령받으면 내가 명단에 표시할 수 있소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1885,
+          "label": "r13_v111_gate_bench13",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0df927413caa13a188d2023c4ae7d1889c6bf595629739c5efaf53edac4de657",
+      "uid": "cb36d51e5abbfd6fbbe52a31",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0022",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "셋이 따뜻한 데서 자고, 아내 이름도 빠지는 거죠? ……저만 여기 남으면 그건 안 되고요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1886,
+          "label": "r13_v111_gate_bench13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9ba8f5bf6a96c539cee61b814d729be6abeefad0221bb2abd583a3d1868eb844",
+      "uid": "80336b840c738b5904f2f0a3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0023",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "가족 셋이 물러나는 조건이오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1887,
+          "label": "r13_v111_gate_bench13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "85fe4eaca84afe9cca279bf592bbcad9344efccf7eff0954ed6710a39fe0f23c",
+      "uid": "a56f1a693f5d5d66b8f29fef",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0024",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "선택: 조건을 더 묻기 / 가족 셋이 수락하고 물러나기 / 거절하고 현장에 남기. 질문은 수락으로 처리하지 않는다. 대표는 거절.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5042ae3b45230dbaf43aee263aa0802fca347e7360142c56ea14ebc55cda24ed",
+      "uid": "cd37f8c5a433eb13fb6e29de",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0025",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "나하고 다람이 있을 자리는 학교에 확인해 뒀어. 까로 씨가 데려다주면 돼.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1888,
+          "label": "r13_v111_gate_bench13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "97c2888673d07b260eb86136c8a6fb363814ee9f2ed71e54527bfe83802c24c3",
+      "uid": "52fcbc103347352f292db19a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0026",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "까로 씨까지 가면…… 여기서 수레는 누가 맡지?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1889,
+          "label": "r13_v111_gate_bench13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "07a91f5b59b475a42e685ef6902c1737b00db568f8df58ed3bf742e83aada127",
+      "uid": "58f33028537308a1f84f045f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0027",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "응. 내가 다람하고 걸어가려면 지금 같이 걸을 사람이 있는지도 봐야 하고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1890,
+          "label": "r13_v111_gate_bench13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7129f390f71e5dd8017938b84faea0ef79d570fb74b68d89c61f36b7c0770d15",
+      "uid": "8bee376626f361166fd97b0b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0028",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "이 시점에는 이동 계획만 정한다. 거래 거절 경로의 엄마·다람은 13-3 담요 대결이 끝날 때까지 아빠 곁에 남는다. 실제 가족 출발은 13-4 수레 정지 후 선택한다. 실제로 합의한 동행자가 있을 때만 대체를 제시한다. 대표 경로는 11–12일 도움으로 현장에 온 네로가 생존한 경우 가족 보행 동행, 네로 사망 시 까로가 가족 이동을 맡았다가 돌아오는 순차 진행. 아빠는 그동안 수레 정지와 감독을 확보해야 한다. 없는 사람이 갑자기 나타나지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8076a119769857b8e7d1c84e4f2af55137e11e6eb125211219560137ff7139fc",
+      "uid": "9c90c3b5bd856a46f2107dde",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0029",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "내일도 여기 있을 수 있습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1903,
+          "label": "r13_v111_offer_question13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "717067561b314e7c49cb88a4a4fedb7162765c2e48f2ab1ba5f3067a593f20be",
+      "uid": "c56d0ee20a91b4eea45f09f0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0030",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "오늘 밤만이오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1904,
+          "label": "r13_v111_offer_question13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f9bc9bc7eb5d9077713e2478cc5b0c43341d9faa62b159e0395b7b636a3affe8",
+      "uid": "d211c8b87173c65033243f06",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0031",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아내는 지금 여기서 빼 주는 거고요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1905,
+          "label": "r13_v111_offer_question13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cff66a3aab088ab6f88abf355f8bcdda5bb1f6fd3abdebaaf6613cb96789d874",
+      "uid": "de6c4eaf42adb951d7eb8840",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0032",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "명단에 적고 너울에게 직접 보이겠소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1907,
+          "label": "r13_v111_offer_question13",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ac4a3df8621f96b7338cd61de92e3d3e660cf1b4b86e2482e1308b24026f135c",
+      "uid": "b12fbd09eec25624dc02a504",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0033",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "……그 자리는 못 받겠습니다. 학교로 갈게요. 아내 이름은 다시 올리지 마세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1921,
+          "label": "r13_v111_offer_refuse13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4a7f69b67817ee9a5a69fd1c82cb9026c1c96255ad34b4f065429272fec57cc0",
+      "uid": "daee6f5d0d0a7267ade18a8e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0034",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "셋이 돌아가시오. 여기서 빠지라는 말이오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1922,
+          "label": "r13_v111_offer_refuse13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "19beaece1af9cddba5c22b692dfbba070daeed9ddf362846653ee9537c8cf05e",
+      "uid": "abdadb446984e8ccd7798f32",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0035",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "지금은 판돌 씨 얘기부터 듣겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1923,
+          "label": "r13_v111_offer_refuse13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a0568387a4f8ed110cc90879f25c7faac5b7b2298c69fbba9d233f8aa264a932",
+      "uid": "e6d8c69e5f2ce04cc3e0baa0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0036",
+      "when": null,
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "난 그 수레에 안 타오. 내 일은 여기서 갚기로 했소.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a516e88d85ece625b1cdf1f747f9dfcc679884f848d920a14b9f219597bbb9d6",
+      "uid": "b17beccd7469e39f7aab4eb7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0037",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0037",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0037",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "알고 있습니다. 지금은 비켜 주세요. 사람 내려야 해요.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ef51f1b39ab3a40b217d84bd25c137a1a4c3cd75daca1c4b1331b9f6914959e4",
+      "uid": "fecee2cd1e9549c3e6672588",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0038",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0038",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0038",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "우리 셋은 물러나겠습니다. 아내 이름부터 빼 주세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1912,
+          "label": "r13_v111_offer_accept13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5bb583036effe322a031db0fefa0c9859b3c6b0ecfe2d0fd47a326c6e10bd3ee",
+      "uid": "f721ba49289fbf61125ef36e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0039",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0039",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0039",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "돌목. 약속한 것을 내주시오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1913,
+          "label": "r13_v111_offer_accept13",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d8a12dc6419f1e3c79b94e56431d3233a298ac46cf6ed681ba1202f08212bdfd",
+      "uid": "eed6f5d4a400f8d012b667ec",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D13_S02_L0040",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D13_S02_L0040",
+        "text"
+      ],
+      "origin": "base",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D13_S02_L0040",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "오늘 밤의 자리를 제안받는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "86d1b558f35b3727f8a4f70590d117460eecc4cb9f2a991a1f7bf51f69dcef5c",
+      "uid": "7a9fd604bfb545cb9a2707fa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

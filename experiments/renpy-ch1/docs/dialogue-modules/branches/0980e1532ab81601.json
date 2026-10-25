@@ -1,0 +1,47 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_life.rpy:204:129",
+      "file": "game/room13_life.rpy",
+      "path": [
+        11686,
+        11735
+      ],
+      "origin": "rpy_literal",
+      "day": 9,
+      "scene": "r13_topic_choice",
+      "block": "r13_topic_choice",
+      "placement": "literal",
+      "ref": "game/room13_life.rpy:204:129",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "서명을 잘라 내는 건 기록을 또 한 번 지우는 일입니다. 다른 방법을 찾아 주십시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_life.rpy",
+          "line": 204,
+          "label": "r13_topic_choice",
+          "guards": [
+            "if key==\"w2_erased\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 204,
+      "scene_title": "r13_topic_choice",
+      "source_hash": "ff6367277bd80f51605a562a690b9994a298289796fb1dd7f1222258428131b7",
+      "baseline_hash": "788f94190dcc2a39d7411d02d8b839d418c43c15b74160f7615594a934cca302",
+      "uid": "c88b78ba0b221a5c9cba1c43",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_topic_choice|rpy_literal|r13_topic_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

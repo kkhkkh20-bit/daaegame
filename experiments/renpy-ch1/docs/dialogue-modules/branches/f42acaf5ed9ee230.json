@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/winter.rpy:271:134",
+      "file": "game/winter.rpy",
+      "path": [
+        12866,
+        12930
+      ],
+      "origin": "rpy_inventory",
+      "day": 4,
+      "scene": "winter_night",
+      "block": "winter_night",
+      "placement": "literal",
+      "ref": "game/winter.rpy:271:134",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "여관에 남은 주민들이 문 앞에 의자를 놓았다. 신고가 사라진 것은 아니지만, 경비는 혼자 둘을 데려가지 못했다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 271,
+          "label": "winter_night",
+          "guards": [
+            "if winter_has(winter,\"family_reported\") and not winter_has(winter,\"report_night_resolved\"):"
+          ]
+        }
+      ],
+      "line": 271,
+      "scene_title": "winter_night",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "0479ceaf3bc0553ac42136589f4862393ae11c93f47d9653034c7892f4c25a03",
+      "uid": "3004ad3e29788340e831f43b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|winter_night|rpy_inventory|winter_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:279:104",
+      "file": "game/winter.rpy",
+      "path": [
+        13461,
+        13472
+      ],
+      "origin": "rpy_inventory",
+      "day": 4,
+      "scene": "winter_night",
+      "block": "winter_night",
+      "placement": "literal",
+      "ref": "game/winter.rpy:279:104",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "여기 같이 있자.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 279,
+          "label": "winter_night",
+          "guards": [
+            "if winter[\"day\"]==1:"
+          ]
+        }
+      ],
+      "line": 279,
+      "scene_title": "winter_night",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "46d7a0ef9033944345dca9685b3805b36ca8cd19f10dbcf4d04a978b79ec3a5b",
+      "uid": "8e71b64ec61d9e94c0cd91b6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|winter_night|rpy_inventory|winter_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

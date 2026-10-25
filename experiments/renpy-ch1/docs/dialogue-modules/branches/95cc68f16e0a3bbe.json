@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_AR_D14_03",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "altar_result14",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "altar_result14",
+      "block": "altar_result14",
+      "placement": "blocks",
+      "ref": "altar_result14",
+      "when": "buri_site_ask14",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "촌장님 없이 쇠를 떼면, 내일 다시 걸라는 말이 나오겠죠.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3034,
+          "label": "r13_v111_altar_close14",
+          "guards": []
+        }
+      ],
+      "scene_title": "altar_result14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "a685fc7d65522ec27a52df6f44dbd6a5c93f33193431d6fa1173ffb2a128cdd6",
+      "uid": "f9f8d2e779af2a7d7a34a27b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|altar_result14|patch|altar_result14|buri_site_ask14",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AR_D14_04",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "altar_result14",
+        4,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "altar_result14",
+      "block": "altar_result14",
+      "placement": "blocks",
+      "ref": "altar_result14",
+      "when": "buri_site_ask14",
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "어르신 말 한마디면 부리도 공구를 놔야 하오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3034,
+          "label": "r13_v111_altar_close14",
+          "guards": []
+        }
+      ],
+      "scene_title": "altar_result14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "7c7c317d2b26eb376899d0f7f24ab1d734ed7e6edf1b820232888218c68dc24b",
+      "uid": "c5ff696a49d8f28e108e8768",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|altar_result14|patch|altar_result14|buri_site_ask14",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events.rpy:490:46",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        25649,
+        25688
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ev_kongi_errand",
+      "block": "r13_ev_kongi_errand",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:490:46",
+      "when": null,
+      "speaker": "resident_kongi",
+      "kind": "dialogue",
+      "text": "첫 손님이니까 이번만 외상이에요. 대신 내일 구운 밤 하나 주세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 490,
+          "label": "r13_ev_kongi_errand",
+          "guards": [
+            "if r13_cash_now()<2:",
+            "if room13[\"day\"]==1:"
+          ]
+        }
+      ],
+      "line": 490,
+      "scene_title": "r13_ev_kongi_errand",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "6883812edd9fdb104965a04ec46b1b35e8ad722b1ae50c471e1a1d0b13780466",
+      "uid": "406c581c494db694daf51d8e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ev_kongi_errand|rpy_literal|r13_ev_kongi_errand|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:492:46",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        25764,
+        25787
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ev_kongi_errand",
+      "block": "r13_ev_kongi_errand",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:492:46",
+      "when": null,
+      "speaker": "resident_kongi",
+      "kind": "dialogue",
+      "text": "돈부터 주세요. 저도 먹고살아야 해요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 492,
+          "label": "r13_ev_kongi_errand",
+          "guards": [
+            "if r13_cash_now()<2:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 492,
+      "scene_title": "r13_ev_kongi_errand",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "00796bc85558ca83889af8b9600f8c41016c4b31ae61c4757555389129c9ad21",
+      "uid": "529c21818b8c2feb0b83b2ae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ev_kongi_errand|rpy_literal|r13_ev_kongi_errand|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

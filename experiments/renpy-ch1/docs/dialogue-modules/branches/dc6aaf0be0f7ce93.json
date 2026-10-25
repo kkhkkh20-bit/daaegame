@@ -1,0 +1,170 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_ND_01",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "nabi_down13",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "nabi_down13",
+      "block": "nabi_down13",
+      "placement": "blocks",
+      "ref": "nabi_down13",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "학교로 가기 전에 수레 옆에 선다. 나비는 아직 앞치마를 두른 채 앉아 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2254,
+          "label": "r13_v111_school_handover_prep13",
+          "guards": [
+            "if r13_v111_value('listed:nabi') is True and not r13_v111_value('handed:nabi'):"
+          ]
+        }
+      ],
+      "scene_title": "nabi_down13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "958dfa71ef47c534e573035b2fcc3b7665e122b83a4f0bd8b75768d1a24bfdef",
+      "uid": "67b3fe118ea213d0a757f9fa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|nabi_down13|patch|nabi_down13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_ND_02",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "nabi_down13",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "nabi_down13",
+      "block": "nabi_down13",
+      "placement": "blocks",
+      "ref": "nabi_down13",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "나비 씨부터 내려 주십시오. 학교에서 침상을 펼 사람이 필요합니다!",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2254,
+          "label": "r13_v111_school_handover_prep13",
+          "guards": [
+            "if r13_v111_value('listed:nabi') is True and not r13_v111_value('handed:nabi'):"
+          ]
+        }
+      ],
+      "scene_title": "nabi_down13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "4b6546b94ca54ee9af31953b20628dcc4c46fbbcbbb63c150f6ed817e98b45b0",
+      "uid": "9eaa8be657df05a2a3337191",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|nabi_down13|patch|nabi_down13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_ND_03",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "nabi_down13",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "nabi_down13",
+      "block": "nabi_down13",
+      "placement": "blocks",
+      "ref": "nabi_down13",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "……학교에서 받는 걸로 적겠소. 내려오시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2254,
+          "label": "r13_v111_school_handover_prep13",
+          "guards": [
+            "if r13_v111_value('listed:nabi') is True and not r13_v111_value('handed:nabi'):"
+          ]
+        }
+      ],
+      "scene_title": "nabi_down13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "9747ce1c04eaf7aacedd77092b4fc37618b3771d2c98f6e77660fbc3ea813897",
+      "uid": "e8665610bd69bcf362d8f66a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|nabi_down13|patch|nabi_down13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_ND_04",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "nabi_down13",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "nabi_down13",
+      "block": "nabi_down13",
+      "placement": "blocks",
+      "ref": "nabi_down13",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나비가 앞치마 끈을 다시 묶고 수레에서 내린다. 아무 말 없이 학교 쪽으로 앞장선다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2254,
+          "label": "r13_v111_school_handover_prep13",
+          "guards": [
+            "if r13_v111_value('listed:nabi') is True and not r13_v111_value('handed:nabi'):"
+          ]
+        }
+      ],
+      "scene_title": "nabi_down13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "20bc1d64245a977253e2278ec81b10745c17af31b25f29731d3f62e76a04563e",
+      "uid": "59ff1e9f6a767a6bdb657c79",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|nabi_down13|patch|nabi_down13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

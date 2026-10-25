@@ -1,0 +1,299 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "hp_house11:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "hp_house11",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 11,
+      "scene": "hp_house11",
+      "block": "hp_house11",
+      "placement": "binding",
+      "ref": "hp_house11:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "학교로 돌아가겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "hidden_pandol",
+        "person": "npc_pandol",
+        "object": null
+      },
+      "scene_title": "hp_house11",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "d54200fe0c1ff5ef9bed27704d67796bdc1852fa7da08252cd1138c3bf24f550",
+      "uid": "d3a216558bbba19b4e82d79b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|hp_house11|choice|hp_house11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "hp_house11:1",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "hp_house11",
+        "options",
+        1,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 11,
+      "scene": "hp_house11",
+      "block": "hp_house11",
+      "placement": "binding",
+      "ref": "hp_house11:1",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "난로와 재통을 살핀다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "hidden_pandol:stove_seen",
+            null
+          ]
+        ],
+        "location": "hidden_pandol",
+        "person": null,
+        "object": "hp_stove"
+      },
+      "scene_title": "hp_house11",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "8e2c9d0c4aca6f9694a41c0c198ae7e59bd0fc9ce18e950de92d3df909a78248",
+      "uid": "6b303af250f9511f6937e32f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|hp_house11|choice|hp_house11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "hp_house11:2",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "hp_house11",
+        "options",
+        2,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 11,
+      "scene": "hp_house11",
+      "block": "hp_house11",
+      "placement": "binding",
+      "ref": "hp_house11:2",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "장작으로 바꿔도 되겠습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "hidden_pandol:stove_seen",
+            true
+          ],
+          [
+            "state",
+            "hidden_pandol:wood_reserved",
+            true
+          ],
+          [
+            "state",
+            "hidden_pandol:consent",
+            null
+          ]
+        ],
+        "location": "hidden_pandol",
+        "person": "npc_pandol",
+        "object": null
+      },
+      "scene_title": "hp_house11",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "aeded315c8696f1a9270b73ed800e703e4bcfb96d24c4d8c7878f757c88e01aa",
+      "uid": "c1cc8b88cf4f608c9b0c860a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|hp_house11|choice|hp_house11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "hp_house11:3",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "hp_house11",
+        "options",
+        3,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 11,
+      "scene": "hp_house11",
+      "block": "hp_house11",
+      "placement": "binding",
+      "ref": "hp_house11:3",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "장작 상자에 가져온 몫을 놓는다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "hidden_pandol:consent",
+            true
+          ],
+          [
+            "state",
+            "hidden_pandol:wood_delivered",
+            null
+          ]
+        ],
+        "location": "hidden_pandol",
+        "person": null,
+        "object": "hp_wood"
+      },
+      "scene_title": "hp_house11",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "bb566968a7226fe1f72dbbe8ceb5212f5ab4062da9d9c689b7c1930b96cf8c31",
+      "uid": "934bc06c8fadd53a8039fa61",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|hp_house11|choice|hp_house11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "hp_house11:4",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "hp_house11",
+        "options",
+        4,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 11,
+      "scene": "hp_house11",
+      "block": "hp_house11",
+      "placement": "binding",
+      "ref": "hp_house11:4",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "집게로 돌을 꺼내 장작을 땐다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "hidden_pandol:consent",
+            true
+          ],
+          [
+            "state",
+            "hidden_pandol:wood_delivered",
+            true
+          ],
+          [
+            "state",
+            "hidden_pandol:tongs",
+            true
+          ],
+          [
+            "state",
+            "hidden_pandol:heat_replaced",
+            null
+          ]
+        ],
+        "location": "hidden_pandol",
+        "person": null,
+        "object": "hp_stove"
+      },
+      "scene_title": "hp_house11",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "d5fdd6afd804baa74fd2e1e657d3ffe6e6abc64de03659d88e86f7edd21b4c0d",
+      "uid": "a41eed4d55d27cdd62084cd6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|hp_house11|choice|hp_house11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "hp_house11:5",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "hp_house11",
+        "options",
+        5,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 11,
+      "scene": "hp_house11",
+      "block": "hp_house11",
+      "placement": "binding",
+      "ref": "hp_house11:5",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "벽의 집게를 빌린다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "hidden_pandol:stove_seen",
+            true
+          ],
+          [
+            "state",
+            "hidden_pandol:tongs",
+            null
+          ]
+        ],
+        "location": "hidden_pandol",
+        "person": null,
+        "object": "hp_tongs"
+      },
+      "scene_title": "hp_house11",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "bcac7135d0db7277728eb936030687abf23bc795466d9598159645b2c4e9333b",
+      "uid": "aa52ef0a71646823e3a08877",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|hp_house11|choice|hp_house11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

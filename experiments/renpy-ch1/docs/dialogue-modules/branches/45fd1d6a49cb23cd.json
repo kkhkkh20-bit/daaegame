@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_episodes.rpy:408:39",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        23428,
+        23451
+      ],
+      "origin": "rpy_literal",
+      "day": 9,
+      "scene": "r13_ep4_accused",
+      "block": "r13_ep4_accused",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:408:39",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "증거도 없이 사람을 가두겠다는 겁니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 408,
+          "label": "r13_ep4_accused",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 408,
+      "scene_title": "r13_ep4_accused",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "bfe32a3760c227d7bb103cca438b5186227b029257643b66a3ec048995da4432",
+      "uid": "552f30be84ae0707108e72c9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_ep4_accused|rpy_literal|r13_ep4_accused|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_episodes.rpy:409:29",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        23483,
+        23503
+      ],
+      "origin": "rpy_literal",
+      "day": 9,
+      "scene": "r13_ep4_accused",
+      "block": "r13_ep4_accused",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:409:29",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "그럼 모레까지 증거를 가져오시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 409,
+          "label": "r13_ep4_accused",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 409,
+      "scene_title": "r13_ep4_accused",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "97a3877614322162819e9882e5198b5e8fe2b087708766770fd2d826e069fbdb",
+      "uid": "d5662805c33ecb95f9e7ff1a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_ep4_accused|rpy_literal|r13_ep4_accused|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

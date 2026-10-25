@@ -1,0 +1,126 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_v111_days1114.rpy:415:8",
+      "file": "game/room13_v111_days1114.rpy",
+      "path": [
+        23119,
+        23131
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "MS14_D11_S03",
+      "block": "r13_v111_heat_seen11",
+      "placement": "literal",
+      "ref": "game/room13_v111_days1114.rpy:415:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "가족 자리부터 본다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 415,
+          "label": "r13_v111_heat_seen11",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 415,
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "aa56cffba0a29954c119b1d0616327b29579646f32f2520278a4f21d02f69444",
+      "baseline_hash": "e7ca7598adb00154372cde4aedac14117358aac1635389183663f2dc5057c329",
+      "uid": "e98a460c4c496b0d84f69a7e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D11_S03|rpy_menu|r13_v111_heat_seen11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_v111_days1114.rpy:417:8",
+      "file": "game/room13_v111_days1114.rpy",
+      "path": [
+        23182,
+        23199
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "MS14_D11_S03",
+      "block": "r13_v111_heat_seen11",
+      "placement": "literal",
+      "ref": "game/room13_v111_days1114.rpy:417:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "아랫길 대피 준비를 확인한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 417,
+          "label": "r13_v111_heat_seen11",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 417,
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "aa56cffba0a29954c119b1d0616327b29579646f32f2520278a4f21d02f69444",
+      "baseline_hash": "dbeec57ddb7ad15dd29b1ec515c42ebc1a1468cca5f9e10c7c7739d1ed712a08",
+      "uid": "0bdda4de75d4cfea98653485",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D11_S03|rpy_menu|r13_v111_heat_seen11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_v111_days1114.rpy:419:8",
+      "file": "game/room13_v111_days1114.rpy",
+      "path": [
+        23252,
+        23269
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "MS14_D11_S03",
+      "block": "r13_v111_heat_seen11",
+      "placement": "literal",
+      "ref": "game/room13_v111_days1114.rpy:419:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "준비된 물자를 학교로 옮긴다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 419,
+          "label": "r13_v111_heat_seen11",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 419,
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "aa56cffba0a29954c119b1d0616327b29579646f32f2520278a4f21d02f69444",
+      "baseline_hash": "941c1f3dcc30be69802a10bdb0917d58cd9000c814558b98dd7ce6f47d33a391",
+      "uid": "93f2aa575a945bd774701235",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D11_S03|rpy_menu|r13_v111_heat_seen11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

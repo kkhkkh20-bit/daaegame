@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "silluk_receipt13:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "silluk_receipt13",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 13,
+      "scene": "silluk_receipt13",
+      "block": "silluk_receipt13",
+      "placement": "binding",
+      "ref": "silluk_receipt13:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "원래 감독 장소의 인수를 확인한다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "v111_labor",
+        "person": "guard",
+        "object": null
+      },
+      "scene_title": "silluk_receipt13",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "3c5cfda0e58a3b16e81889a5e2e7d4416c4331fc98d488055d1f2a3b98dd5569",
+      "uid": "b04a73d2fa1380f807e8e166",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|silluk_receipt13|choice|silluk_receipt13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

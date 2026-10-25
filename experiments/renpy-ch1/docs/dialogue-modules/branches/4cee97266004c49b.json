@@ -1,0 +1,170 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_debate.rpy:674:36",
+      "file": "game/systems/room13_debate.rpy",
+      "path": [
+        40633,
+        40700
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "r13_debate_dispatch",
+      "block": "r13_debate_dispatch",
+      "placement": "literal",
+      "ref": "game/systems/room13_debate.rpy:674:36",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "여기까지 정리하면 이 회의에서는 이 주장을 다시 다룰 수 없다. 반박한 말은 기록에 남고, 남은 말은 그대로 남는다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_debate.rpy",
+          "line": 674,
+          "label": "r13_debate_dispatch",
+          "guards": [
+            "elif r13_debate_action[0]==\"leave\":",
+            "if r13_debate_dad_broken(r13_claim):"
+          ]
+        }
+      ],
+      "line": 674,
+      "scene_title": "r13_debate_dispatch",
+      "source_hash": "e522a9da5723c7f36391b949f7859938b3d15bb6b924594f6878838b865736be",
+      "baseline_hash": "793f7af4fb74d6b5562f6c9ed9d4669296dacd63045da93bb569ef94c330cfba",
+      "uid": "b7c5cdc6c04ce8d40d17ac8b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_debate_dispatch|rpy_inventory|r13_debate_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_debate.rpy:674:116",
+      "file": "game/systems/room13_debate.rpy",
+      "path": [
+        40713,
+        40726
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "r13_debate_dispatch",
+      "block": "r13_debate_dispatch",
+      "placement": "literal",
+      "ref": "game/systems/room13_debate.rpy:674:116",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "회의에서 더 생각한다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_debate.rpy",
+          "line": 674,
+          "label": "r13_debate_dispatch",
+          "guards": [
+            "elif r13_debate_action[0]==\"leave\":",
+            "if r13_debate_dad_broken(r13_claim):"
+          ]
+        }
+      ],
+      "line": 674,
+      "scene_title": "r13_debate_dispatch",
+      "source_hash": "e522a9da5723c7f36391b949f7859938b3d15bb6b924594f6878838b865736be",
+      "baseline_hash": "51518de3fdc6aa6da420cedffcea505fcd688ce24fc02db55d23c2ac5db7a63b",
+      "uid": "56ca938f7e312de48eb559a8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_debate_dispatch|rpy_inventory|r13_debate_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_debate.rpy:676:36",
+      "file": "game/systems/room13_debate.rpy",
+      "path": [
+        40778,
+        40830
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "r13_debate_dispatch",
+      "block": "r13_debate_dispatch",
+      "placement": "literal",
+      "ref": "game/systems/room13_debate.rpy:676:36",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "반론을 그만두면 이 회의에서는 이 주장을 다시 다룰 수 없다. 상대의 말이 그대로 남는다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_debate.rpy",
+          "line": 676,
+          "label": "r13_debate_dispatch",
+          "guards": [
+            "elif r13_debate_action[0]==\"leave\":",
+            "else:"
+          ]
+        }
+      ],
+      "line": 676,
+      "scene_title": "r13_debate_dispatch",
+      "source_hash": "e522a9da5723c7f36391b949f7859938b3d15bb6b924594f6878838b865736be",
+      "baseline_hash": "fd7fbc6a91bfa1a57062ab72a0a0398595822a859c11c7fea3037724f3d9af4b",
+      "uid": "c78fdb1786463ce0e0fe1ec5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_debate_dispatch|rpy_inventory|r13_debate_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_debate.rpy:698:76",
+      "file": "game/systems/room13_debate.rpy",
+      "path": [
+        42397,
+        42409
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "r13_debate_dispatch",
+      "block": "r13_debate_dispatch",
+      "placement": "literal",
+      "ref": "game/systems/room13_debate.rpy:698:76",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "말한 그대로입니다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_debate.rpy",
+          "line": 698,
+          "label": "r13_debate_dispatch",
+          "guards": [
+            "elif r13_debate_action[0]==\"press\":",
+            "else:"
+          ]
+        }
+      ],
+      "line": 698,
+      "scene_title": "r13_debate_dispatch",
+      "source_hash": "e522a9da5723c7f36391b949f7859938b3d15bb6b924594f6878838b865736be",
+      "baseline_hash": "379eff52f413ea1202665a60cb85fe95b243e39848915eecb0cbcb7ddebbe8ce",
+      "uid": "17ed44de2e4c396a985ab155",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_debate_dispatch|rpy_inventory|r13_debate_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

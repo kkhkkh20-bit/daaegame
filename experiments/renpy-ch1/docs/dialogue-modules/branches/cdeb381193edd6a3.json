@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/village_people.rpy:126:27",
+      "file": "game/village_people.rpy",
+      "path": [
+        6861,
+        6882
+      ],
+      "origin": "rpy_inventory",
+      "day": 7,
+      "scene": "village_contact",
+      "block": "village_contact",
+      "placement": "literal",
+      "ref": "game/village_people.rpy:126:27",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "다른 사람에게 말해도 되는지 묻는다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/village_people.rpy",
+          "line": 126,
+          "label": "village_contact",
+          "guards": [
+            "while True:",
+            "if village_contact_topic.get(\"testimony\"):"
+          ]
+        }
+      ],
+      "line": 126,
+      "scene_title": "village_contact",
+      "source_hash": "6d2d2b5aac51599f4976ab8fecc8af5d67c3ea52cae7c9844b27ac4d01ee16b3",
+      "baseline_hash": "9d4a97c3f1df526512e35dda605366f103f3e7e641e8dc3aea0bcaf06ee6c0f9",
+      "uid": "9727080fc482f9f62f20d1af",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|village_contact|rpy_inventory|village_contact|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/village_people.rpy:127:27",
+      "file": "game/village_people.rpy",
+      "path": [
+        6922,
+        6937
+      ],
+      "origin": "rpy_inventory",
+      "day": 7,
+      "scene": "village_contact",
+      "block": "village_contact",
+      "placement": "literal",
+      "ref": "game/village_people.rpy:127:27",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "지금은 둘만 알고 있는다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/village_people.rpy",
+          "line": 127,
+          "label": "village_contact",
+          "guards": [
+            "while True:",
+            "if village_contact_topic.get(\"testimony\"):"
+          ]
+        }
+      ],
+      "line": 127,
+      "scene_title": "village_contact",
+      "source_hash": "6d2d2b5aac51599f4976ab8fecc8af5d67c3ea52cae7c9844b27ac4d01ee16b3",
+      "baseline_hash": "add9095e7e3b9245828f0a2397f4763b2213cccfa8362cb2aeefabc43934207b",
+      "uid": "af90902da1c94363192a5f17",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|village_contact|rpy_inventory|village_contact|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

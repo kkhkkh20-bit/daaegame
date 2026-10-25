@@ -1,0 +1,123 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_LA_CHILDREN3",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_open3",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "la_open3",
+      "block": "la_open3",
+      "placement": "blocks",
+      "ref": "la_open3",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "실룩의 아이들은 공방 바깥 보리 곁에 모여 있다. 실룩은 아이들 쪽을 돌아보고 탁자 앞에 선다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 54,
+          "label": "r13_lamp_attempt_open3",
+          "guards": []
+        }
+      ],
+      "scene_title": "la_open3",
+      "source_hash": "1f8d4bedb33f10201a3ffe6e822492a7cb7ec3d826a133f6d7683d7013245e9b",
+      "baseline_hash": "520fc2add5bd37d2395b8eee5da3b0290f94d3d71a4c4e7ed123fc2aa2fcac42",
+      "uid": "8b0acfdb62f1fef0aa9e2eac",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|la_open3|patch|la_open3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_LA_LA_OPEN3_0",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_open3",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "la_open3",
+      "block": "la_open3",
+      "placement": "blocks",
+      "ref": "la_open3",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "톡이 수리한 등 안에서 칼끝이 나왔소. 책임을 물어야겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 54,
+          "label": "r13_lamp_attempt_open3",
+          "guards": []
+        }
+      ],
+      "scene_title": "la_open3",
+      "source_hash": "1f8d4bedb33f10201a3ffe6e822492a7cb7ec3d826a133f6d7683d7013245e9b",
+      "baseline_hash": "1ba01a728f2b252d5ef13ff6275bce0b148d2165129838765d0534e05ed28d73",
+      "uid": "b7fc34c8c46355d24b2bbe02",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|la_open3|patch|la_open3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_LA_LA_OPEN3_1",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_open3",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "la_open3",
+      "block": "la_open3",
+      "placement": "blocks",
+      "ref": "la_open3",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "수리한 뒤 마지막 점검이 있었습니다. 그 뒤 생긴 일부터 나누죠.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 54,
+          "label": "r13_lamp_attempt_open3",
+          "guards": []
+        }
+      ],
+      "scene_title": "la_open3",
+      "source_hash": "1f8d4bedb33f10201a3ffe6e822492a7cb7ec3d826a133f6d7683d7013245e9b",
+      "baseline_hash": "ba83af60bc31aa775a1f6d1777fe1b0096902781bc0aef494fd0271145f4af53",
+      "uid": "90c5b798cf52990da3cbb541",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|la_open3|patch|la_open3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

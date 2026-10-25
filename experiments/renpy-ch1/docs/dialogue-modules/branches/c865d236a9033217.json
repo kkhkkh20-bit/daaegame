@@ -1,0 +1,1263 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D07_S03_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[화면] 방문을 열어 둔 채 부엉이가 책상에 서류를 펼친다. 다람은 문과 가까운 의자에 앉는다. 도토는 학교 당번을 교대한 뒤 여관 복도에서 장부를 정리하고 있다. [배치 고정: 침대 발치가 복도 문 안쪽 아래에 가깝다. 책상은 방 안쪽에 있어 문 곁에 웅크린 아이가 닿을 수 없다. 이후 틈은 이 문틀 아래를 도토가 실제로 벌려 만든다. 처음부터 열린 틈이나 새 통로가 아니다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "519f62a28bd96a7af4d2e40d9af90287a9b0c3ed1b5ac8b98ec2471d0b229648",
+      "uid": "cc215cdf41e8c8af0233204e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S03_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0002",
+      "when": null,
+      "speaker": "부엉이",
+      "kind": "dialogue",
+      "text": "소금 꾸러미가 다시 왔더군. 부인이 살아 있다는 말은 직접 듣기 전에는 쓰지 말게. 내가 아는 건 물건이 오갔다는 거야.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 697,
+          "label": "r13_v111_room_visit7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "660f82008825b596ec22a7abc24dd939fe78e39e908a9944c604339369e1ce48",
+      "uid": "57c8e84c61f16a3c7f4e95df",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S03_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0003",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마 글씨는 알아요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 698,
+          "label": "r13_v111_room_visit7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8f0d99e5d7ddf7f3e9f7fbe34b455d80d68c870b2eb39bdd95c8596a7c8564aa",
+      "uid": "516a18a2408feea48014fcda",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S03_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0004",
+      "when": null,
+      "speaker": "부엉이",
+      "kind": "dialogue",
+      "text": "그러면 저 봉투…… 아니, 누런 것. 손대지 말고 글씨부터 보거라.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 699,
+          "label": "r13_v111_room_visit7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d09641d582bc48b4d26d071116d8dcd290e1737a400fbc19e1d231c2f11b4503",
+      "uid": "17f3f32e478d376fdbba4582",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S03_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0005",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "부엉이가 말을 멈추고 가슴팍을 누른다. 물을 마시려다 잔을 내려놓는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 703,
+          "label": "r13_v111_room_visit7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "989a7d490454b35524fd08cbc49c7fad0cfd306f777fb4f05597e333c61e1ea4",
+      "uid": "8023478b3c770c3ce6977182",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S03_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0006",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "서리 씨를 부르겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 704,
+          "label": "r13_v111_room_visit7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b426ef552153d50842c67f8a748c98bcfd53967c1309efd037cd85a23954e71f",
+      "uid": "90ac1d44f27898aa0e019d3f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S03_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0007",
+      "when": null,
+      "speaker": "부엉이",
+      "kind": "dialogue",
+      "text": "진료소는 비었을 거야. 저녁엔 서쪽 초소에서 환자를 봐. 걷다가 이러면 큰일이니…… 나 좀 데려오게 해 주게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 705,
+          "label": "r13_v111_room_visit7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "630062890ff0f03148d68a7ac2b50c92f8598c6cef57e541fdf96e52966dc0b4",
+      "uid": "3d7d9c55411c949f9ada5974",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S03_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0008",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "제가 길 압니다. 눈 치운 길은 뒤로 돌아가야 해요. 혼자 뛰시면 미끄러집니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 706,
+          "label": "r13_v111_room_visit7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "71367b2b9ca3e080a598cbf314d5e61bbb058810b7af721f8fbc21a87358c625",
+      "uid": "d211b9a4976235fff3c2dae7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S03_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0009",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "저 혼자 다녀와도 됩니다. 길은 압니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 707,
+          "label": "r13_v111_room_visit7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fbb035d776f44cada4dead0d2cda629e640db9cf3d967eaf4db050483c8fb84f",
+      "uid": "722e6334e9210a6ac511c2a1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S03_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0010",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다람아…… 너랑 떨어지기 싫어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 708,
+          "label": "r13_v111_room_visit7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6f6c4a95e5b8e0ab34debd98ba6df0d0d357aa11e9e11509eccae234353e7286",
+      "uid": "436d078a8ca2dfd48e0a1c61",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S03_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0011",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "예. 여기 계셔도 됩니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 709,
+          "label": "r13_v111_room_visit7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4e4665200a522cd10ff5ddb5b9d9e6082bd695118fea88d959f49a8f1a6891d2",
+      "uid": "7c421643daa85eb3cd4f1caf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S03_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0012",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다람아, 같이 가자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 710,
+          "label": "r13_v111_room_visit7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "409c31b90f3874bd6f616bc658b237751b88bcabcefc188f273ad95836cca92c",
+      "uid": "2dec9d2a62063a2c7eb35e84",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S03_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0013",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "도토 아저씨랑 여기 있을게. 할아버지 혼자 두면 어떡해.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 711,
+          "label": "r13_v111_room_visit7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b058528c176152826a666682623786a568b9b2b8dfc601b0bb55040a77b8cc27",
+      "uid": "11e0803891dbaa2b13b3a774",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S03_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0014",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: D07_S03_medical_request_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f35fca0b58e344ccf63b99785fc1440a267980b649ac0bca59d6f964015454bc",
+      "uid": "8adfd2b4a3843ef3b77ab4a2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S03_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0015",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "다람과 어디에 있을까?",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4ab7a530f033a5ab12d4e512b37173435a132c6bb38206fcb6a094971bc323d7",
+      "uid": "c55add000e7db5c432022178",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S03_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0016",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: D07_S03_protection_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "339d67de282a89c26a32bcb525e7bac70fed4e313ec7ec973d876ac2b527219c",
+      "uid": "8a197d0e7540ecd17b4d846c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S03_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0017",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "저희는 여기 있을게요. 까로 씨, 서리 씨를 데려와 주십시오.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b5aa1e5e6f55a65817db64d90e7ab9a33ce00f4e65e86474e266dc85abc8bb0a",
+      "uid": "c179372b0e6e12fbbe094fcb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S03_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0018",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "다녀오겠습니다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ac41c51d7954b782c6b69bfe1abbd6672390bf54f675bd1285ada7f08b8ce00b",
+      "uid": "77374a856ead9c1650182109",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S03_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0019",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: father_location=room13; DARAM_location=room13; D07_S03_A_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "946e7a50d4b9e89bed747721e0cceadfab23e1b49c28af3769932f94379d71f6",
+      "uid": "8a5e317948fc19e4a7501235",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S03_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0020",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다람아, 손 잡아. 함께 가자.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "13ef8eddb157e01b454e29cd12b43264c20db6b86f977436df2faf2f6f3d4c0f",
+      "uid": "92bda36433324378b456cfb5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S03_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0021",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "응. 할아버지, 다녀올게요.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b15b4d733063e27a497ac00ddde5cb7008fe48044cbc0de4e1208f55521770c4",
+      "uid": "69dd03eaafa38ac40e7cfc88",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S03_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0022",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: father_and_daram_together=true; D07_S03_B_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "dd6878dc4345722303b90640374faf6c40c26fa1f7c114e94d8f0380322efada",
+      "uid": "1c4d9aa061101b212accbe29",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S03_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0023",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "도토 씨, 부탁이 있습니다. 방 안에서 다람이와 같이 있어 주십시오. 문은 열어 두고, 저는 까로 씨와 서리 씨를 데리고 바로 오겠습니다. 불편해하면 방 밖으로 함께 나와 주세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 719,
+          "label": "r13_v111_handover7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4d823efb7215128f6ee418f6067b209cb0a6086d3c03f696545e69fdf8bafc5b",
+      "uid": "7539ec4f62ef9fd879beac3f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S03_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0024",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "제 장부도 안으로 가져오겠습니다. 다람아, 내 옆에 앉을래?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 720,
+          "label": "r13_v111_handover7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "487edbf76c2c40717c7625c76004e430b2bbef7439724638986f225bb78a3b0e",
+      "uid": "b3c1e675e352b748537a4e02",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S03_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0025",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "도토가 의자를 방 안으로 옮긴다. 다람이 그 옆에 앉은 것을 확인하고 나는 가방을 든다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 721,
+          "label": "r13_v111_handover7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "927b288840ca75c40c7684e76b2bef8486ed33aee29f17e3ee238831aea13dc8",
+      "uid": "116c98d7d5a4c96429cfbad7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S03_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0026",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다람아. 종이는 기다려도 돼. 무서우면 바로 도토 아저씨에게 가.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 722,
+          "label": "r13_v111_handover7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "386b75e18d9011e4ca9cdce8dbe9ad837b59eb1bedc211fe0e939e6c3c9974c2",
+      "uid": "91c177cf574db70f8c623f77",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S03_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0027",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "응. 빨리 와.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 723,
+          "label": "r13_v111_handover7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "969ebfa3a9b8e274ecef997fb835c99c5c97a1d2537a78d7832b0e41bf3e0876",
+      "uid": "3b15934466bdf120eeb0ae36",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S03_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0028",
+      "when": null,
+      "speaker": "부엉이",
+      "kind": "dialogue",
+      "text": "고맙네. 문은…… 바람이 세군.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 724,
+          "label": "r13_v111_handover7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b6f37f2566c7ca526cb74db5d939cd646dd248603eb3d73ce4726a82c5f79430",
+      "uid": "05add0453351fd9ec791b2bb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S03_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0029",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "닫지는 마십시오. 제가 이쪽에 앉아 바람을 막겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 725,
+          "label": "r13_v111_handover7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "74f2293b36a5874664aafab87ae607f6d470df392fe11d88dd027c5d56b02f25",
+      "uid": "3cd024f17c0f728f9f70896c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S03_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0030",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 까로와 계단을 내려간다. 방 안은 더 이상 보이지 않는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 726,
+          "label": "r13_v111_handover7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a2e93ed51bd2f494b8208b70f7e2db141e93f802e4c3279c71603fd1de2364b8",
+      "uid": "c39d0b82065766e4888df366",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S03_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S03_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S03_L0031",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: DOTO_location=inside_room13; DARAM_guardian=DOTO; father_location=medical_route; D07_S03_C_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-3. 저녁 / 여관 13호 — 잠깐이라는 약속",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "73cf14016787bd9528844aba28ea105f32ad27644ef558aa9d81fa37c5a00f8b",
+      "uid": "a2ae8a05c630b20348590cbb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

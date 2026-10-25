@@ -1,0 +1,2192 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D07_S02_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0001",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "사정은 들었소. 누비는 아이들을 내보내려 했고, 보리는 훔쳤고, 나비는 금지된 불을 줬소. 다들 책임이 있지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 571,
+          "label": "r13_v111_responsibility7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "fire_lose",
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a5011d23f9a6e6399704653064deeaaa385331d523bfae2d3b9532e30e99dee3",
+      "uid": "627928efd55e61094c1a224b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0002",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그래서 셋 다 똑같다는 겁니까? 불을 놓은 사람까지 그 말 뒤에 숨기지 마십시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다. 조건부 replace/drop 이후 원문 fallback이며 무조건 표시된다는 뜻이 아니다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 572,
+          "label": "r13_v111_responsibility7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "fire_lose"
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4d91c3de158c576dc164b1b3d80c472830b9156620d8993811fcdf1beab8aa65",
+      "uid": "f12ca904e97f989968f865cb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0003",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[제시 순서] 닫힌 등잔의 위치 → 보리의 구조를 직접 본 기록 → 누비의 진술과 발화 지점. 나비의 등잔을 먼저 범인으로 찍었던 선택은 여기서 고칠 수 있다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4f58ccefd3d167b0a0bc16afce0482dfd47daaf85f27abe27c9459d3f8fd0ed7",
+      "uid": "d3c6689c69af04d59d5ada95",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0004",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "제가 밥을 안 줬으면 거기 안 살았을까요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 607,
+          "label": "r13_v111_responsibility_answers7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6e37a8e34722c2d3fb60fcc99e95aaee1deb71de5d393f214614142d080f778a",
+      "uid": "d0bd57cd81290f0cbf4b442e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0005",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "그럼 굶었겠지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 608,
+          "label": "r13_v111_responsibility_answers7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "68aa9d101822cbae34d29304a7b5cb6ce97998bdc8462739d7c20f212fdc6035",
+      "uid": "a4bd8df04af989ffe925ac93",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0006",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "저는…… 그렇게 한마디로 말하지 마요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 609,
+          "label": "r13_v111_responsibility_answers7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ebbc5d1b90728ec51ee75c729e73807a844bf61269290642922146db256ac4ec",
+      "uid": "997775fdd3befa3c7c3a5cc2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0007",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "쉬워서 하는 말 아니야.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 610,
+          "label": "r13_v111_responsibility_answers7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "010c16d63cdcd7f28da57151113faf5f3ea22cf6beb226ef609b39a0904eaa18",
+      "uid": "ce957423cfc76a4e1735c709",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0008",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "누비가 학교로 향하는 아이들을 보려고 창문에 매달린다. 너울이 팔을 잡는다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 611,
+          "label": "r13_v111_responsibility_answers7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "fire_lose",
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "be3b86d84f6db17563b077826e05ee29409bafaa5f233b01b9c06d75bab9c0b5",
+      "uid": "d12a08f48e1cab3a826faccf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0009",
+      "when": null,
+      "speaker": "누비",
+      "kind": "dialogue",
+      "text": "애들은 어디 가요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 612,
+          "label": "r13_v111_responsibility_answers7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "43c129110cf590778b00efd191faabad373e9bb9d1e6bbcbf9d240c9dc48d91a",
+      "uid": "5a0b52bf208db47b4a1e6f26",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0010",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "학교에 자리를 확인했습니다. 오늘 저녁 먹는 것까지 보고 오겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 613,
+          "label": "r13_v111_responsibility_answers7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "273575217091a7e6061fa59d79ae16933c3bb196ec965f9b945d01c25fa50e5a",
+      "uid": "f16a584532a4a46440b853b5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0011",
+      "when": null,
+      "speaker": "누비",
+      "kind": "dialogue",
+      "text": "내 애들한테 제가—",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 614,
+          "label": "r13_v111_responsibility_answers7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "989fc06868691405aed7757538d9b9f1678297cef6c9378b326bf33f969ad24e",
+      "uid": "20e5254f4caa43461ee7780c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0012",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "지금 뭐라고 전할지는 누비 씨가 쓰세요. 제가 바꾸지는 않겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 615,
+          "label": "r13_v111_responsibility_answers7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "fire_lose",
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "af8844062a4eaef18bef441d9153ceeb5b2cc788c170949f178ef3411af8c2d1",
+      "uid": "e3d26a43eaeb5d2d023d610c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0013",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[조작] 피난 명부에 아이 이름 적기 → 실제 침구 수 확인 → 구조 중 다쳤을 때만 보리의 치료, 그리고 생존 아이 보호자 인계 확인. 범인을 넘기는 선택만 하고 아이 보호를 생략하면 빈 침구가 화면에 남는다. 대표 경로는 누비의 아이 셋까지 사자 선생님과 나비에게 낮·밤 담당을 나눠 인계한다. 이후 11일 한파에서 이 인계를 없었던 것으로 만들지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "013b7975cffad27500595fb9309c8af8bb774a2fc69df8a9fdcbf04f02487b5e",
+      "uid": "38e312faf96f7ce79628e731",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0014",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: D07_S02_responsibility_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "491ccbd5535024d864dea2be628dd7ba87ec0f255a17a43f9c3687cf5855010c",
+      "uid": "77fddc9307f536398c73c401",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0015",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어제 창고에서 나온 너희 셋, 여기에 있니?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 628,
+          "label": "r13_v111_school_names_done7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a24e6c692cc7ee0bd73a0467031e3899761eba7abe8bbbe650d324d71fce594f",
+      "uid": "097f7fd7ade11eac33650524",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0016",
+      "when": null,
+      "speaker": "창고 아이 1",
+      "kind": "dialogue",
+      "text": "네.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 629,
+          "label": "r13_v111_school_names_done7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8445741d7d6a831276e8794b874cebee94940ba0e963d4f109bf72f437426789",
+      "uid": "fc851aca4d4547d36b713ecf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0017",
+      "when": null,
+      "speaker": "창고 아이 2",
+      "kind": "dialogue",
+      "text": "저도 여기 있어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 630,
+          "label": "r13_v111_school_names_done7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0e6276e6a31fe33e8b208d7e804fd3b6a0c5f9cd292bf1ad73919d0ce17b6aa7",
+      "uid": "c81dc362b3d955ce253f72ae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0018",
+      "when": null,
+      "speaker": "창고 아이 3",
+      "kind": "dialogue",
+      "text": "이 자리요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 631,
+          "label": "r13_v111_school_names_done7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "64c28ae74d77aa8e6b3c823968e536e381239a59e8c599c6cf8708a5f043ae2a",
+      "uid": "1196647e2ecc0681144db089",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0019",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "누비 씨 아이들 셋은?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 632,
+          "label": "r13_v111_school_names_done7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "10b897d2f327f0ec40211a0c2512a8aa8b1dc4597234667db1f78f6646f15c74",
+      "uid": "3ee841fc4ce1a18d10ad38a6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0020",
+      "when": null,
+      "speaker": "누비의 큰아이",
+      "kind": "dialogue",
+      "text": "여기 있어요. 동생들도 같이 왔어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 633,
+          "label": "r13_v111_school_names_done7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "18ad961ac467dc6e7c9c1564c931ebc475881ae0a9371406ce2b327253156a50",
+      "uid": "f8081c270174d35f0b338776",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0021",
+      "when": null,
+      "speaker": "누비의 둘째",
+      "kind": "dialogue",
+      "text": "우리 엄마는요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 634,
+          "label": "r13_v111_school_names_done7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "75638e1f6f48410557c370e60f782e09ea3d12b6c908da72bf89b88a5084c024",
+      "uid": "6850a46e73c968ad69e25992",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0022",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "지금은 회관에 있어. 오늘은 선생님하고 나비 누나가 같이 있을 거야.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다. 조건부 replace/drop 이후 원문 fallback이며 무조건 표시된다는 뜻이 아니다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 635,
+          "label": "r13_v111_school_names_done7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "fire_lose"
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d937778470e2f54024c5fbbdf91d50059ea84eb1af00f6ae04d1d15ae59d0644",
+      "uid": "e2d2fe1815044d255b648670",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0023",
+      "when": null,
+      "speaker": "누비의 막내",
+      "kind": "dialogue",
+      "text": "누나도 여기서 자?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 636,
+          "label": "r13_v111_school_names_done7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a6881c64d19f60ef65de4784fb6328b848d082731d99c1817ab126353f8c8454",
+      "uid": "a2949da260e32111f1ed26ee",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0024",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "응. 밤에는 내가 올게.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 637,
+          "label": "r13_v111_school_names_done7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "14ae4ec34ba3a2623561d78762099425be9b1749efc22a6c35e14d7d853baf56",
+      "uid": "01d97fbcb905f2448db2f02d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0025",
+      "when": null,
+      "speaker": "사자 선생님",
+      "kind": "dialogue",
+      "text": "낮에는 제가 봅니다. 밤에는 나비 씨와 나눠서요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 638,
+          "label": "r13_v111_school_names_done7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9d6c27193734826bb3255edadc00bde5b6edf75a4746515512aeeb10a92b8a33",
+      "uid": "5726db1f24ac12974a65b9c0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0026",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "밤 자리도 세어 봤어요. 누비 씨 아이들 셋도 여기로 오세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 639,
+          "label": "r13_v111_school_names_done7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "05ae5d51ec773d187ee63cb59bf1db0ec18af775fdd73fcf7173e2defa7efd29",
+      "uid": "b8d0b264f57b5836cbc3561a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0027",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[창고 생존자 수와 누비의 세 아이를 별개로 세고 실제 침구와 맞춘다. 도담은 보리에게 인계되어 별도로 머문다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ed377f587cca6a12c8ca7f19d53795d3af73c16d5c1dec17791b937061e7e80f",
+      "uid": "4fa5821d6fb7e3192b70992a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0028",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이름 적고 돌아설 수는 없습니다. 오늘 누울 자리까지 보고 가겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 640,
+          "label": "r13_v111_school_names_done7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "44eecb216e18c3dafdc6ad42c243e393724f6a11b49de50e3403c89ef45c00bd",
+      "uid": "1cbebff0b5655f694dde7737",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0029",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: FAMILY_BASE=school_night_confirmed; NUBI_CHILDREN_school_care=confirmed; warehouse_survivors_school_care=confirmed; D07_S02_handover_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ada9e3fbba8e6ab73bcbc8a0c1e562aa1f4ff52e464317b2d913d865d6532129",
+      "uid": "b394e26c162c0f948bd794e4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0030",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "우리 애 밥 챙길 때 창고에서 나온 애들도 같이 먹이겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 684,
+          "label": "r13_v111_lost_child7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9c6d88b8153787c1b635e87c15984a2ed157df4601a35d91b945084b1dc270ed",
+      "uid": "ed757c454e4d558d2c274f80",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0031",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "꼬미도 아는 아이였습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 685,
+          "label": "r13_v111_lost_child7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "40602d7db709603348a3b17d2a64fdc3a389cee9e28f5ec269fdd9934c86e3b9",
+      "uid": "0e035d8e741b0c775501f100",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0032",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "내 애는 아니어도 이름은 알았지요. 장작 나를 때마다 말 붙이던 녀석인데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 686,
+          "label": "r13_v111_lost_child7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bdff796afe0c368803f6cff2874433f811ca7e68972cb9a3cb10859d2d6966e0",
+      "uid": "622001d13666ffd09a36ae49",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0033",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: D07_S02_lost_child_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6fd79d186f379005484db4e156db3f491751ac5ae799c393973c20cb63bc02d0",
+      "uid": "40173c74353035fc459e1546",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0034",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "우리 애 밥 챙길 때 꼬미네도 같이 먹이겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 673,
+          "label": "r13_v111_living_child7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7f43aee3aa9f59b4e05080867e1889adeccead5318ea3ae9f89009cd1f0f58d5",
+      "uid": "7c99d5fad155f7478fd2ee25",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0035",
+      "when": null,
+      "speaker": "꼬미",
+      "kind": "dialogue",
+      "text": "나도 그릇은 나를 수 있어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 674,
+          "label": "r13_v111_living_child7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9f4bab5e6ebcc654ef983dc86ce4e322a80d92822ab3c3f6cdb649b46dd719b8",
+      "uid": "3ede4a69e813c5ada39427e1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0036",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "그래. 빈 것부터 날라.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 675,
+          "label": "r13_v111_living_child7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "af77dfe41c872df8ed6619d8c9b668df8ee81b156bae7c9fcc23f061efe9665f",
+      "uid": "7f1873d4c096e93e19c0da2d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0037",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0037",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0037",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: D07_S02_living_child_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "71fabb7645cbc7e602f3a985799c637a01b4a67f5a75a33ccafa5da5182bb5e2",
+      "uid": "fe019b01d983682141610c8b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0038",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0038",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0038",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "오늘은 제가 복도 당번 하겠습니다. 선생님 혼자서는 밤에 애들 화장실도 못 보내겠어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 649,
+          "label": "r13_v111_school_names_done7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "21fd6a7f07e3372736e9d5064afbc7e51f3b02e4e2a5bbe0c8a8cd2c341738fd",
+      "uid": "465717dc26ceb20bff9dda6f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0039",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0039",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0039",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "어제 그 등잔도 아저씨가 찾아 줬어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다. 조건부 replace/drop 이후 원문 fallback이며 무조건 표시된다는 뜻이 아니다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 650,
+          "label": "r13_v111_school_names_done7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "kkomi_alive"
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fd6b3da8b6261121f1b769beb5d92d46cd55a5be1b1c45e62ddf5098f9b81544",
+      "uid": "ba6b6cb470766962371515eb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0040",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0040",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0040",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "찾은 건 네 아빠고, 나는 집게만 들었지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 651,
+          "label": "r13_v111_school_names_done7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "76bb875cbd2d195bae533f1d7d78b3c20de5fa9a1d0d185fc5ea6e396141d5ba",
+      "uid": "958d7cdd28bd3f13de76b358",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0041",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0041",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0041",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "초롱이 내게 접은 종이를 건넨다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 653,
+          "label": "r13_v111_school_names_done7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "34246320056f0bea5a6fbd6531619909ae3f612dc3ff6a1e9768f1f493f6a95e",
+      "uid": "1efca0bee1aa08017b8f0810",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0042",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0042",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0042",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "물자 놓은 자리는 비었어요. 대신 이게 있었어요. 부엉이 어르신께서 예전 전달 기록을 갖고 계신다고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 654,
+          "label": "r13_v111_school_names_done7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4aea68f61c30c03265eceaf03cab0d1f7cd63df31195b7c319a5ce576038ba8e",
+      "uid": "7a9f90bf9226d574befe1a77",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0043",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0043",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0043",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아내가 쓴 겁니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 655,
+          "label": "r13_v111_school_names_done7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cac082903506181e17a9f8cdd1243c8ecfbae4555c0517b0668747d71a05c6c2",
+      "uid": "e32cbdbece142396a9258918",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0044",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0044",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0044",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "누가 쓴 건지는 듣지 못했어요. 어르신께 직접 물어보세요. 저는 전해 달라는 말만 받았어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 656,
+          "label": "r13_v111_school_names_done7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "61c6442c2838e180ef32825ae36245ee492ad3725c1ac6ed8a7aed9de23b03db",
+      "uid": "ce513611816a1fda704aff52",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0045",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0045",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0045",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "종이에는 13이라는 숫자와 부엉이의 이름이 있다. 여관 주인에게는 이 종이를 보이지 않는다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 657,
+          "label": "r13_v111_school_names_done7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f09221769f908dc1890c414ba3317a11c6385ee23a18dbfd810d7470fe260850",
+      "uid": "0f02eac715e96d97b76d8d88",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0046",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0046",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0046",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: E07_OWL_CONTACT=13호_부엉이; D07_S02_message_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c73f90fcf1271ad9854a5f7b1d7279f1700946758e050486cb4344d43c14f08b",
+      "uid": "44c211ea39e729a347da2955",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0047",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0047",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0047",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "이 아이들은 오늘 누구한테 가요?",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0ce352b9d3704faeef49163a6fb771434c2e6ddcc3bca7c43f8d65f9fdf3deea",
+      "uid": "8ca1e12ba6183cc352418b56",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0048",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0048",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0048",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "잠깐만요. 이름하고 잘 자리부터 다시 보겠습니다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "891d886b910af6465d293e11d00161ed4662d14d22be15c32d9beb606ff340c5",
+      "uid": "caad9c51497182ec51c3f884",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0049",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0049",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0049",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "꼬미도 여기 있지?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 677,
+          "label": "r13_v111_living_child7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "99f70b86183164058dcb66354d61864977645ce112c5b0cfd870b702cde13a67",
+      "uid": "4d2412b48d8eaaa6698b8e30",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0050",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0050",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0050",
+      "when": null,
+      "speaker": "꼬미",
+      "kind": "dialogue",
+      "text": "네. 내 자리 저기예요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 678,
+          "label": "r13_v111_living_child7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "68b4cd71c94afa8b8d98393f091c198bb134ce5c13c0575a7771c34cfd4f1f5d",
+      "uid": "ce1658f76370b04470e578fc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0051",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0051",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0051",
+      "when": null,
+      "speaker": "사자 선생님",
+      "kind": "dialogue",
+      "text": "창고에서 온 네 아이 모두 확인했어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 679,
+          "label": "r13_v111_living_child7",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e451ce9474b3f8beaaaa90a76b92e5db84cbe592d5cfa2f18146bd612fb1c067",
+      "uid": "37de186a6bb6ffef2f51cf7f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D07_S02_L0052",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D07_S02_L0052",
+        "text"
+      ],
+      "origin": "base",
+      "day": 7,
+      "scene": "MS14_D07_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D07_S02_L0052",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: D07_S02_fourth_child_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "7-2. 낮 / 회관에서 학교까지 — 남은 사람의 자리",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7ec6dbcbf6e16f14a1cfc736c89d3f9333b562fedec0d637188217e2ef1ea538",
+      "uid": "6e0d50cf2d54dae480ef2be5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

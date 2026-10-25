@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:242:40",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        14345,
+        14383
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_lowroad",
+      "block": "r13_ws_lowroad",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:242:40",
+      "when": null,
+      "speaker": "resident_teacher",
+      "kind": "dialogue",
+      "text": "(천 조각을 오래 들여다본다) ……이름이 있으면, 우리 반이지요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 242,
+          "label": "r13_ws_lowroad",
+          "guards": [
+            "if r13_has(\"ws_nero_moved\"):",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 242,
+      "scene_title": "r13_ws_lowroad",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "4b9edb67248b8c5b1ee299db155cd07b3eeedd18e274cf148c06aeb9cbf9b272",
+      "uid": "ab767cd9db9937c1df2d78fd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_lowroad|rpy_literal|r13_ws_lowroad|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:243:40",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        14426,
+        14458
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_lowroad",
+      "block": "r13_ws_lowroad",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:243:40",
+      "when": null,
+      "speaker": "resident_teacher",
+      "kind": "dialogue",
+      "text": "들어오세요. 뒷문으로. 아이들 교실 옆이 비어 있어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 243,
+          "label": "r13_ws_lowroad",
+          "guards": [
+            "if r13_has(\"ws_nero_moved\"):",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 243,
+      "scene_title": "r13_ws_lowroad",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "9672421010fe9d5faf1358f4e7b72e63cd8d2ccf69f7fba2322beb55aa170211",
+      "uid": "8d6966d616fe00fc2e2396cb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_lowroad|rpy_literal|r13_ws_lowroad|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

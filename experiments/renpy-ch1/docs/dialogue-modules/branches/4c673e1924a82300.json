@@ -1,0 +1,47 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:302:114",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        19086,
+        19144
+      ],
+      "origin": "rpy_literal",
+      "day": 14,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:302:114",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "세 사람은 함께 고개를 넘었다. 가족은 돌아왔지만, 마을에서 끊긴 이름들은 아직 그대로 남아 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 302,
+          "label": "r13_ending",
+          "guards": [
+            "if r13_ending_id in (\"E0\",\"E2\"):",
+            "else:"
+          ]
+        }
+      ],
+      "line": 302,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "b9e437a2372132b79dec29ac6d7a4fd354e12c371acd47efb8c4f7a05158f6fb",
+      "uid": "c9aac8b73706e8e349c7fcfb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|r13_ending|rpy_literal|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

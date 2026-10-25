@@ -1,0 +1,797 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D14_S01_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S01_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S01_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "전원 구조 경로. 학교 아침. 판돌이 의자에 앉아 새 천을 무릎에 펴 놓았다. 살아남은 아이가 국자로 빈 그릇을 두드리다가 나비에게 제지당한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-1. 아침에도 살아 있는 사람",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a22945e58d0a81276e36b055b59f1e25510a95bc2dc032709064990e71d33825",
+      "uid": "31077750c48a6200830d6e51",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S01_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S01_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S01_L0002",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "그건 밥 푸는 거.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2840,
+          "label": "r13_v111_morning_safe14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-1. 아침에도 살아 있는 사람",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4e6aebad190b12704129e120cc85f0a010a1e0ec3e0939352b6c3a8ff4960e75",
+      "uid": "46bf5bd63907bbc224bf177a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S01_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S01_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S01_L0003",
+      "when": null,
+      "speaker": "아이",
+      "kind": "dialogue",
+      "text": "노래 박자만.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2841,
+          "label": "r13_v111_morning_safe14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-1. 아침에도 살아 있는 사람",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c84febbe5b4c5de09e983c71d6b36c7a830e7649affa41c3c12626a8fbf361bd",
+      "uid": "b09f53df6f55355b0b193c7d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S01_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S01_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S01_L0004",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "손으로 해.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2842,
+          "label": "r13_v111_morning_safe14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-1. 아침에도 살아 있는 사람",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "95ab4188772dfa96efba68438c6d3b3804c218f0ee3d2cde704b3b929c099ea2",
+      "uid": "19bce3fa2eb6a2c3a03ed300",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S01_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S01_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S01_L0005",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "다람은 엄마와 나란히 앉는다. 아빠가 문에서 두 사람을 확인하고 판돌에게 간다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-1. 아침에도 살아 있는 사람",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b1a712540a5c386d79f03670a63e76f4de8c39b2329f17b8e9c6a143d67cf87d",
+      "uid": "752da1a557491677f3c27cf9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S01_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S01_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S01_L0006",
+      "when": null,
+      "speaker": "판돌",
+      "kind": "dialogue",
+      "text": "새가 아래를 보는 게 맞았구먼.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2843,
+          "label": "r13_v111_morning_safe14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-1. 아침에도 살아 있는 사람",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f6fa2cfa9195bf87640ab0e6469659df08a1436c092dda1cddd1d6bd2048d433",
+      "uid": "c04aa45c7f88a3a6e9be8ae3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S01_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S01_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S01_L0007",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "먹이 먹는 거래요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2844,
+          "label": "r13_v111_morning_safe14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-1. 아침에도 살아 있는 사람",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3132c65995209b9ba23bd8da82d65fd960058cceff73b17e45fe76ea7624515f",
+      "uid": "e1bc434a9d7196ff259697b9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S01_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S01_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S01_L0008",
+      "when": null,
+      "speaker": "판돌",
+      "kind": "dialogue",
+      "text": "모과도 그런 말을 좋아했소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2845,
+          "label": "r13_v111_morning_safe14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-1. 아침에도 살아 있는 사람",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fa877ea45ed5e59ea2d5f1b8e41d1da106ebb1dbdf8e3969005e764364ab47b1",
+      "uid": "d2602a4d41b776b8d305f70b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S01_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S01_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S01_L0009",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "잠시 침묵.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-1. 아침에도 살아 있는 사람",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "13fd4562171255525d9ce77f98a57148a4d45a29fb1e9ea65badf7a3d766baca",
+      "uid": "3a5cec7ef6b7c97d475df232",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S01_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S01_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S01_L0010",
+      "when": null,
+      "speaker": "판돌",
+      "kind": "dialogue",
+      "text": "오늘은 어디를 보오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2846,
+          "label": "r13_v111_morning_safe14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-1. 아침에도 살아 있는 사람",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "86721372457775f6f3d782c60d51a0ae9c4c1532e75f092521c879851dd9b998",
+      "uid": "736c63e5c37dadb86939528f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S01_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S01_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S01_L0011",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "사람들을 데려갔다는 곳에 가 보려고요. 모과 씨가 어디 계신지는 아직 몰라서요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2847,
+          "label": "r13_v111_morning_safe14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-1. 아침에도 살아 있는 사람",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "36eaf79149b6d7f63609421a2eacd94789dc7b88ea351d928fba9754d9b82782",
+      "uid": "66411cbb4f7ade11bcfc796b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S01_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S01_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S01_L0012",
+      "when": null,
+      "speaker": "판돌",
+      "kind": "dialogue",
+      "text": "살아 있다고도 말 못 하고?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2848,
+          "label": "r13_v111_morning_safe14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-1. 아침에도 살아 있는 사람",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "24cc083091db9a7b9db7e7701621e00bfb13e2deb001bdf7639ae509d9c19db9",
+      "uid": "e33ee05339c7c5f083377f2b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S01_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S01_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S01_L0013",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "네.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2849,
+          "label": "r13_v111_morning_safe14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-1. 아침에도 살아 있는 사람",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8445741d7d6a831276e8794b874cebee94940ba0e963d4f109bf72f437426789",
+      "uid": "5b8d660c3af543f4cd69e0ba",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S01_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S01_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S01_L0014",
+      "when": null,
+      "speaker": "판돌",
+      "kind": "dialogue",
+      "text": "죽었다고도?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2850,
+          "label": "r13_v111_morning_safe14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-1. 아침에도 살아 있는 사람",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ac311ef2fc54e16bc638c61b375fee69c0e6b870afef6358406f26fdf896ba7a",
+      "uid": "b29fdd8ff6ee9f9dcb40f6a2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S01_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S01_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S01_L0015",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "확인하지 못했습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2851,
+          "label": "r13_v111_morning_safe14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-1. 아침에도 살아 있는 사람",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "abce6530c4fdfd790dee910dfc5cf977849775eb24e3d8f75665c1919e24ca49",
+      "uid": "db840e907457ffa019e81f74",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S01_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S01_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S01_L0016",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "판돌이 천을 접는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-1. 아침에도 살아 있는 사람",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "30cc37c2d7f8db7392b0a230437f182d7943e9a4e1d75083a158b183139d8ba2",
+      "uid": "ea8c371c4d960ad158b37d3c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S01_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S01_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S01_L0017",
+      "when": null,
+      "speaker": "판돌",
+      "kind": "dialogue",
+      "text": "그럼 내 옆자리는 비워 두겠소. 당신이 대신 약속하라는 건 아니오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2852,
+          "label": "r13_v111_morning_safe14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-1. 아침에도 살아 있는 사람",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c4cdc9c356c5703147e8e577355ca1c61683a2f6d17f39cbe3163a9fdd79d10d",
+      "uid": "a83935c5a4c6a1dc59d475e6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S01_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S01_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S01_L0018",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다녀와서 말씀드리겠습니다. 모르는 건 모른다고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2853,
+          "label": "r13_v111_morning_safe14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-1. 아침에도 살아 있는 사람",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9913cfb179339c3949765efd59aa21830f754d5ab16f1e654591830694314a00",
+      "uid": "ece5e7f124a0bccbffbcb8d8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S01_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S01_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S01_L0019",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "부분 구조 경로에서는 먼저 남은 인계를 마친다. 아빠가 실제로 참여하고, 가족은 전날 정한 보호자·장소에 남는다. 대기 인물을 자동으로 산속 제단에 이동시키지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-1. 아침에도 살아 있는 사람",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ed92f181adf0fb2d76f205027f1bfd4dae760adb9215642696e602fc58b168e7",
+      "uid": "58baf8d08143a7134513d9c2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

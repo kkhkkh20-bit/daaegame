@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/winter_resident_inference.rpy:272:8",
+      "file": "game/winter_resident_inference.rpy",
+      "path": [
+        16483,
+        16508
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "winter_information_echo",
+      "block": "winter_information_echo",
+      "placement": "literal",
+      "ref": "game/winter_resident_inference.rpy:272:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "길만 물었다며 방문은 비밀로 해 달라 한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/winter_resident_inference.rpy",
+          "line": 272,
+          "label": "winter_information_echo",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 272,
+      "scene_title": "winter_information_echo",
+      "source_hash": "1ed66ae455193bcb5202f6cf9feb435bb81670119b4bc89cc73e28111c6b0ec3",
+      "baseline_hash": "8e7732fdb9afb87726cdbb52825200c984cbaffab57841d2bcf4a2a8dba59a55",
+      "uid": "0b1602dc66bf807a1cd1b890",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|winter_information_echo|rpy_menu|winter_information_echo|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_resident_inference.rpy:274:8",
+      "file": "game/winter_resident_inference.rpy",
+      "path": [
+        16648,
+        16673
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "winter_information_echo",
+      "block": "winter_information_echo",
+      "placement": "literal",
+      "ref": "game/winter_resident_inference.rpy:274:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "아내가 보낸 편지를 확인하려 한다고 말한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/winter_resident_inference.rpy",
+          "line": 274,
+          "label": "winter_information_echo",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 274,
+      "scene_title": "winter_information_echo",
+      "source_hash": "1ed66ae455193bcb5202f6cf9feb435bb81670119b4bc89cc73e28111c6b0ec3",
+      "baseline_hash": "ab62ca79b4d860d49f0f03abcab876f6c4b84d857c082e6f62ccd1d44faf5c0a",
+      "uid": "d3c118d46f1c1463e7ee8aa9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|winter_information_echo|rpy_menu|winter_information_echo|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

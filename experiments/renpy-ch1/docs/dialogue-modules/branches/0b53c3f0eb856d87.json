@@ -1,0 +1,366 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D14_S03_A06",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "after",
+        "MS14_D14_S03_L0032",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D14_S03_L0032",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 13호 난로에서 나온 검푸른 돌과 백 부인 장부의 한 줄을 할머니 앞에 놓는다. ‘7일, 여관, 안쪽 돌 하나.’",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3307,
+          "label": "r13_v111_tosil_inside14",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3325,
+          "label": "r13_v111_tosil_outside14",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "2c079b42a5ef78e97fdd7a6a55ccd20864bef136a828e64feaf1f4d5ea4e7efd",
+      "uid": "0c8f3f72f66ff301fda54418",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D14_S03_A07",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "after",
+        "MS14_D14_S03_L0032",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D14_S03_L0032",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "부엉이 영감도 보미처럼 조용히 가면 됐어요. 명단에 오르면…… 그걸로.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3307,
+          "label": "r13_v111_tosil_inside14",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3325,
+          "label": "r13_v111_tosil_outside14",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "9b808c51d16a827078219ec396f8094056142392f5fe3bba3ea4873e74fc7cd5",
+      "uid": "82fe2cc8a05c81d2dad85e06",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D14_S03_A08",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "after",
+        "MS14_D14_S03_L0032",
+        9,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D14_S03_L0032",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "안쪽 돌이 사람을 무너뜨린다는 건…… 어떻게 아셨습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3307,
+          "label": "r13_v111_tosil_inside14",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3325,
+          "label": "r13_v111_tosil_outside14",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "1d8d5f22b83451be443653491502704536dc94e2a87de124a9a05f0536f33358",
+      "uid": "6aff86d2c3a996ab82efcf79",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D14_S03_A09",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "after",
+        "MS14_D14_S03_L0032",
+        10,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D14_S03_L0032",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "할머니가 엄마를 본다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3307,
+          "label": "r13_v111_tosil_inside14",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3325,
+          "label": "r13_v111_tosil_outside14",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "5383bc34905d59a30599b589ee8e8c245c27f19d25462e9a9774355054f6a796",
+      "uid": "a653b8df82ef88a15b9e99e0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D14_S03_A10",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "after",
+        "MS14_D14_S03_L0032",
+        11,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D14_S03_L0032",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "부인이 시설에서 그랬죠. 꺼낸 아르카 곁에 오래 있으면…… 사람이 무너진다고.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3307,
+          "label": "r13_v111_tosil_inside14",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3325,
+          "label": "r13_v111_tosil_outside14",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "b06596f1952a9c02149d833a48f9bb6b3d083dad16aa0910ead597ab9c61721b",
+      "uid": "2cf2e2366798655de0936de5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D14_S03_A11",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "after",
+        "MS14_D14_S03_L0032",
+        12,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D14_S03_L0032",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "그 말은 믿으셨으면서…… 보미 씨 일에는.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3307,
+          "label": "r13_v111_tosil_inside14",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3325,
+          "label": "r13_v111_tosil_outside14",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "c877dda2cccc72e992d7c3b1651ca9201fce4ebca0f260bd12c286b329088b00",
+      "uid": "32bf6d66cf9d0c77503f9adf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D14_S03_A12",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "after",
+        "MS14_D14_S03_L0032",
+        13,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D14_S03_L0032",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "그걸 믿으면…… 보미를 무너뜨린 게 우리 집 불이 되잖아요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3307,
+          "label": "r13_v111_tosil_inside14",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3325,
+          "label": "r13_v111_tosil_outside14",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "b593cab8b02984f805de3da7788f3b1ae7765c78784f14ff5ea486144fb3c4c9",
+      "uid": "f343b62ffba2b4620554411b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D14_S03_A13",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "after",
+        "MS14_D14_S03_L0032",
+        14,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D14_S03_L0032",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "부인을 시설에 데려간 건…… ‘보내길 잘했다’는 그 한마디를 듣고 싶어서였어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3307,
+          "label": "r13_v111_tosil_inside14",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3325,
+          "label": "r13_v111_tosil_outside14",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 14-3. 보미라는 이름",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "0f0b8913d1eea2ec5910d7f02cf158cbdcb8b7fc71073ef61297509cb3dafd54",
+      "uid": "fe52d76ca4e8edbf5f4bd0e3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S03|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_episodes.rpy:319:17",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        18360,
+        18396
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_ep3_bell",
+      "block": "r13_ep3_bell",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:319:17",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "치지 마시오. 지금 종을 치면 다들 뛰쳐나와 난리가 날 거요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 319,
+          "label": "r13_ep3_bell",
+          "guards": []
+        }
+      ],
+      "line": 319,
+      "scene_title": "r13_ep3_bell",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "579dfba7cc1231673c72d2bd6c994f18585f0012b1ea7a69ce8187e064aa309f",
+      "uid": "7526edf103926d260f2ca4f4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_ep3_bell|rpy_literal|r13_ep3_bell|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_episodes.rpy:321:17",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        18465,
+        18512
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_ep3_bell",
+      "block": "r13_ep3_bell",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:321:17",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "외지 사람이 종을 마음대로 치면 초소에서 경위를 설명해야 하오. 밤새 걸릴 거요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 321,
+          "label": "r13_ep3_bell",
+          "guards": []
+        }
+      ],
+      "line": 321,
+      "scene_title": "r13_ep3_bell",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "654a3c64e086a912406c8a75c0b216be1ae590e716bb8993be4b0024f667299c",
+      "uid": "bc8fc3747c9c745de6a7204a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_ep3_bell|rpy_literal|r13_ep3_bell|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,1736 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D03_S04_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "공방으로 집게를 돌려주는 길. 실룩이 수레의 짐끈을 칼로 자른다. 칼끝 한쪽이 이가 나 있다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a42a467044141fbe972e8951a130c3d28a791e6bf17f15066b8b8d700a5888ee",
+      "uid": "d41780d30aa776774c78592f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0002",
+      "when": null,
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "비켜요. 이거 쏟으면 오늘 품삯 다 날아가.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 988,
+          "label": "r13_v111_silluk3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "04af4e5e659b93b186b0ba8ff147aa2f2a689628cb3e732b7d8bc7977422caf7",
+      "uid": "28cd81ab3b8beaa347ab5133",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0003",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠, 비켜.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 988,
+          "label": "r13_v111_silluk3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d206bc109b25d190c9356324178b44d078134c4aad9c94bedcca248f6457a623",
+      "uid": "bade70c31a5cd58f4f1e83ff",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0004",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "우리는 벽에 붙었다. 수레 옆 작은 아이가 빵을 떨어뜨렸다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 988,
+          "label": "r13_v111_silluk3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9b1bd388e3bfd0be73871ab53a71532c3b657602d6f77ff3cd32ceaa1f4610fa",
+      "uid": "f8258d54645d7955130ed252",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0005",
+      "when": null,
+      "speaker": "실룩의 아이",
+      "kind": "dialogue",
+      "text": "괜찮아. 눈만 털면 돼.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 988,
+          "label": "r13_v111_silluk3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5d5b0fe2e1a1e9ca937ed3904ae973460a760296f71190a8933040f11dc453d1",
+      "uid": "811750710a54fdd10c052118",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0006",
+      "when": null,
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "안 돼. 이리 줘.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 988,
+          "label": "r13_v111_silluk3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3951b02eb47f2593dc31a43e52a88095de0b05c5810392583ca0c659513d1d63",
+      "uid": "a3c287346080fd9356a6fb39",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0007",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "잠깐 물어도 됩니까? 오늘 어디에 짐을 내렸습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 988,
+          "label": "r13_v111_silluk3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "965d407e11fae632259cf351d985b29436bfb7a5d3a58e002122ebb4444c5349",
+      "uid": "df4ae8aeafb1a8d3f6363fd1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0008",
+      "when": null,
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "창고요. 저기. 일자리 찾으면 줄 서야 해요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 988,
+          "label": "r13_v111_silluk3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d61406c391ebc5123718b2b8477d31a9750ab8cc8ef7d470666c0acd1910b988",
+      "uid": "986ed0ed5ce5f8640a893d13",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0009",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "실룩이 제시한 운반표의 수취인은 백 부인이다. 운반표에는 짐 종류만 ‘돌’로 적혀 있고, 정확한 행위와 반출 시각을 증명하지는 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8f896226bf87db9741aff8adc296481c6204bfb09aa7a8b2a1707d578f292b60",
+      "uid": "a19fe158589c4f2a2db7d9a4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L9101",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L9101",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L9101",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "운반표: 수취인 백 부인 / 품목 돌. 이 표만으로 등에서 꺼낸 시각은 알 수 없다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1004,
+          "label": "r13_v111_transport3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7bd613c18761781b9744245a1203895928a4f39ebabe479b9abe9b049e3c951e",
+      "uid": "4d1425ca16116ee9d8f8026a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0010",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "칼끝이 부러졌네요. 잠깐 보여 주시겠습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1019,
+          "label": "r13_v111_knife_observed",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "33cd1a69f13abdbd4195e48e1d9d0d4523559c28c41ce18d37c5605a175b4d51",
+      "uid": "02369b51dd1ffd0d5a2c2bcc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0011",
+      "when": null,
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "짐꾼 칼이 다 이래요. 쓰면 깨지지. 보여 주면 가도 됩니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1019,
+          "label": "r13_v111_knife_observed",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "33abcbdacbd91e4536843066063d69c9e810335071f2efe319ac4f2d2294316a",
+      "uid": "09cd1a881c044fad71e1edda",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0012",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "실룩이 칼을 손잡이부터 내민다. 아빠는 날에 손대지 않고 천 위에 놓는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2d6dbb8c257c6330909d84f15d5e2bbc2119700ceb6fa7b45ae2092424a660aa",
+      "uid": "6a656ba1165ea4bd033b8625",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0013",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "등 안에서 나온 조각과 비교하고 싶습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1019,
+          "label": "r13_v111_knife_observed",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8e935ed4cade5df83ec444c77f6e3b3ded7a0514b2cc7cb10cc8da3a81a62471",
+      "uid": "1b0e7583a146cf5b05570903",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0014",
+      "when": null,
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "칼 비슷하다고 나 잡으려고요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1019,
+          "label": "r13_v111_knife_observed",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "be58504710398ccebcee30cc497759100d0afa015a9ee1d3e20f1e45d07ef88a",
+      "uid": "e1f7b6458fd2cd1415373090",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0015",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "닮은 것 말고, 맞는지 보려는 겁니다. 다른 분들 앞에서요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1019,
+          "label": "r13_v111_knife_observed",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1d3650bd5b8321307a7eac5ffcf9fc11469a0a0d04d134eb66f3b28ec52f8533",
+      "uid": "c7d03f28e6e201c76ad40a4f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0016",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "실룩은 칼을 돌려받아 든 채 함께 광장으로 와 직접 대조하기로 한다. 아빠가 몰래 압수하지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2beae7c62a15893df265809e0e8c053816ec7a2b94f5f862b792b7ebff99e208",
+      "uid": "af244a7ae1b270fb78f4ffb4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0017",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "등의 돌도 운반합니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1021,
+          "label": "r13_v111_knife_observed",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "70b6c14e55aaeb70dff3dd7236ee2e1f292bce908680f9c87ba2c37f5b7e50f2",
+      "uid": "d2d4a3cac00c4809d6480c56",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0018",
+      "when": null,
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "돌이면 다 등 돌이에요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1021,
+          "label": "r13_v111_knife_observed",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c4831ba50551d0081a86cdc07ba0a3bdd2eb3430c84091edab33c6330b760310",
+      "uid": "837693961604a500abd08764",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0019",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그래서 확인하고 싶습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1021,
+          "label": "r13_v111_knife_observed",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "06212e770db13dd0df12a4369401a22f61e4a7072c1ca440a826387552649e3b",
+      "uid": "26594976127a6f954f248c51",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0020",
+      "when": null,
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "애들 앞에서 하지 맙시다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1021,
+          "label": "r13_v111_knife_observed",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9dc9431d46fd2fbe481fa54693c583d3090496ca30287615f0e1968537794174",
+      "uid": "d79fae40612d2db9ca1615b5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0021",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "백 부인 창고 앞. 운반표를 보여 준다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ee8cf49fc43e647eaa49ac2c8b3b8be6efd9b80a10f6b5a895ef1a0c7069035f",
+      "uid": "b9ce71bc076eb0b353dc86fb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L9001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L9001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L9001",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이 표에 부인 이름이 있습니다. 오늘 아침 실룩 씨에게 돌을 사셨습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1035,
+          "label": "r13_v111_store3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b0e3e5491fc54ad07e223725ea43b675e06d5575ca228249250cd910aaf28c29",
+      "uid": "106f7a84cdf5e01702450401",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0022",
+      "when": null,
+      "speaker": "백 부인",
+      "kind": "dialogue",
+      "text": "돈 내고 샀어요. 훔쳤으면 여기 장부에 적었겠어요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1035,
+          "label": "r13_v111_store3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "85db9e8cce6728e43624f0845fb1ca6e843333ecbc4f72c5247feffbda6af2ad",
+      "uid": "7b9917df0185df3e42979d6d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0023",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어느 돌을 샀는지 볼 수 있습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1035,
+          "label": "r13_v111_store3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f75ed0e2dbcb1aeed856a18eae81f78ffc14ec47f25967f3e2adffc907de7baf",
+      "uid": "fd8ed7a8278c602c33b0f825",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0024",
+      "when": null,
+      "speaker": "백 부인",
+      "kind": "dialogue",
+      "text": "보세요. 대신 내 장부까지 가져가지는 말아요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1035,
+          "label": "r13_v111_store3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e58805699ffdd8755006d6616f450a7417042c448c9fd674f224fef609b93687",
+      "uid": "5019630eea25c21347945d96",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0025",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "허락받아 백 부인이 직접 여는 상자를 본다. 돌 세 조각. 그중 ‘3’ 각인. 톡에게 확인을 부탁해 현장으로 데려온다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3bd2a61c649a5d72b9d82912f95ed1a2d8e98a39b2dd37130d3906843a56fed2",
+      "uid": "a34b89be963eb47101f96ed5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0026",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "창고에 번호가 있는 돌이 있습니다. 직접 봐 주시겠습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1051,
+          "label": "r13_v111_stone3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d0378be7eed959ed41e43398cdded6c15abd9561cecd198d91e97f239fc38848",
+      "uid": "6a786486869712c01447437e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0027",
+      "when": null,
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "내가 새긴 건지 봐야죠. 갑시다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1051,
+          "label": "r13_v111_stone3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d9598e2f3ed1f229fc4156855ad10a6e7456931842a0615870108fe0b88497b2",
+      "uid": "cc5f4251cad2edc5a4167896",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0028",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "톡과 창고로 돌아와 상자를 다시 연다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1051,
+          "label": "r13_v111_stone3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8a0c6da91f00b3760ccf3204491e57920a277d3265530cf7cc1ba5f5124d7ebd",
+      "uid": "9cebdcc46d916621a09e0076",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L9102",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L9102",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L9102",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "백 부인 창고에서 확인한 3번 돌. 각인과 금 방향 표시를 톡이 확인했다. 나머지 두 돌의 출처는 미확인.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1053,
+          "label": "r13_v111_stone3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "dac18325627b0f574795d62380b09010ad3a2b4a0e8420f2a54a6cd91a87c9d5",
+      "uid": "546788f248becce5d8af20fb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0029",
+      "when": null,
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "내가 새긴 번호예요. 이 옆의 짧은 선도요. 금 간 쪽을 안으로 놓으라고 표시했어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1053,
+          "label": "r13_v111_stone3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6ecb3ce3e3223b45cc3a1df3c63f039c6919d772277599603adbf3110d9706be",
+      "uid": "25e4edb03e47eb2d661cc30d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0030",
+      "when": null,
+      "speaker": "백 부인",
+      "kind": "dialogue",
+      "text": "공공 물건인 줄은 몰랐어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1053,
+          "label": "r13_v111_stone3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f77fe7a0a7510a3d5a137a4a131be2891466cc7004467734c856f812c6aeaf1b",
+      "uid": "852b4720391ce5224db1b6f5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0031",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그럼 장부도 보여 주십시오. 누구에게 얼마 주고 사셨습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1053,
+          "label": "r13_v111_stone3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e882ef2bee6055f521fc235fd233b0bdb114cd03d76a2d688f86f9c985a51e49",
+      "uid": "c659a8ee7261420772a6f28a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0032",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "백 부인이 장부를 돌린다. 실룩의 이름과 서명, 인수자가 쓴 돌 3개, 지급액.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cfbf0df87cefb6c0524e95ec79f5532a571bfc3d91ef700a6d71b2c2b4c2b2ae",
+      "uid": "482d7c7ad45b913e10ae8905",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L9103",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L9103",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L9103",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "백 부인 매입 장부: 판매자 실룩의 이름과 서명 / 돌 3개 / 지급 내역. 장부는 백 부인이 보관한다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1069,
+          "label": "r13_v111_sale3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "37975a94500a0192afb3771b57ce859468b734f600bc22275d79f2b997ac69c8",
+      "uid": "1a0a0eeee9ea77659edbb430",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0033",
+      "when": null,
+      "speaker": "백 부인",
+      "kind": "dialogue",
+      "text": "이름 숨겨 줄 만큼 친절하게 굴 필요는 없겠네요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1069,
+          "label": "r13_v111_sale3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "96493959494a49ca377a2dc04fe6ed602a96e9a6d2388e9dbe88a4c9718e57f7",
+      "uid": "690f8198ff250c283f80a636",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0034",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "창고 확인 뒤 공방 앞에서 실룩을 만난다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d0d34cf6d824f859887620886f219716efa279ebb9543f6aca70fb926aeebee2",
+      "uid": "944e71e5f8145d8b3e1b2a84",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0035",
+      "when": null,
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "아이들은 어떻게 하라고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1073,
+          "label": "r13_v111_sale3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "78c0d391d90978e21ce2eda1b2a1209a8afed5426dd2dc45a7bb697af807ad6f",
+      "uid": "5446a5c779085471e2a26337",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0036",
+      "when": null,
+      "speaker": "부리",
+      "kind": "dialogue",
+      "text": "가게에 앉아 있어요. 당신 말 끝날 때까지만.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1073,
+          "label": "r13_v111_sale3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b04e5206812d3e1029871b4b2a639116a92a158daf1e96f24fda62845866d862",
+      "uid": "4f69db69136fd5bc86485ef8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S04_L0037",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S04_L0037",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S04_L0037",
+      "when": null,
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "너희 둘, 밖에 나오지 말고 있어. 금방 올게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1073,
+          "label": "r13_v111_sale3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 짐 내리는 골목 / 식구의 빵",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9d97b86bea6974144a1290dfc5dd123cf58903826a899747b80a5fd326539c3f",
+      "uid": "554fed0ba0e8454aa540b2c4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

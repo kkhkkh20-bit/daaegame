@@ -1,0 +1,123 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_P12_01",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "portrait12",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "portrait12",
+      "block": "portrait12",
+      "placement": "blocks",
+      "ref": "portrait12",
+      "when": "piko_dead",
+      "speaker": null,
+      "kind": "narration",
+      "text": "난로 곁에 세워 둔 엄마의 초상이 열에 들떠 있다. 덧칠한 물감이 군데군데 일어나 아래 그림이 비친다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1758,
+          "label": "r13_v111_sleep12",
+          "guards": []
+        }
+      ],
+      "scene_title": "portrait12",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "d50b66f61af6c4a42e9e96a654fa03e9ae2eb1cf1544605fdf92b113f9000f90",
+      "uid": "17ca489b18756c9b40456d91",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|portrait12|patch|portrait12|piko_dead",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_P12_02",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "portrait12",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "portrait12",
+      "block": "portrait12",
+      "placement": "blocks",
+      "ref": "portrait12",
+      "when": "piko_dead",
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마 얼굴 밑에 누가 있어.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1758,
+          "label": "r13_v111_sleep12",
+          "guards": []
+        }
+      ],
+      "scene_title": "portrait12",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "0b38ebf307ce39bf23da9fefe23e030212c46820150b99a2f196427847328281",
+      "uid": "f963871d1942fb73b236cb69",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|portrait12|patch|portrait12|piko_dead",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_P12_03",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "portrait12",
+        4,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "portrait12",
+      "block": "portrait12",
+      "placement": "blocks",
+      "ref": "portrait12",
+      "when": "piko_dead",
+      "speaker": null,
+      "kind": "narration",
+      "text": "수레. 묶인 손. 붉은 목도리. 피코가 그 위에 엄마를 덧그렸다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1758,
+          "label": "r13_v111_sleep12",
+          "guards": []
+        }
+      ],
+      "scene_title": "portrait12",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "18021004d3be98602e703e5bab2f14e0f5966620e98b27578cade9c57a468a94",
+      "uid": "34aefe5e154bb17caeecd90d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|portrait12|patch|portrait12|piko_dead",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

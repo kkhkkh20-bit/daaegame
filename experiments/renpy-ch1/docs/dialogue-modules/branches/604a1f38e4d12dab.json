@@ -1,0 +1,126 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_intro_clues.rpy:153:33",
+      "file": "game/systems/room13_intro_clues.rpy",
+      "path": [
+        10089,
+        10130
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_entry_daram_menu",
+      "block": "r13_entry_daram_menu",
+      "placement": "literal",
+      "ref": "game/systems/room13_intro_clues.rpy:153:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "아빠 이름은 예약 종이랑 명단에 다 있는데, 내 이름도 둘 다 있을까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_intro_clues.rpy",
+          "line": 153,
+          "label": "r13_entry_daram_menu",
+          "guards": [
+            "elif r13_entry_daram_choice==\"compare\":"
+          ]
+        }
+      ],
+      "line": 153,
+      "scene_title": "r13_entry_daram_menu",
+      "source_hash": "22ee3df201e25763c171558cd48d62a5b63f09ef0cb695d7223e40cc7109f91f",
+      "baseline_hash": "4c37edbc82d103f70afc3343b7edccaa2d6c1eb696dd7983645c353f70ff342d",
+      "uid": "4f386606aa50ee31a85f39ce",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_entry_daram_menu|rpy_literal|r13_entry_daram_menu|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_intro_clues.rpy:153:83",
+      "file": "game/systems/room13_intro_clues.rpy",
+      "path": [
+        10139,
+        10166
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_entry_daram_menu",
+      "block": "r13_entry_daram_menu",
+      "placement": "literal",
+      "ref": "game/systems/room13_intro_clues.rpy:153:83",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "예약 종이와 명단을 나란히 놓고 대조해 보자.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_intro_clues.rpy",
+          "line": 153,
+          "label": "r13_entry_daram_menu",
+          "guards": [
+            "elif r13_entry_daram_choice==\"compare\":"
+          ]
+        }
+      ],
+      "line": 153,
+      "scene_title": "r13_entry_daram_menu",
+      "source_hash": "22ee3df201e25763c171558cd48d62a5b63f09ef0cb695d7223e40cc7109f91f",
+      "baseline_hash": "e3ce418bd1b1f776568a234976ebcc6fcb078d191511b13669d438393b6a5bee",
+      "uid": "84ac28f8b74d4eff2efbdb11",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_entry_daram_menu|rpy_literal|r13_entry_daram_menu|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_intro_clues.rpy:156:33",
+      "file": "game/systems/room13_intro_clues.rpy",
+      "path": [
+        10325,
+        10357
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_entry_daram_menu",
+      "block": "r13_entry_daram_menu",
+      "placement": "literal",
+      "ref": "game/systems/room13_intro_clues.rpy:156:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "엄마 만나러 같이 왔는데 아빠만 먼저 들어가면 안 돼.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_intro_clues.rpy",
+          "line": 156,
+          "label": "r13_entry_daram_menu",
+          "guards": [
+            "elif r13_entry_daram_choice==\"together\":"
+          ]
+        }
+      ],
+      "line": 156,
+      "scene_title": "r13_entry_daram_menu",
+      "source_hash": "22ee3df201e25763c171558cd48d62a5b63f09ef0cb695d7223e40cc7109f91f",
+      "baseline_hash": "9f5d15fa5f221bfedc394954862f854ccf70ed0521b31b289485d4c843f23a05",
+      "uid": "5e474ca7a43c68b2eaee019f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_entry_daram_menu|rpy_literal|r13_entry_daram_menu|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

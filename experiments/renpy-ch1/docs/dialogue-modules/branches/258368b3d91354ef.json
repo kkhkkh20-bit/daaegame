@@ -1,0 +1,126 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_v111_days1114.rpy:2166:8",
+      "file": "game/room13_v111_days1114.rpy",
+      "path": [
+        107905,
+        107923
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "MS14_D13_S04",
+      "block": "r13_v111_family_position13",
+      "placement": "literal",
+      "ref": "game/room13_v111_days1114.rpy:2166:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "엄마와 다람이 곁에 남게 한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2166,
+          "label": "r13_v111_family_position13",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 2166,
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "aa56cffba0a29954c119b1d0616327b29579646f32f2520278a4f21d02f69444",
+      "baseline_hash": "b0669cd4ae9c2899bd82dcadfd6b6b8dd68a619546202e3ca9dfb5755aadc11c",
+      "uid": "896fb002433bf26d38e1f363",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D13_S04|rpy_menu|r13_v111_family_position13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_v111_days1114.rpy:2168:8",
+      "file": "game/room13_v111_days1114.rpy",
+      "path": [
+        107973,
+        107994
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "MS14_D13_S04",
+      "block": "r13_v111_family_position13",
+      "placement": "literal",
+      "ref": "game/room13_v111_days1114.rpy:2168:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "엄마와 다람을 까로와 학교로 보낸다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2168,
+          "label": "r13_v111_family_position13",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 2168,
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "aa56cffba0a29954c119b1d0616327b29579646f32f2520278a4f21d02f69444",
+      "baseline_hash": "1d83379cfc0a589735454faa659827141aaa7f4b5f23558276386f57f40fed79",
+      "uid": "8ef99323ec74e3dd130df694",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D13_S04|rpy_menu|r13_v111_family_position13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_v111_days1114.rpy:2170:8",
+      "file": "game/room13_v111_days1114.rpy",
+      "path": [
+        108079,
+        108100
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "MS14_D13_S04",
+      "block": "r13_v111_family_position13",
+      "placement": "literal",
+      "ref": "game/room13_v111_days1114.rpy:2170:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "엄마와 다람을 네로와 학교로 보낸다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2170,
+          "label": "r13_v111_family_position13",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 2170,
+      "scene_title": "장면 13-4. 바퀴가 멎어도",
+      "source_hash": "aa56cffba0a29954c119b1d0616327b29579646f32f2520278a4f21d02f69444",
+      "baseline_hash": "b1ca62ae6d649379015aa1956f8229d1657b2f2db5a1e2b5a220a7d73286f914",
+      "uid": "90967a1e9ac110c6510c272b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D13_S04|rpy_menu|r13_v111_family_position13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

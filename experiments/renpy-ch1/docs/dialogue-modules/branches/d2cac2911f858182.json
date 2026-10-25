@@ -1,0 +1,137 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "hp_meal6:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "hp_meal6",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 6,
+      "scene": "hp_meal6",
+      "block": "hp_meal6",
+      "placement": "binding",
+      "ref": "hp_meal6:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "다람아, 애들한테 가자.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "dining",
+        "person": "daram",
+        "object": null
+      },
+      "scene_title": "hp_meal6",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "8b1ff91bed5137e2d65927582475a348c151879f307769c4e6cb9f51723ee05d",
+      "uid": "e825ab8b079ffdd0f875f176",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|hp_meal6|choice|hp_meal6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "hp_meal6:1",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "hp_meal6",
+        "options",
+        1,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 6,
+      "scene": "hp_meal6",
+      "block": "hp_meal6",
+      "placement": "binding",
+      "ref": "hp_meal6:1",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "식기 보따리를 살핀다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "hidden_pandol:spoon_seen",
+            null
+          ]
+        ],
+        "location": "dining",
+        "person": null,
+        "object": "table"
+      },
+      "scene_title": "hp_meal6",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "8bbf699b7f6f11d36ce462a48191fb2ad2edf96e56fec4f1fa9e166ef7831af5",
+      "uid": "8c9bdf54b36e960cea2ec05d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|hp_meal6|choice|hp_meal6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "hp_meal6:2",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "hp_meal6",
+        "options",
+        2,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 6,
+      "scene": "hp_meal6",
+      "block": "hp_meal6",
+      "placement": "binding",
+      "ref": "hp_meal6:2",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "숟가락 손잡이가 헐겁네요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "hidden_pandol:spoon_seen",
+            true
+          ],
+          [
+            "state",
+            "hidden_pandol:met",
+            null
+          ]
+        ],
+        "location": "dining",
+        "person": "npc_pandol",
+        "object": null
+      },
+      "scene_title": "hp_meal6",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "1d4334f918423f2408894dd616ca5f285025feaf9690dec0fbdbbf9f1ba64392",
+      "uid": "a7c6faab074b7bcfa415b810",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|hp_meal6|choice|hp_meal6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

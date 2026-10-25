@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13.rpy:625:148",
+      "file": "game/room13.rpy",
+      "path": [
+        36182,
+        36235
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_trial",
+      "block": "r13_trial",
+      "placement": "literal",
+      "ref": "game/room13.rpy:625:148",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "오늘 확인할 것은 아이가 그 죽음에 책임이 있는지입니다. 소문을 본 일처럼 말하지 마십시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 625,
+          "label": "r13_trial",
+          "guards": []
+        }
+      ],
+      "line": 625,
+      "scene_title": "r13_trial",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "607f8628d27bcc45356bf6cae23b883c428532f9d088873606866c60f139bfbc",
+      "uid": "7ae8f4d8d1ba15d84d5fb0bd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_trial|rpy_literal|r13_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

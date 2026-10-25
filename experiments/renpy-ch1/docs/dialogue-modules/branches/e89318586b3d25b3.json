@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D01_S05_L0013",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "replace",
+        "MS14_D01_S05_L0013",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D01_S05_L0013",
+      "when": "room13_unchecked_d1",
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "밥상은 매일 차렸죠, 매일. 어느 날부터 안 왔더라…… 아이고, 우선 방부터 봐요. 애가 떨잖아요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 324,
+          "label": "r13_v111_inn",
+          "guards": []
+        }
+      ],
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "97b9d612240519719a712dcec993fde75a1191e063920b381028e739d43c3051",
+      "uid": "58e88d4eeff08ad797719d80",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|patch|replace|room13_unchecked_d1",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

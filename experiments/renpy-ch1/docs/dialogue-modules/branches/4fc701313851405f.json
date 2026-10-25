@@ -1,0 +1,87 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:310:36",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        19767,
+        19775
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:310:36",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "학교 대피소",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 310,
+          "label": "r13_ending",
+          "guards": [
+            "elif r13_ending_id==\"E4\":"
+          ]
+        }
+      ],
+      "line": 310,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "e2f81fe4faf938ec671c95d2f9468fb272221f0a2559525875bc0c8f5f05318c",
+      "uid": "39c5c775489277db4dbfbdf7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ending|rpy_inventory|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:328:36",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        21365,
+        21418
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:328:36",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "초롱 씨가 남긴 짐에 이 도면이 있었어. 마을 밖으로 보낸 적이 있대. 원본은 여기 남겼고.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 328,
+          "label": "r13_ending",
+          "guards": [
+            "else:",
+            "if r13_ending_id==\"E6\":"
+          ]
+        }
+      ],
+      "line": 328,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "5794348f2ea10f6f2ca0f286c6acfea16d97a0432bfaa340e6c71c5dc7627d6c",
+      "uid": "ee3e48622e290c0869622286",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ending|rpy_inventory|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

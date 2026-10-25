@@ -1,0 +1,43 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:276:54",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        16149,
+        16154
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_ws_long_night",
+      "block": "r13_ws_long_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:276:54",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "…….",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 276,
+          "label": "r13_ws_long_night",
+          "guards": []
+        }
+      ],
+      "line": 276,
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "7e428bfac963e979a36c34565ac48fb5ecee5c830adfb7369fe7ce653be4c521",
+      "uid": "b87b93fac05cf2e0865ac365",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_ws_long_night|rpy_literal|r13_ws_long_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_revision.rpy:17:32",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        605,
+        655
+      ],
+      "origin": "rpy_inventory",
+      "day": 2,
+      "scene": "r13_object_mechanism",
+      "block": "r13_object_mechanism",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:17:32",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "손잡이를 당기자 안쪽에서 걸쇠가 풀렸다. 책장 뒤판을 밀면 우리 객실로 나갈 수 있다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 17,
+          "label": "r13_object_mechanism",
+          "guards": [
+            "if kind==\"passage_exit\":"
+          ]
+        }
+      ],
+      "line": 17,
+      "scene_title": "r13_object_mechanism",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "96edd77ece0ce4e79009b73692dc2dc5bf485368bcb62b2f32b68b25d1f83538",
+      "uid": "cb202be3f7cc0ec1541136c5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_object_mechanism|rpy_inventory|r13_object_mechanism|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:50:32",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        2096,
+        2144
+      ],
+      "origin": "rpy_inventory",
+      "day": 2,
+      "scene": "r13_object_mechanism",
+      "block": "r13_object_mechanism",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:50:32",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "책장 오른쪽 아래의 붉은 책. 다른 책보다 깊이 박혀 있다. 당겨도 빠지지 않는다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 50,
+          "label": "r13_object_mechanism",
+          "guards": [
+            "if kind==\"book_latch\":"
+          ]
+        }
+      ],
+      "line": 50,
+      "scene_title": "r13_object_mechanism",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "6deb6751c2c19d261c11ae3476cbd62ddb4522aec86775bf33f62b6a01ddeb9b",
+      "uid": "16845dd18d06d85677e150d0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_object_mechanism|rpy_inventory|r13_object_mechanism|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_OP_D05_01",
+      "file": "game/v111/newworld/d05.json",
+      "path": [
+        "blocks",
+        "snack_plate5",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 5,
+      "scene": "snack_plate5",
+      "block": "snack_plate5",
+      "placement": "blocks",
+      "ref": "snack_plate5",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "책상 접시에 첫날 마차에서 남긴 과자 봉지가 놓여 있다. 다람이 그쪽을 힐끔 본다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 27,
+          "label": "r13_v111_snack_plate5",
+          "guards": []
+        }
+      ],
+      "scene_title": "snack_plate5",
+      "source_hash": "a9e760da50ee60c0891a0f3223c23267f704e9da058eb484a3ffcf4ed70b3f1c",
+      "baseline_hash": "7048a3fa5ff7159e62c1da0ca0a65bc1a9d99d171f63add9a4a29a3d91ceb71f",
+      "uid": "e6d61787979a9ef71bc135fe",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|snack_plate5|patch|snack_plate5|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

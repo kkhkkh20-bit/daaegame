@@ -1,0 +1,129 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D14_MM10",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "end_memorial14",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "end_memorial14",
+      "block": "end_memorial14",
+      "placement": "blocks",
+      "ref": "end_memorial14",
+      "when": "dead:neoul",
+      "speaker": null,
+      "kind": "narration",
+      "text": "광장 수레 자리에 밤새 눈이 쌓였다. 아무도 치우지 않았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2788,
+          "label": "r13_v111_memorial14",
+          "guards": [
+            "if r13_nw_dead():"
+          ]
+        }
+      ],
+      "scene_title": "end_memorial14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "8dae68a526f03606539d17ca46393e4197bdd57c966db9b4cd355b853dad873a",
+      "uid": "0c0fbd98236a06def29e8713",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|end_memorial14|patch|end_memorial14|dead:neoul",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D14_MM11",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "end_memorial14",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "end_memorial14",
+      "block": "end_memorial14",
+      "placement": "blocks",
+      "ref": "end_memorial14",
+      "when": "dead:neoul",
+      "speaker": "주민",
+      "kind": "dialogue",
+      "text": "누가 먼저 쳤는지는 아무도 몰라요. 다들 그랬으니까.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2788,
+          "label": "r13_v111_memorial14",
+          "guards": [
+            "if r13_nw_dead():"
+          ]
+        }
+      ],
+      "scene_title": "end_memorial14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "736b46b934b84b1f5d954497ba5379111ccdbf415d08750c60cadb9c2df1b2ce",
+      "uid": "f7ca2f2677522ad31e81f1dc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|end_memorial14|patch|end_memorial14|dead:neoul",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D14_MM06",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "end_memorial14",
+        7,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "end_memorial14",
+      "block": "end_memorial14",
+      "placement": "blocks",
+      "ref": "end_memorial14",
+      "when": "dead:neoul",
+      "speaker": null,
+      "kind": "narration",
+      "text": "너울의 주판은 수레 바퀴 옆에서 주워졌다. 알 하나가 빠져 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2788,
+          "label": "r13_v111_memorial14",
+          "guards": [
+            "if r13_nw_dead():"
+          ]
+        }
+      ],
+      "scene_title": "end_memorial14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "c1d4494b160e7b7855b2468480f0cdb78eb7ab7aa698798bb50dc6cbe4d4c0de",
+      "uid": "363f8f6f4b3ccb1163f674a5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|end_memorial14|patch|end_memorial14|dead:neoul",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

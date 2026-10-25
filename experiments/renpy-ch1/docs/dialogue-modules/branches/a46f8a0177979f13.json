@@ -1,0 +1,1892 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D03_S03_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "초롱은 광장을 지키고, 아빠와 다람은 톡의 공방으로 이동한다. 부리가 공구판 앞을 막는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c81f37548a072f4e8110f859d29fc1c5c3a35a415b6f69ea787bd95b83ee06d9",
+      "uid": "2fefcd01491910f9e8a19b3b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0002",
+      "when": null,
+      "speaker": "부리",
+      "kind": "dialogue",
+      "text": "지금 가게 문 닫았어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 896,
+          "label": "r13_v111_workshop3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a62a38ceb7860fb219096fa871d9ab954796e48e569903c8b54be3609da834d0",
+      "uid": "29692e5ff01d9053ff6891fa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0003",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "톡 씨가 집게를 확인해 달라고 했습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 896,
+          "label": "r13_v111_workshop3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7b69ed973e55f350c2202c82bd407951cfcfd2b9bde95e53b10b15e87c47e602",
+      "uid": "caadfc72a6c63587333e96ab",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0004",
+      "when": null,
+      "speaker": "부리",
+      "kind": "dialogue",
+      "text": "집게 없는데요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 896,
+          "label": "r13_v111_workshop3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d49c42a6c5cdb9c89d3694c7e2d279ca3b69ea046df6f347eaf1a14978a13127",
+      "uid": "20c84ab98beb92653c5a4a07",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0005",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "왜 없습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 896,
+          "label": "r13_v111_workshop3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7b68dec1d92e7933888a4f61a8c15c7f7985a8a6f2292b2d843201fdee95626a",
+      "uid": "35e7cbe037d054eef65e1082",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0006",
+      "when": null,
+      "speaker": "부리",
+      "kind": "dialogue",
+      "text": "빌려 갔으니까 없죠. 우박이요. 돌 온도 잰다고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 896,
+          "label": "r13_v111_workshop3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0d42d9adf3d012cbec7b8a6a1f72e4b875a3ad4cff9a246eaa0a9d01607a7fba",
+      "uid": "d481fb9b743903164bbb54f9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0007",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "대여 쪽지: 계측 집게 / 우박 / 전날 저녁. 공구판 빈자리와 함께 확인.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 911,
+          "label": "r13_v111_loan3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7a5e7d0c8a0fd11d0833fa95f8849b1543cc3b3821e9202be65822c123dd6787",
+      "uid": "d3422a62808afd80129fe00b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0008",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "대여 쪽지: 계측 집게 / 우박 / 전날 저녁. 공구판 빈자리와 함께 확인.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7a5e7d0c8a0fd11d0833fa95f8849b1543cc3b3821e9202be65822c123dd6787",
+      "uid": "335719a965046709518a832b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L9101",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L9101",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L9101",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "대여 쪽지: 계측 집게 / 우박 / 전날 저녁.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 913,
+          "label": "r13_v111_loan3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9212438384a55c1fbdf4fb501f1ccdf45886beb5701dd1bc5600d46fb71c13e0",
+      "uid": "527b7983599610d84bf4ade8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0009",
+      "when": null,
+      "speaker": "부리",
+      "kind": "dialogue",
+      "text": "빌려준 것까지 잘못이에요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 913,
+          "label": "r13_v111_loan3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d946c3d564149529c02b4a21b55e5dc1170b1a0b77d4e1098430573ee1a485a3",
+      "uid": "bd7631e383801d244fa0a706",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0010",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그 집게가 돌을 가져가는 데 쓰였는지부터 보려는 겁니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 913,
+          "label": "r13_v111_loan3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "728630be71dbba65b75a68cc2bb32c72bc74b8831f3194ad3747a2d816b3ffef",
+      "uid": "505919884b05baee4fd467e9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0011",
+      "when": null,
+      "speaker": "부리",
+      "kind": "dialogue",
+      "text": "그럼 그렇게 적어요. ‘빌려줌’. ‘훔치게 해 줌’ 말고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 913,
+          "label": "r13_v111_loan3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0b358d9eef5ace2c4e8c192588c0d6119d769ab1e33720a37af0d79d55f1df32",
+      "uid": "4ae351ebbe8f749a5454a87d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0012",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "진료소의 측정 탁자. 우박이 집게를 천으로 닦고 있다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "dc43a1c8f0668de37fc0ed0588ac0a7b0c67f3f4292f7d613546de53c9599269",
+      "uid": "eb1d233f52fffaf01ffde9cf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0013",
+      "when": null,
+      "speaker": "우박",
+      "kind": "dialogue",
+      "text": "공방에서 보내셨어요? 가져다주려던 참인데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 920,
+          "label": "r13_v111_clinic3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5e62f2f6535643fba80eec50b6311e500a7072b0cd34e1a7fce1400dcdc2d553",
+      "uid": "3f57cf76c53441babddbeeeb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0014",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어젯밤 3번 등을 열었습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 920,
+          "label": "r13_v111_clinic3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c4d2fe660a235bfae3fa40677a972ed07fcbaff038319ee7c67067b3f99f1684",
+      "uid": "8b2ab6305e93c7564004459c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0015",
+      "when": null,
+      "speaker": "우박",
+      "kind": "dialogue",
+      "text": "……예.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 920,
+          "label": "r13_v111_clinic3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "94f4e7b542da5901366b73ce4490b7b7cd03386f264935cfc999e226ff9ec627",
+      "uid": "56e906b5f3550e06d6c47c20",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0016",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "돌을 꺼냈고요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 920,
+          "label": "r13_v111_clinic3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "88e33e63076f569d9dac2a6ddffe9676911d01983ac48b7995b8943272392ee6",
+      "uid": "030b6aa75c5070a189d14a39",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0017",
+      "when": null,
+      "speaker": "우박",
+      "kind": "dialogue",
+      "text": "재야 하니까요. 잠깐요. 다시 넣었어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 920,
+          "label": "r13_v111_clinic3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "58089a0a6d1a0ab79517325841c3a3b40659bc08da4bf7fff838a63d75223284",
+      "uid": "b19c6b3ac58bd862365e6757",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0018",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "돌을 꺼냈다고요? 그 밑에서 사람이 자는 건 못 봤습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 920,
+          "label": "r13_v111_clinic3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7c499197d74082827d7a799a5beb3d2dafe8ade2767270b3f0fb36bd55e7436d",
+      "uid": "0806b76ba2d915530f549a7a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0019",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "우박이 집게를 뒤로 당겼다. 다람이가 내 소매를 붙잡았다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 920,
+          "label": "r13_v111_clinic3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "379800f98179221229a9556da5b0c13b97c5d39438f697b7047fc5763f6268d2",
+      "uid": "850dbf2759fa4f2a61b5ba51",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0020",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠. 초롱은 돌이 있었댔잖아. 이 사람은 언제 꺼냈는데?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 920,
+          "label": "r13_v111_clinic3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "dab8f5c1d5566530304ba4eaab17867a8e3f3c0c3dafa891fc18b7cb0441087e",
+      "uid": "1b2299ebb94b84daf9acdd21",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0021",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "입을 벌린 채 아이를 보았다. 내 수첩에도 적혀 있는 말이었다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 920,
+          "label": "r13_v111_clinic3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "753bf65b6dce598aa19bc032e2ddec402e2cfe05225719557875846081895971",
+      "uid": "dbaa68ba3170a36972a3332e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0022",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "……맞아. 그걸 빼먹었다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 920,
+          "label": "r13_v111_clinic3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "565a4e449df40379ad433f0aa3fb8e3f11ccceb04ee8603fe278eb32557503f6",
+      "uid": "7381956fe42564a3c42764a1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0023",
+      "when": null,
+      "speaker": "우박",
+      "kind": "dialogue",
+      "text": "말을 끝까지 좀 들으세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 920,
+          "label": "r13_v111_clinic3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6c3323264ca6ede312efcfcda2ce76e953217cc651cde5e93747bfb2b6d17727",
+      "uid": "7fdf6172efa970540efb7d70",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0024",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "제가 성급했습니다. 죄송합니다. 시간을 먼저……",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 920,
+          "label": "r13_v111_clinic3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ffad1be1a9331a23ce2799692b4d8532f788ce9fc9839defb5252393c312743d",
+      "uid": "3bf214e10117575788f47378",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0025",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "몇 시입니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 924,
+          "label": "r13_v111_clinic3",
+          "guards": [
+            "if v111_answer==0:"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b99761e0da6be11f1b63ea2932ed2bff31edd5d81ac71bcbc92decc0adf08221",
+      "uid": "27ec6e734f543cc4fd5803e1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0026",
+      "when": null,
+      "speaker": "우박",
+      "kind": "dialogue",
+      "text": "새벽 종 전보다 한참 전이에요. 기록 있어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 924,
+          "label": "r13_v111_clinic3",
+          "guards": [
+            "if v111_answer==0:"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c352a5102352f81610a72a1b596b13315724286b513c704605ed097f1073dca5",
+      "uid": "d2d9b82d58552dec5c2bb7b0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0027",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "조작: 측정지. 등번호 3, 돌표식 3, 측정 시작·종료 시각. 낮아진 수치는 보이되 마을 전체 고갈의 최종 결론은 쓰지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c6b33a6522a4e8e5aed53455d00ef1ec01927eb7d5d5782bc9db8c594e48bd7c",
+      "uid": "8315c5dfccae9cd8fb7ae188",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L9102",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L9102",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L9102",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "측정지: 등번호 3 / 돌표식 3 / 측정 시작·종료 기록. 우박은 새벽 종 전보다 한참 앞에 끝났다고 말했다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 942,
+          "label": "r13_v111_measurement3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "68165f849646d698e0a3957aa2d9ded9c9419bc923bb7f6328f4b1746af61665",
+      "uid": "11ffc7738159d08f9006de04",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0028",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "돌려놓은 뒤에 본 사람은 없습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 942,
+          "label": "r13_v111_measurement3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0a410d85005d675987a1a15feee894f4b5aac11781834a9d496975b2e0d91886",
+      "uid": "849e97bcb44a2a514bb779ee",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0029",
+      "when": null,
+      "speaker": "우박",
+      "kind": "dialogue",
+      "text": "그러면 뭘 더 해야 해요? 안 열었다고 할 걸 그랬나.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 942,
+          "label": "r13_v111_measurement3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "44c01b14eaf97f06b9bb336d236ea114dea93593d87003de35b01f7fadd643c4",
+      "uid": "76e0d48d0f3821052d9c7748",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0030",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "거짓말하면 더 오래 걸려.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 942,
+          "label": "r13_v111_measurement3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "328caec43dc33206762809fa3c40a5cf2ebd4398fc9eb60f079b4c32606da97e",
+      "uid": "c9020678476e5ea890b874c2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0031",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다람아. 잠깐만.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 942,
+          "label": "r13_v111_measurement3",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2c0a39e2bd04ebd95be785d32a449ceb726f67fa462ebe97eb17e77d40ee67f8",
+      "uid": "33cc313d62a51c725637199f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0042",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0042",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0042",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "조건을 만족하는 다음 블록으로 진행한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fcff34e55d9bfec494fe81e2f2790dca27c3b738b9e9c6f38165c55b19b55973",
+      "uid": "5f430cc3763743a462d021b3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0032",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "조작: 우박의 종료 시각 뒤에 있는 초롱의 내부 점검 기록 제시.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cd00bcbd2a2de2f5233965d84d2fa56a2150c0a84cadb96e7addba83e814de9c",
+      "uid": "f0cfe488ab38ecc0b286294c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0033",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "우박 씨가 나온 뒤에도 초롱 씨가 3번 돌을 봤습니다. 돌이 없어진 건 그 뒤예요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 952,
+          "label": "r13_v111_measurement_correct",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "96d0177945ec3e2ca17d585b04907b1d938031e12d2dc2c523fa96cbb4822dae",
+      "uid": "9bc1fc1116a7f14219f9b3c1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0034",
+      "when": null,
+      "speaker": "우박",
+      "kind": "dialogue",
+      "text": "제가 그 말을 했잖아요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 952,
+          "label": "r13_v111_measurement_correct",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "17baef030f4edb122574749da9590641102d9663af7c76b46d93c1d147183525",
+      "uid": "918182ff8855525d1f58a597",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0035",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "네. 제가 안 듣고 소리부터 질렀습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 952,
+          "label": "r13_v111_measurement_correct",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2ee396a817387e7761302ef5859f7b687d9694023b58326f970a9e629b73d76f",
+      "uid": "5cfcc41d9f2d96b6416b1b25",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0036",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "우박이 집게를 내려놓았다. 손잡이가 탁자에 세게 부딪쳤다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 971,
+          "label": "r13_v111_measurement_after",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e65d08ba5baf324c1755f93da431234d52c19dd22036a13ac259670626f63350",
+      "uid": "c92bad39b235778a2816cdf6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0037",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0037",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0037",
+      "when": null,
+      "speaker": "우박",
+      "kind": "dialogue",
+      "text": "수치도 가져가세요. 돌을 돌려놔도 예전만큼 따뜻하지 않아요. 하나만 잰 건 아니에요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 971,
+          "label": "r13_v111_measurement_after",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3d75392c731b762c44f232929b267e1e949c43a580effb861aeca897253c34bd",
+      "uid": "ef00db7950163361f0190885",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0038",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0038",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0038",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어디서 언제 잰 건지도 써 주세요. 숫자만 보면 전 모르겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 971,
+          "label": "r13_v111_measurement_after",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "dd97c61554e8b218d1af2b4bff32de91270f239461e3399cf6206124e6480236",
+      "uid": "dce3a33fac06775dbdeaf2b4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0039",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0039",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0039",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "기록에 돌려놨다고 적혀 있습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 959,
+          "label": "r13_v111_measurement_wrong",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "66e46b5374f7969a5ac4ac5a8362a4c9a48a9ce6f9dcc10eb0deeadceda0e33d",
+      "uid": "cddffd71578ee835a7e1b465",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0040",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0040",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0040",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "이 종이는 우박 씨가 썼다. 그 뒤에도 돌이 있었는지 다른 기록과 맞춰 보자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 959,
+          "label": "r13_v111_measurement_wrong",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "dea05180bd4b3fad8851b3364009c3281a75612c75483008dce769609c89d6cd",
+      "uid": "5eb4f32066a1f15409ccb6ab",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S03_L0041",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D03_S03_L0041",
+        "text"
+      ],
+      "origin": "base",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D03_S03_L0041",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "돌을 잰 때와 초롱 씨가 안을 본 때. 어느 쪽이 먼저였지?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 965,
+          "label": "r13_v111_measurement_hint",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "18a48277861adc44f38ee7e5292415efef9e634abad9b905f33453e2bd2c218a",
+      "uid": "efb81ddcd6ed2a1c20ed5a1c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

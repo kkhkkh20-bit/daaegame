@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:139:38",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        8166,
+        8203
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_cv_market",
+      "block": "r13_cv_market",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:139:38",
+      "when": null,
+      "speaker": "resident_eunho",
+      "kind": "dialogue",
+      "text": "수레 말이오? 빌려 줬소. 장사꾼이 빈 수레 놀려서 뭐 합니까.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 139,
+          "label": "r13_cv_market",
+          "guards": []
+        }
+      ],
+      "line": 139,
+      "scene_title": "r13_cv_market",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "16b09a808c0b7183bdc8f07400c2b19b9f432a08b7f4e597daf6a53f1767fed7",
+      "uid": "ba3c8d0c8cffa8ee137afd82",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_cv_market|rpy_literal|r13_cv_market|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

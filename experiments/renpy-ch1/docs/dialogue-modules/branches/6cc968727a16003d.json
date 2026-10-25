@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/winter_opening.rpy:110:75",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        7271,
+        7288
+      ],
+      "origin": "rpy_inventory",
+      "day": 5,
+      "scene": "winter_entry_reason",
+      "block": "winter_entry_reason",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:110:75",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "근데 내 이름 이미 있잖아.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 110,
+          "label": "winter_entry_reason",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 110,
+      "scene_title": "winter_entry_reason",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "f9d66e728e65a6483525878eac85b39fdeaec4308950434a4a976da41feac9a3",
+      "uid": "59b1a73cec035fac65f98d87",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|winter_entry_reason|rpy_inventory|winter_entry_reason|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:122:85",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        8234,
+        8270
+      ],
+      "origin": "rpy_inventory",
+      "day": 5,
+      "scene": "winter_entry_reason",
+      "block": "winter_entry_reason",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:122:85",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "짐은 문 옆에 놓을게요. 난 마구간에 있으니 필요하면 불러요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 122,
+          "label": "winter_entry_reason",
+          "guards": []
+        }
+      ],
+      "line": 122,
+      "scene_title": "winter_entry_reason",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "478c6ebd7d03594a1ce0035efabac0e82d76b8f013c7068f35080101a2f0044a",
+      "uid": "ac48f5afeb5edb54e9a46a9d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|winter_entry_reason|rpy_inventory|winter_entry_reason|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

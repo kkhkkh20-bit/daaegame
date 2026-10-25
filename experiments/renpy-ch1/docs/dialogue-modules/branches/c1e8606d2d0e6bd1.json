@@ -1,0 +1,128 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/timeline.rpy:188:144",
+      "file": "game/timeline.rpy",
+      "path": [
+        9293,
+        9308
+      ],
+      "origin": "rpy_inventory",
+      "day": 4,
+      "scene": "village_support_hearing",
+      "block": "village_support_hearing",
+      "placement": "literal",
+      "ref": "game/timeline.rpy:188:144",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "다른 사람의 말을 듣는다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/timeline.rpy",
+          "line": 188,
+          "label": "village_support_hearing",
+          "guards": [
+            "while len(village_supporters()) < 4:"
+          ]
+        }
+      ],
+      "line": 188,
+      "scene_title": "village_support_hearing",
+      "source_hash": "32f0da6319ec64b601cf1e99cd9913d1ccd06399bb88eeba9d96de973d38631d",
+      "baseline_hash": "d96f8d8c0f6f6ef2fa1cd77908d026649d801be2d2f8a1a3605317b16c406983",
+      "uid": "7e3a94359ad5ba21f57b1044",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|village_support_hearing|rpy_inventory|village_support_hearing|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/timeline.rpy:189:34",
+      "file": "game/timeline.rpy",
+      "path": [
+        9393,
+        9424
+      ],
+      "origin": "rpy_inventory",
+      "day": 4,
+      "scene": "village_support_hearing",
+      "block": "village_support_hearing",
+      "placement": "literal",
+      "ref": "game/timeline.rpy:189:34",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "아직 확신하지 못한 주민 · 누구의 걱정부터 들을까?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/timeline.rpy",
+          "line": 189,
+          "label": "village_support_hearing",
+          "guards": [
+            "while len(village_supporters()) < 4:"
+          ]
+        }
+      ],
+      "line": 189,
+      "scene_title": "village_support_hearing",
+      "source_hash": "32f0da6319ec64b601cf1e99cd9913d1ccd06399bb88eeba9d96de973d38631d",
+      "baseline_hash": "860971765252b20aa8dc733798abedbbc0df2aec0925d3b3ec459d62d1042d36",
+      "uid": "761ca2f51062849df5fbc539",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|village_support_hearing|rpy_inventory|village_support_hearing|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/timeline.rpy:197:94",
+      "file": "game/timeline.rpy",
+      "path": [
+        9884,
+        9912
+      ],
+      "origin": "rpy_inventory",
+      "day": 4,
+      "scene": "village_support_hearing",
+      "block": "village_support_hearing",
+      "placement": "literal",
+      "ref": "game/timeline.rpy:197:94",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "저도 떠나야 합니다. 아직 결정 못 하신 거죠?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/timeline.rpy",
+          "line": 197,
+          "label": "village_support_hearing",
+          "guards": [
+            "while len(village_supporters()) < 4:",
+            "elif village_hearing_person == \"listen\":",
+            "if council_support_listens >= 2:"
+          ]
+        }
+      ],
+      "line": 197,
+      "scene_title": "village_support_hearing",
+      "source_hash": "32f0da6319ec64b601cf1e99cd9913d1ccd06399bb88eeba9d96de973d38631d",
+      "baseline_hash": "b4094fdd0c8b69b6e21b3f31e4c607f2b8d2fe730e4981c600ad6eaeb89770c7",
+      "uid": "eb8070b63f87b0719fe14626",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|village_support_hearing|rpy_inventory|village_support_hearing|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

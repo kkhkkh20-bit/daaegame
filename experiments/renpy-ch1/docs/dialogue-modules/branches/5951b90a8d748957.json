@@ -1,0 +1,1276 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D09_S02_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "톡이 유리 너머 촛대 고리를 보고 눈을 가늘게 뜬다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1158,
+          "label": "r13_v111_tok9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8e9754050cceb8fdb3c29b04923c4b14af1a6bdeda94828819be06b478a639e1",
+      "uid": "0737a71f2c8279cf2678056a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S02_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0002",
+      "when": null,
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "흔한 핀이네요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1159,
+          "label": "r13_v111_tok9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5987a16952ca296c1530beb0cf43aaf1b65406dd684d6b4585d4d22e6c3ce0ae",
+      "uid": "eadbbf0710d1fbb8f54f9559",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S02_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0003",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "누가 쓰는지 압니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1160,
+          "label": "r13_v111_tok9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "94068120a7618e819c73f11a6b56b70f0935cfcafe33a34b937cd3612865f5ee",
+      "uid": "a8e88bbca15798f4ba24d5b5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S02_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0004",
+      "when": null,
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "흔하다고요. 반 마을이 저런 걸 써요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1161,
+          "label": "r13_v111_tok9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "559bce1f536372fe272fea70cca035d0dc44341e2c8186d7be31e6fdedd2233f",
+      "uid": "4aa466b9a7861ca76012a76a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S02_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0005",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[살펴보기] 핀 뒤 고리의 구리선. 확대 후에만 질문이 생긴다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "31267c284d27d20bc60f455ec6fcd9112ca61c3f541ef19ec13031a4169a16a4",
+      "uid": "74f516021fdc3411dbb461ca",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S02_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0006",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이 감은 부분도 흔합니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1162,
+          "label": "r13_v111_tok9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bab41f45c90e0767a0c8788c536ebaa0d5fb7754470e546b3b35f053d461d9c6",
+      "uid": "7bce0abd6dcac90a7d731a59",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S02_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0007",
+      "when": null,
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "……거꾸로 돌려 봐요. 아니, 만지지는 말고 상자째.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1163,
+          "label": "r13_v111_tok9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c208159db5d57d9c603fb1e77f9f170a5e6b4e1cd9daf632d2c8a7160faadf47",
+      "uid": "d4431bf0d1c12060f0cb8781",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S02_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0008",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "톡이 자신의 작업대에서 짧은 구리선을 집는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1164,
+          "label": "r13_v111_tok9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c7a6886ee7fb4e74774fb480c9f8a5e2aeb4e479d8b627e76dd5ee55d47c2e6d",
+      "uid": "034dfdcea772c77a01726547",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S02_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0009",
+      "when": null,
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "은선이 없어서 구리선을 썼어요. 주인이 새것은 싫다길래. 두 번 감으면 목도리에 걸려요. 그래서 끝을 안으로 말아 넣었죠. 그냥 감은 게 아닙니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1165,
+          "label": "r13_v111_tok9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cdac009c935db8306b07d92336150fed163ccc7e1f03df9ffc26d77544016de0",
+      "uid": "574f1d0d32b4493e9c1ad7ec",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S02_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0010",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "주인이 누구였습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1166,
+          "label": "r13_v111_tok9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "28e26371d1892a85ed652eb43c4b870ce9749c70cf41578aa0377452b21e35ed",
+      "uid": "ec54b589909f43f1b95b8c3a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S02_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0011",
+      "when": null,
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "여관 할머니요. 수선값 아직 안 줬습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1167,
+          "label": "r13_v111_tok9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "985956a7752da61f93b72c8ade2de114a0ee330b664271009d3ef2ba721c53b8",
+      "uid": "a760fa7e8248768b11cb9ae2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S02_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0012",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "그는 장부에서 핀 수선 항목을 찾아 펼친다. 날짜와 구리선 사용량이 적혀 있다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1168,
+          "label": "r13_v111_tok9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "67282d3c042abbfc622ecc7a68e1b986e95b7fcc406ca6af0c478b6476c42f0d",
+      "uid": "6fb439423645adaad2d1bab8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S02_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0013",
+      "when": null,
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "이것만 보고 사람 잡진 마세요. 내가 고친 건 핀이지, 사람이 아닙니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1169,
+          "label": "r13_v111_tok9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "696b9fdb5526dda09901517d285ab57f355032a1df9330c217ac5375592bac28",
+      "uid": "43ae4f6c58bcbb3d1e895b7d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S02_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0014",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "누가 맡겼다 찾아갔는지 들으러 왔습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1170,
+          "label": "r13_v111_tok9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f73c805c1bd30694ef99f8c0d09e0d3d47a15361b73dd18f8f89d7727fe2ba08",
+      "uid": "a4adf5a280e6737332d057e4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S02_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0015",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이 끝이 끊어지기 전 그림도 있습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1171,
+          "label": "r13_v111_tok9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6315af7bd3f3626624c43f2d7d3638855d9793cb80ac349c2fbe76fd50b7a7ae",
+      "uid": "4e4f1b4d7360ace5ff9731ba",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S02_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0016",
+      "when": null,
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "장부 옆에 그려 뒀어요. 안으로 말아 넣은 끝, 여기요. 지금은 짧아졌네요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1172,
+          "label": "r13_v111_tok9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "69d69c7eba3b61e13bb33d3350a414fd1bb96a2221fa7e0943dfa8176aed70ba",
+      "uid": "fccabc02e7f28d15b1d2c8cd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S02_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0017",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[플레이어가 기존 수선 전후 그림과 현재 핀, 상처에서 나온 구리 조각을 대조한다. 소유자는 이 수선 확인 뒤에만 연결한다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e9f8687db4070dd9976b7acffed1d0a69a880fab1f3b9778d1f5c74bcd6d265b",
+      "uid": "9e72b05311897508b3c816fd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S02_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0018",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: E09_PIN_OWNER=repair_and_receipt_confirmed; D09_S02_tok_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "85ca619e9abe9abb7a13d1c4989ce1c68b0ca6606a9d55408e7a51ccd9083110",
+      "uid": "9dd67d1a2cd2260f676a0f1d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S02_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0019",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "세련이 공방에서 공개 보관하던 수선 영수증 등본을 꺼낸다. 수선 전후 그림과 수령인 이름이 나란히 있다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1178,
+          "label": "r13_v111_repair_copy9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2550c85c65e0a7e28583f8b86f31dfc65f847a5500fdf5f0e2fdaa091e4e9710",
+      "uid": "2853cedd3836d28738e39990",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S02_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0020",
+      "when": null,
+      "speaker": "세련",
+      "kind": "dialogue",
+      "text": "제가 비용을 전달하러 갔을 때 이 등본을 받았습니다. 수령인은 할머니로 적혀 있고요. 수선하는 손을 직접 본 건 아닙니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1179,
+          "label": "r13_v111_repair_copy9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "151f149dd4e00b99b5514521efbb20dc3f1115aaa12a9bffca63a4cf619f6044",
+      "uid": "21c5063b4e9c9b06e4d41daf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S02_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0021",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이 매듭 모양과 날짜까지만 확인해 주십시오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1180,
+          "label": "r13_v111_repair_copy9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c7d9e1fab3788a0c855c791473dd1245ed503e15bec8471cf61d240b437a3891",
+      "uid": "6c16e52a92902ba638d3c2d9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S02_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0022",
+      "when": null,
+      "speaker": "세련",
+      "kind": "dialogue",
+      "text": "네. 그림은 이쪽입니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1181,
+          "label": "r13_v111_repair_copy9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e3c897dd43277712a9a10ea9520d3b3d98b47b837d155c6e68417c90c6217fbc",
+      "uid": "8a02b029358a281d53c290c0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S02_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0023",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[플레이어가 핀 뒤 구리선과 수선 전후 그림, 날짜와 수령인을 직접 대조한다. 없던 기록을 새로 만드는 것이 아니라 같은 사전 거래 자료를 확인한다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b5331355a3d50e32337e9d1e60f5eeaecbea2c363472e6f69345dfb17779a5b6",
+      "uid": "1d34d57d3589012b568f4c9c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S02_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0024",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "수선 뒤 그림에는 이 끝이 남아 있군요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1182,
+          "label": "r13_v111_repair_copy9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4da38fd8b50776dd1ea492dc01efb06d2a5e2be3d402c0a79d891b9fd483b121",
+      "uid": "d076e90561a1af7ce4803b0e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S02_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0025",
+      "when": null,
+      "speaker": "세련",
+      "kind": "dialogue",
+      "text": "그림과 수령인은 확인해 드릴 수 있어요. 상처에서 나온 조각은 서리 씨 기록과 보셔야 합니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1183,
+          "label": "r13_v111_repair_copy9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "61dbca9c0c85b416fb08e5cf00211683c69dc27a05e27f8bd4322550984d569b",
+      "uid": "a999f8d01cddbaeb1c433aa1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S02_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0026",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: E09_PIN_OWNER=repair_receipt_copy_confirmed; D09_S02_receipt_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a895338d30119e9025dcae731f34aa39180d142722e52104c44b8417a1bf3912",
+      "uid": "794206e54f664c091ed3e298",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S02_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0027",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "겉모양 말고 고친 부분을 더 보겠습니다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6b2ce8d23fa02f9334215ab0ece9226578924cd429e75a589ad5c64bee6e0070",
+      "uid": "3689dc62029dc080373cbfff",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S02_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0028",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: time_cost=0",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "451e183e78ad687c8dbdb27d0b91e15d9de947a8f4a717fdcf37c0d4dab74de9",
+      "uid": "420703186028c195570f3619",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S02_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0029",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[이미 획득한 사실과 읽은 발화만 재열람한다. 현재 생사·위치와 다른 과거 증언은 기록으로 표시하고 인물을 새로 현장에 출현시키지 않는다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e4047cc80b769f2f77ad98a244e6c771def19c3e354355926f66719bef6b47dd",
+      "uid": "73a649b7ff7cb53267eb8a54",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S02_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0030",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "적어 둔 것부터 다시 보겠습니다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bd1227da2b99009eeb0fd6b304bfb6ad9beb3e1371024ffecf107cb589a8b8c6",
+      "uid": "2412b2ff95bbe15b2fb3fcc6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_S02_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_S02_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_S02_L0031",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: time_cost=0",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-2. 낮 / 공방 — 같은 핀이 아니다",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "451e183e78ad687c8dbdb27d0b91e15d9de947a8f4a717fdcf37c0d4dab74de9",
+      "uid": "fa8c79cf1edc8976a9162e24",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13.rpy:264:247",
+      "file": "game/room13.rpy",
+      "path": [
+        14655,
+        14691
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_day",
+      "block": "r13_day",
+      "placement": "literal",
+      "ref": "game/room13.rpy:264:247",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "할아버지 물건은 받아만 둘게. 아빠 돌아오면 같이 열어 보자.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 264,
+          "label": "r13_day",
+          "guards": [
+            "if room13[\"day\"]==R13_CASE_DAY and not r13_has(\"elder_appointment\"):"
+          ]
+        }
+      ],
+      "line": 264,
+      "scene_title": "r13_day",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "952595e856f3bda3b713cfc36ef34f5aad324bbf81ce61427ad268730046dda6",
+      "uid": "4a67da022c4df154bce7420d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_day|rpy_literal|r13_day|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

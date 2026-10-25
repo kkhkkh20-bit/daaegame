@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D05_S05_L0063",
+      "file": "game/v111/newworld/d05.json",
+      "path": [
+        "replace",
+        "MS14_D05_S05_L0063",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D05_S05_L0063",
+      "when": "snack_unbagged5",
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 종이에 쓰던 ‘내일’을 지우고, 아침에 나갈 시간을 적는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 724,
+          "label": "r13_v111_last5",
+          "guards": []
+        }
+      ],
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "a9e760da50ee60c0891a0f3223c23267f704e9da058eb484a3ffcf4ed70b3f1c",
+      "baseline_hash": "93128e8bb6c3ed0ae1d9c906dde7fcfe9e77b662ab2bedce3c5a2c6f1f6c985f",
+      "uid": "79c6cca7b07cd5696e1b4a97",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|patch|replace|snack_unbagged5",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

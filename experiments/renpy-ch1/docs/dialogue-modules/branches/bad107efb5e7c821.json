@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_v111_days123.rpy:399:63",
+      "file": "game/room13_v111_days123.rpy",
+      "path": [
+        18310,
+        18321
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "MS14_D01_S05",
+      "block": "r13_v111_room_compare",
+      "placement": "literal",
+      "ref": "game/room13_v111_days123.rpy:399:63",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "방을 더 둘러본다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 399,
+          "label": "r13_v111_room_compare",
+          "guards": []
+        }
+      ],
+      "line": 399,
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "456f94ff2e8310cc392465f4cf6e8b4751192ba306a52edeb7646cb6546fd0ef",
+      "baseline_hash": "4c25063eeb98ce770214223b13aa4374acb9522ff9e8217270de99a578b1436d",
+      "uid": "618e04a05d35f8e0e28989d2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D01_S05|rpy_literal|r13_v111_room_compare|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

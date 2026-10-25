@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:229:101",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        14468,
+        14518
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_final_rescue",
+      "block": "r13_final_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:229:101",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "엄마와 장치를 다루는 사람들이 관을 떼어 냈다. 그사이 보리가 아이를 수레에서 내렸다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 229,
+          "label": "r13_final_rescue",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 229,
+      "scene_title": "r13_final_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "538b3928c703ede3bb7127a57defaa0d2e5fcbad49a75b1a0c17cc055f9fb204",
+      "uid": "9833beb4eb2d90875aa98f1a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_final_rescue|rpy_literal|r13_final_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

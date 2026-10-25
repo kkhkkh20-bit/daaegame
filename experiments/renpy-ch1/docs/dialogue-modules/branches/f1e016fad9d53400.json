@@ -1,0 +1,85 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:228:26",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        12914,
+        12957
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_nt_ttadak_signal",
+      "block": "r13_nt_ttadak_signal",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:228:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "여관 뒤에서 망치 소리가 났다. 따닥이 처마 밑 판자에 못을 박고 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 228,
+          "label": "r13_nt_ttadak_signal",
+          "guards": []
+        }
+      ],
+      "line": 228,
+      "scene_title": "r13_nt_ttadak_signal",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "b465d74753a9e1e81323089778f4d17efbb358ab7349e9dd11298289749cf538",
+      "uid": "029ee0a91507ee20359c1996",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_nt_ttadak_signal|rpy_literal|r13_nt_ttadak_signal|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:242:36",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        14044,
+        14101
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_nt_ttadak_signal",
+      "block": "r13_nt_ttadak_signal",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:242:36",
+      "when": null,
+      "speaker": "resident_tok",
+      "kind": "dialogue",
+      "text": "오늘 밤 제가 박아 둘게요. 따닥이 판자 반 치씩 길게 자르는 버릇, 저는 아직 못 고쳐 줬거든요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 242,
+          "label": "r13_nt_ttadak_signal",
+          "guards": [
+            "menu:",
+            "if r13_has(\"tok_cleared\") and not r13_has(\"tok_detained\"):"
+          ]
+        }
+      ],
+      "line": 242,
+      "scene_title": "r13_nt_ttadak_signal",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "1601d072282749474c85e31ba88f0921d0f158e4bc4dc625c3647d890ff11461",
+      "uid": "d9bd9ea394a62ec4b8ef324e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_nt_ttadak_signal|rpy_literal|r13_nt_ttadak_signal|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

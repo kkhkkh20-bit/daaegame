@@ -1,0 +1,919 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D06_S03_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S03_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S03_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[화면] 학교 문을 나서자 눈 위로 붉은 빛이 번진다. 다람이 내 팔을 세게 잡는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-3. 해 질 무렵 / 창고 바깥 — 먼저 꺼낼 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1cc90d7e6a199d9471df482ce007a06563c1fc560e41102376bdb99a4df47f1a",
+      "uid": "73feda4d0a3c023f68097c37",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S03_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S03_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S03_L0002",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "저기, 우리 깡통.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 279,
+          "label": "r13_v111_fire6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-3. 해 질 무렵 / 창고 바깥 — 먼저 꺼낼 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b8420628440ba9306bfef7d789244fd55b9677aacef50b3174370804eae414de",
+      "uid": "6b612b5ae73daea0ef70dcab",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S03_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S03_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S03_L0003",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "종소리가 아니다. 철판이 열에 뒤틀려 터지는 소리다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 280,
+          "label": "r13_v111_fire6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-3. 해 질 무렵 / 창고 바깥 — 먼저 꺼낼 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "00dc75e05147c50b23428169eed9cb633cfd6995ef1deb74d38d694ba751d43b",
+      "uid": "0286736018092a0c70fc76cc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S03_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S03_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S03_L0004",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "옆으로! 문 앞은 안 돼!",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 281,
+          "label": "r13_v111_fire6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-3. 해 질 무렵 / 창고 바깥 — 먼저 꺼낼 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ba826ea44ac39d36a5f5ed429e0033bc45982879d3dc4358fc18578ea9e7e16c",
+      "uid": "24735110e7484ec782fdcb6a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S03_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S03_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S03_L0005",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "보리가 아이 하나를 안고 뛰어나온다. 그의 뒤로 두 아이가 젖은 천을 뒤집어쓰고 기어 나온다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 282,
+          "label": "r13_v111_fire6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-3. 해 질 무렵 / 창고 바깥 — 먼저 꺼낼 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "01b9a595a29779829bf6c0103f2e58731710f24a3e2de39802b5087eb797ca08",
+      "uid": "d6381c0e9019424844e7646b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S03_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S03_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S03_L0006",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다람아, 선생님한테 가. 돌아오지 마.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 283,
+          "label": "r13_v111_fire6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-3. 해 질 무렵 / 창고 바깥 — 먼저 꺼낼 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e1524a9cf2efad8caec8083556b7e30b44d19658573faa54a57e5a333a6fea07",
+      "uid": "facb451a375326e190e61248",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S03_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S03_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S03_L0007",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "꼬미는?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 284,
+          "label": "r13_v111_fire6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-3. 해 질 무렵 / 창고 바깥 — 먼저 꺼낼 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "49dc67b392275879cc31e5bcab261349627d4831d2c1929aad8db102c283e222",
+      "uid": "6b0fce0cf9e999f3f4664419",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S03_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S03_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S03_L0008",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "내가 찾을게. 너는 저 애들 손 잡고 가.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 285,
+          "label": "r13_v111_fire6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-3. 해 질 무렵 / 창고 바깥 — 먼저 꺼낼 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fd53ba68c6a143cd727ad1d261fb3dd461d6dd9d2fae6200434bc53d72755535",
+      "uid": "0acd30020da4155d56c3b2f7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S03_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S03_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S03_L0009",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[조작] 다람과 구조된 아이들을 학교 쪽으로 이동시킨 뒤 구조에 합류한다. 불 속으로 아이를 보내는 선택은 없다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-3. 해 질 무렵 / 창고 바깥 — 먼저 꺼낼 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "61f5c72a9b4c07eaaa8b09a4a7134cd3ab100fd3d6611acd88a1044b566eb4f7",
+      "uid": "681333567e8544f7754b2ea2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S03_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S03_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S03_L0010",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "안쪽 받침대 밑이야. 내가 봤어. 그런데 들보가—",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 287,
+          "label": "r13_v111_fire6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-3. 해 질 무렵 / 창고 바깥 — 먼저 꺼낼 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ab96146fdb109503f187ad98578185d2f2411e6a96d0cf53c3ab71bc6e327261",
+      "uid": "6f8ccd8af4ebc4656d8ee8ad",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S03_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S03_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S03_L0011",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[조작] 물통을 받아 천 적시기 → 보리에게 건네기 → 옆문 장작 밀어내기. 각 입력 뒤 화면은 조금씩 가까워지지만, 열린 통로와 쓰러지는 지붕을 함께 보여 준다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-3. 해 질 무렵 / 창고 바깥 — 먼저 꺼낼 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c877d407b38b3a2f9cd4d3f90d10d88893996d1305357462a6a4b5ab21e1ab67",
+      "uid": "d37ca46b6719d07715c5919f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S03_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S03_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S03_L0012",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "꼬미야! 내 목소리 들리니!",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 307,
+          "label": "r13_v111_rescue_done6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-3. 해 질 무렵 / 창고 바깥 — 먼저 꺼낼 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "548e95a3f344565286f6e926b96b6c3c2d70627200aa4f0bdaff963f3d2c1b7f",
+      "uid": "c2e13fe32a70045793fe0351",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S03_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S03_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S03_L0013",
+      "when": null,
+      "speaker": "꼬미",
+      "kind": "dialogue",
+      "text": "……깡통!",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 308,
+          "label": "r13_v111_rescue_done6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-3. 해 질 무렵 / 창고 바깥 — 먼저 꺼낼 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4f304fcd6ae48c9800eb38b15957bbcc503a942dbb96a3e8dcef2a03bbb2565c",
+      "uid": "39aee79a4f0152fc9b894027",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S03_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S03_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S03_L0014",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그거 두고 나와!",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 309,
+          "label": "r13_v111_rescue_done6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-3. 해 질 무렵 / 창고 바깥 — 먼저 꺼낼 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f9505c093571c13158b4bdfc7e9c4b0bd815ac45f9f4a28825c2422ef4584a12",
+      "uid": "a1f9b8a798297cd833d8e5b4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S03_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S03_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S03_L0015",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "들보가 떨어진다. 보리가 내 허리를 붙잡아 뒤로 끌어낸다. 반대쪽 벽이 안으로 주저앉는다. 소리가 끊긴다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 310,
+          "label": "r13_v111_rescue_done6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-3. 해 질 무렵 / 창고 바깥 — 먼저 꺼낼 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0bc20111317303424ada1208327b64cc6c51cdf6cf4b2bacab9f6a90592c68dc",
+      "uid": "bfc5756ecf92b037d5b11a50",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S03_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S03_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S03_L0016",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "놓으시오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 311,
+          "label": "r13_v111_rescue_done6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-3. 해 질 무렵 / 창고 바깥 — 먼저 꺼낼 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d767b5c412e3f88da3e9dd047bcca476e60bcc806838eed53d01168812a0d665",
+      "uid": "3b9e670f75f89b83d41f315e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S03_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S03_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S03_L0017",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "길이 없어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 312,
+          "label": "r13_v111_rescue_done6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-3. 해 질 무렵 / 창고 바깥 — 먼저 꺼낼 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "79c2ee49440d70c36a836143a9275b41c6ae9e7cc9dc1b0a032f646ef2bb3830",
+      "uid": "d4937073c2e27060f64b22f6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S03_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S03_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S03_L0018",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "놓으라고!",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 313,
+          "label": "r13_v111_rescue_done6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-3. 해 질 무렵 / 창고 바깥 — 먼저 꺼낼 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "56b77465f6b413a1f1d46977fb0e06a9ecfdb3aec732a8d76a8b2320610a9f8d",
+      "uid": "2835d5db0f922062a763d30b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S03_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S03_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S03_L0019",
+      "when": null,
+      "speaker": "보리",
+      "kind": "dialogue",
+      "text": "없어! 나도 들어가고 싶다고!",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 314,
+          "label": "r13_v111_rescue_done6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-3. 해 질 무렵 / 창고 바깥 — 먼저 꺼낼 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "97ec3493e71e5f7b6f87ffa539b9a2031a5510fd96a1b21415f1ffaadef5bdba",
+      "uid": "6f6254e91f53bd5158171ee7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S03_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S03_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S03_L0020",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "보리의 손이 내 옷에서 미끄러진다. 손바닥 껍질이 벗겨져 있다. 나는 다시 두 걸음 갔다가 열기 때문에 눈을 감는다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 315,
+          "label": "r13_v111_rescue_done6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-3. 해 질 무렵 / 창고 바깥 — 먼저 꺼낼 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f6721ba39a14dc4a608c792065af71726daaadb7c68d684853c548577e6e4119",
+      "uid": "576c2d568a8d15b52aeb9e2d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S03_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S03_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S03_L0021",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[정적] 구조 불가능이 확인된 후에는 반복 클릭으로 생존을 암시하지 않는다. 일찍 문을 비우고 실제 대피를 마친 경로에서는 이 장면 대신 빈 창고 화재를 진압하며 네 아이 모두 학교에 있다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-3. 해 질 무렵 / 창고 바깥 — 먼저 꺼낼 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e20b49f4fcc28a21a3485f8f7c59967b027cdcf63e5764b851f0a2bf5bc1af7a",
+      "uid": "388006f81ff728414f3b0c53",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S03_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S03_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S03_L0022",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: KKOMI_ALIVE=false; warehouse_children_rescued=3; DARAM_location=school; BORI_hands=burned; D06_S03_main_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-3. 해 질 무렵 / 창고 바깥 — 먼저 꺼낼 것",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "05096378ff0977c65fd3f8351047ad49f821d203830fa814020fce00cfd047cf",
+      "uid": "58e4be6a22a578366b46cd3f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:528:41",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        28451,
+        28488
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_ep1_aftermath",
+      "block": "r13_ep1_aftermath",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:528:41",
+      "when": null,
+      "speaker": "resident_ubak",
+      "kind": "dialogue",
+      "text": "조각을 돌려놔도 오래 따뜻하지 않아요. 돌 자체가 식고 있어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 528,
+          "label": "r13_ep1_aftermath",
+          "guards": [
+            "if r13_has(\"know_stone_failing\") and r13_has(\"madam_store_opened\") and r13_has(\"tok_cleared\"):"
+          ]
+        }
+      ],
+      "line": 528,
+      "scene_title": "r13_ep1_aftermath",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "90a569c610dddb4ef1e428466ddc8c51ac62dadcb5c73179b80339077388de11",
+      "uid": "d1fd6509490e871dae5cff04",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_ep1_aftermath|rpy_literal|r13_ep1_aftermath|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:533:21",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        28786,
+        28808
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_ep1_aftermath",
+      "block": "r13_ep1_aftermath",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:533:21",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "……아빠. 이 책, 이제 안 읽을래.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 533,
+          "label": "r13_ep1_aftermath",
+          "guards": [
+            "if r13_has(\"piko_dead\"):"
+          ]
+        }
+      ],
+      "line": 533,
+      "scene_title": "r13_ep1_aftermath",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "14e7ee7ab8a4b332d480560c5dce63c6588c88fa1b4f1214eae392a862246387",
+      "uid": "18527535f63e94d75beb88c8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_ep1_aftermath|rpy_literal|r13_ep1_aftermath|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:539:21",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        29116,
+        29134
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_ep1_aftermath",
+      "block": "r13_ep1_aftermath",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:539:21",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "아빠, 이번엔 끝이 바뀌었어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 539,
+          "label": "r13_ep1_aftermath",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 539,
+      "scene_title": "r13_ep1_aftermath",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "754cf9a7f7d0c5a53ff5f5b7ba63e549e0b14333e01394c2aafa8df1aad625d6",
+      "uid": "0a44c64075b9ea13853da345",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_ep1_aftermath|rpy_literal|r13_ep1_aftermath|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

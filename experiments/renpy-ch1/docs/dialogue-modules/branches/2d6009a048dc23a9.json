@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:420:30",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        23234,
+        23290
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_library_dawn",
+      "block": "r13_ep1_library_dawn",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:420:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "기록실 사서 선생님이 밤새 앓다가 진료소로 옮겨졌다는 말을 들었다. 난로 조각은 사라졌다고 했다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 420,
+          "label": "r13_ep1_library_dawn",
+          "guards": [
+            "elif r13_has(\"lt_lib_ill\"):"
+          ]
+        }
+      ],
+      "line": 420,
+      "scene_title": "r13_ep1_library_dawn",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "61bd68522ec3c433410db37708e58f1f8d004e220224a159948ef4edf1e8023e",
+      "uid": "baf251f88171f0162594a8cb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_library_dawn|rpy_literal|r13_ep1_library_dawn|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:425:30",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        23491,
+        23523
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_library_dawn",
+      "block": "r13_ep1_library_dawn",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:425:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "난로가 꺼져 있었다. 조각이 있던 자리가 비어 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 425,
+          "label": "r13_ep1_library_dawn",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 425,
+      "scene_title": "r13_ep1_library_dawn",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "fae2f1411576a0a4fbb9a13f640b802cf5396d95674587cb09e46006bac4e071",
+      "uid": "fabfc1f876293387d7cfce9e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_library_dawn|rpy_literal|r13_ep1_library_dawn|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

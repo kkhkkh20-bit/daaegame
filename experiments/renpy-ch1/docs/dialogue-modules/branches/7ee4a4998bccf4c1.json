@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_week2_events.rpy:168:38",
+      "file": "game/systems/room13_week2_events.rpy",
+      "path": [
+        9056,
+        9096
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_w2e_buy_tools",
+      "block": "r13_w2e_buy_tools",
+      "placement": "literal",
+      "ref": "game/systems/room13_week2_events.rpy:168:38",
+      "when": null,
+      "speaker": "resident_eunho",
+      "kind": "dialogue",
+      "text": "도시로 보낼 짐은 아직 안 떠났소. 공구함을 되사려면 열여덟 냥이오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week2_events.rpy",
+          "line": 168,
+          "label": "r13_w2e_buy_tools",
+          "guards": []
+        }
+      ],
+      "line": 168,
+      "scene_title": "r13_w2e_buy_tools",
+      "source_hash": "bd106ab951275b7b2a06d9b6705a142790d202b883e7f2e6d4f37241b21c87c0",
+      "baseline_hash": "b48f0444b5eb1f443847a66ed4851eba0270c14f2148a513ad95431ff8f9fa73",
+      "uid": "fcb2a2eb60cffbc1a5ffdc85",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_w2e_buy_tools|rpy_literal|r13_w2e_buy_tools|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

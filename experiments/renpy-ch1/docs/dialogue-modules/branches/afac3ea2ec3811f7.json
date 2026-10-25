@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_OP_D07_01",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "free_open7",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "free_open7",
+      "block": "free_open7",
+      "placement": "blocks",
+      "ref": "free_open7",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "초롱이 돌아가고, 도토도 여관 방마다 돌을 갈아야 한다며 먼저 일어선다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 34,
+          "label": "r13_v111_free_day7",
+          "guards": []
+        }
+      ],
+      "scene_title": "free_open7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "c51b0d3ed2ab1908ad72d6f99cc0d903c09978fdf3ca270510f1431c5d4eac65",
+      "uid": "04163b3ff8995ec0b53171c7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|free_open7|patch|free_open7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OP_D07_02",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "free_open7",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "free_open7",
+      "block": "free_open7",
+      "placement": "blocks",
+      "ref": "free_open7",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "thought",
+      "text": "해 지려면 아직 멀었다. 쪽지의 13호는…… 저녁에 다람이와 같이 가 보자.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 34,
+          "label": "r13_v111_free_day7",
+          "guards": []
+        }
+      ],
+      "scene_title": "free_open7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "45099902b09bae8ed8ae1f02527c113cb42dc34683390f024cf0fc2ca6ddabc8",
+      "uid": "de2135205e400eae4a02a963",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|free_open7|patch|free_open7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

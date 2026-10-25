@@ -1,0 +1,166 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D14_S04_V09",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "after",
+        "MS14_D14_S04_L0015",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D14_S04_L0015",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "thought",
+      "text": "모과 씨가 어디 계신지까지 알아냈다면 좋았을 텐데.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3368,
+          "label": "r13_v111_pandol_news14",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "0508a9d8b666227a244b8e0b19f225efc12b1a048819bd625e9c116f1e24bf60",
+      "uid": "36514da52aa89b682812b467",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D14_S04_V10",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "after",
+        "MS14_D14_S04_L0025",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D14_S04_L0025",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "돌목이 빈칸 옆에 도장을 쾅쾅 두 번 찍는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3386,
+          "label": "r13_v111_supply_inventory_done14",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "26ca8ca47d810dc98baaeb80a48413e1956bce0999aa744b3c997822115de79e",
+      "uid": "456ded764a4cf6fb18c2de9b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D14_S04_V11",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "after",
+        "MS14_D14_S04_L0034",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D14_S04_L0034",
+      "when": null,
+      "speaker": "부엉이",
+      "kind": "dialogue",
+      "text": "흠. 적어 두게.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3428,
+          "label": "r13_v111_owl_alive14",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "a219881f0be2e33d17e477e576cbad305c35a86c7a27fa91182df3803b6614ad",
+      "uid": "481604e1de5b554cd20b7562",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D14_S04_MB01",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "after",
+        "MS14_D14_S04_L0022",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "MS14_D14_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D14_S04_L0022",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "백 부인이 제 앞으로 당겨 두었던 장부를 탁자 가운데로 민다. 그리고 글씨가 맞은편에서 읽히도록 한 번 돌려 놓는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3395,
+          "label": "r13_v111_madam_inventory14",
+          "guards": [
+            "if r13_v111_actor_ready('resident_madam'):"
+          ]
+        }
+      ],
+      "scene_title": "장면 14-4. 이름판 아래의 그릇",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "91a93a94517e52b7bb23d2154bc9e19acb62a916c1f8225a897dedaca82aacbd",
+      "uid": "ccd3abe0ca57672c7e527913",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

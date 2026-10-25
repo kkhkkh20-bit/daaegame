@@ -1,0 +1,126 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:367:33",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        18372,
+        18407
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_ep2_decision",
+      "block": "r13_ep2_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:367:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "……무쇠 할아버지야. 아파서 그래. 일부러 그런 거 아니야.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 367,
+          "label": "r13_ep2_decision",
+          "guards": [
+            "if _kd_pick==\"name\":"
+          ]
+        }
+      ],
+      "line": 367,
+      "scene_title": "r13_ep2_decision",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "90b5018d371f8d8c99c28a7eb83d34bdfb9db8cd019f80e4ae17255fada29de5",
+      "uid": "2c971eb63fe5be806001c193",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_ep2_decision|rpy_literal|r13_ep2_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:372:33",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        18633,
+        18658
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_ep2_decision",
+      "block": "r13_ep2_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:372:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "서리 선생님한테 데려가 줘. 보호소 말고.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 372,
+          "label": "r13_ep2_decision",
+          "guards": [
+            "elif _kd_pick==\"seori\":"
+          ]
+        }
+      ],
+      "line": 372,
+      "scene_title": "r13_ep2_decision",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "c95809278d8a2be548902117d4a4068c91f6ff679a3980d16871642b76fd2c87",
+      "uid": "aa8c1fb984f50a08bfbf4f9d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_ep2_decision|rpy_literal|r13_ep2_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:379:33",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        18968,
+        18990
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_ep2_decision",
+      "block": "r13_ep2_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:379:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "누군지는 몰라. 근데 밤이는 아니야.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 379,
+          "label": "r13_ep2_decision",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 379,
+      "scene_title": "r13_ep2_decision",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "ebc784e7845dde8a412642ba3a49054d3189467ab0c62ecaeba54a306b80503a",
+      "uid": "a2f61825b8108a8128acfb7d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_ep2_decision|rpy_literal|r13_ep2_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

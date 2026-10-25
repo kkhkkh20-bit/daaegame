@@ -1,0 +1,129 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_A1_H01",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "altar1_half14",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "altar1_half14",
+      "block": "altar1_half14",
+      "placement": "blocks",
+      "ref": "altar1_half14",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "학교 장작 묶음은 선생님이 받아 갔습니다. 그 인수 기록입니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2933,
+          "label": "r13_v111_altar1_wrong14",
+          "guards": [
+            "if v111_altar_half:"
+          ]
+        }
+      ],
+      "scene_title": "altar1_half14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "42f81acf2c879b1e363d1ee62725291a1324dacd70ff03033d5eb188cf61772e",
+      "uid": "2e9448a1c3babc2f4be8ad79",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|altar1_half14|patch|altar1_half14|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_A1_H02",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "altar1_half14",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "altar1_half14",
+      "block": "altar1_half14",
+      "placement": "blocks",
+      "ref": "altar1_half14",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "장작 몇 묶음이오. 장작은 어디서 나오오? 다음 겨울에도 그걸로 버틸 거요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2933,
+          "label": "r13_v111_altar1_wrong14",
+          "guards": [
+            "if v111_altar_half:"
+          ]
+        }
+      ],
+      "scene_title": "altar1_half14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "0b434c3b13b78befe30a99a63c7bd7794db25dc17e8c1fa51485d009f6b09c84",
+      "uid": "93d3d740a5d885e54bdced17",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|altar1_half14|patch|altar1_half14|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_A1_H03",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "altar1_half14",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "altar1_half14",
+      "block": "altar1_half14",
+      "placement": "blocks",
+      "ref": "altar1_half14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "장작 창고의 숫자는 너울의 장부에 있다. 그 장부는 내 손에 없다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2933,
+          "label": "r13_v111_altar1_wrong14",
+          "guards": [
+            "if v111_altar_half:"
+          ]
+        }
+      ],
+      "scene_title": "altar1_half14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "a7f812659ef12d750397944e34ea75e5d659379fc69e02b37479b75c8dc4588c",
+      "uid": "edda0b728dc57c5669104e4e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|altar1_half14|patch|altar1_half14|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

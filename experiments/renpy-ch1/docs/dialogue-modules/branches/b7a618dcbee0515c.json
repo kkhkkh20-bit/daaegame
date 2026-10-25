@@ -1,0 +1,406 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events.rpy:251:34",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        13513,
+        13553
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_ev_b_caught",
+      "block": "r13_ev_b_caught",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:251:34",
+      "when": null,
+      "speaker": "resident_madam",
+      "kind": "dialogue",
+      "text": "도둑질한 그 애는 너울에게 넘기세요. 버릇을 단단히 고쳐 놔야 해요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 251,
+          "label": "r13_ev_b_caught",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 251,
+      "scene_title": "r13_ev_b_caught",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "4ba8f6945acfdf0ac9e012f742f301e07004c2a39b675ac76877913b60c03dd3",
+      "uid": "63927abff038b3f623061757",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_ev_b_caught|rpy_literal|r13_ev_b_caught|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:263:34",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        14294,
+        14353
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_ev_b_caught",
+      "block": "r13_ev_b_caught",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:263:34",
+      "when": null,
+      "speaker": "resident_eunho",
+      "kind": "dialogue",
+      "text": "백 부인 창고 물건이구려. 값은 쳐 드리리다. 열여덟 냥. 대신 이 일은 우리 둘만 아는 걸로 합시다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 263,
+          "label": "r13_ev_b_caught",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 263,
+      "scene_title": "r13_ev_b_caught",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "cbd31fcb823eada094f9140e040c0a0802aa4859b945c5d8762a371e7a757b5c",
+      "uid": "d5da04976823d2d96fe310d2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_ev_b_caught|rpy_literal|r13_ev_b_caught|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:268:34",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        14661,
+        14704
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_ev_b_caught",
+      "block": "r13_ev_b_caught",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:268:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "골목 끝 집은 차가웠다. 무쇠 할아버지는 이불을 둘둘 감고도 떨고 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 268,
+          "label": "r13_ev_b_caught",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 268,
+      "scene_title": "r13_ev_b_caught",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "ad69485e7d4512b3c9f49ed3dd120e11403b55beeee1779d80291906a66e4ed0",
+      "uid": "7622893fa56e1134373af8b5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_ev_b_caught|rpy_literal|r13_ev_b_caught|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:269:34",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        14741,
+        14760
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_ev_b_caught",
+      "block": "r13_ev_b_caught",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:269:34",
+      "when": null,
+      "speaker": "resident_musoe",
+      "kind": "dialogue",
+      "text": "……이거, 남의 창고 물건이오?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 269,
+          "label": "r13_ev_b_caught",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 269,
+      "scene_title": "r13_ev_b_caught",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "3efde8ea1c38db9eb6d8916daf2cf0c9e991cb8fc26bf8264ac745c514622685",
+      "uid": "1aa5888dd2666403fce14152",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_ev_b_caught|rpy_literal|r13_ev_b_caught|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:272:34",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        14927,
+        14983
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_ev_b_caught",
+      "block": "r13_ev_b_caught",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:272:34",
+      "when": null,
+      "speaker": "resident_musoe",
+      "kind": "dialogue",
+      "text": "폐광 지도요. 눈이 크게 오면 그 폐광 굴 말고는 바람 피할 데가 없소. 빚은 이 지도로 갚겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 272,
+          "label": "r13_ev_b_caught",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 272,
+      "scene_title": "r13_ev_b_caught",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "a274520718efd38be7bdef58f8885a443df88bf1a62514b75cdc32305be49e96",
+      "uid": "a6560c55868f18a3b7f1748d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_ev_b_caught|rpy_literal|r13_ev_b_caught|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:276:34",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        15201,
+        15241
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_ev_b_caught",
+      "block": "r13_ev_b_caught",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:276:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "진료실에서 서리 검사원은 꾸러미를 저울에 올리고 묶음을 하나씩 셌다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 276,
+          "label": "r13_ev_b_caught",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 276,
+      "scene_title": "r13_ev_b_caught",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "0a8963e9ca712c2d7a63e4be415775280e19cc763f217a256e3cbed5f03819b8",
+      "uid": "9f13517228f9746046af5c11",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_ev_b_caught|rpy_literal|r13_ev_b_caught|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:277:34",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        15278,
+        15331
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_ev_b_caught",
+      "block": "r13_ev_b_caught",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:277:34",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "창고 도장, 해열 약초 서른두 묶음. 도장 날짜가 마을에 약이 없다고 보고된 날과 같습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 277,
+          "label": "r13_ev_b_caught",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 277,
+      "scene_title": "r13_ev_b_caught",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "26bf18bd77e2d249d5a85752e5adc535247434df3957c35a8ec2517cab401901",
+      "uid": "10b24d0c635b4f2a6348a1a8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_ev_b_caught|rpy_literal|r13_ev_b_caught|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:278:34",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        15368,
+        15422
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_ev_b_caught",
+      "block": "r13_ev_b_caught",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:278:34",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "아이는 처벌하지 않고 진술만 기록으로 남기겠습니다. 약 일부는 여기서 아이 할아버지께 쓰지요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 278,
+          "label": "r13_ev_b_caught",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 278,
+      "scene_title": "r13_ev_b_caught",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "02700a1dfc9bb862a6f4c4fea2efa4561d4e28519527de47e6be47403bb4bf11",
+      "uid": "80864594c91625032fc71875",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_ev_b_caught|rpy_literal|r13_ev_b_caught|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:284:34",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        15813,
+        15842
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_ev_b_caught",
+      "block": "r13_ev_b_caught",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:284:34",
+      "when": null,
+      "speaker": "resident_madam",
+      "kind": "dialogue",
+      "text": "……이게 다예요? 약초 묶음이 모자란 것 같은데.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 284,
+          "label": "r13_ev_b_caught",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 284,
+      "scene_title": "r13_ev_b_caught",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "150eaec789272015ecbe942043ed78bdebc16acfcd90de555d6054ad6aa94690",
+      "uid": "143977e915c52584987bd1a2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_ev_b_caught|rpy_literal|r13_ev_b_caught|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:286:34",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        15922,
+        15948
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_ev_b_caught",
+      "block": "r13_ev_b_caught",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:286:34",
+      "when": null,
+      "speaker": "resident_madam",
+      "kind": "dialogue",
+      "text": "흥. 그럼 다섯 냥이에요. 반만 찾았으니까.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 286,
+          "label": "r13_ev_b_caught",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 286,
+      "scene_title": "r13_ev_b_caught",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "822fc8fdf4d4933eefdc9ea4e7b6d306e7d3981aa5d632fe8d7f1659e70f1464",
+      "uid": "8182291d7966225206f89f66",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_ev_b_caught|rpy_literal|r13_ev_b_caught|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

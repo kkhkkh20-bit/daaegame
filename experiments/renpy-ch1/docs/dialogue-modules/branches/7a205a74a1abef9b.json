@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_v111_days123.rpy:330:67",
+      "file": "game/room13_v111_days123.rpy",
+      "path": [
+        15316,
+        15358
+      ],
+      "origin": "rpy_inventory",
+      "day": 7,
+      "scene": "MS14_D01_S05",
+      "block": "r13_v111_room_observe",
+      "placement": "literal",
+      "ref": "game/room13_v111_days123.rpy:330:67",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "아내가 머물던 방이다. 다람이와 함께, 남겨 둔 흔적을 천천히 살펴보자.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 330,
+          "label": "r13_v111_room_observe",
+          "guards": [
+            "if not r13_v111_value('ui_room_arrival_seen'):"
+          ]
+        }
+      ],
+      "line": 330,
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "456f94ff2e8310cc392465f4cf6e8b4751192ba306a52edeb7646cb6546fd0ef",
+      "baseline_hash": "e02f980a3683df556a61b613fb88e9229703cb13459a900b9fb4f3ee5ca8adc8",
+      "uid": "836aabf1cdda35058ab071cb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D01_S05|rpy_inventory|r13_v111_room_observe|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

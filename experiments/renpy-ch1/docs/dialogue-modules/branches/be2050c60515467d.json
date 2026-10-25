@@ -1,0 +1,129 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_K2_CAN_LOOK6_0",
+      "file": "game/v111/newworld/d06.json",
+      "path": [
+        "blocks",
+        "can_look6",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 6,
+      "scene": "can_look6",
+      "block": "can_look6",
+      "placement": "blocks",
+      "ref": "can_look6",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "장작더미 옆에 매단 깡통 줄이 문고리까지 이어져 있다. 안에는 도토리가 몇 알 들었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 141,
+          "label": "r13_v111_afternoon6",
+          "guards": [
+            "if v111_answer==80:"
+          ]
+        }
+      ],
+      "scene_title": "can_look6",
+      "source_hash": "34df23f41d57916ce5b839de420f86f588f2b883338565904ffc098b14cca2db",
+      "baseline_hash": "dc0d8c42bbfe2c7c9cc60545e3811811fdfc1c9c335a875c11ab090cce9a1405",
+      "uid": "01af567a13bcd37222778a6f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|can_look6|patch|can_look6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_K2_CAN_LOOK6_1",
+      "file": "game/v111/newworld/d06.json",
+      "path": [
+        "blocks",
+        "can_look6",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 6,
+      "scene": "can_look6",
+      "block": "can_look6",
+      "placement": "blocks",
+      "ref": "can_look6",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "문 열 때마다 도토리도 덜컹거리겠네.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 141,
+          "label": "r13_v111_afternoon6",
+          "guards": [
+            "if v111_answer==80:"
+          ]
+        }
+      ],
+      "scene_title": "can_look6",
+      "source_hash": "34df23f41d57916ce5b839de420f86f588f2b883338565904ffc098b14cca2db",
+      "baseline_hash": "bbc1ab0d5e215c9991ef54766910e6a95d18098e548bea10350657389dac8357",
+      "uid": "62966b733c30c0d5338c05b6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|can_look6|patch|can_look6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_K2_CAN_LOOK6_2",
+      "file": "game/v111/newworld/d06.json",
+      "path": [
+        "blocks",
+        "can_look6",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 6,
+      "scene": "can_look6",
+      "block": "can_look6",
+      "placement": "blocks",
+      "ref": "can_look6",
+      "when": null,
+      "speaker": "꼬미",
+      "kind": "dialogue",
+      "text": "우리 거야. 소리도 우리 거고.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 141,
+          "label": "r13_v111_afternoon6",
+          "guards": [
+            "if v111_answer==80:"
+          ]
+        }
+      ],
+      "scene_title": "can_look6",
+      "source_hash": "34df23f41d57916ce5b839de420f86f588f2b883338565904ffc098b14cca2db",
+      "baseline_hash": "dab7f11436d54445d86585470ef074a5bfca7a11c515e1e9df2747d41f6d80a1",
+      "uid": "8cc8389d7f3d0952691f27b7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|can_look6|patch|can_look6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

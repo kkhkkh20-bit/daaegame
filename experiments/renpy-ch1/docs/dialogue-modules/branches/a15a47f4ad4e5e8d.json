@@ -1,0 +1,454 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "rescue_cart11:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "rescue_cart11",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 11,
+      "scene": "rescue_cart11",
+      "block": "rescue_cart11",
+      "placement": "binding",
+      "ref": "rescue_cart11:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "수레를 끌고 아랫길로 간다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "square",
+        "person": null,
+        "object": "cart"
+      },
+      "scene_title": "rescue_cart11",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "35fe7f1874c12247d07f85062a9a41d9add517ce04b5f1b90af71a750011492e",
+      "uid": "50ca78487ccd10cfdef0ef1a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|rescue_cart11|choice|rescue_cart11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "rescue_cart11:1",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "rescue_cart11",
+        "options",
+        1,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 11,
+      "scene": "rescue_cart11",
+      "block": "rescue_cart11",
+      "placement": "binding",
+      "ref": "rescue_cart11:1",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "수레 짐칸을 살핀다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "grand_bowl_seen11",
+            null
+          ]
+        ],
+        "location": "square",
+        "person": null,
+        "object": "cart"
+      },
+      "scene_title": "rescue_cart11",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "f78db4853f5f67c8f42c1815538ae405a1ca808acc61c281f650e19df1d25aeb",
+      "uid": "3f10edd5da210a86d0bd248b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|rescue_cart11|choice|rescue_cart11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "rescue_cart11:2",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "rescue_cart11",
+        "options",
+        2,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 11,
+      "scene": "rescue_cart11",
+      "block": "rescue_cart11",
+      "placement": "binding",
+      "ref": "rescue_cart11:2",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "그릇 하나를 집는다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "grand_bowl_seen11",
+            true
+          ],
+          [
+            "state",
+            "grand_bowl_pocket",
+            null
+          ]
+        ],
+        "location": "square",
+        "person": null,
+        "object": "cart"
+      },
+      "scene_title": "rescue_cart11",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "510270ddf925acab99fed81e3bfd3312757439018462ca531ffd8a5ec17ba296",
+      "uid": "1c4cf68107a6cbb359ae7bb6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|rescue_cart11|choice|rescue_cart11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "rescue_cart11:3",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "rescue_cart11",
+        "options",
+        3,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 11,
+      "scene": "rescue_cart11",
+      "block": "rescue_cart11",
+      "placement": "binding",
+      "ref": "rescue_cart11:3",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "짐칸을 다시 본다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "grand_bowl_seen11",
+            true
+          ],
+          [
+            "state",
+            "grand_bowl_pocket",
+            null
+          ]
+        ],
+        "location": "square",
+        "person": null,
+        "object": "cart"
+      },
+      "scene_title": "rescue_cart11",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "5ae8b8eeb520cd66cf5717b2205cf13178e744c5dd2fad7087cbbc3dee899991",
+      "uid": "da367636e5423653bb34709c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|rescue_cart11|choice|rescue_cart11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "rescue_cart11:80",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "rescue_cart11",
+        "options",
+        4,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 11,
+      "scene": "rescue_cart11",
+      "block": "rescue_cart11",
+      "placement": "binding",
+      "ref": "rescue_cart11:80",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "수레 짐을 내려 자리를 비운다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "rescue_cart_ready",
+            null
+          ]
+        ],
+        "location": "square",
+        "person": null,
+        "object": "cart"
+      },
+      "scene_title": "rescue_cart11",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "4b6a687cb4be1473fa23542380b892592d322ad64df1cb4c008693a0135940e2",
+      "uid": "0caf95dd64dd5c25c9ed913e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|rescue_cart11|choice|rescue_cart11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "rescue_cart11:81",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "rescue_cart11",
+        "options",
+        5,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 11,
+      "scene": "rescue_cart11",
+      "block": "rescue_cart11",
+      "placement": "binding",
+      "ref": "rescue_cart11:81",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "덮개를 접어 빈 짐칸에 싣는다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "rescue_cart_ready",
+            true
+          ],
+          [
+            "state",
+            "rescue_cover_ready",
+            null
+          ]
+        ],
+        "location": "square",
+        "person": null,
+        "object": "cart"
+      },
+      "scene_title": "rescue_cart11",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "23a123f7a3e52dcdaa9f2dd503be1f11663d9f2b4330ac8e81be947716744eb2",
+      "uid": "f1b8e0238bb9eb7c6e53b192",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|rescue_cart11|choice|rescue_cart11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "rescue_cart11:82",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "rescue_cart11",
+        "options",
+        6,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 11,
+      "scene": "rescue_cart11",
+      "block": "rescue_cart11",
+      "placement": "binding",
+      "ref": "rescue_cart11:82",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "까로에게 운반을 부탁한다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "rescue_cart_ready",
+            true
+          ],
+          [
+            "state",
+            "rescue_driver_ready",
+            null
+          ]
+        ],
+        "location": "square",
+        "person": "karo",
+        "object": null
+      },
+      "scene_title": "rescue_cart11",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "267f450a2efa0c696a8a8f6f322b34a9d0bf606bc42cbf759a54d9d04a1b558d",
+      "uid": "6655bd8ae9dd8661b0ccc0e6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|rescue_cart11|choice|rescue_cart11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "rescue_cart11:83",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "rescue_cart11",
+        "options",
+        7,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 11,
+      "scene": "rescue_cart11",
+      "block": "rescue_cart11",
+      "placement": "binding",
+      "ref": "rescue_cart11:83",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "아랫길을 비추는 등을 점검한다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "rescue_lights_ready",
+            null
+          ]
+        ],
+        "location": "square",
+        "person": null,
+        "object": "lamp"
+      },
+      "scene_title": "rescue_cart11",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "ba1beed3a8e47be1e2f14a794fbefc56cfeca5ce944a1ac4231125c5f1e9d6e7",
+      "uid": "3aea93014cc55fac38d67a52",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|rescue_cart11|choice|rescue_cart11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "rescue_cart11:84",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "rescue_cart11",
+        "options",
+        8,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 11,
+      "scene": "rescue_cart11",
+      "block": "rescue_cart11",
+      "placement": "binding",
+      "ref": "rescue_cart11:84",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "아랫길 세 사람의 받을 자리를 비운다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "rescue_school_ready11",
+            null
+          ]
+        ],
+        "location": "school",
+        "person": null,
+        "object": "blankets"
+      },
+      "scene_title": "rescue_cart11",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "f1a51440dddf23b15c48ddee6af763398f3a483ac90cd0a07f76ffcea40feef1",
+      "uid": "847d76dbd1c776b41242ae7c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|rescue_cart11|choice|rescue_cart11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "rescue_cart11:85",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "rescue_cart11",
+        "options",
+        9,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 11,
+      "scene": "rescue_cart11",
+      "block": "rescue_cart11",
+      "placement": "binding",
+      "ref": "rescue_cart11:85",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "먼저 학교 물자를 인계한다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "square",
+        "person": null,
+        "object": "cart"
+      },
+      "scene_title": "rescue_cart11",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "ba448a9a91090bee9fec70aed460c5cf75870bdeb13ba7d49c9a38926adcdf7b",
+      "uid": "e929f96a247e909ddb4d2e85",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|rescue_cart11|choice|rescue_cart11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

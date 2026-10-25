@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_SO_L_01",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "soup_lost12",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "soup_lost12",
+      "block": "soup_lost12",
+      "placement": "blocks",
+      "ref": "soup_lost12",
+      "when": "route12_late",
+      "speaker": null,
+      "kind": "narration",
+      "text": "보리가 도담 곁에서 일어나지 않는다. 아무도 보리를 일으키지 못한다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1594,
+          "label": "r13_v111_soup_lost12",
+          "guards": []
+        }
+      ],
+      "scene_title": "soup_lost12",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "1e2993303963b8563d49b0fb77878549e94b7cbe7881817b7211f2c5f302c7a0",
+      "uid": "8f4de0923fc422df5712c266",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|soup_lost12|patch|soup_lost12|route12_late",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

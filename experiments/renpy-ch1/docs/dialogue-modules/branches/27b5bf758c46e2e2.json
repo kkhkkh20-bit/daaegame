@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:449:26",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        26787,
+        26857
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_wf_meeting",
+      "block": "r13_wf_meeting",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:449:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "교실 책상을 벽으로 밀어 두었다. 보리는 손이 묶인 채 앞에 서 있었다. 살아남은 아이들이 사자 선생님 뒤에 숨어 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 449,
+          "label": "r13_wf_meeting",
+          "guards": []
+        }
+      ],
+      "line": 449,
+      "scene_title": "r13_wf_meeting",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "df108d3df3847b09c9949813dfeebe0b090c5f640b90978c89153662cb80bb32",
+      "uid": "17aff6fcf7198144f0b8b683",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_wf_meeting|rpy_literal|r13_wf_meeting|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

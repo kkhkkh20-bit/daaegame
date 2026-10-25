@@ -1,0 +1,334 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_HP_DISCOVER7_00",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_discover7",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "hp_discover7",
+      "block": "hp_discover7",
+      "placement": "blocks",
+      "ref": "hp_discover7",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "문 옆 쟁반에서 숟가락의 손잡이를 맞추고 핀을 끼운다. 놓자마자 문 안쪽에서 손 하나가 뻗어 나온다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 59,
+          "label": "r13_hp_pick7",
+          "guards": [
+            "elif n==83 and r13_hp_value('visit_allowed') and not r13_hp_value('family_seen'):"
+          ]
+        }
+      ],
+      "scene_title": "hp_discover7",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "0902f9e6ce7adbd54aa4adb291e7db88ac174738faa7f6d6d5e5ef83c844be67",
+      "uid": "b2359c11f1ffa495e50d24e0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|hp_discover7|patch|hp_discover7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HP_DISCOVER7_01",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_discover7",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "hp_discover7",
+      "block": "hp_discover7",
+      "placement": "blocks",
+      "ref": "hp_discover7",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "“그 굵은 거. 내 건 그거야.” 안쪽 여자가 손잡이를 꼭 쥔다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 59,
+          "label": "r13_hp_pick7",
+          "guards": [
+            "elif n==83 and r13_hp_value('visit_allowed') and not r13_hp_value('family_seen'):"
+          ]
+        }
+      ],
+      "scene_title": "hp_discover7",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "0194bcfa79d0518695949ef4ca29c4c57d9e1ae380478ea2787a9a26f75750ec",
+      "uid": "12825b3b6f7a41fc04f7f6db",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|hp_discover7|patch|hp_discover7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HP_DISCOVER7_02",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_discover7",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "hp_discover7",
+      "block": "hp_discover7",
+      "placement": "blocks",
+      "ref": "hp_discover7",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "안에 가족분이 계셨군요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 59,
+          "label": "r13_hp_pick7",
+          "guards": [
+            "elif n==83 and r13_hp_value('visit_allowed') and not r13_hp_value('family_seen'):"
+          ]
+        }
+      ],
+      "scene_title": "hp_discover7",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "eeb7830a7b34e98a0306a437ec31896f5ad7c532846ab2e7008f38fed532ff59",
+      "uid": "f003603bb8f29eee1dd48f07",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|hp_discover7|patch|hp_discover7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HP_DISCOVER7_03",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_discover7",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "hp_discover7",
+      "block": "hp_discover7",
+      "placement": "blocks",
+      "ref": "hp_discover7",
+      "when": null,
+      "speaker": "판돌",
+      "kind": "dialogue",
+      "text": "누나요. 자꾸 날짜를 물어요. 이름은 알아듣는데. 모과처럼 데려갈까 봐 남한테 말을 못 하겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 59,
+          "label": "r13_hp_pick7",
+          "guards": [
+            "elif n==83 and r13_hp_value('visit_allowed') and not r13_hp_value('family_seen'):"
+          ]
+        }
+      ],
+      "scene_title": "hp_discover7",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "592cc6e508ab9d79a06b3759feac58656df353c84e2b88d70706371d67ba5210",
+      "uid": "8dc310f085c23ea21213ff4e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|hp_discover7|patch|hp_discover7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HP_DISCOVER7_04",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_discover7",
+        4,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "hp_discover7",
+      "block": "hp_discover7",
+      "placement": "blocks",
+      "ref": "hp_discover7",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "누나분도 모과 씨처럼 데려갈까 봐요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 59,
+          "label": "r13_hp_pick7",
+          "guards": [
+            "elif n==83 and r13_hp_value('visit_allowed') and not r13_hp_value('family_seen'):"
+          ]
+        }
+      ],
+      "scene_title": "hp_discover7",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "a33cd08320ef58083bdc1c2ac7e040a3137cd6e6a194ac0f367c0a5807c94c70",
+      "uid": "198c34c73b7b1604d1f3b807",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|hp_discover7|patch|hp_discover7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HP_DISCOVER7_05",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_discover7",
+        5,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "hp_discover7",
+      "block": "hp_discover7",
+      "placement": "blocks",
+      "ref": "hp_discover7",
+      "when": null,
+      "speaker": "판돌",
+      "kind": "dialogue",
+      "text": "그렇소. 둘을 자꾸 찾게 되는군. 한 사람은 바로 문 안에 있는데.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 59,
+          "label": "r13_hp_pick7",
+          "guards": [
+            "elif n==83 and r13_hp_value('visit_allowed') and not r13_hp_value('family_seen'):"
+          ]
+        }
+      ],
+      "scene_title": "hp_discover7",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "85a546ae7f335c511b2302ec1d3109ae82690e6928634138bf4853a0ae9d9157",
+      "uid": "e75c1d8ee7dd565cc1a009f5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|hp_discover7|patch|hp_discover7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HP_DISCOVER7_06",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_discover7",
+        6,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "hp_discover7",
+      "block": "hp_discover7",
+      "placement": "blocks",
+      "ref": "hp_discover7",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "안쪽에서 “판돌아, 숟가락이 안 돌아간다”는 소리가 들린다. 판돌이 그제야 문턱에서 어깨를 뗀다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 59,
+          "label": "r13_hp_pick7",
+          "guards": [
+            "elif n==83 and r13_hp_value('visit_allowed') and not r13_hp_value('family_seen'):"
+          ]
+        }
+      ],
+      "scene_title": "hp_discover7",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "78f566269beaf1327b73d8dfeda9341da811ae0d9a05686d37f6a2d225e04291",
+      "uid": "f7f022c1485be48c9b6c85a9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|hp_discover7|patch|hp_discover7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HP_DISCOVER7_07",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_discover7",
+        7,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "hp_discover7",
+      "block": "hp_discover7",
+      "placement": "blocks",
+      "ref": "hp_discover7",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다행이네요. 핀 끝이 거칠면 다시 말씀해 주세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 59,
+          "label": "r13_hp_pick7",
+          "guards": [
+            "elif n==83 and r13_hp_value('visit_allowed') and not r13_hp_value('family_seen'):"
+          ]
+        }
+      ],
+      "scene_title": "hp_discover7",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "ffe8d9e5e9407eb8eff9cc2dccb580c791d568d43e892a92ef11ae41de8d134e",
+      "uid": "c2154da40b9fb5f40040eac6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|hp_discover7|patch|hp_discover7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

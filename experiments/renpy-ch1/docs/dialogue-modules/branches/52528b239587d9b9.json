@@ -1,0 +1,53 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D12_S04_L06",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "after",
+        "MS14_D12_S04_L0092",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D12_S04_L0092",
+      "when": "soup_lose_nabi_murder",
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "식당 국도 몰래 보탰다 들었소. 13호 때도 말을 바꿨소. 이번에도 그렇소?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1584,
+          "label": "r13_v111_fragment_wrong12",
+          "guards": [
+            "if r13_nw_retry(\"soup\",['E12_FRAGMENT', 'E12_SEAL', 'E12_HANDLING'],'나비가 고개를 젓는다. 파편과 봉인, 냄비를 건넨 구간을 함께 놓아야 한다.'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1590,
+          "label": "r13_v111_fragment_wrong12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "ed46a6a35e7e124fd7edae9db172e5eefa2f2c2425d686178fe5b8d2ffb623da",
+      "uid": "411611ff7abb2dabff850434",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|patch|after|soup_lose_nabi_murder",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

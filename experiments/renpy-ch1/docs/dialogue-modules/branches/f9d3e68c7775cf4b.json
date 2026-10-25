@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/winter_events.rpy:26:88",
+      "file": "game/winter_events.rpy",
+      "path": [
+        1317,
+        1354
+      ],
+      "origin": "rpy_inventory",
+      "day": 8,
+      "scene": "winter_timed_cart",
+      "block": "winter_timed_cart",
+      "placement": "literal",
+      "ref": "game/winter_events.rpy:26:88",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "춥죠? 안쪽에 가면 따뜻합니다. 손은 천 밖으로 내밀지 마세요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_events.rpy",
+          "line": 26,
+          "label": "winter_timed_cart",
+          "guards": [
+            "if winter_cart_available(winter):"
+          ]
+        }
+      ],
+      "line": 26,
+      "scene_title": "winter_timed_cart",
+      "source_hash": "c243df8d1e60cf0363929033d609f45d8b16e19ec39edab44c858674085e0fd6",
+      "baseline_hash": "6b9b900567172282c4e82d681602b8e261a80cfb6c7789ba3b91615737ff3236",
+      "uid": "de74ab845e76df75fabac572",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|winter_timed_cart|rpy_inventory|winter_timed_cart|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_events.rpy:40:88",
+      "file": "game/winter_events.rpy",
+      "path": [
+        2592,
+        2610
+      ],
+      "origin": "rpy_inventory",
+      "day": 8,
+      "scene": "winter_timed_cart",
+      "block": "winter_timed_cart",
+      "placement": "literal",
+      "ref": "game/winter_events.rpy:40:88",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "여긴 아무도 안 지나갔나 봐.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_events.rpy",
+          "line": 40,
+          "label": "winter_timed_cart",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 40,
+      "scene_title": "winter_timed_cart",
+      "source_hash": "c243df8d1e60cf0363929033d609f45d8b16e19ec39edab44c858674085e0fd6",
+      "baseline_hash": "4da2a1a5fee3eacea58bf61eb0ef2cbfd5d2b8bf88e64c2541d55aeda3fadecc",
+      "uid": "a2ada16957586a14c11d83a6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|winter_timed_cart|rpy_inventory|winter_timed_cart|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

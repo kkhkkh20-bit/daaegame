@@ -1,0 +1,123 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_H_CH_01",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "blocks",
+        "hyp_chief11",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "hyp_chief11",
+      "block": "hyp_chief11",
+      "placement": "blocks",
+      "ref": "hyp_chief11",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "학교 문이 열린다. 촌장이 문간에 선다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 835,
+          "label": "r13_v111_hyp5_won11",
+          "guards": []
+        }
+      ],
+      "scene_title": "hyp_chief11",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "8ceccd9a9f20b4b86e2a6acc87a218c698c74c953f1694e5c37e0cdcb930dc91",
+      "uid": "2cd1a7d7f67792edca547761",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|hyp_chief11|patch|hyp_chief11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_H_CH_02",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "blocks",
+        "hyp_chief11",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "hyp_chief11",
+      "block": "hyp_chief11",
+      "placement": "blocks",
+      "ref": "hyp_chief11",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "아르카를 끄라는 것은 아르카를 버리라는 말이오. 손님이 우리 불을 꺼서 무엇을 얻겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 835,
+          "label": "r13_v111_hyp5_won11",
+          "guards": []
+        }
+      ],
+      "scene_title": "hyp_chief11",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "411cb37b2f349538dec45055ac3d7194aa038a85f5bb1ddcf86b9004cc38a42a",
+      "uid": "d1876d0a92193fba43027ed2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|hyp_chief11|patch|hyp_chief11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_H_CH_03",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "blocks",
+        "hyp_chief11",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "hyp_chief11",
+      "block": "hyp_chief11",
+      "placement": "blocks",
+      "ref": "hyp_chief11",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "얻을 건 없습니다. 오늘 밤 아이들이 날짜를 덜 잊으면 그걸로 됩니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 835,
+          "label": "r13_v111_hyp5_won11",
+          "guards": []
+        }
+      ],
+      "scene_title": "hyp_chief11",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "502ed1121bbc24b364c37abb306292e5533574e737088f893a457dd6f578436a",
+      "uid": "0c79262549ff496d6cdc1c06",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|hyp_chief11|patch|hyp_chief11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

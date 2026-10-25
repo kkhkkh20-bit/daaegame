@@ -1,0 +1,170 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_LA_LA_STORE3_0",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_store3",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "la_store3",
+      "block": "la_store3",
+      "placement": "blocks",
+      "ref": "la_store3",
+      "when": null,
+      "speaker": "백 부인",
+      "kind": "dialogue",
+      "text": "오늘 실룩 씨가 판 건 두 개요. 3번 돌은 없어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 41,
+          "label": "r13_lamp_attempt_field3",
+          "guards": [
+            "elif _return==3:"
+          ]
+        }
+      ],
+      "scene_title": "la_store3",
+      "source_hash": "1f8d4bedb33f10201a3ffe6e822492a7cb7ec3d826a133f6d7683d7013245e9b",
+      "baseline_hash": "6eb828b506d082c3501b290f3c8d2c522e17552d0e03f165474259ba0d81482d",
+      "uid": "669dd2491918e28e80abb0ef",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|la_store3|patch|la_store3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_LA_LA_STORE3_1",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_store3",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "la_store3",
+      "block": "la_store3",
+      "placement": "blocks",
+      "ref": "la_store3",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "3번 줄의 두 배 값은요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 41,
+          "label": "r13_lamp_attempt_field3",
+          "guards": [
+            "elif _return==3:"
+          ]
+        }
+      ],
+      "scene_title": "la_store3",
+      "source_hash": "1f8d4bedb33f10201a3ffe6e822492a7cb7ec3d826a133f6d7683d7013245e9b",
+      "baseline_hash": "d93a4ec330c4342269d0e790a1438e3391ac93c2ac1a8f480dbdf4c9cb888670",
+      "uid": "3e50133d914d8936a172a8b5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|la_store3|patch|la_store3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_LA_LA_STORE3_2",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_store3",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "la_store3",
+      "block": "la_store3",
+      "placement": "blocks",
+      "ref": "la_store3",
+      "when": null,
+      "speaker": "백 부인",
+      "kind": "dialogue",
+      "text": "가져오면 그 값으로 사겠다는 거요. 못 가져와서 돈도 안 줬소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 41,
+          "label": "r13_lamp_attempt_field3",
+          "guards": [
+            "elif _return==3:"
+          ]
+        }
+      ],
+      "scene_title": "la_store3",
+      "source_hash": "1f8d4bedb33f10201a3ffe6e822492a7cb7ec3d826a133f6d7683d7013245e9b",
+      "baseline_hash": "d72ff3530b2fd70a4f630eb6f00c43a33df15a6f1bdc404b50f85b6dc25e753f",
+      "uid": "59d69b7ced0d4a460982bc9a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|la_store3|patch|la_store3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_LA_LA_STORE3_3",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_store3",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "la_store3",
+      "block": "la_store3",
+      "placement": "blocks",
+      "ref": "la_store3",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "장부의 두 돌 인수와 서명을 확인한다. 3번 줄은 인수 표시 없이 약속한 값만 적혀 있다. 안쪽 돌의 별도 가격과 보관 날짜도 함께 대조한다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 41,
+          "label": "r13_lamp_attempt_field3",
+          "guards": [
+            "elif _return==3:"
+          ]
+        }
+      ],
+      "scene_title": "la_store3",
+      "source_hash": "1f8d4bedb33f10201a3ffe6e822492a7cb7ec3d826a133f6d7683d7013245e9b",
+      "baseline_hash": "77459c2940e0c192845f68e3a3d7fb2ea1bed91e25663256f8394f79f90d5e49",
+      "uid": "fd4c2c743cf8194bd329fa67",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|la_store3|patch|la_store3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

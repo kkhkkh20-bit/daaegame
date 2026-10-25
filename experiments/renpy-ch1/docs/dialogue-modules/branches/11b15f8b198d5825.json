@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events.rpy:236:34",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        12837,
+        12894
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_ev_b_ambush",
+      "block": "r13_ev_b_ambush",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:236:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "해가 기울 무렵, 지붕에서 작은 몸이 툭 떨어졌다. 솜이가 꾸러미를 품에 안고 골목으로 뛰어들었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 236,
+          "label": "r13_ev_b_ambush",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 236,
+      "scene_title": "r13_ev_b_ambush",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "68b81b2c198208bc2b67f6e80436f13a30024e080e6b39bac4fc212edcfaa70d",
+      "uid": "850e4652ae0f33a98f7bf241",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_ev_b_ambush|rpy_literal|r13_ev_b_ambush|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

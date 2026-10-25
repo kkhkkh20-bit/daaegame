@@ -1,0 +1,129 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events.rpy:342:12",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        18242,
+        18251
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_ev_c_door",
+      "block": "r13_ev_c_door",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:342:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "문을 살펴본다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 342,
+          "label": "r13_ev_c_door",
+          "guards": [
+            "while _c_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 342,
+      "scene_title": "r13_ev_c_door",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "d2d1631e3e6b422e6b60f69cfd75ceeeb43b6ed3dc3f495a92510f497b92f1fa",
+      "uid": "7f83dc00b0926bfa4f478879",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_ev_c_door|rpy_menu|r13_ev_c_door|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:345:12",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        18414,
+        18430
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_ev_c_door",
+      "block": "r13_ev_c_door",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:345:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "가진 물건을 문에 써 본다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 345,
+          "label": "r13_ev_c_door",
+          "guards": [
+            "while _c_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 345,
+      "scene_title": "r13_ev_c_door",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "2451ef7ff5b9c7a6d9f381b66c65ac09175975c712ea537913899343b32a76df",
+      "uid": "5527ebe2b1fa83a5b3b33edf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_ev_c_door|rpy_menu|r13_ev_c_door|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:352:12",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        18901,
+        18911
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_ev_c_door",
+      "block": "r13_ev_c_door",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:352:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "안으로 들어간다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 352,
+          "label": "r13_ev_c_door",
+          "guards": [
+            "while _c_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 352,
+      "scene_title": "r13_ev_c_door",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "1ca9515d2e8eca397272dd4a9914d6ebcfc66830e491868c1a32fb7c4b5ebf25",
+      "uid": "0b650f1d6ce532b22f16ed68",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_ev_c_door|rpy_menu|r13_ev_c_door|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

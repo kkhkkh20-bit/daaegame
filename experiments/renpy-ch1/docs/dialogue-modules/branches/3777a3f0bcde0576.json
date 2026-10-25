@@ -1,0 +1,132 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/source.rpy:390:45",
+      "file": "game/source.rpy",
+      "path": [
+        22253,
+        22267
+      ],
+      "origin": "rpy_inventory",
+      "day": 5,
+      "scene": "source_lines",
+      "block": "source_lines",
+      "placement": "literal",
+      "ref": "game/source.rpy:390:45",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "…상자 뒤에 뭐가 있어",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/source.rpy",
+          "line": 390,
+          "label": "source_lines",
+          "guards": [
+            "while index < len(items):",
+            "elif source_t:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 390,
+      "scene_title": "source_lines",
+      "source_hash": "d4d2e3c04e11cbfcf3a3fba69ebf7aeaafb2b6df2127ae22719a63727bd63a37",
+      "baseline_hash": "71f16ee9b8983936e4e14060e1588453e5c6f371c4379d7db10fcf8a4485423e",
+      "uid": "4ce8c716c315a1b76bd79f9d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|source_lines|rpy_inventory|source_lines|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/source.rpy:399:45",
+      "file": "game/source.rpy",
+      "path": [
+        22699,
+        22708
+      ],
+      "origin": "rpy_inventory",
+      "day": 5,
+      "scene": "source_lines",
+      "block": "source_lines",
+      "placement": "literal",
+      "ref": "game/source.rpy:399:45",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "바구니랑 수건",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/source.rpy",
+          "line": 399,
+          "label": "source_lines",
+          "guards": [
+            "while index < len(items):",
+            "elif source_t:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 399,
+      "scene_title": "source_lines",
+      "source_hash": "d4d2e3c04e11cbfcf3a3fba69ebf7aeaafb2b6df2127ae22719a63727bd63a37",
+      "baseline_hash": "d0a8998e29bf06f777cd563d3ef9af9fe0413c530942c56d8b1106d4952e991e",
+      "uid": "42cfcea65d97d89376330d29",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|source_lines|rpy_inventory|source_lines|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/source.rpy:399:55",
+      "file": "game/source.rpy",
+      "path": [
+        22709,
+        22721
+      ],
+      "origin": "rpy_inventory",
+      "day": 5,
+      "scene": "source_lines",
+      "block": "source_lines",
+      "placement": "literal",
+      "ref": "game/source.rpy:399:55",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "모르겠어. 그러니까",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/source.rpy",
+          "line": 399,
+          "label": "source_lines",
+          "guards": [
+            "while index < len(items):",
+            "elif source_t:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 399,
+      "scene_title": "source_lines",
+      "source_hash": "d4d2e3c04e11cbfcf3a3fba69ebf7aeaafb2b6df2127ae22719a63727bd63a37",
+      "baseline_hash": "efbce6603eb9a0883af995ec2eeb0ce7d4c3dc94bdfb540673e43618ae4ec07c",
+      "uid": "77fb9ccab3ad257d1571f403",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|source_lines|rpy_inventory|source_lines|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

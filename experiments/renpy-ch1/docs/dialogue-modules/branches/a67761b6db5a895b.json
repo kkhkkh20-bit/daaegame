@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_granny_reply.rpy:29:68",
+      "file": "game/systems/room13_granny_reply.rpy",
+      "path": [
+        1507,
+        1538
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_granny_warning_reply",
+      "block": "r13_granny_warning_reply",
+      "placement": "literal",
+      "ref": "game/systems/room13_granny_reply.rpy:29:68",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "광장에 있었군요. 나도 부인 소식을 기다리고 있어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_granny_reply.rpy",
+          "line": 29,
+          "label": "r13_granny_warning_reply",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 29,
+      "scene_title": "r13_granny_warning_reply",
+      "source_hash": "864543f55c278744fcf8f32bfca41a7d4d43e24693b556ca0b133868e243221e",
+      "baseline_hash": "424187b17f978ef82c32d436e8c6196c1e91d92bbef597e945d3e5fc99fb987b",
+      "uid": "7d45091e50ffaa9331696e79",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_granny_warning_reply|rpy_literal|r13_granny_warning_reply|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_granny_reply.rpy:32:68",
+      "file": "game/systems/room13_granny_reply.rpy",
+      "path": [
+        1719,
+        1762
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_granny_warning_reply",
+      "block": "r13_granny_warning_reply",
+      "placement": "literal",
+      "ref": "game/systems/room13_granny_reply.rpy:32:68",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "나도 부인 소식을 기다리고 있으니까요. 어디에 소식을 남겼는지 궁금해서요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_granny_reply.rpy",
+          "line": 32,
+          "label": "r13_granny_warning_reply",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 32,
+      "scene_title": "r13_granny_warning_reply",
+      "source_hash": "864543f55c278744fcf8f32bfca41a7d4d43e24693b556ca0b133868e243221e",
+      "baseline_hash": "df86737574586edd95e470cde696a76d38fc684a31c3992eb90cb51301e4136f",
+      "uid": "ee4ff65911e65876941bd2d6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_granny_warning_reply|rpy_literal|r13_granny_warning_reply|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:368:21",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        18431,
+        18451
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_ep2_decision",
+      "block": "r13_ep2_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:368:21",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "내일 아침 그 노인을 데려가겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 368,
+          "label": "r13_ep2_decision",
+          "guards": [
+            "if _kd_pick==\"name\":"
+          ]
+        }
+      ],
+      "line": 368,
+      "scene_title": "r13_ep2_decision",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "ec48c8765923b983bb3de48db9b50ded03966f8d3268329b30dd490a14c7e76b",
+      "uid": "680e53995a8002ca0cbc1ed7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_ep2_decision|rpy_literal|r13_ep2_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:375:21",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        18796,
+        18811
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_ep2_decision",
+      "block": "r13_ep2_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:375:21",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "……검사원이 책임진다면.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 375,
+          "label": "r13_ep2_decision",
+          "guards": [
+            "elif _kd_pick==\"seori\":"
+          ]
+        }
+      ],
+      "line": 375,
+      "scene_title": "r13_ep2_decision",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "161095cdc26437b35a8d06115bf955157c553ded8770b2ea1e60084ccf487b2c",
+      "uid": "5791910a0d3d066b026ed59b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_ep2_decision|rpy_literal|r13_ep2_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:380:21",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        19014,
+        19035
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_ep2_decision",
+      "block": "r13_ep2_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:380:21",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "풀어 주겠소. 앞으로 눈여겨보겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 380,
+          "label": "r13_ep2_decision",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 380,
+      "scene_title": "r13_ep2_decision",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "6f255d3a30f30cb2f4f1a09a4d1f00107db5aa59d4df0bc9c633675cbe2385ba",
+      "uid": "79414c7e7e8241c0c7b1135d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_ep2_decision|rpy_literal|r13_ep2_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

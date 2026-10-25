@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_EF_04",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "end_frozen14",
+        7,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "end_frozen14",
+      "block": "end_frozen14",
+      "placement": "blocks",
+      "ref": "end_frozen14",
+      "when": "reader_nabi",
+      "speaker": null,
+      "kind": "narration",
+      "text": "열나흘째 아침, 이름판 앞. 이름을 읽던 나비가 읽다 말고 멈췄다. 자기가 무엇을 읽고 있었는지 잊은 얼굴이었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2821,
+          "label": "r13_v111_frozen_ending14",
+          "guards": []
+        }
+      ],
+      "scene_title": "end_frozen14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "ec119cf00083331a8304c36d7abb20373167957f0ca832cd717cda19fe738f53",
+      "uid": "8a345a140d8063609af7f7ae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|end_frozen14|patch|end_frozen14|reader_nabi",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

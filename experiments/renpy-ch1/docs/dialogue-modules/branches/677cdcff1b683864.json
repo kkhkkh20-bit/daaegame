@@ -1,0 +1,123 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D10_P01_V01",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "before",
+        "MS14_D10_P01_L0050",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_P01",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D10_P01_L0050",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "부엉이가 고개를 뒤로 천천히 돌렸다가 다시 나를 본다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1756,
+          "label": "r13_v111_pocket_answer10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-P. 예방 대체 / 그 종이를 넘기기 전에",
+      "source_hash": "662dca5b8bc468185010c09a7dfb1668b1ea5e32eb2c8731e681e5c8ee9106df",
+      "baseline_hash": "a859513226354a6e173df6e050a9c6c5267bef49b287d825c22c0456e8998f34",
+      "uid": "727869dfb5e5ee7c886f3bce",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_P01|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AUD_D10_01",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "before",
+        "MS14_D10_P01_L0078",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_P01",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D10_P01_L0078",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "회관 밖, 남들 눈이 닿지 않는 벤치 안쪽에서 다람과 종이를 편다. ‘옛 펌프집 아래 통, 셋째 말뚝.’ 마지막으로 쓴 날짜는 6일이다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1802,
+          "label": "r13_v111_public_paper10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-P. 예방 대체 / 그 종이를 넘기기 전에",
+      "source_hash": "662dca5b8bc468185010c09a7dfb1668b1ea5e32eb2c8731e681e5c8ee9106df",
+      "baseline_hash": "8c5b4c964c9e245d43a08e077c777be3f13cdaa859a9a9590daffc0fc4503026",
+      "uid": "58692240b848a4447641c7c7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_P01|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AUD_D10_03",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "before",
+        "MS14_D10_P01_L0057",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_P01",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D10_P01_L0057",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "부엉이가 접힌 종이로 안쪽 면을 가린 채, 뒷면 모서리만 내 쪽으로 기울인다. ‘6일, 수건 두 장, 소금 한 꾸러미.’",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1769,
+          "label": "r13_v111_family_paper10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-P. 예방 대체 / 그 종이를 넘기기 전에",
+      "source_hash": "662dca5b8bc468185010c09a7dfb1668b1ea5e32eb2c8731e681e5c8ee9106df",
+      "baseline_hash": "2ff26545fc197f3da8c1987f52916a4c42f682855d5de14362bdb7f7b7481a43",
+      "uid": "680afd64a7394eef10536bd8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_P01|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_interaction.rpy:292:59",
+      "file": "game/room13_interaction.rpy",
+      "path": [
+        16303,
+        16315
+      ],
+      "origin": "rpy_inventory",
+      "day": 9,
+      "scene": "r13_sleep_in_room",
+      "block": "r13_sleep_in_room",
+      "placement": "literal",
+      "ref": "game/room13_interaction.rpy:292:59",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "아직 할 일이 있다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_interaction.rpy",
+          "line": 292,
+          "label": "r13_sleep_in_room",
+          "guards": []
+        }
+      ],
+      "line": 292,
+      "scene_title": "r13_sleep_in_room",
+      "source_hash": "c47d17bc2d18e4a3eb4c37352a85b0aa51847666779aaeaa7ec058ce1e3138b8",
+      "baseline_hash": "7af7991eac4e707255ba296eb1fa1508779ed744b7e856e2e13e05805a88ce5a",
+      "uid": "f36b0192dda1c0c6c932ad18",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_sleep_in_room|rpy_inventory|r13_sleep_in_room|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

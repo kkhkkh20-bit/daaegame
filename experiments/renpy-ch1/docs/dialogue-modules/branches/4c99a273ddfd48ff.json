@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13.rpy:457:42",
+      "file": "game/room13.rpy",
+      "path": [
+        24627,
+        24667
+      ],
+      "origin": "rpy_literal",
+      "day": 2,
+      "scene": "r13_talk_dispatch",
+      "block": "r13_talk_dispatch",
+      "placement": "literal",
+      "ref": "game/room13.rpy:457:42",
+      "when": null,
+      "speaker": "resident_eunho",
+      "kind": "dialogue",
+      "text": "필요한 물건이 있으면 골라 보십시오. 가격은 정해진 대로만 받습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 457,
+          "label": "r13_talk_dispatch",
+          "guards": [
+            "if r13_topic==\"shop:eunho\":"
+          ]
+        }
+      ],
+      "line": 457,
+      "scene_title": "r13_talk_dispatch",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "6a399ec4bdff42152b718b51fb9fc5760eb2744daa29b29a5bfa3ab13fe04079",
+      "uid": "433d2ff98775823d20fd460b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_talk_dispatch|rpy_literal|r13_talk_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

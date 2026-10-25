@@ -1,0 +1,1981 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D14_END_FAMILY_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_FAMILY_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_FAMILY_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "13일 거래로 가족이 물러났고 이후 수레를 멈출 사람이 부족했던 경로. 14일 아빠는 제단 전경을 전지적 시점으로 보지 않는다. 경비실에서 돌목에게 실제로 확인한 출발 사실만 듣는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f4c14ef506a0f48fb865b426f6b1054f116bbcbef6c1a772350440bf68ca2781",
+      "uid": "ec5a909535bd69ec687768ae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_FAMILY_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_FAMILY_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_FAMILY_L0002",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "새벽에 떠났소. 명단에서 부인은 빠졌고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3447,
+          "label": "r13_v111_family_ending14",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f1260e5accf511e743c593c3e7faa55258d88778563ade885492ec73c650c34d",
+      "uid": "a377ea777921e92a2473d829",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_FAMILY_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_FAMILY_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_FAMILY_L0003",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "도착한 건 확인됐습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3448,
+          "label": "r13_v111_family_ending14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9c1e2d9ad802e94f5e3db10db4b6dc1c510f991c13f7b70e981355963412c4cd",
+      "uid": "2107b5efb5f9ec1586890bc4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_FAMILY_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_FAMILY_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_FAMILY_L0004",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "아직 아니오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3450,
+          "label": "r13_v111_family_ending14",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "523ec3fde7d45ff479e8b74d67dcb41dccac28bb88e4aaedde7920a1397ac4aa",
+      "uid": "6dadafd7943150298760e993",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_FAMILY_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_FAMILY_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_FAMILY_L0005",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "살았다고도 죽었다고도 현재 시점에서 확정 자막을 붙이지 않는다. 가족은 이송을 막지 못했다. 이후 확인되지 않은 결말을 온정적으로 지우지도 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8e3331332119d647d9c6b8b7fc8725f9302f35363c1218f0fcb9ef3c0d65253c",
+      "uid": "7c370d953e3b95bb1cb41420",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_FAMILY_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_FAMILY_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_FAMILY_L0006",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그 아저씨 담요는 가져갔지?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3451,
+          "label": "r13_v111_family_ending14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d5f56432bd5dc753c5add1ba468c22f420849977470d06881f802579c2f7d2fb",
+      "uid": "4d6776da1ba9db28f2b4be34",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_FAMILY_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_FAMILY_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_FAMILY_L0007",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3452,
+          "label": "r13_v111_family_ending14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8025c713f26164a6787608a6cbce1b8ac0cfe963a42e1416578db60193e95224",
+      "uid": "e3b5961bbfe5836d52895838",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_FAMILY_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_FAMILY_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_FAMILY_L0008",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그래도 추우면?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3453,
+          "label": "r13_v111_family_ending14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1d9e1c97d5bf9d48b0b1ddc3851c3b4d4e6589a8d1dbfb68c752eae43193de30",
+      "uid": "827a8e589a1fa780ca65fd68",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_FAMILY_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_FAMILY_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_FAMILY_L0009",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠는 답하지 못한다. 엄마가 가족 몫 배급을 셋으로 나눈다. 그릇이 따뜻한 사실은 유지된다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ec3ee239da9f2ca1778023bca67dda63f5e0e5b739bba8c10a3906994526e050",
+      "uid": "c1fd56533908ea62906f28d0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_FAMILY_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_FAMILY_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_FAMILY_L0010",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "먹고 나서, 우리가 확인할 수 있는 데부터 다시 물어보자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3454,
+          "label": "r13_v111_family_ending14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3e8ab9cbdab52246ce54829d9f18a44afaf11bc615a5abaabf497e6e375bd3bc",
+      "uid": "d54861fffea350ee8b1add64",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_FAMILY_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_FAMILY_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_FAMILY_L0011",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "14-5의 과자 장면은 이어진다. 안전을 택한 가족을 악인으로 판정하는 점수·자막 없음. 벤치와 배급은 실현됐고, 타인의 이송은 막지 못했다는 두 사실이 함께 남는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "af5473be9a4b0380f1c34895a00eacf834b301bd0f4e57d8b2b0d450d125c34d",
+      "uid": "77c0495586980762393fff73",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_FAMILY_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_FAMILY_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_FAMILY_L0012",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "남은 사람들이 학교까지 데려갔소. 수레는 출발하지 않았소.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cd90e8fb4a928e9222d03dacacb1461953f8e23c98e65e17c02bde421e67d555",
+      "uid": "3ec3cdbdaf0718343e3a095e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_FAMILY_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_FAMILY_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_FAMILY_L0013",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "판돌 씨도요?",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a44ec8707ef27cd177ff0681c3c1d760fca27f101a145a26ac53e4b0fcceea51",
+      "uid": "09e36100cc600c4dac73e0a0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_FAMILY_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_FAMILY_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_FAMILY_L0014",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "실제 받은 명단에 있소.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "659750ada0a116120a9376f2b6c51270d827bfd61e4c17422b3615ec7f09315b",
+      "uid": "d8104e9d5b04eeb21a5fa7cf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_FAMILY_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_FAMILY_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_FAMILY_L0015",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "먹고 나서 학교에 가 보자.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "48521cf746f6413bcd919ece2dfe050ea87cb9595399c7da089a6999abbc9f3f",
+      "uid": "275268d44110d8edfba5773d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_PARTIAL_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_PARTIAL_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "14일 아침까지 현장 정지를 유지한 경로. 멈춘 수레 옆에서 아빠가 빈 침상 하나가 생겼다는 말을 듣는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e4ab27c1b2424d0be89e75b30edf892757795a3a8b61ecf11311abcc9e02246e",
+      "uid": "c5b03c6cdc810b595fc6d3d8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_PARTIAL_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_PARTIAL_L0002",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "한 자리 났어. 먼저 누운 사람 옮기자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3469,
+          "label": "r13_v111_partial_ending14",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4776c394b017c9f0b8c9f6c49fc56a75a9368c5efdd41a05ffb211662cb611ed",
+      "uid": "b70cbc8ef8d54418ce35b46f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_PARTIAL_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_PARTIAL_L0003",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이 사람부터요. 감독은 남아 주실 수 있죠?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3470,
+          "label": "r13_v111_partial_ending14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "afccf3d77ea98ec094fbe65fdf3cae0d5dfc8f13bdeb652f228304cc84554b6d",
+      "uid": "2dab6f2af2fb46eca4ef8159",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_PARTIAL_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_PARTIAL_L0004",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "남겠소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3472,
+          "label": "r13_v111_partial_ending14",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2139a6b1ffcd542a14755ea08eb143ce34333a471f3280f046ba7b170eae894c",
+      "uid": "e7b9be21de0c4e444abe55d5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_PARTIAL_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_PARTIAL_L0005",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠는 제단 방문 대신 실제로 남은 인계에 참여한다. 전날 구한 사람을 다시 태우지 않는다. 확인 못 한 과거는 그대로 남긴다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "df0759ce4b84457e417ff97393718c213aa396b15ca224a12cf20710568e1033",
+      "uid": "ceb0e7ff258c56225808fcac",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_PARTIAL_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_PARTIAL_L0006",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "오늘도 안 끝났어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3473,
+          "label": "r13_v111_partial_ending14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cb8ff9150517f23c8ac3f084f3e27d8802966ac5c9080c7d90c25f4b40afae81",
+      "uid": "a458d92f761caa40e73d881f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_PARTIAL_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_PARTIAL_L0007",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응. 그래도 어제 내린 사람은 내려와 있어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3474,
+          "label": "r13_v111_partial_ending14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "819875f0be175d78a99cdc12490bd7408dd5b2b1c6f3fbef3b2dcca35b9471dd",
+      "uid": "5cdba33de46415a73b2a0366",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_PARTIAL_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_PARTIAL_L0008",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "밤에 인계가 전부 끝나면 대표의 가족 결말로 간다. 여전히 남으면 대기자의 보온·감독·다음 인수 책임자가 실제 정해진 상태를 마지막으로 보여 준다. ‘전원 구출’ 자막 없음.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4433fcbb82c80eb581e94df78d8be6268bf1a174d3724664a0d4da21b2ef313b",
+      "uid": "1c43f3228aea9df879dfc00f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_PARTIAL_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_PARTIAL_L0009",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "이제 마지막 사람이야. 안에서 받았어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3509,
+          "label": "r13_v111_partial_received14",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e3d1707b188122aca912fb02830b89b2736bdba59f4dae03d5f9a93bec90240b",
+      "uid": "1395722c59bdcc1636cef6ba",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_PARTIAL_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_PARTIAL_L0010",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "수레에 남은 사람은 없고요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3510,
+          "label": "r13_v111_partial_received14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "23739be156e8ec45d2ee1c4d2fae739ac7c9cbb38b464e8206cbcd2c5ba0c5c0",
+      "uid": "e06ede5cf44861c112f59832",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_PARTIAL_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_PARTIAL_L0011",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "없어. 직접 보고 왔어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3512,
+          "label": "r13_v111_partial_received14",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7e430dd203317314c08414d4df2105e218f7f5833f0ab1e6916632db0cf0ee2b",
+      "uid": "50653d6975218a2b0697472c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_PARTIAL_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_PARTIAL_L0012",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이 덮개는 두고 가요. 교대할 때까지 자리를 비우지 말아 주세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3519,
+          "label": "r13_v111_partial_wait14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "013ea103d7f65eebc7db0d3fc0355d8c7e3d36c5816a5e3f93ce84ec0b4a83cd",
+      "uid": "f0d5098187d32b46e57119fd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_PARTIAL_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_PARTIAL_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_PARTIAL_L0013",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "내가 남겠소. 다음 자리가 나면 먼저 부르겠소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3521,
+          "label": "r13_v111_partial_wait14",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "68da669d8c0f5e3182ee34240bfae60cdb20c4c6beecc838b6e8f9723f6bf126",
+      "uid": "afbc5326a1195f6fe68395d3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "너울 폭행을 막지 못한 경로. 진료 공간. 구조된 사람들의 자리 옆에 다친 너울이 누워 있다. 돌목이 감독한다. 서리는 보존한 증거·정당한 조사와 치료를 섞지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ebcbf03c44e29d2e87c31c6443ba4e6b35d6d147848bb73638d6392904e92d4c",
+      "uid": "c466734b15e28dc589910b1b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0002",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "여긴 다친 사람 보는 곳이에요. 질문은 나중에 해요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3535,
+          "label": "r13_v111_violence_ending14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b1e5bce9f59dba2e251bea1dde397f13464aa05e97603e6a235ed060f2bd86e7",
+      "uid": "7824d3619efd49d974cbd89b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0003",
+      "when": null,
+      "speaker": "주민",
+      "kind": "dialogue",
+      "text": "저 사람 때문에 우리 집이…….",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3536,
+          "label": "r13_v111_violence_ending14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c6566b0607740edfb031a58a5b2d8791e99595d4fefcbed318ec09ab2346edb5",
+      "uid": "95c5f76099b5253db80ae470",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0004",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "알아야 하는 일은 없어지지 않아요. 지금은 비켜 주세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3537,
+          "label": "r13_v111_violence_ending14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "26d3508b9a884e670232d3d2205d1e857e715f4527586fb70df17bd7f5e7f918",
+      "uid": "66c3341d75ba3a4edd3ad0c6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0005",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠가 문 앞 사람들을 물린다. 다람은 너울의 얼굴을 보지 않고 아빠의 손을 본다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "80dc9512fbf9cd497833ff273365f551e6511ac20d57b771d97a00b2ae685013",
+      "uid": "c4aef3792fdd32433ec23e6e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0006",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "다람이 전날 현장에 있었다면.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b8959578c43b780944cc954e9889431db1192273fb7a99884a9972c5cfd17987",
+      "uid": "2548a731c7676d5380c2cbc0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0007",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "어제 아빠가 막을 줄 알았어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3549,
+          "label": "r13_v111_crowd_child_saw14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "06a2a319d771f4060ee77df7c0461e1924ec81bef0c4c0a93b1f48bbb54411c9",
+      "uid": "50f4bb3c666e7ae134848991",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0008",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "다람이 학교에 있었다면 먼저 아빠가 설명한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "46de906047d86998da532dfde5b971754b41434eaf6a51a5e1d16826dac0eed6",
+      "uid": "3e6a1bdf89710ccdb7de042b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0009",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어제 수레 앞에서 사람들이 너울 씨를 때렸어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3553,
+          "label": "r13_v111_crowd_child_away14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5158a496aa5cfc0cd6844ac2645140ddec23c63f2565007dea606c2772ec7ae5",
+      "uid": "bc919f18c32ab17e8a0e8276",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0010",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠도 거기 있었어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3554,
+          "label": "r13_v111_crowd_child_away14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cc82780efa77027a579d9d4f51f924735aeb3cffe7190b18e6e779a472498c9d",
+      "uid": "23a6e5fce98534c283e5ab23",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0011",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3555,
+          "label": "r13_v111_crowd_child_away14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8025c713f26164a6787608a6cbce1b8ac0cfe963a42e1416578db60193e95224",
+      "uid": "311949264da3e0bb38559f7f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0012",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠는 뭐 했어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3556,
+          "label": "r13_v111_crowd_child_away14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "30f6d8bee589559e249e6afbd9f2bd5ceb5401310876c05f2e85114bcdaf1360",
+      "uid": "496800d6df16e3f9d3bf8b03",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0013",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠가 불개입했다면.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "14e031e0265c7f187d029cb7c37c99815f5ba0bbacd83ca7fbc9b5cb45453b91",
+      "uid": "61633db3111fbb4314150d52",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0014",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "내가 막지 않았어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3565,
+          "label": "r13_v111_crowd_no_action14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b2ba59b299733036f2fa3f1e181ef03a4168794a15a5040fbd963826045a9e3b",
+      "uid": "601ad427bb85c2819ec9c39c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0015",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그래.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3566,
+          "label": "r13_v111_crowd_no_action14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "47dd1707211c7354d813fcd6c66319369aef44dca3d28aedf2278035f5fb055c",
+      "uid": "9910151bac949e3267778e1a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0016",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠가 개입했으나 실패했다면.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "eb3184c9d197409aad69a53f72f9f3f2f0e6f1c183166ee273ec43206fe3067d",
+      "uid": "bd61d46d666d2e8ed18a4153",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0017",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "막으려고 갔는데, 못 막았어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3560,
+          "label": "r13_v111_crowd_failed14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6fae5b9751c54d4d97f9cd8ca549ce20808f1582d2229a85a145e78eb50eca8f",
+      "uid": "757a56394dc212490c83b50d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0018",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "다음에는 사람 더 불러.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3561,
+          "label": "r13_v111_crowd_failed14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "019d5c693713c07f1273b9e12d98d54499ebccf7a7d7788970417a765bb09cb2",
+      "uid": "8953870b5e561bcd02f3d3d0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0019",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "짧은 반성 연설로 다람의 표정이 즉시 풀리지 않는다. 너울에 대한 책임 조사와 폭행에 대한 확인이 둘 다 남는다. 수레에서 구한 사람은 계속 안전하며, 폭력 결과를 이유로 그 구조를 취소하지 않는다. 과자는 나누지만 다람이 아빠에게 먼저 봉투를 밀지는 않는 작은 차이만 남긴다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3d4c76b73142c761ddd3616061ba65695d4233eabe504ffdad25fbb499c4612b",
+      "uid": "3eed43bc977d4146f1297863",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0020",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어제는 다치기 전에 떼어 놨어.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "77a651a317d134263b2d8c27358fb0e053fde9abd7577b880927f70738c0cc8f",
+      "uid": "c67b54f09c0303500bc2f26f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0021",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "다시 때리면?",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "85d7a4546398d51bf3192258a880044d68efa53a8b5df87cdafeae7081749ff4",
+      "uid": "2e88f8170f429197ce7c7daf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_END_VIOLENCE_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_END_VIOLENCE_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "공통",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_END_VIOLENCE_L0022",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "돌목 씨가 곁에 있어. 나도 그냥 두진 않을게.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "526adeea24d4fb44540610bd75840174ede6b6ccab05cf13ce30b40f097918c4",
+      "uid": "756ab09d76b0c04a10101a5c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|공통|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:194:36",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        10850,
+        10884
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_nt_overhear",
+      "block": "r13_nt_overhear",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:194:36",
+      "when": null,
+      "speaker": "resident_lamplighter",
+      "kind": "dialogue",
+      "text": "아버님? 걱정 마세요. 종탑 길은 제가 눈 감고도 다녀요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 194,
+          "label": "r13_nt_overhear",
+          "guards": [
+            "if not r13_has(\"chorong_dead\"):"
+          ]
+        }
+      ],
+      "line": 194,
+      "scene_title": "r13_nt_overhear",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "96ef384558ea040f469b31b21aefbd9a799e8e41469b2822a2ef7329fe956107",
+      "uid": "ca47275882ac7aa62ac052bf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_nt_overhear|rpy_literal|r13_nt_overhear|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:195:36",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        10923,
+        10970
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_nt_overhear",
+      "block": "r13_nt_overhear",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:195:36",
+      "when": null,
+      "speaker": "resident_lamplighter",
+      "kind": "dialogue",
+      "text": "편지는 직접 전해야 해요. 그분이 그렇게 부탁하셨어요. 아무 손도 거치지 말라고.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 195,
+          "label": "r13_nt_overhear",
+          "guards": [
+            "if not r13_has(\"chorong_dead\"):"
+          ]
+        }
+      ],
+      "line": 195,
+      "scene_title": "r13_nt_overhear",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "a94364eb4e95b25960cefb1edf9cc0760993739ab632e441d2984d0c1082e44d",
+      "uid": "2da158ace43737a9324b0d45",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_nt_overhear|rpy_literal|r13_nt_overhear|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:209:56",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        11954,
+        11978
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_nt_overhear",
+      "block": "r13_nt_overhear",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:209:56",
+      "when": null,
+      "speaker": "resident_lamplighter",
+      "kind": "dialogue",
+      "text": "아버님도 참. 저 이 일 십 년 했어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 209,
+          "label": "r13_nt_overhear",
+          "guards": [
+            "if not r13_has(\"chorong_dead\"):",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 209,
+      "scene_title": "r13_nt_overhear",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "be859f7d4f5bae045fc7b8f20ee7addf985408554f9771f0f62b1885293fd826",
+      "uid": "4d3d0fcd3623413367c08db6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_nt_overhear|rpy_literal|r13_nt_overhear|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

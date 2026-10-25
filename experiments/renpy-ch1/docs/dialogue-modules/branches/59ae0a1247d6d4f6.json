@@ -1,0 +1,70 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "E05:observed",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "evidence",
+        "E05",
+        "variants",
+        "observed"
+      ],
+      "origin": "catalog",
+      "day": 1,
+      "scene": "E05",
+      "block": "E05",
+      "placement": "evidence",
+      "ref": "E05",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "방문 신청 원본과 숙박 확인에 따라 그 자리에서 고침. 방문객 다돌, 동행인 다람. 확인자 돌목.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "scene_title": "E05",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "450b2852c5c787ee14357db49995fdb2204db2da10fc7a185762e7809cdbf526",
+      "uid": "3178d9117211d2f604a85621",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|E05|catalog|E05|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "E05:unlisted",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "evidence",
+        "E05",
+        "add_variants",
+        "unlisted"
+      ],
+      "origin": "catalog",
+      "day": 1,
+      "scene": "E05",
+      "block": "E05",
+      "placement": "evidence",
+      "ref": "E05",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "정정 없음. 신규 일꾼 다돌, 외 1명. 동행 아동 이름 기재 없음. 확인자 돌목.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "scene_title": "E05",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "dd7099d15915153968c0b4de3e6075d32fac60399da165662d303de753ee3fb4",
+      "uid": "0818f4034ff0ae21ce50f0c7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|E05|catalog|E05|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

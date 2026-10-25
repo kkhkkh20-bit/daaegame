@@ -1,0 +1,4045 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D10_S03_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0001",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이 조각에서 나온 핀입니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1505,
+          "label": "r13_v111_owner10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "944c989120c1b165a7440b100228ab63578ee5e99471e511da6d0f8430580b1d",
+      "uid": "1836e4635404049cc054be7c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0002",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "그 흔한 걸? 나도 쓰고 나비도 써. 시장에 한 줌씩 파는 거야.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1506,
+          "label": "r13_v111_owner10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e57c4def598c5f09ae6233f5ce6bbc3b90a06fdfa0569152866379200224803a",
+      "uid": "e1834cb6f5ddac5fd20a96a1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0003",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[플레이어가 핀의 뒤쪽을 돌려 구리선 수리를 선택한 뒤. 핀만 제출한 경우의 실패 응답은 아래 분기를 쓴다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cfbce615c2b3b7978a0af31afd5a4390ce4dffaeca9cd6253283e3baf51df005",
+      "uid": "c25c9c28582a0fa1f0bbf630",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0004",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: D10_S03_owner_question_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "056a00e4d6b2a90800088bea0f60dc3d4c7e14c69eb632e10908d193e7291e53",
+      "uid": "09368061ccd7913f51e211cf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0005",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이 구리선은 누가 감았습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1521,
+          "label": "r13_v111_owner_tok10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3d6c7d3cdeb025aed0cc6f4987fec42479cb281ba55dc2a2e265ed19a473880e",
+      "uid": "c6ccecbcbe03aca75de0ac53",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0006",
+      "when": null,
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "접니다. 할머니가 고쳐 달라고 가져오셨죠.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1522,
+          "label": "r13_v111_owner_tok10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "90cad86b70c9954097ffd2c69d39a89d484e9923e2d9b05849b877e04bec939f",
+      "uid": "5809fb2d31aee7fafb2ea1a0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0007",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "다른 것도 그렇게 고쳤겠지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1523,
+          "label": "r13_v111_owner_tok10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9795339e4e1e4989a6d7cf473150d4eb500b02eee05630da225131878db7fcc0",
+      "uid": "930300840266c802ac59a025",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0008",
+      "when": null,
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "끝을 고리 안에 넣어 감은 건 이것 하나예요. 목도리에 안 걸리게 하느라 오래 걸렸죠. 다음부터는 다르게 했습니다. 장부도 보세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1524,
+          "label": "r13_v111_owner_tok10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cf69860bc8564c8ba416a500055fa13a8b88c3fa748196b04db9a11e478bcaad",
+      "uid": "fa2d29e84bc5ed2294e8bbce",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0009",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[플레이어 조작: 핀 뒤를 돌려 구리선 수리를 살핀 뒤 수선 장부·톡의 진술과 함께 제출한다. 핀의 흔한 겉모양만 내면 “같은 걸 쓰는 사람이 얼마나 많은데 그러니?”라는 할머니의 반박 후 관찰 화면으로 돌아간다. 아래 소유 확인은 올바른 묶음을 제출한 뒤에만 나온다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "814d4e060c109cc4739c8d9a01506a40cf66191a47b5e1174eae84250647061d",
+      "uid": "2a2830fcb62899fcfb3c6e36",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0010",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "똑같이 생긴 다른 핀이 아니라, 할머니가 맡겼다가 찾아간 핀입니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1525,
+          "label": "r13_v111_owner_tok10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "aaf24e503b32beae59e81b43fc1f6ab6fe05c6b3055d0e8b2ddade99ef179e27",
+      "uid": "eec36e4093230bf17d1ab334",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0011",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "……그럼 내 거겠구나. 내가 작은 건 잘 잃어버려.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1526,
+          "label": "r13_v111_owner_tok10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5cb1455bf44806c0b99b53baf721cb65f6bd381277a05a8aab64ab6b1497caf1",
+      "uid": "e32517612054a4dbaf16d15c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0012",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "맡겼다 찾아가신 핀은 맞군요. 언제 떨어졌는지 말씀해 주십시오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1527,
+          "label": "r13_v111_owner_tok10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0b833883254959b217f4698a4811a4a650551b57430f25883d8696de97cf4c17",
+      "uid": "531fe57ff64a188a43249cda",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0013",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: pin_owner=grandmother; D10_S03_owner_tok_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a3953892a834709157a90c5dca9961f2c604c056c45d1c154425e5aedfc793a5",
+      "uid": "16c1dcea548fb3cbcd5e8395",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0014",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이 구리선과 수선 그림을 보십시오. 맡긴 날짜와 찾아간 사람의 서명도 있습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1532,
+          "label": "r13_v111_owner_copy10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "103decc2e9d7243fce471d2665bf2132fba52d37133979ae1a7aff2aa1fc7891",
+      "uid": "d60945d83ee0254853749a43",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0015",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "……찾아온 건 맞아. 그럼 내 거겠구나. 내가 작은 건 잘 잃어버려.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1533,
+          "label": "r13_v111_owner_copy10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "62e633c53573393a2aafcc16a083d7da5f854980153446524a298f0418e02b2f",
+      "uid": "6f0986c89b076eea6ab0c222",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0016",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "맡겼다 찾아가신 핀은 맞군요. 언제 떨어졌는지 말씀해 주십시오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1534,
+          "label": "r13_v111_owner_copy10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0b833883254959b217f4698a4811a4a650551b57430f25883d8696de97cf4c17",
+      "uid": "a95b0c7983dc66e008ebdd7c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0017",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: pin_owner=grandmother; D10_S03_owner_copy_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c7abd4ad13773e55c17fda0fa8086ba9e65a0f8243ba3f1a28d8c9dec317936b",
+      "uid": "19993b761c1947d9716896a1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0018",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "낮에 그 방을 치웠어. 그때 떨어졌겠지. 할아버지가 주워 놓으셨을 수도 있고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1539,
+          "label": "r13_v111_time10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3b414de34bc3f810203547e15dd9171be085756dc820ce12fa1a0a678003d32a",
+      "uid": "079ae8dd3d193cae13569031",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0019",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "발자국도 청소할 때 남았을 수 있소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1540,
+          "label": "r13_v111_time10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "724d1f27fd0fd4c9e73ff44948a8b89474e5ec656368bc9b927b51fa4af41460",
+      "uid": "8317b61ce33b47b4057bae0c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0020",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "발자국으로 낮인지 밤인지 가르자는 게 아닙니다. 나비 씨, 그 핀을 마지막으로 본 게 언제입니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1541,
+          "label": "r13_v111_time10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "aad5ec8e699dd2b54295998a0eac8284a1a8a53e9256aec796259530c36dceb4",
+      "uid": "346ab0128f58f15b3d96738f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0021",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[플레이어 조작: 핀을 다시 여민 때의 진술을 제시한다. ‘첫 비명 동행’을 거짓이라고 공격하면 나비: “그때는 분명히 제 옆에 계셨어요.”라고 부인하고 목록으로 돌아간다. ‘첫 비명 뒤 핀을 다시 여밈’을 고르면 아래 대사를 잇는다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8718ddc477fa2723ddfca8bb16fa244fdac72bd858247cc65efddeca9beecdec",
+      "uid": "f4eb4234d1d05d4b6e0af8c0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0022",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: D10_S03_time_question_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ee07fd46a6695944755e1ddc7f6b051940f29d28ce5b770a1ede6b351bb1e017",
+      "uid": "b69344ffd5e786e5844cfd20",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0023",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[나비가 일어서다 의자를 건드린다. 넘어진 의자를 자기 손으로 세운다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "722127058228b83f1179bb8e477d30f9ea9c448afa36caa7cae08e358c80bf36",
+      "uid": "40657e2a1e21ec76c444a85e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0024",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "첫 비명을 들은 뒤요. 할머니가 일어나시다가 목도리가 의자에 걸렸어요. 제가 풀어 드리고 핀을 다시 채웠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1550,
+          "label": "r13_v111_time_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3bf84e5be607b1b547b7e8c0ec22e2715ddd54840d270624bd09d06b318349b4",
+      "uid": "8944155fc86486344a2333fc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0025",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "놀라서 앞뒤가 바뀌었구나.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1551,
+          "label": "r13_v111_time_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "16d641ac8297a5db73e649098dfcb1d3ae6e6ce03a11fa2e2ffada3c381fcd71",
+      "uid": "310d1a32b340f5c8367eadcc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0026",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "아니에요. 소리 듣고 일어나셨고, 목도리가 걸렸어요. 그래서 제가 채웠어요. 그다음 할머니하고 같이 계단으로 갔어요. 도토 씨가 아이 손을 잡을 때도 그 핀은 목도리에 있었어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1552,
+          "label": "r13_v111_time_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "716685e80fa402b1550cfa41b60988daf7a851d5e31e5a233197626d1ef41c62",
+      "uid": "462eff8c157e831e48c1f879",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0027",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "내가 네 손을 얼마나 봐 줬는데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1553,
+          "label": "r13_v111_time_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "43fc0d1aedd1ce4b533178a804802cc18cebf9b07709e487a8f5c25a1f96842f",
+      "uid": "55aef400ebdd5662a25a19d4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0028",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "그 말은 지금 하지 마세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1554,
+          "label": "r13_v111_time_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b75bbaec0b163879ee33b5932a3e7a8d94e9f368fab2aaef399f84174b5122c1",
+      "uid": "1b21efd29cc7c3677f474516",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0029",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[아빠가 입을 열려 하자 나비가 손을 든다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "10c8c230cbe46b6c0b98c09116c8c9af28aadbae0357c2608d43e844c6814cd6",
+      "uid": "0dbd189f572a3f75e409a559",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0030",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "제가 말할게요. 낮에 방에서 잃어버린 핀이라면, 제가 밤에 목도리에 채워 드릴 수는 없잖아요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1555,
+          "label": "r13_v111_time_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cec60819ab3416a1d1e076e6a64ec1accc560968fe2cf68bda6af48e07ae876d",
+      "uid": "b02d2a50250de13f34374e62",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0031",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[할머니가 나비를 바라본다. 입술이 열렸다가 닫힌다. 잠깐, 방 안의 기침 소리만 들린다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ad50030de3d85a878e4e1cbe96ebf917af7d92eea66d91a16dba18b8644ea3c1",
+      "uid": "5bd0dbd20a9e94674f4c8386",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0032",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "그래서? 아이 소리 듣고 도우러 간 게 잘못이니?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1556,
+          "label": "r13_v111_time_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "69c09e4495abdecbf8b8209d769e2f18902bca5162b04b75a20f8387e2a31850",
+      "uid": "50c34103da6640f4d1a2f741",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0033",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어디로 가셨습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1557,
+          "label": "r13_v111_time_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "dc7e9d9474bf5ebbf856966b518e95c104ef9a44b77f70c479145a4a401d4129",
+      "uid": "ce590b91208c60e1a823a364",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0034",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "공구 찾으러 주방으로. 네가 그걸로 문 열었잖아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1558,
+          "label": "r13_v111_time_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d19904a85dfe894ed12eaccc351d134d84eb0e43e3f51ebc3067bebfe974d570",
+      "uid": "12c47966249a5fa71561c03c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0035",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "네. 제가 받았습니다. 그걸 찾는 동안 통로로 들어가셨습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1559,
+          "label": "r13_v111_time_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "70f0d24b6cd75105ee46e8b3c164fd648af5d292b1e978795135aa11b8e2af84",
+      "uid": "47b70da7b4665a59c8a6c2eb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0036",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: pin_after_cry=grandmother_scarf_testimony; grandmother_kitchen_move=admitted; D10_S03_time_answer_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ecd1e0f861170903a36ee8ec443a668536127b1b11e30b8581f6f2505c3d24a5",
+      "uid": "3235fe941a4e0d4f3e30b153",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0037",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0037",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0037",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "……문이 안 열린다기에 다른 데로 봤어. 집을 아는 내가 가야지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1561,
+          "label": "r13_v111_time_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e6fe4163b41826fe82fbb574e5bfbdd58a8c2f6bc12ceddff30724f13d1df53f",
+      "uid": "e20e9226cec9812b547153d6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0038",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0038",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0038",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "저한테 말이라도 하셨어야죠. 저는 계속 문을 밀고 있었는데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1562,
+          "label": "r13_v111_time_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5d92ef4c85a9aa4da8da1741281a1dcde32705052b80fdc9d0e6db0284431f88",
+      "uid": "bc9259ba79ade4f6b5b93d71",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0039",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0039",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0039",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "안에 무슨 일이 났는지도 모르는데 너부터 들여보내니? 아이가 놀랄까 봐 조용히 간 거야.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1563,
+          "label": "r13_v111_time_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3b434ff7717f3f2bd4558e8827954b5c834dcaff304ff2a03b5b5e25788d0f34",
+      "uid": "9ddafe76d0dbb7eb9342e119",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0040",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0040",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0040",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "들어가서 뭘 보셨습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1564,
+          "label": "r13_v111_time_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e2399b9d3a94b173f0b3a6857aa81b98985dfa940a655237ba3798027b6ad949",
+      "uid": "cd0f611b98eb99240cdb4b90",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0041",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0041",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0041",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "이미 쓰러져 있었어. 촛대가 발에 걸릴까 봐 집었지. 핀은 그때 걸렸나 보다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1565,
+          "label": "r13_v111_time_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "04eae954a2f791a7bd26ab94498651ed25348c79f4d67f47db47eb05aecaff4c",
+      "uid": "ceead3b21a08305247d8af70",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0042",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0042",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0042",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[다람이 아빠 소매를 잡는다. 아빠는 잠깐 아이 쪽으로 몸을 돌렸다가 탁자를 본다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8db0c65dec6e0c433e76fae7219fcd1a9eb6d7457a2121d9a9024d104910161a",
+      "uid": "46e2e9b5167fa4fc637a224a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0043",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0043",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0043",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[플레이어 조작: 접힌 천·닫힌 핀·기존 고리의 관통 순서, 머리 상처 구리 조각·핀의 끊긴 끝 맞춤, 깨진 앞면·돌출 구리 끝의 동일 접촉면을 제시한다. 여기에 이미 확인한 계단참 핀 착용 시점과 도토의 연속 양손 관찰을 연결해야 한다. 핀 발견만 제시하면 B011의 실제 반박으로 돌아간다. 고리와 핀의 눌림 및 최초 기록 세 가지만으로 다음 결론을 열지 않는다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "896b5ad71f55580f1736a6fbda1355065ecbae21bd5ed9e3cc19d455966a8c2c",
+      "uid": "070813755103b97fc83f0bb6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0044",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0044",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0044",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: grandmother_passage_entry=admitted; D10_S03_entry_admission_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0e604d7c76ea1df2bc1474c0be1941e53f0b5622148cc604b7ab5251fb2c4976",
+      "uid": "d8f345ee6b68b77163c5f092",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0045",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0045",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0045",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그냥 집어 들다 핀이 걸렸다고 하셨습니다. 이 천도 그때 걸렸습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1575,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f14912c8b390368b315e0462943b287afa4de7ffd7ff6a6a992d71bbc6526920",
+      "uid": "fda0731f4127b8b931cc6ef5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0046",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0046",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0046",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "깨진 데 잡다가 손 베일까 봐 감았어. 그게 잘못이니?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1576,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "64004029873a37eba938e0bb8626d6604ba3d7711e13e6076c176f7b8fcf86bf",
+      "uid": "b46358e82894f484acddaa09",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0047",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0047",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0047",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "핀은 닫힌 채로 천하고 고리를 같이 물고 있습니다. 저절로 걸린 게 아니라, 목도리를 감고 다시 채운 거죠?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1577,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5c64a51d2effc35fab062790e8d4b3cd1ff3c386410fdaed2d481200e4c1e8e0",
+      "uid": "01664927dab319df7f3562d7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0048",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0048",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0048",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "안 풀리게 해야 들지. 그래서 채웠어. 쓰러진 뒤에 치운 거라니까.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1578,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "321c1e8e9a075a70b44e49778cffcec61935f8154b23b202a2995ffc8a6d115f",
+      "uid": "5c2cf877902fbde881707690",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0049",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0049",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0049",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[플레이어가 접힌 천·닫힌 핀·고리의 관통 순서를 대조한다. 다음에는 상처 가장자리의 구리 조각과 핀에서 비어 있는 끝을 연결한다. 이 두 묶음의 제시 전에는 아래 결론을 출력하지 않는다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b1ab3120723f1f4e5a46aa81dfd540227ed380dc6ed264ba890616f290bb2265",
+      "uid": "6fee76908e1e94be0e3336c5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0050",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0050",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0050",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "서리 씨. 상처에서 나온 조각을 보여 주세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1579,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "428af3bc1747a58b25a7481a20ccd215caee99b26c0d75c83a031aeb9417ce4d",
+      "uid": "d3ac20ae3bf6fd429ea5c227",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0051",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0051",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0051",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "머리 상처 가장자리 안에서 나온 구리선입니다. 핀에 남은 선과 끊긴 모양이 이어집니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1580,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "355a222a18cf9880277e6ee637ee511b37ea7ab8c035169041553391d6fca3b3",
+      "uid": "b175d8bea2701c5adaf5a146",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0052",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0052",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0052",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "바닥에 있던 게 묻었을 수도 있잖니.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1581,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "770399de91eca0fbb6f12f3be1110d0d56dc073e4a1c62570f575c7ebcd73e23",
+      "uid": "82500951d4dfcbd87393ce96",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0053",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0053",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0053",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "겉에 묻어 있던 게 아닙니다. 깨진 면이 남긴 상처의 가장자리 안에 박혀 있었습니다. 처음 기록에도 그 위치와 방향이 있습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1582,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bccdb126272b4be20d8d0d5ca9029b6e724931ffa1b54917c6ff633e18ebbc77",
+      "uid": "2bbd554d52995546d28c0c24",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0054",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0054",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0054",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[플레이어가 동일 접촉면의 깨진 앞면·돌출 구리 끝·상처 가장자리의 위치를 연결한다. 원본 형상을 같은 방향으로 보여 준다. 상처가 둘이라 범인이 둘이라는 판정은 사용하지 않는다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f2a8c215e9a5db220c037edaf55836cb835ec8e9190a550f603b7977cdd7a014",
+      "uid": "82bad9891900fb3431bf0db7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0055",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0055",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0055",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이건 촛대 옆에서 핀을 찾았다는 얘기가 아닙니다. 감아 고정한 천과 핀이 붙어 있는 이 앞부분이 머리에 닿았습니다. 그때 핀의 구리 끝이 부러져 상처에 남은 겁니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1583,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "db7eb50b3eaec367be34bef88a78d1d5a941db771647299466e63e1d02d757e3",
+      "uid": "de4e7e8d333c1e27687128e5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0056",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0056",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0056",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "아이가 먼저 쓰고 내려놨을 수도 있지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1584,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "41c34c65b24a05c879e39b1f0fb1b1cac7c9f7d2af9a9c9f3f40ef5ff272a5a0",
+      "uid": "443276891bb281335df4a40e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0057",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0057",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0057",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "첫 비명 뒤에는 나비 씨가 그 핀을 할머니 목도리에 다시 채웠습니다. 도토 씨가 다람이 두 손과 아랫조각을 보고 있을 때도 핀은 할머니 목도리에 있었습니다. 그 뒤에 주방으로 내려가셨고요. 윗조각에 목도리를 감고 핀을 채웠다는 건 방금 할머니가 하신 말입니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1585,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d5afa3697306cbb536a9888505f6fa451f6886d35636205dc303ce87114ffe19",
+      "uid": "cdc18b0e8a754e3dacf9ecf4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0058",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0058",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0058",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "쓰러진 뒤에 치우기만 해서 생긴 상처는 아닙니다. 이 조각과 핀이 함께 머리에 닿은 일을 설명해야 합니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1586,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f70c27d3c225eb3afff3299e4829bc07666ece9aed26c9b849aa93838ad20a8d",
+      "uid": "daec8e4c5313c6aafef54d3c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0059",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0059",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0059",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: pin_transfer=intentional_refastening_through_cloth_ring_admitted; fatal_contact_assembly=matched_break_and_wound_edge; same_moment_fatal_contact=authored_material_chain; child_upper_reuse=refuted; D10_contact_limit_completed=true; D10_S03_contact_limit_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "49846058238eafd2d9316636e2c846c66d4d50741d331bf2964fc4b53aaaf117",
+      "uid": "5d56613c6c78b59a0acf3ca6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0060",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0060",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0060",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "그 아이가 내 목도리를 잡았을 수도 있지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1588,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5337587a2393d6c97924d0c8c82a09943fb6e439ef5ec52866326e0867324992",
+      "uid": "28240599a337cce32d943182",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0061",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0061",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0061",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "나 안 나갔어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1589,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c10e9712746131aaf6402fe3194dae89eb07cbe5757e899f2e7cc68ed48c2955",
+      "uid": "27a88586325aada00dca65c3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0062",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0062",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0062",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[서리가 다람에게 손을 내민다. 아빠가 아이 앞에 조금 더 선다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d488cf847f5cb83a0ee7c76b2d9a8b99cc8d6c75175ccd087efc10f25915ffea",
+      "uid": "02e97c5f441ed88b9e02089a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0063",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0063",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0063",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다람아, 잠깐. ……할머니한테 물었습니다. 아까는 쓰러진 분 옆에서 촛대만 주웠다고 하셨죠. 이제는 아이한테 다가갔다는 겁니까? 언제, 어디서요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1590,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "93b86a135067cd46b44509c8595e78b53167e7ddceaa4c0ca25598d4076661db",
+      "uid": "2f7aa7bdf851095066567bd6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0064",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0064",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0064",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "그걸 내가 다 기억하니.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1591,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b9b02641ce7bd744ee15bceaa7d72585f782c6d3eca95afbd4a8a92d6a023fd5",
+      "uid": "6c856db34f81c2ff7e422c1f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0065",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0065",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0065",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "기억나지 않는 자리에 우리 애를 세우지는 마세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1592,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e9301addc524a445e01fce918cde9177294c10cf3c744551ae4eb6138a987ea7",
+      "uid": "8028e7c911a38369dd963fc7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0066",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0066",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0066",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "…….",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1593,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7e428bfac963e979a36c34565ac48fb5ecee5c830adfb7369fe7ce653be4c521",
+      "uid": "e5dfe676996016bcd87eb1cf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0067",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0067",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0067",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그리고 도우러 들어갔다면 왜 문을 안 열었습니까? 도토 씨는 밖에 있었습니다. 쓰러진 분을 보고도 알리지 않고, 다시 주방으로 나와 공구만 가져오셨잖아요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1594,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f839e172f25c471450df450820ef2a90a63e105da05bb40d0d3a19ccb93c6666",
+      "uid": "f15f5f89fb32cd74ce5b3304",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0068",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0068",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0068",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "네가 그 종이를 봤으면 좋았을까.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1595,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bb970319173b03e16b8753656057e9ed0932c8da5531fa4fb80a770b6ab2151d",
+      "uid": "ddf5bab291da18aacb073191",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0069",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0069",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0069",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "무슨 종이요?",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1596,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c2de3283868f315d9818ac0c7ad2b3ace92d27a91614d17ed7c0c692f868da33",
+      "uid": "d15b60feba89b32c6e884db5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0070",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0070",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0070",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "집에 보내면 됐어. 부인만 찾으면 돌아가게 하면 됐는데. 그 노인이 못 준다고, 죽어도 못 준다고…….",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1597,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f4ed40d53980011ff80e3758082af58c73886e9e25410e254fe258a2d83074a6",
+      "uid": "1e8fb0258179294c6656e463",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0071",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0071",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0071",
+      "when": null,
+      "speaker": "부리",
+      "kind": "dialogue",
+      "text": "할아버지가 그렇게 말했어요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1598,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "af7ea9e1da487b3bcb046a75ab1681f973deda63bfac3f6e8301233f4a053f9b",
+      "uid": "4d3075e7c9a1f96e9325356a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0072",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0072",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0072",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[할머니가 말을 삼킨다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c82ba9e2d6b8a205b74fb0642e5992f04910379604c2fc54a043ef9f24950514",
+      "uid": "f4562fec6606b94fa0b1ea40",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0073",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0073",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0073",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그 기록을 가지러 들어갔습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1599,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "847e277846c82043d753b27ae2fab6cf100ede1893feef0e8e7db9612d6154d7",
+      "uid": "1cbb77ac2020556705020eed",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0074",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0074",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0074",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "돌려받으러 갔어. 내 집에서 나온 거니까.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1600,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1efa2c68f4d72096963e31de852816f0447fe86dc8eadbc1a606f7b6f8360354",
+      "uid": "7004844ae09002ea62660880",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0075",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0075",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0075",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "부엉이 어르신이 막으셨습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1601,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "dcd0b6bc2437f1455b628d82a8bc6a12a01726a73968c728876ffea57626dbfc",
+      "uid": "a91591dc4c601ee2f5e88f31",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0076",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0076",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0076",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "팔을 잡았어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1602,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "36d8069e3a90beccce6c8fec1f6718f8b6ad64358e70e3518cb9c1ccda69c2dd",
+      "uid": "8a61da182f457464c3a4add9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0077",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0077",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0077",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그래서 부러진 촛대를 드셨습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1603,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "08adbcc1d81aa33b7dc3a560c6a843b8525f92a349784efb40a592e8a9c30b3f",
+      "uid": "6993869b6d39150792f1ad07",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0078",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0078",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0078",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[할머니가 목도리의 빈자리를 누른다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0d542697a38b8826b56ceccce755b81be9e71333478614e7954752d859204383",
+      "uid": "81758818c7c5d0225ab2bd90",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0079",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0079",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0079",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "넘어질 줄은 몰랐어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1604,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3447de4ec0f7a2a7c96644d1f17b2168641ec0070f4d29772161590c9cf0ed91",
+      "uid": "678b84f54fd9773dfc11cc79",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0080",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0080",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0080",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "손 놓으라고 버티다가 닿았다는 겁니까, 치려고 휘둘렀다는 겁니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1605,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e011ef743cf10a0d7a42376de0cb659dd4a9b344e2ed27b169df17c615565e77",
+      "uid": "8244b0c6002e7562db248d0b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0081",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0081",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0081",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "그걸 지금…… 네가 뭘 알아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1606,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6baf15bf1e02274e75336d60ccd69ea1be95d0e5247317c735a42ca6a93d9071",
+      "uid": "dda5bdf025cc9ee1003d8afa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0082",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0082",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0082",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "치려고 휘두르셨는지까지 제가 단정할 수는 없습니다. 그래도 이미 쓰러진 뒤에 치우기만 했다는 말은 그만하십시오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1607,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4df21342bdfc75ebf6dd045220586f9b79ce55cf3735f4dbd3ec7a671cd29df5",
+      "uid": "51fab0d007fbeafba8a559be",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0083",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0083",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0083",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "방금 말 그대로 적어 주세요. 다람이가 손목을 친 일도 적고요. 하지만 그 뒤 머리를 친 일까지 다람이가 했다고 적지는 마십시오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1608,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cc7abd18b0f05d0659b0a6b888ea37c0e087aa071472688ba744f3b38f8e95bc",
+      "uid": "1950bc8dea4c2004ceb01655",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0084",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0084",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0084",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "아이가 손목을 친 일과, 그 뒤 목도리로 감싼 윗조각이 머리에 닿은 일을 나눠서 남기겠습니다. 상처와 핀 조각, 도토 씨가 아이를 보고 있던 때가 맞물립니다. 아이에게 머리 상처까지 떠넘길 수는 없습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1609,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2158fd69e739ba12cb838e5d581adcc4c178a8d18e4e4ada188b76234bfcd564",
+      "uid": "7b76c5a5fa2c8c1b9891ec09",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0085",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0085",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0085",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "아이는 풀어 주시오. 할머니는 별도로…….",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1610,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b9725ae4f60b52c769fab59c044e1246ca23a929e7af9d1869e40c6afb6d6ac3",
+      "uid": "c7e2c54ceccddf152584415f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0086",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0086",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0086",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "문부터 여세요. 제 딸 데리고 나가겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1611,
+          "label": "r13_v111_contact_answer10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "93d3f8de03c1f4abbb1ba708edc284614de46880a042bdef72c80bc6f36f9df4",
+      "uid": "21b471eb0009e075ca25506e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0087",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0087",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0087",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[너울이 대기실 문을 열고 감시를 해제한다. 아빠가 다람의 손을 잡는다. 둘이 실제로 문턱을 넘는다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "974eddde2a39b214d8c1b21c835cf21a6ce2e7f2bf43655542a81ba9e6b07a65",
+      "uid": "fc9251d3b72bf615cdddabda",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0088",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0088",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0088",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: grandmother_records_confrontation=admitted; fatal_contact_responsibility=grandmother; premeditation=unproven; interpretation.intentional_strike_vs_struggle_collision=not_proven; DARAM_DETAINED=false; daram_release_basis=access_refutation_continuous_child_position_material_chain; D10_confrontation_release_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c9df4d8d2deecf0b67c9b3b6dd913963e88c0fdd16fca6d50031bf6326dc7f25",
+      "uid": "e8f1b54c14e8247135a5bd57",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0089",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0089",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0089",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "같은 걸 쓰는 사람이 얼마나 많은데 그러니?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1619,
+          "label": "r13_v111_owner_wrong10",
+          "guards": [
+            "if r13_nw_retry(\"room13\",['E08_WOUND_WIRE', 'E09_PIN_OWNER'],'할머니가 웃는다. 구리선과 수선 기록을 함께 놓아야 한다.'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1623,
+          "label": "r13_v111_owner_wrong10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "993cef6131a3257fea86c4c1bc4dd552e0d45ae27652cd0164201f2b45e13801",
+      "uid": "56deb3d3142af4fd0e3cda3f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0090",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0090",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0090",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "그때는 분명히 제 옆에 계셨어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1629,
+          "label": "r13_v111_time_wrong10",
+          "guards": [
+            "if r13_nw_retry(\"room13\",['E09_PIN_TIME', 'E09_PIN_HANDOVER_TIME'],'나비가 고개를 젓는다. 핀을 다시 채운 때와 계단참의 핀을 함께 놓아야 한다.'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1633,
+          "label": "r13_v111_time_wrong10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9071466db5b9d7d81fe64b4fd53eeab293d133a689a71be4a88d287184be2271",
+      "uid": "83159bf650964938bd0df57c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0091",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0091",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0091",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "그러니까 주웠다니까. 내 물건이 있다는 말만 또 하는 거니?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1639,
+          "label": "r13_v111_contact_wrong10",
+          "guards": [
+            "if r13_nw_retry(\"room13\",['E08_CONTACT_ASSEMBLY', 'E08_WOUND_WIRE', 'E08_CHILD_POSITION', 'E08_ROOM_REACH', 'E09_SCARF'],'할머니가 목도리를 여민다. 천과 핀, 상처, 아이의 자리를 함께 놓아야 한다.'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1643,
+          "label": "r13_v111_contact_wrong10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "29f4ded06a467e401be5ffa1c2328e227076d886ef499e82df98b5faf16355f5",
+      "uid": "e85cea9a2e2eab7b2a88272d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0092",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0092",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0092",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "물건이 어디에 어떻게 붙어 있었는지부터 다시 보겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1639,
+          "label": "r13_v111_contact_wrong10",
+          "guards": [
+            "if r13_nw_retry(\"room13\",['E08_CONTACT_ASSEMBLY', 'E08_WOUND_WIRE', 'E08_CHILD_POSITION', 'E08_ROOM_REACH', 'E09_SCARF'],'할머니가 목도리를 여민다. 천과 핀, 상처, 아이의 자리를 함께 놓아야 한다.'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1644,
+          "label": "r13_v111_contact_wrong10",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "309d4d1e574688d15841c28509917b1291cd3b8a1e48c2f00523bc4c14a9819f",
+      "uid": "55faab6f76c98732199c115d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0093",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0093",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0093",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "천을 어떻게 고정했는지, 상처의 조각이 어디서 왔는지 다시 보겠습니다. 아이 손을 본 때도요.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "10405c2203344c4de3fbb445506ab317fccbd1a7b3bc43fd60fc8ed1cde0b410",
+      "uid": "1848536e335458d64651d70b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0094",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0094",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0094",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: time_cost=0",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "451e183e78ad687c8dbdb27d0b91e15d9de947a8f4a717fdcf37c0d4dab74de9",
+      "uid": "24de93ce2947832af1c96429",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0095",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0095",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0095",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[이미 획득한 사실과 읽은 발화만 재열람한다. 현재 생사·위치와 다른 과거 증언은 기록으로 표시하고 인물을 새로 현장에 출현시키지 않는다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e4047cc80b769f2f77ad98a244e6c771def19c3e354355926f66719bef6b47dd",
+      "uid": "44ad16924aa13c21265295bf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0096",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0096",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0096",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "적어 둔 것부터 다시 보겠습니다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bd1227da2b99009eeb0fd6b304bfb6ad9beb3e1371024ffecf107cb589a8b8c6",
+      "uid": "db390d9dc1e5a652356e8e0c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D10_S03_L0097",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D10_S03_L0097",
+        "text"
+      ],
+      "origin": "base",
+      "day": 10,
+      "scene": "MS14_D10_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D10_S03_L0097",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: time_cost=0",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "10-3. 정오 / 회관 — 세 번의 변명",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "451e183e78ad687c8dbdb27d0b91e15d9de947a8f4a717fdcf37c0d4dab74de9",
+      "uid": "538a37d7b1b0ad4932e953dd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

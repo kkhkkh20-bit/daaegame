@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_HP_VISIT11_00",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_visit11",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "hp_visit11",
+      "block": "hp_visit11",
+      "placement": "blocks",
+      "ref": "hp_visit11",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "돌 얘기를 듣고 나니 누나분이 마음에 걸렸습니다. 난로를 봐도 될까요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 82,
+          "label": "r13_hp_visit11",
+          "guards": []
+        }
+      ],
+      "scene_title": "hp_visit11",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "77a1ddeac0167d05c9c3e47ee92054529e86731770a8cabacc6a33303dde66ff",
+      "uid": "af4179cd15a87545d361af38",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|hp_visit11|patch|hp_visit11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HP_VISIT11_01",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_visit11",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "hp_visit11",
+      "block": "hp_visit11",
+      "placement": "blocks",
+      "ref": "hp_visit11",
+      "when": null,
+      "speaker": "판돌",
+      "kind": "dialogue",
+      "text": "보시오. 불을 끄면 추워할 텐데, 그것부터 걱정이오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 82,
+          "label": "r13_hp_visit11",
+          "guards": []
+        }
+      ],
+      "scene_title": "hp_visit11",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "fe45b42885055928a39fc5607b90dac1a7ad625520d219eeed9b9243dfea2afd",
+      "uid": "0802455a1f19528019ee12af",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|hp_visit11|patch|hp_visit11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

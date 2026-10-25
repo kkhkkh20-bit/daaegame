@@ -1,0 +1,126 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/council_issue.rpy:118:35",
+      "file": "game/council_issue.rpy",
+      "path": [
+        5395,
+        5402
+      ],
+      "origin": "rpy_inventory",
+      "day": 5,
+      "scene": "council_open_issue",
+      "block": "council_open_issue",
+      "placement": "literal",
+      "ref": "game/council_issue.rpy:118:35",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": " · 논의",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/council_issue.rpy",
+          "line": 118,
+          "label": "council_open_issue",
+          "guards": []
+        }
+      ],
+      "line": 118,
+      "scene_title": "council_open_issue",
+      "source_hash": "75101b1a3fdac648a2d081c61f6d6641e1bb93d9be94605bc39e707c5de0142b",
+      "baseline_hash": "5701f60f90c307a96437eadd3de5d98c0dcfd49412a60e9c1f3fc1097c120a12",
+      "uid": "1c3b84e2f15421c796c875cd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|council_open_issue|rpy_inventory|council_open_issue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/council_issue.rpy:129:115",
+      "file": "game/council_issue.rpy",
+      "path": [
+        5830,
+        5850
+      ],
+      "origin": "rpy_inventory",
+      "day": 5,
+      "scene": "council_open_issue",
+      "block": "council_open_issue",
+      "placement": "literal",
+      "ref": "game/council_issue.rpy:129:115",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "그래. 우리도 확인한 걸 말하자.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/council_issue.rpy",
+          "line": 129,
+          "label": "council_open_issue",
+          "guards": [
+            "if \"opened\" not in council_history:"
+          ]
+        }
+      ],
+      "line": 129,
+      "scene_title": "council_open_issue",
+      "source_hash": "75101b1a3fdac648a2d081c61f6d6641e1bb93d9be94605bc39e707c5de0142b",
+      "baseline_hash": "1d7da53e9d2880c74b178a18dbc7ce4bffd9c2336d5f0d401b46b4f4687c28e2",
+      "uid": "e17fd7a3feb6e974a7375855",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|council_open_issue|rpy_inventory|council_open_issue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/council_issue.rpy:151:45",
+      "file": "game/council_issue.rpy",
+      "path": [
+        6925,
+        6957
+      ],
+      "origin": "rpy_inventory",
+      "day": 5,
+      "scene": "council_open_issue",
+      "block": "council_open_issue",
+      "placement": "literal",
+      "ref": "game/council_issue.rpy:151:45",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "설명은 들었습니다. 확인한 근거가 있으면 보여주십시오.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/council_issue.rpy",
+          "line": 151,
+          "label": "council_open_issue",
+          "guards": [
+            "while not council_resolved():",
+            "elif council_action == \"ask\":",
+            "else:"
+          ]
+        }
+      ],
+      "line": 151,
+      "scene_title": "council_open_issue",
+      "source_hash": "75101b1a3fdac648a2d081c61f6d6641e1bb93d9be94605bc39e707c5de0142b",
+      "baseline_hash": "8dc0fe529ab1ca26bb4e2d061daf0ec3355810b4d0f2d0bc2901652387a06e98",
+      "uid": "880a44401b811c4962ae0aa9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|council_open_issue|rpy_inventory|council_open_issue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

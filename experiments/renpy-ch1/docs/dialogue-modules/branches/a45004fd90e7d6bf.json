@@ -1,0 +1,129 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D12_MR01",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "meal12_return",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "meal12_return",
+      "block": "meal12_return",
+      "placement": "blocks",
+      "ref": "meal12_return",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "교실로 돌아오니 흰 그릇은 아까 놓은 자리에 그대로 있다. 다람이 숟가락을 쥔 채 나를 올려다본다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1163,
+          "label": "r13_v111_meal12",
+          "guards": [
+            "if r13_v111_value('meal12_intro_seen'):"
+          ]
+        }
+      ],
+      "scene_title": "meal12_return",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "0fef63eb7965c43029b04dd0b33b77e2a9d81f343bef256c1d0e0b09d6f8050d",
+      "uid": "a522ff27e24bca6ca7ef8549",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|meal12_return|patch|meal12_return|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D12_MR02",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "meal12_return",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "meal12_return",
+      "block": "meal12_return",
+      "placement": "blocks",
+      "ref": "meal12_return",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "부탁한 일은 확인하고 왔습니다. 배식은 아직이지요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1163,
+          "label": "r13_v111_meal12",
+          "guards": [
+            "if r13_v111_value('meal12_intro_seen'):"
+          ]
+        }
+      ],
+      "scene_title": "meal12_return",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "9ac957cf64db4ce909d5cc4e37528f2cd1edfabf5299ee8abc661f9d1060967f",
+      "uid": "f799867df0c325e11ed83b87",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|meal12_return|patch|meal12_return|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D12_MR03",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "meal12_return",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "meal12_return",
+      "block": "meal12_return",
+      "placement": "blocks",
+      "ref": "meal12_return",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "솥에서는 아직 김이 오른다. 아이들은 하던 이야기로 돌아간다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1163,
+          "label": "r13_v111_meal12",
+          "guards": [
+            "if r13_v111_value('meal12_intro_seen'):"
+          ]
+        }
+      ],
+      "scene_title": "meal12_return",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "f15834d6c9da6b540bb806d21295ce5609736499b4379f78d2ab62d082859405",
+      "uid": "61ebdf99019560e11793ece2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|meal12_return|patch|meal12_return|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

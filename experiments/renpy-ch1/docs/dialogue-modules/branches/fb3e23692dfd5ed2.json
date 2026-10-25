@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D12_FS01",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "fever_seat12",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "fever_seat12",
+      "block": "fever_seat12",
+      "placement": "blocks",
+      "ref": "fever_seat12",
+      "when": null,
+      "speaker": "사자 선생님",
+      "kind": "dialogue",
+      "text": "난로 옆은 한 자리뿐이에요. 열나는 아이부터 눕혀야죠.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1117,
+          "label": "r13_v111_warm_place12",
+          "guards": [
+            "if r13_v111_value('daram_fever12'):"
+          ]
+        }
+      ],
+      "scene_title": "fever_seat12",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "bdaf72671a55696e975c98bb242f7e6504eadc4c65e0fac32ab84c5d4f102116",
+      "uid": "7b6f5c5af6163447a711ded8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|fever_seat12|patch|fever_seat12|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D12_FS02",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "fever_seat12",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "fever_seat12",
+      "block": "fever_seat12",
+      "placement": "blocks",
+      "ref": "fever_seat12",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "선생님이 비워 둔 난로 옆자리에 다람이 눕는다. 다른 아이들 몫으로 남은 자리는 없다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1117,
+          "label": "r13_v111_warm_place12",
+          "guards": [
+            "if r13_v111_value('daram_fever12'):"
+          ]
+        }
+      ],
+      "scene_title": "fever_seat12",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "e625121552ac0d01fa935ad2c25aaa2a452a5a2ea184b9003dc4f4311fcae4f0",
+      "uid": "8bd0dde59d0e8a55b2de4675",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|fever_seat12|patch|fever_seat12|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:396:12",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        19751,
+        19768
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_ep2_tell_somi",
+      "block": "r13_ep2_tell_somi",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:396:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "강 이야기를 솜이에게 전한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 396,
+          "label": "r13_ep2_tell_somi",
+          "guards": [
+            "if r13_has(\"K07\") and not r13_has(\"kd_seori\"):",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 396,
+      "scene_title": "r13_ep2_tell_somi",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "de0b3ac1c643048b39e46e300611180cf51e7666a508cb55529f6f3099afdabc",
+      "uid": "84857341ace0f4619f313241",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_ep2_tell_somi|rpy_menu|r13_ep2_tell_somi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:401:12",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        20031,
+        20044
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_ep2_tell_somi",
+      "block": "r13_ep2_tell_somi",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:401:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "오늘은 그냥 돌아간다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 401,
+          "label": "r13_ep2_tell_somi",
+          "guards": [
+            "if r13_has(\"K07\") and not r13_has(\"kd_seori\"):",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 401,
+      "scene_title": "r13_ep2_tell_somi",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "8547d8548f97d1d619fc1a993b896bd0b498097fce95dde81a1f96c7c83794da",
+      "uid": "a2fe55b1faabac9bef47a626",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_ep2_tell_somi|rpy_menu|r13_ep2_tell_somi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

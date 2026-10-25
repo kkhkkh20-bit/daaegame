@@ -1,0 +1,334 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13.rpy:676:12",
+      "file": "game/room13.rpy",
+      "path": [
+        38759,
+        38783
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_link_reason",
+      "block": "r13_link_reason",
+      "placement": "literal",
+      "ref": "game/room13.rpy:676:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "정문만 봐서는 다른 길을 배제할 수 없다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 676,
+          "label": "r13_link_reason",
+          "guards": [
+            "if claim==\"C1\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 676,
+      "scene_title": "r13_link_reason",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "e0e473d48f55e373f586cfbd77d492aa0579498d6f3db48f0488eff46629b7a3",
+      "uid": "a7714561397a94b6e221f070",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_link_reason|rpy_menu|r13_link_reason|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:684:12",
+      "file": "game/room13.rpy",
+      "path": [
+        39352,
+        39371
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_link_reason",
+      "block": "r13_link_reason",
+      "placement": "literal",
+      "ref": "game/room13.rpy:684:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "통로가 있으니 할머니가 범인이다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 684,
+          "label": "r13_link_reason",
+          "guards": [
+            "if claim==\"C1\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 684,
+      "scene_title": "r13_link_reason",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "0faab27bbdf98e78e0c5f8b0aa479d7193f2693ae9ae2083ea17d049e2ea9fb6",
+      "uid": "10605ffa9e610bc2c0e30ad5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_link_reason|rpy_menu|r13_link_reason|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:689:12",
+      "file": "game/room13.rpy",
+      "path": [
+        39599,
+        39624
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_link_reason",
+      "block": "r13_link_reason",
+      "placement": "literal",
+      "ref": "game/room13.rpy:689:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "죽게 한 상처는 촛대가 갈라진 뒤에 생겼다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 689,
+          "label": "r13_link_reason",
+          "guards": [
+            "elif claim==\"C2\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 689,
+      "scene_title": "r13_link_reason",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "91b7e4d33f2db8232543e90f0791280af9dbc4410e03b930c675dcebde1c35d4",
+      "uid": "c763f0331e574ff3bc4afff4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_link_reason|rpy_menu|r13_link_reason|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:692:12",
+      "file": "game/room13.rpy",
+      "path": [
+        40067,
+        40092
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_link_reason",
+      "block": "r13_link_reason",
+      "placement": "literal",
+      "ref": "game/room13.rpy:692:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "다람이는 착한 아이니 사람을 죽일 수 없다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 692,
+          "label": "r13_link_reason",
+          "guards": [
+            "elif claim==\"C2\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 692,
+      "scene_title": "r13_link_reason",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "5bbb906676ee87ff9059733ddd878cada16fc5b6f8bbcc142b48b15ab0199331",
+      "uid": "8b3125a302bd9d93007ef05c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_link_reason|rpy_menu|r13_link_reason|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:697:12",
+      "file": "game/room13.rpy",
+      "path": [
+        40280,
+        40300
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_link_reason",
+      "block": "r13_link_reason",
+      "placement": "literal",
+      "ref": "game/room13.rpy:697:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "식당에 있던 건 첫 비명 때뿐이다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 697,
+          "label": "r13_link_reason",
+          "guards": [
+            "elif claim==\"C3\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 697,
+      "scene_title": "r13_link_reason",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "4fefa38c34d0e16f1c543918170fc8182db5132c789b7292f3e3c179d750a955",
+      "uid": "e5182efefd238fd6319e88b2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_link_reason|rpy_menu|r13_link_reason|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:700:12",
+      "file": "game/room13.rpy",
+      "path": [
+        40598,
+        40621
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_link_reason",
+      "block": "r13_link_reason",
+      "placement": "literal",
+      "ref": "game/room13.rpy:700:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "나비가 할머니 편이므로 전부 거짓말이다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 700,
+          "label": "r13_link_reason",
+          "guards": [
+            "elif claim==\"C3\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 700,
+      "scene_title": "r13_link_reason",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "e9aadb13d9105f1772e10d1f2ca5031e2047036d6eec48dab51a320320c41b94",
+      "uid": "a8e269f942751a733d86c2b3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_link_reason|rpy_menu|r13_link_reason|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:705:12",
+      "file": "game/room13.rpy",
+      "path": [
+        40801,
+        40825
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_link_reason",
+      "block": "r13_link_reason",
+      "placement": "literal",
+      "ref": "game/room13.rpy:705:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "핀과 도구로 ‘구하다 만졌다’를 반박한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 705,
+          "label": "r13_link_reason",
+          "guards": [
+            "else:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 705,
+      "scene_title": "r13_link_reason",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "acd0f9e2402d416a5b3804bec5e7b1f168d947e345f9db5f791c3ee602b43fce",
+      "uid": "063418257684172a26420b4b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_link_reason|rpy_menu|r13_link_reason|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:708:12",
+      "file": "game/room13.rpy",
+      "path": [
+        41356,
+        41377
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_link_reason",
+      "block": "r13_link_reason",
+      "placement": "literal",
+      "ref": "game/room13.rpy:708:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "핀 주인이니 다른 자료는 필요 없다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 708,
+          "label": "r13_link_reason",
+          "guards": [
+            "else:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 708,
+      "scene_title": "r13_link_reason",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "3d2300017ccd0a13815388bedbaf6e7d822efe25faff47bdf9d9fa92879496e0",
+      "uid": "45f8fb25837c0fc147b6d6f5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_link_reason|rpy_menu|r13_link_reason|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

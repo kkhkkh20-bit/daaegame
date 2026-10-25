@@ -1,0 +1,48 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D12_SQ01",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "seori_ask12",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "seori_ask12",
+      "block": "seori_ask12",
+      "placement": "blocks",
+      "ref": "seori_ask12",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "약장 밖에 맡긴 약도 있습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1490,
+          "label": "r13_v111_medical_arrival12",
+          "guards": [
+            "if r13_v111_value('route12')=='late_exposure':",
+            "menu:"
+          ]
+        }
+      ],
+      "scene_title": "seori_ask12",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "7da020f4594a12cdc9ddec35f24cb50e83839434589bf1a1654398c247e56ba7",
+      "uid": "8b4e88e1a425f696eccaf9ff",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|seori_ask12|patch|seori_ask12|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

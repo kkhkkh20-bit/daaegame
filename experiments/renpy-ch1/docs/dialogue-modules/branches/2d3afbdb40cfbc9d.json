@@ -1,0 +1,164 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:338:38",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        20282,
+        20296
+      ],
+      "origin": "rpy_inventory",
+      "day": 8,
+      "scene": "r13_wf_ruins",
+      "block": "r13_wf_ruins",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:338:38",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "6일 · 장작 창고 터",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 338,
+          "label": "r13_wf_ruins",
+          "guards": []
+        }
+      ],
+      "line": 338,
+      "scene_title": "r13_wf_ruins",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "6c1519ab97a6281f6726dd8bee74ba3960173fb4fc53680e808495b2eefcd765",
+      "uid": "56a81747f5fb06b0f2f53a52",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_wf_ruins|rpy_inventory|r13_wf_ruins|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:342:88",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        20518,
+        20525
+      ],
+      "origin": "rpy_inventory",
+      "day": 8,
+      "scene": "r13_wf_ruins",
+      "block": "r13_wf_ruins",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:342:88",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "문을 본다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 342,
+          "label": "r13_wf_ruins",
+          "guards": [
+            "while _wf_left:"
+          ]
+        }
+      ],
+      "line": 342,
+      "scene_title": "r13_wf_ruins",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "f8489904bced87fcede1434e120b372be60f558a9ffe8b70649ce475edbe8be3",
+      "uid": "a9984879a3e025e1e9122993",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_wf_ruins|rpy_inventory|r13_wf_ruins|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:367:28",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        22139,
+        22150
+      ],
+      "origin": "rpy_inventory",
+      "day": 8,
+      "scene": "r13_wf_ruins",
+      "block": "r13_wf_ruins",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:367:28",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "사자 선생님의 말",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 367,
+          "label": "r13_wf_ruins",
+          "guards": [
+            "if r13_has(\"wf_kkomi_alive\"):"
+          ]
+        }
+      ],
+      "line": 367,
+      "scene_title": "r13_wf_ruins",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "1c10d1a66c31d0a49c8cb37730077b2f55798ea82c6e0f2edcfe4e5ec16500eb",
+      "uid": "81a1f4480bea1e09f7b67039",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_wf_ruins|rpy_inventory|r13_wf_ruins|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:376:28",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        22728,
+        22750
+      ],
+      "origin": "rpy_inventory",
+      "day": 8,
+      "scene": "r13_wf_ruins",
+      "block": "r13_wf_ruins",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:376:28",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "학교에서 살아남은 아이들에게 들은 말",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 376,
+          "label": "r13_wf_ruins",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 376,
+      "scene_title": "r13_wf_ruins",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "b02d9446cded27783a2e64cd8cc365a20435176ae7090809ac99bc828ecd64e1",
+      "uid": "d332a188c356e1ba7135211f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_wf_ruins|rpy_inventory|r13_wf_ruins|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

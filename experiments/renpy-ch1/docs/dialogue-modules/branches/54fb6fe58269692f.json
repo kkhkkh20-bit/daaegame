@@ -1,0 +1,165 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_week2_events.rpy:138:15",
+      "file": "game/systems/room13_week2_events.rpy",
+      "path": [
+        7530,
+        7549
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_w2e_tools",
+      "block": "r13_w2e_tools",
+      "placement": "literal",
+      "ref": "game/systems/room13_week2_events.rpy:138:15",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "수리할 때 쓰던 공구 아니었니?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week2_events.rpy",
+          "line": 138,
+          "label": "r13_w2e_tools",
+          "guards": []
+        }
+      ],
+      "line": 138,
+      "scene_title": "r13_w2e_tools",
+      "source_hash": "bd106ab951275b7b2a06d9b6705a142790d202b883e7f2e6d4f37241b21c87c0",
+      "baseline_hash": "b312b58cf7bb976c6dc27aca292747792ea81bd9ddcc1c9f82d0a528ee131d32",
+      "uid": "9a56cc0966123979b13c68f4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_w2e_tools|rpy_literal|r13_w2e_tools|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week2_events.rpy:144:35",
+      "file": "game/systems/room13_week2_events.rpy",
+      "path": [
+        7826,
+        7840
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_w2e_tools",
+      "block": "r13_w2e_tools",
+      "placement": "literal",
+      "ref": "game/systems/room13_week2_events.rpy:144:35",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "공구 값은 내가 낼게.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week2_events.rpy",
+          "line": 144,
+          "label": "r13_w2e_tools",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 144,
+      "scene_title": "r13_w2e_tools",
+      "source_hash": "bd106ab951275b7b2a06d9b6705a142790d202b883e7f2e6d4f37241b21c87c0",
+      "baseline_hash": "165c7b900a676ff6d37b522e835a530bb5ccadde29c45b2c37d138f768615868",
+      "uid": "9374f418363da39c4e2a9b8b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_w2e_tools|rpy_literal|r13_w2e_tools|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week2_events.rpy:149:35",
+      "file": "game/systems/room13_week2_events.rpy",
+      "path": [
+        8148,
+        8179
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_w2e_tools",
+      "block": "r13_w2e_tools",
+      "placement": "literal",
+      "ref": "game/systems/room13_week2_events.rpy:149:35",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "가족이 받을 몫을 장부에 넣을게. 공구는 남겨 두자.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week2_events.rpy",
+          "line": 149,
+          "label": "r13_w2e_tools",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 149,
+      "scene_title": "r13_w2e_tools",
+      "source_hash": "bd106ab951275b7b2a06d9b6705a142790d202b883e7f2e6d4f37241b21c87c0",
+      "baseline_hash": "ab1879e8dc93eb67f108aefefb1d95f6a89551a4334db7ee5a1f3b01683f99f8",
+      "uid": "52f80902b4856841891618ef",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_w2e_tools|rpy_literal|r13_w2e_tools|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week2_events.rpy:164:35",
+      "file": "game/systems/room13_week2_events.rpy",
+      "path": [
+        8896,
+        8940
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_w2e_tools",
+      "block": "r13_w2e_tools",
+      "placement": "literal",
+      "ref": "game/systems/room13_week2_events.rpy:164:35",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(장치를 밤새 붙잡고 있을 공구가 사라졌다. 이래서는 교대를 짤 수 없다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week2_events.rpy",
+          "line": 164,
+          "label": "r13_w2e_tools",
+          "guards": [
+            "if r13_has(\"tools_sold\"):",
+            "else:"
+          ]
+        }
+      ],
+      "line": 164,
+      "scene_title": "r13_w2e_tools",
+      "source_hash": "bd106ab951275b7b2a06d9b6705a142790d202b883e7f2e6d4f37241b21c87c0",
+      "baseline_hash": "22dbd488e920e22995fd40c3bf2978c5d8c2c1be104716dbe505064d549cfb3e",
+      "uid": "04675faeb69d24159cab1ea1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_w2e_tools|rpy_literal|r13_w2e_tools|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

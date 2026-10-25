@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:109:157",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        7057,
+        7077
+      ],
+      "origin": "rpy_inventory",
+      "day": 7,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:109:157",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "마지막으로 어디 간다고 했습니까?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 109,
+          "label": "r13_life_first_night",
+          "guards": [
+            "if store.room13.get(\"life_poc\") and key==\"granny_letter\":"
+          ]
+        }
+      ],
+      "line": 109,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "75236e8ba2ea3a8b6c77186bdb1a930d38b0cb459264225a60acde432d3e89c0",
+      "uid": "3fdf2ae7456654c1fa9fcefc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_life_first_night|rpy_inventory|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:113:297",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        7694,
+        7728
+      ],
+      "origin": "rpy_inventory",
+      "day": 7,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:113:297",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "내게 일일이 말하진 않았어요. 밥도 식혀 놓고 들어오던걸.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 113,
+          "label": "r13_life_first_night",
+          "guards": [
+            "if store.room13.get(\"life_poc\") and key==\"register\":"
+          ]
+        }
+      ],
+      "line": 113,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "339c26e3dadf90db3b9bb961f17ca37540630751d449a55aa620041f3ce8aa81",
+      "uid": "bf82c7577447cd736761cf54",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_life_first_night|rpy_inventory|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

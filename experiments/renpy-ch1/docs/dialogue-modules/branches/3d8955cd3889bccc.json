@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D13_S04_C01",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "order_relay_next13",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "order_relay_next13",
+      "block": "order_relay_next13",
+      "placement": "blocks",
+      "ref": "order_relay_next13",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "thought",
+      "text": "명령을 멈췄다는 사본은 받았어. 너울이 다시 보내라고 해도 막을 사람이 있어야 해.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2496,
+          "label": "r13_v111_order_stop13",
+          "guards": []
+        }
+      ],
+      "scene_title": "order_relay_next13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "47589e148f6088166ab91373220aac7a220c2d94fe0a16e7dcf0d0302a623326",
+      "uid": "0e931898dc21b91969a11940",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|order_relay_next13|patch|order_relay_next13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

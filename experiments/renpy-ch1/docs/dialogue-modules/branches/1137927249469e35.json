@@ -1,0 +1,129 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13.rpy:658:38",
+      "file": "game/room13.rpy",
+      "path": [
+        37837,
+        37912
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_argument",
+      "block": "r13_argument",
+      "placement": "literal",
+      "ref": "game/room13.rpy:658:38",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "아버님이 보여 준 자국도 오래된 것일 수 있다고 했죠. 누가 그 길로 들어갔다 해도, 어르신을 도우려던 건지 아닌지 어떻게 알아요?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 658,
+          "label": "r13_argument",
+          "guards": [
+            "else:",
+            "if r13_has(\"granny_prepared:E09\"):"
+          ]
+        }
+      ],
+      "line": 658,
+      "scene_title": "r13_argument",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "4a8433812e34ea99702d67ff3ba311a2db331114a9af6a080dd7361e3c370218",
+      "uid": "46cf932dd5281c001f5cbbda",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_argument|rpy_literal|r13_argument|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:660:38",
+      "file": "game/room13.rpy",
+      "path": [
+        38058,
+        38111
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_argument",
+      "block": "r13_argument",
+      "placement": "literal",
+      "ref": "game/room13.rpy:660:38",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "브로치를 조사하신다니까 말씀드리는데요. 오후에 어르신을 도와드릴 때 떨어졌을 수도 있잖아요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 660,
+          "label": "r13_argument",
+          "guards": [
+            "else:",
+            "elif any(r13_has(\"granny_prepared:\"+e) for e in (\"E13\",\"E14\",\"E35\",\"E36\")):"
+          ]
+        }
+      ],
+      "line": 660,
+      "scene_title": "r13_argument",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "ca41f3f18cbb46710120b6162b25316a28abf84e761ec44ca29dcbef4ebcc812",
+      "uid": "97002bca420561f1208cbda6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_argument|rpy_literal|r13_argument|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:662:38",
+      "file": "game/room13.rpy",
+      "path": [
+        38191,
+        38246
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_argument",
+      "block": "r13_argument",
+      "placement": "literal",
+      "ref": "game/room13.rpy:662:38",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "잠깐 주방에 갔다고 해서 내가 13호에 갔다는 건가요? 갔다 해도 아픈 분을 도우려던 거라면요?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 662,
+          "label": "r13_argument",
+          "guards": [
+            "else:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 662,
+      "scene_title": "r13_argument",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "1f7a6d18b5dccb965a1c60f833fa8dfba1161bfe9d65733dd175da83dbebeffb",
+      "uid": "4b223c9e35318b6657f5ffe0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_argument|rpy_literal|r13_argument|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

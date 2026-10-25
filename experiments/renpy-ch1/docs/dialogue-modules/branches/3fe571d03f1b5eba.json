@@ -1,0 +1,225 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "afternoon6:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "afternoon6",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 6,
+      "scene": "afternoon6",
+      "block": "afternoon6",
+      "placement": "binding",
+      "ref": "afternoon6:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "아이들 자리를 여쭌다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "kkomi_seat6",
+            null
+          ]
+        ],
+        "location": "school",
+        "person": "resident_teacher",
+        "object": null
+      },
+      "scene_title": "afternoon6",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "ae6a0265c956b45d2865cdc49418194f179714f7569d4e8e0be0da0eb8007173",
+      "uid": "6c281e88e4d88832be873f72",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|afternoon6|choice|afternoon6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "afternoon6:1",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "afternoon6",
+        "options",
+        1,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 6,
+      "scene": "afternoon6",
+      "block": "afternoon6",
+      "placement": "binding",
+      "ref": "afternoon6:1",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "학교에 자리가 났어. 같이 갈래?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "kkomi_seat6",
+            true
+          ]
+        ],
+        "location": "v111_woodshed",
+        "person": "kid_kkomi",
+        "object": null
+      },
+      "scene_title": "afternoon6",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "92e5a757b1c1d709fd352c2be9bb398dcc8ea6ef926ca7c81bcba54dc02413b3",
+      "uid": "c62be496c33dbf19a0712ede",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|afternoon6|choice|afternoon6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "afternoon6:2",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "afternoon6",
+        "options",
+        2,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 6,
+      "scene": "afternoon6",
+      "block": "afternoon6",
+      "placement": "binding",
+      "ref": "afternoon6:2",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "내일 아침에 데리러 올게",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "v111_woodshed",
+        "person": "kid_kkomi",
+        "object": null
+      },
+      "scene_title": "afternoon6",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "9a29184e41b6bbdc460a74a801fbb5785a083b49c414cc13cdd314f22ed0ced6",
+      "uid": "79c531b594b0ae5f28e42082",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|afternoon6|choice|afternoon6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "afternoon6:80",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "afternoon6",
+        "options",
+        3,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 6,
+      "scene": "afternoon6",
+      "block": "afternoon6",
+      "placement": "binding",
+      "ref": "afternoon6:80",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "장작더미 옆 깡통 줄을 살핀다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "kkomi_can_seen6",
+            null
+          ]
+        ],
+        "location": "v111_woodshed",
+        "person": null,
+        "object": "v111_wood"
+      },
+      "scene_title": "afternoon6",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "5acf9aff8eb7d7a558efff93b92371b7d6329d289360adc31b87912b9d5c7180",
+      "uid": "233ae215fad4cf80e9f80565",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|afternoon6|choice|afternoon6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "afternoon6:81",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "afternoon6",
+        "options",
+        4,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 6,
+      "scene": "afternoon6",
+      "block": "afternoon6",
+      "placement": "binding",
+      "ref": "afternoon6:81",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "줄을 풀고 도토리를 챙긴다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "kkomi_can_seen6",
+            true
+          ],
+          [
+            "state",
+            "acorn_recovered",
+            null
+          ]
+        ],
+        "location": "v111_woodshed",
+        "person": null,
+        "object": "v111_wood"
+      },
+      "scene_title": "afternoon6",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "ddb9526ac621e8d59e5e6de6a154107558d71535c52b72324ef4d0077750834e",
+      "uid": "9cc14f5b1f6c57e4d1b8a3b1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|afternoon6|choice|afternoon6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

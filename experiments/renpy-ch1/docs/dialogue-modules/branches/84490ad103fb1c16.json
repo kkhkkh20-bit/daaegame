@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "bundle_open:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "bundle_open",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": null,
+      "scene": "bundle_open",
+      "block": "bundle_open",
+      "placement": "binding",
+      "ref": "bundle_open:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "책상 아래 보따리를 연다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "room13",
+        "person": null,
+        "object": "family_bundle"
+      },
+      "scene_title": "bundle_open",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "c7a70a430d3aab5cd2c8fc7fceb34d1142cc385e00104e48bba497fc8672d957",
+      "uid": "257e26b6760a36e2ca193c92",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|bundle_open|choice|bundle_open|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "bundle_open:100",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "bundle_open",
+        "options",
+        1,
+        "title"
+      ],
+      "origin": "choice",
+      "day": null,
+      "scene": "bundle_open",
+      "block": "bundle_open",
+      "placement": "binding",
+      "ref": "bundle_open:100",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "서랍 밑 종이를 빼낸다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "hidden_base:paper",
+            null
+          ]
+        ],
+        "location": "room13",
+        "person": null,
+        "object": "family_bundle"
+      },
+      "scene_title": "bundle_open",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "59fc71058fd115c274f729b59eede1a5194482eda83e695ead513713846308e1",
+      "uid": "ace884a2a44248837d9636b7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|bundle_open|choice|bundle_open|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

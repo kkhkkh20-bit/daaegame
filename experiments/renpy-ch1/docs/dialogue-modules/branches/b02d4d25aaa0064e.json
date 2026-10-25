@@ -1,0 +1,82 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/winter_opening.rpy:51:196",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        3162,
+        3179
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "winter_arrival",
+      "block": "winter_arrival",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:51:196",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "돌아갈 때도 이 마차 타요?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 51,
+          "label": "winter_arrival",
+          "guards": []
+        }
+      ],
+      "line": 51,
+      "scene_title": "winter_arrival",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "88a2f0696c50572a3b292560d7fba12393a591859738a540d860a7eddc18d3aa",
+      "uid": "17d1c6e5aa5b86f4ff600e5d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|winter_arrival|rpy_inventory|winter_arrival|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:53:96",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        3408,
+        3445
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "winter_arrival",
+      "block": "winter_arrival",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:53:96",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "눈에 발이 푹 잠겼다. 문 안쪽에서 경비가 책 한 권을 펼쳤다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 53,
+          "label": "winter_arrival",
+          "guards": []
+        }
+      ],
+      "line": 53,
+      "scene_title": "winter_arrival",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "27ca163140093350a9a07d10de11772de8218dc48408effa50523476534a5dec",
+      "uid": "710d6aed31538863fc3f0526",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|winter_arrival|rpy_inventory|winter_arrival|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

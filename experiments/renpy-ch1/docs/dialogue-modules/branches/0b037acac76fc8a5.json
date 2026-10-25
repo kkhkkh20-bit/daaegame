@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D05_S03_L0014",
+      "file": "game/v111/newworld/d05.json",
+      "path": [
+        "replace",
+        "MS14_D05_S03_L0014",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D05_S03_L0014",
+      "when": "gate_post_won_with_e21",
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "아이 말은 그렇다 치고…… 그럼 무쇠가 물었다는 거요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 508,
+          "label": "r13_v111_bami_clear5",
+          "guards": []
+        }
+      ],
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "a9e760da50ee60c0891a0f3223c23267f704e9da058eb484a3ffcf4ed70b3f1c",
+      "baseline_hash": "eee0f4de29a3123f5c4aa7bc3bdc8a627d206049f074afbfb739a7c67bdd7344",
+      "uid": "7a3ad15465b21b80f2f19101",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|patch|replace|gate_post_won_with_e21",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

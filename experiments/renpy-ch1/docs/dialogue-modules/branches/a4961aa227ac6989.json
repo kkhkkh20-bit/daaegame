@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events.rpy:226:35",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        12401,
+        12436
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_ev_b_store",
+      "block": "r13_ev_b_store",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:226:35",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(남의 창고 일이다. 우리에게는 아내를 찾는 일이 먼저다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 226,
+          "label": "r13_ev_b_store",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 226,
+      "scene_title": "r13_ev_b_store",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "f6529b4b3217487091d470986b987c586922786384303143ec44ce2336dc985f",
+      "uid": "27a68d1ae694f1cad2ef2605",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_ev_b_store|rpy_literal|r13_ev_b_store|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

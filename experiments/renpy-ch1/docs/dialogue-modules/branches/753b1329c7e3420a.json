@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:361:23",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        20057,
+        20076
+      ],
+      "origin": "rpy_inventory",
+      "day": 3,
+      "scene": "r13_cv_altar",
+      "block": "r13_cv_altar",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:361:23",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "……할아버지 손이 심심하댔잖아.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 361,
+          "label": "r13_cv_altar",
+          "guards": [
+            "if r13_has(\"cart_left\"):"
+          ]
+        }
+      ],
+      "line": 361,
+      "scene_title": "r13_cv_altar",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "433831df05d47d52abcd6886dd590450480af195448e3af300b782cbb7261ca1",
+      "uid": "6d4747c86df06d3225bf4fdf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_cv_altar|rpy_inventory|r13_cv_altar|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:381:23",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        21462,
+        21491
+      ],
+      "origin": "rpy_inventory",
+      "day": 3,
+      "scene": "r13_cv_altar",
+      "block": "r13_cv_altar",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:381:23",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "토실아. 엄마 손자국, 같이 찾자. 탐정단이잖아.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 381,
+          "label": "r13_cv_altar",
+          "guards": [
+            "if r13_has(\"cv_granny_tomorrow\") or room13.get(\"granny_state\")!=\"detained\":"
+          ]
+        }
+      ],
+      "line": 381,
+      "scene_title": "r13_cv_altar",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "f32e42ff8d92f7e3eec141177d426b9491a3a8574fe43afbefeebcc78cc33d35",
+      "uid": "cea4fd58e01248f2c1b3529d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_cv_altar|rpy_inventory|r13_cv_altar|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:174:8",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        9933,
+        9943
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "r13_nt_chorong_signal",
+      "block": "r13_nt_chorong_signal",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:174:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "이름 판을 본다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 174,
+          "label": "r13_nt_chorong_signal",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 174,
+      "scene_title": "r13_nt_chorong_signal",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "ae6f9b8fd4831667ddadec4bb887d4356072baa647e0d074ad6efc935c936a71",
+      "uid": "0aa83e9d5512b7319b4c72f3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_chorong_signal|rpy_menu|r13_nt_chorong_signal|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:179:8",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        10231,
+        10240
+      ],
+      "origin": "rpy_menu",
+      "day": 8,
+      "scene": "r13_nt_chorong_signal",
+      "block": "r13_nt_chorong_signal",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:179:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "그냥 지나간다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 179,
+          "label": "r13_nt_chorong_signal",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 179,
+      "scene_title": "r13_nt_chorong_signal",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "3d417e83da205469381080cdd2a85bb5b2fca5988faa277cbeca2a5c5d742981",
+      "uid": "e38e930ce3253e73ac4ae664",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_nt_chorong_signal|rpy_menu|r13_nt_chorong_signal|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

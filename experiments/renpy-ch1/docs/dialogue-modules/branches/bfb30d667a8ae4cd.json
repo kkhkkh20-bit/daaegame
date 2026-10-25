@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:286:34",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        16793,
+        16813
+      ],
+      "origin": "rpy_inventory",
+      "day": 4,
+      "scene": "r13_ep1_dawn",
+      "block": "r13_ep1_dawn",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:286:34",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "꺼진 3번 등 밑에서 쓰러진 피코",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 286,
+          "label": "r13_ep1_dawn",
+          "guards": [
+            "if r13_has(\"piko_sheltered\"):"
+          ]
+        }
+      ],
+      "line": 286,
+      "scene_title": "r13_ep1_dawn",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "1aade23cbd780c7dd98aa1c085e1f0d358fb3dd5868f676f58df727c3f70ce08",
+      "uid": "6cc1c75cc254103943ce2082",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_ep1_dawn|rpy_inventory|r13_ep1_dawn|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:304:34",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        17916,
+        17926
+      ],
+      "origin": "rpy_inventory",
+      "day": 4,
+      "scene": "r13_ep1_dawn",
+      "block": "r13_ep1_dawn",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:304:34",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "3일 새벽 광장",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 304,
+          "label": "r13_ep1_dawn",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 304,
+      "scene_title": "r13_ep1_dawn",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "789ed7b8b25c6271dc7e9d102ac73e66a27632b37ac31a3772c356a9a3d89c7d",
+      "uid": "07eda86e810d66fa6c29362d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_ep1_dawn|rpy_inventory|r13_ep1_dawn|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

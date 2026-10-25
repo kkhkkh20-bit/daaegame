@@ -1,0 +1,129 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_AR_D13_11",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "handover_wait13",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "handover_wait13",
+      "block": "handover_wait13",
+      "placement": "blocks",
+      "ref": "handover_wait13",
+      "when": "karo_guard_ready13",
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "학교 자리가 덜 났으면 덮개 씌워 하룻밤 수레에서 기다리게 할 수도 있어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2239,
+          "label": "r13_v111_handover_plan13",
+          "guards": [
+            "if not r13_has(\"v111:shown:handover_wait13\"):"
+          ]
+        }
+      ],
+      "scene_title": "handover_wait13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "5d6dd258b51c807d32f31cc780e32a838aa46ff46af4e77f5a0df2d4174665e6",
+      "uid": "1cf5ec5d6d2f71e83db7835d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|handover_wait13|patch|handover_wait13|karo_guard_ready13",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AR_D13_12",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "handover_wait13",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "handover_wait13",
+      "block": "handover_wait13",
+      "placement": "blocks",
+      "ref": "handover_wait13",
+      "when": "karo_guard_ready13",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그러면 내일 아침까지 저분들은 수레 위에 있는 거군요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2239,
+          "label": "r13_v111_handover_plan13",
+          "guards": [
+            "if not r13_has(\"v111:shown:handover_wait13\"):"
+          ]
+        }
+      ],
+      "scene_title": "handover_wait13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "a3e5df4e345c6a6e3174d92ef826ef0d12dbe06536448260e60410fe3e46d26e",
+      "uid": "640cd790dd19982c76c6beb5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|handover_wait13|patch|handover_wait13|karo_guard_ready13",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AR_D13_13",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "handover_wait13",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "handover_wait13",
+      "block": "handover_wait13",
+      "placement": "blocks",
+      "ref": "handover_wait13",
+      "when": "karo_guard_ready13",
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "내가 지키겠소. 그 대신 오늘은 거기서 끝이오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2239,
+          "label": "r13_v111_handover_plan13",
+          "guards": [
+            "if not r13_has(\"v111:shown:handover_wait13\"):"
+          ]
+        }
+      ],
+      "scene_title": "handover_wait13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "7b355e768457e9c36317cfb552990e6fbe76c98108c522499026d0cec5fc180e",
+      "uid": "7449db3a538ce1b75a10712b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|handover_wait13|patch|handover_wait13|karo_guard_ready13",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

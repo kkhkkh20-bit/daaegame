@@ -1,0 +1,127 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_tool_discovery.rpy:170:34",
+      "file": "game/room13_tool_discovery.rpy",
+      "path": [
+        8777,
+        8787
+      ],
+      "origin": "rpy_inventory",
+      "day": 4,
+      "scene": "r13_tool_inspect",
+      "block": "r13_tool_inspect",
+      "placement": "literal",
+      "ref": "game/room13_tool_discovery.rpy:170:34",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "질문 완료 · ",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_tool_discovery.rpy",
+          "line": 170,
+          "label": "r13_tool_inspect",
+          "guards": [
+            "for note in r13_tool_notes():",
+            "if note[\"topic\"] in room13.get(\"read_topics\",[]):"
+          ]
+        }
+      ],
+      "line": 170,
+      "scene_title": "r13_tool_inspect",
+      "source_hash": "5b774cf695d168f5e27b635cc11bdcd8d7358de55477983cd7d41b8bebf1af8d",
+      "baseline_hash": "e4d71fd10bf65e10b96b5857ae4ae9c6e854a93483562348fcb0d045d5b32234",
+      "uid": "1af941e131821dce3bd2d5b4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_tool_inspect|rpy_inventory|r13_tool_inspect|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_tool_discovery.rpy:187:34",
+      "file": "game/room13_tool_discovery.rpy",
+      "path": [
+        9782,
+        9824
+      ],
+      "origin": "rpy_inventory",
+      "day": 4,
+      "scene": "r13_tool_inspect",
+      "block": "r13_tool_inspect",
+      "placement": "literal",
+      "ref": "game/room13_tool_discovery.rpy:187:34",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "이건 빌려드린 옛 도면에, 할머니가 집을 보수하면서 선을 덧그린 거예요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_tool_discovery.rpy",
+          "line": 187,
+          "label": "r13_tool_inspect",
+          "guards": [
+            "if \"E04\" in store.room13[\"evidence\"]:"
+          ]
+        }
+      ],
+      "line": 187,
+      "scene_title": "r13_tool_inspect",
+      "source_hash": "5b774cf695d168f5e27b635cc11bdcd8d7358de55477983cd7d41b8bebf1af8d",
+      "baseline_hash": "3faaa8150b6a4a7f9b814d3b4469de78bafa54abd88a305777d26c1e0a93275e",
+      "uid": "93466f3c1d323e6ea2fbac40",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_tool_inspect|rpy_inventory|r13_tool_inspect|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_tool_discovery.rpy:190:34",
+      "file": "game/room13_tool_discovery.rpy",
+      "path": [
+        10016,
+        10064
+      ],
+      "origin": "rpy_inventory",
+      "day": 4,
+      "scene": "r13_tool_inspect",
+      "block": "r13_tool_inspect",
+      "placement": "literal",
+      "ref": "game/room13_tool_discovery.rpy:190:34",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "밖에서 창과 창 사이 길이도 재 보세요. 그 길이를 이 도면이랑 대조해 보면 돼요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_tool_discovery.rpy",
+          "line": 190,
+          "label": "r13_tool_inspect",
+          "guards": [
+            "if store.room13[\"period\"]<3 and any(name==\"map\" for name,unused in r13_actions()):"
+          ]
+        }
+      ],
+      "line": 190,
+      "scene_title": "r13_tool_inspect",
+      "source_hash": "5b774cf695d168f5e27b635cc11bdcd8d7358de55477983cd7d41b8bebf1af8d",
+      "baseline_hash": "80baa51f5644cf174c0b93a6490343035906669db1e97077ca3acd7f304043d2",
+      "uid": "60553ff02cf61a31426a9113",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_tool_inspect|rpy_inventory|r13_tool_inspect|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

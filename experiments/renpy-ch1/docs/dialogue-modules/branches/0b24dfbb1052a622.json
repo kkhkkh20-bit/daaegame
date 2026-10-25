@@ -1,0 +1,981 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D01_S04_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S04_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S04_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "돌목이 신규 일꾼을 지우고 가족 방문으로 고친다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a488ec5751968fac61e5f7dc0f0570ed0af451d42988eda8bd3aeb160dbfafcf",
+      "uid": "4eee7b6aff654f9ef2c35e08",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S04_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S04_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S04_L0002",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아직 기다려?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 282,
+          "label": "r13_v111_registered",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3805a79b22fa9e275e5bd846c2e3bcff3f4a88c6140a366199f4d0625c89ee59",
+      "uid": "f5879732802141fa731bb35c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S04_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S04_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S04_L0003",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "이름 적는 동안만.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 282,
+          "label": "r13_v111_registered",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "530b3ad757adab1266bb11a8052feb2f9b4db535702981c3b40c89b344de636b",
+      "uid": "75d58f30bb17ce68f531f26f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S04_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S04_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S04_L0004",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "둘 다 들어가는 거죠?",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 282,
+          "label": "r13_v111_registered",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a86807c7c0372f49038b5b6012b5d37b31ff74e4d78504db0168d8f7cef393a7",
+      "uid": "bf2b4baa463273fdb8d56735",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S04_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S04_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S04_L0005",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "그렇소. 가족 방문. 다돌, 동행 아동 한 명.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다. 조건부 replace/drop 이후 원문 fallback이며 무조건 표시된다는 뜻이 아니다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 282,
+          "label": "r13_v111_registered",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "gate_daram_unlisted",
+          "gate_daram_listed"
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f7f5a03176eda285a77e5f4a60376d11036e8c1b184fc7f2293e120d76d88fd5",
+      "uid": "d77b7f373eba2148ad191329",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S04_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S04_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S04_L0006",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "외 한 명 말고, 다람.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다. 조건부 replace/drop 이후 원문 fallback이며 무조건 표시된다는 뜻이 아니다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 282,
+          "label": "r13_v111_registered",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "gate_daram_unlisted",
+          "gate_daram_listed"
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7105dbca15e653e3f8fabd2853e64dfdfb10eed9469002a867347152e9c55911",
+      "uid": "f8c1c99530023575f12fe598",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S04_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S04_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S04_L0007",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "펜이 멈췄다가 다시 움직인다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "147b1a83b3a92b1c2d4eaa6cc47b8b6086c2db3765eef1ab4dd647fb49488929",
+      "uid": "ea3695eb54fc339d493c1df4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S04_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S04_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S04_L0008",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "다람. 됐소.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다. 조건부 replace/drop 이후 원문 fallback이며 무조건 표시된다는 뜻이 아니다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 282,
+          "label": "r13_v111_registered",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "gate_daram_unlisted"
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "91cb9f36ae5dd47fe6db92910978263fe779880e77e98250d59696aff4e16500",
+      "uid": "9c18f47bf066906989e6ae3e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S04_L9101",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S04_L9101",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S04_L9101",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "가족 방문 원본 및 숙소 확인에 따라 현장 정정. 다돌, 동행인 다람. 확인자 돌목.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다. 조건부 replace/drop 이후 원문 fallback이며 무조건 표시된다는 뜻이 아니다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 286,
+          "label": "r13_v111_registered",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "gate_daram_unlisted",
+          "gate_daram_listed"
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7934cd1f24b5a72bb3dfe267d21c8a95f84ac31a425464b50f9d99ed204d1a30",
+      "uid": "90aea119029d990790e76e86",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S04_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S04_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S04_L0009",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "자, 들어가자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 286,
+          "label": "r13_v111_registered",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7532cccbca1d95d7f20407aa43dd52dfba1c0860fc9a01e7f7f7852bc2290b29",
+      "uid": "15396e2fa259db6a5ec6c5ad",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S04_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S04_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S04_L0010",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "잠깐. 고맙습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 286,
+          "label": "r13_v111_registered",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bc7e30b7565e6cb1d90a998e8d50272d30ed062252ce75ad700a40aad5fe3caa",
+      "uid": "80d5abe4ce808b22f7c7743a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S04_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S04_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S04_L0011",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "발판 조심하시오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 286,
+          "label": "r13_v111_registered",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1497e2e1abcf814b9fa9af71559a245da036edbc5228c783665b03140be48c26",
+      "uid": "50c61ae4e8887fc556f00cec",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S04_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S04_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S04_L0012",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "짐을 찾으러 가기 전에",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 286,
+          "label": "r13_v111_registered",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "170790525da0d11ff91f3b2cb27b3dab2d162efaf881da3e62d643a11ba683ae",
+      "uid": "3d912177ab2c4644bbc8ff49",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S04_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S04_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S04_L0013",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그런데 왜 저를 일꾼으로 적은 겁니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 303,
+          "label": "r13_v111_registered_reason",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "af57a03657e146597d2ae8a7d834b31c5d70a8478f799df657dcc773856ee184",
+      "uid": "7f42753d77fc7e2d3f3d00ec",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S04_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S04_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S04_L0014",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "너울이 새로 오는 어른은 가족 방문이어도 먼저 작업 명단에 넣으라더군. 장작 나를 사람이 모자라오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 303,
+          "label": "r13_v111_registered_reason",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6e3ad8e53a92d0ea70924d808f38c1177c4b3451ccc2e6bb10a6c86e3a7d8fe6",
+      "uid": "393455131e358e6130a900b6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S04_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S04_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S04_L0015",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "전 하겠다고 한 적 없습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 303,
+          "label": "r13_v111_registered_reason",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0bde9c8355f2203a2801a4aa142134a218b911e872bb8ee3feff3a192ef60982",
+      "uid": "03cb08b6191e9e4fb2f9a8d2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S04_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S04_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S04_L0016",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "그건 너울에게 말하시오. 잘못 적힌 걸 고쳤다는 기록은 남겼소.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다. 조건부 replace/drop 이후 원문 fallback이며 무조건 표시된다는 뜻이 아니다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 303,
+          "label": "r13_v111_registered_reason",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "gate_daram_unlisted"
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "844d6bf8278b7ec016a32233b74dd4118c7dd2afe3ae144696d2ad5270a5e9da",
+      "uid": "0554f24684ab3f0775e8ec15",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S04_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S04_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S04_L0017",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "큰 짐을 찾는 동안 너울이 와서 정정된 표를 읽는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "98b7fd89545a9dc09c07cea95eae2eb6c8319de2d456aab4d50c5f7b40b9792d",
+      "uid": "7f8d535f759cbd30636ee0d0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S04_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S04_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S04_L0018",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "여관에 들어간 뒤 묵는 곳을 옮기면 알려 주시오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 310,
+          "label": "r13_v111_registered_depart",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "44486ca48507898b17eceba36ffa0b8829d61d0b75671fbf16e43dd26a482f59",
+      "uid": "c8c32a46f9a05820befe5c4b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S04_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S04_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S04_L0019",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아내 만나고 정하겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 310,
+          "label": "r13_v111_registered_depart",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8f13f60a5a39a5d0ea5fd686ae708122084055191ad8053d83679610f2c2a58b",
+      "uid": "d9b2cc0bf48e760d5cba8bb3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S04_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S04_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S04_L0020",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "부인이 나타나도 여관에 먼저 연락해 달라고 했소, 돌목 씨.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 310,
+          "label": "r13_v111_registered_depart",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "298ea622c8e960afbb6012dd68fb6271a7f19d22cb22d5b59d10b9f7c2ac6e16",
+      "uid": "c981ae6c6563c1d9de71f436",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S04_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S04_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S04_L0021",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "지금은 이 두 사람 등록 중이오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 313,
+          "label": "r13_v111_registered_depart",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "aedf2e396b48259f028b3e99b770ceb2f6c72f0304c772863d63f481dbb2931b",
+      "uid": "0aab120be3cb3dc00b821130",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S04_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D01_S04_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D01_S04_L0022",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "다람의 가방끈을 고쳐 매고 까로에게 큰 짐을 받아 여관으로 간다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3bff023ea7edbd9e1008592e5c5894f2d9119e7b41641546049c8c6ff9a9cf92",
+      "uid": "1fc9945c098ac4f5c84c392f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

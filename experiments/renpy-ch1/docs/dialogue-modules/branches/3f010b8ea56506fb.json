@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:329:40",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        19131,
+        19152
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_ws_teacher_talk",
+      "block": "r13_ws_teacher_talk",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:329:40",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "깜이, 몽이, 방울, 도담, 새미.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 329,
+          "label": "r13_ws_teacher_talk",
+          "guards": []
+        }
+      ],
+      "line": 329,
+      "scene_title": "r13_ws_teacher_talk",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "e12ec493773fbe26eec78f6ff7ced918bd70cd255e00f76e3edd653f5bce3976",
+      "uid": "2d7ea96cd234888b59269d7f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_teacher_talk|rpy_inventory|r13_ws_teacher_talk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

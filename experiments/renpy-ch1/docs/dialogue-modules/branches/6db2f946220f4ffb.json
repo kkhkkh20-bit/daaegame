@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "woodshed_check6:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "woodshed_check6",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 6,
+      "scene": "woodshed_check6",
+      "block": "woodshed_check6",
+      "placement": "binding",
+      "ref": "woodshed_check6:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "문 앞과 뒤창을 살핀다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "v111_woodshed",
+        "person": null,
+        "object": "v111_wood"
+      },
+      "scene_title": "woodshed_check6",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "cec30fdc8ae62b3e7094206206bd39f362dbe90aca907311a41e56bc67c88f17",
+      "uid": "5944d5494b5fab070e5247b6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|woodshed_check6|choice|woodshed_check6|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

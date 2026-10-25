@@ -1,0 +1,2002 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D06_S01_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[화면] 학교 뒤 처마. 낮인데도 고드름 끝에 물이 없다. 등 점검을 마친 초롱이 길을 짚어 준다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "71d56deaf861492db2b79e588d82583c33a4b60ca35806188585f50609e6c7a8",
+      "uid": "49229883f8c83cea94d315a7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0002",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "물자를 보내려면 학교 뒷문에서 나비 씨를 찾으세요. 수건과 소금을 놓는 자리가 거기예요. 제가 인수 표시를 확인합니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 10,
+          "label": "r13_v111_day6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7aaddab5159eeeb787be7f2e33cb4ae1a885c7ef6aa318103bcc0857fbfe9481",
+      "uid": "0b96aa3a56bfbf569aa4aa01",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0003",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이 내 장갑 한쪽을 주머니에서 꺼낸다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 11,
+          "label": "r13_v111_day6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2e306b1ebceafac8879ed01f65419aa5819c4b4516c17d06d6f5fe36c776f4a1",
+      "uid": "f0e55ac6fe891eadda833272",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0004",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마 건 안 챙겨?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 12,
+          "label": "r13_v111_day6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6f0a09ff41e1254dfd3a8ce50552865e8c20c036f0d8d6774bd2cb15885c547b",
+      "uid": "f267c2180ff24ff4e9dfe006",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0005",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "챙겼어. 안쪽에.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 13,
+          "label": "r13_v111_day6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3319f7a43d2bba0da83434569e159c403a2975b2386e324970382dbe4dd61dc0",
+      "uid": "a63fb3ea6a447526a9b4e258",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0006",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그럼 됐어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 14,
+          "label": "r13_v111_day6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "754c2818f052eb0d316f3b85bccadaf43c5261bc30c6156198df4b1977511a0b",
+      "uid": "2dc2ba2173a0ef0cad5ccfdf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0007",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "장갑 아래에 어제 받은 경고를 접어 넣는다. ‘여관에는 말하지 말라.’ 글씨를 다시 읽는 대신 주머니 단추를 채운다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 15,
+          "label": "r13_v111_day6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "920b0daedc7332dd92b7f9f15ff7fcd3f5f459040df073731f17bb7154f46c3f",
+      "uid": "9ed3de511b45b912b8c1df76",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0008",
+      "when": null,
+      "speaker": "사자 선생님",
+      "kind": "dialogue",
+      "text": "뒷문으로 오시라고 한 건 아이들 수업 때문입니다. 창고를 방으로 쓰겠다는 뜻은 아니고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 16,
+          "label": "r13_v111_day6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1e2d8c1711919eb96a43d951005feb8f88720213b83a29933c27f90caa9d91c3",
+      "uid": "9dfe64f345b720221aee71ce",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0009",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "낮 동안 다람이 앉아 있을 자리부터 부탁드립니다. 제가 어디 가는지는 여기 적겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 17,
+          "label": "r13_v111_day6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8309cac8582b1d41d59d18a212df30377b7aaf2198bcc4ad3471521610b9275d",
+      "uid": "82cc575f1f0c6b88a8ce921d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0010",
+      "when": null,
+      "speaker": "사자 선생님",
+      "kind": "dialogue",
+      "text": "표가 없으면 배급은 안 나옵니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 18,
+          "label": "r13_v111_day6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a64673dc8e514e077fc4ced54fe1becd1c40a76b3e03f54d5c03cc60ca22603c",
+      "uid": "89d297f4340962b6ba68feb9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0011",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "먹을 건 가져오겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 19,
+          "label": "r13_v111_day6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f46cd193c59efe9950161a8c339444ab0d02d0138f8f42e2f4ca0e327668c207",
+      "uid": "1976dedeb08518039e9b201c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0012",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: D06_S01_opening_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5b4556b13f4d074cfb8cc7f28dca10c09af2cdc9c5f7f1dbee3efe1775864e3a",
+      "uid": "bf9ebc7f382e299699ebef30",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0013",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이 가족 짐에 묶인 마른 담요 두 장을 짚는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 47,
+          "label": "r13_v111_blankets6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "237f560f6d202491eb91de4e9ff33885f870e12b8adc825f007f66fe5b0bbaad",
+      "uid": "516ded5d9ddf13402904ca0e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0014",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "우리 것은 여기 있어. 두 장.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 48,
+          "label": "r13_v111_blankets6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "357ff845a080cede019dccbbea44eb05f51b37433867a36cbe54b7e52d84a3d2",
+      "uid": "5aef35eca8d7e793721f16d4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0015",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응. 그건 우리가 들고 온 거고, 다른 아이들 것은 따로 구해야 해.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 49,
+          "label": "r13_v111_blankets6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "54d74188c1e57583526fc8bbd614888022fb98306eaae59320e419e872f5586c",
+      "uid": "92fc3ced565b48366f97cc17",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0016",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: family_blankets_not_donated=true; D06_S01_blankets_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "04c673b2e8b225716d1f32476afd16e45b93918811ed20712c3bd34b2829e4eb",
+      "uid": "20327d6af96cf1755ebc0de9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0017",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠. 내 의자만 놓으면 저 애들은?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 24,
+          "label": "r13_v111_day6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "004ac0f692794753e5c1806547d81bfa331414c046e68747d547f049ded6a9ff",
+      "uid": "4f21200be16dbe82a8927bce",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0018",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "뒤뜰의 아이가 물동이 뒤로 숨는다. 목에 맨 헝겊 보따리에서 빈 그릇이 부딪친다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 25,
+          "label": "r13_v111_day6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e0b0644e85edeceaf5d1d48bdbff5764defd8cca6470cb2b9438b4baba7ee94b",
+      "uid": "53db4c33627cc92228a8dbe5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0019",
+      "when": null,
+      "speaker": "사자 선생님",
+      "kind": "dialogue",
+      "text": "꼬미야. 훔치러 왔니?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 26,
+          "label": "r13_v111_day6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7ec58428be1aa3de191f9cc2aadbfd3d02a8fb750a52a57687c898b98c1b6c90",
+      "uid": "c5119e64ca156b9f8d110a92",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0020",
+      "when": null,
+      "speaker": "꼬미",
+      "kind": "dialogue",
+      "text": "빌렸어요. 나비 누나 그릇이야.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 27,
+          "label": "r13_v111_day6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2dacc9b5f0f250300a417d9ec1c8f620d68ec402e3bca3b663381aeddea7d974",
+      "uid": "dc73d80e0e15e54ad6d07f6b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0021",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "나비가 밥을 보내?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 28,
+          "label": "r13_v111_day6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ca5955ba9d174eaeb47abd4f151db66bc53265eb09a1aaf53846565f35b94866",
+      "uid": "6ab7d56015f91cd1d6003683",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0022",
+      "when": null,
+      "speaker": "꼬미",
+      "kind": "dialogue",
+      "text": "아저씨도 뺏을 거야?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 34,
+          "label": "r13_v111_day6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "214ac033624e58f0c5e6a5ecd7e6732b0bbb16f5b60898960c512f1b4aaa87b6",
+      "uid": "339ea32579df6eb795ce7ada",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0023",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: D06_S01_children_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "75165d1302df07773ad32791a011e6df0478a6c0e27b1e52690bf3936703cd00",
+      "uid": "8e647a7b9917dd38109c79bd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0024",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "꼬미에게 뭐라고 할까?",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6059598e6303503e52e362e7256ab3bc03485c8bfa84e14c70c7243c60b52180",
+      "uid": "92595b91bdf79ee63f8d20cf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0025",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: D06_S01_bowl_choice_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cba911707468b5d5fd706489cebf823d3f3ff62b98666cfef8531c2fdda55731",
+      "uid": "425ab1dbb01bef53934b26e7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0026",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "같이 가자. 그릇은 네가 들고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 54,
+          "label": "r13_v111_bowl_together6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5e9e62481846c595d133ea3c9f6cece4d5594e198a2cde56c75c02b73716b671",
+      "uid": "963b2c762161f3b53537a03e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0027",
+      "when": null,
+      "speaker": "꼬미",
+      "kind": "dialogue",
+      "text": "뺏는 거 아니지?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 55,
+          "label": "r13_v111_bowl_together6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fba1ca2b62277feef8d6f61c77b745b7afe7b0ca3641c0f30ada939d25b9fd78",
+      "uid": "6eb02969ab38f968f54137a5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0028",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "네가 돌려줘. 나는 물어볼 게 있어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 56,
+          "label": "r13_v111_bowl_together6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bbe242053434f543d740957392f46b66a1f032e0a08d876fa29644791b8a4e1c",
+      "uid": "79b55a61215761ec3ba01f98",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0029",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: D06_S01_bowl_together_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c75d98ab7993eac29f8d8e43f45d1b69a16084890e0da85359eb49564d5804c8",
+      "uid": "5976692146a9a77ae405c465",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0030",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "먼저 먹어. 그릇은 내가 가져다줄게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 61,
+          "label": "r13_v111_bowl_eat6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ef44035ff9507d78900b5e472c12ad52c6406f824aad4bc55929b05537e6b270",
+      "uid": "244f2ae4a6fb3b6460d98f17",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0031",
+      "when": null,
+      "speaker": "꼬미",
+      "kind": "dialogue",
+      "text": "지금 먹을 건 없어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 62,
+          "label": "r13_v111_bowl_eat6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8300bd2e5d901929bba29d95691e7a713cd86481844063de7ae1fcde4d627cb4",
+      "uid": "14434d9fae70ad030bbcc0e8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0032",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그럼 그릇부터 같이 가져가자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 63,
+          "label": "r13_v111_bowl_eat6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "40289dfcc37e8fac22f7778649ef03ceea8609362df8e90f37e206ca4670191d",
+      "uid": "d3a278ccd19bc437e37d3c47",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0033",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: D06_S01_bowl_eat_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4d10510bb79d40f7ae73fcab08de0e4c1d1d72e6a6605da19eb5e421283e34d0",
+      "uid": "330476395cd3b13669386318",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0034",
+      "when": null,
+      "speaker": "꼬미",
+      "kind": "dialogue",
+      "text": "먹었어. 어제.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 68,
+          "label": "r13_v111_nabi_supply6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a0835225e07a03a45573c72563a3d9476c4886f3fb32823f2c136e8e4b891e89",
+      "uid": "364498641ac10f00233296b0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0035",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[화면] 식당 뒷문. 나비가 반죽 묻은 손으로 그릇을 받는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5febeeef65f854126b714ef0db5ce3a49da696ba06e4780d0275a8457be6c136",
+      "uid": "ab0ddd0aec8b2373ed884839",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0036",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "학교까지 갔니? 그냥 창고에서 기다리라니까.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 69,
+          "label": "r13_v111_nabi_supply6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "10518bf66ed35393d3e0ca65edfce022b4356e6bdc4cfad4c459ed0f62654893",
+      "uid": "02d63fb7fbd7431c228ed86e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0037",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0037",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0037",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "창고에 아이들이 삽니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 70,
+          "label": "r13_v111_nabi_supply6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "802a53f2ff5642c16db7733461a96b214aeeb32799f4e47d1f4f0a8a97fc6f39",
+      "uid": "1d0b4ab572467652863d895c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0038",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0038",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0038",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "낮엔 안 있어요. 사람들한테 보이면 쫓겨나니까…… 아, 말하지 말걸.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 71,
+          "label": "r13_v111_nabi_supply6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6f81752f1203600f884daa7cf589ecc9d3e756cf9ee9d0b0df342c9040b632fd",
+      "uid": "a136f62353add2dc0be55cb0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0039",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0039",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0039",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아이들이 잘 곳을 구하고 있습니다. 수건이나 여분 담요는 어디에 부탁하면 됩니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 72,
+          "label": "r13_v111_nabi_supply6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f737d54620f5168e053371ad7838595ecbda9c3a2cc30443ee883aa3e2f080f2",
+      "uid": "686a7a86358eb4df23a91216",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0040",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0040",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0040",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "수건은 학교 뒤에 놓아요. 필요한 사람이 가져가요. 담요는 선생님께 먼저 물어보셔야 해요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 73,
+          "label": "r13_v111_nabi_supply6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6a01d79ab88c7634445f8e1ba25341aaed2e4a85616c6bec11d368b7b31679eb",
+      "uid": "302f0898d90fbeb06ffee2d4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0041",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0041",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0041",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "놓는 사람과 가져가는 사람 이름을 적습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 74,
+          "label": "r13_v111_nabi_supply6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "eb15690ea3989d5360c2d23a02e6e91e0c9cad52db22fc5f2fc749bf5eadd15c",
+      "uid": "9096b4732a891ab501242e15",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0042",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0042",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0042",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "아니요. 수량만 적어요. 오늘 아침에도 수건 두 장과 소금 한 꾸러미가 없어졌어요. 누가 가져갔는지는 못 봤어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 75,
+          "label": "r13_v111_nabi_supply6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "44935afe3b66d3ecbae978c9eabe8ee3db3b88b4b77c9d33c15d35a6e99aa3a1",
+      "uid": "4c67defecb2406e19df0da13",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0043",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0043",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0043",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[조작] 나비가 문밖 공개 보급판을 보여 준다. 아빠는 오늘 날짜, 수건 두 장·소금 한 꾸러미의 인수 표시만 옮겨 적는다. 개인 이름·거처·연락함 좌표는 없고, 엄마가 수령했다는 사실도 확인되지 않는다. 이 공개 수량 기록만 E06_CONTACT에 저장한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "51926adcaa4082ddf489ee0209586fbb3b579b44bd3fe8750dc8b712d61fa9d7",
+      "uid": "646f0a0630fa505560a477ee",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0044",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0044",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0044",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나비가 빈 그릇을 씻는다. 나는 안주머니에 넣었던 손을 뺀다. 엄마 이야기는 꺼내지 않는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 88,
+          "label": "r13_v111_board_done6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "11106d717927b31fd7af51e891af0efa46b5ed350bed143221ea7e9c16bf80d9",
+      "uid": "c73ed8d1651151184e1196c2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0045",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0045",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0045",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그럼 새 수건 두 장을 보태겠습니다. 이름 없이요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 90,
+          "label": "r13_v111_board_done6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f0808f6eff875d79017905578004a29df485bf02044a597181cb5117d82fbc93",
+      "uid": "3ba4e6ce7c2628926faeb094",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0046",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0046",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0046",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "젖지 않게 싸 주세요. 요새는 하나도 아쉬워서.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 91,
+          "label": "r13_v111_board_done6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6559179e3574d7e1cfb4bf00ed7a7fe40c94f814014596e8d93237efc6d9857c",
+      "uid": "f194d44ea7513ef9241f0747",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0047",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0047",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0047",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[기록] ‘학교 뒤 익명 물자 자리와 피난에 필요한 물품.’ 엄마의 이름·장갑·편지·찾는 경로는 나비에게 공개하지 않는다. 초롱과 이미 확인한 연락은 별도의 비공개 경로로 유지한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "49cc9a6f8b62adbc2fc42499b4209c48b64d3dfccbf6dc3470f13315039dc856",
+      "uid": "ab8f6f4578da52c3775d4f48",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_S01_L0048",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_S01_L0048",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_S01_L0048",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: E06_CONTACT=public_count_only; school_day_seat=confirmed; mother_route_shared=false; D06_S01_supply_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1c58b4eb15da1b049a6c410b5a867679550422d042905fc04dfb47961a6eb930",
+      "uid": "c31c3e351f87d455407bfcff",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

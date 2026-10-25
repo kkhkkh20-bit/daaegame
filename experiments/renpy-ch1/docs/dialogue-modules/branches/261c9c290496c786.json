@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_LA_LA_PARTIAL3_0",
+      "file": "game/v111/newworld/lamp_attempt.json",
+      "path": [
+        "blocks",
+        "la_partial3",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "la_partial3",
+      "block": "la_partial3",
+      "placement": "blocks",
+      "ref": "la_partial3",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "톡 씨 수리 뒤에 다른 손이 간 건 확인했습니다. 하지만 그 손까지 잇지는 못했군요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_lamp_attempt.rpy",
+          "line": 81,
+          "label": "r13_lamp_attempt_partial3",
+          "guards": []
+        }
+      ],
+      "scene_title": "la_partial3",
+      "source_hash": "1f8d4bedb33f10201a3ffe6e822492a7cb7ec3d826a133f6d7683d7013245e9b",
+      "baseline_hash": "713a8c711ea86762aa0ac2764a56dbdbebf2d248cb4e82da60d3516db63b4bbf",
+      "uid": "1f00d7b95646b0f6b4df8259",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|la_partial3|patch|la_partial3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

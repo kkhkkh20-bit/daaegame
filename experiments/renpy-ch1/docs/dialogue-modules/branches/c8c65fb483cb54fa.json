@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:18:146",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        1366,
+        1437
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_week2_opening",
+      "block": "r13_week2_opening",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:18:146",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "재판에서 누구 편을 들었든, 눈과 추위는 마을 전체를 덮고 있었다. 학교는 교실을 비웠다. 진료소는 복도까지 자리를 깔았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 18,
+          "label": "r13_week2_opening",
+          "guards": []
+        }
+      ],
+      "line": 18,
+      "scene_title": "r13_week2_opening",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "95bd3545a8b98b86a0a32516f8cfd936c49d1260cb12b515f34ab7f2913865fc",
+      "uid": "a43cba214ba2f2d9d0986dda",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_week2_opening|rpy_literal|r13_week2_opening|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,2797 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D04_S04_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "밝은 초소 안. 바둑이가 문가에 앉고, 밤이는 문이 보이는 의자를 고른다. 아빠와 다람도 함께 있다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "12eb54769e9495132da862d48be450dcceac6f42d97fc4d1aea5fec0f1a5497f",
+      "uid": "aa106b0fc6ee0f22bb4c84ed",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0002",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "엄마 소식도 물어야 하는데. 아침까지 또……",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 225,
+          "label": "r13_v111_testimony4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8b2f1fe25bb86bf7f33c7a13fba111e538b753f855a3603806e14637ae682c0a",
+      "uid": "2cade283a65d3fb7b5d3bec6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0003",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "밤이는 내일 끌려가?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 226,
+          "label": "r13_v111_testimony4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "94567ac81067162bf7cbb0b5a8b52a3184f373c4c470f9be1fade9d39f294318",
+      "uid": "034f5eb96ca1bba05fb46538",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0004",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 접으려던 수첩을 다시 폈다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 227,
+          "label": "r13_v111_testimony4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3f553405f50983c6eb764ebe0c1592dadca1047e03d0375e848adb60406f391d",
+      "uid": "56af4546eba6c2f608742ad7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0005",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "……밤이, 네 얘기부터 듣자. 그냥 두고 가면 잠을 못 잘 것 같다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 228,
+          "label": "r13_v111_testimony4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "02d55e06b89fda1887c2e216c5815c995443d82dd4de32eb4f0589359b2c2d80",
+      "uid": "ec5e1abff0ee56df0951a058",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0006",
+      "when": null,
+      "speaker": "밤이",
+      "kind": "dialogue",
+      "text": "아무도 내 말 안 물어봤어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 229,
+          "label": "r13_v111_testimony4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c1166bc56b851b5553e9bb6a1d3d86a2af67f1560d7440bab7f223beb10824eb",
+      "uid": "35df11ab3adec1109900df3f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0007",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "내가 들을게. 어디서부터 봤어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 230,
+          "label": "r13_v111_testimony4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f6149633f5262a831604c70bf83dad59e17f672ebc3480c75ce7ae89ebfacb0f",
+      "uid": "a1c5f03cfbe885e9b46f022f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0008",
+      "when": null,
+      "speaker": "밤이",
+      "kind": "dialogue",
+      "text": "저 처마요. 양동이 넘어졌을 때도 거기 있었어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 240,
+          "label": "r13_v111_bami_night4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "bami_cold4",
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b55481382cefe618edeeaf4abe2f5d01c01ed188efdd469f10db01cca37003da",
+      "uid": "6ac130b170938b99c5cb9237",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0009",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "우리 그림 볼 때랑 같은 데?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 241,
+          "label": "r13_v111_bami_night4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "bami_cold4",
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8217880fc04e5995ba70457a5089d0d171e5465c83d8d1babb47c440f3ec5d3b",
+      "uid": "a305d26c072efac0e639d352",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0010",
+      "when": null,
+      "speaker": "밤이",
+      "kind": "dialogue",
+      "text": "그건 낮이고. 밤에도 거기 있었어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 242,
+          "label": "r13_v111_bami_night4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "bami_cold4",
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "254475a037ef4131c95b20bd6bfdd7f5f075797bb5139824be61e412f3020c48",
+      "uid": "6e3d3628c20ffcc3dfd84f55",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0011",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다른 사람을 봤니?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 243,
+          "label": "r13_v111_bami_night4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9ec139e7d56f6a4dbed4d6c6e5b765a80e191fa3ceda1a20294321d45c81b0ea",
+      "uid": "c962cb2395c24e8eadf67fad",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0012",
+      "when": null,
+      "speaker": "밤이",
+      "kind": "dialogue",
+      "text": "맨발이었어요. 울타리 쪽으로 가는 사람. 얼굴은 못 봤어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 244,
+          "label": "r13_v111_bami_night4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "96e710c3273c183581793bc94903e39e9bb0a4d08c05b5b905573f53a89c3780",
+      "uid": "97afb82350a4473675b70310",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0013",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아이였니, 어른이었니?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 245,
+          "label": "r13_v111_bami_night4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b826ce938919d4a4a318658d8bb7852ae06376baa196bedc140b3e72d17efea1",
+      "uid": "0b2118df49fec0d17cd63b07",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0014",
+      "when": null,
+      "speaker": "밤이",
+      "kind": "dialogue",
+      "text": "몰라요. 구부리고 있었어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 246,
+          "label": "r13_v111_bami_night4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4df0d1ba5742f298c2583e5e6d595d470ee98c65331cf89c87602f5ace9a0ccd",
+      "uid": "d58e41b865e956f66124c083",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0015",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이가 수첩에 썼던 ‘큰 사람’에 줄을 그었다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 247,
+          "label": "r13_v111_bami_night4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cbe85717a96d83f861eb8ba8fdfb12a5ef5a5ac87baec7ce9d8971eed8b7b8cb",
+      "uid": "3048d8c8087616c625c75ff6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0016",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "나는 할아버지인 줄…….",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 248,
+          "label": "r13_v111_bami_night4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "df924ef69403bda68d5c2cfd6f091949bdde92e2629a51e095c0c135cf3401b2",
+      "uid": "5db31836b46dc92f638aaaea",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0017",
+      "when": null,
+      "speaker": "밤이",
+      "kind": "dialogue",
+      "text": "난 그렇게 말 안 했어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 249,
+          "label": "r13_v111_bami_night4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "24e157c798930ec65f2a489c4c9216e39e6132150429cbb3f763d71a1e34d5e1",
+      "uid": "430947f57f866a292eb88f3e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0018",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "응. 지웠어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 250,
+          "label": "r13_v111_bami_night4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6ce9db25c9777b0765402130eb6e4f19fab08e00a5a172f672f1d1260d698cb3",
+      "uid": "3674c3a3ef1d3d8f38e63901",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0019",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "나비의 심부름으로 물을 가져온 콩이가 문에서 멈춘다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e242fafd7d3cc8e7f6c6104fba1c62458918bbc13378311fa7bec91e03e72a5c",
+      "uid": "d51c2854505728c351433384",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0020",
+      "when": null,
+      "speaker": "콩이",
+      "kind": "dialogue",
+      "text": "밤이가 문 거 아니야?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 252,
+          "label": "r13_v111_bami_night4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cd747402467b6464e56acf265f2a933669e8ec411cd3fba60390794325c3e1bb",
+      "uid": "37bbb0cab555fbc6aae86357",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0021",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "본 사람이 없대. 네가 봤어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 253,
+          "label": "r13_v111_bami_night4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8cecefb47560d935f8822c5e3c596117e09c514ce0b95ab5975b74e82baec615",
+      "uid": "f0ac0e32e6bd3ba3f8279242",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0022",
+      "when": null,
+      "speaker": "콩이",
+      "kind": "dialogue",
+      "text": "왜 나한테만 그래? 어른들도 다 그랬어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 254,
+          "label": "r13_v111_bami_night4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2d7ad89298ef4be0fdd5b8d69c5cc652a2f5a36bd1929058ee85b8a581e9521a",
+      "uid": "ff7923012f8d3ed31bceec34",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0023",
+      "when": null,
+      "speaker": "밤이",
+      "kind": "dialogue",
+      "text": "네가 나 봤다고 했잖아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 255,
+          "label": "r13_v111_bami_night4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3f9afd5e6694c0f09b65f4098b544c5dab4352a596afba3f0e0e1adf996a2d69",
+      "uid": "860e0197d0b8acb866adb545",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0024",
+      "when": null,
+      "speaker": "콩이",
+      "kind": "dialogue",
+      "text": "낮에 봤지! 네가 맨날 여기 있으니까…….",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 256,
+          "label": "r13_v111_bami_night4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1779ec874a9442e8a92d3f235d09fc76613ef7aef6202c62e7471cfece62fbe2",
+      "uid": "bc6c5e9e8e1c34e3e1a05bf7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0025",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "문 건 못 봤네.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 257,
+          "label": "r13_v111_bami_night4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "44e69f321e56ea72609a162b0ccb89fef13a9b9b39e36d34209467e404222ef4",
+      "uid": "3bc6a5e48d2b9277e05a6cef",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0026",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "콩이가 주전자를 내려놓았다. 물이 조금 넘쳤다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 258,
+          "label": "r13_v111_bami_night4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6955dba9df62b9bee2a5412547b617ead898a558b3e89b9c27e81af5a219f85f",
+      "uid": "3551047600ef5d36051754b8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0027",
+      "when": null,
+      "speaker": "콩이",
+      "kind": "dialogue",
+      "text": "……그건 못 봤어. 됐어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 259,
+          "label": "r13_v111_bami_night4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4d15126a92731fde78b9d23daf23df85a9be6b0f72349c50bc1a58a282699429",
+      "uid": "051eab99348e28dbffd46398",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0028",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "내일도 그렇게 말해 줘. 사람들 앞에서.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 260,
+          "label": "r13_v111_bami_night4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "efdbdfdf0ee2b6b25904a646d65f9240422b007afdc55cdbeebab88dfc403e9b",
+      "uid": "624213cc089187b07ffcc585",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0029",
+      "when": null,
+      "speaker": "콩이",
+      "kind": "dialogue",
+      "text": "다 나만 쳐다볼 텐데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 261,
+          "label": "r13_v111_bami_night4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e2e1fa1177a2a3454e83da91ab64b3ef32569bb84384df3890e7e1a202dea3c1",
+      "uid": "fea4e1a59c33740bb1d89951",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0030",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "내가 옆에 있을게.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 262,
+          "label": "r13_v111_bami_night4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "49646ed33656aa7e460242911b6d087e0351c822b9bd93ab8ac02f442316ba41",
+      "uid": "8ae6ad893ff99019be044a5b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0031",
+      "when": null,
+      "speaker": "콩이",
+      "kind": "dialogue",
+      "text": "……나비한테 먼저 말할 거야.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 263,
+          "label": "r13_v111_bami_night4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e590e7125a3aacfc5e120a6b8aaa7f048924ab7dc3c723ba80a1f3ad0cbac09c",
+      "uid": "1b6f130b84aa468f70d05432",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0032",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "콩이는 식당으로 돌아간다. 아빠는 수첩에서 콩이의 소문에 ‘목격 아님’을 직접 쓴다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1a0b99da1d909178595c0f5f30790d12de1be845435d40a6ba71c10a92679739",
+      "uid": "153fb993ec6417cf239e2ce6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0033",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "초소 밖 짧은 현장 확인. 바둑이가 밤이와 남고 아빠·다람은 초소 불빛 범위 안에서만 살핀다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "781e672c3173d074fd8d512c3d4be5c1d0c31fb2d3932e5e8d3d52dc8980d911",
+      "uid": "d5ab9ba8b735695707ccb098",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0034",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "조사: 울타리 못에 걸린 회색 천 / 눈 위의 겹친 발자국 / 엎어진 양동이.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ac69fbe65163727fb0516e79778107af75e5a712468ca099ff576cb7184a0203",
+      "uid": "e71443a7a98f9612e30a06b0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0035",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "밤이가 본 사람은 맨발이랬지? 여기 발자국도 맨발이야.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 308,
+          "label": "r13_v111_tracks_talk4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d5c43e9587c7fddd933c9969f362e2b0327de0861d2a23a533cd98d66ca29a67",
+      "uid": "5e13d043ea3fdc838f1c759a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0036",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "다람이 울타리의 회색 천을 먼저 가리킨다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bd04194f6076d07ca92c14da59f76d03293abba6f62fb3491676ff0bbe7dd1b8",
+      "uid": "6f67e59247af04d82ed4e15b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0037",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0037",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0037",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "저 천도 걸렸어. 발자국이랑 같은 쪽이야. 따라가면 되겠다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 309,
+          "label": "r13_v111_tracks_talk4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "000dd8b7f3761346d2b8c34b79cdc8516b6391422ea72f9df0cf9bfa68c12354",
+      "uid": "5fb99f0c581c7c33175ef985",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0038",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0038",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0038",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "발자국이 겹쳤어. 눈도 더 오고…… 같은 발인지 모르겠는데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 310,
+          "label": "r13_v111_tracks_talk4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "998625bdc0d3dc3c803ae0bfa7d461a3918a628b76d8e136009f7c719333f1c0",
+      "uid": "15710749aaa659ccad7e8282",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0039",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0039",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0039",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "저 집 쪽인데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 311,
+          "label": "r13_v111_tracks_talk4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "30d38ac4d02fd5d009c2bfc54f6e7beb811acdefc619ad7e63c4a6a103e2f899",
+      "uid": "b4be8f3b92f9858e55c52e55",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0040",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0040",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0040",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어느 쪽으로 갔는지만 적자. 사람 이름 말고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 312,
+          "label": "r13_v111_tracks_talk4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e98a9aefd79c1103ba595ebc1031a634b40957933b3403ea720beedbd05c138a",
+      "uid": "dbd6bf89a4ee2b1283ab84d7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0041",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0041",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0041",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "조작: 걸린 천의 위치와 방향을 그린 뒤 바둑이를 부른다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "03d47ef01630e051cb5fbe4f170ec9a37bdaaf86484b41eaf5857e4b79f61538",
+      "uid": "8716a94cff8b226adf9db0ac",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0042",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0042",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0042",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "밤이, 나도 문가로 잠깐 갈 거다. 같이 올래, 여기서 기다릴래?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 322,
+          "label": "r13_v111_cloth4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1ea70d1129fe0a5394cf1c3ef1cbdd7a77536358119be66c716a2e57cb072839",
+      "uid": "a478547b29f7973daff9b716",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0043",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0043",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0043",
+      "when": null,
+      "speaker": "밤이",
+      "kind": "dialogue",
+      "text": "같이 갈래요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 323,
+          "label": "r13_v111_cloth4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "04a622f98a0548b5461962fbce14ee20eae7e9a264cc49447ec103da7cf584d4",
+      "uid": "616feb5206dddcbea7cc9f6a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0044",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0044",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0044",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "밤이가 문 불빛 안에 선다. 바둑이가 아빠와 문 앞 울타리에서 천을 수거한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b64cdf3f6eebd7e7364f60f803491f29193034a57b224c2f9113b38b6d6b2cff",
+      "uid": "95eca15e67deb125202b3ba9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L9101",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L9101",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L9101",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "초소 문 앞 울타리의 회색 천. 걸린 위치와 방향을 그린 뒤 바둑이와 함께 수거했다. 발자국은 겹쳐 있다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "34e4d1049281e9dfc7bf4e3d37339c9d7913c4721afc9106ffb6754922660b9f",
+      "uid": "417080fe6fbaebb73c2f8580",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0045",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0045",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0045",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "솜이가 아까 천막 쪽이라고 했는데…… 집 쪽에 더 가까워.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 325,
+          "label": "r13_v111_cloth4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "db5dd3a8a84df3ab9164ff7e03148eefd5b601a54a0966b1603a1d3edc3cae9f",
+      "uid": "5d2e2ffadd3324a723ca9236",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0046",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0046",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0046",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "솜이가 언제 그랬어?",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 326,
+          "label": "r13_v111_cloth4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "60c0b5d15c8b7230fd7d33e9d7353252ee15580c70e99f0dbbf5a1ca72eb2687",
+      "uid": "2382b6c25f3a9bdce2283a82",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0047",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0047",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0047",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "낮에 그랬잖아. 천막에 있다면서, 집 안에선 기침했어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 327,
+          "label": "r13_v111_cloth4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "80fb2f7c156e032c149e40b080a71958f3cc29b589bbc13d4845034eaa84ffce",
+      "uid": "73b0e46c23dbaf81539b2f9f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0048",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0048",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0048",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "기침한 얼굴은 못 봤지. 내일 솜이한테 물어보자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 328,
+          "label": "r13_v111_cloth4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "52f48a8092ab22d4baaca00c791058c0186d327f7b8c01fa02632d17ac44779e",
+      "uid": "f56d6d7cdbcf5e778df9d84d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0049",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0049",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0049",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "밤이 이야기 틀렸다는 거 찾으러 가는 거야?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 329,
+          "label": "r13_v111_cloth4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "39e980d3a74d240b2731c0a55bf9811d13b6153d991fd30b47fffe00f10f9060",
+      "uid": "30331b35530720cad35f40fa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0050",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0050",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0050",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아니. 밤이를 그냥 끌고 가게 둘 순 없잖아. 붙잡을 만한 이유가 있나 봐야지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 330,
+          "label": "r13_v111_cloth4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2b3a861ee443708c0f5132cac1e54dafda889a6000a09250d6c3aa4b6a9d3f82",
+      "uid": "f1793051dc9e20a9f9bda396",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0051",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0051",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0051",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "귀가 전, 함께 식당으로 간다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2fcefa1740cb95a0b239de60e34dd46bf704a847fdc060f1e56b6580b09c0de6",
+      "uid": "2c00c5841835e00740231da6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0052",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0052",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0052",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "오늘 밤은 나도 이 아이 곁에 있겠소. 문 닫기 전에 자리 좀 봅시다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 333,
+          "label": "r13_v111_cloth4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f1dd085831be1e75ce32677313bf679c6cb2ab9dd7fe49986a69b31edc4bf62f",
+      "uid": "78ae6dda4ae1c24948a836f3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0053",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0053",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0053",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "앞자리요. 제가 문 닫을 때까지 여기 계세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 334,
+          "label": "r13_v111_cloth4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d24d9f8d8da60cd28f90302ed30a7b84ed374a55f8606d6358094229d922ca4e",
+      "uid": "76322d628e085a49d0575f86",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0054",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0054",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0054",
+      "when": null,
+      "speaker": "밤이",
+      "kind": "dialogue",
+      "text": "나가고 싶으면요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 335,
+          "label": "r13_v111_cloth4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c6562f46164c1304bd073343a2a1795478c8c615394db3d4bc60da430a5606b7",
+      "uid": "5f354feddc25a18fc6cecbde",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0055",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0055",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0055",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "나한테 말해. 같이 나가면 되지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 336,
+          "label": "r13_v111_cloth4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "64911324022ebb791d5fb986dcd4ac5ba12ea680779b9892e9a3bd7597e8249d",
+      "uid": "a64d9a79c79046bd867e9cc7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0056",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0056",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0056",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠 수첩에도 큰 사람이라고 썼어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 337,
+          "label": "r13_v111_cloth4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d3a275cf3faeab048045a308139ab7ecb18fc1fb40fc1d8316e6d0c2911e2415",
+      "uid": "3b3272f300e101973f750a9b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0057",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0057",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0057",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응. 그랬네.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 338,
+          "label": "r13_v111_cloth4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d69e5869e7b5f5e5ba09ae181660f4fe2cb75d62bcf71d0f8258ad43a6daec30",
+      "uid": "6fd0502f4657d0d4379231ed",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0058",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0058",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0058",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "나는 지웠는데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 339,
+          "label": "r13_v111_cloth4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a77d1b5496543d3115fd7207b5dd86051d830c17974a460ce76794abde37f90b",
+      "uid": "86a356015de4afa87aaefb39",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0059",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0059",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0059",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "연필 좀 줘. 아빠 것도 고치게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 340,
+          "label": "r13_v111_cloth4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "57594cba141a52590be1424614712335b706f20d751d35516fd5fa56d20abc39",
+      "uid": "78fd6f28be5a26a88b89e927",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0060",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0060",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0060",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "광장, 여관으로 돌아가기 전.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ec2b8613b7e7dcaabe56c5feea3b3ab45adbc110ffaeac7a0834546f9a1f0970",
+      "uid": "98e6c29e753b5d78eccc2104",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0061",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0061",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0061",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "오늘도 답은 없었어요. 당신 쪽지도 그대로고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 344,
+          "label": "r13_v111_cloth4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "edc83e9ffc6ef27e5cd95513e3920de108c54fbac90d9640a98d2606446e4aed",
+      "uid": "b2725df65dbaf3a308c4cef0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0062",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0062",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0062",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "누가 왔다 간 흔적은요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 345,
+          "label": "r13_v111_cloth4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1604a0f65721a689f18d63dd977785774bf41a14d4b082bcdb4728292252a6c7",
+      "uid": "41a880b71322ea70681a8621",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0063",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0063",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0063",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "발자국이 겹쳤어요. 누군지는 모르겠어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 346,
+          "label": "r13_v111_cloth4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9fee411e2a41c05754aa183c40ccaf65716d83a86d207eb651f0888e30f2b6a6",
+      "uid": "d4151f647bc6d8876b055b57",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0064",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0064",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0064",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "내일도 봐 주세요. 부탁합니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 347,
+          "label": "r13_v111_cloth4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fed9ab4f7cb7f4c0673df3077619734c20be04556841b4823b27c69c3a8257eb",
+      "uid": "2538f157f92245e703559c9b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S04_L0065",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S04_L0065",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S04_L0065",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "방에서 초상 옆에 천의 그림을 놓는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f08bea08a900046b2ffb8b9a024f8a575a6e52bfaf7101840757893a93d6f752",
+      "uid": "588ff1385c6da7b6d5e64748",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

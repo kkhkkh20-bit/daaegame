@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D12_S01_R26",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "after",
+        "MS14_D12_S01_L0026",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D12_S01_L0026",
+      "when": "warm_support_ready",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "여기면 아이들이 누울 수 있겠어요. 장작도 들여놨으니, 이제 불만 붙이면 돼요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1120,
+          "label": "r13_v111_warm_place12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "a577a44f1e44ae31290beaba51fddce8a3fc849be0a1bc8c3560310bd75e71d6",
+      "uid": "77dc913ddee45b566b65d9ac",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|patch|after|warm_support_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D12_S01_R27",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "after",
+        "MS14_D12_S01_L0027",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D12_S01_L0027",
+      "when": "warm_support_ready",
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "이제 자리만 잡으면 돼요. 장작 왔으니까, 앉혀 놓고 불부터 봐요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1121,
+          "label": "r13_v111_warm_place12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-1. 불러야 할 이름",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "0d6e04d935945843381812b17d85de294aabc9d557f408101253ca8e40561867",
+      "uid": "46917fb2632760c79a5eee7c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S01|patch|after|warm_support_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

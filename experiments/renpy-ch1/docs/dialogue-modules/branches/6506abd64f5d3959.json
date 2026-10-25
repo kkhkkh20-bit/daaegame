@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_life.rpy:221:97",
+      "file": "game/room13_life.rpy",
+      "path": [
+        12860,
+        12880
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_topic_choice",
+      "block": "r13_topic_choice",
+      "placement": "literal",
+      "ref": "game/room13_life.rpy:221:97",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "갚을 몫은 기록으로 남기겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_life.rpy",
+          "line": 221,
+          "label": "r13_topic_choice",
+          "guards": [
+            "if key==\"w2_eunho\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 221,
+      "scene_title": "r13_topic_choice",
+      "source_hash": "ff6367277bd80f51605a562a690b9994a298289796fb1dd7f1222258428131b7",
+      "baseline_hash": "4976fa306d327fec3ac92ba0404e2365497dac9b0e804f4234102a1fa0a53984",
+      "uid": "0e810a1cb6f7804d37b21e00",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_topic_choice|rpy_literal|r13_topic_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_life.rpy:221:137",
+      "file": "game/room13_life.rpy",
+      "path": [
+        12900,
+        12950
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_topic_choice",
+      "block": "r13_topic_choice",
+      "placement": "literal",
+      "ref": "game/room13_life.rpy:221:137",
+      "when": null,
+      "speaker": "resident_eunho",
+      "kind": "dialogue",
+      "text": "빚진 사람 이름만 적힌 종이는 이미 많습니다. 오늘 누구 몫이 남는지부터 따져 봅시다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_life.rpy",
+          "line": 221,
+          "label": "r13_topic_choice",
+          "guards": [
+            "if key==\"w2_eunho\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 221,
+      "scene_title": "r13_topic_choice",
+      "source_hash": "ff6367277bd80f51605a562a690b9994a298289796fb1dd7f1222258428131b7",
+      "baseline_hash": "9cabba4f30810c7f8ea81107bde45deb38ea74afbba8d545159c96f27e3bb553",
+      "uid": "4bde6caa4d0ed589f8f9e96f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_topic_choice|rpy_literal|r13_topic_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

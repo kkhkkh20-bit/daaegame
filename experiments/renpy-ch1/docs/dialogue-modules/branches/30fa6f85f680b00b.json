@@ -1,0 +1,279 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D04_S04_A01",
+      "file": "game/v111/newworld/d04.json",
+      "path": [
+        "after",
+        "MS14_D04_S04_L0045",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D04_S04_L0045",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "솜이네 문간이 보인다. 신발 두 켤레가 놓여 있다. 하나는 바닥까지 말라 있고, 하나는 젖어 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 325,
+          "label": "r13_v111_cloth4",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "3498ca2f17801632f3caaaf64580b0d2b16a45c98cf1c99b69eab5af4b51ba32",
+      "baseline_hash": "32309a9734af8cec375043155a020f1131ec60bb4207ca1d35ba4b1b74db3e29",
+      "uid": "c6361a222d5a60cd99d1d934",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D04_S04_A02",
+      "file": "game/v111/newworld/d04.json",
+      "path": [
+        "after",
+        "MS14_D04_S04_L0053",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D04_S04_L0053",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "식당 뒤쪽에서 누군가 물통을 지고 나가는 뒷모습이 보인다. 젖은 신발 자국이 문턱까지 이어져 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 334,
+          "label": "r13_v111_cloth4",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "3498ca2f17801632f3caaaf64580b0d2b16a45c98cf1c99b69eab5af4b51ba32",
+      "baseline_hash": "00dd59c5a9b0e1beda0defcc57692a1b6de857c4ad44ba89d62dd470b50cc7da",
+      "uid": "8c1023d439757a825f82913b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D04_S04_V02",
+      "file": "game/v111/newworld/d04.json",
+      "path": [
+        "after",
+        "MS14_D04_S04_L0059",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D04_S04_L0059",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "thought",
+      "text": "본 것과 짐작한 것을…… 나는 한 줄에 같이 적어 두었구나.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 340,
+          "label": "r13_v111_cloth4",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "3498ca2f17801632f3caaaf64580b0d2b16a45c98cf1c99b69eab5af4b51ba32",
+      "baseline_hash": "dd9340b601cd790b7c8b26042d6cbd97079d5bd1c8aa04f3a73ec29f4668a0fa",
+      "uid": "284611762f9a0bced09a19c4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_MV_D04_01",
+      "file": "game/v111/newworld/d04.json",
+      "path": [
+        "after",
+        "MS14_D04_S04_L0050",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D04_S04_L0050",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠, 밤이가 강 쪽에서 엄마 봤댔잖아.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 330,
+          "label": "r13_v111_cloth4",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "3498ca2f17801632f3caaaf64580b0d2b16a45c98cf1c99b69eab5af4b51ba32",
+      "baseline_hash": "8318ba1c5af081e8c04eee786b418b933b2d2a0e3f6ce9638ad74747b6a772db",
+      "uid": "7c257b8006b23dfe86a8e609",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_MV_D04_02",
+      "file": "game/v111/newworld/d04.json",
+      "path": [
+        "after",
+        "MS14_D04_S04_L0050",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D04_S04_L0050",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "……응. 그랬지.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 330,
+          "label": "r13_v111_cloth4",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "3498ca2f17801632f3caaaf64580b0d2b16a45c98cf1c99b69eab5af4b51ba32",
+      "baseline_hash": "ba49ac7e0d42f0ab2356c362e44cdc508b7d3e7ac7b307c64f253071376b48fa",
+      "uid": "3e4573ae27ee0fbf61e94e01",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_MV_D04_03",
+      "file": "game/v111/newworld/d04.json",
+      "path": [
+        "after",
+        "MS14_D04_S04_L0050",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D04_S04_L0050",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "밤이 데려가면, 엄마 본 사람이 또 없어지잖아.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 330,
+          "label": "r13_v111_cloth4",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "3498ca2f17801632f3caaaf64580b0d2b16a45c98cf1c99b69eab5af4b51ba32",
+      "baseline_hash": "83db94dd42d94a940b8327239f47a2e06b6ad93276184862dd01f03c9378224f",
+      "uid": "6e90d769336175a514c6ee2f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_MV_D04_04",
+      "file": "game/v111/newworld/d04.json",
+      "path": [
+        "after",
+        "MS14_D04_S04_L0050",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 4,
+      "scene": "MS14_D04_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D04_S04_L0050",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그 얘기도 더 들어야지. 우선 밤이를 데려갈 만한 근거가 있는지 보자.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 330,
+          "label": "r13_v111_cloth4",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 같은 밤 / 잘못 적은 키",
+      "source_hash": "3498ca2f17801632f3caaaf64580b0d2b16a45c98cf1c99b69eab5af4b51ba32",
+      "baseline_hash": "267372f3794d31c912199b3940c39301c3abf5e1e0e75cf2b80aa4002189fd21",
+      "uid": "685887c2a5316af806c62721",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

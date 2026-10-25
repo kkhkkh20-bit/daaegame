@@ -1,0 +1,170 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:362:26",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        21163,
+        21216
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_nt_after_trial",
+      "block": "r13_nt_after_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:362:26",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "토실아. 할머니 없어도 밥 거르지 말렴. 나비 말 잘 듣고. 밤에 무서우면 나비 방에 가렴.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 362,
+          "label": "r13_nt_after_trial",
+          "guards": [
+            "if room13.get(\"trial_result\")==\"culprit_proven\" and r13_has(\"N03\") and r13_has(\"N07\") and (r13_has(\"ttadak_dead\") or r13_has(\"nt_ttadak_half\")):",
+            "if _return:"
+          ]
+        }
+      ],
+      "line": 362,
+      "scene_title": "r13_nt_after_trial",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "b7de39c2e70fdf828a74576ade7b89576525704f9e38b8a34af4729d7bf81c27",
+      "uid": "810234e922857ff7a0f10035",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_nt_after_trial|rpy_literal|r13_nt_after_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:365:26",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        21328,
+        21346
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_nt_after_trial",
+      "block": "r13_nt_after_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:365:26",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "……그럼. 할머니는 할머니지.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 365,
+          "label": "r13_nt_after_trial",
+          "guards": [
+            "if room13.get(\"trial_result\")==\"culprit_proven\" and r13_has(\"N03\") and r13_has(\"N07\") and (r13_has(\"ttadak_dead\") or r13_has(\"nt_ttadak_half\")):",
+            "if _return:"
+          ]
+        }
+      ],
+      "line": 365,
+      "scene_title": "r13_nt_after_trial",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "284cd810b9cb7f5d732ba68e9baabd81d7605efd932162354694741f7c1453e9",
+      "uid": "d4e5a6b58c3f79f77784ba7c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_nt_after_trial|rpy_literal|r13_nt_after_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:366:26",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        21375,
+        21406
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_nt_after_trial",
+      "block": "r13_nt_after_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:366:26",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "다람이 참 착한 아이란다. 그 애 엄마를 꼭 닮았지.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 366,
+          "label": "r13_nt_after_trial",
+          "guards": [
+            "if room13.get(\"trial_result\")==\"culprit_proven\" and r13_has(\"N03\") and r13_has(\"N07\") and (r13_has(\"ttadak_dead\") or r13_has(\"nt_ttadak_half\")):",
+            "if _return:"
+          ]
+        }
+      ],
+      "line": 366,
+      "scene_title": "r13_nt_after_trial",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "53147e0b70d4f3319c5bcd1e993027a66dfe5015687fedf7e0c3bf223aad7e50",
+      "uid": "b8b03910b587a303a06e0a3b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_nt_after_trial|rpy_literal|r13_nt_after_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:367:26",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        21435,
+        21478
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_nt_after_trial",
+      "block": "r13_nt_after_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:367:26",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "내가 왜 그랬는지는 묻지 말렴. 아이 아버지는 아직 그걸 들을 수 없단다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 367,
+          "label": "r13_nt_after_trial",
+          "guards": [
+            "if room13.get(\"trial_result\")==\"culprit_proven\" and r13_has(\"N03\") and r13_has(\"N07\") and (r13_has(\"ttadak_dead\") or r13_has(\"nt_ttadak_half\")):",
+            "if _return:"
+          ]
+        }
+      ],
+      "line": 367,
+      "scene_title": "r13_nt_after_trial",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "9f674c2d0aafe99abd79515d3dc506736effe84503b0a1f2619b17bf4540af3d",
+      "uid": "89242b6411722f8f6ae37926",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_nt_after_trial|rpy_literal|r13_nt_after_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

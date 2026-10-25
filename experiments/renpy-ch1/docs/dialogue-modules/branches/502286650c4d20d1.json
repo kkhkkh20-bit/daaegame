@@ -1,0 +1,126 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/ms14_story.rpy:280:27",
+      "file": "game/ms14_story.rpy",
+      "path": [
+        14982,
+        14994
+      ],
+      "origin": "rpy_inventory",
+      "day": 7,
+      "scene": "ms14_proof",
+      "block": "ms14_proof",
+      "placement": "literal",
+      "ref": "game/ms14_story.rpy:280:27",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "자료를 다시 읽는다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/ms14_story.rpy",
+          "line": 280,
+          "label": "ms14_proof",
+          "guards": []
+        }
+      ],
+      "line": 280,
+      "scene_title": "ms14_proof",
+      "source_hash": "4532fcb1f112e5860e4ce3e37219337a5840d5fc429a92390df4893681171b9a",
+      "baseline_hash": "841a1d347812d61f22f64511e743d1226273a4e00872604ce538e89894475c0b",
+      "uid": "69a3ebeb4fe84b32f3518bc8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|ms14_proof|rpy_inventory|ms14_proof|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/ms14_story.rpy:286:27",
+      "file": "game/ms14_story.rpy",
+      "path": [
+        15353,
+        15362
+      ],
+      "origin": "rpy_inventory",
+      "day": 7,
+      "scene": "ms14_proof",
+      "block": "ms14_proof",
+      "placement": "literal",
+      "ref": "game/ms14_story.rpy:286:27",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "고른 자료: ",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/ms14_story.rpy",
+          "line": 286,
+          "label": "ms14_proof",
+          "guards": [
+            "if ms14_answer == \"pick\":",
+            "if _return and _return.startswith(\"MS14:\"):"
+          ]
+        }
+      ],
+      "line": 286,
+      "scene_title": "ms14_proof",
+      "source_hash": "4532fcb1f112e5860e4ce3e37219337a5840d5fc429a92390df4893681171b9a",
+      "baseline_hash": "67623cea8cdfbe58bd264042f644736df15e0fa553a0f1ab579ef0662cfbf4fd",
+      "uid": "e06292219704d6dc078cd222",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|ms14_proof|rpy_inventory|ms14_proof|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/ms14_story.rpy:292:27",
+      "file": "game/ms14_story.rpy",
+      "path": [
+        15615,
+        15635
+      ],
+      "origin": "rpy_inventory",
+      "day": 7,
+      "scene": "ms14_proof",
+      "block": "ms14_proof",
+      "placement": "literal",
+      "ref": "game/ms14_story.rpy:292:27",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "제시할 자료를 직접 골라 주세요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/ms14_story.rpy",
+          "line": 292,
+          "label": "ms14_proof",
+          "guards": [
+            "elif ms14_answer == \"submit\":",
+            "else:"
+          ]
+        }
+      ],
+      "line": 292,
+      "scene_title": "ms14_proof",
+      "source_hash": "4532fcb1f112e5860e4ce3e37219337a5840d5fc429a92390df4893681171b9a",
+      "baseline_hash": "2969b16b1f94e677f59bfd6b2a2bb3c2219d77b75ed64935cdc2aab97b5f72a1",
+      "uid": "a544562b52b47eeb5aa6120b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|ms14_proof|rpy_inventory|ms14_proof|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

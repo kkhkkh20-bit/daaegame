@@ -1,0 +1,197 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "lamp_attempt_field3:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "lamp_attempt_field3",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 3,
+      "scene": "lamp_attempt_field3",
+      "block": "lamp_attempt_field3",
+      "placement": "binding",
+      "ref": "lamp_attempt_field3:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "공방에서 함께 확인한다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "lamp_field_done3",
+            true
+          ],
+          [
+            "state",
+            "lamp_knife_done3",
+            true
+          ],
+          [
+            "state",
+            "lamp_store_done3",
+            true
+          ]
+        ],
+        "location": "square",
+        "person": "resident_tok",
+        "object": null
+      },
+      "scene_title": "lamp_attempt_field3",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "10d818b2a2e3c739bcf8e535e8108ead0915b947fd826e88b70c7f37ed808f2c",
+      "uid": "f531aadd4dc1510d1aea52c3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|lamp_attempt_field3|choice|lamp_attempt_field3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "lamp_attempt_field3:1",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "lamp_attempt_field3",
+        "options",
+        1,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 3,
+      "scene": "lamp_attempt_field3",
+      "block": "lamp_attempt_field3",
+      "placement": "binding",
+      "ref": "lamp_attempt_field3:1",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "돌받침 안쪽을 살피고 조각을 담는다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "lamp_field_done3",
+            null
+          ]
+        ],
+        "location": "square",
+        "person": null,
+        "object": "lamp"
+      },
+      "scene_title": "lamp_attempt_field3",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "62b2fe0fbe2e7e3b192f5f59c88a9da9ad3ddf57a8fed0558b3f902be6a222a3",
+      "uid": "7457ee88c91713dd9c19e77c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|lamp_attempt_field3|choice|lamp_attempt_field3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "lamp_attempt_field3:2",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "lamp_attempt_field3",
+        "options",
+        2,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 3,
+      "scene": "lamp_attempt_field3",
+      "block": "lamp_attempt_field3",
+      "placement": "binding",
+      "ref": "lamp_attempt_field3:2",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "칼과 조각의 대조를 부탁한다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "lamp_field_done3",
+            true
+          ],
+          [
+            "state",
+            "lamp_knife_done3",
+            null
+          ]
+        ],
+        "location": "square",
+        "person": "resident_siluk",
+        "object": null
+      },
+      "scene_title": "lamp_attempt_field3",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "d2d7182d75b3e1d0428754047df2fcece1f533d9d5d2052d0e73f8839d124ec3",
+      "uid": "8319cb79606e209954bb8ce5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|lamp_attempt_field3|choice|lamp_attempt_field3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "lamp_attempt_field3:3",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "lamp_attempt_field3",
+        "options",
+        3,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 3,
+      "scene": "lamp_attempt_field3",
+      "block": "lamp_attempt_field3",
+      "placement": "binding",
+      "ref": "lamp_attempt_field3:3",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "매입 장부와 약속한 값을 확인한다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "lamp_store_done3",
+            null
+          ]
+        ],
+        "location": "store",
+        "person": "resident_madam",
+        "object": null
+      },
+      "scene_title": "lamp_attempt_field3",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "3e8945c489d81c8848b237823e5b334366565bc3d2739dcc7ee0bd8847da1e09",
+      "uid": "a5518ad0fd9e2dc0a0066ad4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|lamp_attempt_field3|choice|lamp_attempt_field3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

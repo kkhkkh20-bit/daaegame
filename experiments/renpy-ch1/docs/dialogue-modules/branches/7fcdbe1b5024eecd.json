@@ -1,0 +1,162 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D01_S04_A08",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "after",
+        "MS14_D01_S04_L0021",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D01_S04_L0021",
+      "when": "gate_daram_unlisted",
+      "speaker": null,
+      "kind": "narration",
+      "text": "너울이 돌아간 뒤, 돌목이 표를 접으며 중얼거린다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 313,
+          "label": "r13_v111_registered_depart",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "a5502080f124b4058b0091ae85d95677a8018eb4e40d0f4bf2c5ef67c4f1d2ed",
+      "uid": "0e5692f262961653ffdb8f40",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|patch|after|gate_daram_unlisted",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AR_D01_01",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "after",
+        "MS14_D01_S04_L0008",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D01_S04_L0008",
+      "when": "gate_daram_unlisted",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이름 칸이 없으면 어떻게 됩니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 282,
+          "label": "r13_v111_registered",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "4cd4a87ba184f46fe1d9cc01d92d37ae7a782c1c39e61f907881e041df47d7aa",
+      "uid": "4256f173de23286b2d23b136",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|patch|after|gate_daram_unlisted",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AR_D01_02",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "after",
+        "MS14_D01_S04_L0008",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D01_S04_L0008",
+      "when": "gate_daram_unlisted",
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "표에 적힌 대로만 세오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 282,
+          "label": "r13_v111_registered",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "b62ea0942b9592dc014935d73379716c2c4c5ef86451b48a802953d8315e0221",
+      "uid": "b4a1659207088e53a52c73cf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|patch|after|gate_daram_unlisted",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AR_D01_03",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "after",
+        "MS14_D01_S04_L0008",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D01_S04_L0008",
+      "when": "gate_daram_unlisted",
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "……나 없는 사람이야?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 282,
+          "label": "r13_v111_registered",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "c0e205521471feea4462d11e419b2cdcb1371c2cd5ce6336d3d7e115d0810218",
+      "uid": "995ff3ed34a2a296863be1fc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|patch|after|gate_daram_unlisted",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

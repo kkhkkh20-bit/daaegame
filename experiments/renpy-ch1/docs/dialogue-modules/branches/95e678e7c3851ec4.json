@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D11_LE02",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "blocks",
+        "lower_elder11",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "lower_elder11",
+      "block": "lower_elder11",
+      "placement": "blocks",
+      "ref": "lower_elder11",
+      "when": "karo_ready",
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "아랫길 판잣집 할아버지 거예요. ……네로 씨가 업고 나오던 참이었나 봐요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 999,
+          "label": "r13_v111_late_road11",
+          "guards": []
+        }
+      ],
+      "scene_title": "lower_elder11",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "7ec9e46842d1460c411ff4ef6386bec59dacba611bc6e6b817a8298eb3af47df",
+      "uid": "2a8b613f7d164dc1a91ed5f1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|lower_elder11|patch|lower_elder11|karo_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

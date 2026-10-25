@@ -1,0 +1,170 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_HP_HOUSE7_00",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_house7",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "hp_house7",
+      "block": "hp_house7",
+      "placement": "blocks",
+      "ref": "hp_house7",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "안쪽 난로에서 푸른 불이 보인다. 문 옆에는 빈 장작 상자와 돌 바구니가 놓여 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 62,
+          "label": "r13_hp_pick7",
+          "guards": [
+            "elif n==84 and r13_hp_value('family_seen'):"
+          ]
+        }
+      ],
+      "scene_title": "hp_house7",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "072ea8f2fb28c4e5b778f872db6f4af787c92923ce700263e9e00eae7f652e30",
+      "uid": "5c5c7b854c7017f7a9d9ff62",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|hp_house7|patch|hp_house7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HP_HOUSE7_01",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_house7",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "hp_house7",
+      "block": "hp_house7",
+      "placement": "blocks",
+      "ref": "hp_house7",
+      "when": null,
+      "speaker": "판돌",
+      "kind": "dialogue",
+      "text": "춥다고 하면 불부터 올렸소. 그래도 날짜를 자꾸 묻는군.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 62,
+          "label": "r13_hp_pick7",
+          "guards": [
+            "elif n==84 and r13_hp_value('family_seen'):"
+          ]
+        }
+      ],
+      "scene_title": "hp_house7",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "b633d8fa8fcd73a1b3cc521ff6bd825c4231d3fc0fa55d37d06f3d899f4465c1",
+      "uid": "63ad97ac6c80843ae1b5efb4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|hp_house7|patch|hp_house7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HP_HOUSE7_02",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_house7",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "hp_house7",
+      "block": "hp_house7",
+      "placement": "blocks",
+      "ref": "hp_house7",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "얼마나 오래 그러셨습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 62,
+          "label": "r13_hp_pick7",
+          "guards": [
+            "elif n==84 and r13_hp_value('family_seen'):"
+          ]
+        }
+      ],
+      "scene_title": "hp_house7",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "ddbf3e73810bc643e27e6c42b224ce0c193abc7393a8e4b65f9da892be27380e",
+      "uid": "07f0f75731c14e1034d451f0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|hp_house7|patch|hp_house7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HP_HOUSE7_03",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_house7",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "hp_house7",
+      "block": "hp_house7",
+      "placement": "blocks",
+      "ref": "hp_house7",
+      "when": null,
+      "speaker": "판돌",
+      "kind": "dialogue",
+      "text": "모과 떠난 뒤로 더 잦아졌소. 뭘 해 줘야 할지 모르겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 62,
+          "label": "r13_hp_pick7",
+          "guards": [
+            "elif n==84 and r13_hp_value('family_seen'):"
+          ]
+        }
+      ],
+      "scene_title": "hp_house7",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "30999ca7a9abaaea5c08ee2c607b25d31a40fe15c7b539bef3e65d0dd53f0718",
+      "uid": "d1fc442185a163961d748922",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|hp_house7|patch|hp_house7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_week1_cases.rpy:153:15",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        8726,
+        8774
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:153:15",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "말리는 게 아니라 붙인 데를 떼고 계신데요. 받는 분이 열어 달라고 한 편지입니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 153,
+          "label": "r13_w1c_letters",
+          "guards": []
+        }
+      ],
+      "line": 153,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "a93b51de73d647f3b729585544663df81318915215bec0960cfd05466755169c",
+      "uid": "2a7a4ac2769f2349e785245c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:178:35",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        10179,
+        10207
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:178:35",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "남의 편지를 열려던 일을 경비에게 알리겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 178,
+          "label": "r13_w1c_letters",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 178,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "54e5020093fdcec11ce165712d3c8f79bc9b6886ee587b594ce30d7ef357ad27",
+      "uid": "b947ba9ac6f5551aed7e44bf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:195:35",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        11355,
+        11387
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:195:35",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "이 초상, 전에 보여 드렸지요. 이분은 제 아내입니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 195,
+          "label": "r13_w1c_letters",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 195,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "84551ee051105bc4d0cbafd753208a48984e41013b805789c0c2c87c4467cf34",
+      "uid": "4a23a715f2ef83ea9de12bfc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

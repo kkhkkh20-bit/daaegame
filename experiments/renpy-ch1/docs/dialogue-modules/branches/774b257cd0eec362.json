@@ -1,0 +1,169 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_livelihood_flow.rpy:65:75",
+      "file": "game/systems/room13_livelihood_flow.rpy",
+      "path": [
+        3383,
+        3408
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_livelihood_start",
+      "block": "r13_livelihood_start",
+      "placement": "literal",
+      "ref": "game/systems/room13_livelihood_flow.rpy:65:75",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "응. 나머지 그릇은 식당으로 내가면 되니?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_livelihood_flow.rpy",
+          "line": 65,
+          "label": "r13_livelihood_start",
+          "guards": [
+            "elif r13_job_key==\"kitchen\":"
+          ]
+        }
+      ],
+      "line": 65,
+      "scene_title": "r13_livelihood_start",
+      "source_hash": "8199753cfb17291d0932587c49c966b0e3e549fdf6af097673d3ee5348ee0559",
+      "baseline_hash": "95ec1a05ba01f9661fa08180d5cce3946eab5e4b58bc7b9f5156d16050aa27bf",
+      "uid": "23851f17851f84287c452520",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_livelihood_start|rpy_literal|r13_livelihood_start|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_livelihood_flow.rpy:87:35",
+      "file": "game/systems/room13_livelihood_flow.rpy",
+      "path": [
+        4303,
+        4318
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_livelihood_start",
+      "block": "r13_livelihood_start",
+      "placement": "literal",
+      "ref": "game/systems/room13_livelihood_flow.rpy:87:35",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "받는 집은 잘 아십니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_livelihood_flow.rpy",
+          "line": 87,
+          "label": "r13_livelihood_start",
+          "guards": [
+            "if r13_life_result[\"observed\"]:",
+            "if r13_job_key==\"delivery\":"
+          ]
+        }
+      ],
+      "line": 87,
+      "scene_title": "r13_livelihood_start",
+      "source_hash": "8199753cfb17291d0932587c49c966b0e3e549fdf6af097673d3ee5348ee0559",
+      "baseline_hash": "1eac10aea47ca97be5af956b8497b9ea71debbdd3b6d3a3150606d0ea8b2d777",
+      "uid": "d48590e10104f310049660c9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_livelihood_start|rpy_literal|r13_livelihood_start|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_livelihood_flow.rpy:91:35",
+      "file": "game/systems/room13_livelihood_flow.rpy",
+      "path": [
+        4640,
+        4661
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_livelihood_start",
+      "block": "r13_livelihood_start",
+      "placement": "literal",
+      "ref": "game/systems/room13_livelihood_flow.rpy:91:35",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "따로 놓은 이 그릇은 누구 몫이니?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_livelihood_flow.rpy",
+          "line": 91,
+          "label": "r13_livelihood_start",
+          "guards": [
+            "if r13_life_result[\"observed\"]:",
+            "elif r13_job_key==\"kitchen\":"
+          ]
+        }
+      ],
+      "line": 91,
+      "scene_title": "r13_livelihood_start",
+      "source_hash": "8199753cfb17291d0932587c49c966b0e3e549fdf6af097673d3ee5348ee0559",
+      "baseline_hash": "2405b3fcea5e6759e13ac98b11dfbb11feaaa81584e3dd11441a49539f405792",
+      "uid": "06c3340aa368c93058a49b60",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_livelihood_start|rpy_literal|r13_livelihood_start|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_livelihood_flow.rpy:93:35",
+      "file": "game/systems/room13_livelihood_flow.rpy",
+      "path": [
+        4794,
+        4829
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_livelihood_start",
+      "block": "r13_livelihood_start",
+      "placement": "literal",
+      "ref": "game/systems/room13_livelihood_flow.rpy:93:35",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "부품 하나가 모자라. 그래서 장부에는 아직 표시하지 않았어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_livelihood_flow.rpy",
+          "line": 93,
+          "label": "r13_livelihood_start",
+          "guards": [
+            "if r13_life_result[\"observed\"]:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 93,
+      "scene_title": "r13_livelihood_start",
+      "source_hash": "8199753cfb17291d0932587c49c966b0e3e549fdf6af097673d3ee5348ee0559",
+      "baseline_hash": "c9244415d7e1cc8a2cb4d6441dd853bebce73299d5549992a47ff2fb0947c0f4",
+      "uid": "54cadd53691c6a28b08254df",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_livelihood_start|rpy_literal|r13_livelihood_start|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

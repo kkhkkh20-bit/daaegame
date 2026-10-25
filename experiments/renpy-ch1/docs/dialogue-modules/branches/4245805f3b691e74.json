@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_EL14_08",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "ending_last14",
+        8,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "ending_last14",
+      "block": "ending_last14",
+      "placement": "blocks",
+      "ref": "ending_last14",
+      "when": "end_morning_lost",
+      "speaker": null,
+      "kind": "narration",
+      "text": "제단의 쇠는 그대로 남아 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3617,
+          "label": "r13_v111_cookie_scene14",
+          "guards": []
+        }
+      ],
+      "scene_title": "ending_last14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "f9bb4ecf046d5e147b5d8de78791c268b648e487b20e1b026b93c66bc4a96da0",
+      "uid": "e0875bddb0243bfa5461c954",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|ending_last14|patch|ending_last14|end_morning_lost",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_EL14_08B",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "ending_last14",
+        9,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "ending_last14",
+      "block": "ending_last14",
+      "placement": "blocks",
+      "ref": "ending_last14",
+      "when": "end_morning_lost",
+      "speaker": null,
+      "kind": "narration",
+      "text": "그래도 그날 밤, 학교 난로 곁에는 셋이 함께 앉았다. 오늘 기다릴 자리는 정해져 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3617,
+          "label": "r13_v111_cookie_scene14",
+          "guards": []
+        }
+      ],
+      "scene_title": "ending_last14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "836fbfbd74a1c10bca2ee95cc398028f16b54eeb211a371b69b4a0fb4bfec9d8",
+      "uid": "761731529b8f2ebcf3e16ffc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|ending_last14|patch|ending_last14|end_morning_lost",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:458:34",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        25043,
+        25099
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_ep1_siluk",
+      "block": "r13_ep1_siluk",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:458:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "실룩의 아이가 빵을 꼭 쥔 채 말했다. \"아빠가 어젯밤 늦게, 손이 꽁꽁 언 채 들어왔어요.\"",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 458,
+          "label": "r13_ep1_siluk",
+          "guards": [
+            "while _e1_loop:",
+            "elif _e1_pick==\"kid\":"
+          ]
+        }
+      ],
+      "line": 458,
+      "scene_title": "r13_ep1_siluk",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "f33910de8487bad33d785c75b4b001e8728eed97763311fec7777b7e6d451647",
+      "uid": "bde3870b23d0d18d96ea7d8d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_ep1_siluk|rpy_literal|r13_ep1_siluk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

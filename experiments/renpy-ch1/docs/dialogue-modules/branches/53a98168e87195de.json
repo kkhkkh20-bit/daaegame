@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:237:23",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        13555,
+        13635
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_nt_ttadak_signal",
+      "block": "r13_nt_ttadak_signal",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:237:23",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "그리고 통로 안쪽 판자 문은 주방 손잡이로만 여닫습니다. 그 문엔 안쪽 손잡이가 없습니다. 누가 손잡이를 내리면, 따닥 씨는 안에 갇힙니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 237,
+          "label": "r13_nt_ttadak_signal",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 237,
+      "scene_title": "r13_nt_ttadak_signal",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "8748e19242b2b9968f54f7a4c64727420e2397e99cf63a99dee3275e3c597bff",
+      "uid": "d165e38bd47a1043d4ac023f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_nt_ttadak_signal|rpy_literal|r13_nt_ttadak_signal|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

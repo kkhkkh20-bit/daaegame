@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:304:38",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        19228,
+        19242
+      ],
+      "origin": "rpy_inventory",
+      "day": 8,
+      "scene": "r13_ending",
+      "block": "r13_ending",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:304:38",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "아무도 없는 만남의 방",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 304,
+          "label": "r13_ending",
+          "guards": [
+            "elif r13_ending_id==\"E1\":"
+          ]
+        }
+      ],
+      "line": 304,
+      "scene_title": "r13_ending",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "f0e408fdc99b7edb46e21dc40b4cfd305157454e826cbc369ab0f10c25253260",
+      "uid": "1218f65f94312b0e782fb9c2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ending|rpy_inventory|r13_ending|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

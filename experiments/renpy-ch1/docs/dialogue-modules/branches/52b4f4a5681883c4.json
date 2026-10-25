@@ -1,0 +1,123 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_BL_01",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "badook_lost13",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "badook_lost13",
+      "block": "badook_lost13",
+      "placement": "blocks",
+      "ref": "badook_lost13",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "어르신 곁에 있었습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1979,
+          "label": "r13_v111_badook_wrong13",
+          "guards": []
+        }
+      ],
+      "scene_title": "badook_lost13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "5a889e13c1bb118e25245e25d27d50b0d11d729459ed44921dc68595ed05074b",
+      "uid": "5dded7f78ce22d06bc4adbe4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|badook_lost13|patch|badook_lost13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_BL_02",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "badook_lost13",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "badook_lost13",
+      "block": "badook_lost13",
+      "placement": "blocks",
+      "ref": "badook_lost13",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "그래, 바둑이도 같이 있었지. 날짜쯤이야 헷갈릴 수 있소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1979,
+          "label": "r13_v111_badook_wrong13",
+          "guards": []
+        }
+      ],
+      "scene_title": "badook_lost13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "bddb168943cdf00275188ca9073fd38460b1dd76698811a12de2630c139a4872",
+      "uid": "86d92a68f03a2aaeb8c4f0c0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|badook_lost13|patch|badook_lost13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_BL_03",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "badook_lost13",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "badook_lost13",
+      "block": "badook_lost13",
+      "placement": "blocks",
+      "ref": "badook_lost13",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "바둑이가 고삐에서 손을 뗀다. 더는 말하지 않는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1979,
+          "label": "r13_v111_badook_wrong13",
+          "guards": []
+        }
+      ],
+      "scene_title": "badook_lost13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "93f024728e917cab1d08f92d8cd78b5f9db7a696da530ee4ee84ca38aeefe2c4",
+      "uid": "011bf650a1fae796346ab688",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|badook_lost13|patch|badook_lost13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

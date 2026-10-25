@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:236:123",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        14921,
+        14927
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_final_rescue",
+      "block": "r13_final_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:236:123",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "다람아!",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 236,
+          "label": "r13_final_rescue",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 236,
+      "scene_title": "r13_final_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "ebb2962b5e8558396d42baedeaaad3b83fa1105364281bff68710a7801e8a3e6",
+      "uid": "305179b364a3faf984041ab6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_final_rescue|rpy_literal|r13_final_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,2725 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D04_S01_L0062",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0062",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0062",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "조건을 만족하는 다음 블록으로 진행한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fcff34e55d9bfec494fe81e2f2790dca27c3b738b9e9c6f38165c55b19b55973",
+      "uid": "21b9c22d0a210154de39d0ce",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "3일 실룩을 인계한 경우만. 아침, 솜이네로 가는 길의 공동 장작 하역장. 실룩이 짐을 내리고 너울이 작업표를 들고 있다. 아빠와 다람이 직접 본다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8d53f4fb96c43d65c1de6594d052572bf42420a145a20181390c06220b93daaa",
+      "uid": "34e212e06460ffc2ea338f2e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0002",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "조사하러 데려간다고 했습니다. 왜 여기서 일합니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 15,
+          "label": "r13_v111_labor4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "af47c4ad4a51afee69ea1d2710d10714908706199700897c21f8cd976e2e0b24",
+      "uid": "b71b8dafd00383fe92845628",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0003",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "밤 회의에서 공동작업으로 넘겼소. 돌값하고 수리비를 갚아야지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 16,
+          "label": "r13_v111_labor4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "af7650295e5fc341510f6fc471ca061b6556a0656ebeb45618124fb2885d455f",
+      "uid": "14df05929184881fb44722ab",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0004",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "며칠입니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 17,
+          "label": "r13_v111_labor4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2067600ebfe29454c2530363e012bdea15aa9946f54cc507a9f7112160b5affc",
+      "uid": "11e69c2c20c49688b3a7b02f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0005",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "매일 작업량으로 깎소. 다 갚을 때까지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 18,
+          "label": "r13_v111_labor4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f18048636e476dfb6f5b1b6036b056a0cd015acfd96a8e4b8478a80c9a5591ca",
+      "uid": "2560babd001afa4eb052c5ff",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0006",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "먹고 자는 곳은요? 아이들은 만납니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 19,
+          "label": "r13_v111_labor4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b87f24fb8afb9ae4346c01c126d5e584ad93bd82fd270b3e1796102256d5497a",
+      "uid": "8d6ae2da1a3cc52eff828230",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0007",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "작업 대기소에서 먹고 자오. 아이들은 저녁 배식 때 오게 하면 되고. 지금은 짐 내려야 하니 비키시오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 20,
+          "label": "r13_v111_labor4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ba85cd5a648d45c8cd61b88abf94670624e71ab48a91dedca20a5045c1aa84d0",
+      "uid": "a15a4128bdee16214aab2dff",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0008",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠가 작업표를 보여 달라고 요구한다. ‘실룩 / 조사 대기에서 공동작업으로 전환 / 종료일 공란’. 아빠가 그대로 수첩에 옮긴다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "27b1061cd1497945354049bbf3776c06320591ca7fb5bff4463112bb6e0d0e28",
+      "uid": "6ef855c9d98cc98da371d088",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0009",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "조사라더니, 끝나는 날도 없이 일을 시킵니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 30,
+          "label": "r13_v111_labor_confirm4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3eb15df507b224b8c101f805c4f85e9d3212fc805315e0b47088e8fa17497ee1",
+      "uid": "9856e88c0353238da0b67a24",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0010",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "회의에서 정한 거요. 나한테 따져도 끝나는 날은 안 나오오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 31,
+          "label": "r13_v111_labor_confirm4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2039afafcd7b01b221e76ce91f59d5f2e6719ef978ac4bd7bbe4acceacfcd77b",
+      "uid": "42b45a320c603da8a9d3f278",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0011",
+      "when": null,
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "그만해요. 당신은 적고 가면 되잖아요. ……다람아, 저쪽으로 가 있어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 32,
+          "label": "r13_v111_labor_confirm4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "93765fc64892b8818214d6ed7d50ba367c6096b4b41aa0800b3c443074d900ac",
+      "uid": "41b01c3f68a768df82eeace4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0012",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이가 내 손을 잡았다. 어제 공방에 있던 두 아이의 자리는 여기에는 없었다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 33,
+          "label": "r13_v111_labor_confirm4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5b257009501774d938d9c580df248af6195adfc141be356e045a7bc93cf0e5bf",
+      "uid": "807c85add12f9b452768c535",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0013",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "저녁에 아이들이 만날 수 있다는 말, 적겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 34,
+          "label": "r13_v111_labor_confirm4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0a2933bfcf8708f35e1a9cb427caa0d845a819d43992d480640fd54b07b766a9",
+      "uid": "32c98df66a03aebd92acc008",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0014",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "적으시오. 끝났으면 길 비워 주고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 35,
+          "label": "r13_v111_labor_confirm4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c867e78c1bb1bfbe5c5e97bd1ea812a25f8154ec501263b90ef25e63c10abc47",
+      "uid": "5673d47e44d3e36c97ed7afc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0015",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "실룩은 작업 대기소 감독 아래 공동노동 중임을 직접 확인했다. 도주·자유로운 마부로 쓰지 않는다. 보호·출석만 요구한 선택이면 이 장면은 전혀 재생하지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9ccc63c9601c37903e511fadaa24632ab91b4fe5b608dd6aa731b878e48e5a62",
+      "uid": "05051c05c6f550a29961737c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L9101",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L9101",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L9101",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "실룩 작업표: 조사 대기에서 공동작업으로 전환 / 종료일 공란. 너울은 매일 작업량으로 갚고 저녁 배식 때 아이들을 만난다고 말했다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f507f403f8f54e678d3ab342953d6037ab18860c361b1ea16d515d3febef3557",
+      "uid": "9a923b1535881713904a6a2b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0016",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아침. 네로가 젖은 침구를 짜고 있다. 다람은 판자 초상을 두 팔로 들고 있다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d6ee8a0da4e6231917671c1cbc933b64fa89c7b16264bf0ddcb8bb8e2a05f8b3",
+      "uid": "23c6f560bfa992ae9f9f062c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0017",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "그때 그 부녀네요. 얼굴 그림도 나왔군요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 52,
+          "label": "r13_v111_nero_known4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2ff0f5f90fbf89fcd1cdee6ff4dcf3fa730ba23ae83f60764d9f5d29e5bcb8d3",
+      "uid": "3ce4d9946d7057de646b2670",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0018",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "오늘은 솜이네에 왔던 일도 물으려고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 53,
+          "label": "r13_v111_nero_known4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9fcf11d372513a44006ec017e5b19717fd2a37757a71510922cd38788ff97814",
+      "uid": "9b82be875f7a3c7727468fcf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0019",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "앞서 얻은 공급 경로는 다시 설명하지 않는다. 아래 공통 질문으로 합류.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "93ae5ee5abc0836ac8e4019770e45644af2e98245749efb92c8a50006cb5d7ec",
+      "uid": "f3e75e7f23b7b0419c7eaa47",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0020",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "누군데요? 손 좀 비켜요. 물 떨어져요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 57,
+          "label": "r13_v111_nero_new4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "11ad724f932df124da4fca99d6d4fa25f11c632d6f9b1537ec390908f766320e",
+      "uid": "a2230a4ccf869e8a042389e5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0021",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아내를 찾습니다. 식량을 건네셨다고 들었습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 58,
+          "label": "r13_v111_nero_new4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "022dd05c22363dec7f8ea508d24382259d43012d551247b4ccac707ab548979f",
+      "uid": "811bcdd484e7434ed3f21059",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0022",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "지금 이것부터 끝내야 해요. 안에 혼자 오래 둘 수가 없어서.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 59,
+          "label": "r13_v111_nero_new4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "480aab24987a58295d194412796d4415da8efc7d442bda56713a2c910ca32b34",
+      "uid": "08d774c040f6d705616cbcec",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0023",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "조작: 네로가 부탁한 물통을 빈 통으로 바꾸고 젖은 침구 끝을 함께 짜서 처마 안에 옮긴다. 다람은 마른 천이 바닥에 끌리지 않게 받친다. 작업을 완료해야 접촉 면담이 열린다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e107c016516e253309a9045559e3f85fac9f8fb56362ec37bfa9649514e62dbe",
+      "uid": "629783ae4dd90cb692915796",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0024",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이쪽에 놓으면 됩니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 69,
+          "label": "r13_v111_nero_help_done4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b86293468c4adb7e70810224e173fa8463aff56061339ab9f63a44bfda6bce43",
+      "uid": "19acb0b007b5c28c08292675",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0025",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "네. 그분도 이거 말려 줬는데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 70,
+          "label": "r13_v111_nero_help_done4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2a73d047fe91ea0c039b388eec8fe406baed9b93bb99e08e95a6b154ca639e98",
+      "uid": "0d91295dd71f3f11cd30ccd7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0026",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아내를 만나셨군요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 71,
+          "label": "r13_v111_nero_help_done4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "22ed513e4a52d9096c710dd06f11e69cfd995e1be787d949243eb82c99a6ea46",
+      "uid": "8292c35af437d914dd7003fc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0027",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "함 옆에서 식량을 줬어요. 혼자 와서 빵 한 조각 먹고, 남은 건 싸 갔죠. 어디 묵는지는 안 가르쳐 줬고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 72,
+          "label": "r13_v111_nero_help_done4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2a3fbac514b6b70902c4405e01f5e1383612ab726fd846f7b233886adb228890",
+      "uid": "bd493533cf7eee32d07dc943",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0028",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "물자를 더 보내려면 어떻게 합니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 73,
+          "label": "r13_v111_nero_help_done4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f06fd4ab1e09982371660034a4db32ae626587a3516a6464c3cae30674eda02c",
+      "uid": "531bc06bfafe5457e104a04d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0029",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "학교 옆 공동 창고요. 빵하고 마른 천은 따로 받아요. 함 너머는…… 나도 가 봤으면 여기서 이러고 있겠어요?",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 74,
+          "label": "r13_v111_nero_help_done4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "008b8c9a28d60714a24714d05004ad5aed2f03270417890fe2c6253fb6c179af",
+      "uid": "bc93e1bf5126937e745ccdb8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0030",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그날 일손 몫으로 남겼다는 침구는 아직 있습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 75,
+          "label": "r13_v111_nero_help_done4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bb9df4bb46f665eca5d6dcedde32f82898dda6290e5a104cf15c3954cdcfcbc6",
+      "uid": "680e9144b945a1b846741b34",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0031",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "어제 도운 다른 가족이 가져갔어요. 오늘은 이 집 침구라 남는 게 없고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 76,
+          "label": "r13_v111_nero_help_done4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "611451dfe569cdf83b68d52d5d664ffdb39115a0c91c77be6b9d3d68ed6fd0d6",
+      "uid": "ef856e6e566fed0be46582cd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0032",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "……알겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 77,
+          "label": "r13_v111_nero_help_done4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "20136649218e5d69763130d13a8ba93e4ac1d8d19b2407c43fe4bde55b521b7a",
+      "uid": "9c3164d56c6fba816006b2d9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0033",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "직접 일을 돕고 면담한 뒤 제한된 공급 구간만 회복한다. 가족 침구는 이미 다른 가족에게 배분됐으므로 지급하지 않는다. carried_dry_blankets=0 유지.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bccb9727fdf5c61df0e538cd08318b0a1d062701b1fc5c4d6b79288cbaea9b44",
+      "uid": "5140b53b238ea779037a8f70",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L9102",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L9102",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L9102",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "네로: 엄마에게 교환함 옆에서 식량을 줬다. 엄마는 혼자였고 빵 한 조각을 먹고 남은 것을 싸 갔다. 물자는 학교 옆 공동 창고에서 받는다. 함 너머의 거처는 모른다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "04db860ab4f47e42b85ea2894a6e387802ca22f500be94e2e05f27962c1e9993",
+      "uid": "9637fe7e024a204d30732e09",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0034",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이분이 솜이네에 온 적 있습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 88,
+          "label": "r13_v111_somi_talk4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "aee726e42475dabbc530bb64f7ff8bce06502f7327af204fc391af6aa9396130",
+      "uid": "5ea37a32b52dae352b4dd831",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0035",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "있어요. 책을 읽어 줬지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 89,
+          "label": "r13_v111_somi_talk4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e5106844493a5049b673cb628d30b49666896bf870a1417f66255e55d025e116",
+      "uid": "8aba7f477e2fbd7b40cc15e8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0036",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "언제입니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 90,
+          "label": "r13_v111_somi_talk4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c619a2c71fba644af92e925b2c665546a3258bb72d9b3fa000a2737f56ca4243",
+      "uid": "51b6c46a930712346675e7a1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0037",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0037",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0037",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "며칠 됐어요. 그 집에 물어보면 될 걸.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 91,
+          "label": "r13_v111_somi_talk4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "10e897d39e5f5f2e5465446d24cb586893c987bf7183cce65ec5233516e34c6f",
+      "uid": "a1a8b9407fc0c6d032607acc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0038",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0038",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0038",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "길을 몰라서요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 92,
+          "label": "r13_v111_somi_talk4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "13cdc91c892c7c8d6bdf692fb46a96e123739fcada5d9a059523e6b43a1e78e9",
+      "uid": "c3185afa01e48a6601f7dd61",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0039",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0039",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0039",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "저기요. 오늘은 바쁜 집이에요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 93,
+          "label": "r13_v111_somi_talk4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "13fe9c8d31f98947b0b1dab14f77919fa7f7a955bd120b197dead46ef556b1fa",
+      "uid": "e5adfcd41d2b4a2e67c241f4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0040",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0040",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0040",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "솜이가 뒷문을 열고 빈 그릇을 내놓는다. 문틈에서 무쇠의 손이 뻗어 나온다. 손바닥의 글씨는 이 거리에서는 읽히지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0c0b44009c1f99f210069e44ba35d0fbec70c2d1d7a6f817ca27d9ab5022bdc7",
+      "uid": "145c5893f7944f45ea6f38ee",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0041",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0041",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0041",
+      "when": null,
+      "speaker": "솜이",
+      "kind": "dialogue",
+      "text": "네로 아저씨, 물이 또 없어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 94,
+          "label": "r13_v111_somi_talk4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fb0b9e65396ed6e16d6c4cff61e06b2e63d96a9a7b379cd60725f5e428189f8e",
+      "uid": "b50cc10e14acb663c99b7706",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0042",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0042",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0042",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "솜아, 내가 갈 테니 문 닫아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 95,
+          "label": "r13_v111_somi_talk4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "355f0b877ca07db84bb4871c14e778377057a9527e8f6afa6d692272d3b5777c",
+      "uid": "9e6a714a445d94f09967fcc1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0043",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0043",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0043",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "우리 엄마 이 집 왔어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 96,
+          "label": "r13_v111_somi_talk4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b26e404fe9c27cedaa042362f3d54964375442f95f967ca288118569a9f19065",
+      "uid": "d6839e8f5d99eeee4ce559f8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0044",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0044",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0044",
+      "when": null,
+      "speaker": "솜이",
+      "kind": "dialogue",
+      "text": "응. 할아버지 책 때문에.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 97,
+          "label": "r13_v111_somi_talk4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6fe62d1c9fba1d996a6f6fe3433b0af9e0b7629762a1ec51cbac8fb405575737",
+      "uid": "0ea26bdbc8aa59b53f1dfcad",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0045",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0045",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0045",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "지금은?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 98,
+          "label": "r13_v111_somi_talk4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5867d9c677bf4b083a301a7c42e2b755548109835eb42751be917da25b3774ec",
+      "uid": "f8cc10055805de60c480107e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0046",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0046",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0046",
+      "when": null,
+      "speaker": "솜이",
+      "kind": "dialogue",
+      "text": "몰라.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 99,
+          "label": "r13_v111_somi_talk4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d4281ad8d24d75dc20390726878e75db6b761b1c7381d5388ac8f94c3d4ca907",
+      "uid": "ec0594494a00997594695f2a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0047",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0047",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0047",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "할아버지한테 물어보면 안 돼?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 100,
+          "label": "r13_v111_somi_talk4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "709d5bce94dac8d4b5cd479ecfc41507020204b153bcd3c0c42ba73783383ad7",
+      "uid": "9f032e8b1f78706373166606",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0048",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0048",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0048",
+      "when": null,
+      "speaker": "솜이",
+      "kind": "dialogue",
+      "text": "할아버지 천막에 있어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 101,
+          "label": "r13_v111_somi_talk4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "40c23f70c75468734fb0399dc8e8d1c6d3eead6bd8dea5f725a3302301903c1f",
+      "uid": "52d23cdd9119aa5ebf6167b8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0049",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0049",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0049",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "문 안에서 기침 소리가 난다. 솜이가 문을 자기 등으로 밀어 닫는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fb0e01f6d7bdbd50346cee700443b36e45a2b43750a07d721b9cf0b3e7378169",
+      "uid": "9022a55ad9923132b19e292e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0050",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0050",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0050",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "솜이가 그림을 보고 오래 멈춘다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4d4dc91a83cc501f22590e656e3e2bc1e909aaba2b4ffe8f14fae67194d65638",
+      "uid": "029b0929badd516926311b4c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L9103",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L9103",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L9103",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "솜이: 엄마는 할아버지에게 책을 읽어 줬다. 같은 것을 두 번 읽어도 기다려 줬다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8ebe27f2ebd1eae9f7cc551f2aa6d1d38d5216b36f6a73ad799ea0b4e34f1faf",
+      "uid": "714e7da23201fb1fe59cf990",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0051",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0051",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0051",
+      "when": null,
+      "speaker": "솜이",
+      "kind": "dialogue",
+      "text": "그 아줌마, 할아버지 기다려 줬어. 같은 거 두 번 읽어도.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 103,
+          "label": "r13_v111_somi_talk4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c215adedb6d8e578182b82eacdbd36649531716704a62e95fa07135e7e901ab3",
+      "uid": "61ea99afcb18a4c31ac1df4d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0052",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0052",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0052",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "뭘 읽으셨는지 볼 수 있을까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 104,
+          "label": "r13_v111_somi_talk4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ad352d9ab05868f5883e71759eacd02dce1ef774aede6a5ab1843b779dbbfc8a",
+      "uid": "04fba2592e26ded05809b3dc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0053",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0053",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0053",
+      "when": null,
+      "speaker": "솜이",
+      "kind": "dialogue",
+      "text": "지금은 안 돼요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 105,
+          "label": "r13_v111_somi_talk4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "697f9facaa537833bae48d86718e87918e4e254ffdc27dcabc1c3935c374568d",
+      "uid": "8e0f1e87a126847b6f033199",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0054",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0054",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0054",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "잠깐이면…….",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 106,
+          "label": "r13_v111_somi_talk4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e3a48a5cb008a5dbdcb0bc43ae3cfb88ba604dcdfc2657e615ce7c3912754e09",
+      "uid": "2b8c425aef23816f37aaef7c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0055",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0055",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0055",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "안 된다고 했잖아요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 107,
+          "label": "r13_v111_somi_talk4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cb5ccac068709c8c8bac72a02274b9ce62bcad51081b67975ff2f87256d02f90",
+      "uid": "e23e579f93c210496d02eb9f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0056",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0056",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0056",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 문손잡이로 가던 손을 거뒀다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 108,
+          "label": "r13_v111_somi_talk4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d8648350948664cbe0c751ed96f29f3f740533ffd83ed541223cf02651153f3d",
+      "uid": "39e780ab4f3ebc4507e53b7f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0057",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0057",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0057",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아내 소식일까 봐 마음이 급했습니다. 오후에 다시 와도 되겠습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 109,
+          "label": "r13_v111_somi_talk4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5a1e3776629c77aa20a7eb2d93ac9d8d3d096158eae5d27459ef83f5df913900",
+      "uid": "a2ba71f4cd6503453fffb45a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0058",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0058",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0058",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "그때 사정 보고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 110,
+          "label": "r13_v111_somi_talk4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ec2dba4b7b4f0d5664b725026bd976eff4005cd3d99d90effc71e87b834f422a",
+      "uid": "ac5272f4459903fe80808b04",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0059",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0059",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0059",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "네로가 물을 들고 들어간다. 아빠와 다람은 골목에서 나온다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a4beba1699a660b0bf61b91bae90b987e349fe63bef7572878fc317b642fc7dc",
+      "uid": "2d0bcc4b126fcb6df242dd59",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0060",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0060",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0060",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠도 못 기다렸네.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 111,
+          "label": "r13_v111_somi_talk4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0f24ce79fac42ab58f475144dc45706c006ed704cc6c24115c8106328795c73b",
+      "uid": "6eeb6ce3647bed7c6f3c5b61",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D04_S01_L0061",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D04_S01_L0061",
+        "text"
+      ],
+      "origin": "base",
+      "day": 4,
+      "scene": "MS14_D04_S01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D04_S01_L0061",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응. 좀 그랬다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 112,
+          "label": "r13_v111_somi_talk4",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "1. 솜이네 골목 / 닫힌 뒷문",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e2e9dacec3725cff9542a60378281c27d961e0cf02235fe7f0f0137bd31751ff",
+      "uid": "99c0763f761a178cea4ae8d0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

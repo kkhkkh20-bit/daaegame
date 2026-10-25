@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/winter_resident_inference.rpy:273:81",
+      "file": "game/winter_resident_inference.rpy",
+      "path": [
+        16591,
+        16620
+      ],
+      "origin": "rpy_inventory",
+      "day": 1,
+      "scene": "winter_information_echo",
+      "block": "winter_information_echo",
+      "placement": "literal",
+      "ref": "game/winter_resident_inference.rpy:273:81",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "알겠습니다. 이미 들은 것까진 거둘 수 없겠네요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_resident_inference.rpy",
+          "line": 273,
+          "label": "winter_information_echo",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 273,
+      "scene_title": "winter_information_echo",
+      "source_hash": "1ed66ae455193bcb5202f6cf9feb435bb81670119b4bc89cc73e28111c6b0ec3",
+      "baseline_hash": "bf36351683cb47664ca6c617b5dabe20ecd1a5a868fe49eaa806464158b6a961",
+      "uid": "b796f943c77d76ab1a7eba4a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|winter_information_echo|rpy_inventory|winter_information_echo|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_resident_inference.rpy:288:31",
+      "file": "game/winter_resident_inference.rpy",
+      "path": [
+        17386,
+        17398
+      ],
+      "origin": "rpy_inventory",
+      "day": 1,
+      "scene": "winter_information_echo",
+      "block": "winter_information_echo",
+      "placement": "literal",
+      "ref": "game/winter_resident_inference.rpy:288:31",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "에게 보여 줄 내용",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_resident_inference.rpy",
+          "line": 288,
+          "label": "winter_information_echo",
+          "guards": []
+        }
+      ],
+      "line": 288,
+      "scene_title": "winter_information_echo",
+      "source_hash": "1ed66ae455193bcb5202f6cf9feb435bb81670119b4bc89cc73e28111c6b0ec3",
+      "baseline_hash": "28ee83b1a139c8b2d1bfd35dee35fdf840df7b71c9fee6df7a2327cde6ab10a6",
+      "uid": "f0d3d9806eaa5de27233ced9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|winter_information_echo|rpy_inventory|winter_information_echo|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

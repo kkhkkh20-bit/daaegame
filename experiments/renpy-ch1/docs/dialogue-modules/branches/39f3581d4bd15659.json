@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_A3_W03",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "altar3_won14",
+        4,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "altar3_won14",
+      "block": "altar3_won14",
+      "placement": "blocks",
+      "ref": "altar3_won14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "바둑이는 그 뒤로 아무것도 덧붙이지 않는다. 고개를 끄덕이는 사람도 없다. 쇠 쪽을 한 번 보고, 눈을 내린다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2999,
+          "label": "r13_v111_altar3_won14",
+          "guards": []
+        }
+      ],
+      "scene_title": "altar3_won14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "3bc968ba70acb41a1efb2b3c6f8fb033439f301e02a55753bc4b6c47d5512ff5",
+      "uid": "d26894aa2618b3e28e519ae8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|altar3_won14|patch|altar3_won14|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

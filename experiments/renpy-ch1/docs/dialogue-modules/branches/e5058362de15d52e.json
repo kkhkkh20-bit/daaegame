@@ -1,0 +1,1387 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D09_P01_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "따닥이 벽을 두드리고 분필로 선을 긋는다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1275,
+          "label": "r13_v111_prevent_walk9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d010f6a90baf581b9b379dce03c0a6087ac46eb3c98a08a4d70391594945e8b4",
+      "uid": "84b743461681e85be36195a8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0002",
+      "when": null,
+      "speaker": "따닥",
+      "kind": "dialogue",
+      "text": "이 안은 비었네요. 문부터 열어 봅시다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1276,
+          "label": "r13_v111_prevent_walk9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "731e534ceaacde9a7425b9a435c5559fc009868f9d1b53f0fd90d966ef156089",
+      "uid": "121b4888933b82522902179b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0003",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "안에서 다시 열 수 있습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1277,
+          "label": "r13_v111_prevent_walk9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8c184d9682e7d213e9c2aec53c9a26a6b9a8e04fe3094f9dab945e983d43a5cb",
+      "uid": "558e7f63cbb6a89b3842c532",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0004",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "주방 장치는 제가 잡겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1278,
+          "label": "r13_v111_prevent_walk9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1f4f4150419057300de4410b3bc98070d72995f52602c4e40ab215e6d1c6bb3b",
+      "uid": "72523cfcda24dce5499f14b6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0005",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[도토가 주방 레버를 올리고 아빠가 아래 책을 당긴다. 책장 뒤 문이 열린다. 안쪽 손잡이가 없다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "42025b296820e61be7f9040bb96d2d754a1b7f8874d142f7484395227e5ede25",
+      "uid": "7508c124db2300716b425861",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0006",
+      "when": null,
+      "speaker": "따닥",
+      "kind": "dialogue",
+      "text": "멈춰요. 쐐기부터 박겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1279,
+          "label": "r13_v111_prevent_walk9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6b7d92703e96df862a33d754734fcea8b41f66e52669dac86b422032945c8b9e",
+      "uid": "b7b936fb022e14313aefd7a2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0007",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "밖에 계세요. 둘 다 돌아오면 내리십시오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1280,
+          "label": "r13_v111_prevent_walk9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e01cf8cef2950c37231c071d9385d2c632ec5b2a882121baee86774b914c2362",
+      "uid": "08f6b7c2b1e12df874949a0a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0008",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[쐐기와 안전줄, 바깥 문지기를 확인하고 아빠와 따닥이 왕복한다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e780c309303f07f6cfaf739e0c0e364e58efec0c655ac458ff86771824b1b6b4",
+      "uid": "40d6084c6a1ce281ae7de792",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0009",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "주방에서 방까지 이어지네요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1281,
+          "label": "r13_v111_prevent_walk9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c952128dbec63258d8fa1f81388797caa712686cce0659eb32cf5754a30bdbeb",
+      "uid": "07eb03ec515d652e8d812c04",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0010",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "오래된 빨래 길이라니까.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1282,
+          "label": "r13_v111_prevent_walk9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "199418ca5e2df6a9b5d955a0aba42bbd21b5ea1c1e27900f3af5e3209e88f4a5",
+      "uid": "a105407b34b7265410e67b89",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0011",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "할머니가 주방 장치 앞에 계신 건 봤어요. 안으로 들어가시는 것까지는 못 봤고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1283,
+          "label": "r13_v111_prevent_walk9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "prevention_stone",
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cab31b7fb0a0bf6c82bfcafd3ae6adcd87ebc98ae8a21b50470ef497133528c1",
+      "uid": "1ce0c6f32298883a67bd0ffe",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0012",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: E09_PASSAGE=safe_walk_completed; TTADAK_ALIVE=true; D09_P01_passage_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7c510906135cb694ab27023aacc3a1792f6600d4b146b306b2d2c7db1268b67b",
+      "uid": "dc2ca41580d505cc13a76386",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0013",
+      "when": null,
+      "speaker": "부엉이",
+      "kind": "dialogue",
+      "text": "부인이 물자를 어디로 보냈는지 적어 둔 종이들이네. 번호대로 다시 놓아 보지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1295,
+          "label": "r13_v111_papers_done9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b87d6911d8c65615b0d1f74440fa273d3e3363f0d8da13086fea5157e89c5655",
+      "uid": "ab170275630e230a6a691b0d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0014",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "비어 있는 자리는 잃어버리신 걸 수도 있습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1296,
+          "label": "r13_v111_papers_done9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f0315c5095ac315fa84ba67604b18892c93acc50eff92dc9bf0ef4f6c92a46ca",
+      "uid": "2783457b9de61f20a6cbe581",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0015",
+      "when": null,
+      "speaker": "부엉이",
+      "kind": "dialogue",
+      "text": "내가 병든 건 사실이네. 그래서 내가 종이를 잃어버렸다는 말도 편리하지.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1297,
+          "label": "r13_v111_papers_done9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          "prevention_stone",
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b71bbc60d5bb8e8e9fe1b3b1161c6476d7432192e92a10cbc3a48186ec12134c",
+      "uid": "cc63495ca8e2bb4114a97def",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0016",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "마지막으로 어디 두셨습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1298,
+          "label": "r13_v111_papers_done9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c51d9065c077b858b2f4786b4c621daf2871c79c9b4bcf188b06fd409d8e33be",
+      "uid": "1154211aa58c361375c8c821",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0017",
+      "when": null,
+      "speaker": "부엉이",
+      "kind": "dialogue",
+      "text": "여기에. 접힌 귀퉁이가 이 선에 닿도록. 내 손이 떨려서 매번 이렇게 맞춰.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1299,
+          "label": "r13_v111_papers_done9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a282a0acc43d4d29aff0f77e1ee2c70109840738b76ddbf39e7f96b66be703c0",
+      "uid": "ca475b3b1829ce79b2194dfe",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0018",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[플레이어가 실제 사본철의 번호와 빈 자리 눌린 자국을 확인한다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f424368883990aae0528a5315ecd35c5f545b7b57357df7c8abb4e6c47f5e368",
+      "uid": "ee0bf02e4e1ea28d07a6a44e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0019",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "할머니, 이 서류를 옮기셨습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1300,
+          "label": "r13_v111_papers_done9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "75ecc587a4d79930ea2b5e4977473ec956e167314f91b41b371f097ca0cf1449",
+      "uid": "1663a830a49baed32a607af9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0020",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "치우면서 옮겼어. 잃어버린 거 아니야. 여기 있잖니.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1301,
+          "label": "r13_v111_papers_done9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f9001a46d2816d10291027d7fced88750b592f0520ab6d3e24ff275d8db94312",
+      "uid": "0a1d02ff1d4c43481fb54e2c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0021",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[할머니가 반환한 장을 부엉이가 번호 순으로 놓는다. 아빠가 반환 장수와 빈 자리를 따로 적는다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b37026e1cbf5a1413cd05cf5c5bd0f2ec363dee66d430efb30e36c9e45a367aa",
+      "uid": "d02efbb878842036a0394fd3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0022",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "허락은 받으셨습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1302,
+          "label": "r13_v111_papers_done9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d473fb5f3f401334c2231a096c6806bace5c6d3ac89541189640cb7ed170a249",
+      "uid": "6e80dee8e105af98d43631fa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0023",
+      "when": null,
+      "speaker": "부엉이",
+      "kind": "dialogue",
+      "text": "내게 물은 적 없어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1303,
+          "label": "r13_v111_papers_done9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a363e76a7545040aa2b7825c8b328c8394310ff7d59aea6f4c35a23588e4e75c",
+      "uid": "544e854d85f2320c44962377",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0024",
+      "when": null,
+      "speaker": "할머니",
+      "kind": "dialogue",
+      "text": "내 집 방 치우는 것까지 묻니?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1304,
+          "label": "r13_v111_papers_done9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "be24a761528378259c433c90bab73476ee06fee0ca7ac19654d3f59259738268",
+      "uid": "1533dbb3c9b9d3a856eebad5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0025",
+      "when": null,
+      "speaker": "부엉이",
+      "kind": "dialogue",
+      "text": "부인이 맡긴 건 이 묶음이 전부야. 따로 둔 건 없어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1305,
+          "label": "r13_v111_papers_done9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "21bf967ea5acd3c64723707a114eed107219ed2766542db8c486e31633dc3530",
+      "uid": "1162dce3f9cf9677f099a65e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0026",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "전부라고 하셨습니다. 그 말도 적어 두겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1306,
+          "label": "r13_v111_papers_done9",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "644ede5634025ac9b7caae110d20f26a30464ab2a8c87ee9c82c9df88464f716",
+      "uid": "95b9c32c80c75dc376de7dd9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0027",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: returned_pages_count=observed_source_count; OWL_claim_no_separate_page=statement_not_fact; hidden_page_known=false; D09_P01_records_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f25a748edb965fbc4ce46ff96d4d285006fb327e95e2d0ab35774bb82f8fc077",
+      "uid": "c4a83dbed6ef5f917c679a72",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0028",
+      "when": null,
+      "speaker": "따닥",
+      "kind": "dialogue",
+      "text": "기다려요. 쐐기부터 박겠습니다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e8e4267b3bf38ed79099f04444218eaea2d68df67c764d6773bae5ce5822660e",
+      "uid": "1c613bf9acf445f8190163e6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0029",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "밖에 사람이 남아 있는지 보고 들어가죠.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "058168b54b7cdda6242f7aef389f4e70036c17bb71065e4e1f4a065a06adbe90",
+      "uid": "77f9cf1e48eb53bd8f0aae4e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0030",
+      "when": null,
+      "speaker": "부엉이",
+      "kind": "dialogue",
+      "text": "돌려받은 장부터 번호대로 놓아 보세.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "de00e92dc86b7fe30f9923eaa0d07185ce5c119fb2c5b30e93319f7a0d6828dd",
+      "uid": "e533e65cc691bf8e7d5bfedf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0031",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: time_cost=0",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "451e183e78ad687c8dbdb27d0b91e15d9de947a8f4a717fdcf37c0d4dab74de9",
+      "uid": "991ec0f8bd869751d65217ac",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0032",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[이미 획득한 사실과 읽은 발화만 재열람한다. 현재 생사·위치와 다른 과거 증언은 기록으로 표시하고 인물을 새로 현장에 출현시키지 않는다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e4047cc80b769f2f77ad98a244e6c771def19c3e354355926f66719bef6b47dd",
+      "uid": "4eddcab735413dfdf9830948",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0033",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "적어 둔 것부터 다시 보겠습니다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bd1227da2b99009eeb0fd6b304bfb6ad9beb3e1371024ffecf107cb589a8b8c6",
+      "uid": "7f5d433e3221a84c19758352",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D09_P01_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D09_P01_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D09_P01_L0034",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: time_cost=0",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "451e183e78ad687c8dbdb27d0b91e15d9de947a8f4a717fdcf37c0d4dab74de9",
+      "uid": "61f695c77ab657c2eb670cb0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,1169 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D06_P01_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_P01_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_P01_L0001",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "내일 허락받으면 늦을 것 같습니다. 오늘 교실 바닥만 쓰게 해 주세요. 이름은 제가 쓰겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 171,
+          "label": "r13_v111_seat6",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 205,
+          "label": "r13_v111_permission_today6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_P01 — 오늘 옮기는 경로",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4c0e78d7da8dfadff974f271732a0dbeb338e63bbead62d95fc669f5f7119109",
+      "uid": "1c4e681f466cf04895cf111c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_P01_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_P01_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_P01_L0002",
+      "when": null,
+      "speaker": "사자 선생님",
+      "kind": "dialogue",
+      "text": "종이만 쓰고 사라지시면 안 됩니다. 물과 이불도 모자라요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 171,
+          "label": "r13_v111_seat6",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 206,
+          "label": "r13_v111_permission_today6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_P01 — 오늘 옮기는 경로",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0fb0a001c85a2934c18f228f3f393829cde35c82e17c23fa5d811ad4f82c2bf2",
+      "uid": "39124e0ac53177d5e4b83936",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_P01_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_P01_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_P01_L0003",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "물은 제가 나르겠습니다. 이불은 도토 씨와 빌리러 가겠습니다. 먼저 아이들을 들여보내죠.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 171,
+          "label": "r13_v111_seat6",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 207,
+          "label": "r13_v111_permission_today6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_P01 — 오늘 옮기는 경로",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "74a753ddc92519e74c5f3d8d479bd15291f8d8317f003b8198428a9498fc57d1",
+      "uid": "e0975a26712eb716f0fa67a5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_P01_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_P01_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_P01_L0004",
+      "when": null,
+      "speaker": "꼬미",
+      "kind": "dialogue",
+      "text": "진짜 들어가도 돼요? 문 닫고 나서 쫓아내면 싫어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 208,
+          "label": "r13_v111_permission_today6",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 246,
+          "label": "r13_v111_handoff_done6",
+          "guards": [
+            "if r13_v111_value('kkomi_seat6'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_P01 — 오늘 옮기는 경로",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "65d5ee5cf20b481072efd5ea8b47461f42fd53ec6612d0e27ec37d5015853e51",
+      "uid": "e32ddc55f1c1db73c5b44424",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_P01_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_P01_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_P01_L0005",
+      "when": null,
+      "speaker": "사자 선생님",
+      "kind": "dialogue",
+      "text": "오늘은 안 내보낸다. 신발은 여기 놓고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 209,
+          "label": "r13_v111_permission_today6",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 246,
+          "label": "r13_v111_handoff_done6",
+          "guards": [
+            "if r13_v111_value('kkomi_seat6'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_P01 — 오늘 옮기는 경로",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e027a2ede9951ffadc4439dbbed12e6912b2bd4db5e688752f40888eb4dd0925",
+      "uid": "cdae8f6ef658efa677099e70",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_P01_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_P01_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_P01_L0006",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "도토리 다시 줘. 비밀 문 열었잖아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 210,
+          "label": "r13_v111_permission_today6",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 246,
+          "label": "r13_v111_handoff_done6",
+          "guards": [
+            "if r13_v111_value('kkomi_seat6'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_P01 — 오늘 옮기는 경로",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "08acb7c07ff2134c10df9db19c7bfa03c33eb2f17618434ebc3673286314db63",
+      "uid": "e568d016ed679c13d4865185",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_P01_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_P01_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_P01_L0007",
+      "when": null,
+      "speaker": "꼬미",
+      "kind": "dialogue",
+      "text": "여긴 비밀 아니잖아.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 211,
+          "label": "r13_v111_permission_today6",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 246,
+          "label": "r13_v111_handoff_done6",
+          "guards": [
+            "if r13_v111_value('kkomi_seat6'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_P01 — 오늘 옮기는 경로",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "485d2754de16c1d9e2029a6b60b240fb7376f261558f2b44669674285650d1d0",
+      "uid": "5ab763b71c3f8dffd57addb3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_P01_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_P01_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_P01_L0008",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: D06_P01_permission_completed=true; school_permission=true; teacher_agrees=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_P01 — 오늘 옮기는 경로",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8f4107e3b770400839a482b6853a9e9fdd33e44c788d4a2cf6930a85a960e387",
+      "uid": "7aaa93606ce4cedcd2f6509a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_P01_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_P01_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_P01_L0009",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "네 명 다 나왔니? 문 옆에 서 보렴.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 226,
+          "label": "r13_v111_children_ready6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_P01 — 오늘 옮기는 경로",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6b88bb056101a4691e530cade458d23cfcb900b17a4ca525c70a94bbe98f60c3",
+      "uid": "506757b1fc16133b7204c4c3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_P01_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_P01_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_P01_L0010",
+      "when": null,
+      "speaker": "꼬미",
+      "kind": "dialogue",
+      "text": "나까지 넷. 안에는 없어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 227,
+          "label": "r13_v111_children_ready6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_P01 — 오늘 옮기는 경로",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5708ed5220ade31da152edfd76187d5a253340981aeefd78902f5d658d1b4f80",
+      "uid": "77e44b16d9d5c579d1f676cb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_P01_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_P01_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_P01_L0011",
+      "when": null,
+      "speaker": "도토",
+      "kind": "dialogue",
+      "text": "물하고 담요는 제가 같이 옮기죠.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 228,
+          "label": "r13_v111_children_ready6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_P01 — 오늘 옮기는 경로",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8a9545b5f1c35586b643d3bfb82b022b1cd89acf13e8413a2fc0c68b9ff790d3",
+      "uid": "b07ee78625ec2198dcc2f2c2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_P01_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_P01_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_P01_L0012",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "꼬미야, 여기 있니?",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 229,
+          "label": "r13_v111_children_ready6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_P01 — 오늘 옮기는 경로",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "789328832fbb13fa639ed00916165c9be75df3e45c2f932a622fb6755db14121",
+      "uid": "c836c0cacd41d019737d2a7c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_P01_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_P01_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_P01_L0013",
+      "when": null,
+      "speaker": "꼬미",
+      "kind": "dialogue",
+      "text": "여기.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 230,
+          "label": "r13_v111_children_ready6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_P01 — 오늘 옮기는 경로",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ed17717e1c20afbb1f085f12b69eee842420c763b282c8928ef02d570fb0b9a3",
+      "uid": "46cec7a07b85f6bd74cd9ba0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_P01_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_P01_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_P01_L0014",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "너희 셋도 차례로 손 들어 보렴. 문 안에 남은 친구는 없지?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 231,
+          "label": "r13_v111_children_ready6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_P01 — 오늘 옮기는 경로",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "243ac68485bf214a70c94a7dd1b31149776215b4b62f961d5e3a3b3b43b6e40c",
+      "uid": "57c55c0cb626746a14b4b511",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_P01_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_P01_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_P01_L0015",
+      "when": null,
+      "speaker": "창고 아이 1",
+      "kind": "dialogue",
+      "text": "없어요. 저도 나왔어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 232,
+          "label": "r13_v111_children_ready6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_P01 — 오늘 옮기는 경로",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e8e01122cb1d9ce6e249ca738e87157b9e2ad3e324352d03629b790f5f7d18bf",
+      "uid": "abba84643f9cdccd67b3b9e9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_P01_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_P01_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_P01_L0016",
+      "when": null,
+      "speaker": "창고 아이 2",
+      "kind": "dialogue",
+      "text": "나도요.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 233,
+          "label": "r13_v111_children_ready6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_P01 — 오늘 옮기는 경로",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2f911533ed92506aeeb503838a96e067f9bcbac1f7bbf2de02f8ffbc50d7331e",
+      "uid": "bb081360643a9fe89a331ee6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_P01_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_P01_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_P01_L0017",
+      "when": null,
+      "speaker": "창고 아이 3",
+      "kind": "dialogue",
+      "text": "다 나왔어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 234,
+          "label": "r13_v111_children_ready6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_P01 — 오늘 옮기는 경로",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "adbef9b511b9ffa00bb9caf35c48d4261b541495b255750a9d9ccc9fe89b430e",
+      "uid": "a773e5e2c2d1f160abc9c56a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_P01_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_P01_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_P01_L0018",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[원본에서 이름이 정해지지 않은 기존 창고 아이 세 슬롯이다. 새 이름이나 새 인원을 만들지 않는다. 아빠가 각 아이와 기존 명부의 동일 슬롯을 대조하고 다람과 함께 학교로 걷는다. 도담은 별개다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_P01 — 오늘 옮기는 경로",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2e30cc359f7fd7ff6b8668f973910e738bd7aaabe61951e7f2caebecc3190650",
+      "uid": "5aac6d35a6313051bf632801",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_P01_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_P01_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_P01_L0019",
+      "when": null,
+      "speaker": "사자 선생님",
+      "kind": "dialogue",
+      "text": "저 창가부터 네 자리예요. 오늘 밤은 제가 맡습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 247,
+          "label": "r13_v111_handoff_done6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_P01 — 오늘 옮기는 경로",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d0a2ca83e5ad68ab0577da660c5b4c1418b7fdf18b3c196be968765ac0e9408d",
+      "uid": "0884323a4fa7d9cd3ccc6c47",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_P01_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_P01_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_P01_L0020",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "물은 여기에 두겠습니다. 담요 수도 같이 보시죠.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 248,
+          "label": "r13_v111_handoff_done6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_P01 — 오늘 옮기는 경로",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e777abc39893828c261d468f6c35ae4159b2e3f97398e019335d2a71baf58e27",
+      "uid": "27ab19383ea36edcd2fdad9f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_P01_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_P01_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_P01_L0021",
+      "when": null,
+      "speaker": "꼬미",
+      "kind": "dialogue",
+      "text": "진짜 여기서 자는 거죠?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 249,
+          "label": "r13_v111_handoff_done6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_P01 — 오늘 옮기는 경로",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f77eb5ac0b583d4cd6d86349dc320ff5f34a1fcc707ef2364970949aaa9dd18d",
+      "uid": "7316df2bce417a71311d4027",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_P01_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_P01_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_P01_L0022",
+      "when": null,
+      "speaker": "사자 선생님",
+      "kind": "dialogue",
+      "text": "그래. 신발은 입구에 벗고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 250,
+          "label": "r13_v111_handoff_done6",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_P01 — 오늘 옮기는 경로",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "cc37161d69ae5f2b5add39acc7f137cc21d84f3c3e5e5254ab88312a8e8bb38c",
+      "uid": "a2d8264111695d1b182cd47c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_P01_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_P01_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_P01_L0023",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "[아빠와 도토가 물과 학교 차용 침구를 나르고, 선생님이 네 아이의 실제 입실과 물자 수령을 확인한다.]",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_P01 — 오늘 옮기는 경로",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "882667230ab45d4e23bb82e2640fe50572c628f565424c210820b3847ee5cad5",
+      "uid": "5f067f76e831bdfcbd5f4679",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_P01_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_P01_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_P01_L0024",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: FIRE_EVACUATED=true; KKOMI_ALIVE=true; warehouse_children_school_handover=4; D06_P01_handover_completed=true",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_P01 — 오늘 옮기는 경로",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b173cbfdd8df3f6f27dcac51a90523d57154e4c1b6ca94a81794d94be954180e",
+      "uid": "2ccc8885cc73dfd08f261d8b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_P01_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_P01_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_P01_L0025",
+      "when": null,
+      "speaker": "사자 선생님",
+      "kind": "dialogue",
+      "text": "아직 안 온 아이가 있습니까?",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_P01 — 오늘 옮기는 경로",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "95d93b7202b326290724abba38f9439b32b429fb3f7a31ce51e52e9111e8b3ec",
+      "uid": "8530a2d8463467d11c0cbb49",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_P01_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_P01_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_P01_L0026",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "말만 전하고 끝낼 수는 없죠. 제가 데려와서 다시 세겠습니다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_P01 — 오늘 옮기는 경로",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b5bc59148c1c71e587d0bf8adae0aa9d775159176b87d91d39ad8821a12b4a79",
+      "uid": "6b2619c09f7bb28045b91a5c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D06_P01_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D06_P01_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 6,
+      "scene": "MS14_D06_P01",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D06_P01_L0027",
+      "when": null,
+      "speaker": null,
+      "kind": "system",
+      "text": "완료 효과: FIRE_EVACUATED=false",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "D06_P01 — 오늘 옮기는 경로",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "90635936b74e93624ac2e84805de28250a5ee97dafa6f60b68c47758c4ea531b",
+      "uid": "25ec33e18fdd13aeb50d1821",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_P01|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

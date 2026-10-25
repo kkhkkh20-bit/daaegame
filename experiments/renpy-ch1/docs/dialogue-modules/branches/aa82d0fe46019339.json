@@ -1,0 +1,126 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:126:31",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        8107,
+        8164
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:126:31",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(전에 확인한 교대 순서와 지금 경비들 움직임이 다르다. 그러니 지금 기록을 다시 확인해야 한다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 126,
+          "label": "r13_rescue",
+          "guards": [
+            "if route not in r13_rescue_routes():"
+          ]
+        }
+      ],
+      "line": 126,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "fa3e50edce12f5b189882ed91a78baf89a3ff8738459588acd67f0ee40219645",
+      "uid": "2fab8c20cf4543c4fe15b94e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:140:41",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        9360,
+        9393
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:140:41",
+      "when": null,
+      "speaker": "resident_nubi",
+      "kind": "dialogue",
+      "text": "수레는 여기에 두겠습니다. 안에서 오래 기다리면 들켜요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 140,
+          "label": "r13_rescue",
+          "guards": [
+            "elif not at_altar and route==\"laundry\":"
+          ]
+        }
+      ],
+      "line": 140,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "025f444c22aac9d04a8906e8bc00fc249657931ac0f4aff1b1fab31fff51fef0",
+      "uid": "fcde671f537b786d34e10648",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:145:31",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        9866,
+        9883
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:145:31",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "여기 있어. 둘 다 손 줘.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 145,
+          "label": "r13_rescue",
+          "guards": [
+            "if at_altar:"
+          ]
+        }
+      ],
+      "line": 145,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "5e1b69ca9c20b53d9223a49e5e03142d1de3b1e084ef06a42a3e925274bf8119",
+      "uid": "d218eb6a1affea4eb1289d5e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

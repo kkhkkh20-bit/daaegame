@@ -1,0 +1,129 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_CP_CROWD_PLACE_GUARD13_0",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "crowd_place_guard13",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "crowd_place_guard13",
+      "block": "crowd_place_guard13",
+      "placement": "blocks",
+      "ref": "crowd_place_guard13",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "기록을 읽는 동안 너울 씨 곁을 맡아 주시겠습니까? 수레와 읽을 자리는 떨어뜨려 뒀습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2620,
+          "label": "r13_v111_crowd_prepare_wait13",
+          "guards": [
+            "elif _return==2 and r13_crowd_guard_available13():"
+          ]
+        }
+      ],
+      "scene_title": "crowd_place_guard13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "6be3fe97fce95759257bd546530c02551fc4e5adbea3fe67b772a7fe3756cde5",
+      "uid": "53a32f009291c2da74a53647",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|crowd_place_guard13|patch|crowd_place_guard13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_CP_CROWD_PLACE_GUARD13_1",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "crowd_place_guard13",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "crowd_place_guard13",
+      "block": "crowd_place_guard13",
+      "placement": "blocks",
+      "ref": "crowd_place_guard13",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "여기 서겠소. 읽는 사람은 저쪽으로 모이게 하시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2620,
+          "label": "r13_v111_crowd_prepare_wait13",
+          "guards": [
+            "elif _return==2 and r13_crowd_guard_available13():"
+          ]
+        }
+      ],
+      "scene_title": "crowd_place_guard13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "80ee52bc161689577b94c7cb54cfdcc35e63bbc403d4606d48cf585679a81358",
+      "uid": "21c5098a0b2b537af2382ea6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|crowd_place_guard13|patch|crowd_place_guard13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_CP_CROWD_PLACE_GUARD13_2",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "crowd_place_guard13",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "crowd_place_guard13",
+      "block": "crowd_place_guard13",
+      "placement": "blocks",
+      "ref": "crowd_place_guard13",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "돌목이 너울 곁에 선다. 아직 기록은 소리 내어 읽지 않는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2620,
+          "label": "r13_v111_crowd_prepare_wait13",
+          "guards": [
+            "elif _return==2 and r13_crowd_guard_available13():"
+          ]
+        }
+      ],
+      "scene_title": "crowd_place_guard13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "c664fb6acd256386d108963fb974af97a3e66356a7b9bfa4ca6250ec634ba810",
+      "uid": "58221e269c627b6e0d731932",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|crowd_place_guard13|patch|crowd_place_guard13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

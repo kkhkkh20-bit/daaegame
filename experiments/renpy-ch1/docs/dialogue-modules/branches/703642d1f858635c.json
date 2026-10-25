@@ -1,0 +1,201 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D08_S04_V01",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S04_L0031",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S04_L0031",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "thought",
+      "text": "편지는 안주머니에 넣자. 다람이 만나면 내가 직접 읽어 줘야지.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1065,
+          "label": "r13_v111_escort_done8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-4. 해 질 무렵 / 등 관리함 — 혼자 가지 않는 길",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "307cf604e66c601c7c63ae3dd42952d11c7ace163417b6608a3495f209cd0489",
+      "uid": "dd58a2655efb754e9f56764d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D08_LETTER_A1",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S04_L0012",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S04_L0012",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "손가락이 날짜 위에서 멈춘다. 6일. 오늘은 8일이다. 이틀 전에 쓴 말이다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1034,
+          "label": "r13_v111_letter_murder8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-4. 해 질 무렵 / 등 관리함 — 혼자 가지 않는 길",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "74fd3b5543fe1d68a0bdb7812a5cf0a3e9c7c7fed55dfd2d0e61b8fcf72995f0",
+      "uid": "c8b03f2c0760a8f909e3713e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D08_LETTER_A2",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S04_L0020",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S04_L0020",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "손가락이 날짜 위에서 멈춘다. 6일. 오늘은 8일이다. 이틀 전에 쓴 말이다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1049,
+          "label": "r13_v111_letter_prevent8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-4. 해 질 무렵 / 등 관리함 — 혼자 가지 않는 길",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "74fd3b5543fe1d68a0bdb7812a5cf0a3e9c7c7fed55dfd2d0e61b8fcf72995f0",
+      "uid": "f1b62e4a3c5a3079e01f0729",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AR_D08_15",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S04_L0009",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S04_L0009",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "바둑이 씨, 방금 순찰대원이 편지를 보자고 했습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1031,
+          "label": "r13_v111_letter_murder8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-4. 해 질 무렵 / 등 관리함 — 혼자 가지 않는 길",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "227195f6d7438ecffae3f02de0da729f5532e52d81766a3af666b5b3ddbc72fd",
+      "uid": "9fb3ae8316729b5ce2afc6ea",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AR_D08_16",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "after",
+        "MS14_D08_S04_L0009",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D08_S04_L0009",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "……너울 밑 사람이 그랬소? 초롱 씨 돌아가는 길이면, 큰길까지는 내가 서겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1031,
+          "label": "r13_v111_letter_murder8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-4. 해 질 무렵 / 등 관리함 — 혼자 가지 않는 길",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "9ede828b5c95744940a05ea14c99965cb87cbf7d3bf0c4f46e4fde40e7d9c238",
+      "uid": "1caf5b6ce1271e1ca771f457",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

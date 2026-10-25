@@ -1,0 +1,249 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_evening.rpy:92:26",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        4716,
+        4755
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ev_lamp_round",
+      "block": "r13_ev_lamp_round",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:92:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "광장 가장자리에서 초롱이 긴 장대로 등 뚜껑을 하나씩 열고 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 92,
+          "label": "r13_ev_lamp_round",
+          "guards": []
+        }
+      ],
+      "line": 92,
+      "scene_title": "r13_ev_lamp_round",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "f4462b6fe26d6757488ac1b2a351f4c8b83856bd1eadb497bfb978c9b4c397e0",
+      "uid": "efb7eb2152991294841092c6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ev_lamp_round|rpy_literal|r13_ev_lamp_round|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:100:56",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        5086,
+        5146
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ev_lamp_round",
+      "block": "r13_ev_lamp_round",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:100:56",
+      "when": null,
+      "speaker": "resident_lamplighter",
+      "kind": "dialogue",
+      "text": "식은 등은 열둘 중에 넷이요. 한 달 전보다 반나절 일찍 꺼져요. 이번 겨울에만 조각을 두 번 갈았어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 100,
+          "label": "r13_ev_lamp_round",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 100,
+      "scene_title": "r13_ev_lamp_round",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "8b5abddfdc3c338efaab78ab9071c6236db355e1933a75099e63e00b53d405f9",
+      "uid": "382139d0d0691bef76e3116e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ev_lamp_round|rpy_literal|r13_ev_lamp_round|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:108:26",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        5634,
+        5664
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ev_lamp_round",
+      "block": "r13_ev_lamp_round",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:108:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "조각을 등에 끼우자 차가운 유리가 천천히 데워졌다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 108,
+          "label": "r13_ev_lamp_round",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 108,
+      "scene_title": "r13_ev_lamp_round",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "70b29483ee2eccf11a80dbb92282bfd732ac7743ed7494c7b18cdb62d685baf2",
+      "uid": "e4bf65f5eb00eb5e1d6bbbbc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ev_lamp_round|rpy_literal|r13_ev_lamp_round|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:119:56",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        6420,
+        6453
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ev_lamp_round",
+      "block": "r13_ev_lamp_round",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:119:56",
+      "when": null,
+      "speaker": "resident_lamplighter",
+      "kind": "dialogue",
+      "text": "하나쯤은 괜찮아요. 등을 끄면 돌이 덜 지친다고들 해요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 119,
+          "label": "r13_ev_lamp_round",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 119,
+      "scene_title": "r13_ev_lamp_round",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "16302cefa60929a0382897622306a91eae3ab8852c0ebe2fb16bf224d5ba1810",
+      "uid": "73c0f8a324589525b79dce4e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ev_lamp_round|rpy_literal|r13_ev_lamp_round|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:126:56",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        6947,
+        6963
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ev_lamp_round",
+      "block": "r13_ev_lamp_round",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:126:56",
+      "when": null,
+      "speaker": "resident_lamplighter",
+      "kind": "dialogue",
+      "text": "그 등은 제가 혼자 봐요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 126,
+          "label": "r13_ev_lamp_round",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 126,
+      "scene_title": "r13_ev_lamp_round",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "a779a3887eecdd52071fd9ceb69a7da8a00b0c6782eb838261ec4544fcd2a348",
+      "uid": "30d3b1b3f8acf8aca24b0dd5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ev_lamp_round|rpy_literal|r13_ev_lamp_round|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:127:26",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        6992,
+        7016
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ev_lamp_round",
+      "block": "r13_ev_lamp_round",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:127:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "초롱은 장대를 내리고 한참 말이 없었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 127,
+          "label": "r13_ev_lamp_round",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 127,
+      "scene_title": "r13_ev_lamp_round",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "9a26be397739d4fd4f66708b9bc4cf3ddf614f57ef9e100fe9e4dcdf88e98d80",
+      "uid": "11e22bf32a2d8d8af382cb49",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ev_lamp_round|rpy_literal|r13_ev_lamp_round|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

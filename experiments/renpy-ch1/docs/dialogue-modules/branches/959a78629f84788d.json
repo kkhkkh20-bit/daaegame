@@ -1,0 +1,3503 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D14_S02_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "낮. 산길의 제단. 외부 산길은 폐쇄 상태지만 현지 제단 접근로는 바둑이가 확인해 안내한다. 전날 쉬지 못한 바둑이가 동행 불가하면 정찰을 마친 다른 실제 안내자가 맡거나 방문을 미룬다. 엄마는 자료 확인을 위해 동행하고 다람은 안전한 후방에서 가족과 함께 움직인다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5ccf1c9d868778a44e5b00a4cacb4b2b483b260acbc330dc03035ab22a34bdfc",
+      "uid": "b0bde73deb33b72265702532",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0002",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "전원 구조 경로. 제단의 결박 고리는 비어 있다. 바닥에 새 피해자도, 재납치된 판돌도 없다. 아빠는 한 번 고리를 들어 올렸다 놓는다. 금속 소리가 짧게 울린다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "067999f3a7670c5a835c8157877418ac7466d254a0257d0462d5130b9400a0a7",
+      "uid": "45c0e78aa4158efff1bf9467",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0003",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아무도 없네.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2886,
+          "label": "r13_v111_altar14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6492ba08e42fb9d79691099c986938a496b5e3d958b5516d097e33b8ce540ece",
+      "uid": "8c744034aaf5197cd00b9d68",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0004",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2887,
+          "label": "r13_v111_altar14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8025c713f26164a6787608a6cbce1b8ac0cfe963a42e1416578db60193e95224",
+      "uid": "ca700101ee0271abb561399b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0005",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "우리가 늦은 거 아니지?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2888,
+          "label": "r13_v111_altar14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a58a5b21ad2ac3b00bc86ba6cbac9bbc92231dcdf13665d315bed35584a9f751",
+      "uid": "07fd0c0081f564eb1b5a6354",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0006",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이번에는 사람들이 학교에 있어. 아침에 보고 왔잖아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2889,
+          "label": "r13_v111_altar14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f9bb89e346b9c3e93b62dcacd1d19e42a247b42222b149db530c2a9bc8226b83",
+      "uid": "28b3e47713a64db5522fccff",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0007",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "엄마가 제단의 장치와 자신이 조사한 옛 시설 도면을 비교한다. 손에 쥔 도면은 사람의 이름과 사망 일시가 적힌 만능 장부가 아니다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f5cf1b9fc6f3cc5704c64ce7f5582130dcf42994a2fdde64ab84f1ca9c767ab1",
+      "uid": "02ba0884f30dbddb3d40bb02",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0008",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "여기까지 이어지는 구조는 맞아. 아래 시설하고 같은 데가 있고, 바뀐 데도 있어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2890,
+          "label": "r13_v111_altar14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a93dccf5032b9a0788a6670a5977c610ac4d05f7388d25ec3d63979adf54af1c",
+      "uid": "67e53cffc3f72a55141f4e0a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0009",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "여기에 누가 왔는지는 이걸로 못 찾겠네.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2891,
+          "label": "r13_v111_altar14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5ffc0e4d05642c0bb5533579dd13d13002b5d705759976480ea013ac59a14ff8",
+      "uid": "99f32df5dfba86b354b0039c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0010",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "응.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2892,
+          "label": "r13_v111_altar14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8025c713f26164a6787608a6cbce1b8ac0cfe963a42e1416578db60193e95224",
+      "uid": "0c21aeb115d807b2cb13e11f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0011",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "촌장이 구금된 경로에서는 이 자리 자유 출석 없음. 감독 아래 현장 확인에 동의해 동행한 경우에만 다음 문답을 한다. 그 밖의 경우 마을 감독 장소에서 같은 질문을 한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a37cdb32eaf08a1aa216a7317361e2078c88e2d7e470ee47335f84eedbdb0e37",
+      "uid": "7e9bdbbfc829860e33b5b33d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0012",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "모과 씨를 그제 밤, 학교 등이 켜지기 전에 만난 겁니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2901,
+          "label": "r13_v111_mayor_interview14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4f92d402c7aabf240106b9cb6e50ac472d56fb10701d1c54f4761fac308bedb7",
+      "uid": "ed3d9b9a644f484f7a79b5f6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0013",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "……그 담요를 보여 준 적은 없소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2902,
+          "label": "r13_v111_mayor_interview14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1a39202bd6cd0c85626336a8fc81aa0d8d13bdf3b79a168e3aee273e68942485",
+      "uid": "112bbd4989c8fd0143518f04",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0014",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그 말은 이미 맞지 않았습니다. 모과 씨를 만났습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2903,
+          "label": "r13_v111_mayor_interview14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f1cbcc16e26ce9ba3457e9dbcb0149faa4a1811f0bf86b789e288cf8bac24544",
+      "uid": "f4b7e44b7b9f749e28ecc302",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0015",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "아니오.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2904,
+          "label": "r13_v111_mayor_interview14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8d82e15ebdf9c667459cfbeb749e8c4798c21052582e26f392278baee0204c9a",
+      "uid": "e6fa68aca15cf778e13c1c9c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0016",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그럼 판돌 씨에게 누가 부른다고 한 겁니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2905,
+          "label": "r13_v111_mayor_interview14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ab22fa7d006f252412fc6173db0873f4fdea63d1c951945009a71b9fef463328",
+      "uid": "19ca8ad71dac158cc280ab93",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0017",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "내가.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2906,
+          "label": "r13_v111_mayor_interview14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fa010bcb70807f49e6c63fdaa1442871b0639ddc7b8019c853aca649fe80aa1f",
+      "uid": "beb2b2d48d03865545916fb0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0018",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "촌장이 돌을 본다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6f65d9748cb205ea4d67a088ca4ed7fdd810e2a76ea3869df661c7adffb62fca",
+      "uid": "306b8aeb2403438692b7c71f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0019",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "그래야 탈 테니까.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2907,
+          "label": "r13_v111_mayor_interview14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "572b4533d555d2491203b9c79272123ea6e181888089e959bad022f37e7d9496",
+      "uid": "d31fb237eb4deb2d12bf14db",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0020",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "이 인정은 허위 초대의 책임을 추가한다. 모과의 사망이나 과거 이송자 모두의 결말을 자동 확정하지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5da61c522774da576d7bd584f53909d2cae183aa7e70ef37de27aa93ab2bcf8f",
+      "uid": "6e3dc81c30ca323cbf7e58f4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0021",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "모과 씨가 지금 어디 있는지는요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2908,
+          "label": "r13_v111_mayor_interview14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "20d500c57a18739b1ca3a2c753dd89dd8f0741648f1bbc646067ac9344286cca",
+      "uid": "99c0545056556576af1d4b5b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0022",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "오늘 당신한테 확인해 줄 수는 없소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2909,
+          "label": "r13_v111_mayor_interview14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "177a24b6dc442394e80c5eda5a72f24db2337b0ed74b554853f279f7cb24367a",
+      "uid": "f2401d7c0733ee4b797e71c0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0023",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "판돌 씨한테는 아직 모른다고 전하겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2910,
+          "label": "r13_v111_mayor_interview14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b9cf1a206e6e6d34b224fb8e5b2bd4c130b6bff4ee04d99ba4abf7d50dce9f25",
+      "uid": "d47de305d9693b28d63cc910",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0024",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "촌장의 손녀 달래가 첫 희생이었다는 사실이 앞선 기록과 증언으로 이미 밝혀진 경로에서만 이어진다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5e7db56f5bf1d1efdeea5e354ee56f0a222fc8c44c70d76453349c9b818ab397",
+      "uid": "928892d377aa7c2b06bcb3f9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0025",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "내 손녀도 여기 왔소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3045,
+          "label": "r13_v111_dallae14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2548263e2a878342493b0ed41fc357b9084e58d5c851a2e517896d5725ac0518",
+      "uid": "aac2e7961cbbf1d8a3f7c29a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0026",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그렇다고 판돌 씨까지 보내야 합니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3046,
+          "label": "r13_v111_dallae14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "177d829b2c8212915caaebc2923714994863d63b0a26a1a547138c0b077c0185",
+      "uid": "e6e38c5557cbe365211c04ab",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0027",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "그럼 내가 그 애한테 한 일은…….",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3047,
+          "label": "r13_v111_dallae14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9caf7b60cfb8d60c195ce725e00c4ec32f1305fce8dfb6f24c226e789efe3441",
+      "uid": "c085df47e0adc22263a05b69",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0028",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "말이 끝나지 않는다. 아빠가 대신 결론을 내려 주지 않는다. 다람은 고리에서 물러나 엄마 손을 잡는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ef681701822a7ef55a5d2b90510b419445c6f03f5a0e64643dab7ba4ca30793d",
+      "uid": "fd6277f7cfbdb9a7eb339101",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0029",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "현장 자유 조사에서 ‘사람 고정 장치를 보존·분리한다’를 선택한다. 부리는 전날 공구 인수 때 직접 동행을 요청해 수락받은 경로만 등장한다. 백 부인 역시 학교 물자 확인 중 “내놓은 돌이 어디 쓰이는지는 보겠어요”라며 참관에 동의한 경우만 동행한다. 이름만 눌러 산으로 소환하지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bc52c743700c9a0ed80af51b260f0bdf86ceafd712005bc11172a383640feb5b",
+      "uid": "709aa5114562355ea024162b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0030",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "대표: 촌장은 현장 확인에 동의해 바둑이의 감독 아래 있다. 구금이었다면 결박·감독 상태를 유지하고 바둑이는 이 장면에서 장비 운반을 맡지 않는다. 아빠가 현 상태를 기록한 뒤 엄마가 잔열 전달부와 사람 고정부를 구분해 표시한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "20ebdc33af9288284cf5cbb65be31b30bafc8e379ce5db0b28ae31714eeb2c41",
+      "uid": "02c6b34251cfd82a9f51b307",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0031",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "여기까지는 남은 돌을 잇는 부분이에요. 이 위에 사람을 묶던 건 따로 떼어 낼 수 있어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3082,
+          "label": "r13_v111_buri_work_start14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "73d0ad371653402bbb2a86030e72d6b8e33c95f7b359481a48aa90ec8689b0f1",
+      "uid": "17a2a042e6bda9849633c190",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0032",
+      "when": null,
+      "speaker": "부리",
+      "kind": "dialogue",
+      "text": "밑을 받쳐 주세요. 이 쇠부터 풀면 기울어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3084,
+          "label": "r13_v111_buri_work_start14",
+          "guards": [
+            "if r13_v111_actor_ready('buri'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9e2ee3b5654e3c112238e14131f2d7c3da963f50c10705ef515ff21b8afa604c",
+      "uid": "881881bf3218b2d49cefa2d4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0033",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠가 받침을 댄다. 부리가 공구를 걸자 촌장이 앞으로 몸을 움직인다. 바둑이가 그 한 걸음을 막는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f7738b283a9ac9db071e74e32da0d88bd28a9ab0c97ed1d3082d5bea46011a9a",
+      "uid": "52c3419e10ca091e75e43a6a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0034",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "부리. 손 떼.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3085,
+          "label": "r13_v111_buri_work_start14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "db9edf6eaffa716c260854073ec6deb67db3514c1da53237c39706ba175ae7f5",
+      "uid": "2e5bf6452ed51e23cbde33c6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0035",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "부리의 손이 멈춘다. 돌목이 있는 마을 쪽을 보는 대신, 자기 공구와 고리를 내려다본다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e56c66c048c9ae14397be7fc94fedbe9bf7760ae54bda23d6e9700e3936af4d6",
+      "uid": "7f3bf3bbb39906859d9bda1a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0036",
+      "when": null,
+      "speaker": "백 부인",
+      "kind": "dialogue",
+      "text": "잠깐. 저 쇠를 떼고도 밤에 추우면요? 내 창고가 끝없이 차는 줄 알아요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3094,
+          "label": "r13_v111_madam_device_question14",
+          "guards": [
+            "if r13_v111_actor_ready('resident_madam'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "efcdcf3bc2702e0a7cf07058c4e5ce25b093d1cdf44e7f625f3b68c79904609a",
+      "uid": "a0178bd39cd400af6a972c3c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0037",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0037",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0037",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "남은 양이 끝이 있다는 건 맞아요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3095,
+          "label": "r13_v111_madam_device_question14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "eab6a82a8f4bc616175c586aedc4acba936f251f0b9e679f27cdbc14ce94e1df",
+      "uid": "c71c7375c37f88fc6b4c9fb0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0038",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0038",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0038",
+      "when": null,
+      "speaker": "백 부인",
+      "kind": "dialogue",
+      "text": "그럼 왜 지금 없애요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3097,
+          "label": "r13_v111_madam_device_question14",
+          "guards": [
+            "if r13_v111_actor_ready('resident_madam'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "eacb8f6139dfced7215721978acb17dd598f1ff1de6808bf38e1a96e78fe753e",
+      "uid": "9f388f0effc5892a9a121770",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0039",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0039",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0039",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "열을 옮기는 쪽은 남겨요. 지금 떼는 건 사람을 못 움직이게 고정하던 쇠예요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3098,
+          "label": "r13_v111_madam_device_question14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a766dcfeaf6f9ba8dc7d54050fcb6a67dadfe8fcd169667ef1ff368a42ced5a1",
+      "uid": "c12fd382d2be0059384d10be",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0040",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0040",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0040",
+      "when": null,
+      "speaker": "백 부인",
+      "kind": "dialogue",
+      "text": "다음 겨울에도 그 말만 할 수 있겠어요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3100,
+          "label": "r13_v111_madam_device_question14",
+          "guards": [
+            "if r13_v111_actor_ready('resident_madam'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9502ccd559d9a0db851687652526c43a345a6b527b182a86aeb944ff6325eee3",
+      "uid": "fe54312f26e53467ba313ce8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0041",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0041",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0041",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "다음 겨울이 괜찮다고 약속할 수는 없어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3101,
+          "label": "r13_v111_madam_device_question14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f1a4174c2c2074b8c61acc422d01b43d92cb8a92be9441ee0a67514e7be83222",
+      "uid": "676d967d7b4db4bb14744580",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0042",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0042",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0042",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "실제 현장의 작업자는 아직 공구를 움직이지 않는다. 백 부인이 함께 왔다면 물러서지 않은 채 기다린다. 부재한 인물을 시선이나 행동으로 소환하지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ea5b754d69e45e016b124b995086f27e5fc2bac81e8b4a17b5508c24ff77b62c",
+      "uid": "f0d6b03fb2093e53986e5329",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0043",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0043",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0043",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "다시 걸어. 남은 돌이 다 타면 학교도 식소. 그때도 아이들을 따뜻하게 재울 수 있소? 겨울은 아직 남았는데, 사람 안 보내겠다는 말로 버틸 거요? 사람들은 내가 맡을 테니 공구 내려놔.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3088,
+          "label": "r13_v111_buri_work_start14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6eec3ec7d66b9f5f223f7323a45050129353ef63152b1b2bfee5b2b77f0abdb4",
+      "uid": "67ce3b3f4643faa53413e12b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0044",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0044",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0044",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "입력: 이미 확보한 ‘학교 물자 인수 기록’ 또는 ‘13일 구조 인계 기록’을 직접 골라 펼친다. 학교 물자는 11–12일 실제 인수·연결해 사용한 상자·받침과 남은 양이 기록된 경우만, 구조 기록은 13일 실제 학교 인수 완료된 대상만 고를 수 있다. 기록을 펼치기 전에는 아빠·엄마·작업자가 결론을 대신 말하지 않는다. 한 기록을 고르면 그 대응 블록만 재생하고 작업으로 돌아간다. 미제시로 협력·분리 성공을 만들지 않으며, 조사로 돌아갈 수 있다. 기록 재열람·대사 읽기로 시간이나 물자를 차감하지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "28a1c8772d8df4a4a03587339f6fae46a71b8d9263600602a71dbd112a8a3c57",
+      "uid": "a460526ae9b0cd69fb55eb7b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0078",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0078",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0078",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "플레이어가 펼친 인수 기록 옆에 엄마가 11일 시설에서 확인한 잔열 전달부 표시를 맞춘다. 새 잔열이나 새 물자를 더하지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "97590bf85ab2e7a61ca5be1c873858b4e7d18f28f4139e8d782823eb3af2444c",
+      "uid": "dd109e3c71aa5aab4f98910e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0079",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0079",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0079",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "저도 다람이 잘 자리부터 찾았습니다. 학교에서 받아 쓴 게 여기 적혀 있어요. 우리 아이 누울 자리도 이걸로 만들었어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3142,
+          "label": "r13_v111_device_supply14",
+          "guards": [
+            "if r13_v111_actor_ready('dad'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ff86306631cd77630249abeb393efdf9cdde544e684fb7269629d3b93cabccb1",
+      "uid": "cdd3b3679f770fea0bee9f88",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0080",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0080",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0080",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "여기 쓴 만큼 뺐어요. 남은 건 이만큼입니다. 열이 지나는 쪽은 그대로 두고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3144,
+          "label": "r13_v111_device_supply14",
+          "guards": [
+            "if r13_v111_actor_ready('mom'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e28229eab1eed3e5fc771a4a2ca232017678aa0312ce0ae34fd9ac66d8819cb4",
+      "uid": "bb20e68c1e83208d5295a62e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0081",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0081",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0081",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "플레이어가 판돌의 학교 인수 완료가 적힌 줄을 펼친다. 그 아래 다른 이름은 실제 인수된 경우만 보인다. 새로운 구조자나 생존자를 추가하지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3c6da2fc719c3778d7ac49bb71e31d7129fe697d0a22257d5f2624f95fc202f1",
+      "uid": "a22cdaf82156decfd954b5b3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0082",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0082",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0082",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "우리 식구부터 챙기고 싶어요. 그래도 판돌 씨는 학교에서 받았고, 아침에 보고 왔습니다. 다시 태우진 않겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3133,
+          "label": "r13_v111_device_rescue14",
+          "guards": [
+            "if r13_v111_actor_ready('dad'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5f49eaa0db9015b11b0f75aa4593c88f903373abdf5551586be547c240926641",
+      "uid": "02afd4f23c5dbe0520120412",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0083",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0083",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0083",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "돌을 잇는 아래쪽은 건드리지 않아요. 위의 쇠만요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3135,
+          "label": "r13_v111_device_rescue14",
+          "guards": [
+            "if r13_v111_actor_ready('mom'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "45736b834438bde6d308bedfd33d675947b42875bb4827f1ae14a5217197cd1e",
+      "uid": "ef8c10d19861dcc797dae6dd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0045",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0045",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0045",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "11–12일 학교에 물자를 직접 인계했고 부리에게 공구·작업 사정을 성실히 확인해 협력이 확보된 경로.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3d1828e3e297f1e26a4446b864f2c2fc7f7f5094e823c8aedec58cb28424ed80",
+      "uid": "48eb322444d97fdd780dd998",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0046",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0046",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0046",
+      "when": null,
+      "speaker": "부리",
+      "kind": "dialogue",
+      "text": "이 표, 학교 문에서 같이 셌잖아요. 제가 내려놓은 상자고요. 애들이 그 곁에서 잤어요. 사람 묶는 쇠는 안 썼습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3247,
+          "label": "r13_v111_buri_supply_answer14",
+          "guards": [
+            "if r13_v111_actor_ready('buri'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7764de6bdf86d323dfed4f697594ce0bf8a37d85ee28fdfa1eda23581a66520f",
+      "uid": "b971240d43f455ff9b748215",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0047",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0047",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0047",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "그건 하루 얘기다. 그 상자 다 비고 나서도 네가 아이들 곁에 있을 거냐?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3248,
+          "label": "r13_v111_buri_supply_answer14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "839ca01f28f186e5cc5387939c0465f7269a522b4055eaae19431b43973fe43e",
+      "uid": "6d39c51dd937be0240da7a71",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0048",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0048",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0048",
+      "when": null,
+      "speaker": "부리",
+      "kind": "dialogue",
+      "text": "……저도 그게 겁납니다. 그래도 이 쇠는 풀겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3250,
+          "label": "r13_v111_buri_supply_answer14",
+          "guards": [
+            "if r13_v111_actor_ready('buri'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fa55fb289206b85565a34a85722f27b878d6b05357927f02320ea714ce2826dc",
+      "uid": "64c4bff90f11aac33f5f3f97",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0049",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0049",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0049",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "부리가 공구를 다시 쥔다. 아빠에게 받침을 더 붙여 달라고 손짓한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "38a4cf0e120cf19eddf672ebf61603fd3a3ee2843b3623872e333b2e59e3a052",
+      "uid": "83d0a531b0e8e35663e8e19a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0050",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0050",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0050",
+      "when": null,
+      "speaker": "부리",
+      "kind": "dialogue",
+      "text": "받침 더 붙여 주세요. 아니, 제 발 옆이요. 제가 푸는 동안 밀리지 않게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3252,
+          "label": "r13_v111_buri_supply_answer14",
+          "guards": [
+            "if r13_v111_actor_ready('buri'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "108ce311aafcb573e9b6c12bba0a12f2b32779fa6da2eae7ee07a10d4a1dbd5b",
+      "uid": "b10041f75fb85bae92301297",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0084",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0084",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0084",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "부리는 인계 기록에서 눈을 떼고 공구를 다시 건다. 학교 물자 운반에 참여하지 않은 경로라면 참여했다고 말하지 않는다. 아빠에게 받침을 당겨 달라는 손짓만 한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "6259ad65290e975e3836ecc23cbd1095c0b063c131eb27403413a4f9a914b0b9",
+      "uid": "e9551a1d034e5f9947e63492",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0085",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0085",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0085",
+      "when": null,
+      "speaker": "부리",
+      "kind": "dialogue",
+      "text": "학교에서 받았다고 여기 적혀 있네요. 내려온 사람 다시 묶는 일은 안 하겠습니다. 거기 받쳐요. 묶던 쪽부터 풉니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3257,
+          "label": "r13_v111_buri_no_transport_answer14",
+          "guards": [
+            "if r13_v111_actor_ready('buri'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4d41b92a6b9f4007cbb5fd1ee6c7a3e9ff2b8cfed98f752dfcd613153c946c96",
+      "uid": "2482c1213fbc7487ee383de3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0051",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0051",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0051",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "부리 협력 미확보/부재 경로. 없는 감사 대사를 지급하지 않는다. 부리가 함께 왔다면 공구를 내려놓고 한 발 물러나며 “저는…… 못 하겠어요”라고 한다. 아빠가 받아도 즉시 작업 성공하지 않는다. 엄마가 구조를 확인하고 까로가 운반을 마친 뒤 받침 작업에 동의해야 다음으로 간다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e8fbd699b37bf1ebaf674cb1a11eb249c7f35aa02465b0ab0b0f01d8399547aa",
+      "uid": "d97383446e40d9ab04b040e4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0052",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0052",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0052",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "까로 씨. 혼자서는 못 풀겠습니다. 밑을 잡아 주실 수 있습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3152,
+          "label": "r13_v111_device_worker14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3be329367988c6364a14308423d6160e97cc3e4d45791f8efcd7c3ada5f139c1",
+      "uid": "9b443806a5c3437688c1f29d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0053",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0053",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0053",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "받침은 내가 잡아. 어제 판돌 씨 내렸는데 이걸 또 쓰게 두진 않겠어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3154,
+          "label": "r13_v111_device_worker14",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d57d8a6a467828a6a4a1e0da90b405edbacaedf135d893e852796fadfbce3485",
+      "uid": "bc034f4969037bf9a6e27a6e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0054",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0054",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0054",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "까로가 실제 받침을 잡는다. 그동안 다른 물자를 운반하지 않는다. 준비가 안 됐으면 장비 분리는 남은 작업으로 두며, 다른 조사·물자 확인을 먼저 할 수 있다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3a71f64b1526612f1648793551a30cef21d17362a1e065a9b38ed2ed910623e5",
+      "uid": "a86a2b7634fbb2814f62989b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0055",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0055",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0055",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "바둑이. 공구부터 받아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3234,
+          "label": "r13_v111_buri_record_answer14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "13bcf3583d3db0e5c709139511fcefe55cf13e0dbea2a91b1b0ffae71e230200",
+      "uid": "3b8c59d864b74bdd1081b5a9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0056",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0056",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0056",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "바둑이는 촌장 앞에 선 채 움직이지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4f0ec0cedc0c2b4d32f8042e92b3b1b5c63a388cd4dac287a77bb4a28e8943d4",
+      "uid": "0775f91c6da77ae3c300e4af",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0057",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0057",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0057",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "모과 씨가 그 새를 보고 웃었다고 하셨죠. 그 말부터 틀렸습니다. 또 시키신다고 공구까지 빼앗진 않겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3236,
+          "label": "r13_v111_buri_record_answer14",
+          "guards": [
+            "if r13_v111_actor_ready('resident_badook'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "563ea3aa3a8afcb502659ff2b08c02ff51905f439368c0d572883d9cdd6f3fb9",
+      "uid": "0c9d3b2c311e8c2d6a21d04a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0058",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0058",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0058",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "내가 시킨다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3237,
+          "label": "r13_v111_buri_record_answer14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fbceb818014b7403946ce61b720ff062ea49beb5b6bb851502dc79b462e1323c",
+      "uid": "7978ea872009ff736b429823",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0059",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0059",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0059",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "명령 뒤 바둑이가 촌장 앞으로 한 발 옮겨 통로를 막는다. 공구를 빼앗으러 가지 않는다. 이미 기록을 제시했고 부리 협력을 확보했다면 풀던 쇠의 마찰음이 돌아온다. 대체 작업 경로는 까로가 받침을 잡은 뒤에만 아빠의 작업음이 난다. 둘 다 미준비면 성공 소리 없이 멈춘 손을 남긴다. 웅변이나 합창 없이, 명령과 다르게 움직이는 손을 한 박자 보여 준다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1f6acdebd03f8ea05103eb4a38af54e0e78154f029bc0a3e4c519ee77b2c03fd",
+      "uid": "3ce29a6b7f85349bcc47f85e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0060",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0060",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0060",
+      "when": null,
+      "speaker": "백 부인",
+      "kind": "dialogue",
+      "text": "학교 몫, 돌아가서 나도 볼 거예요. 빈칸도 가리지 말고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3106,
+          "label": "r13_v111_madam_device_close14",
+          "guards": [
+            "if r13_v111_actor_ready('resident_madam'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "405c01034cc49783ed742ecc8357cc50d82c09f45bcbdf2c09a7b018b051bf36",
+      "uid": "b26df3105e849ec1c2f5c00f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0061",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0061",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0061",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "같이 봐요. 쓴 것부터 빼 놓을게요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3107,
+          "label": "r13_v111_madam_device_close14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "894e18e6f5599225b2f1739832ce45cab81f2cfccd91b2fd449cdd52169119f4",
+      "uid": "006dfe3fa553bfe585b15f4b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0062",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0062",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0062",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠와 실제 작업자가 기록한 고정부를 안전하게 분리한다. 잔열 전달부는 남긴다. 백 부인이 실제 동행한 경우에도 박수나 추가 물자 약속은 없다. 아빠는 분리한 쇠에서 손을 떼고 후방의 다람이 있는 곳부터 돌아본다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2a00def8ad09536c00bb90f41c81864e0bcb4ace81dda6f447b5a10a44d49159",
+      "uid": "ec0a6671de2b21691a8cd708",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0063",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0063",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0063",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "다시 끼우면?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3184,
+          "label": "r13_v111_device_detached14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9c3403bf64a8f1a66590a51d8f26097668b895868ddefa8bf2694b6776a3afe6",
+      "uid": "97c7e032646a9c44c688f7c8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0064",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0064",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0064",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그래서 여기 두고 가지 않을 거야.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3185,
+          "label": "r13_v111_device_detached14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "70c0de78c5921c08e3cf58c1f0a5cb9dea5e49f3c61ebd490af3f9e2b075fcc3",
+      "uid": "1923b19931d427b2ece54697",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0065",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0065",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0065",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "촌장 현장 동행을 확보하지 못하면 명령 대결은 학교 출발 전 감독 장소에서 한 번만 한다. 실제 참석한 작업자와 감독자의 블록만 사용한다. 부리 부재 경로에 부리의 정지·대답을 소환하지 않고 B031의 까로·바둑이 대결을 쓴다. 확보한 기록은 그 문답 자리에서 플레이어가 제시한다. 산에서는 대결을 반복하지 않고 안전한 접근·실제 인력·공구가 갖춰진 뒤 기록과 분리 작업만 한다. 할머니의 구금은 바뀌지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c1023ec179cf3a27683429ded9f54270f96dc989c6b85e51b827f09719b6a336",
+      "uid": "428e0b35b0cd51bc8dfc957b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0066",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0066",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0066",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "이후의 인계는 갈등과 같은 비중의 다섯 회의가 아니라 짧은 연속 작업으로 압축한다. 기록 번호대로 부품을 상자에 넣음→실제 운반자 까로가 학교로 운반→6일 보았던 학교 잠금함 앞에서 나비가 기존 열쇠와 기록판을 꺼냄→돌목이 물건을 대조함. 운반 중인 까로는 다른 인계 자리에 동시에 있지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f32ebd0f38bb46dc0589dec3055110d5c71ce05d01f767eee6fabc1ab4a13f4f",
+      "uid": "37b12a1cbe209f308aea37df",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0067",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0067",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0067",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "학교에서 쓰던 잠금함이에요. 물자 칸은 따로 비웠어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3213,
+          "label": "r13_v111_device_school14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "76e9d4cbf234a5fadfa2228d38c24e44a4ea1d9d22f5463e7f3465072359bd10",
+      "uid": "b49e36cb6d8cd74a7b04a21e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0068",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0068",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0068",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "열쇠는 내가 맡겠소. 열 때는 나비 씨나 부인이 함께 보고. 사람 묶는 데 쓰겠다면 내주지 않겠소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3215,
+          "label": "r13_v111_device_school14",
+          "guards": [
+            "if r13_v111_actor_ready('guard'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ebfb8a7918167d7a426043eb3be27bbe2d821fe47d04db2354f6ad72025e12f0",
+      "uid": "5b0bae07002f673af6de2d1e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0069",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0069",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0069",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "나비가 열쇠를 돌목 손에 실제로 놓고 기록판을 함께 확인한다. 잠금·인수·입회자 표시까지 짧게 보여 준다. 감독 중인 돌목은 산에 출연하지 않는다. 이 동작을 완료해야 장비 분리·공동 통제가 기록된다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a73f94e5947573b8ccc0f3673bcf1a9a50cce140b3d0e83a911b3ee4bd02eb5e",
+      "uid": "e0faa633d7f57537806700bf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0070",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0070",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0070",
+      "when": null,
+      "speaker": "부리",
+      "kind": "dialogue",
+      "text": "저는…… 못 하겠어요.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d61b7ea740979c789ce44cab19fe858472caf2d398df3575a097ae12efa98b6f",
+      "uid": "4f16c729cc29a68fc52ab22d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0071",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0071",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0071",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "알겠습니다. 공구는 잠깐 놔 주세요.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "86a857c951cd8ce9128262e1bff963018eb1cea4d5d267bbd4f62d8fc779eae5",
+      "uid": "c8f2989ee8e5d0cba4f3a8f8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0072",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0072",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0072",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이대로 당기면 위험하겠네. 지금은 못 떼겠다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9833ddb38dea61188600b720873344d3810cfaa013187b1f242516066c721001",
+      "uid": "898e961b7f9bffe8d44b3325",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0073",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0073",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0073",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "표시부터 남기자. 사람하고 받침을 갖춰서 해야 해.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f10f33996fcd79ec8daceb7f57b9009eb340081a1fdb6b28511a0d80923e181c",
+      "uid": "ab03e9b48d04e29a1dea78b7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0074",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0074",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0074",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "바둑이. 공구부터 받아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3163,
+          "label": "r13_v111_device_order14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "13bcf3583d3db0e5c709139511fcefe55cf13e0dbea2a91b1b0ffae71e230200",
+      "uid": "e1d737ea75e1beb4d3ce3f3f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0075",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0075",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0075",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "모과 씨가 그 새를 보고 웃었다고 하셨죠. 그 말부터 틀렸습니다. 또 시키신다고 공구까지 빼앗진 않겠습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3165,
+          "label": "r13_v111_device_order14",
+          "guards": [
+            "if r13_v111_actor_ready('resident_badook'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "563ea3aa3a8afcb502659ff2b08c02ff51905f439368c0d572883d9cdd6f3fb9",
+      "uid": "d910c813cb4744714c044557",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0076",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0076",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0076",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "내가 시킨다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3166,
+          "label": "r13_v111_device_order14",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fbceb818014b7403946ce61b720ff062ea49beb5b6bb851502dc79b462e1323c",
+      "uid": "f7a3d502b210bedfe670e376",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D14_S02_L0077",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D14_S02_L0077",
+        "text"
+      ],
+      "origin": "base",
+      "day": 14,
+      "scene": "MS14_D14_S02",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D14_S02_L0077",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "사람 묶는 걸 다시 옮겨 주진 않겠소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3168,
+          "label": "r13_v111_device_order14",
+          "guards": [
+            "if r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 14-2. 아무도 묶여 있지 않은 제단",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "dc01a9da893abf3fe96f323a5505584a98332ad5322746d6732f51b83122bdf3",
+      "uid": "70c58f822b8011153bb3ae7b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|MS14_D14_S02|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_HP_PERMIT7_00",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_permit7",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "hp_permit7",
+      "block": "hp_permit7",
+      "placement": "blocks",
+      "ref": "hp_permit7",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "손잡이에 맞는 핀을 구했습니다. 숟가락을 가져오셨습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 55,
+          "label": "r13_hp_pick7",
+          "guards": [
+            "elif n==82 and r13_hp_value('pin_fitted') and not r13_hp_value('visit_allowed'):"
+          ]
+        }
+      ],
+      "scene_title": "hp_permit7",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "a0ca7b11e727c5abd9ed8c5014bbf3cf75b10931e202b05be866cb096c91f40e",
+      "uid": "1afc5d5da040b342cde4b327",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|hp_permit7|patch|hp_permit7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HP_PERMIT7_01",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_permit7",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "hp_permit7",
+      "block": "hp_permit7",
+      "placement": "blocks",
+      "ref": "hp_permit7",
+      "when": null,
+      "speaker": "판돌",
+      "kind": "dialogue",
+      "text": "집에 두고 왔소. 그 손잡이를 찾는 사람이 있어서. 집 문간에서 고칩시다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 55,
+          "label": "r13_hp_pick7",
+          "guards": [
+            "elif n==82 and r13_hp_value('pin_fitted') and not r13_hp_value('visit_allowed'):"
+          ]
+        }
+      ],
+      "scene_title": "hp_permit7",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "f5cd56c7e9012b533ec6aa53af753b1cbd4bb5d97372984354a77289b6c8e75c",
+      "uid": "04f9883b29b4b0b8db955f62",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|hp_permit7|patch|hp_permit7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HP_PERMIT7_02",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_permit7",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "hp_permit7",
+      "block": "hp_permit7",
+      "placement": "blocks",
+      "ref": "hp_permit7",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "보따리에 있던 숟가락 말씀이죠?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 55,
+          "label": "r13_hp_pick7",
+          "guards": [
+            "elif n==82 and r13_hp_value('pin_fitted') and not r13_hp_value('visit_allowed'):"
+          ]
+        }
+      ],
+      "scene_title": "hp_permit7",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "b4413f56a40f49165520296fc0337f62b629f0d9697df55cf2fa28a4bb60b5b2",
+      "uid": "59dd8f841212dc29008b7d0b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|hp_permit7|patch|hp_permit7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HP_PERMIT7_03",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_permit7",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "hp_permit7",
+      "block": "hp_permit7",
+      "placement": "blocks",
+      "ref": "hp_permit7",
+      "when": null,
+      "speaker": "판돌",
+      "kind": "dialogue",
+      "text": "그거요. 안에 들어올 건 없고, 문 옆 쟁반에 놓아 주시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 55,
+          "label": "r13_hp_pick7",
+          "guards": [
+            "elif n==82 and r13_hp_value('pin_fitted') and not r13_hp_value('visit_allowed'):"
+          ]
+        }
+      ],
+      "scene_title": "hp_permit7",
+      "source_hash": "7fe9901a62c066b26f971a3c01eb524a33fd42292dc65736e2f214ea5c384d7a",
+      "baseline_hash": "c38497c2e8e53609352e918e1cbbd792b3aea36cf1584c59c3fab1dfda13c36d",
+      "uid": "49d0008ddbacbee85343a45f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|hp_permit7|patch|hp_permit7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

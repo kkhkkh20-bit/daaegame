@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:327:74",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        18590,
+        18595
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_cv_decision",
+      "block": "r13_cv_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:327:74",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "…….",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 327,
+          "label": "r13_cv_decision",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 327,
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "7e428bfac963e979a36c34565ac48fb5ecee5c830adfb7369fe7ce653be4c521",
+      "uid": "53a1f6b018bedb86d559a3e7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_cv_decision|rpy_literal|r13_cv_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

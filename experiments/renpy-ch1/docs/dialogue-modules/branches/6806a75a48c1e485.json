@@ -1,0 +1,129 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_SP_SEPARATE12_0",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "sp_separate12",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "sp_separate12",
+      "block": "sp_separate12",
+      "placement": "blocks",
+      "ref": "sp_separate12",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "흰 그릇은 잠깐 옆으로 놓을게요. 작은 냄비 안을 먼저 보겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1256,
+          "label": "r13_v111_meal_inspect12",
+          "guards": [
+            "elif _return==3 and r13_soup_inspect_ready12():"
+          ]
+        }
+      ],
+      "scene_title": "sp_separate12",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "71a51a3b705a1a2cdcdcbac8f2c1dcc5b26d9e85636ac75e4544749d24e88257",
+      "uid": "bc57f3c663d20eab482903fc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|sp_separate12|patch|sp_separate12|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_SP_SEPARATE12_1",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "sp_separate12",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "sp_separate12",
+      "block": "sp_separate12",
+      "placement": "blocks",
+      "ref": "sp_separate12",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "흰 그릇을 배식 줄에서 분리하고 작은 냄비 뚜껑을 든다. 국 표면에 작은 유리 조각이 비친다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1256,
+          "label": "r13_v111_meal_inspect12",
+          "guards": [
+            "elif _return==3 and r13_soup_inspect_ready12():"
+          ]
+        }
+      ],
+      "scene_title": "sp_separate12",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "a5f1501eb8ff03cb878d23439cf14120177e5eaa1f9bf58b68020ddceb41d31f",
+      "uid": "08dd0777dc8b5a2b19489416",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|sp_separate12|patch|sp_separate12|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_SP_SEPARATE12_2",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "sp_separate12",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "sp_separate12",
+      "block": "sp_separate12",
+      "placement": "blocks",
+      "ref": "sp_separate12",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "국자도 그대로 두세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1256,
+          "label": "r13_v111_meal_inspect12",
+          "guards": [
+            "elif _return==3 and r13_soup_inspect_ready12():"
+          ]
+        }
+      ],
+      "scene_title": "sp_separate12",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "902da206d36ee44398cc850751a1dad0e7540b985b15bb88eb1383258794e3e0",
+      "uid": "c54a9e044c102886230e5423",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|sp_separate12|patch|sp_separate12|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

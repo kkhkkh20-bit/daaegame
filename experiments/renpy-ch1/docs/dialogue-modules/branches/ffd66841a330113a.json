@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_week1_cases.rpy:182:42",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        10398,
+        10448
+      ],
+      "origin": "rpy_literal",
+      "day": 2,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:182:42",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 경비 너울을 찾아가, 슬링이 배달할 봉투의 입구를 김으로 떼고 있던 일을 전했다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 182,
+          "label": "r13_w1c_letters",
+          "guards": [
+            "menu:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 182,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "6255fa52572223b3012fc80b57c33127945fd4d779c529ec0764fb0ace7ef39e",
+      "uid": "a7204c8479a09b0336666a83",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:184:42",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        10577,
+        10581
+      ],
+      "origin": "rpy_literal",
+      "day": 2,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:184:42",
+      "when": null,
+      "speaker": "resident_sling",
+      "kind": "dialogue",
+      "text": "……",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 184,
+          "label": "r13_w1c_letters",
+          "guards": [
+            "menu:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 184,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "a7f878b8ced1a7957c560d573e30ddbbc1696e38c370513aacbbf4bff12e7f43",
+      "uid": "1939a59858d576c49e7443ff",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

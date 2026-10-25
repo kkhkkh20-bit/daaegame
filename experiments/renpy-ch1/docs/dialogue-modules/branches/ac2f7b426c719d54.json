@@ -1,0 +1,249 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/winter_resident_inference.rpy:168:35",
+      "file": "game/winter_resident_inference.rpy",
+      "path": [
+        9429,
+        9446
+      ],
+      "origin": "rpy_inventory",
+      "day": 5,
+      "scene": "winter_present_to_resident",
+      "block": "winter_present_to_resident",
+      "placement": "literal",
+      "ref": "game/winter_resident_inference.rpy:168:35",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "이 글씨…… 어디서 찾았어?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_resident_inference.rpy",
+          "line": 168,
+          "label": "winter_present_to_resident",
+          "guards": [
+            "if winter_proof_person==\"buri\" and \"mother_note\" in winter_proof_keys:"
+          ]
+        }
+      ],
+      "line": 168,
+      "scene_title": "winter_present_to_resident",
+      "source_hash": "1ed66ae455193bcb5202f6cf9feb435bb81670119b4bc89cc73e28111c6b0ec3",
+      "baseline_hash": "aab1fb00d3e244dd2cdb07ff422bd3ab26ace53592f8b0e055d30820f3f58627",
+      "uid": "b0b47cd15812ac280c590a4b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|winter_present_to_resident|rpy_inventory|winter_present_to_resident|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_resident_inference.rpy:174:35",
+      "file": "game/winter_resident_inference.rpy",
+      "path": [
+        9889,
+        9960
+      ],
+      "origin": "rpy_inventory",
+      "day": 5,
+      "scene": "winter_present_to_resident",
+      "block": "winter_present_to_resident",
+      "placement": "literal",
+      "ref": "game/winter_resident_inference.rpy:174:35",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "수레가 어디로 갔는지는 이걸 보고 묻는 거군. 내가 아는 건 고친 물건뿐이야. 누가 탔는지까지 내 입으로 말하길 바라진 마.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_resident_inference.rpy",
+          "line": 174,
+          "label": "winter_present_to_resident",
+          "guards": [
+            "if winter_proof_person==\"buri\" and winter_proof_keys.intersection({\"tracks\",\"transfer_seal\"}):"
+          ]
+        }
+      ],
+      "line": 174,
+      "scene_title": "winter_present_to_resident",
+      "source_hash": "1ed66ae455193bcb5202f6cf9feb435bb81670119b4bc89cc73e28111c6b0ec3",
+      "baseline_hash": "d37b7d1e76ce997b4eb5598d83098bcc1373eb812c40c178fe82cac7549c2ff6",
+      "uid": "f42bd3a73b0305d4416d4f21",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|winter_present_to_resident|rpy_inventory|winter_present_to_resident|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_resident_inference.rpy:179:55",
+      "file": "game/winter_resident_inference.rpy",
+      "path": [
+        10344,
+        10377
+      ],
+      "origin": "rpy_inventory",
+      "day": 5,
+      "scene": "winter_present_to_resident",
+      "block": "winter_present_to_resident",
+      "placement": "literal",
+      "ref": "game/winter_resident_inference.rpy:179:55",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "등 고칠 일이면 밝을 때 말해. 다른 종이는 넣어 두고.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_resident_inference.rpy",
+          "line": 179,
+          "label": "winter_present_to_resident",
+          "guards": [
+            "if winter_proof_person==\"resident_lamplighter\" and winter_proof_keys.intersection({\"mother_note\",\"mother_repair\",\"invitation\",\"mother_linen\"}):",
+            "if not winter_private_conversation(winter,winter_proof_person):"
+          ]
+        }
+      ],
+      "line": 179,
+      "scene_title": "winter_present_to_resident",
+      "source_hash": "1ed66ae455193bcb5202f6cf9feb435bb81670119b4bc89cc73e28111c6b0ec3",
+      "baseline_hash": "644817170f8250142e96a4058a0c4e7c96c050885614294b5f1e437f3c77e683",
+      "uid": "7e0b736cc25c9c50416540ba",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|winter_present_to_resident|rpy_inventory|winter_present_to_resident|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_resident_inference.rpy:185:55",
+      "file": "game/winter_resident_inference.rpy",
+      "path": [
+        10764,
+        10798
+      ],
+      "origin": "rpy_inventory",
+      "day": 5,
+      "scene": "winter_present_to_resident",
+      "block": "winter_present_to_resident",
+      "placement": "literal",
+      "ref": "game/winter_resident_inference.rpy:185:55",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "그 단추, 아이 외투에 달아 준다더니. 두 사람이 맞구나.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_resident_inference.rpy",
+          "line": 185,
+          "label": "winter_present_to_resident",
+          "guards": [
+            "if winter_proof_person==\"resident_lamplighter\" and winter_proof_keys.intersection({\"mother_note\",\"mother_repair\",\"invitation\",\"mother_linen\"}):",
+            "if {\"invitation\",\"mother_linen\"}<=winter_proof_keys:"
+          ]
+        }
+      ],
+      "line": 185,
+      "scene_title": "winter_present_to_resident",
+      "source_hash": "1ed66ae455193bcb5202f6cf9feb435bb81670119b4bc89cc73e28111c6b0ec3",
+      "baseline_hash": "8b5147aa17d44de1a1e6b3b43e53a3eff2d841cd4df84b918496bdb42e3560fe",
+      "uid": "c7a41adb7d6ad25dd85be597",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|winter_present_to_resident|rpy_inventory|winter_present_to_resident|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_resident_inference.rpy:191:55",
+      "file": "game/winter_resident_inference.rpy",
+      "path": [
+        11231,
+        11291
+      ],
+      "origin": "rpy_inventory",
+      "day": 5,
+      "scene": "winter_present_to_resident",
+      "block": "winter_present_to_resident",
+      "placement": "literal",
+      "ref": "game/winter_resident_inference.rpy:191:55",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "내가 점검한 곳을 묻는 거구나. 메모와 부리가 적은 말은 맞아. 어디서 무엇을 봤는지까진 말할 수 있어.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_resident_inference.rpy",
+          "line": 191,
+          "label": "winter_present_to_resident",
+          "guards": [
+            "if winter_proof_person==\"resident_lamplighter\" and winter_proof_keys.intersection({\"mother_note\",\"mother_repair\",\"invitation\",\"mother_linen\"}):",
+            "if {\"mother_note\",\"mother_repair\"}<=winter_proof_keys:"
+          ]
+        }
+      ],
+      "line": 191,
+      "scene_title": "winter_present_to_resident",
+      "source_hash": "1ed66ae455193bcb5202f6cf9feb435bb81670119b4bc89cc73e28111c6b0ec3",
+      "baseline_hash": "fcea49bbc968bad199e058ef243adf8d7fc0147a729870a08d81224ab303be19",
+      "uid": "3cc3ad6e857f305ea20a4c8b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|winter_present_to_resident|rpy_inventory|winter_present_to_resident|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_resident_inference.rpy:220:35",
+      "file": "game/winter_resident_inference.rpy",
+      "path": [
+        13369,
+        13418
+      ],
+      "origin": "rpy_inventory",
+      "day": 5,
+      "scene": "winter_present_to_resident",
+      "block": "winter_present_to_resident",
+      "placement": "literal",
+      "ref": "game/winter_resident_inference.rpy:220:35",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "여섯을 받았다는 종이가 아니야. 배정했다는 거지. 내 서명이 있는 걸 같이 볼 테야?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_resident_inference.rpy",
+          "line": 220,
+          "label": "winter_present_to_resident",
+          "guards": [
+            "if winter_proof_person==\"nabi\" and \"ration_notice\" in winter_proof_keys:"
+          ]
+        }
+      ],
+      "line": 220,
+      "scene_title": "winter_present_to_resident",
+      "source_hash": "1ed66ae455193bcb5202f6cf9feb435bb81670119b4bc89cc73e28111c6b0ec3",
+      "baseline_hash": "bcfbf869c9ec118481f6dd4a453267a98afe2270edb5e6f09bd8a82a3fcf5a95",
+      "uid": "55f7cb148816f2093514a392",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|winter_present_to_resident|rpy_inventory|winter_present_to_resident|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

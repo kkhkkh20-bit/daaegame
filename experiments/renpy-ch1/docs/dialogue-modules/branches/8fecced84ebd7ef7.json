@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D13_RT05",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "riot13",
+        4,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "riot13",
+      "block": "riot13",
+      "placement": "blocks",
+      "ref": "riot13",
+      "when": "riot_momo13",
+      "speaker": null,
+      "kind": "narration",
+      "text": "뒤집힌 수레 밑으로 모모 씨의 손이 나와 있다. 아무도 그 손을 잡지 않았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2724,
+          "label": "r13_v111_crowd_watch13",
+          "guards": []
+        }
+      ],
+      "scene_title": "riot13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "3362fcb8c21df652195d3e91e6fb5e6bc1c277a28a29cbd6510830077db55136",
+      "uid": "576185de7357cbf7e48bb335",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|riot13|patch|riot13|riot_momo13",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_BD_D13_M03",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "riot13",
+        5,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "riot13",
+      "block": "riot13",
+      "placement": "blocks",
+      "ref": "riot13",
+      "when": "riot_momo13",
+      "speaker": null,
+      "kind": "narration",
+      "text": "그 손가락 사이로 박물관 열쇠 꾸러미가 비어져 나와 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2724,
+          "label": "r13_v111_crowd_watch13",
+          "guards": []
+        }
+      ],
+      "scene_title": "riot13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "65811857bc8e44d3779745e92fbfb1de6bc3390602aa5311ef4cc0f7695db78f",
+      "uid": "238de9936e1784b06f45c256",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|riot13|patch|riot13|riot_momo13",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

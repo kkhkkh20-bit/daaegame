@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_livelihood_flow.rpy:97:19",
+      "file": "game/systems/room13_livelihood_flow.rpy",
+      "path": [
+        5156,
+        5173
+      ],
+      "origin": "rpy_inventory",
+      "day": 9,
+      "scene": "r13_livelihood_start",
+      "block": "r13_livelihood_start",
+      "placement": "literal",
+      "ref": "game/systems/room13_livelihood_flow.rpy:97:19",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "일당 %d냥 · 현재 %d냥",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_livelihood_flow.rpy",
+          "line": 97,
+          "label": "r13_livelihood_start",
+          "guards": []
+        }
+      ],
+      "line": 97,
+      "scene_title": "r13_livelihood_start",
+      "source_hash": "8199753cfb17291d0932587c49c966b0e3e549fdf6af097673d3ee5348ee0559",
+      "baseline_hash": "000e9ab608ddd5d78524d9b2e57368e7101f7f052e4284ed096e2e1f5444437e",
+      "uid": "6b818f8102e9129b59d6c29c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_livelihood_start|rpy_inventory|r13_livelihood_start|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

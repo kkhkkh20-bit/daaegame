@@ -1,0 +1,122 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:261:85",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        14554,
+        14589
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_cv_night",
+      "block": "r13_cv_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:261:85",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "종소리였다. 낮고 길게, 눈 덮인 지붕들 위로 퍼져 나갔다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 261,
+          "label": "r13_cv_night",
+          "guards": [
+            "if r13_has(\"cv_bell\"):"
+          ]
+        }
+      ],
+      "line": 261,
+      "scene_title": "r13_cv_night",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "469f97f44680942f729b8c9f6b24087759cf46eb963fcf3281ad33ad864daad6",
+      "uid": "5cd3e854b5c5bd6a95db0705",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_cv_night|rpy_literal|r13_cv_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:283:25",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        15962,
+        15998
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_cv_night",
+      "block": "r13_cv_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:283:25",
+      "when": null,
+      "speaker": "resident_ppul",
+      "kind": "dialogue",
+      "text": "소란 피울 일이 아니오. 아픈 이들을 보호소에 모시는 길이오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 283,
+          "label": "r13_cv_night",
+          "guards": []
+        }
+      ],
+      "line": 283,
+      "scene_title": "r13_cv_night",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "22854126c4f325f75480b5f83f75517bfd1ae1252db79b103b6b9f9b88344516",
+      "uid": "c9698ab28b88cc9a19da381b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_cv_night|rpy_literal|r13_cv_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:284:25",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        16026,
+        16058
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_cv_night",
+      "block": "r13_cv_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:284:25",
+      "when": null,
+      "speaker": "resident_ppul",
+      "kind": "dialogue",
+      "text": "말할 게 있으면 지금 하시오. 여기, 다 보는 앞에서.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 284,
+          "label": "r13_cv_night",
+          "guards": []
+        }
+      ],
+      "line": 284,
+      "scene_title": "r13_cv_night",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "8cb18fd5ca57fd2198e81397449429defe773db12388ad5a828d39423592eafd",
+      "uid": "2f40310af040fa979e40cd00",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_cv_night|rpy_literal|r13_cv_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

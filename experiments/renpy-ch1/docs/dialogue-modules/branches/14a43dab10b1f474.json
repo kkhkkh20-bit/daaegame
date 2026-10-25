@@ -1,0 +1,211 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_evening.rpy:215:12",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        11706,
+        11717
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_ev_eve_trial",
+      "block": "r13_ev_eve_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:215:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "나비 옆에 앉는다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 215,
+          "label": "r13_ev_eve_trial",
+          "guards": [
+            "while _eve_left>0:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 215,
+      "scene_title": "r13_ev_eve_trial",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "f5de77e8732c6948f0fd02fb9e3c62854d3828b35788cbe0e011e4d3583849a2",
+      "uid": "5367fbd09a40287cbdfa98f3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_ev_eve_trial|rpy_menu|r13_ev_eve_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:225:12",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        12411,
+        12419
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_ev_eve_trial",
+      "block": "r13_ev_eve_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:225:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "톡을 찾는다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 225,
+          "label": "r13_ev_eve_trial",
+          "guards": [
+            "while _eve_left>0:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 225,
+      "scene_title": "r13_ev_eve_trial",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "6a8040494791859c83d9a9647fcff18cf7d466a348f7984c5fd1ec408eeffb1b",
+      "uid": "2961e380754d8219eebbec16",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_ev_eve_trial|rpy_menu|r13_ev_eve_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:235:12",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        13126,
+        13135
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_ev_eve_trial",
+      "block": "r13_ev_eve_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:235:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "밤이를 찾는다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 235,
+          "label": "r13_ev_eve_trial",
+          "guards": [
+            "while _eve_left>0:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 235,
+      "scene_title": "r13_ev_eve_trial",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "9f60ef3d31fde9699cd5761fdd08003c9eb4767231c74a6e852c56357c3ca370",
+      "uid": "ff92a3c3484f9106cac7484a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_ev_eve_trial|rpy_menu|r13_ev_eve_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:245:12",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        13829,
+        13844
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_ev_eve_trial",
+      "block": "r13_ev_eve_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:245:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "뿔이 촌장과 마주 앉는다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 245,
+          "label": "r13_ev_eve_trial",
+          "guards": [
+            "while _eve_left>0:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 245,
+      "scene_title": "r13_ev_eve_trial",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "f15f9c2fcfdb94608f3d9180509e188bb2274ad11fc9ff40b00873eb3f4b790e",
+      "uid": "60c94a9fad95175c2dd000fd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_ev_eve_trial|rpy_menu|r13_ev_eve_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:252:12",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        14292,
+        14301
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_ev_eve_trial",
+      "block": "r13_ev_eve_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:252:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "그만 일어선다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 252,
+          "label": "r13_ev_eve_trial",
+          "guards": [
+            "while _eve_left>0:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 252,
+      "scene_title": "r13_ev_eve_trial",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "c7c3391c24ff2ff5c18c15a04a0873818039ea52efa3a4ed4260addca145fefb",
+      "uid": "b18cf4973fc4c3662b910b74",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_ev_eve_trial|rpy_menu|r13_ev_eve_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

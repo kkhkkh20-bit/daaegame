@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D12_S04_R01",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "after",
+        "MS14_D12_S04_L0046",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D12_S04_L0046",
+      "when": "medicine_unchecked",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아침에는…… 아무도 약장을 확인하지 않았습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1486,
+          "label": "r13_v111_medical_arrival12",
+          "guards": [
+            "if r13_v111_value('route12')=='late_exposure':"
+          ]
+        }
+      ],
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "58cba6414c1666b1db700e299964526410106619cef76bb8c488d5e25f5f1d15",
+      "uid": "0f69cffa582f601c860a8d88",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|patch|after|medicine_unchecked",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D12_S04_R02",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "after",
+        "MS14_D12_S04_L0046",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D12_S04_L0046",
+      "when": "medicine_unchecked",
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "방금 하나씩 다 셌어요. ……장부로는 빠진 게 없어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1486,
+          "label": "r13_v111_medical_arrival12",
+          "guards": [
+            "if r13_v111_value('route12')=='late_exposure':"
+          ]
+        }
+      ],
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "b8deb9c969431e634db8b430a350be64d716e53de318a55533ffbb6fe6bc18da",
+      "uid": "dd44488c29ec434b550a3d02",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|patch|after|medicine_unchecked",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

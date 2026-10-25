@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D01_S04_V01",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "before",
+        "MS14_D01_S04_L0018",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D01_S04_L0018",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "장부를 옆구리에 낀 사람이 초소로 들어온다. 돌목이 “너울 씨” 하고 고개를 숙인다. 너울은 붓끝을 혀로 축이고 장부의 한 줄을 짚는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 310,
+          "label": "r13_v111_registered_depart",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "26c4831bea7e706237266198b7bab62b8faf0a7906f5d7e13073412420b42c3e",
+      "uid": "1d128ab3e51b31fd5e886415",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D01_S04_V02",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "before",
+        "MS14_D01_S04_L0019",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D01_S04_L0019",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 수첩을 꺼내 ‘옮기면 알릴 것’이라고 적는다. 적어 두는 건 오래된 버릇이다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 310,
+          "label": "r13_v111_registered_depart",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "e81af296d32020076cbc6184baa76ba0689c383ae121aa63a6ef17ef3461c5e0",
+      "uid": "f32029718252c6416e918ff7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

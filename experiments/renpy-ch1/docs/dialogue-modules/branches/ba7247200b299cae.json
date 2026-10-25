@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_AUD_D05_04",
+      "file": "game/v111/newworld/d05.json",
+      "path": [
+        "before",
+        "MS14_D05_S04_L0007",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D05_S04_L0007",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "편지 끝에 작은 그림이 하나 있다. {image=assets/room13-acorn-ink.png}",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 555,
+          "label": "r13_v111_warning_read5",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "a9e760da50ee60c0891a0f3223c23267f704e9da058eb484a3ffcf4ed70b3f1c",
+      "baseline_hash": "051e7b4200682a23e135f6e297d1fe9dbd4db523c2ba9c4a23da9ded15f81781",
+      "uid": "073b3f7e86b2e73228fb8511",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

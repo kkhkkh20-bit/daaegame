@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D10_S01_V01",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_S01_L0017",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_S01_L0017",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "thought",
+      "text": "숨기지 않겠다고 했지. 안 한 일까지 떠안게 두지도 않겠다고 했고. 오늘은 그 두 마디만 지키면 돼.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1401,
+          "label": "r13_v111_waiting10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-1. 아침 / 회관 대기실 — 아빠 말부터 고치기",
+      "source_hash": "662dca5b8bc468185010c09a7dfb1668b1ea5e32eb2c8731e681e5c8ee9106df",
+      "baseline_hash": "18baf2b81617f8ea118cbefd7de07b2c6059eb833d8f041e11eb92dbfc2b138a",
+      "uid": "013708637f50c0aac06ef50d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AUD_D10_05",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_S01_L0014",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_S01_L0014",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "부리가 손을 내민다. 나는 수첩 원본을 그 손에 돌려준다. 허락받고 옮겨 적은 장만 내 쪽에 남긴다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1399,
+          "label": "r13_v111_waiting10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-1. 아침 / 회관 대기실 — 아빠 말부터 고치기",
+      "source_hash": "662dca5b8bc468185010c09a7dfb1668b1ea5e32eb2c8731e681e5c8ee9106df",
+      "baseline_hash": "a24d2c913ca811f0f36c7b954ea5386109f505b3beebaccc487d4620e7611104",
+      "uid": "4f23fc50ab2f8dc1f965bb22",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

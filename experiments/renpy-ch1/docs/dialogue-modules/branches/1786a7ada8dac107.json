@@ -1,0 +1,82 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:258:28",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        15186,
+        15208
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_ws_long_night",
+      "block": "r13_ws_long_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:258:28",
+      "when": null,
+      "speaker": "resident_teacher",
+      "kind": "dialogue",
+      "text": "그럼 오늘부터 새미도 우리 반이에요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 258,
+          "label": "r13_ws_long_night",
+          "guards": []
+        }
+      ],
+      "line": 258,
+      "scene_title": "r13_ws_long_night",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "c722c21a6a600fce2b3163e69fad435e2a4b56500740fb6d44d737e1f3e1631d",
+      "uid": "0e46effa2cc18c911c9c8917",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ws_long_night|rpy_literal|r13_ws_long_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:261:28",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        15370,
+        15429
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_ws_long_night",
+      "block": "r13_ws_long_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:261:28",
+      "when": null,
+      "speaker": "resident_teacher",
+      "kind": "dialogue",
+      "text": "……표가 없으면 이름도 없는 거라더군요. 보호소에 간 사람이 돌아오는 걸, 저는 한 번도 못 봤습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 261,
+          "label": "r13_ws_long_night",
+          "guards": []
+        }
+      ],
+      "line": 261,
+      "scene_title": "r13_ws_long_night",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "072d39646cc72d38fb521d98658dc0cfa59cea01c59d583414fbe209713734aa",
+      "uid": "1b7dd58c0a50be32db66db53",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_ws_long_night|rpy_literal|r13_ws_long_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

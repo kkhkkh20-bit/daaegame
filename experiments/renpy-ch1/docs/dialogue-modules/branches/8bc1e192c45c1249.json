@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:314:26",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        18236,
+        18281
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ep1_accused",
+      "block": "r13_ep1_accused",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:314:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "수리점 앞에 사람들이 모여 있었다. 너울이 톡의 작업대를 손바닥으로 내리쳤다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 314,
+          "label": "r13_ep1_accused",
+          "guards": []
+        }
+      ],
+      "line": 314,
+      "scene_title": "r13_ep1_accused",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "c8e629e8c8cd1285ad79a3c48a55a199e8cb3da37e806e8bf4ed8107c5befded",
+      "uid": "f57b8e0c4bbe50a310281730",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ep1_accused|rpy_literal|r13_ep1_accused|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

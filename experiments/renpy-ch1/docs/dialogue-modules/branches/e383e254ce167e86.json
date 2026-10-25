@@ -1,0 +1,363 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D11_S03_V01",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "before",
+        "MS14_D11_S03_L0008",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D11_S03_L0008",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이 떨어진 돌판 쪽으로 손을 쭉 뻗는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 372,
+          "label": "r13_v111_guldol_heat11",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "2ce70ddd430a3acdb05ff225259f625dffffcdef401b903138298630564eabc9",
+      "uid": "ad7ef728c29c1f5c5b12e5b9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D11_S03_V02",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "before",
+        "MS14_D11_S03_L0012",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D11_S03_L0012",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "초롱이 끈을 입에 문 채 등갓을 닦으며 말한다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 394,
+          "label": "r13_v111_heat_seen11",
+          "guards": [
+            "if r13_v111_actor_ready('resident_lamplighter'):"
+          ]
+        }
+      ],
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "b826052761399c24509238bd9149b43cf0e03ec6d8ac071ec987b8e9acfa6b97",
+      "uid": "2f06624c25facf5e1fb0e2c0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D11_S03_V03",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "before",
+        "MS14_D11_S03_L0025",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D11_S03_L0025",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "선생님이 손뼉을 짝 친다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 520,
+          "label": "r13_v111_supply_school11",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "6c60abe32a0334d4e135136be50b7b79c1dd8cce0ac166e78a012912044a9fec",
+      "uid": "99b6d46ebfb64cf3d6387c3e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D11_S03_V04",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "before",
+        "MS14_D11_S03_L0030",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D11_S03_L0030",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나비가 국자를 든 채 돌아본다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 531,
+          "label": "r13_v111_school_visit11",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "d7a0c9f40a72dcc64583a6411b3667b307fbaab92b0ecd6717d56798d57d0ca1",
+      "uid": "e31198ac8434363b5b2d1849",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_DLG_D11_01",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "before",
+        "MS14_D11_S03_L0002",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D11_S03_L0002",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "엄마 곁에 처음 보는 노인이 서 있다. 엄마가 낮게 일러 준다. 굴돌 할아버지, 마을에서 마지막으로 돌 일을 하던 사람이라고.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 366,
+          "label": "r13_v111_guldol_heat11",
+          "guards": [
+            "if r13_v111_actor_ready('resident_guldol'):"
+          ]
+        }
+      ],
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "0dc70eb41a4a5575c647f4716a9fc3b6a85f5896c4841b4c60262698bfc46b5a",
+      "uid": "28ad9f611f430b5e8dc75eb7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AUD_D11_04",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "before",
+        "MS14_D11_S03_L0002",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D11_S03_L0002",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "엄마가 등을 들어 벽 한쪽을 비춘다. 새겨진 그림 속에서 누군가 돌을 장치 안에 넣고 있다. 그 옆에는 장작불이 따로 피어 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 366,
+          "label": "r13_v111_guldol_heat11",
+          "guards": [
+            "if r13_v111_actor_ready('resident_guldol'):"
+          ]
+        }
+      ],
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "60226726982b2e823b9dce138823c528bd8c045422855081a27ff0c76b1c62cf",
+      "uid": "803150910fa216887eae92f5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AUD_D11_05",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "before",
+        "MS14_D11_S03_L0043",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D11_S03_L0043",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "엄마가 등을 들어 벽 한쪽을 비춘다. 새겨진 그림 속에서 누군가 돌을 장치 안에 넣고 있다. 그 옆에는 장작불이 따로 피어 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 377,
+          "label": "r13_v111_mother_heat11",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "60226726982b2e823b9dce138823c528bd8c045422855081a27ff0c76b1c62cf",
+      "uid": "bff82a8b43de6a05163e72d0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_DLG_D11_02",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "before",
+        "MS14_D11_S03_L0052",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D11_S03_L0052",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "광장 끝에서, 아랫길에서 먼저 올라온 주민 하나가 머뭇거리며 다가온다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 498,
+          "label": "r13_v111_day_rescue11",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "db1a28cf8a11b18c92820f1b1596499644ab5fa4f22a005aebc77147b8e9c71d",
+      "uid": "85d7ffa0059f72ea363c42e1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D11_NB00",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "before",
+        "MS14_D11_S03_L0035",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S03",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D11_S03_L0035",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나비가 국자를 든 채 손을 멈추고 우리 셋을 본다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 535,
+          "label": "r13_v111_school_visit11",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 11-3. 열이 있는 물건",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "be5727cd624129691f5b5b05c505b404e7b3c77e9d3c8bf4f27ddaa84a78191d",
+      "uid": "718dd608ba429f04eaaf3de5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S03|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

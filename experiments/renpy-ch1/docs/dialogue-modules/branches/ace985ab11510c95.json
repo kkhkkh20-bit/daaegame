@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events.rpy:273:31",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        15036,
+        15052
+      ],
+      "origin": "rpy_inventory",
+      "day": 1,
+      "scene": "r13_ev_b_caught",
+      "block": "r13_ev_b_caught",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:273:31",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "무쇠 할아버지가 건넨 지도",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 273,
+          "label": "r13_ev_b_caught",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 273,
+      "scene_title": "r13_ev_b_caught",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "09b24a940c9b8b85ec0df0f4d293ce803c8317b6b204ac8faa509f496ade14f0",
+      "uid": "702e658f02bac11628bb3f25",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_ev_b_caught|rpy_inventory|r13_ev_b_caught|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:280:31",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        15540,
+        15557
+      ],
+      "origin": "rpy_inventory",
+      "day": 1,
+      "scene": "r13_ev_b_caught",
+      "block": "r13_ev_b_caught",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:280:31",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "서리 검사원이 센 창고 약초",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 280,
+          "label": "r13_ev_b_caught",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 280,
+      "scene_title": "r13_ev_b_caught",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "bf2e6d463c1bd4d2445b24879f0565c7f7ec1083f5a9351e9e830b02f4ac3390",
+      "uid": "990fd1f20f6d2de8dc7859a4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_ev_b_caught|rpy_inventory|r13_ev_b_caught|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13.rpy:683:51",
+      "file": "game/room13.rpy",
+      "path": [
+        39281,
+        39319
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_link_reason",
+      "block": "r13_link_reason",
+      "placement": "literal",
+      "ref": "game/room13.rpy:683:51",
+      "when": null,
+      "speaker": "seryeon",
+      "kind": "dialogue",
+      "text": "가족을 믿는다는 대답만으로는 그날 출입했는지 확인할 수 없습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 683,
+          "label": "r13_link_reason",
+          "guards": [
+            "if claim==\"C1\":",
+            "menu:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 683,
+      "scene_title": "r13_link_reason",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "849c7aed4188121f13d02625d2ab6499ace0a4fe7dc35cfc7761a45464dc99c0",
+      "uid": "0b311505b8cf1b306666b365",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_link_reason|rpy_literal|r13_link_reason|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

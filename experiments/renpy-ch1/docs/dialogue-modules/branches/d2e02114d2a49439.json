@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/winter_exploration.rpy:84:85",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        5761,
+        5790
+      ],
+      "origin": "rpy_inventory",
+      "day": 5,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:84:85",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "마지막에 본 사람부터 찾자. 엄마가 혼자였는지도.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 84,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "if winter_action_id==\"room_reason\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 84,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "d510ae18d3d065a9fc02afd022f1933ceff7a4b36997adc96d745ba5699fc5b2",
+      "uid": "aa6c240ab74344576be0520c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:114:85",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        7873,
+        7892
+      ],
+      "origin": "rpy_inventory",
+      "day": 5,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:114:85",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "그래. 점검한 곳과 함께 보자.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 114,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "elif winter_action_id==\"mother_reply_reason\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 114,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "869b19fab10b18a3da353b8134722bd1a17fcd4f4538d17908d3102d30c74700",
+      "uid": "92fa61c24d7d18781fb9b2ba",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

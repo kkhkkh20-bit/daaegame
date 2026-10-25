@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D01_S03_X01",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "before",
+        "MS14_D01_S03_L0015",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S03",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D01_S03_L0015",
+      "when": "gate_won_with_e01",
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "그 편지는 이 확인에 필요 없소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 227,
+          "label": "r13_v111_gate_proven",
+          "guards": []
+        }
+      ],
+      "scene_title": "3. 초소 / 둘이 들어갈 근거",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "78aaadf31bd1f2a153ac8daa723fd8503c8eb54d7364cee97c1c77355258a308",
+      "uid": "9fda346422964dfb50cff940",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S03|patch|before|gate_won_with_e01",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D01_S03_X02",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "before",
+        "MS14_D01_S03_L0021",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S03",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D01_S03_L0021",
+      "when": "gate_won_with_e01",
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "그 편지는 이 확인에 필요 없소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 235,
+          "label": "r13_v111_gate_early",
+          "guards": []
+        }
+      ],
+      "scene_title": "3. 초소 / 둘이 들어갈 근거",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "78aaadf31bd1f2a153ac8daa723fd8503c8eb54d7364cee97c1c77355258a308",
+      "uid": "f70b927755dd28bde62cbe86",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S03|patch|before|gate_won_with_e01",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_livelihood_flow.rpy:87:60",
+      "file": "game/systems/room13_livelihood_flow.rpy",
+      "path": [
+        4328,
+        4377
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_livelihood_start",
+      "block": "r13_livelihood_start",
+      "placement": "literal",
+      "ref": "game/systems/room13_livelihood_flow.rpy:87:60",
+      "when": null,
+      "speaker": "karo",
+      "kind": "dialogue",
+      "text": "광장 뒤는 제가 매일 다니는 길이에요. 짐 끈은 수레에 걸어 뒀으니 필요하면 쓰세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_livelihood_flow.rpy",
+          "line": 87,
+          "label": "r13_livelihood_start",
+          "guards": [
+            "if r13_life_result[\"observed\"]:",
+            "if r13_job_key==\"delivery\":"
+          ]
+        }
+      ],
+      "line": 87,
+      "scene_title": "r13_livelihood_start",
+      "source_hash": "8199753cfb17291d0932587c49c966b0e3e549fdf6af097673d3ee5348ee0559",
+      "baseline_hash": "f5070752250bd40df747bf8061db9886c6600d9ac0ce846e0c826087fd14789d",
+      "uid": "5fa76c24e2b58f01c304bd4b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_livelihood_start|rpy_literal|r13_livelihood_start|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_livelihood_flow.rpy:93:80",
+      "file": "game/systems/room13_livelihood_flow.rpy",
+      "path": [
+        4839,
+        4894
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_livelihood_start",
+      "block": "r13_livelihood_start",
+      "placement": "literal",
+      "ref": "game/systems/room13_livelihood_flow.rpy:93:80",
+      "when": null,
+      "speaker": "buri",
+      "kind": "dialogue",
+      "text": "잘했어요. 장부에 적힌 수에 억지로 맞추지 마세요. 모자란 하나는 제가 어디 썼는지 찾아볼게요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_livelihood_flow.rpy",
+          "line": 93,
+          "label": "r13_livelihood_start",
+          "guards": [
+            "if r13_life_result[\"observed\"]:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 93,
+      "scene_title": "r13_livelihood_start",
+      "source_hash": "8199753cfb17291d0932587c49c966b0e3e549fdf6af097673d3ee5348ee0559",
+      "baseline_hash": "2692d3914016bec48e7ef90eaf875e2c93bdd427207ec83a7e7b6c65e7d4843d",
+      "uid": "b3e9b4223bc577fb3f801ce1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_livelihood_start|rpy_literal|r13_livelihood_start|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

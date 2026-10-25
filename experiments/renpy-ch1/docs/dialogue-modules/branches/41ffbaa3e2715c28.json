@@ -1,0 +1,287 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:177:30",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        9866,
+        9904
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_stable",
+      "block": "r13_cv_stable",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:177:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "실룩은 마구간 기둥에 묶여 있었다. 수레가 떠날 때 같이 실린다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 177,
+          "label": "r13_cv_stable",
+          "guards": [
+            "if r13_has(\"siluk_handed\"):"
+          ]
+        }
+      ],
+      "line": 177,
+      "scene_title": "r13_cv_stable",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "452cd1849ef11c559d60fa6378a4d77bf7f4e8bd5719f5c588697e86b9b150b8",
+      "uid": "342b744806344336c6562726",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_stable|rpy_literal|r13_cv_stable|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:178:30",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        9937,
+        9969
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_stable",
+      "block": "r13_cv_stable",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:178:30",
+      "when": null,
+      "speaker": "resident_siluk",
+      "kind": "dialogue",
+      "text": "빚 대신 일꾼이랬는데, 일꾼은 보호소에 안 가지 않소?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 178,
+          "label": "r13_cv_stable",
+          "guards": [
+            "if r13_has(\"siluk_handed\"):"
+          ]
+        }
+      ],
+      "line": 178,
+      "scene_title": "r13_cv_stable",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "b63386b58394f96f54294488ed5fd7ba28f1d708adf935ea4dae98c6fd050a87",
+      "uid": "e40641b5a419cda46bcb8d84",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_stable|rpy_literal|r13_cv_stable|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:179:30",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        10002,
+        10034
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_stable",
+      "block": "r13_cv_stable",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:179:30",
+      "when": null,
+      "speaker": "resident_siluk",
+      "kind": "dialogue",
+      "text": "작년에도 그 수레를 봤소. 내려올 땐 늘 빈 수레였소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 179,
+          "label": "r13_cv_stable",
+          "guards": [
+            "if r13_has(\"siluk_handed\"):"
+          ]
+        }
+      ],
+      "line": 179,
+      "scene_title": "r13_cv_stable",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "6b4775dae7944d4cf9d0b7703930792015c870aeb8bbdd869fef95efdf0a3ea6",
+      "uid": "fbe82fdd63a57b5ef4c8425c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_stable|rpy_literal|r13_cv_stable|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:182:30",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        10181,
+        10231
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_stable",
+      "block": "r13_cv_stable",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:182:30",
+      "when": null,
+      "speaker": "resident_siluk",
+      "kind": "dialogue",
+      "text": "작년에도 몰았소. 산길 끝까지 올라가서, 사람을 내려놓고, 끈만 다시 감아서 내려왔소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 182,
+          "label": "r13_cv_stable",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 182,
+      "scene_title": "r13_cv_stable",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "2d9f86c7e089efad3427719474e6b73975db8fd490036ed5bcf0132fcdd01cf7",
+      "uid": "94db656429d2e35a7b2eb1ef",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_stable|rpy_literal|r13_cv_stable|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:183:30",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        10264,
+        10304
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_stable",
+      "block": "r13_cv_stable",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:183:30",
+      "when": null,
+      "speaker": "resident_siluk",
+      "kind": "dialogue",
+      "text": "내려올 땐 늘 빈 수레였소. 보호소라는데, 거기 지붕 하나 못 봤소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 183,
+          "label": "r13_cv_stable",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 183,
+      "scene_title": "r13_cv_stable",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "6dab10a6427fe9065191a4295bd137a0083e7f3b9f83728d6061eae3860858ea",
+      "uid": "b17ac9fa950bb7fc63747078",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_stable|rpy_literal|r13_cv_stable|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:184:30",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        10337,
+        10366
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_stable",
+      "block": "r13_cv_stable",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:184:30",
+      "when": null,
+      "speaker": "resident_siluk",
+      "kind": "dialogue",
+      "text": "나는 끄는 사람이오. 끄는 사람은 뒤를 안 보오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 184,
+          "label": "r13_cv_stable",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 184,
+      "scene_title": "r13_cv_stable",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "70e246afcad04df2fe8724838d04757c7ad3bf842fe294e56d5c5d43d2a0dc41",
+      "uid": "58a93037b9c229ce7ee90854",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_stable|rpy_literal|r13_cv_stable|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:189:50",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        10567,
+        10595
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_stable",
+      "block": "r13_cv_stable",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:189:50",
+      "when": null,
+      "speaker": "resident_siluk",
+      "kind": "dialogue",
+      "text": "……말이 발을 다쳤다고 하겠소. 동트기 전까진.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 189,
+          "label": "r13_cv_stable",
+          "guards": [
+            "if r13_has(\"siluk_debt_cleared\"):",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 189,
+      "scene_title": "r13_cv_stable",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "4747a812b668a6ed617233912159f096c8b949a5993e3a6b4a5b2f8c530b6a1f",
+      "uid": "9a7e37d7bdb2097eed8d22d0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_stable|rpy_literal|r13_cv_stable|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

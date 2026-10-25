@@ -1,0 +1,123 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D02_S04_V01",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "before",
+        "MS14_D02_S04_L0003",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D02_S04_L0003",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "앞치마를 두른 식당 일꾼이 행주를 어깨에 척 걸친다. 다른 손으로는 빈 쟁반을 빙글 돌린다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 637,
+          "label": "r13_v111_diner_offer",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "a0e7c79e30fb555f98b2adc0f92923428943a0f7146f1d40f1f3348a9b3d6cb5",
+      "baseline_hash": "8b1aef67584e6268380df4ee729df04f8579457ed461ab08dcc113b40c58e64c",
+      "uid": "784cd642a9ab64bd1cad42d7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AUD_D02_01",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "before",
+        "MS14_D02_S04_L0073",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D02_S04_L0073",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "네로와 헤어진 뒤 교환함을 다시 열어 본다. 아침에 넣은 쪽지는 그대로 있고, 답장 칸은 비어 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 738,
+          "label": "r13_v111_nero_done",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "a0e7c79e30fb555f98b2adc0f92923428943a0f7146f1d40f1f3348a9b3d6cb5",
+      "baseline_hash": "d6847b838f0913a11cde4250b8b9bf73d1fd7a5cea35a1dcf1c11d59b3939c65",
+      "uid": "124d517224a9bd24a5e49c07",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_DLG_D02_01",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "before",
+        "MS14_D02_S04_L0012",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D02_S04_L0012",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "순찰을 나서던 초롱이 식당 문을 열고 고개를 들이민다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 637,
+          "label": "r13_v111_diner_offer",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "a0e7c79e30fb555f98b2adc0f92923428943a0f7146f1d40f1f3348a9b3d6cb5",
+      "baseline_hash": "2ee033f1e3b821cf1feae947785bfa5ef78bc388a5586e58437c2adf5370e51e",
+      "uid": "8ffc10206fe0291302938b7c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

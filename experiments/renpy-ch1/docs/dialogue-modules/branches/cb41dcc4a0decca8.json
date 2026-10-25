@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_OP_D11_01",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "blocks",
+        "hyp5_reason11",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "hyp5_reason11",
+      "block": "hyp5_reason11",
+      "placement": "blocks",
+      "ref": "hyp5_reason11",
+      "when": "prevention_stone",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "한 방의 돌을 꺼내자, 그 앞에서 흐려지던 머리가 맑아졌습니다. 제 머리였습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 816,
+          "label": "r13_v111_hyp5_reason11",
+          "guards": []
+        }
+      ],
+      "scene_title": "hyp5_reason11",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "1426210b4f296ef41ee2ba1c2dc240b0467487e97b4834e0dd445bb5eda33a42",
+      "uid": "1cb3e7e6a9bf505b44f885e2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|hyp5_reason11|patch|hyp5_reason11|prevention_stone",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

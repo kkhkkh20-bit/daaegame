@@ -1,0 +1,126 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13.rpy:397:32",
+      "file": "game/room13.rpy",
+      "path": [
+        20616,
+        20710
+      ],
+      "origin": "rpy_inventory",
+      "day": 2,
+      "scene": "r13_object",
+      "block": "r13_object",
+      "placement": "literal",
+      "ref": "game/room13.rpy:397:32",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "복도 맨 끝에 있는 13호실 문. 복도에서 바라봤을 때 왼쪽 문틀의 잠금쇠 고정부가 뜯겨 나가 있다. 오른쪽 경첩은 멀쩡하고, 문짝은 방 안쪽으로 밀려 열려 있었다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 397,
+          "label": "r13_object",
+          "guards": [
+            "elif room13[\"case_state\"]==\"occurred\" and room13[\"location\"]==\"hall\" and key==\"door\":"
+          ]
+        }
+      ],
+      "line": 397,
+      "scene_title": "r13_object",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "5f3e3a0b24c444150b0cb30281b840d2ae26280e2cd3c6d0d1deb700a1906c1d",
+      "uid": "f741e740ea0f3c3aab97ac96",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_object|rpy_inventory|r13_object|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:399:32",
+      "file": "game/room13.rpy",
+      "path": [
+        20907,
+        20987
+      ],
+      "origin": "rpy_inventory",
+      "day": 2,
+      "scene": "r13_object",
+      "block": "r13_object",
+      "placement": "literal",
+      "ref": "game/room13.rpy:399:32",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "바닥에 굳은 촛농과 핏자국을 다시 살폈다. 현장을 처음 발견했을 때 기록해 둔 자료가 있어야 어떤 자국이 먼저 생겼는지 순서를 알 수 있다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 399,
+          "label": "r13_object",
+          "guards": [
+            "elif room13[\"case_state\"]==\"occurred\" and room13[\"location\"]==\"room13\" and key==\"floor\":"
+          ]
+        }
+      ],
+      "line": 399,
+      "scene_title": "r13_object",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "6879788efe2c58531e0bacb304ff5eaf60e28f0b4ea3d8cb42abfb8e5bb9f875",
+      "uid": "0f1d3bfd9779cca2bd079909",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_object|rpy_inventory|r13_object|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:401:32",
+      "file": "game/room13.rpy",
+      "path": [
+        21131,
+        21209
+      ],
+      "origin": "rpy_inventory",
+      "day": 2,
+      "scene": "r13_object",
+      "block": "r13_object",
+      "placement": "literal",
+      "ref": "game/room13.rpy:401:32",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "이불 안쪽이 붉은 실로 기워져 있다. 집에서 아내가 바느질할 때 쓰던 매듭 모양과 닮았다. 누가 언제 꿰맨 것인지는 따로 알아봐야 한다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 401,
+          "label": "r13_object",
+          "guards": [
+            "elif room13[\"daram_state\"]==\"held\" and room13[\"location\"]==\"room13\" and key==\"bed\":"
+          ]
+        }
+      ],
+      "line": 401,
+      "scene_title": "r13_object",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "8d30fe4eff2f9cee4a9d3c4c8fff5129089edf6998ca9a9fa85c2551c8a2a01a",
+      "uid": "8b205ac436810afd0eaf0d5f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_object|rpy_inventory|r13_object|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

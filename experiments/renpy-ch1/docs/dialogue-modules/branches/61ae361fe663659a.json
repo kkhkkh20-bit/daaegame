@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_week2_events.rpy:171:27",
+      "file": "game/systems/room13_week2_events.rpy",
+      "path": [
+        9196,
+        9209
+      ],
+      "origin": "rpy_inventory",
+      "day": 7,
+      "scene": "r13_w2e_buy_tools",
+      "block": "r13_w2e_buy_tools",
+      "placement": "literal",
+      "ref": "game/systems/room13_week2_events.rpy:171:27",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "부리의 공구함 되사기",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week2_events.rpy",
+          "line": 171,
+          "label": "r13_w2e_buy_tools",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 171,
+      "scene_title": "r13_w2e_buy_tools",
+      "source_hash": "bd106ab951275b7b2a06d9b6705a142790d202b883e7f2e6d4f37241b21c87c0",
+      "baseline_hash": "3752a4f5d2ddb9394ce8d1857cfaf1e9256be4beedc871d10cae98e2db0d0750",
+      "uid": "7ab481ff2575fb6f917d0342",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_w2e_buy_tools|rpy_inventory|r13_w2e_buy_tools|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

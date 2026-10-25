@@ -1,0 +1,129 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:345:32",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        19632,
+        19643
+      ],
+      "origin": "rpy_inventory",
+      "day": 2,
+      "scene": "r13_ep1_lamp",
+      "block": "r13_ep1_lamp",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:345:32",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "꺼진 3번 등 안",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 345,
+          "label": "r13_ep1_lamp",
+          "guards": [
+            "while _e1_loop:",
+            "if _e1_pick==\"inside\":"
+          ]
+        }
+      ],
+      "line": 345,
+      "scene_title": "r13_ep1_lamp",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "e4f1ef6c08b0e22c81c171201ab5ec6adb94a47010fb2f49ffdfeb0d25942a26",
+      "uid": "5332d5ab8a89971600d39fa6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_ep1_lamp|rpy_inventory|r13_ep1_lamp|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:350:32",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        19927,
+        19939
+      ],
+      "origin": "rpy_inventory",
+      "day": 2,
+      "scene": "r13_ep1_lamp",
+      "block": "r13_ep1_lamp",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:350:32",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "꺼진 3번 등 뚜껑",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 350,
+          "label": "r13_ep1_lamp",
+          "guards": [
+            "while _e1_loop:",
+            "elif _e1_pick==\"gap\":"
+          ]
+        }
+      ],
+      "line": 350,
+      "scene_title": "r13_ep1_lamp",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "d755795f6d17b80b13851111ec0e04bca4a373f13f454d3ec470820d83e8daea",
+      "uid": "95c1e8ec342de116ea22c956",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_ep1_lamp|rpy_inventory|r13_ep1_lamp|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:356:32",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        20226,
+        20239
+      ],
+      "origin": "rpy_inventory",
+      "day": 2,
+      "scene": "r13_ep1_lamp",
+      "block": "r13_ep1_lamp",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:356:32",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "나사 둘레를 뜬 탁본",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 356,
+          "label": "r13_ep1_lamp",
+          "guards": [
+            "while _e1_loop:",
+            "elif _e1_pick==\"rub\":"
+          ]
+        }
+      ],
+      "line": 356,
+      "scene_title": "r13_ep1_lamp",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "62b6b10450ca97045228b0eebe4ec7c3f0561f606f30476cce4c890847f3bca1",
+      "uid": "efb93394758eea29dfc24850",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_ep1_lamp|rpy_inventory|r13_ep1_lamp|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

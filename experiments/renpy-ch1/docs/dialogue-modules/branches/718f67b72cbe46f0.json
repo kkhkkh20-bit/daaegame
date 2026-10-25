@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/arrival.rpy:349:13",
+      "file": "game/arrival.rpy",
+      "path": [
+        14677,
+        14691
+      ],
+      "origin": "rpy_inventory",
+      "day": 13,
+      "scene": "arrival_topic",
+      "block": "arrival_topic",
+      "placement": "literal",
+      "ref": "game/arrival.rpy:349:13",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "주민은 자리를 비웠다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/arrival.rpy",
+          "line": 349,
+          "label": "arrival_topic",
+          "guards": [
+            "elif not village_outdoor_people(arrival_location):"
+          ]
+        }
+      ],
+      "line": 349,
+      "scene_title": "arrival_topic",
+      "source_hash": "af44ba03258afcb2df492fceb033025264d71a22371f03bafa6875a5012294f8",
+      "baseline_hash": "c0b963ca4a1d9db6b9a10d8eb76b88495863f5371cf3997cc4785b1279b3fd83",
+      "uid": "0512a330f70b184c0a450102",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|arrival_topic|rpy_inventory|arrival_topic|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

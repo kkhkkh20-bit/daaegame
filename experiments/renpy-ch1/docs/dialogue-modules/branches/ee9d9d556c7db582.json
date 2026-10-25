@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D08_P01_V01",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "before",
+        "MS14_D08_P01_L0013",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_P01",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D08_P01_L0013",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이 발끝으로 서서 할아버지 얼굴을 살핀다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 983,
+          "label": "r13_v111_care8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-P. 생존 대체 / 다람과 함께 듣는 진료",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "3cac90dfc717035fd026780282f769a6ff26a4a772c8508e30fbebc1e7d18ca6",
+      "uid": "f64a8bc289050af6d9ac6dfb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_P01|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

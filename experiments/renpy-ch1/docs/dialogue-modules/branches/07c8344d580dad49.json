@@ -1,0 +1,123 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_HB_ARRIVAL14_01",
+      "file": "game/v111/newworld/hidden_base.json",
+      "path": [
+        "blocks",
+        "hidden_base_arrival14",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "hidden_base_arrival14",
+      "block": "hidden_base_arrival14",
+      "placement": "blocks",
+      "ref": "hidden_base_arrival14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "엄마를 따라 시설의 정비실 앞에 선다. 복도 끝 문틀에 길고 짧은 홈이 나 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_base.rpy",
+          "line": 91,
+          "label": "r13_hidden_base14",
+          "guards": []
+        }
+      ],
+      "scene_title": "hidden_base_arrival14",
+      "source_hash": "6e9232db54dc86c540d07513a1c200c4a0397d9f5aaf68a365716856e872c4c1",
+      "baseline_hash": "68e99ca56e5310698940fd2aa39175e13d13871e56744ea6ac67c7d40df5f17d",
+      "uid": "2b508a0769186806562e68b5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|hidden_base_arrival14|patch|hidden_base_arrival14|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HB_ARRIVAL14_02",
+      "file": "game/v111/newworld/hidden_base.json",
+      "path": [
+        "blocks",
+        "hidden_base_arrival14",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "hidden_base_arrival14",
+      "block": "hidden_base_arrival14",
+      "placement": "blocks",
+      "ref": "hidden_base_arrival14",
+      "when": null,
+      "speaker": "엄마",
+      "kind": "dialogue",
+      "text": "여기야. 수첩을 넣어 둔 줄 알았는데, 문 밑으로 미끄러졌어.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_base.rpy",
+          "line": 91,
+          "label": "r13_hidden_base14",
+          "guards": []
+        }
+      ],
+      "scene_title": "hidden_base_arrival14",
+      "source_hash": "6e9232db54dc86c540d07513a1c200c4a0397d9f5aaf68a365716856e872c4c1",
+      "baseline_hash": "82d85ac920c04d25715cfda19f0045a296d436345a7785e1ded85c11590c1573",
+      "uid": "c3ed887f12032f6e4523bd5e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|hidden_base_arrival14|patch|hidden_base_arrival14|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HB_ARRIVAL14_03",
+      "file": "game/v111/newworld/hidden_base.json",
+      "path": [
+        "blocks",
+        "hidden_base_arrival14",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "hidden_base_arrival14",
+      "block": "hidden_base_arrival14",
+      "placement": "blocks",
+      "ref": "hidden_base_arrival14",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이번에는 손부터 넣지 말고, 문부터 열자.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_base.rpy",
+          "line": 91,
+          "label": "r13_hidden_base14",
+          "guards": []
+        }
+      ],
+      "scene_title": "hidden_base_arrival14",
+      "source_hash": "6e9232db54dc86c540d07513a1c200c4a0397d9f5aaf68a365716856e872c4c1",
+      "baseline_hash": "f30311316ccd2715c0ff299f73e9098ae3aa67a01983ecf33a9071877e1d1039",
+      "uid": "8d53a9591f5d0663d1eb3528",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|hidden_base_arrival14|patch|hidden_base_arrival14|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

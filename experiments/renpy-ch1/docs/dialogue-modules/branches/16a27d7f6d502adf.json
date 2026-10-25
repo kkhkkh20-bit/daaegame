@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:434:39",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        25848,
+        25887
+      ],
+      "origin": "rpy_literal",
+      "day": 9,
+      "scene": "r13_wf_choice",
+      "block": "r13_wf_choice",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:434:39",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "창고 문 앞에 등유가 부어져 있었습니다. 이 통이 반이나 줄었고요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 434,
+          "label": "r13_wf_choice",
+          "guards": [
+            "menu:",
+            "if sum(1 for k in (\"F09\",\"F10\",\"F11\") if r13_has(k))>=2:"
+          ]
+        }
+      ],
+      "line": 434,
+      "scene_title": "r13_wf_choice",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "97acf9c7ef3db74580c9791ea5763db6955f6c906b9d40f93c42f25af23f4e71",
+      "uid": "f60b3466ed153e35ad3242b8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_wf_choice|rpy_literal|r13_wf_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:442:49",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        26496,
+        26527
+      ],
+      "origin": "rpy_literal",
+      "day": 9,
+      "scene": "r13_wf_choice",
+      "block": "r13_wf_choice",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:442:49",
+      "when": null,
+      "speaker": "resident_nubi",
+      "kind": "dialogue",
+      "text": "……무슨 말씀이신지 모르겠어요. 빨래 일이 바빠서요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 442,
+          "label": "r13_wf_choice",
+          "guards": [
+            "menu:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 442,
+      "scene_title": "r13_wf_choice",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "6c553160b2d50f9121b44d7e0628efef82f95678813dfc9655b0822ecf328fa5",
+      "uid": "aea1d102f91c7e82588654d6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_wf_choice|rpy_literal|r13_wf_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

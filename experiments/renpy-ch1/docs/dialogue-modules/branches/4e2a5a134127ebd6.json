@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:503:29",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        26986,
+        27011
+      ],
+      "origin": "rpy_literal",
+      "day": 9,
+      "scene": "r13_ep1_decision",
+      "block": "r13_ep1_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:503:29",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "톡은 풀어 주겠소. 실룩은 내가 데려가오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 503,
+          "label": "r13_ep1_decision",
+          "guards": []
+        }
+      ],
+      "line": 503,
+      "scene_title": "r13_ep1_decision",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "fdbc916d7334d30d77c7727be9cdf83399c656a93ead754933d4bc8f3d1cf9c7",
+      "uid": "27b0d55fdbb3d83b8c668f31",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_ep1_decision|rpy_literal|r13_ep1_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:518:19",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        27920,
+        27965
+      ],
+      "origin": "rpy_literal",
+      "day": 9,
+      "scene": "r13_ep1_decision",
+      "block": "r13_ep1_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:518:19",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "부인이 산 조각은 훔친 물건입니다. 돌려주시든지, 그 값으로 빚을 지우시든지.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 518,
+          "label": "r13_ep1_decision",
+          "guards": [
+            "if _e1_pick==\"debt\":"
+          ]
+        }
+      ],
+      "line": 518,
+      "scene_title": "r13_ep1_decision",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "e9fca32c45b8d834b5b6bf4b6707ea608bcb842e61973ef1909fc16f6188da57",
+      "uid": "2471bf6947be09f2cc53439e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_ep1_decision|rpy_literal|r13_ep1_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

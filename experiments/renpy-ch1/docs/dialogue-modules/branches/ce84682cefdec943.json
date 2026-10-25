@@ -1,0 +1,129 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_OP_D07_27",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "stove_swap7",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "stove_swap7",
+      "block": "stove_swap7",
+      "placement": "blocks",
+      "ref": "stove_swap7",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "난로 앞에 쪼그려 앉는다. 불기운이 얼굴에 닿자 머리가 띵하다. 방금 무얼 하려 했더라.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 63,
+          "label": "r13_v111_free_day7_pick",
+          "guards": [
+            "elif n==5:"
+          ]
+        }
+      ],
+      "scene_title": "stove_swap7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "32bc55a1c9828a6b699b19df6c9957c9afb4bf4c58e403a08fbcbf036571bb8c",
+      "uid": "5a301334709e1c977b478e0d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|stove_swap7|patch|stove_swap7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OP_D07_28",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "stove_swap7",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "stove_swap7",
+      "block": "stove_swap7",
+      "placement": "blocks",
+      "ref": "stove_swap7",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "집게로 검푸르게 타는 돌을 꺼낸다. 배급 돌에 찍히는 표시가 없다. 주머니의 배급 돌을 대신 넣는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 63,
+          "label": "r13_v111_free_day7_pick",
+          "guards": [
+            "elif n==5:"
+          ]
+        }
+      ],
+      "scene_title": "stove_swap7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "1e9fe6d13cc420d87edeb59aa8c02b06804e1be3e9cef7ee80123aff435aa0d2",
+      "uid": "b01cd8cb42f37e90a8874d4c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|stove_swap7|patch|stove_swap7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OP_D07_29",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "stove_swap7",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "stove_swap7",
+      "block": "stove_swap7",
+      "placement": "blocks",
+      "ref": "stove_swap7",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "창을 열고 검푸른 돌을 창틀 밖 눈 속에 묻는다. 찬 바람이 방을 한 바퀴 돌자, 머리가 맑아진다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 63,
+          "label": "r13_v111_free_day7_pick",
+          "guards": [
+            "elif n==5:"
+          ]
+        }
+      ],
+      "scene_title": "stove_swap7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "026773ae8144096dc1c0b42ec41f908f1200d3ac693f599799d68ce8b492399b",
+      "uid": "7f88a512f183c2ac439fb33a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|stove_swap7|patch|stove_swap7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

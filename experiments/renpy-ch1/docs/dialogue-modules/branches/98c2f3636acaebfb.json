@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "portrait_show4:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "portrait_show4",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 4,
+      "scene": "portrait_show4",
+      "block": "portrait_show4",
+      "placement": "binding",
+      "ref": "portrait_show4:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "이분을 보셨습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "ms14_somi",
+        "person": "resident_nero",
+        "object": null
+      },
+      "scene_title": "portrait_show4",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "d1097e58f4a6a3872fd4179d0af96e36fdd3e31b93d3114f1e01d8c4ec38c152",
+      "uid": "490c347827bd4d6e95a52a2d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|portrait_show4|choice|portrait_show4|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

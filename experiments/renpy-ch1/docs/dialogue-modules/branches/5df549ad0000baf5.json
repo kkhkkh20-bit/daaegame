@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_K1_BENCH_LOOK2_0",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "blocks",
+        "bench_look2",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "bench_look2",
+      "block": "bench_look2",
+      "placement": "blocks",
+      "ref": "bench_look2",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "포대가 비켜난 벤치에 마른 물감 자국이 남아 있다. 손바닥으로 쓸자 가루가 묻어난다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 653,
+          "label": "r13_v111_afternoon",
+          "guards": [
+            "elif v111_answer==80:"
+          ]
+        }
+      ],
+      "scene_title": "bench_look2",
+      "source_hash": "a0e7c79e30fb555f98b2adc0f92923428943a0f7146f1d40f1f3348a9b3d6cb5",
+      "baseline_hash": "ce15299a7a77d47e46c3d8f91c40d7c09f7d86b95b86e156e0023c108ccfd692",
+      "uid": "bad4576afb6f0d04c23be9ae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|bench_look2|patch|bench_look2|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_K1_BENCH_LOOK2_1",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "blocks",
+        "bench_look2",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "bench_look2",
+      "block": "bench_look2",
+      "placement": "blocks",
+      "ref": "bench_look2",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "앉으면 옷에 다 묻겠네.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 653,
+          "label": "r13_v111_afternoon",
+          "guards": [
+            "elif v111_answer==80:"
+          ]
+        }
+      ],
+      "scene_title": "bench_look2",
+      "source_hash": "a0e7c79e30fb555f98b2adc0f92923428943a0f7146f1d40f1f3348a9b3d6cb5",
+      "baseline_hash": "d3fe116c5cb6cccf12814de38a61ac1523a4ad5389694e67daa552a45e91b368",
+      "uid": "c4ea197c7a102bc0fd66a0f2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|bench_look2|patch|bench_look2|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

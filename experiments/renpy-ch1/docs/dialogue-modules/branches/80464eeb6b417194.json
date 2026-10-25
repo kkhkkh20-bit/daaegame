@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_AUD_D04_01",
+      "file": "game/v111/newworld/d04.json",
+      "path": [
+        "before",
+        "MS14_D04_S03_L0002",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 4,
+      "scene": "MS14_D04_S03",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D04_S03_L0002",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "초소로 돌아오는 길이다. 초소 뒤에서 짧은 비명이 나더니 양동이가 넘어지는 소리가 난다. 이어 돌목의 목소리가 들린다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 184,
+          "label": "r13_v111_cry4",
+          "guards": []
+        }
+      ],
+      "scene_title": "3. 저녁 초소 뒤 / 비명",
+      "source_hash": "3498ca2f17801632f3caaaf64580b0d2b16a45c98cf1c99b69eab5af4b51ba32",
+      "baseline_hash": "1e4a737ae78f76cbeb7cdf530e4f747d39160116ed63378f6110c58b8a2a20c5",
+      "uid": "7d0cc8f089f92c4639a7ffef",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S03|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AUD_D04_02",
+      "file": "game/v111/newworld/d04.json",
+      "path": [
+        "before",
+        "MS14_D04_S03_L0004",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 4,
+      "scene": "MS14_D04_S03",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D04_S03_L0004",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 다람이를 등 뒤에 세우고, 불빛이 닿는 초소 쪽으로 한 걸음 나선다. 그림자 하나가 어두운 골목으로 사라진다. 얼굴은 보이지 않는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 195,
+          "label": "r13_v111_bite4",
+          "guards": []
+        }
+      ],
+      "scene_title": "3. 저녁 초소 뒤 / 비명",
+      "source_hash": "3498ca2f17801632f3caaaf64580b0d2b16a45c98cf1c99b69eab5af4b51ba32",
+      "baseline_hash": "69b75252214f2119f56ed120bc9c424e0ad641ec2d9629c84ae652642185abcf",
+      "uid": "0600960a1ef9fe498bc171c7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|MS14_D04_S03|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

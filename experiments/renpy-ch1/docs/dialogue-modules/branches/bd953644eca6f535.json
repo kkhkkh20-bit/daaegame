@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep_story.rpy:83:32",
+      "file": "game/systems/room13_ep_story.rpy",
+      "path": [
+        5726,
+        5740
+      ],
+      "origin": "rpy_inventory",
+      "day": 2,
+      "scene": "r13_st_kkomi_class",
+      "block": "r13_st_kkomi_class",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep_story.rpy:83:32",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "학교 교실 · 칠판 앞",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep_story.rpy",
+          "line": 83,
+          "label": "r13_st_kkomi_class",
+          "guards": []
+        }
+      ],
+      "line": 83,
+      "scene_title": "r13_st_kkomi_class",
+      "source_hash": "3e440ff5a7c7edc8e655c4b78b4f673960d544f0bdbed07710a48fa032aef2c8",
+      "baseline_hash": "2b0861cfa12851ffa144e5f1b2bb9d8ad1fcd0581278986c7b7d796cec4b9bf7",
+      "uid": "9eaa0873c0fb3d7135b167f0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_st_kkomi_class|rpy_inventory|r13_st_kkomi_class|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

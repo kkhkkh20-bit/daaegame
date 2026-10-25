@@ -1,0 +1,252 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_evening.rpy:185:39",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        10211,
+        10241
+      ],
+      "origin": "rpy_literal",
+      "day": 9,
+      "scene": "r13_ev_night_visit",
+      "block": "r13_ev_night_visit",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:185:39",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "옛날에 도토리 하나가 겨울 숲에서 길을 잃었는데……",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 185,
+          "label": "r13_ev_night_visit",
+          "guards": [
+            "while _visit_turns>0:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 185,
+      "scene_title": "r13_ev_night_visit",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "98099d2787ae348863e63caa9d3042e5cbf64f97e26845ba36108ba2e449fa24",
+      "uid": "106a530337a47dea9a7a0875",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_ev_night_visit|rpy_literal|r13_ev_night_visit|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:186:29",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        10273,
+        10292
+      ],
+      "origin": "rpy_literal",
+      "day": 9,
+      "scene": "r13_ev_night_visit",
+      "block": "r13_ev_night_visit",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:186:29",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "……그 도토리, 결국 집에 가?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 186,
+          "label": "r13_ev_night_visit",
+          "guards": [
+            "while _visit_turns>0:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 186,
+      "scene_title": "r13_ev_night_visit",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "cd52ec5ed6daf5a597d0d8453c6754bf9753a478eb806847ce64f4711c511ed1",
+      "uid": "ef5cbb51161cefa7b9d25878",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_ev_night_visit|rpy_literal|r13_ev_night_visit|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:191:39",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        10579,
+        10635
+      ],
+      "origin": "rpy_literal",
+      "day": 9,
+      "scene": "r13_ev_night_visit",
+      "block": "r13_ev_night_visit",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:191:39",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "내일 마을 사람들 앞에서 그날 밤 일을 하나씩 다시 짚어 볼 거야. 넌 네가 본 것만 말하면 돼.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 191,
+          "label": "r13_ev_night_visit",
+          "guards": [
+            "while _visit_turns>0:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 191,
+      "scene_title": "r13_ev_night_visit",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "238e1baa25750fa422f3f7a7ad123b53006a495a9c9ab190ea0f59f38c99e88b",
+      "uid": "35569b8dff6ce97f247c12fa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_ev_night_visit|rpy_literal|r13_ev_night_visit|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:192:29",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        10667,
+        10681
+      ],
+      "origin": "rpy_literal",
+      "day": 9,
+      "scene": "r13_ev_night_visit",
+      "block": "r13_ev_night_visit",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:192:29",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "모르는 건 어떻게 해?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 192,
+          "label": "r13_ev_night_visit",
+          "guards": [
+            "while _visit_turns>0:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 192,
+      "scene_title": "r13_ev_night_visit",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "74a9e594403b2be7216b1edbc850e0c9102547e057de59249124d22c9104ec2e",
+      "uid": "cf513ab37a98f63b241f66ed",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_ev_night_visit|rpy_literal|r13_ev_night_visit|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:197:29",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        10933,
+        10975
+      ],
+      "origin": "rpy_literal",
+      "day": 9,
+      "scene": "r13_ev_night_visit",
+      "block": "r13_ev_night_visit",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:197:29",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "지금 뭘 하는 거요. 오늘 면회는 끝이오. 재판 전까지 밤 면회는 없소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 197,
+          "label": "r13_ev_night_visit",
+          "guards": [
+            "while _visit_turns>0:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 197,
+      "scene_title": "r13_ev_night_visit",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "e7e8f85df620983432b6a0a1731a0da1ab57fda0c849ddd6eba84e99f6484355",
+      "uid": "e80b3982a17587da08767d92",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_ev_night_visit|rpy_literal|r13_ev_night_visit|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:198:29",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        11007,
+        11014
+      ],
+      "origin": "rpy_literal",
+      "day": 9,
+      "scene": "r13_ev_night_visit",
+      "block": "r13_ev_night_visit",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:198:29",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "아빠……!",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 198,
+          "label": "r13_ev_night_visit",
+          "guards": [
+            "while _visit_turns>0:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 198,
+      "scene_title": "r13_ev_night_visit",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "7248784bf05db99731a1b13999170a0c888aef5d0972be92ca8a4a0e4c45eda9",
+      "uid": "08612659137da60695c89b2b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|r13_ev_night_visit|rpy_literal|r13_ev_night_visit|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

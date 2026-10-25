@@ -1,0 +1,123 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_AR_D05_02",
+      "file": "game/v111/newworld/d05.json",
+      "path": [
+        "after",
+        "MS14_D05_S05_L0008",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D05_S05_L0008",
+      "when": "gate_post_win",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "솜아. 할아버지 옷 이야기는 아저씨가 했어. 밤이를 풀어 주려면 그것밖에 없었어.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 623,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "a9e760da50ee60c0891a0f3223c23267f704e9da058eb484a3ffcf4ed70b3f1c",
+      "baseline_hash": "2dade245c841bc2aebd5d9d14c386e19caf074cb13a192c483b1ac457d704825",
+      "uid": "e7d52148d83b4f29c766ee68",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|patch|after|gate_post_win",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AR_D05_03",
+      "file": "game/v111/newworld/d05.json",
+      "path": [
+        "after",
+        "MS14_D05_S05_L0008",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D05_S05_L0008",
+      "when": "gate_post_win",
+      "speaker": "솜이",
+      "kind": "dialogue",
+      "text": "……밤이는 풀려났어요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 623,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "a9e760da50ee60c0891a0f3223c23267f704e9da058eb484a3ffcf4ed70b3f1c",
+      "baseline_hash": "13563bc0cef095c1f1c0a8394a036374c99778dc09e25d3f526aee731e31f7f4",
+      "uid": "a6273797f7fc292c2a7cd930",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|patch|after|gate_post_win",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AR_D05_04",
+      "file": "game/v111/newworld/d05.json",
+      "path": [
+        "after",
+        "MS14_D05_S05_L0008",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D05_S05_L0008",
+      "when": "gate_post_win",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응. 네가 싫다고 한 옷 이야기를 아저씨가 꺼냈다. 미안하다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 623,
+          "label": "r13_v111_night5",
+          "guards": []
+        }
+      ],
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "a9e760da50ee60c0891a0f3223c23267f704e9da058eb484a3ffcf4ed70b3f1c",
+      "baseline_hash": "f914315ee2f9709d49b45a1456fadef10a2304ec925994c9c37995af54f516c7",
+      "uid": "de66f6ae4ce7ee15ee3cb645",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|patch|after|gate_post_win",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

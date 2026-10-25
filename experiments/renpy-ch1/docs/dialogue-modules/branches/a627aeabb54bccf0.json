@@ -1,0 +1,2062 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D02_S03_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "우체국에서 광장으로. 모모가 피코의 그림을 내려놓고 돌아선다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b652f37face4be4bf95c52f7bd4ace3186cd017f64cf4f1cbbe4c8a363a32efd",
+      "uid": "2907a7cbe08ed4dc5b0207ee",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0002",
+      "when": null,
+      "speaker": "모모",
+      "kind": "dialogue",
+      "text": "어제 것도 안 팔렸어요. 다음에 봅시다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 552,
+          "label": "r13_v111_piko2",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c0ca653907df26b08c3393b3bc3216a06d556c52d3f47297be6d5c8c54a1b016",
+      "uid": "2087b815eca40b1d76310343",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0003",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "다음에는 눈이 녹겠네. 그때는 그림도 젖고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 552,
+          "label": "r13_v111_piko2",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "507cf824ec7bdaca45e7e8afd876f9ab60df0bcdb192380ff08f39c6abf1447f",
+      "uid": "41150976fc47c32e6ff0d87a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0004",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "피코가 그림 위에 천을 덮었다. 발밑에는 접은 담요와 나무 판자가 있었다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 552,
+          "label": "r13_v111_piko2",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "35bf97da51023ac30b37c8d1a3431dbe09dbf3d25f35b9dd082c70d6bc4ebcc0",
+      "uid": "4c1f75831c8a486a25710d52",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0005",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "사람 얼굴도 그리십니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 552,
+          "label": "r13_v111_piko2",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "332d66b828595238d3db120672c45b76f1ef53a668fcf9f7d25babfffe4e9e1b",
+      "uid": "9e23143ac9fa40e0278046a3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0006",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "사람은 앉혀 줘야 그리죠.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 552,
+          "label": "r13_v111_piko2",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "32c46c6de7170781e9acaa3b486b1abcd6b366ba2c5367301b95a646e9899c63",
+      "uid": "267d59394117c235fe217640",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0007",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "없어서 그려야 해요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 552,
+          "label": "r13_v111_piko2",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c081860f197a84bd10c18a9b94789d1172c5e74490da4288f923522023c88825",
+      "uid": "50642d4560505c09bee229ca",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0008",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "……찾는구나.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 552,
+          "label": "r13_v111_piko2",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "53e74fd8d8c12836097f27516430d389793b60ac8ea5312f10e67e3f7c0f73a0",
+      "uid": "31d257a69ca550a63b78c8e4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0009",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아빠가 가족 사진이 아니라 작은 여행 수첩의 오래된 엄마 옆얼굴 스케치를 꺼낸다. 정확한 현재 초상은 아직 없다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "eaa92e964d86f6c96d4fd695ac8d031c6ba9b5b9ce7cab48a5a34ccb6d295929",
+      "uid": "ebbc60b3bb6dc2afac71c670",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0010",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "제가 그린 거라 많이 다릅니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 567,
+          "label": "r13_v111_portrait_commission",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "586171d93e8451b6fe5c0b944c7abd0cc35312951d1318f2f27d8842fc39e826",
+      "uid": "3bd8ef667fdaaca87c400620",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0011",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "귀를 너무 위에 달았네요. 장갑 끼고 그렸어요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 567,
+          "label": "r13_v111_portrait_commission",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f5637a2fbb211a0aa3259fbc70c92a1aa15993a39f297c202cf339b1297bc46b",
+      "uid": "5d577a309ee3cbddc3b67ff3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0012",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "맨손이었습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 567,
+          "label": "r13_v111_portrait_commission",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "02fc4176ebcacdb0dffc128672fdf2b47458ef30c8ff7d67c12026c6e376317a",
+      "uid": "acc77f7b9d7685792d899b0f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0013",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "그 말은 안 해도 됐는데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 567,
+          "label": "r13_v111_portrait_commission",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2479c662693f77aba2711d47b74d39f7d35aac25fd22ad81f2aecdc947e4fd48",
+      "uid": "5f6c8adffa95b9ea10a60c70",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0014",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이가 웃었다. 피코가 빈 판자를 무릎에 올렸다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 567,
+          "label": "r13_v111_portrait_commission",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f9e4666d1eb4199a6300bcecb1c9b3b20beba99a6b182e3329786f407d310e60",
+      "uid": "ba842cc572b819e68e2e90d5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0015",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "눈은 이 그림보다 커요, 작아요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 567,
+          "label": "r13_v111_portrait_commission",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "761e0c72bc58e21fbb4d887aa999927dd8ba282d0fa7c4665fdd55066f10889b",
+      "uid": "9844282f62d17f118c64d50b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0016",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "웃으면 작아져요. 그리고 아빠 싫은 말 하면 코가 이렇게 돼요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 567,
+          "label": "r13_v111_portrait_commission",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0e383236d539c7f269ed7fd046e67c33e5beabe93170c3f256f5bb697d95e8e0",
+      "uid": "205c2402dc193a68d1ada8d3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0017",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아빠 싫은 말?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 567,
+          "label": "r13_v111_portrait_commission",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e493fa28bbd371b7f8e691f6daf568b61a5cbfacf7f4ba250b602866264ab2f7",
+      "uid": "1693bc221344cc84c27a3569",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0018",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "냄비 또 태웠다고 할 때.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 567,
+          "label": "r13_v111_portrait_commission",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "559b2fefd2ce29c546b91923a1689450f7e4a890c20a59f75c4f931949fbfab3",
+      "uid": "e1fbe33094d51fa901d5f9f9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0019",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "코는 마지막에. 꼭 맞춰 줄게.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 567,
+          "label": "r13_v111_portrait_commission",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "de040185fb6c1f88ccbf72b1cee098d62ceebf9068e3fe3b10f8599d8f5cf96f",
+      "uid": "340757c0b0074b6d0c816d01",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0020",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "다람이 내민 새끼손가락에 피코가 손가락을 건다. 아빠가 재료비를 건네고 다음 날 아침 이 자리에서 받기로 한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "65b1f51d0c02d44c0d71b43dac1701a9eb63ac3a8a485f5a4e80a036a8bb5661",
+      "uid": "85d782e1b83e9989c3722951",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0021",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "여기서 주무십니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 569,
+          "label": "r13_v111_portrait_commission",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ef62e3068ac9c77b2dae2b43f364a3a9d5f147abb6f746e1485d46afbcfa8763",
+      "uid": "9c9124c70008c7308e8e4a72",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0022",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "그림에 침대를 사 줘야 하는데, 그림이 나한테 안 벌어 줘요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 569,
+          "label": "r13_v111_portrait_commission",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b9b786bde8f7c5d8a01c1b06270bed195b66b1f926e82ed2562f5541796634dc",
+      "uid": "eeaac972daad725da924e76a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0023",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "춥겠다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 569,
+          "label": "r13_v111_portrait_commission",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "eb0b4dd36dadf3d5946b5ce7cd09046ce5ee94d9cb8933b2b7b9c8809a060a70",
+      "uid": "7fbcc9ff7dacda5910156351",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0024",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "이 등 아래는 따뜻해. 손 대 봐. 유리 말고 받침.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 569,
+          "label": "r13_v111_portrait_commission",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2e189d91c9c633b0d836ff33402ed582cac49118f66813aac7f25158b17b3177",
+      "uid": "f0cc781baf8f9ccfc7769b7e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0025",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "조사: 3번 번호판 / 덜 맞물린 덮개 / 얇은 담요 / 받침에서 멀어질수록 차가운 바닥.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1a2ff4174cab343a556c97b8533d0acbcc9f24cccdac2d4c88b4f460cbf620f1",
+      "uid": "c07bd08feec0233fa45ab246",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L9101",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L9101",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L9101",
+      "when": null,
+      "speaker": null,
+      "kind": "evidence",
+      "text": "3번 등. 덮개가 덜 맞물려 있다. 피코의 담요는 얇고, 받침에서 멀어지면 바닥이 차갑다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 628,
+          "label": "r13_v111_lamp_details",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4a89a189cdd584215734ddbc3c2d2e0c18ee7e30970faf8466785b17838301bb",
+      "uid": "4a46a356565096322c6a9805",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0026",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "덮개가 벌어져 있는데요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 628,
+          "label": "r13_v111_lamp_details",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f13d5a46215c7b240a99316e5d33574d114c68a752325f27b637216d38183c38",
+      "uid": "175a2c7eb5d5c3a660a7d574",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0027",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "바깥 걸쇠가 닳았어요. 톡에게 수리 맡겼습니다. 돌은 지금 들어 있어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 628,
+          "label": "r13_v111_lamp_details",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ef1ef5826e0e2d44b8a998734bc9aadc961900a2c7fa6b269636a02d3268d996",
+      "uid": "f2db23fe8ff1106f3930af57",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0028",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "오늘 밤에도 계속 켜집니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 628,
+          "label": "r13_v111_lamp_details",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "daa16b2ddacdca4264f4b45a32e92a58e856aa738ac447f064b645b45f3cfb8e",
+      "uid": "0c8d836096a9f37c3b608381",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0029",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "순회 때마다 보죠. 밤새 지키지는 못해요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 628,
+          "label": "r13_v111_lamp_details",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8354bd7edf3abd3e089d8d09e229c7cb744d6da3fefe060f23cc833f2d5dad21",
+      "uid": "0de42b9e2cad43e3983f88d1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0030",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "내 잠자리 앞에서 그렇게 불안한 소리 하지 마요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 628,
+          "label": "r13_v111_lamp_details",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3d3cdcbc1c78d6c79afcdb03c9319c14db5acff3836430303d2a09cf9387cf8c",
+      "uid": "681d0409d249e8428de954ea",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0031",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "식으면 깨실 수 있습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 628,
+          "label": "r13_v111_lamp_details",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "472d0c38681f5149d66a5635f2b9ed73055657270a53bacde7ca84a6f33b9fc3",
+      "uid": "f4b721a6c997346b530b9326",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0032",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "깨면 어디로 가는데요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 628,
+          "label": "r13_v111_lamp_details",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "53b28db26c8406dd919c04983a2e89aaa6e4dbae0a9930020cee1e1492318599",
+      "uid": "62851503c5d63e1699561926",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0033",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "피코가 웃으려다가 담요 끝을 발 아래 밀어 넣었다. 나는 식당의 불 켜진 창을 보았다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 628,
+          "label": "r13_v111_lamp_details",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8e68fd6c77368e9f6704c665427cfd9e94033697ff4e5ecd85ddc370d250a622",
+      "uid": "1581e7894a2d06b83c5400d8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0034",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "안에서 잘 자리를 구할 수 있으면, 옮기실래요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 628,
+          "label": "r13_v111_lamp_details",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0d2b563f3b5b49fe87c5c348c4cb69b459a3a51d214d89e6a4151a5a83308164",
+      "uid": "0fcfe20f4f5074bf0e06931b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0035",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "그림까지 들고 가도 되는 데라면요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 628,
+          "label": "r13_v111_lamp_details",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "41f179340b217428aa6b2115ba63958cc962b9724b52183a44ba39e0c3a00f62",
+      "uid": "2c89c5844417da772b4386aa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0036",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "피코가 아직 선뿐인 초상과 아빠의 스케치를 번갈아 본다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e4da5e55aa712b1dde7de080bf6961acd33ecd9e2c01c75c7fd53b6d68503c4b",
+      "uid": "bf5276ca293fd3bbc3ee8e96",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0037",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0037",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0037",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "이분, 네로한테 물어봤어요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 628,
+          "label": "r13_v111_lamp_details",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "269a9b38923fa7ca8994068e1e3318071388ab802e18cb5076fa34b67b6c6de3",
+      "uid": "5b5f2bc4666308616ffc9645",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0038",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0038",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0038",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "누구요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 628,
+          "label": "r13_v111_lamp_details",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "81a61733dd56491b2d1379ea4b5acacbec1f20f73f012f6ab055ea3d073bb383",
+      "uid": "b00ecfdef6380f0ba5e688ef",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0039",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0039",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0039",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "젖은 침구 나르는 사람. 얼마 전에 저 얼굴을 봤어요. 네로가 식량 주머니 건네던 날.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 628,
+          "label": "r13_v111_lamp_details",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ccad596bede178969534737984a8eef17333b716280948255dfb6644a144ff87",
+      "uid": "3824065a2e0df0982e7446c8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0040",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0040",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0040",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "지금 어디 있습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 628,
+          "label": "r13_v111_lamp_details",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9f2cedd01c01ae24028ff4297cc81527672041c9a4680e4c5ca10b5b5a2ef57f",
+      "uid": "c77114705a7f877225bb3ca5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0041",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0041",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0041",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "오늘은 북쪽 길 안쪽에서 짐 날라요. 해 질 무렵 교환함 갈림길로 나오고, 곧 어르신 돌보러 가요. 만나려면 그때예요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 628,
+          "label": "r13_v111_lamp_details",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b0499a569ada3ceb63462ef509c87b0e4949bab63d2ee701b4fc6f836d4a6ae0",
+      "uid": "56491086ebb4936e70bf818d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0042",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0042",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0042",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아침에 만났으면 좋았을 텐데.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 628,
+          "label": "r13_v111_lamp_details",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4573fd262abf0f19011caa1ca6af1a285944abea6567b9f4a7ca85b8f336b353",
+      "uid": "41df1bfc83aa2f27540e5cb8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0043",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0043",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0043",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "네로가 부인을 봤다는 건 저도 지금 들었어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 628,
+          "label": "r13_v111_lamp_details",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "42fa0f24113bcd10a29df3c2718982bb9fa9e01cc575c0bd6896acb6a7641635",
+      "uid": "cea74cebc55b94620fae729e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0044",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0044",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0044",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "오늘 그쪽 들어가면 짐 묶는 손도 좀 보태 줘요. 내일 나눌 마른 침구를 실어야 한대요. 일손 값으로 가족 몫 하나 남겨 놨다고 했어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 628,
+          "label": "r13_v111_lamp_details",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "af6589c51a3fb1e5b2d5d711ef54cc9ad56fedb1380dcfc14e329f740c4c9987",
+      "uid": "6188bbf37ba65cb9dc4e5924",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0045",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0045",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0045",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "지금 받을 수 있습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 628,
+          "label": "r13_v111_lamp_details",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7b99e09ba7a717db3d7e6ce0e9ce60d4462a433766a0e814dc29a3a29ee9e2ec",
+      "uid": "b9b5472e3695c020e37d963d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0046",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0046",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0046",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "아직 건조 끝난 게 아니라 내일이래요. 오늘 밤 쓸 건 아니고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 628,
+          "label": "r13_v111_lamp_details",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b15fb141d3f6f797e04ae22f3d5f40f72db1bc23e522ac69f2dc4a42a6508b83",
+      "uid": "c4fc61de9a9cce4f2fa62666",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0047",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D02_S03_L0047",
+        "text"
+      ],
+      "origin": "base",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D02_S03_L0047",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "오늘 남은 선택 가능한 목적지: 식당의 잠자리 마련, 교환함 갈림길에서 네로 면담. 두 장소는 같은 남은 낮 시간을 쓴다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0b253f3e98da64d5a793509bc7d826ecb7a007282b5d7b19852a7b0a02eae983",
+      "uid": "b67009a0fb34f555c67f77bc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

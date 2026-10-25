@@ -1,0 +1,152 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D03_S05_L0073",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "replace",
+        "MS14_D03_S05_L0073",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D03_S05_L0073",
+      "when": "lamp_stage_stone",
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 마지막 점검 기록과 창고의 돌을 다시 떠올린다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1274,
+          "label": "r13_v111_trial_hint",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1291,
+          "label": "r13_v111_trial_hint_sale",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1308,
+          "label": "r13_v111_trial_hint_latch",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1325,
+          "label": "r13_v111_trial_hint_stone",
+          "guards": []
+        }
+      ],
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "911fc4252b9c67f790f91f4bed7251e93b42d5c80eb0f5fa902f80223c21120c",
+      "uid": "b4f0c3ae2249b04d4094c7d4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|patch|replace|lamp_stage_stone",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D03_S05_L0071",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "replace",
+        "MS14_D03_S05_L0071",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "MS14_D03_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D03_S05_L0071",
+      "when": "lamp_stage_stone",
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "점검한 뒤에 그 돌이 누구 손으로 넘어갔는지는 어디 있소?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1263,
+          "label": "r13_v111_trial_wrong",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1268,
+          "label": "r13_v111_trial_wrong",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1281,
+          "label": "r13_v111_trial_wrong_sale",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1285,
+          "label": "r13_v111_trial_wrong_sale",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1298,
+          "label": "r13_v111_trial_wrong_latch",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1302,
+          "label": "r13_v111_trial_wrong_latch",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1315,
+          "label": "r13_v111_trial_wrong_stone",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1319,
+          "label": "r13_v111_trial_wrong_stone",
+          "guards": []
+        }
+      ],
+      "scene_title": "5. 광장 공방 / 무엇을 증명했는가",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "e732db312d63ae864181bed618ef9e14c6a011b586c4fe0ad2e3d04cef8b1e77",
+      "uid": "63382d8af71f963ef2e80299",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S05|patch|replace|lamp_stage_stone",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

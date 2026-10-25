@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13.rpy:184:36",
+      "file": "game/room13.rpy",
+      "path": [
+        9687,
+        9700
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_entry_dispatch",
+      "block": "r13_entry_dispatch",
+      "placement": "literal",
+      "ref": "game/room13.rpy:184:36",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "이 편지도 있습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 184,
+          "label": "r13_entry_dispatch",
+          "guards": [
+            "elif r13_choice[1]==\"argue\":",
+            "elif r13_item:"
+          ]
+        }
+      ],
+      "line": 184,
+      "scene_title": "r13_entry_dispatch",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "af088eb028898a7dfc8e50ac3ccb8f20ccbbef76de69f1d1b14446188b0726d9",
+      "uid": "c44c8fa99c9b029cd41d7b50",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_entry_dispatch|rpy_literal|r13_entry_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:191:36",
+      "file": "game/room13.rpy",
+      "path": [
+        10101,
+        10146
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_entry_dispatch",
+      "block": "r13_entry_dispatch",
+      "placement": "literal",
+      "ref": "game/room13.rpy:191:36",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "가족 방문이고 둘이 잘 방도 확인됐습니다. 저 규칙대로 딸도 들여보내 주세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 191,
+          "label": "r13_entry_dispatch",
+          "guards": [
+            "elif r13_choice[1]==\"wait\":",
+            "if _return:"
+          ]
+        }
+      ],
+      "line": 191,
+      "scene_title": "r13_entry_dispatch",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "78028fa3011b6e43bc10e898a5fcbb656d803df52b17f5975f5659ffed1a9524",
+      "uid": "a09b7fc3babf1b116b51374d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_entry_dispatch|rpy_literal|r13_entry_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

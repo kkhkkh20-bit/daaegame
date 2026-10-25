@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_memory.rpy:106:31",
+      "file": "game/systems/room13_memory.rpy",
+      "path": [
+        6677,
+        6704
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_sling_grudge_reason",
+      "block": "r13_sling_grudge_reason",
+      "placement": "literal",
+      "ref": "game/systems/room13_memory.rpy:106:31",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "전에 들은 편지 일을 다시 확인하고 싶습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_memory.rpy",
+          "line": 106,
+          "label": "r13_sling_grudge_reason",
+          "guards": [
+            "if r13_sling_knows_requester():"
+          ]
+        }
+      ],
+      "line": 106,
+      "scene_title": "r13_sling_grudge_reason",
+      "source_hash": "fb1ce4b10a4990d33456645a7f1034acb2b1d784277adfbd097754ebaf87e2ea",
+      "baseline_hash": "9ef3c43d6ce978186cf4622763740f7d6d23787bd538cedba866e1e6ebb539bd",
+      "uid": "9440f2fac3d3946c94c50341",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_sling_grudge_reason|rpy_literal|r13_sling_grudge_reason|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_memory.rpy:109:31",
+      "file": "game/systems/room13_memory.rpy",
+      "path": [
+        6867,
+        6902
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_sling_grudge_reason",
+      "block": "r13_sling_grudge_reason",
+      "placement": "literal",
+      "ref": "game/systems/room13_memory.rpy:109:31",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "그때 왜 편지를 열려 했는지, 이제라도 들을 수 있겠습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_memory.rpy",
+          "line": 109,
+          "label": "r13_sling_grudge_reason",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 109,
+      "scene_title": "r13_sling_grudge_reason",
+      "source_hash": "fb1ce4b10a4990d33456645a7f1034acb2b1d784277adfbd097754ebaf87e2ea",
+      "baseline_hash": "a2e1b424f5f58c3a1ef352909528fca0ef2e5d6cfc328de5f00e5514a112fcab",
+      "uid": "5b536017cfba7c5e2df49346",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_sling_grudge_reason|rpy_literal|r13_sling_grudge_reason|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

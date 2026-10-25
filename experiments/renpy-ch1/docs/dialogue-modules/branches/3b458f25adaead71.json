@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events.rpy:336:31",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        18046,
+        18061
+      ],
+      "origin": "rpy_inventory",
+      "day": 1,
+      "scene": "r13_ev_c_door",
+      "block": "r13_ev_c_door",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:336:31",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "백 부인 창고 앞 · 밤",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 336,
+          "label": "r13_ev_c_door",
+          "guards": []
+        }
+      ],
+      "line": 336,
+      "scene_title": "r13_ev_c_door",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "641346f931c086097a4d1267a2058abbd188bcea68c99fde609d4e8565b72603",
+      "uid": "2d40da6dfa37af8069c4670f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_ev_c_door|rpy_inventory|r13_ev_c_door|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

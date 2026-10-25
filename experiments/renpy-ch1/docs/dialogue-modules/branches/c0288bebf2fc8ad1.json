@@ -1,0 +1,127 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13.rpy:715:116",
+      "file": "game/room13.rpy",
+      "path": [
+        41761,
+        41798
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_verdict",
+      "block": "r13_verdict",
+      "placement": "literal",
+      "ref": "game/room13.rpy:715:116",
+      "when": null,
+      "speaker": "resident_ppul",
+      "kind": "dialogue",
+      "text": "아이는 가족에게 돌려보내겠습니다. 남은 사안은 따로 기록하시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 715,
+          "label": "r13_verdict",
+          "guards": [
+            "if \"C2\" in room13[\"propositions\"]:"
+          ]
+        }
+      ],
+      "line": 715,
+      "scene_title": "r13_verdict",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "30a4e44e816173de93f55e62d2b0d9ff03a749b02a47151aa763eaed96846d52",
+      "uid": "a8b64104eb18c5497bb1fe71",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_verdict|rpy_literal|r13_verdict|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:718:46",
+      "file": "game/room13.rpy",
+      "path": [
+        41987,
+        42070
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_verdict",
+      "block": "r13_verdict",
+      "placement": "literal",
+      "ref": "game/room13.rpy:718:46",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "할머니가 어르신에게 손을 대고 그 사실을 숨긴 일, 어르신을 죽게 한 일은 따로 확인됐습니다. 증거를 훼손하지 못하도록 할머니를 붙잡아 두십시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 718,
+          "label": "r13_verdict",
+          "guards": [
+            "if \"C2\" in room13[\"propositions\"]:",
+            "if \"C4\" in room13[\"propositions\"]:"
+          ]
+        }
+      ],
+      "line": 718,
+      "scene_title": "r13_verdict",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "fc2cd5e38053b8ebee2816db411ee12eea878a62844ac4b2996a59963ac13ec5",
+      "uid": "5b6a16f8025d4905e47fc57a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_verdict|rpy_literal|r13_verdict|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:722:206",
+      "file": "game/room13.rpy",
+      "path": [
+        42551,
+        42564
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_verdict",
+      "block": "r13_verdict",
+      "placement": "literal",
+      "ref": "game/room13.rpy:722:206",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "아빠는 같이 못 와?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 722,
+          "label": "r13_verdict",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 722,
+      "scene_title": "r13_verdict",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "23ba19dd2521954d3fa0cf5e1344128ef9e8038b2c603f9e7e7db36c2ee1af3b",
+      "uid": "ba044e5db753fbb28584a574",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_verdict|rpy_literal|r13_verdict|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

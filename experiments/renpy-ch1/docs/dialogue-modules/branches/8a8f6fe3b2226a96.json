@@ -1,0 +1,123 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_SL_L_01",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "soup_list_lost12",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "soup_list_lost12",
+      "block": "soup_list_lost12",
+      "placement": "blocks",
+      "ref": "soup_list_lost12",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "선생님이 미친 거요. 명단이 무슨 상관이오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1553,
+          "label": "r13_v111_list_wrong12",
+          "guards": []
+        }
+      ],
+      "scene_title": "soup_list_lost12",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "f7a1479bdaeca5db516237c72a3614e8d7fdde0c988dd726dfb35dc262facb9a",
+      "uid": "72f998c5a2293279440797b4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|soup_list_lost12|patch|soup_list_lost12|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_SL_L_02",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "soup_list_lost12",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "soup_list_lost12",
+      "block": "soup_list_lost12",
+      "placement": "blocks",
+      "ref": "soup_list_lost12",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "너울이 문 옆 명단을 떼어 접는다. 품에 넣는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1553,
+          "label": "r13_v111_list_wrong12",
+          "guards": []
+        }
+      ],
+      "scene_title": "soup_list_lost12",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "d6211eea3f0ed858e30db0cb5000a2e5aa433e2efe672e2ec0e7c38df814386e",
+      "uid": "3b17f402b5d7c190b3ef8cbc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|soup_list_lost12|patch|soup_list_lost12|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_SL_L_03",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "soup_list_lost12",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "soup_list_lost12",
+      "block": "soup_list_lost12",
+      "placement": "blocks",
+      "ref": "soup_list_lost12",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "……모두를 위한 거였다니까요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1553,
+          "label": "r13_v111_list_wrong12",
+          "guards": []
+        }
+      ],
+      "scene_title": "soup_list_lost12",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "6d5b59349e7c8198b37b57a573af5e10f6fbce1984e4affc2b10ee6f8f9a4e49",
+      "uid": "ece57a4ae36c3ce3ee0e3266",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|soup_list_lost12|patch|soup_list_lost12|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

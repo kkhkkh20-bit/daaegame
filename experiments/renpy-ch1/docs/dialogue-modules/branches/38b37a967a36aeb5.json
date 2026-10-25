@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_AR_D14_05",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "record_question14",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "record_question14",
+      "block": "record_question14",
+      "placement": "blocks",
+      "ref": "record_question14",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "쇠를 떼면 어르신이 물으실 거요. 사람 안 보내고 무엇으로 버티느냐고.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3114,
+          "label": "r13_v111_device_record14",
+          "guards": [
+            "if not r13_v111_value(\"buri_device_present\") and r13_v111_actor_ready(\"resident_badook\") and not r13_has(\"v111:shown:record_question14\"):"
+          ]
+        }
+      ],
+      "scene_title": "record_question14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "aca3c89898522eef10bb77f04a6ea17fa57fb497affaa962cd0285a25838ae77",
+      "uid": "230dceab14087ce064068e18",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|record_question14|patch|record_question14|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AR_D14_06",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "record_question14",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "record_question14",
+      "block": "record_question14",
+      "placement": "blocks",
+      "ref": "record_question14",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "……그 답이 될 기록부터 꺼내 보죠.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3114,
+          "label": "r13_v111_device_record14",
+          "guards": [
+            "if not r13_v111_value(\"buri_device_present\") and r13_v111_actor_ready(\"resident_badook\") and not r13_has(\"v111:shown:record_question14\"):"
+          ]
+        }
+      ],
+      "scene_title": "record_question14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "1c3913d0e3a72ba4c319d3b94ea66456f255b2587d4527cfe3d000ca57cfde35",
+      "uid": "d330ab94d9a92296dc83ac29",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|record_question14|patch|record_question14|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:325:37",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        16404,
+        16454
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_ep2_at_somi_home",
+      "block": "r13_ep2_at_somi_home",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:325:37",
+      "when": null,
+      "speaker": "resident_somi",
+      "kind": "dialogue",
+      "text": "말하지 마. 아무한테도. 할아버지 보호소 가면…… 보호소 간 사람은 아무도 안 돌아와.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 325,
+          "label": "r13_ep2_at_somi_home",
+          "guards": []
+        }
+      ],
+      "line": 325,
+      "scene_title": "r13_ep2_at_somi_home",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "0ea45b7394ac1c6dbc51f07838255cca06e4940f839f352381ef17e72796c4d9",
+      "uid": "fad40f546a39dc01a1cb76c2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_ep2_at_somi_home|rpy_literal|r13_ep2_at_somi_home|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:328:17",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        16628,
+        16673
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_ep2_at_somi_home",
+      "block": "r13_ep2_at_somi_home",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:328:17",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "(밤이를 구하려면 할아버지를 말해야 해. 할아버지를 지키려면 밤이가 잡혀가.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 328,
+          "label": "r13_ep2_at_somi_home",
+          "guards": []
+        }
+      ],
+      "line": 328,
+      "scene_title": "r13_ep2_at_somi_home",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "1ffa51ad99a48ba6e297028c53076331b6ffcb221a1882b91fc885787951984e",
+      "uid": "d49f8a68e74ab0b6b30d393e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_ep2_at_somi_home|rpy_literal|r13_ep2_at_somi_home|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

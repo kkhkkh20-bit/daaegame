@@ -1,0 +1,129 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_NR_DRIVER11_0",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "blocks",
+        "nr_driver11",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "nr_driver11",
+      "block": "nr_driver11",
+      "placement": "blocks",
+      "ref": "nr_driver11",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아랫길 사람들을 학교까지 옮기려고요. 수레를 끌어 주시겠습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 464,
+          "label": "r13_v111_rescue_cart11",
+          "guards": [
+            "elif _return==82 and r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "scene_title": "nr_driver11",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "7eee3a528ed07fb50c6ed069564ba0d8951447a9642a55ea9516f2dc7d46d103",
+      "uid": "5ad93aac731b33668008d071",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|nr_driver11|patch|nr_driver11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_NR_DRIVER11_1",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "blocks",
+        "nr_driver11",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "nr_driver11",
+      "block": "nr_driver11",
+      "placement": "blocks",
+      "ref": "nr_driver11",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "제가 앞을 잡죠. 뒤는 같이 들어 주세요. 사람 태우면 짐하고는 달라요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 464,
+          "label": "r13_v111_rescue_cart11",
+          "guards": [
+            "elif _return==82 and r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "scene_title": "nr_driver11",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "d8305578cf9b363359059b2dbb597465026901b2db165b708fee315cba4b3425",
+      "uid": "2a06078326514445f283d993",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|nr_driver11|patch|nr_driver11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_NR_DRIVER11_2",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "blocks",
+        "nr_driver11",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "nr_driver11",
+      "block": "nr_driver11",
+      "placement": "blocks",
+      "ref": "nr_driver11",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "뒤는 제가 받칠게요. 제 발걸음도 좀 봐주시고요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 464,
+          "label": "r13_v111_rescue_cart11",
+          "guards": [
+            "elif _return==82 and r13_v111_actor_ready('karo'):"
+          ]
+        }
+      ],
+      "scene_title": "nr_driver11",
+      "source_hash": "a8e1b9cc1bd5df651843458013d299926891bce076fa7e1ba9309979f6a0be72",
+      "baseline_hash": "2fa8959a8b8d3bc28d8673cad763fb6fef83741902e43d8af9b6c0ff22d40199",
+      "uid": "fcd0646f910d08f6f87bfb94",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|nr_driver11|patch|nr_driver11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

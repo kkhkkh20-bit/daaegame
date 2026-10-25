@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_OWL_REPAIR_OWL_TOK_STAYS7_0",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "owl_tok_stays7",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "owl_tok_stays7",
+      "block": "owl_tok_stays7",
+      "placement": "blocks",
+      "ref": "owl_tok_stays7",
+      "when": null,
+      "speaker": "톡",
+      "kind": "dialogue",
+      "text": "비, 빗장은 제가 보고 있을게요. 어르신 곁에 있을 테니 다녀오세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 144,
+          "label": "r13_v111_tok_night7",
+          "guards": []
+        }
+      ],
+      "scene_title": "owl_tok_stays7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "8b086d072f5a6ef7638060652ee975037444b1b3bc6b41233f8730171f639a15",
+      "uid": "c6f004922316133080b5b0e7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|owl_tok_stays7|patch|owl_tok_stays7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OWL_REPAIR_OWL_TOK_STAYS7_1",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "owl_tok_stays7",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "owl_tok_stays7",
+      "block": "owl_tok_stays7",
+      "placement": "blocks",
+      "ref": "owl_tok_stays7",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "톡 씨, 아이도 부탁드립니다. 서리 씨를 모시고 바로 오겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 144,
+          "label": "r13_v111_tok_night7",
+          "guards": []
+        }
+      ],
+      "scene_title": "owl_tok_stays7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "eed5f27601582938b418521759fd312c6bd67c9f9c6bcaaf74226a6fc03483dc",
+      "uid": "3fc722426376356b675b5fad",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|owl_tok_stays7|patch|owl_tok_stays7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

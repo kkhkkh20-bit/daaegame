@@ -1,0 +1,211 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D12_EN02",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "elder_name12",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "elder_name12",
+      "block": "elder_name12",
+      "placement": "blocks",
+      "ref": "elder_name12",
+      "when": "daram_ready",
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "이건 누구 표야?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1047,
+          "label": "r13_v111_loss_names12",
+          "guards": [
+            "if r13_v111_value('alive:v111_lowerroad_elder') is False:"
+          ]
+        }
+      ],
+      "scene_title": "elder_name12",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "d8321b4fe8c065867555d3b1c51989c067b668c1f70e1d4e124309a6c3a8748d",
+      "uid": "ce4af9f756e387eef7afa9e6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|elder_name12|patch|elder_name12|daram_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_BD_D12_E01",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "elder_name12",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "elder_name12",
+      "block": "elder_name12",
+      "placement": "blocks",
+      "ref": "elder_name12",
+      "when": "daram_ready",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아랫길 할아버지. 솜이네 처마 밑에서 지팡이 짚던 분.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1047,
+          "label": "r13_v111_loss_names12",
+          "guards": [
+            "if r13_v111_value('alive:v111_lowerroad_elder') is False:"
+          ]
+        }
+      ],
+      "scene_title": "elder_name12",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "312327e3b7cdf50777ff189484d32914379b55e2627c85d48f38adca62fe2570",
+      "uid": "a3b7b051a6de3ed179b15fa1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|elder_name12|patch|elder_name12|daram_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_BD_D12_E02",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "elder_name12",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "elder_name12",
+      "block": "elder_name12",
+      "placement": "blocks",
+      "ref": "elder_name12",
+      "when": "daram_ready",
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "……이름은 뭐야?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1047,
+          "label": "r13_v111_loss_names12",
+          "guards": [
+            "if r13_v111_value('alive:v111_lowerroad_elder') is False:"
+          ]
+        }
+      ],
+      "scene_title": "elder_name12",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "42c2f56329d1f0616564a9eace422ec498c3b1d817ce3cb118bb3f8cf129f13e",
+      "uid": "2389492bb9968e22b4de38c6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|elder_name12|patch|elder_name12|daram_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_BD_D12_E03",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "elder_name12",
+        5,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "elder_name12",
+      "block": "elder_name12",
+      "placement": "blocks",
+      "ref": "elder_name12",
+      "when": "daram_ready",
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "영감이야. 네로 아저씨가 그렇게 부르던 거, 나 들었어.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1047,
+          "label": "r13_v111_loss_names12",
+          "guards": [
+            "if r13_v111_value('alive:v111_lowerroad_elder') is False:"
+          ]
+        }
+      ],
+      "scene_title": "elder_name12",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "a6ce580a9d8714971446bfa8f25dc9c053ef18c3513980390f446467d72da04b",
+      "uid": "138cc8068cf17b97fa04ccb6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|elder_name12|patch|elder_name12|daram_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_BD_D12_E04",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "blocks",
+        "elder_name12",
+        6,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "elder_name12",
+      "block": "elder_name12",
+      "placement": "blocks",
+      "ref": "elder_name12",
+      "when": "daram_ready",
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이 이름 없는 표 귀퉁이에 연필로 작게 ‘영감’이라고 적는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1047,
+          "label": "r13_v111_loss_names12",
+          "guards": [
+            "if r13_v111_value('alive:v111_lowerroad_elder') is False:"
+          ]
+        }
+      ],
+      "scene_title": "elder_name12",
+      "source_hash": "62ec28049ff74737d93a82c3b337c4c6e4240a2b27050cb683b75ff06c870576",
+      "baseline_hash": "9df59f0f32f9b04d6640f8aaea42d800394b2e5774f5f0761b8ec2ed0a2ab57e",
+      "uid": "b750783b864f851174f4fad2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|elder_name12|patch|elder_name12|daram_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

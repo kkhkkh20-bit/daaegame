@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_new_places.rpy:220:21",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        13101,
+        13123
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_ancient_first_visit",
+      "block": "r13_ancient_first_visit",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:220:21",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "응. 그런데 여기, 이상하게 따뜻해.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 220,
+          "label": "r13_ancient_first_visit",
+          "guards": [
+            "if r13_ancient_daram:"
+          ]
+        }
+      ],
+      "line": 220,
+      "scene_title": "r13_ancient_first_visit",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "987a96d4704c92af3bc20c5f2154464f7fbc99b9cb55a533e1d3453968e14c82",
+      "uid": "df0897049820ada1b604eb50",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_ancient_first_visit|rpy_literal|r13_ancient_first_visit|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_places.rpy:227:31",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        13577,
+        13620
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_ancient_first_visit",
+      "block": "r13_ancient_first_visit",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:227:31",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(할머니는 지금 붙잡혀 있다. 이곳을 지키던 사람이 자리를 비운 셈이다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 227,
+          "label": "r13_ancient_first_visit",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 227,
+      "scene_title": "r13_ancient_first_visit",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "775af51548d6f570e1004da72c7ff42c9a17aa9815a99c138c661c6e15695fa0",
+      "uid": "2d684473cd85947957dead17",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_ancient_first_visit|rpy_literal|r13_ancient_first_visit|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,728 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D08_S04_L0001",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "replace",
+        "MS14_D08_S04_L0001",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S04",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D08_S04_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "초롱이 끈을 문 채 평소보다 작은 가방을 멘다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1017,
+          "label": "r13_v111_mother_letter8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-4. 해 질 무렵 / 등 관리함 — 혼자 가지 않는 길",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "b3a2772b4d23ce2bc9ef6effd6d1dbc33768df4a64f82b2a842b78f6c9563b8c",
+      "uid": "06a17b54b735ecacb3e895f3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S04|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S04_L0032",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "replace",
+        "MS14_D08_S04_L0032",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S04",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D08_S04_L0032",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "등은 제가 마저 볼게요. 등갓도 닦아야 하고요. 돌아가실 땐 큰길로 가세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1066,
+          "label": "r13_v111_escort_done8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-4. 해 질 무렵 / 등 관리함 — 혼자 가지 않는 길",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "9a47cedc8e9005a6805e1ffbaad069ac9096c380a76124e14fac35b4da2c03ea",
+      "uid": "c13d6860e7c3ca2ec21e1ec7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S04|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S04_L0002",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "replace",
+        "MS14_D08_S04_L0002",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S04",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D08_S04_L0002",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "잠깐요, 답장이 왔어요. 늘 물건 놓던 자리에요. 지금은 등 점검함에 옮겨 뒀어요. 밤에 종탑 쪽으로 돌아서 제가 가져다드릴게요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1018,
+          "label": "r13_v111_mother_letter8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-4. 해 질 무렵 / 등 관리함 — 혼자 가지 않는 길",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "c336f5f54def3ecd3d59e2d350f6bcc94c19acedbf398cd952649e04979ee74e",
+      "uid": "c8184775151bf3e8fbbb5a50",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S04|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S04_L0003",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "replace",
+        "MS14_D08_S04_L0003",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S04",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D08_S04_L0003",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "혼자 가지 마세요. 지금, 저랑 같이 가죠.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1019,
+          "label": "r13_v111_mother_letter8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-4. 해 질 무렵 / 등 관리함 — 혼자 가지 않는 길",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "d37557477c4fb4ab28cf9d83a058557e6ad9122061b1e45bda674f6202a14769",
+      "uid": "c42107803a172a88e7646007",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S04|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S04_L0004",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "replace",
+        "MS14_D08_S04_L0004",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S04",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D08_S04_L0004",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "저 때문에 시간 뺏기시면—",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1020,
+          "label": "r13_v111_mother_letter8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-4. 해 질 무렵 / 등 관리함 — 혼자 가지 않는 길",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "750a5e1ebb61258eac056c6cf4bf7b288ee909924d677d2fc47e55570b30fc2d",
+      "uid": "38e48bdd4d2f43a01e4cabe7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S04|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S04_L0009",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "replace",
+        "MS14_D08_S04_L0009",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S04",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D08_S04_L0009",
+      "when": null,
+      "speaker": "순찰대원",
+      "kind": "dialogue",
+      "text": "전해 줄 물건을 확인하겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1031,
+          "label": "r13_v111_letter_murder8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-4. 해 질 무렵 / 등 관리함 — 혼자 가지 않는 길",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "c9440eb66bce74f9482503daa724b55bf0c845573e876b2a0d7fb83b9bdd9fed",
+      "uid": "331f199c677a2a79a43b12ea",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S04|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S04_L0010",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "replace",
+        "MS14_D08_S04_L0010",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S04",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D08_S04_L0010",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "누구에게 주라는 건지부터 확인하죠. 여기서 같이 봅시다. 가져가실 거면, 받아 가는 분 이름부터 남겨 주세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1032,
+          "label": "r13_v111_letter_murder8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-4. 해 질 무렵 / 등 관리함 — 혼자 가지 않는 길",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "554ac23047ce0a9f7ac0dc9232649189dceb77e07595a049b313aa16efcc4fa6",
+      "uid": "5930ee0fdc570b1565fa2f32",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S04|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S04_L0011",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "replace",
+        "MS14_D08_S04_L0011",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S04",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D08_S04_L0011",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "등 관리 기록은 제 이름으로 받았어요. 제가 꺼낼게요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1033,
+          "label": "r13_v111_letter_murder8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-4. 해 질 무렵 / 등 관리함 — 혼자 가지 않는 길",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "1758cb4d36df6ba88c1c760e322e752fa7d1d3cd7886451eb52e665b58d904c6",
+      "uid": "5950154a6de6c845b55c5d5f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S04|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S04_L0023",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "replace",
+        "MS14_D08_S04_L0023",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S04",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D08_S04_L0023",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "제가…… 더 일찍—",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1037,
+          "label": "r13_v111_letter_murder8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-4. 해 질 무렵 / 등 관리함 — 혼자 가지 않는 길",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "26e589121ca8dcfa9a157f76e8d688e1a54caf6a9b944cbaa67e6183646a33aa",
+      "uid": "81e12a0795a8e93ffe55f414",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S04|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S04_L0024",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "replace",
+        "MS14_D08_S04_L0024",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S04",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D08_S04_L0024",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그런 뜻이 아닙니다. 제가…… 그때 곁에 있었어야 했는데.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1038,
+          "label": "r13_v111_letter_murder8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-4. 해 질 무렵 / 등 관리함 — 혼자 가지 않는 길",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "952e81c882d07d652534575b4f7f4e60d30fffeb65f4b824f5ea31b3ed9a6211",
+      "uid": "47e9dbc832d684ae1c6e1b0b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S04|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S04_L0014",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "replace",
+        "MS14_D08_S04_L0014",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S04",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D08_S04_L0014",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다람이는 학교에 있습니다. 제 시간은 걱정 마세요. 같이 가시죠.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1044,
+          "label": "r13_v111_letter_prevent8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-4. 해 질 무렵 / 등 관리함 — 혼자 가지 않는 길",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "8b1a013025c5bde26a8607debf7940bf0f1a40d2d31255d0237c74379ff31000",
+      "uid": "8cc664a6901b64b4093e98fc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S04|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S04_L0017",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "replace",
+        "MS14_D08_S04_L0017",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S04",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D08_S04_L0017",
+      "when": null,
+      "speaker": "순찰대원",
+      "kind": "dialogue",
+      "text": "전해 줄 물건을 확인하겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1046,
+          "label": "r13_v111_letter_prevent8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-4. 해 질 무렵 / 등 관리함 — 혼자 가지 않는 길",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "c9440eb66bce74f9482503daa724b55bf0c845573e876b2a0d7fb83b9bdd9fed",
+      "uid": "8e298011379886f6a518fba9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S04|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S04_L0018",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "replace",
+        "MS14_D08_S04_L0018",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S04",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D08_S04_L0018",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "누구에게 주라는 건지부터 확인하죠. 여기서 같이 봅시다. 가져가실 거면, 받아 가는 분 이름부터 남겨 주세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1047,
+          "label": "r13_v111_letter_prevent8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-4. 해 질 무렵 / 등 관리함 — 혼자 가지 않는 길",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "554ac23047ce0a9f7ac0dc9232649189dceb77e07595a049b313aa16efcc4fa6",
+      "uid": "096461dd5c417ca30c4dd92f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S04|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S04_L0019",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "replace",
+        "MS14_D08_S04_L0019",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S04",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D08_S04_L0019",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "등 관리 기록은 제 이름으로 받았어요. 제가 꺼낼게요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1048,
+          "label": "r13_v111_letter_prevent8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-4. 해 질 무렵 / 등 관리함 — 혼자 가지 않는 길",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "1758cb4d36df6ba88c1c760e322e752fa7d1d3cd7886451eb52e665b58d904c6",
+      "uid": "7bbbdc69db913234623c4008",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S04|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S04_L0027",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "replace",
+        "MS14_D08_S04_L0027",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S04",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D08_S04_L0027",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "오늘은 다람이를 혼자 두지 않았습니다. 내일도…… 곁에 있을 겁니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1051,
+          "label": "r13_v111_letter_prevent8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-4. 해 질 무렵 / 등 관리함 — 혼자 가지 않는 길",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "5d65bcdff354d00e2f83dd11b7a30d4f506aebb5e6d7555fd068a0a2eb856b13",
+      "uid": "015f983855cb7a96a0e2888b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S04|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S04_L0028",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "replace",
+        "MS14_D08_S04_L0028",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S04",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D08_S04_L0028",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "그럼…… 이 편지, 잘 온 거네요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1052,
+          "label": "r13_v111_letter_prevent8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-4. 해 질 무렵 / 등 관리함 — 혼자 가지 않는 길",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "d4288ab363e4b6472e568e2fb4646a1cd441cdc0251ce398e201442110010f3d",
+      "uid": "a677cccaa89b7033db5ca134",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S04|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S04_L0029",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "replace",
+        "MS14_D08_S04_L0029",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S04",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D08_S04_L0029",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "예. 잘 받았습니다. 정말로요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1053,
+          "label": "r13_v111_letter_prevent8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-4. 해 질 무렵 / 등 관리함 — 혼자 가지 않는 길",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "8697c591dd87393d215a9114a7b8da61d30b2ac3743fbe7faee8d0feba0b63d5",
+      "uid": "e57a4d5e1d5f5351926a47eb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S04|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S04_L0008",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "replace",
+        "MS14_D08_S04_L0008",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S04",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D08_S04_L0008",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "너울 밑의 순찰대원 하나가 앞을 막는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1030,
+          "label": "r13_v111_letter_murder8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-4. 해 질 무렵 / 등 관리함 — 혼자 가지 않는 길",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "098560874871408f43fc174dbff262d1aad7e98ae9778f271e08e3da700a388d",
+      "uid": "5e4d9afea282e5dc4e965fa9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S04|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D08_S04_L0016",
+      "file": "game/v111/newworld/d08.json",
+      "path": [
+        "replace",
+        "MS14_D08_S04_L0016",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 8,
+      "scene": "MS14_D08_S04",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D08_S04_L0016",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "너울 밑의 순찰대원 하나가 앞을 막는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1045,
+          "label": "r13_v111_letter_prevent8",
+          "guards": []
+        }
+      ],
+      "scene_title": "8-4. 해 질 무렵 / 등 관리함 — 혼자 가지 않는 길",
+      "source_hash": "dccf207d775ef3a7dc581ae8f3f9ab51f3a9812604ecdedc63bcea65e7809568",
+      "baseline_hash": "098560874871408f43fc174dbff262d1aad7e98ae9778f271e08e3da700a388d",
+      "uid": "ddb1f13dd3e9977e913e9b41",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|MS14_D08_S04|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_inn_change.rpy:54:17",
+      "file": "game/systems/room13_inn_change.rpy",
+      "path": [
+        3493,
+        3508
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_case_noticed",
+      "block": "r13_case_noticed",
+      "placement": "literal",
+      "ref": "game/systems/room13_inn_change.rpy:54:17",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "아빠…… 나 여기 있어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_inn_change.rpy",
+          "line": 54,
+          "label": "r13_case_noticed",
+          "guards": []
+        }
+      ],
+      "line": 54,
+      "scene_title": "r13_case_noticed",
+      "source_hash": "a9c983ee613d47d1ec413067b3a47e3525c4acde09e9944f5bef52aabe62c038",
+      "baseline_hash": "cf6525628d779490cc70974fff7d38ce767e1b5a70a6d022966d7ccac21ef88f",
+      "uid": "a59f726c1279003a5d4c821a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_case_noticed|rpy_literal|r13_case_noticed|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_inn_change.rpy:62:17",
+      "file": "game/systems/room13_inn_change.rpy",
+      "path": [
+        3906,
+        3935
+      ],
+      "origin": "rpy_literal",
+      "day": 7,
+      "scene": "r13_case_noticed",
+      "block": "r13_case_noticed",
+      "placement": "literal",
+      "ref": "game/systems/room13_inn_change.rpy:62:17",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "내가 할아버지를 때렸어. 할아버지가 안 놔줘서……",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_inn_change.rpy",
+          "line": 62,
+          "label": "r13_case_noticed",
+          "guards": []
+        }
+      ],
+      "line": 62,
+      "scene_title": "r13_case_noticed",
+      "source_hash": "a9c983ee613d47d1ec413067b3a47e3525c4acde09e9944f5bef52aabe62c038",
+      "baseline_hash": "58df99b4bdd09547fd5de85224e8ea9067a3173e28bee2cb2dd75fd9a534ce20",
+      "uid": "c8327cf7874542c5d2831f16",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|r13_case_noticed|rpy_literal|r13_case_noticed|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_bundle3.rpy:100:55",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        6319,
+        6342
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_b3_scale",
+      "block": "r13_b3_scale",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:100:55",
+      "when": null,
+      "speaker": "resident_eunho",
+      "kind": "dialogue",
+      "text": "……그래서, 저한테 무엇을 원하십니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 100,
+          "label": "r13_b3_scale",
+          "guards": []
+        }
+      ],
+      "line": 100,
+      "scene_title": "r13_b3_scale",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "863382e5c35959ecb31bceff401f6b44e23138abc63e1fb98b48437a1c0cf3ca",
+      "uid": "cf149b62201be71a76d1bdba",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_b3_scale|rpy_literal|r13_b3_scale|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

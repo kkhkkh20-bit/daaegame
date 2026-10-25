@@ -1,0 +1,142 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "bori_witness7:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "bori_witness7",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 7,
+      "scene": "bori_witness7",
+      "block": "bori_witness7",
+      "placement": "binding",
+      "ref": "bori_witness7:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "창고 문 앞에서 무엇을 보셨습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "laundry",
+        "person": "resident_bori",
+        "object": null
+      },
+      "scene_title": "bori_witness7",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "9a712183bd471deb6e79fe0b04466ba1c9dce14eb5904a76c097892e412f2cd4",
+      "uid": "99da970fcde5bda058c525b8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|bori_witness7|choice|bori_witness7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "bori_witness7:1",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "bori_witness7",
+        "options",
+        1,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 7,
+      "scene": "bori_witness7",
+      "block": "bori_witness7",
+      "placement": "binding",
+      "ref": "bori_witness7:1",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "기름통을 살핀다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "grand_ticket_spot_known",
+            true
+          ],
+          [
+            "evidence",
+            "NW_NUBI_TICKET",
+            false
+          ]
+        ],
+        "location": "laundry",
+        "person": null,
+        "object": "v111_drum"
+      },
+      "scene_title": "bori_witness7",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "112ab641aae5770eeca3bc963bd5f3819b1b47c0bf3ae16da9f566bd15f89d8e",
+      "uid": "7871b44ac32eaeb452c3d685",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|bori_witness7|choice|bori_witness7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "bori_witness7:2",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "bori_witness7",
+        "options",
+        2,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 7,
+      "scene": "bori_witness7",
+      "block": "bori_witness7",
+      "placement": "binding",
+      "ref": "bori_witness7:2",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "통 밑 홈을 들춘다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "grand_ticket_spot_known",
+            true
+          ],
+          [
+            "evidence",
+            "NW_NUBI_TICKET",
+            false
+          ]
+        ],
+        "location": "laundry",
+        "person": null,
+        "object": "v111_drum"
+      },
+      "scene_title": "bori_witness7",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "54849e5781dc8b0c8b01b936c0b19cf2b8480ed13d12ec09cc32f55d1d24b4c8",
+      "uid": "fac2da94061a71bfe9f764cf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|bori_witness7|choice|bori_witness7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

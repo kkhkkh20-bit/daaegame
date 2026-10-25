@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/winter_resident_inference.rpy:237:8",
+      "file": "game/winter_resident_inference.rpy",
+      "path": [
+        14351,
+        14368
+      ],
+      "origin": "rpy_inventory",
+      "day": 8,
+      "scene": "winter_buri_approach",
+      "block": "winter_buri_approach",
+      "placement": "literal",
+      "ref": "game/winter_resident_inference.rpy:237:8",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "어떻게 이야기를 이어 갈까?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_resident_inference.rpy",
+          "line": 237,
+          "label": "winter_buri_approach",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 237,
+      "scene_title": "winter_buri_approach",
+      "source_hash": "1ed66ae455193bcb5202f6cf9feb435bb81670119b4bc89cc73e28111c6b0ec3",
+      "baseline_hash": "df36a859990783cecf1e7eaea0026dd5ec22657eb8e1ac708af1a2bce4087290",
+      "uid": "3590d191ea3d206298a436a9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|winter_buri_approach|rpy_inventory|winter_buri_approach|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_resident_inference.rpy:239:38",
+      "file": "game/winter_resident_inference.rpy",
+      "path": [
+        14437,
+        14483
+      ],
+      "origin": "rpy_inventory",
+      "day": 8,
+      "scene": "winter_buri_approach",
+      "block": "winter_buri_approach",
+      "placement": "literal",
+      "ref": "game/winter_resident_inference.rpy:239:38",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "아내가 알아보던 일을 찾는 겁니다. 부리 씨가 데려갔다고 말하려는 게 아닙니다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_resident_inference.rpy",
+          "line": 239,
+          "label": "winter_buri_approach",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 239,
+      "scene_title": "winter_buri_approach",
+      "source_hash": "1ed66ae455193bcb5202f6cf9feb435bb81670119b4bc89cc73e28111c6b0ec3",
+      "baseline_hash": "12f9c7b64e5dc6fd9b14f86d9b16b59318e5e9ac6ca572bddbadf3f2580486a0",
+      "uid": "0d4546a5849f84e08fb877f5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|winter_buri_approach|rpy_inventory|winter_buri_approach|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D07_NC01",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "nubi_children_received7",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "nubi_children_received7",
+      "block": "nubi_children_received7",
+      "placement": "blocks",
+      "ref": "nubi_children_received7",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "사자 선생님이 세 아이의 이름을 하나씩 불러 확인한다. 아이들이 교실 안으로 들어간다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 504,
+          "label": "r13_v111_nubi_children_received7",
+          "guards": []
+        }
+      ],
+      "scene_title": "nubi_children_received7",
+      "source_hash": "125349ce6970669a39ec06ae9d02d65fc96c6a61a0828d3288953ac3251f90ab",
+      "baseline_hash": "c844d6fa03d98b7334286e3aa8ba27a3cf54985775f8b5fa5d0ac1d7a8915e9f",
+      "uid": "27689b6b2b2c2a20923dbe88",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|nubi_children_received7|patch|nubi_children_received7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

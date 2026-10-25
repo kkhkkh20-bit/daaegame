@@ -1,0 +1,204 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_episodes.rpy:282:16",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        16486,
+        16530
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ep2_food",
+      "block": "r13_ep2_food",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:282:16",
+      "when": null,
+      "speaker": "nabi",
+      "kind": "dialogue",
+      "text": "어디서요? 이 마을에 남는 밥은 없어요. 다들 자기 먹을 것도 없다고 해요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 282,
+          "label": "r13_ep2_food",
+          "guards": []
+        }
+      ],
+      "line": 282,
+      "scene_title": "r13_ep2_food",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "54a842f9a02c4b49b4c161780b4f6aad1b53ad4fd372e5080ce5150ec46b8598",
+      "uid": "114711101819b2439769a227",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ep2_food|rpy_literal|r13_ep2_food|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_episodes.rpy:285:46",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        16663,
+        16711
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ep2_food",
+      "block": "r13_ep2_food",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:285:46",
+      "when": null,
+      "speaker": "resident_eunho",
+      "kind": "dialogue",
+      "text": "일주일 치 말이오? 값은 정해진 대로 받습니다. 누가 먹을 건지는 묻지 않겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 285,
+          "label": "r13_ep2_food",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 285,
+      "scene_title": "r13_ep2_food",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "9fcc6a04c903f44677e027dc2796393c7ba1f8ef791759e2eeb626731f98aa85",
+      "uid": "03326e0974f68500decfa85c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ep2_food|rpy_literal|r13_ep2_food|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_episodes.rpy:295:46",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        17317,
+        17353
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ep2_food",
+      "block": "r13_ep2_food",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:295:46",
+      "when": null,
+      "speaker": "resident_musoe",
+      "kind": "dialogue",
+      "text": "굴 안에 말린 콩 자루가 있소. 솜이 몫만 남기고 가져가시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 295,
+          "label": "r13_ep2_food",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 295,
+      "scene_title": "r13_ep2_food",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "22ad98d60bea8ef5ca4bb425e2e4ab5e0545045196448e98adb98daccbe4ccc9",
+      "uid": "e11127ecaf08493c93508d0e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ep2_food|rpy_literal|r13_ep2_food|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_episodes.rpy:299:36",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        17586,
+        17624
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ep2_food",
+      "block": "r13_ep2_food",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:299:36",
+      "when": null,
+      "speaker": "nabi",
+      "kind": "dialogue",
+      "text": "사자 선생님이요? ……선생님은 좋은 분인데, 촌장님 눈치를 봐요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 299,
+          "label": "r13_ep2_food",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 299,
+      "scene_title": "r13_ep2_food",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "d6a14e222d0ae8c5f0b390342e733d4c80bf26421ff101879652f7061a7b2c8a",
+      "uid": "49c70663b5f44f0228eb0461",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ep2_food|rpy_literal|r13_ep2_food|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_episodes.rpy:303:36",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        17791,
+        17817
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_ep2_food",
+      "block": "r13_ep2_food",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:303:36",
+      "when": null,
+      "speaker": "nabi",
+      "kind": "dialogue",
+      "text": "그건 안 돼요. 다람이도 제 몫은 먹어야죠.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 303,
+          "label": "r13_ep2_food",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 303,
+      "scene_title": "r13_ep2_food",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "9abe7ba8a946bfb0c91cc34f102e0857edee58b93632ef43a41e748d81d53490",
+      "uid": "d7b44b2b2062624f90f63dc5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_ep2_food|rpy_literal|r13_ep2_food|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

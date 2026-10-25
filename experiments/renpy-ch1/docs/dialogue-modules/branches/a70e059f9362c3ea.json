@@ -1,0 +1,82 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_revision.rpy:88:336",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        4992,
+        5036
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_mother_intervention",
+      "block": "r13_mother_intervention",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:88:336",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "오늘 아침. 어제 받은 편지는 사건 전에 온 거였어. 다람이, 많이 다쳤어?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 88,
+          "label": "r13_mother_intervention",
+          "guards": []
+        }
+      ],
+      "line": 88,
+      "scene_title": "r13_mother_intervention",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "ac9ab9be8fb4fa37bdbb10089c38a751259bae0af51996da0633b78abe57c949",
+      "uid": "11c9371a2dfd9c9688902482",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_mother_intervention|rpy_literal|r13_mother_intervention|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:89:26",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        5391,
+        5452
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_mother_intervention",
+      "block": "r13_mother_intervention",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:89:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "너울이 면회 시간을 적었다. 경비가 엄마에게 연구 원본을 내놓으라고 했다. 그러자 초롱이 앞을 가로막았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 89,
+          "label": "r13_mother_intervention",
+          "guards": []
+        }
+      ],
+      "line": 89,
+      "scene_title": "r13_mother_intervention",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "f92ea99825d9243bd51680c0658bba1b751be3027a33661780a84b35f1d8f214",
+      "uid": "7ea15c58cf49df5bc77b9353",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_mother_intervention|rpy_literal|r13_mother_intervention|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

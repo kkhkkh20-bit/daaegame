@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_AUD_D09_02",
+      "file": "game/v111/newworld/d09.json",
+      "path": [
+        "after",
+        "MS14_D09_P01_L0007",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 9,
+      "scene": "MS14_D09_P01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D09_P01_L0007",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "따닥이 쐐기를 박고 안전줄을 맨다. 문밖에 도토가 남은 것을 확인하고, 나는 따닥과 함께 통로 끝까지 갔다가 돌아온다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1280,
+          "label": "r13_v111_prevent_walk9",
+          "guards": []
+        }
+      ],
+      "scene_title": "9-P. 생존 대체 / 침입과 위조의 갈림길",
+      "source_hash": "b6ad6a05d63439df019e5608ab9fea79d40e75b4905df3194c837f0960463bb2",
+      "baseline_hash": "bc5f134fcbd2d2a57cc608ddd377e2e06b9b9e476e8e41d87b7d0dbac4292234",
+      "uid": "b6f9bbf1918f52a764fd1fca",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_P01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

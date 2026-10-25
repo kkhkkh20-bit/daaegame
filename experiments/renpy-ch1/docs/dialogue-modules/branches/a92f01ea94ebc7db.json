@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_AL_02",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "altar_lost14",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "altar_lost14",
+      "block": "altar_lost14",
+      "placement": "blocks",
+      "ref": "altar_lost14",
+      "when": "hyp_not_lose",
+      "speaker": null,
+      "kind": "narration",
+      "text": "쇠는 제단에 남는다. 학교에서 장작으로 버티는 겨울은 올해뿐이다. 다음 겨울에는 다시 돌을 태울 것이다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3041,
+          "label": "r13_v111_altar_lost14",
+          "guards": []
+        }
+      ],
+      "scene_title": "altar_lost14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "40faf24bff27829dbff18ef749bb0bcba35a917ae1d66c0a57671dfacb965cb8",
+      "uid": "185595db86425bcf4251f7c2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|altar_lost14|patch|altar_lost14|hyp_not_lose",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

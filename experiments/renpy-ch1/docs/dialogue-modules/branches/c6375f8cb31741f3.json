@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/winter_world.rpy:201:426",
+      "file": "game/winter_world.rpy",
+      "path": [
+        12973,
+        12987
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "winter_talk",
+      "block": "winter_talk",
+      "placement": "literal",
+      "ref": "game/winter_world.rpy:201:426",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "이유는 듣고 싶습니다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_world.rpy",
+          "line": 201,
+          "label": "winter_talk",
+          "guards": [
+            "if winter_target_id==\"granny\" and not winter_has(winter,\"inn_registered\"):"
+          ]
+        }
+      ],
+      "line": 201,
+      "scene_title": "winter_talk",
+      "source_hash": "ff8cbdb71b750feb8e520f298fe41851a94441ed8da76ec6008f6dc30ae61602",
+      "baseline_hash": "79bdccf4e48ef4535a9194d2ff337a5b0bde1bd4a746bfb5b325dbfea15601db",
+      "uid": "acab2ff309495ed9cd3f2089",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|winter_talk|rpy_inventory|winter_talk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_world.rpy:203:36",
+      "file": "game/winter_world.rpy",
+      "path": [
+        13261,
+        13299
+      ],
+      "origin": "rpy_inventory",
+      "day": 6,
+      "scene": "winter_talk",
+      "block": "winter_talk",
+      "placement": "literal",
+      "ref": "game/winter_world.rpy:203:36",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "수첩 첫 장은 달력으로 쓸래. 엄마 만나면 날짜에 동그라미 치게.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_world.rpy",
+          "line": 203,
+          "label": "winter_talk",
+          "guards": [
+            "if winter_target_id==\"granny\" and not winter_has(winter,\"inn_registered\"):"
+          ]
+        }
+      ],
+      "line": 203,
+      "scene_title": "winter_talk",
+      "source_hash": "ff8cbdb71b750feb8e520f298fe41851a94441ed8da76ec6008f6dc30ae61602",
+      "baseline_hash": "55dd246e167c6004eeb302215c22c240b5d1ba91dd8a2520493592949b26eb7d",
+      "uid": "a3d94ae4a56188827c4a381c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|winter_talk|rpy_inventory|winter_talk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

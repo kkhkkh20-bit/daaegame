@@ -1,0 +1,135 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13.rpy:479:20",
+      "file": "game/room13.rpy",
+      "path": [
+        25688,
+        25702
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_talk_dispatch",
+      "block": "r13_talk_dispatch",
+      "placement": "literal",
+      "ref": "game/room13.rpy:479:20",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "목격한 내용만 설명한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 479,
+          "label": "r13_talk_dispatch",
+          "guards": [
+            "if r13_topic==\"present\":",
+            "if r13_item:",
+            "if r13_item==\"E10\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 479,
+      "scene_title": "r13_talk_dispatch",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "ff0af99cfb4086f4108f67037435a2230aac25fc405411f48e839ce6928d93c3",
+      "uid": "1d3868df670c36bf9619b00d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_talk_dispatch|rpy_menu|r13_talk_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:481:20",
+      "file": "game/room13.rpy",
+      "path": [
+        25774,
+        25793
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_talk_dispatch",
+      "block": "r13_talk_dispatch",
+      "placement": "literal",
+      "ref": "game/room13.rpy:481:20",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "목격자인 밤이의 이름까지 밝힌다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 481,
+          "label": "r13_talk_dispatch",
+          "guards": [
+            "if r13_topic==\"present\":",
+            "if r13_item:",
+            "if r13_item==\"E10\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 481,
+      "scene_title": "r13_talk_dispatch",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "9db9611afc050a93f798344f73c3b615259351f9893c84ccca7352dc4f13d359",
+      "uid": "f6682f4c69e37bf28ff728bb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_talk_dispatch|rpy_menu|r13_talk_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:483:20",
+      "file": "game/room13.rpy",
+      "path": [
+        25864,
+        25879
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_talk_dispatch",
+      "block": "r13_talk_dispatch",
+      "placement": "literal",
+      "ref": "game/room13.rpy:483:20",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "기록을 보여 주지 않는다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 483,
+          "label": "r13_talk_dispatch",
+          "guards": [
+            "if r13_topic==\"present\":",
+            "if r13_item:",
+            "if r13_item==\"E10\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 483,
+      "scene_title": "r13_talk_dispatch",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "d2306dad49216f2e74c7b205b1281e26c9c6cb4af80e58b1e5345e7d282ab95e",
+      "uid": "7f44f216a05ae0742356ef22",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_talk_dispatch|rpy_menu|r13_talk_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

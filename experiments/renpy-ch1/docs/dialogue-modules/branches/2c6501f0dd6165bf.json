@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_new_places.rpy:276:30",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        16140,
+        16178
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_mom_hideout",
+      "block": "r13_mom_hideout",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:276:30",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "뿌리 밑 구멍은 그대로다. 접힌 담요 위에 눈이 조금 더 쌓였다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 276,
+          "label": "r13_mom_hideout",
+          "guards": [
+            "if r13_has(\"mom_hideout_found\"):"
+          ]
+        }
+      ],
+      "line": 276,
+      "scene_title": "r13_mom_hideout",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "fc751c1bf1542cc076481fdbbbd91686a6141639edfd2dde63f645d0f59d4fd6",
+      "uid": "99282766a50094e4e4b26766",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_mom_hideout|rpy_literal|r13_mom_hideout|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

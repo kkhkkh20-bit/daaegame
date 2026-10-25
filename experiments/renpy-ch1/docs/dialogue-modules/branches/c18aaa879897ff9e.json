@@ -1,0 +1,124 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:14:192",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        874,
+        930
+      ],
+      "origin": "rpy_literal",
+      "day": 2,
+      "scene": "r13_week2_opening",
+      "block": "r13_week2_opening",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:14:192",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "판결이 내려졌어도 아이에게 가는 길이 끝난 것은 아니었다. 옮겨질 사람들의 명단부터 찾아야 한다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 14,
+          "label": "r13_week2_opening",
+          "guards": [
+            "if room13[\"daram_state\"]==\"held\":"
+          ]
+        }
+      ],
+      "line": 14,
+      "scene_title": "r13_week2_opening",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "27f4bb71072495995a9f4a9605900efaa8cde98d4c35a7a6c505066ac464a8ac",
+      "uid": "c6cfb87d75dcebfade96c61a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_week2_opening|rpy_literal|r13_week2_opening|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:16:162",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        1127,
+        1149
+      ],
+      "origin": "rpy_literal",
+      "day": 2,
+      "scene": "r13_week2_opening",
+      "block": "r13_week2_opening",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:16:162",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "물 가져다줄까? 먼저 물어보고 줄게.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 16,
+          "label": "r13_week2_opening",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 16,
+      "scene_title": "r13_week2_opening",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "d15297f0a94296da200332dfea8ecc05c78ec188072c5ba85a18bdf98baecd94",
+      "uid": "156e6b27b1b30c85d8e005b2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_week2_opening|rpy_literal|r13_week2_opening|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:18:92",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        1312,
+        1358
+      ],
+      "origin": "rpy_literal",
+      "day": 2,
+      "scene": "r13_week2_opening",
+      "block": "r13_week2_opening",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:18:92",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "등불이 어두워진 건 나중이에요. 며칠 전부터 힘을 재는 바늘이 먼저 흔들렸어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 18,
+          "label": "r13_week2_opening",
+          "guards": []
+        }
+      ],
+      "line": 18,
+      "scene_title": "r13_week2_opening",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "27639cced33b5cdb19694eabd402b200f8c14075bd3c836f26cedc0e27dd28ef",
+      "uid": "61c4d80d5cc3d58782aaaa17",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_week2_opening|rpy_literal|r13_week2_opening|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

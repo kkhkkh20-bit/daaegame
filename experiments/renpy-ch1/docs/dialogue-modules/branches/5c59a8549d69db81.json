@@ -1,0 +1,126 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:264:43",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        14849,
+        14894
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_cv_night",
+      "block": "r13_cv_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:264:43",
+      "when": null,
+      "speaker": "resident_badook",
+      "kind": "dialogue",
+      "text": "명령서를 들고 있습니다. 이 명령서는 촌장님 글씨가 아닙니다. 회의를 엽시다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 264,
+          "label": "r13_cv_night",
+          "guards": [
+            "if r13_has(\"cv_badook_safe\"):"
+          ]
+        }
+      ],
+      "line": 264,
+      "scene_title": "r13_cv_night",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "44ed8baf10940fe5819f324d882e5f5f2e61b996e3ece0526971705539daf24c",
+      "uid": "be21780f761574698be3a210",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_cv_night|rpy_literal|r13_cv_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:268:33",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        15097,
+        15103
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_cv_night",
+      "block": "r13_cv_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:268:33",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "밀어라.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 268,
+          "label": "r13_cv_night",
+          "guards": [
+            "elif r13_has(\"cv_badook_witness\"):"
+          ]
+        }
+      ],
+      "line": 268,
+      "scene_title": "r13_cv_night",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "bb22808406783e7a283168dc6101eb04faa33d168724ee6a1e70326a94456446",
+      "uid": "9ef3863889c640067b17f76d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_cv_night|rpy_literal|r13_cv_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:272:33",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        15311,
+        15317
+      ],
+      "origin": "rpy_literal",
+      "day": 3,
+      "scene": "r13_cv_night",
+      "block": "r13_cv_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:272:33",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "밀어라.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 272,
+          "label": "r13_cv_night",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 272,
+      "scene_title": "r13_cv_night",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "bb22808406783e7a283168dc6101eb04faa33d168724ee6a1e70326a94456446",
+      "uid": "42fb25aa32baf75a4b4448fa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|r13_cv_night|rpy_literal|r13_cv_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

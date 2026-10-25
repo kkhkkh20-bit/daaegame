@@ -1,0 +1,4754 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D12_S04_L0001",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0001",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0001",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "아이들 돌봄은 방 안쪽에서 계속된다. 아빠·나비·선생님은 배식대에 남는다. 백 부인은 문 밖에서 보급 자루를 들고 있다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "37ee781a640c57472245765e107514c11ee161c92de0a478d002372d90960b15",
+      "uid": "35f444a64f08125eb38465cb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0002",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0002",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0002",
+      "when": null,
+      "speaker": "백 부인",
+      "kind": "dialogue",
+      "text": "내 재료라고들 하던데. 썩은 걸 내줬다는 거예요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1379,
+          "label": "r13_v111_meal_observations12",
+          "guards": [
+            "if r13_v111_actor_ready('resident_madam'):"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "44c71d2a7458cbc3ba9458c12b2f274e82f17e3067b9b18f0d19763376d8bc06",
+      "uid": "05ccc8aee145568059790066",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0003",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0003",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0003",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "재료부터 배식까지 같이 확인할 겁니다. 아직 누구라고 말하지 않았어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1380,
+          "label": "r13_v111_meal_observations12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "dc3ebe93c06d4cf860268e68559af00eef43f3ad7e1a552ea2173885e00226b3",
+      "uid": "49ee265432d1deba899afe23",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0004",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0004",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0004",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "저도 같은 자리에서 먹었어요. 저만 멀쩡하다고…….",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1381,
+          "label": "r13_v111_meal_observations12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ab1e42b6b9d864c5da853a38af82a8a91368f9ecbd0d8dce35ee98f19935e732",
+      "uid": "3a5355048c241f7013305abd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0005",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0005",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0005",
+      "when": null,
+      "speaker": "새미",
+      "kind": "dialogue",
+      "text": "안 먹었잖아.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1382,
+          "label": "r13_v111_meal_observations12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a524bfdc2e5575f27baea0d5a08b690cc101729e6ba3d0b37a2def1812bc1db1",
+      "uid": "f43f955a9457adf5670c924e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0006",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0006",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0006",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "네가 계속 나만 봤어?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1383,
+          "label": "r13_v111_meal_observations12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4cfc555b46dee8484fe5755025b4890fe6e6d95293278937ae2efb4b882a31f7",
+      "uid": "a5b4b87c98a97924f81028fb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0007",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0007",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0007",
+      "when": null,
+      "speaker": "새미",
+      "kind": "dialogue",
+      "text": "계속은 아니고. 내가 남길 때는 젓기만 했어.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1384,
+          "label": "r13_v111_meal_observations12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b629cb2dc0827b74b229de3e66f563af6495f099510a95dd4398f9ee291ac075",
+      "uid": "6e32a38097bf405412dfa3a4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0008",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0008",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0008",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "새미야. 그때 본 것만 얘기하면 돼.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1385,
+          "label": "r13_v111_meal_observations12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d0297dd1eaa20bcdd07e32a6ff8142aaa3d015bb64871d822eb7a4d08a2c670c",
+      "uid": "9b531173b1c12e377a492a66",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0009",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0009",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0009",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "입력: 빨간 그릇과 큰 냄비, 흰 그릇과 작은 냄비를 잇는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "80f2dd250967b9c3d91bf2d955b55c1152e1b89a42d3e8887a698ef809e9734e",
+      "uid": "81548cec68f423c696ecd598",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0010",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0010",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0010",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "선생님 건 내가 큰 데서 줬어요. 애들 건 작은 데서.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1386,
+          "label": "r13_v111_meal_observations12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7f40748427175888b6f0c2480d976ca277d6c84a099d55d36893c42d03b9dfb9",
+      "uid": "2d1a54b0cc9e024bab61ad54",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0011",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0011",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0011",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "같은 식탁에 앉은 건 맞아요. 같은 냄비에서 받지는 않았습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1389,
+          "label": "r13_v111_meal_observations12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "31d2247b30cff263900da25ad19952a25da362c98719e7bb9b68031a23b04657",
+      "uid": "c973a19a5661d3ca4c816d17",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0012",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0012",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0012",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "나누기 전에는 하나였잖아요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1390,
+          "label": "r13_v111_meal_observations12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fcfacd64de22aa1b3405fc757e68c5dfe82ef24ff91d51056a5d11485ec9a14a",
+      "uid": "f6141faa51ea8333d939639b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0013",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0013",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0013",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그래서 나눈 다음도 봐야 합니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1391,
+          "label": "r13_v111_meal_observations12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bb871eeb53374d9ca41fbd545672a64007ddca5bff26f6c9dfe4c696744003cb",
+      "uid": "f67224b708a77aaeb894c768",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0014",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0014",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0014",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "입력: 파편 회전. 비대칭 파손 경계 둘과 제조 이음선이 동시에 연결된다. 병과 조각은 동일 원본 형상으로 제작한다. 조작 뒤 ‘내용물 확인’이 아니라 ‘병 입구 연결’만 표시한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "52539261d179e1a7d36cd3061935caba552ff2a71fc8f90dd7a64a06df880a19",
+      "uid": "69014672e1494696d305941b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0015",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0015",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0015",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그릇 조각이 아니네요. 여기, 선생님 병 입구입니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1404,
+          "label": "r13_v111_bottle_matched12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4f526caa4208e1dd2cb6d6e57672dbbc9dab50ff3ba6c52c6224f72e72d04afc",
+      "uid": "4c30df38fa13eddb6eaa7bf1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0016",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0016",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0016",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "……부딪히긴 했어요. 떨어진 줄은 몰랐어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1405,
+          "label": "r13_v111_bottle_matched12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "210099afb4bb1d946370f634464d7b5adc6120cd5855898c253e9d44f5408d96",
+      "uid": "03b03fc0660a30d7e298f95c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0017",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0017",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0017",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이 병을 냄비에 댔습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1406,
+          "label": "r13_v111_bottle_matched12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "62464ba3a64371d2e29924f023106483e3ce750f148fb157aa819869734af188",
+      "uid": "49abc444ff944af2e4ed9461",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0018",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0018",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0018",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "물을 넣었어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1407,
+          "label": "r13_v111_bottle_matched12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "fc4f58cc389d346271cdaf792c94d19372bc41e72e71b50203c97492c60b12dd",
+      "uid": "2eb91089077f6d8f6b686ec6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0019",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0019",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0019",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "이 병으로요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1408,
+          "label": "r13_v111_bottle_matched12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ec29374ddbafb0339d83ef8a70601b77cea943beac2ae27f5794d44fd7cd78d1",
+      "uid": "dbe20d7de9cc7d552c735fc6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0020",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0020",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0020",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "약 다 쓴 병에 물 담으면 안 돼요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1409,
+          "label": "r13_v111_bottle_matched12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1379d29689664cf9d8f9f5628683ec722a5d85b82308c4389604b969fd1132f5",
+      "uid": "7bf984e1bd54003204013614",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0021",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0021",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0021",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "반박 입력: 약 표기 / 배식 그릇 / 준비 때 개봉 봉인. 약 표기만 제시하면 아빠는 빈 약병을 재사용할 수 있음을 인정한다. 봉인을 제시하면 앞서 실제로 본 원본만 재생한다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7d09af8d8bc30569979b455757b58028d6a4b34ec8c8851c6e6eb2569027e4eb",
+      "uid": "46e69c8c608a135102504603",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0022",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0022",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0022",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "제가 나갈 때는 이 종이가 마개하고 목에 이어져 있었어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1425,
+          "label": "r13_v111_seal_late12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "31283b312bb73aca1329c79d26c5f51c62bf1d49eb7faf939dfb1181ef954de6",
+      "uid": "ba1ff75b0389feb45300a787",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0023",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0023",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0023",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "그걸 보고 있었어요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1426,
+          "label": "r13_v111_seal_late12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4a5aa8a91b55d42fefaad10fbdbb0c0e2dc8085d3555fc104a96b53891309995",
+      "uid": "76407e8e05e316dc720fe5ce",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0024",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0024",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0024",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "안 깨졌는지 같이 봤죠. 예전에 열어 씻어 둔 병이었다는 말씀은 맞지 않아요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1427,
+          "label": "r13_v111_seal_late12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ac3ab6dc41e1fb387a23c826e9ff4a3eac2bf23392802717496829bc48d1b393",
+      "uid": "28dd58a3049b0ecc589042b4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0025",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0025",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0025",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "그 뒤에 비웠어요. 비우고 물 넣었어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1428,
+          "label": "r13_v111_seal_late12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c81d380035fee2b8d3c939910f4de396fcea419af6eb68600a054cf230c64a90",
+      "uid": "1bd7e3d1f29d210889815aa2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0026",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0026",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0026",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어디에 비웠고, 어디서 물을 받았습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1429,
+          "label": "r13_v111_seal_late12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "34b5a5bca874c2c0c65ef8ddb32711e785859dcf2e33d0ee9fb47f9173f4a28b",
+      "uid": "a07e7ca99bf41062a1fa893f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0027",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0027",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0027",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "씻는 데서요. 저기.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1430,
+          "label": "r13_v111_seal_late12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4b896ffa9a4fcdc051814ecce847248ea03d6c76bb911498d397b96c81748b57",
+      "uid": "7a9581c367f57d57cdf7e71d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0062",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0062",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0062",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "제가 운반함을 정리하기 전에는 이 종이가 마개하고 목에 이어져 있었어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1434,
+          "label": "r13_v111_seal_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "525e9c31734c05b255a841489f6741a4c90f67c267684fb00f6133edf810940f",
+      "uid": "d8b381fb45c45879c0fc1621",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0063",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0063",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0063",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "그걸 보고 있었어요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1435,
+          "label": "r13_v111_seal_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4a5aa8a91b55d42fefaad10fbdbb0c0e2dc8085d3555fc104a96b53891309995",
+      "uid": "fc4d41d8d6f2353d64ca23cb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0064",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0064",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0064",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "안 깨졌는지 같이 봤죠. 예전에 열어 씻어 둔 병이었다는 말씀은 맞지 않아요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1436,
+          "label": "r13_v111_seal_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ac3ab6dc41e1fb387a23c826e9ff4a3eac2bf23392802717496829bc48d1b393",
+      "uid": "58c0240798be04aa9bfa9766",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0065",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0065",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0065",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "그 뒤에 비웠어요. 비우고 물 넣었어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1437,
+          "label": "r13_v111_seal_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c81d380035fee2b8d3c939910f4de396fcea419af6eb68600a054cf230c64a90",
+      "uid": "26cc4bdf642ed2d42142ba79",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0066",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0066",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0066",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어디에 비웠고, 어디서 물을 받았습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1438,
+          "label": "r13_v111_seal_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "34b5a5bca874c2c0c65ef8ddb32711e785859dcf2e33d0ee9fb47f9173f4a28b",
+      "uid": "aee5eeee4221e046d6cb0eaa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0067",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0067",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0067",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "씻는 데서요. 저기.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1439,
+          "label": "r13_v111_seal_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4b896ffa9a4fcdc051814ecce847248ea03d6c76bb911498d397b96c81748b57",
+      "uid": "780c7af332cea82db463861d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0028",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0028",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0028",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "입력: 나비에게 질문. 나비의 기억을 아빠가 목격한 영화로 재생하지 않는다. 평면도의 관찰 범위에 대사가 붙는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7c19c6ea6e6668d39d878e3aad0aab870ee2a7e18af4841e2533c57c4f14947d",
+      "uid": "0627735001a9675cfecfdd22",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0029",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0029",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0029",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "제가 나간 다음부터 작은 냄비를 놓을 때까지 무슨 일이 있었어요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1450,
+          "label": "r13_v111_handling_late12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "227ddd8550eff6075382b90d3f77b29ba8e98cf8d633a2112886027cbf1c5497",
+      "uid": "30c70beb7d9a6d8d3d3be57d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0030",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0030",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0030",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "냄비 건네고, 흰 그릇 몇 개냐고 물었어요. 대답을 안 해서 다시 물었고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1451,
+          "label": "r13_v111_handling_late12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "afaffde599eae963067dda1be7a729a6a05833a5fd08b48828785071f14618cb",
+      "uid": "534b73aa1fd64fc31bfa5daa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0031",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0031",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0031",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "계속 보셨어요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1452,
+          "label": "r13_v111_handling_late12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c649e522219772b06b9d619740720c6c3eb3a9382a9fc168bfc382db05d960b3",
+      "uid": "6bf0aefd964aaa2b0ee431d9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0032",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0032",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0032",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "그 짧은 동안은요. 얼굴이랑 어깨. 손은 몸하고 저 판에 가렸고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1453,
+          "label": "r13_v111_handling_late12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f46d4ecc4ce95341e2426ec7fa4c362f5315566e7c9fd19a49e6e4e25bcf9354",
+      "uid": "1d85d3380cc94d1988e67e78",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0033",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0033",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0033",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "세척대까지 오셨습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1454,
+          "label": "r13_v111_handling_late12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d1e8fd9c4d12ad6b812c5e9ee31011dfe8c5d02ba1f9e40b3cec447c5b1f5b07",
+      "uid": "593d9ca8973fe4abefd98025",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0034",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0034",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0034",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "아뇨. 거기서 그릇 세고 있었어요. 그러다 딱, 소리가 났고. 천 위에 놓으라고 했어요. 그 뒤 꾸러미를 선반에 넣었죠.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1455,
+          "label": "r13_v111_handling_late12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bf5b01848a0ec33241a06ffd65e099250e89892196317045e23f8cd1db5dbc15",
+      "uid": "914f9ffbf5f38824c8c46b21",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0035",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0035",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0035",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다른 사람이 냄비에 갔습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1456,
+          "label": "r13_v111_handling_late12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2fd3de64eb859f296c6fa848fb722cdac3905ec670bda9b7f47d21790102d2d5",
+      "uid": "faf7a2ab37ef503fc0a586c3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0036",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0036",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0036",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "내가 건넨 뒤 그 대화 중에는 안 갔어요. 통로는 여기서 보여요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1457,
+          "label": "r13_v111_handling_late12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "df82f2fa39566ee6756e581964b222e1111fe0b0bef2669ca4e28187a36d79ef",
+      "uid": "ee27afaeab6468f65344e2c6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0037",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0037",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0037",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "물을 건네셨나요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1458,
+          "label": "r13_v111_handling_late12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e09cf1249967095dd3ae96eb7bc72ce87f2806c7adf6c79e400fe59fd8eab19c",
+      "uid": "3f3e77737e65ca433a78ba8c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0038",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0038",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0038",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "아니요. 주전자는 내가 썼어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1459,
+          "label": "r13_v111_handling_late12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "80260968fbd2d8956b4a4680916ea95638e3c2c6dade60b5f82d9adc452198a0",
+      "uid": "7321cab97d86adfaf3e7805b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0039",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0039",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0039",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "그쪽 말만 믿겠다는 거네요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1460,
+          "label": "r13_v111_handling_late12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f0530a29f8aea4244e5b12e43a4e80eee6badac31bc804950ae99e1a1106c962",
+      "uid": "3ac3ef98838718848f1fc8c8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0040",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0040",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0040",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "손을 못 봤다는 말도 같이 듣고 있습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1461,
+          "label": "r13_v111_handling_late12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "73b15d18d06e6c2ada5a66661f3b80846fdc0454e9b4accbc05d8c05e9d1b0cd",
+      "uid": "46460185dbf17ed277ee65e0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0068",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0068",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0068",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "제가 문 옆 운반함을 정리하는 동안 무슨 일이 있었어요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1465,
+          "label": "r13_v111_handling_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "44edfb17ed1fd94318b3504fe7dafc9b24c681a3e1405d2386890922153f2c0b",
+      "uid": "44c4c5b7d357da229b722dfc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0069",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0069",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0069",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "냄비 건네고, 흰 그릇 몇 개냐고 물었어요. 대답을 안 해서 다시 물었고.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1466,
+          "label": "r13_v111_handling_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "afaffde599eae963067dda1be7a729a6a05833a5fd08b48828785071f14618cb",
+      "uid": "7fcdb0d4733b760f432ee92b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0070",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0070",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0070",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "계속 보셨어요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1467,
+          "label": "r13_v111_handling_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "c649e522219772b06b9d619740720c6c3eb3a9382a9fc168bfc382db05d960b3",
+      "uid": "de21330e4c572646a4322d89",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0071",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0071",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0071",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "그 짧은 동안은요. 얼굴이랑 어깨. 손은 몸하고 저 판에 가렸고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1468,
+          "label": "r13_v111_handling_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f46d4ecc4ce95341e2426ec7fa4c362f5315566e7c9fd19a49e6e4e25bcf9354",
+      "uid": "37de08c4f5ceeb29dde586b5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0072",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0072",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0072",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "세척대까지 오셨습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1469,
+          "label": "r13_v111_handling_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d1e8fd9c4d12ad6b812c5e9ee31011dfe8c5d02ba1f9e40b3cec447c5b1f5b07",
+      "uid": "c9634d36d25fcd27596a56f9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0073",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0073",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0073",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "아뇨. 거기서 그릇 세고 있었어요. 그러다 딱, 소리가 났고. 천 위에 놓으라고 했어요. 그 뒤 꾸러미를 선반에 넣었죠.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1470,
+          "label": "r13_v111_handling_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bf5b01848a0ec33241a06ffd65e099250e89892196317045e23f8cd1db5dbc15",
+      "uid": "8f02dcb8341094b463f3c855",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0074",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0074",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0074",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다른 사람이 냄비에 갔습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1471,
+          "label": "r13_v111_handling_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "2fd3de64eb859f296c6fa848fb722cdac3905ec670bda9b7f47d21790102d2d5",
+      "uid": "a672bd649c2d1c20eaefe0dc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0075",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0075",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0075",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "내가 건넨 뒤 그 대화 중에는 안 갔어요. 통로는 여기서 보여요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1472,
+          "label": "r13_v111_handling_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "df82f2fa39566ee6756e581964b222e1111fe0b0bef2669ca4e28187a36d79ef",
+      "uid": "c7b35e5454936879924bf52c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0076",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0076",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0076",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "물을 건네셨나요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1473,
+          "label": "r13_v111_handling_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e09cf1249967095dd3ae96eb7bc72ce87f2806c7adf6c79e400fe59fd8eab19c",
+      "uid": "bb511de7b773c71a46287b1d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0077",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0077",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0077",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "아니요. 주전자는 내가 썼어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1474,
+          "label": "r13_v111_handling_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "80260968fbd2d8956b4a4680916ea95638e3c2c6dade60b5f82d9adc452198a0",
+      "uid": "0cb61a8ee30c82b44ac5833d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0078",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0078",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0078",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "그쪽 말만 믿겠다는 거네요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1475,
+          "label": "r13_v111_handling_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f0530a29f8aea4244e5b12e43a4e80eee6badac31bc804950ae99e1a1106c962",
+      "uid": "4548353e15af691363fe53ef",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0079",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0079",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0079",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "손을 못 봤다는 말도 같이 듣고 있습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1476,
+          "label": "r13_v111_handling_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "73b15d18d06e6c2ada5a66661f3b80846fdc0454e9b4accbc05d8c05e9d1b0cd",
+      "uid": "c40efca4714c10f62848f125",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0041",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0041",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0041",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "입력: 주장한 세척대 왕복 경로를 표시하고 처음 배식대 물건과 현재 보존물 대조. 별도 물·버리는 통은 없었다. 천·바닥의 상태도 그대로 보존한다. ‘마른 천이니 모든 가능성 배제’ 같은 판정 없음.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e1d38aa9bc6d23d85b915d237eb3ed043c1fa8a5d4487bb8d60f895699d0c0d1",
+      "uid": "06f118d3985f020dcc4653f7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0042",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0042",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0042",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "선생님은 저기서 물을 받았다는데, 나비 씨는 거기로 안 왔다고 합니다. 어느 쪽입니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1482,
+          "label": "r13_v111_medical_arrival12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "0e102036704b6fe2aaeb09d42d7a9af555370efa84c7f82bf3b9b7cbfc3fab8f",
+      "uid": "7a66d4ecfd94f1cd8888470b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0043",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0043",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0043",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "서리가 실제 도착해 아이들을 먼저 살핀 뒤 병을 본다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "97f2e33a456a97cd0e2b9e9ade946b95cdf8680add657ea29a12ac7356dc098c",
+      "uid": "03beb1ef5b1b21ff6843e4e6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0044",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0044",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0044",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "진료소 약의 표기예요. 병과 남은 수프 다 따로 두세요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1483,
+          "label": "r13_v111_medical_arrival12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "958a6ec9b3f57c61e7a0de50db50ade02cf3d9581cf4d85840874d2e975bf604",
+      "uid": "04e600b325e2e6352328f1b3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0045",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0045",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0045",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "병만으로 무엇이 들어갔는지 알 수 있습니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1484,
+          "label": "r13_v111_medical_arrival12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "818e1c7a6273af507b83fc2fbe079048f97d8d2a9805b3aef6782abe12f6fec0",
+      "uid": "a5626c054ad8f50320a77c5b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0046",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0046",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0046",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "그건 아니에요. 아이들이 먹은 건 따로 봐야 합니다. 언제 무엇을 줬는지 알아야 해요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1486,
+          "label": "r13_v111_medical_arrival12",
+          "guards": [
+            "if r13_v111_value('route12')=='late_exposure':"
+          ]
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "146d6495a3ff69a48f2ea29e7103cf78d5011f71814b2b35661746f1f26dcf25",
+      "uid": "57a9c161e4d30b777660b38a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0047",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0047",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0047",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "최종 입력: 작은 냄비의 파편과 병 / 온전했던 봉인과 재사용 설명 / 교사의 취급 구간과 세척대 진술. 세 항목은 이미 확인한 기록을 자유롭게 골라 결론에 놓는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "948dcdff009d9a59929886382a90cbcc8aa2d1c14b232795259996ff9257c906",
+      "uid": "5f6c4ea4151b980c110c060a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0048",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0048",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0048",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아이들 냄비에서 이 병 조각이 나왔어요. 물을 담았다는 설명도 맞지 않고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1512,
+          "label": "r13_v111_conclusion_late12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "b5b33530b630da7d07607891d1ef5a6a52adaf6e292630c8652e0c6ce7dabfec",
+      "uid": "30cebbf3a0002ceb3315ef70",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0049",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0049",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0049",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "…….",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1513,
+          "label": "r13_v111_conclusion_late12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7e428bfac963e979a36c34565ac48fb5ecee5c830adfb7369fe7ce653be4c521",
+      "uid": "a279389bee736ba460b2dbff",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0050",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0050",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0050",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "무엇을 넣었습니까. 지금 아이들을 보는 사람한테는 말해야 해요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1514,
+          "label": "r13_v111_conclusion_late12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1f18de657eeaedeae3717575a6f0c555e4ed4df8e20112fc159b1fc666b26445",
+      "uid": "192bdaa5044b0bfd524c616f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0080",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0080",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0080",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "아이들에게 줄 냄비에서 이 병 조각이 나왔어요. 물을 담았다는 설명도 맞지 않고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1523,
+          "label": "r13_v111_conclusion_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1ba09a1fb59094c2726d2f81220156cdff3272c04f47b4a75861a41a14de214c",
+      "uid": "0dda186b716424f642288619",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0081",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0081",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0081",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "…….",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1524,
+          "label": "r13_v111_conclusion_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7e428bfac963e979a36c34565ac48fb5ecee5c830adfb7369fe7ce653be4c521",
+      "uid": "7b2c7455e6c8a392b79b469a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0082",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0082",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0082",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "무엇을 넣었습니까. 지금 아이들을 보는 사람한테는 말해야 해요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1525,
+          "label": "r13_v111_conclusion_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1f18de657eeaedeae3717575a6f0c555e4ed4df8e20112fc159b1fc666b26445",
+      "uid": "2323a64b1918c87480c65f2d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0051",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0051",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0051",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "선생님은 서리를 보지 못하고 작은 냄비를 본다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "24db06f63d36ada19f6b7804b77f9c7b66b6e4f3322b9cd574f2253645408a5e",
+      "uid": "48632d6d534e811c17e1bc0b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0052",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0052",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0052",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "진료소에서 가져온 약이요. 병 안에 있던 걸…… 작은 냄비에 넣었어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1515,
+          "label": "r13_v111_conclusion_late12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a9dd94589dd172194c991751ad1876c0706d1614c7f2f86e0c1221434ab782df",
+      "uid": "0affb50bdaaeb3b26a2ccc76",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0053",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0053",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0053",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "언제요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1516,
+          "label": "r13_v111_conclusion_late12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9ef18b206072a36807e06e950138becc5f7fb2da1ee4d17cbb9b2819a496b9d4",
+      "uid": "b3adcd2444d6f465283063ab",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0054",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0054",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0054",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "아빠가 나가고. 그릇을 세라고 할 때.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1517,
+          "label": "r13_v111_conclusion_late12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5c5eb476c4bc0c9e797f5f8f3f30cf898ac892df1b44022a1ca7a7ed280ba6b8",
+      "uid": "5172b300f669bb637c0853e5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0055",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0055",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0055",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "잘못 들어간 겁니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1518,
+          "label": "r13_v111_conclusion_late12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f91ccbe7ec630a6d95ae3f9c6cb343ea963804e080bc24255eae6b02d8842102",
+      "uid": "69755f866624d4e161c94ef9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0056",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0056",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0056",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "아니요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1519,
+          "label": "r13_v111_conclusion_late12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "76731555bc6eccd9a5a1267537848ac216b28c623b8a4c579225c6ba7ecc0cc3",
+      "uid": "aea377e8c959525717da32fd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0083",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0083",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0083",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "선생님은 서리를 보지 못하고 작은 냄비를 본다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "24db06f63d36ada19f6b7804b77f9c7b66b6e4f3322b9cd574f2253645408a5e",
+      "uid": "f9998906f8fef41410f09303",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0084",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0084",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0084",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "진료소에서 가져온 약이요. 병 안에 있던 걸…… 작은 냄비에 넣었어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1528,
+          "label": "r13_v111_conclusion_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a9dd94589dd172194c991751ad1876c0706d1614c7f2f86e0c1221434ab782df",
+      "uid": "911030e2a0d41b203a5a1411",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0085",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0085",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0085",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "언제요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1529,
+          "label": "r13_v111_conclusion_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "9ef18b206072a36807e06e950138becc5f7fb2da1ee4d17cbb9b2819a496b9d4",
+      "uid": "466142bf68e28db481b27281",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0086",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0086",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0086",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "아빠가 운반함을 정리할 때. 그릇을 세라고 할 때.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1530,
+          "label": "r13_v111_conclusion_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "4617ac4497902bae4276c5dda49c8db4035b1462ad51e37879d8efd917eaa2da",
+      "uid": "b13a75ebd28545896c9466d3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0087",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0087",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0087",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "잘못 들어간 겁니까?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1531,
+          "label": "r13_v111_conclusion_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f91ccbe7ec630a6d95ae3f9c6cb343ea963804e080bc24255eae6b02d8842102",
+      "uid": "bafcac629f1055b98ce11fff",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0088",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0088",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0088",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "아니요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1532,
+          "label": "r13_v111_conclusion_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "76731555bc6eccd9a5a1267537848ac216b28c623b8a4c579225c6ba7ecc0cc3",
+      "uid": "ad9c354764c3a0b9590b89bb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0057",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0057",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0057",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "음악 없음. 선생님이 아이들 쪽으로 몸을 돌리자 나비가 한 발 앞에 선다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "350c32f0c8c7e5111494be649d1e142a1825bf18fab1a61014875c7be6e3a72c",
+      "uid": "20ce098a2b0d175844fbbfb9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0058",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0058",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0058",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "다시 춥다고 하지 않게 하려고. 아파하면서 기다리지 않게…… 내가 넣었어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1538,
+          "label": "r13_v111_confessed12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ab68d3ed175d83dc56192f7651f979128300e12b757d2f8217443d64176eb8d1",
+      "uid": "99a70d17f333fd69c2489e2e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0059",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0059",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0059",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다람이한테도 줄 거였어요? 애들한테 물어보긴 했냐고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1539,
+          "label": "r13_v111_confessed12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "294931a9c1b3f8c7a1a593d6764806e56f8b845f3256bcd8e5e8381d7fa7d716",
+      "uid": "60bbfcd60a9c68cbde9de1ed",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0060",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0060",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0060",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "그걸 어떻게 물어요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1540,
+          "label": "r13_v111_confessed12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "f527e61e5aa7d286a264c35cf7cfdf493267454f202159d6ddabbf4309f9343a",
+      "uid": "665c51e64b0d7daeb3b7d709",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0061",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0061",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0061",
+      "when": null,
+      "speaker": null,
+      "kind": "action",
+      "text": "고의 투입과 의도는 이 실제 진술로 새로 확인된다. 앞선 물증이 화학 성분이나 치사량을 증명했다는 연출을 하지 않는다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "8fb693443b7bcb2241c2c3955e7fc2b8963356d213651e43946cf3b7617e3e51",
+      "uid": "04d525936ea777335e72dad6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0089",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0089",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0089",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "약병이었던 건 맞아요. 하지만 빈 병에 물을 담았을 수도 있습니다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1573,
+          "label": "r13_v111_medicine_wrong12",
+          "guards": [
+            "if r13_nw_retry(\"soup\",['E12_FRAGMENT', 'E12_SEAL'],'선생님이 병을 감싼다. 파편과 봉인을 함께 놓아야 한다.'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1578,
+          "label": "r13_v111_medicine_wrong12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "bb1b879f04c6172753a048862b6d00d201db1c0b9f71e68ac341e8c980d879f8",
+      "uid": "a996c3a44baefb5f3a925d3e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0090",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0090",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0090",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "제 말이 그 말이에요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1573,
+          "label": "r13_v111_medicine_wrong12",
+          "guards": [
+            "if r13_nw_retry(\"soup\",['E12_FRAGMENT', 'E12_SEAL'],'선생님이 병을 감싼다. 파편과 봉인을 함께 놓아야 한다.'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1579,
+          "label": "r13_v111_medicine_wrong12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d1783346efd8857d618bce0068112842706dd45f3df0eba1b6073e46dcf66707",
+      "uid": "c86ed9f9eecb6f9a5b43c558",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0091",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0091",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0091",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "병 입구 조각은 맞습니다. 안에 뭘 담았는지는 더 봐야 해요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1584,
+          "label": "r13_v111_fragment_wrong12",
+          "guards": [
+            "if r13_nw_retry(\"soup\",['E12_FRAGMENT', 'E12_SEAL', 'E12_HANDLING'],'나비가 고개를 젓는다. 파편과 봉인, 냄비를 건넨 구간을 함께 놓아야 한다.'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1589,
+          "label": "r13_v111_fragment_wrong12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "de8a074a2f428b0285a4c7fecce086c15f4fdcd9a5625d7a946d7b470ae8940b",
+      "uid": "e70b6be0165115a4cd2ff1cd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0092",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0092",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0092",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "물을 넣었다고 했잖아요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1584,
+          "label": "r13_v111_fragment_wrong12",
+          "guards": [
+            "if r13_nw_retry(\"soup\",['E12_FRAGMENT', 'E12_SEAL', 'E12_HANDLING'],'나비가 고개를 젓는다. 파편과 봉인, 냄비를 건넨 구간을 함께 놓아야 한다.'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1590,
+          "label": "r13_v111_fragment_wrong12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "52a0282d4139ce5e89b2ed85663ffb5a650adc9243328ce7e351bcb5a8b4b795",
+      "uid": "b8bc21bad9d119fbb5da44a8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0093",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0093",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0093",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "처음 봤을 때 병이 어땠지. 나비 씨가 본 자리도 다시 보자.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1598,
+          "label": "r13_v111_soup_hint12",
+          "guards": []
+        },
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1602,
+          "label": "r13_v111_soup_hint_final12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "55403aee8c22f47014fa7cab736c783819488b38c04e5982194eedd477526568",
+      "uid": "24dd685190d033c11eda2898",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0094",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0094",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0094",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "작은 냄비는 애들한테 줄 거예요. 아직 아무 그릇에도 안 담았고요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1477,
+          "label": "r13_v111_handling_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "01f2598cafd3f50671cffd45b7ce5f3a79ea98673116093033dbcc19813717d6",
+      "uid": "8a1e356fcc588be38c4b8138",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0095",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0095",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0095",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "큰 것하고 작은 것, 둘 다 그대로 둡시다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1478,
+          "label": "r13_v111_handling_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "725749a5796fcfc366ec6cf57fe93bb8591e0bf58457d706127a61467e506ca2",
+      "uid": "b562bc7801349d65e194a569",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0096",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0096",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0096",
+      "when": null,
+      "speaker": "새미",
+      "kind": "dialogue",
+      "text": "선생님, 나 내일 가져올 책 뭐야?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1606,
+          "label": "r13_v111_aftermath_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "55e4c9c6ef0449c0498d1c6d4249a37574e8e4ed8aabe9629a4e6fbe9d3b2783",
+      "uid": "b3cf2b240b1798f0a3774473",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0097",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0097",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0097",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "……책장 맨 아래 거.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1607,
+          "label": "r13_v111_aftermath_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d56156caba81a2c24764eaf2e992384c165775118fc7f9445e248deb14cdc020",
+      "uid": "3d81211abc487ecd6c7b98fe",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0098",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0098",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0098",
+      "when": null,
+      "speaker": "새미",
+      "kind": "dialogue",
+      "text": "못 꺼내. 무거워.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1608,
+          "label": "r13_v111_aftermath_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "3ae7b442325f0999cb0e0687f01b103c4fc2d7b72fa930f8a9a4c88f02f13f42",
+      "uid": "466e7923976b65e13928d5c9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0099",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0099",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0099",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "나비 씨. 그 책…….",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1609,
+          "label": "r13_v111_aftermath_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "22b555672c2f9ae0ae012ccdab3148f48866acab8a63d430105cf500ab54741a",
+      "uid": "97181528686e4f350edf2cac",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0100",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0100",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0100",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "제가 꺼내 줄게요.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1610,
+          "label": "r13_v111_aftermath_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "e922a803dd49a3f7df7e8d0c6f27bbd86f2778d4538d4a349d39b3b6cb0a731e",
+      "uid": "90c058feac4bda915d7624c8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0101",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0101",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0101",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "내가 맡으면 여기서 감독하겠소. 아이들 곁에는 못 가게 하겠소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1612,
+          "label": "r13_v111_aftermath_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "7f7bbfa2140800893873de9e4038f89fe0a369c2d9f23c41f3b4d4da30a09b7a",
+      "uid": "60105ec1250b15a09287c06a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0102",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0102",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0102",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "내게 넘기면 공동 이송 대상으로 처리하겠소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1613,
+          "label": "r13_v111_aftermath_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "932d2ec15c2c39c80f29568b559e7c08a6d8e1757a6651dbd621f4651d06f88f",
+      "uid": "7deb827dabe09a5afa8f4a86",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0103",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0103",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0103",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "돌목 씨, 맡아 주세요. 아이들 곁에는 못 가게 해 주세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1621,
+          "label": "r13_v111_teacher_guard_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "79183146f820820b17dd711b50672fd9fe3a094960f5497f76ea2688a7afc777",
+      "uid": "c6ec6e5c84ee824c5a92b955",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0104",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0104",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0104",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "진료 공간 바깥에서 내가 맡겠소.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1622,
+          "label": "r13_v111_teacher_guard_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5262867ba90967737933a96fcdfcbb2571b093ab0873a82a5f9a44351ec266a5",
+      "uid": "9aebd9a75ad999569145a79a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0105",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0105",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0105",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "데려가세요. 아이들 곁엔 두고 싶지 않습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1627,
+          "label": "r13_v111_teacher_neoul_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "a6a1271b5ed2c09674d9f7bdcd72f322fdf0bc049dc0c79acac0b06b880b3efd",
+      "uid": "39ed536ffeb4953b5af17010",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0106",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0106",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0106",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "이송 명단에 올리겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1628,
+          "label": "r13_v111_teacher_neoul_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "ea0ba24cc817f1c96fadadaf6a963e55b8da352462accee17f15704016f32fb4",
+      "uid": "6e9bea218bf4843f9df2b9f5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0107",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0107",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0107",
+      "when": null,
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "어디로요?",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1629,
+          "label": "r13_v111_teacher_neoul_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [
+          null
+        ],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1f2a5c7bc10824be58747475148a2a3d0dd17fcbc946591445354edcb1bc8837",
+      "uid": "8af147a90964b39e4ab4d297",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0108",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0108",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0108",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "공동 이송이오.",
+      "editable": true,
+      "usage": "active",
+      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1630,
+          "label": "r13_v111_teacher_neoul_pre12",
+          "guards": []
+        }
+      ],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "1468c98b79bbb6dccbffe54cad2c78935525783557903dff326c8c71d2e125b8",
+      "uid": "42a09abd938d96729f5e86cb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0109",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0109",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0109",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "먹기 전에 막았다. 선생님을 누구에게 맡길까?",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "5abf663d9f3058343374a8097ac4df32b6e083eb7480a6fe0e1c0e11aae7d911",
+      "uid": "4a3a21a599bce628efc1e3ea",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D12_S04_L0110",
+      "file": "game/v111/records.json",
+      "path": [
+        "records",
+        "MS14_D12_S04_L0110",
+        "text"
+      ],
+      "origin": "base",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "text",
+      "ref": "MS14_D12_S04_L0110",
+      "when": null,
+      "speaker": "서리",
+      "kind": "dialogue",
+      "text": "병만 보고 내용물을 알 수는 없어요. 아직 먹지 않은 수프도 따로 두세요. 언제 무엇을 넣었는지 알아야 합니다.",
+      "editable": false,
+      "usage": "unused",
+      "note": "직접 대사 호출을 정적으로 찾지 못함. 진행 메모/미사용 원문일 수 있어 읽기 전용.",
+      "call_sites": [],
+      "activation": {
+        "replace_conditions": [],
+        "drop_conditions": []
+      },
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+      "baseline_hash": "d0289216f610b350d78c491657eb32f0967d291db5c62e1f19c46fceac3311e1",
+      "uid": "b2c30973218c768ce59674e1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|base|text|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

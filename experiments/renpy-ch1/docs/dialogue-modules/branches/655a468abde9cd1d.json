@@ -1,0 +1,89 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_evening.rpy:172:41",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        9385,
+        9412
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_ev_night_visit",
+      "block": "r13_ev_night_visit",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:172:41",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "따뜻해……. 아빠, 구운 밤 반은 아빠 거야.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 172,
+          "label": "r13_ev_night_visit",
+          "guards": [
+            "while _visit_turns>0:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 172,
+      "scene_title": "r13_ev_night_visit",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "01369ef18c52eb24168ae0ebccf03bb0e5b25a79559308f1e7ed60b231bd6493",
+      "uid": "7adb683c15dc61e74c620edc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_ev_night_visit|rpy_literal|r13_ev_night_visit|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:183:31",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        10067,
+        10097
+      ],
+      "origin": "rpy_literal",
+      "day": 1,
+      "scene": "r13_ev_night_visit",
+      "block": "r13_ev_night_visit",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:183:31",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(바둑이였다면 달랐을까. 경비도 사람마다 다르다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 183,
+          "label": "r13_ev_night_visit",
+          "guards": [
+            "while _visit_turns>0:",
+            "menu:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 183,
+      "scene_title": "r13_ev_night_visit",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "420b714c5ed90b8250598cabb21996b166b038dce3261cb8d54032d97afbd8b4",
+      "uid": "8417f3e6a937b4a0aa2c92f8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|r13_ev_night_visit|rpy_literal|r13_ev_night_visit|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

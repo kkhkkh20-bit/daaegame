@@ -1,0 +1,43 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:451:62",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        26996,
+        27014
+      ],
+      "origin": "rpy_literal",
+      "day": 2,
+      "scene": "r13_wf_meeting",
+      "block": "r13_wf_meeting",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:451:62",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "(작게) 이름 있어. 꼬미야.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 451,
+          "label": "r13_wf_meeting",
+          "guards": []
+        }
+      ],
+      "line": 451,
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "6a3353a958b14cc2d4deae1cf1298a36392a0056ff3af582b2bd19201f8a2e0f",
+      "uid": "4b024b5272e1946098374c4b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_wf_meeting|rpy_literal|r13_wf_meeting|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

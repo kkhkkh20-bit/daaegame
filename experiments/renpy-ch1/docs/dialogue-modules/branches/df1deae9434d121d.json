@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/winter_exploration.rpy:87:77",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        5999,
+        6025
+      ],
+      "origin": "rpy_inventory",
+      "day": 7,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:87:77",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "그래. 무엇을 확인하려 했는지부터 찾아보자.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 87,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "if winter_action_id==\"room_reason\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 87,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "3d96a00cd57b0904e541271e2eeb3f358b01ed834ad435679a5a5fffd226757b",
+      "uid": "874d9d58f955f8310be5e6f0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:111:87",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        7633,
+        7667
+      ],
+      "origin": "rpy_inventory",
+      "day": 7,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:111:87",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "불빛 말고 열이 남은 곳. 답장과 맞아. 입구를 찾아보자.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 111,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "elif winter_action_id==\"mother_reply_reason\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 111,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "024c6921ef2aa2003d8600c59353f9a134d2f6a9277009de4a2a35dc1481e7c5",
+      "uid": "f3a17069a5487b6b29f83965",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

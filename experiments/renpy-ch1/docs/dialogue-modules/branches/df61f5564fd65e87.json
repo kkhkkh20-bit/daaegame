@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D13_S02_A01",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "after",
+        "MS14_D13_S02_L0015",
+        5,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D13_S02_L0015",
+      "when": "listed:daram",
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "아이도 명단에 있소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1879,
+          "label": "r13_v111_gate_bench13",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "0fb184ebdad0542f00f56fb0c51b77165cad9d527e74719b97e74a98f48beec1",
+      "uid": "fd0a371891a3fad672e54382",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|patch|after|listed:daram",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D13_S02_A02",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "after",
+        "MS14_D13_S02_L0015",
+        6,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "MS14_D13_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D13_S02_L0015",
+      "when": "listed:daram",
+      "speaker": null,
+      "kind": "narration",
+      "text": "순찰대원이 다람의 손목 끈을 짐칸 고리에 건다. 나는 그 손을 쳐낸다. 너울은 눈도 깜박이지 않는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1879,
+          "label": "r13_v111_gate_bench13",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 13-2. 벤치 한 칸",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "5f1dcf24300c2524da6529fcc1321ffb89b596b5198abfdaba334c049dad88ac",
+      "uid": "e273517fa821bea0910bcf8f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|MS14_D13_S02|patch|after|listed:daram",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

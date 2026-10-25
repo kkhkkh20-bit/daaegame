@@ -1,0 +1,94 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/council_issue.rpy:167:53",
+      "file": "game/council_issue.rpy",
+      "path": [
+        7933,
+        7970
+      ],
+      "origin": "rpy_inventory",
+      "day": 3,
+      "scene": "council_open_issue",
+      "block": "council_open_issue",
+      "placement": "literal",
+      "ref": "game/council_issue.rpy:167:53",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "그 기록과 방을 숨긴 일이 어떻게 연결되는지 아직 모르겠습니다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/council_issue.rpy",
+          "line": 167,
+          "label": "council_open_issue",
+          "guards": [
+            "while not council_resolved():",
+            "elif council_action == \"present\":",
+            "if council_source_key == \"physical\":",
+            "if council_ev != \"cancel\":",
+            "else:"
+          ]
+        }
+      ],
+      "line": 167,
+      "scene_title": "council_open_issue",
+      "source_hash": "75101b1a3fdac648a2d081c61f6d6641e1bb93d9be94605bc39e707c5de0142b",
+      "baseline_hash": "83654eadbb7a284ab2c8e8deeb004e1723d71127664360c6f711391473a78fbb",
+      "uid": "ca79f511887cbda43e0ecbf5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|council_open_issue|rpy_inventory|council_open_issue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/council_issue.rpy:178:83",
+      "file": "game/council_issue.rpy",
+      "path": [
+        8955,
+        8975
+      ],
+      "origin": "rpy_inventory",
+      "day": 3,
+      "scene": "council_open_issue",
+      "block": "council_open_issue",
+      "placement": "literal",
+      "ref": "game/council_issue.rpy:178:83",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "…그건 내가 먼저 물었어야 했어.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/council_issue.rpy",
+          "line": 178,
+          "label": "council_open_issue",
+          "guards": [
+            "while not council_resolved():",
+            "elif council_action == \"present\":",
+            "elif council_source_key != \"cancel\":",
+            "if council_share:",
+            "if not council_public_allowed(council_record):"
+          ]
+        }
+      ],
+      "line": 178,
+      "scene_title": "council_open_issue",
+      "source_hash": "75101b1a3fdac648a2d081c61f6d6641e1bb93d9be94605bc39e707c5de0142b",
+      "baseline_hash": "1fb105434e9e3359c0cee3837265b679009a6d10f223f420e9d7f108f95b1c01",
+      "uid": "d0563c06c0e22d2661038745",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|council_open_issue|rpy_inventory|council_open_issue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

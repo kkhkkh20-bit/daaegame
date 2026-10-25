@@ -1,0 +1,123 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D03_S01_A01",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "after",
+        "MS14_D03_S01_L0016",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "MS14_D03_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D03_S01_L0016",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "지나가던 사람들이 꺼진 3번 등 앞에서 손바닥을 펴 보인다. “아르카 곁에서 쉬시오.” 누군가는 등이 꺼진 게 불길하다고 수군거린다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 832,
+          "label": "r13_v111_piko_dead3",
+          "guards": []
+        }
+      ],
+      "scene_title": "1. 아침 / 두 가지 약속의 끝",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "c744aafddd727716767d69c47ba9898c557486da55465a537bba8da8f3571cbd",
+      "uid": "c201ce7b74de8e26b435a125",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_RU_D03_E09_01",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "after",
+        "MS14_D03_S01_L0036",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "MS14_D03_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D03_S01_L0036",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "그림 속 아내는 무릎에 천을 펴 놓고 바늘을 쥐고 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 823,
+          "label": "r13_v111_piko_receive",
+          "guards": []
+        }
+      ],
+      "scene_title": "1. 아침 / 두 가지 약속의 끝",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "e0d97e04af75b2d711510a4075659a13a8c2ab16eb2acd4b3e695ac2acc012d4",
+      "uid": "7a2cd0806729c17e6c23708c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_RU_D03_E09_03",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "after",
+        "MS14_D03_S01_L9101",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "MS14_D03_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D03_S01_L9101",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "그림 속 아내는 무릎에 천을 펴 놓고 바늘을 쥐고 있다. 손까지는 다 그려져 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 834,
+          "label": "r13_v111_piko_dead3",
+          "guards": []
+        }
+      ],
+      "scene_title": "1. 아침 / 두 가지 약속의 끝",
+      "source_hash": "b1cc0e82547ca2bfc4ae9009fcf7cdefe43940153b18c55e6b4ab0dead5a5a82",
+      "baseline_hash": "739c62b6e5bd093012a51070b7908670e6071652ab34df0329705a010ee90c12",
+      "uid": "687e15482a90228fbb119c26",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

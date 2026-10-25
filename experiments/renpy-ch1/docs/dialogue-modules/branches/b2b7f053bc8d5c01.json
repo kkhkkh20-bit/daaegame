@@ -1,0 +1,249 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:277:36",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        15988,
+        16006
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_nt_night8",
+      "block": "r13_nt_night8",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:277:36",
+      "when": null,
+      "speaker": "resident_lamplighter",
+      "kind": "dialogue",
+      "text": "직접 전해 드린다고 했잖아요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 277,
+          "label": "r13_nt_night8",
+          "guards": [
+            "if r13_has(\"nt_chorong_safe\"):"
+          ]
+        }
+      ],
+      "line": 277,
+      "scene_title": "r13_nt_night8",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "3c7fcb3448816e17269282814433a521a4b63e2eb31ac3789234ee588f29f4f7",
+      "uid": "c07730516d55911942d3af77",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_nt_night8|rpy_literal|r13_nt_night8|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:279:36",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        16144,
+        16174
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_nt_night8",
+      "block": "r13_nt_night8",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:279:36",
+      "when": null,
+      "speaker": "resident_lamplighter",
+      "kind": "dialogue",
+      "text": "오늘 등은 같이 켜요. 저 혼자는 오늘 무서워서요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 279,
+          "label": "r13_nt_night8",
+          "guards": [
+            "if r13_has(\"nt_chorong_safe\"):"
+          ]
+        }
+      ],
+      "line": 279,
+      "scene_title": "r13_nt_night8",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "dc8a832fbcfd4e0c62c81d3d162eb00857d552f4f4c6837c8141313a1387c878",
+      "uid": "53ba2bb178fca82fd921d28a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_nt_night8|rpy_literal|r13_nt_night8|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:283:36",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        16449,
+        16481
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_nt_night8",
+      "block": "r13_nt_night8",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:283:36",
+      "when": null,
+      "speaker": "resident_lamplighter",
+      "kind": "dialogue",
+      "text": "미안해요……. 빼앗겼어요. 편지. 그분 글씨였는데…….",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 283,
+          "label": "r13_nt_night8",
+          "guards": [
+            "elif r13_has(\"nt_chorong_half\"):"
+          ]
+        }
+      ],
+      "line": 283,
+      "scene_title": "r13_nt_night8",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "830ddc0fe2e020f72b7947cae2c3f3c5d99cbae0ba26748028054b9c017c5f25",
+      "uid": "ed3c869dbfc2999ce9ec91d8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_nt_night8|rpy_literal|r13_nt_night8|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:300:26",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        17425,
+        17446
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_nt_night8",
+      "block": "r13_nt_night8",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:300:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "동쪽 등 하나가 켜졌다. 둘. 셋.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 300,
+          "label": "r13_nt_night8",
+          "guards": [
+            "else:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 300,
+      "scene_title": "r13_nt_night8",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "c0aac3e818855f4b7e05ca7d0fe38d2ed537f6714479802db71bb374676161b0",
+      "uid": "da22a74787b064a269281793",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_nt_night8|rpy_literal|r13_nt_night8|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:301:26",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        17475,
+        17503
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_nt_night8",
+      "block": "r13_nt_night8",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:301:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "광장 너머, 보호실의 작은 창에 불빛이 비쳤다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 301,
+          "label": "r13_nt_night8",
+          "guards": [
+            "else:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 301,
+      "scene_title": "r13_nt_night8",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "e6999c8aadf40fde05cb77a993fa076d8c5429ffbc775f0ac6a41d2c15c9e54a",
+      "uid": "d81cc5b7c2eec147e8e34b92",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_nt_night8|rpy_literal|r13_nt_night8|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:305:26",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        17692,
+        17709
+      ],
+      "origin": "rpy_literal",
+      "day": 6,
+      "scene": "r13_nt_night8",
+      "block": "r13_nt_night8",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:305:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "등은 그날 밤 꺼진 채였다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 305,
+          "label": "r13_nt_night8",
+          "guards": [
+            "else:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 305,
+      "scene_title": "r13_nt_night8",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "0f5c26e512456bdc1c8099069ca762be121be3d2f73b4793098904caad099ad6",
+      "uid": "09b4cd645f317f8b3d234187",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|r13_nt_night8|rpy_literal|r13_nt_night8|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

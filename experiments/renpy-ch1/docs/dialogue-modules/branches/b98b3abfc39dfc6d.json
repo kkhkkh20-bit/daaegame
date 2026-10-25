@@ -1,0 +1,290 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/winter_resident_inference.rpy:145:48",
+      "file": "game/winter_resident_inference.rpy",
+      "path": [
+        7582,
+        7621
+      ],
+      "origin": "rpy_inventory",
+      "day": 8,
+      "scene": "winter_present_to_resident",
+      "block": "winter_present_to_resident",
+      "placement": "literal",
+      "ref": "game/winter_resident_inference.rpy:145:48",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "안 본다고 했어. 치워. 내 이름을 그렇게 써 놓고 또 뭘 바라나?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_resident_inference.rpy",
+          "line": 145,
+          "label": "winter_present_to_resident",
+          "guards": [
+            "if winter_person_closed(winter,winter_proof_person):"
+          ]
+        }
+      ],
+      "line": 145,
+      "scene_title": "winter_present_to_resident",
+      "source_hash": "1ed66ae455193bcb5202f6cf9feb435bb81670119b4bc89cc73e28111c6b0ec3",
+      "baseline_hash": "55f1b74949064164a3597b73f8605b96d5bb1b711ca2fcfd9bbee33d586488bd",
+      "uid": "441a478dbe21c5fa395232e1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|winter_present_to_resident|rpy_inventory|winter_present_to_resident|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_resident_inference.rpy:151:38",
+      "file": "game/winter_resident_inference.rpy",
+      "path": [
+        8071,
+        8108
+      ],
+      "origin": "rpy_inventory",
+      "day": 8,
+      "scene": "winter_present_to_resident",
+      "block": "winter_present_to_resident",
+      "placement": "literal",
+      "ref": "game/winter_resident_inference.rpy:151:38",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "안쪽 길부터 살펴보셨군요. 어느 구간을 말씀하시는지 알겠습니다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_resident_inference.rpy",
+          "line": 151,
+          "label": "winter_present_to_resident",
+          "guards": [
+            "if not winter_prepared_before and winter_has(winter,\"transport_counter_prepared\"):"
+          ]
+        }
+      ],
+      "line": 151,
+      "scene_title": "winter_present_to_resident",
+      "source_hash": "1ed66ae455193bcb5202f6cf9feb435bb81670119b4bc89cc73e28111c6b0ec3",
+      "baseline_hash": "bf4ef60ac23743b9a1e999a5a4824d1df7cf7ab8672c65468a3be59b9e348313",
+      "uid": "7efe38a2cfee990bfdbb496d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|winter_present_to_resident|rpy_inventory|winter_present_to_resident|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_resident_inference.rpy:166:88",
+      "file": "game/winter_resident_inference.rpy",
+      "path": [
+        9321,
+        9352
+      ],
+      "origin": "rpy_inventory",
+      "day": 8,
+      "scene": "winter_present_to_resident",
+      "block": "winter_present_to_resident",
+      "placement": "literal",
+      "ref": "game/winter_resident_inference.rpy:166:88",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "부리는 기록을 읽다가 주위 사람들의 얼굴부터 살폈다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_resident_inference.rpy",
+          "line": 166,
+          "label": "winter_present_to_resident",
+          "guards": [
+            "if winter_proof_person==\"buri\" and \"mother_note\" in winter_proof_keys:",
+            "if not winter_private_conversation(winter,\"buri\"):"
+          ]
+        }
+      ],
+      "line": 166,
+      "scene_title": "winter_present_to_resident",
+      "source_hash": "1ed66ae455193bcb5202f6cf9feb435bb81670119b4bc89cc73e28111c6b0ec3",
+      "baseline_hash": "4dcb2e2556d78ea77ce03a2398c024701df29a405937766ccbe6903d504fd4f9",
+      "uid": "1d6de883e18c9404f8da764c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|winter_present_to_resident|rpy_inventory|winter_present_to_resident|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_resident_inference.rpy:168:108",
+      "file": "game/winter_resident_inference.rpy",
+      "path": [
+        9502,
+        9548
+      ],
+      "origin": "rpy_inventory",
+      "day": 8,
+      "scene": "winter_present_to_resident",
+      "block": "winter_present_to_resident",
+      "placement": "literal",
+      "ref": "game/winter_resident_inference.rpy:168:108",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "나한테 왔던 건 맞아. 하지만 내가 그분이랑 같이 뭘 했다는 식으로 말하진 마.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_resident_inference.rpy",
+          "line": 168,
+          "label": "winter_present_to_resident",
+          "guards": [
+            "if winter_proof_person==\"buri\" and \"mother_note\" in winter_proof_keys:"
+          ]
+        }
+      ],
+      "line": 168,
+      "scene_title": "winter_present_to_resident",
+      "source_hash": "1ed66ae455193bcb5202f6cf9feb435bb81670119b4bc89cc73e28111c6b0ec3",
+      "baseline_hash": "65c284a5f04b4c9f880c5b2dd7c47c7f1c23092b8d33f61253d23bd4c541af3d",
+      "uid": "af87b80e54927e51019118a9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|winter_present_to_resident|rpy_inventory|winter_present_to_resident|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_resident_inference.rpy:204:98",
+      "file": "game/winter_resident_inference.rpy",
+      "path": [
+        12247,
+        12273
+      ],
+      "origin": "rpy_inventory",
+      "day": 8,
+      "scene": "winter_present_to_resident",
+      "block": "winter_present_to_resident",
+      "placement": "literal",
+      "ref": "game/winter_resident_inference.rpy:204:98",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "행방을 알려 드리려고 보여드린 건 아닙니다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_resident_inference.rpy",
+          "line": 204,
+          "label": "winter_present_to_resident",
+          "guards": [
+            "if winter_proof_person in (\"seryeon\",\"guard\",\"neoul\") and winter_proof_keys.intersection({\"mother_help\",\"mother_reply\",\"research\"}):",
+            "else:"
+          ]
+        }
+      ],
+      "line": 204,
+      "scene_title": "winter_present_to_resident",
+      "source_hash": "1ed66ae455193bcb5202f6cf9feb435bb81670119b4bc89cc73e28111c6b0ec3",
+      "baseline_hash": "2a25c3dcd223ab575c54612355bab7a0c86b444aea174158701c6b498eb90250",
+      "uid": "c119c30abd2189a2aa0e1613",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|winter_present_to_resident|rpy_inventory|winter_present_to_resident|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_resident_inference.rpy:210:98",
+      "file": "game/winter_resident_inference.rpy",
+      "path": [
+        12763,
+        12777
+      ],
+      "origin": "rpy_inventory",
+      "day": 8,
+      "scene": "winter_present_to_resident",
+      "block": "winter_present_to_resident",
+      "placement": "literal",
+      "ref": "game/winter_resident_inference.rpy:210:98",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "이름도 알려 준 거야?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_resident_inference.rpy",
+          "line": 210,
+          "label": "winter_present_to_resident",
+          "guards": [
+            "if winter_proof_person in (\"seryeon\",\"guard\") and \"witness\" in winter_proof_keys:",
+            "if winter_disclosure_named:",
+            "if winter[\"witness\"]==\"available\":"
+          ]
+        }
+      ],
+      "line": 210,
+      "scene_title": "winter_present_to_resident",
+      "source_hash": "1ed66ae455193bcb5202f6cf9feb435bb81670119b4bc89cc73e28111c6b0ec3",
+      "baseline_hash": "73ec3d4bf1657507c3d81d1b86e3b443bb3600c82dd6452788542a88a80dfd0c",
+      "uid": "c7a0a2bec34bc2147f827334",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|winter_present_to_resident|rpy_inventory|winter_present_to_resident|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_resident_inference.rpy:226:38",
+      "file": "game/winter_resident_inference.rpy",
+      "path": [
+        13761,
+        13803
+      ],
+      "origin": "rpy_inventory",
+      "day": 8,
+      "scene": "winter_present_to_resident",
+      "block": "winter_present_to_resident",
+      "placement": "literal",
+      "ref": "game/winter_resident_inference.rpy:226:38",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "적힌 양과 받은 양이 다르군요. 바꾼 기록이 있는지 원본을 봐야겠습니다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_resident_inference.rpy",
+          "line": 226,
+          "label": "winter_present_to_resident",
+          "guards": [
+            "if winter_proof_person==\"seryeon\" and {\"ration_notice\",\"kitchen_receipt\"}<=winter_proof_keys:"
+          ]
+        }
+      ],
+      "line": 226,
+      "scene_title": "winter_present_to_resident",
+      "source_hash": "1ed66ae455193bcb5202f6cf9feb435bb81670119b4bc89cc73e28111c6b0ec3",
+      "baseline_hash": "ae5f493d45bd161ce3dbcb9276bb29da13df12485e37e8ff7f7951dcef65e55e",
+      "uid": "14b05ebe6c0848887f790cf4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|winter_present_to_resident|rpy_inventory|winter_present_to_resident|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

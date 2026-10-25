@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_owl_buri.rpy:135:44",
+      "file": "game/systems/room13_owl_buri.rpy",
+      "path": [
+        7465,
+        7488
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_tok_after_doubt",
+      "block": "r13_tok_after_doubt",
+      "placement": "literal",
+      "ref": "game/systems/room13_owl_buri.rpy:135:44",
+      "when": null,
+      "speaker": "resident_tok",
+      "kind": "dialogue",
+      "text": "……알겠어요. 그 말은 기억해 둘게요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_owl_buri.rpy",
+          "line": 135,
+          "label": "r13_tok_after_doubt",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 135,
+      "scene_title": "r13_tok_after_doubt",
+      "source_hash": "db5bd71cd78f8a37555c256d5aa1064675f5c6d6a3560b1af22518f20f98d9e9",
+      "baseline_hash": "c9238bb1f081ca9d28c66439d5866a749df1ce2fdb95b37f4e52c7bc67ab17cd",
+      "uid": "b3e5006b7218ff5362f428a3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_tok_after_doubt|rpy_literal|r13_tok_after_doubt|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_owl_buri.rpy:138:44",
+      "file": "game/systems/room13_owl_buri.rpy",
+      "path": [
+        7632,
+        7658
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_tok_after_doubt",
+      "block": "r13_tok_after_doubt",
+      "placement": "literal",
+      "ref": "game/systems/room13_owl_buri.rpy:138:44",
+      "when": null,
+      "speaker": "resident_tok",
+      "kind": "dialogue",
+      "text": "기록은 기록이지요. 나도 그 정도는 압니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_owl_buri.rpy",
+          "line": 138,
+          "label": "r13_tok_after_doubt",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 138,
+      "scene_title": "r13_tok_after_doubt",
+      "source_hash": "db5bd71cd78f8a37555c256d5aa1064675f5c6d6a3560b1af22518f20f98d9e9",
+      "baseline_hash": "b205c7991eee7b72c1d2df00903395c311d83752f07f49d8c4bb794f36df90f6",
+      "uid": "98341cdd369788f0e8140139",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_tok_after_doubt|rpy_literal|r13_tok_after_doubt|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

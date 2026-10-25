@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events.rpy:435:15",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        22889,
+        22908
+      ],
+      "origin": "rpy_literal",
+      "day": 5,
+      "scene": "r13_ev_c_mungchi",
+      "block": "r13_ev_c_mungchi",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:435:15",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "뭉치야, 여기서 뭘 찾고 있니?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 435,
+          "label": "r13_ev_c_mungchi",
+          "guards": []
+        }
+      ],
+      "line": 435,
+      "scene_title": "r13_ev_c_mungchi",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "10795cd97c0dc1b2d773a6148cc1710fd6ed8b1b906beac8230f848415e031f7",
+      "uid": "dc618f3152009bd7e2337965",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|r13_ev_c_mungchi|rpy_literal|r13_ev_c_mungchi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

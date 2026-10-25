@@ -1,0 +1,82 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_week1_cases.rpy:249:18",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        14245,
+        14277
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_w1c_fake_night",
+      "block": "r13_w1c_fake_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:249:18",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "잠깐 볼일이 있어서 나가요. 아이는 방에 있게 하세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 249,
+          "label": "r13_w1c_fake_night",
+          "guards": []
+        }
+      ],
+      "line": 249,
+      "scene_title": "r13_w1c_fake_night",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "39170385f28e636308a31c73d168e49dab9d60acb4f085174791a24fdc016d4e",
+      "uid": "56f5da8272f5928ce8da6d6f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_w1c_fake_night|rpy_literal|r13_w1c_fake_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:261:38",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        14973,
+        15013
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_w1c_fake_night",
+      "block": "r13_w1c_fake_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:261:38",
+      "when": null,
+      "speaker": "resident_owlgp",
+      "kind": "dialogue",
+      "text": "할머니가 초소 쪽으로 가는 걸 봤소. 오늘 밤은 여기 오지 않겠구려.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 261,
+          "label": "r13_w1c_fake_night",
+          "guards": []
+        }
+      ],
+      "line": 261,
+      "scene_title": "r13_w1c_fake_night",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "e4c03c568cc615cb65cb58219e87c632b6f0d69bb21a716f014766463b5126a6",
+      "uid": "7da5d3d1c9abe54344b7bf07",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_w1c_fake_night|rpy_literal|r13_w1c_fake_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

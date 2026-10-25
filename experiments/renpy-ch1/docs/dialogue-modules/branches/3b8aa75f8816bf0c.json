@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D13_MW01",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "momo_walk13",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "momo_walk13",
+      "block": "momo_walk13",
+      "placement": "blocks",
+      "ref": "momo_walk13",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "모모를 부축해 학교로 향한다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2308,
+          "label": "r13_v111_momo_school13",
+          "guards": []
+        }
+      ],
+      "scene_title": "momo_walk13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "7a3fb69261c01ee3c4d7a94247b1686b06514525e0b767dd073d759ce4548759",
+      "uid": "359054ea9fea347ccc77ce8c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|momo_walk13|patch|momo_walk13|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

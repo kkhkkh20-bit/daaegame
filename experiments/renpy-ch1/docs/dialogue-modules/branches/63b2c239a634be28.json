@@ -1,0 +1,129 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_WN_R10",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "wild_road_help14",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "wild_road_help14",
+      "block": "wild_road_help14",
+      "placement": "blocks",
+      "ref": "wild_road_help14",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "돌목 씨, 같이 가요. 불 곁에 있으면 안 돼요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3698,
+          "label": "r13_v111_wild_road14",
+          "guards": [
+            "if _return==0:"
+          ]
+        }
+      ],
+      "scene_title": "wild_road_help14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "b315ace315f53681f9f0ec93834ec1a0911e0550f783cfbb4dc3b733e647358a",
+      "uid": "f74ed0389345d9c14060361b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|wild_road_help14|patch|wild_road_help14|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_WN_R11",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "wild_road_help14",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "wild_road_help14",
+      "block": "wild_road_help14",
+      "placement": "blocks",
+      "ref": "wild_road_help14",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "장부에 없는 사람은…… 못 내보내오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3698,
+          "label": "r13_v111_wild_road14",
+          "guards": [
+            "if _return==0:"
+          ]
+        }
+      ],
+      "scene_title": "wild_road_help14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "0601c52cea5035763541fcc2707f58e7b5ff88acc7164bd00636ae2faceb117e",
+      "uid": "a04d91ee205fd30fe183011c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|wild_road_help14|patch|wild_road_help14|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_WN_R12",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "wild_road_help14",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "wild_road_help14",
+      "block": "wild_road_help14",
+      "placement": "blocks",
+      "ref": "wild_road_help14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "돌목이 초소 안으로 물러나 문을 닫는다. 빗장 거는 소리가 난다. 아래쪽 광장에서 사람들이 산길로 올라온다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3698,
+          "label": "r13_v111_wild_road14",
+          "guards": [
+            "if _return==0:"
+          ]
+        }
+      ],
+      "scene_title": "wild_road_help14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "abaa31e3c627bbca703e18de8e983848edf5545bdc5a05987b174fa6e981d17a",
+      "uid": "19a24414f891e2b725725bf2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|wild_road_help14|patch|wild_road_help14|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

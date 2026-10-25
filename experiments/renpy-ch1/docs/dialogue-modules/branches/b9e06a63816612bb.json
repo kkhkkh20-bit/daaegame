@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_LD_02",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "listed_down13",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "listed_down13",
+      "block": "listed_down13",
+      "placement": "blocks",
+      "ref": "listed_down13",
+      "when": "daram_listed_unhanded",
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람의 손목 끈을 바둑이가 푼다. 다람이 내 쪽으로 뛰어내린다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2356,
+          "label": "r13_v111_last_cart13",
+          "guards": []
+        }
+      ],
+      "scene_title": "listed_down13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "c1d40a72da54ee2c740ab228ad11d7616122d536e3ac5fb81e11025902e9291c",
+      "uid": "d2637fd81609e9d1edc93fa7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|listed_down13|patch|listed_down13|daram_listed_unhanded",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

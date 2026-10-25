@@ -1,0 +1,123 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_CN_OWL",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "cart_names13",
+        5,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "cart_names13",
+      "block": "cart_names13",
+      "placement": "blocks",
+      "ref": "cart_names13",
+      "when": "owl_listed_cart13",
+      "speaker": null,
+      "kind": "narration",
+      "text": "부엉이가 겉옷 품을 누르고 앉아 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2045,
+          "label": "r13_v111_cart_observed13",
+          "guards": []
+        }
+      ],
+      "scene_title": "cart_names13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "5f0a4891fce260ea66ace9af47f44f6949cb4b60f7f24c5a825865bd5db18b3a",
+      "uid": "3d6d61394cc0aa24f10a2c2e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|cart_names13|patch|cart_names13|owl_listed_cart13",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_DF13_OWL_LIST01",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "cart_names13",
+        6,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "cart_names13",
+      "block": "cart_names13",
+      "placement": "blocks",
+      "ref": "cart_names13",
+      "when": "owl_listed_cart13",
+      "speaker": null,
+      "kind": "narration",
+      "text": "명단에 적힌 이름에서 눈을 떼고 부엉이를 본다. 노인이 고개를 들 때까지 기다린다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2045,
+          "label": "r13_v111_cart_observed13",
+          "guards": []
+        }
+      ],
+      "scene_title": "cart_names13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "b09b4ce3c2b5172b94873813132aace11f09ef41893d51d79fee06c89c65af79",
+      "uid": "184e240f015b066c89eb21bf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|cart_names13|patch|cart_names13|owl_listed_cart13",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_DF13_OWL_LIST02",
+      "file": "game/v111/newworld/d13.json",
+      "path": [
+        "blocks",
+        "cart_names13",
+        7,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 13,
+      "scene": "cart_names13",
+      "block": "cart_names13",
+      "placement": "blocks",
+      "ref": "cart_names13",
+      "when": "owl_listed_cart13",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "어르신, 저 여기 있습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2045,
+          "label": "r13_v111_cart_observed13",
+          "guards": []
+        }
+      ],
+      "scene_title": "cart_names13",
+      "source_hash": "faf5b6194e266275374567b90d0f6f06fc4ac178a00af85a7382d20e5c15af78",
+      "baseline_hash": "c53456ea2471a909033f1c3b73ebdda8cda687f8f2efd160c3802e34e8161d7e",
+      "uid": "7c269f8c8cdd48fb1b9fc474",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d13|cart_names13|patch|cart_names13|owl_listed_cart13",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

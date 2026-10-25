@@ -1,0 +1,100 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_OP_D10_01",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_P01_L0085",
+        4,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_P01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_P01_L0085",
+      "when": "records_lose_prev_stone",
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "그리고…… 같은 말을 두 번씩 묻는 노인이오. 혼자 둘 수 없소. 이송 명단에 올리겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1811,
+          "label": "r13_v111_authority_wrong10",
+          "guards": [
+            "if r13_nw_retry(\"records\",['E06_CONTACT', 'E09_MAIL'],'부엉이가 손을 거둔다. 할머니에게 맡겼다는 말이 어디에 적혀 있는지부터 봐야 한다. 물자를 건넨 공개 기록과 우체국 기록을 함께 놓자.'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1816,
+          "label": "r13_v111_authority_wrong10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-P. 예방 대체 / 그 종이를 넘기기 전에",
+      "source_hash": "662dca5b8bc468185010c09a7dfb1668b1ea5e32eb2c8731e681e5c8ee9106df",
+      "baseline_hash": "697a995609a629ccadb0b69d75d56c324c68643cbd824a1a81dd5e056248deb9",
+      "uid": "fc9564f027813ce6829e1eb5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_P01|patch|after|records_lose_prev_stone",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OP_D10_02",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_P01_L0085",
+        6,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_P01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_P01_L0085",
+      "when": "records_lose_prev_stone",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "같은 말을 두 번 묻는 건 나이 탓일 수도 있습니다. 그걸로 사람을 보내지 마십시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1811,
+          "label": "r13_v111_authority_wrong10",
+          "guards": [
+            "if r13_nw_retry(\"records\",['E06_CONTACT', 'E09_MAIL'],'부엉이가 손을 거둔다. 할머니에게 맡겼다는 말이 어디에 적혀 있는지부터 봐야 한다. 물자를 건넨 공개 기록과 우체국 기록을 함께 놓자.'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1816,
+          "label": "r13_v111_authority_wrong10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-P. 예방 대체 / 그 종이를 넘기기 전에",
+      "source_hash": "662dca5b8bc468185010c09a7dfb1668b1ea5e32eb2c8731e681e5c8ee9106df",
+      "baseline_hash": "4b1ee4432a3857dc72c9fd9ee346d7586a73158b750ce4c4e41a770efdb5637e",
+      "uid": "163fcd9c2ae1a4a4205b4b22",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_P01|patch|after|records_lose_prev_stone",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

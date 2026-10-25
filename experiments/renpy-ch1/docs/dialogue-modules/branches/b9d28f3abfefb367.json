@@ -1,0 +1,47 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "NW_D14_MM07",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "end_memorial14",
+        8,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "end_memorial14",
+      "block": "end_memorial14",
+      "placement": "blocks",
+      "ref": "end_memorial14",
+      "when": "dead:resident_momo",
+      "speaker": null,
+      "kind": "narration",
+      "text": "모모 씨의 이름은 이름판 맨 아래에 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 2788,
+          "label": "r13_v111_memorial14",
+          "guards": [
+            "if r13_nw_dead():"
+          ]
+        }
+      ],
+      "scene_title": "end_memorial14",
+      "source_hash": "7cef9bcc1dcce558fe3b4dc47504c23126e43928c2cf9019f297997f1543be2b",
+      "baseline_hash": "dbb61460d39f3a47343a77e9404583c38dfdd589cca1eb52712c07c8b160e9c8",
+      "uid": "e3655befc360f75045c03ad3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|end_memorial14|patch|end_memorial14|dead:resident_momo",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

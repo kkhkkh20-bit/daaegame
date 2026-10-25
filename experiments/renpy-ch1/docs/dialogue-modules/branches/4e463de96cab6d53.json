@@ -1,0 +1,289 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "afternoon2:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "afternoon2",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 2,
+      "scene": "afternoon2",
+      "block": "afternoon2",
+      "placement": "binding",
+      "ref": "afternoon2:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "포대를 옮긴다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "piko_sacks2",
+            null
+          ]
+        ],
+        "location": "dining",
+        "person": "nabi",
+        "object": null
+      },
+      "scene_title": "afternoon2",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "66638ed4e61cad218ab983a808297292ef853c3ac0c3595a730de7585eadeeb9",
+      "uid": "c616241a159c84dfce8ab846",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|afternoon2|choice|afternoon2|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "afternoon2:1",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "afternoon2",
+        "options",
+        1,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 2,
+      "scene": "afternoon2",
+      "block": "afternoon2",
+      "placement": "binding",
+      "ref": "afternoon2:1",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "마른 천을 빌린다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "piko_cloth2",
+            null
+          ]
+        ],
+        "location": "inn",
+        "person": "granny",
+        "object": null
+      },
+      "scene_title": "afternoon2",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "44cfe2b02593674f827a8d0eb5776a98676357b481d5af87cfa83e1e16a7adac",
+      "uid": "d9fd189a6ba310b5bf23ec9a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|afternoon2|choice|afternoon2|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "afternoon2:2",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "afternoon2",
+        "options",
+        2,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 2,
+      "scene": "afternoon2",
+      "block": "afternoon2",
+      "placement": "binding",
+      "ref": "afternoon2:2",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "식당에 앉을 자리를 전한다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "piko_sacks2",
+            true
+          ],
+          [
+            "state",
+            "piko_cloth2",
+            true
+          ],
+          [
+            "state",
+            "piko_bench_clean2",
+            true
+          ]
+        ],
+        "location": "square",
+        "person": "resident_piko",
+        "object": null
+      },
+      "scene_title": "afternoon2",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "9fe1203be71ac9e67590e3047482763a2afc4569cb22ea2596fa4d836711aaba",
+      "uid": "393c9785530e75e921d7cc07",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|afternoon2|choice|afternoon2|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "afternoon2:3",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "afternoon2",
+        "options",
+        3,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 2,
+      "scene": "afternoon2",
+      "block": "afternoon2",
+      "placement": "binding",
+      "ref": "afternoon2:3",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "네로를 만나러 간다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "dining",
+        "person": "nabi",
+        "object": null
+      },
+      "scene_title": "afternoon2",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "312be8451276e01897550bdf9ce1f2b6745af15b725302730537d591fc1647b3",
+      "uid": "06ccedddbd52632e45ad6a7e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|afternoon2|choice|afternoon2|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "afternoon2:80",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "afternoon2",
+        "options",
+        4,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 2,
+      "scene": "afternoon2",
+      "block": "afternoon2",
+      "placement": "binding",
+      "ref": "afternoon2:80",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "벤치 표면을 살핀다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "piko_sacks2",
+            true
+          ],
+          [
+            "state",
+            "piko_bench_seen2",
+            null
+          ]
+        ],
+        "location": "dining",
+        "person": null,
+        "object": "table"
+      },
+      "scene_title": "afternoon2",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "e732d0911bb59619b2da30a3ad4d602b9d709c489131cd7db067521d0903c693",
+      "uid": "8983e59dfae708613d0f3e8d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|afternoon2|choice|afternoon2|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "afternoon2:81",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "afternoon2",
+        "options",
+        5,
+        "title"
+      ],
+      "origin": "choice",
+      "day": 2,
+      "scene": "afternoon2",
+      "block": "afternoon2",
+      "placement": "binding",
+      "ref": "afternoon2:81",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "천으로 벤치의 물감을 닦는다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [
+          [
+            "state",
+            "piko_bench_seen2",
+            true
+          ],
+          [
+            "state",
+            "piko_cloth2",
+            true
+          ],
+          [
+            "state",
+            "piko_bench_clean2",
+            null
+          ]
+        ],
+        "location": "dining",
+        "person": null,
+        "object": "table"
+      },
+      "scene_title": "afternoon2",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "4b3810b7b566c9c2a545d79601f127930f2fdef57685f25d56a67aec117d1fb5",
+      "uid": "c837384e0db2c0d496b92736",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|afternoon2|choice|afternoon2|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

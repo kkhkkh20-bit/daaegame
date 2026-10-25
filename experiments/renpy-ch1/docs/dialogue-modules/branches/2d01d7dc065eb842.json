@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/room13.rpy:698:102",
+      "file": "game/room13.rpy",
+      "path": [
+        40404,
+        40440
+      ],
+      "origin": "rpy_literal",
+      "day": 2,
+      "scene": "r13_link_reason",
+      "block": "r13_link_reason",
+      "placement": "literal",
+      "ref": "game/room13.rpy:698:102",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "그러니까 내가 잠깐 안 보였다는 것 말고는 아무것도 없잖아요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 698,
+          "label": "r13_link_reason",
+          "guards": [
+            "elif claim==\"C3\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 698,
+      "scene_title": "r13_link_reason",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "a206da65018f9a58a70367c375a0bf5860c3e673a1d69c5e891e3bc3b3d750dc",
+      "uid": "f4f7dd3044b0be78ad2627c4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_link_reason|rpy_literal|r13_link_reason|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:706:432",
+      "file": "game/room13.rpy",
+      "path": [
+        41259,
+        41296
+      ],
+      "origin": "rpy_literal",
+      "day": 2,
+      "scene": "r13_link_reason",
+      "block": "r13_link_reason",
+      "placement": "literal",
+      "ref": "game/room13.rpy:706:432",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "대답하지 않으셔도 됩니다. 지금까지 모은 자료로 판단하겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 706,
+          "label": "r13_link_reason",
+          "guards": [
+            "else:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 706,
+      "scene_title": "r13_link_reason",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "77ac3dcf7ab601678ae58755aa4c68a66cfa8b1174748775c6d0ae89e773547d",
+      "uid": "062ad0d3579b55595f4c81ab",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_link_reason|rpy_literal|r13_link_reason|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

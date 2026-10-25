@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "game/systems/room13_owl_buri.rpy:103:18",
+      "file": "game/systems/room13_owl_buri.rpy",
+      "path": [
+        5973,
+        5999
+      ],
+      "origin": "rpy_literal",
+      "day": 8,
+      "scene": "r13_owl_omen",
+      "block": "r13_owl_omen",
+      "placement": "literal",
+      "ref": "game/systems/room13_owl_buri.rpy:103:18",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "오늘은 방에서 쉬세요. 제가 가져다드릴게요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_owl_buri.rpy",
+          "line": 103,
+          "label": "r13_owl_omen",
+          "guards": []
+        }
+      ],
+      "line": 103,
+      "scene_title": "r13_owl_omen",
+      "source_hash": "db5bd71cd78f8a37555c256d5aa1064675f5c6d6a3560b1af22518f20f98d9e9",
+      "baseline_hash": "b1239b8107a7a405f7033cb901364bf34ba33169539fbcf55ac86d5b66d7efd4",
+      "uid": "4b97d8e8a6087842a0d24d78",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d08|r13_owl_omen|rpy_literal|r13_owl_omen|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

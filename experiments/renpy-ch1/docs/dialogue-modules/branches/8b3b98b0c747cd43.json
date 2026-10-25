@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "knife_permission:0",
+      "file": "game/v111/field-bindings.json",
+      "path": [
+        "knife_permission",
+        "options",
+        0,
+        "title"
+      ],
+      "origin": "choice",
+      "day": null,
+      "scene": "knife_permission",
+      "block": "knife_permission",
+      "placement": "binding",
+      "ref": "knife_permission:0",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "칼을 보여 달라고 요청한다",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [],
+      "activation": {
+        "guard": [],
+        "location": "square",
+        "person": "resident_siluk",
+        "object": null
+      },
+      "scene_title": "knife_permission",
+      "source_hash": "1f175b34df1e458f8b87c5afefc40649fb27c4dc717e7ef7cd6c3532b887f1dc",
+      "baseline_hash": "3da0585dfc0467338481ccae92754a171e7b4af97ba57234b1e0fc6aba76b6b5",
+      "uid": "8c9a8ab9bc23e1cc06ac7af1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|knife_permission|choice|knife_permission|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}
