@@ -5,7 +5,8 @@ import test_v111 as source_tests
 ROOT=source_tests.ROOT
 LAYER=ROOT/'game/room13_v111_newworld_text.rpy'
 # 2026-10-24: 대승리 장면(room13_v111_grand_win.rpy)도 같은 대사 층을 쓴다.
-DAYS=['room13_v111_days123.rpy','room13_v111_days45.rpy','room13_v111_days610.rpy','room13_v111_days1114.rpy','room13_v111_grand_win.rpy']
+# 2026-10-25: 부엉이 예방 장면(room13_v111_owl_prevent.rpy)도 같다.
+DAYS=['room13_v111_days123.rpy','room13_v111_days45.rpy','room13_v111_days610.rpy','room13_v111_days1114.rpy','room13_v111_grand_win.rpy','room13_v111_owl_prevent.rpy']
 SPEAKERS=ast.literal_eval(re.search(r'MS14_SPEAKERS = (\{.*?\})\n',(ROOT/'game/ms14_story.rpy').read_text(),re.S).group(1))
 # Later layers (init 310/311) add the day 4-14 speakers before the text layer (init 319) runs.
 for _m in re.finditer(r'MS14_SPEAKERS\.update\((\{.*?\})\)',(ROOT/'game/room13_v111_later_bindings.rpy').read_text()):SPEAKERS.update(ast.literal_eval(_m.group(1)))

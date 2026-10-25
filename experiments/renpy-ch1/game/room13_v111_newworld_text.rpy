@@ -142,8 +142,19 @@ init 319 python:
         "fire_partial":lambda:r13_v111_value("meeting:fire")=="partial",
         "fire_lose":lambda:r13_v111_value("meeting:fire")=="lose",
         # Events 06-07: the day-7 room 13 night and the day-10 meetings.
-        "prevention_a":lambda:r13_v111_value("prevention")=="A",
-        "prevention_b":lambda:r13_v111_value("prevention")=="B",
+        # 2026-10-25 부엉이 예방 1단계(OWL_PREVENTION_DESIGN.md 9장): 7일 A/B/C 메뉴를 걷고, 7일 낮 13호 난로의 돌(stone)
+        # 또는 도토의 다짐(promise)으로만 막는다. 다짐만 받은 판은 예전 B 판처럼 부엉이가 무너진 채 살아 8일 서리가 돌을 꺼낸다.
+        "prevention_b":lambda:r13_v111_value("prevention") in ("B","promise"),
+        "prevention_stone":lambda:r13_v111_value("prevention")=="stone",
+        "owl_fell7":lambda:r13_v111_value("OWL_ALIVE") is not False and r13_v111_value("prevention")!="stone",
+        "stove_untouched7":lambda:r13_v111_value("stove13_7") is None,
+        "stove_blue7":lambda:r13_v111_value("stove13_7") not in ("ration","empty"),
+        "stove_fixed7":lambda:r13_v111_value("stove13_7") in ("ration","empty"),
+        "stove_ration7":lambda:r13_v111_value("stove13_7")=="ration",
+        "stove_emptied7":lambda:r13_v111_value("stove13_7")=="empty",
+        # 결정 11(2026-10-25): 5일 밤 접시의 과자 봉지를 다람의 가방에 넣은 판. 아니면 과자는 첫날처럼 외투 안에 있다.
+        "snack_bagged5":lambda:r13_v111_value("snack_bagged5") is True,
+        "snack_unbagged5":lambda:r13_v111_value("snack_bagged5") is not True,
         "room13_win":lambda:r13_v111_value("meeting:room13")=="win",
         "room13_lose":lambda:r13_v111_value("meeting:room13")=="lose",
         "room13_not_win":lambda:r13_v111_value("meeting:room13") in ("partial","lose"),
@@ -151,11 +162,12 @@ init 319 python:
         "room13_partial_accident":lambda:r13_v111_value("meeting:room13")=="partial" and r13_v111_value("room13_partial_kind")=="accident",
         "records_partial":lambda:r13_v111_value("meeting:records")=="partial",
         "records_lose":lambda:r13_v111_value("meeting:records")=="lose",
-        # Review 0.20.1 3rd #1: the owl grabbed Daram's sleeve only in prevention A.
-        "records_lose_prev_a":lambda:r13_v111_value("meeting:records")=="lose" and r13_v111_value("prevention")=="A",
-        "records_lose_prev_b":lambda:r13_v111_value("meeting:records")=="lose" and r13_v111_value("prevention")!="A",
-        "records_partial_prev_a":lambda:r13_v111_value("meeting:records")=="partial" and r13_v111_value("prevention")=="A",
-        "records_partial_prev_b":lambda:r13_v111_value("meeting:records")=="partial" and r13_v111_value("prevention")!="A",
+        "records_lose_prev_b":lambda:r13_v111_value("meeting:records")=="lose" and r13_v111_value("prevention") in ("B","promise"),
+        "records_partial_prev_b":lambda:r13_v111_value("meeting:records")=="partial" and r13_v111_value("prevention") in ("B","promise"),
+        # 돌을 바꿔 부엉이가 무너지지 않은 판: 할머니가 너울에게 「같은 말을 두 번 묻는다」고 일러 명단 얘기가 나온다.
+        "records_lose_prev_stone":lambda:r13_v111_value("meeting:records")=="lose" and r13_v111_value("prevention")=="stone",
+        "records_partial_prev_stone":lambda:r13_v111_value("meeting:records")=="partial" and r13_v111_value("prevention")=="stone",
+        "records_lose_fell7":lambda:r13_v111_value("meeting:records")=="lose" and r13_v111_value("prevention")!="stone",
         # Event 08: the day-11 facility and the hypothesis meeting.
         "guldol_ready":lambda:r13_v111_actor_ready("resident_guldol"),
         "karo_ready":lambda:r13_v111_actor_ready("karo"),  # 0.20.9

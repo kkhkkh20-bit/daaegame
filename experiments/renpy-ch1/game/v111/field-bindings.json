@@ -877,6 +877,18 @@
         "title": "문과 창문 잠금을 확인한다",
         "location": "room13",
         "object": "window"
+      },
+      {
+        "title": "책상 접시를 본다",
+        "location": "room13",
+        "object": "bread",
+        "guard": [
+          [
+            "state",
+            "snack_bagged5",
+            null
+          ]
+        ]
       }
     ]
   },
@@ -2484,5 +2496,130 @@
         ]
       }
     ]
+  },
+  "free_day7": {
+    "location": "school",
+    "people": [
+      "nabi",
+      "resident_teacher",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "다람아, 이제 13호에 가 보자.",
+        "location": "school",
+        "person": "daram"
+      },
+      {
+        "title": "돌 바구니가 무거워 보입니다.",
+        "location": "hall",
+        "person": "doto",
+        "remember_read": true
+      },
+      {
+        "title": "아래서 누가 부르면 어떻게 하십니까?",
+        "location": "hall",
+        "person": "doto",
+        "guard": [
+          [
+            "state",
+            "doto_promise7",
+            null
+          ]
+        ]
+      },
+      {
+        "title": "난로를 살핀다",
+        "location": "room13",
+        "object": "v111_stove"
+      },
+      {
+        "title": "재받이를 들여다본다",
+        "location": "room13",
+        "object": "v111_ashbin",
+        "guard": [
+          [
+            "state",
+            "pocket_ration7",
+            null
+          ],
+          [
+            "state",
+            "stove13_7",
+            null
+          ]
+        ]
+      },
+      {
+        "title": "집게로 돌을 꺼내고, 주머니의 배급 돌을 넣는다",
+        "location": "room13",
+        "object": "v111_stove",
+        "guard": [
+          [
+            "state",
+            "tongs7",
+            true
+          ],
+          [
+            "state",
+            "pocket_ration7",
+            true
+          ],
+          [
+            "state",
+            "stove13_7",
+            null
+          ]
+        ]
+      },
+      {
+        "title": "집게 하나만 빌릴 수 있을까?",
+        "location": "workshop",
+        "person": "buri",
+        "guard": [
+          [
+            "state",
+            "tongs7",
+            null
+          ]
+        ]
+      },
+      {
+        "title": "집게로 돌을 꺼낸다",
+        "location": "room13",
+        "object": "v111_stove",
+        "guard": [
+          [
+            "state",
+            "tongs7",
+            true
+          ],
+          [
+            "state",
+            "pocket_ration7",
+            null
+          ],
+          [
+            "state",
+            "stove13_7",
+            null
+          ]
+        ]
+      }
+    ],
+    "people_by_location": {
+      "school": [
+        "nabi",
+        "resident_teacher",
+        "daram"
+      ],
+      "hall": [
+        "doto"
+      ],
+      "room13": [],
+      "workshop": [
+        "buri"
+      ]
+    }
   }
 }

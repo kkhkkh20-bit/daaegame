@@ -1335,14 +1335,6 @@
         "when": "records_lose"
       },
       {
-        "id": "NW_D10_P01_L04",
-        "speaker": "너울",
-        "kind": "dialogue",
-        "text": "그리고…… 아이를 붙잡은 노인이오. 이송 명단에 올리겠소.",
-        "expression": "neutral",
-        "when": "records_lose_prev_a"
-      },
-      {
         "id": "NW_D10_P01_L04B",
         "speaker": "너울",
         "kind": "dialogue",
@@ -1351,12 +1343,26 @@
         "when": "records_lose_prev_b"
       },
       {
+        "id": "NW_OP_D10_01",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "그리고…… 같은 말을 두 번씩 묻는 노인이오. 혼자 둘 수 없소. 이송 명단에 올리겠소.",
+        "when": "records_lose_prev_stone"
+      },
+      {
         "id": "NW_D10_P01_L05",
         "speaker": "서리",
         "kind": "dialogue",
         "text": "방 때문일 수도 있잖아요. 그걸로 사람을 보내지 마십시오.",
         "expression": "anxious",
-        "when": "records_lose"
+        "when": "records_lose_fell7"
+      },
+      {
+        "id": "NW_OP_D10_02",
+        "speaker": "서리",
+        "kind": "dialogue",
+        "text": "말을 두 번 묻는 건 나이 탓일 수도 있잖아요. 그걸로 사람을 보내지 마십시오.",
+        "when": "records_lose_prev_stone"
       },
       {
         "id": "NW_D10_P01_L06",
@@ -1399,20 +1405,19 @@
         "when": "records_partial"
       },
       {
-        "id": "NW_D10_P01_P02",
-        "speaker": "너울",
-        "kind": "dialogue",
-        "text": "기록은 가족이 받으시오. 대신 노인은 계속 지켜볼 사람으로 적겠소. 다시 아이를 붙잡으면…… 명단에 올리겠소.",
-        "expression": "neutral",
-        "when": "records_partial_prev_a"
-      },
-      {
         "id": "NW_D10_P01_P02B",
         "speaker": "너울",
         "kind": "dialogue",
         "text": "기록은 가족이 받으시오. 대신 노인은 계속 지켜볼 사람으로 적겠소. 다시 혼자 문을 걸어 잠그면…… 명단에 올리겠소.",
         "expression": "neutral",
         "when": "records_partial_prev_b"
+      },
+      {
+        "id": "NW_OP_D10_03",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "기록은 가족이 받으시오. 대신 노인은 지켜볼 사람으로 적겠소. 또 같은 말을 되풀이하면…… 명단이오.",
+        "when": "records_partial_prev_stone"
       },
       {
         "id": "NW_D10_P01_P03",

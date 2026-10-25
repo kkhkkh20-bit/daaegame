@@ -1652,7 +1652,14 @@
         "kind": "dialogue",
         "text": "한 방의 돌을 치우자, 무너지던 사람이 돌아왔습니다.",
         "expression": "neutral",
-        "when": "owl_alive"
+        "when": "owl_fell7"
+      },
+      {
+        "id": "NW_OP_D11_01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "한 방의 돌을 꺼내자, 그 앞에서 흐려지던 머리가 맑아졌습니다. 제 머리였습니다.",
+        "when": "prevention_stone"
       }
     ],
     "hyp5_won11": [
@@ -1673,14 +1680,6 @@
         "when": "owl_dead"
       },
       {
-        "id": "NW_H5_W_03",
-        "speaker": "아빠",
-        "kind": "dialogue",
-        "text": "7일 밤 13호 난로에서 이 돌을 꺼내 눈에 묻었습니다. 한참 뒤 어르신이 부리 이름을 또렷하게 불렀습니다.",
-        "expression": "neutral",
-        "when": "prevention_a"
-      },
-      {
         "id": "NW_H5_W_04",
         "speaker": "아빠",
         "kind": "dialogue",
@@ -1689,12 +1688,26 @@
         "when": "prevention_b"
       },
       {
+        "id": "NW_OP_D11_02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "7일 낮 13호 난로에 이 돌이 들어 있었습니다. 그 앞에 잠깐 앉았을 뿐인데, 하려던 일을 잊었습니다.",
+        "when": "prevention_stone"
+      },
+      {
         "id": "NW_H5_W_05",
         "speaker": "부엉이",
         "kind": "dialogue",
         "text": "……나는 그날 밤을 반밖에 기억 못 하오. 돌을 치운 뒤부터는…… 기억이 있소.",
         "expression": "neutral",
-        "when": "owl_alive"
+        "when": "owl_fell7"
+      },
+      {
+        "id": "NW_OP_D11_03",
+        "speaker": "부엉이",
+        "kind": "dialogue",
+        "text": "……그날 저녁 나는 바로 그 방에서 기다렸소. 저 돌이 그대로였다면…… 나도 무쇠처럼 되었겠지.",
+        "when": "prevention_stone"
       },
       {
         "id": "NW_H5_W_06",

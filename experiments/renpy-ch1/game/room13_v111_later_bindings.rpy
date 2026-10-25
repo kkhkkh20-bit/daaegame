@@ -117,8 +117,6 @@ init 314 python:
         "MS14_D07_S02":lambda:r13_v111_value("NUBI_admitted_setting_fire") is True,
         "MS14_D07_S03":lambda:r13_v111_value("D07_S02_handover_completed") is True,
         "MS14_D07_S04":lambda:r13_v111_value("route7")=="murder" and r13_v111_value("D07_S03_C_completed") is True,
-        "MS14_D07_P01":lambda:r13_v111_value("route7")=="prevented" and r13_v111_value("prevention")=="A",
-        "MS14_D07_P02":lambda:r13_v111_value("route7")=="prevented" and r13_v111_value("prevention")=="B",
         "MS14_D08_S01":lambda:r13_v111_value("route7")=="murder" and r13_v111_value("DARAM_DETAINED") is True,
         "MS14_D08_S02":lambda:r13_v111_value("route7")=="murder" and r13_v111_value("OWL_ALIVE") is False,
         "MS14_D08_S03":lambda:r13_v111_value("route7")=="murder" and r13_v111_owned("E08_ROOM"),

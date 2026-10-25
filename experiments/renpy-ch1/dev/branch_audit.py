@@ -37,7 +37,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 GAME = ROOT / 'game'
 SRC_SCENES = ROOT / 'docs/story-ms14/source/다람탐정_제작기준본01_대사연출조건.json'
-STORY_FILES = ('room13_v111_days123.rpy', 'room13_v111_days45.rpy', 'room13_v111_days610.rpy', 'room13_v111_days1114.rpy')
+STORY_FILES = ('room13_v111_days123.rpy', 'room13_v111_days45.rpy', 'room13_v111_days610.rpy', 'room13_v111_days1114.rpy', 'room13_v111_owl_prevent.rpy')
 ENTRY = 'r13_v111_start'
 
 # 한 조건을 판정할 때 펼쳐 보는 값 조합의 상한. 넘으면 그 조건은 「알 수 없음」.
@@ -91,7 +91,7 @@ FATE_WORDS = [
     ('fate_kkomi', ('lost',), r'타 버린 창고|꼬미(의)? (그릇|숟가락|빈자리)|꼬미(가|는|도)? ?(죽었|죽은|숨졌)'),
     ('fate_kkomi', ('saved',), r'빈 창고(만)? ?(탔|타|불)|아이 넷(을|이)? ?(다 )?(학교|데려|옮)'),
     ('fate_owl', ('lost',), r'부엉이(는|가)? ?죽었|노인을 죽게 한|부엉이를 친|(죽은|돌아가신) 부엉이'),
-    ('fate_owl', ('stay', 'take'), r'부엉이(가|는)? ?(살았|살아 있)|부엉이 어르신은 살아서'),
+    ('fate_owl', ('stone', 'promise'), r'부엉이(가|는)? ?(살았|살아 있)|부엉이 어르신은 살아서'),
     ('fate_nero', ('lost',), r'끊긴 등불|눈에 묻혀|네로(가|는|도)? ?(죽었|죽은|묻혔|못 돌아)'),
     ('fate_nero', ('handover', 'rescue'), r'셋 다 들어왔'),
     ('fate_soup', ('lost',), r'도담아[.,]? ?(불 켜졌어)?[.…, ]*일어나|도담(이)?(가|는)? ?(죽었|죽은|숨졌)'),

@@ -473,7 +473,8 @@ label r13_v111_nubi_children_school7:
     $ r13_v111_arrive(["nabi","resident_teacher","kid_nubi1","kid_nubi2","kid_nubi3"])
     # 2026-10-24 대승리 F3(GRAND_WIN_DESIGN.md 1-3): 5일 밤부터 다람의 가방에 든 과자. 다람이 곁에 있고
     # 숨긴 자리를 아직 모를 때만 다람에게 막내 이야기를 꺼낼 수 있다(표시 없이 다람의 질문 목록에 섞인다).
-    $ r13_v111_set("grand_snack_ready7",not r13_v111_value("DARAM_DETAINED") and r13_v111_value("location:daram") in (None,"school") and not r13_v111_value("grand_ticket_spot_known") and not r13_v111_value("grand_snack_given7"))
+    # 2026-10-25 결정 11: 5일 밤 과자 봉지를 가방에 넣어 둔 판에서만(그렇지 않으면 과자는 외투 안이라 막내 눈에 안 띈다).
+    $ r13_v111_set("grand_snack_ready7",r13_v111_value("snack_bagged5") is True and not r13_v111_value("DARAM_DETAINED") and r13_v111_value("location:daram") in (None,"school") and not r13_v111_value("grand_ticket_spot_known") and not r13_v111_value("grand_snack_given7"))
     jump r13_v111_nubi_children_receipt7
 
 label r13_v111_nubi_children_receipt7:
@@ -640,7 +641,8 @@ label r13_v111_school_names_done7:
     call r13_lines(r13_v111_lines(['MS14_D07_S02_L0044']),'v111:MS14_D07_S02_L0044')
     call r13_lines(r13_v111_lines(['MS14_D07_S02_L0045']),'v111:MS14_D07_S02_L0045')
     $ r13_v111_commit('MS14_D07_S02_L0046')
-    jump r13_v111_room_visit7
+    # 2026-10-25 부엉이 예방 1단계: 학교에서 곧장 저녁 13호로 가지 않고, 낮 자유 시간을 지도로 연다(room13_v111_owl_prevent.rpy).
+    jump r13_v111_free_day7
 
 # 2026-10-24 지시서 02 감정선(도담): 학교 점심에 도담이 다람에게 제 숟가락을 빌려준다(아빠 숟가락은 자기가 들고 다닌다).
 # 12일 배식 장면과 그 저녁 창가가 이 숟가락을 비춘다. 보리의 손은 불을 끄다 덴 판에만 다쳤다(bori_burned6).
@@ -680,6 +682,9 @@ label r13_v111_room_visit7:
     call r13_lines(r13_v111_lines(['MS14_D07_S03_L0002']),'v111:MS14_D07_S03_L0002')
     call r13_lines(r13_v111_lines(['MS14_D07_S03_L0003']),'v111:MS14_D07_S03_L0003')
     call r13_lines(r13_v111_lines(['MS14_D07_S03_L0004']),'v111:MS14_D07_S03_L0004')
+    # 2026-10-25 부엉이 예방 1단계(소유자 승인): A/B/C 메뉴를 걷었다. 낮에 난로의 돌을 꺼낸 판만 부엉이가 무너지지 않는다.
+    if r13_v111_value('stove13_7') in ('ration','empty'):
+        jump r13_v111_owl_well7
     call r13_lines(r13_v111_lines(['MS14_D07_S03_L0005']),'v111:MS14_D07_S03_L0005')
     call r13_lines(r13_v111_lines(['MS14_D07_S03_L0006']),'v111:MS14_D07_S03_L0006')
     call r13_lines(r13_v111_lines(['MS14_D07_S03_L0007']),'v111:MS14_D07_S03_L0007')
@@ -690,39 +695,10 @@ label r13_v111_room_visit7:
     call r13_lines(r13_v111_lines(['MS14_D07_S03_L0012']),'v111:MS14_D07_S03_L0012')
     call r13_lines(r13_v111_lines(['MS14_D07_S03_L0013']),'v111:MS14_D07_S03_L0013')
     $ r13_v111_commit('MS14_D07_S03_L0014')
-    menu:
-        '다람과 남고 까로를 의료진에게 보낸다':
-            $ r13_v111_set('route7','prevented')
-            $ r13_v111_set('prevention','A')
-            $ r13_fork_set_fate('fate_owl','stay')
-            $ r13_v111_set('choice:MS14_D07_S03','A')
-            $ r13_v111_commit('MS14_D07_S03_L0016')
-            jump r13_v111_stay7
-        '다람과 함께 의료진을 데리러 간다':
-            $ r13_v111_set('route7','prevented')
-            $ r13_v111_set('prevention','B')
-            $ r13_fork_set_fate('fate_owl','take')
-            $ r13_v111_set('choice:MS14_D07_S03','B')
-            $ r13_v111_commit('MS14_D07_S03_L0016')
-            jump r13_v111_take7
-        '다람을 도토에게 맡기고 의료진을 데리러 간다':
-            $ r13_v111_set('route7','murder')
-            $ r13_v111_set('choice:MS14_D07_S03','C')
-            $ r13_fork_set_fate('fate_owl','lost')
-            $ r13_v111_commit('MS14_D07_S03_L0016')
-            jump r13_v111_handover7
-
-label r13_v111_stay7:
-    call r13_lines(r13_v111_lines(['MS14_D07_S03_L0017']),'v111:MS14_D07_S03_L0017')
-    call r13_lines(r13_v111_lines(['MS14_D07_S03_L0018']),'v111:MS14_D07_S03_L0018')
-    $ r13_v111_commit('MS14_D07_S03_L0019')
-    jump r13_v111_prevent_a7
-
-label r13_v111_take7:
-    call r13_lines(r13_v111_lines(['MS14_D07_S03_L0020']),'v111:MS14_D07_S03_L0020')
-    call r13_lines(r13_v111_lines(['MS14_D07_S03_L0021']),'v111:MS14_D07_S03_L0021')
-    $ r13_v111_commit('MS14_D07_S03_L0022')
-    jump r13_v111_prevent_b7
+    # 첫 판의 길: 서리는 외지인이 직접 불러야 오고(까로 L0009), 다람은 난로 곁에서 다리가 풀려 걷지 못한다.
+    # 뒷길은 얼음이 무너져 업고 갈 수 없다. 그래서 다람을 도토에게 맡긴다(설계 3장).
+    $ r13_v111_commit('MS14_D07_S03_L0016')
+    jump r13_v111_handover7
 
 label r13_v111_handover7:
     call r13_lines(r13_v111_lines(['MS14_D07_S03_L0023']),'v111:MS14_D07_S03_L0023')
@@ -734,63 +710,13 @@ label r13_v111_handover7:
     call r13_lines(r13_v111_lines(['MS14_D07_S03_L0029']),'v111:MS14_D07_S03_L0029')
     call r13_lines(r13_v111_lines(['MS14_D07_S03_L0030']),'v111:MS14_D07_S03_L0030')
     $ r13_v111_commit('MS14_D07_S03_L0031')
+    # 2026-10-25: 낮에 도토의 다짐을 받은 판은 거짓 부름에 도토가 내려가지 않는다(room13_v111_owl_prevent.rpy).
+    if r13_v111_value('doto_promise7'):
+        jump r13_v111_promise_night7
+    $ r13_v111_set('route7','murder')
+    $ r13_v111_set('choice:MS14_D07_S03','C')
+    $ r13_fork_set_fate('fate_owl','lost')
     jump r13_v111_incident7
-
-label r13_v111_prevent_a7:
-    $ r13_v111_scene('MS14_D07_P01')
-    $ r13_edit(period=2)
-    $ room13["v111"]["people"]=[]
-    call r13_v111_travel('room13','prevent_a7',['daram'])
-    $ r13_v111_arrive(['daram', 'doto', 'resident_owlgp', 'karo'])
-    $ r13_v111_score()
-    call r13_lines(r13_v111_lines(['MS14_D07_P01_L0001']),'v111:MS14_D07_P01_L0001')
-    call r13_lines(r13_v111_lines(['MS14_D07_P01_L0002']),'v111:MS14_D07_P01_L0002')
-    call r13_lines(r13_v111_lines(['MS14_D07_P01_L0003']),'v111:MS14_D07_P01_L0003')
-    call r13_lines(r13_v111_lines(['MS14_D07_P01_L0004']),'v111:MS14_D07_P01_L0004')
-    call r13_lines(r13_v111_lines(['MS14_D07_P01_L0005']),'v111:MS14_D07_P01_L0005')
-    call r13_lines(r13_v111_lines(['MS14_D07_P01_L0006']),'v111:MS14_D07_P01_L0006')
-    call r13_lines(r13_v111_lines(['MS14_D07_P01_L0007']),'v111:MS14_D07_P01_L0007')
-    call r13_lines(r13_v111_lines(['MS14_D07_P01_L0008']),'v111:MS14_D07_P01_L0008')
-    call r13_lines(r13_v111_lines(['MS14_D07_P01_L0009']),'v111:MS14_D07_P01_L0009')
-    call r13_lines(r13_v111_lines(['MS14_D07_P01_L0010']),'v111:MS14_D07_P01_L0010')
-    call r13_lines(r13_v111_lines(['MS14_D07_P01_L0011']),'v111:MS14_D07_P01_L0011')
-    call r13_lines(r13_v111_lines(['MS14_D07_P01_L0012']),'v111:MS14_D07_P01_L0012')
-    call r13_lines(r13_v111_lines(['MS14_D07_P01_L0013']),'v111:MS14_D07_P01_L0013')
-    $ r13_v111_commit('MS14_D07_P01_L0014')
-    jump r13_v111_sleep7
-
-label r13_v111_prevent_b7:
-    $ r13_v111_scene('MS14_D07_P02')
-    $ r13_edit(period=2)
-    $ room13["v111"]["people"]=[]
-    call r13_v111_travel('room13','prevent_b7_room',['daram'])
-    $ r13_v111_arrive(['daram', 'doto', 'resident_owlgp', 'karo'])
-    $ r13_v111_score()
-    call r13_lines(r13_v111_lines(['MS14_D07_P02_L0001']),'v111:MS14_D07_P02_L0001')
-    call r13_lines(r13_v111_lines(['MS14_D07_P02_L0002']),'v111:MS14_D07_P02_L0002')
-    call r13_lines(r13_v111_lines(['MS14_D07_P02_L0003']),'v111:MS14_D07_P02_L0003')
-    call r13_lines(r13_v111_lines(['MS14_D07_P02_L0004']),'v111:MS14_D07_P02_L0004')
-    call r13_v111_travel('clinic','prevent_b7',['daram'])
-    $ r13_v111_arrive(['daram', 'karo', 'resident_seori'])
-    call r13_lines(r13_v111_lines(['MS14_D07_P02_L0006']),'v111:MS14_D07_P02_L0006')
-    call r13_lines(r13_v111_lines(['MS14_D07_P02_L0007']),'v111:MS14_D07_P02_L0007')
-    call r13_lines(r13_v111_lines(['MS14_D07_P02_L0008']),'v111:MS14_D07_P02_L0008')
-    call r13_lines(r13_v111_lines(['MS14_D07_P02_L0011']),'v111:MS14_D07_P02_L0011')
-    call r13_lines(r13_v111_lines(['MS14_D07_P02_L0012']),'v111:MS14_D07_P02_L0012')
-    call r13_lines(r13_v111_lines(['MS14_D07_P02_L0013']),'v111:MS14_D07_P02_L0013')
-    call r13_lines(r13_v111_lines(['MS14_D07_P02_L0014']),'v111:MS14_D07_P02_L0014')
-    call r13_lines(r13_v111_lines(['MS14_D07_P02_L0015']),'v111:MS14_D07_P02_L0015')
-    call r13_lines(r13_v111_lines(['MS14_D07_P02_L0016']),'v111:MS14_D07_P02_L0016')
-    call r13_lines(r13_v111_lines(['MS14_D07_P02_L0017']),'v111:MS14_D07_P02_L0017')
-    # 0.20.10 (4~14일 리뷰 7일): 대본의 '같은 제설길로 여관 귀환'을 실제 이동으로 보인다.
-    call r13_lines(r13_nw_block('owl_return7'),'nw:owl_return7')
-    $ r13_v111_time("move:travel:room13",5)
-    call r13_v111_travel('room13','prevent_b7_return',['daram'],direct=True)
-    $ r13_v111_arrive(['daram', 'doto', 'resident_owlgp', 'resident_seori', 'karo'])
-    call r13_lines(r13_v111_lines(['MS14_D07_P02_L0019']),'v111:MS14_D07_P02_L0019')
-    call r13_lines(r13_v111_lines(['MS14_D07_P02_L0020']),'v111:MS14_D07_P02_L0020')
-    $ r13_v111_commit('MS14_D07_P02_L0021')
-    jump r13_v111_sleep7
 
 label r13_v111_incident7:
     $ r13_v111_scene('MS14_D07_S04')
@@ -1022,30 +948,17 @@ label r13_v111_prevent_clinic8:
     $ r13_edit(period=0)
     $ room13["v111"]["people"]=[]
     call r13_v111_travel('room13','prevent_clinic8',['daram'])
-    $ r13_v111_arrive(['daram', 'resident_owlgp', 'resident_seori', 'doto'])
+    # 2026-10-25: 돌을 꺼내 무너지지 않은 판에는 서리를 부를 일이 없었다.
+    if r13_v111_value('prevention')=='stone':
+        $ r13_v111_arrive(['daram', 'resident_owlgp', 'doto'])
+    else:
+        $ r13_v111_arrive(['daram', 'resident_owlgp', 'resident_seori', 'doto'])
     $ r13_v111_score()
 
 label r13_v111_prevention_story8:
-    if r13_v111_value('prevention')=='A':
-        jump r13_v111_fear8
+    if r13_v111_value('prevention')=='stone':
+        jump r13_v111_owl_well8
     jump r13_v111_care8
-
-label r13_v111_fear8:
-    call r13_lines(r13_v111_lines(['MS14_D08_P01_L0002']),'v111:MS14_D08_P01_L0002')
-    call r13_lines(r13_v111_lines(['MS14_D08_P01_L0003']),'v111:MS14_D08_P01_L0003')
-    call r13_lines(r13_v111_lines(['MS14_D08_P01_L0004']),'v111:MS14_D08_P01_L0004')
-    call r13_lines(r13_v111_lines(['MS14_D08_P01_L0005']),'v111:MS14_D08_P01_L0005')
-    # 0.20.7 (review 6-12 #4): the promise "복도에 있어도 돼" is kept as a real place to stand.
-    $ v111_answer=renpy.display_menu([("방에 같이 들어간다",0),("복도에서 문을 열어 두고 듣는다",1)])
-    if v111_answer==0:
-        call r13_lines(r13_nw_block('owl_room8'),'nw:owl_room8')
-    else:
-        call r13_lines(r13_nw_block('owl_hall8'),'nw:owl_hall8')
-    call r13_lines(r13_v111_lines(['MS14_D08_P01_L0007']),'v111:MS14_D08_P01_L0007')
-    call r13_lines(r13_v111_lines(['MS14_D08_P01_L0008']),'v111:MS14_D08_P01_L0008')
-    call r13_lines(r13_v111_lines(['MS14_D08_P01_L0009']),'v111:MS14_D08_P01_L0009')
-    $ r13_v111_commit('MS14_D08_P01_L0010')
-    jump r13_v111_missing_pages8
 
 label r13_v111_care8:
     call r13_lines(r13_v111_lines(['MS14_D08_P01_L0012']),'v111:MS14_D08_P01_L0012')
@@ -1065,7 +978,8 @@ label r13_v111_missing_pages8:
     call r13_lines(r13_v111_lines(['MS14_D08_P01_L0023']),'v111:MS14_D08_P01_L0023')
     call r13_lines(r13_v111_lines(['MS14_D08_P01_L0024']),'v111:MS14_D08_P01_L0024')
     $ r13_v111_commit('MS14_D08_P01_L0026')
-    $ r13_nw_acquire("NW_STONE","removed" if r13_v111_value("prevention")=="A" else "clinic")
+    # 돌을 꺼낸 판은 7일 낮에 이미 받았다(swapped). 다짐만 받은 판은 서리가 오늘 꺼낸 돌이다.
+    $ r13_nw_acquire("NW_STONE","clinic")
     jump r13_v111_mother_letter8
 
 label r13_v111_mother_letter8:

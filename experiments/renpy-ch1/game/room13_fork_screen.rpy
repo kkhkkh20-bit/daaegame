@@ -35,7 +35,7 @@ init 322 python:
     R13_FORK_FATE_RESULTS = dict(
         fate_piko=(('saved','들임'),('lost','꺼진 등')),
         fate_kkomi=(('saved','넷 인계'),('lost','타 버린 창고')),
-        fate_owl=(('stay','함께 남음'),('take','함께 감'),('lost','닫힌 문')),
+        fate_owl=(('stone','식은 돌'),('promise','내려가지 않은 당번'),('lost','닫힌 문')),
         fate_nero=(('handover','인계'),('rescue','구조'),('lost','끊긴 등불')),
         fate_soup=(('early','조기 예방'),('premeal','먹기 전 중단'),('lost','작은 냄비')),
         fate_crowd=(('supervisor','감독자'),('block','막아섬'),('riot','올라간 주먹')))

@@ -748,7 +748,10 @@ label r13_v111_hyp5_q11:
     menu:
         '한 방의 돌이 바뀌자 한 사람이 한 저녁 사이에 무너졌다' if r13_v111_value('OWL_ALIVE') is False:
             jump r13_v111_hyp5_reason11
-        '한 방의 돌을 치우자 무너지던 사람이 돌아왔다' if r13_v111_value('OWL_ALIVE') is not False:
+        '한 방의 돌을 치우자 무너지던 사람이 돌아왔다' if r13_v111_value('OWL_ALIVE') is not False and r13_v111_value('prevention')!='stone':
+            jump r13_v111_hyp5_reason11
+        # 2026-10-25 부엉이 예방 1단계: 7일 낮 돌을 꺼낸 판은 부엉이가 무너진 적이 없다. 그 앞에서 흐려진 것은 아빠의 머리였다.
+        '한 방의 돌을 꺼내자 그 앞에서 흐려지던 머리가 맑아졌다' if r13_v111_value('prevention')=='stone':
             jump r13_v111_hyp5_reason11
         '부엉이 어르신은 원래 아팠다':
             jump r13_v111_hyp5_badreason11
@@ -2773,10 +2776,13 @@ label r13_v111_altar1_proof14:
     jump expression _return
 
 label r13_v111_altar1_wrong14:
-    if not ("V111:E14_SUPPLY" in (v111_last_presented or []) and not r13_v111_owned("NW_NEOUL_LEDGER")) and r13_nw_retry("altar"):
+    # 2026-10-25 결정 10: 장작 기록만 낸 판은 지금처럼 반쪽 답이다. 대체 정답(창고 아이들·침상 목록)을 함께 노리다 빠뜨린
+    # 제출은 반쪽으로 끝내지 않고 기회를 쓴다.
+    $ v111_altar_half=("V111:E14_SUPPLY" in (v111_last_presented or []) and not r13_v111_owned("NW_NEOUL_LEDGER") and not any(k in (v111_last_presented or []) for k in ("V111:NW_KKOMI_NOSTONE","V111:NW_SICK_BEDS")))
+    if not v111_altar_half and r13_nw_retry("altar"):
         call r13_lines(r13_nw_block("altar1_lost14"),"nw:altar1_lost14:retry")
         jump r13_v111_altar1_proof14
-    if "V111:E14_SUPPLY" in (v111_last_presented or []) and not r13_v111_owned("NW_NEOUL_LEDGER"):
+    if v111_altar_half:
         $ r13_v111_set("altar_half1",True)
         $ r13_v111_set("altar_issue:1","half")
         call r13_lines(r13_nw_block("altar1_half14"),"nw:altar1_half14")
@@ -2785,7 +2791,11 @@ label r13_v111_altar1_wrong14:
     jump r13_v111_altar_lost14
 
 label r13_v111_altar1_won14:
-    call r13_lines(r13_nw_block('altar1_won14'),'nw:altar1_won14')
+    # 2026-10-25 결정 10: 장부가 없는 판(13일 피코 회의를 진 판)의 대체 정답 — 장작 인수·창고 아이들·침상 목록.
+    if "V111:NW_NEOUL_LEDGER" not in (r13_v111_value("proof_given:희생의 숫자와 장부를 대조한다") or []):
+        call r13_lines(r13_nw_block('altar1_won_alt14'),'nw:altar1_won_alt14')
+    else:
+        call r13_lines(r13_nw_block('altar1_won14'),'nw:altar1_won14')
     $ r13_v111_set('altar_issue:1','won')
     jump r13_v111_altar2_q14
 

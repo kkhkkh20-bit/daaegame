@@ -679,6 +679,9 @@ label r13_v111_lock_check5:
     call r13_v111_wait('lock_check5')
     if _return==0:
         jump r13_v111_safety5
+    # 2026-10-25 결정 11: 책상 접시의 과자 봉지를 본 판만 다람이 그것을 가방에 넣는다(room13_v111_owl_prevent.rpy).
+    if _return==1:
+        call r13_v111_snack_plate5
     jump r13_v111_lock_check5
 
 label r13_v111_safety5:
