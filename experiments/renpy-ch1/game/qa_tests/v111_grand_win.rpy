@@ -74,6 +74,8 @@ testcase v111_gw_snack_kid7:
     run Function(r13_edit,day=7,location="school",period=0)
     run Function(r13_v111_arrive,["nabi","resident_teacher","daram"])
     assert eval ("막내가 네 가방만 보고 있네." not in qa_gw_options("nubi_children_receipt7"))
+    # 2026-10-25 결정 11: 5일 밤 과자 봉지를 가방에 넣어 둔 판에서만 열린다.
+    run Function(r13_v111_set,"snack_bagged5",True)
     run Function(r13_v111_set,"grand_snack_ready7",True)
     assert eval ("막내가 네 가방만 보고 있네." in qa_gw_options("nubi_children_receipt7"))
     run Jump("qa_gw_snack7")

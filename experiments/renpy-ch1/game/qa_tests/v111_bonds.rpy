@@ -33,7 +33,9 @@ label qa_bd_crisis_lines:
     call r13_lines(r13_v111_lines(['MS14_D06_S01_L0020','MS14_D06_S03_L0013']),'qa:bonds:d06')
     $ r13_edit(location="room13")
     $ r13_v111_arrive(['daram','resident_seori','resident_owlgp'])
-    call r13_lines(r13_v111_lines(['MS14_D07_S04_L0022','MS14_D07_P01_L0005']),'qa:bonds:d07')
+    call r13_lines(r13_v111_lines(['MS14_D07_S04_L0022']),'qa:bonds:d07')
+    # 2026-10-25 부엉이 예방 1단계: 막은 판의 「장갑을 꿰매 주던 손」은 7일 메뉴 A(P01) 대신 돌 판 저녁(owl_well7)에 있다.
+    call r13_lines(r13_nw_block('owl_well7'),'qa:bonds:d07_saved')
     $ r13_v111_set('lower_road_lost',True)
     $ r13_v111_set('nero_alive',False)
     $ r13_v111_set('alive:v111_lowerroad_elder',False)

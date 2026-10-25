@@ -8,9 +8,10 @@
 # 보고: docs/reviews/owl-prevention-20261024/적용보고.md
 init 322 python:
     # 13호 그림에는 난로가 그려져 있지 않다(전용 그림 필요). 책장과 화분 사이 빈 벽에 조사 자리만 둔다.
+    # 오른쪽 끝으로 밀었을 때 오른쪽 아래 조작 버튼(새 생각·기록)에 가리지 않는 높이다.
     # 글이 빈 물건은 그 단계의 선택이 있을 때만 눌린다(7일 낮 자유 시간에만).
-    ROOM13["objects"].setdefault("room13",{})["v111_stove"]=dict(rect=[1810,300,170,220],need=[],give=[],flags=[],text="")
-    ROOM13["objects"]["room13"]["v111_ashbin"]=dict(rect=[1985,540,110,60],need=[],give=[],flags=[],text="")
+    ROOM13["objects"].setdefault("room13",{})["v111_stove"]=dict(rect=[1820,250,170,190],need=[],give=[],flags=[],text="")
+    ROOM13["objects"]["room13"]["v111_ashbin"]=dict(rect=[1830,445,100,60],need=[],give=[],flags=[],text="")
     R13_OBJECT_NAMES.update(v111_stove="난로",v111_ashbin="재받이")
 
 # ---------------------------------------------------------------- 5일 밤 (결정 11: 과자 봉지)
@@ -29,29 +30,34 @@ label r13_v111_free_day7_wait:
     call r13_v111_wait('free_day7')
     if _return==0:
         jump r13_v111_free_evening7
-    if _return==1:
+    call r13_v111_free_day7_pick(_return)
+    jump r13_v111_free_day7_wait
+
+# 대기 화면이 돌려준 번호(field-bindings.json free_day7 의 선택 차례)로 한 가지 행동을 한다.
+label r13_v111_free_day7_pick(n):
+    if n==1:
         call r13_lines(r13_nw_block('doto_basket7'),'nw:doto_basket7')
-    if _return==2:
+    elif n==2:
         call r13_lines(r13_nw_block('doto_promise7'),'nw:doto_promise7')
         $ r13_v111_set('doto_promise7',True)
-    if _return==3:
+    elif n==3:
         call r13_lines(r13_nw_block('stove_look7'),'nw:stove_look7')
-    if _return==4:
+    elif n==4:
         call r13_lines(r13_nw_block('ashbin7'),'nw:ashbin7')
         $ r13_v111_set('pocket_ration7',True)
-    if _return==5:
+    elif n==5:
         call r13_lines(r13_nw_block('stove_swap7'),'nw:stove_swap7')
         $ r13_v111_set('pocket_ration7',False)
         $ r13_v111_set('stove13_7','ration')
         $ r13_nw_acquire("NW_STONE","swapped")
-    if _return==6:
+    elif n==6:
         call r13_lines(r13_nw_block('buri_tongs7'),'nw:buri_tongs7')
         $ r13_v111_set('tongs7',True)
-    if _return==7:
+    elif n==7:
         call r13_lines(r13_nw_block('stove_hide7'),'nw:stove_hide7')
         $ r13_v111_set('stove13_7','empty')
         $ r13_nw_acquire("NW_STONE","swapped")
-    jump r13_v111_free_day7_wait
+    return
 
 label r13_v111_free_evening7:
     call r13_lines(r13_nw_block('free_evening7'),'nw:free_evening7')
@@ -74,7 +80,8 @@ label r13_v111_owl_well7:
 # 다짐만 받은 판: 부엉이는 무너지고 아빠는 서리를 부르러 간다(다람은 걷지 못해 도토에게 맡긴다).
 # 계단 아래 거짓 부름에 도토가 내려가지 않아 할머니는 돌아간다. 돌은 밤새 남고 8일 서리가 꺼낸다(예전 B 판과 같다).
 label r13_v111_promise_night7:
-    call r13_v111_travel('clinic','promise_clinic7',[])
+    # 살인 판과 같은 이동(지도로 진료소). 갈림은 돌아온 뒤에야 보인다.
+    call r13_v111_travel('clinic','incident7',[])
     $ r13_v111_arrive(['karo','resident_seori'])
     call r13_lines(r13_nw_block('promise_clinic7'),'nw:promise_clinic7')
     call r13_v111_travel('room13','promise_room7',[],True)

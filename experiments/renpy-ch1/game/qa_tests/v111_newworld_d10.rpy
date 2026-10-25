@@ -108,19 +108,19 @@ testcase v111_nw_d10_room13_won:
     assert eval (qa_nw_seen("제가 방을 나설 땐") and qa_nw_seen("본보기를 맡긴 사람") and qa_nw_seen("편지 일은 따로 확인했어요") and not qa_nw_seen("세련이 빈손으로 온다"))
 
 testcase v111_nw_d07_stone_out:
-    # Event 07 path A: Dad takes the stone out and the old man calls Buri's name.
+    # Event 07: 2026-10-25 부엉이 예방 1단계로 7일 메뉴 A(남아서 돌을 꺼냄)가 걷혔다. 같은 「돌을 꺼내 눈에 묻는」 일은
+    # 이제 7일 낮 자유 시간에 집게를 들고 13호 난로에서 한다(room13_v111_owl_prevent.rpy). 진입을 그 길로 바꿨다.
     pause 1.0
     click "처음부터"
     click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(r13_v111_set,"day",7)
-    run Function(r13_edit,day=7,location="room13")
-    run Function(r13_v111_set,"route7","prevented")
-    run Function(r13_v111_set,"prevention","A")
-    run Jump("r13_v111_prevent_a7")
+    run Function(r13_edit,day=7,location="room13",period=1)
+    run Function(r13_v111_set,"tongs7",True)
+    run Call("r13_v111_free_day7_pick",7)
     pause 1.0
-    click pos (900,600) until screen "r13_hub" timeout 120
-    assert eval (qa_nw_seen("검푸르게 타는 돌이다") and qa_nw_seen("부리는 어디 있나"))
+    click pos (900,600) until eval (r13_v111_value("stove13_7")=="empty") timeout 120
+    assert eval (qa_nw_seen("검푸르게 타는 돌을 꺼낸다") and qa_nw_seen("머리가 맑아진다") and r13_v111_owned("NW_STONE"))
 
 testcase v111_nw_d10_five_chances:
     # 회의별 기회(2026-10-24 소유자 결정 5, 쟁점 수 + 2): 13호는 쟁점 다섯이라 7번. 남은 기회가 있으면 증명으로
