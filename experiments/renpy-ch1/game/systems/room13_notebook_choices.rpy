@@ -22,10 +22,10 @@ init 81 python:
     def r13_notebook_note():
         # Crop the paper body before nine-slicing; the original large transparent
         # margin above the tape must not consume half of a 92px heading.
-        return Frame(Crop((16,16,190,52),r13_asset_path("file:assets/ui-b-options/b_opt_choice.png")),24,16)
+        return r13_sticker_button()
 
     def r13_notebook_choice_surface(width,hovered=False):
-        return r13_original_card_surface(r13_asset_path("file:"+("assets/ui-b-question/"+("b_panel_card_hover.png" if hovered else "b_panel_card.png"))),width)
+        return r13_sticker_button(focused=hovered)
 
     def r13_notebook_choice_geometry(entries,width,heading):
         size=r13_read_size(36,38)
@@ -51,7 +51,7 @@ screen r13_notebook_choice_list(person,pose,title,entries,ready,return_action=No
     $ header_top=180 if header_height<=112 and len(pages)==1 else max(40,640-header_height-28-rows_height-((100 if r13_touch_ui() else 66) if len(pages)>1 else 0))
     $ rows_top=header_top+header_height+28
     if person and not carriage:
-        add r13_close_art(person,pose,760):
+        add R13StickerOutline(r13_close_art(person,pose,760)):
             xpos r13_close_x(person,pose,760)+390 xanchor .5 ypos r13_close_y(person,760,70,pose)
     frame:
         xpos left+20 ypos header_top xsize width-40 ysize header_height padding (42,22,24,22) background r13_notebook_note()
@@ -69,7 +69,7 @@ screen r13_notebook_choice_list(person,pose,title,entries,ready,return_action=No
                 hovered SetLocalVariable("focused_choice",i)
                 unhovered SetLocalVariable("focused_choice",None)
                 fixed:
-                    add Transform(r13_asset_path("file:assets/ui-b-question/b_tape_red.png") if focused_choice==i else r13_asset_path("file:assets/ui-b-question/b_tape_teal.png"),xysize=(54,18),rotate=12) xpos width-78 ypos -12
+                    # Selection uses ink/acorn emphasis; no repeated tape.
                     frame:
                         xpos 60 yalign .5 xysize (54,54) padding (3,3) background Solid("#fff6e6")
                         fixed:

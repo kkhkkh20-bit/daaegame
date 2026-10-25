@@ -121,7 +121,7 @@ def scan(project=PROJECT):
     sheet='assets/ui-b-sticker/button_sheet.png'
     for name,row in [('standard',0),('focused',1),('primary',2)]:
         key='surface.button.'+name
-        virtual(key,sheet,['kind:surface','surface:'+name,'state:basic'],{'crop':[64,64+293*row,1410,292],'zoom':1/3,'frame':[27,16,27,16],'allow_frame':True})
+        virtual(key,'assets/ui-field-stickers/'+{'standard':'paper_basic','focused':'paper_hover','primary':'primary_basic'}[name]+'.png',['kind:surface','surface:'+name,'state:basic'],{'frame':[14,14,14,14],'allow_frame':True})
         role(key,'공통 큰 버튼 · '+name,['asset:'+key])
 
     def font_role(name,path,state):

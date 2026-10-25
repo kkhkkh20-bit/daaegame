@@ -30,7 +30,7 @@ init 80 python:
         return r13_asset_path("file:"+("assets/ui-b-question/b_lineart_"+kind+".png"))
 
     def r13_notebook_button_surface(primary=False,hovered=False):
-        return Frame(Crop((16,10,128,32),r13_asset_path("file:assets/ui-b-question/b_button_primary.png") if primary else r13_asset_path("file:assets/ui-b-question/b_button.png")),16,10)
+        return r13_sticker_button(primary=primary,focused=hovered)
 
     def r13_original_card_surface(path,width):
         # Uniform scale of the actual artwork; centre within the larger hit area.

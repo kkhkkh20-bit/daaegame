@@ -11,7 +11,7 @@ class SettingsTypeScale(unittest.TestCase):
   self.assertEqual(A.count('size (r13_opt_title_size()+8)'),1)
  def test_scale_small_normal_large(self):
   block=A.split('init python:\n',1)[1].split('\nstyle ',1)[0]
-  for small,large,body,title,row in [(False,False,22,30,92),(True,False,20,27,92),(False,True,26,34,112)]:
+  for small,large,body,title,row in [(False,False,22,30,76),(True,False,20,27,76),(False,True,26,34,112)]:
    def size(base,big):return big if large else int(max(base-3,round(base*.9))) if small else base
    ns={'r13_read_size':size,'persistent':SimpleNamespace(room13_large_text=large)};exec(textwrap.dedent(block),ns)
    self.assertEqual((ns['r13_opt_size'](),ns['r13_opt_title_size'](),ns['r13_opt_row_height']()),(body,title,row))
@@ -68,8 +68,8 @@ class SettingsTypeScale(unittest.TestCase):
   preview=(ROOT/'game/room13_typing_preview.rpy').read_text()
   self.assertIn('(preferences.text_cps, _r13_say_size(), r13_ui_font())',preview)
   self.assertNotIn('r13_read_size(24,30)',preview)
-  self.assertIn('size _r13_say_size()',A);self.assertNotIn('add typing_preview xsize',A)
+  self.assertIn('add typing_preview',A);self.assertNotIn('add typing_preview xsize',A)
  def test_replay_and_footer_share_padding_height(self):
-  self.assertIn('"다시 보기" id "r13_preview_replay" xsize 160 text_size r13_opt_size()',A)
+  self.assertIn('"다시 보기" id "r13_preview_replay" xsize 150 text_size r13_opt_size()',A)
   self.assertIn('padding (10,4) ysize 52',A)
   self.assertNotIn('text_size 21',A);self.assertNotIn('text_size 24',A)

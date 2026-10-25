@@ -50,7 +50,7 @@ class MapB(unittest.TestCase):
     def test_assets_exist_with_alpha_and_names_appear_in_script(self):
         frame = GAME / (self.ns["R13_BMAP_ART"] + "notebook_frame.webp")
         self.assertEqual(image_size(frame), (1280, 720))
-        self.assertIn("notebook_frame.webp", SOURCE)
+        self.assertIn("notebook_frame_1280x720.png", (GAME/"room13_navigation.rpy").read_text())
         for region, spec in self.B.items():
             with Image.open(GAME / spec["base"]) as im:
                 self.assertEqual(im.size, (1136, 570))

@@ -143,7 +143,7 @@ init 175 python:
                 art=r13_meeting_slot_art(person,base)
                 if art is None:art=r13_fullbody_close_art(person,pose,base)
                 if art is None:art=Transform(r13_meeting_actor(person,self.focus,640),ysize=base,fit="contain",nearest=True)
-                art=r13_meeting_reaction_art(person,pose,base,art)
+                art=R13StickerOutline(r13_meeting_reaction_art(person,pose,base,art))
                 gain=(.065 if self.beat in ("interrupt","explain","shaken","gasp","cornered") else .0) if person==self.focus else (-.01 if person==listener else -.05)-self.shade*.35
                 self.art[person]=Transform(art,nearest=not bool(r13_dialogue_source_profile(person,pose,base)),subpixel=True,matrixcolor=BrightnessMatrix(gain))
                 self.offsets[person]=(r13_close_x(person,pose,base)-640,r13_fullbody_close_y(person,base,96,pose))

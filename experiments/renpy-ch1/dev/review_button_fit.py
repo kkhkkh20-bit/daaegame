@@ -108,7 +108,11 @@ def capture(project, output, measure=False):
                     if process.poll() is not None:raise RuntimeError('캡처가 먼저 종료됨: '+str(log))
                     time.sleep(.25)
                 else:raise RuntimeError('캡처 180초 초과: '+str(log))
-            finally:preview._stop(process,stage)
+            finally:
+                preview._stop(process,stage)
+                # Retain completed screenshots even when a later checkpoint fails.
+                for path in (stage/'tests/screenshots').glob('*.png'):
+                    shutil.copy2(path,output/path.name)
         for path in (stage/'tests/screenshots').glob('*.png'):shutil.copy2(path,output/path.name)
         if measure:shutil.copy2(stage/'fit-measurements.json',output/'fit-measurements.json')
         owned=preview._alive(preview._owned_processes(process.pid,stage))

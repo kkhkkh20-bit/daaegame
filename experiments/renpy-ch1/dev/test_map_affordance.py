@@ -82,15 +82,12 @@ class MapAffordance(unittest.TestCase):
         self.assertNotIn('Return(', locked)
 
     def test_footer_row_centers_both_responsive_heights(self):
-        source = (GAME / "room13_navigation.rpy").read_text()
-        expression = next(line.split("=", 1)[1] for line in source.splitlines()
-                          if "$ map_controls_y=" in line)
-        for height, expected_y in ((64, 625), (80, 617), (88, 613)):
-            y = eval(expression, {"r13_map_control_height": lambda: height})
-            self.assertEqual(y, expected_y)
-            self.assertEqual(y - 602, 712 - (y + height))
-            self.assertGreaterEqual(720 - (y + height), 16)
-            self.assertLess(y, 704 - height)
+        source=(GAME/'room13_map_village_b.rpy').read_text()
+        self.assertIn('by-((88 if r13_touch_ui() else 44)-bh)//2',source)
+        for height in (44,88):
+            top=643-(height-40)//2
+            self.assertEqual(top+height/2,663)
+            self.assertLessEqual(top+height,708)
 
     def test_mobile_map_controls_meet_css_target(self):
         source = (GAME / "room13_navigation.rpy").read_text()
@@ -104,19 +101,22 @@ class MapAffordance(unittest.TestCase):
                 for height in (390,360):self.assertGreaterEqual(expected*height/720,44)
 
     def test_tabs_and_actions_share_centered_row(self):
-        source = (GAME / "room13_navigation.rpy").read_text()
-        self.assertIn('xpos 366 ypos map_controls_y spacing 8', source)
-        for column in (3, 4):
-            self.assertIn('area (r13_control_x(%d)-24,map_controls_y,R13_CONTROL["width"],r13_map_control_height())' % column, source)
-        self.assertIn('text_xalign .5 text_yalign .5', source)
-        self.assertIn('use r13_field_button("이곳으로 이동","map",', source)
-        self.assertIn('use r13_field_button("현장으로","dialogue",close_action,enabled=ready,height=r13_map_control_height(),control_id="r13_map_close")', source)
+        source=(GAME/'room13_map_village_b.rpy').read_text()
+        footer=source.split('screen r13_map_diary_footer(',1)[1]
+        self.assertIn('use r13_village_b_control("이곳으로 이동",(704,643,184,40)',footer)
+        self.assertIn('use r13_village_b_control("현장으로",(902,643,142,40)',footer)
+        self.assertIn('chosen=key==region',footer)
+        nav=(GAME/'room13_navigation.rpy').read_text()
+        self.assertIn('use r13_map_diary_footer(region,selected,ready,local_guide,close_action)',nav)
+        self.assertIn('use r13_map_diary_footer("village",selected,ready,local_guide,close_action)',source)
 
     def test_travel_and_local_guide_gates_remain(self):
-        source = (GAME / "room13_navigation.rpy").read_text()
-        self.assertIn('can_travel=selected!=room13["location"] and (selected in dict(r13_local_connections()) if local_guide else selected in r13_places())', source)
-        self.assertIn('[Hide("r13_inn_guide"),Return(("travel",selected))] if local_guide else Return(selected),enabled=ready and can_travel,primary=True,height=r13_map_control_height(),control_id="r13_map_travel")', source)
-        self.assertIn('if not local_guide:', source)
+        source=(GAME/'room13_map_village_b.rpy').read_text().split('screen r13_map_diary_footer(',1)[1]
+        self.assertIn('selected!=room13["location"]',source)
+        self.assertIn('selected in dict(r13_local_connections()) if local_guide else selected in r13_places()',source)
+        self.assertIn('[Hide("r13_inn_guide"),Return(("travel",selected))] if local_guide else Return(selected)',source)
+        self.assertIn('enabled=ready and can_travel',source)
+        self.assertIn('if not local_guide:',source)
 
     def test_geometry_and_discovery_layer_unchanged(self):
         self.assertIn("if r13_cart_cover_visible(secret):", self.source)

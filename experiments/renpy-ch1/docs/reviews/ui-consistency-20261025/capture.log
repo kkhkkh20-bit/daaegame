@@ -1,0 +1,59 @@
+[rpytest] [log] Running 2 test(s) marked with 'only' flag.
+[rpytest] [log] - global::button_fit_review
+[rpytest] [log] - global::button_fit_review
+
+[rpytest] Starting test run
+[rpytest] Platform:      Linux-6.18.55-x86_64-with-glibc2.41
+[rpytest] Python:        3.12.8
+[rpytest] Ren'Py:        Ren'Py 8.5.3.26051504
+[rpytest] Game Version:  0.20.40
+
+[rpytest] [exc] + global
+[rpytest] [exc]   - button_fit_review
+
+Full traceback:
+  File "renpy/test/testexecution.py", line 549, in update
+    node_executor.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "renpy/test/testexecution.py", line 471, in execute
+    self.node_state = self.node.execute(self.node_state, elapsed)
+                      ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/test/testast.py", line 1312, in execute
+    raise RenpyTestTimeoutError(msg)
+renpy.test.types.RenpyTestTimeoutError: Until Statement timed out after 60 seconds.
+
+While running game code:
+renpy.test.types.RenpyTestTimeoutError: Until Statement timed out after 60 seconds.
+File "/tmp/r13-fit-review-capture-ou3lmhy3/project/game/room13_v111_days123.rpy", line 5, in script call
+  call r13_carriage_departure
+File "/tmp/r13-fit-review-capture-ou3lmhy3/project/game/room13_carriage_direction.rpy", line 55, in script call
+  call r13_coach_travel_cut
+File "/tmp/r13-fit-review-capture-ou3lmhy3/project/game/room13_coach_cut.rpy", line 32, in script call
+  call r13_lines([(None,line) for line in R13_BLACK_CARD_LINES],"v111:opening:black")
+File "/tmp/r13-fit-review-capture-ou3lmhy3/project/game/room13.rpy", line 76, in script call
+  $ R13_CHARS.get(r13_packet[0],source_thought)(r13_line_markup(r13_pages[r13_page_i]))
+File "/tmp/r13-fit-review-capture-ou3lmhy3/project/game/qa_tests/b_dialogue_stickers.rpy", line 2, in script call
+  call r13_lines([("granny","잘 왔구나. 여기 앉아서 천천히 이야기하자.",{"expression":"joy"}),("resident_lamplighter","아직 불빛을 살펴보는 중이에요.",{"expression":"angry"}),("resident_teacher","방금 들은 이야기를 다시 확인해 봐야겠어요.",{"expression":"surprise"}),("dad","어디서 본 물건인지 먼저 물어봐야겠다.",{"thought":True})],"qa:b-dialogue")
+File "/tmp/r13-fit-review-capture-ou3lmhy3/project/game/room13_v111_days123.rpy", line 1187, in script
+  $ v111_answer=renpy.display_menu(v111_menu)
+
+During testcase execution:
+  File "/tmp/r13-fit-review-capture-ou3lmhy3/project/.", line 0, in None
+
+  File "/tmp/r13-fit-review-capture-ou3lmhy3/project/game/qa_tests/zz_button_fit_review.rpy", line 1, in testsuite global
+    testcase button_fit_review:
+  File "/tmp/r13-fit-review-capture-ou3lmhy3/project/game/qa_tests/zz_button_fit_review.rpy", line 59, in testcase button_fit_review
+    click pos (900,600) until screen "r13_meeting_retry_choice" timeout 60
+
+====================
+[rpytest] [exc]   - button_fit_review (84.452 s [01:24])
+[rpytest] [exc]   - button_fit_review (84.452 s [01:24])
+
+[rpytest] Test outcomes (Summary)
+[rpytest] Test suites:     1 |     0 passed |     0 xfailed |     1 failed |     0 xpassed |     0 skipped |     0 not run
+[rpytest] Test cases :   429 |     0 passed |     0 xfailed |     1 failed |     0 xpassed |   428 skipped |     0 not run
+[rpytest] Test hooks :     0 |     0 passed |     0 xfailed |     0 failed |     0 xpassed |     0 skipped |     0 not run
+[rpytest] Assertions :     0 |     0 passed |     0 xfailed |     0 failed |     0 xpassed |
+
+[rpytest] Time: 89.431 s [01:29]
+[rpytest] Status: FAILED

@@ -22,19 +22,23 @@ init 67 python:
             natural=spec.get("render",{}).get("zoom",1.0)
             self.scale=min(float(self.width)/(self.crop[2]*natural),float(self.height)/(self.crop[3]*natural))
             self.skins={state:Transform(r13_asset(role,state),zoom=self.scale) for state in ("basic","pressed","selected","disabled")}
+            self.paper_size=(max(1,int(round(self.crop[2]*natural*self.scale))),max(1,int(round(self.crop[3]*natural*self.scale))))
+            primary=self.family in ("primary","main_primary","topic_primary")
+            self.shared_skins={state:Transform(r13_sticker_button(primary=primary,focused=self.selected or state=="pressed",disabled=state=="disabled"),xysize=self.paper_size) for state in ("basic","pressed","selected","disabled")}
             self.asset_revision=r13_asset_revision()
 
         def visit(self):
             self.update_skins()
-            return list(self.skins.values())+([self.icon] if self.icon else [])
+            return list(self.shared_skins.values())+([self.icon] if self.icon else [])
 
         def render(self,width,height,st,at):
             self.update_skins()
             w,h=self.width,self.height
             state="disabled" if not self.enabled else "pressed" if self.pressed else "selected" if self.selected else "basic"
             out=renpy.Render(w,h)
-            paper=renpy.render(self.skins[state],w,h,st,at)
-            pw,ph=paper.get_size();out.blit(paper,((w-pw)//2,(h-ph)//2))
+            pw,ph=self.paper_size
+            paper=renpy.render(self.shared_skins[state],pw,ph,st,at)
+            out.blit(paper,((w-pw)//2,(h-ph)//2))
             render_spec=r13_asset_spec("button."+self.family,state).get("render",{})
             color=render_spec.get("text_color", "#8b8175" if not self.enabled else "#fff5e5" if self.family=="primary" else "#493324")
             text=Text(self.caption,font=R13_UI_BOLD_FONT,size=self.text_size,color=color)

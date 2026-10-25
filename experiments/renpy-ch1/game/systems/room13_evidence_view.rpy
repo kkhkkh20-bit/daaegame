@@ -323,7 +323,7 @@ screen r13_ink_record_shell(title,tabs,current="all",close_action=None,note=None
     $ touch=r13_touch_ui()
     $ tab_h=88 if touch else 48
     add Solid("#05070fa6")
-    add R13PaperFrame() xpos 12 ypos 12 xysize (1256,696)
+    add R13DiaryPanel() xpos 12 ypos 12 xysize (1256,696)
     # 작은 탭의 글자가 수첩의 짙은 테두리에 묻히지 않도록 제목 띠를 확보한다.
     add Solid("#fff1d8") xpos 40 ypos 34 xysize (1200,66)
     $ tab_x=r13_ev_tab_x(title)
