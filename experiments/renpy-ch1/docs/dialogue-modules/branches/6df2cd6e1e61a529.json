@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "518c1016ae60a1f0d3bd57ee93108f53ea8dbc0c3754bed06738799310218bf4",
+  "source_stamp": "18f921aba9b7f3e59b86b50391f79ccdee585812b4de62794a6f0609e380f360",
   "entries": [
     {
       "id": "NW_D10_S04_V01",
@@ -33,9 +33,87 @@
         }
       ],
       "scene_title": "10-4. 오후 / 우체국 옆 벤치 — 다음에 갈 곳",
-      "source_hash": "1608837cff9f6084d3fb5827a467f348a11b9b23987906c7cc80a00fd7297eed",
+      "source_hash": "6a126f2d75b1ce5e56b05903dbc8916c5f4d73b27a8e85fe445d1b0d256c11f3",
       "baseline_hash": "8b04f015ae6be5137b0ce27a646d65851a6821cf3e87a8a43cd64fd1a80f3e26",
       "uid": "24e7330a58154e5027b3cc35",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_S04_T21",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_S04_L0020",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_S04_L0020",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마는 문 닫혀도 기다리잖아.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1672,
+          "label": "r13_v111_bench10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-4. 오후 / 우체국 옆 벤치 — 다음에 갈 곳",
+      "source_hash": "6a126f2d75b1ce5e56b05903dbc8916c5f4d73b27a8e85fe445d1b0d256c11f3",
+      "baseline_hash": "c46f9e1091c569503940573ea3aec780ad0dfcdc0fa1b7cde789c71945a937b0",
+      "uid": "13db9739f841f47198a65abf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d10|MS14_D10_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D10_S04_T22",
+      "file": "game/v111/newworld/d10.json",
+      "path": [
+        "after",
+        "MS14_D10_S04_L0020",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 10,
+      "scene": "MS14_D10_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D10_S04_L0020",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "……그러니까 내일 밝을 때 가자. 같이.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1672,
+          "label": "r13_v111_bench10",
+          "guards": []
+        }
+      ],
+      "scene_title": "10-4. 오후 / 우체국 옆 벤치 — 다음에 갈 곳",
+      "source_hash": "6a126f2d75b1ce5e56b05903dbc8916c5f4d73b27a8e85fe445d1b0d256c11f3",
+      "baseline_hash": "7ebd5e5e56907fc4523753e7b3872e70749fdde099ebf6673d3325a9db6c3f80",
+      "uid": "c86cfe1ec32e4a89888cb9e2",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d10|MS14_D10_S04|patch|after|행 조건 없음",
