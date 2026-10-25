@@ -1,0 +1,27 @@
+{
+  "version": "0.20.36",
+  "unit_tests": 1051,
+  "lint": "passed",
+  "native_retry": 4,
+  "web_carriage": {
+    "archive_sha256": "62e819ac2560df0193299f2d8b33f402af73f1871626a2b9b25a7cee166802c4",
+    "checks": [
+      "Web build: carriage opens on empty interior, Daram pops in and stays during Dad line, skip reaches gate day 1"
+    ],
+    "page_errors": [],
+    "status": "passed"
+  },
+  "web_mobile": {
+    "passed": true,
+    "version": "0.20.36",
+    "checks": [
+      "B dialogue body and matching face",
+      "large touch dialogue",
+      "more/settings/return",
+      "inn and forest mobile maps",
+      "hidden destinations absent",
+      "village map preserved"
+    ],
+    "pageerrors": []
+  }
+}
