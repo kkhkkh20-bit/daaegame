@@ -52416,6 +52416,24 @@
       "render": {},
       "id": "file:assets/ui-field-stickers/arrow_right_hover.png"
     },
+    "file:assets/ui-field-stickers/diary.png": {
+      "path": "assets/ui-field-stickers/diary.png",
+      "media": "image",
+      "size": [
+        160,
+        96
+      ],
+      "tags": [
+        "asset:file:assets/ui-field-stickers/diary.png",
+        "folder:ui-field-stickers",
+        "kind:image",
+        "media:image",
+        "state:basic",
+        "style:diary-b"
+      ],
+      "render": {},
+      "id": "file:assets/ui-field-stickers/diary.png"
+    },
     "file:assets/ui-field-stickers/label_basic.png": {
       "path": "assets/ui-field-stickers/label_basic.png",
       "media": "image",
@@ -52529,6 +52547,62 @@
       ],
       "render": {},
       "id": "file:assets/ui-field-stickers/place_hover.png"
+    },
+    "file:assets/ui-field-stickers/primary_basic.png": {
+      "path": "assets/ui-field-stickers/primary_basic.png",
+      "media": "image",
+      "size": [
+        160,
+        64
+      ],
+      "tags": [
+        "asset:file:assets/ui-field-stickers/primary_basic.png",
+        "folder:ui-field-stickers",
+        "kind:image",
+        "media:image",
+        "pack:file/ui-field-stickers/primary",
+        "state:basic",
+        "style:diary-b"
+      ],
+      "render": {},
+      "id": "file:assets/ui-field-stickers/primary_basic.png"
+    },
+    "file:assets/ui-field-stickers/primary_hover.png": {
+      "path": "assets/ui-field-stickers/primary_hover.png",
+      "media": "image",
+      "size": [
+        160,
+        64
+      ],
+      "tags": [
+        "asset:file:assets/ui-field-stickers/primary_hover.png",
+        "folder:ui-field-stickers",
+        "kind:image",
+        "media:image",
+        "pack:file/ui-field-stickers/primary",
+        "state:hover",
+        "style:diary-b"
+      ],
+      "render": {},
+      "id": "file:assets/ui-field-stickers/primary_hover.png"
+    },
+    "file:assets/ui-field-stickers/ring.png": {
+      "path": "assets/ui-field-stickers/ring.png",
+      "media": "image",
+      "size": [
+        28,
+        34
+      ],
+      "tags": [
+        "asset:file:assets/ui-field-stickers/ring.png",
+        "folder:ui-field-stickers",
+        "kind:image",
+        "media:image",
+        "state:basic",
+        "style:diary-b"
+      ],
+      "render": {},
+      "id": "file:assets/ui-field-stickers/ring.png"
     },
     "file:assets/ui-night/close_x.png": {
       "path": "assets/ui-night/close_x.png",
@@ -54022,11 +54096,11 @@
       "id": "button.topic_standard.disabled"
     },
     "surface.button.standard": {
-      "path": "assets/ui-b-sticker/button_sheet.png",
+      "path": "assets/ui-field-stickers/paper_basic.png",
       "media": "image",
       "size": [
-        1536,
-        1024
+        160,
+        64
       ],
       "tags": [
         "asset:surface.button.standard",
@@ -54035,18 +54109,11 @@
         "surface:standard"
       ],
       "render": {
-        "crop": [
-          64,
-          64,
-          1410,
-          292
-        ],
-        "zoom": 0.3333333333333333,
         "frame": [
-          27,
-          16,
-          27,
-          16
+          14,
+          14,
+          14,
+          14
         ],
         "allow_frame": true
       },
@@ -54054,11 +54121,11 @@
       "id": "surface.button.standard"
     },
     "surface.button.focused": {
-      "path": "assets/ui-b-sticker/button_sheet.png",
+      "path": "assets/ui-field-stickers/paper_hover.png",
       "media": "image",
       "size": [
-        1536,
-        1024
+        160,
+        64
       ],
       "tags": [
         "asset:surface.button.focused",
@@ -54067,18 +54134,11 @@
         "surface:focused"
       ],
       "render": {
-        "crop": [
-          64,
-          357,
-          1410,
-          292
-        ],
-        "zoom": 0.3333333333333333,
         "frame": [
-          27,
-          16,
-          27,
-          16
+          14,
+          14,
+          14,
+          14
         ],
         "allow_frame": true
       },
@@ -54086,11 +54146,11 @@
       "id": "surface.button.focused"
     },
     "surface.button.primary": {
-      "path": "assets/ui-b-sticker/button_sheet.png",
+      "path": "assets/ui-field-stickers/primary_basic.png",
       "media": "image",
       "size": [
-        1536,
-        1024
+        160,
+        64
       ],
       "tags": [
         "asset:surface.button.primary",
@@ -54099,18 +54159,11 @@
         "surface:primary"
       ],
       "render": {
-        "crop": [
-          64,
-          650,
-          1410,
-          292
-        ],
-        "zoom": 0.3333333333333333,
         "frame": [
-          27,
-          16,
-          27,
-          16
+          14,
+          14,
+          14,
+          14
         ],
         "allow_frame": true
       },

@@ -45,7 +45,7 @@ class InnNavigationV4(unittest.TestCase):
         self.assertIn('for key,point in r13_map_nodes("inn")',source)
         hub=(GAME/'room13_screens.rpy').read_text()
         self.assertNotIn('textbutton "안내도":',hub)
-        nav=(GAME/'room13_navigation.rpy').read_text()
+        nav=(GAME/'room13_navigation.rpy').read_text()+(GAME/'room13_map_village_b.rpy').read_text()
         self.assertIn('Return(("travel",selected))',nav)
         self.assertIn('selected in dict(r13_local_connections()) if local_guide',nav)
 

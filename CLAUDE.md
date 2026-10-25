@@ -101,3 +101,5 @@
   - 공개본: `preview/room13-dev/`. `experiments/renpy-ch1/dev/build_web.py`로만 만든다. 손으로 고치거나 병합하지 않는다.
   - 검사: `dev/check.sh`(단위+lint), `dev/run_renpy_tests.sh`(화면), `dev/qa_*.py`(브라우저).
   - 함수 덮어쓰기 순서: `experiments/renpy-ch1/docs/OVERRIDE_MAP.md`. 층을 더하면 `python3 dev/override_map.py --write`.
+
+- UI 통일 승인(2026-10-25, 0.20.42): 전체 화면 검토 후 소유자 “그러면 맞춰줘”. 크림/남색 윤곽·빨강 강조·굵은 Pretendard 버튼과 수첩 패널을 공통화한다. 장식 테이프를 모든 버튼에 반복하지 않는다. 에셋 스캔의 공통 surface.button 레시피도 동일 부품을 유지한다. 대사·분기·조건은 그대로 둔다. 검토: `experiments/renpy-ch1/docs/reviews/ui-unified-20261025/`.

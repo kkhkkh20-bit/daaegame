@@ -158,7 +158,7 @@ screen r13_map_b(region, selected, ready, map_hover, map_notice=None):
     $ wx, wy = r13_bmap_screen(0, 0)
     # 빈 바탕 → 수첩 틀 → 가림판·스티커 → 이름표 순. 틀을 스티커 아래에 두어 떠오른 스티커가 틀에 잘리지 않는다.
     add Transform(spec["base"], size=(int(round(R13_BMAP_WINDOW[2]*s))+2, int(round(R13_BMAP_WINDOW[3]*s))+2)) xpos (int(wx)-1) ypos (int(wy)-1)
-    add Transform(r13_asset_path("file:"+(R13_BMAP_ART+"notebook_frame.webp")), zoom=s) xpos fx ypos fy
+    # The shared outer notebook and footer are owned by r13_map.
     for key, cover in r13_bmap_covers(region):
         $ cx, cy, cw, ch = r13_bmap_fit(cover["art"], cover["box"])
         add Transform(cover["art"], size=(cw, ch)) xpos cx ypos cy
@@ -218,15 +218,3 @@ screen r13_map_b(region, selected, ready, map_hover, map_notice=None):
                 unhovered (None if r13_touch_ui() else SetScreenVariable("map_hover", None))
                 sensitive ready
                 alt r13_map_label(key)
-    # 수첩 아래 띠: 구역 이름·현재 위치(왼쪽), 안내 또는 알림(오른쪽).
-    $ band_y = int(fy+636*s)
-    $ band_h = int(54*s)
-    $ band_left = int(fx+86*s)
-    $ band_right = int(fx+1220*s)
-    fixed:
-        area (band_left, band_y, band_right-band_left, band_h)
-        hbox:
-            yalign .5 spacing 14
-            text ("여관 안" if region == "inn" else "숲·산길") size 23 color "#4b3420" font R13_UI_BOLD_FONT yalign .5
-            text ("현재 · "+(R13_MAP_LABELS.get(current,"마을") if r13_map_discovered(current) else "마을")) size 17 color "#765b3e" yalign .5
-        text (map_notice or r13_bmap_hint(region)) size (19 if r13_touch_ui() else 17) color ("#7a2a22" if map_notice else "#5b4630") xalign 1.0 yalign .5 text_align 1.0

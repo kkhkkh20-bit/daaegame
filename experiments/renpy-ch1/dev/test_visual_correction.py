@@ -29,8 +29,8 @@ class VisualCorrection(unittest.TestCase):
   self.assertNotEqual(normal,selected)
  def test_option_states_share_frame(self):
   s=(ROOT/'game/screens.rpy').read_text().split('style r13opt_button is button:',1)[1].split('style r13opt_button_text',1)[0]
-  # B settings: all five states retain the same cropped frame geometry.
-  self.assertNotIn('R13InkPanel',s);self.assertEqual(s.count('assets/ui-b-options/b_opt_choice'),5);self.assertEqual(s.count('Crop((16,16,190,52)'),5);self.assertEqual(s.count('),24,16)'),5)
+  # All five states now share the same sticker surface family.
+  self.assertNotIn('R13InkPanel',s);self.assertEqual(s.count('r13_sticker_button('),5);self.assertNotIn('b_opt_choice',s)
  def test_preview_not_stretched_and_font_unchanged(self):
   s=(ROOT/'game/screens.rpy').read_text();self.assertIn('add typing_preview\n',s);self.assertNotIn('add typing_preview xsize',s)
   p=(ROOT/'game/room13_typing_preview.rpy').read_text();self.assertIn('r13_ui_font()',p);self.assertIn('font=signature[2]',p)
@@ -72,10 +72,7 @@ class VisualCorrection(unittest.TestCase):
    self.assertLessEqual(rect[1]+rect[3],view[1])
   self.assertLessEqual(title[0]+title[2]+8,current[0])
   self.assertLessEqual(abs(title[1]+title[3]/2-current[1]-current[3]/2),4)
-  # Inn/forest retain a single shared centreline in the notebook's lower band.
-  b=(ROOT/'game/room13_map_b.rpy').read_text()
-  self.assertIn('hbox:\n            yalign .5 spacing 14',b)
-  # Font weight can change without changing either label's shared centreline.
-  self.assertRegex(b,r'text [^\n]*size 23\b[^\n]*yalign \.5\b')
-  self.assertRegex(b,r'text [^\n]*size 17\b[^\n]*yalign \.5\b')
-  self.assertIn('xalign 1.0 yalign .5 text_align 1.0',b)
+  # Inn/forest now share the village notebook footer instead of an outer band.
+  nav=(ROOT/'game/room13_navigation.rpy').read_text()
+  self.assertIn('use r13_map_diary_footer(region,selected,ready,local_guide,close_action)',nav)
+  self.assertIn('xpos 640 ypos 78 xanchor .5',nav)

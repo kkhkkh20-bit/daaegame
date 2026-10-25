@@ -145,36 +145,18 @@ screen r13_map(initial_region=None, local_guide=False):
     if region=="village":
         use r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_action,extra_places,village_zoom)
     else:
-        use r13_map_b(region,selected,ready,map_hover,map_notice)
-    if region!="village":
-        # 여관·숲의 기존 조작 줄은 유지한다.
-        add r13_field_paper() xpos 24 ypos 602 xysize (1232,110)
-        # Center every map control in the same footer, including 88px touch targets.
-        $ map_controls_y=602+(110-r13_map_control_height())//2
-        if selected:
-            text r13_map_label(selected) xpos 48 ypos 627 size 27 color "#4b3021" font R13_UI_BOLD_FONT
-            $ meeting_venue=r13_meeting_map_venue(selected)
-            text (("● 현재 위치" if selected==room13["location"] else "선택됨")+(" · "+meeting_venue[2] if meeting_venue else " · 이동 버튼으로 확정")+(" · 모임 중" if meeting_venue and r13_meeting_map_pending(selected) else "")) xpos 48 ypos 663 size 17 color "#87613d" xsize 302
-            $ can_travel=selected!=room13["location"] and (selected in dict(r13_local_connections()) if local_guide else selected in r13_places())
-            fixed:
-                area (r13_control_x(3)-24,map_controls_y,R13_CONTROL["width"],r13_map_control_height())
-                use r13_field_button("이곳으로 이동","map",[Hide("r13_inn_guide"),Return(("travel",selected))] if local_guide else Return(selected),enabled=ready and can_travel,primary=True,height=r13_map_control_height(),control_id="r13_map_travel")
-        else:
-            text "아직 확인한 장소가 없습니다." xpos 48 ypos 642 size 22 color "#765b3e"
-        if not local_guide:
-            hbox:
-                xpos 366 ypos map_controls_y spacing 8
-                for key,title in R13_MAP_REGIONS:
-                    if r13_map_nodes(key):
-                        textbutton title:
-                            id ("r13_map_region_"+key)
-                            style "r13_action_button" xsize 116 ysize r13_map_control_height() padding (8,8) text_size 19 text_font R13_UI_BOLD_FONT
-                            background r13_field_button_art(region==key)
-                            hover_background Transform(r13_field_button_art(region==key),matrixcolor=BrightnessMatrix(.05))
-                            text_color ("#fff5e5" if region==key else "#4b3021") text_hover_color ("#ffffff" if region==key else "#9c3c2b") text_selected_color "#fff5e5" text_insensitive_color "#938477"
-                            text_xalign .5 text_yalign .5
-                            action [SetScreenVariable("region",key),SetScreenVariable("selected",r13_map_selection(key,selected)),SetScreenVariable("map_hover",None),SetScreenVariable("map_notice",None)]
-                            selected region==key sensitive ready
+        add r13_asset("file:assets/map-village-b/notebook_frame_1280x720.png")
+        add Solid("#fff0d4") xpos 88 ypos 58 xysize (1136,570)
         fixed:
-            area (r13_control_x(4)-24,map_controls_y,R13_CONTROL["width"],r13_map_control_height())
-            use r13_field_button("현장으로","dialogue",close_action,enabled=ready,height=r13_map_control_height(),control_id="r13_map_close")
+            ypos 70
+            use r13_map_b(region,selected,ready,map_hover,map_notice)
+        text ("다람탐정 · "+("여관 지도" if region=="inn" else "숲·산길 지도")) xpos 640 ypos 78 xanchor .5 size 28 font R13_UI_BOLD_FONT color "#29364b"
+        textbutton "×":
+            area ((1180,48,88,88) if r13_touch_ui() else (1190,64,48,48)) padding (0,0) background None
+            text_font R13_UI_BOLD_FONT text_size 28 text_color "#493324" text_xalign .5 text_yalign .5
+            action close_action sensitive ready alt "닫기"
+        use r13_map_diary_footer(region,selected,ready,local_guide,close_action)
+        if map_notice:
+            frame:
+                area (330,584,620,44) padding (12,6) background r13_sticker_button()
+                text map_notice font R13_UI_BOLD_FONT size 19 color "#963b2f" align (.5,.5)

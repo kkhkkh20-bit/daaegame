@@ -117,18 +117,7 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
             text_yalign .5
             text_font R13_UI_BOLD_FONT text_size 20 text_color "#493324"
             action ToggleScreenVariable("extra_places") sensitive ready
-    fixed:
-        area (102,643,180,40)
-        add Frame(r13_asset_path("file:assets/map-village-b/b_panel_small_trimmed.png"),12,10) xysize (180,40)
-        text ("선택: "+r13_map_label(selected) if selected else "장소를 선택하세요") font R13_UI_BOLD_FONT size 19 color "#493324" xmaximum 168 align (.5,.5) text_align .5
-    if not local_guide:
-        for key,title,rect in (("village","마을",(300,643,106,40)),("inn","여관 안",(416,643,120,40)),("mountain","숲·산길",(546,643,132,40))):
-            if r13_map_nodes(key):
-                use r13_village_b_control(title,rect,[SetScreenVariable("region",key),SetScreenVariable("selected",r13_map_selection(key,selected)),SetScreenVariable("map_hover",None),SetScreenVariable("map_notice",None)],"r13_map_region_"+key,enabled=ready,chosen=key=="village")
-    $ can_travel=selected and selected!=room13["location"] and (selected in dict(r13_local_connections()) if local_guide else selected in r13_places())
-    use r13_village_b_control("이곳으로 이동",(704,643,184,40),[Hide("r13_inn_guide"),Return(("travel",selected))] if local_guide else Return(selected),"r13_map_travel",primary=True,enabled=ready and can_travel)
-    use r13_village_b_control("현장으로",(902,643,142,40),close_action,"r13_map_close",enabled=ready)
-    add Transform(r13_asset_path("file:assets/map-village-b/sticker_daram_stubborn.png"),xysize=(67,67),fit="contain") xpos 1137 ypos 631
+    use r13_map_diary_footer("village",selected,ready,local_guide,close_action)
     $ meeting_venue=r13_meeting_map_venue(selected) if selected else None
     $ visible_notice=map_notice or ((meeting_venue[2]+(" · 모임 중" if r13_meeting_map_pending(selected) else "")) if meeting_venue else None)
     if visible_notice:
@@ -158,3 +147,17 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
                                 background Solid("#ead8b866") hover_background Solid("#e0c19b99")
                                 text_font R13_UI_BOLD_FONT text_size 24 text_color ("#493324" if state=="open" else "#88796b")
                                 action ([SetScreenVariable("selected",key),SetScreenVariable("map_notice",None),SetScreenVariable("extra_places",False)] if state!="locked" else SetScreenVariable("map_notice",r13_map_label(key)+" · 지금은 이곳으로 갈 수 없습니다."))
+
+screen r13_map_diary_footer(region,selected,ready,local_guide,close_action):
+    fixed:
+        area (102,643,180,40)
+        add Frame(r13_asset_path("file:assets/map-village-b/b_panel_small_trimmed.png"),12,10) xysize (180,40)
+        text ("선택: "+r13_map_label(selected) if selected else "장소를 선택하세요") font R13_UI_BOLD_FONT size 19 color "#493324" xmaximum 168 align (.5,.5) text_align .5
+    if not local_guide:
+        for key,title,rect in (("village","마을",(300,643,106,40)),("inn","여관 안",(416,643,120,40)),("mountain","숲·산길",(546,643,132,40))):
+            if r13_map_nodes(key):
+                use r13_village_b_control(title,rect,[SetScreenVariable("region",key),SetScreenVariable("selected",r13_map_selection(key,selected)),SetScreenVariable("map_hover",None),SetScreenVariable("map_notice",None)],"r13_map_region_"+key,enabled=ready,chosen=key==region)
+    $ can_travel=selected and selected!=room13["location"] and (selected in dict(r13_local_connections()) if local_guide else selected in r13_places())
+    use r13_village_b_control("이곳으로 이동",(704,643,184,40),[Hide("r13_inn_guide"),Return(("travel",selected))] if local_guide else Return(selected),"r13_map_travel",primary=True,enabled=ready and can_travel)
+    use r13_village_b_control("현장으로",(902,643,142,40),close_action,"r13_map_close",enabled=ready)
+    add Transform(r13_asset_path("file:assets/map-village-b/sticker_daram_stubborn.png"),xysize=(67,67),fit="contain") xpos 1137 ypos 631

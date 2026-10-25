@@ -580,16 +580,16 @@ init python:
         return r13_read_size(30,34)
 
     def r13_opt_row_height():
-        return 112 if persistent.room13_large_text else 92
+        return max(96 if globals().get("r13_touch_ui",lambda:False)() else 76,112 if persistent.room13_large_text else 76)
 
 style r13opt_text is text:
     font r13_ui_font() color "#4b3420" line_spacing 2
 # Approved B options artwork; crops remove only the transparent delivery margin.
 style r13opt_button is button:
-    background Frame(Crop((16,16,190,52),r13_asset_path("file:assets/ui-b-options/b_opt_choice.png")),24,16) hover_background Frame(Crop((16,16,190,52),r13_asset_path("file:assets/ui-b-options/b_opt_choice_hover.png")),24,16)
-    selected_background Frame(Crop((16,16,190,52),r13_asset_path("file:assets/ui-b-options/b_opt_choice_selected.png")),24,16)
-    selected_hover_background Frame(Crop((16,16,190,52),r13_asset_path("file:assets/ui-b-options/b_opt_choice_selected.png")),24,16)
-    insensitive_background Frame(Crop((16,16,190,52),r13_asset_path("file:assets/ui-b-options/b_opt_choice.png")),24,16)
+    background r13_sticker_button() hover_background r13_sticker_button(focused=True)
+    selected_background r13_sticker_button(primary=True)
+    selected_hover_background r13_sticker_button(primary=True,focused=True)
+    insensitive_background r13_sticker_button(disabled=True)
     selected_foreground None
     padding (10,4) ysize 52
 style r13opt_button variant "touch":
@@ -605,15 +605,15 @@ style r13opt_bar is bar:
 style r13opt_tab_button is button:
     background None hover_background None selected_background None padding (0,0)
 style r13opt_tab_button_text is text:
-    font r13_ui_font() color "#4b3420" hover_color "#4b3420" selected_color "#4b3420" xpos 62 yalign .5
+    font R13_UI_BOLD_FONT color "#4b3420" hover_color "#4b3420" selected_color "#4b3420" xpos 62 yalign .5
 
 style r13opt_footer_button is r13opt_button:
     padding (10,4)
 style r13opt_footer_button_text is r13opt_button_text:
     hover_color "#4b3420"
 style r13opt_close_button is r13opt_footer_button:
-    background Frame(Crop((16,16,190,52),r13_asset_path("file:assets/ui-b-options/b_opt_choice_selected.png")),24,16)
-    hover_background Frame(Crop((16,16,190,52),r13_asset_path("file:assets/ui-b-options/b_opt_choice_selected.png")),24,16)
+    background r13_sticker_button(primary=True)
+    hover_background r13_sticker_button(primary=True,focused=True)
 style r13opt_close_button_text is r13opt_footer_button_text:
     color "#fff6e2" hover_color "#fff6e2"
 
@@ -663,7 +663,7 @@ screen pause_menu():
     add Transform(r13_asset_path("file:assets/ui-b-options/daram_diary_sticker_magnifier.png"),zoom=64.0/422,rotate=-10) xpos 216 ypos 460
     # Keep the index clear of the unscaled binder rings.
     add Crop((16,16,150,44),r13_asset_path("file:assets/ui-b-options/b_opt_title_tape.png")) xpos 96 ypos 42
-    text "설정" xpos 120 ypos 42 size (r13_opt_title_size()+8) color "#4b3420"
+    text "설정" xpos 120 ypos 42 font R13_UI_BOLD_FONT size (r13_opt_title_size()+8) color "#4b3420"
     vbox:
         xpos 96 ypos 136 spacing 0
         for key,name in (("reading","읽기"),("sound","소리"),("screen","화면")):
@@ -717,19 +717,17 @@ screen pause_menu():
                 use r13_opt_row("자동 넘김 대기", "자동 재생 중 다음 대사까지"):
                     for value,name in ((0,"수동"),(5,"짧게"),(15,"보통"),(25,"길게")):
                         textbutton name xsize 132 action Preference("auto-forward time",value) selected (_preferences.afm_time==0 if value==0 else (0<_preferences.afm_time<10) if value==5 else (10<=_preferences.afm_time<20) if value==15 else _preferences.afm_time>=20) text_size r13_opt_size() ysize r13_opt_button_height()
-                null height 10
-                text "자동 읽기는 대화 중 더보기에서 켜고 끕니다." xpos 248 size (r13_opt_size()-3) color "#765b3e"
-                null height 14
                 hbox:
-                    spacing 18
-                    text "속도 미리보기" size (r13_opt_size()+1) color "#4b3420" yalign .5
-                    text "· 타이핑 중" size (r13_opt_size()-2) color "#765b3e" yalign .5
-                    textbutton "다시 보기" id "r13_preview_replay" xsize 160 text_size r13_opt_size() action Function(typing_preview.restart) ysize r13_opt_button_height()
-                null height 10
-                frame:
-                    xsize 824 ysize 110 padding (26,16) background Frame(Crop((16,16,860,110),r13_asset_path("file:assets/ui-b-options/b_opt_preview_box.png")),26,16)
-                    add typing_preview
+                    spacing 12
+                    textbutton "다시 보기" id "r13_preview_replay" xsize 150 text_size r13_opt_size() action Function(typing_preview.restart) ysize r13_opt_button_height()
+                    frame:
+                        xsize 674 ysize 88 padding (18,12) background r13_sticker_button()
+                        add typing_preview
             else:
+                null height 0
+                frame:
+                    xsize 824 ysize 76 padding (26,16) background Frame(Crop((16,16,860,110),r13_asset_path("file:assets/ui-b-options/b_opt_preview_box.png")),26,16)
+                    text "대사창 미리보기 · 바꾼 진하기가 적용됩니다." font R13_UI_BOLD_FONT size r13_opt_size() color "#4b3420" xsize 772
                 use r13_opt_row("대사창 진하기", "배경이 비쳐 보이는 정도"):
                     for value,name in (("99","연하게"),("d4","보통"),("f5","진하게")):
                         textbutton name xsize 176 selected persistent.room13_window_alpha==value action [SetField(persistent,"room13_window_alpha",value),Function(renpy.save_persistent)] text_size r13_opt_size() ysize r13_opt_button_height()
@@ -745,10 +743,6 @@ screen pause_menu():
                         textbutton "끄기" xsize 132 action Function(r13_admin_toggle) text_size r13_opt_size() ysize r13_opt_button_height()
                     else:
                         textbutton "핀 번호로 켜기" xsize 220 action Show("r13_admin_pin") text_size r13_opt_size() ysize r13_opt_button_height()
-                null height 14
-                frame:
-                    xsize 824 ysize 110 padding (26,16) background Frame(Crop((16,16,860,110),r13_asset_path("file:assets/ui-b-options/b_opt_preview_box.png")),26,16)
-                    text "대사창 미리보기\n바꾼 진하기가 바로 적용됩니다." size _r13_say_size() color "#4b3420" xsize 772
     text ("v"+config.version) xpos 120 ypos (516 if r13_touch_ui() else 540) size (r13_opt_size()-6) color "#8f8778"
     add Crop((16,16,1080,6),r13_asset_path("file:assets/ui-b-options/b_opt_divider.png")) xpos 112 ypos (536 if r13_touch_ui() else 560)
     textbutton "설정 초기화" style "r13opt_footer_button":

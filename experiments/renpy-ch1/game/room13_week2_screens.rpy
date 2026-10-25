@@ -54,17 +54,17 @@ screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장",can_p
     timer .15 action SetScreenVariable("ready",True)
     $ control_height=88 if r13_touch_ui() else 56
     frame:
-        area (50,110,1180,554) padding (28,25) background R13PaperPanel()
+        area (50,100,1180,570) padding (48,32,28,24) background R13DiaryPanel()
         fixed:
             hbox:
-                xsize 1110
+                xsize 1090
                 text heading size 22 color "#717367"
                 if chances:
                     text chances size 22 color "#795d40" xalign 1.0
-            text R13_CLAIMS[claim]["assertion"] ypos 40 size r13_read_size(30,32) color "#765426" xsize 1110
+            text R13_CLAIMS[claim]["assertion"] ypos 40 size r13_read_size(30,32) color "#765426" xsize 1090
             text ("고른 자료 · %d개"%len(room13["arguments"].get(claim,[]))) ypos 116 size 22
             viewport:
-                ypos 150 xsize 1110 ysize 120 draggable True mousewheel True scrollbars "vertical"
+                ypos 150 xsize 1090 ysize 120 draggable True mousewheel True scrollbars "vertical"
                 vscrollbar_unscrollable "hide"
                 vbox:
                     spacing 8
@@ -76,13 +76,13 @@ screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장",can_p
                                 use r13_control("빼기",None,Return(("remove",key)),enabled=ready,width=128,height=control_height,label_size=24)
                     if not room13["arguments"].get(claim):
                         text "아직 고른 자료가 없습니다." size 22 color "#717367"
-            text r13_proof_edit_help(chances) ypos 290 size (26 if r13_touch_ui() else 22) color "#795d40" xsize 1110
+            text r13_proof_edit_help(chances) ypos 290 size (26 if r13_touch_ui() else 22) color "#795d40" xsize 1090
             hbox:
                 ypos 414 spacing 16
-                use r13_control("자료 고르기",None,Return("present"),enabled=ready,width=264,height=control_height,label_size=24,control_id="r13_proof_pick")
-                use r13_control("되묻는다",None,Return("press"),enabled=(ready and can_press),width=264,height=control_height,label_size=24,control_id="r13_proof_hint")
-                use r13_control("선택한 근거 제출",None,Return("argue"),enabled=(ready and (bool(room13["arguments"].get(claim)) or not need_evidence)),primary=True,width=264,height=control_height,label_size=24,control_id="r13_proof_submit")
-                use r13_control(leave_label,None,Return("leave"),enabled=ready,width=264,height=control_height,label_size=24,control_id="r13_proof_back")
+                use r13_control("자료 고르기",None,Return("present"),enabled=ready,width=258,height=control_height,label_size=24,control_id="r13_proof_pick")
+                use r13_control("되묻는다",None,Return("press"),enabled=(ready and can_press),width=258,height=control_height,label_size=24,control_id="r13_proof_hint")
+                use r13_control("선택한 근거 제출",None,Return("argue"),enabled=(ready and (bool(room13["arguments"].get(claim)) or not need_evidence)),primary=True,width=258,height=control_height,label_size=24,control_id="r13_proof_submit")
+                use r13_control(leave_label,None,Return("leave"),enabled=ready,width=258,height=control_height,label_size=24,control_id="r13_proof_back")
 
 screen r13_rescue_notes():
     style_prefix "r13"

@@ -70,6 +70,17 @@ init 58 python:
             r.blit(renpy.render(R13InkPanel(self.focused,self.disabled),w,band,st,at),(0,h-band))
             return r
 
+    class R13DiaryPanel(renpy.Displayable):
+        """Fixed corners and rings; the blank centre alone expands."""
+        def render(self,width,height,st,at):
+            w,h=max(1,int(width)),max(1,int(height))
+            out=renpy.Render(w,h)
+            face=Frame(r13_asset_path("file:assets/ui-field-stickers/diary.png"),26,26)
+            out.blit(renpy.render(Transform(face,xysize=(w,h)),w,h,st,at),(0,0))
+            ring=renpy.render(r13_asset("file:assets/ui-field-stickers/ring.png"),28,34,st,at)
+            for y in (.25,.5,.75):out.blit(ring,(0,int(h*y)-17))
+            return out
+
     class R13PaperPanel(renpy.Displayable):
         def __init__(self, focused=False, dark=False, transferable=False, remembered=False, **kwargs):
             super(R13PaperPanel,self).__init__(**kwargs)

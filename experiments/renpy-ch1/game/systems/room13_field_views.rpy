@@ -26,7 +26,7 @@ init 85 python:
         return r13_asset_path("file:assets/ui-field-stickers/arrow_%s_%s.png"%(direction,"hover" if hover else "basic"))
 
     def r13_field_button_art(primary=False):
-        return Frame(Crop((16,10,128,32),r13_asset_path("file:assets/ui-b-field/b_button_primary.png") if primary else r13_asset_path("file:assets/ui-b-field/b_button.png")),24,10,24,10)
+        return r13_sticker_button(primary=primary)
 
     def r13_field_icon(name):
         return r13_asset_path("file:"+("assets/ui-b-field/b_icon_%s.png"%({"record":"book","settings":"more","dialogue":"acorn"}.get(name,name))))
