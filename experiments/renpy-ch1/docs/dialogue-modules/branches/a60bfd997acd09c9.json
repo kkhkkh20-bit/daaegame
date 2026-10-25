@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "e177280e9f541392b4e2290a9056edfa14448f03122c49a2be945ee3d8bc802c",
+  "entries": [
+    {
+      "id": "NW_H_OPEN_04_D1",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "blocks",
+        "hyp_open11",
+        4,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "hyp_open11",
+      "block": "hyp_open11",
+      "placement": "blocks",
+      "ref": "hyp_open11",
+      "when": "daram_ready",
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "꽃이 와? 머리에?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 588,
+          "label": "r13_v111_hypothesis11",
+          "guards": []
+        }
+      ],
+      "scene_title": "hyp_open11",
+      "source_hash": "0ba5ee822924678bbe0d55c53a45e696441b6a969e4ca395ebe81c542d31c469",
+      "baseline_hash": "1864d4981b7d82594e439526c7b33e81ba22ee13337711e84c345a4a2baf198f",
+      "uid": "e898eb2d3210609045cfac16",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|hyp_open11|patch|hyp_open11|daram_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_H_OPEN_04_D2",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "blocks",
+        "hyp_open11",
+        5,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "hyp_open11",
+      "block": "hyp_open11",
+      "placement": "blocks",
+      "ref": "hyp_open11",
+      "when": "daram_ready",
+      "speaker": "선생님",
+      "kind": "dialogue",
+      "text": "……그렇게들 불러. 예쁜 이름이지.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 588,
+          "label": "r13_v111_hypothesis11",
+          "guards": []
+        }
+      ],
+      "scene_title": "hyp_open11",
+      "source_hash": "0ba5ee822924678bbe0d55c53a45e696441b6a969e4ca395ebe81c542d31c469",
+      "baseline_hash": "790b8b84b8c315f0b11404be7d8eef7e3cc4b7058ff129339ba1148819435d7c",
+      "uid": "66dc696ea13bb7031e1e709c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|hyp_open11|patch|hyp_open11|daram_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

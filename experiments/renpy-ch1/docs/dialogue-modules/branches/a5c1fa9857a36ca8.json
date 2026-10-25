@@ -1,0 +1,45 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "e177280e9f541392b4e2290a9056edfa14448f03122c49a2be945ee3d8bc802c",
+  "entries": [
+    {
+      "id": "NW_D02_S04_T01",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "after",
+        "MS14_D02_S04_L0034",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D02_S04_L0034",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "thought",
+      "text": "꼭이라고 했다. ……다돌, 내일은 진짜 일찍 일어나야 한다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 710,
+          "label": "r13_v111_shelter_done",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "e6c7fa339136feff3016855e8f997dea6cc5f62191ed23aaeb827049efcb4be8",
+      "baseline_hash": "c4995aada5577b8a9f91c75358fc0eb8c5a252f71bdde3809a38a8ab4cd9e605",
+      "uid": "4bd45edfc39f41266712a285",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}
