@@ -125,7 +125,7 @@ init 301 python:
         authored=r13_v111_binding().get("people",["daram"])
         # Preserve the existing residents and their scheduled staging. Explicit
         # V1.1.1 survival, relocation and custody results still take precedence.
-        people=list(_r13_v111_visible_people())
+        people=[] if r13_v111_value("wild_night14") else list(_r13_v111_visible_people())
         people=[p for p in people if not r13_v111_value("busy:"+p) or r13_v111_value("location:"+p) in (None,store.room13["location"])]
         if r13_v111_value("piko.location") and r13_v111_value("piko.location")!=store.room13["location"]:
             people=[p for p in people if p!="resident_piko"]
@@ -161,6 +161,7 @@ init 301 python:
         if store.room13["location"]=="kitchen" and key in ("rear_after","rear_after_known"):return "rear"
         return key
     def r13_v111_ambient_text(key,spec):
+        if r13_v111_value("wild_night14"):return "연기가 밀려온다. 오래 들여다볼 틈이 없다."
         location=store.room13["location"]
         key=r13_v111_object_key(key)
         spec=ROOM13["objects"].get(location,{}).get(key,spec)
@@ -236,6 +237,9 @@ label r13_v111_wait_again:
         jump r13_v111_wait_again
     if v111_pick[0]=="person":
         $ v111_person=v111_pick[1]
+        if r13_v111_value("wild_night14") and not any(o.get("person")==v111_person for o in v111_binding.get("options",[])):
+            call r13_v111_wild_family_wait14
+            jump r13_v111_wait_again
         if key=="gate_request" and v111_person=="guard":
             $ r13_v111_time("inspect:gate_request:ledger",15)
             return 0
@@ -249,6 +253,10 @@ label r13_v111_wait_again:
             if _return!="back":
                 $ r13_v111_talk_person=v111_person
                 $ r13_v111_set("talked:%s:%s"%(room13["v111"].get("scene"),v111_person),True)
+            if r13_v111_value("wild_night14") and (_return=="present" or isinstance(_return,tuple)):
+                $ r13_v111_talk_person=None
+                $ renpy.notify("지금은 불길을 피해야 한다.")
+                jump r13_v111_wait_again
             if isinstance(_return,int):
                 $ r13_v111_set("ui_topic_read:%s:%s"%(key,_return),True)
                 $ r13_v111_time("topic:"+key+":"+str(_return),0 if (key=="gate_investigate" and _return in (5,6)) or (key=="post_menu" and _return==1) or key in ("safe_passage9","passage_after9") else 10)

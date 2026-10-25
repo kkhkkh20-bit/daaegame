@@ -236,6 +236,18 @@ init 319 python:
         # 13일 수레 앞: 다람이 곁에 있고, 방금까지 수레에 묶여 있던 판(listed:daram)이 아닐 때만 빈 칸을 묻는다.
         "daram_watching13":lambda:r13_v111_actor_ready("daram") and r13_v111_value("listed:daram") is not True,
         # 14일 아침: 엄마와 다람이 함께 학교에 있을 때만 셋이 말한다.
+        # 2026-10-24 불타는 밤: 11일 가설 회의를 진 판의 12~13일 전조와 14일 밤.
+        "wild_omen12":lambda:r13_v111_value("meeting:hypothesis")=="lose" and r13_v111_actor_ready("resident_teacher"),
+        "wild_omen13_karo":lambda:r13_v111_value("meeting:hypothesis")=="lose" and r13_v111_actor_ready("karo"),
+        # 11일 1번 쟁점을 이긴 판은 돌목이 「초소 불은 오늘 끄겠소」(NW_H1_W_04)라고 했다가 다시 켰다.
+        "wild_omen13_gate_kept":lambda:r13_v111_value("meeting:hypothesis")=="lose" and r13_v111_value("hyp_issue:1")!="won" and r13_v111_actor_ready("guard"),
+        "wild_omen13_gate_relit":lambda:r13_v111_value("meeting:hypothesis")=="lose" and r13_v111_value("hyp_issue:1")=="won" and r13_v111_actor_ready("guard"),
+        "wild_daram_fever":lambda:bool(r13_v111_value("daram_fever12")),
+        "wild_daram_well":lambda:not r13_v111_value("daram_fever12"),
+        "wild_three":lambda:r13_v111_value("wild_family")=="three",
+        "wild_no_mom":lambda:r13_v111_value("wild_family")=="no_mom",
+        "wild_alone":lambda:r13_v111_value("wild_family")=="alone",
+        "wild_omen13_gate":lambda:r13_v111_value("meeting:hypothesis")=="lose" and r13_v111_actor_ready("guard") and r13_v111_actor_ready("daram"),
         "mom_daram_ready14":lambda:r13_v111_actor_ready("mom") and r13_v111_actor_ready("daram"),
         # 2026-10-24 행동 검수(action-review-20261024/적용보고.md). 이미 있는 값만 읽는다.
         # 대안 1: 회의에서 틀린 뒤 기회가 한 번만 남았을 때 결정하는 사람이 참을성이 바닥났음을 말한다.

@@ -65,6 +65,11 @@ class Transactions(unittest.TestCase):
   self.env['r13_v111_set']('piko_alive',False)
   self.env['r13_v111_binding']=lambda:dict(people=['resident_piko','daram'])
   self.assertNotIn('resident_piko',visible())
+ def test_wild_night_only_stages_authored_people(self):
+  self.env.update(r13_v111_active=lambda:True,_r13_v111_visible_people=lambda:['resident_kongi','resident_siluk'],r13_v111_binding=lambda:dict(people=['daram']))
+  self.env['r13_v111_set']('wild_night14',True)
+  self.assertEqual(self.env['r13_visible_people'](),['daram'])
+  self.assertIn('연기',self.env['r13_v111_ambient_text']('road',{}))
  def test_reserved_blankets_are_not_possession_and_receipt_is_once(self):
   self.env['r13_v111_commit']('MS14_D02_S04_L0083');self.assertEqual(self.env['r13_v111_value']('carried_dry_blankets'),0)
   self.assertTrue(self.env['r13_v111_value']('nero_bedding_reserved'))

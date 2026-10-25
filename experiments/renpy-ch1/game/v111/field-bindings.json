@@ -2621,5 +2621,87 @@
         "buri"
       ]
     }
+  },
+  "wild_room14": {
+    "location": "school",
+    "people": [
+      "mom",
+      "daram",
+      "nabi"
+    ],
+    "options": [
+      {
+        "title": "담요와 외투를 챙긴다",
+        "location": "school",
+        "guard": [],
+        "object": "blankets"
+      }
+    ]
+  },
+  "wild_hall14": {
+    "location": "school",
+    "people": [
+      "mom",
+      "daram",
+      "doto"
+    ],
+    "options": [
+      {
+        "title": "도토의 손에서 바구니를 떼어 낸다",
+        "location": "school",
+        "guard": [],
+        "person": "doto"
+      },
+      {
+        "title": "뒷문으로 돌아 광장으로 간다",
+        "location": "square",
+        "guard": [],
+        "move": "square"
+      }
+    ]
+  },
+  "wild_square14": {
+    "location": "square",
+    "people": [
+      "mom",
+      "daram",
+      "resident_badook"
+    ],
+    "options": [
+      {
+        "title": "바둑이와 잠긴 문을 연다",
+        "location": "square",
+        "guard": [],
+        "person": "resident_badook"
+      },
+      {
+        "title": "다람과 산길 쪽으로 간다",
+        "location": "forest",
+        "guard": [],
+        "move": "forest"
+      }
+    ]
+  },
+  "wild_road14": {
+    "location": "forest",
+    "people": [
+      "mom",
+      "daram",
+      "guard"
+    ],
+    "options": [
+      {
+        "title": "돌목을 초소에서 끌어낸다",
+        "location": "forest",
+        "guard": [],
+        "person": "guard"
+      },
+      {
+        "title": "초소를 등지고 첫 굽이로 오른다",
+        "location": "forest",
+        "guard": [],
+        "object": "forest_roots"
+      }
+    ]
   }
 }

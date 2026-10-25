@@ -1120,7 +1120,7 @@
 | `MS14_D14_END_FAMILY` | 가족 철수 결말 — 열지 않은 문 · 학교/안전 확인된 제단/감독 면회 자리/광장/확보 숙소 | 눈에 막힌 입구(gate) | 엄마, 다람, 돌목 | `r13_v111_family_ending14` |
 | `MS14_D14_END_PARTIAL` | 부분 구조 결말 — 남은 인계표 · 학교/안전 확인된 제단/감독 면회 자리/광장/확보 숙소 | 돌이 있는 광장(square), 마을 학교(school) | 까로, 돌목, 바둑이, 다람, 엄마, 나비, (+식) | `r13_v111_partial_ending14`, `r13_v111_partial_departed14`, `r13_v111_partial_handoff14`, `r13_v111_partial_work14`, `r13_v111_partial_patient14`, `r13_v111_partial_receipt14` 외 2 |
 | `MS14_D14_END_VIOLENCE` | 군중 폭력 결말 — 한 명의 자리가 더 필요하다 · 학교/안전 확인된 제단/감독 면회 자리/광장/확보 숙소 | 임시 진료실(clinic), 눈에 막힌 입구(gate), 마을 학교(school) | 엄마, 다람, 돌목, 서리 검사원 | `r13_v111_violence_ending14`, `r13_v111_family_lodging14`, `r13_v111_cookie14`, `r13_v111_cookie_gate14` |
-| `MS14_D14_S05` | 장면 14-5. 엄마 몫 과자 · 학교/안전 확인된 제단/감독 면회 자리/광장/확보 숙소 | — | — | `r13_v111_cookie_scene14`, `r13_v111_true_epilogue14` |
+| `MS14_D14_S05` | 장면 14-5. 엄마 몫 과자 · 학교/안전 확인된 제단/감독 면회 자리/광장/확보 숙소 | — | 엄마, 다람, 나비, 도토, 바둑이, 돌목 | `r13_v111_cookie_scene14`, `r13_v111_true_epilogue14`, `r13_v111_wild_family_wait14`, `r13_v111_wild_night14`, `r13_v111_wild_room14`, `r13_v111_wild_hall14` 외 4 |
 
 #### `MS14_D14_S01` 갈림 · 값 (room13_v111_days1114.rpy:2698)
 
@@ -1248,9 +1248,20 @@
 
 #### `MS14_D14_S05` 갈림 · 값 (room13_v111_days1114.rpy:3457)
 
+- `r13_v111_cookie_scene14` if `r13_v111_value('ending14')=='morning' and r13_v111_value('meeting:hypothesis')=='lose' and r13_v111_value('meeting:altar')=='lose'` `→ r13_v111_wild_night14`
+- `r13_v111_wild_hall14` if 「도토의 손에서 바구니를 떼어 낸다」 `$ r13_v111_set('wild_late',(r13_v111_value('wild_late') or 0)+1)`
+- `r13_v111_wild_square14` if 「바둑이와 잠긴 문을 연다」 `$ r13_v111_set('wild_late',(r13_v111_value('wild_late') or 0)+1)`
+- `r13_v111_wild_road14` if 「돌목을 초소에서 끌어낸다」 `$ r13_v111_set('wild_late',(r13_v111_value('wild_late') or 0)+1)`
 - 값
   - `story14_completed` = `true` (`r13_v111_cookie_scene14`)
   - `ending14` = `"true"` (`r13_v111_true_epilogue14`)
+  - `ending14` = `"wild_night"` (`r13_v111_wild_night14`)
+  - `wild_night14` = `true` (`r13_v111_wild_night14`)
+  - `wild_late` = `0` (`r13_v111_wild_night14`)
+  - `wild_late` = `(r13_v111_value('wild_late') or 0)+1` (`r13_v111_wild_hall14`)
+  - `wild_late` = `(r13_v111_value('wild_late') or 0)+1` (`r13_v111_wild_square14`)
+  - `wild_late` = `(r13_v111_value('wild_late') or 0)+1` (`r13_v111_wild_road14`)
+  - `wild_family` = `r13_nw_wild_family()` (`r13_v111_wild_climb14`)
 
 ### 날짜 없음
 
@@ -1472,7 +1483,7 @@
 - `"win" if all(r13_v111_value("hyp_issue:%d"%i)=="won" for i in (1,2,3,4)) else "partial"` · `r13_v111_hyp5_won11` (room13_v111_days1114.rpy:787)
 - `"lose"` · `r13_v111_hyp_lost_gate11` (room13_v111_days1114.rpy:792)
 
-이 회의를 읽는 조건: `hyp_final`, `hyp_lose`, `hyp_lose_none_won`, `hyp_lose_some_won`, `hyp_not_lose`, `hyp_partial`, `hyp_retry`, `hyp_win`
+이 회의를 읽는 조건: `hyp_final`, `hyp_lose`, `hyp_lose_none_won`, `hyp_lose_some_won`, `hyp_not_lose`, `hyp_partial`, `hyp_retry`, `hyp_win`, `wild_omen12`, `wild_omen13_gate`, `wild_omen13_gate_kept`, `wild_omen13_gate_relit`, `wild_omen13_karo`
 
 ### 수프 회의 `soup` · 12일 · 기회 5
 
@@ -1842,6 +1853,16 @@ def r13_nw_true_ending_ready():
 | `town_won_none_before11` | `not any(r13_v111_value("meeting:"+m)=="win" for m in ("lamp","gate_post","fire","room13","records"))` | d11 |
 | `warm_support_pending` | `not r13_v111_value("warm_support_arrived")` | d12 |
 | `warm_support_ready` | `r13_v111_value("warm_support_arrived") is True` | d12 |
+| `wild_alone` | `r13_v111_value("wild_family")=="alone"` | d14 |
+| `wild_daram_fever` | `bool(r13_v111_value("daram_fever12"))` | d14 |
+| `wild_daram_well` | `not r13_v111_value("daram_fever12")` | d14 |
+| `wild_no_mom` | `r13_v111_value("wild_family")=="no_mom"` | d14 |
+| `wild_omen12` | `r13_v111_value("meeting:hypothesis")=="lose" and r13_v111_actor_ready("resident_teacher")` | d12 |
+| `wild_omen13_gate` | `r13_v111_value("meeting:hypothesis")=="lose" and r13_v111_actor_ready("guard") and r13_v111_actor_ready("daram")` | d13 |
+| `wild_omen13_gate_kept` | `r13_v111_value("meeting:hypothesis")=="lose" and r13_v111_value("hyp_issue:1")!="won" and r13_v111_actor_ready("guard")` | d13 |
+| `wild_omen13_gate_relit` | `r13_v111_value("meeting:hypothesis")=="lose" and r13_v111_value("hyp_issue:1")=="won" and r13_v111_actor_ready("guard")` | d13 |
+| `wild_omen13_karo` | `r13_v111_value("meeting:hypothesis")=="lose" and r13_v111_actor_ready("karo")` | d13 |
+| `wild_three` | `r13_v111_value("wild_family")=="three"` | d14 |
 | `wood12_missing` | `not (r13_v111_value("warm_support_arrived") or r13_v111_value("heat_box_received"))` | d12 |
 | `writing_won_with_e09` | `"V111:E09" in (r13_v111_value("proof_given:반송·필사본·초대 발송을 대조한다") or [])` | d10 |
 | `writing_won_with_e27` | `"V111:E27" in (r13_v111_value("proof_given:반송·필사본·초대 발송을 대조한다") or [])` | d10 |

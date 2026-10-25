@@ -219,6 +219,18 @@ init 318 python:
         if not (r13_v111_value("grand:fire") is True and r13_v111_value("grand:soup") is True):return False
         return all(r13_v111_value("meeting:"+m)=="win" for m in ("records","hypothesis","blanket","altar"))
 
+    # 승인된 불타는 밤: 아침 줄기의 두 회의 완패 이후에만 열린다.
+    def r13_nw_wild_night_ready():
+        return (r13_v111_value("ending14")=="morning" and r13_v111_value("meeting:hypothesis")=="lose"
+            and r13_v111_value("meeting:altar")=="lose")
+    R13_NW_WILD_LATE_OK=1
+    def r13_nw_wild_family():
+        late=r13_v111_value("wild_late") or 0
+        fever=bool(r13_v111_value("daram_fever12"))
+        if not fever and late<=R13_NW_WILD_LATE_OK:return "three"
+        if fever and late>R13_NW_WILD_LATE_OK:return "alone"
+        return "no_mom"
+
     # Chances per meeting (owner 2026-10-22: three, then five "so the player can keep deducing").
     # A wrong answer shows the rebuttal and costs a chance; the wrong answer that uses the last chance stands.
     # 2026-10-24 소유자 결정 5 (docs/reviews/meeting-balance-20261024/기회수_분석.md 5장 B안): 같은 다섯 번이

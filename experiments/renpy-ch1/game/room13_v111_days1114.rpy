@@ -3477,6 +3477,8 @@ label r13_v111_cookie_scene14:
     call r13_lines(r13_v111_lines(['MS14_D14_S05_L0020']),'v111:MS14_D14_S05_L0020')
     call r13_lines(r13_v111_lines(['MS14_D14_S05_L0021']),'v111:MS14_D14_S05_L0021')
     call r13_lines(r13_v111_lines(['MS14_D14_S05_L0022']),'v111:MS14_D14_S05_L0022')
+    if r13_v111_value('ending14')=='morning' and r13_v111_value('meeting:hypothesis')=='lose' and r13_v111_value('meeting:altar')=='lose':
+        jump r13_v111_wild_night14
     # 0.20.7 (ending review): the path's last act (what was saved, lost or still waiting).
     call r13_lines(r13_nw_block('ending_last14'),'nw:ending_last14')
     if r13_nw_true_ending_ready():
@@ -3501,6 +3503,84 @@ label r13_v111_true_epilogue14:
     call r13_scene(R13_PLACES["gate"][1],"말을 위한 돌","quiet")
     call r13_lines(r13_nw_block('end_true14'),'nw:end_true14')
     return
+
+label r13_v111_wild_family_wait14:
+    call r13_lines(r13_nw_block('wild_family_wait14'),'nw:wild_family_wait14')
+    return
+
+label r13_v111_wild_night14:
+    $ r13_v111_set('ending14','wild_night')
+    $ r13_v111_set('wild_night14',True)
+    $ r13_v111_set('wild_late',0)
+    jump r13_v111_wild_room14
+
+label r13_v111_wild_room14:
+    $ r13_edit(period=2,location='school')
+    $ room13["v111"]["people"]=[]
+    call r13_scene(R13_PLACES['school'][1],'불타는 밤',"night")
+    $ r13_sound_ambience('fire')
+    $ r13_v111_arrive(['mom', 'daram', 'nabi'])
+    call r13_lines(r13_nw_block('wild_wake14'),'nw:wild_wake14')
+    call r13_v111_wait('wild_room14')
+    jump r13_v111_wild_hall14
+
+label r13_v111_wild_hall14:
+    $ r13_edit(period=2,location='school')
+    $ room13["v111"]["people"]=[]
+    call r13_scene(R13_PLACES['school'][1],'불타는 밤',"night")
+    $ r13_sound_ambience('fire')
+    $ r13_v111_arrive(['mom', 'daram', 'doto'])
+    call r13_lines(r13_nw_block('wild_hall14'),'nw:wild_hall14')
+    call r13_v111_wait('wild_hall14')
+    if _return==0:
+        $ r13_v111_set('wild_late',(r13_v111_value('wild_late') or 0)+1)
+        call r13_lines(r13_nw_block('wild_hall_help14'),'nw:wild_hall_help14')
+    jump r13_v111_wild_square14
+
+label r13_v111_wild_square14:
+    $ r13_edit(period=2,location='square')
+    $ room13["v111"]["people"]=[]
+    call r13_scene(R13_PLACES['square'][1],'불타는 밤',"night")
+    $ r13_sound_ambience('fire')
+    $ r13_v111_arrive(['mom', 'daram', 'resident_badook'])
+    call r13_lines(r13_nw_block('wild_square14'),'nw:wild_square14')
+    call r13_v111_wait('wild_square14')
+    if _return==0:
+        $ r13_v111_set('wild_late',(r13_v111_value('wild_late') or 0)+1)
+        call r13_lines(r13_nw_block('wild_square_help14'),'nw:wild_square_help14')
+    jump r13_v111_wild_road14
+
+label r13_v111_wild_road14:
+    $ r13_edit(period=2,location='forest')
+    $ room13["v111"]["people"]=[]
+    call r13_scene(R13_PLACES['forest'][1],'불타는 밤',"night")
+    $ r13_sound_ambience('fire')
+    $ r13_v111_arrive(['mom', 'daram', 'guard'])
+    call r13_lines(r13_nw_block('wild_road14'),'nw:wild_road14')
+    call r13_v111_wait('wild_road14')
+    if _return==0:
+        $ r13_v111_set('wild_late',(r13_v111_value('wild_late') or 0)+1)
+        call r13_lines(r13_nw_block('wild_road_help14'),'nw:wild_road_help14')
+    jump r13_v111_wild_climb14
+
+label r13_v111_wild_climb14:
+    $ r13_edit(period=2,location='forest')
+    $ room13["v111"]["people"]=[]
+    $ r13_v111_arrive(['mom','daram'])
+    $ r13_v111_set('wild_family',r13_nw_wild_family())
+    call r13_lines(r13_nw_block('wild_climb14'),'nw:wild_climb14')
+    jump r13_v111_wild_ending14
+
+label r13_v111_wild_ending14:
+    $ r13_edit(period=0,location='greenhouse')
+    $ room13["v111"]["people"]=[]
+    if r13_v111_value('wild_family')=='three':
+        $ r13_v111_arrive(['mom','daram'])
+    elif r13_v111_value('wild_family')=='no_mom':
+        $ r13_v111_arrive(['daram'])
+    call r13_scene(R13_PLACES['greenhouse'][1],'불타는 밤',"quiet")
+    call r13_lines(r13_nw_block('end_wild_night14'),'nw:end_wild_night14')
+    jump r13_v111_story_end14
 
 init 315 python:
     R13_V111_ALLOWED={

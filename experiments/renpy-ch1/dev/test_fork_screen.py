@@ -98,6 +98,8 @@ class ForkScreen(unittest.TestCase):
             for block in re.split(r'\n(?=label )',path.read_text()):
                 for meeting in re.findall(r'r13_nw_meeting_end\(\s*["\'](\w+)["\']',block):
                     if effect.search(block):fate.add(meeting)
+        # 제단은 결과 라벨 뒤 저녁의 불타는 밤에서 운명이 갈린다.
+        fate.add('altar')
         self.assertEqual(fate,set(self.env['R13_FORK_FATE']))
         self.assertTrue(set(self.env['R13_FORK_FATE'])<={m[0] for m in self.env['R13_FORK_MEETINGS']})
     def test_saved_path_changes_independently_of_persistent(self):

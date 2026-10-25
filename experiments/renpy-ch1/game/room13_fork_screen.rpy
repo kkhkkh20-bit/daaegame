@@ -63,7 +63,7 @@ init 322 python:
             r13_v111_set('fate:'+key,result)
             r13_fork_record(key,result)
 
-    R13_FORK_ENDINGS = dict(left_name='남겨진 이름',frozen='얼어붙은 마을',family='함께 떠난 가족',partial='남은 사람들',violence='상처 입은 귀환',morning='마을의 아침',true='새로운 아침')
+    R13_FORK_ENDINGS = dict(left_name='남겨진 이름',frozen='얼어붙은 마을',family='함께 떠난 가족',partial='남은 사람들',violence='상처 입은 귀환',morning='마을의 아침',true='새로운 아침',wild_night='불타는 밤')
 
     def r13_fork_start():
         persistent.r13_fork_runs = (persistent.r13_fork_runs or 0)+1
@@ -134,7 +134,7 @@ init 322 python:
     # sends people away on the cart (departed:), takes someone into custody (DARAM_DETAINED,
     # grandmother_custody) or ends a life (*_alive False). dev/test_fork_screen.py re-derives the
     # set from those labels, so a new fate effect in a meeting shows up as a test failure.
-    R13_FORK_FATE = frozenset(('lamp','gate_post','fire','room13','records','soup','blanket'))
+    R13_FORK_FATE = frozenset(('lamp','gate_post','fire','room13','records','soup','blanket','altar'))
     R13_FORK_FATE_LINE = '여기서 누군가의 운명이 갈렸다.'
 
     def r13_fork_fate(meeting):
