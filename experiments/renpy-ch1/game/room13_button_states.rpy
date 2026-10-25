@@ -41,7 +41,7 @@ init 67 python:
             out.blit(paper,((w-pw)//2,(h-ph)//2))
             render_spec=r13_asset_spec("button."+self.family,state).get("render",{})
             color=render_spec.get("text_color", "#8b8175" if not self.enabled else "#fff5e5" if self.family=="primary" else "#493324")
-            text=Text(self.caption,font=R13_UI_BOLD_FONT,size=self.text_size,color=color)
+            text=Text(self.caption,font=R13_UI_TYPE["button"]["font"],size=self.text_size,color=color)
             tr=renpy.render(text,w,h,st,at);tw,th=tr.get_size()
             ir=renpy.render(self.icon,32,32,st,at) if self.icon else None
             iw,ih=ir.get_size() if ir else (0,0)

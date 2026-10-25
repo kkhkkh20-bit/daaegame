@@ -632,10 +632,10 @@ screen r13_opt_row(label,description=""):
     fixed:
         xsize 844 ysize r13_opt_row_height()
         vbox:
-            xpos 0 yalign .5 xsize 256 spacing 4
-            text label size (r13_opt_size()+2) color "#4b3420"
+            xpos 0 yalign .5 xsize 232 spacing 4
+            text label font R13_UI_TYPE["button"]["font"] size (r13_opt_size()+2) color "#4b3420"
             if description:
-                text description size (r13_opt_size()-4) color "#765b3e" xsize 256
+                text description size (r13_opt_size()-4) color "#765b3e" xsize 232
         hbox:
             xpos 248 ypos ((r13_opt_row_height()-r13_opt_button_height())//2) spacing 12
             transclude
@@ -714,7 +714,7 @@ screen pause_menu():
                 use r13_opt_row("대사 표시 속도", "글자가 나타나는 빠르기"):
                     for speed_title,speed_value in (("느리게",24),("보통",34),("빠르게",55),("즉시",0)):
                         textbutton speed_title id ("r13_text_speed_%d"%speed_value) xsize 132 action [Preference("text speed",speed_value),Function(typing_preview.restart)] selected _preferences.text_cps==speed_value text_size r13_opt_size() ysize r13_opt_button_height()
-                use r13_opt_row("자동 넘김 대기", "자동 재생 중 다음 대사까지"):
+                use r13_opt_row("자동 넘김 대기", "다음 대사까지 대기"):
                     for value,name in ((0,"수동"),(5,"짧게"),(15,"보통"),(25,"길게")):
                         textbutton name xsize 132 action Preference("auto-forward time",value) selected (_preferences.afm_time==0 if value==0 else (0<_preferences.afm_time<10) if value==5 else (10<=_preferences.afm_time<20) if value==15 else _preferences.afm_time>=20) text_size r13_opt_size() ysize r13_opt_button_height()
                 hbox:
@@ -734,7 +734,7 @@ screen pause_menu():
                 use r13_opt_row("화면 움직임", "눈·불빛·인물의 짧은 반응"):
                     for value,name in ((True,"켜기"),(False,"끄기")):
                         textbutton name xsize 176 selected persistent.room13_motion==value action Function(r13_set_option,"room13_motion",value) text_size r13_opt_size() ysize r13_opt_button_height()
-                use r13_opt_row("전체 화면", "기기·브라우저 지원 시 전환"):
+                use r13_opt_row("전체 화면", "지원 기기에서 전환"):
                     textbutton "전체 화면 전환" xsize 300 action Function(r13_toggle_fullscreen) text_size r13_opt_size() ysize r13_opt_button_height()
                 # 0.18.50 (owner): test tool behind a PIN (systems/room13_admin.rpy).
                 use r13_opt_row("관리자 도구", "핀 번호를 넣으면 켜짐"):

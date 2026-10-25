@@ -58,25 +58,30 @@ screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장",can_p
         fixed:
             hbox:
                 xsize 1090
-                text heading size 22 color "#717367"
+                text heading font R13_UI_TYPE["title"]["font"] size 22 color "#717367"
                 if chances:
                     text chances size 22 color "#795d40" xalign 1.0
-            text R13_CLAIMS[claim]["assertion"] ypos 40 size r13_read_size(30,32) color "#765426" xsize 1090
+            text R13_CLAIMS[claim]["assertion"] font R13_UI_TYPE["title"]["font"] ypos 40 size r13_read_size(30,32) color "#765426" xsize 1090
             text ("고른 자료 · %d개"%len(room13["arguments"].get(claim,[]))) ypos 116 size 22
+            frame:
+                area (0,142,1090,190) padding (20,16) background r13_sticker_button()
             viewport:
-                ypos 150 xsize 1090 ysize 120 draggable True mousewheel True scrollbars "vertical"
+                xpos 20 ypos 158 xsize 1050 ysize 158 draggable True mousewheel True scrollbars "vertical"
                 vscrollbar_unscrollable "hide"
                 vbox:
                     spacing 8
                     for key in room13["arguments"].get(claim,[]):
                         hbox:
                             spacing 16
-                            text ("· "+ROOM13["evidence"][key]["name"]) size r13_read_size(23,26) xsize 900 yalign .5
+                            text ("· "+ROOM13["evidence"][key]["name"]) size r13_read_size(23,26) xsize 850 yalign .5
                             if need_evidence:
                                 use r13_control("빼기",None,Return(("remove",key)),enabled=ready,width=128,height=control_height,label_size=24)
                     if not room13["arguments"].get(claim):
-                        text "아직 고른 자료가 없습니다." size 22 color "#717367"
-            text r13_proof_edit_help(chances) ypos 290 size (26 if r13_touch_ui() else 22) color "#795d40" xsize 1090
+                        vbox:
+                            spacing 12
+                            text "아직 고른 자료가 없습니다." font R13_UI_BOLD_FONT size 24 color "#493b30"
+                            text "아래 ‘자료 고르기’에서 대조할 자료를 골라 주세요." size 22 color "#717367" xmaximum 1000
+            text r13_proof_edit_help(chances) ypos 350 size (26 if r13_touch_ui() else 22) color "#795d40" xsize 1090
             hbox:
                 ypos 414 spacing 16
                 use r13_control("자료 고르기",None,Return("present"),enabled=ready,width=258,height=control_height,label_size=24,control_id="r13_proof_pick")
