@@ -1,0 +1,1038 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "entries": [
+    {
+      "id": "MS14_D01_S01_L0012",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "replace",
+        "MS14_D01_S01_L0012",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D01_S01_L0012",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "방 번호만 확인하는 거야. 아빠도 아는 게 있어.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 27,
+          "label": "r13_v111_letter_read",
+          "guards": []
+        }
+      ],
+      "scene_title": "1. 마차 / 엄마 몫",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "23e5ffef83131bbbc5d1b367d00d2028dd6e6a500fe234e3f29ef73b6e0d6772",
+      "uid": "8e10281a6d2bf6a418a2e2cf",
+      "review_status": "reviewed",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S02_L0007",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "replace",
+        "MS14_D01_S02_L0007",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S02",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D01_S02_L0007",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "초소에서 방문 확인부터 받으세요. 짐은 나, 까로가 지킬게요. 바퀴가 이래서 짐 싣고 달아나지도 못해요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 104,
+          "label": "r13_v111_gate_arrival",
+          "guards": []
+        }
+      ],
+      "scene_title": "2. 초소 / 한 사람의 허가",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "3e64443248b389b291d11d8aa17c252d4c9f9cff534e5ecb3472172159b87809",
+      "uid": "8b98068f10d9b44f6503a3bb",
+      "review_status": "reviewed",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S02|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AR_D01_01",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "after",
+        "MS14_D01_S04_L0008",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D01_S04_L0008",
+      "when": "gate_daram_unlisted",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그럼 제 딸 이름은 어디에 적습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 282,
+          "label": "r13_v111_registered",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "4cd4a87ba184f46fe1d9cc01d92d37ae7a782c1c39e61f907881e041df47d7aa",
+      "uid": "4256f173de23286b2d23b136",
+      "review_status": "reviewed",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|patch|after|gate_daram_unlisted",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AR_D01_02",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "after",
+        "MS14_D01_S04_L0008",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D01_S04_L0008",
+      "when": "gate_daram_unlisted",
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "이 작업표에는 다돌 씨 이름 옆에 한 명이라고만 붙일 수 있소.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 282,
+          "label": "r13_v111_registered",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "b62ea0942b9592dc014935d73379716c2c4c5ef86451b48a802953d8315e0221",
+      "uid": "b4a1659207088e53a52c73cf",
+      "review_status": "reviewed",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|patch|after|gate_daram_unlisted",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_AR_D01_03",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "after",
+        "MS14_D01_S04_L0008",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D01_S04_L0008",
+      "when": "gate_daram_unlisted",
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "나도 이름 있는데…….",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 282,
+          "label": "r13_v111_registered",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "c0e205521471feea4462d11e419b2cdcb1371c2cd5ce6336d3d7e115d0810218",
+      "uid": "995ff3ed34a2a296863be1fc",
+      "review_status": "reviewed",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|patch|after|gate_daram_unlisted",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D01_SR05",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "after",
+        "MS14_D01_S04_L0020",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D01_S04_L0020",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "묵는 사람 소식은 여관에 알리게 돼 있소. 그 규칙대로 한 말이오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 310,
+          "label": "r13_v111_registered_depart",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 문이 열릴 때 / 이름",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "4c10403131fd89f50340385ffc92593b38444c1766168dd417fd6521799cde7a",
+      "uid": "46dfad209e25cc1b1032122c",
+      "review_status": "reviewed",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0023",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "replace",
+        "MS14_D01_S05_L0023",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D01_S05_L0023",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "엄마가 내 그림 가져왔네! 아빠 팔 세 개 그린 거!",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 378,
+          "label": "r13_v111_bundle",
+          "guards": []
+        }
+      ],
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "5782de5a60a62c3a5ab156010f1c9750c79b1479e160b236ea22e7bc3605e853",
+      "uid": "0bbe647f79fe9b9e1b3a80d0",
+      "review_status": "reviewed",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D01_S05_L0024",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "replace",
+        "MS14_D01_S05_L0024",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D01_S05_L0024",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "응. 엄마가 좋아했잖아. 팔 하나로 설거지도 하라고.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 378,
+          "label": "r13_v111_bundle",
+          "guards": []
+        }
+      ],
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "7869621574073d3183fceb22c821cb54fbac2f6ac53b8d122786c9c4af67ee38",
+      "baseline_hash": "1dd5dc19b35a2c624374da65e633df55b21e9016d7950b83bc1c64d0ab9bd0e4",
+      "uid": "42216bd1d4b490be45f98cfa",
+      "review_status": "reviewed",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0005",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "replace",
+        "MS14_D02_S01_L0005",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D02_S01_L0005",
+      "when": null,
+      "speaker": "까로",
+      "kind": "dialogue",
+      "text": "고갯길도 봐야죠. 축은 고쳐도 눈 쌓인 길까지 제가 밀어 놓을 순 없으니까요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 424,
+          "label": "r13_v111_day2",
+          "guards": []
+        }
+      ],
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "a0e7c79e30fb555f98b2adc0f92923428943a0f7146f1d40f1f3348a9b3d6cb5",
+      "baseline_hash": "eeb60d99266e487593430c0e6d08a7881d564b9792f79b1c6ff7a2c7127121c3",
+      "uid": "bde56d2d21a28e94a598203b",
+      "review_status": "reviewed",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0015",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "replace",
+        "MS14_D02_S01_L0015",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D02_S01_L0015",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "다돌입니다. 아내가 여기 계신 분께 물어보라고 이 메모를 남겼습니다. 글씨를 아시겠습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 447,
+          "label": "r13_v111_chorong",
+          "guards": []
+        }
+      ],
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "a0e7c79e30fb555f98b2adc0f92923428943a0f7146f1d40f1f3348a9b3d6cb5",
+      "baseline_hash": "2647857e5876ea1a9ef44bf7ada6ccf120dfd53788098b5e1c9bc6d5e157ff93",
+      "uid": "e7e289bed494754fb19b4ec8",
+      "review_status": "reviewed",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S01_L0020",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "replace",
+        "MS14_D02_S01_L0020",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D02_S01_L0020",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "북쪽 물자 길의 교환함이요. 식량은 거기에 놓았어요. 부인이 어디서 지내시는지는 못 들었고요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 447,
+          "label": "r13_v111_chorong",
+          "guards": []
+        }
+      ],
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "a0e7c79e30fb555f98b2adc0f92923428943a0f7146f1d40f1f3348a9b3d6cb5",
+      "baseline_hash": "3de7a5da4f103be220d65b0663e3cf92ece45d298135917344c4def57f0f7882",
+      "uid": "c6b08d466d1df72634487fdf",
+      "review_status": "reviewed",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D02_SR01",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "before",
+        "MS14_D02_S01_L0040",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D02_S01_L0040",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그럼 여기 왔다고 쪽지를 남기자. 엄마가 함을 열면 볼 수 있게.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 493,
+          "label": "r13_v111_box_written",
+          "guards": []
+        }
+      ],
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "a0e7c79e30fb555f98b2adc0f92923428943a0f7146f1d40f1f3348a9b3d6cb5",
+      "baseline_hash": "240b9693cf6e2994377e6c244e873ca8010e878419f1a21425ec55d949562057",
+      "uid": "c22a258e84a70f709651337e",
+      "review_status": "reviewed",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D02_S01_V03",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "before",
+        "MS14_D02_S01_L0043",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "MS14_D02_S01",
+      "block": null,
+      "placement": "before",
+      "ref": "MS14_D02_S01_L0043",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "thought",
+      "text": "함 위치는 그렸고. 쪽지도 남겼고. 이제 편지 부친 사람을 알아보자.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 493,
+          "label": "r13_v111_box_written",
+          "guards": []
+        }
+      ],
+      "scene_title": "1. 광장 / 초롱의 손",
+      "source_hash": "a0e7c79e30fb555f98b2adc0f92923428943a0f7146f1d40f1f3348a9b3d6cb5",
+      "baseline_hash": "38bf94b11fe69f9157f6cfcc9a7fdfb4340197d61a8b2fa24000872206efdd43",
+      "uid": "34bcbf7edb49dbdcf77670c8",
+      "review_status": "reviewed",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S01|patch|before|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S02_L0017",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "replace",
+        "MS14_D02_S02_L0017",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D02_S02_L0017",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "가져온 사람은 장부에 안 남았고, 쓴 사람도 모르는 거군요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 540,
+          "label": "r13_v111_post_return",
+          "guards": []
+        }
+      ],
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "a0e7c79e30fb555f98b2adc0f92923428943a0f7146f1d40f1f3348a9b3d6cb5",
+      "baseline_hash": "6a2192cf6dabb8bc422a8d1ca54b8e016f47baf60fdde134d5fccf25f57ba5c4",
+      "uid": "d8d7bd7d4e0c25fdfbcca4b3",
+      "review_status": "reviewed",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S02_L0018",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "replace",
+        "MS14_D02_S02_L0018",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D02_S02_L0018",
+      "when": null,
+      "speaker": "세련",
+      "kind": "dialogue",
+      "text": "네. 제가 확인한 건 여기까지예요. 못 본 사람 이름을 장부에 보태 드릴 수는 없어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 540,
+          "label": "r13_v111_post_return",
+          "guards": []
+        }
+      ],
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "a0e7c79e30fb555f98b2adc0f92923428943a0f7146f1d40f1f3348a9b3d6cb5",
+      "baseline_hash": "d9ee5177a6c47ec60134f1732d8f8371ae758606e071594275eec6046e46bcf8",
+      "uid": "d281463ec90d2be99d1a4943",
+      "review_status": "reviewed",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0006",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "replace",
+        "MS14_D02_S03_L0006",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D02_S03_L0006",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "그럼요. 여기 앉으세요. 얼굴 돌리지 마시고요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 552,
+          "label": "r13_v111_piko2",
+          "guards": []
+        }
+      ],
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "a0e7c79e30fb555f98b2adc0f92923428943a0f7146f1d40f1f3348a9b3d6cb5",
+      "baseline_hash": "45ed7bc044ca1f3ca62e4c81e3e6c0ffcce35a870e66c673b00ef5fab3aa597b",
+      "uid": "3e42acb5287b6e4a534e636b",
+      "review_status": "reviewed",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0008",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "replace",
+        "MS14_D02_S03_L0008",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D02_S03_L0008",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "아, 두 분 말고 다른 분을 그려 달라고요. 찾는 분이구나.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 552,
+          "label": "r13_v111_piko2",
+          "guards": []
+        }
+      ],
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "a0e7c79e30fb555f98b2adc0f92923428943a0f7146f1d40f1f3348a9b3d6cb5",
+      "baseline_hash": "53e74fd8d8c12836097f27516430d389793b60ac8ea5312f10e67e3f7c0f73a0",
+      "uid": "d073b61c6b16a8f4aa26f4e8",
+      "review_status": "reviewed",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0022",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "replace",
+        "MS14_D02_S03_L0022",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D02_S03_L0022",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "그림 한 장 팔면 침대부터 사려고요. 그런데 다들 그림만 보고 가요. 나도 침대는 보기만 하고.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 569,
+          "label": "r13_v111_portrait_commission",
+          "guards": []
+        }
+      ],
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "a0e7c79e30fb555f98b2adc0f92923428943a0f7146f1d40f1f3348a9b3d6cb5",
+      "baseline_hash": "93d7a430db717c896f2b0b4251e20a4260763904ce2ab8dea47276812b50874c",
+      "uid": "04e56143a4cff44a2b8eee2c",
+      "review_status": "reviewed",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0032",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "replace",
+        "MS14_D02_S03_L0032",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D02_S03_L0032",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "깨면 어디로 가요? 빈 침대가 생기는 것도 아닌데.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 628,
+          "label": "r13_v111_lamp_details",
+          "guards": []
+        }
+      ],
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "a0e7c79e30fb555f98b2adc0f92923428943a0f7146f1d40f1f3348a9b3d6cb5",
+      "baseline_hash": "8bae17f18890345497d3ebc0cc7deae81f429d06416d4c17ec5d5fb0fb50beed",
+      "uid": "5508face4daec529ee62265c",
+      "review_status": "reviewed",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0042",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "replace",
+        "MS14_D02_S03_L0042",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D02_S03_L0042",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그럼 해 질 무렵에 갈림길로 가면 만날 수 있겠군요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 628,
+          "label": "r13_v111_lamp_details",
+          "guards": []
+        }
+      ],
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "a0e7c79e30fb555f98b2adc0f92923428943a0f7146f1d40f1f3348a9b3d6cb5",
+      "baseline_hash": "63cdf3bb02d5f3bd3c4b0a479f99025afc6c0061d3669355eb807ac680bc8bfd",
+      "uid": "82b8fc38936082b51086d016",
+      "review_status": "reviewed",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S03_L0043",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "replace",
+        "MS14_D02_S03_L0043",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "MS14_D02_S03",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D02_S03_L0043",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "네. 놓치지 않게 해 지기 전에 가세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 628,
+          "label": "r13_v111_lamp_details",
+          "guards": []
+        }
+      ],
+      "scene_title": "3. 3번 등 / 초상 의뢰",
+      "source_hash": "a0e7c79e30fb555f98b2adc0f92923428943a0f7146f1d40f1f3348a9b3d6cb5",
+      "baseline_hash": "cc1593cbc1bd4651fea1cacb6377ea1a5b36f38abf0b75064dbdefb8186626b2",
+      "uid": "2fdabee36dc3b87ba55a963d",
+      "review_status": "reviewed",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S03|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0024",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "replace",
+        "MS14_D02_S04_L0024",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D02_S04_L0024",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "나를 밀가루 옆에 재우겠다고요? 아침에 같이 반죽하지는 말고요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 696,
+          "label": "r13_v111_shelter_prepare",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "a0e7c79e30fb555f98b2adc0f92923428943a0f7146f1d40f1f3348a9b3d6cb5",
+      "baseline_hash": "6de34e8ad0ff9554550801eceaf1624941ae61c4b508ae75741cc73ef324ccb2",
+      "uid": "7d50efa791a228c680df43d3",
+      "review_status": "reviewed",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0025",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "replace",
+        "MS14_D02_S04_L0025",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D02_S04_L0025",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "벤치를 비워 뒀습니다. 그림 놓을 자리도 있고요. 반죽은 나비 씨한테 따로 부탁하셔야 합니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 696,
+          "label": "r13_v111_shelter_prepare",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "a0e7c79e30fb555f98b2adc0f92923428943a0f7146f1d40f1f3348a9b3d6cb5",
+      "baseline_hash": "dbcfbba42189d9cd63c5022eced68f578c64020ed47e9a374f951c4e86a8afc8",
+      "uid": "ee13d1c6c1092b959842e25e",
+      "review_status": "reviewed",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0028",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "replace",
+        "MS14_D02_S04_L0028",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D02_S04_L0028",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "그림은 내가 들게. 담요 부탁해. 그건 구겨져도 괜찮거든.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 696,
+          "label": "r13_v111_shelter_prepare",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "a0e7c79e30fb555f98b2adc0f92923428943a0f7146f1d40f1f3348a9b3d6cb5",
+      "baseline_hash": "0506d57b5b771c53134da0391065b12530fe0d7239933634ab9dfdfe7239d5cd",
+      "uid": "a57a8f96a1c23fe0955b8854",
+      "review_status": "reviewed",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0055",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "replace",
+        "MS14_D02_S04_L0055",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D02_S04_L0055",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "싫다고 하셨어요. 그래서 더 안 물었어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 723,
+          "label": "r13_v111_nero_choice",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "a0e7c79e30fb555f98b2adc0f92923428943a0f7146f1d40f1f3348a9b3d6cb5",
+      "baseline_hash": "4e12b43d3ce40c0bc54bcb3c2acc168c29cd6702dc56447c04ae5d6bcc7acb1d",
+      "uid": "c28948b71d578c55d93c9819",
+      "review_status": "reviewed",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S04_L0078",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "replace",
+        "MS14_D02_S04_L0078",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D02_S04_L0078",
+      "when": null,
+      "speaker": "피코",
+      "kind": "dialogue",
+      "text": "사과는 됐어요. 내일 얼굴이나 봐줘요. 코를 아직 못 그려서, 그건 맞는지 들어야겠거든.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 740,
+          "label": "r13_v111_nero_done",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "a0e7c79e30fb555f98b2adc0f92923428943a0f7146f1d40f1f3348a9b3d6cb5",
+      "baseline_hash": "1d4017d89044ef05dbe3e82dae53984fbbbc62d79e0ea7b1164490b3654030ac",
+      "uid": "d85bda59b5170554951c9839",
+      "review_status": "reviewed",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "MS14_D02_S05_L0002",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "replace",
+        "MS14_D02_S05_L0002",
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "MS14_D02_S05",
+      "block": null,
+      "placement": "replace",
+      "ref": "MS14_D02_S05_L0002",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "제가 말로 설명하니까 영 딴사람이 돼서요. 다람이가 그림을 보여 드리자더군요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 753,
+          "label": "r13_v111_evening2",
+          "guards": []
+        }
+      ],
+      "scene_title": "5. 여관 / 설명할 수 없는 빈칸",
+      "source_hash": "a0e7c79e30fb555f98b2adc0f92923428943a0f7146f1d40f1f3348a9b3d6cb5",
+      "baseline_hash": "002263997f497ac0998b7c9454bb312544851dcbcce888b372c7d2df8b13f29b",
+      "uid": "06ecd5b938d8cf74acc03096",
+      "review_status": "reviewed",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S05|patch|replace|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -28,10 +28,14 @@ testcase v111_nw_d02_afternoon_shelter:
     pause 1.0
     click "포대를 옮긴다"
     click pos (900,600) until eval (r13_v111_value("piko_sacks2") is True and qa_nw_seen("벤치 하나가 빈다")) timeout 30
-    assert eval (qa_nw_afternoon_titles("dining")==["네로를 만나러 간다"] and qa_nw_afternoon_titles("inn")==["마른 천을 빌린다"])
+    assert eval (qa_nw_afternoon_titles("dining")==["네로를 만나러 간다","벤치 표면을 살핀다"] and qa_nw_afternoon_titles("inn")==["마른 천을 빌린다"])
     assert eval (qa_nw_afternoon_titles("square")==[])
     run Function(r13_v111_set,"piko_cloth2",True)
-    assert eval (qa_nw_afternoon_titles("square")==["비운 벤치와 조건을 전한다"])
+    assert eval (qa_nw_afternoon_titles("square")==[])
+    # 벤치 관찰·청소의 실제 조작은 piko_bench_preparation에서 확인한다.
+    run Function(r13_v111_set,"piko_bench_seen2",True)
+    run Function(r13_v111_set,"piko_bench_clean2",True)
+    assert eval (qa_nw_afternoon_titles("square")==["식당에 앉을 자리를 전한다"])
     run Function(r13_v111_apply,"option:afternoon:0",[{'op':'set','field':'D02_afternoon','value':'shelter'}])
     run Jump("r13_v111_shelter_done")
     pause 1.0
