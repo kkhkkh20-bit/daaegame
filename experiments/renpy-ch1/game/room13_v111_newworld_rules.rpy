@@ -117,6 +117,8 @@ init 318 python:
     # 0.20.6: which meeting's chances a proof uses (dev/test_proof_meetings.py re-derives this from the
     # wrong-answer labels). The proof screen shows them; a proof without a meeting shows none.
     R13_PROOF_MEETING={
+        "인수하지 않은 돌의 약속 값을 보인다":"piko",
+        "수리 뒤 새로 생긴 파손을 가린다":"lamp","남아 있는 돌과 칼의 사용을 연결한다":"lamp",
         "함께 들어갈 근거를 고른다":"gate",
         "수리와 반출을 가릴 자료를 낸다":"lamp","돌과 매입 기록을 낸다":"lamp","바깥 걸쇠 주장과 발견 위치를 대조한다":"lamp","마지막 점검과 인수한 돌을 연결한다":"lamp",
         "밤이 혐의의 근거를 확인한다":"gate_post",

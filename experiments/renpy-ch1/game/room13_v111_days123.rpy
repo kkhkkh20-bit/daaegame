@@ -662,7 +662,6 @@ label r13_v111_afternoon:
     elif v111_answer==3:
         $ r13_v111_option('MS14_D02_S04_L0020_O2')
         $ r13_v111_apply('option:afternoon:1',[{'op': 'set', 'field': 'D02_afternoon', 'value': 'nero'}])
-        $ r13_fork_set_fate('fate_piko','lost')
         jump r13_v111_nero_choice
     jump r13_v111_afternoon
 
@@ -781,6 +780,8 @@ label r13_v111_evening2_end:
     jump r13_v111_sleep2
 
 label r13_v111_sleep2:
+    if not r13_v111_value('lamp_prep_done2'):
+        call r13_lamp_prep2
     call r13_v111_travel('room13','sleep2')
     call r13_v111_wait('sleep2')
     $ v111_answer=_return
@@ -790,6 +791,11 @@ label r13_v111_sleep2:
     jump r13_v111_sleep2
 
 label r13_v111_day3:
+    if r13_v111_value('lamp_bound2'):
+        $ r13_fork_set_fate('fate_piko','saved')
+        jump r13_lamp_attempt3
+    if not r13_v111_value('piko_sheltered'):
+        $ r13_fork_set_fate('fate_piko','lost')
     if r13_v111_value('piko_sheltered')==True:
         jump r13_v111_piko_alive3
     jump r13_v111_piko_dead3
@@ -1078,6 +1084,8 @@ label r13_v111_trial_open:
 
 label r13_v111_trial_repair:
     $ r13_meeting_checkpoint("lamp")
+    if r13_v111_value('lamp_bound2'):
+        jump r13_lamp_attempt_repair3
     call r13_v111_proof('수리와 반출을 가릴 자료를 낸다',['E11', 'E12', 'E13'],'r13_v111_trial_repair_ok','r13_v111_trial_wrong','r13_v111_trial_hint')
     jump expression _return
 
@@ -1318,6 +1326,8 @@ label r13_v111_trial_hint_stone:
     jump r13_v111_trial_stone
 
 label r13_v111_restore_route:
+    if r13_v111_value('lamp_bound2'):
+        jump r13_lamp_attempt_after3
     # 2026-10-24 동기 줄 4차: 회의가 끝난 공방에서 톡과 까로의 축 이야기(풀려난 판 / 명단에 오른 판).
     call r13_lines(r13_nw_block('tok_axle3'),'nw:tok_axle3')
     if r13_v111_value('public_stones')=='returned_uninstalled':

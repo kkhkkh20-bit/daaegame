@@ -447,6 +447,8 @@ init 303 python:
         check=globals().get("R13_V111_SCENE_CHECKS",{}).get(scene)
         if check and not check():raise Exception("Unmet authored scene state: "+scene)
         items,values=R13_V111_ENTRY.get(scene,([],{}))
+        if scene=="MS14_D03_S05" and r13_v111_value("lamp_bound2"):
+            items,values=(["NW_LA_CHECK","NW_LA_FIELD","NW_LA_KNIFE","NW_LA_OFFER"],{"silluk.children.location":"workshop_with_buri"})
         if not all(r13_v111_owned(x) for x in items) or not all(r13_v111_value(k)==v for k,v in values.items()):raise Exception("Unmet authored scene entry: "+scene)
         if scene=="MS14_D02_S01" and not r13_has("v111:applied:option:sleep1:0"):raise Exception("Missing actual first-night sleep")
         if scene=="MS14_D03_S01" and not r13_has("v111:applied:option:sleep2:0"):raise Exception("Missing actual second-night sleep")

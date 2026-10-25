@@ -5,7 +5,7 @@ ROOT=Path(__file__).resolve().parents[1]
 class ProofMeetings(unittest.TestCase):
     def test_table_matches_wrong_labels(self):
         labels={}
-        for f in sorted((ROOT/'game').glob('room13_v111_days*.rpy')):
+        for f in sorted(list((ROOT/'game').glob('room13_v111_days*.rpy'))+[(ROOT/'game/room13_lamp_attempt.rpy')]):
             for block in re.split(r'\n(?=label )',f.read_text()):
                 m=re.match(r'label (\w+)',block)
                 if m:labels[m.group(1)]=block
