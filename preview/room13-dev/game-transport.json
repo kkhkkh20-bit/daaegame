@@ -1,12 +1,12 @@
 {
  "multipart": true,
- "archive_bytes": 16007975,
- "archive_sha256": "5b019c20491c20a5e61e7fdfda25d05506f45d3c9bcf070d4b3fd6625cdc12e9",
+ "archive_bytes": 16674400,
+ "archive_sha256": "0e69bf1fd4aff14c2ba6e8c4004fa281fa663e6b1e59124c58ba984b24115938",
  "parts": [
   {
    "file": "game.part01",
-   "bytes": 16007975,
-   "sha256": "5b019c20491c20a5e61e7fdfda25d05506f45d3c9bcf070d4b3fd6625cdc12e9"
+   "bytes": 16674400,
+   "sha256": "0e69bf1fd4aff14c2ba6e8c4004fa281fa663e6b1e59124c58ba984b24115938"
   }
  ],
  "preload": [
@@ -19,6 +19,11 @@
    "file": "game/assets/Galmuri11.ttf",
    "bytes": 1964416,
    "sha256": "9b4e414d11b0f4c16e4d30caaaa45ac53f8605068bebbc0635612ed04c56c80a"
+  },
+  {
+   "file": "game/assets/Pretendard-Bold.otf",
+   "bytes": 1576660,
+   "sha256": "2e91915fab54df71cc9598ebf608b2bdb54c6fe3c066ac61dff0bc44fca71cc7"
   },
   {
    "file": "game/assets/Pretendard-Regular.otf",
@@ -116,9 +121,24 @@
    "sha256": "0b146b2716d19e429c1fa1855674b542aafdc5ea48b96ec3a44d586639e1abee"
   },
   {
+   "file": "game/assets/ui-b-choice/paper-components.png",
+   "bytes": 1605168,
+   "sha256": "98c7b847284da82673c202803630076f305dd0dab578cd58fc2ad9c0b92d942f"
+  },
+  {
    "file": "game/assets/ui-b-dialogue/b_panel_dialogue.png",
    "bytes": 137657,
    "sha256": "c6111c66fc5135db20dc07442dcad0fb4bae9e3b50a58291adeac12ee45e0d25"
+  },
+  {
+   "file": "game/assets/ui-b-field/b_panel_dialogue.png",
+   "bytes": 137657,
+   "sha256": "c6111c66fc5135db20dc07442dcad0fb4bae9e3b50a58291adeac12ee45e0d25"
+  },
+  {
+   "file": "game/assets/ui-b-field/sticker_daram_delighted.png",
+   "bytes": 248451,
+   "sha256": "f612b1ca54273c0303051a113d5239f58f0577ce43d30dff5b5fef62a49893d3"
   },
   {
    "file": "game/assets/ui-b-main/b_logo.png",
@@ -131,14 +151,44 @@
    "sha256": "5d49f06d3bca99640fdf88b0779c2ba1511b4a8502cd32e81d7133b7aaa8a9d1"
   },
   {
+   "file": "game/assets/ui-b-main/b_main_background_postcard.png",
+   "bytes": 3126112,
+   "sha256": "8a0e2cf7fa1100ec4447435d3a81a37de5ae6089411b3fcf7a76fab3f66b4f5a"
+  },
+  {
+   "file": "game/assets/ui-b-main/b_main_cast_poster.png",
+   "bytes": 2589187,
+   "sha256": "4ab11f41350c46f21c08917a7570975cb042554d9749fcdd9b2d67af51155a54"
+  },
+  {
+   "file": "game/assets/ui-b-main/b_main_cast_poster_plain.png",
+   "bytes": 2299365,
+   "sha256": "065b79a2a79d5395232eb09a23bc443398a84b2d90ba76c38c9428dd74bd310c"
+  },
+  {
    "file": "game/assets/ui-b-main/b_main_daram.png",
    "bytes": 613493,
    "sha256": "819b5b2ee00de88f9fdb616568b826e977022c18084351e6db763c1c17e92783"
   },
   {
+   "file": "game/assets/ui-b-main/b_main_daram_eureka.png",
+   "bytes": 233575,
+   "sha256": "c725f443f797f1f5bb69e82eab99fd88fdd53e83bff1f1c90ec98e0db56cf166"
+  },
+  {
    "file": "game/assets/ui-b-main/b_main_panel.png",
    "bytes": 137057,
    "sha256": "3db5e5edeca046e4d8820a796ab2e83d4ed02f701e74d559ab843c3e9d4ffb22"
+  },
+  {
+   "file": "game/assets/ui-b-main/b_main_sticker_cream.png",
+   "bytes": 965479,
+   "sha256": "331a6cbb0d52e2a81eb0a7711830fd1417b1321a47c57ad9c10bac2917b69fb6"
+  },
+  {
+   "file": "game/assets/ui-b-main/b_main_sticker_red.png",
+   "bytes": 1010361,
+   "sha256": "d30279928ea1809dd1ee5f287605a07f9e134c474b9d93223e7883985e7f6d2a"
   },
   {
    "file": "game/assets/ui-b-options/b_opt_panel.png",
@@ -149,6 +199,46 @@
    "file": "game/assets/ui-b-options/b_opt_preview_box.png",
    "bytes": 103448,
    "sha256": "65f381c7f99bcfe54d072828770111ee888f76ea2a520755652e76f1a2726317"
+  },
+  {
+   "file": "game/assets/ui-b-options/daram_diary_sticker_acorn.png",
+   "bytes": 277825,
+   "sha256": "04a38934c80bd38f0a9ce59acff5af89f62cd537bbbfced833f93cea82cf1d9a"
+  },
+  {
+   "file": "game/assets/ui-b-options/daram_diary_sticker_emphasis.png",
+   "bytes": 191988,
+   "sha256": "adceab002daf17ca92fb4b8b8aae47b65050d2649653676d70364d553bb8b7e8"
+  },
+  {
+   "file": "game/assets/ui-b-options/daram_diary_sticker_gingham_tape.png",
+   "bytes": 204906,
+   "sha256": "f335c06e72aa8ae5e4a0710ca6fc0a423ba69a23bf1e658271c1736c81da3700"
+  },
+  {
+   "file": "game/assets/ui-b-options/daram_diary_sticker_letter.png",
+   "bytes": 226042,
+   "sha256": "c089d60a0465aeb3e93b97e1e676d3a52023d5ad0c1932a0db8ca79d456617ee"
+  },
+  {
+   "file": "game/assets/ui-b-options/daram_diary_sticker_magnifier.png",
+   "bytes": 274897,
+   "sha256": "431059cdedc0fc261d0a192e8dc02e9b67bca0518ee47547c2c932f50381e103"
+  },
+  {
+   "file": "game/assets/ui-b-options/daram_diary_sticker_star.png",
+   "bytes": 216523,
+   "sha256": "71e004d33a04e5ee47bb6fcc1e69b4485bf224480a5b69970d279b9d28243677"
+  },
+  {
+   "file": "game/assets/ui-b-question/b_panel_book.png",
+   "bytes": 347827,
+   "sha256": "72df207aa3b12bc6cdcc022c75a0867eb726ea74fb0c3c610f6f4fcf7f443b15"
+  },
+  {
+   "file": "game/assets/ui-b-sticker/button_sheet.png",
+   "bytes": 1886460,
+   "sha256": "b83846e2a0dc1305dbc4ffbb4a2e2afb6908d7807ba5e9a2f3c0189a2395c4b7"
   }
  ],
  "asset_versions": {
@@ -1442,7 +1532,7 @@
   "game/assets/evidence/NW_MADAM_DAY7.webp": "1c29f70ae516",
   "game/assets/evidence/NW_NAMES.webp": "e89b813c34e2",
   "game/assets/evidence/NW_NEOUL_LEDGER.webp": "15b35617c702",
-  "game/assets/evidence/NW_NUBI_TICKET.webp": "dc8522d869ad",
+  "game/assets/evidence/NW_NUBI_TICKET.webp": "62fbf883c05e",
   "game/assets/evidence/NW_PIKO_PAINTING.webp": "41088f1461a4",
   "game/assets/evidence/NW_PIKO_SKETCH4.webp": "6984aede4e4c",
   "game/assets/evidence/NW_PIKO_TREMOR.webp": "a9255237737b",
@@ -1500,6 +1590,8 @@
   "game/assets/investigation-source2/tosil-thermos-v1.webp": "ea00e0891749",
   "game/assets/investigation-source2/ttadak-doorframe-v1.webp": "d665345deb29",
   "game/assets/kitchen.png": "ec1b0a22de0d",
+  "game/assets/lowerroad-elder/v111_lowerroad_elder_face.webp": "c91ab7cd4f5c",
+  "game/assets/lowerroad-elder/v111_lowerroad_elder_fullbody.webp": "017e457021f8",
   "game/assets/map-action27/CL-1--resident_piko.webp": "e913d7a74ff9",
   "game/assets/map-action27/DI-1a--resident_tok.webp": "d480e3cee510",
   "game/assets/map-action27/DI-1b--resident_dalgeurak.webp": "975e67ec3999",
@@ -1560,6 +1652,22 @@
   "game/assets/map-b/inn_room13.webp": "3208ef5ed5b1",
   "game/assets/map-b/inn_temporary_guestroom.webp": "54bd72f815e9",
   "game/assets/map-b/notebook_frame.webp": "ba180521d3d7",
+  "game/assets/map-village-b/b_button.png": "1e9f07601be9",
+  "game/assets/map-village-b/b_button_primary.png": "16fd3e7bd68f",
+  "game/assets/map-village-b/b_button_primary_trimmed.png": "b0235cd21810",
+  "game/assets/map-village-b/b_button_trimmed.png": "448d0e000468",
+  "game/assets/map-village-b/b_icon_back.png": "3c2cd892e106",
+  "game/assets/map-village-b/b_icon_map.png": "6cea7d5bc780",
+  "game/assets/map-village-b/b_icon_pin.png": "798a993e5f9c",
+  "game/assets/map-village-b/b_panel_small.png": "2eb7b30bc334",
+  "game/assets/map-village-b/b_panel_small_trimmed.png": "84db262c7a68",
+  "game/assets/map-village-b/b_tab_title.png": "867c0fd55f92",
+  "game/assets/map-village-b/b_tape_red.png": "3f0b2d0272ca",
+  "game/assets/map-village-b/b_tape_teal.png": "35f23c6e63e8",
+  "game/assets/map-village-b/map_background_1136x570.png": "467f8a61d916",
+  "game/assets/map-village-b/notebook_frame_1280x720.png": "e9472803750a",
+  "game/assets/map-village-b/sticker_daram_stubborn.png": "c52abd9405db",
+  "game/assets/map-village-b/village_clean.png": "9ba92807dfb4",
   "game/assets/map-work-nine/resident_dalgeurak--pots_display.webp": "24206e03f6d0",
   "game/assets/map-work-nine/resident_guldol--stone_tapping.webp": "3c2d3bcd88b1",
   "game/assets/map-work-nine/resident_jongjong--letters_waiting.webp": "df0aff4c1b59",
@@ -2924,9 +3032,6 @@
   "game/assets/table.png": "a69e4d56023e",
   "game/assets/town-bright.mp3": "4fa2da90a7d8",
   "game/assets/travel.mp3": "ae70a95360ac",
-  "game/assets/ui-b-question/b_panel_card.png": "3b1b05132872",
-  "game/assets/ui-b-question/b_panel_card_done.png": "db044a1158b8",
-  "game/assets/ui-b-question/b_panel_card_hover.png": "5be487ea9d29",
   "game/assets/ui-night/close_x.png": "794b022fdf57",
   "game/assets/ui-night/diamond.png": "8d44e7fc8244",
   "game/assets/ui-night/diamond_outline.png": "651fea55e6ae",
@@ -2945,6 +3050,12 @@
   "game/assets/village-activities.png": "e61afbf68e54",
   "game/assets/village-overview.png": "fb4dab45eacc",
   "game/assets/village-stone.png": "8c2e8a9860c6",
+  "game/assets/wild-night/wild-greenhouse-night.webp": "37fa8ec92982",
+  "game/assets/wild-night/wild-road-mouth-night.webp": "d8922bb5a88c",
+  "game/assets/wild-night/wild-school-classroom-night.webp": "09d0dd37749b",
+  "game/assets/wild-night/wild-school-hall-night.webp": "a85416a569f5",
+  "game/assets/wild-night/wild-square-burning.webp": "755e5a183024",
+  "game/assets/wild-night/wild-village-dawn-ash.webp": "0d681221ab17",
   "game/assets/winter-carriage.png": "c17bba428d2f",
   "game/assets/winter-gate-clean.png": "f12cd8b64d28",
   "game/assets/winter-gate.webp": "32b2d5d84150",

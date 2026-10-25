@@ -1,13 +1,13 @@
 {
  "engine": "Ren'Py 8.5.3",
  "game_transport": {
-  "archive_bytes": 16007975,
-  "archive_sha256": "5b019c20491c20a5e61e7fdfda25d05506f45d3c9bcf070d4b3fd6625cdc12e9",
+  "archive_bytes": 16674400,
+  "archive_sha256": "0e69bf1fd4aff14c2ba6e8c4004fa281fa663e6b1e59124c58ba984b24115938",
   "parts": [
    {
     "file": "game.part01",
-    "bytes": 16007975,
-    "sha256": "5b019c20491c20a5e61e7fdfda25d05506f45d3c9bcf070d4b3fd6625cdc12e9"
+    "bytes": 16674400,
+    "sha256": "0e69bf1fd4aff14c2ba6e8c4004fa281fa663e6b1e59124c58ba984b24115938"
    }
   ]
  },
@@ -29,16 +29,20 @@
    "sha256": "6bb23b55d259a317d6c3a496f5c8892bd820bc4f0730a172d030b4497c534bfe"
   },
   "game-transport.json": {
-   "bytes": 225579,
-   "sha256": "eff43f2acf80f70f18c55f731e47dfd0334fc45e010ee4100d177be173e203e8"
+   "bytes": 230154,
+   "sha256": "2bf39cfdb69c993dfcf8093e54ffc149a63c5217e0ec4c58951d7d772acb06f8"
   },
   "game.part01": {
-   "bytes": 16007975,
-   "sha256": "5b019c20491c20a5e61e7fdfda25d05506f45d3c9bcf070d4b3fd6625cdc12e9"
+   "bytes": 16674400,
+   "sha256": "0e69bf1fd4aff14c2ba6e8c4004fa281fa663e6b1e59124c58ba984b24115938"
   },
   "game/assets/Galmuri11.ttf": {
    "bytes": 1964416,
    "sha256": "9b4e414d11b0f4c16e4d30caaaa45ac53f8605068bebbc0635612ed04c56c80a"
+  },
+  "game/assets/Pretendard-Bold.otf": {
+   "bytes": 1576660,
+   "sha256": "2e91915fab54df71cc9598ebf608b2bdb54c6fe3c066ac61dff0bc44fca71cc7"
   },
   "game/assets/Pretendard-Regular.otf": {
    "bytes": 1574352,
@@ -5297,8 +5301,8 @@
    "sha256": "15b35617c70296b42aff375011ffdf27a84fccd93aa7e585d50d29486a250be0"
   },
   "game/assets/evidence/NW_NUBI_TICKET.webp": {
-   "bytes": 25172,
-   "sha256": "dc8522d869adfe1a49ccd4b44793f64e54cccb2f3146d9cbf2b119002accc1db"
+   "bytes": 704514,
+   "sha256": "62fbf883c05ebf5d9e7743427b8364ee004bcac0e85be17fd77ee97b327282b7"
   },
   "game/assets/evidence/NW_PIKO_PAINTING.webp": {
    "bytes": 152186,
@@ -5527,6 +5531,14 @@
   "game/assets/kitchen.png": {
    "bytes": 1595503,
    "sha256": "ec1b0a22de0d2cbfdb24ec4fcd6d684cfcc5d17263fd9a61ab4bcde86ee6d091"
+  },
+  "game/assets/lowerroad-elder/v111_lowerroad_elder_face.webp": {
+   "bytes": 279122,
+   "sha256": "c91ab7cd4f5c224692cdf7dc351d63bc41f753eae0451aa5225c4b63908b4987"
+  },
+  "game/assets/lowerroad-elder/v111_lowerroad_elder_fullbody.webp": {
+   "bytes": 1110866,
+   "sha256": "017e457021f85bec78a1c8e918b3e1aa422ed2b0f488c998fe8ca9373930aa9a"
   },
   "game/assets/map-action27/CL-1--resident_piko.webp": {
    "bytes": 89352,
@@ -5767,6 +5779,70 @@
   "game/assets/map-b/notebook_frame.webp": {
    "bytes": 56188,
    "sha256": "ba180521d3d771310a9c1e49dee9e4584a8c8c72b730fb76d30253ece8a58032"
+  },
+  "game/assets/map-village-b/b_button.png": {
+   "bytes": 5543,
+   "sha256": "1e9f07601be922235d5556e59d61ff9390b153d8dc496050aea66e32fb3cc1c6"
+  },
+  "game/assets/map-village-b/b_button_primary.png": {
+   "bytes": 5984,
+   "sha256": "16fd3e7bd68f955e1c491c98cc575446bbf5db533a25deb7767e11aa0bb1c005"
+  },
+  "game/assets/map-village-b/b_button_primary_trimmed.png": {
+   "bytes": 5665,
+   "sha256": "b0235cd21810ed75a3709244c50f39a1292cd0e692b42a50a00a4aebe5441ed7"
+  },
+  "game/assets/map-village-b/b_button_trimmed.png": {
+   "bytes": 5222,
+   "sha256": "448d0e000468c58af60dd29dfe5fa89d579e8ed256c20089b0cf71ff691a5eb6"
+  },
+  "game/assets/map-village-b/b_icon_back.png": {
+   "bytes": 2091,
+   "sha256": "3c2cd892e106b8e4b40c575531da358324b5c7630c66a5630b16d300e541f3d5"
+  },
+  "game/assets/map-village-b/b_icon_map.png": {
+   "bytes": 2642,
+   "sha256": "6cea7d5bc7801bb834d01187010d88a3c38cce65297e80f9a188479a60b05e0e"
+  },
+  "game/assets/map-village-b/b_icon_pin.png": {
+   "bytes": 2200,
+   "sha256": "798a993e5f9cde13aa892322fd6e47d4c361b8fc9580b13bd8be4de98327661c"
+  },
+  "game/assets/map-village-b/b_panel_small.png": {
+   "bytes": 11384,
+   "sha256": "2eb7b30bc334edbba01b2192ad8da460df41afcdfafcab7a2baaefea2531786d"
+  },
+  "game/assets/map-village-b/b_panel_small_trimmed.png": {
+   "bytes": 11051,
+   "sha256": "84db262c7a687a074be2fe789f7cf7907d04f266c8afe922921805149ddf72b1"
+  },
+  "game/assets/map-village-b/b_tab_title.png": {
+   "bytes": 14910,
+   "sha256": "867c0fd55f921c4823cb8e958c5bf5ff0902d9e4204e2b0afe94b9f91532fac7"
+  },
+  "game/assets/map-village-b/b_tape_red.png": {
+   "bytes": 3522,
+   "sha256": "3f0b2d0272cae29143db87f891124b5f2c6e46908531074412d4f501fe375440"
+  },
+  "game/assets/map-village-b/b_tape_teal.png": {
+   "bytes": 3605,
+   "sha256": "35f23c6e63e8a63a6cac78b879f7e7f8805e831e40abaf68189737c32d6060c8"
+  },
+  "game/assets/map-village-b/map_background_1136x570.png": {
+   "bytes": 1526066,
+   "sha256": "467f8a61d916af2117efb493cb0326a53506561dc983a80f678520bbfbb0e6ae"
+  },
+  "game/assets/map-village-b/notebook_frame_1280x720.png": {
+   "bytes": 369133,
+   "sha256": "e9472803750aeec18ad23df1fb04e6f877daf70d21980a6dd35244f92210ad59"
+  },
+  "game/assets/map-village-b/sticker_daram_stubborn.png": {
+   "bytes": 211889,
+   "sha256": "c52abd9405dbd645d87ec66d1534492e3b61827ab19abdb3e37e09de194abf44"
+  },
+  "game/assets/map-village-b/village_clean.png": {
+   "bytes": 3500103,
+   "sha256": "9ba92807dfb402cac6c1e59334d9adae449ef15485a11512a92b9a04907fe89d"
   },
   "game/assets/map-work-nine/resident_dalgeurak--pots_display.webp": {
    "bytes": 793802,
@@ -11424,9 +11500,21 @@
    "bytes": 12740,
    "sha256": "40f506ad3a5513e10398f7084bce2b0fdf5963756f8383b855d5d69ec2c37463"
   },
+  "game/assets/ui-b-choice/paper-components.png": {
+   "bytes": 1605168,
+   "sha256": "98c7b847284da82673c202803630076f305dd0dab578cd58fc2ad9c0b92d942f"
+  },
   "game/assets/ui-b-dialogue/b_panel_dialogue.png": {
    "bytes": 137657,
    "sha256": "c6111c66fc5135db20dc07442dcad0fb4bae9e3b50a58291adeac12ee45e0d25"
+  },
+  "game/assets/ui-b-field/b_panel_dialogue.png": {
+   "bytes": 137657,
+   "sha256": "c6111c66fc5135db20dc07442dcad0fb4bae9e3b50a58291adeac12ee45e0d25"
+  },
+  "game/assets/ui-b-field/sticker_daram_delighted.png": {
+   "bytes": 248451,
+   "sha256": "f612b1ca54273c0303051a113d5239f58f0577ce43d30dff5b5fef62a49893d3"
   },
   "game/assets/ui-b-main/b_logo.png": {
    "bytes": 238806,
@@ -11436,13 +11524,37 @@
    "bytes": 1957810,
    "sha256": "5d49f06d3bca99640fdf88b0779c2ba1511b4a8502cd32e81d7133b7aaa8a9d1"
   },
+  "game/assets/ui-b-main/b_main_background_postcard.png": {
+   "bytes": 3126112,
+   "sha256": "8a0e2cf7fa1100ec4447435d3a81a37de5ae6089411b3fcf7a76fab3f66b4f5a"
+  },
+  "game/assets/ui-b-main/b_main_cast_poster.png": {
+   "bytes": 2589187,
+   "sha256": "4ab11f41350c46f21c08917a7570975cb042554d9749fcdd9b2d67af51155a54"
+  },
+  "game/assets/ui-b-main/b_main_cast_poster_plain.png": {
+   "bytes": 2299365,
+   "sha256": "065b79a2a79d5395232eb09a23bc443398a84b2d90ba76c38c9428dd74bd310c"
+  },
   "game/assets/ui-b-main/b_main_daram.png": {
    "bytes": 613493,
    "sha256": "819b5b2ee00de88f9fdb616568b826e977022c18084351e6db763c1c17e92783"
   },
+  "game/assets/ui-b-main/b_main_daram_eureka.png": {
+   "bytes": 233575,
+   "sha256": "c725f443f797f1f5bb69e82eab99fd88fdd53e83bff1f1c90ec98e0db56cf166"
+  },
   "game/assets/ui-b-main/b_main_panel.png": {
    "bytes": 137057,
    "sha256": "3db5e5edeca046e4d8820a796ab2e83d4ed02f701e74d559ab843c3e9d4ffb22"
+  },
+  "game/assets/ui-b-main/b_main_sticker_cream.png": {
+   "bytes": 965479,
+   "sha256": "331a6cbb0d52e2a81eb0a7711830fd1417b1321a47c57ad9c10bac2917b69fb6"
+  },
+  "game/assets/ui-b-main/b_main_sticker_red.png": {
+   "bytes": 1010361,
+   "sha256": "d30279928ea1809dd1ee5f287605a07f9e134c474b9d93223e7883985e7f6d2a"
   },
   "game/assets/ui-b-options/b_opt_panel.png": {
    "bytes": 941287,
@@ -11452,17 +11564,37 @@
    "bytes": 103448,
    "sha256": "65f381c7f99bcfe54d072828770111ee888f76ea2a520755652e76f1a2726317"
   },
-  "game/assets/ui-b-question/b_panel_card.png": {
-   "bytes": 43835,
-   "sha256": "3b1b051328727710cb8b796e20c6bf4ef068fc9ad0b2bfec308bce9d0ff9419d"
+  "game/assets/ui-b-options/daram_diary_sticker_acorn.png": {
+   "bytes": 277825,
+   "sha256": "04a38934c80bd38f0a9ce59acff5af89f62cd537bbbfced833f93cea82cf1d9a"
   },
-  "game/assets/ui-b-question/b_panel_card_done.png": {
-   "bytes": 54970,
-   "sha256": "db044a1158b8fff0827fcfb494895008f93e77faed1dbec3c70ad1020ac0653e"
+  "game/assets/ui-b-options/daram_diary_sticker_emphasis.png": {
+   "bytes": 191988,
+   "sha256": "adceab002daf17ca92fb4b8b8aae47b65050d2649653676d70364d553bb8b7e8"
   },
-  "game/assets/ui-b-question/b_panel_card_hover.png": {
-   "bytes": 41851,
-   "sha256": "5be487ea9d29f309c866871f48d5669cc60f609096bce1e6ad26e8e74a1bab41"
+  "game/assets/ui-b-options/daram_diary_sticker_gingham_tape.png": {
+   "bytes": 204906,
+   "sha256": "f335c06e72aa8ae5e4a0710ca6fc0a423ba69a23bf1e658271c1736c81da3700"
+  },
+  "game/assets/ui-b-options/daram_diary_sticker_letter.png": {
+   "bytes": 226042,
+   "sha256": "c089d60a0465aeb3e93b97e1e676d3a52023d5ad0c1932a0db8ca79d456617ee"
+  },
+  "game/assets/ui-b-options/daram_diary_sticker_magnifier.png": {
+   "bytes": 274897,
+   "sha256": "431059cdedc0fc261d0a192e8dc02e9b67bca0518ee47547c2c932f50381e103"
+  },
+  "game/assets/ui-b-options/daram_diary_sticker_star.png": {
+   "bytes": 216523,
+   "sha256": "71e004d33a04e5ee47bb6fcc1e69b4485bf224480a5b69970d279b9d28243677"
+  },
+  "game/assets/ui-b-question/b_panel_book.png": {
+   "bytes": 347827,
+   "sha256": "72df207aa3b12bc6cdcc022c75a0867eb726ea74fb0c3c610f6f4fcf7f443b15"
+  },
+  "game/assets/ui-b-sticker/button_sheet.png": {
+   "bytes": 1886460,
+   "sha256": "b83846e2a0dc1305dbc4ffbb4a2e2afb6908d7807ba5e9a2f3c0189a2395c4b7"
   },
   "game/assets/ui-night/close_x.png": {
    "bytes": 785,
@@ -11535,6 +11667,30 @@
   "game/assets/village-stone.png": {
    "bytes": 985629,
    "sha256": "8c2e8a9860c6f8af9e7e3e94df89abba3fa41c88a2d0c2aadc70fd02f94ff05b"
+  },
+  "game/assets/wild-night/wild-greenhouse-night.webp": {
+   "bytes": 1359542,
+   "sha256": "37fa8ec92982b47e7ebdcf201eebcde71390bcfbf230e80a3d437dfb82f91e83"
+  },
+  "game/assets/wild-night/wild-road-mouth-night.webp": {
+   "bytes": 1967104,
+   "sha256": "d8922bb5a88c72b7962bca05786e540b2d552d00dc4f00f58b16fb98b18d4703"
+  },
+  "game/assets/wild-night/wild-school-classroom-night.webp": {
+   "bytes": 1640296,
+   "sha256": "09d0dd37749be5271186b5990d4dcf892b04c1aaeb1df40e383d0ee121433ca9"
+  },
+  "game/assets/wild-night/wild-school-hall-night.webp": {
+   "bytes": 1260758,
+   "sha256": "a85416a569f528480ad490aca5c37a1b684bf737ceb028f3303e4420b8fd3e6e"
+  },
+  "game/assets/wild-night/wild-square-burning.webp": {
+   "bytes": 1943242,
+   "sha256": "755e5a1830242a25e63cea0715dac25453e6c81502cfecb80eb1915f4bb24777"
+  },
+  "game/assets/wild-night/wild-village-dawn-ash.webp": {
+   "bytes": 2158848,
+   "sha256": "0d681221ab17d54533365f4c75ba412cd7b41a1606a2233ab425f40469678d83"
   },
   "game/assets/winter-carriage.png": {
    "bytes": 1904713,
@@ -11661,5 +11817,5 @@
    "sha256": "0ef27bfe65a2917248171666649a51d85e3a200a3ae87bbaaa7085748bc4f0c5"
   }
  },
- "total_bytes": 641644173
+ "total_bytes": 677673130
 }
