@@ -135,6 +135,8 @@ init 319 python:
         "blanket_won_with_e35":lambda:"V111:E35" in (r13_v111_value("proof_given:아내가 봤다는 담요의 시점을 확인한다") or []),
         "badook_won_with_e29":lambda:"V111:E29" in (r13_v111_value("proof_given:촌장이 어젯밤 있던 곳을 확인한다") or []),
         "piko_ledger_with_e34":lambda:"V111:E34" in (r13_v111_value("proof_given:장부의 두 배를 실룩에게 보인다") or []),
+        "altar4_won_with_ledger":lambda:"V111:NW_NEOUL_LEDGER" in (r13_v111_value("proof_given:맨 처음 이름을 짚는다") or []),
+        "altar4_won_with_rations":lambda:"V111:NW_OLD_RATIONS" in (r13_v111_value("proof_given:맨 처음 이름을 짚는다") or []) and "V111:NW_NEOUL_LEDGER" not in (r13_v111_value("proof_given:맨 처음 이름을 짚는다") or []),
         "altar4_won_with_burnt_page":lambda:"V111:NW_BURNT_PAGE" in (r13_v111_value("proof_given:맨 처음 이름을 짚는다") or []),
         "hyp1_won_without_e08":lambda:bool(r13_v111_value("proof_given:초롱과 피코의 하루를 대조한다")) and "V111:E08" not in r13_v111_value("proof_given:초롱과 피코의 하루를 대조한다"),
         # Event 05: the day-7 fire meeting.

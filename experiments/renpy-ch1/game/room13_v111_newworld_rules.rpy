@@ -85,6 +85,7 @@ init 318 python:
         "명단과 흰 그릇을 대조한다":("NW_RETURNED_BOWL","NW_SICK_BEDS"),
     }
     R13_PROOF_ALTERNATES={
+        "맨 처음 이름을 짚는다":(("NW_NAMES","NW_OLD_RATIONS"),),
         "구리선과 수선 출처를 대조한다":(("E08_CONTACT_ASSEMBLY","E09_PIN_OWNER"),),
         "초롱과 피코의 하루를 대조한다":(("E11","NW_PIKO_TREMOR"),),
         # 0.20.18 연쇄 P1 (소유자 2026-10-23 "전 사건에서 살린 애가 나중에 활용되어"): 2일에 살린 피코의

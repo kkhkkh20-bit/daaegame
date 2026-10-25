@@ -1113,7 +1113,7 @@
 
 | 장면 | 제목 · 원본 장소 | 이동(travel) | 인물 | 라벨 |
 |---|---|---|---|---|
-| `MS14_D14_S01` | 장면 14-1. 아침에도 살아 있는 사람 · 학교/안전 확인된 제단/감독 면회 자리/광장/확보 숙소 | 마을 학교(school) | 엄마, 다람, 판돌, 나비, 토실, 백 부인 | `r13_v111_morning_safe14`, `r13_v111_altar_guide14`, `r13_v111_altar_ready14` |
+| `MS14_D14_S01` | 장면 14-1. 아침에도 살아 있는 사람 · 학교/안전 확인된 제단/감독 면회 자리/광장/확보 숙소 | 마을 학교(school) | 엄마, 다람, 판돌, 나비, 토실, 백 부인 | `r13_v111_morning_safe14`, `r13_v111_old_rations14`, `r13_v111_altar_guide14`, `r13_v111_altar_ready14` |
 | `MS14_D14_S02` | 장면 14-2. 아무도 묶여 있지 않은 제단 · 학교/안전 확인된 제단/감독 면회 자리/광장/확보 숙소 | 북쪽 산길 · 숲속 제단(altar), 눈에 막힌 입구(gate), v111_labor, 마을 학교(school) | 엄마, 다람, 바둑이, 까로, 뿔이 촌장, 부리, 돌목, 실룩, (+식), 나비 | `r13_v111_altar14`, `r13_v111_mayor_interview14`, `r13_v111_altar1_q14`, `r13_v111_altar1_proof14`, `r13_v111_altar1_wrong14`, `r13_v111_altar1_won14` 외 34 |
 | `MS14_D14_S03` | 장면 14-3. 보미라는 이름 · 학교/안전 확인된 제단/감독 면회 자리/광장/확보 숙소 | 눈에 막힌 입구(gate) | 엄마, 다람, 할머니, 돌목, 토실, 부엉이 할아버지 | `r13_v111_granny_interview14`, `r13_v111_tosil_listen14`, `r13_v111_tosil_inside14`, `r13_v111_tosil_outside14` |
 | `MS14_D14_S04` | 장면 14-4. 이름판 아래의 그릇 · 학교/안전 확인된 제단/감독 면회 자리/광장/확보 숙소 | 돌이 있는 광장(square), 마을 학교(school) | 엄마, 다람, 토실, 판돌, 나비, 돌목, 초롱, 부엉이 할아버지 | `r13_v111_name_board14`, `r13_v111_tosil_name14`, `r13_v111_tosil_no_name14`, `r13_v111_pandol_news14`, `r13_v111_supply_inventory14`, `r13_v111_supply_inventory_done14` 외 4 |
@@ -1129,10 +1129,11 @@
 - 값
   - 자료 얻음 `NW_BURNT_PAGE` (`r13_v111_morning_safe14`)
   - 자료 얻음 `NW_MADAM_DAY7` (`r13_v111_morning_safe14`)
+  - 자료 얻음 `NW_OLD_RATIONS` (`r13_v111_old_rations14`)
   - `altar_guide_confirmed` = `true` (`r13_v111_altar_ready14`)
   - `busy:resident_badook` = `false` (`r13_v111_altar_ready14`)
 
-#### `MS14_D14_S02` 갈림 · 값 (room13_v111_days1114.rpy:2739)
+#### `MS14_D14_S02` 갈림 · 값 (room13_v111_days1114.rpy:2745)
 
 - `r13_v111_altar1_wrong14` if `not v111_altar_half and r13_nw_retry("altar")` `→ r13_v111_altar1_proof14`
 - `r13_v111_altar1_wrong14` if `v111_altar_half` `→ r13_v111_altar2_q14`
@@ -1140,8 +1141,8 @@
 - `r13_v111_altar2_wrong14` if `r13_nw_retry("altar",['NW_TABLET_A', 'NW_TABLET_B'],'촌장이 고개를 젓는다. 돌판의 앞 반쪽과 밑돌의 글자를 함께 놓아야 한다.')` `→ r13_v111_altar2_proof14`
 - `r13_v111_altar3_proof14` if `not all(r13_v111_owned(k) for k in ['NW_IRON_MARK'])` `→ r13_v111_altar4_q14`
 - `r13_v111_altar3_wrong14` if `r13_nw_retry("altar",['NW_IRON_MARK'],None)` `→ r13_v111_altar3_proof14`
-- `r13_v111_altar4_proof14` if `not all(r13_v111_owned(k) for k in ['NW_NAMES', 'NW_NEOUL_LEDGER'])` `→ r13_v111_altar_close14`
-- `r13_v111_altar4_wrong14` if `r13_nw_retry("altar",['NW_NAMES', 'NW_NEOUL_LEDGER'],'촌장의 손이 떨린다. 벽의 이름과 그해 장부를 함께 놓아야 한다.')` `→ r13_v111_altar4_proof14`
+- `r13_v111_altar4_proof14` if `not (r13_v111_owned("NW_NAMES") and (r13_v111_owned("NW_NEOUL_LEDGER") or r13_v111_owned("NW_OLD_RATIONS")))` `→ r13_v111_altar_close14`
+- `r13_v111_altar4_wrong14` if `r13_nw_retry("altar",['NW_NAMES', 'NW_NEOUL_LEDGER'],'촌장의 손이 떨린다. 벽의 이름과 그해 집별 배급 기록을 함께 놓아야 한다.')` `→ r13_v111_altar4_proof14`
 - `r13_v111_device14` if `r13_v111_value("buri_device_consent") and not r13_v111_value("mayor_site_decided") ` `→ r13_v111_mayor_site_request14`
 - `r13_v111_mayor_site_request14` if 「감독 아래 현장 확인에 동행해 주십시오.」 `→ r13_v111_mayor_site_yes14`
 - `r13_v111_mayor_site_request14` if 「이 자리에서만 확인하겠습니다.」 `→ r13_v111_mayor_site_no14`
@@ -1198,9 +1199,9 @@
   - `busy:buri` = `"device_work"` (`r13_v111_buri_record_answer14`)
   - `device_support_ready` = `true` (`r13_v111_buri_record_answer14`)
 
-#### `MS14_D14_S03` 갈림 · 값 (room13_v111_days1114.rpy:3121)
+#### `MS14_D14_S03` 갈림 · 값 (room13_v111_days1114.rpy:3127)
 
-- 메뉴 `r13_v111_tosil_listen14` (3139줄)
+- 메뉴 `r13_v111_tosil_listen14` (3145줄)
   - 「안에서 직접 듣는다」 → `r13_v111_tosil_inside14`
   - 「보호자와 밖에서 기다린다」 → `r13_v111_tosil_outside14`
 - 값
@@ -1212,9 +1213,9 @@
   - `bomi_death_confirmed` = `true` (`r13_v111_tosil_outside14`)
   - `adult_interview_done` = `true` (`r13_v111_tosil_outside14`)
 
-#### `MS14_D14_S04` 갈림 · 값 (room13_v111_days1114.rpy:3195)
+#### `MS14_D14_S04` 갈림 · 값 (room13_v111_days1114.rpy:3201)
 
-- 메뉴 `r13_v111_name_board14` (3203줄)
+- 메뉴 `r13_v111_name_board14` (3209줄)
   - 「토실이 이름을 쓰겠다면 기다린다」 → `r13_v111_tosil_name14`
   - 「지금 쓰지 않아도 된다고 말한다」 → `r13_v111_tosil_no_name14`
 - `r13_v111_supply_inventory14` if 「실물·사용처·남은 양을 함께 확인한다」 `→ r13_v111_supply_inventory_done14`
@@ -1226,7 +1227,7 @@
   - `lamp_manager` = `"resident_lamplighter"` (`r13_v111_chorong_lamps14`)
   - `lamp_manager` = `"mom"` (`r13_v111_mother_lamps14`)
 
-#### `MS14_D14_END_PARTIAL` 갈림 · 값 (room13_v111_days1114.rpy:3318)
+#### `MS14_D14_END_PARTIAL` 갈림 · 값 (room13_v111_days1114.rpy:3324)
 
 - `r13_v111_partial_ending14` if `r13_v111_value("cart_departed")` `→ r13_v111_partial_departed14`
 - `r13_v111_partial_handoff14` if 「남은 인계에 직접 참여한다」 `→ r13_v111_partial_work14`
@@ -1239,13 +1240,13 @@
   - `pending_handover_completed` = `false` (`r13_v111_partial_wait14`)
   - `pending_handover_supervised` = `true` (`r13_v111_partial_wait14`)
 
-#### `MS14_D14_END_VIOLENCE` 갈림 · 값 (room13_v111_days1114.rpy:3387)
+#### `MS14_D14_END_VIOLENCE` 갈림 · 값 (room13_v111_days1114.rpy:3393)
 
 - 값
   - `night14_lodging` = `"school"` (`r13_v111_cookie14`)
   - `night14_lodging` = `"gate"` (`r13_v111_cookie_gate14`)
 
-#### `MS14_D14_S05` 갈림 · 값 (room13_v111_days1114.rpy:3451)
+#### `MS14_D14_S05` 갈림 · 값 (room13_v111_days1114.rpy:3457)
 
 - 값
   - `story14_completed` = `true` (`r13_v111_cookie_scene14`)
@@ -1521,15 +1522,15 @@
 
 | 증명 키(쟁점) | 화면 제목 | 정답 | 대체 정답 | 덧붙여도 받음 | 자리 |
 |---|---|---|---|---|---|
-| 희생의 숫자와 장부를 대조한다 | — | NW_NEOUL_LEDGER | E14_SUPPLY+NW_KKOMI_NOSTONE+NW_SICK_BEDS | — | room13_v111_days1114.rpy:2780 |
-| 아르카가 부른다는 말과 옛 기록을 대조한다 | — | NW_TABLET_A+NW_TABLET_B | — | — | room13_v111_days1114.rpy:2819 |
-| 쇠가 언제 붙었는지 보인다 | — | NW_IRON_MARK | — | — | room13_v111_days1114.rpy:2847 |
-| 맨 처음 이름을 짚는다 | — | NW_NAMES+NW_NEOUL_LEDGER | — | NW_BURNT_PAGE | room13_v111_days1114.rpy:2875 |
+| 희생의 숫자와 장부를 대조한다 | — | NW_NEOUL_LEDGER | E14_SUPPLY+NW_KKOMI_NOSTONE+NW_SICK_BEDS | — | room13_v111_days1114.rpy:2786 |
+| 아르카가 부른다는 말과 옛 기록을 대조한다 | — | NW_TABLET_A+NW_TABLET_B | — | — | room13_v111_days1114.rpy:2825 |
+| 쇠가 언제 붙었는지 보인다 | — | NW_IRON_MARK | — | — | room13_v111_days1114.rpy:2853 |
+| 맨 처음 이름을 짚는다 | — | NW_NAMES+NW_NEOUL_LEDGER | NW_NAMES+NW_OLD_RATIONS | NW_BURNT_PAGE | room13_v111_days1114.rpy:2881 |
 
 결과마다 바뀌는 값
 
-- `"win" if all(r13_v111_value("altar_issue:%d"%i)=="won" for i in (1,2,3,4)) else "partial"` · `r13_v111_altar_close14` (room13_v111_days1114.rpy:2893)
-- `"lose"` · `r13_v111_altar_lost14` (room13_v111_days1114.rpy:2900)
+- `"win" if all(r13_v111_value("altar_issue:%d"%i)=="won" for i in (1,2,3,4)) else "partial"` · `r13_v111_altar_close14` (room13_v111_days1114.rpy:2899)
+- `"lose"` · `r13_v111_altar_lost14` (room13_v111_days1114.rpy:2906)
 
 이 회의를 읽는 조건: `altar_lose`, `altar_partial`, `altar_win`, `end_morning_lost`, `end_morning_partial`, `end_morning_won`
 
@@ -1651,6 +1652,8 @@ def r13_nw_true_ending_ready():
 | 이름 | 식 | 쓰는 곳 |
 |---|---|---|
 | `altar4_won_with_burnt_page` | `"V111:NW_BURNT_PAGE" in (r13_v111_value("proof_given:맨 처음 이름을 짚는다") or [])` | d14 |
+| `altar4_won_with_ledger` | `"V111:NW_NEOUL_LEDGER" in (r13_v111_value("proof_given:맨 처음 이름을 짚는다") or [])` | d14 |
+| `altar4_won_with_rations` | `"V111:NW_OLD_RATIONS" in (r13_v111_value("proof_given:맨 처음 이름을 짚는다") or []) and "V111:NW_NEOUL_LEDGER" not in (r13_v111_value("proof_given:맨 처음 이름을 짚는다") or [])` | d14 |
 | `altar_lose` | `r13_v111_value("meeting:altar")=="lose"` | d14 |
 | `altar_partial` | `r13_v111_value("meeting:altar")=="partial"` | d14 |
 | `altar_win` | `r13_v111_value("meeting:altar")=="win"` | d14 |

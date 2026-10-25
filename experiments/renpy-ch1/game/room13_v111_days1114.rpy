@@ -2720,7 +2720,13 @@ label r13_v111_morning_safe14:
     if r13_v111_value("OWL_ALIVE") is False:
         $ r13_nw_acquire("NW_BURNT_PAGE")
     $ r13_nw_acquire("NW_MADAM_DAY7")
+    call r13_v111_old_rations14
     jump r13_v111_altar_guide14
+
+label r13_v111_old_rations14:
+    call r13_lines(r13_nw_block('old_rations14'),'nw:old_rations14')
+    $ r13_nw_acquire("NW_OLD_RATIONS")
+    return
 
 label r13_v111_altar_guide14:
     call r13_v111_wait('altar_guide14')
@@ -2865,9 +2871,9 @@ label r13_v111_altar4_q14:
     jump r13_v111_altar4_proof14
 
 label r13_v111_altar4_proof14:
-    # 0.20.5 (Codex T01): without the records this question needs (an earlier meeting was lost),
-    # say so and let the question stand unanswered; no chance is spent on an impossible answer.
-    if not all(r13_v111_owned(k) for k in ['NW_NAMES', 'NW_NEOUL_LEDGER']):
+    # The school copy replaces only this question's yearly ration facts, not Neoul's whole ledger.
+    # Missing both sources (or the wall names) still spends no chance on an impossible answer.
+    if not (r13_v111_owned("NW_NAMES") and (r13_v111_owned("NW_NEOUL_LEDGER") or r13_v111_owned("NW_OLD_RATIONS"))):
         call r13_lines(r13_nw_block('altar4_cannot14'),'nw:altar4_cannot14')
         call r13_lines(r13_nw_block('altar4_lost14'),'nw:altar4_lost14:cannot')
         $ r13_v111_set('altar_issue:4','lost')
@@ -2876,7 +2882,7 @@ label r13_v111_altar4_proof14:
     jump expression _return
 
 label r13_v111_altar4_wrong14:
-    if r13_nw_retry("altar",['NW_NAMES', 'NW_NEOUL_LEDGER'],'촌장의 손이 떨린다. 벽의 이름과 그해 장부를 함께 놓아야 한다.'):
+    if r13_nw_retry("altar",['NW_NAMES', 'NW_NEOUL_LEDGER'],'촌장의 손이 떨린다. 벽의 이름과 그해 집별 배급 기록을 함께 놓아야 한다.'):
         call r13_lines(r13_nw_block("altar4_lost14"),"nw:altar4_lost14:retry")
         jump r13_v111_altar4_proof14
     call r13_lines(r13_nw_block('altar4_lost14'),'nw:altar4_lost14')
