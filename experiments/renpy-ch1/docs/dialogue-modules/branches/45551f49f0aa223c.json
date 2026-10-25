@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "91f419b460b4f95909e0d180a0dbabe1e91cbc9fd9ab15121f397c4f5c3af0c2",
+  "entries": [
+    {
+      "id": "NW_HB_PLATE_SEEN7_D1",
+      "file": "game/v111/newworld/hidden_base.json",
+      "path": [
+        "blocks",
+        "hidden_base_plate_seen7",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "hidden_base_plate_seen7",
+      "block": "hidden_base_plate_seen7",
+      "placement": "blocks",
+      "ref": "hidden_base_plate_seen7",
+      "when": "daram_ready",
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "구멍이 셋이야. 단추야?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_base.rpy",
+          "line": 59,
+          "label": "r13_hidden_base_pick7",
+          "guards": [
+            "if n==100 and not r13_hidden_base_value('plate_seen'):"
+          ]
+        }
+      ],
+      "scene_title": "hidden_base_plate_seen7",
+      "source_hash": "9ce9186c466dc7d8f8fe058adaa6ed1b09da5a7c9f92def69707cc7c7a6f5d32",
+      "baseline_hash": "59331f9c9a4d5632020a86debc742a48a1b2433ae64e3d6c53d6bff9a96c1f18",
+      "uid": "c741ad3cf0797aa7b9eca95f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|hidden_base_plate_seen7|patch|hidden_base_plate_seen7|daram_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HB_PLATE_SEEN7_D2",
+      "file": "game/v111/newworld/hidden_base.json",
+      "path": [
+        "blocks",
+        "hidden_base_plate_seen7",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "hidden_base_plate_seen7",
+      "block": "hidden_base_plate_seen7",
+      "placement": "blocks",
+      "ref": "hidden_base_plate_seen7",
+      "when": "daram_ready",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "구멍 셋짜리 단추는 아빠도 못 채워.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_base.rpy",
+          "line": 59,
+          "label": "r13_hidden_base_pick7",
+          "guards": [
+            "if n==100 and not r13_hidden_base_value('plate_seen'):"
+          ]
+        }
+      ],
+      "scene_title": "hidden_base_plate_seen7",
+      "source_hash": "9ce9186c466dc7d8f8fe058adaa6ed1b09da5a7c9f92def69707cc7c7a6f5d32",
+      "baseline_hash": "39e549459800cb7ef915721c56057ab21681ea4b15a3159a40b7e57eca49b5a5",
+      "uid": "9e6940e77c1596f386c2dcf9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|hidden_base_plate_seen7|patch|hidden_base_plate_seen7|daram_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

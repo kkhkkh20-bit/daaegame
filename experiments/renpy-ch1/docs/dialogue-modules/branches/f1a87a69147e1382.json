@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "91f419b460b4f95909e0d180a0dbabe1e91cbc9fd9ab15121f397c4f5c3af0c2",
+  "entries": [
+    {
+      "id": "NW_HP_SPOON6_D1",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_spoon6",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 6,
+      "scene": "hp_spoon6",
+      "block": "hp_spoon6",
+      "placement": "blocks",
+      "ref": "hp_spoon6",
+      "when": "daram_ready",
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "손잡이가 엄청 뚱뚱해. 숟가락이 겨울옷 입었어.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 39,
+          "label": "r13_hp_meal6_wait",
+          "guards": [
+            "if _return==1:"
+          ]
+        }
+      ],
+      "scene_title": "hp_spoon6",
+      "source_hash": "37d8465869d866d473b2c3d695af8c355ebb2eadabaf5c51d411ef5460fd9245",
+      "baseline_hash": "f52d1f3187efbac4423a58d918dd37cbb7653464b554e14d708869f9aad6b3ed",
+      "uid": "1952e98080e98a273ff92cfe",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|hp_spoon6|patch|hp_spoon6|daram_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HP_SPOON6_D2",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_spoon6",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 6,
+      "scene": "hp_spoon6",
+      "block": "hp_spoon6",
+      "placement": "blocks",
+      "ref": "hp_spoon6",
+      "when": "daram_ready",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "뚱뚱한 데는 다 이유가 있어. 아빠 배처럼.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 39,
+          "label": "r13_hp_meal6_wait",
+          "guards": [
+            "if _return==1:"
+          ]
+        }
+      ],
+      "scene_title": "hp_spoon6",
+      "source_hash": "37d8465869d866d473b2c3d695af8c355ebb2eadabaf5c51d411ef5460fd9245",
+      "baseline_hash": "3f87c89d2c63379027de6f8d572f255c6605d34ce7ed4cf0fa22122b7f9a26d8",
+      "uid": "ac5d7455045294a85de46722",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|hp_spoon6|patch|hp_spoon6|daram_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

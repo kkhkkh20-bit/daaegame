@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "91f419b460b4f95909e0d180a0dbabe1e91cbc9fd9ab15121f397c4f5c3af0c2",
+  "entries": [
+    {
+      "id": "NW_HP_PIN7_D1",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_pin7",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "hp_pin7",
+      "block": "hp_pin7",
+      "placement": "blocks",
+      "ref": "hp_pin7",
+      "when": "daram_ready",
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "아빠, 그거 그냥 가져가면 도둑이야.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 48,
+          "label": "r13_hp_pick7",
+          "guards": [
+            "if n==80 and r13_hp_value('spoon_seen') and not r13_hp_value('pin_seen'):"
+          ]
+        }
+      ],
+      "scene_title": "hp_pin7",
+      "source_hash": "37d8465869d866d473b2c3d695af8c355ebb2eadabaf5c51d411ef5460fd9245",
+      "baseline_hash": "b0473e807f76a6d0b0d4b724e4b9e0ff03a44570609f5d5148453c7f241cce8c",
+      "uid": "e690ecf96102402cd38389f6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|hp_pin7|patch|hp_pin7|daram_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_HP_PIN7_D2",
+      "file": "game/v111/newworld/hidden_pandol.json",
+      "path": [
+        "blocks",
+        "hp_pin7",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "hp_pin7",
+      "block": "hp_pin7",
+      "placement": "blocks",
+      "ref": "hp_pin7",
+      "when": "daram_ready",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그래서 묻는다니까. 아빠는 손님이야.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_hidden_pandol.rpy",
+          "line": 48,
+          "label": "r13_hp_pick7",
+          "guards": [
+            "if n==80 and r13_hp_value('spoon_seen') and not r13_hp_value('pin_seen'):"
+          ]
+        }
+      ],
+      "scene_title": "hp_pin7",
+      "source_hash": "37d8465869d866d473b2c3d695af8c355ebb2eadabaf5c51d411ef5460fd9245",
+      "baseline_hash": "1dd71df7b3da3a42037f0b704a39bb0b2141d45530197ad6bdee9409f8cf65c5",
+      "uid": "f9b1efa91df894020af25f39",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|hp_pin7|patch|hp_pin7|daram_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

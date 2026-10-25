@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "91f419b460b4f95909e0d180a0dbabe1e91cbc9fd9ab15121f397c4f5c3af0c2",
+  "entries": [
+    {
+      "id": "NW_OWL_LATCH_LOOK7_D1",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "owl_latch_look7",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "owl_latch_look7",
+      "block": "owl_latch_look7",
+      "placement": "blocks",
+      "ref": "owl_latch_look7",
+      "when": "daram_ready",
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "문이 졸려서 내려앉았나 봐.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 130,
+          "label": "r13_v111_owl_repair_pick7",
+          "guards": [
+            "if n==110:"
+          ]
+        }
+      ],
+      "scene_title": "owl_latch_look7",
+      "source_hash": "6daec1d66740b2110da150929696cfc82be1469ec8cd18a0827cfe47538b4c33",
+      "baseline_hash": "ae9c711e6add7ed86ab8679c1599bd433cb8ec2f3c61486ccb232b58aa10c7f1",
+      "uid": "8ae5c5c8d093bdb6f26dfc4d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|owl_latch_look7|patch|owl_latch_look7|daram_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_OWL_LATCH_LOOK7_D2",
+      "file": "game/v111/newworld/d07.json",
+      "path": [
+        "blocks",
+        "owl_latch_look7",
+        3,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 7,
+      "scene": "owl_latch_look7",
+      "block": "owl_latch_look7",
+      "placement": "blocks",
+      "ref": "owl_latch_look7",
+      "when": "daram_ready",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "그럼 깨우지 말고 살살 닫자.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_owl_prevent.rpy",
+          "line": 130,
+          "label": "r13_v111_owl_repair_pick7",
+          "guards": [
+            "if n==110:"
+          ]
+        }
+      ],
+      "scene_title": "owl_latch_look7",
+      "source_hash": "6daec1d66740b2110da150929696cfc82be1469ec8cd18a0827cfe47538b4c33",
+      "baseline_hash": "40442fa27e1eeb93059842d01a77a7b42c4410143b278b7d0fb7b6231321311c",
+      "uid": "1beb316027247c2c5f57087b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|owl_latch_look7|patch|owl_latch_look7|daram_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}
