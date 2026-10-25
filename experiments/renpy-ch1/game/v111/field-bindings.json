@@ -3568,5 +3568,81 @@
         "object": "blankets"
       }
     ]
+  },
+  "meal_inspect12": {
+    "location": "school",
+    "people": [
+      "daram",
+      "nabi",
+      "resident_teacher",
+      "resident_bori",
+      "kid_dodam",
+      "kid_saemi"
+    ],
+    "options": [
+      {
+        "title": "작은 냄비와 국자 자리를 살핀다",
+        "location": "school",
+        "object": "desks",
+        "guard": [
+          [
+            "state",
+            "soup_smallpot_seen12",
+            null
+          ]
+        ]
+      },
+      {
+        "title": "흰 그릇이 놓인 자리를 살핀다",
+        "location": "school",
+        "object": "v111_bowl_table",
+        "guard": [
+          [
+            "state",
+            "soup_bowls_seen12",
+            null
+          ]
+        ]
+      },
+      {
+        "title": "선반에 놓인 병의 봉인을 살핀다",
+        "location": "school",
+        "object": "desks",
+        "guard": [
+          [
+            "state",
+            "soup_bottle_seen12",
+            null
+          ]
+        ]
+      },
+      {
+        "title": "흰 그릇을 옆으로 옮기고 작은 냄비를 연다",
+        "location": "school",
+        "object": "v111_bowl_table",
+        "guard": [
+          [
+            "state",
+            "soup_smallpot_seen12",
+            true
+          ],
+          [
+            "state",
+            "soup_bowls_seen12",
+            true
+          ],
+          [
+            "state",
+            "soup_bottle_seen12",
+            true
+          ]
+        ]
+      },
+      {
+        "title": "장작을 받을 일을 다시 살핀다",
+        "location": "school",
+        "object": "desks"
+      }
+    ]
   }
 }
