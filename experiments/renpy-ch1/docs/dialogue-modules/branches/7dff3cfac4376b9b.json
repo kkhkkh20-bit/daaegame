@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "553d7cd68b57135136767dee8d37852f428dbfe7b0cc352abddcf8899909196c",
+  "source_stamp": "15202e4a9a8d17c37bf71ef61c1719d85e82258c9061029a54d412261225b46b",
   "entries": [
     {
       "id": "NW_D03_S02_A06",
@@ -33,7 +33,7 @@
         }
       ],
       "scene_title": "2. 광장 / 먼저 묶인 손",
-      "source_hash": "f5ae42292ff12618b9147a484acdfb2276c4d48eea8e654190e3f6984532f1ef",
+      "source_hash": "497c472ad8f5b83ed8febb98f114b9dc375e85d72a48440d9efbe5a19949f3d4",
       "baseline_hash": "bed07c7bdd41faac6183e673ec6c016bee5d42e16c45d90f3f1053becb2b806e",
       "uid": "1b513e518cb4e6a442fd88c7",
       "review_status": "draft",
@@ -72,7 +72,7 @@
         }
       ],
       "scene_title": "2. 광장 / 먼저 묶인 손",
-      "source_hash": "f5ae42292ff12618b9147a484acdfb2276c4d48eea8e654190e3f6984532f1ef",
+      "source_hash": "497c472ad8f5b83ed8febb98f114b9dc375e85d72a48440d9efbe5a19949f3d4",
       "baseline_hash": "2d1bcba8be9b2cc3b4bc5e40c1237607e9148b01cde30dc0bf0b3ba3f7dbc6a6",
       "uid": "b8401600ae4c95c3eb78229e",
       "review_status": "draft",
@@ -81,7 +81,7 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
-      "id": "NW_MV_D03_10",
+      "id": "NW_D03_S02_T21",
       "file": "game/v111/newworld/d03.json",
       "path": [
         "after",
@@ -96,9 +96,9 @@
       "placement": "after",
       "ref": "MS14_D03_S02_L0011",
       "when": null,
-      "speaker": "아빠",
+      "speaker": "너울",
       "kind": "dialogue",
-      "text": "그리고 톡 씨는 저희가 타고 나갈 마차를 고칠 사람입니다. 잘못 데려가시면 저희도 이 마을에서 못 나갑니다.",
+      "text": "그래서?",
       "editable": true,
       "usage": "active",
       "note": "",
@@ -111,9 +111,48 @@
         }
       ],
       "scene_title": "2. 광장 / 먼저 묶인 손",
-      "source_hash": "f5ae42292ff12618b9147a484acdfb2276c4d48eea8e654190e3f6984532f1ef",
-      "baseline_hash": "b6c384089e61c4040b2b2aded24ecf4f7f237060a1af4dc71fe020702de7e2f2",
+      "source_hash": "497c472ad8f5b83ed8febb98f114b9dc375e85d72a48440d9efbe5a19949f3d4",
+      "baseline_hash": "f04bbd37504b582fc9415a5af8d59e9c133f0acfeb9cd94955a00517d41f8452",
       "uid": "82197056f9262f7143fbca8d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_MV_D03_10",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "after",
+        "MS14_D03_S02_L0011",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D03_S02_L0011",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "……그리고 톡 씨는 저희 마차를 고칠 사람입니다. 잘못 데려가시면 저희도 못 나가요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 841,
+          "label": "r13_v111_lamp3",
+          "guards": []
+        }
+      ],
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "497c472ad8f5b83ed8febb98f114b9dc375e85d72a48440d9efbe5a19949f3d4",
+      "baseline_hash": "74d661b3cebeb6068fbf69148be2f66bff88a43be3e1164ae76dff8bcb56efce",
+      "uid": "ca18b422117aec3dadda897b",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d03|MS14_D03_S02|patch|after|행 조건 없음",
@@ -125,7 +164,7 @@
       "path": [
         "after",
         "MS14_D03_S02_L0011",
-        1,
+        2,
         "text"
       ],
       "origin": "patch",
@@ -150,9 +189,9 @@
         }
       ],
       "scene_title": "2. 광장 / 먼저 묶인 손",
-      "source_hash": "f5ae42292ff12618b9147a484acdfb2276c4d48eea8e654190e3f6984532f1ef",
+      "source_hash": "497c472ad8f5b83ed8febb98f114b9dc375e85d72a48440d9efbe5a19949f3d4",
       "baseline_hash": "fd89acc026ce3ad7823fbdfaf07c5242997319afa2891a76de7bc68ebc068e37",
-      "uid": "ca18b422117aec3dadda897b",
+      "uid": "4ae14584174a51bc167cba1a",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d03|MS14_D03_S02|patch|after|행 조건 없음",
@@ -189,9 +228,87 @@
         }
       ],
       "scene_title": "2. 광장 / 먼저 묶인 손",
-      "source_hash": "f5ae42292ff12618b9147a484acdfb2276c4d48eea8e654190e3f6984532f1ef",
+      "source_hash": "497c472ad8f5b83ed8febb98f114b9dc375e85d72a48440d9efbe5a19949f3d4",
       "baseline_hash": "dec2940c92a6078a5fd98ed66c875eef6ab7e72f718edb160b41f76b55da89c4",
       "uid": "6fe31d2b753d61b706e758a1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D03_S02_T22",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "after",
+        "MS14_D03_S02_L0023",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D03_S02_L0023",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "조각은요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 873,
+          "label": "r13_v111_lamp_fragment3",
+          "guards": []
+        }
+      ],
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "497c472ad8f5b83ed8febb98f114b9dc375e85d72a48440d9efbe5a19949f3d4",
+      "baseline_hash": "6f9acd74aa81f060dd41bffa9dc38c8037817fabd365181007bc2ec4e08a9589",
+      "uid": "1bda45ce10ce8953a0d18666",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S02|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D03_S02_T23",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "after",
+        "MS14_D03_S02_L0023",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "MS14_D03_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D03_S02_L0023",
+      "when": null,
+      "speaker": "초롱",
+      "kind": "dialogue",
+      "text": "없었어요. 돌을 잠깐 들고 받침 가루까지 털었는걸요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 873,
+          "label": "r13_v111_lamp_fragment3",
+          "guards": []
+        }
+      ],
+      "scene_title": "2. 광장 / 먼저 묶인 손",
+      "source_hash": "497c472ad8f5b83ed8febb98f114b9dc375e85d72a48440d9efbe5a19949f3d4",
+      "baseline_hash": "d8c9240acc8e6d3f79a148f45ff691acde3db3cfe3d3c91b25d3208238d0a898",
+      "uid": "5b262566d38c77051b496441",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d03|MS14_D03_S02|patch|after|행 조건 없음",
