@@ -11,3 +11,14 @@ PNG8 모두 RGBA 160×52, 알파 경계 (16,10,144,42). 원본 전체 균일 확
 후속 환경에서 RENPY_SDK와 xvfb-run 준비 후 dev/check.sh 및 dev/asset_screen_examples.py 실행 필요. 병합/배포 전 실제 질문·지도 PC/터치 및 네 상태 가독성을 확인해야 한다.
 
 검사 결과: asset_toolbox validate 통과, test_button_fit_assets 3개 통과, test_asset_toolbox* 31개 통과, 전체 단위검사1104개 중1103개 통과/1개 오류. 오류는 shallow clone에 과거2ea4d41 객체가 없어 test_historical_semantic_revision_preserved_story_source의 git show가128로 종료한 환경 제한이다. Python init 블록 구문 검사와 git diff --check 통과.
+
+## 공식 의존성 준비 후속 (2026-10-25)
+
+PR head 0d60aed72f4f05d0ab5fd59d091c3d3aa8228cd6에서 CI 절차를 확인했다.
+
+- `curl --fail --location --retry 3 --output /tmp/renpy-sdk.tar.bz2 https://www.renpy.org/dl/8.5.3/renpy-8.5.3-sdk.tar.bz2`: exit22, HTTP403. SDK 미확보로 공식 SHA256 검증/압축 해제/실제 렌더/lint 실행 불가. 다른 URL로 우회하지 않았다.
+- `sudo apt-get update`: exit127, `/bin/bash: sudo: command not found`. xvfb/xauth 설치 미완료. 시스템 우회 설치는 하지 않았다.
+- 실제 화면 캡처와 before/current는 추가하지 않았고 기존 공개 캡처를 보존했다. CI YAML 및 게임 기능 변경 없음.
+
+- `git fetch --no-tags --depth=1 origin 2ea4d41bb8918b74d95d9cb6dc0bb8705e3297fd`: 1분 이상 약117MiB 수신 시점에도 미완료. SDK403으로 화면 검증 불가가 확정되어 해당 fetch를 SIGTERM으로 종료했다. 과거 객체 미확보.
+- `python3 -m unittest discover -s dev -p 'test_actor_intent_and_source_art.py'`: 10개 중9개 통과/1개는 과거 객체 미확보로 같은 오류. 전체 검사는 재실행하지 않았다.
