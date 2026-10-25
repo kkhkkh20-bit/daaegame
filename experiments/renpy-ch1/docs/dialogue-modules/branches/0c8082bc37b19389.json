@@ -1,0 +1,100 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "5d9f58ea7f772404f0ab33ce31f979610d7707cdcad099eb7048e0fd9f0703be",
+  "entries": [
+    {
+      "id": "NW_D03_TW_L01",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "blocks",
+        "trial_wrong_latch3",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "trial_wrong_latch3",
+      "block": "trial_wrong_latch3",
+      "placement": "blocks",
+      "ref": "trial_wrong_latch3",
+      "when": null,
+      "speaker": "실룩",
+      "kind": "dialogue",
+      "text": "에이, 그게 뭐요. 난 바깥 걸쇠만 밀어 닫았다니까요. 안쪽은 구경도 못 했어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1298,
+          "label": "r13_v111_trial_wrong_latch",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1302,
+          "label": "r13_v111_trial_wrong_latch",
+          "guards": []
+        }
+      ],
+      "scene_title": "trial_wrong_latch3",
+      "source_hash": "4d29ae1cd9dc339abf91e67a1e0d967d335c3b906344fd3f3b8d55488958c899",
+      "baseline_hash": "f725866a8100228f4124f7f8ec64aacdc3746292a1ff8a4b01a866545f3378f4",
+      "uid": "bd34d54c201655cc9f3421e0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|trial_wrong_latch3|patch|trial_wrong_latch3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D03_TW_L02",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "blocks",
+        "trial_wrong_latch3",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "trial_wrong_latch3",
+      "block": "trial_wrong_latch3",
+      "placement": "blocks",
+      "ref": "trial_wrong_latch3",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "……바깥만이라. 그 말부터 다시 맞춰 보겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1298,
+          "label": "r13_v111_trial_wrong_latch",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1302,
+          "label": "r13_v111_trial_wrong_latch",
+          "guards": []
+        }
+      ],
+      "scene_title": "trial_wrong_latch3",
+      "source_hash": "4d29ae1cd9dc339abf91e67a1e0d967d335c3b906344fd3f3b8d55488958c899",
+      "baseline_hash": "a61dd3110402855ea0126d8879e38ee3cd6f77180870f5507371f26a90b5c242",
+      "uid": "c35a2772d2f0ca209cef846f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|trial_wrong_latch3|patch|trial_wrong_latch3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

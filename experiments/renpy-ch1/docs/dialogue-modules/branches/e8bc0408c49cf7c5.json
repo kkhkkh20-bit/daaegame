@@ -1,0 +1,100 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "5d9f58ea7f772404f0ab33ce31f979610d7707cdcad099eb7048e0fd9f0703be",
+  "entries": [
+    {
+      "id": "NW_D03_TW_S01",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "blocks",
+        "trial_wrong_sale3",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "trial_wrong_sale3",
+      "block": "trial_wrong_sale3",
+      "placement": "blocks",
+      "ref": "trial_wrong_sale3",
+      "when": null,
+      "speaker": "너울",
+      "kind": "dialogue",
+      "text": "돌이 어디로 갔든, 등을 연 이름은 하나요. 톡. 다른 이름을 대려면 마지막으로 연 사람부터 보이시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1281,
+          "label": "r13_v111_trial_wrong_sale",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1285,
+          "label": "r13_v111_trial_wrong_sale",
+          "guards": []
+        }
+      ],
+      "scene_title": "trial_wrong_sale3",
+      "source_hash": "4d29ae1cd9dc339abf91e67a1e0d967d335c3b906344fd3f3b8d55488958c899",
+      "baseline_hash": "87881fd1ce6cf7a39a764f69da8330d4471064990f51d9ce7985940799ba1a52",
+      "uid": "a971b492dd26b1f3f53ca43d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|trial_wrong_sale3|patch|trial_wrong_sale3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D03_TW_S02",
+      "file": "game/v111/newworld/d03.json",
+      "path": [
+        "blocks",
+        "trial_wrong_sale3",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 3,
+      "scene": "trial_wrong_sale3",
+      "block": "trial_wrong_sale3",
+      "placement": "blocks",
+      "ref": "trial_wrong_sale3",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "……마지막으로 연 사람. 잠깐만요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1281,
+          "label": "r13_v111_trial_wrong_sale",
+          "guards": [
+            "if r13_nw_retry('lamp'):"
+          ]
+        },
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 1285,
+          "label": "r13_v111_trial_wrong_sale",
+          "guards": []
+        }
+      ],
+      "scene_title": "trial_wrong_sale3",
+      "source_hash": "4d29ae1cd9dc339abf91e67a1e0d967d335c3b906344fd3f3b8d55488958c899",
+      "baseline_hash": "c7a2e86fa2b8cd774fc1e14a4d355015198318c68739a362f8bab445b813484c",
+      "uid": "68a33344d15299cd79023a30",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|trial_wrong_sale3|patch|trial_wrong_sale3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}
