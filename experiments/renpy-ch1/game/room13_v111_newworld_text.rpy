@@ -162,8 +162,8 @@ init 319 python:
         "room13_partial_accident":lambda:r13_v111_value("meeting:room13")=="partial" and r13_v111_value("room13_partial_kind")=="accident",
         "records_partial":lambda:r13_v111_value("meeting:records")=="partial",
         "records_lose":lambda:r13_v111_value("meeting:records")=="lose",
-        "records_lose_prev_b":lambda:r13_v111_value("meeting:records")=="lose" and r13_v111_value("prevention") in ("B","promise"),
-        "records_partial_prev_b":lambda:r13_v111_value("meeting:records")=="partial" and r13_v111_value("prevention") in ("B","promise"),
+        "records_lose_prev_b":lambda:r13_v111_value("meeting:records")=="lose" and r13_v111_value("prevention")!="stone",
+        "records_partial_prev_b":lambda:r13_v111_value("meeting:records")=="partial" and r13_v111_value("prevention")!="stone",
         # 돌을 바꿔 부엉이가 무너지지 않은 판: 할머니가 너울에게 「같은 말을 두 번 묻는다」고 일러 명단 얘기가 나온다.
         "records_lose_prev_stone":lambda:r13_v111_value("meeting:records")=="lose" and r13_v111_value("prevention")=="stone",
         "records_partial_prev_stone":lambda:r13_v111_value("meeting:records")=="partial" and r13_v111_value("prevention")=="stone",

@@ -1801,10 +1801,10 @@ def r13_nw_true_ending_ready():
 | `reader_tosil` | `bool(r13_v111_value("departed:nabi") or not r13_v111_person_alive("nabi"))` | d14 |
 | `records_lose` | `r13_v111_value("meeting:records")=="lose"` | d10 |
 | `records_lose_fell7` | `r13_v111_value("meeting:records")=="lose" and r13_v111_value("prevention")!="stone"` | d10 |
-| `records_lose_prev_b` | `r13_v111_value("meeting:records")=="lose" and r13_v111_value("prevention") in ("B","promise")` | d10 |
+| `records_lose_prev_b` | `r13_v111_value("meeting:records")=="lose" and r13_v111_value("prevention")!="stone"` | d10 |
 | `records_lose_prev_stone` | `r13_v111_value("meeting:records")=="lose" and r13_v111_value("prevention")=="stone"` | d10 |
 | `records_partial` | `r13_v111_value("meeting:records")=="partial"` | d10 |
-| `records_partial_prev_b` | `r13_v111_value("meeting:records")=="partial" and r13_v111_value("prevention") in ("B","promise")` | d10 |
+| `records_partial_prev_b` | `r13_v111_value("meeting:records")=="partial" and r13_v111_value("prevention")!="stone"` | d10 |
 | `records_partial_prev_stone` | `r13_v111_value("meeting:records")=="partial" and r13_v111_value("prevention")=="stone"` | d10 |
 | `repair_won_with_e10` | `"V111:E10" in (r13_v111_value("proof_given:수리와 반출을 가릴 자료를 낸다") or [])` | d03 |
 | `riot_momo13` | `r13_v111_value("riot_momo13") is True` | d13 |
