@@ -119,6 +119,7 @@ jobs:
           mkdir -p "$HOME" "$XDG_CONFIG_HOME" "$XDG_DATA_HOME" "$XDG_CACHE_HOME" "$RENPY_PATH_TO_SAVES" "$ROOM13_QA_OUT"
           bash dev/run_renpy_tests.sh settings_volume_endpoint settings_typography settings_touch title_fx design_restore_piko investigation_sofa_tosil investigation_sofa_nubi meeting_direction admin_meeting_replay investigation_placement_granny investigation_job_musoe investigation_source2_ttadak investigation_source2_tosil 2>&1 | tee "$ROOM13_CI_OUT/native-qa-summary.log"
       - name: Capture question and map asset examples
+        if: ${{ !cancelled() }}
         working-directory: experiments/renpy-ch1
         timeout-minutes: 8
         run: |
