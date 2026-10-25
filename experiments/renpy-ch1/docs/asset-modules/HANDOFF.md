@@ -30,3 +30,10 @@
 적용 담당 Codex는 `python3 dev/asset_delivery.py 납품폴더/daram-delivery.json --output 적용계획.json`으로 슬롯·중복·원본 충돌·파일·크기를 먼저 검사한다. 통과해도 자동 적용/화면 검수 완료가 아니다. UI 그룹의 연결과 모든 상태, 캐릭터 JSON 및 전신 정렬을 검토해 일괄 적용한 뒤 scan/validate, PC/모바일 캡처를 남긴다. deliveries.json과 이 문서에 적용 결과를 기록하고 현황판을 갱신·공개한다.
 
 현재 공유 웹은 정적 조회 화면이다. 납품 명세 내려받기는 브라우저 기능이며 업로드·실시간 게임 반영·공유 서버 저장 기능은 아니다. 개발 미리보기 실시간 연동은 아직 구현되지 않았다. 공개 게임은 검증된 묶음만 배포한다.
+
+
+## 에셋 교체 전후 실제 화면 확인
+
+[실제 화면 예시/비교](screens/) · [직접 이미지 URL과 버전 JSON](screens/manifest.json) · [텍스트 인계와 이미지 목록](screens/README.md)
+
+다른 채팅은 웹 스크래핑 대신 manifest.json의 image_url을 직접 읽는다. captured_at·version·commit·local_game_changes를 확인한다. 캡처는 자동 실시간이 아니며, 에셋 연결을 수정한 뒤 개발용 `asset_toolbox.py serve`의 ‘전체 캡처’ 버튼 또는 `python3 dev/asset_screen_examples.py`로 갱신한다. SDK/Xvfb가 있는 개발 환경에서 실제 게임을 실행한다. 이전 캡처도 보관된다. 캡처 전후 source_fingerprint가 바뀌면 결과를 게시하지 않는다. 공개 웹에는 생성 결과를 커밋·배포한 후 표시된다. 원화만 보고 재교체하지 말고 변경 전후 실제 화면을 확인하고 납품 보고에 이미지 링크를 남긴다.

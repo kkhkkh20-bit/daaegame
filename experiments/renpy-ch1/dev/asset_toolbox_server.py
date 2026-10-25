@@ -135,6 +135,12 @@ def run(project: Path, host='127.0.0.1', port=8787):
             path=unquote(urlsplit(self.path).path)
             if path=='/':
                 return self.send(200,index.read_bytes(),'text/html; charset=utf-8')
+            if path.startswith('/screens/'):
+                root=(project/'docs/asset-modules/screens').resolve()
+                target=(root/path[len('/screens/'):]).resolve()
+                if target.is_relative_to(root) and target.is_file() and target.suffix in ('.png','.json','.html','.md'):
+                    return self.send(200,target.read_bytes(),mimetypes.guess_type(target.name)[0] or 'application/octet-stream')
+                return self.send(404,{'error':'화면 예시 파일 없음'})
             if path=='/api/preview':
                 metadata=project/'docs/reviews/toolbox-preview/capture.json'
                 return self.send(200,json.loads(metadata.read_text()) if metadata.is_file() else {'images':[]})
@@ -172,6 +178,10 @@ def run(project: Path, host='127.0.0.1', port=8787):
                 with lock:
                     catalog,bindings=deepcopy(read())
                     path=urlsplit(self.path).path
+                    if path=='/api/screens':
+                        from asset_screen_examples import capture as capture_screens
+                        capture_screens(project)
+                        return self.send(200,{'url':'/screens/index.html'})
                     if path=='/api/preview':
                         from asset_toolbox_preview import capture
                         return self.send(200,capture(project))
