@@ -47,7 +47,7 @@ screen r13_notebook_topic_action(x,w,caption,command,ready=True,primary=False,ic
     fixed:
         area (x,r13_notebook_topic_y(),w,88 if r13_touch_ui() else 64)
         $ state_icon=r13_notebook_button_icon(icon) if icon else None
-        use r13_state_button(caption,command,w,88 if r13_touch_ui() else 64,family="topic_primary" if primary else "topic_standard",enabled=ready,icon=state_icon,text_size=24 if r13_touch_ui() else 22,control_id=control_id or ("r13_notebook_"+caption))
+        use r13_state_button(caption,command,w,88 if r13_touch_ui() else 64,family="question_flat_primary" if primary else "question_flat_standard",enabled=ready,icon=state_icon,text_size=24 if r13_touch_ui() else 22,control_id=control_id or ("r13_notebook_"+caption))
 
 screen r13_notebook_topic_tools(ready,person,present_action):
     if present_action is not None:

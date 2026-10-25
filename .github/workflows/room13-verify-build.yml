@@ -41,6 +41,8 @@ jobs:
             design/maps
             design/resource-intake-20261024/b-ui-map-forest
             design/resource-intake-20261024/b-ui-map-inn
+            design/resource-intake-20261024/b-char-primary50
+            design/resource-intake-20261025/batch-02
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -116,6 +118,20 @@ jobs:
           export ROOM13_TEST_TIMEOUT=180
           mkdir -p "$HOME" "$XDG_CONFIG_HOME" "$XDG_DATA_HOME" "$XDG_CACHE_HOME" "$RENPY_PATH_TO_SAVES" "$ROOM13_QA_OUT"
           bash dev/run_renpy_tests.sh settings_volume_endpoint settings_typography settings_touch title_fx design_restore_piko investigation_sofa_tosil investigation_sofa_nubi meeting_direction admin_meeting_replay investigation_placement_granny investigation_job_musoe investigation_source2_ttadak investigation_source2_tosil 2>&1 | tee "$ROOM13_CI_OUT/native-qa-summary.log"
+      - name: Capture question and map asset examples
+        if: ${{ !cancelled() }}
+        working-directory: experiments/renpy-ch1
+        timeout-minutes: 8
+        run: |
+          python dev/asset_screen_examples.py
+          mkdir -p "$ROOM13_CI_OUT/asset-screen-examples/previous"
+          cp docs/asset-modules/screens/manifest.json "$ROOM13_CI_OUT/asset-screen-examples/"
+          for screen in 05-questions 07-map-inn 08-map-forest 09-map-village; do
+            cp "docs/asset-modules/screens/$screen.png" "$ROOM13_CI_OUT/asset-screen-examples/"
+            if [ -f "docs/asset-modules/screens/previous/$screen.png" ]; then
+              cp "docs/asset-modules/screens/previous/$screen.png" "$ROOM13_CI_OUT/asset-screen-examples/previous/"
+            fi
+          done
       - name: Compile and build web release
         if: env.ROOM13_DIAGNOSTIC_ONLY != '1'
         working-directory: experiments/renpy-ch1

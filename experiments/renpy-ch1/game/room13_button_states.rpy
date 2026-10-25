@@ -17,7 +17,10 @@ init 67 python:
         def update_skins(self):
             if self.asset_revision==r13_asset_revision():return
             role="button."+self.family
-            spec=r13_asset_spec(role)
+            self.flat_scope=self.family.startswith(("question_flat_","map_flat_"))
+            layout_family=("topic_" if self.family.startswith("question_flat_") else "")+self.family.rsplit("_",1)[-1] if self.flat_scope else self.family
+            self.layout_role="button."+layout_family
+            spec=r13_asset_spec(self.layout_role)
             self.crop=spec.get("render",{}).get("crop",[0,0]+spec["size"])
             natural=spec.get("render",{}).get("zoom",1.0)
             self.scale=min(float(self.width)/(self.crop[2]*natural),float(self.height)/(self.crop[3]*natural))
@@ -25,6 +28,10 @@ init 67 python:
             self.paper_size=(max(1,int(round(self.crop[2]*natural*self.scale))),max(1,int(round(self.crop[3]*natural*self.scale))))
             primary=self.family in ("primary","main_primary","topic_primary")
             self.shared_skins={state:Transform(r13_sticker_button(primary=primary,focused=self.selected or state=="pressed",disabled=state=="disabled"),xysize=self.paper_size) for state in ("basic","pressed","selected","disabled")}
+            if self.flat_scope:
+                # 원본 전체를 균일 확대한다. 기존 종이 폭/높이 안에 알파 경계만 맞춘다.
+                flat_scale=min(self.paper_size[0]/128.0,self.paper_size[1]/32.0)
+                self.shared_skins={state:Transform(r13_asset(role,state),zoom=flat_scale) for state in ("basic","pressed","selected","disabled")}
             self.asset_revision=r13_asset_revision()
 
         def visit(self):
@@ -38,8 +45,12 @@ init 67 python:
             out=renpy.Render(w,h)
             pw,ph=self.paper_size
             paper=renpy.render(self.shared_skins[state],pw,ph,st,at)
-            out.blit(paper,((w-pw)//2,(h-ph)//2))
+            draw_w,draw_h=paper.get_size()
+            out.blit(paper,((w-draw_w)//2,(h-draw_h)//2))
             render_spec=r13_asset_spec("button."+self.family,state).get("render",{})
+            if self.flat_scope:
+                render_spec=dict(r13_asset_spec(self.layout_role,state).get("render",{}))
+                render_spec["text_color"]="#8b8175" if not self.enabled else "#fff5e5" if self.family.endswith("primary") else "#263953"
             color=render_spec.get("text_color", "#8b8175" if not self.enabled else "#fff5e5" if self.family=="primary" else "#493324")
             text=Text(self.caption,font=R13_UI_TYPE["button"]["font"],size=self.text_size,color=color)
             tr=renpy.render(text,w,h,st,at);tw,th=tr.get_size()

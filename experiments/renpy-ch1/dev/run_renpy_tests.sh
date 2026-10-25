@@ -26,7 +26,7 @@ for tc in "${TESTS[@]}"; do
   [ -f qa_result.txt ] && { cat qa_result.txt; echo; }
   [ -f qa_items.json ] && cp qa_items.json "$LOG/$tc-items.json"
   [ -d tests/screenshots ] && { mkdir -p "$LOG/$tc"; cp tests/screenshots/*.png "$LOG/$tc/" 2>/dev/null; }
-  [ "$status" = "Status: PASSED" ] || { fail=1; grep -E "Error:|line [0-9]+, in testcase" "$log" | head -3; }
+  [ "$status" = "Status: PASSED" ] || { fail=1; tail -80 "$log"; }
 done
 rm -rf game/saves tests qa_result.txt qa_items.json
 exit $fail

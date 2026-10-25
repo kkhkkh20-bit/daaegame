@@ -183,6 +183,8 @@ init 999 python:
 
 # Town events: set up a state and enter it through r13_roam (so arrival events run).
 label r13_qa_roam(state,flags=(),items=(),cash=0):
+    # Jumping out of the opening interrupts its normal black-card cleanup.
+    $ r13_black_card=False
     # The owner's admin tool is a persistent toggle; tests always start without it.
     $ persistent.room13_admin=False
     $ r13_admin_hitboxes=False

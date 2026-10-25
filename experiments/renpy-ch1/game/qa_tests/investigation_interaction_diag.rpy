@@ -151,15 +151,22 @@ init 999 python:
     def r13_pd_assert_topic_say():
         assert r13_pd_topic_say_ready(), 'Selected topic resident speech not reached'
         screen=renpy.get_screen('say');scope=screen.scope
+        assert not r13_black_card,'Opening narration card leaked into investigation fixture'
         what=renpy.get_displayable('say','what');who=renpy.get_displayable('say','who')
         expected_name=r13_speaker_label(R13_NAMES[r13_pd_person])
         assert scope.get('who')==expected_name,(scope.get('who'),expected_name)
-        assert scope.get('what') and what is not None and who is not None
+        assert scope.get('what') and what is not None and who is not None, dict(packet=list(r13_packet),who=scope.get('who'),what=scope.get('what'),what_widget=type(what).__name__,who_widget=type(who).__name__,widget_ids=sorted(screen.widgets),black_card=r13_black_card)
         assert min(renpy.render(what,1280,720,1.2,1.2).get_size())>0
+        assert who.text==[expected_name],('Wrong rendered speaker label',who.text,expected_name)
+        name_focus=renpy.test.testfocus.focus_from_displayable(who)
+        assert name_focus and name_focus.x is not None and min(name_focus.w,name_focus.h)>0,'Speaker label is not rendered'
+        assert 0<=name_focus.x<1280 and 0<=name_focus.y<720,('Speaker label outside viewport',name_focus.x,name_focus.y)
+        name_alphas=r13_pd_alpha_path('say',who)
+        assert name_alphas is not None and all(alpha>=.99 for alpha in name_alphas),('Hidden speaker label',name_alphas)
         assert 'r13_visitor' in renpy.get_showing_tags() and r13_motion_person==r13_pd_person
         bounds=renpy.get_image_bounds('r13_visitor')
         assert bounds and min(bounds[2:])>0
-        r13_pd_flow_log('actual-topic-say-verified',dict(topic=r13_pd_topic,packet=list(r13_packet),who=scope.get('who'),what=scope.get('what'),page_index=r13_page_i,portrait_tag='r13_visitor',portrait_bounds=list(bounds),portrait_person=r13_motion_person,portrait_pose=r13_current_pose))
+        r13_pd_flow_log('actual-topic-say-verified',dict(topic=r13_pd_topic,packet=list(r13_packet),who=scope.get('who'),what=scope.get('what'),page_index=r13_page_i,portrait_tag='r13_visitor',portrait_bounds=list(bounds),portrait_person=r13_motion_person,portrait_pose=r13_current_pose,name_widget_registered=renpy.get_displayable('say','who') is not None,name_widget_text=who.text,name_render_bounds=[name_focus.x,name_focus.y,name_focus.w,name_focus.h],name_ancestor_alphas=name_alphas))
 
     def r13_pd_choose_object(allow_wait=False):
         store.r13_pd_object_ready=False
