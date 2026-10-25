@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "89a6b5259412bed8bd5f381c3607bc011253edd55a9e0b5c03feecd555ab653b",
+  "source_stamp": "5b09ee3f01110fc4e3e5702f676302ad8a7a24ae2498d9e856e7ed7596254dda",
   "entries": [
     {
       "id": "NW_D11_S04_V01",
@@ -33,9 +33,50 @@
         }
       ],
       "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
-      "source_hash": "e3e40653f86f2fec92b2fc4aafbaa2c651d884b8341629bcda40d22f7755cb56",
+      "source_hash": "e777e86bff25a44a31313549351b3afa25d17e34a321ee0827a43a396bcc18f9",
       "baseline_hash": "08bb9557b4931120761f90be6c9efcb5bc5a9fbcc62fbe9c82f1a2132587576b",
       "uid": "c486861365f1d4fb5c663155",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D11_S04_E01",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "after",
+        "MS14_D11_S04_L0038",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D11_S04_L0038",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "네로가 말리라고 내놓았던 장갑을 도로 낀다. 목에는 아무것도 걸려 있지 않다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 984,
+          "label": "r13_v111_late_cart11",
+          "guards": [
+            "if r13_v111_actor_ready('resident_nero'):"
+          ]
+        }
+      ],
+      "scene_title": "장면 11-4. 문이 열려 있어야 하는 밤",
+      "source_hash": "e777e86bff25a44a31313549351b3afa25d17e34a321ee0827a43a396bcc18f9",
+      "baseline_hash": "00b9a3ef5d268d539820196ddd02ef082263f32ec8e66a2b3cb1e148682a7221",
+      "uid": "f9401f9142bf6a1310e80490",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d11|MS14_D11_S04|patch|after|행 조건 없음",
