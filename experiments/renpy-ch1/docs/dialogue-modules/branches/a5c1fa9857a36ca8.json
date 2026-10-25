@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "3040f982653a34060f1c940ee4397c25475d85c507c1c309bfe6cb011679b137",
+  "source_stamp": "2c79eda5bdec0d6dd6dbbe12ce3b619cf194fce4b640e159fa239457685e888a",
   "entries": [
     {
       "id": "NW_D02_S04_T01",
@@ -33,9 +33,165 @@
         }
       ],
       "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
-      "source_hash": "f5a7edb9e22c4c02597a33588e536489eed7a607702254f8752cc15f37f666ac",
+      "source_hash": "454b57e924274ed84f4a74e3c28d97702d3ba4fb16b22f31c049a3532ca35cfe",
       "baseline_hash": "c4995aada5577b8a9f91c75358fc0eb8c5a252f71bdde3809a38a8ab4cd9e605",
       "uid": "4bd45edfc39f41266712a285",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D02_S04_T21",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "after",
+        "MS14_D02_S04_L0050",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D02_S04_L0050",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "그런데요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 723,
+          "label": "r13_v111_nero_choice",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "454b57e924274ed84f4a74e3c28d97702d3ba4fb16b22f31c049a3532ca35cfe",
+      "baseline_hash": "cc4eea9500f74f69be04baeaf93d1db63f4767a01976909ba993a5ab91710dc9",
+      "uid": "27d77880e5b5d15caa9bf6e0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D02_S04_T22",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "after",
+        "MS14_D02_S04_L0050",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D02_S04_L0050",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "피코 씨한테 들었습니다. 얼마 전에 제 아내한테 식량 주머니를 건네셨다고요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 723,
+          "label": "r13_v111_nero_choice",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "454b57e924274ed84f4a74e3c28d97702d3ba4fb16b22f31c049a3532ca35cfe",
+      "baseline_hash": "d1bca6a7157e59a2a4a1cc01ac8196e74b5f72da58c8483e48ef0f79a62e9931",
+      "uid": "39d35ad90fe93268815757ac",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D02_S04_T23",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "after",
+        "MS14_D02_S04_L0058",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D02_S04_L0058",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "우리 몫도 있어요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 723,
+          "label": "r13_v111_nero_choice",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "454b57e924274ed84f4a74e3c28d97702d3ba4fb16b22f31c049a3532ca35cfe",
+      "baseline_hash": "c9f329478a169fa7488b386be287d4ffd4f8a3c49871386cb3f3c1db339e04ec",
+      "uid": "db2bda39f10354105a2706a3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D02_S04_T24",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "after",
+        "MS14_D02_S04_L0058",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "MS14_D02_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D02_S04_L0058",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "마지막 한 묶음이 도와주는 사람 몫이야.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 723,
+          "label": "r13_v111_nero_choice",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 식당 / 부탁은 자리가 되기까지",
+      "source_hash": "454b57e924274ed84f4a74e3c28d97702d3ba4fb16b22f31c049a3532ca35cfe",
+      "baseline_hash": "337dd20312308992c52c34b6047440e8436361bbe5f7dd68daf7da545008e837",
+      "uid": "a1c0abc0bbbd60c4650c82ac",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d02|MS14_D02_S04|patch|after|행 조건 없음",
