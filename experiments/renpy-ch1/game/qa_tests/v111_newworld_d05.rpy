@@ -21,6 +21,8 @@ testcase v111_nw_d05_half_then_lost:
     run Function(qa_nw_day5,["V111:E20"])
     run Jump("r13_v111_wrong5")
     pause 1.0
+    if screen "r13_meeting_retry_choice":
+        click id "r13_meeting_retry_accept"
     click pos (900,600) until screen "r13_hub" timeout 90
     assert eval (r13_v111_value("meeting:gate_post")=="lose" and r13_v111_value("listed:bami") is True and r13_v111_value("bami_status")=="listed")
     assert eval (qa_nw_seen("밤이는 보호시설에 보낼 명단에") and qa_nw_seen("밤이 아니라고 했잖아"))

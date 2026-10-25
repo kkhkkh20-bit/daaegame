@@ -543,6 +543,7 @@ label r13_v111_hypothesis11:
     jump r13_v111_hyp0_menu11
 
 label r13_v111_hyp0_menu11:
+    $ r13_meeting_checkpoint("hypothesis")
     call r13_nw_wrong_thought
     $ v111_claim='menu:hyp0'
     menu:
@@ -1321,6 +1322,7 @@ label r13_v111_bottle_matched12:
     jump r13_v111_seal_proof12
 
 label r13_v111_seal_proof12:
+    $ r13_meeting_checkpoint("soup")
     call r13_v111_proof('재사용 설명과 개봉 봉인을 대조한다',['E12_FRAGMENT', 'E12_SEAL'],'r13_v111_seal_answer12','r13_v111_medicine_wrong12','r13_v111_soup_hint12')
     jump expression _return
 
@@ -1854,6 +1856,7 @@ label r13_v111_blanket_lie13:
     jump r13_v111_mending_proof13
 
 label r13_v111_mending_proof13:
+    $ r13_meeting_checkpoint("blanket")
     call r13_v111_proof('아내가 봤다는 담요의 시점을 확인한다',['E13_MENDING'],'r13_v111_mending_answer13','r13_v111_mending_wrong13','r13_v111_mending_hint13')
     jump expression _return
 
@@ -2003,6 +2006,7 @@ label r13_v111_rein13:
     jump r13_v111_rein_ledger13p
 
 label r13_v111_rein_ledger13p:
+    $ r13_meeting_checkpoint("piko")
     if not r13_v111_value("roster_shown13"):
         $ r13_v111_set("roster_shown13",True)
         call r13_lines(r13_nw_roster_lines(),'nw:roster13')
@@ -2772,6 +2776,7 @@ label r13_v111_altar1_q14:
     jump r13_v111_altar1_proof14
 
 label r13_v111_altar1_proof14:
+    $ r13_meeting_checkpoint("altar")
     call r13_v111_proof('희생의 숫자와 장부를 대조한다',['NW_NEOUL_LEDGER'],'r13_v111_altar1_won14','r13_v111_altar1_wrong14',None)
     jump expression _return
 

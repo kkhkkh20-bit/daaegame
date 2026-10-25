@@ -67,6 +67,7 @@ init 55 python:
     }
 
     def r13_new():
+        store.r13_meeting_checkpoint_state = None
         return dict(campaign_id="room13_v1",version=3,story_revision=ROOM13["story_revision"],day=1,period=0,location="gate",
             kitchen_switch=False,passage_open=False,secret_route_unlocked=False,
             case_state="pending",victim_state="alive",daram_state="with_dad",
