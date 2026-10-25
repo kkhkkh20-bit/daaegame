@@ -9,6 +9,7 @@ init 154 python:
     def source_fx(key):
         if key in R13_DIARY_FX:
             path,volume=R13_DIARY_FX[key]
+            path=r13_asset_path("file:"+path)
             if renpy.loadable(path):
                 if not renpy.is_skipping():
                     store.source_effect_log.append(key)

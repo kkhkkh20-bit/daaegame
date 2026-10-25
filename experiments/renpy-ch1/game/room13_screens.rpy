@@ -23,7 +23,7 @@ screen r13_hud():
             xpos 24 ypos 20 padding (12,8) background r13_field_paper()
             hbox:
                 spacing 1
-                add Transform(Crop((16,16,32,32),"assets/ui-b-field/b_icon_pin.png"),xysize=(28,28)) yalign .5
+                add Transform(Crop((16,16,32,32),r13_asset_path("file:assets/ui-b-field/b_icon_pin.png")),xysize=(28,28)) yalign .5
                 text r13_hud_place() size r13_read_size(20,23) color "#493b30" font R13_UI_BOLD_FONT yalign .5
 
 init 80:

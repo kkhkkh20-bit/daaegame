@@ -13,4 +13,4 @@ screen r13_map_status_badges(key, state, selected, label_rect):
     $ badges=r13_map_status_kinds(key,state,selected)
     for badge in badges:
         # 48px로 통일해 축소 지도에서도 읽히도록 하며, 원본 비율을 유지한다.
-        add Transform("assets/map-status/"+badge+".png",zoom=.5) xpos (int(bx)-24) ypos (int(by+bh/2)-28)
+        add Transform(r13_asset("file:"+("assets/map-status/"+badge+".png")),zoom=.5) xpos (int(bx)-24) ypos (int(by+bh/2)-28)

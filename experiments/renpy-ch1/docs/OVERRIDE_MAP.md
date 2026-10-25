@@ -454,6 +454,20 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 2 | 330 | `systems/room13_v111_relations.rpy:18` | _r13_fork_observed_set |
 | 3 | 331 | `room13_fork_screen.rpy:381` |  |
 
+## `r13_acting_spec` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 59 | `room13_acting.rpy:50` | _r13_assets_acting_spec |
+| 2 | 995 | `systems/room13_asset_domains.rpy:18` |  |
+
+## `r13_bdialogue_face` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 171 | `room13_bdialogue_faces.rpy:5` | _r13_assets_dialogue_face |
+| 2 | 995 | `systems/room13_asset_domains.rpy:22` |  |
+
 ## `r13_calendar_promises` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -467,6 +481,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 69 | `room13_feedback.rpy:8` | _r13_sound_click_feedback |
 | 2 | 150 | `systems/room13_sound.rpy:210` |  |
+
+## `r13_close_spec` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 59 | `room13_acting.rpy:20` | _r13_assets_close_spec |
+| 2 | 995 | `systems/room13_asset_domains.rpy:14` |  |
 
 ## `r13_contact_presentations` (2층)
 
@@ -565,6 +586,20 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 69 | `room13_feedback.rpy:3` | _r13_sound_evidence_acquired |
 | 2 | 150 | `systems/room13_sound.rpy:196` |  |
+
+## `r13_evidence_art_path` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 330 | `systems/room13_evidence_view.rpy:102` | _r13_assets_evidence_art |
+| 2 | 995 | `systems/room13_asset_domains.rpy:27` |  |
+
+## `r13_fullbody_spec` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 58 | `room13_fullbody_dialogue.rpy:58` | _r13_assets_fullbody_spec |
+| 2 | 995 | `systems/room13_asset_domains.rpy:10` |  |
 
 ## `r13_grant` (2층)
 

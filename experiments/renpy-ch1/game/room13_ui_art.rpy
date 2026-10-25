@@ -53,7 +53,7 @@ init 58 python:
             self.spine=spine
         def render(self,width,height,st,at):
             w=max(1,int(width));h=max(1,int(height));r=renpy.Render(w,h);c=r.canvas()
-            face=Frame(Crop((35,25,550,245),"assets/ui-b-main/b_main_panel.png"),44,28)
+            face=Frame(Crop((35,25,550,245),r13_asset_path("file:assets/ui-b-main/b_main_panel.png")),44,28)
             r.blit(renpy.render(Transform(face,xysize=(w,h)),w,h,st,at),(0,0))
             if self.spine:
                 c.line("#bda580",(238,26),(238,h-30),2)

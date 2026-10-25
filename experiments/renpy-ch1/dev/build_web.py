@@ -70,6 +70,17 @@ def startup_files(game):
     for folder in ("ui-b-main", "ui-b-options", "ui-b-dialogue", "ui-b-question", "ui-b-choice", "ui-b-field", "ui-b-sticker", "ui-button-states", "map-status"):
         result.update(p.relative_to(game).as_posix() for p in (game / "assets" / folder).glob("*.png"))
     result.update(p.relative_to(game).as_posix() for p in (game / "assets/diary-sounds").glob("*.*") if p.suffix in (".mp3", ".ogg"))
+    # 도구함에서 다른 폴더의 에셋을 고르더라도 첫 UI에 필요한 실제 파일을 미리 받는다.
+    toolbox = game / "asset-toolbox"
+    if (toolbox / "bindings.json").exists():
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("r13_build_assets", game / "python-packages/r13_assets.py")
+        module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+        registry = module.Registry(json.loads((toolbox / "catalog.json").read_text()), json.loads((toolbox / "bindings.json").read_text()))
+        for role, rule in registry.bindings["bindings"].items():
+            if role.startswith(("button.", "surface.", "font.", "main.", "file:assets/ui-b-", "file:assets/map-status/", "file:assets/diary-sounds/")):
+                for state in rule.get("states", ["basic"]):
+                    result.add(registry.resolve(role, state)["path"])
     # Small face stickers must be present when the first dialogue is drawn.
     result.update(p.relative_to(game).as_posix() for p in (game / "assets/dialogue-b-faces").glob("*.webp"))
     layout = json.loads((game / "assets/room13-world-layout.json").read_text())
@@ -87,6 +98,11 @@ def startup_files(game):
     fx = json.loads((game / "assets/room13-dot-fx.json").read_text())
     files(fx.get("lights", {}).get("title", {}))
     files(fx.get("lights", {}).get("gate", {}))
+    if (toolbox / "bindings.json").exists():
+        for original in tuple(result):
+            role="file:"+original
+            if role in registry.bindings["bindings"]:
+                result.add(registry.resolve(role)["path"])
     return result
 
 

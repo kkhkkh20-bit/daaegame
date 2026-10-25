@@ -344,7 +344,7 @@ screen r13_ink_record_shell(title,tabs,current="all",close_action=None,note=None
         background None hover_background Solid("#fff6e214")
         action close_action alt "닫기"
         text "×" font R13_UI_BOLD_FONT size 38 color "#493323" align (.5,.5)
-    add Transform(Crop((16,16,32,32),"assets/ui-b-field/b_icon_acorn.png"),xysize=(18,18)) xpos 52 ypos 94
+    add Transform(Crop((16,16,32,32),r13_asset_path("file:assets/ui-b-field/b_icon_acorn.png")),xysize=(18,18)) xpos 52 ypos 94
     add Solid("#c9a86a99") xpos 66 ypos 103 xsize 1156 ysize 1
 
 screen r13_ink_chips(chips):
@@ -391,7 +391,7 @@ screen r13_evidence_grid(entries,detail,page,owner,pair=None,pair_slot=1,archive
                     # 2026-10-24 증거 서랍: 이름 아래 「N일 · 장소」 꼬리표와 귀퉁이 쪽지(v111 에서만. 옛 이야기는 이름만).
                     use r13_drawer_card_body(key,cell_w,cell_h,label_size,chosen,thumb,174)
                     if not archive and r13_catalog_transferable(key):
-                        add R13_NIGHT_UI+"diamond.png" xpos 9 ypos 7
+                        add r13_asset_path("file:"+(R13_NIGHT_UI+"diamond.png")) xpos 9 ypos 7
                     if pair and key in (first,second):
                         text ("①" if key==first else "②") xpos 65 xanchor 1.0 ypos 2 size 22 color "#fff0ce" outlines [(3,"#8b1f2a",0,0)] font R13_UI_BOLD_FONT
                     # 0.20.12: the unread mark sits on the picture's corner instead of taking name width.
@@ -432,7 +432,7 @@ screen r13_evidence_fact_list(key,width):
         for line in r13_evidence_facts(key):
             hbox:
                 spacing 10
-                add R13_NIGHT_UI+"diamond.png" yoffset ((r13_ev_fact_size()-8)//2+2)
+                add r13_asset_path("file:"+(R13_NIGHT_UI+"diamond.png")) yoffset ((r13_ev_fact_size()-8)//2+2)
                 text line size r13_ev_fact_size() color "#503525" font R13_UI_BOLD_FONT xsize (width-18)
 
 # One record: big picture, facts, and on the right the hint or the folded original text.
@@ -528,7 +528,7 @@ screen r13_evidence_pair(entries,pair,pair_slot,owner,archive=False):
     $ touch=r13_touch_ui()
     text "나란히 놓기 · 두 자료를 함께 봅니다. 맞는지 아닌지는 표시하지 않습니다." xpos 350 ypos 112 size r13_ev_small_size() color "#80654e" font R13_UI_BOLD_FONT
     add Solid("#c9a86a66") xpos 782 ypos 150 xsize 1 ysize (by-162)
-    add R13_NIGHT_UI+"diamond.png" xpos 778 ypos ((150+by-12)//2)
+    add r13_asset_path("file:"+(R13_NIGHT_UI+"diamond.png")) xpos 778 ypos ((150+by-12)//2)
     $ pair_title=(r13_read_size(28,30) if touch else r13_read_size(24,27))
     $ pic=r13_ev_pair_picture(pair,by,pair_title)
     for column,key index (column,key) in enumerate(r13_compare_slots(pair)):

@@ -116,7 +116,7 @@ init 160 python:
         if name.startswith("ev:"):
             # 0.20.7: a record's own picture held up above the dialogue (same art as the 자료 view).
             # To the right of the speaker's face, above the dialogue.
-            return Fixed(Transform(Frame(R13_NIGHT_UI+"preview_box.png",8,8),xysize=(380,380),xpos=850,ypos=60),
+            return Fixed(Transform(Frame(r13_asset_path("file:"+(R13_NIGHT_UI+"preview_box.png")),8,8),xysize=(380,380),xpos=850,ypos=60),
                 Transform("assets/evidence/%s.webp"%name[3:],xysize=(356,356),fit="contain",xpos=862,ypos=72),xysize=(1280,720))
         if name in ("v111_blanket_before","v111_blanket_after"):
             # Existing cut layer/clear lifecycle, preserving the actual school

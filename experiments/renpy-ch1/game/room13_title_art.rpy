@@ -46,11 +46,11 @@ screen r13_cover_button(caption,key,icon,width,command,focus,enabled=True,first=
 init 81:
     style r13_title_button is r13_button:
         xsize 240 ysize 84
-        background Transform("assets/ui-b-main/b_button.png", xysize=(240,84))
-        hover_background Transform("assets/ui-b-main/b_button_primary.png", xysize=(240,84))
-        selected_background Transform("assets/ui-b-main/b_button_primary.png", xysize=(240,84))
-        selected_hover_background Transform("assets/ui-b-main/b_button_primary.png", xysize=(240,84))
-        insensitive_background Transform("assets/ui-b-main/b_button.png", xysize=(240,84), alpha=.55)
+        background Transform(r13_asset_path("file:assets/ui-b-main/b_button.png"), xysize=(240,84))
+        hover_background Transform(r13_asset_path("file:assets/ui-b-main/b_button_primary.png"), xysize=(240,84))
+        selected_background Transform(r13_asset_path("file:assets/ui-b-main/b_button_primary.png"), xysize=(240,84))
+        selected_hover_background Transform(r13_asset_path("file:assets/ui-b-main/b_button_primary.png"), xysize=(240,84))
+        insensitive_background Transform(r13_asset_path("file:assets/ui-b-main/b_button.png"), xysize=(240,84), alpha=.55)
         focus_mask True
         # Transparent delivery margins must not overlap the next row/column.
         focus_rect (24,16,192,52)

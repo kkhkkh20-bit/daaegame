@@ -17,13 +17,13 @@ init 85 python:
         return 552 if r13_world_width()>1280 and bottom<=552 else r13_control_y()-24
 
     def r13_field_paper():
-        return Frame(Crop((8,8,224,44),"assets/ui-b-field/b_panel_small.png"),24,12,24,12)
+        return Frame(Crop((8,8,224,44),r13_asset_path("file:assets/ui-b-field/b_panel_small.png")),24,12,24,12)
 
     def r13_field_button_art(primary=False):
-        return Frame(Crop((16,10,128,32),"assets/ui-b-field/b_button_primary.png" if primary else "assets/ui-b-field/b_button.png"),24,10,24,10)
+        return Frame(Crop((16,10,128,32),r13_asset_path("file:assets/ui-b-field/b_button_primary.png") if primary else r13_asset_path("file:assets/ui-b-field/b_button.png")),24,10,24,10)
 
     def r13_field_icon(name):
-        return "assets/ui-b-field/b_icon_%s.png"%({"record":"book","settings":"more","dialogue":"acorn"}.get(name,name))
+        return r13_asset_path("file:"+("assets/ui-b-field/b_icon_%s.png"%({"record":"book","settings":"more","dialogue":"acorn"}.get(name,name))))
 
     def r13_field_selection():
         picked=getattr(store,"r13_field_pick",None)
@@ -67,9 +67,9 @@ screen r13_field_button(caption,icon,command,enabled=True,width=232,height=None,
 
 screen r13_field_notebook_surface():
     $ book_top=r13_field_notebook_top()
-    add Transform(Frame(Crop((16,16,1168,128),"assets/ui-b-field/b_panel_dialogue.png"),64,30,64,30),xysize=(1232,712-book_top)) xpos 24 ypos book_top
+    add Transform(Frame(Crop((16,16,1168,128),r13_asset_path("file:assets/ui-b-field/b_panel_dialogue.png")),64,30,64,30),xysize=(1232,712-book_top)) xpos 24 ypos book_top
     # A permanent notebook mascot, never a substitute for the current speaker.
-    add Transform("assets/ui-b-field/sticker_daram_delighted.png",xysize=(72,72)) xpos 76 ypos (book_top+10)
+    add Transform(r13_asset_path("file:assets/ui-b-field/sticker_daram_delighted.png"),xysize=(72,72)) xpos 76 ypos (book_top+10)
 
 screen r13_field_view_controls(ready):
     # Keep the legacy screen name for saved screens; no separate mode or toggle.
@@ -78,7 +78,7 @@ screen r13_field_view_controls(ready):
     $ book_top=r13_field_notebook_top()
     hbox:
         xpos 178 ypos (book_top+8) spacing 4
-        add Transform(Crop((16,16,32,32),"assets/ui-b-field/b_icon_acorn.png"),xysize=(30,30)) yalign .5
+        add Transform(Crop((16,16,32,32),r13_asset_path("file:assets/ui-b-field/b_icon_acorn.png")),xysize=(30,30)) yalign .5
         text "조사" size r13_read_size(24,27) color "#4b3021" font R13_UI_BOLD_FONT yalign .5
     if scene_hint or pan_hint:
         if scene_hint:
