@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "2c79eda5bdec0d6dd6dbbe12ce3b619cf194fce4b640e159fa239457685e888a",
+  "source_stamp": "28178d88a02b868e5f247c9df131280fa46e892688f8483adc3177e27dfecfe9",
   "entries": [
     {
       "id": "NW_D05_S03_A01",
@@ -33,7 +33,7 @@
         }
       ],
       "scene_title": "3. 초소 / 사라지지 않는 상처",
-      "source_hash": "8a94a867baca5a67cf54caee9fecc8fd537a024a6df29f2ce6394a8d2af4b62b",
+      "source_hash": "e61b08cf9177cf51a42164f3c27f0eaa9c048139b09daac92fd520e9da0752e7",
       "baseline_hash": "6f3986784efa3a2002c93f9ae35545f308cb407f702cbaf6863c63c24009dcac",
       "uid": "2757e2c24c1d67c577b7a5cf",
       "review_status": "draft",
@@ -72,7 +72,7 @@
         }
       ],
       "scene_title": "3. 초소 / 사라지지 않는 상처",
-      "source_hash": "8a94a867baca5a67cf54caee9fecc8fd537a024a6df29f2ce6394a8d2af4b62b",
+      "source_hash": "e61b08cf9177cf51a42164f3c27f0eaa9c048139b09daac92fd520e9da0752e7",
       "baseline_hash": "549e229492987bd8d35531c5d96aac6ba3e5ffc3c8efbe76f664db3e26ca0995",
       "uid": "d32216cbaf716b636abbe2ef",
       "review_status": "draft",
@@ -111,7 +111,7 @@
         }
       ],
       "scene_title": "3. 초소 / 사라지지 않는 상처",
-      "source_hash": "8a94a867baca5a67cf54caee9fecc8fd537a024a6df29f2ce6394a8d2af4b62b",
+      "source_hash": "e61b08cf9177cf51a42164f3c27f0eaa9c048139b09daac92fd520e9da0752e7",
       "baseline_hash": "8728ecf1ea575c2cb09362990fffe0200f5987057c8a7a63f4abdee31b25005c",
       "uid": "6b070840a1638f98c67823b1",
       "review_status": "draft",
@@ -150,7 +150,7 @@
         }
       ],
       "scene_title": "3. 초소 / 사라지지 않는 상처",
-      "source_hash": "8a94a867baca5a67cf54caee9fecc8fd537a024a6df29f2ce6394a8d2af4b62b",
+      "source_hash": "e61b08cf9177cf51a42164f3c27f0eaa9c048139b09daac92fd520e9da0752e7",
       "baseline_hash": "68d97872fcae24d5cbe353a779453f9b174df0160f2da477132a89a2c5ecdf79",
       "uid": "f3a359712a6e7204569d566c",
       "review_status": "draft",
@@ -189,7 +189,7 @@
         }
       ],
       "scene_title": "3. 초소 / 사라지지 않는 상처",
-      "source_hash": "8a94a867baca5a67cf54caee9fecc8fd537a024a6df29f2ce6394a8d2af4b62b",
+      "source_hash": "e61b08cf9177cf51a42164f3c27f0eaa9c048139b09daac92fd520e9da0752e7",
       "baseline_hash": "c24f9fd0b810dbc0e1749bfef3c0bbe5b958abf0fe86d8004855bc94fbdf1df7",
       "uid": "0c92b52b4a6ccd2f4e71a643",
       "review_status": "draft",
@@ -228,9 +228,87 @@
         }
       ],
       "scene_title": "3. 초소 / 사라지지 않는 상처",
-      "source_hash": "8a94a867baca5a67cf54caee9fecc8fd537a024a6df29f2ce6394a8d2af4b62b",
+      "source_hash": "e61b08cf9177cf51a42164f3c27f0eaa9c048139b09daac92fd520e9da0752e7",
       "baseline_hash": "8d8e8f149862991d977a2281d80767ff55c0428405633f28db21bb81e0a7cef8",
       "uid": "1824e4517e59ef225377237b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D05_S03_T21",
+      "file": "game/v111/newworld/d05.json",
+      "path": [
+        "after",
+        "MS14_D05_S03_L0025",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D05_S03_L0025",
+      "when": null,
+      "speaker": "네로",
+      "kind": "dialogue",
+      "text": "……고맙습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 518,
+          "label": "r13_v111_bami_clear5",
+          "guards": []
+        }
+      ],
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "e61b08cf9177cf51a42164f3c27f0eaa9c048139b09daac92fd520e9da0752e7",
+      "baseline_hash": "2babbb49a7f64fd7ef3e09747a632fc6537d5a39b40feced5680fd4bb9ca4024",
+      "uid": "cf5775909f058d796916af28",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S03|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D05_S03_T22",
+      "file": "game/v111/newworld/d05.json",
+      "path": [
+        "after",
+        "MS14_D05_S03_L0025",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 5,
+      "scene": "MS14_D05_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D05_S03_L0025",
+      "when": null,
+      "speaker": "바둑이",
+      "kind": "dialogue",
+      "text": "어르신은 내가 진료소에서 모셔 오겠소. 오늘 밤은 네로와 번갈아 곁에 있겠소. 내일 다시 정합시다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 518,
+          "label": "r13_v111_bami_clear5",
+          "guards": []
+        }
+      ],
+      "scene_title": "3. 초소 / 사라지지 않는 상처",
+      "source_hash": "e61b08cf9177cf51a42164f3c27f0eaa9c048139b09daac92fd520e9da0752e7",
+      "baseline_hash": "d06d3bba2d31bd5b233738d1331eab2ef25e580ed9e5f3715c81e8c32b370b37",
+      "uid": "c24b6697b0ee2df3dbcb6d36",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d05|MS14_D05_S03|patch|after|행 조건 없음",
