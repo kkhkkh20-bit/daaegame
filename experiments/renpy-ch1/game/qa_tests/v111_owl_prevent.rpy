@@ -153,7 +153,7 @@ testcase v111_op_stone_day8:
     run Function(r13_nw_acquire,"NW_STONE","swapped")
     run Jump("r13_v111_prevent_clinic8")
     click pos (900,600) until eval (room13["v111"].get("gate")=="travel" and renpy.get_screen("r13_hub")) timeout 150
-    assert eval (qa_nw_seen("둘 다 적거라") and qa_nw_seen("여기가 비었군") and qa_nw_seen("같은 말을 두 번씩 묻는 노인") and qa_nw_seen("저도 그럽니다"))
+    assert eval (qa_nw_seen("들은 말은 오른쪽에 따로 적거라") and qa_nw_seen("여기가 비었군") and qa_nw_seen("같은 말을 두 번씩 묻는 노인") and qa_nw_seen("저도 그럽니다"))
     assert eval (not qa_nw_seen("어제보다는 낫네") and not qa_nw_seen("무너지시는 건") and not qa_nw_seen("빗장까지"))
     assert eval (r13_v111_value("NW_STONE.variant")=="swapped")
 

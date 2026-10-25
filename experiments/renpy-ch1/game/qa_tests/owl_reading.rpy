@@ -22,7 +22,7 @@ testcase owl_reading_alive:
     run Function(qa_owl_reading_setup)
     run Jump('qa_owl_reading_episode')
     click pos (900,600) until screen 'r13_confirm' timeout 60
-    assert eval (r13_v111_value('owl_reading8_done') and qa_nw_seen('남의 빈칸이지') and qa_nw_seen('내 빈칸은 장수가'))
+    assert eval (r13_v111_value('owl_reading8_done') and qa_nw_seen('남의 빈칸이지') and qa_nw_seen('수첩 하나 더 사야겠는데'))
 
 testcase owl_reading_absent:
     pause 1.0

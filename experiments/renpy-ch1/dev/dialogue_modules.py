@@ -59,7 +59,7 @@ def scan_rpy(text,file):
     contexts={};label=None;stack=[];current_scene=None;calls=[];special={};safe={}
     for number,line in enumerate(text.splitlines(),1):
         indent=len(line)-len(line.lstrip());strip=line.strip()
-        if strip.startswith('label '):label=strip.split()[1].split('(')[0].rstrip(':');stack=[]
+        if strip.startswith('label '):label=strip.split()[1].split('(')[0].rstrip(':');stack=[];current_scene=None
         if strip and not strip.startswith('#'):
             while stack and indent<=stack[-1][0]:stack.pop()
         m=re.search(r"r13_v111_scene\(['\"]([^'\"]+)",line)
@@ -86,7 +86,7 @@ def scan_rpy(text,file):
                 span=ast_span(fragment,candidate,match.start())
                 speaker=None
                 if match.group(1)=='r13_lines' and isinstance(node.elts[0],ast.Constant):speaker=node.elts[0].value
-                safe[tuple(span)]=dict(speaker=speaker,kind='dialogue' if speaker else 'narration',origin='rpy_literal',id=None)
+                safe[tuple(span)]=dict(speaker=speaker,kind=('choice' if match.group(1)=='renpy.display_menu' else 'dialogue' if speaker else 'narration'),origin='rpy_menu' if match.group(1)=='renpy.display_menu' else 'rpy_literal',id=None)
     for variable in ('R13_V111_CARRIAGE_TEXT','R13_NW_WRONG_THOUGHTS'):
         for match in re.finditer(r'\b'+variable+r'\s*=\s*\{',text):
             begin=text.index('{',match.start());end=closing(text,begin)
@@ -202,7 +202,8 @@ def collect(root=ROOT,out=None):
         rid=meta.get('id') or pointer(path);ref=meta.get('ref') or rid
         match=re.match(r'(MS14_D\d{2}_.+)_L\d+',str(ref))
         scene=meta.pop('scene',None) or (match.group(1) if match else meta.get('block') or '공통')
-        day=meta.pop('day',None) or infer_day(file) or infer_day(str(ref)) or infer_day(meta.get('block') or '')
+        position_id=str(meta.get('origin','')).startswith('rpy') and not re.match(r'MS14_D\d{2}_',str(ref))
+        day=meta.pop('day',None) or infer_day(file) or (None if position_id else infer_day(str(ref))) or infer_day(meta.get('block') or '')
         defaults=dict(id=rid,file=file,path=path,origin='json',day=day,scene=scene,block=None,placement='text',ref=ref,when=None,speaker=None,kind='dialogue',text=text,editable=True,usage='active',note='',call_sites=[])
         defaults.update(meta);defaults['text']=text;defaults['scene_title']=scene_title_map.get(scene,scene)
         defaults['source_hash']=hashes[file];defaults['baseline_hash']=digest(text)
@@ -357,6 +358,25 @@ def apply_package(package,root=ROOT,out=None,write=False):
         atomic_write_batch(updates)
     return dict(status='passed',write=write,entries=len(package['entries']),changed=len(changes),files=[str(p.relative_to(root)) if p.is_relative_to(root) else str(p) for p in updates],changes=targets)
 
+
+def supplement_reading(inv,day,raw):
+    """Append separately stored authored branches without pretending to know playback order."""
+    present=set(re.findall(r'(?m)^\s*\+?(NW_[A-Za-z0-9_]+)',raw))
+    groups={}
+    for row in inv['rows']:
+        if row.get('origin')!='patch' or row.get('day')!=day or row.get('usage')!='active':continue
+        if re.fullmatch(r'd\d{2}\.json',Path(row['file']).name) or row['id'] in present:continue
+        if row.get('placement') not in ('blocks','before','after','replace'):continue
+        groups.setdefault((row['file'],row.get('block') or row.get('ref') or row['scene']),[]).append(row)
+    if not groups:return raw
+    extra=['','## 별도 파일 분기 대사 부록','아래 블록은 조건에 따라 별도로 호출된다. 위 본편 뒤에 모두 재생된다는 뜻이 아니다. 호출 조건은 편집기에서 확인한다.']
+    for (file,block),rows in groups.items():
+        extra.extend(['',f'## {Path(file).name} / {block}'])
+        for row in rows:
+            when='{'+str(row['when'])+'}' if row.get('when') else ''
+            extra.append(f"  +{row['id']} (별도 블록){when} {row.get('speaker') or '지문'}: {row['text']}")
+    return raw.rstrip()+'\n'+'\n'.join(extra)+'\n'
+
 def build(root=ROOT,out=None,template=None):
     root=Path(root);out=Path(out) if out else root/'docs/dialogue-modules';template=Path(template) if template else root/'dev/dialogue-modules/index.html';inv=collect(root,out)
     if not template.exists():raise ModuleError('HTML 템플릿이 없다: '+str(template))
@@ -365,7 +385,7 @@ def build(root=ROOT,out=None,template=None):
     required=[root/'game/v111/records.json']+[root/f'game/v111/newworld/d{day:02}.json' for day in range(1,15)]
     if reader.exists() and all(p.exists() for p in required):
         for day in range(1,15):
-            try:readings[f'reading/d{day:02}.txt']=subprocess.check_output([sys.executable,str(reader),'show',str(day)],cwd=root,text=True,encoding='utf-8').encode('utf-8')
+            try:readings[f'reading/d{day:02}.txt']=supplement_reading(inv,day,subprocess.check_output([sys.executable,str(reader),'show',str(day)],cwd=root,text=True,encoding='utf-8')).encode('utf-8')
             except subprocess.CalledProcessError as e:raise ModuleError(f'{day}일 합본 대본 생성 실패') from e
             lines=[]
             for line in readings[f'reading/d{day:02}.txt'].decode('utf-8').splitlines():
@@ -378,7 +398,7 @@ def build(root=ROOT,out=None,template=None):
             page=f'<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{day}일 순서 대본</title><style>body{{max-width:1100px;margin:24px auto;padding:16px;background:#fffaf0;color:#332a21;font:16px/1.8 system-ui,sans-serif}}pre{{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit}}a{{color:#704322}}nav{{position:sticky;top:0;background:#fffaf0;padding:12px 0;border-bottom:1px solid #cbb799}}</style><nav><a href="../?day={day}">대사 편집기</a> · <a href="d{day:02}.txt" download>합본 텍스트 받기</a></nav><h1>{day}일 순서 대본</h1><p>대사 ID를 누르면 편집기로 이동합니다. 조건이 다른 줄은 나란히 표시되며 한 번의 플레이에서 모두 나오는 줄이 아닙니다.</p><pre>'+"\n".join(lines)+'</pre></html>'
             readings[f'reading/d{day:02}.html']=page.encode('utf-8')
     inv['reading']={str(day):f'reading/d{day:02}.html' for day in range(1,15)} if readings else {}
-    inv['reading_note']='기존 dialogue_day show의 순서 합본이다. 서로 다른 조건의 줄은 나란히 표시되며, 실제 한 번의 플레이에서 모두 재생된다는 뜻은 아니다.'
+    inv['reading_note']='본편 합본과 날짜가 확인된 별도 파일 분기 부록이다. 부록은 재생 순서가 아니며, 서로 다른 조건의 줄이 한 번의 플레이에서 모두 재생된다는 뜻은 아니다.'
     html=template.read_text()
     if html.count('__DATA__')!=1:raise ModuleError('템플릿에는 __DATA__가 정확히 한 번 있어야 한다.')
     payload=json.dumps(inv,ensure_ascii=False).replace('<','\\u003c').replace('\u2028','\\u2028').replace('\u2029','\\u2029')

@@ -201,5 +201,5 @@ testcase v111_bonds_crisis_lines:
     click pos (900,600) until screen "r13_hub" timeout 120
     assert eval (qa_nw_seen("깡통을 흔들던 아이다") and qa_nw_seen("하나 받으면 하나 넣는다던 깡통이다"))
     assert eval (qa_nw_seen("두 땀이면 된다고 했는데") and qa_nw_seen("장갑을 꿰매 주던 손이다"))
-    assert eval (qa_nw_seen("헝겊을 감아 주던 그 지팡이다") and qa_nw_seen("지팡이 짚던 분") and qa_nw_seen("……아무도 몰랐어.") and qa_nw_seen("부르던 거, 나 들었어"))
+    assert eval (qa_nw_seen("헝겊을 감아 주던 그 지팡이다") and qa_nw_seen("지팡이 짚던 분") and qa_nw_seen("이름은 못 들었어.") and qa_nw_seen("부르던 거, 나 들었어"))
     assert eval (qa_nw_seen("그 화가한테…… 가 봤어요?") and qa_nw_seen("박물관 열쇠 꾸러미"))

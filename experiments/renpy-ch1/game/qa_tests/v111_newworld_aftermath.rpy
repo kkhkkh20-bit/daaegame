@@ -19,7 +19,7 @@ testcase v111_nw_aftermath_reactions:
     run Jump("r13_v111_qa_day13_reactions")
     pause 1.0
     click pos (900,600) until eval (r13_v111_value("qa_reactions_done") is True) timeout 60
-    assert eval (qa_nw_seen("꼬미 자리에 도토리 놔 둘래") and qa_nw_seen("대장은 오늘 누워 있는 거야"))
+    assert eval (qa_nw_seen("꼬미 자리에 도토리 놔 둘래") and qa_nw_seen("대장은 오늘 누워서 해"))
 
 testcase v111_nw_aftermath_memorial:
     # 0.20.20 결말에서 이름 부르기: 죽은 사람마다 남은 물건 한 줄. 산 사람 줄은 나오지 않는다.
