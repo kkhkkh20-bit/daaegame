@@ -201,10 +201,13 @@ def scan(project=PROJECT):
 
 def main():
     parser=argparse.ArgumentParser(description='다람탐정 에셋 도구함')
-    parser.add_argument('command',choices=['scan','validate','serve'])
+    parser.add_argument('command',choices=['scan','validate','serve','modules'])
     parser.add_argument('--port',type=int,default=8787)
     args=parser.parse_args()
-    if args.command=='scan':
+    if args.command=='modules':
+        from asset_modules import build
+        build(PROJECT)
+    elif args.command=='scan':
         registry=scan();print('등록 에셋 %d개 · 연결 역할 %d개'%(len(registry.catalog['assets']),len(registry.bindings['bindings'])))
     elif args.command=='validate':
         folder=PROJECT/'game/asset-toolbox'
