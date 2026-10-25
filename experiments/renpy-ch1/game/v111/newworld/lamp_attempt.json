@@ -79,7 +79,7 @@
         "id": "NW_LA_LA_MORNING3_2",
         "speaker": "아빠",
         "kind": "dialogue",
-        "text": "다람아, 코는 만지지 말자. 우리 것만 쓰자."
+        "text": "다람아, 그림 코는 만지지 말자. 만지고 싶으면 네 코 만져."
       },
       {
         "id": "NW_LA_LA_MORNING3_3",
@@ -298,6 +298,58 @@
         "speaker": null,
         "kind": "narration",
         "text": "피코는 그림 상자를 안고 진료소 쪽으로 걸어간다. 손을 좀 녹이고 가겠다고 한다."
+      }
+    ],
+    "owl_workshop3a": [
+      {
+        "id": "NW_LA_OWL3A_01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "사람들이 흩어진 공방 안쪽 의자에 눈이 둥근 노인이 앉아 있다. 회의 내내 거기 있었던 모양이다. 노인이 무릎 위 수첩을 덮으며 나를 올려다본다."
+      },
+      {
+        "id": "NW_LA_OWL3A_02",
+        "speaker": "부엉이",
+        "kind": "dialogue",
+        "text": "……흠. 아까 탁자에서 자네가 수첩을 몇 번이나 뒤적이더군.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_LA_OWL3A_03",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "본 것과 들은 것이 자꾸 섞여서요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_LA_OWL3A_04",
+        "speaker": "부엉이",
+        "kind": "dialogue",
+        "text": "나도 그랬네. 젊을 때. 본 건 왼쪽, 들은 건 오른쪽에 적게. 섞어 놓으면 남한테 들은 것도 내가 본 줄 알게 돼.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_LA_OWL3A_05",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "할아버지도 탐정이에요?",
+        "expression": "neutral",
+        "when": "daram_ready"
+      },
+      {
+        "id": "NW_LA_OWL3A_06",
+        "speaker": "부엉이",
+        "kind": "dialogue",
+        "text": "그 일은 그만뒀네. 지금은 내 수첩이나 다시 읽지.",
+        "expression": "neutral",
+        "when": "daram_ready"
+      },
+      {
+        "id": "NW_LA_OWL3A_07",
+        "speaker": null,
+        "kind": "narration",
+        "text": "다람이 제 수첩을 펴서 한가운데에 세로줄을 하나 긋는다.",
+        "when": "daram_ready"
       }
     ]
   },

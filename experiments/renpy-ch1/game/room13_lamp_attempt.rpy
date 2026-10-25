@@ -88,6 +88,10 @@ label r13_lamp_attempt_win3:
 
 label r13_lamp_attempt_after3:
     call r13_lines(r13_nw_block('tok_axle3'),'nw:tok_axle3')
+    # 이 판은 진료소·집게 반납(owl_tongs3)을 지나지 않는다. 5일 장갑·7일 13호가 「공방에서 본 노인」과
+    # 「본 건 왼쪽, 들은 건 오른쪽」을 전제하므로, 회의가 끝난 공방에서 같은 노인과 같은 말을 만나게 한다.
+    $ r13_v111_join(['resident_owlgp'])
+    call r13_lines(r13_nw_block('owl_workshop3a'),'nw:owl_workshop3a')
     $ r13_edit(period=2)
     call r13_v111_travel('square','lamp_attempt_after3',direct=True)
     $ r13_v111_arrive(['resident_lamplighter','resident_piko','daram'])

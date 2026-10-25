@@ -129,6 +129,7 @@ init 319 python:
         "lower_elder_received12":lambda:r13_v111_value("lower_road_handover")==3 and r13_v111_value("alive:v111_lowerroad_elder") is not False,
         "owl_listed_cart13":lambda:r13_v111_value("OWL_ALIVE") is not False and r13_v111_value("listed:resident_owlgp") is True and not r13_v111_value("departed:resident_owlgp"),
         "kkomi_can_carried6":lambda:bool(r13_v111_value("kkomi_can_seen6") and r13_v111_value("acorn_recovered")),
+        "kkomi_can_left6":lambda:not (r13_v111_value("kkomi_can_seen6") and r13_v111_value("acorn_recovered")),
         "kkomi_acorn_shared":lambda:r13_v111_value("kkomi_acorn10") is True and r13_v111_actor_ready("daram"),
         # 0.20.18 (CRUEL_CHOICES.md C1): 13일 공개 때 엄마와 다람이 광장에 있는가.
         # 0.20.18 (CRUEL_CHOICES.md C3 A안): 3일 실룩을 풀어 준 판, 5번 등이 비어 밤이가 처마에서 내려왔다.
