@@ -2498,7 +2498,7 @@
         ]
       },
       {
-        "title": "자리 났어. 지금 같이 가자",
+        "title": "학교에 자리가 났어. 같이 갈래?",
         "location": "v111_woodshed",
         "person": "kid_kkomi",
         "guard": [
@@ -2514,6 +2514,37 @@
         "location": "v111_woodshed",
         "person": "kid_kkomi",
         "guard": []
+      },
+      {
+        "index": 80,
+        "title": "장작더미 옆 깡통 줄을 살핀다",
+        "location": "v111_woodshed",
+        "object": "v111_wood",
+        "guard": [
+          [
+            "state",
+            "kkomi_can_seen6",
+            null
+          ]
+        ]
+      },
+      {
+        "index": 81,
+        "title": "줄을 풀고 도토리를 챙긴다",
+        "location": "v111_woodshed",
+        "object": "v111_wood",
+        "guard": [
+          [
+            "state",
+            "kkomi_can_seen6",
+            true
+          ],
+          [
+            "state",
+            "acorn_recovered",
+            null
+          ]
+        ]
       }
     ]
   },

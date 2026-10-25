@@ -137,9 +137,21 @@ label r13_v111_afternoon6:
     # 학교에 든다. 「내일 아침에 데리러 올게」로 떠나면 저녁에 불이 난다. 무엇을 잃는지는 미리 말하지 않는다.
     call r13_v111_wait('afternoon6')
     $ v111_answer=_return
+    if v111_answer==80:
+        call r13_lines(r13_nw_block('can_look6'),'nw:can_look6')
+        $ r13_v111_set('kkomi_can_seen6',True)
+        jump r13_v111_afternoon6
+    if v111_answer==81:
+        call r13_lines(r13_nw_block('can_pack6'),'nw:can_pack6')
+        $ r13_v111_set('acorn_recovered',True)
+        jump r13_v111_afternoon6
     if v111_answer==0:
         jump r13_v111_seat6
     if v111_answer==1:
+        if not r13_v111_value('acorn_recovered'):
+            call r13_lines(r13_nw_block('can_wait6'),'nw:can_wait6')
+            $ r13_v111_talk_person=None
+            jump r13_v111_afternoon6
         $ r13_v111_set('choice:MS14_D06_S02','today')
         $ r13_v111_commit('MS14_D06_S02_L0026')
         $ r13_v111_commit('MS14_D06_S02_L0029')
@@ -166,7 +178,7 @@ label r13_v111_fetch6:
     call r13_v111_travel('v111_woodshed','children_fetch6')
     $ r13_v111_arrive(['daram', 'kid_kkomi', 'resident_bori'])
     call r13_lines(r13_nw_block('fetch_now6'),'nw:fetch_now6')
-    jump r13_v111_acorn_recover6
+    jump r13_v111_children_ready6
 
 # 0.20.18 부터 새 판은 아래 today6·permission_today6 를 지나지 않는다(위 afternoon6 이 seat6·fetch6 으로 간다).
 # 그 전 저장을 이어 하는 사람을 위해 남긴다.
@@ -210,6 +222,7 @@ label r13_v111_acorn_recover6:
 label r13_v111_acorn_recovered6:
     call r13_lines([(None,"꼬미가 깡통에서 도토리를 꺼내 손에 쥐었다.")],"v111:acorn_recovered")
     $ r13_v111_set("acorn_recovered",True)
+label r13_v111_children_ready6:
     call r13_lines(r13_v111_lines(['MS14_D06_P01_L0009']),'v111:MS14_D06_P01_L0009')
     call r13_lines(r13_v111_lines(['MS14_D06_P01_L0010']),'v111:MS14_D06_P01_L0010')
     call r13_lines(r13_v111_lines(['MS14_D06_P01_L0011']),'v111:MS14_D06_P01_L0011')
