@@ -260,13 +260,21 @@ init 130 python:
 screen r13_world_camera_controls(adjustment):
     # Fixed screen-edge controls; world art, actors and targets share one viewport.
     if adjustment.value>4:
-        textbutton "‹":
-            style "r13_action_button" xpos 8 ypos 236 padding (12,8) text_size 22 xminimum 80 yminimum 80
-            action Function(r13_pan_camera,adjustment,-1) tooltip "왼쪽 구역" alt "왼쪽 구역"
+        fixed:
+            xpos 8 ypos 236 xysize (80,80)
+            imagebutton:
+                xpos 4 ypos 4
+                idle r13_field_arrow("left") hover r13_field_arrow("left",True)
+                action Function(r13_pan_camera,adjustment,-1)
+                alt "왼쪽 구역"
     if adjustment.value<adjustment.range-4:
-        textbutton "›":
-            style "r13_action_button" xpos 1272 xanchor 1.0 ypos 236 padding (12,8) text_size 22 xminimum 80 yminimum 80
-            action Function(r13_pan_camera,adjustment,1) tooltip "오른쪽 구역" alt "오른쪽 구역"
+        fixed:
+            xpos 1192 ypos 236 xysize (80,80)
+            imagebutton:
+                xpos 4 ypos 4
+                idle r13_field_arrow("right") hover r13_field_arrow("right",True)
+                action Function(r13_pan_camera,adjustment,1)
+                alt "오른쪽 구역"
 
 # Retained for existing saves.
 default persistent.r13_pan_hint_seen = False
