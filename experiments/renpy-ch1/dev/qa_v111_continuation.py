@@ -33,7 +33,7 @@ async def main():
    try:
     for page in b.pages:await page.close()
     pg=await b.new_page();q=Fast(pg,OUT);events=[];heard=[];book=None;wrong_recipient=0;map_target=None;shots=set();tries={};last=None;stale=0
-    await pg.goto('http://localhost:8766/preview/room13-dev/',wait_until='domcontentloaded',timeout=180000)
+    await pg.goto(os.environ.get('ROOM13_URL','http://localhost:8766/preview/room13-dev/'),wait_until='domcontentloaded',timeout=180000)
     await pg.wait_for_function("typeof renpy_exec==='function'",timeout=180000);await asyncio.sleep(10);await q.input(1100,600);await q.wait('main_menu')
     await q.py('import renpy;renpy.store.preferences.text_cps=0;result=True')
     print('BUILD_VERSION',await q.py('import renpy;result=renpy.store.config.version'),flush=True)
@@ -48,7 +48,7 @@ async def main():
     await pg.evaluate('code=>{renpy_exec("exec("+JSON.stringify(code)+")").catch(()=>{});return true;}',code)
     await asyncio.sleep(3);await pg.evaluate("window._renpy_cmd_callback({data:true})")
     for step in range(20000):
-     st=await q.py('import renpy;ns={};exec('+repr(PROBE)+',ns);result=ns["result"];s=renpy.store;result["v111_probe"]=dict(gate=s.room13.get("v111",{}).get("gate"),claim=getattr(s,"v111_claim",None),binding=s.r13_v111_binding(),scene=s.room13.get("v111",{}).get("scene"),packet=list(getattr(s,"r13_packet",[])[:2]))');room=st['room'];v=room.get('v111',{});values=v.get('values',{});screens=st['screens'];gate=v.get('gate');loc=room.get('location')
+     st=await q.py('import renpy;ns={};exec('+repr(PROBE)+',ns);result=ns["result"];s=renpy.store;result["v111_probe"]=dict(gate=s.room13.get("v111",{}).get("gate"),claim=getattr(s,"v111_claim",None),binding=s.r13_v111_binding(),skipping=bool(renpy.config.skipping),scene=s.room13.get("v111",{}).get("scene"),packet=list(getattr(s,"r13_packet",[])[:2]))');room=st['room'];v=room.get('v111',{});values=v.get('values',{});screens=st['screens'];gate=v.get('gate');loc=room.get('location')
      assert '_exception' not in screens,('Game exception',sc if 'sc' in locals() else None)
      extra=st.pop('v111_probe')
      sc=extra['scene']
@@ -106,6 +106,8 @@ async def main():
        if gate in ('teacher_relief_check13','carrier_receipt12','device_detach14','transport_cleanup13','blanket_mend13'):await q.shot('field-'+gate)
      if sc and sc not in shots and 'say' in screens:
       await q.shot(sc);shots.add(sc);events.append(dict(step=step,scene=sc,gate=gate,day=room['day'],values=values,evidence=room['evidence']));print('SCENE',sc,gate,flush=True)
+     if os.environ.get('V111_DIAG_OBJECT') and 'r13_hub' in screens:
+      print('OBJECT_DIAG',await q.py('import renpy;s=renpy.store;k='+repr(os.environ.get('V111_DIAG_OBJECT'))+';result=dict(binding=s.r13_v111_binding(),objects=[dict(key=k,visible=s.r13_object_visible(v),spec=v,target=s.r13_object_target_rect(k,v)) for k,v in s.ROOM13["objects"][s.room13["location"]].items()],offset=s.r13_world_offset())'),flush=True)
      if ((os.environ.get('V111_STOP_DAY') and room['day']>=int(os.environ['V111_STOP_DAY'])) or (os.environ.get('V111_STOP_GATE')==gate)) and 'r13_hub' in screens:
       (OUT/'checkpoint-report.json').write_text(json.dumps(dict(status='checkpoint_reached',day=room['day'],scope='Actual clicks from previous genuine save; later days not yet tested',events=events,final=room),ensure_ascii=False,indent=2));return
      if values.get('story14_completed'):
@@ -156,7 +158,12 @@ async def main():
        checks.append('Non-participating Buri never claims hauling school supplies')
       report=dict(status='passed',scope='Existing-save continuation; actual field/map/topic/notebook clicks, no narrative state injection',checks=checks,heard=heard,events=events,final=room)
       (OUT/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));return
-     if 'say' in screens:await q.input(900,590);continue
+     if 'say' in screens:
+      if extra.get('skipping') and stale<3:await asyncio.sleep(.15)
+      elif extra.get('skipping'):await q.input(900,590)
+      elif any('건너뛰기' in b['text'] for b in st.get('buttons',[])):await q.press('건너뛰기')
+      else:await q.input(900,590)
+      continue
      if 'choice' in screens:
       await asyncio.sleep(.5)
       branch_slot='v111-branch-'+str(sc)
@@ -174,6 +181,10 @@ async def main():
       await q.press(preferred);continue
      if 'r13_crisis_proof' in screens:
       claim=extra['claim'];title=claim[5:];correct=PROOFS[title]
+      candidates=await q.py('import renpy;s=renpy.store;result=[sorted(x) for x in s.r13_v111_proof_sets('+repr(title)+','+repr(correct)+')]')
+      owned=set(room['evidence']);accepted=next((x for x in candidates if set(x)<=owned),None)
+      assert accepted,('No owned proof set',title,candidates,room['evidence'])
+      correct=[x[5:] for x in accepted]
       selected=room['arguments'].get(claim,[]);missing=[k for k in correct if 'V111:'+k not in selected]
       if missing:book='V111:'+missing[0];await q.press('근거를 내놓는다')
       else:await q.press('논리를 연결한다')
@@ -184,14 +195,7 @@ async def main():
        elif sc=='MS14_D14_S02' and os.environ.get('V111_DEVICE_RECORD')=='supply':book='V111:E14_SUPPLY'
        else:book='V111:E13_HANDOVER'
       if wrong_recipient==2:await asyncio.sleep(.2);continue
-      entries=await q.py('import renpy;result=list(renpy.display.screen.get_screen("r13_book").scope["entries"])')
-      assert book in entries,(book,entries)
-      name=await q.py('import renpy;result=renpy.store.ROOM13["evidence"]['+repr(book)+']["name"]')
-      try:await q.press(name)
-      except AssertionError:
-       page=await q.py('import renpy;s=renpy.store;c=renpy.display.screen.get_screen("r13_book").scope;e=c["entries"];result=[e.index('+repr(book)+')//s.r13_record_page_size(),s.r13_record_page(e,c["page"])]')
-       await q.press('이전' if page[0]<page[1] else '다음');continue
-      await q.press('보여주기');book=None
+      await q.select_material(book,finish=True);book=None
       if wrong_recipient==1:wrong_recipient=2
       continue
      if gate=='labor_sheet4' and step%5==0:
@@ -216,9 +220,7 @@ async def main():
      if 'r13_map' in screens:
       target=map_target or next(o['move'] for o in opts if o.get('move'))
       map_target=None
-      region=await q.py('import renpy;result=renpy.store.r13_map_region('+repr(target)+')')
-      await q.press({'village':'마을','inn':'여관 안','mountain':'숲·산길'}[region]);await q.value(target)
-      if 'r13_map'in (await q.state())['screens']:await q.press('이곳으로 이동')
+      await q.navigate_map(target)
       continue
      if 'r13_hub' in screens:
       assert opt,('Empty field',extra)
@@ -235,17 +237,15 @@ async def main():
        continue
       if opt.get('object'):
        key=opt['object'];attempt=tries.get((gate,key),0);tries[(gate,key)]=attempt+1
-       fx,fy=[(.5,.5),(.1,.1),(.9,.9),(.1,.9),(.9,.1),(.25,.5),(.75,.5)][attempt%7]
-       rect=await q.py('import renpy;result=next(([f.x,f.y,f.w,f.h] for f in renpy.display.focus.focus_list if f.x is not None and f.w and f.h for a in (getattr(f.widget,"clicked",None) if isinstance(getattr(f.widget,"clicked",None),(list,tuple)) else [getattr(f.widget,"clicked",None)]) if getattr(a,"value",None)=='+repr(('object',key))+'),None)')
-       if rect:x,y=rect[0]+rect[2]*fx,rect[1]+rect[3]*fy
-       else:
-        x,y=await q.py('import renpy;s=renpy.store;x,y,w,h=s.ROOM13["objects"][s.room13["location"]]['+repr(key)+']["rect"];result=[x+w*'+str(fx)+'-s.r13_world_offset(),y+h*'+str(fy)+']')
-       if not 0<=x<1280:await q.press('‹' if x<0 else '›');await asyncio.sleep(.7)
-       else:await asyncio.sleep(.25);await q.input(x,y)
+       await q.click_object(key,attempt)
        continue
      await asyncio.sleep(.1)
     raise AssertionError('Continuation step limit reached')
    except BaseException as error:
+    try:
+     await q.py('import renpy;renpy.exports.save("v111-continuation-recovery");result=True')
+     await asyncio.sleep(.8)
+    except Exception:pass
     await pg.screenshot(path=str(OUT/'failure.png'))
     raw=await q.py('import renpy;ns={};exec('+repr(__import__('webqa').PROBE)+',ns);result=ns["result"]')
     (OUT/'failure-state.json').write_text(json.dumps(raw,ensure_ascii=False,indent=2))
