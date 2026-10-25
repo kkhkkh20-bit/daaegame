@@ -14,9 +14,13 @@ class Fast(UIQA):
  async def value(self,value):
   await asyncio.sleep(.5)
   if isinstance(value,tuple) and value[0]=='person':
-   st=await self.state();bs=[b for b in st['buttons'] if b.get('value')==repr(value) and b['text'].strip()]
+   st=await self.state();bs=[b for b in st['buttons'] if b.get('value')==repr(value) and b['rect'][2]>=20]
    if bs:
-    x,y,w,h=min(bs,key=lambda b:b['rect'][2]*b['rect'][3])['rect'];await self.input(x+w/2,y+h/2);return
+    b=min(bs,key=lambda b:b['rect'][2]*b['rect'][3]);x,y,w,h=b['rect']
+    edge='‹' if x<=1 else '›' if x+w>=1279 else None
+    if not b['text'].strip() and edge and any(t['text'].strip()==edge for t in st['buttons']):
+     await self.press(edge);await asyncio.sleep(.6);return
+    await self.input(x+w/2,y+h/2);return
   return await super().value(value)
  async def advance_dialogue(self):
   st=await self.state()

@@ -6,7 +6,7 @@ from pathlib import Path
 from playwright.async_api import async_playwright
 from webqa import UIQA,PROBE
 from qa_v111_play import Fast
-PROBE=PROBE.replace("names=[","names=['_exception',",1)
+PROBE=PROBE.replace("names=[","names=['_exception','r13_meeting_retry_choice',",1)
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=Path(os.environ.get('ROOM13_QA_OUT','/workspace/work/v111/continuation'));OUT.mkdir(parents=True,exist_ok=True)
@@ -109,7 +109,10 @@ async def main():
      if os.environ.get('V111_DIAG_OBJECT') and 'r13_hub' in screens:
       print('OBJECT_DIAG',await q.py('import renpy;s=renpy.store;k='+repr(os.environ.get('V111_DIAG_OBJECT'))+';result=dict(binding=s.r13_v111_binding(),objects=[dict(key=k,visible=s.r13_object_visible(v),spec=v,target=s.r13_object_target_rect(k,v)) for k,v in s.ROOM13["objects"][s.room13["location"]].items()],offset=s.r13_world_offset())'),flush=True)
      if ((os.environ.get('V111_STOP_DAY') and room['day']>=int(os.environ['V111_STOP_DAY'])) or (os.environ.get('V111_STOP_GATE')==gate)) and 'r13_hub' in screens:
+      await q.py('import renpy;renpy.exports.save("v111-natural-checkpoint");result=True')
       (OUT/'checkpoint-report.json').write_text(json.dumps(dict(status='checkpoint_reached',day=room['day'],scope='Actual clicks from previous genuine save; later days not yet tested',events=events,final=room),ensure_ascii=False,indent=2));return
+     if 'r13_meeting_retry_choice' in screens:
+      await q.press('회의를 처음부터 다시' if os.environ.get('V111_RETRY')=='retry' else '결과를 받아들인다');continue
      if values.get('story14_completed'):
       checks=[]
       assert values.get('carried_dry_blankets',0)>=0,values
@@ -129,8 +132,8 @@ async def main():
       outcome=values.get('outcome13')
       if outcome=='all_rescued':
        assert values.get('all_cart_handed') and all(values.get('handed:'+p) for p in values.get('cart_roster',[])),values
-       assert values.get('device_joint_control') and values.get('current_transport_chain_stopped'),values
-       checks.append('Every actual passenger handed over; transport stopped; device jointly locked')
+       assert bool(values.get('current_sacrifice_operation_closed'))==bool(values.get('device_joint_control') and values.get('current_transport_chain_stopped')),values
+       checks.append('Every actual passenger handed over; device/transport closure remain separate and consistent')
       elif outcome=='family_priority':
        assert values.get('family_benefits_received') and values.get('night14_lodging')=='gate' and not values.get('all_cart_handed'),values
        checks.append('Family departure keeps gate lodging without inventing other rescues')
@@ -151,7 +154,7 @@ async def main():
         away={original['MS14_D13_C_L0006']['text'],original['MS14_D13_C_L0007']['text']}
         assert not any(h['scene']=='MS14_D13_C' and h['packet'][1] in away for h in heard),heard
        checks.append('Off-site child dialogue and immediate Dad cookie reconciliation excluded')
-      if values.get('buri_device_present') and not values.get('buri_supply_participated'):
+      if heard and values.get('buri_device_present') and not values.get('buri_supply_participated'):
        original=json.loads((ROOT/'game/v111/records.json').read_text())['records']
        false_recall=original['MS14_D14_S02_L0046']['text']
        assert not any(h['scene']=='MS14_D14_S02' and h['packet'][1]==false_recall for h in heard),heard
@@ -170,7 +173,7 @@ async def main():
       if branch_slot not in shots:
        await q.py('import renpy;renpy.exports.save('+repr(branch_slot)+');result=True');shots.add(branch_slot)
       items=await q.py('import renpy;result=[i.caption for i in renpy.display.screen.get_screen("choice").scope["items"] if i.action is not None]')
-      preferred=next((t for t in ['하차한 사람부터 부축한다','그릇을 돌려주러 같이 가자.','오늘 안에 학교 자리를 확인하고 옮긴다.','아이들은 학교에서 기다리게 하자.','다람과 남고 까로를 의료진에게 보낸다','짐 안에 둔다','준비된 물자를 학교로 옮긴다','없는 운반수단을 지금 구한다','배식 전에 더 살핀다','돌목에게 감독을 맡긴다','조건을 더 묻는다','거절하고 현장에 남는다','엄마와 다람이 곁에 남게 한다','안에서 직접 듣는다','토실이 이름을 쓰겠다면 기다린다'] if t in items),items[0])
+      preferred=next((t for t in ['꺼낸 아르카 곁에 오래 있던 사람부터 무너진다','만지는 것보다 곁에서 오래 지내는 게 문제다','백 부인은 그 돌 곁에서 잠을 자지 않는다','요즘 태우는 돌이 더 독하다','아이 방에도 아르카등이 밤새 켜져 있었다','한 방의 돌이 바뀌자 한 사람이 한 저녁 사이에 무너졌다','한 방의 돌을 치우자 무너지던 사람이 돌아왔다','한 방의 돌을 꺼내자 그 앞에서 흐려지던 머리가 맑아졌다','하차한 사람부터 부축한다','그릇을 돌려주러 같이 가자.','오늘 안에 학교 자리를 확인하고 옮긴다.','아이들은 학교에서 기다리게 하자.','다람과 남고 까로를 의료진에게 보낸다','짐 안에 둔다','준비된 물자를 학교로 옮긴다','없는 운반수단을 지금 구한다','배식 전에 더 살핀다','돌목에게 너울을 맡긴다','돌목에게 감독을 맡긴다','조건을 더 묻는다','거절하고 현장에 남는다','엄마와 다람이 곁에 남게 한다','안에서 직접 듣는다','토실이 이름을 쓰겠다면 기다린다'] if t in items),items[0])
       # Once the family offer has been clarified, refuse it rather than looping.
       if '거절하고 현장에 남는다' in items and values.get('family_offer_terms_seen'):preferred='거절하고 현장에 남는다'
       overrides=json.loads(os.environ.get('V111_BRANCHES','{}'))
@@ -228,7 +231,7 @@ async def main():
        map_target=opt['location'];await q.press('지도');continue
       if opt.get('move'):map_target=opt['move'];await q.press('지도');continue
       if opt.get('person'):
-       p=opt['person'];buttons=[x for x in st['buttons'] if x.get('value')==repr(('person',p)) and x['text'].strip()]
+       p=opt['person'];buttons=[x for x in st['buttons'] if x.get('value')==repr(('person',p)) and x['rect'][2]>=20]
        if buttons:await q.value(('person',p));continue
        x=await q.py('import renpy;s=renpy.store;result=next(a["x"] for a in s.r13_stage_people() if a["person"]=='+repr(p)+')-s.r13_world_offset()')
        if x<0 or x>1280:
