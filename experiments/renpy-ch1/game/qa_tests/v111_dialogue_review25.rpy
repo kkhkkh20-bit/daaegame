@@ -45,19 +45,3 @@ testcase dr25_kkomi10_carried:
     run Jump("r13_v111_sleep10")
     click pos (900,600) until screen "r13_hub" timeout 90
     assert eval (qa_nw_seen("창고에서 안고 나온 그 깡통") and not qa_nw_seen("새 깡통이야") and qa_nw_seen("달그락, 한 번"))
-
-testcase dr25_wild_alone_well:
-    # 12일에 열이 나지 않은 판: 다람을 업지 않았으므로 「업힌」 대신 손을 놓치는 문장.
-    pause 1.0
-    click "처음부터"
-    click pos (900,600) until "편지를 외투 안에" timeout 60
-    click pos (900,600) until screen "r13_hub" timeout 90
-    run Function(qa_nw_day14,"prevented")
-    run Function(r13_v111_set,"meeting:hypothesis","lose")
-    run Function(r13_v111_set,"meeting:altar","lose")
-    run Function(r13_v111_set,"ending14","wild_night")
-    run Function(r13_v111_set,"daram_fever12",False)
-    run Function(r13_v111_set,"wild_late",2)
-    run Jump("r13_v111_wild_climb14")
-    click pos (900,600) until screen "r13_confirm" timeout 120
-    assert eval (r13_v111_value("wild_family")=="alone" and qa_nw_seen("손이 내 손에서 빠져나간다") and not qa_nw_seen("등에 업힌 다람"))

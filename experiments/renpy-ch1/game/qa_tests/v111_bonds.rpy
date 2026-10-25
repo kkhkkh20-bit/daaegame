@@ -79,7 +79,7 @@ testcase v111_bonds_owl3:
     run Function(r13_edit,day=3,location="clinic")
     run Jump("r13_v111_measurement_after")
     click pos (900,600) until screen "r13_hub" timeout 90
-    assert eval (qa_nw_seen("눈이 둥근 노인") and qa_nw_seen("본 건 왼쪽, 들은 건 오른쪽") and qa_nw_seen("종이 묶음이나 세는"))
+    assert eval (qa_nw_seen("눈이 둥근 노인") and qa_nw_seen("본 건 왼쪽, 들은 건 오른쪽") and qa_nw_seen("내 수첩이나 다시 읽지"))
     assert eval (not qa_nw_seen("등 번호"))
 
 testcase v111_bonds_elder4:
@@ -124,7 +124,7 @@ testcase v111_bonds_owl7_reunion:
     run Function(r13_edit,day=7,location="room13")
     run Jump("r13_v111_room_visit7")
     click pos (900,600) until "아내 소식을 아십니까" timeout 90
-    assert eval (qa_nw_seen("장갑을 꿰매 주던 그분이다") and qa_nw_seen("이번엔 안 잊었지") and qa_nw_seen("부엉이 어르신이셨군요"))
+    assert eval (qa_nw_seen("장갑을 꿰매 주던 그분이다") and qa_nw_seen("이번엔 안 잊었지") and qa_nw_seen("부엉이가 어르신이셨군요"))
     assert eval (not qa_nw_seen("처음 보는 노인"))
 
 testcase v111_bonds_dodam7:

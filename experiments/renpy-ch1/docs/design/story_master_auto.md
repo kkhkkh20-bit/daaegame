@@ -2036,8 +2036,6 @@ def r13_nw_true_ending_ready():
 | `warm_support_pending` | `not r13_v111_value("warm_support_arrived")` | d12 |
 | `warm_support_ready` | `r13_v111_value("warm_support_arrived") is True` | d12 |
 | `wild_alone` | `r13_v111_value("wild_family")=="alone"` | d14 |
-| `wild_alone_fever` | `r13_v111_value("wild_family")=="alone" and bool(r13_v111_value("daram_fever12"))` | d14 |
-| `wild_alone_well` | `r13_v111_value("wild_family")=="alone" and not r13_v111_value("daram_fever12")` | d14 |
 | `wild_daram_fever` | `bool(r13_v111_value("daram_fever12"))` | d14 |
 | `wild_daram_well` | `not r13_v111_value("daram_fever12")` | d14 |
 | `wild_no_mom` | `r13_v111_value("wild_family")=="no_mom"` | d14 |
