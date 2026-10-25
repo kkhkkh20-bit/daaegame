@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "22551b066ac78d5585d4e1e8fb6c4d3ea7e21a858e45b7fb149d5b95c7f6a94f",
+  "source_stamp": "c4dd478aa7d5fd1af09bcd4d6e2e6c0a2f051ad3f169867b7cef0a55a0eecf48",
   "entries": [
     {
       "id": "NW_D11_S01_V01",
@@ -33,9 +33,165 @@
         }
       ],
       "scene_title": "장면 11-1. 빈 뿌리 집",
-      "source_hash": "863b4ca26958ab5f6a9f99d5603bada1275eb6707837b7460205934540a13ed3",
+      "source_hash": "ca044676f5c361f9aa9b4b032289f84012f1e8e223d2b4d9696020f651603977",
       "baseline_hash": "0664351af9112536992efb8d50de51861496708043510685710caecfd1663f24",
       "uid": "21b725aba56a8096c70b26a9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D11_S01_T21",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "after",
+        "MS14_D11_S01_L0021",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D11_S01_L0021",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "알아 오면?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 112,
+          "label": "r13_v111_tosil_detained11",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "ca044676f5c361f9aa9b4b032289f84012f1e8e223d2b4d9696020f651603977",
+      "baseline_hash": "44faf469906ff79e865dd923ea4d916a40f8adfbe5d4d654b05b1c63feb80e47",
+      "uid": "b3ffdd39a4dbd4caf6246d6c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D11_S01_T22",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "after",
+        "MS14_D11_S01_L0021",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D11_S01_L0021",
+      "when": null,
+      "speaker": "토실",
+      "kind": "dialogue",
+      "text": "우리 엄마 있는 데도 찾아 준다고. 아직은 못 찾았대. 그러면 나는…… 더 물어볼 수가 없잖아.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 112,
+          "label": "r13_v111_tosil_detained11",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "ca044676f5c361f9aa9b4b032289f84012f1e8e223d2b4d9696020f651603977",
+      "baseline_hash": "c827b93fb7bcd6dd96c44d6eb9885a5e90e2cb7bfd255f3f1c47f02e6dc45751",
+      "uid": "71a6946cbd431d9d1b1da881",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D11_S01_T23",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "after",
+        "MS14_D11_S01_L0041",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D11_S01_L0041",
+      "when": null,
+      "speaker": "나비",
+      "kind": "dialogue",
+      "text": "토실이를요? 왜요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 137,
+          "label": "r13_v111_nabi_arrival11",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "ca044676f5c361f9aa9b4b032289f84012f1e8e223d2b4d9696020f651603977",
+      "baseline_hash": "cc9f9931d28976bc96451da30ccd6f7ec96b9408db021ec9c286e684b4c7078a",
+      "uid": "52d99e769d1858e7e40ab29d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|MS14_D11_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D11_S01_T24",
+      "file": "game/v111/newworld/d11.json",
+      "path": [
+        "after",
+        "MS14_D11_S01_L0041",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 11,
+      "scene": "MS14_D11_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D11_S01_L0041",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "누가 이 아이한테 우리 뒤를 따라가라고 시켰대요. 벌주지는 말아 주세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 137,
+          "label": "r13_v111_nabi_arrival11",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 11-1. 빈 뿌리 집",
+      "source_hash": "ca044676f5c361f9aa9b4b032289f84012f1e8e223d2b4d9696020f651603977",
+      "baseline_hash": "22faa024c6a33625ccb75afadd218d255fe01106224ffc6f5fc1999c048b67af",
+      "uid": "49c16b9f927bdb5e954660d7",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d11|MS14_D11_S01|patch|after|행 조건 없음",
