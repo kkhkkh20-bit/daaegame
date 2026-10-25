@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "a55b36899a43f9f9e169c85da180c3aa93f44ebe0a4d70e713823c4be1ed6b86",
+  "source_stamp": "faa0e0ca0ab58b086da80bcfa11fa2c3c59956c5957a0388bc95217560f7ebd1",
   "entries": [
     {
       "id": "NW_D12_S04_A03",
@@ -35,7 +35,7 @@
         }
       ],
       "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
-      "source_hash": "0f085a103e09d3b1067a95a03fa48ae0b0720d92ee15484badd402a00e933d7b",
+      "source_hash": "c369de7597ea647429ebd99270fc932bda5005ef268ea8669099a12277a936c9",
       "baseline_hash": "104ef4285aaafb9b86e22e00dfedf397eb329f1354c1059a1f035d3aea00946f",
       "uid": "e94436c716d6481ebe6ff80d",
       "review_status": "draft",
@@ -74,7 +74,7 @@
         }
       ],
       "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
-      "source_hash": "0f085a103e09d3b1067a95a03fa48ae0b0720d92ee15484badd402a00e933d7b",
+      "source_hash": "c369de7597ea647429ebd99270fc932bda5005ef268ea8669099a12277a936c9",
       "baseline_hash": "55c079ee561b5c62ea906a145e7c734df5bf25ab24b4adb8e34f6dad1e1c6bd7",
       "uid": "e77018d6d7f665d1c5d61c6d",
       "review_status": "draft",
@@ -113,7 +113,7 @@
         }
       ],
       "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
-      "source_hash": "0f085a103e09d3b1067a95a03fa48ae0b0720d92ee15484badd402a00e933d7b",
+      "source_hash": "c369de7597ea647429ebd99270fc932bda5005ef268ea8669099a12277a936c9",
       "baseline_hash": "85bcdbcaa26d236fc5c062a00666d5bfd83c157a081b29cf12fc8da1add79caa",
       "uid": "aa9ed76675a6f1939daa51b1",
       "review_status": "draft",
@@ -152,7 +152,7 @@
         }
       ],
       "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
-      "source_hash": "0f085a103e09d3b1067a95a03fa48ae0b0720d92ee15484badd402a00e933d7b",
+      "source_hash": "c369de7597ea647429ebd99270fc932bda5005ef268ea8669099a12277a936c9",
       "baseline_hash": "55c079ee561b5c62ea906a145e7c734df5bf25ab24b4adb8e34f6dad1e1c6bd7",
       "uid": "3e452f703823fde4085dde16",
       "review_status": "draft",
@@ -191,9 +191,48 @@
         }
       ],
       "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
-      "source_hash": "0f085a103e09d3b1067a95a03fa48ae0b0720d92ee15484badd402a00e933d7b",
+      "source_hash": "c369de7597ea647429ebd99270fc932bda5005ef268ea8669099a12277a936c9",
       "baseline_hash": "85bcdbcaa26d236fc5c062a00666d5bfd83c157a081b29cf12fc8da1add79caa",
       "uid": "21fdb13812e45307088353fc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D12_S04_K01",
+      "file": "game/v111/newworld/d12.json",
+      "path": [
+        "after",
+        "MS14_D12_S04_L0042",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 12,
+      "scene": "MS14_D12_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D12_S04_L0042",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "아무도 대답하지 않는다. 식은 국 냄새만 남는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1482,
+          "label": "r13_v111_medical_arrival12",
+          "guards": []
+        }
+      ],
+      "scene_title": "장면 12-4. 같은 것을 먹었다는 말",
+      "source_hash": "c369de7597ea647429ebd99270fc932bda5005ef268ea8669099a12277a936c9",
+      "baseline_hash": "052d3c3f9a2b31c3f604f178d17f844e72587dff6ab905611d7d86cf10a4676c",
+      "uid": "5c61868b97f3c688a88bfe8d",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d12|MS14_D12_S04|patch|after|행 조건 없음",
