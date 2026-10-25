@@ -360,6 +360,9 @@ label r13_v111_mother_heat11:
 
 label r13_v111_heat_check11:
     call r13_v111_wait('heat_check11')
+    if _return==100:
+        call r13_hidden_base_marks11
+        jump r13_v111_heat_check11
     if _return==0:
         jump r13_v111_heat_seen11
     jump r13_v111_heat_check11
@@ -940,6 +943,12 @@ label r13_v111_sleep11:
 
 label r13_v111_sleep11_input:
     call r13_v111_wait('sleep11_input')
+    if _return==80:
+        call r13_hp_visit11
+        jump r13_v111_sleep11_input
+    if _return==81:
+        call r13_hp_wood11
+        jump r13_v111_sleep11_input
     if _return==0:
         jump r13_v111_sleep11_done
     jump r13_v111_sleep11_input
@@ -1716,6 +1725,9 @@ label r13_v111_day13:
 
 label r13_v111_blanket_mend13:
     call r13_v111_wait('blanket_mend13')
+    if _return==80:
+        call r13_hp_handoff13
+        jump r13_v111_blanket_mend13
     if _return==0:
         jump r13_v111_blanket_mended13
     jump r13_v111_blanket_mend13
@@ -3498,6 +3510,7 @@ label r13_v111_true_epilogue14:
     # 0.20.5 (Codex T02): the ending just read is recorded before the true epilogue replaces it.
     $ r13_fork_ending(r13_v111_value('ending14'))
     $ r13_v111_set('ending14','true')
+    call r13_hidden_base14
     $ r13_edit(location="gate")
     $ room13["v111"]["people"]=[]
     call r13_scene(R13_PLACES["gate"][1],"말을 위한 돌","quiet")

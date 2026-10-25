@@ -35,7 +35,11 @@ label r13_v111_free_day7_wait:
 
 # 대기 화면이 돌려준 번호(field-bindings.json free_day7 의 선택 차례)로 한 가지 행동을 한다.
 label r13_v111_free_day7_pick(n):
-    if n==1:
+    if n>=100:
+        call r13_hidden_base_pick7(n)
+    elif n>=80:
+        call r13_hp_pick7(n)
+    elif n==1:
         call r13_lines(r13_nw_block('doto_basket7'),'nw:doto_basket7')
     elif n==2:
         call r13_lines(r13_nw_block('doto_promise7'),'nw:doto_promise7')

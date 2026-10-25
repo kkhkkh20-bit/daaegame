@@ -37,7 +37,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 GAME = ROOT / 'game'
 SRC_SCENES = ROOT / 'docs/story-ms14/source/다람탐정_제작기준본01_대사연출조건.json'
-STORY_FILES = ('room13_v111_days123.rpy', 'room13_v111_days45.rpy', 'room13_v111_days610.rpy', 'room13_v111_days1114.rpy', 'room13_v111_owl_prevent.rpy')
+STORY_FILES = ('room13_v111_days123.rpy', 'room13_v111_days45.rpy', 'room13_v111_days610.rpy', 'room13_v111_days1114.rpy', 'room13_v111_owl_prevent.rpy', 'room13_hidden_pandol.rpy', 'room13_hidden_base.rpy')
 ENTRY = 'r13_v111_start'
 
 # 한 조건을 판정할 때 펼쳐 보는 값 조합의 상한. 넘으면 그 조건은 「알 수 없음」.
@@ -305,6 +305,9 @@ def load_game():
         p = GAME / f'v111/newworld/d{day:02d}.json'
         if p.exists():
             g.patches[day] = json.loads(p.read_text(encoding='utf-8'))
+    for name in ('hidden_pandol','hidden_base'):
+        p = GAME / ('v111/newworld/'+name+'.json')
+        if p.exists():g.patches[name]=json.loads(p.read_text(encoding='utf-8'))
     p = GAME / 'v111/newworld/reactions.json'
     g.reactions = json.loads(p.read_text(encoding='utf-8')) if p.exists() else {}
     src = (GAME / 'ms14_story.rpy').read_text(encoding='utf-8')

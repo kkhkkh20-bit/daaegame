@@ -74,7 +74,7 @@ init 301 python:
             target=v["travel_to"]
             return dict(people=v.get("people",["daram"]),options=[dict(title=R13_PLACES[target][0],location=target,move=target)])
         b=dict(R13_V111_BINDINGS.get(v.get("gate"),{}))
-        b["options"]=[dict(o,index=i) for i,o in enumerate(b.get("options",[])) if all((r13_v111_owned(k)==expected if kind=="evidence" else r13_v111_value(k)==expected) for kind,k,expected in o.get("guard",[]))]
+        b["options"]=[dict(o,index=o.get("index",i)) for i,o in enumerate(b.get("options",[])) if all((r13_v111_owned(k)==expected if kind=="evidence" else r13_v111_value(k)==expected) for kind,k,expected in o.get("guard",[]))]
         if v.get("gate")=="transport_cleanup13":
             guard_place=r13_v111_value("location:guard") if r13_v111_value("busy:guard")=="silluk_supervision" else "square"
             for option in b["options"]:
@@ -125,7 +125,7 @@ init 301 python:
         authored=r13_v111_binding().get("people",["daram"])
         # Preserve the existing residents and their scheduled staging. Explicit
         # V1.1.1 survival, relocation and custody results still take precedence.
-        people=[] if r13_v111_value("wild_night14") else list(_r13_v111_visible_people())
+        people=[] if r13_v111_value("wild_night14") or store.room13["location"] in ("hidden_pandol","hidden_base14") else list(_r13_v111_visible_people())
         people=[p for p in people if not r13_v111_value("busy:"+p) or r13_v111_value("location:"+p) in (None,store.room13["location"])]
         if r13_v111_value("piko.location") and r13_v111_value("piko.location")!=store.room13["location"]:
             people=[p for p in people if p!="resident_piko"]
@@ -237,6 +237,9 @@ label r13_v111_wait_again:
         jump r13_v111_wait_again
     if v111_pick[0]=="person":
         $ v111_person=v111_pick[1]
+        if room13["location"] in ("hidden_pandol","hidden_base14") and not any(o.get("person")==v111_person for o in v111_binding.get("options",[])):
+            call r13_hidden_idle
+            jump r13_v111_wait_again
         if r13_v111_value("wild_night14") and not any(o.get("person")==v111_person for o in v111_binding.get("options",[])):
             call r13_v111_wild_family_wait14
             jump r13_v111_wait_again
@@ -253,6 +256,10 @@ label r13_v111_wait_again:
             if _return!="back":
                 $ r13_v111_talk_person=v111_person
                 $ r13_v111_set("talked:%s:%s"%(room13["v111"].get("scene"),v111_person),True)
+            if room13["location"] in ("hidden_pandol","hidden_base14") and (_return=="present" or isinstance(_return,tuple)):
+                $ r13_v111_talk_person=None
+                call r13_hidden_idle
+                jump r13_v111_wait_again
             if r13_v111_value("wild_night14") and (_return=="present" or isinstance(_return,tuple)):
                 $ r13_v111_talk_person=None
                 $ renpy.notify("지금은 불길을 피해야 한다.")

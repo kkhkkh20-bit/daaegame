@@ -86,6 +86,7 @@ label r13_v111_board6:
 
 label r13_v111_board_done6:
     call r13_lines(r13_v111_lines(['MS14_D06_S01_L0044']),'v111:MS14_D06_S01_L0044')
+    call r13_hp_meal6
     call r13_lines(r13_v111_lines(['MS14_D06_S01_L0045']),'v111:MS14_D06_S01_L0045')
     call r13_lines(r13_v111_lines(['MS14_D06_S01_L0046']),'v111:MS14_D06_S01_L0046')
     $ r13_v111_commit('MS14_D06_S01_L0048')

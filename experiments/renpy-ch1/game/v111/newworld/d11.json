@@ -1236,7 +1236,7 @@
         "kind": "dialogue",
         "text": "판돌이오. 돌 일 하는 늙은이요. 손님이 마을 일을 몇 번 가려 줬다고 들었소. 까닭이나 들어 봅시다.",
         "expression": "neutral",
-        "when": "town_won_before11"
+        "when": "hp_unknown_trusted"
       },
       {
         "id": "NW_H_OPEN_10B",
@@ -1244,7 +1244,21 @@
         "kind": "dialogue",
         "text": "판돌이오. 돌 일 하는 늙은이요. 손님 말은 회의마다 막혔다고 들었소. ……그래도 까닭이나 들어 봅시다.",
         "expression": "neutral",
-        "when": "town_won_none_before11"
+        "when": "hp_unknown_untrusted"
+      },
+      {
+        "id": "NW_HP_REUNION11_A",
+        "speaker": "판돌",
+        "kind": "dialogue",
+        "text": "손잡이는 잘 쓰고 있소. 손님이 마을 일도 몇 번 가려 줬다고 들었소. 오늘은 무슨 얘기요?",
+        "when": "hp_known_trusted"
+      },
+      {
+        "id": "NW_HP_REUNION11_B",
+        "speaker": "판돌",
+        "kind": "dialogue",
+        "text": "손잡이는 잘 쓰고 있소. 회의에서는 자꾸 말이 막혔다던데. ……오늘 얘기는 들어 봅시다.",
+        "when": "hp_known_untrusted"
       },
       {
         "id": "NW_H_OPEN_11",

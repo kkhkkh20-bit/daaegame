@@ -362,6 +362,9 @@ label r13_v111_room_note:
 label r13_v111_bundle_open:
     call r13_v111_travel('room13','bundle_open')
     call r13_v111_wait('bundle_open')
+    if _return==100:
+        call r13_hidden_base_paper1
+        jump r13_v111_bundle_open
     $ v111_answer=_return
     if v111_answer==0:
         jump r13_v111_bundle

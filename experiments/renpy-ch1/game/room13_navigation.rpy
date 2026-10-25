@@ -69,7 +69,7 @@ init 60 python:
 
     def r13_map_region(location):
         if location in R13_INN_LOCATIONS:return "inn"
-        if location in ("forest","facility","greenhouse","altar"):return "mountain"
+        if location in ("forest","facility","greenhouse","altar","hidden_base14"):return "mountain"
         return "village"
 
     def r13_map_nodes(region):
@@ -96,6 +96,7 @@ init 60 python:
 
     def r13_map_discovered(key):
         if globals().get("r13_v111_active",lambda:False)():
+            if key=="hidden_pandol":return bool(r13_v111_value("hidden_pandol:visit_allowed"))
             if key=="greenhouse":return bool(r13_v111_value("greenhouse_address_known") and r13_v111_value("tosil_safe_handoff_confirmed"))
             if key=="altar":return bool(r13_v111_value("altar_guide_confirmed"))
             if key=="passage":return bool(r13_v111_value("E09_PASSAGE"))

@@ -186,6 +186,19 @@
         "location": "room13",
         "guard": [],
         "object": "family_bundle"
+      },
+      {
+        "index": 100,
+        "title": "서랍 밑 종이를 빼낸다",
+        "location": "room13",
+        "object": "family_bundle",
+        "guard": [
+          [
+            "state",
+            "hidden_base:paper",
+            null
+          ]
+        ]
       }
     ]
   },
@@ -1265,6 +1278,29 @@
         "title": "벽 그림과 돌판을 확인한다",
         "location": "facility",
         "object": "v111_mural"
+      },
+      {
+        "index": 100,
+        "title": "종이와 벽의 자국을 맞춰 본다",
+        "location": "facility",
+        "object": "v111_mural",
+        "guard": [
+          [
+            "state",
+            "hidden_base:paper",
+            true
+          ],
+          [
+            "state",
+            "hidden_base:plate",
+            true
+          ],
+          [
+            "state",
+            "hidden_base:marks_copied",
+            null
+          ]
+        ]
       }
     ]
   },
@@ -1521,6 +1557,24 @@
         "title": "회색 담요를 실제로 수선한다",
         "location": "school",
         "object": "blankets"
+      },
+      {
+        "index": 80,
+        "title": "누나의 돌봄 인계를 확인한다",
+        "location": "school",
+        "object": "desks",
+        "guard": [
+          [
+            "state",
+            "hidden_pandol:heat_replaced",
+            true
+          ],
+          [
+            "state",
+            "hidden_pandol:care_handed",
+            null
+          ]
+        ]
       }
     ]
   },
@@ -2006,6 +2060,52 @@
         "title": "잠자리를 정리한다",
         "location": "school",
         "object": "blankets"
+      },
+      {
+        "index": 80,
+        "title": "판돌 씨 집에 들렀다 온다",
+        "location": "school",
+        "object": "blankets",
+        "guard": [
+          [
+            "state",
+            "hidden_pandol:family_seen",
+            true
+          ],
+          [
+            "state",
+            "meeting:hypothesis",
+            "win"
+          ],
+          [
+            "state",
+            "hidden_pandol:heat_replaced",
+            null
+          ]
+        ]
+      },
+      {
+        "index": 81,
+        "title": "남은 장작 몫을 확인한다",
+        "location": "school",
+        "object": "blankets",
+        "guard": [
+          [
+            "state",
+            "hidden_pandol:family_seen",
+            true
+          ],
+          [
+            "state",
+            "meeting:hypothesis",
+            "win"
+          ],
+          [
+            "state",
+            "hidden_pandol:wood_reserved",
+            null
+          ]
+        ]
       }
     ],
     "daram_if_free": true
@@ -2605,6 +2705,127 @@
             null
           ]
         ]
+      },
+      {
+        "index": 80,
+        "title": "문고리 부품을 살핀다",
+        "location": "workshop",
+        "object": "bolts",
+        "guard": [
+          [
+            "state",
+            "hidden_pandol:spoon_seen",
+            true
+          ],
+          [
+            "state",
+            "hidden_pandol:pin_seen",
+            null
+          ]
+        ]
+      },
+      {
+        "index": 81,
+        "title": "숟가락에 맞는 핀일까?",
+        "location": "workshop",
+        "person": "buri",
+        "guard": [
+          [
+            "state",
+            "hidden_pandol:met",
+            true
+          ],
+          [
+            "state",
+            "hidden_pandol:pin_seen",
+            true
+          ],
+          [
+            "state",
+            "hidden_pandol:pin_fitted",
+            null
+          ]
+        ]
+      },
+      {
+        "index": 82,
+        "title": "숟가락을 가져오셨습니까?",
+        "location": "dining",
+        "person": "npc_pandol",
+        "guard": [
+          [
+            "state",
+            "hidden_pandol:pin_fitted",
+            true
+          ],
+          [
+            "state",
+            "hidden_pandol:visit_allowed",
+            null
+          ]
+        ]
+      },
+      {
+        "index": 83,
+        "title": "손잡이를 고쳐 쟁반에 놓는다",
+        "location": "hidden_pandol",
+        "object": "hp_table",
+        "guard": [
+          [
+            "state",
+            "hidden_pandol:visit_allowed",
+            true
+          ],
+          [
+            "state",
+            "hidden_pandol:family_seen",
+            null
+          ]
+        ]
+      },
+      {
+        "index": 84,
+        "title": "안쪽 난로를 살핀다",
+        "location": "hidden_pandol",
+        "object": "hp_stove",
+        "guard": [
+          [
+            "state",
+            "hidden_pandol:family_seen",
+            true
+          ]
+        ]
+      },
+      {
+        "index": 100,
+        "title": "버리는 문고리 부품을 살핀다",
+        "location": "workshop",
+        "object": "bolts",
+        "guard": [
+          [
+            "state",
+            "hidden_base:plate_seen",
+            null
+          ]
+        ]
+      },
+      {
+        "index": 101,
+        "title": "이 작은 판은 가져가도 될까?",
+        "location": "workshop",
+        "person": "buri",
+        "guard": [
+          [
+            "state",
+            "hidden_base:plate_seen",
+            true
+          ],
+          [
+            "state",
+            "hidden_base:plate",
+            null
+          ]
+        ]
       }
     ],
     "people_by_location": {
@@ -2619,6 +2840,12 @@
       "room13": [],
       "workshop": [
         "buri"
+      ],
+      "dining": [
+        "npc_pandol"
+      ],
+      "hidden_pandol": [
+        "npc_pandol"
       ]
     }
   },
@@ -2701,6 +2928,287 @@
         "location": "forest",
         "guard": [],
         "object": "forest_roots"
+      }
+    ]
+  },
+  "hp_meal6": {
+    "location": "dining",
+    "people": [
+      "npc_pandol",
+      "daram",
+      "nabi"
+    ],
+    "options": [
+      {
+        "index": 0,
+        "title": "다람아, 애들한테 가자.",
+        "location": "dining",
+        "person": "daram"
+      },
+      {
+        "index": 1,
+        "title": "식기 보따리를 살핀다",
+        "location": "dining",
+        "object": "table",
+        "guard": [
+          [
+            "state",
+            "hidden_pandol:spoon_seen",
+            null
+          ]
+        ]
+      },
+      {
+        "index": 2,
+        "title": "숟가락 손잡이가 헐겁네요.",
+        "location": "dining",
+        "person": "npc_pandol",
+        "guard": [
+          [
+            "state",
+            "hidden_pandol:spoon_seen",
+            true
+          ],
+          [
+            "state",
+            "hidden_pandol:met",
+            null
+          ]
+        ]
+      }
+    ]
+  },
+  "hp_house11": {
+    "location": "hidden_pandol",
+    "people": [
+      "npc_pandol"
+    ],
+    "options": [
+      {
+        "index": 0,
+        "title": "학교로 돌아가겠습니다.",
+        "location": "hidden_pandol",
+        "person": "npc_pandol"
+      },
+      {
+        "index": 1,
+        "title": "난로와 재통을 살핀다",
+        "location": "hidden_pandol",
+        "object": "hp_stove",
+        "guard": [
+          [
+            "state",
+            "hidden_pandol:stove_seen",
+            null
+          ]
+        ]
+      },
+      {
+        "index": 2,
+        "title": "장작으로 바꿔도 되겠습니까?",
+        "location": "hidden_pandol",
+        "person": "npc_pandol",
+        "guard": [
+          [
+            "state",
+            "hidden_pandol:stove_seen",
+            true
+          ],
+          [
+            "state",
+            "hidden_pandol:wood_reserved",
+            true
+          ],
+          [
+            "state",
+            "hidden_pandol:consent",
+            null
+          ]
+        ]
+      },
+      {
+        "index": 3,
+        "title": "장작 상자에 가져온 몫을 놓는다",
+        "location": "hidden_pandol",
+        "object": "hp_wood",
+        "guard": [
+          [
+            "state",
+            "hidden_pandol:consent",
+            true
+          ],
+          [
+            "state",
+            "hidden_pandol:wood_delivered",
+            null
+          ]
+        ]
+      },
+      {
+        "index": 4,
+        "title": "집게로 돌을 꺼내 장작을 땐다",
+        "location": "hidden_pandol",
+        "object": "hp_stove",
+        "guard": [
+          [
+            "state",
+            "hidden_pandol:consent",
+            true
+          ],
+          [
+            "state",
+            "hidden_pandol:wood_delivered",
+            true
+          ],
+          [
+            "state",
+            "hidden_pandol:tongs",
+            true
+          ],
+          [
+            "state",
+            "hidden_pandol:heat_replaced",
+            null
+          ]
+        ]
+      },
+      {
+        "index": 5,
+        "title": "벽의 집게를 빌린다",
+        "location": "hidden_pandol",
+        "object": "hp_tongs",
+        "guard": [
+          [
+            "state",
+            "hidden_pandol:stove_seen",
+            true
+          ],
+          [
+            "state",
+            "hidden_pandol:tongs",
+            null
+          ]
+        ]
+      }
+    ]
+  },
+  "hidden_base_offer14": {
+    "location": "school",
+    "people": [
+      "mom",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "수첩을 챙기러 같이 가자.",
+        "location": "school",
+        "person": "mom"
+      },
+      {
+        "title": "오늘은 여기서 쉰다",
+        "location": "school",
+        "object": "blankets"
+      }
+    ]
+  },
+  "hidden_base_door14": {
+    "location": "hidden_base14",
+    "people": [
+      "mom",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "문틀의 홈을 살핀다",
+        "location": "hidden_base14",
+        "object": "hb_door",
+        "guard": [
+          [
+            "state",
+            "hidden_base:frame_seen",
+            null
+          ]
+        ]
+      },
+      {
+        "title": "홈 위에 종이를 댄다",
+        "location": "hidden_base14",
+        "object": "hb_door",
+        "guard": [
+          [
+            "state",
+            "hidden_base:frame_seen",
+            true
+          ],
+          [
+            "state",
+            "hidden_base:paper_set",
+            null
+          ]
+        ]
+      },
+      {
+        "title": "표시한 면을 바깥으로 끼운다",
+        "location": "hidden_base14",
+        "object": "hb_door",
+        "guard": [
+          [
+            "state",
+            "hidden_base:paper_set",
+            true
+          ]
+        ]
+      },
+      {
+        "title": "표시한 면을 안으로 끼운다",
+        "location": "hidden_base14",
+        "object": "hb_door",
+        "guard": [
+          [
+            "state",
+            "hidden_base:paper_set",
+            true
+          ]
+        ]
+      },
+      {
+        "title": "문을 연다",
+        "location": "hidden_base14",
+        "object": "hb_door"
+      },
+      {
+        "title": "학교로 돌아가자.",
+        "location": "hidden_base14",
+        "person": "mom"
+      }
+    ]
+  },
+  "hidden_base_room14": {
+    "location": "hidden_base14",
+    "people": [
+      "mom",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "정비 단면판을 읽는다",
+        "location": "hidden_base14",
+        "object": "hb_section"
+      },
+      {
+        "title": "고장 점검표를 읽는다",
+        "location": "hidden_base14",
+        "object": "hb_incident"
+      },
+      {
+        "title": "엄마의 현장 수첩을 챙긴다",
+        "location": "hidden_base14",
+        "object": "hb_notebook"
+      },
+      {
+        "title": "학교로 돌아간다",
+        "location": "hidden_base14",
+        "object": "hb_door"
       }
     ]
   }

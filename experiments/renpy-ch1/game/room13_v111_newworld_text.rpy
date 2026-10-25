@@ -20,7 +20,7 @@
 # Conditions are named Python predicates, never evaluated strings.
 # With every file empty the game shows the same lines in the same order as before.
 init 319 python:
-    R13_NW_TEXT_DAYS=["d%02d"%n for n in range(1,15)]
+    R13_NW_TEXT_DAYS=["d%02d"%n for n in range(1,15)]+["hidden_pandol","hidden_base"]
     R13_NW_TEXT=dict(replace={},before={},after={},drop=[],evidence={},new_evidence={},blocks={},titles={})
     for _nw_day in R13_NW_TEXT_DAYS:
         _nw_path="v111/newworld/%s.json"%_nw_day
@@ -46,6 +46,10 @@ init 319 python:
     # Named conditions for added lines. Add one line here when an event needs it.
     R13_NW_WHEN={
         "always":lambda:True,
+        "hp_known_trusted":lambda:bool(r13_v111_value("hidden_pandol:met")) and R13_NW_WHEN["town_won_before11"](),
+        "hp_known_untrusted":lambda:bool(r13_v111_value("hidden_pandol:met")) and R13_NW_WHEN["town_won_none_before11"](),
+        "hp_unknown_trusted":lambda:not r13_v111_value("hidden_pandol:met") and R13_NW_WHEN["town_won_before11"](),
+        "hp_unknown_untrusted":lambda:not r13_v111_value("hidden_pandol:met") and R13_NW_WHEN["town_won_none_before11"](),
         "owl_alive":lambda:r13_v111_value("OWL_ALIVE") is not False,
         "owl_dead":lambda:r13_v111_value("OWL_ALIVE") is False,
         "piko_alive":lambda:r13_v111_value("piko_alive") is not False,
