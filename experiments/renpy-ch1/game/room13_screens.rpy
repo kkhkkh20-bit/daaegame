@@ -109,7 +109,7 @@ screen r13_hub(entry=False):
         # 0.18.56 (owner): no work/shop board at the top. Work is asked for from the person who
         # gives it, goods are bought from the seller in person; only the purse is shown.
         frame:
-            xpos 510 ypos 100 padding (12,6) background r13_field_paper()
+            xpos 510 ypos 100 padding (12,6) background r13_field_paper(label=True)
             text ("가진 돈 %d냥"%r13_wallet(room13)["cash"]) size r13_read_size(18,21) color "#664932"
     if not entry and not r13_v111_active():
         use r13_event_offers(input_ready)
@@ -181,7 +181,7 @@ screen r13_world_contents(entry=False,ready=False):
             add leader xpos leader.left ypos leader.top
         textbutton (R13_NAMES[nameplate["person"]]+(" !" if not entry and nameplate["person"]=="resident_piko" and r13_offer_for_person("resident_piko")=="r13_w1c_portrait" else "")):
             area nameplate["rect"]
-            padding (7,2) background r13_field_paper() hover_background Transform(r13_field_paper(),matrixcolor=BrightnessMatrix(.05)) text_size int((18 if r13_touch_ui() else 16)/r13_field_zoom()) text_color "#4b3021" text_hover_color "#9c3c2b" text_font R13_UI_BOLD_FONT text_xalign .5 text_yalign .5
+            padding (7,2) background r13_field_paper(label=True) hover_background r13_field_paper(label=True,hover=True) text_size int((18 if r13_touch_ui() else 16)/r13_field_zoom()) text_color "#4b3021" text_hover_color "#9c3c2b" text_font R13_UI_BOLD_FONT text_xalign .5 text_yalign .5
             action r13_person_action(nameplate["person"],entry) sensitive ready
         if not entry and r13_offer_for_person(nameplate["person"]) and not (nameplate["person"]=="resident_piko" and r13_offer_for_person("resident_piko")=="r13_w1c_portrait"):
             # 0.18.53: something is happening with this person; press them to see it.
