@@ -114,6 +114,9 @@ testcase v111_nw_d14_true_ending:
     run Function(r13_v111_set,"meeting:hypothesis","win")
     run Function(r13_v111_set,"meeting:blanket","win")
     run Function(r13_v111_set,"meeting:altar","win")
+    # 2026-10-24: 진엔딩 조건에 불·수프 대승리가 더해졌다(GRAND_WIN_DESIGN.md 2-5).
+    run Function(r13_v111_set,"grand:fire",True)
+    run Function(r13_v111_set,"grand:soup",True)
     run Jump("r13_v111_cookie14")
     click pos (900,600) until screen "r13_confirm" timeout 150
     assert eval (r13_v111_value("ending14")=="true" and qa_nw_seen("여기만이 아닐지도 몰라") and qa_nw_seen("닫음"))

@@ -245,6 +245,23 @@ init 319 python:
         "buri_site_ask14":lambda:bool(r13_v111_value("buri_device_consent")) and not r13_v111_value("mayor_site_decided") and r13_v111_person_alive("buri"),
         # 대안 9: 마을의 아침인데 이 아침을 함께 못 맞은 사람이 있는 판(진엔딩을 막는 까닭 하나).
         "morning_with_loss14":lambda:r13_v111_value("ending14")=="morning" and r13_nw_loss_count()>0 and r13_v111_actor_ready("mom") and r13_v111_actor_ready("daram"),
+        # 2026-10-24 대승리(GRAND_WIN_DESIGN.md 1·2장, 결정 4·7): 5일 빨래터에서 엿들은 판, 7일 막내에게서 숨긴 자리를 들은 판.
+        "laundry_overheard5":lambda:r13_v111_value("grand_laundry_seen5") is True,
+        "ticket_spot_kid7":lambda:r13_v111_value("grand_ticket_spot_kid") is True and r13_v111_value("grand_laundry_seen5") is not True,
+        # 7일 불 회의를 배급표로 이긴 판(대승리)과 보통으로 이긴 판.
+        "fire_grand":lambda:r13_v111_value("grand:fire") is True,
+        "fire_win_plain":lambda:r13_v111_value("meeting:fire")=="win" and r13_v111_value("grand:fire") is not True,
+        "karo_ready11":lambda:r13_v111_actor_ready("karo"),
+        # 12일 수프 회의를 돌아온 그릇으로 이긴 판. 돌목이 그 자리에 있으면 그가 칸을 무효로 적는다.
+        "grand_soup":lambda:r13_v111_value("grand:soup") is True,
+        "grand_soup_guard":lambda:r13_v111_value("grand:soup") is True and r13_v111_actor_ready("guard"),
+        "grand_soup_noguard":lambda:r13_v111_value("grand:soup") is True and not r13_v111_actor_ready("guard"),
+        # 이송 예정 칸이 무효가 된 판(수프 대승리, 또는 국을 미리 막은 판에서 돌목에게 그릇을 보인 판).
+        "list_voided":lambda:r13_v111_value("transfer_list_voided") is True,
+        "list_not_voided":lambda:r13_v111_value("transfer_list_voided") is not True,
+        "daram_listed_voided13":lambda:r13_v111_value("listed:daram") is True and r13_v111_value("transfer_list_voided") is True and r13_v111_actor_ready("guard"),
+        "daram_listed_unvoided13":lambda:r13_v111_value("listed:daram") is True and not (r13_v111_value("transfer_list_voided") is True and r13_v111_actor_ready("guard")),
+        "daram_departs13":lambda:r13_v111_value("listed:daram") is True and r13_v111_value("transfer_list_voided") is not True,
     }
     for _nw_who in ("resident_piko","kid_kkomi","resident_owlgp","resident_nero","kid_dodam","neoul","resident_momo","v111_lowerroad_elder"):
         R13_NW_WHEN["dead:"+_nw_who]=(lambda w=_nw_who:w in r13_nw_dead())

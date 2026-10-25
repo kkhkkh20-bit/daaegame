@@ -1270,6 +1270,52 @@
         "title": "빈 수레와 덮개를 부탁합니다.",
         "location": "square",
         "person": "karo"
+      },
+      {
+        "title": "수레 짐칸을 살핀다",
+        "location": "square",
+        "object": "cart",
+        "guard": [
+          [
+            "state",
+            "grand_bowl_seen11",
+            null
+          ]
+        ]
+      },
+      {
+        "title": "그릇 하나를 집는다",
+        "location": "square",
+        "object": "cart",
+        "guard": [
+          [
+            "state",
+            "grand_bowl_seen11",
+            true
+          ],
+          [
+            "state",
+            "grand_bowl_pocket",
+            null
+          ]
+        ]
+      },
+      {
+        "title": "짐칸을 다시 본다",
+        "location": "square",
+        "object": "cart",
+        "guard": [
+          [
+            "state",
+            "grand_bowl_seen11",
+            true
+          ],
+          [
+            "state",
+            "grand_bowl_pocket",
+            null
+          ]
+        ]
       }
     ]
   },
@@ -1412,6 +1458,28 @@
         "title": "병과 파편의 경계를 대조한다",
         "location": "school",
         "object": "desks"
+      },
+      {
+        "title": "주머니의 그릇을 배식대 옆에 놓아 본다",
+        "location": "school",
+        "object": "v111_bowl_table",
+        "guard": [
+          [
+            "state",
+            "grand_bowl_pocket",
+            true
+          ],
+          [
+            "evidence",
+            "NW_RETURNED_BOWL",
+            false
+          ],
+          [
+            "state",
+            "bowls_carried12",
+            true
+          ]
+        ]
       }
     ]
   },
@@ -1789,6 +1857,40 @@
         "title": "창고 문 앞에서 무엇을 보셨습니까?",
         "location": "laundry",
         "person": "resident_bori"
+      },
+      {
+        "title": "기름통을 살핀다",
+        "location": "laundry",
+        "object": "v111_drum",
+        "guard": [
+          [
+            "state",
+            "grand_ticket_spot_known",
+            true
+          ],
+          [
+            "evidence",
+            "NW_NUBI_TICKET",
+            false
+          ]
+        ]
+      },
+      {
+        "title": "통 밑 홈을 들춘다",
+        "location": "laundry",
+        "object": "v111_drum",
+        "guard": [
+          [
+            "state",
+            "grand_ticket_spot_known",
+            true
+          ],
+          [
+            "evidence",
+            "NW_NUBI_TICKET",
+            false
+          ]
+        ]
       }
     ]
   },
@@ -2114,15 +2216,29 @@
       "resident_teacher",
       "kid_nubi1",
       "kid_nubi2",
-      "kid_nubi3"
+      "kid_nubi3",
+      "daram"
     ],
     "options": [
       {
         "title": "누비 씨의 아이 셋 인수를 확인한다",
         "location": "school",
         "person": "resident_teacher"
+      },
+      {
+        "title": "막내가 네 가방만 보고 있네.",
+        "location": "school",
+        "person": "daram",
+        "guard": [
+          [
+            "state",
+            "grand_snack_ready7",
+            true
+          ]
+        ]
       }
-    ]
+    ],
+    "daram_if_free": true
   },
   "carrier_receipt12": {
     "location": "school",
@@ -2286,6 +2402,86 @@
         "location": "v111_woodshed",
         "person": "kid_kkomi",
         "guard": []
+      }
+    ]
+  },
+  "laundry5": {
+    "location": "laundry",
+    "people": [
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "빨래 줄에 젖은 장갑을 건다",
+        "location": "laundry",
+        "object": "v111_line",
+        "guard": [
+          [
+            "state",
+            "grand_laundry_seen5",
+            null
+          ]
+        ]
+      },
+      {
+        "title": "여관 접수대",
+        "location": "inn",
+        "move": "inn"
+      }
+    ],
+    "daram_if_free": true
+  },
+  "early_bowl12": {
+    "location": "school",
+    "people": [
+      "daram",
+      "mom",
+      "nabi",
+      "resident_teacher",
+      "karo",
+      "kid_dodam",
+      "kid_saemi",
+      "guard"
+    ],
+    "options": [
+      {
+        "title": "저녁 배식을 돕는다",
+        "location": "school",
+        "object": "stove"
+      },
+      {
+        "title": "주머니의 그릇을 배식대 옆에 놓아 본다",
+        "location": "school",
+        "object": "v111_bowl_table",
+        "guard": [
+          [
+            "state",
+            "grand_bowl_pocket",
+            true
+          ],
+          [
+            "evidence",
+            "NW_RETURNED_BOWL",
+            false
+          ]
+        ]
+      },
+      {
+        "title": "이 그릇 바닥의 표시는 무엇입니까?",
+        "location": "school",
+        "person": "guard",
+        "guard": [
+          [
+            "evidence",
+            "NW_RETURNED_BOWL",
+            true
+          ],
+          [
+            "state",
+            "grand:soup",
+            null
+          ]
+        ]
       }
     ]
   }

@@ -1003,6 +1003,13 @@
       "variants": {
         "observed": "솜이: “할아버지는 갱도 맨 아래까지 갔대. 안쪽 돌을 제일 많이 캤대.” 무쇠는 어제 한 말을 오늘 모른다."
       }
+    },
+    "NW_LAUNDRY_TALK": {
+      "name": "빨래터에서 들은 너울의 말",
+      "kind": "관찰기록",
+      "variants": {
+        "observed": "5일 저녁 빨래터. 너울이 빨래하던 여자에게 도장 찍힌 종이를 건네며 말했다. “그 창고가 비면, 그 몫은 당신 집으로 가오. 명단은 내가 손보겠소.”"
+      }
     }
   },
   "blocks": {
@@ -1088,6 +1095,93 @@
         "kind": "dialogue",
         "text": "이제 손 안 트겠다!",
         "expression": "joy"
+      }
+    ],
+    "laundry_line5": [
+      {
+        "id": "NW_GW_D05_01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "소매와 장갑이 눈에 젖었다. 빨래터 솥이 아직 따뜻하다. 빨래 줄에 잠깐 걸어 말리고 가자."
+      },
+      {
+        "id": "NW_GW_D05_02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "젖은 장갑을 줄에 걸자, 늘어진 빨래 너머 솥 곁에서 낮은 목소리가 들린다."
+      },
+      {
+        "id": "NW_GW_D05_03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "장부를 옆구리에 낀 너울이다. 맞은편에는 빨래를 하던 여자가 방망이를 쥐고 서 있다."
+      }
+    ],
+    "laundry_overhear5": [
+      {
+        "id": "NW_GW_D05_04",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "이번 주 배급이 또 줄었소. 학교 뒤 장작 창고에 표 없는 애들이 사는 건 아시오?"
+      },
+      {
+        "id": "NW_GW_D05_05",
+        "speaker": "누비",
+        "kind": "dialogue",
+        "text": "……알아요. 밤마다 뒤창으로 불빛이 새요.",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_GW_D05_06",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "그 창고가 비면, 그 몫은 당신 집으로 가오. 여기 적어 두었소."
+      },
+      {
+        "id": "NW_GW_D05_07",
+        "speaker": null,
+        "kind": "narration",
+        "text": "너울이 도장 찍힌 종이 한 장을 내민다. 여자는 받아 들고 한참 들여다본다."
+      },
+      {
+        "id": "NW_GW_D05_08",
+        "speaker": "누비",
+        "kind": "dialogue",
+        "text": "우리 애가 셋이에요. ……정말 와요?",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_GW_D05_09",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "표에 적힌 대로요. 명단은 내가 손보겠소."
+      },
+      {
+        "id": "NW_GW_D05_10",
+        "speaker": null,
+        "kind": "narration",
+        "text": "너울이 골목 쪽으로 걸어 나간다. 여자는 주위를 한 번 둘러보고, 솥 옆 기름통을 기울여 밑의 홈에 종이를 밀어 넣는다."
+      },
+      {
+        "id": "NW_GW_D05_11",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "아빠, 저 아줌마 뭐 숨겼어?",
+        "expression": "anxious",
+        "when": "daram_ready"
+      },
+      {
+        "id": "NW_GW_D05_12",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "……남의 거야. 우리는 장갑만 말리고 가자.",
+        "when": "daram_ready"
+      },
+      {
+        "id": "NW_GW_D05_13",
+        "speaker": null,
+        "kind": "narration",
+        "text": "장갑이 미지근해졌다. 줄에서 걷어 품에 넣는다."
       }
     ]
   }

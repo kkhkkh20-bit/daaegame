@@ -199,10 +199,17 @@
       "text": "누구를.",
       "expression": "anxious"
     },
-    "MS14_D07_S01_L0034": {
-      "text": "창고에 사는 애들요. 불이 보이면 나올 줄 알았어요.",
-      "expression": "anxious"
-    },
+    "MS14_D07_S01_L0034": [
+      {
+        "text": "창고에 사는 애들요. ……학교로 옮겨 가는 건 봤어요. 그래도 창고가 서 있으면 또 돌아오잖아요.",
+        "when": "fire_evacuated",
+        "expression": "anxious"
+      },
+      {
+        "text": "창고에 사는 애들요. 불이 보이면 나올 줄 알았어요.",
+        "expression": "anxious"
+      }
+    ],
     "MS14_D07_S01_L0035": {
       "text": "문 앞에다?",
       "expression": "anxious"
@@ -537,7 +544,37 @@
         "speaker": null,
         "kind": "narration",
         "text": "회의 기록을 맡은 사람이 그 줄을 옮겨 적는다. 너울은 끝까지 그 종이를 보지 않는다.",
-        "when": "fire_win"
+        "when": "fire_win_plain"
+      },
+      {
+        "id": "NW_GW_D07_11",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "말만이 아닙니다. 이 표에 적혀 있습니다. ‘창고가 비면 빨래터 누비네로. 처리 너울’.",
+        "when": "fire_grand",
+        "beat": "interrupt"
+      },
+      {
+        "id": "NW_GW_D07_12",
+        "speaker": null,
+        "kind": "narration",
+        "text": "기록을 맡은 사람이 표를 받아 들고 그 줄을 그대로 옮겨 적는다. 표는 회의 기록철 사이에 끼운다.",
+        "when": "fire_grand"
+      },
+      {
+        "id": "NW_GW_D07_13",
+        "speaker": "누비",
+        "kind": "dialogue",
+        "text": "……그거, 우리 애들 밥이었어요.",
+        "expression": "anxious",
+        "when": "fire_grand"
+      },
+      {
+        "id": "NW_GW_D07_14",
+        "speaker": null,
+        "kind": "narration",
+        "text": "너울이 이번에는 그 종이를 본다. 끝까지 아무 말도 하지 않는다.",
+        "when": "fire_grand"
       },
       {
         "id": "NW_D07_S02_P01",
@@ -835,6 +872,16 @@
         "kind": "dialogue",
         "text": "그 애들은 늘 뒤창으로 드나들잖아요. 앞문에 불이 보이면…… 뒤창으로 나갈 줄 알았어요.",
         "expression": "anxious",
+        "beat": "cornered",
+        "when": "fire_not_evacuated"
+      },
+      {
+        "id": "NW_D07_S01_A03E",
+        "speaker": "누비",
+        "kind": "dialogue",
+        "text": "창고가 비면 그 몫이 우리 집에 온댔어요. 창고가 없어지면…… 돌아올 자리도 없고요.",
+        "expression": "anxious",
+        "when": "fire_evacuated",
         "beat": "cornered"
       },
       {
@@ -910,6 +957,13 @@
       }
     ],
     "MS14_D07_S01_L0002": [
+      {
+        "id": "NW_GW_D07_00",
+        "speaker": "아빠",
+        "kind": "thought",
+        "text": "그저께 저녁, 솥 곁에서 너울에게 종이를 받던 그 여자다.",
+        "when": "laundry_overheard5"
+      },
       {
         "id": "NW_D07_S01_V02",
         "speaker": null,
@@ -1232,6 +1286,122 @@
         "text": "……먹기나 해라. 국 식는다.",
         "expression": "neutral"
       }
+    ],
+    "nubi_snack7": [
+      {
+        "id": "NW_GW_D07_01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "다람아, 저 막내가 네 가방만 보고 있네."
+      },
+      {
+        "id": "NW_GW_D07_02",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "……이거 엄마 줄 건데.",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_GW_D07_03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "다람이 봉지를 열어 작은 과자 하나를 꺼낸다. 제일 큰 것은 그대로 둔다."
+      },
+      {
+        "id": "NW_GW_D07_04",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "하나만. 큰 건 엄마 거야."
+      },
+      {
+        "id": "NW_GW_D07_05",
+        "speaker": "누비의 막내",
+        "kind": "dialogue",
+        "text": "고마워. ……이제 우리 밥 많아진대. 엄마가 그랬어."
+      },
+      {
+        "id": "NW_GW_D07_06",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "그래? 누가 그러던?"
+      },
+      {
+        "id": "NW_GW_D07_07",
+        "speaker": "누비의 막내",
+        "kind": "dialogue",
+        "text": "장부 든 아저씨가 엄마한테 도장 찍힌 종이를 줬어. 엄마가 솥 옆 통 밑에 넣었어."
+      },
+      {
+        "id": "NW_GW_D07_08",
+        "speaker": null,
+        "kind": "narration",
+        "text": "선생님이 아이들을 부르자, 막내가 과자를 쥔 채 뛰어간다."
+      }
+    ],
+    "drum_look7": [
+      {
+        "id": "NW_GW_D07_21",
+        "speaker": "아빠",
+        "kind": "thought",
+        "text": "통 밑이 젖어 있다. 그저께 저녁, 저 아래로 종이를 밀어 넣었지.",
+        "when": "laundry_overheard5"
+      },
+      {
+        "id": "NW_GW_D07_22",
+        "speaker": "아빠",
+        "kind": "thought",
+        "text": "막내가 말한 통이다. 솥 옆, 통 밑.",
+        "when": "ticket_spot_kid7"
+      },
+      {
+        "id": "NW_GW_D07_23",
+        "speaker": null,
+        "kind": "narration",
+        "text": "반쯤 빈 등유 통이다. 밑바닥 한쪽이 들떠 있다."
+      }
+    ],
+    "nubi_ticket7": [
+      {
+        "id": "NW_GW_D07_31",
+        "speaker": null,
+        "kind": "narration",
+        "text": "통을 살짝 기울여 밑의 홈을 들춘다. 젖은 종이 한 장이 눌려 있다."
+      },
+      {
+        "id": "NW_GW_D07_32",
+        "speaker": null,
+        "kind": "narration",
+        "text": "누비는 빨래 방망이를 두드리느라 이쪽을 돌아보지 않는다."
+      },
+      {
+        "id": "NW_GW_D07_33",
+        "speaker": null,
+        "kind": "narration",
+        "text": "도장 찍힌 배급표다. 누비네 이름 칸 아래에 줄 하나가 덧붙어 있다."
+      },
+      {
+        "id": "NW_GW_D07_34",
+        "speaker": "아빠",
+        "kind": "thought",
+        "text": "‘처리 너울’. ……어디서 본 글씨다."
+      }
+    ],
+    "laundry_talk_rebut7": [
+      {
+        "id": "NW_GW_D07_41",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "손님이 담 뒤에서 들은 말을 회의 기록에 적으라는 거요?"
+      }
     ]
+  },
+  "new_evidence": {
+    "NW_NUBI_TICKET": {
+      "name": "누비네 배급표의 덧붙인 줄",
+      "kind": "물증",
+      "variants": {
+        "observed": "도장 찍힌 배급표 한 장. 누비네 이름 칸 아래에 줄이 하나 덧붙어 있다. ‘장작 창고 몫 넷 — 창고가 비면 빨래터 누비네로. 처리 너울’."
+      }
+    }
   }
 }

@@ -429,6 +429,13 @@ label r13_v111_rescue_cart11:
     call r13_v111_wait('rescue_cart11')
     if _return==0:
         jump r13_v111_rescue_ready11
+    # 2026-10-24 대승리 S1(GRAND_WIN_DESIGN.md 2-3): 짐칸을 비우며 그릇 상자를 내리고, 하나를 주머니에 넣을 수 있다.
+    if _return==1:
+        call r13_v111_bowl_cart11
+    if _return==2:
+        call r13_v111_bowl_pocket11
+    if _return==3:
+        call r13_lines(r13_nw_block('bowl_cart_again11'),'nw:bowl_cart_again11')
     jump r13_v111_rescue_cart11
 
 label r13_v111_rescue_ready11:
@@ -1294,6 +1301,9 @@ label r13_v111_bottle_match12:
     call r13_v111_wait('bottle_match12')
     if _return==0:
         jump r13_v111_bottle_matched12
+    # 2026-10-24 대승리 S1: 11일 주머니에 넣은 그릇을 작은 배식대 옆에 놓아 본 판에서만 자료가 된다.
+    if _return==1:
+        call r13_v111_bowl_compare12
     jump r13_v111_bottle_match12
 
 label r13_v111_bottle_matched12:
@@ -1451,6 +1461,10 @@ label r13_v111_list_wrong12:
 label r13_v111_list_won12:
     $ r13_nw_meeting_end("soup","win")
     $ r13_v111_set('transfer_list_secured',True)
+    # 2026-10-24 대승리(GRAND_WIN_DESIGN.md 2-4): 돌아온 그릇으로 이겼으면 돌목이 이송 예정 칸을 무효로 적는다.
+    if r13_v111_value("meeting:soup")=="win" and r13_nw_grand(["명단과 흰 그릇을 대조한다"],"NW_RETURNED_BOWL"):
+        $ r13_v111_set("grand:soup",True)
+        $ r13_v111_set("transfer_list_voided",True)
     call r13_lines(r13_nw_block('soup_list_won12'),'nw:soup_list_won12')
     jump r13_v111_soup_after_route12
 
@@ -1638,6 +1652,9 @@ label r13_v111_early12:
     $ r13_v111_set('route12','early_prevented')
     $ r13_v111_set('school_heat_connected',True)
     $ r13_v111_set('busy:karo',False)
+    # 2026-10-24 결정 7: 수프 회의가 없는 판. 주머니에 그릇을 든 판에만 돌목이 문간에 선다.
+    if r13_v111_value('grand_bowl_pocket') and r13_v111_person_alive('guard') and not r13_v111_value('departed:guard'):
+        call r13_v111_early_bowl12
     # 0.20.7 (ending review 8): the prevented path gets its own ordinary evening.
     call r13_lines(r13_nw_block('early_ordinary12'),'nw:early_ordinary12')
     jump r13_v111_sleep12
@@ -1893,6 +1910,8 @@ label r13_v111_mending_wrong13:
         _aboard=list(r13_v111_value("cart_roster") or ["npc_pandol","resident_momo","resident_guldol"])
         if r13_v111_value("teacher_transfer")=="listed" and r13_v111_person_alive("resident_teacher"):_aboard.append("resident_teacher")
         if r13_v111_value("silluk_status")=="supervised_compulsory_labor" and r13_v111_person_alive("resident_siluk"):_aboard.append("resident_siluk")
+        # 2026-10-24 대승리(수프): 무효 칸으로 실린 사람은 떠나기 전에 내린다(blanket_lost13 의 무효 줄).
+        r13_gw_void_down()
         _aboard=[p for p in dict.fromkeys(_aboard+r13_nw_listed()) if not r13_v111_value("handed:"+p)]
         r13_v111_set("departed_names",_aboard)
         for _p in _aboard:r13_v111_set("departed:"+_p,True)
@@ -1964,6 +1983,8 @@ label r13_v111_stop_cart13:
         call r13_lines(r13_v111_lines(['MS14_D13_S04_L0004']),'v111:MS14_D13_S04_L0004')
     $ r13_v111_set('cart_stopped',True)
     $ r13_v111_set('stop_actor','resident_badook')
+    # 2026-10-24 대승리(수프): 이송 예정 칸이 무효면 그 칸으로 실린 사람이 모두 이 자리에서 내린다.
+    call r13_v111_listed_void13
     # Audit d11-14 #7: listed Daram is untied as soon as the cart stops.
     if r13_v111_value("listed:daram") and not r13_v111_value("handed:daram"):
         call r13_lines(r13_nw_block('listed_down_daram13'),'nw:listed_down_daram13:stop')
@@ -2492,9 +2513,15 @@ label r13_v111_crowd13:
     call r13_lines(r13_v111_lines(['MS14_D13_C_L0003']),'v111:MS14_D13_C_L0003')
     if r13_v111_value('family_location')=='square':
         call r13_v111_daram_crowd13
+    # 2026-10-24 대승리(불, GRAND_WIN_DESIGN.md 1-5): 7일 회의에 배급표가 적힌 판에서는 누비가 먼저 나선다.
+    if r13_v111_value('neoul_promise_proven') and r13_v111_person_alive('resident_nubi') and r13_v111_person_alive('neoul'):
+        $ r13_v111_join(['resident_nubi'])
+        call r13_lines(r13_nw_block('crowd_record13'),'nw:crowd_record13')
     # 2026-10-24 행동 검수 13-11: 메뉴 글이 두 뜻으로 읽혔다(「너울 앞을 막는다」=달아나는 길을 막는다?,
     # 「막지 않는다」=무엇을?, 「현장 감독자」=이 장면에서 불린 적 없는 말). 같은 갈래를 뜻이 하나로 읽히게 쓴다.
     menu:
+        '7일 회의 기록을 함께 읽는다' if r13_v111_value('neoul_promise_proven') and r13_v111_person_alive('resident_nubi') and r13_v111_person_alive('neoul'):
+            jump r13_v111_crowd_record13
         '너울을 몸으로 감싼다':
             jump r13_v111_crowd_block13
         '돌목에게 너울을 맡긴다' if not r13_v111_value('busy:guard'):

@@ -1311,6 +1311,13 @@
         "observed": "12일 밤 난로 곁에서 초상의 덧칠이 들떴다. 아래에 수레, 묶인 손, 붉은 목도리가 비친다. 피코가 그 위에 엄마를 덧그렸다.",
         "told": "피코: “초상 밑그림은 버린 게 아니에요. 모과 씨예요. 첫눈 무렵 밤에 수레에 묶여 산길로 갔어요. 붉은 목도리를 하고.”"
       }
+    },
+    "NW_RETURNED_BOWL": {
+      "name": "돌아온 흰 그릇",
+      "kind": "관찰기록",
+      "variants": {
+        "observed": "11일 까로의 빈 수레가 시설에서 돌아오며 싣고 온 흰 그릇. 12일 작은 배식대의 흰 그릇과 바닥 표시가 같다. 다른 학교 그릇에는 그 표시가 없다."
+      }
     }
   },
   "blocks": {
@@ -1397,6 +1404,64 @@
         "text": "……알아요.",
         "expression": "neutral",
         "when": "route12_late"
+      },
+      {
+        "id": "NW_GW_D12_11",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "돌아오는 건 이 그릇뿐이군요. 어제 까로 씨의 빈 수레가 시설에서 싣고 온 겁니다.",
+        "when": "grand_soup",
+        "beat": "interrupt"
+      },
+      {
+        "id": "NW_GW_D12_12",
+        "speaker": null,
+        "kind": "narration",
+        "text": "주머니에서 꺼낸 흰 그릇을 배식대의 흰 그릇 옆에 놓는다. 바닥 표시가 같다.",
+        "when": "grand_soup"
+      },
+      {
+        "id": "NW_GW_D12_13",
+        "speaker": "선생님",
+        "kind": "dialogue",
+        "text": "……빈 수레가 오면 그 그릇만 내려요. 실려 간 사람 몫이던 그릇만.",
+        "when": "grand_soup",
+        "beat": "cornered"
+      },
+      {
+        "id": "NW_GW_D12_14",
+        "speaker": null,
+        "kind": "narration",
+        "text": "돌목이 그릇을 들어 바닥을 뒤집어 본다.",
+        "when": "grand_soup_guard"
+      },
+      {
+        "id": "NW_GW_D12_15",
+        "speaker": "돌목",
+        "kind": "dialogue",
+        "text": "나는 받아 적기만 했소. 돌아오는 게 그릇뿐이라면, 이 칸으로는 아무도 못 싣소.",
+        "when": "grand_soup_guard"
+      },
+      {
+        "id": "NW_GW_D12_16",
+        "speaker": "돌목",
+        "kind": "dialogue",
+        "text": "이 칸은 무효로 적겠소.",
+        "when": "grand_soup_guard"
+      },
+      {
+        "id": "NW_GW_D12_17",
+        "speaker": null,
+        "kind": "narration",
+        "text": "돌목이 이송 예정 칸에 줄을 긋고, 그 옆에 ‘무효’라고 적는다.",
+        "when": "grand_soup_guard"
+      },
+      {
+        "id": "NW_GW_D12_18",
+        "speaker": null,
+        "kind": "narration",
+        "text": "나는 이송 예정 칸 옆에 그릇 이야기를 적는다. 회의 기록을 맡은 사람이 그 칸을 무효로 옮겨 적는다.",
+        "when": "grand_soup_noguard"
       },
       {
         "id": "NW_SL_W_09",
@@ -1698,6 +1763,90 @@
         "kind": "narration",
         "text": "다람이 이름 없는 표 귀퉁이에 연필로 작게 ‘영감’이라고 적는다.",
         "when": "daram_ready"
+      }
+    ],
+    "bowl_compare12": [
+      {
+        "id": "NW_GW_D12_01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "작은 배식대 위 흰 그릇 옆에, 주머니에 넣어 온 그릇을 꺼내 놓아 본다."
+      },
+      {
+        "id": "NW_GW_D12_02",
+        "speaker": "아빠",
+        "kind": "thought",
+        "text": "어제 수레에서 내린 그릇이랑 같은 거네."
+      },
+      {
+        "id": "NW_GW_D12_03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "배식대의 흰 그릇을 하나 뒤집어 본다. 바닥에 같은 표시가 있다. 다른 학교 그릇에는 없는 표시다."
+      }
+    ],
+    "early_door12": [
+      {
+        "id": "NW_GW_D12_21",
+        "speaker": null,
+        "kind": "narration",
+        "text": "문간에 돌목이 출입 장부를 들고 서 있다. 밖으로 나가는 병을 세는 중이다."
+      }
+    ],
+    "early_guard_bowl12": [
+      {
+        "id": "NW_GW_D12_22",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "돌목 씨, 이 그릇 바닥의 표시는 뭡니까? 어제 까로 씨 빈 수레에서 내린 겁니다."
+      },
+      {
+        "id": "NW_GW_D12_23",
+        "speaker": "돌목",
+        "kind": "dialogue",
+        "text": "시설 표시요. 빈 수레가 돌아올 땐, 실려 간 사람 몫 그릇만 학교로 돌려보내오."
+      },
+      {
+        "id": "NW_GW_D12_24",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "사람은요? 실려 간 사람은 언제 돌아옵니까?"
+      },
+      {
+        "id": "NW_GW_D12_25",
+        "speaker": "돌목",
+        "kind": "dialogue",
+        "text": "……돌아온 적은 없소."
+      },
+      {
+        "id": "NW_GW_D12_26",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "아침에 문 옆 명단을 봤습니다. ‘보호시설로 이송 예정’ 칸이요. 그 칸 사람들도 그릇만 돌아옵니까?"
+      },
+      {
+        "id": "NW_GW_D12_27",
+        "speaker": null,
+        "kind": "narration",
+        "text": "돌목이 그릇을 뒤집어 든 채 한참 말이 없다."
+      },
+      {
+        "id": "NW_GW_D12_28",
+        "speaker": "돌목",
+        "kind": "dialogue",
+        "text": "나는 받아 적기만 했소. 정한 건 아니오."
+      },
+      {
+        "id": "NW_GW_D12_29",
+        "speaker": "돌목",
+        "kind": "dialogue",
+        "text": "돌아오는 게 그릇뿐이라면, 그 칸으로는 아무도 못 싣소. 무효로 적겠소."
+      },
+      {
+        "id": "NW_GW_D12_30",
+        "speaker": null,
+        "kind": "narration",
+        "text": "돌목이 문 옆 명단 앞으로 가 이송 예정 칸에 줄을 긋는다. 그 옆에 ‘무효’라고 적는다."
       }
     ]
   }

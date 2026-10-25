@@ -471,12 +471,17 @@ label r13_v111_children_here7:
 label r13_v111_nubi_children_school7:
     call r13_v111_travel('school','nubi_children_school7',[])
     $ r13_v111_arrive(["nabi","resident_teacher","kid_nubi1","kid_nubi2","kid_nubi3"])
+    # 2026-10-24 대승리 F3(GRAND_WIN_DESIGN.md 1-3): 5일 밤부터 다람의 가방에 든 과자. 다람이 곁에 있고
+    # 숨긴 자리를 아직 모를 때만 다람에게 막내 이야기를 꺼낼 수 있다(표시 없이 다람의 질문 목록에 섞인다).
+    $ r13_v111_set("grand_snack_ready7",not r13_v111_value("DARAM_DETAINED") and r13_v111_value("location:daram") in (None,"school") and not r13_v111_value("grand_ticket_spot_known") and not r13_v111_value("grand_snack_given7"))
     jump r13_v111_nubi_children_receipt7
 
 label r13_v111_nubi_children_receipt7:
     call r13_v111_wait('nubi_children_receipt7')
     if _return==0:
         jump r13_v111_nubi_children_received7
+    if _return==1:
+        call r13_v111_nubi_snack7
     jump r13_v111_nubi_children_receipt7
 
 label r13_v111_nubi_children_received7:
@@ -490,6 +495,11 @@ label r13_v111_bori_witness7:
     call r13_v111_wait('bori_witness7')
     if _return==0:
         jump r13_v111_bori_witness_heard7
+    # 2026-10-24 대승리 F1: 숨긴 자리를 아는 판에서만 기름통에 손댈 수 있다(5일 엿듣기 또는 7일 막내의 말).
+    if _return==1:
+        call r13_lines(r13_nw_block('drum_look7'),'nw:drum_look7')
+    if _return==2:
+        call r13_v111_nubi_ticket7
     jump r13_v111_bori_witness7
 
 label r13_v111_bori_witness_heard7:
@@ -562,6 +572,9 @@ label r13_v111_rescue_fire_basis7:
 
 label r13_v111_responsibility_wrong7:
     if r13_nw_retry("fire",["E06_FIRE","E06_EMPTY","E07_NUBI"] if r13_v111_value("FIRE_EVACUATED") else ["E06_FIRE","E06_RESCUE","E07_NUBI"],"너울이 고개를 젓는다. 불의 원인과 그날 밤 일을 함께 묶어야 한다."):
+        # 2026-10-24 대승리: 엿들은 말만으로는 너울의 약속을 적지 못한다(덧붙임으로만 받는다).
+        if "V111:NW_LAUNDRY_TALK" in (v111_last_presented or []) and "V111:NW_NUBI_TICKET" not in (v111_last_presented or []):
+            call r13_lines(r13_nw_block('laundry_talk_rebut7'),'nw:laundry_talk_rebut7')
         jump r13_v111_fire_basis_route7
     $ r13_nw_meeting_end("fire","partial")
     $ r13_nw_list("resident_bori","fire_partial")
@@ -571,6 +584,10 @@ label r13_v111_responsibility_answers7:
     $ r13_nw_meeting_end("fire","win")
     if r13_v111_value("meeting:fire")=="win":
         $ r13_v111_set("fire_neoul_promise_recorded",True)
+        # 2026-10-24 대승리(GRAND_WIN_DESIGN.md 1-5): 2번 쟁점을 배급표로 이겼으면(덧붙여 낸 것도) 약속이 물건으로 적힌다.
+        if r13_nw_grand(["불의 원인과 빈 창고 진압을 구분한다","불의 원인과 아이 구조를 구분한다"],"NW_NUBI_TICKET"):
+            $ r13_v111_set("grand:fire",True)
+            $ r13_v111_set("neoul_promise_proven",True)
     call r13_lines(r13_v111_lines(['MS14_D07_S02_L0004']),'v111:MS14_D07_S02_L0004')
     call r13_lines(r13_v111_lines(['MS14_D07_S02_L0005']),'v111:MS14_D07_S02_L0005')
     call r13_lines(r13_v111_lines(['MS14_D07_S02_L0006']),'v111:MS14_D07_S02_L0006')

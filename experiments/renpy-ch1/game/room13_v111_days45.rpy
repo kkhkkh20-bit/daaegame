@@ -644,7 +644,14 @@ label r13_v111_night5:
     call r13_lines(r13_v111_lines(['MS14_D05_S05_L9501']),'v111:MS14_D05_S05_L9501')
     $ r13_v111_commit('MS14_D05_S05_L9502')
     call r13_v111_owl_glove5
+    # 2026-10-24 대승리(GRAND_WIN_DESIGN.md 1-3 F1): 여관으로 가는 길에 지도에서 빨래터로 돌 수 있다.
+    # 아무도 권하지 않고 표시도 없다. 들르면 너울과 누비의 말을 엿듣는다(room13_v111_grand_win.rpy).
+    $ room13["v111"]["travel_detour"]="laundry"
     call r13_v111_travel('inn','lobby5')
+    $ room13["v111"]["travel_detour"]=None
+    if room13["location"]=="laundry":
+        call r13_v111_laundry5
+        call r13_v111_travel('inn','lobby5')
     $ r13_v111_commit('MS14_D05_S05_L0027')
     call r13_lines(r13_v111_lines(['MS14_D05_S05_L0028']),'v111:MS14_D05_S05_L0028')
     call r13_lines(r13_v111_lines(['MS14_D05_S05_L0029']),'v111:MS14_D05_S05_L0029')

@@ -41,7 +41,8 @@ init 318 python:
         Facts only (no outcome, no hint): each name ever written and where it stands now."""
         rows=[]
         for p in (r13_v111_value("listed_order") or []):
-            if r13_v111_value("handed:"+p):state="데려옴"
+            if r13_v111_value("handed:"+p) and r13_v111_value("void_down:"+p):state="무효 칸에서 내림"
+            elif r13_v111_value("handed:"+p):state="데려옴"
             elif r13_v111_value("departed:"+p):state="수레로 떠남"
             elif r13_v111_value("listed:"+p):state="아직 명단에 있음"
             else:state="명단에서 빠짐"
@@ -77,6 +78,11 @@ init 318 python:
         "촌장이 어젯밤 있던 곳을 확인한다":("E29",),
         "장부의 두 배를 실룩에게 보인다":("E34",),
         "맨 처음 이름을 짚는다":("NW_BURNT_PAGE",),
+        # 2026-10-24 대승리(GRAND_WIN_DESIGN.md 1-4·2-3, 결정 4): 엿들은 말(NW_LAUNDRY_TALK)과 1일 초소 명단(E02, 같은
+        # 「처리 너울」)은 덧붙임으로만 받는다. 엿들은 말 혼자로는 약속을 입증하지 못한다(너울: 담 뒤에서 들은 말).
+        "불의 원인과 빈 창고 진압을 구분한다":("NW_LAUNDRY_TALK","E02"),
+        "불의 원인과 아이 구조를 구분한다":("NW_LAUNDRY_TALK","E02"),
+        "명단과 흰 그릇을 대조한다":("NW_RETURNED_BOWL","NW_SICK_BEDS"),
     }
     R13_PROOF_ALTERNATES={
         "구리선과 수선 출처를 대조한다":(("E08_CONTACT_ASSEMBLY","E09_PIN_OWNER"),),
@@ -89,6 +95,14 @@ init 318 python:
         # 5일 엄마의 경고 편지(E27, "그 편지는 내가 쓴 게 아니야")가 접수 묶음(E07)보다 그 물음에 직접 답한다.
         # 초대장(E01)과 발송 순서(E09_MAIL)는 그대로 있어야 한다. 회의 결론 불변.
         "반송·필사본·초대 발송을 대조한다":(("E01","E27","E09_MAIL"),),
+        # 2026-10-24 대승리(GRAND_WIN_DESIGN.md 1-4, 결정 4): 누비의 진술(E07_NUBI)은 스스로 「약속은 입증 못 한다」고
+        # 적혀 있다. 배급표의 덧붙인 줄(「창고가 비면 빨래터 누비네로. 처리 너울」)이 그 자리를 물건으로 메운다.
+        # 기본 정답은 그대로이고, 이 표로 이기면(덧붙여 내도) 대승리 grand:fire 를 적는다(room13_v111_days610.rpy).
+        "불의 원인과 빈 창고 진압을 구분한다":(("E06_FIRE","E06_EMPTY","NW_NUBI_TICKET"),),
+        "불의 원인과 아이 구조를 구분한다":(("E06_FIRE","E06_RESCUE","NW_NUBI_TICKET"),),
+        # 2026-10-24 대승리(GRAND_WIN_DESIGN.md 2-3, 결정 4): 빈 수레가 시설에서 돌려보낸 흰 그릇이 배식대의 흰 그릇과
+        # 같다는 것이 「흰 그릇 = 실려 갈 사람 몫」을 명단 없이 보인다. 이 그릇으로 이기면 grand:soup.
+        "명단과 흰 그릇을 대조한다":(("NW_WHITE_BOWLS","NW_RETURNED_BOWL"),),
     }
     # Shown title only; the proof key (and the saved argument slot) keeps the old name.
     R13_PROOF_TITLES={"첫 비명 뒤 핀을 다시 채운 때":"핀이 언제 떨어졌는가",
@@ -142,6 +156,11 @@ init 318 python:
         if len(counted)>len(keep-extra):return []
         return [k for k in (given or ()) if isinstance(k,str) and k.startswith("V111:") and k[5:] in keep]
 
+    # 2026-10-24 대승리 판정(GRAND_WIN_DESIGN.md 0장): 쟁점을 이긴 제출(proof_given)에 보너스 증거가 있으면 대승리다.
+    # 회의 결과가 이김일 때만 부른다. 보너스 증거는 어디에도 「새」나 이름으로 표시하지 않는다.
+    def r13_nw_grand(keys,bonus):
+        return any("V111:"+bonus in (r13_v111_value("proof_given:"+k) or []) for k in keys)
+
     # Half presentation (plan 7-2): some of the right records, none wrong.
     def r13_nw_half(correct):
         given=set(getattr(store,"v111_last_presented",None) or [])
@@ -185,9 +204,13 @@ init 318 python:
         if r13_v111_value("crowd_injury"):return "violence"
         return "morning"
     def r13_nw_true_ending_ready():
-        """Plan 11-1 #6: all five alive, records/hypothesis/blanket/altar won, Neoul's ledger held."""
+        """Morning ending with no one lost (R13_NW_LIVES), Neoul's ledger held, records/hypothesis/blanket/altar
+        won, and both grand wins (2026-10-24 MEETING_RULES_V2.md 3장, GRAND_WIN_DESIGN.md 2-5): 7일 불 회의를
+        배급표로, 12일 수프 회의를 돌아온 그릇으로 이긴 판. 12일 국을 미리 막은 판은 돌목에게 그릇을 보인
+        대화가 수프 대승리를 대신한다(결정 7)."""
         if r13_v111_value("ending14")!="morning" or r13_nw_loss_count():return False
         if not r13_v111_owned("NW_NEOUL_LEDGER"):return False
+        if not (r13_v111_value("grand:fire") is True and r13_v111_value("grand:soup") is True):return False
         return all(r13_v111_value("meeting:"+m)=="win" for m in ("records","hypothesis","blanket","altar"))
 
     # Chances per meeting (owner 2026-10-22: three, then five "so the player can keep deducing").
