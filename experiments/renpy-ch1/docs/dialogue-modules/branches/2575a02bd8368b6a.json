@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "faa0e0ca0ab58b086da80bcfa11fa2c3c59956c5957a0388bc95217560f7ebd1",
+  "source_stamp": "518c1016ae60a1f0d3bd57ee93108f53ea8dbc0c3754bed06738799310218bf4",
   "entries": [
     {
       "id": "NW_D01_S03_R02",
@@ -33,7 +33,7 @@
         }
       ],
       "scene_title": "3. 초소 / 둘이 들어갈 근거",
-      "source_hash": "14f1eea6fd9baa51e557131d26fa9cbb0c8861c452ac3f8a622343578dd0de00",
+      "source_hash": "1d84d6b37d583eeb763b5dbb2b83d9b129fc728297a87b88e5be68e8b1dd7eaa",
       "baseline_hash": "9629c17476717e6a92817fc090a202770bce62695d420f52fd8cdc5321c77b46",
       "uid": "ae3f3875250d844a1af08618",
       "review_status": "draft",
@@ -72,7 +72,7 @@
         }
       ],
       "scene_title": "3. 초소 / 둘이 들어갈 근거",
-      "source_hash": "14f1eea6fd9baa51e557131d26fa9cbb0c8861c452ac3f8a622343578dd0de00",
+      "source_hash": "1d84d6b37d583eeb763b5dbb2b83d9b129fc728297a87b88e5be68e8b1dd7eaa",
       "baseline_hash": "43f47546be43da5411bf350e193f1951738e7d6325a6050cd6521b92802d9ecf",
       "uid": "0fe7ce3797a4618f3f7ade48",
       "review_status": "draft",
@@ -111,7 +111,7 @@
         }
       ],
       "scene_title": "3. 초소 / 둘이 들어갈 근거",
-      "source_hash": "14f1eea6fd9baa51e557131d26fa9cbb0c8861c452ac3f8a622343578dd0de00",
+      "source_hash": "1d84d6b37d583eeb763b5dbb2b83d9b129fc728297a87b88e5be68e8b1dd7eaa",
       "baseline_hash": "43f47546be43da5411bf350e193f1951738e7d6325a6050cd6521b92802d9ecf",
       "uid": "a151e3cd0dbb43bc65193388",
       "review_status": "draft",
@@ -150,9 +150,87 @@
         }
       ],
       "scene_title": "3. 초소 / 둘이 들어갈 근거",
-      "source_hash": "14f1eea6fd9baa51e557131d26fa9cbb0c8861c452ac3f8a622343578dd0de00",
+      "source_hash": "1d84d6b37d583eeb763b5dbb2b83d9b129fc728297a87b88e5be68e8b1dd7eaa",
       "baseline_hash": "161f2f562efec2df8857d6fb4c3da10053af790fb02e36c479fd6fba820c5548",
       "uid": "ba2230d4588778d640c66dc9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S03|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D01_S03_T21",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "after",
+        "MS14_D01_S03_L0029",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D01_S03_L0029",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "너울이요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 274,
+          "label": "r13_v111_gate_reason",
+          "guards": []
+        }
+      ],
+      "scene_title": "3. 초소 / 둘이 들어갈 근거",
+      "source_hash": "1d84d6b37d583eeb763b5dbb2b83d9b129fc728297a87b88e5be68e8b1dd7eaa",
+      "baseline_hash": "81e70e354be5959d0b7009e415d87fde87696cd3e95f289ea6afcdf665b26db2",
+      "uid": "88457b06eb11b9308ef9d7e4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d01|MS14_D01_S03|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D01_S03_T22",
+      "file": "game/v111/newworld/d01.json",
+      "path": [
+        "after",
+        "MS14_D01_S03_L0029",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 1,
+      "scene": "MS14_D01_S03",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D01_S03_L0029",
+      "when": null,
+      "speaker": "돌목",
+      "kind": "dialogue",
+      "text": "장부 맡은 사람이오. 이 마을 이름은 다 그 사람 손을 거치오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 274,
+          "label": "r13_v111_gate_reason",
+          "guards": []
+        }
+      ],
+      "scene_title": "3. 초소 / 둘이 들어갈 근거",
+      "source_hash": "1d84d6b37d583eeb763b5dbb2b83d9b129fc728297a87b88e5be68e8b1dd7eaa",
+      "baseline_hash": "4841493c210de1a8f2b1b8adb5d582ad43c7889a41b7dec9174e234b662d75a3",
+      "uid": "9a52f975ef26b785fb08dffb",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d01|MS14_D01_S03|patch|after|행 조건 없음",

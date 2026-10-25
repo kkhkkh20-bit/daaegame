@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "faa0e0ca0ab58b086da80bcfa11fa2c3c59956c5957a0388bc95217560f7ebd1",
+  "source_stamp": "518c1016ae60a1f0d3bd57ee93108f53ea8dbc0c3754bed06738799310218bf4",
   "entries": [
     {
       "id": "NW_A4_W01",
@@ -33,7 +33,7 @@
         }
       ],
       "scene_title": "altar4_won14",
-      "source_hash": "c958b43f72464edf979f2249ab439a0691d0868b66ba8eefab544a8ee7b07550",
+      "source_hash": "ce0edc6c24ddc800404c825a43c1cd0a535e3692ceefd5b8d65004065f10ba8d",
       "baseline_hash": "1d0500f084f03bcb803a7c8fe49cef39a0ee38fd2f543870a4d55d6d21f75dd8",
       "uid": "8e40b9bd8d587ca582f645de",
       "review_status": "draft",
@@ -72,7 +72,7 @@
         }
       ],
       "scene_title": "altar4_won14",
-      "source_hash": "c958b43f72464edf979f2249ab439a0691d0868b66ba8eefab544a8ee7b07550",
+      "source_hash": "ce0edc6c24ddc800404c825a43c1cd0a535e3692ceefd5b8d65004065f10ba8d",
       "baseline_hash": "e21cad53b304f37d761535e6c9cb24d335ede4d4ccde223455ce1227ee82e088",
       "uid": "520ac8dd45b8a54239b544b8",
       "review_status": "draft",
@@ -111,9 +111,48 @@
         }
       ],
       "scene_title": "altar4_won14",
-      "source_hash": "c958b43f72464edf979f2249ab439a0691d0868b66ba8eefab544a8ee7b07550",
+      "source_hash": "ce0edc6c24ddc800404c825a43c1cd0a535e3692ceefd5b8d65004065f10ba8d",
       "baseline_hash": "9b7ac114e594f2df9fa69b1939d5da8875144a01e17520f1e5e9fee7c6ef5a67",
       "uid": "3830315ea9d351e358261ee8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d14|altar4_won14|patch|altar4_won14|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_A4_K01",
+      "file": "game/v111/newworld/d14.json",
+      "path": [
+        "blocks",
+        "altar4_won14",
+        5,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 14,
+      "scene": "altar4_won14",
+      "block": "altar4_won14",
+      "placement": "blocks",
+      "ref": "altar4_won14",
+      "when": null,
+      "speaker": "촌장",
+      "kind": "dialogue",
+      "text": "……열흘이오. 열흘은 샀소. 샀어야 하오.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 3027,
+          "label": "r13_v111_altar4_won14",
+          "guards": []
+        }
+      ],
+      "scene_title": "altar4_won14",
+      "source_hash": "ce0edc6c24ddc800404c825a43c1cd0a535e3692ceefd5b8d65004065f10ba8d",
+      "baseline_hash": "184d780e8781d4af46d896316565ae159ad67c593446a58791bc0c8978c6a2e9",
+      "uid": "0171a3ead7da161d8582cf1e",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d14|altar4_won14|patch|altar4_won14|행 조건 없음",
@@ -125,7 +164,7 @@
       "path": [
         "blocks",
         "altar4_won14",
-        6,
+        7,
         "text"
       ],
       "origin": "patch",
@@ -150,9 +189,9 @@
         }
       ],
       "scene_title": "altar4_won14",
-      "source_hash": "c958b43f72464edf979f2249ab439a0691d0868b66ba8eefab544a8ee7b07550",
+      "source_hash": "ce0edc6c24ddc800404c825a43c1cd0a535e3692ceefd5b8d65004065f10ba8d",
       "baseline_hash": "594a2067da7ac0f27c7123714cc45bb4ff4ee8bd28157b2912827565176b0c97",
-      "uid": "4119bb4049812649dfc86f06",
+      "uid": "e3551c0e7cac580714a9318e",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d14|altar4_won14|patch|altar4_won14|행 조건 없음",

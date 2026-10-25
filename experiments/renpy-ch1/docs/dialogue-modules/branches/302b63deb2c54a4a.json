@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "faa0e0ca0ab58b086da80bcfa11fa2c3c59956c5957a0388bc95217560f7ebd1",
+  "source_stamp": "518c1016ae60a1f0d3bd57ee93108f53ea8dbc0c3754bed06738799310218bf4",
   "entries": [
     {
       "id": "NW_D05_S04_A01",
@@ -33,7 +33,7 @@
         }
       ],
       "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
-      "source_hash": "e61b08cf9177cf51a42164f3c27f0eaa9c048139b09daac92fd520e9da0752e7",
+      "source_hash": "fa0b7e58a1030cd38732bd37f8bf2b4b2c2c73675de2591c50aedbe81ef75130",
       "baseline_hash": "cc63dedf420c72a8ede1423190697a7e1e99c27efbb8a60f928582ba3b43aaaf",
       "uid": "9be76dec879ba85e246569fe",
       "review_status": "draft",
@@ -72,7 +72,7 @@
         }
       ],
       "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
-      "source_hash": "e61b08cf9177cf51a42164f3c27f0eaa9c048139b09daac92fd520e9da0752e7",
+      "source_hash": "fa0b7e58a1030cd38732bd37f8bf2b4b2c2c73675de2591c50aedbe81ef75130",
       "baseline_hash": "28ddff554045b044ed066acb9a6466a031a58f04ab8a495c3d4952e0ce3754f4",
       "uid": "6486eb4a46c1597fd38ddfd0",
       "review_status": "draft",
@@ -111,7 +111,7 @@
         }
       ],
       "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
-      "source_hash": "e61b08cf9177cf51a42164f3c27f0eaa9c048139b09daac92fd520e9da0752e7",
+      "source_hash": "fa0b7e58a1030cd38732bd37f8bf2b4b2c2c73675de2591c50aedbe81ef75130",
       "baseline_hash": "9f3083596e1df164c858beb427845756bde8a3306857e2f110179a2f4cfdcc94",
       "uid": "3269a6206b9e6ab00585e942",
       "review_status": "draft",
@@ -150,7 +150,7 @@
         }
       ],
       "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
-      "source_hash": "e61b08cf9177cf51a42164f3c27f0eaa9c048139b09daac92fd520e9da0752e7",
+      "source_hash": "fa0b7e58a1030cd38732bd37f8bf2b4b2c2c73675de2591c50aedbe81ef75130",
       "baseline_hash": "f44e2cff79f308e50b08c602aec4b6030aef6e67480f603031ac33b5432ece20",
       "uid": "930c65e7bf1b85de65778327",
       "review_status": "draft",
@@ -189,7 +189,7 @@
         }
       ],
       "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
-      "source_hash": "e61b08cf9177cf51a42164f3c27f0eaa9c048139b09daac92fd520e9da0752e7",
+      "source_hash": "fa0b7e58a1030cd38732bd37f8bf2b4b2c2c73675de2591c50aedbe81ef75130",
       "baseline_hash": "2ba1ccf82a9fc28257e02ae1d7ffdb92dd2b7286d6a9ea9afcf493067ce01566",
       "uid": "0cb590a8989337cecef68c47",
       "review_status": "draft",
@@ -228,9 +228,87 @@
         }
       ],
       "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
-      "source_hash": "e61b08cf9177cf51a42164f3c27f0eaa9c048139b09daac92fd520e9da0752e7",
+      "source_hash": "fa0b7e58a1030cd38732bd37f8bf2b4b2c2c73675de2591c50aedbe81ef75130",
       "baseline_hash": "159a78938422610a08d867ce89e1250008cf481e62d1bcc432f763534b3310d3",
       "uid": "239bb60c56a1479fe69435de",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D05_S04_T21",
+      "file": "game/v111/newworld/d05.json",
+      "path": [
+        "after",
+        "MS14_D05_S04_L0021",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D05_S04_L0021",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그럼…… 그 편지는?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 584,
+          "label": "r13_v111_warning_compared5",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "fa0b7e58a1030cd38732bd37f8bf2b4b2c2c73675de2591c50aedbe81ef75130",
+      "baseline_hash": "977d81fbfb9b28efbfc53df65311aa7525fdc333a094b0f1627efec040bc902b",
+      "uid": "acd1e9f76970d237730a3f09",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S04|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D05_S04_T22",
+      "file": "game/v111/newworld/d05.json",
+      "path": [
+        "after",
+        "MS14_D05_S04_L0021",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 5,
+      "scene": "MS14_D05_S04",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D05_S04_L0021",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "누가 보냈는지 모르겠어. 그러니까 우리 얘기는, 이제 아무한테나 하지 말자.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 584,
+          "label": "r13_v111_warning_compared5",
+          "guards": []
+        }
+      ],
+      "scene_title": "4. 점심 무렵 / 이제 도착한 경고",
+      "source_hash": "fa0b7e58a1030cd38732bd37f8bf2b4b2c2c73675de2591c50aedbe81ef75130",
+      "baseline_hash": "04241123ade41239767c3c5a8fcd2fd295d3e5fc5645b6a3e990ff8d9d8190a1",
+      "uid": "7e3401185a75d47868768499",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d05|MS14_D05_S04|patch|after|행 조건 없음",

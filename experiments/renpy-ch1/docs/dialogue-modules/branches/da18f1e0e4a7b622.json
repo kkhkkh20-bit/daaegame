@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "faa0e0ca0ab58b086da80bcfa11fa2c3c59956c5957a0388bc95217560f7ebd1",
+  "source_stamp": "518c1016ae60a1f0d3bd57ee93108f53ea8dbc0c3754bed06738799310218bf4",
   "entries": [
     {
       "id": "NW_D05_S05_V04",
@@ -33,7 +33,7 @@
         }
       ],
       "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
-      "source_hash": "e61b08cf9177cf51a42164f3c27f0eaa9c048139b09daac92fd520e9da0752e7",
+      "source_hash": "fa0b7e58a1030cd38732bd37f8bf2b4b2c2c73675de2591c50aedbe81ef75130",
       "baseline_hash": "fdb5d196a6063ae378e5d1e939e9ff5ff29c2934da3df1fa311b1cf8596c3449",
       "uid": "010c5c412f5b8a1cec9ab508",
       "review_status": "draft",
@@ -72,7 +72,7 @@
         }
       ],
       "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
-      "source_hash": "e61b08cf9177cf51a42164f3c27f0eaa9c048139b09daac92fd520e9da0752e7",
+      "source_hash": "fa0b7e58a1030cd38732bd37f8bf2b4b2c2c73675de2591c50aedbe81ef75130",
       "baseline_hash": "80ac9cd90e87b72c0956f88534056345b999f1d00b70971369e9a51a1cad1f02",
       "uid": "f84df2ce8904daed9af629e0",
       "review_status": "draft",
@@ -111,7 +111,7 @@
         }
       ],
       "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
-      "source_hash": "e61b08cf9177cf51a42164f3c27f0eaa9c048139b09daac92fd520e9da0752e7",
+      "source_hash": "fa0b7e58a1030cd38732bd37f8bf2b4b2c2c73675de2591c50aedbe81ef75130",
       "baseline_hash": "08b11ddccb4f168fca5de0c2e3f3738212edf92c40f32de74e4b78e273d8de2a",
       "uid": "096df89a06b3fc6a2474433d",
       "review_status": "draft",
@@ -150,7 +150,7 @@
         }
       ],
       "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
-      "source_hash": "e61b08cf9177cf51a42164f3c27f0eaa9c048139b09daac92fd520e9da0752e7",
+      "source_hash": "fa0b7e58a1030cd38732bd37f8bf2b4b2c2c73675de2591c50aedbe81ef75130",
       "baseline_hash": "d6256171a06aca13ebb3a7524a5b916418597eaf28d405d70e0c862a012ad86f",
       "uid": "3e481167fca85647b193dfdc",
       "review_status": "draft",
@@ -189,7 +189,7 @@
         }
       ],
       "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
-      "source_hash": "e61b08cf9177cf51a42164f3c27f0eaa9c048139b09daac92fd520e9da0752e7",
+      "source_hash": "fa0b7e58a1030cd38732bd37f8bf2b4b2c2c73675de2591c50aedbe81ef75130",
       "baseline_hash": "7edbd5cbb9364fc065e8c680d6adbe24c691773d5ac51766305d3907078b2f8e",
       "uid": "60a0eab01dcfa1f540afd438",
       "review_status": "draft",
@@ -228,7 +228,7 @@
         }
       ],
       "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
-      "source_hash": "e61b08cf9177cf51a42164f3c27f0eaa9c048139b09daac92fd520e9da0752e7",
+      "source_hash": "fa0b7e58a1030cd38732bd37f8bf2b4b2c2c73675de2591c50aedbe81ef75130",
       "baseline_hash": "3bc49ef788be06f810318cd34513b5496b6cb4b59bfe9997ff150ed0551027a8",
       "uid": "f74255ae56c755166b706caf",
       "review_status": "draft",
@@ -267,9 +267,87 @@
         }
       ],
       "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
-      "source_hash": "e61b08cf9177cf51a42164f3c27f0eaa9c048139b09daac92fd520e9da0752e7",
+      "source_hash": "fa0b7e58a1030cd38732bd37f8bf2b4b2c2c73675de2591c50aedbe81ef75130",
       "baseline_hash": "676b26266180fc937c6cee7a546e33e6f7b73081ff7c99989214f34c5b5a544d",
       "uid": "0932d21f16f935b89c07b6c6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D05_S05_T21",
+      "file": "game/v111/newworld/d05.json",
+      "path": [
+        "after",
+        "MS14_D05_S05_L0039",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D05_S05_L0039",
+      "when": null,
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "왜?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 690,
+          "label": "r13_v111_safety5",
+          "guards": []
+        }
+      ],
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "fa0b7e58a1030cd38732bd37f8bf2b4b2c2c73675de2591c50aedbe81ef75130",
+      "baseline_hash": "fd7b0d2da76a76ea02c72a4e18e7490fc8a851a07f870761de786b99af42eeac",
+      "uid": "64e09ae5cb7c903b548c1dc2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d05|MS14_D05_S05|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_D05_S05_T22",
+      "file": "game/v111/newworld/d05.json",
+      "path": [
+        "after",
+        "MS14_D05_S05_L0039",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 5,
+      "scene": "MS14_D05_S05",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D05_S05_L0039",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "누가 엄마가 보냈다고 해도 바로 따라가면 안 돼. 아빠가 보냈다고 해도. ……아빠는 그런 심부름 안 시켜.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 690,
+          "label": "r13_v111_safety5",
+          "guards": []
+        }
+      ],
+      "scene_title": "5. 저녁 / 맡긴다는 말의 무게",
+      "source_hash": "fa0b7e58a1030cd38732bd37f8bf2b4b2c2c73675de2591c50aedbe81ef75130",
+      "baseline_hash": "d392c36a7b22062d223d77288eb5603b3a04bd65eb4a6e003aff279bb553e7e4",
+      "uid": "4ca2db18e3026a4bea921b58",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d05|MS14_D05_S05|patch|after|행 조건 없음",
