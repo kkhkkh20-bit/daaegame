@@ -67,7 +67,7 @@ def startup_media(rel, startup_files):
 def startup_files(game):
     result = set(START_FILES)
     # Approved title/settings must be ready before the first interaction.
-    for folder in ("ui-b-main", "ui-b-options", "ui-b-dialogue", "ui-b-question", "ui-b-choice", "ui-b-field", "ui-b-sticker", "ui-button-states", "map-status"):
+    for folder in ("ui-b-main", "ui-b-options", "ui-b-dialogue", "ui-b-question", "ui-b-choice", "ui-b-field", "ui-b-sticker", "ui-button-states", "ui-button-fit", "map-status"):
         result.update(p.relative_to(game).as_posix() for p in (game / "assets" / folder).glob("*.png"))
     result.update(p.relative_to(game).as_posix() for p in (game / "assets/diary-sounds").glob("*.*") if p.suffix in (".mp3", ".ogg"))
     # 도구함에서 다른 폴더의 에셋을 고르더라도 첫 UI에 필요한 실제 파일을 미리 받는다.

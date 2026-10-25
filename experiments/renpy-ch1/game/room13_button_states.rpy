@@ -35,18 +35,21 @@ init 67 python:
             out=renpy.Render(w,h)
             paper=renpy.render(self.skins[state],w,h,st,at)
             pw,ph=paper.get_size();out.blit(paper,((w-pw)//2,(h-ph)//2))
-            color=r13_asset_spec("button."+self.family,state).get("render",{}).get("text_color", "#8b8175" if not self.enabled else "#fff5e5" if self.family=="primary" else "#493324")
+            render_spec=r13_asset_spec("button."+self.family,state).get("render",{})
+            color=render_spec.get("text_color", "#8b8175" if not self.enabled else "#fff5e5" if self.family=="primary" else "#493324")
             text=Text(self.caption,font=R13_UI_BOLD_FONT,size=self.text_size,color=color)
             tr=renpy.render(text,w,h,st,at);tw,th=tr.get_size()
             ir=renpy.render(self.icon,32,32,st,at) if self.icon else None
             iw,ih=ir.get_size() if ir else (0,0)
-            gap=8 if ir else 0
+            gap=render_spec.get("icon_gap",8) if ir and self.caption else 0
             contentw=tw+iw+gap
             # 글자와 아이콘도 함께 균일 축소해 같은 비율의 종이 안에 유지한다.
-            fit=min(1.0,max(1,pw-16)/max(1,contentw),max(1,ph-6)/max(1,th,ih))
+            safe=render_spec.get("safe_size")
+            safe_w,safe_h=(safe[0]*self.scale,safe[1]*self.scale) if safe else (pw-16,ph-6)
+            fit=min(1.0,max(1,safe_w)/max(1,contentw),max(1,safe_h)/max(1,th,ih))
             children=[]
             if self.icon:children.append(Transform(self.icon,yalign=.5))
-            children.append(Transform(text,yalign=.5))
+            if self.caption:children.append(Transform(text,yalign=.5))
             row=renpy.display.layout.MultiBox(layout="horizontal",spacing=gap)
             for child in children:row.add(child)
             content=renpy.render(Transform(row,zoom=fit),w,h,st,at)

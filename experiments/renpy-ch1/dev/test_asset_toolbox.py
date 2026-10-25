@@ -80,6 +80,28 @@ class AssetToolbox(unittest.TestCase):
         with self.assertRaises(AssetError):registry.assign('main.primary','cream.basic')
         self.assertEqual(registry.resolve('main.primary')['id'],'red.basic')
 
+    def test_invalid_safe_area_or_icon_gap_rejects_assignment_atomically(self):
+        for key,value in (('safe_size',[137,30]),('safe_size',[100,0]),
+                          ('safe_size',[True,30]),('safe_size',[100,float('nan')]),
+                          ('icon_gap',-1),('icon_gap',float('inf')),('icon_gap','6')):
+            with self.subTest(key=key,value=value):
+                registry=fixture()
+                before=copy.deepcopy(registry.bindings)
+                registry.catalog['assets']['cream.basic']['render'][key]=value
+                with self.assertRaises(AssetError):registry.assign('main.primary','cream.basic')
+                self.assertEqual(registry.bindings,before)
+                self.assertEqual(registry.resolve('main.primary')['id'],'red.basic')
+
+    def test_state_safe_areas_and_gaps_cannot_jump_when_pressed(self):
+        for key,value in (('safe_size',[120,30]),('icon_gap',6)):
+            with self.subTest(key=key):
+                registry=fixture()
+                registry.catalog['assets']['cream.pressed']['render'][key]=value
+                before=copy.deepcopy(registry.bindings)
+                with self.assertRaisesRegex(AssetError,'상태별'):
+                    registry.assign('main.primary','cream.basic')
+                self.assertEqual(registry.bindings,before)
+
     def test_canvas_and_media_contracts_reject_incompatible_replacement(self):
         registry=fixture();rule=registry.bindings['bindings']['main.primary'];rule['canvas_size']=[160,52]
         registry.catalog['assets']['cream.basic']['size']=[128,32]

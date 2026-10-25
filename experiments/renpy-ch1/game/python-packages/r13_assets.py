@@ -116,6 +116,17 @@ class Registry:
                     or min(crop[:2]) < 0 or min(crop[2:]) <= 0 or not size
                     or crop[0] + crop[2] > size[0] or crop[1] + crop[3] > size[1]):
                 raise AssetError("잘라내기 범위가 원본 밖입니다: " + asset['id'])
+        safe = render.get('safe_size')
+        if 'safe_size' in render:
+            area = crop[2:] if crop else size
+            if (not isinstance(safe, (list, tuple)) or len(safe) != 2 or not area
+                    or any(isinstance(n, bool) or not isinstance(n, (int, float))
+                           or not 0 < n <= area[i] for i, n in enumerate(safe))):
+                raise AssetError("내용 안전영역이 잘라낸 그림 안의 양수 크기가 아닙니다: " + asset['id'])
+        gap = render.get('icon_gap', 8)
+        if (isinstance(gap, bool) or not isinstance(gap, (int, float))
+                or not 0 <= gap < float('inf')):
+            raise AssetError("아이콘 간격은 유한한 0 이상의 수여야 합니다: " + asset['id'])
         zoom = render.get('zoom', 1.0)
         if not isinstance(zoom, (int, float)) or not 0 < zoom <= 16:
             raise AssetError("균일 배율이 올바르지 않습니다: " + asset['id'])
@@ -139,9 +150,10 @@ class Registry:
                 try:
                     item = self.resolve(role, state)
                     render = item.get('render', {})
-                    current = (item.get('size'), render.get('crop'), render.get('zoom', 1), render.get('frame'))
+                    current = (item.get('size'), render.get('crop'), render.get('zoom', 1), render.get('frame'),
+                               render.get('safe_size'), render.get('icon_gap', 8))
                     if geometry is not None and current != geometry:
-                        raise AssetError("상태별 캔버스·잘라내기·배율이 다릅니다: " + role)
+                        raise AssetError("상태별 캔버스·잘라내기·배율·내용 배치가 다릅니다: " + role)
                     geometry = current
                 except (AssetError, TypeError, KeyError) as exc:
                     errors.append(str(exc))

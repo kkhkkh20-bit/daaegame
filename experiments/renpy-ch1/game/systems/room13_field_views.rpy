@@ -52,16 +52,13 @@ init 85 python:
 screen r13_field_button(caption,icon,command,enabled=True,width=232,height=None,chosen=False,control_id=None,primary=False):
     $ state_icon=Transform(Crop((16,16,32,32),r13_field_icon(icon)),zoom=30.0/32,alpha=1.0 if enabled else .5) if icon else None
     if not caption:
-        # 정사각 아이콘 버튼은 가로형 납품을 억지로 맞추지 않고 기존 모양을 유지한다.
+        # Exact square original, same existing input target and accessibility name.
         button:
             id (control_id or "r13_field_icon_control")
             xysize (width,height or r13_control_height()) padding (0,0)
-            background r13_field_button_art(chosen or primary)
-            hover_background Transform(r13_field_button_art(chosen or primary),matrixcolor=BrightnessMatrix(.05))
-            insensitive_background Transform(r13_field_button_art(),alpha=.65)
+            background None hover_background None insensitive_background None
             action command sensitive enabled selected chosen alt "메뉴"
-            if state_icon:
-                add state_icon align (.5,.5)
+            add R13ButtonStateVisual("","square_standard",width,height or r13_control_height(),chosen or primary,enabled,state_icon,22) id ((control_id or "r13_field_icon_control")+"_visual")
     else:
         use r13_state_button(caption,command,width,height or r13_control_height(),family="primary" if chosen or primary else "wide_choice",chosen=chosen,enabled=enabled,icon=state_icon,text_size=r13_read_size(22,25),control_id=control_id or ("r13_field_control_"+caption))
 

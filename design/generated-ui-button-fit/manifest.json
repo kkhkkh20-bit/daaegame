@@ -1,0 +1,919 @@
+{
+  "version": 1,
+  "description": "승인된 크림/빨강 종이 버튼을 참고해 새로 그린 크기별 SVG 원본. 기존 래스터 재가공 없음.",
+  "source_request": "design/requests/pending-ui-buttons-20261025.zip",
+  "renderer": "Inkscape SVG native-size PNG",
+  "state_priority": [
+    "disabled",
+    "pressed",
+    "selected",
+    "basic"
+  ],
+  "reference_original_sha256": {
+    "pending-ui-buttons-20261025/approved-originals/legacy_field_button.png": "1e9f07601be922235d5556e59d61ff9390b153d8dc496050aea66e32fb3cc1c6",
+    "pending-ui-buttons-20261025/approved-originals/primary_basic.png": "16fd3e7bd68f955e1c491c98cc575446bbf5db533a25deb7767e11aa0bb1c005",
+    "pending-ui-buttons-20261025/approved-originals/primary_disabled.png": "e0ba95f2137af2b5d4d83768f6f27bdc35b597970be4892599d499b5052eac5f",
+    "pending-ui-buttons-20261025/approved-originals/primary_pressed.png": "b8b76b77c890c0cbf5d2d5b14a02fd0a5f0dddc65fd0b7442906a20fda502ca8",
+    "pending-ui-buttons-20261025/approved-originals/primary_selected.png": "b79b5cdf43bbd21ed2353a18e245356990b79a9c7076a8bd1403698439bf9f34",
+    "pending-ui-buttons-20261025/approved-originals/standard_basic.png": "1e9f07601be922235d5556e59d61ff9390b153d8dc496050aea66e32fb3cc1c6",
+    "pending-ui-buttons-20261025/approved-originals/standard_disabled.png": "992d1732370876e3d2e3904ac3f8bfeb85b9f50411c7d703cb05df8149d35409",
+    "pending-ui-buttons-20261025/approved-originals/standard_pressed.png": "8c804322d6ee02f0df26278da230553c2235ba9a2384915995a336122f589bf0",
+    "pending-ui-buttons-20261025/approved-originals/standard_selected.png": "dbf08ef3eb652e7ccd86c0888390b417075855c150e17880034fac5815fb8b56",
+    "pending-ui-buttons-20261025/approved-originals/wide_choice_basic.png": "2eb7b30bc334edbba01b2192ad8da460df41afcdfafcab7a2baaefea2531786d",
+    "pending-ui-buttons-20261025/approved-originals/wide_choice_disabled.png": "45470f434f9c8a3cf4bb58db3b97798c7823f65186c403698e3a8c3539896dfe",
+    "pending-ui-buttons-20261025/approved-originals/wide_choice_pressed.png": "b95247890dbdccf4565b9836a6da5bc9e03a74e446aa38e76edb5c5b8fb26705",
+    "pending-ui-buttons-20261025/approved-originals/wide_choice_selected.png": "66fb7ca310284cfbc8f4412c3e959c11434b5b92c5f175e3d7f69f90e71b1ef8"
+  },
+  "assets": [
+    {
+      "filename": "square_standard_basic.png",
+      "family": "square_standard",
+      "state": "basic",
+      "canvas": [
+        80,
+        80
+      ],
+      "art_rect": [
+        8,
+        8,
+        64,
+        64
+      ],
+      "alpha_bbox": [
+        8,
+        8,
+        72,
+        72
+      ],
+      "safe_rect": [
+        20,
+        20,
+        40,
+        40
+      ],
+      "display_size": [
+        64,
+        64
+      ],
+      "display_scale": 1,
+      "pressed_visual_offset": [
+        0,
+        0
+      ],
+      "runtime_content_offset": [
+        0,
+        0
+      ],
+      "sha256": "f6baeaecb3be6cb8f4d2f74b17e4bfef92597fc4e28e48c7edcc56d7196681b1",
+      "svg": "square_standard_basic.svg",
+      "text_in_image": false,
+      "icons_in_image": false
+    },
+    {
+      "filename": "square_standard_pressed.png",
+      "family": "square_standard",
+      "state": "pressed",
+      "canvas": [
+        80,
+        80
+      ],
+      "art_rect": [
+        8,
+        8,
+        64,
+        64
+      ],
+      "alpha_bbox": [
+        8,
+        8,
+        72,
+        72
+      ],
+      "safe_rect": [
+        20,
+        20,
+        40,
+        40
+      ],
+      "display_size": [
+        64,
+        64
+      ],
+      "display_scale": 1,
+      "pressed_visual_offset": [
+        0,
+        0
+      ],
+      "runtime_content_offset": [
+        0,
+        2
+      ],
+      "sha256": "132d08c432bf896599b0308939932ac6228e02dbbf2b50df2752ca08c8a69807",
+      "svg": "square_standard_pressed.svg",
+      "text_in_image": false,
+      "icons_in_image": false
+    },
+    {
+      "filename": "square_standard_selected.png",
+      "family": "square_standard",
+      "state": "selected",
+      "canvas": [
+        80,
+        80
+      ],
+      "art_rect": [
+        8,
+        8,
+        64,
+        64
+      ],
+      "alpha_bbox": [
+        8,
+        8,
+        72,
+        72
+      ],
+      "safe_rect": [
+        20,
+        20,
+        40,
+        40
+      ],
+      "display_size": [
+        64,
+        64
+      ],
+      "display_scale": 1,
+      "pressed_visual_offset": [
+        0,
+        0
+      ],
+      "runtime_content_offset": [
+        0,
+        0
+      ],
+      "sha256": "48ad6498cc95d751fc634731a13ceffbe640632e227ad855463549927ceb1b03",
+      "svg": "square_standard_selected.svg",
+      "text_in_image": false,
+      "icons_in_image": false
+    },
+    {
+      "filename": "square_standard_disabled.png",
+      "family": "square_standard",
+      "state": "disabled",
+      "canvas": [
+        80,
+        80
+      ],
+      "art_rect": [
+        8,
+        8,
+        64,
+        64
+      ],
+      "alpha_bbox": [
+        8,
+        8,
+        72,
+        72
+      ],
+      "safe_rect": [
+        20,
+        20,
+        40,
+        40
+      ],
+      "display_size": [
+        64,
+        64
+      ],
+      "display_scale": 1,
+      "pressed_visual_offset": [
+        0,
+        0
+      ],
+      "runtime_content_offset": [
+        0,
+        0
+      ],
+      "sha256": "45a2ebdae1abb3d4022a6d54021d545e3919a98288176368197dcfd56f9b115d",
+      "svg": "square_standard_disabled.svg",
+      "text_in_image": false,
+      "icons_in_image": false
+    },
+    {
+      "filename": "main_primary_basic.png",
+      "family": "main_primary",
+      "state": "basic",
+      "canvas": [
+        200,
+        76
+      ],
+      "art_rect": [
+        8,
+        8,
+        184,
+        60
+      ],
+      "alpha_bbox": [
+        8,
+        8,
+        192,
+        68
+      ],
+      "safe_rect": [
+        18,
+        17,
+        164,
+        42
+      ],
+      "display_size": [
+        184,
+        60
+      ],
+      "display_scale": 1,
+      "pressed_visual_offset": [
+        0,
+        0
+      ],
+      "runtime_content_offset": [
+        0,
+        0
+      ],
+      "sha256": "7eb992351af9d5ec153408b7cdf5d78a00de9ec08980131cfae7a4e671859dae",
+      "svg": "main_primary_basic.svg",
+      "text_in_image": false,
+      "icons_in_image": false
+    },
+    {
+      "filename": "main_primary_pressed.png",
+      "family": "main_primary",
+      "state": "pressed",
+      "canvas": [
+        200,
+        76
+      ],
+      "art_rect": [
+        8,
+        8,
+        184,
+        60
+      ],
+      "alpha_bbox": [
+        8,
+        8,
+        192,
+        68
+      ],
+      "safe_rect": [
+        18,
+        17,
+        164,
+        42
+      ],
+      "display_size": [
+        184,
+        60
+      ],
+      "display_scale": 1,
+      "pressed_visual_offset": [
+        0,
+        0
+      ],
+      "runtime_content_offset": [
+        0,
+        2
+      ],
+      "sha256": "415ebcd7fccf678dfedb155d3a2d1f7fbb31056f63b35c72e474f2bc17b69ded",
+      "svg": "main_primary_pressed.svg",
+      "text_in_image": false,
+      "icons_in_image": false
+    },
+    {
+      "filename": "main_primary_selected.png",
+      "family": "main_primary",
+      "state": "selected",
+      "canvas": [
+        200,
+        76
+      ],
+      "art_rect": [
+        8,
+        8,
+        184,
+        60
+      ],
+      "alpha_bbox": [
+        8,
+        8,
+        192,
+        68
+      ],
+      "safe_rect": [
+        18,
+        17,
+        164,
+        42
+      ],
+      "display_size": [
+        184,
+        60
+      ],
+      "display_scale": 1,
+      "pressed_visual_offset": [
+        0,
+        0
+      ],
+      "runtime_content_offset": [
+        0,
+        0
+      ],
+      "sha256": "62b8fb9776b3dab9597c2686c548648c589ef213d49164d40fb72fe2620cc605",
+      "svg": "main_primary_selected.svg",
+      "text_in_image": false,
+      "icons_in_image": false
+    },
+    {
+      "filename": "main_primary_disabled.png",
+      "family": "main_primary",
+      "state": "disabled",
+      "canvas": [
+        200,
+        76
+      ],
+      "art_rect": [
+        8,
+        8,
+        184,
+        60
+      ],
+      "alpha_bbox": [
+        8,
+        8,
+        192,
+        68
+      ],
+      "safe_rect": [
+        18,
+        17,
+        164,
+        42
+      ],
+      "display_size": [
+        184,
+        60
+      ],
+      "display_scale": 1,
+      "pressed_visual_offset": [
+        0,
+        0
+      ],
+      "runtime_content_offset": [
+        0,
+        0
+      ],
+      "sha256": "675c264692b282e6d8d814f932e54c7a50d31dbf158c593b25cd3448fbf0a02a",
+      "svg": "main_primary_disabled.svg",
+      "text_in_image": false,
+      "icons_in_image": false
+    },
+    {
+      "filename": "main_standard_basic.png",
+      "family": "main_standard",
+      "state": "basic",
+      "canvas": [
+        200,
+        76
+      ],
+      "art_rect": [
+        8,
+        8,
+        184,
+        60
+      ],
+      "alpha_bbox": [
+        8,
+        8,
+        192,
+        68
+      ],
+      "safe_rect": [
+        18,
+        17,
+        164,
+        42
+      ],
+      "display_size": [
+        184,
+        60
+      ],
+      "display_scale": 1,
+      "pressed_visual_offset": [
+        0,
+        0
+      ],
+      "runtime_content_offset": [
+        0,
+        0
+      ],
+      "sha256": "581dd2312b6218c5801568db080be88a05444b1ccb62116724fc10f671ec73ca",
+      "svg": "main_standard_basic.svg",
+      "text_in_image": false,
+      "icons_in_image": false
+    },
+    {
+      "filename": "main_standard_pressed.png",
+      "family": "main_standard",
+      "state": "pressed",
+      "canvas": [
+        200,
+        76
+      ],
+      "art_rect": [
+        8,
+        8,
+        184,
+        60
+      ],
+      "alpha_bbox": [
+        8,
+        8,
+        192,
+        68
+      ],
+      "safe_rect": [
+        18,
+        17,
+        164,
+        42
+      ],
+      "display_size": [
+        184,
+        60
+      ],
+      "display_scale": 1,
+      "pressed_visual_offset": [
+        0,
+        0
+      ],
+      "runtime_content_offset": [
+        0,
+        2
+      ],
+      "sha256": "63b0b3add27fecd09b04dacf73691ee357ef769a7ce537ba35bd73c4a0e78bc1",
+      "svg": "main_standard_pressed.svg",
+      "text_in_image": false,
+      "icons_in_image": false
+    },
+    {
+      "filename": "main_standard_selected.png",
+      "family": "main_standard",
+      "state": "selected",
+      "canvas": [
+        200,
+        76
+      ],
+      "art_rect": [
+        8,
+        8,
+        184,
+        60
+      ],
+      "alpha_bbox": [
+        8,
+        8,
+        192,
+        68
+      ],
+      "safe_rect": [
+        18,
+        17,
+        164,
+        42
+      ],
+      "display_size": [
+        184,
+        60
+      ],
+      "display_scale": 1,
+      "pressed_visual_offset": [
+        0,
+        0
+      ],
+      "runtime_content_offset": [
+        0,
+        0
+      ],
+      "sha256": "c226d98d4f1ee16b0504785f965f1c8ad512e457ab149ddd4b1f7c88278b5cbc",
+      "svg": "main_standard_selected.svg",
+      "text_in_image": false,
+      "icons_in_image": false
+    },
+    {
+      "filename": "main_standard_disabled.png",
+      "family": "main_standard",
+      "state": "disabled",
+      "canvas": [
+        200,
+        76
+      ],
+      "art_rect": [
+        8,
+        8,
+        184,
+        60
+      ],
+      "alpha_bbox": [
+        8,
+        8,
+        192,
+        68
+      ],
+      "safe_rect": [
+        18,
+        17,
+        164,
+        42
+      ],
+      "display_size": [
+        184,
+        60
+      ],
+      "display_scale": 1,
+      "pressed_visual_offset": [
+        0,
+        0
+      ],
+      "runtime_content_offset": [
+        0,
+        0
+      ],
+      "sha256": "3a8dd1bcc2154aae9f83e6defd3970cf0f3ca2798c2ca744578247d96312bdb1",
+      "svg": "main_standard_disabled.svg",
+      "text_in_image": false,
+      "icons_in_image": false
+    },
+    {
+      "filename": "topic_primary_basic.png",
+      "family": "topic_primary",
+      "state": "basic",
+      "canvas": [
+        162,
+        68
+      ],
+      "art_rect": [
+        8,
+        8,
+        146,
+        52
+      ],
+      "alpha_bbox": [
+        8,
+        8,
+        154,
+        60
+      ],
+      "safe_rect": [
+        16,
+        16,
+        130,
+        36
+      ],
+      "display_size": [
+        146,
+        52
+      ],
+      "display_scale": 1,
+      "pressed_visual_offset": [
+        0,
+        0
+      ],
+      "runtime_content_offset": [
+        0,
+        0
+      ],
+      "sha256": "a7ba0e8fe10cbc7bc9711eab79cfb2b9f96f4fd75cbb1cf3ebf48b0a9e7ab90f",
+      "svg": "topic_primary_basic.svg",
+      "text_in_image": false,
+      "icons_in_image": false
+    },
+    {
+      "filename": "topic_primary_pressed.png",
+      "family": "topic_primary",
+      "state": "pressed",
+      "canvas": [
+        162,
+        68
+      ],
+      "art_rect": [
+        8,
+        8,
+        146,
+        52
+      ],
+      "alpha_bbox": [
+        8,
+        8,
+        154,
+        60
+      ],
+      "safe_rect": [
+        16,
+        16,
+        130,
+        36
+      ],
+      "display_size": [
+        146,
+        52
+      ],
+      "display_scale": 1,
+      "pressed_visual_offset": [
+        0,
+        0
+      ],
+      "runtime_content_offset": [
+        0,
+        2
+      ],
+      "sha256": "ff0a3ddc9fc3b1d829c040976691b9cee137d0d7a7436feb39ba27d1bbd1bddb",
+      "svg": "topic_primary_pressed.svg",
+      "text_in_image": false,
+      "icons_in_image": false
+    },
+    {
+      "filename": "topic_primary_selected.png",
+      "family": "topic_primary",
+      "state": "selected",
+      "canvas": [
+        162,
+        68
+      ],
+      "art_rect": [
+        8,
+        8,
+        146,
+        52
+      ],
+      "alpha_bbox": [
+        8,
+        8,
+        154,
+        60
+      ],
+      "safe_rect": [
+        16,
+        16,
+        130,
+        36
+      ],
+      "display_size": [
+        146,
+        52
+      ],
+      "display_scale": 1,
+      "pressed_visual_offset": [
+        0,
+        0
+      ],
+      "runtime_content_offset": [
+        0,
+        0
+      ],
+      "sha256": "fd5e454fd4a3c4682a37814faf6039dbfb22c8d4e31ea253fb4088e962b47e83",
+      "svg": "topic_primary_selected.svg",
+      "text_in_image": false,
+      "icons_in_image": false
+    },
+    {
+      "filename": "topic_primary_disabled.png",
+      "family": "topic_primary",
+      "state": "disabled",
+      "canvas": [
+        162,
+        68
+      ],
+      "art_rect": [
+        8,
+        8,
+        146,
+        52
+      ],
+      "alpha_bbox": [
+        8,
+        8,
+        154,
+        60
+      ],
+      "safe_rect": [
+        16,
+        16,
+        130,
+        36
+      ],
+      "display_size": [
+        146,
+        52
+      ],
+      "display_scale": 1,
+      "pressed_visual_offset": [
+        0,
+        0
+      ],
+      "runtime_content_offset": [
+        0,
+        0
+      ],
+      "sha256": "33b7e0427064388254ef0fc5545d5c64fd3b005489f507dcc515f06a906eff4c",
+      "svg": "topic_primary_disabled.svg",
+      "text_in_image": false,
+      "icons_in_image": false
+    },
+    {
+      "filename": "topic_standard_basic.png",
+      "family": "topic_standard",
+      "state": "basic",
+      "canvas": [
+        162,
+        68
+      ],
+      "art_rect": [
+        8,
+        8,
+        146,
+        52
+      ],
+      "alpha_bbox": [
+        8,
+        8,
+        154,
+        60
+      ],
+      "safe_rect": [
+        16,
+        16,
+        130,
+        36
+      ],
+      "display_size": [
+        146,
+        52
+      ],
+      "display_scale": 1,
+      "pressed_visual_offset": [
+        0,
+        0
+      ],
+      "runtime_content_offset": [
+        0,
+        0
+      ],
+      "sha256": "4daaf1c040190c717af747c0a8641c91d99fcd4df89f9cdb794045d52e3fae5e",
+      "svg": "topic_standard_basic.svg",
+      "text_in_image": false,
+      "icons_in_image": false
+    },
+    {
+      "filename": "topic_standard_pressed.png",
+      "family": "topic_standard",
+      "state": "pressed",
+      "canvas": [
+        162,
+        68
+      ],
+      "art_rect": [
+        8,
+        8,
+        146,
+        52
+      ],
+      "alpha_bbox": [
+        8,
+        8,
+        154,
+        60
+      ],
+      "safe_rect": [
+        16,
+        16,
+        130,
+        36
+      ],
+      "display_size": [
+        146,
+        52
+      ],
+      "display_scale": 1,
+      "pressed_visual_offset": [
+        0,
+        0
+      ],
+      "runtime_content_offset": [
+        0,
+        2
+      ],
+      "sha256": "b825b698866c77d9fc5ff41fb7a2bdc1da71655da70479e3976904d7f707a795",
+      "svg": "topic_standard_pressed.svg",
+      "text_in_image": false,
+      "icons_in_image": false
+    },
+    {
+      "filename": "topic_standard_selected.png",
+      "family": "topic_standard",
+      "state": "selected",
+      "canvas": [
+        162,
+        68
+      ],
+      "art_rect": [
+        8,
+        8,
+        146,
+        52
+      ],
+      "alpha_bbox": [
+        8,
+        8,
+        154,
+        60
+      ],
+      "safe_rect": [
+        16,
+        16,
+        130,
+        36
+      ],
+      "display_size": [
+        146,
+        52
+      ],
+      "display_scale": 1,
+      "pressed_visual_offset": [
+        0,
+        0
+      ],
+      "runtime_content_offset": [
+        0,
+        0
+      ],
+      "sha256": "82a06987d9dc3160820d373e0740baa77e8309bf411919bcebaa90658b036776",
+      "svg": "topic_standard_selected.svg",
+      "text_in_image": false,
+      "icons_in_image": false
+    },
+    {
+      "filename": "topic_standard_disabled.png",
+      "family": "topic_standard",
+      "state": "disabled",
+      "canvas": [
+        162,
+        68
+      ],
+      "art_rect": [
+        8,
+        8,
+        146,
+        52
+      ],
+      "alpha_bbox": [
+        8,
+        8,
+        154,
+        60
+      ],
+      "safe_rect": [
+        16,
+        16,
+        130,
+        36
+      ],
+      "display_size": [
+        146,
+        52
+      ],
+      "display_scale": 1,
+      "pressed_visual_offset": [
+        0,
+        0
+      ],
+      "runtime_content_offset": [
+        0,
+        0
+      ],
+      "sha256": "fdfd3f5a0ce05dfb1f8df6b233700ff2e8826aa14eace8caf10aebc1a3d8cd7b",
+      "svg": "topic_standard_disabled.svg",
+      "text_in_image": false,
+      "icons_in_image": false
+    }
+  ],
+  "qa": {
+    "files": 20,
+    "canvas_and_alpha_bbox": "passed",
+    "identical_active_alpha_support_per_family": "passed",
+    "disabled_alpha_ratio_045_tolerance_1": "passed",
+    "identical_svg_outer_contour_per_family": "passed",
+    "no_raster_resizing": true
+  },
+  "preview": "preview-1280x720.png",
+  "preview_kind": "합성 제작 검토판; 실제 게임 캡처 아님"
+}

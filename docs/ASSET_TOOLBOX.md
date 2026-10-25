@@ -107,3 +107,9 @@ HTTP 회귀 테스트는 실제 모델과 작은 버튼 파일을 임시 프로�
 역할을 선택하고 **선택 역할 제작 요청 ZIP**을 누르면 같은 그룹의 상태별 원본, `matching.json` 연결·크기·crop·배율·태그 계약, `usage.json` 코드 참조 위치, 제작 안내와 마지막 회의 캡처를 내려받는다. 고정 표시 크기를 알 수 없는 부품에는 임의의 수치를 만들지 않는다. `reference`의 캡처는 마지막 렌더 시점 자료이므로 변경 후에는 다시 캡처해서 전달한다.
 
 **마지막 변경 되돌리기**는 이 도구함에서 저장한 직전 연결/태그를 한 번 복원한다. 파일 자체를 되돌리는 기능은 아니다. `previous.json`은 로컬 작업 기록으로 Git에서 제외한다. 코드 사용처는 정적 참조 검색이며 동적 경로 조합은 누락될 수 있다.
+
+## 규격별 신규 버튼 20종
+
+2026-10-25 소유자의 직접 제작 승인에 따라 `experiments/renpy-ch1/game/assets/ui-button-fit/`에 20종을 제작했다. `button.square_standard`, `button.main_primary`, `button.main_standard`, `button.topic_primary`, `button.topic_standard`의 각 4상태로 연결한다. 제작 원본 SVG·manifest·재생성 코드는 `design/generated-ui-button-fit/`, 납품 묶음은 `design/daram_ui_button_fit_20.zip`이다.
+
+크기별 원본을 사용하며 `safe_size`와 `icon_gap`으로 글자·아이콘 영역을 검사한다. 제작·적용·독립 검수를 별도 담당자가 수행했고 실제 화면 비교 결과는 `experiments/renpy-ch1/docs/reviews/button-fit-review/`에 기록한다. 앞서 만든 `pending-ui-buttons-20261025.zip`은 제작 당시의 규격 요청 이력으로 보관한다.

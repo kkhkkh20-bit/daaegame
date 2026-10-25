@@ -15,6 +15,13 @@ IMAGE = {'.png','.webp','.jpg','.jpeg','.svg'}
 AUDIO = {'.mp3','.ogg','.wav','.opus'}
 FONT = {'.otf','.ttf','.woff2'}
 STATES = ('basic','pressed','selected','disabled')
+FIT_BUTTONS = {
+    'square_standard': ('정사각 아이콘 버튼', [80,80], [8,8,64,64], [40,40], 0),
+    'main_primary': ('메인 빨강 버튼', [200,76], [8,8,184,60], [164,42], 10),
+    'main_standard': ('메인 크림 버튼', [200,76], [8,8,184,60], [164,42], 10),
+    'topic_primary': ('질문 도구 빨강 버튼', [162,68], [8,8,146,52], [130,36], 6),
+    'topic_standard': ('질문 도구 크림 버튼', [162,68], [8,8,146,52], [130,36], 6),
+}
 
 
 def save(path, data):
@@ -90,6 +97,26 @@ def scan(project=PROJECT):
             path='assets/ui-button-states/%s_%s.png'%(family,state)
             virtual('button.%s.%s'%(family,state),path,[pack,'kind:button','family:'+family,'state:'+state],{'crop':[4,4,232,52] if family=='wide_choice' else [12,6,136,40],'policy':'uniform','text_color':'#8b8175' if state=='disabled' else '#fff5e5' if family=='primary' else '#493324'})
         role('button.'+family,label,[pack],STATES,fallback={'hover':'basic'})
+
+    # Newly drawn size-specific originals retain their actual paper proportion.
+    # Missing families are not approximated with an old button or a Frame.
+    for family,(label,canvas,crop,safe,gap) in FIT_BUTTONS.items():
+        paths=['assets/ui-button-fit/%s_%s.png'%(family,state) for state in STATES]
+        present=[(game/path).is_file() for path in paths]
+        if not any(present):continue
+        if not all(present):raise AssetError('크기별 버튼의 필수 상태 누락: '+family)
+        pack='pack:button-fit-v1/'+family
+        for state,path in zip(STATES,paths):
+            with Image.open(game/path) as im:
+                if list(im.size)!=canvas:raise AssetError('크기별 버튼 캔버스 불일치: '+path)
+            virtual('button.%s.%s'%(family,state),path,
+                    [pack,'kind:button','family:'+family,'state:'+state],
+                    dict(crop=crop,policy='uniform',safe_size=safe,icon_gap=gap,
+                         text_color='#8b8175' if state=='disabled' else '#fff5e5' if family.endswith('_primary') else '#493324'),
+                    label=label+' · '+state)
+        role('button.'+family,label,[pack],STATES,fallback={'hover':'basic'})
+        binding['bindings']['button.'+family].setdefault('canvas_size',canvas)
+        binding['bindings']['button.'+family].setdefault('forbid_render',['frame'])
 
     sheet='assets/ui-b-sticker/button_sheet.png'
     for name,row in [('standard',0),('focused',1),('primary',2)]:
