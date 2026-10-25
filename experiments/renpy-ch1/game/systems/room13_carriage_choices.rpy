@@ -9,16 +9,19 @@ screen r13_carriage_choice_list(entries,ready,caption=""):
         frame:
             area (36,30,600,132) padding (20,16) background R13InkPanel(alpha="e6",slim=True)
             text context[1] xsize 560 size r13_read_size(22,26) color "#fff4df" font r13_ui_font() line_spacing 3
-    text (caption or "어떻게 할까?") xpos 56 ypos 180 xsize 560 size r13_read_size(24,28) color "#f6d18a" font r13_ui_font()
+    frame:
+        xpos 36 ypos 170 xsize 600 padding (20,6)
+        background Frame(Crop((16,16,640,84),"assets/ui-b-question/b_panel_card.png"),80,24)
+        text (caption or "어떻게 할까?") xsize 560 size r13_read_size(28,30) color "#4b3420" font r13_ui_font()
     vbox:
         pos (36,226) spacing 16
         for index,(label,command,was_read) in enumerate(entries):
             button:
                 id ("r13_carriage_choice_"+str(index+1))
                 xsize 600 yminimum row_height padding (64,16,20,16)
-                background R13ReferenceChoice(False,index+1) hover_background R13ReferenceChoice(True,index+1)
+                background R13ReferenceChoice(False,index+1,parchment=True) hover_background R13ReferenceChoice(True,index+1,parchment=True)
                 action r13_safe_question_action(command) sensitive ready
-                text r13_question_caption(label,was_read,False) xsize 516 size r13_read_size(24,28) font r13_ui_font() color "#fff4df" yalign .5
+                text r13_question_caption(label,was_read,False) xsize 516 size r13_read_size(26,30) font r13_ui_font() color "#4b3420" yalign .5
     if ready:
         for index,(label,command,was_read) in enumerate(entries[:9]):
             key ("K_%d"%(index+1)) action r13_safe_question_action(command)
