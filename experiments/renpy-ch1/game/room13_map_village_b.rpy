@@ -31,7 +31,7 @@ screen r13_village_b_control(label, rect, action, control_id, primary=False, ena
     $ bx,by,bw,bh=rect
     fixed:
         area (bx,by-((88 if r13_touch_ui() else 44)-bh)//2,bw,88 if r13_touch_ui() else 44)
-        use r13_state_button(label,action,bw,88 if r13_touch_ui() else 44,family="primary" if primary else "standard",chosen=chosen,enabled=enabled,text_size=19,control_id=control_id)
+        use r13_state_button(label,action,bw,88 if r13_touch_ui() else 44,family="map_flat_primary" if primary else "map_flat_standard",chosen=chosen,enabled=enabled,text_size=19,control_id=control_id)
 
 screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_action,extra_places,village_zoom):
     add Solid("#d9d7c6")

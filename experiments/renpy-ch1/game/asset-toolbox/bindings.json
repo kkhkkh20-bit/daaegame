@@ -50613,6 +50613,118 @@
       ],
       "group": "file:assets/ui-field-stickers/ring.png",
       "refresh": "restart"
+    },
+    "button.question_flat_primary": {
+      "label": "질문 도구 primary",
+      "match": [
+        "pack:question-map-flat-v1/primary"
+      ],
+      "states": [
+        "basic",
+        "pressed",
+        "selected",
+        "disabled"
+      ],
+      "media": "image",
+      "refresh": "live",
+      "fallback": {
+        "hover": "basic"
+      },
+      "group": "button.question_flat_primary",
+      "canvas_size": [
+        160,
+        52
+      ],
+      "forbid_render": [
+        "frame"
+      ],
+      "consumers": [
+        "question 하단 버튼만"
+      ]
+    },
+    "button.question_flat_standard": {
+      "label": "질문 도구 standard",
+      "match": [
+        "pack:question-map-flat-v1/standard"
+      ],
+      "states": [
+        "basic",
+        "pressed",
+        "selected",
+        "disabled"
+      ],
+      "media": "image",
+      "refresh": "live",
+      "fallback": {
+        "hover": "basic"
+      },
+      "group": "button.question_flat_standard",
+      "canvas_size": [
+        160,
+        52
+      ],
+      "forbid_render": [
+        "frame"
+      ],
+      "consumers": [
+        "question 하단 버튼만"
+      ]
+    },
+    "button.map_flat_primary": {
+      "label": "지도 하단 primary",
+      "match": [
+        "pack:question-map-flat-v1/primary"
+      ],
+      "states": [
+        "basic",
+        "pressed",
+        "selected",
+        "disabled"
+      ],
+      "media": "image",
+      "refresh": "live",
+      "fallback": {
+        "hover": "basic"
+      },
+      "group": "button.map_flat_primary",
+      "consumers": [
+        "map 하단 버튼만"
+      ],
+      "forbid_render": [
+        "frame"
+      ],
+      "canvas_size": [
+        160,
+        52
+      ]
+    },
+    "button.map_flat_standard": {
+      "label": "지도 하단 standard",
+      "match": [
+        "pack:question-map-flat-v1/standard"
+      ],
+      "states": [
+        "basic",
+        "pressed",
+        "selected",
+        "disabled"
+      ],
+      "media": "image",
+      "refresh": "live",
+      "fallback": {
+        "hover": "basic"
+      },
+      "group": "button.map_flat_standard",
+      "consumers": [
+        "map 하단 버튼만"
+      ],
+      "forbid_render": [
+        "frame"
+      ],
+      "canvas_size": [
+        160,
+        52
+      ]
     }
   }
 }
