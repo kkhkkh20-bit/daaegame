@@ -3644,5 +3644,72 @@
         "object": "desks"
       }
     ]
+  },
+  "crowd_prepare13": {
+    "location": "square",
+    "people": [
+      "guard",
+      "karo",
+      "resident_badook",
+      "neoul"
+    ],
+    "options": [
+      {
+        "title": "기록 읽을 자리를 수레에서 떼어 놓는다",
+        "location": "square",
+        "object": "cart",
+        "guard": [
+          [
+            "state",
+            "crowd_records_spaced13",
+            null
+          ]
+        ]
+      },
+      {
+        "title": "수레 옆 짐을 옮겨 통로를 나눈다",
+        "location": "square",
+        "object": "cart",
+        "guard": [
+          [
+            "state",
+            "crowd_cart_spaced13",
+            null
+          ]
+        ]
+      },
+      {
+        "title": "돌목에게 기록 읽는 동안 너울을 맡아 달라고 한다",
+        "location": "square",
+        "person": "guard",
+        "guard": [
+          [
+            "state",
+            "crowd_records_spaced13",
+            true
+          ],
+          [
+            "state",
+            "crowd_cart_spaced13",
+            true
+          ],
+          [
+            "state",
+            "crowd_supervisor_placed13",
+            null
+          ]
+        ]
+      },
+      {
+        "title": "검증한 기록을 소리 내어 읽는다",
+        "location": "square",
+        "object": "cart"
+      },
+      {
+        "title": "공개를 미루고 인계부터 확인한다",
+        "location": "square",
+        "object": "cart"
+      }
+    ]
   }
 }

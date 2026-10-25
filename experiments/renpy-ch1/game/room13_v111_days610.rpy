@@ -992,6 +992,7 @@ label r13_v111_missing_pages8:
     call r13_lines(r13_v111_lines(['MS14_D08_P01_L0022']),'v111:MS14_D08_P01_L0022')
     call r13_lines(r13_v111_lines(['MS14_D08_P01_L0023']),'v111:MS14_D08_P01_L0023')
     call r13_lines(r13_v111_lines(['MS14_D08_P01_L0024']),'v111:MS14_D08_P01_L0024')
+    call r13_v111_owl_reading8
     # 2026-10-25: 너울과 할머니가 문간에 서는 줄(A05~)은 두 사람을 무대에 세운 뒤에 보인다.
     $ r13_v111_join(['neoul','granny'])
     call r13_lines(r13_nw_block('neoul_list8'),'nw:neoul_list8')

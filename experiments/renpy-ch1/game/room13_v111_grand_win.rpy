@@ -126,6 +126,8 @@ label r13_v111_crowd_record13:
     call r13_lines(r13_nw_block('crowd_record_read13'),'nw:crowd_record_read13')
     if not r13_v111_owned("NW_NEOUL_LEDGER"):
         $ r13_nw_acquire("NW_NEOUL_LEDGER","surrendered")
+    if r13_v111_value('crowd_preparation_schema13'):
+        $ r13_crowd_release13()
     $ r13_v111_set('crowd_record_read',True)
     $ r13_v111_set('crowd_resolution_done',True)
     $ r13_v111_set('crowd_injury',False)

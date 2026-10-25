@@ -104,3 +104,11 @@ label r13_v111_promise_night7:
 label r13_v111_owl_well8:
     call r13_lines(r13_nw_block('owl_well8'),'nw:owl_well8')
     jump r13_v111_missing_pages8
+
+# 살아 있는 부엉이의 도움: 빈 기록을 추측으로 메우지 않는 실제 읽기 습관.
+label r13_v111_owl_reading8:
+    if r13_v111_value('OWL_ALIVE') is not True or r13_v111_value('owl_reading8_done') or not r13_v111_actor_ready('resident_owlgp'):
+        return
+    call r13_lines(r13_nw_block('owl_reading8'),'nw:owl_reading8')
+    $ r13_v111_set('owl_reading8_done',True)
+    return

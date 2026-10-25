@@ -1,4 +1,14 @@
 init 324 python:
+    def r13_crowd_guard_available13(reserved=False):
+        busy=r13_v111_value('busy:guard')
+        return (r13_v111_person_alive('guard') and not r13_v111_value('departed:guard') and not r13_v111_value('listed:guard')
+            and r13_v111_value('location:guard') in (None,'square') and (not busy or reserved and busy=='crowd_supervision'))
+    def r13_crowd_prepared13():
+        return (all(r13_v111_value(k) is True for k in ('crowd_records_spaced13','crowd_cart_spaced13','crowd_supervisor_placed13'))
+            and r13_crowd_guard_available13(True) and r13_v111_value('busy:guard')=='crowd_supervision')
+    def r13_crowd_release13():
+        if r13_v111_value('busy:guard')=='crowd_supervision':r13_v111_set('busy:guard',False)
+        r13_v111_set('crowd_supervisor_placed13',None)
     def r13_soup_inspect_ready12():
         return all(r13_v111_value(k) is True for k in ('soup_smallpot_seen12','soup_bowls_seen12','soup_bottle_seen12'))
     def r13_nero_transport_ready11():
@@ -2235,7 +2245,7 @@ label r13_v111_handover_plan13:
         '보온·감독 아래 인계를 기다린다':
             jump r13_v111_partial13
         '검증한 기록을 공개한다' if r13_v111_value('false_message_admitted') and not r13_v111_value('crowd_resolution_done'):
-            jump r13_v111_crowd13
+            jump r13_v111_crowd_prepare13
 
 label r13_v111_school_handover_prep13:
     # Review 0.20.1 4-3: a listed Nabi gets off the cart before she works the school handover.
@@ -2594,14 +2604,39 @@ label r13_v111_partial13:
     $ r13_v111_set('pending_handover_supervised',True)
     jump r13_v111_sleep13
 
+label r13_v111_crowd_prepare13:
+    $ r13_v111_set('crowd_preparation_schema13',True)
+    call r13_v111_travel('square','crowd_prepare13',[],True)
+    $ r13_v111_arrive(['karo','resident_badook','neoul']+(['guard'] if r13_crowd_guard_available13(True) else []))
+label r13_v111_crowd_prepare_wait13:
+    call r13_v111_wait('crowd_prepare13')
+    if _return==0:
+        call r13_lines(r13_nw_block('crowd_space_records13'),'nw:crowd_space_records13')
+        $ r13_v111_set('crowd_records_spaced13',True)
+    elif _return==1:
+        call r13_lines(r13_nw_block('crowd_space_cart13'),'nw:crowd_space_cart13')
+        $ r13_v111_set('crowd_cart_spaced13',True)
+    elif _return==2 and r13_crowd_guard_available13():
+        call r13_lines(r13_nw_block('crowd_place_guard13'),'nw:crowd_place_guard13')
+        $ r13_v111_set('busy:guard','crowd_supervision')
+        $ r13_v111_set('location:guard','square')
+        $ r13_v111_set('crowd_supervisor_placed13',True)
+        $ r13_v111_talk_person=None
+    elif _return==3:
+        jump r13_v111_crowd13
+    elif _return==4:
+        $ r13_crowd_release13()
+        jump r13_v111_handover_plan13
+    jump r13_v111_crowd_prepare_wait13
+
 label r13_v111_crowd13:
     $ r13_v111_scene('MS14_D13_C')
     $ r13_edit(period=2)
     $ room13["v111"]["people"]=[]
     call r13_v111_travel('square','crowd13',[])
-    $ r13_v111_arrive(['guard', 'karo', 'resident_badook', 'neoul'])
+    $ r13_v111_arrive(['karo', 'resident_badook', 'neoul']+(['guard'] if not r13_v111_value('crowd_preparation_schema13') or r13_crowd_guard_available13(True) else []))
     $ r13_v111_score()
-    $ r13_v111_arrive(['guard', 'karo', 'resident_badook', 'neoul'])
+    $ r13_v111_arrive(['karo', 'resident_badook', 'neoul']+(['guard'] if not r13_v111_value('crowd_preparation_schema13') or r13_crowd_guard_available13(True) else []))
     call r13_lines(r13_v111_lines(['MS14_D13_C_L0002']),'v111:MS14_D13_C_L0002')
     call r13_lines(r13_v111_lines(['MS14_D13_C_L0003']),'v111:MS14_D13_C_L0003')
     if r13_v111_value('family_location')=='square':
@@ -2610,6 +2645,15 @@ label r13_v111_crowd13:
     if r13_v111_value('neoul_promise_proven') and r13_v111_person_alive('resident_nubi') and r13_v111_person_alive('neoul'):
         $ r13_v111_join(['resident_nubi'])
         call r13_lines(r13_nw_block('crowd_record13'),'nw:crowd_record13')
+    # New runs settle from the actual pre-publication state. Saved old menus remain below.
+    if r13_v111_value('crowd_preparation_schema13'):
+        if r13_v111_value('neoul_promise_proven') and r13_v111_person_alive('resident_nubi') and r13_v111_person_alive('neoul'):
+            jump r13_v111_crowd_record13
+        if r13_crowd_prepared13():
+            jump r13_v111_crowd_guard13
+        jump r13_v111_crowd_watch13
+
+label r13_v111_crowd_legacy_menu13:
     # 2026-10-24 행동 검수 13-11: 메뉴 글이 두 뜻으로 읽혔다(「너울 앞을 막는다」=달아나는 길을 막는다?,
     # 「막지 않는다」=무엇을?, 「현장 감독자」=이 장면에서 불린 적 없는 말). 같은 갈래를 뜻이 하나로 읽히게 쓴다.
     menu:
@@ -2623,7 +2667,7 @@ label r13_v111_crowd13:
             jump r13_v111_crowd_watch13
 
 label r13_v111_daram_crowd13:
-    $ r13_v111_arrive(['mom', 'daram', 'guard', 'karo', 'neoul', 'resident_badook'])
+    $ r13_v111_arrive(['mom', 'daram', 'karo', 'neoul', 'resident_badook']+(['guard'] if not r13_v111_value('crowd_preparation_schema13') or r13_crowd_guard_available13(True) else []))
     if r13_v111_actor_ready('daram') and room13['location']=='square':
         call r13_lines(r13_v111_lines(['MS14_D13_C_L0006']),'v111:MS14_D13_C_L0006')
         $ r13_v111_set('crowd_witnessed',True)
@@ -2668,6 +2712,8 @@ label r13_v111_crowd_guard13:
     $ r13_v111_set('crowd_resolution_done',True)
     $ r13_v111_set('crowd_injury',False)
     $ r13_v111_set('outcome13','all_rescued')
+    if r13_v111_value('crowd_preparation_schema13'):
+        $ r13_crowd_release13()
     jump r13_v111_handover_plan13
 
 label r13_v111_crowd_watch13:
@@ -2683,6 +2729,8 @@ label r13_v111_crowd_watch13:
     $ r13_v111_set('crowd_injury',True)
     $ r13_v111_set('crowd_intervention','none')
     $ r13_v111_set('outcome13','crowd_violence')
+    if r13_v111_value('crowd_preparation_schema13'):
+        $ r13_crowd_release13()
     jump r13_v111_sleep13
 
 # 미연결 분기(검토 0.20.4 연결 2): 정상 선택에서 들어오는 길이 없다. docs/design/UNCONNECTED_BRANCHES.md (2026-10-23 미연결 유지 결정).

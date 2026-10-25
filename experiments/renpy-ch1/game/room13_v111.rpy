@@ -95,6 +95,9 @@ init 301 python:
         if v.get("scene") in ("MS14_D14_S02","MS14_D14_S04") and r13_v111_value("madam_observer_consent") and r13_v111_value("location:resident_madam")==store.room13["location"] and r13_v111_person_alive("resident_madam"):
             b["people"]=list(dict.fromkeys(b["people"]+["resident_madam"]))
         if v.get("gate")=="partial_receipt14" and getattr(store,"v111_pending_patient",None):b["people"]=list(dict.fromkeys(b["people"]+[store.v111_pending_patient]))
+        if v.get("gate")=="crowd_prepare13" and not r13_crowd_guard_available13(True):
+            b["people"]=[p for p in b.get("people",[]) if p!="guard"]
+            b["options"]=[o for o in b["options"] if o.get("person")!="guard"]
         if b.get("daram_if_free") and r13_v111_value("DARAM_DETAINED"):b["people"]=[p for p in b["people"] if p!="daram"]
         if b.get("people_by_location") is not None:b["people"]=b["people_by_location"].get(store.room13["location"],[])
         return b
@@ -126,6 +129,7 @@ init 301 python:
         # Preserve the existing residents and their scheduled staging. Explicit
         # V1.1.1 survival, relocation and custody results still take precedence.
         people=[] if r13_v111_value("wild_night14") or store.room13["location"] in ("hidden_pandol","hidden_base14") else list(_r13_v111_visible_people())
+        if store.room13["v111"].get("gate")=="crowd_prepare13" and not r13_crowd_guard_available13(True):people=[p for p in people if p!="guard"]
         people=[p for p in people if not r13_v111_value("busy:"+p) or r13_v111_value("location:"+p) in (None,store.room13["location"])]
         if r13_v111_value("piko.location") and r13_v111_value("piko.location")!=store.room13["location"]:
             people=[p for p in people if p!="resident_piko"]
