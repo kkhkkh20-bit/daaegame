@@ -77,4 +77,4 @@ async def main():
    except:pass
   (OUT/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));print(json.dumps(report,ensure_ascii=False),flush=True);await b.close()
   if report['status']=='failed':raise SystemExit(1)
-asyncio.run(main())
+if __name__=='__main__':asyncio.run(main())

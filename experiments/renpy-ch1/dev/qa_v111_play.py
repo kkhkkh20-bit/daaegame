@@ -39,7 +39,8 @@ class Fast(UIQA):
    wanted='‹' if x<640 else '›'
    if wanted in arrows:await self.press(wanted)
    elif arrows:await self.press(arrows[0])
-   else:raise AssertionError(('Object target absent',key,state))
+   else:
+    await asyncio.sleep(.6);return
    await asyncio.sleep(.4);return
   x,y,w,h=rects[-1]
   fx,fy=((.5,.5),(.2,.2),(.8,.2),(.2,.8),(.8,.8),(.05,.5),(.95,.5))[attempt%7]

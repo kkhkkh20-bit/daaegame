@@ -1,0 +1,27 @@
+{
+  "version": "0.20.37",
+  "unit_tests": 1051,
+  "lint": "passed",
+  "native": {
+    "status": "PASSED",
+    "remaining_processes": 0,
+    "source": "/workspace/daaegame-apply/experiments/renpy-ch1",
+    "screenshots": [
+      "gate-clear-touch.png",
+      "object-open.png",
+      "person-open.png",
+      "records-open.png"
+    ]
+  },
+  "web": {
+    "passed": true,
+    "version": "0.20.37",
+    "checks": [
+      "actual newgame gate",
+      "records touch",
+      "thought open/close",
+      "guard interaction"
+    ],
+    "pageerrors": []
+  }
+}

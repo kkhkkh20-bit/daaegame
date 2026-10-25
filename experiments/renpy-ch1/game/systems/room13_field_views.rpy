@@ -73,15 +73,13 @@ screen r13_field_view_controls(ready):
     $ wide=r13_world_width()>1280
     $ scene_hint,pan_hint=r13_field_hint_state(room13["location"],wide,r13_scene_hint_seen,persistent.r13_pan_hint_seen)
     $ book_top=r13_field_notebook_top()
-    hbox:
-        xpos 178 ypos (book_top+8) spacing 4
-        add Transform(Crop((16,16,32,32),r13_asset_path("file:assets/ui-b-field/b_icon_acorn.png")),xysize=(30,30)) yalign .5
-        text "조사" size r13_read_size(24,27) color "#4b3021" font R13_UI_BOLD_FONT yalign .5
     if scene_hint or pan_hint:
         if scene_hint:
             timer (6.0 if room13["location"]=="gate" else 3.0) action SetVariable("r13_scene_hint_seen",tuple(r13_scene_hint_seen)+(room13["location"],))
         if pan_hint:
             timer 6.0 action SetField(persistent,"r13_pan_hint_seen",True)
-        frame:
-            area (190,book_top+42,536,44) padding (0,0) background None
-            text ("인물과 놓인 물건·붙은 글을 눌러 살펴보세요." if room13["location"]=="gate" and scene_hint else ("인물·사물을 눌러 조사 · 좌우 끝 화살표로 이동" if wide else "인물이나 사물을 눌러 조사하세요")) size r13_read_size(20,23) color "#6a4d37" font r13_ui_font() xsize 536
+        # 안내 문구는 장면을 가리지 않도록 조사 화면에서 상시 표시하지 않는다.
+
+screen r13_field_top_button(caption,icon,command,ready=True,width=144,chosen=False):
+    $ top_icon=Transform(Crop((16,16,32,32),r13_field_icon(icon)),zoom=24.0/32)
+    use r13_state_button(caption,command,width,88 if r13_touch_ui() else 64,family="topic_standard",chosen=chosen,enabled=ready,icon=top_icon,text_size=22)
