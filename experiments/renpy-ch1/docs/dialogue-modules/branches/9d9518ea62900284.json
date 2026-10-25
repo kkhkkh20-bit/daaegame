@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "c7e00b15136871e56d6e90ca17c98b0654db9f906a97da74b3fa5a95b7cd78e4",
+  "source_stamp": "c46c499f6c8df010bf05492c66f0e1fb3559b493d4eecdd2310007d36dc58a59",
   "entries": [
     {
       "id": "MS14_D07_S01_L0001",
@@ -398,9 +398,9 @@
       "speaker": null,
       "kind": "narration",
       "text": "보리가 문밖에 선다.",
-      "editable": true,
-      "usage": "active",
-      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
       "call_sites": [
         {
           "file": "game/room13_v111_days610.rpy",
@@ -410,7 +410,9 @@
         }
       ],
       "activation": {
-        "replace_conditions": [],
+        "replace_conditions": [
+          null
+        ],
         "drop_conditions": []
       },
       "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
@@ -572,9 +574,9 @@
       "speaker": null,
       "kind": "narration",
       "text": "누비의 막내가 솥 옆에서 입을 연다.",
-      "editable": true,
-      "usage": "active",
-      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
       "call_sites": [
         {
           "file": "game/room13_v111_days610.rpy",
@@ -584,7 +586,9 @@
         }
       ],
       "activation": {
-        "replace_conditions": [],
+        "replace_conditions": [
+          null
+        ],
         "drop_conditions": []
       },
       "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
@@ -1282,9 +1286,9 @@
       "speaker": null,
       "kind": "narration",
       "text": "누비가 젖은 행주를 접고 또 접는다.",
-      "editable": true,
-      "usage": "active",
-      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
       "call_sites": [
         {
           "file": "game/room13_v111_days610.rpy",
@@ -1294,7 +1298,9 @@
         }
       ],
       "activation": {
-        "replace_conditions": [],
+        "replace_conditions": [
+          null
+        ],
         "drop_conditions": []
       },
       "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
@@ -1589,9 +1595,9 @@
       "speaker": null,
       "kind": "narration",
       "text": "누비가 행주를 놓는다.",
-      "editable": true,
-      "usage": "active",
-      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
       "call_sites": [
         {
           "file": "game/room13_v111_days610.rpy",
@@ -1601,7 +1607,9 @@
         }
       ],
       "activation": {
-        "replace_conditions": [],
+        "replace_conditions": [
+          null
+        ],
         "drop_conditions": []
       },
       "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
@@ -1807,9 +1815,9 @@
       "speaker": null,
       "kind": "narration",
       "text": "나는 종이에서 눈을 들어 누비를 본다.",
-      "editable": true,
-      "usage": "active",
-      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
       "call_sites": [
         {
           "file": "game/room13_v111_days610.rpy",
@@ -1819,7 +1827,9 @@
         }
       ],
       "activation": {
-        "replace_conditions": [],
+        "replace_conditions": [
+          null
+        ],
         "drop_conditions": []
       },
       "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
