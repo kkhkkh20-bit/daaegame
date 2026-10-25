@@ -148,29 +148,14 @@ init 999 python:
         packet=getattr(store,'r13_packet',None)
         return bool(screen and getattr(store,'r13_topic',None)==getattr(store,'r13_pd_topic',None) and packet and packet[0]==r13_pd_person and packet[1] in r13_pd_expected_speech)
 
-    def r13_pd_say_widget(widget_id):
-        screen=renpy.get_screen('say')
-        widget=renpy.get_displayable('say',widget_id)
-        if widget is not None:return widget
-        # SDK 8.5.3 can reuse a cached nameplate subtree without re-registering
-        # its child id. Require the actual Text with that id in the live tree.
-        pending=[screen.child];seen=set();matches=[]
-        while pending:
-            node=pending.pop()
-            if node is None or id(node) in seen:continue
-            seen.add(id(node))
-            if getattr(node,'id',None)==widget_id and isinstance(node,renpy.text.text.Text):matches.append(node)
-            pending.extend(node.visit())
-        assert len(matches)==1,('Missing or ambiguous live say widget',widget_id,len(matches))
-        return matches[0]
-
     def r13_pd_assert_topic_say():
         assert r13_pd_topic_say_ready(), 'Selected topic resident speech not reached'
         screen=renpy.get_screen('say');scope=screen.scope
-        what=r13_pd_say_widget('what');who=r13_pd_say_widget('who')
+        assert not r13_black_card,'Opening narration card leaked into investigation fixture'
+        what=renpy.get_displayable('say','what');who=renpy.get_displayable('say','who')
         expected_name=r13_speaker_label(R13_NAMES[r13_pd_person])
         assert scope.get('who')==expected_name,(scope.get('who'),expected_name)
-        assert scope.get('what') and what is not None and who is not None, dict(packet=list(r13_packet),who=scope.get('who'),what=scope.get('what'),what_widget=type(what).__name__,who_widget=type(who).__name__,widget_ids=sorted(screen.widgets))
+        assert scope.get('what') and what is not None and who is not None, dict(packet=list(r13_packet),who=scope.get('who'),what=scope.get('what'),what_widget=type(what).__name__,who_widget=type(who).__name__,widget_ids=sorted(screen.widgets),black_card=r13_black_card)
         assert min(renpy.render(what,1280,720,1.2,1.2).get_size())>0
         assert who.text==[expected_name],('Wrong rendered speaker label',who.text,expected_name)
         name_focus=renpy.test.testfocus.focus_from_displayable(who)
