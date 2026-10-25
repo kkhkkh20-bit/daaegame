@@ -728,6 +728,9 @@ label r13_v111_handover7:
     # 2026-10-25: 낮에 도토의 다짐을 받은 판은 거짓 부름에 도토가 내려가지 않는다(room13_v111_owl_prevent.rpy).
     if r13_v111_value('doto_promise7'):
         jump r13_v111_promise_night7
+    if r13_v111_value('owl_tok_work7') and r13_owl_tok_available7():
+        jump r13_v111_tok_night7
+    $ r13_owl_tok_release7()
     $ r13_v111_set('route7','murder')
     $ r13_v111_set('choice:MS14_D07_S03','C')
     $ r13_fork_set_fate('fate_owl','lost')

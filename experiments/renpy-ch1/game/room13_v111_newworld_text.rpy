@@ -157,7 +157,7 @@ init 319 python:
         # Events 06-07: the day-7 room 13 night and the day-10 meetings.
         # 2026-10-25 부엉이 예방 1단계(OWL_PREVENTION_DESIGN.md 9장): 7일 A/B/C 메뉴를 걷고, 7일 낮 13호 난로의 돌(stone)
         # 또는 도토의 다짐(promise)으로만 막는다. 다짐만 받은 판은 예전 B 판처럼 부엉이가 무너진 채 살아 8일 서리가 돌을 꺼낸다.
-        "prevention_b":lambda:r13_v111_value("prevention") in ("B","promise"),
+        "prevention_b":lambda:r13_v111_value("prevention") in ("B","promise","repair"),
         "prevention_stone":lambda:r13_v111_value("prevention")=="stone",
         "owl_fell7":lambda:r13_v111_value("OWL_ALIVE") is not False and r13_v111_value("prevention")!="stone",
         "stove_untouched7":lambda:r13_v111_value("stove13_7") is None,

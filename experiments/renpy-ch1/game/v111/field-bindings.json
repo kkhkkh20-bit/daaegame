@@ -3005,6 +3005,60 @@
             null
           ]
         ]
+      },
+      {
+        "index": 110,
+        "title": "13호 빗장 받이를 살핀다",
+        "location": "room13",
+        "object": "v111_latch7",
+        "guard": [
+          [
+            "state",
+            "owl_latch_seen7",
+            null
+          ]
+        ]
+      },
+      {
+        "index": 111,
+        "title": "빗장 받이를 봐 주실 수 있습니까?",
+        "location": "workshop",
+        "person": "resident_tok",
+        "guard": [
+          [
+            "state",
+            "owl_latch_seen7",
+            true
+          ],
+          [
+            "state",
+            "owl_tok_agreed7",
+            null
+          ],
+          [
+            "state",
+            "TOK_ALIVE",
+            true
+          ]
+        ]
+      },
+      {
+        "index": 112,
+        "title": "빗장 받이 작업을 함께 확인한다",
+        "location": "room13",
+        "object": "v111_latch7",
+        "guard": [
+          [
+            "state",
+            "owl_tok_agreed7",
+            true
+          ],
+          [
+            "state",
+            "owl_tok_work7",
+            null
+          ]
+        ]
       }
     ],
     "people_by_location": {
@@ -3018,7 +3072,8 @@
       ],
       "room13": [],
       "workshop": [
-        "buri"
+        "buri",
+        "resident_tok"
       ],
       "dining": [
         "npc_pandol"

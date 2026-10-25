@@ -75,6 +75,8 @@ init 301 python:
             return dict(people=v.get("people",["daram"]),options=[dict(title=R13_PLACES[target][0],location=target,move=target)])
         b=dict(R13_V111_BINDINGS.get(v.get("gate"),{}))
         b["options"]=[dict(o,index=o.get("index",i)) for i,o in enumerate(b.get("options",[])) if all((r13_v111_owned(k)==expected if kind=="evidence" else r13_v111_value(k)==expected) for kind,k,expected in o.get("guard",[]))]
+        if v.get("gate")=="free_day7" and not r13_owl_tok_available7():
+            b["options"]=[o for o in b["options"] if o.get("index") not in (111,112)]
         if v.get("gate")=="transport_cleanup13":
             guard_place=r13_v111_value("location:guard") if r13_v111_value("busy:guard")=="silluk_supervision" else "square"
             for option in b["options"]:

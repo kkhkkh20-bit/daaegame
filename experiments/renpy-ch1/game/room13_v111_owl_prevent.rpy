@@ -7,11 +7,19 @@
 # 새 사실(설계 문서 범위 안): 할머니는 7일 아침 도토가 13호 돌을 간 뒤 그 배급 돌을 꺼내 재받이에 묻고 안쪽 돌을 넣었다.
 # 보고: docs/reviews/owl-prevention-20261024/적용보고.md
 init 322 python:
+    def r13_owl_tok_available7():
+        return (r13_v111_value('meeting:lamp') in ('win','partial') and r13_v111_value('TOK_ALIVE') is not False and not r13_v111_value('listed:resident_tok') and not r13_v111_value('departed:resident_tok') and r13_v111_value('busy:resident_tok') in (None,False,'owl_repair7'))
+    def r13_owl_tok_release7():
+        if r13_v111_value('busy:resident_tok')=='owl_repair7':
+            r13_v111_set('busy:resident_tok',False)
+            r13_v111_set('location:resident_tok',None)
     # 13호 그림에는 난로가 그려져 있지 않다(전용 그림 필요). 책장과 화분 사이 빈 벽에 조사 자리만 둔다.
     # 오른쪽 끝으로 밀었을 때 오른쪽 아래 조작 버튼(새 생각·기록)에 가리지 않는 높이다.
     # 글이 빈 물건은 그 단계의 선택이 있을 때만 눌린다(7일 낮 자유 시간에만).
     ROOM13["objects"].setdefault("room13",{})["v111_stove"]=dict(rect=[1820,250,170,190],need=[],give=[],flags=[],text="")
     ROOM13["objects"]["room13"]["v111_ashbin"]=dict(rect=[1830,445,100,60],need=[],give=[],flags=[],text="")
+    ROOM13["objects"]["room13"]["v111_latch7"]=dict(rect=[85,240,150,250],need=[],give=[],flags=[],text="")
+    R13_OBJECT_NAMES['v111_latch7']='13호 빗장 받이'
     R13_OBJECT_NAMES.update(v111_stove="난로",v111_ashbin="재받이")
 
 # ---------------------------------------------------------------- 5일 밤 (결정 11: 과자 봉지)
@@ -35,7 +43,9 @@ label r13_v111_free_day7_wait:
 
 # 대기 화면이 돌려준 번호(field-bindings.json free_day7 의 선택 차례)로 한 가지 행동을 한다.
 label r13_v111_free_day7_pick(n):
-    if n>=100:
+    if n in (110,111,112):
+        call r13_v111_owl_repair_pick7(n)
+    elif n>=100:
         call r13_hidden_base_pick7(n)
     elif n>=80:
         call r13_hp_pick7(n)
@@ -71,6 +81,7 @@ label r13_v111_free_evening7:
 # 돌을 꺼낸 판: 부엉이가 무너지지 않는다. 의료진을 부를 일이 없으니 할머니의 틈도 없다.
 # 할머니의 동기는 남는다 — 난로를 들여다보고(7일), 8일 너울에게 「같은 말을 두 번 묻는 노인」이라 이른다.
 label r13_v111_owl_well7:
+    $ r13_owl_tok_release7()
     call r13_lines(r13_nw_block('owl_well7'),'nw:owl_well7')
     $ r13_v111_set('route7','prevented')
     $ r13_v111_set('prevention','stone')
@@ -84,6 +95,7 @@ label r13_v111_owl_well7:
 # 다짐만 받은 판: 부엉이는 무너지고 아빠는 서리를 부르러 간다(다람은 걷지 못해 도토에게 맡긴다).
 # 계단 아래 거짓 부름에 도토가 내려가지 않아 할머니는 돌아간다. 돌은 밤새 남고 8일 서리가 꺼낸다(예전 B 판과 같다).
 label r13_v111_promise_night7:
+    $ r13_owl_tok_release7()
     # 살인 판과 같은 이동(지도로 진료소). 갈림은 돌아온 뒤에야 보인다.
     call r13_v111_travel('clinic','incident7',[])
     $ r13_v111_arrive(['karo','resident_seori'])
@@ -112,3 +124,36 @@ label r13_v111_owl_reading8:
     call r13_lines(r13_nw_block('owl_reading8'),'nw:owl_reading8')
     $ r13_v111_set('owl_reading8_done',True)
     return
+
+label r13_v111_owl_repair_pick7(n):
+    if n==110:
+        call r13_lines(r13_nw_block('owl_latch_look7'),'nw:owl_latch_look7')
+        $ r13_v111_set('owl_latch_seen7',True)
+    elif n==111 and r13_v111_value('owl_latch_seen7') and r13_owl_tok_available7():
+        call r13_lines(r13_nw_block('owl_latch_request7'),'nw:owl_latch_request7')
+        $ r13_v111_set('owl_tok_agreed7',True)
+    elif n==112 and r13_v111_value('owl_tok_agreed7') and r13_owl_tok_available7():
+        $ r13_v111_join(['resident_tok'])
+        call r13_lines(r13_nw_block('owl_latch_work7'),'nw:owl_latch_work7')
+        $ r13_v111_set('owl_tok_work7',True)
+        $ r13_v111_set('busy:resident_tok','owl_repair7')
+    return
+
+label r13_v111_tok_night7:
+    $ r13_v111_join(['resident_tok'])
+    call r13_lines(r13_nw_block('owl_tok_stays7'),'nw:owl_tok_stays7')
+    call r13_v111_travel('clinic','incident7',[])
+    $ r13_v111_arrive(['karo','resident_seori'])
+    call r13_lines(r13_nw_block('promise_clinic7'),'nw:promise_clinic7')
+    call r13_v111_travel('room13','tok_room7',[],True)
+    $ r13_v111_arrive(['daram','doto','resident_owlgp','resident_seori','karo','resident_tok'])
+    call r13_lines(r13_nw_block('owl_tok_return7'),'nw:owl_tok_return7')
+    $ r13_v111_set('route7','prevented')
+    $ r13_v111_set('prevention','repair')
+    $ r13_v111_set('choice:MS14_D07_S03','repair')
+    $ r13_fork_set_fate('fate_owl','repair')
+    $ r13_v111_set('OWL_ALIVE',True)
+    $ r13_v111_set('DARAM_DETAINED',False)
+    $ r13_v111_set('D07_medical_care','complete')
+    $ r13_owl_tok_release7()
+    jump r13_v111_sleep7
