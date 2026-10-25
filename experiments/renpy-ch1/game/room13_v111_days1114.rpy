@@ -2022,7 +2022,10 @@ label r13_v111_rein_ledger13p:
     if not r13_v111_value("roster_shown13"):
         $ r13_v111_set("roster_shown13",True)
         call r13_lines(r13_nw_roster_lines(),'nw:roster13')
-    call r13_v111_proof('장부의 두 배를 실룩에게 보인다',['E16'],'r13_v111_rein_ledger13','r13_v111_rein_wrong13a',None)
+    if r13_v111_value('lamp_bound2'):
+        call r13_v111_proof('인수하지 않은 돌의 약속 값을 보인다',['NW_LA_OFFER'],'r13_v111_rein_ledger13','r13_v111_rein_wrong13a',None)
+    else:
+        call r13_v111_proof('장부의 두 배를 실룩에게 보인다',['E16'],'r13_v111_rein_ledger13','r13_v111_rein_wrong13a',None)
     jump expression _return
 
 label r13_v111_rein_ledger13:

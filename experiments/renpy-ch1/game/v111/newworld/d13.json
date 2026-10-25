@@ -1305,7 +1305,14 @@
         "speaker": "아빠",
         "kind": "thought",
         "text": "저 칸을 채우는 손이 따로 있다. ……실룩 씨가 저 수레에 있다. 3일에 3번 돌을 판 사람이다.",
-        "when": "listed:resident_siluk"
+        "when": "lamp_stolen_silluk_listed"
+      },
+      {
+        "id": "NW_AR_D13_10_ATTEMPT",
+        "speaker": "아빠",
+        "kind": "thought",
+        "text": "저 칸을 채우는 손이 따로 있다. 실룩 씨다. 3번 돌을 빼려다 멈춘 까닭을 아직 다 듣지 못했다.",
+        "when": "lamp_attempt_silluk_listed"
       },
       {
         "id": "NW_RO_01",
@@ -1343,7 +1350,16 @@
         "speaker": "실룩",
         "kind": "dialogue",
         "text": "두 배를 왜 줬겠어요. 3번이니까요. 그 아래 누가 자는지 마을 사람 다 알아요.",
-        "expression": "neutral"
+        "expression": "neutral",
+        "when": "lamp_stolen"
+      },
+      {
+        "id": "NW_RL_01_ATTEMPT",
+        "speaker": "실룩",
+        "kind": "dialogue",
+        "text": "두 배를 주겠다고 했어요. 3번이니까요. 하지만 돌을 못 가져가서 그 돈은 못 받았어요.",
+        "expression": "neutral",
+        "when": "lamp_attempt"
       },
       {
         "id": "NW_RL_02",
@@ -1357,7 +1373,16 @@
         "speaker": "아빠",
         "kind": "dialogue",
         "text": "판자를요? 그런데 왜 등의 돌을 뺐습니까?",
-        "expression": "neutral"
+        "expression": "neutral",
+        "when": "lamp_stolen"
+      },
+      {
+        "id": "NW_RL_02B_ATTEMPT",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "판자를요? 그런데 왜 등의 돌을 빼려 했습니까?",
+        "expression": "neutral",
+        "when": "lamp_attempt"
       },
       {
         "id": "NW_RL_02C",
@@ -1389,7 +1414,7 @@
         "kind": "dialogue",
         "text": "새벽에 가 보니 벤치가 비어 있었어요. 판자를 찾느라 벤치 밑까지 뒤졌는데 없더군요.",
         "expression": "anxious",
-        "when": "piko_alive"
+        "when": "piko_alive_lamp_stolen"
       },
       {
         "id": "NW_RL_02G",
@@ -1397,7 +1422,7 @@
         "kind": "dialogue",
         "text": "그럼 빈손으로 돌아가면 됐잖습니까.",
         "expression": "neutral",
-        "when": "piko_alive"
+        "when": "piko_alive_lamp_stolen"
       },
       {
         "id": "NW_RL_02H",
@@ -1405,7 +1430,15 @@
         "kind": "dialogue",
         "text": "못 가져오면 등 돌이라도 빼라고 했어요. 그 자리에 다시 못 자게. 백 부인이 두 배로 산다고 했고요. 그래서…… 돌만 뺐어요.",
         "expression": "anxious",
-        "when": "piko_alive"
+        "when": "piko_alive_lamp_stolen"
+      },
+      {
+        "id": "NW_RL_02H_ATTEMPT",
+        "speaker": "실룩",
+        "kind": "dialogue",
+        "text": "판자를 못 가져가면 등 돌이라도 빼라고 했어요. 그 자리에 다시 못 자게. 그런데 덮개가 묶여 있어서 못 뺐어요.",
+        "expression": "anxious",
+        "when": "lamp_attempt"
       },
       {
         "id": "NW_RL_03",

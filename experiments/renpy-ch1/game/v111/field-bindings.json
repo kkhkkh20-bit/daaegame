@@ -3288,5 +3288,160 @@
         "object": "hb_door"
       }
     ]
+  },
+  "lamp_prep2": {
+    "location": "room13",
+    "people": [
+      "daram"
+    ],
+    "people_by_location": {
+      "square": [
+        "resident_lamplighter",
+        "daram"
+      ],
+      "room13": [
+        "daram"
+      ]
+    },
+    "options": [
+      {
+        "title": "방으로 들어간다",
+        "location": "room13",
+        "person": "daram"
+      },
+      {
+        "title": "남은 끈을 빌린다",
+        "location": "square",
+        "person": "resident_lamplighter",
+        "guard": [
+          [
+            "state",
+            "lamp_cord2",
+            null
+          ]
+        ]
+      },
+      {
+        "title": "덮개의 걸쇠를 살핀다",
+        "location": "square",
+        "object": "lamp",
+        "guard": [
+          [
+            "state",
+            "lamp_latch_seen2",
+            null
+          ]
+        ]
+      },
+      {
+        "title": "걸쇠에 끈을 감아 고정한다",
+        "location": "square",
+        "object": "lamp",
+        "guard": [
+          [
+            "state",
+            "lamp_cord2",
+            true
+          ],
+          [
+            "state",
+            "lamp_latch_seen2",
+            true
+          ],
+          [
+            "state",
+            "lamp_bound2",
+            null
+          ]
+        ]
+      }
+    ]
+  },
+  "lamp_attempt_field3": {
+    "location": "square",
+    "people": [
+      "resident_lamplighter",
+      "resident_tok",
+      "resident_piko",
+      "daram"
+    ],
+    "options": [
+      {
+        "title": "공방에서 함께 확인한다",
+        "location": "square",
+        "person": "resident_tok",
+        "guard": [
+          [
+            "state",
+            "lamp_field_done3",
+            true
+          ],
+          [
+            "state",
+            "lamp_knife_done3",
+            true
+          ],
+          [
+            "state",
+            "lamp_store_done3",
+            true
+          ]
+        ]
+      },
+      {
+        "title": "돌받침 안쪽을 살피고 조각을 담는다",
+        "location": "square",
+        "object": "lamp",
+        "guard": [
+          [
+            "state",
+            "lamp_field_done3",
+            null
+          ]
+        ]
+      },
+      {
+        "title": "칼과 조각의 대조를 부탁한다",
+        "location": "square",
+        "person": "resident_siluk",
+        "guard": [
+          [
+            "state",
+            "lamp_field_done3",
+            true
+          ],
+          [
+            "state",
+            "lamp_knife_done3",
+            null
+          ]
+        ]
+      },
+      {
+        "title": "매입 장부와 약속한 값을 확인한다",
+        "location": "store",
+        "person": "resident_madam",
+        "guard": [
+          [
+            "state",
+            "lamp_store_done3",
+            null
+          ]
+        ]
+      }
+    ],
+    "people_by_location": {
+      "square": [
+        "resident_lamplighter",
+        "resident_tok",
+        "resident_piko",
+        "resident_siluk",
+        "daram"
+      ],
+      "store": [
+        "resident_madam",
+        "daram"
+      ]
+    }
   }
 }
