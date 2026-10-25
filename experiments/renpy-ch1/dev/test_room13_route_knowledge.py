@@ -21,8 +21,10 @@ for state,allowed in (({},False),({'secret_route_unlocked':False},False),({'secr
 # Each run starts from zero: a new run is locked even after endings were seen.
 source=(root/'game/room13_rules.rpy').read_text().split('    def r13_new():\n')[1].split('\n    def ',1)[0]
 persistent=types.SimpleNamespace(room13_endings=[])
-exec('def new():\n'+textwrap.indent(textwrap.dedent(source),'    '),dict(ROOM13=content,persistent=persistent),local:={})
+exec('def new():\n'+textwrap.indent(textwrap.dedent(source),'    '),dict(ROOM13=content,persistent=persistent,store=store),local:={})
+store.r13_meeting_checkpoint_state={'meeting':'lamp'}
 first=local['new'](); assert not first['secret_route_unlocked']
+assert store.r13_meeting_checkpoint_state is None
 persistent.room13_endings=['ending_seen']
 assert not first['secret_route_unlocked']
 assert not local['new']()['secret_route_unlocked']

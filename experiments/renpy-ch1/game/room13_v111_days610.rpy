@@ -509,6 +509,7 @@ label r13_v111_bori_witness_heard7:
     jump r13_v111_nubi_proof7
 
 label r13_v111_nubi_proof7:
+    $ r13_meeting_checkpoint("fire")
     call r13_v111_proof('불이 시작된 곳과 진술을 대조한다',['E06_FIRE'],'r13_v111_nubi_admission7','r13_v111_nubi_wrong7',None)
     jump expression _return
 
@@ -1401,6 +1402,7 @@ label r13_v111_hearing10:
     jump r13_v111_wound_proof10
 
 label r13_v111_wound_proof10:
+    $ r13_meeting_checkpoint("room13")
     call r13_v111_proof('두 상처와 촛대 파손을 대조한다',['E08_CHILD_ACCOUNT', 'E08_TOOL'],'r13_v111_wound_answer10','r13_v111_hearing_wrong10','r13_v111_hearing_hint10')
     jump expression _return
 
@@ -1684,6 +1686,7 @@ label r13_v111_prevent_hearing10:
     jump r13_v111_authority_proof10
 
 label r13_v111_authority_proof10:
+    $ r13_meeting_checkpoint("records")
     call r13_v111_proof('수신인과 가족 전달 권한을 구분한다',['E06_CONTACT', 'E09_MAIL'],'r13_v111_authority_answer10','r13_v111_authority_wrong10',None)
     jump expression _return
 

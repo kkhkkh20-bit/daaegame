@@ -212,6 +212,7 @@ label r13_v111_gate_lodging:
     jump r13_v111_gate_investigate
 
 label r13_v111_gate_proof:
+    $ r13_meeting_checkpoint("gate")
     call r13_v111_proof('함께 들어갈 근거를 고른다',['E02', 'E03', 'E04'],'r13_v111_gate_proven_dispatch','r13_v111_gate_wrong','r13_v111_gate_hint')
     jump expression _return
 
@@ -1067,6 +1068,7 @@ label r13_v111_trial_open:
     jump r13_v111_trial_repair
 
 label r13_v111_trial_repair:
+    $ r13_meeting_checkpoint("lamp")
     call r13_v111_proof('수리와 반출을 가릴 자료를 낸다',['E11', 'E12', 'E13'],'r13_v111_trial_repair_ok','r13_v111_trial_wrong','r13_v111_trial_hint')
     jump expression _return
 

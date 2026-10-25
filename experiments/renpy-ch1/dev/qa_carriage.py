@@ -36,7 +36,7 @@ async def main():
  report={'archive_sha256':json.load(urllib.request.urlopen(URL+'game-transport.json'))['archive_sha256'],'checks':[]}
  async with async_playwright() as p:
   b=await p.chromium.launch(executable_path=os.environ.get('ROOM13_CHROME','/opt/pw-browsers/chromium-1194/chrome-linux/chrome'),args=['--no-sandbox','--enable-unsafe-swiftshader'])
-  context=await b.new_context(viewport={'width':1280,'height':720},has_touch=True,service_workers='allow');pg=await context.new_page();q=IntroQA(pg,OUT)
+  context=await b.new_context(viewport={'width':1280,'height':720},has_touch=True,service_workers='allow');pg=await context.new_page();page_errors=[];pg.on('pageerror',lambda error:page_errors.append(str(error)));q=IntroQA(pg,OUT)
   try:
    await pg.goto(URL);await pg.wait_for_function("typeof renpy_exec==='function'",timeout=150000);await q.wait('main_menu')
    await q.py('import renpy;s=renpy.store;s.preferences.text_cps=0;s.preferences.afm_enable=False;result=True')
@@ -64,6 +64,8 @@ async def main():
    assert room['location']=='gate' and room['day']==1,room
    await q.shot('c3-gate')
    report['checks'].append('Web build: carriage opens on empty interior, Daram pops in and stays during Dad line, skip reaches gate day 1')
+   assert not page_errors,page_errors
+   report['page_errors']=page_errors
    report['status']='passed'
   except Exception as e:
    report.update(status='failed',error=repr(e));await pg.screenshot(path=str(OUT/'failure.png'))

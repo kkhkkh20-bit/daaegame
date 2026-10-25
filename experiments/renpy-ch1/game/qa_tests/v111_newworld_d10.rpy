@@ -41,6 +41,8 @@ testcase v111_nw_d10_room13_half_then_lost:
     run SetVariable("v111_last_presented",["V111:E08_TOOL"])
     run Jump("r13_v111_hearing_wrong10")
     pause 1.0
+    if screen "r13_meeting_retry_choice":
+        click id "r13_meeting_retry_accept"
     click pos (900,600) until screen "r13_hub" timeout 120
     assert eval (r13_v111_value("meeting:room13")=="lose" and r13_v111_value("listed:daram") is True and r13_v111_value("DARAM_DETAINED") is False)
     assert eval qa_nw_seen("몸을 지키려다 지나치게 다치게 한")

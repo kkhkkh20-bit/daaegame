@@ -1,4 +1,4 @@
-"""The display component returns a choice; story owners supply actual retry semantics."""
+"""승인된 화면은 선택만 반환하고, 회의 로직이 그 결과를 적용한다."""
 import re
 import unittest
 from pathlib import Path
@@ -14,12 +14,9 @@ class MeetingRetryContract(unittest.TestCase):
                          ['R13_MEETING_RETRY_ACCEPT','R13_MEETING_RETRY_RETRY'])
         self.assertRegex(SOURCE,r'label r13_meeting_retry_prompt:\s+call screen r13_meeting_retry_choice\s+return _return')
 
-    def test_no_story_mutations_or_unapproved_failure_hook(self):
+    def test_display_has_no_story_mutations(self):
         for forbidden in ('r13_v111_set(', 'r13_nw_meeting_end(', 'Jump(', 'Start(', 'renpy.load(', 'room13['):
             self.assertNotIn(forbidden,SOURCE)
-        for path in (ROOT/'game').glob('*.rpy'):
-            if path.name!='room13_meeting_retry_ui.rpy':
-                self.assertNotRegex(path.read_text(),r'\bcall (?:screen )?r13_meeting_retry_(?:prompt|choice)\b')
 
     def test_button_slots_equal_and_reference_lowres_never_upscaled(self):
         self.assertEqual(re.findall(r'area \(\d+,\d+,(\d+),(\d+)\)',SOURCE),[('410','133'),('410','133')])

@@ -479,6 +479,7 @@ label r13_v111_hearing5:
     jump r13_v111_proof5
 
 label r13_v111_proof5:
+    $ r13_meeting_checkpoint("gate_post")
     # C3 A안: 밤이가 울타리 옆에 있었던 판은 너울이 한 수를 더 쥔다(기회 하나 감소, 한 번만).
     if r13_v111_value('bami_cold4') and not r13_v111_value('gate_post_cold_cost'):
         $ r13_v111_set('gate_post_cold_cost',True)

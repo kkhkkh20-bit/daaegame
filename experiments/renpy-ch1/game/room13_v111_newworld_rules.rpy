@@ -238,9 +238,10 @@ init 318 python:
         if left<=0:
             renpy.notify("잘못된 제출로 기회 1회 사용 · 남은 기회 0번.")
             r13_nw_wrong_queue(meeting,True)
+            r13_meeting_exhausted(meeting)
             return False
         kept=bool((store.room13.get("arguments") or {}).get(getattr(store,"v111_claim",None) or ""))
-        hint=note if (note and correct and r13_nw_half(correct)) else ("맞는 근거는 남겨 두었다." if kept else "맞지 않는다.")
+        hint="맞는 근거는 남겨 두었다." if kept else "맞지 않는다."
         renpy.notify("기회 1회 사용 · 남은 기회 %d번. %s"%(left,hint))
         r13_nw_wrong_queue(meeting,False)
         return True
