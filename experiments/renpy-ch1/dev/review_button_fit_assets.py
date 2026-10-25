@@ -37,9 +37,9 @@ def check():
             bbox=list(alpha.getbbox())
             assert bbox==[x,y,x+w,y+h],(name,bbox)
             assert alpha.crop((safe[0],safe[1],safe[0]+sw,safe[1]+sh)).getextrema()[0]>0,name
-            mask=bytes(v>0 for v in alpha.getdata())
+            mask=bytes(v>0 for v in alpha.tobytes())
             family=name.removesuffix('_'+row['state']+'.png')
-            values=bytes(alpha.getdata())
+            values=alpha.tobytes()
             if row['state']=='disabled':
                 # 45% 알파에서 가장자리 1/255 픽셀이 0으로 양자화될 수 있다.
                 assert max(abs(b-round(a*.45)) for a,b in zip(alphas[family],values))<=1,name
@@ -57,7 +57,7 @@ def check():
         forbidden={'text','textPath','tspan','image','foreignObject','use'}
         assert not any(node.tag.rsplit('}',1)[-1] in forbidden for node in svg.iter()),name
         report.append(dict(file=name,canvas=size,crop=crop,alpha_bbox=bbox,safe=safe))
-    original=json.loads(Path('/tmp/r13-fit-review-originals.json').read_text())
+    original=json.loads((PROJECT/'docs/reviews/button-fit-review/original-sha256.json').read_text())
     changed=[name for name,digest in original.items()
              if not (PROJECT/name).is_file() or hashlib.sha256((PROJECT/name).read_bytes()).hexdigest()!=digest]
     assert not changed,changed
