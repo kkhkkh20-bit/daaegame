@@ -16,7 +16,7 @@ testcase owner_play_fixes:
     click pos (900,600) until screen "r13_topics" timeout 20  # 0.20.10: Daram answers once first
     pause 0.5
     screenshot "fix-02-daram-topics.png"
-    click "자료 보여주기"
+    click "자료 제시"
     pause 1.0
     click "QA V111:E01"
     pause 1.0
@@ -36,7 +36,7 @@ testcase owner_play_fixes:
     click "돌목"
     pause 1.2
     screenshot "fix-06-guard-topics.png"
-    click "자료 보여주기"
+    click "자료 제시"
     pause 1.2
     screenshot "fix-07-guard-book.png"
     click "QA 닫기"

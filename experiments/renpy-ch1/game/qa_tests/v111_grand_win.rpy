@@ -316,7 +316,8 @@ testcase v111_gw_crowd_no_record13:
     run Function(r13_v111_set,"fire_neoul_promise_recorded",True)
     run Function(r13_flag,"v111:entered:MS14_D13_C")
     run Jump("r13_v111_crowd13")
-    click pos (900,600) until "주민들을 말리지 않는다" timeout 90
+    click pos (900,600) until "너울을 몸으로 감싼다" timeout 90
+    click "다음 →" until "주민들을 말리지 않는다" timeout 10
     assert eval (not qa_nw_seen("7일 회의 기록을 함께 읽는다") and not qa_nw_seen("때리면 저 사람 장부도"))
 
 testcase v111_gw_true_ending:
