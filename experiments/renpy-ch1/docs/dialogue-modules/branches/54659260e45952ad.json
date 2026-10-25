@@ -1,0 +1,123 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "bcabcad1ad6d4811fd1390ecec9013b1e66e6baaa327481f2b39c7c12ba0231c",
+  "entries": [
+    {
+      "id": "NW_FUN_D06_01",
+      "file": "game/v111/newworld/d06.json",
+      "path": [
+        "after",
+        "MS14_D06_S01_L0011",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D06_S01_L0011",
+      "when": "daram_ready",
+      "speaker": "사자 선생님",
+      "kind": "dialogue",
+      "text": "좋아요! 그럼 다람이는 오늘부터 우리 반 임시 학생! 출석 부르면 크게 대답하는 겁니다!",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 19,
+          "label": "r13_v111_day6",
+          "guards": []
+        }
+      ],
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "7f4e38d549a0671601ca8a2b68b7cf903db10f07b46433a763161c89f1b24894",
+      "baseline_hash": "ab469d52186aeffe5f2aa742b53107e46a3fbfb598de4924aec38a371c0dc22e",
+      "uid": "9ed6f041730bf76731b1295e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|patch|after|daram_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_FUN_D06_02",
+      "file": "game/v111/newworld/d06.json",
+      "path": [
+        "after",
+        "MS14_D06_S01_L0011",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D06_S01_L0011",
+      "when": "daram_ready",
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "그럼 ‘다람 탐정단 대장’이라고 불러 주세요. 대장이니까요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 19,
+          "label": "r13_v111_day6",
+          "guards": []
+        }
+      ],
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "7f4e38d549a0671601ca8a2b68b7cf903db10f07b46433a763161c89f1b24894",
+      "baseline_hash": "33bcd2c9dfa27edda908a6e181fa558e2c5787d5c5af41868c00f2da6b000fdf",
+      "uid": "7f80214c24b4438b0ac80612",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|patch|after|daram_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_FUN_D06_03",
+      "file": "game/v111/newworld/d06.json",
+      "path": [
+        "after",
+        "MS14_D06_S01_L0011",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 6,
+      "scene": "MS14_D06_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D06_S01_L0011",
+      "when": "daram_ready",
+      "speaker": "사자 선생님",
+      "kind": "dialogue",
+      "text": "좋아요, 대장! 대장 자리는 맨 앞이에요. 떠들면 제일 잘 보이는 자리!",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 19,
+          "label": "r13_v111_day6",
+          "guards": []
+        }
+      ],
+      "scene_title": "6-1. 오전 / 학교 뒤문 — 엄마에게 갈 물건",
+      "source_hash": "7f4e38d549a0671601ca8a2b68b7cf903db10f07b46433a763161c89f1b24894",
+      "baseline_hash": "f50137bf3d8c7ec7bbc401dbbb73fd2c16960e2bdc384ce0cfd4dec38dc98008",
+      "uid": "2b5d5dbf850c2ea132c12402",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d06|MS14_D06_S01|patch|after|daram_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

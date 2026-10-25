@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "efbcc400916ca3c438d3949d9142d1718c22d24f8e695ef5f6e32465f5f7582f",
+  "entries": [
+    {
+      "id": "NW_FUN_D09_01",
+      "file": "game/v111/newworld/d09.json",
+      "path": [
+        "after",
+        "MS14_D09_S01_L0017",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 9,
+      "scene": "MS14_D09_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D09_S01_L0017",
+      "when": "daram_ready",
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "따닥 아저씨는 이름도 망치 소리 같아요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1139,
+          "label": "r13_v111_passage_measured_hint9",
+          "guards": []
+        }
+      ],
+      "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
+      "source_hash": "dcaac5bd37fe409f10c337120d0b49538cd03a7c08a8a54a08487d3375cf6771",
+      "baseline_hash": "5edfa734eac4c13d2131f4828b0e7814a4df24a8ec43c507b4ecbc5321f106f1",
+      "uid": "0d8f91192582ba93763584ab",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S01|patch|after|daram_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_FUN_D09_02",
+      "file": "game/v111/newworld/d09.json",
+      "path": [
+        "after",
+        "MS14_D09_S01_L0017",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 9,
+      "scene": "MS14_D09_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D09_S01_L0017",
+      "when": "daram_ready",
+      "speaker": "따닥",
+      "kind": "dialogue",
+      "text": "그래서 내가 오기 전에 다들 문부터 열어 놔. 소리가 먼저 가거든.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1139,
+          "label": "r13_v111_passage_measured_hint9",
+          "guards": []
+        }
+      ],
+      "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
+      "source_hash": "dcaac5bd37fe409f10c337120d0b49538cd03a7c08a8a54a08487d3375cf6771",
+      "baseline_hash": "d417692843ac31300e67f658bc9da3aa905b30bf7f47d981e1882b7e623021cf",
+      "uid": "77998d5027831345aac5e3a1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S01|patch|after|daram_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

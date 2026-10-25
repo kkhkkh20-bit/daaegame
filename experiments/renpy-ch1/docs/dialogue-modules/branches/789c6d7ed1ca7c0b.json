@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "c685b511bbd56d21f26b9f6c441bac8575f8629eb7e9dcdeba515a36f2dffb0e",
+  "source_stamp": "bcabcad1ad6d4811fd1390ecec9013b1e66e6baaa327481f2b39c7c12ba0231c",
   "entries": [
     {
       "id": "NW_D09_S01_A01",
@@ -33,7 +33,7 @@
         }
       ],
       "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
-      "source_hash": "44ef266e09b6b10e5a1395eadc84fda7d6f321561d33b1652431875cec464958",
+      "source_hash": "6658eb539b21a7f14b877d42f2550540075e61feb3fef504badd38891f97d5fb",
       "baseline_hash": "bd2a32cfa195c1c6b87b265278271167d8869f84c02333173b9ba3e2fa2da276",
       "uid": "8ab3079cc233a221676dbc5d",
       "review_status": "draft",
@@ -72,7 +72,7 @@
         }
       ],
       "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
-      "source_hash": "44ef266e09b6b10e5a1395eadc84fda7d6f321561d33b1652431875cec464958",
+      "source_hash": "6658eb539b21a7f14b877d42f2550540075e61feb3fef504badd38891f97d5fb",
       "baseline_hash": "c25317e3b2443da5c47560e1c074130d72d6ad55339a6a471218aee6d37e7f1d",
       "uid": "95079441f78adc4ccbefe45f",
       "review_status": "draft",
@@ -111,7 +111,7 @@
         }
       ],
       "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
-      "source_hash": "44ef266e09b6b10e5a1395eadc84fda7d6f321561d33b1652431875cec464958",
+      "source_hash": "6658eb539b21a7f14b877d42f2550540075e61feb3fef504badd38891f97d5fb",
       "baseline_hash": "e1177a1c719208475d75a11941fba19a3da21965d1bef2bd6d22839c2d1a35a1",
       "uid": "ad03bcab6cd9f0e78409f85a",
       "review_status": "draft",
@@ -150,7 +150,7 @@
         }
       ],
       "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
-      "source_hash": "44ef266e09b6b10e5a1395eadc84fda7d6f321561d33b1652431875cec464958",
+      "source_hash": "6658eb539b21a7f14b877d42f2550540075e61feb3fef504badd38891f97d5fb",
       "baseline_hash": "e0bbb344449e2d54f09ea9eff4a740dc1ef6e1d30fa6fcdacdc39c4a143a1dc2",
       "uid": "f77be398ff21392c56df2ff8",
       "review_status": "draft",
@@ -189,9 +189,126 @@
         }
       ],
       "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
-      "source_hash": "44ef266e09b6b10e5a1395eadc84fda7d6f321561d33b1652431875cec464958",
+      "source_hash": "6658eb539b21a7f14b877d42f2550540075e61feb3fef504badd38891f97d5fb",
       "baseline_hash": "991747c3803bd1e130a0db7b2d7680f88884a299aacc3f222693a27f7a94e0bb",
       "uid": "cd66dc74ce3556ab43e72742",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_FUN_D09_01",
+      "file": "game/v111/newworld/d09.json",
+      "path": [
+        "after",
+        "MS14_D09_S01_L0017",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 9,
+      "scene": "MS14_D09_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D09_S01_L0017",
+      "when": null,
+      "speaker": "따닥",
+      "kind": "dialogue",
+      "text": "다 쟀어요. 아, 아버님 키도 쟀어요. 버릇이라서.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1139,
+          "label": "r13_v111_passage_measured_hint9",
+          "guards": []
+        }
+      ],
+      "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
+      "source_hash": "6658eb539b21a7f14b877d42f2550540075e61feb3fef504badd38891f97d5fb",
+      "baseline_hash": "03f98a47a4388ef4d5bd4a6735ef431d9bd4726d3d23f1d9ce141990ad7bd6d6",
+      "uid": "0d8f91192582ba93763584ab",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_FUN_D09_02",
+      "file": "game/v111/newworld/d09.json",
+      "path": [
+        "after",
+        "MS14_D09_S01_L0017",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 9,
+      "scene": "MS14_D09_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D09_S01_L0017",
+      "when": null,
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "……언제요?",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1139,
+          "label": "r13_v111_passage_measured_hint9",
+          "guards": []
+        }
+      ],
+      "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
+      "source_hash": "6658eb539b21a7f14b877d42f2550540075e61feb3fef504badd38891f97d5fb",
+      "baseline_hash": "6ae55b6b3aaab6579d6cdf868b0b052c57103c55088a23a6d680ad11faa448eb",
+      "uid": "77998d5027831345aac5e3a1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d09|MS14_D09_S01|patch|after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_FUN_D09_03",
+      "file": "game/v111/newworld/d09.json",
+      "path": [
+        "after",
+        "MS14_D09_S01_L0017",
+        2,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 9,
+      "scene": "MS14_D09_S01",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D09_S01_L0017",
+      "when": null,
+      "speaker": "따닥",
+      "kind": "dialogue",
+      "text": "들어오실 때요. 문틀 보고요. 반 뼘만 더 크셨으면 머리 찧으셨어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 1139,
+          "label": "r13_v111_passage_measured_hint9",
+          "guards": []
+        }
+      ],
+      "scene_title": "9-1. 오전 / 주방과 책장 — 길 하나를 더 세다",
+      "source_hash": "6658eb539b21a7f14b877d42f2550540075e61feb3fef504badd38891f97d5fb",
+      "baseline_hash": "679d2f74362ee1130eafba415fb470efe5dd053790bca38701b6ec32fd9ad5bb",
+      "uid": "8968e9726ad9ed7fdaec922a",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "d09|MS14_D09_S01|patch|after|행 조건 없음",

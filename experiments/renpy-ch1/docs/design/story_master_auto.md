@@ -1852,7 +1852,7 @@ def r13_nw_true_ending_ready():
 | `daram_listed_voided13` | `r13_v111_value("listed:daram") is True and r13_v111_value("transfer_list_voided") is True and r13_v111_actor_ready("guard")` | d13 |
 | `daram_not_deal_freed` | `r13_v111_value("daram_deal_freed") is not True` | d14 |
 | `daram_not_watching13` | `not (r13_v111_actor_ready("daram") and r13_v111_value("listed:daram") is not True)` | d13 |
-| `daram_ready` | `r13_v111_actor_ready("daram")` | d02, d03, d05, d12, d13 |
+| `daram_ready` | `r13_v111_actor_ready("daram")` | d02, d03, d05, d06, d12, d13 |
 | `daram_watching13` | `r13_v111_actor_ready("daram") and r13_v111_value("listed:daram") is not True` | d13 |
 | `dead:kid_dodam` | `"kid_dodam" in r13_nw_dead()` | d14 |
 | `dead:kid_kkomi` | `"kid_kkomi" in r13_nw_dead()` | d14 |

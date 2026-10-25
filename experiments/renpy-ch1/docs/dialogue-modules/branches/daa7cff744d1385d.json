@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "bcabcad1ad6d4811fd1390ecec9013b1e66e6baaa327481f2b39c7c12ba0231c",
+  "entries": [
+    {
+      "id": "NW_FUN_D02_01",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "after",
+        "MS14_D02_S02_L0004",
+        0,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D02_S02_L0004",
+      "when": "daram_ready",
+      "speaker": "다람",
+      "kind": "dialogue",
+      "text": "봉투는 아빠가 밤새 베고 잤어요. 그래서 납작해요.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 500,
+          "label": "r13_v111_post",
+          "guards": []
+        }
+      ],
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "d71808a4d1f819fcbed4965bf1acca896e9e286aa8da0147e9aabd5e5b60dfb8",
+      "baseline_hash": "c28546cecdcfa7709a86bb2f7b4fd726a4cefa102da29bac9c1afa15167b8b2a",
+      "uid": "209afe9b4a98c268b814b83b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|patch|after|daram_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "NW_FUN_D02_02",
+      "file": "game/v111/newworld/d02.json",
+      "path": [
+        "after",
+        "MS14_D02_S02_L0004",
+        1,
+        "text"
+      ],
+      "origin": "patch",
+      "day": 2,
+      "scene": "MS14_D02_S02",
+      "block": null,
+      "placement": "after",
+      "ref": "MS14_D02_S02_L0004",
+      "when": "daram_ready",
+      "speaker": "아빠",
+      "kind": "dialogue",
+      "text": "……여관 베개가 좀 낮아서요. 여기 있습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 500,
+          "label": "r13_v111_post",
+          "guards": []
+        }
+      ],
+      "scene_title": "2. 우체국 / 내 편지부터",
+      "source_hash": "d71808a4d1f819fcbed4965bf1acca896e9e286aa8da0147e9aabd5e5b60dfb8",
+      "baseline_hash": "bbc12db31bae2a873c6dd72bd1a937478610ba76b71c349f5875458804671071",
+      "uid": "969345f0cd11a466251de2b5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|MS14_D02_S02|patch|after|daram_ready",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}
