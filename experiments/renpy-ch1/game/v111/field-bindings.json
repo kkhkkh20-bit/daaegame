@@ -2442,7 +2442,7 @@
         ]
       },
       {
-        "title": "비운 벤치와 조건을 전한다",
+        "title": "식당에 앉을 자리를 전한다",
         "location": "square",
         "person": "resident_piko",
         "guard": [
@@ -2455,6 +2455,11 @@
             "state",
             "piko_cloth2",
             true
+          ],
+          [
+            "state",
+            "piko_bench_clean2",
+            true
           ]
         ]
       },
@@ -2463,6 +2468,47 @@
         "location": "dining",
         "person": "nabi",
         "guard": []
+      },
+      {
+        "index": 80,
+        "title": "벤치 표면을 살핀다",
+        "location": "dining",
+        "object": "table",
+        "guard": [
+          [
+            "state",
+            "piko_sacks2",
+            true
+          ],
+          [
+            "state",
+            "piko_bench_seen2",
+            null
+          ]
+        ]
+      },
+      {
+        "index": 81,
+        "title": "천으로 벤치의 물감을 닦는다",
+        "location": "dining",
+        "object": "table",
+        "guard": [
+          [
+            "state",
+            "piko_bench_seen2",
+            true
+          ],
+          [
+            "state",
+            "piko_cloth2",
+            true
+          ],
+          [
+            "state",
+            "piko_bench_clean2",
+            null
+          ]
+        ]
       }
     ]
   },

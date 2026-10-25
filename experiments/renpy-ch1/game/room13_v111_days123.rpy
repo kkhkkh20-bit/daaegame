@@ -649,6 +649,12 @@ label r13_v111_afternoon:
     elif v111_answer==1:
         $ r13_v111_set('piko_cloth2',True)
         call r13_lines(r13_nw_block('shelter_cloth_done2'),'nw:shelter_cloth_done2')
+    elif v111_answer==80:
+        call r13_lines(r13_nw_block('bench_look2'),'nw:bench_look2')
+        $ r13_v111_set('piko_bench_seen2',True)
+    elif v111_answer==81:
+        call r13_lines(r13_nw_block('bench_clean2'),'nw:bench_clean2')
+        $ r13_v111_set('piko_bench_clean2',True)
     elif v111_answer==2:
         $ r13_v111_option('MS14_D02_S04_L0020_O1')
         $ r13_v111_apply('option:afternoon:0',[{'op': 'set', 'field': 'D02_afternoon', 'value': 'shelter'}])
