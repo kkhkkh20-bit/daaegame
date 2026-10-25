@@ -25,3 +25,9 @@
 - 적용 후 scan → validate → 현황판 갱신 → 게임 재시작 및 PC/모바일 캡처 순서로 확인한다.
 
 이 모듈은 기존 게임 연결표를 읽는다. 별도 중복 연결표를 만들지 않으므로 누가 채워도 실제 적용 경로를 추적할 수 있다.
+
+## 질문·지도 버튼 전용 연결
+
+`button.question_flat_primary/standard`는 질문 하단 도구, `button.map_flat_primary/standard`는 지도 하단 탭·이동·현장으로에만 연결한다. `ui-question-map-flat-v1` 원본 8장은 전체 캔버스를 균일 확대하며 crop/Frame을 사용하지 않는다. 기존 클릭영역과 글꼴·내용 정렬 계산을 유지한다. 전역 `button.primary/standard`와 메인·현장 연결은 유지한다.
+
+이 연결의 실제 화면 캡처는 아직 미검증이다. screens의 0.20.48 격리 렌더는 적용 전 참고 자료이며 이번 변경의 결과 화면이 아니다.

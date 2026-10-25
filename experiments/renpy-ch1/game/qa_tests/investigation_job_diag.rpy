@@ -130,19 +130,19 @@ testcase investigation_job_musoe:
     screenshot "job-musoe-01-field.png"
     run Function(r13_pd_choose_person,True)
     if eval (not r13_pd_person_ready and r13_world_offset()>0):
-        click "‹"
+        click "왼쪽 구역"
         pause 0.5
         run Function(r13_pd_choose_person,True)
     if eval (not r13_pd_person_ready and r13_world_offset()>0):
-        click "‹"
+        click "왼쪽 구역"
         pause 0.5
         run Function(r13_pd_choose_person,True)
     if eval (not r13_pd_person_ready and r13_world_offset()<r13_world_width()-1280):
-        click "›"
+        click "오른쪽 구역"
         pause 0.5
         run Function(r13_pd_choose_person,True)
     if eval (not r13_pd_person_ready and r13_world_offset()<r13_world_width()-1280):
-        click "›"
+        click "오른쪽 구역"
         pause 0.5
         run Function(r13_pd_choose_person,True)
     assert eval (r13_pd_person_ready and r13_pd_person=="resident_musoe")
@@ -203,10 +203,10 @@ testcase investigation_job_musoe:
         run Function(r13_pd_check_field,"body-click-denial-stayed-in-field")
     # Final init106 clears context waits: wood follows ordinary observation, then returns to field.
     if eval (r13_world_offset()>0):
-        click "‹"
+        click "왼쪽 구역"
         pause 0.5
     if eval (r13_world_offset()>0):
-        click "‹"
+        click "왼쪽 구역"
         pause 0.5
     assert eval (r13_world_offset()==0)
     $ r13_pd_saved_object_preference=R13_PD_MAP_OBJECTS["workshop"]
@@ -234,10 +234,10 @@ testcase investigation_job_musoe:
     screenshot "job-musoe-03d-wood-returned.png"
     $ R13_PD_MAP_OBJECTS["workshop"]=r13_pd_saved_object_preference
     if eval (r13_world_offset()<r13_world_width()-1280):
-        click "›"
+        click "오른쪽 구역"
         pause 0.5
     if eval (r13_world_offset()<r13_world_width()-1280):
-        click "›"
+        click "오른쪽 구역"
         pause 0.5
     assert eval (r13_world_offset()==(r13_world_width()-1280 if room13["location"]=="workshop" else 0))
     run Function(r13_pd_check_field,"job-right-camera-end")
