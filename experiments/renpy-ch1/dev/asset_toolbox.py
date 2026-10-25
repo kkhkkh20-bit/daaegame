@@ -68,6 +68,8 @@ def scan(project=PROJECT):
         if key in old['assets']:
             entry['tags']=old['assets'][key].get('tags',entry['tags'])
             entry['render']=old['assets'][key].get('render',{})
+            if old['assets'][key].get('label'):
+                entry['label']=old['assets'][key]['label']
         catalog['assets'][key]=entry
         group=key
         # 같은 승인 부품의 복사본은 한 번의 변경으로 함께 연결한다.
@@ -114,11 +116,50 @@ def scan(project=PROJECT):
         ('map.village','지도 · 마을 배경','assets/map-village-b/village_clean.png'),
         ('panel.options','설정 · 수첩','assets/ui-b-options/b_opt_panel.png'),
         ('panel.dialogue','대사 · 수첩','assets/ui-b-dialogue/b_panel_dialogue.png'),
+        ('main.background','메인 · 겨울 엽서 배경','assets/ui-b-main/b_main_background_postcard.png'),
+        ('panel.question','질문 · 펼친 수첩','assets/ui-b-question/b_panel_book.png'),
+        ('ribbon.question.title','질문 · 빨간 제목표','assets/ui-b-question/b_tab_title.png'),
+        ('paper.question.name','질문 · 인물 이름 쪽지','assets/ui-b-question/nameplate_paper.png'),
+        ('icon.question.acorn','질문 · 도토리 표시','assets/ui-b-question/b_icon_acorn.png'),
+        ('icon.question.read','질문 · 읽은 도토리 표시','assets/ui-b-question/b_icon_acorn_done.png'),
+        ('icon.question.document','질문 · 자료 제시 아이콘','assets/ui-b-question/icon_document.png'),
+        ('icon.question.record','질문 · 기록 아이콘','assets/ui-b-question/icon_book_open.png'),
+        ('icon.question.back','질문 · 돌아가기 아이콘','assets/ui-b-question/icon_arrow_left_bold.png'),
+        ('decoration.question.village','질문 · 마을 선화','assets/ui-b-question/b_lineart_village.png'),
+        ('decoration.question.market','질문 · 장터 선화','assets/ui-b-question/b_lineart_market.png'),
+        ('decoration.question.winter','질문 · 겨울 선화','assets/ui-b-question/b_lineart_winter.png'),
+        ('panel.field','조사 · 하단 수첩','assets/ui-b-field/b_panel_dialogue.png'),
+        ('sticker.field.mascot','조사 · 다람 수첩 장식','assets/ui-b-field/sticker_daram_delighted.png'),
+        ('icon.field.more','조사 · 더보기 아이콘','assets/ui-b-field/b_icon_more.png'),
+        ('icon.field.location','조사 · 위치 핀','assets/ui-b-field/b_icon_pin.png'),
+        ('ribbon.dialogue.name','대사 · 화자 이름 리본','assets/ui-b-dialogue/b_ribbon_name.png'),
+        ('panel.options.preview','설정 · 미리보기 종이','assets/ui-b-options/b_opt_preview_box.png'),
+        ('decoration.options.tape','설정 · 체크 테이프','assets/ui-b-options/daram_diary_sticker_gingham_tape.png'),
+        ('decoration.options.star','설정 · 별 스티커','assets/ui-b-options/daram_diary_sticker_star.png'),
+        ('decoration.options.emphasis','설정 · 강조 스티커','assets/ui-b-options/daram_diary_sticker_emphasis.png'),
+        ('decoration.options.acorn','설정 · 도토리 스티커','assets/ui-b-options/daram_diary_sticker_acorn.png'),
+        ('decoration.options.letter','설정 · 편지 스티커','assets/ui-b-options/daram_diary_sticker_letter.png'),
+        ('decoration.options.magnifier','설정 · 돋보기 스티커','assets/ui-b-options/daram_diary_sticker_magnifier.png'),
+        ('panel.map.village','지도 · 마을 수첩 프레임','assets/map-village-b/notebook_frame_1280x720.png'),
+        ('paper.map.place','지도 · 장소 이름표','assets/map-village-b/b_panel_small_trimmed.png'),
+        ('sticker.map.mascot','지도 · 다람 수첩 장식','assets/map-village-b/sticker_daram_stubborn.png'),
+        ('map.inn','지도 · 여관 바탕','assets/map-b/inn_base.webp'),
+        ('map.forest','지도 · 숲 바탕','assets/map-b/forest_base.webp'),
+        ('panel.map.regions','지도 · 여관과 숲 수첩 프레임','assets/map-b/notebook_frame.webp'),
+        ('icon.map.new_dialogue','지도 · 새 대화 표시 원본','assets/map-status/new_dialogue.png'),
+        ('sound.notebook.open','효과음 · 수첩 열기','assets/diary-sounds/notebook-open.ogg'),
+        ('sound.paper.select','효과음 · 종이 선택','assets/diary-sounds/paper-selection.mp3'),
+        ('sound.paper.page','효과음 · 자료 넘기기','assets/diary-sounds/evidence-paper.mp3'),
     ]:
         raw='file:'+path
         if raw not in catalog['assets']:continue
         original=binding['bindings'][raw]
-        binding['bindings'].setdefault(key,dict(label=label,match=deepcopy(original['match']),states=['basic'],media='image',canvas_size=original['canvas_size'],group=original['group'],refresh='live' if key.startswith('icon.map.') else 'restart'))
+        binding['bindings'].setdefault(key,dict(label=label,match=deepcopy(original['match']),states=['basic'],media=original['media'],canvas_size=original['canvas_size'],group=original['group'],refresh='live' if key in ('icon.map.locked','icon.map.current','icon.map.selected') else 'restart'))
+        # Semantic names share the exact file group. Rebinding them therefore
+        # reaches existing screens without another renderer or story adapter.
+        entry=catalog['assets'][raw]
+        entry.setdefault('label',label)
+        entry['tags']=sorted(set(entry['tags'])|{'화면:'+label.split(' · ')[0]})
     for family in ('primary','standard','wide_choice'):
         binding['bindings']['button.'+family].setdefault('forbid_render',['frame'])
     for name in ('standard','focused','primary'):

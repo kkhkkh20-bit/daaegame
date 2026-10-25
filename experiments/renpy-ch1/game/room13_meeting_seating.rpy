@@ -277,17 +277,17 @@ screen r13_meeting_chrome(claim):
         $ session=r13_debate_session(claim)
         $ proved,proof_total=r13_debate_progress(claim)
         frame:
-            area (24,18,900,66) padding (16,8) background R13PaperFrame()
-            add R13AntiqueIcon("meeting_"+r13_meeting_kind(session),size=30) xpos 0 ypos 8
+            area (24,18,900,86) padding (20,12) background r13_field_paper()
+            add R13AntiqueIcon("meeting_"+r13_meeting_kind(session),size=30) xpos 0 ypos 14
             vbox:
-                xpos 42
-                spacing 2
-                text (r13_meeting_header(session)+("" if r13_meeting_intro else ("  ·  확인한 발언 %d"%proved+(" · "+r13_q1_thesis_title() if r13_q1_hard() else "")) if claim=="Q1" and r13_q1_v2() else "  ·  반박 %d / %d"%(proved,proof_total))) size r13_read_size(15,17) color "#795d40"
-                text ("참석자들의 이야기" if r13_meeting_intro else "쟁점 · 3번 등의 조각을 누가 가져갔는가?" if claim=="Q1" and r13_q1_v2() else "쟁점 · "+R13_MEETING_ISSUES.get(claim,R13_DEBATE[claim]["title"])) size r13_read_size(21,25) color "#493b30"
+                xpos 42 xsize 812
+                spacing 3
+                text (r13_meeting_header(session)+("" if r13_meeting_intro else ("  ·  확인한 발언 %d"%proved+(" · "+r13_q1_thesis_title() if r13_q1_hard() else "")) if claim=="Q1" and r13_q1_v2() else "  ·  반박 %d / %d"%(proved,proof_total))) size r13_read_size(17,19) color "#795d40" font R13_UI_BOLD_FONT
+                text ("참석자들의 이야기" if r13_meeting_intro else "쟁점 · 3번 등의 조각을 누가 가져갔는가?" if claim=="Q1" and r13_q1_v2() else "쟁점 · "+R13_MEETING_ISSUES.get(claim,R13_DEBATE[claim]["title"])) size r13_read_size(21,25) color "#493b30" font R13_UI_BOLD_FONT
             if not r13_meeting_intro:
-                add Solid("#d6bf98") xpos 0 ypos 51 xysize (868,3)
+                add Solid("#d6bf98") xpos 0 ypos 64 xysize (860,3)
                 if proved and not (claim=="Q1" and r13_q1_v2()):
-                    add Solid("#a88043") xpos 0 ypos 51 xysize (int(868*proved/max(1,proof_total)),3)
+                    add Solid("#a88043") xpos 0 ypos 64 xysize (int(860*proved/max(1,proof_total)),3)
 
 screen r13_meeting_tools(claim,sid=None,board=False,ready=True):
     $ completed=bool(sid and r13_debate_is_broken(claim,sid))
@@ -302,16 +302,16 @@ screen r13_meeting_tools(claim,sid=None,board=False,ready=True):
         $ live_ids=r13_meeting_live_ids(claim,r13_meeting_live_sid)
         $ visible_ids=[st["id"] for st in r13_debate_statements(claim) if r13_debate_visible(claim,st)]
         frame:
-            area (942,18,314,66) padding (54,6) background R13InkPanel(alpha="e6",slim=True)
+            area (942,18,314,86) padding (54,12) background r13_field_paper()
             vbox:
                 align (.5,.5) spacing 2
-                text "발언 듣는 중" size 20 color "#f6dfac" font r13_ui_font() xalign .5
-                text ("%d / %d"%(visible_ids.index(r13_meeting_live_sid)+1,len(visible_ids))) size 17 color "#fff4df" font r13_ui_font() xalign .5
+                text "발언 듣는 중" size 20 color "#4b3420" font R13_UI_BOLD_FONT xalign .5
+                text ("%d / %d"%(visible_ids.index(r13_meeting_live_sid)+1,len(visible_ids))) size 17 color "#795d40" font R13_UI_BOLD_FONT xalign .5
         textbutton "‹":
-            area (948,28,48,44) style "r13_action_button" padding (4,0) text_size 30 alt "이전 발언"
+            area (948,36,48,48) style "r13_action_button" padding (4,0) background None hover_background None text_font R13_UI_BOLD_FONT text_color "#4b3420" text_size 30 alt "이전 발언"
             action Function(r13_meeting_request_live_action,"previous") sensitive ready and len(live_ids)>1
         textbutton "›":
-            area (1202,28,48,44) style "r13_action_button" padding (4,0) text_size 30 alt "다음 발언"
+            area (1202,36,48,48) style "r13_action_button" padding (4,0) background None hover_background None text_font R13_UI_BOLD_FONT text_color "#4b3420" text_size 30 alt "다음 발언"
             action Function(r13_meeting_request_live_action,"next") sensitive ready and len(live_ids)>1
         if ready and len(live_ids)>1:
             key "K_LEFT" action Function(r13_meeting_request_live_action,"previous")

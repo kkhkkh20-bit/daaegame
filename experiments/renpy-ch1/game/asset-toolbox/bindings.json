@@ -49393,6 +49393,541 @@
       ],
       "group": "file:assets/ui-b-dialogue/b_panel_dialogue.png",
       "refresh": "restart"
+    },
+    "main.background": {
+      "label": "메인 · 겨울 엽서 배경",
+      "match": [
+        "asset:file:assets/ui-b-main/b_main_background_postcard.png"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        1672,
+        941
+      ],
+      "group": "file:assets/ui-b-main/b_main_background_postcard.png",
+      "refresh": "restart"
+    },
+    "panel.question": {
+      "label": "질문 · 펼친 수첩",
+      "match": [
+        "asset:file:assets/ui-b-question/b_panel_book.png"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        760,
+        540
+      ],
+      "group": "file:assets/ui-b-question/b_panel_book.png",
+      "refresh": "restart"
+    },
+    "ribbon.question.title": {
+      "label": "질문 · 빨간 제목표",
+      "match": [
+        "asset:file:assets/ui-b-question/b_tab_title.png"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        320,
+        64
+      ],
+      "group": "file:assets/ui-b-question/b_tab_title.png",
+      "refresh": "restart"
+    },
+    "paper.question.name": {
+      "label": "질문 · 인물 이름 쪽지",
+      "match": [
+        "asset:file:assets/ui-b-question/nameplate_paper.png"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        232,
+        96
+      ],
+      "group": "file:assets/ui-b-question/nameplate_paper.png",
+      "refresh": "restart"
+    },
+    "icon.question.acorn": {
+      "label": "질문 · 도토리 표시",
+      "match": [
+        "asset:file:assets/ui-b-question/b_icon_acorn.png"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        64,
+        64
+      ],
+      "group": "file:assets/ui-b-question/b_icon_acorn.png",
+      "refresh": "restart"
+    },
+    "icon.question.read": {
+      "label": "질문 · 읽은 도토리 표시",
+      "match": [
+        "asset:file:assets/ui-b-question/b_icon_acorn_done.png"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        64,
+        64
+      ],
+      "group": "file:assets/ui-b-question/b_icon_acorn_done.png",
+      "refresh": "restart"
+    },
+    "icon.question.document": {
+      "label": "질문 · 자료 제시 아이콘",
+      "match": [
+        "asset:file:assets/ui-b-question/icon_document.png"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        64,
+        64
+      ],
+      "group": "file:assets/ui-b-question/icon_document.png",
+      "refresh": "restart"
+    },
+    "icon.question.record": {
+      "label": "질문 · 기록 아이콘",
+      "match": [
+        "asset:file:assets/ui-b-question/icon_book_open.png"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        64,
+        64
+      ],
+      "group": "file:assets/ui-b-question/icon_book_open.png",
+      "refresh": "restart"
+    },
+    "icon.question.back": {
+      "label": "질문 · 돌아가기 아이콘",
+      "match": [
+        "asset:file:assets/ui-b-question/icon_arrow_left_bold.png"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        64,
+        64
+      ],
+      "group": "file:assets/ui-b-question/icon_arrow_left_bold.png",
+      "refresh": "restart"
+    },
+    "decoration.question.village": {
+      "label": "질문 · 마을 선화",
+      "match": [
+        "asset:file:assets/ui-b-question/b_lineart_village.png"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        292,
+        112
+      ],
+      "group": "file:assets/ui-b-question/b_lineart_village.png",
+      "refresh": "restart"
+    },
+    "decoration.question.market": {
+      "label": "질문 · 장터 선화",
+      "match": [
+        "asset:file:assets/ui-b-question/b_lineart_market.png"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        292,
+        112
+      ],
+      "group": "file:assets/ui-b-question/b_lineart_market.png",
+      "refresh": "restart"
+    },
+    "decoration.question.winter": {
+      "label": "질문 · 겨울 선화",
+      "match": [
+        "asset:file:assets/ui-b-question/b_lineart_winter.png"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        292,
+        112
+      ],
+      "group": "file:assets/ui-b-question/b_lineart_winter.png",
+      "refresh": "restart"
+    },
+    "panel.field": {
+      "label": "조사 · 하단 수첩",
+      "match": [
+        "asset:file:assets/ui-b-field/b_panel_dialogue.png"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        1200,
+        160
+      ],
+      "group": "file:assets/ui-b-field/b_panel_dialogue.png",
+      "refresh": "restart"
+    },
+    "sticker.field.mascot": {
+      "label": "조사 · 다람 수첩 장식",
+      "match": [
+        "asset:file:assets/ui-b-field/sticker_daram_delighted.png"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        512,
+        512
+      ],
+      "group": "file:assets/ui-b-field/sticker_daram_delighted.png",
+      "refresh": "restart"
+    },
+    "icon.field.more": {
+      "label": "조사 · 더보기 아이콘",
+      "match": [
+        "asset:file:assets/ui-b-field/b_icon_more.png"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        64,
+        64
+      ],
+      "group": "file:assets/ui-b-field/b_icon_more.png",
+      "refresh": "restart"
+    },
+    "icon.field.location": {
+      "label": "조사 · 위치 핀",
+      "match": [
+        "asset:file:assets/ui-b-field/b_icon_pin.png"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        64,
+        64
+      ],
+      "group": "file:assets/ui-b-field/b_icon_pin.png",
+      "refresh": "restart"
+    },
+    "ribbon.dialogue.name": {
+      "label": "대사 · 화자 이름 리본",
+      "match": [
+        "asset:file:assets/ui-b-dialogue/b_ribbon_name.png"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        200,
+        56
+      ],
+      "group": "file:assets/ui-b-dialogue/b_ribbon_name.png",
+      "refresh": "restart"
+    },
+    "panel.options.preview": {
+      "label": "설정 · 미리보기 종이",
+      "match": [
+        "asset:file:assets/ui-b-options/b_opt_preview_box.png"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        892,
+        142
+      ],
+      "group": "file:assets/ui-b-options/b_opt_preview_box.png",
+      "refresh": "restart"
+    },
+    "decoration.options.tape": {
+      "label": "설정 · 체크 테이프",
+      "match": [
+        "asset:file:assets/ui-b-options/daram_diary_sticker_gingham_tape.png"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        464,
+        239
+      ],
+      "group": "file:assets/ui-b-options/daram_diary_sticker_gingham_tape.png",
+      "refresh": "restart"
+    },
+    "decoration.options.star": {
+      "label": "설정 · 별 스티커",
+      "match": [
+        "asset:file:assets/ui-b-options/daram_diary_sticker_star.png"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        368,
+        360
+      ],
+      "group": "file:assets/ui-b-options/daram_diary_sticker_star.png",
+      "refresh": "restart"
+    },
+    "decoration.options.emphasis": {
+      "label": "설정 · 강조 스티커",
+      "match": [
+        "asset:file:assets/ui-b-options/daram_diary_sticker_emphasis.png"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        432,
+        274
+      ],
+      "group": "file:assets/ui-b-options/daram_diary_sticker_emphasis.png",
+      "refresh": "restart"
+    },
+    "decoration.options.acorn": {
+      "label": "설정 · 도토리 스티커",
+      "match": [
+        "asset:file:assets/ui-b-options/daram_diary_sticker_acorn.png"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        369,
+        437
+      ],
+      "group": "file:assets/ui-b-options/daram_diary_sticker_acorn.png",
+      "refresh": "restart"
+    },
+    "decoration.options.letter": {
+      "label": "설정 · 편지 스티커",
+      "match": [
+        "asset:file:assets/ui-b-options/daram_diary_sticker_letter.png"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        408,
+        318
+      ],
+      "group": "file:assets/ui-b-options/daram_diary_sticker_letter.png",
+      "refresh": "restart"
+    },
+    "decoration.options.magnifier": {
+      "label": "설정 · 돋보기 스티커",
+      "match": [
+        "asset:file:assets/ui-b-options/daram_diary_sticker_magnifier.png"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        404,
+        422
+      ],
+      "group": "file:assets/ui-b-options/daram_diary_sticker_magnifier.png",
+      "refresh": "restart"
+    },
+    "panel.map.village": {
+      "label": "지도 · 마을 수첩 프레임",
+      "match": [
+        "asset:file:assets/map-village-b/notebook_frame_1280x720.png"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        1280,
+        720
+      ],
+      "group": "file:assets/map-village-b/notebook_frame_1280x720.png",
+      "refresh": "restart"
+    },
+    "paper.map.place": {
+      "label": "지도 · 장소 이름표",
+      "match": [
+        "asset:file:assets/map-village-b/b_panel_small_trimmed.png"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        224,
+        44
+      ],
+      "group": "file:assets/map-village-b/b_panel_small_trimmed.png",
+      "refresh": "restart"
+    },
+    "sticker.map.mascot": {
+      "label": "지도 · 다람 수첩 장식",
+      "match": [
+        "asset:file:assets/map-village-b/sticker_daram_stubborn.png"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        512,
+        512
+      ],
+      "group": "file:assets/map-village-b/sticker_daram_stubborn.png",
+      "refresh": "restart"
+    },
+    "map.inn": {
+      "label": "지도 · 여관 바탕",
+      "match": [
+        "asset:file:assets/map-b/inn_base.webp"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        1136,
+        570
+      ],
+      "group": "file:assets/map-b/inn_base.webp",
+      "refresh": "restart"
+    },
+    "map.forest": {
+      "label": "지도 · 숲 바탕",
+      "match": [
+        "asset:file:assets/map-b/forest_base.webp"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        1136,
+        570
+      ],
+      "group": "file:assets/map-b/forest_base.webp",
+      "refresh": "restart"
+    },
+    "panel.map.regions": {
+      "label": "지도 · 여관과 숲 수첩 프레임",
+      "match": [
+        "asset:file:assets/map-b/notebook_frame.webp"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        1280,
+        720
+      ],
+      "group": "file:assets/map-b/notebook_frame.webp",
+      "refresh": "restart"
+    },
+    "icon.map.new_dialogue": {
+      "label": "지도 · 새 대화 표시 원본",
+      "match": [
+        "asset:file:assets/map-status/new_dialogue.png"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "image",
+      "canvas_size": [
+        96,
+        96
+      ],
+      "group": "file:assets/map-status/new_dialogue.png",
+      "refresh": "restart"
+    },
+    "sound.notebook.open": {
+      "label": "효과음 · 수첩 열기",
+      "match": [
+        "asset:file:assets/diary-sounds/notebook-open.ogg"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "audio",
+      "canvas_size": null,
+      "group": "file:assets/diary-sounds/notebook-open.ogg",
+      "refresh": "restart"
+    },
+    "sound.paper.select": {
+      "label": "효과음 · 종이 선택",
+      "match": [
+        "asset:file:assets/diary-sounds/paper-selection.mp3"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "audio",
+      "canvas_size": null,
+      "group": "file:assets/diary-sounds/paper-selection.mp3",
+      "refresh": "restart"
+    },
+    "sound.paper.page": {
+      "label": "효과음 · 자료 넘기기",
+      "match": [
+        "asset:file:assets/diary-sounds/evidence-paper.mp3"
+      ],
+      "states": [
+        "basic"
+      ],
+      "media": "audio",
+      "canvas_size": null,
+      "group": "file:assets/diary-sounds/evidence-paper.mp3",
+      "refresh": "restart"
     }
   }
 }

@@ -135,10 +135,18 @@ def run(project: Path, host='127.0.0.1', port=8787):
             path=unquote(urlsplit(self.path).path)
             if path=='/':
                 return self.send(200,index.read_bytes(),'text/html; charset=utf-8')
+            if path=='/api/preview':
+                metadata=project/'docs/reviews/toolbox-preview/capture.json'
+                return self.send(200,json.loads(metadata.read_text()) if metadata.is_file() else {'images':[]})
             if path=='/api/catalog':
                 with lock:payload=self.snapshot()
                 return self.send(200,payload)
+            if path.startswith('/preview/'):
+                target=project/'docs/reviews/toolbox-preview'/Path(path).name
+                if target.suffix=='.png' and target.is_file() and not target.is_symlink():
+                    return self.send(200,target.read_bytes(),'image/png')
             if path.startswith('/assets/'):
+
                 try:
                     target=asset_path(path[1:])
                     if target.suffix.lower() not in ('.png','.jpg','.jpeg','.webp','.gif','.svg','.avif','.ogg','.mp3','.wav','.opus','.flac','.ttf','.otf','.woff','.woff2'):
@@ -164,6 +172,24 @@ def run(project: Path, host='127.0.0.1', port=8787):
                 with lock:
                     catalog,bindings=deepcopy(read())
                     path=urlsplit(self.path).path
+                    if path=='/api/preview':
+                        from asset_toolbox_preview import capture
+                        return self.send(200,capture(project))
+                    if path=='/api/usage':
+                        from asset_toolbox_export import source_usage
+                        return self.send(200,source_usage(project,registry(catalog,bindings),body['role']))
+                    if path=='/api/export':
+                        from asset_toolbox_export import request_zip
+                        return self.send(200,request_zip(project,registry(catalog,bindings),body['role']),'application/zip')
+                    if path=='/api/undo':
+                        history=directory/'previous.json'
+                        if not history.exists():raise ValueError('되돌릴 변경이 없습니다.')
+                        previous=json.loads(history.read_text())
+                        _,errors=inspect(previous['catalog'],previous['bindings'])
+                        if errors:raise ValueError('이전 연결이 현재 파일과 맞지 않습니다.')
+                        write('catalog.json',previous['catalog']);write('bindings.json',previous['bindings'])
+                        history.unlink()
+                        return self.send(200,self.snapshot())
                     if path=='/api/assign':
                         role=body['role'];asset_id=body['asset_id']
                         model=registry(catalog,bindings)
@@ -178,6 +204,8 @@ def run(project: Path, host='127.0.0.1', port=8787):
                     else:return self.send(404,{'error':'알 수 없는 저장 동작입니다.'})
                     _,errors=inspect(catalog,bindings)
                     if errors:return self.send(422,{'error':'검증 오류가 있어 저장하지 않았습니다.','errors':errors})
+                    old_catalog,old_bindings=read()
+                    write('previous.json',dict(catalog=old_catalog,bindings=old_bindings))
                     write(name,value)
                     payload=self.snapshot()
                 return self.send(200,payload)

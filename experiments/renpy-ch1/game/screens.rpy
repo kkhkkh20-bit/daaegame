@@ -125,11 +125,14 @@ screen say(who,what):
         use r13_meeting_chrome(r13_meeting_claim)
         window:
             id "window"
-            area (80,r13_control_y()-148,1120,132) background R13InkPanel(alpha="d9",slim=True) padding (22,36,22,14)
-            r13_dialogue_text what id "what" style "say_dialogue" size r13_read_size(23,29) line_spacing 5 xsize 1076 font r13_ui_font() color "#fff4df"
+            area (80,r13_control_y()-148,1120,132) background Frame(Crop((16,16,1168,128),r13_asset_path("file:assets/ui-b-dialogue/b_panel_dialogue.png")),48,24,64,24) padding (56,50,28,14)
+            r13_dialogue_text what id "what" style "say_dialogue" size r13_read_size(23,29) line_spacing 5 xsize 1036 font R13_UI_BOLD_FONT color "#4b3420"
         if who:
-            text who id "who" xpos 104 ypos (r13_control_y()-144) size r13_read_size(24,26) color "#f6dfac" font r13_ui_font() xmaximum 1076
-        text "▸" xpos 1160 ypos (r13_control_y()-48) size 24 color "#e8d9b0"
+            frame:
+                xpos 104 ypos (r13_control_y()-158) padding (16,5,24,7)
+                background Frame(Crop((16,12,168,32),r13_asset_path("file:assets/ui-b-dialogue/b_ribbon_name.png")),16,6,32,6)
+                text who id "who" size r13_read_size(24,26) color "#fff3df" font R13_UI_BOLD_FONT xmaximum 1000 outlines []
+        text "▸" xpos 1160 ypos (r13_control_y()-48) size 24 color "#4b3420"
         timer .02 repeat True action Function(r13_typing_tick, _update_screens=False)
         if r13_nw_meeting_claim(r13_meeting_claim):
             use r13_toolbar(mode="line")

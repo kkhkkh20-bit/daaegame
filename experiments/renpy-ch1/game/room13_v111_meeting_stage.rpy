@@ -177,13 +177,13 @@ screen r13_nw_meeting_chrome(claim):
     $ key=r13_nw_meeting_key(claim)
     $ left=r13_nw_tries_left(key)
     frame:
-        area (24,18,900,66) padding (16,8) background R13PaperFrame()
-        add R13AntiqueIcon("meeting_"+r13_meeting_kind(r13_debate_session(claim)),size=30) xpos 0 ypos 8
+        area (24,18,900,86) padding (20,12) background r13_field_paper()
+        add R13AntiqueIcon("meeting_"+r13_meeting_kind(r13_debate_session(claim)),size=30) xpos 0 ypos 14
         vbox:
-            xpos 42
-            spacing 2
-            text (r13_meeting_header(r13_debate_session(claim))+"  ·  남은 기회 %d / %d"%(left,r13_nw_tries_max(key))) size r13_read_size(15,17) color "#795d40"
-            text ("쟁점 · "+R13_NW_MEETINGS[key]["issue"]) size r13_read_size(21,25) color "#493b30"
-        add Solid("#d6bf98") xpos 0 ypos 51 xysize (868,3)
+            xpos 42 xsize 812
+            spacing 3
+            text (r13_meeting_header(r13_debate_session(claim))+"  ·  남은 기회 %d / %d"%(left,r13_nw_tries_max(key))) size r13_read_size(17,19) color "#795d40" font R13_UI_BOLD_FONT
+            text ("쟁점 · "+R13_NW_MEETINGS[key]["issue"]) size r13_read_size(21,25) color "#493b30" font R13_UI_BOLD_FONT
+        add Solid("#d6bf98") xpos 0 ypos 64 xysize (860,3)
         if left<r13_nw_tries_max(key):
-            add Solid("#a88043") xpos 0 ypos 51 xysize (int(868*left/float(r13_nw_tries_max(key))),3)
+            add Solid("#a88043") xpos 0 ypos 64 xysize (int(860*left/float(r13_nw_tries_max(key))),3)

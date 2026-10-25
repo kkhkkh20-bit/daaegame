@@ -129,7 +129,25 @@ class AssetToolboxHTTP(unittest.TestCase):
                 self.assertEqual(response['resolved'][role][state]['id'],'second.'+state)
         self.assertEqual(saved['bindings']['button.untouched'],self.bindings['bindings']['button.untouched'])
         self.assertEqual(json.loads(self.catalog_path.read_text(encoding='utf-8')),self.catalog)
-        self.assertEqual(sorted(p.name for p in self.data.iterdir()),['bindings.json','catalog.json'])
+        self.assertEqual(sorted(p.name for p in self.data.iterdir()),['bindings.json','catalog.json','previous.json'])
+
+    def test_export_contains_complete_group_contract_and_originals(self):
+        import io,zipfile
+        status,body=self.request('/api/export',{'role':'button.left'})
+        self.assertEqual(status,200)
+        with zipfile.ZipFile(io.BytesIO(body)) as archive:
+            manifest=json.loads(archive.read('matching.json'))
+            self.assertEqual(len(manifest['items']),8)
+            self.assertEqual({i['role'] for i in manifest['items']},{'button.left','button.right'})
+            self.assertEqual(len([n for n in archive.namelist() if n.startswith('originals/')]),4)
+        self.assertEqual(self.request('/api/export',{'role':'unknown'})[0],422)
+
+    def test_undo_restores_group_and_is_single_use(self):
+        self.request('/api/assign',{'role':'button.left','asset_id':'second.basic'})
+        status,body=self.request('/api/undo',{})
+        self.assertEqual(status,200)
+        self.assertEqual(body['bindings'],self.bindings)
+        self.assertEqual(self.request('/api/undo',{})[0],422)
 
     def test_incomplete_pack_is_rejected_without_touching_either_json(self):
         original={p:p.read_bytes() for p in (self.catalog_path,self.bindings_path)}
