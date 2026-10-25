@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
     {
       "id": "MS14_D08_S04_L0001",
@@ -1023,9 +1023,9 @@
       "speaker": null,
       "kind": "narration",
       "text": "나는 날짜를 손가락으로 가렸다가 뗀다. 이미 일어난 밤을 종이로 밀어낼 수는 없다.",
-      "editable": true,
-      "usage": "active",
-      "note": "원문 변경은 해당 날짜 newworld 기본 replace로 반영한다.",
+      "editable": false,
+      "usage": "overridden",
+      "note": "무조건 replace가 있으므로 이 원문을 수정해도 현재 대사는 바뀌지 않음.",
       "call_sites": [
         {
           "file": "game/room13_v111_days610.rpy",
@@ -1035,15 +1035,17 @@
         }
       ],
       "activation": {
-        "replace_conditions": [],
+        "replace_conditions": [
+          null
+        ],
         "drop_conditions": []
       },
       "scene_title": "8-4. 해 질 무렵 / 등 관리함 — 혼자 가지 않는 길",
       "source_hash": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
       "baseline_hash": "3b6a8f2ed53bfeeeeaf0a7078019ad31f3d7f51dc93796d3859a04c8eee34d6d",
       "uid": "15d43c5f2ceb0865cf833d0a",
-      "review_status": "draft",
-      "baseline_review_status": "draft",
+      "review_status": "reviewed",
+      "baseline_review_status": "reviewed",
       "branch_key": "d08|MS14_D08_S04|base|text|행 조건 없음",
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },

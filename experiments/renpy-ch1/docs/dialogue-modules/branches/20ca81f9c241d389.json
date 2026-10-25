@@ -1,7 +1,161 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_week1_cases.rpy:248:26",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        14173,
+        14224
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_fake_night",
+      "block": "r13_w1c_fake_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:248:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "해가 지자 할머니가 등잔을 들고 계단을 내려갔다. 손에는 담요와 굵은 끈이 들려 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 248,
+          "label": "r13_w1c_fake_night",
+          "guards": []
+        }
+      ],
+      "line": 248,
+      "scene_title": "r13_w1c_fake_night",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "8552a8e657cb61b72ce0817f1d8fc9ba644df46da3ad4834c1383f6d97ee7f40",
+      "uid": "8bf7c33e708d5bddffd1174c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_fake_night|rpy_literal|r13_w1c_fake_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:249:18",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        14245,
+        14277
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_fake_night",
+      "block": "r13_w1c_fake_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:249:18",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "잠깐 볼일이 있어서 나가요. 아이는 방에 있게 하세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 249,
+          "label": "r13_w1c_fake_night",
+          "guards": []
+        }
+      ],
+      "line": 249,
+      "scene_title": "r13_w1c_fake_night",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "39170385f28e636308a31c73d168e49dab9d60acb4f085174791a24fdc016d4e",
+      "uid": "56f5da8272f5928ce8da6d6f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_fake_night|rpy_literal|r13_w1c_fake_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:250:15",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        14295,
+        14321
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_fake_night",
+      "block": "r13_w1c_fake_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:250:15",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(가짜 편지에 적어 둔 바로 그 시각이다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 250,
+          "label": "r13_w1c_fake_night",
+          "guards": []
+        }
+      ],
+      "line": 250,
+      "scene_title": "r13_w1c_fake_night",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "f05dd2497943d26e3283f5b580b93f53e5a32fcbade88196e82ca77f934533b2",
+      "uid": "a3d2c5c91f41d62ef528f4a7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_fake_night|rpy_literal|r13_w1c_fake_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:253:34",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        14424,
+        14476
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_fake_night",
+      "block": "r13_w1c_fake_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:253:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "할머니는 북쪽 초소 처마 밑에서 등잔을 낮췄다. 끈을 담요 밑에 감추고, 길 쪽만 보았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 253,
+          "label": "r13_w1c_fake_night",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 253,
+      "scene_title": "r13_w1c_fake_night",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "6c5e1e37f5c599705dc785194f7af3f147d540d27d657a7742eb1fff4209c05a",
+      "uid": "21cc20f737cd0333565696be",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_fake_night|rpy_literal|r13_w1c_fake_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_week1_cases.rpy:254:40",
       "file": "game/systems/room13_week1_cases.rpy",
@@ -37,6 +191,240 @@
       "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
       "baseline_hash": "2f6538c4f84adf407bb7978e7bdfbb75a104d61a134da7c699718ed233752715",
       "uid": "66d231ed8cbbb19535aca5bd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_fake_night|rpy_literal|r13_w1c_fake_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:255:26",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        14577,
+        14606
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_fake_night",
+      "block": "r13_w1c_fake_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:255:26",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "기다리는 사람이 있어요. 아이 엄마가 올 거예요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 255,
+          "label": "r13_w1c_fake_night",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 255,
+      "scene_title": "r13_w1c_fake_night",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "ad95e04c1a36535e168e6a49c3d8086a780222e9e8861c21e5e0217a99a6eb1a",
+      "uid": "38115cb677a1ea60eb86aaef",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_fake_night|rpy_literal|r13_w1c_fake_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:256:23",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        14632,
+        14670
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_fake_night",
+      "block": "r13_w1c_fake_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:256:23",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(아이 엄마를 기다리는 사람이 끈을 숨기고 있다. 초롱도 봤다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 256,
+          "label": "r13_w1c_fake_night",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 256,
+      "scene_title": "r13_w1c_fake_night",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "8a2010b7d996407748679cbc48b819324f3fff847bed91b74e76a372ba575679",
+      "uid": "275d4d2d793d55d6cfed4d21",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_fake_night|rpy_literal|r13_w1c_fake_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:259:34",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        14831,
+        14872
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_fake_night",
+      "block": "r13_w1c_fake_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:259:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "할머니가 나간 뒤 여관은 조용했다. 다람이는 내 무릎을 베고 잠들었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 259,
+          "label": "r13_w1c_fake_night",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 259,
+      "scene_title": "r13_w1c_fake_night",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "a8595f277b5cd9e429775d685c4a885bd31054ae4dd3bf753b15c83e73e59521",
+      "uid": "37b7bf43767c332373e5bd42",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_fake_night|rpy_literal|r13_w1c_fake_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:261:38",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        14973,
+        15013
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_fake_night",
+      "block": "r13_w1c_fake_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:261:38",
+      "when": null,
+      "speaker": "resident_owlgp",
+      "kind": "dialogue",
+      "text": "할머니가 초소 쪽으로 가는 걸 봤소. 오늘 밤은 여기 오지 않겠구려.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 261,
+          "label": "r13_w1c_fake_night",
+          "guards": []
+        }
+      ],
+      "line": 261,
+      "scene_title": "r13_w1c_fake_night",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "e4c03c568cc615cb65cb58219e87c632b6f0d69bb21a716f014766463b5126a6",
+      "uid": "7da5d3d1c9abe54344b7bf07",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_fake_night|rpy_literal|r13_w1c_fake_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:262:26",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        15042,
+        15077
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_fake_night",
+      "block": "r13_w1c_fake_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:262:26",
+      "when": null,
+      "speaker": "resident_owlgp",
+      "kind": "dialogue",
+      "text": "부인에게서 맡아 둔 물건을 돌려드리겠소. 베껴 둔 기록이오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 262,
+          "label": "r13_w1c_fake_night",
+          "guards": []
+        }
+      ],
+      "line": 262,
+      "scene_title": "r13_w1c_fake_night",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "617f3846ee51b39f56591e29231f41c14c50b2cbf4e874d086d351cb2b443a2b",
+      "uid": "468b5666d4ecebfa61de22e0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_fake_night|rpy_literal|r13_w1c_fake_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:263:14",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        15094,
+        15120
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_fake_night",
+      "block": "r13_w1c_fake_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:263:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "그날 밤 13호에서는 아무도 다치지 않았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 263,
+          "label": "r13_w1c_fake_night",
+          "guards": []
+        }
+      ],
+      "line": 263,
+      "scene_title": "r13_w1c_fake_night",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "5a9427ee65964ffc2ddc3f719504b76cc92e9eb5cb19ecb60e2b076e0a959695",
+      "uid": "ee680b7599308b5b3f1be4f7",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_w1c_fake_night|rpy_literal|r13_w1c_fake_night|행 조건 없음",

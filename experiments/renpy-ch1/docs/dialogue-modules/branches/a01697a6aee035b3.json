@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_carryover.rpy:93:8",
+      "file": "game/systems/room13_carryover.rpy",
+      "path": [
+        5770,
+        5781
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_carry_eunho_full",
+      "block": "r13_carry_eunho_full",
+      "placement": "literal",
+      "ref": "game/systems/room13_carryover.rpy:93:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "열다섯 냥을 낸다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_carryover.rpy",
+          "line": 93,
+          "label": "r13_carry_eunho_full",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 93,
+      "scene_title": "r13_carry_eunho_full",
+      "source_hash": "f10306dfce96df81431a8d3c357b4d31023a0ef3afd42beef4d1a8184ca40d9d",
+      "baseline_hash": "80fa4d30832d7238c1762f64c1223dd3546e69687b8b2e4a4689a2ab39a52cb1",
+      "uid": "47f8a79846ac8f4f49dec163",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_carry_eunho_full|rpy_menu|r13_carry_eunho_full|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_carryover.rpy:97:8",
+      "file": "game/systems/room13_carryover.rpy",
+      "path": [
+        6024,
+        6032
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_carry_eunho_full",
+      "block": "r13_carry_eunho_full",
+      "placement": "literal",
+      "ref": "game/systems/room13_carryover.rpy:97:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "다음에 산다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_carryover.rpy",
+          "line": 97,
+          "label": "r13_carry_eunho_full",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 97,
+      "scene_title": "r13_carry_eunho_full",
+      "source_hash": "f10306dfce96df81431a8d3c357b4d31023a0ef3afd42beef4d1a8184ca40d9d",
+      "baseline_hash": "60e800f820eadc8c37ade0f1482a18d2f2dbf5d740dcefbf7b622a089beb4e35",
+      "uid": "d554cf00cac34f0ee86c7da7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_carry_eunho_full|rpy_menu|r13_carry_eunho_full|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

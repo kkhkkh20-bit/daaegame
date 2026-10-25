@@ -1,0 +1,170 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/winter.rpy:219:12",
+      "file": "game/winter.rpy",
+      "path": [
+        9894,
+        9920
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "winter_action_run",
+      "block": "winter_action_run",
+      "placement": "literal",
+      "ref": "game/winter.rpy:219:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "지하 연결로가 있는지 도면과 흔적을 비교한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 219,
+          "label": "winter_action_run",
+          "guards": [
+            "if winter_action_id==\"hidden\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 219,
+      "scene_title": "winter_action_run",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "878dd30d00a5bb1a60d76e78d2fb8fe5588cca4da81066048ec916989d147256",
+      "uid": "6713c14dd81ac53fd2c4738c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_action_run|rpy_menu|winter_action_run|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:221:12",
+      "file": "game/winter.rpy",
+      "path": [
+        9955,
+        9974
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "winter_action_run",
+      "block": "winter_action_run",
+      "placement": "literal",
+      "ref": "game/winter.rpy:221:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "둘 중 하나가 거짓말했을 것이다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 221,
+          "label": "winter_action_run",
+          "guards": [
+            "if winter_action_id==\"hidden\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 221,
+      "scene_title": "winter_action_run",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "53b1b6e3d15d2a30c49531d6a9f2d5f35e654a119cf68609d176cd48e31f8165",
+      "uid": "5c1bf166a1e0d9902aaa1d68",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_action_run|rpy_menu|winter_action_run|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:249:12",
+      "file": "game/winter.rpy",
+      "path": [
+        11442,
+        11466
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "winter_action_run",
+      "block": "winter_action_run",
+      "placement": "literal",
+      "ref": "game/winter.rpy:249:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "이름은 감추고 가족을 지킬 방법을 찾는다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 249,
+          "label": "winter_action_run",
+          "guards": [
+            "if winter_action_id==\"witness\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 249,
+      "scene_title": "winter_action_run",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "b8cbbbb5d6278bd0587da259b1488f6375c074fc437e63005a9f464572b117f5",
+      "uid": "ebb28ab98194a27cd5cdf9e9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_action_run|rpy_menu|winter_action_run|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:251:12",
+      "file": "game/winter.rpy",
+      "path": [
+        11540,
+        11566
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "winter_action_run",
+      "block": "winter_action_run",
+      "placement": "literal",
+      "ref": "game/winter.rpy:251:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "체류 담당자에게 누비의 이름과 목격을 알린다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 251,
+          "label": "winter_action_run",
+          "guards": [
+            "if winter_action_id==\"witness\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 251,
+      "scene_title": "winter_action_run",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "bd9072c210c11a3159f3fdc2a4e024a9a26e714feda8106d69c22580db5b3312",
+      "uid": "4d05b7f37ea7610edce6c132",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_action_run|rpy_menu|winter_action_run|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

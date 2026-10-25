@@ -1,7 +1,83 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/room13_revision.rpy:88:44",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        4700,
+        4741
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_mother_intervention",
+      "block": "r13_mother_intervention",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:88:44",
+      "when": null,
+      "speaker": "resident_lamplighter",
+      "kind": "dialogue",
+      "text": "오늘 아침에 사건 소식을 전했습니다. 그랬더니 여기서 보자고 하셨어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 88,
+          "label": "r13_mother_intervention",
+          "guards": []
+        }
+      ],
+      "line": 88,
+      "scene_title": "r13_mother_intervention",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "5d72698727ce1cb38ab9c553d742994327278dd9f5be3f73c439cd5738ceddff",
+      "uid": "e85ca254f57dfbbdc89a988f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_mother_intervention|rpy_literal|r13_mother_intervention|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:88:94",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        4750,
+        4767
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_mother_intervention",
+      "block": "r13_mother_intervention",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:88:94",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "누가 보자고 했다는 겁니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 88,
+          "label": "r13_mother_intervention",
+          "guards": []
+        }
+      ],
+      "line": 88,
+      "scene_title": "r13_mother_intervention",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "d7f7ae5b380a10e51674fbe92e50aac2bcee40740664cde75f4a0258298fae20",
+      "uid": "5fca34259e3f49bdbc77a7a7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_mother_intervention|rpy_literal|r13_mother_intervention|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/room13_revision.rpy:88:120",
       "file": "game/room13_revision.rpy",
@@ -35,6 +111,310 @@
       "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
       "baseline_hash": "48da66a28af111dc3ed4e8df949ae8b81f84b8794285a26455ec17960fcd2740",
       "uid": "d42e4e6596798984ecdd726c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_mother_intervention|rpy_literal|r13_mother_intervention|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:88:133",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        4789,
+        4846
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_mother_intervention",
+      "block": "r13_mother_intervention",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:88:133",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "엄마는 젖은 장갑도 벗지 않은 채였다. 나를 보고 한 걸음 다가오다가, 이내 너울 쪽으로 돌아섰다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 88,
+          "label": "r13_mother_intervention",
+          "guards": []
+        }
+      ],
+      "line": 88,
+      "scene_title": "r13_mother_intervention",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "16c2f5c559f6b340b406d4335fcee7983600956d104d45a800ea139a6e30a849",
+      "uid": "07fd0af78bbf3553696abbde",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_mother_intervention|rpy_literal|r13_mother_intervention|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:88:199",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        4855,
+        4897
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_mother_intervention",
+      "block": "r13_mother_intervention",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:88:199",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "아이부터 만나게 해 주세요. 저를 찾던 거라면 이렇게 제가 직접 왔어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 88,
+          "label": "r13_mother_intervention",
+          "guards": []
+        }
+      ],
+      "line": 88,
+      "scene_title": "r13_mother_intervention",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "4da945f717df955e16f48ac814f4eef31ec5f7c854411b6c7d65f260a9a32ce2",
+      "uid": "d7ec4d958bcbe963ed1a0a26",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_mother_intervention|rpy_literal|r13_mother_intervention|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:88:252",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        4908,
+        4958
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_mother_intervention",
+      "block": "r13_mother_intervention",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:88:252",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "부엉이 어르신 사망 사건입니다. 어머니가 오셨다는 이유로 아이를 내보낼 수는 없습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 88,
+          "label": "r13_mother_intervention",
+          "guards": []
+        }
+      ],
+      "line": 88,
+      "scene_title": "r13_mother_intervention",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "5f1857f08d3bf7e3d7917131a92f417c051a249bce010aea02265273f7df9539",
+      "uid": "ba2ed678a8112d43d138dcbc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_mother_intervention|rpy_literal|r13_mother_intervention|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:88:311",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        4967,
+        4983
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_mother_intervention",
+      "block": "r13_mother_intervention",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:88:311",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "사건 소식은 언제 들었어?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 88,
+          "label": "r13_mother_intervention",
+          "guards": []
+        }
+      ],
+      "line": 88,
+      "scene_title": "r13_mother_intervention",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "8b24d6291a994998bd995e4e76d76d097d501aac4b1fbf64ace4a2ea05070160",
+      "uid": "826bdf28a15f3a03f3fbf238",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_mother_intervention|rpy_literal|r13_mother_intervention|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:88:336",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        4992,
+        5036
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_mother_intervention",
+      "block": "r13_mother_intervention",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:88:336",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "오늘 아침. 어제 받은 편지는 사건 전에 온 거였어. 다람이, 많이 다쳤어?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 88,
+          "label": "r13_mother_intervention",
+          "guards": []
+        }
+      ],
+      "line": 88,
+      "scene_title": "r13_mother_intervention",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "ac9ab9be8fb4fa37bdbb10089c38a751259bae0af51996da0633b78abe57c949",
+      "uid": "11c9371a2dfd9c9688902482",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_mother_intervention|rpy_literal|r13_mother_intervention|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:88:389",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        5045,
+        5077
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_mother_intervention",
+      "block": "r13_mother_intervention",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:88:389",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "할아버지한테 팔을 붙잡혔었어. 지금은 움직일 수 있어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 88,
+          "label": "r13_mother_intervention",
+          "guards": []
+        }
+      ],
+      "line": 88,
+      "scene_title": "r13_mother_intervention",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "285e6ce64ed9f9745dc8c250d1147e8ec8d9a935fc07a0fd4b9a6ef6e2d0e936",
+      "uid": "cc1ff5b8d2ced49d8397b02b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_mother_intervention|rpy_literal|r13_mother_intervention|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:88:433",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        5089,
+        5125
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_mother_intervention",
+      "block": "r13_mother_intervention",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:88:433",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "연구한 원본을 가져오면 아이 일도 이야기해 볼 수는 있겠지요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 88,
+          "label": "r13_mother_intervention",
+          "guards": []
+        }
+      ],
+      "line": 88,
+      "scene_title": "r13_mother_intervention",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "d8738955857f5785244a9f890c9a5d3f1b73bf69e0661e552e4b0a184db4c48c",
+      "uid": "9870efcbd4d83900d1d4a3f8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_mother_intervention|rpy_literal|r13_mother_intervention|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:88:478",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        5134,
+        5164
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_mother_intervention",
+      "block": "r13_mother_intervention",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:88:478",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "그 연구를 내놓으면 아이에게 걸린 의심이 풀리나요?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 88,
+          "label": "r13_mother_intervention",
+          "guards": []
+        }
+      ],
+      "line": 88,
+      "scene_title": "r13_mother_intervention",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "1b9d2c159743a044358966772e0c8777998e2cddef9927d7051c9f26dd6cd67d",
+      "uid": "efe5418f36dd8d022038a0e3",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_mother_intervention|rpy_literal|r13_mother_intervention|행 조건 없음",
@@ -79,6 +459,44 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
+      "id": "game/room13_revision.rpy:88:559",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        5215,
+        5266
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_mother_intervention",
+      "block": "r13_mother_intervention",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:88:559",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "그럼 기록부터 다시 봐 주세요. 제가 왔다는 사실 말고, 아이가 실제로 한 일을 보고요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 88,
+          "label": "r13_mother_intervention",
+          "guards": []
+        }
+      ],
+      "line": 88,
+      "scene_title": "r13_mother_intervention",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "6ed2c46b6d2121260644649f89f7764c435e929c53557db234cebb568c84154c",
+      "uid": "4b87b2685b505589bb00b88b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_mother_intervention|rpy_literal|r13_mother_intervention|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
       "id": "game/room13_revision.rpy:88:630",
       "file": "game/room13_revision.rpy",
       "path": [
@@ -117,6 +535,120 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
+      "id": "game/room13_revision.rpy:89:26",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        5391,
+        5452
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_mother_intervention",
+      "block": "r13_mother_intervention",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:89:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "너울이 면회 시간을 적었다. 경비가 엄마에게 연구 원본을 내놓으라고 했다. 그러자 초롱이 앞을 가로막았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 89,
+          "label": "r13_mother_intervention",
+          "guards": []
+        }
+      ],
+      "line": 89,
+      "scene_title": "r13_mother_intervention",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "f92ea99825d9243bd51680c0658bba1b751be3027a33661780a84b35f1d8f214",
+      "uid": "7ea15c58cf49df5bc77b9353",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_mother_intervention|rpy_literal|r13_mother_intervention|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:89:113",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        5478,
+        5524
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_mother_intervention",
+      "block": "r13_mother_intervention",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:89:113",
+      "when": null,
+      "speaker": "resident_lamplighter",
+      "kind": "dialogue",
+      "text": "저는 두 분의 만남을 주선했을 뿐입니다. 여기는 서류를 넘기는 자리가 아닙니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 89,
+          "label": "r13_mother_intervention",
+          "guards": []
+        }
+      ],
+      "line": 89,
+      "scene_title": "r13_mother_intervention",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "fedae3d16dfaa91fa52f20bf00c7aa3db82307f10f16f65a59434a48cf3fe4e7",
+      "uid": "fd6e6b12696dfc28e97b86f6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_mother_intervention|rpy_literal|r13_mother_intervention|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:89:168",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        5533,
+        5586
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_mother_intervention",
+      "block": "r13_mother_intervention",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:89:168",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "오늘 만남이 끝나면 다시 연락할게. 따라붙은 사람이 없는지 확인하기 전엔 나를 따라오지 마.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 89,
+          "label": "r13_mother_intervention",
+          "guards": []
+        }
+      ],
+      "line": 89,
+      "scene_title": "r13_mother_intervention",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "8d73b9f96b95056bcef663e5fd2264ae3a2543e198660867f768a3f905eec839",
+      "uid": "f40f6f6608dd044422b1e00b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_mother_intervention|rpy_literal|r13_mother_intervention|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
       "id": "game/room13_revision.rpy:89:230",
       "file": "game/room13_revision.rpy",
       "path": [
@@ -149,6 +681,44 @@
       "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
       "baseline_hash": "725a7c99a98d35145e41ec32d273c0748ad1b322c1d1988fa121a4d6005a0401",
       "uid": "943707e5a0e04c113ddd890e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_mother_intervention|rpy_literal|r13_mother_intervention|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:89:268",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        5633,
+        5701
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_mother_intervention",
+      "block": "r13_mother_intervention",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:89:268",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "표식은 초롱에게 남길게. 아이 기록은 네가 챙겨 줘. 나는 이 사람들이 아이를 붙잡아 둘 이유를 없앨 방법을 찾아올게.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 89,
+          "label": "r13_mother_intervention",
+          "guards": []
+        }
+      ],
+      "line": 89,
+      "scene_title": "r13_mother_intervention",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "565e001dada65c7bf7c16a1eea7877ae894a4f8fc031136bba1878197e9831e8",
+      "uid": "aefcf7438621f9e8e36ef083",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_mother_intervention|rpy_literal|r13_mother_intervention|행 조건 없음",

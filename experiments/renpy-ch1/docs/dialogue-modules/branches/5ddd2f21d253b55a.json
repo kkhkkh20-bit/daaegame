@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events.rpy:235:8",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        12787,
+        12801
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_ev_b_ambush",
+      "block": "r13_ev_b_ambush",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:235:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "골목 입구에서 기다린다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 235,
+          "label": "r13_ev_b_ambush",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 235,
+      "scene_title": "r13_ev_b_ambush",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "a440f53ca7e7c6343b4e90f7d826c16adbfa2dec6bb12dcea4f8dd421ece1772",
+      "uid": "8ea6e9f34c268474d843093d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_b_ambush|rpy_menu|r13_ev_b_ambush|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:238:8",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        12958,
+        12971
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_ev_b_ambush",
+      "block": "r13_ev_b_ambush",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:238:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "오늘은 그냥 지나간다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 238,
+          "label": "r13_ev_b_ambush",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 238,
+      "scene_title": "r13_ev_b_ambush",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "5070b6f7af18eb58b5fde78d23d7a2c28c4125888f159d206d62edeccb8c6d4f",
+      "uid": "4697a77e0922772a91955db2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_b_ambush|rpy_menu|r13_ev_b_ambush|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

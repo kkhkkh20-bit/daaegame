@@ -1,7 +1,362 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:224:26",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        13162,
+        13212
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_lowroad",
+      "block": "r13_ws_lowroad",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:224:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "아랫길. 마을 장부에 이름이 없는 사람들의 천막 여섯 채. 천막 사이에 작은 불 하나.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 224,
+          "label": "r13_ws_lowroad",
+          "guards": []
+        }
+      ],
+      "line": 224,
+      "scene_title": "r13_ws_lowroad",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "198176195c4f523f97d463c1154b729360a464f96ec9fa1d150c2c25a9e286f5",
+      "uid": "6740248dfa7dff99ffcc6d5f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_lowroad|rpy_literal|r13_ws_lowroad|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:225:25",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        13240,
+        13282
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_lowroad",
+      "block": "r13_ws_lowroad",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:225:25",
+      "when": null,
+      "speaker": "resident_nero",
+      "kind": "dialogue",
+      "text": "오늘 밤이 춥다는 말 하러 왔나? 매일 춥다. 우리는 늘 여기서 버텼다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 225,
+          "label": "r13_ws_lowroad",
+          "guards": []
+        }
+      ],
+      "line": 225,
+      "scene_title": "r13_ws_lowroad",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "f7ddd659b84613c5e38ca68cc27bbbcc9d87ccf0ab16f8dcf2c7c2d790a7877b",
+      "uid": "37f2dd62809baa6e297920ce",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_lowroad|rpy_literal|r13_ws_lowroad|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:226:25",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        13310,
+        13348
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_lowroad",
+      "block": "r13_ws_lowroad",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:226:25",
+      "when": null,
+      "speaker": "resident_nero",
+      "kind": "dialogue",
+      "text": "학교는 표 있는 사람 데다. 우리 같은 건 문 앞에서 돌려보낸다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 226,
+          "label": "r13_ws_lowroad",
+          "guards": []
+        }
+      ],
+      "line": 226,
+      "scene_title": "r13_ws_lowroad",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "a742500725f3028fa713741bb23c1d96bc0ea3efc412b4daa34f1b6860be40f1",
+      "uid": "c52e89bfc4eba4c2f8042bb1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_lowroad|rpy_literal|r13_ws_lowroad|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:230:35",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        13605,
+        13654
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_lowroad",
+      "block": "r13_ws_lowroad",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:230:35",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "진료소에서 잰 숫자입니다. 돌이 밤마다 더 식고 있어요. 오늘 밤이 더 낮을 겁니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 230,
+          "label": "r13_ws_lowroad",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 230,
+      "scene_title": "r13_ws_lowroad",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "ae7b00c1fabdcb6b7029200d5ce75f2c0e38d5eb824529215b5769f93f32be95",
+      "uid": "d57591ca60786338e32986ae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_lowroad|rpy_literal|r13_ws_lowroad|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:231:33",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        13690,
+        13725
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_lowroad",
+      "block": "r13_ws_lowroad",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:231:33",
+      "when": null,
+      "speaker": "resident_nero",
+      "kind": "dialogue",
+      "text": "……어젯밤에 영감 하나가 손가락을 못 폈다. 그게 그거였군.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 231,
+          "label": "r13_ws_lowroad",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 231,
+      "scene_title": "r13_ws_lowroad",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "dd41b15a9c6baa7a3d75ba982ca89f4fbf285683d639c605819a8cc29cb46c38",
+      "uid": "ba05431e8f581955fc436b01",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_lowroad|rpy_literal|r13_ws_lowroad|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:232:33",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        13761,
+        13803
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_lowroad",
+      "block": "r13_ws_lowroad",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:232:33",
+      "when": null,
+      "speaker": "resident_nero",
+      "kind": "dialogue",
+      "text": "알았다. 근데 걷지 못하는 사람도 있다. 그리고 문이 안 열리면 끝이다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 232,
+          "label": "r13_ws_lowroad",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 232,
+      "scene_title": "r13_ws_lowroad",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "7506c4ef1c38499926673072421e91617dfaa94cbdcce312166efeccf777a740",
+      "uid": "1dbd7a56505ccb4de5035a35",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_lowroad|rpy_literal|r13_ws_lowroad|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:235:45",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        13940,
+        13949
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_lowroad",
+      "block": "r13_ws_lowroad",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:235:45",
+      "when": null,
+      "speaker": "resident_nero",
+      "kind": "dialogue",
+      "text": "말은 공짜다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 235,
+          "label": "r13_ws_lowroad",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 235,
+      "scene_title": "r13_ws_lowroad",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "aa61938c79ff84ad008a0e85170146d1d55cfcb0360c5893ed5be2f0dc4249ac",
+      "uid": "6ac899f759c18b46e5cf1ccc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_lowroad|rpy_literal|r13_ws_lowroad|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:238:44",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        14096,
+        14137
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_lowroad",
+      "block": "r13_ws_lowroad",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:238:44",
+      "when": null,
+      "speaker": "resident_teacher",
+      "kind": "dialogue",
+      "text": "아랫길 분들을요? ……명단에 없는 분들은 촌장님 허락이 있어야 합니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 238,
+          "label": "r13_ws_lowroad",
+          "guards": [
+            "if r13_has(\"ws_nero_moved\"):"
+          ]
+        }
+      ],
+      "line": 238,
+      "scene_title": "r13_ws_lowroad",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "a13a0a374a8d7ffe37ea82dbfd5f8912521e0d09cd9c5af4c9ad9a780e4f5339",
+      "uid": "591637c0b9bacd65d52ff03f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_lowroad|rpy_literal|r13_ws_lowroad|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:241:39",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        14260,
+        14302
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_lowroad",
+      "block": "r13_ws_lowroad",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:241:39",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "아랫길 사람들은 서로 이름표를 만들어 줍니다. 이름 없는 사람은 없어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 241,
+          "label": "r13_ws_lowroad",
+          "guards": [
+            "if r13_has(\"ws_nero_moved\"):",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 241,
+      "scene_title": "r13_ws_lowroad",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "5f01589215a61606ea2d61168327ead8452a349540b200f8bfb5dd3913abdc6d",
+      "uid": "f5d83ab188bd02b587ad5a41",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_lowroad|rpy_literal|r13_ws_lowroad|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_ep5_soup.rpy:242:40",
       "file": "game/systems/room13_ep5_soup.rpy",
@@ -79,6 +434,47 @@
       "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
       "baseline_hash": "9672421010fe9d5faf1358f4e7b72e63cd8d2ccf69f7fba2322beb55aa170211",
       "uid": "8d6966d616fe00fc2e2396cb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_lowroad|rpy_literal|r13_ws_lowroad|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:246:52",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        14600,
+        14628
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_lowroad",
+      "block": "r13_ws_lowroad",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:246:52",
+      "when": null,
+      "speaker": "resident_teacher",
+      "kind": "dialogue",
+      "text": "죄송합니다. 오늘 밤은 아이들 자리도 모자라요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 246,
+          "label": "r13_ws_lowroad",
+          "guards": [
+            "if r13_has(\"ws_nero_moved\"):",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 246,
+      "scene_title": "r13_ws_lowroad",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "dfd8a2e15418708fb93b0d9b7e1d45837a13c137698982cfaf59910f3694a2bd",
+      "uid": "942970cffb84401b98910e03",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_ws_lowroad|rpy_literal|r13_ws_lowroad|행 조건 없음",

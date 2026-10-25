@@ -1,0 +1,82 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events.rpy:419:31",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        22090,
+        22103
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_ev_c_seori",
+      "block": "r13_ev_c_seori",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:419:31",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "백 부인 창고 · 밤",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 419,
+          "label": "r13_ev_c_seori",
+          "guards": []
+        }
+      ],
+      "line": 419,
+      "scene_title": "r13_ev_c_seori",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "bc7dfd22de686421d198bf6705d9a419e7b9924951e52467373b8320a6ddaee8",
+      "uid": "2f15f1bfeae99b11a7b66f07",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_seori|rpy_inventory|r13_ev_c_seori|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:425:23",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        22442,
+        22457
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_ev_c_seori",
+      "block": "r13_ev_c_seori",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:425:23",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "서리 검사원의 감금 확인",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 425,
+          "label": "r13_ev_c_seori",
+          "guards": []
+        }
+      ],
+      "line": 425,
+      "scene_title": "r13_ev_c_seori",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "e9789806261aba8635be981b4e48bae96fd5f0759562dc784fc458ca3fb85911",
+      "uid": "527d531069135613893804f4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_seori|rpy_inventory|r13_ev_c_seori|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

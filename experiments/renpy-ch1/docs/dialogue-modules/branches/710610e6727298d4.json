@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/room13_v111_days1114.rpy:557:8",
+      "file": "game/room13_v111_days1114.rpy",
+      "path": [
+        29451,
+        29463
+      ],
+      "origin": "rpy_menu",
+      "day": 11,
+      "scene": "r13_v111_blanket_choice11",
+      "block": "r13_v111_blanket_choice11",
+      "placement": "literal",
+      "ref": "game/room13_v111_days1114.rpy:557:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "가족 짐에 보관한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 557,
+          "label": "r13_v111_blanket_choice11",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 557,
+      "scene_title": "r13_v111_blanket_choice11",
+      "source_hash": "aa56cffba0a29954c119b1d0616327b29579646f32f2520278a4f21d02f69444",
+      "baseline_hash": "2391ea23e3512cfcdcc76e5d4c54f035eeafc58b6172ac350d32e5ec2d0099a6",
+      "uid": "8beee58d3d992d5de4d21fad",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|r13_v111_blanket_choice11|rpy_menu|r13_v111_blanket_choice11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_v111_days1114.rpy:559:8",
+      "file": "game/room13_v111_days1114.rpy",
+      "path": [
+        29515,
+        29530
+      ],
+      "origin": "rpy_menu",
+      "day": 11,
+      "scene": "r13_v111_blanket_choice11",
+      "block": "r13_v111_blanket_choice11",
+      "placement": "literal",
+      "ref": "game/room13_v111_days1114.rpy:559:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "토실에게 한 장을 건넨다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 559,
+          "label": "r13_v111_blanket_choice11",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 559,
+      "scene_title": "r13_v111_blanket_choice11",
+      "source_hash": "aa56cffba0a29954c119b1d0616327b29579646f32f2520278a4f21d02f69444",
+      "baseline_hash": "5d921e0397629565ec926e4f872190db0eae882759e161f5eb154d23d39d9202",
+      "uid": "038fad7c4409f7d5cb5b55a1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d11|r13_v111_blanket_choice11|rpy_menu|r13_v111_blanket_choice11|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

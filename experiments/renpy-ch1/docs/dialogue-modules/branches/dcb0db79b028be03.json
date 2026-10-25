@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
     {
       "id": "game/room13_week2.rpy:10:30",
@@ -37,6 +37,46 @@
       "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
       "baseline_hash": "d332e4c550691028ad080fd4d0f83a957d40d947c9b6c9f807047f1116f287c0",
       "uid": "70948e1d06b2c035a1925243",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_week2_opening|rpy_literal|r13_week2_opening|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:10:83",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        473,
+        510
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_week2_opening",
+      "block": "r13_week2_opening",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:10:83",
+      "when": null,
+      "speaker": "nabi",
+      "kind": "dialogue",
+      "text": "할머니는 아직 경비실에 계세요. 그래서 이 문은 제가 잠글게요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 10,
+          "label": "r13_week2_opening",
+          "guards": [
+            "if room13[\"granny_state\"]==\"detained\":"
+          ]
+        }
+      ],
+      "line": 10,
+      "scene_title": "r13_week2_opening",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "6436630ec9aa10fc803f0e4e3341bf1866aed5f3483988ecb5dedd3f23083a2d",
+      "uid": "55b1839e2c73133b9119c2e9",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_week2_opening|rpy_literal|r13_week2_opening|행 조건 없음",
@@ -83,6 +123,46 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
+      "id": "game/room13_week2.rpy:14:33",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        715,
+        763
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_week2_opening",
+      "block": "r13_week2_opening",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:14:33",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "보호시설 난방도 약해졌습니다. 환자들을 다른 곳으로 옮긴다는 말이 나오고 있습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 14,
+          "label": "r13_week2_opening",
+          "guards": [
+            "if room13[\"daram_state\"]==\"held\":"
+          ]
+        }
+      ],
+      "line": 14,
+      "scene_title": "r13_week2_opening",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "b9a76065e06c49982535a06c93f871b3b70967813c498e25c56c027e7fb4136c",
+      "uid": "e42544130a215ac283bd75ea",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_week2_opening|rpy_literal|r13_week2_opening|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
       "id": "game/room13_week2.rpy:14:90",
       "file": "game/room13_week2.rpy",
       "path": [
@@ -117,6 +197,322 @@
       "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
       "baseline_hash": "d1b39d01e5de8ca115a94d03a82f07f6896ae91691affdd775e2449a26af92d3",
       "uid": "55bae3082e9ca0f16c3d365d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_week2_opening|rpy_literal|r13_week2_opening|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:14:123",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        805,
+        866
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_week2_opening",
+      "block": "r13_week2_opening",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:14:123",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "지금 쓰고 있는 명단을 확인해야 합니다. 지난 재판 기록만으로는 이번에 누구를 끌고 갈지 알 수 없습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 14,
+          "label": "r13_week2_opening",
+          "guards": [
+            "if room13[\"daram_state\"]==\"held\":"
+          ]
+        }
+      ],
+      "line": 14,
+      "scene_title": "r13_week2_opening",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "0e15f69bc072eea3cbf44c9e4ad49a67b53ef5ef762bda542284d6a128d76ff0",
+      "uid": "2bb3bdeafc930ffd78a9a9c0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_week2_opening|rpy_literal|r13_week2_opening|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:14:192",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        874,
+        930
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_week2_opening",
+      "block": "r13_week2_opening",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:14:192",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "판결이 내려졌어도 아이에게 가는 길이 끝난 것은 아니었다. 옮겨질 사람들의 명단부터 찾아야 한다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 14,
+          "label": "r13_week2_opening",
+          "guards": [
+            "if room13[\"daram_state\"]==\"held\":"
+          ]
+        }
+      ],
+      "line": 14,
+      "scene_title": "r13_week2_opening",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "27f4bb71072495995a9f4a9605900efaa8cde98d4c35a7a6c505066ac464a8ac",
+      "uid": "c6cfb87d75dcebfade96c61a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_week2_opening|rpy_literal|r13_week2_opening|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:16:33",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        998,
+        1026
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_week2_opening",
+      "block": "r13_week2_opening",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:16:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "아빠. 저 사람, 어제도 저기서 배관 고쳤잖아.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 16,
+          "label": "r13_week2_opening",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 16,
+      "scene_title": "r13_week2_opening",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "18eef47a826d4af2178f91afe6eb8ef0da494cd48b105c3810fd8cab17441b29",
+      "uid": "666a1cdce6c283f5c73b8711",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_week2_opening|rpy_literal|r13_week2_opening|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:16:69",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        1034,
+        1089
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_week2_opening",
+      "block": "r13_week2_opening",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:16:69",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "배관을 고치던 주민이 자기 이름을 잊었다. 길 건너에서는 빈 식량 자루를 두고 언성이 높아졌다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 16,
+          "label": "r13_week2_opening",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 16,
+      "scene_title": "r13_week2_opening",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "4fd22f9f430157a0596e6e8eeb4a351f01556fee36608217418cce718212dcf8",
+      "uid": "e15326978e31cbdac4c46f19",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_week2_opening|rpy_literal|r13_week2_opening|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:16:133",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        1098,
+        1116
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_week2_opening",
+      "block": "r13_week2_opening",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:16:133",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "아빠랑 여기서 같이 지켜보자.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 16,
+          "label": "r13_week2_opening",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 16,
+      "scene_title": "r13_week2_opening",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "0a4326e53db29d8d1181c142f6bf9283b52580ae5bfe86091a841e3f772d255e",
+      "uid": "880f1bb910a26f5aa345ecc6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_week2_opening|rpy_literal|r13_week2_opening|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:16:162",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        1127,
+        1149
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_week2_opening",
+      "block": "r13_week2_opening",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:16:162",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "물 가져다줄까? 먼저 물어보고 줄게.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 16,
+          "label": "r13_week2_opening",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 16,
+      "scene_title": "r13_week2_opening",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "d15297f0a94296da200332dfea8ecc05c78ec188072c5ba85a18bdf98baecd94",
+      "uid": "156e6b27b1b30c85d8e005b2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_week2_opening|rpy_literal|r13_week2_opening|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:18:92",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        1312,
+        1358
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_week2_opening",
+      "block": "r13_week2_opening",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:18:92",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "등불이 어두워진 건 나중이에요. 며칠 전부터 힘을 재는 바늘이 먼저 흔들렸어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 18,
+          "label": "r13_week2_opening",
+          "guards": []
+        }
+      ],
+      "line": 18,
+      "scene_title": "r13_week2_opening",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "27639cced33b5cdb19694eabd402b200f8c14075bd3c836f26cedc0e27dd28ef",
+      "uid": "61c4d80d5cc3d58782aaaa17",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_week2_opening|rpy_literal|r13_week2_opening|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:18:146",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        1366,
+        1437
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_week2_opening",
+      "block": "r13_week2_opening",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:18:146",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "재판에서 누구 편을 들었든, 눈과 추위는 마을 전체를 덮고 있었다. 학교는 교실을 비웠다. 진료소는 복도까지 자리를 깔았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 18,
+          "label": "r13_week2_opening",
+          "guards": []
+        }
+      ],
+      "line": 18,
+      "scene_title": "r13_week2_opening",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "95bd3545a8b98b86a0a32516f8cfd936c49d1260cb12b515f34ab7f2913865fc",
+      "uid": "a43cba214ba2f2d9d0986dda",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_week2_opening|rpy_literal|r13_week2_opening|행 조건 없음",

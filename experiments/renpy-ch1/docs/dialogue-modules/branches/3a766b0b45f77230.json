@@ -1,0 +1,486 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_poc_route.rpy:159:33",
+      "file": "game/systems/room13_poc_route.rpy",
+      "path": [
+        10365,
+        10407
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_poc_night_review",
+      "block": "r13_poc_night_review",
+      "placement": "literal",
+      "ref": "game/systems/room13_poc_route.rpy:159:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "엄마는 오라는 편지를 쓴 적 없대. 그럼 우리가 받은 건 누가 쓴 거야?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_poc_route.rpy",
+          "line": 159,
+          "label": "r13_poc_night_review",
+          "guards": [
+            "if r13_has(\"poc:letter_conflict\"):"
+          ]
+        }
+      ],
+      "line": 159,
+      "scene_title": "r13_poc_night_review",
+      "source_hash": "6fc5903b31e5eecbac36010074326a6723e9305ca010e781eb3ff1f1c4324234",
+      "baseline_hash": "46ec41f720d47d09973f0dddb3d82e42ebbde307923422c62257dee0e1058c4a",
+      "uid": "c2b7ef7bd36d3f3a22f56210",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_poc_night_review|rpy_literal|r13_poc_night_review|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_poc_route.rpy:159:84",
+      "file": "game/systems/room13_poc_route.rpy",
+      "path": [
+        10416,
+        10444
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_poc_night_review",
+      "block": "r13_poc_night_review",
+      "placement": "literal",
+      "ref": "game/systems/room13_poc_route.rpy:159:84",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "응. 두 편지를 나란히 놓으니 말이 서로 달라.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_poc_route.rpy",
+          "line": 159,
+          "label": "r13_poc_night_review",
+          "guards": [
+            "if r13_has(\"poc:letter_conflict\"):"
+          ]
+        }
+      ],
+      "line": 159,
+      "scene_title": "r13_poc_night_review",
+      "source_hash": "6fc5903b31e5eecbac36010074326a6723e9305ca010e781eb3ff1f1c4324234",
+      "baseline_hash": "703e887bfcacbb2314b6d793f56883cf2af0d2f651534deda0503753da051a3c",
+      "uid": "3ebce070df9e66e4b1509b88",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_poc_night_review|rpy_literal|r13_poc_night_review|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_poc_route.rpy:159:123",
+      "file": "game/systems/room13_poc_route.rpy",
+      "path": [
+        10455,
+        10477
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_poc_night_review",
+      "block": "r13_poc_night_review",
+      "placement": "literal",
+      "ref": "game/systems/room13_poc_route.rpy:159:123",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "엄마는 우리가 오는 게 싫었던 거야?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_poc_route.rpy",
+          "line": 159,
+          "label": "r13_poc_night_review",
+          "guards": [
+            "if r13_has(\"poc:letter_conflict\"):"
+          ]
+        }
+      ],
+      "line": 159,
+      "scene_title": "r13_poc_night_review",
+      "source_hash": "6fc5903b31e5eecbac36010074326a6723e9305ca010e781eb3ff1f1c4324234",
+      "baseline_hash": "cfdbbbdcb92226100baf38786e2354f20669722b4c07c7ed77f174dc1771e4b0",
+      "uid": "c8fef2fe6c6650e82d542eac",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_poc_night_review|rpy_literal|r13_poc_night_review|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_poc_route.rpy:159:179",
+      "file": "game/systems/room13_poc_route.rpy",
+      "path": [
+        10511,
+        10566
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_poc_night_review",
+      "block": "r13_poc_night_review",
+      "placement": "literal",
+      "ref": "game/systems/room13_poc_route.rpy:159:179",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "아니. 엄마 글에는 우리 걱정만 적혀 있었어. 누가 엄마 이름으로 우리를 불렀는지 알아내야 해.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_poc_route.rpy",
+          "line": 159,
+          "label": "r13_poc_night_review",
+          "guards": [
+            "if r13_has(\"poc:letter_conflict\"):"
+          ]
+        }
+      ],
+      "line": 159,
+      "scene_title": "r13_poc_night_review",
+      "source_hash": "6fc5903b31e5eecbac36010074326a6723e9305ca010e781eb3ff1f1c4324234",
+      "baseline_hash": "1dab839094a2a51be23f18b09874c6511279305c7499e7faf2a9542959148476",
+      "uid": "0a5268f9057285019b8c46a7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_poc_night_review|rpy_literal|r13_poc_night_review|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_poc_route.rpy:161:33",
+      "file": "game/systems/room13_poc_route.rpy",
+      "path": [
+        10648,
+        10679
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_poc_night_review",
+      "block": "r13_poc_night_review",
+      "placement": "literal",
+      "ref": "game/systems/room13_poc_route.rpy:161:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "엄마 글에는 오라는 편지를 쓴 적 없다고 적혀 있어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_poc_route.rpy",
+          "line": 161,
+          "label": "r13_poc_night_review",
+          "guards": [
+            "elif r13_has(\"E18\"):"
+          ]
+        }
+      ],
+      "line": 161,
+      "scene_title": "r13_poc_night_review",
+      "source_hash": "6fc5903b31e5eecbac36010074326a6723e9305ca010e781eb3ff1f1c4324234",
+      "baseline_hash": "a3d127a5971dd15473e19e2c47d1d57ded8c964e73c416b2de573a3e2b053ecf",
+      "uid": "405518323b18a4b4032acf01",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_poc_night_review|rpy_literal|r13_poc_night_review|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_poc_route.rpy:161:73",
+      "file": "game/systems/room13_poc_route.rpy",
+      "path": [
+        10688,
+        10721
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_poc_night_review",
+      "block": "r13_poc_night_review",
+      "placement": "literal",
+      "ref": "game/systems/room13_poc_route.rpy:161:73",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "그럼 엄마 이름으로 온 초대 편지는 누가, 왜 쓴 걸까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_poc_route.rpy",
+          "line": 161,
+          "label": "r13_poc_night_review",
+          "guards": [
+            "elif r13_has(\"E18\"):"
+          ]
+        }
+      ],
+      "line": 161,
+      "scene_title": "r13_poc_night_review",
+      "source_hash": "6fc5903b31e5eecbac36010074326a6723e9305ca010e781eb3ff1f1c4324234",
+      "baseline_hash": "70cb4469bac21844963d781fbcf6dbf31bd1e8902d322b16d4de229af66f776a",
+      "uid": "747648d8e17a35ce8881a18f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_poc_night_review|rpy_literal|r13_poc_night_review|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_poc_route.rpy:165:33",
+      "file": "game/systems/room13_poc_route.rpy",
+      "path": [
+        10941,
+        10968
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_poc_night_review",
+      "block": "r13_poc_night_review",
+      "placement": "literal",
+      "ref": "game/systems/room13_poc_route.rpy:165:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "어딘가에 엄마가 맡겨 둔 글이 있을지도 몰라.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_poc_route.rpy",
+          "line": 165,
+          "label": "r13_poc_night_review",
+          "guards": [
+            "elif r13_has(\"J04\") or r13_has(\"J05\"):"
+          ]
+        }
+      ],
+      "line": 165,
+      "scene_title": "r13_poc_night_review",
+      "source_hash": "6fc5903b31e5eecbac36010074326a6723e9305ca010e781eb3ff1f1c4324234",
+      "baseline_hash": "c0230661486a72496054acb25861d6e0781f93860406854305e07a83612b5f08",
+      "uid": "fc6faf4e49807b3776908659",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_poc_night_review|rpy_literal|r13_poc_night_review|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_poc_route.rpy:165:69",
+      "file": "game/systems/room13_poc_route.rpy",
+      "path": [
+        10977,
+        11027
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_poc_night_review",
+      "block": "r13_poc_night_review",
+      "placement": "literal",
+      "ref": "game/systems/room13_poc_route.rpy:165:69",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "응. 봉투가 있었다는 것만 알아. 안에 뭐가 적혔는지는 봉투를 맡아 둔 사람만 알겠지.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_poc_route.rpy",
+          "line": 165,
+          "label": "r13_poc_night_review",
+          "guards": [
+            "elif r13_has(\"J04\") or r13_has(\"J05\"):"
+          ]
+        }
+      ],
+      "line": 165,
+      "scene_title": "r13_poc_night_review",
+      "source_hash": "6fc5903b31e5eecbac36010074326a6723e9305ca010e781eb3ff1f1c4324234",
+      "baseline_hash": "2b9260d6d77ddd97e6dbf31a2ee867e32bb415f6e4b5081ec7778afd292696d8",
+      "uid": "5c246bcebc8dea4766aa13cb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_poc_night_review|rpy_literal|r13_poc_night_review|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_poc_route.rpy:167:33",
+      "file": "game/systems/room13_poc_route.rpy",
+      "path": [
+        11131,
+        11158
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_poc_night_review",
+      "block": "r13_poc_night_review",
+      "placement": "literal",
+      "ref": "game/systems/room13_poc_route.rpy:167:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "우체국에도 엄마가 갔었는지 아직 못 물어봤지?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_poc_route.rpy",
+          "line": 167,
+          "label": "r13_poc_night_review",
+          "guards": [
+            "elif r13_has(\"J02\") and not r13_has(\"J03\"):"
+          ]
+        }
+      ],
+      "line": 167,
+      "scene_title": "r13_poc_night_review",
+      "source_hash": "6fc5903b31e5eecbac36010074326a6723e9305ca010e781eb3ff1f1c4324234",
+      "baseline_hash": "db1dc9754901b9c01122820dbb7ddd328eafd81338591e9f411ed010a2a9d45c",
+      "uid": "9d194185ed694f2f9f8ceb06",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_poc_night_review|rpy_literal|r13_poc_night_review|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_poc_route.rpy:167:69",
+      "file": "game/systems/room13_poc_route.rpy",
+      "path": [
+        11167,
+        11210
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_poc_night_review",
+      "block": "r13_poc_night_review",
+      "placement": "literal",
+      "ref": "game/systems/room13_poc_route.rpy:167:69",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "응. 우체국 창구는 오전에 열어. 그런데 손님 이야기를 우리한테 해 줄까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_poc_route.rpy",
+          "line": 167,
+          "label": "r13_poc_night_review",
+          "guards": [
+            "elif r13_has(\"J02\") and not r13_has(\"J03\"):"
+          ]
+        }
+      ],
+      "line": 167,
+      "scene_title": "r13_poc_night_review",
+      "source_hash": "6fc5903b31e5eecbac36010074326a6723e9305ca010e781eb3ff1f1c4324234",
+      "baseline_hash": "c723a13c5b14cb369edfc223f612708f65a99ce43cec3d41660230f2f0531243",
+      "uid": "766bdaa3dd21bb10e831e075",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_poc_night_review|rpy_literal|r13_poc_night_review|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_poc_route.rpy:169:33",
+      "file": "game/systems/room13_poc_route.rpy",
+      "path": [
+        11274,
+        11297
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_poc_night_review",
+      "block": "r13_poc_night_review",
+      "placement": "literal",
+      "ref": "game/systems/room13_poc_route.rpy:169:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "오늘 물어본 건 수첩에 다 적어 뒀지?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_poc_route.rpy",
+          "line": 169,
+          "label": "r13_poc_night_review",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 169,
+      "scene_title": "r13_poc_night_review",
+      "source_hash": "6fc5903b31e5eecbac36010074326a6723e9305ca010e781eb3ff1f1c4324234",
+      "baseline_hash": "fce1cf52b321ff042da32002f7053c19e780a7133baf2ad05c33fe459cfe1603",
+      "uid": "03cfec713ccaf74382431991",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_poc_night_review|rpy_literal|r13_poc_night_review|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_poc_route.rpy:169:65",
+      "file": "game/systems/room13_poc_route.rpy",
+      "path": [
+        11306,
+        11354
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_poc_night_review",
+      "block": "r13_poc_night_review",
+      "placement": "literal",
+      "ref": "game/systems/room13_poc_route.rpy:169:65",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "응. 엄마는 우리가 올 걸 알았는데 왜 기다리지 않았을까. 그게 계속 마음에 걸려.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_poc_route.rpy",
+          "line": 169,
+          "label": "r13_poc_night_review",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 169,
+      "scene_title": "r13_poc_night_review",
+      "source_hash": "6fc5903b31e5eecbac36010074326a6723e9305ca010e781eb3ff1f1c4324234",
+      "baseline_hash": "6ad1e1db1d6ab2ebde0eed425b6c74d55bd1b04b411fed3b3d1e009f73d428c7",
+      "uid": "a03be8f23b4e5f0afc5e384c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_poc_night_review|rpy_literal|r13_poc_night_review|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

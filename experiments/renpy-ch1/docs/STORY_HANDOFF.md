@@ -1,11 +1,7 @@
-> 2026-10-25 최신: 숨겨진 가족·고대 기지를 0.20.43로 구현했다. 현재 통합 브랜치는 `codex/meeting-retry-0.20.33`이며 검증 뒤 `main`에 반영한다. 아래 오래된 브랜치·실패 목록은 당시 기록이다. 다음은 5장 3번 예방 퍼즐 대조, 전체 대사 손질은 기능 정리 후 진행한다.
-
-> 2026-10-25 입구 대화 보완: 소유자가 일꾼 등록 설명 전 아이 고용 제한이 등장하는 맥락 비약을 지적했다. d01 교체 대사의 명부 등록 내용→아빠 방문 목적 정정→동행 아이 입장 제한 순서로 두 줄을 수정했다. 정답·입장 조건·명부 증거는 유지한다.
-
-> 2026-10-25 후속 통합: 0.20.34 이야기와 0.20.33 회의 재시도를 현재 수첩 UI·태그 도구함·규격별 버튼20종과 0.20.36로 합쳤다. 재시도 로직은 원격 정본의 회의 시작 스냅샷 복원 방식을 유지한다. 검사·웹 확인 기록은 `docs/reviews/mobile-integration-20261025/`를 참조한다. 아래 최초 미연결·미공개 항목은 당시 인계 이력이다.
+> 최신 인계: **0.20.54**, 1~14일 날짜순 대사 후속 검수 완료. 먼저 [클로드 인계서](HANDOFF_CLAUDE_20261025.md)를 읽는다. 아래 6장은 이전 작업 이력이다. 현재 기준은 main이며 작업 브랜치는 `codex/meeting-retry-0.20.33`이다.
 
 # 새 채팅·Codex가 이어받을 때 (소유자가 전달하는 말)
-> 너는 다람탐정 Room13의 이야기 담당(대사·로직·분기·스토리)이다. 디자인은 다른 채팅 몫이니 손대지 않는다. 저장소 kkhkkh20-bit/daaegame, 작업 브랜치 claude/cool-gates-s9msjz 를 pull 해서 시작한다. 루트 CLAUDE.md → 이 문서 → story_master 두 문서·DECISIONS_20261024.md 순서로 읽고, 아래 「5. 다음 할 일」 맨 위부터 이어서 한다. 대사·로직은 분기 논리 오류 0·그 경로 인물에 맞는 말·아빠 입장 이해로 검수, 회의가 본 게임·예방은 보너스, 화면 시험은 묶음 끝에 한 번, 검증 뒤 main 반영(강제 push 금지), 작업마다 이 문서 갱신, 보고는 한글.
+> daaegame main 최신에서 `experiments/renpy-ch1/docs/HANDOFF_CLAUDE_20261025.md`를 읽고 이어서 한다. 1~14일 대사 후속 검수·작업실·미납품 그림 요청서는 반영했으며, 남은 핵심은 주요 경로 자연 플레이 회귀와 납품 그림 연결이다. 아빠 입장 이해·질문답 연결·유쾌한 부녀·주민 개성을 유지하고 생사·진상·정답은 승인 없이 바꾸지 않는다.
 
 # 이야기·대사 인계 기록 (Claude → Codex 이어받기용)
 
@@ -33,25 +29,24 @@
 ## 3. 대사 작업 방법
 - 대사는 `game/v111/newworld/dNN.json` 패치(replace/before/after/blocks/new_evidence), 조건은 `game/room13_v111_newworld_text.rpy`의 `R13_NW_WHEN`, 블록 재생은 `r13_nw_block(name)`. 하루 대본 보기·적용: `python3 dev/dialogue_day.py show N` / `apply N EDITS.json`(조건 변형이 섞여 나오므로 의심 줄은 조건을 코드에서 확인).
 - 말하는 사람은 그 장면에 세운다(`r13_v111_arrive`/`r13_v111_join`). 죽었거나 떠난 판에서는 나오지 않게 조건.
-- 점검(모두 통과해야 반영): 단위 시험 `python3 -m unittest discover -s dev -p 'test_*.py'`(원래 실패 3건 — drawer_puzzle 2, actor_intent 1 — 외 0), lint `$SDK/renpy.sh . lint`, `dev/dialogue_logic_check.py`, `dev/dialogue_sweep.py`, `dev/branch_audit.py --all`(새 의심 0), `dev/reanchor_lines.py --write`, `dev/override_map.py --write`, 화면 시험 `dev/run_renpy_tests.sh <이름>`(다른 renpy와 동시에 돌리지 않음).
+- 점검(모두 통과해야 반영): 단위 시험 `python3 -m unittest discover -s dev -p 'test_*.py'`(최신 실행 결과는 검수 보고서 기준; 옛 실패 3건을 현재 실패로 가정하지 않음), lint `$SDK/renpy.sh . lint`, `dev/dialogue_logic_check.py`, `dev/dialogue_sweep.py`, `dev/branch_audit.py --all`(상태 확장으로 중단한 검사는 통과로 기록하지 않으며 관련 검사 범위를 보고), `dev/reanchor_lines.py --write`, `dev/override_map.py --write`, 화면 시험 `dev/run_renpy_tests.sh <이름>`(다른 renpy와 동시에 돌리지 않음).
 - 대사·조건·회의 코드를 고쳤으면 `python3 dev/story_master.py --write` 로 총정리 자동 부분을 다시 만들고, 바뀐 뜻이 있으면 `docs/design/story_master.md`·`branch_table.html` 도 고친다.
-- 반영: 작업 브랜치 `claude/cool-gates-s9msjz`에 커밋 → 검증 → `git push origin HEAD:main`(강제 push 금지). 버전은 `game/options.rpy` 두 곳, 릴리스 노트 `docs/releases/RELEASE_x.md`, 웹 빌드 `dev/build_web.py`.
+- 반영: 작업 브랜치 `codex/meeting-retry-0.20.33`에 커밋 → 검증 → `git push origin HEAD:main`(강제 push 금지). 버전은 `game/options.rpy` 두 곳, 릴리스 노트 `docs/releases/RELEASE_x.md`, 웹 빌드 `dev/build_web.py`.
 - 커밋·보고는 한글, 이모지 금지, 모델 이름 넣지 않음.
 
-## 4. 지금 상태 (2026-10-25 마지막 갱신)
-- 이전 공개본: 0.20.32(부엉이 예방 1단계·제단 대체 정답·과자 길 조건·「재」) + **Codex의 수첩 UI·납품 에셋 통합(ae80ad9, 지시서 03)** 병합. 병합 뒤 실패 화면 시험 4개 수정·재검증, 웹 빌드·qa_carriage 통과 후 main 공개 반영(2026-10-25). 기록 `docs/reviews/release-0.20.32/`.
-- 공개 반영 0.20.33: 회의 11개에 「받아들인다/다시」 로직 연결. 첫 쟁점 직전 체크포인트로 자료·생사·명단·쟁점 상태를 복원하며 반복 재시도 가능. 체크포인트 없는 구형 중간 저장은 기존 결과 흐름 유지. 네이티브 6개 통과 기록은 `docs/reviews/meeting-retry-20261025/적용보고.md`. 웹 빌드·브라우저 qa_carriage 통과 후 main 반영. 불타는 밤 배경 6장은 등록만 됨(`game/systems/room13_wild_night_art.rpy`).
-- 디자인(UI·그림)은 다른 채팅 몫. 요청서: `docs/reviews/requests-20261025/그림_화면_요청서.md`(원탁 서 있는 그림 1번 묶음 재전송·대승리 자료 3장·아랫길 노인·13호 난로), `docs/reviews/wild-night-20261024/배경_요청서.md`, Codex 지시서 `docs/codex/지시서_03_회의다시_갈림길_지도시험.md`.
-- 기존 실패 시험(내 변경 탓 아님): `new_places`(새 끌기 지도 좌표 — 지시서 03의 8번), `ms14_45_privacy`·`ms14_45_rebuttal`·`ms14_45_night`(옛 MS14 시험), 단위 시험 3건(drawer_puzzle 2, actor_intent 1).
-- 결정 기록: `docs/design/DECISIONS_20261024.md` 1~14번 전부 확정. 열린 결정 없음.
+## 4. 현재 완료 상태 (0.20.54)
 
-## 5. 현재 완료 상태와 남은 확인
+- 회의 재시도, 불타는 밤, 숨겨진 가족/고대 기지, 예방 다섯 묶음, 부엉이 2단계까지 구현했다. 완료·추가 대안은 `docs/reviews/prevention-puzzles-20261025/진행현황.md`를 구분해 본다.
+- 0.20.52 첫 검수 51곳 이후, 0.20.53 1~2일 27곳, 0.20.54 3~14일 94곳을 손봤다. 날짜순 대사 후속 검수 한 바퀴는 마쳤다. 전부 새로 쓰기·모든 경로 자연 완주 완료라는 뜻은 아니다.
+- 원문·수정·조건·검수·다운로드는 `docs/story-workbench/`. 날짜별 읽기에 별도 JSON 분기 부록 추가, 직접 rpy 날짜 오추정 수정. 원본 반영은 check → apply --write → 관련 검사 → 모듈 재생성 순서다.
+- 미납품 그림 10건과 납품 확인 6건은 `docs/art-requests/`에서 구분한다. 그림 제작이나 외부 송신을 수행한 것은 아니다.
+- 이번 전체 작업·검증·주의점은 `docs/HANDOFF_CLAUDE_20261025.md`와 `docs/reviews/dialogue-through14-20261025/README.md`에 모았다.
 
-- 불타는 밤, 숨겨진 가족·고대 기지, 예방 다섯 묶음의 실제 행동 연결, 부엉이 2단계는 구현·검증·main 반영을 마쳤다. 각 범위와 미구현 대안은 `docs/reviews/prevention-puzzles-20261025/진행현황.md`를 참조한다.
-- 0.20.52: 1~14일 합본 대사·조건별 변형·감정선과 숨겨진 에피소드를 대조해 수정했다. 전후 문장·범위·검증은 `docs/reviews/dialogue-final-20261025/`에 있다. 모든 분기를 자연 플레이했다는 뜻은 아니다.
-- 남은 필수 확인: 주요 생존/실패/진엔딩 경로를 실제 플레이로 묶어 최종 회귀 확인. 새 기능을 추가하기보다 발견한 진행·표현 문제만 수정한다.
-- 전용 그림은 납품되는 대로 적용한다. 미납품 그림을 임시 배경과 다른 인물로 채워 완료 처리하지 않는다. 에셋 인계·현황 도구는 `docs/asset-modules/HANDOFF.md`.
-- 꼬미 뒤창·네로 지팡이 등 추가 대안은 선택 확장안이며 현재 구현 완료 항목과 분리한다. 새 생사·정답·진상 변경은 기존 승인 규칙을 따른다.
+## 5. 남은 일 (필수와 선택 구분)
+
+1. 주요 생존/실패/부분 구조/진엔딩 경로를 실제 자연 플레이로 묶어 최종 회귀 확인. 통독·장면별 검사를 전 조합 자연완주로 세지 않는다.
+2. 전용 그림을 납품받는 대로 검증·연결. 원탁 다섯 인물은 기존 ZIP 확인/재전송부터, 숨겨진 가족·고대 기지는 전용 그림 납품 후 적용. 임시 배경을 전용 그림 완료로 세지 않는다.
+3. 꼬미 뒤창·네로 지팡이 등은 선택 확장안. 현재 구현 누락 목록에 섞지 않고 새 생사·정답·진상은 승인 후 작업한다.
 
 ## 6. 갱신 기록
 - 2026-10-25: 0.20.32 공개.
@@ -95,3 +90,5 @@
 > 소유자 후속 요청: 51곳 수정만으로 전면 개작이 끝난 것으로 보지 않는다. 전체 대사를 언제든 날짜·장면·조건별로 내려받아 수정·검수할 수 있도록 `docs/story-workbench/`와 `dev/dialogue_modules.py`를 추가했다. 전체 대사 기본 검수 상태는 draft이며 이전 정독 기록만으로 reviewed로 올리지 않는다. 미납품 그림 요청은 `docs/art-requests/`에서 제작 필요·납품 확인·이미 받은 그림을 구분한다. 게임 문장 반영은 편집 JSON check 후 apply --write로 하고 재검증한다.
 
 > 0.20.53: 날짜순 후속 대사 검수 1〜2일, 27줄 수정. 질문·답 연결과 인물 생활감을 보완하고 수정한 행만 reviewed로 표시했다. docs/reviews/dialogue-early-20261025/ 참조. 다음 순서는 3일 이후이며 전체 개작·모든 분기 자연완주 완료로 세지 않는다.
+
+> 0.20.54: 3~14일 94곳 수정과 1~14일 후속 통독 마무리. 클로드 인계서에 누적 구현·대사 기준·도구·그림 현황·남은 회귀를 통합했다. 검수 파일: docs/reviews/dialogue-through14-20261025/.

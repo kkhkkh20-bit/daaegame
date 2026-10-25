@@ -1,0 +1,396 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_new_places.rpy:215:26",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        12780,
+        12827
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ancient_first_visit",
+      "block": "r13_ancient_first_visit",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:215:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "계단을 내려갈수록 공기가 따뜻해졌다. 마지막 계단을 내려서자 넓은 방이 나타났다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 215,
+          "label": "r13_ancient_first_visit",
+          "guards": []
+        }
+      ],
+      "line": 215,
+      "scene_title": "r13_ancient_first_visit",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "cdf4e4d86e1d343a691ab7b9b99e307e90cb6605271a87c15a95cc3fd0e26d06",
+      "uid": "e3c897645c56f299ddfc4961",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ancient_first_visit|rpy_literal|r13_ancient_first_visit|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_places.rpy:216:14",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        12844,
+        12891
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ancient_first_visit",
+      "block": "r13_ancient_first_visit",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:216:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "돌기둥이 끝없이 늘어서 있고, 유리관 속 돌 조각들이 초록빛으로 숨 쉬듯 빛났다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 216,
+          "label": "r13_ancient_first_visit",
+          "guards": []
+        }
+      ],
+      "line": 216,
+      "scene_title": "r13_ancient_first_visit",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "7df20701b1a3d435fd20f49a0489db847649150a5384ccb1e78cc1c64e4576a1",
+      "uid": "2224941dafb5891bcb8bdee9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ancient_first_visit|rpy_literal|r13_ancient_first_visit|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_places.rpy:218:33",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        12977,
+        13001
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ancient_first_visit",
+      "block": "r13_ancient_first_visit",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:218:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "아빠…… 마을 아래에 이런 데가 있었어?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 218,
+          "label": "r13_ancient_first_visit",
+          "guards": [
+            "if r13_ancient_daram:"
+          ]
+        }
+      ],
+      "line": 218,
+      "scene_title": "r13_ancient_first_visit",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "de183ece5d19dd4a84d12a28bb69f3cd14bc1552a63a7c7f22789714e7e9f0c5",
+      "uid": "cabcbfbe7a02ce950051b7c4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ancient_first_visit|rpy_literal|r13_ancient_first_visit|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_places.rpy:219:19",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        13048,
+        13077
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ancient_first_visit",
+      "block": "r13_ancient_first_visit",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:219:19",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "아빠도 처음 봐. 손 놓지 말고 아빠 옆에 있어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 219,
+          "label": "r13_ancient_first_visit",
+          "guards": [
+            "if r13_ancient_daram:"
+          ]
+        }
+      ],
+      "line": 219,
+      "scene_title": "r13_ancient_first_visit",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "25944f1763bacde02d3cce64395f0ad36ece57c687b14094483ed1fd5c7fde3e",
+      "uid": "6264a3c336bf5f8988d5150c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ancient_first_visit|rpy_literal|r13_ancient_first_visit|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_places.rpy:220:21",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        13101,
+        13123
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ancient_first_visit",
+      "block": "r13_ancient_first_visit",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:220:21",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "응. 그런데 여기, 이상하게 따뜻해.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 220,
+          "label": "r13_ancient_first_visit",
+          "guards": [
+            "if r13_ancient_daram:"
+          ]
+        }
+      ],
+      "line": 220,
+      "scene_title": "r13_ancient_first_visit",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "987a96d4704c92af3bc20c5f2154464f7fbc99b9cb55a533e1d3453968e14c82",
+      "uid": "df0897049820ada1b604eb50",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ancient_first_visit|rpy_literal|r13_ancient_first_visit|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_places.rpy:221:27",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        13176,
+        13234
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ancient_first_visit",
+      "block": "r13_ancient_first_visit",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:221:27",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(유리관 속 돌에 광장의 【돌】과 같은 홈무늬가 있다. 마을을 데우는 돌이 여기서 만들어졌던 걸까.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 221,
+          "label": "r13_ancient_first_visit",
+          "guards": []
+        }
+      ],
+      "line": 221,
+      "scene_title": "r13_ancient_first_visit",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "f0cbcb67c5343242bf112530fb2cc06aa5ab2d8c5a438d512830614f61f2dcf2",
+      "uid": "2e7808da2f02c386f625091d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ancient_first_visit|rpy_literal|r13_ancient_first_visit|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_places.rpy:222:14",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        13268,
+        13334
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ancient_first_visit",
+      "block": "r13_ancient_first_visit",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:222:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "바닥 먼지 위로 발자국 한 줄이 나 있었다. 작고 끝이 둥근 신발 자국. 여관 접수대 앞에서 날마다 보던 신발이다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 222,
+          "label": "r13_ancient_first_visit",
+          "guards": []
+        }
+      ],
+      "line": 222,
+      "scene_title": "r13_ancient_first_visit",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "7464fb93d4ebba46be631f332dec0acd4032f61b98ff93ccb0026e89158750ac",
+      "uid": "f9eecf0a2da785f326ebc2d5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ancient_first_visit|rpy_literal|r13_ancient_first_visit|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_places.rpy:223:15",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        13352,
+        13372
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ancient_first_visit",
+      "block": "r13_ancient_first_visit",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:223:15",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(【할머니】가 이곳을 드나든다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 223,
+          "label": "r13_ancient_first_visit",
+          "guards": []
+        }
+      ],
+      "line": 223,
+      "scene_title": "r13_ancient_first_visit",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "dfa7ff2645d59b3e57e9795f6ed404f13bc4ac81201971919e56975d3b4d1123",
+      "uid": "3aab7f6cfab9c9f9e8053ed4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ancient_first_visit|rpy_literal|r13_ancient_first_visit|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_places.rpy:227:31",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        13577,
+        13620
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ancient_first_visit",
+      "block": "r13_ancient_first_visit",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:227:31",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(할머니는 지금 붙잡혀 있다. 이곳을 지키던 사람이 자리를 비운 셈이다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 227,
+          "label": "r13_ancient_first_visit",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 227,
+      "scene_title": "r13_ancient_first_visit",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "775af51548d6f570e1004da72c7ff42c9a17aa9815a99c138c661c6e15695fa0",
+      "uid": "2d684473cd85947957dead17",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ancient_first_visit|rpy_literal|r13_ancient_first_visit|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_places.rpy:228:19",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        13659,
+        13698
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ancient_first_visit",
+      "block": "r13_ancient_first_visit",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:228:19",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(보이는 것만 적어 두자. 이것만으로는 아무것도 밝혀지지 않는다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 228,
+          "label": "r13_ancient_first_visit",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 228,
+      "scene_title": "r13_ancient_first_visit",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "cf95919312aaa158fef6ed296aceaddd22ace9590bea1180fca697cfc2d2f453",
+      "uid": "d9b750c428309a6e54a456cd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ancient_first_visit|rpy_literal|r13_ancient_first_visit|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

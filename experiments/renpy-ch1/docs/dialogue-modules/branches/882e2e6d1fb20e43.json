@@ -1,41 +1,363 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "491b613ff5b7f03e522d1a3f63f8378bdfc3cf1b164e5909f161d8aa83ef9132",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
     {
-      "id": "game/room13_week2.rpy:39:30",
+      "id": "game/room13_week2.rpy:35:48",
       "file": "game/room13_week2.rpy",
       "path": [
-        2655,
-        2723
+        2320,
+        2360
       ],
       "origin": "rpy_literal",
       "day": null,
       "scene": "r13_week2_events",
       "block": "r13_week2_events",
       "placement": "literal",
-      "ref": "game/room13_week2.rpy:39:30",
+      "ref": "game/room13_week2.rpy:35:48",
       "when": null,
-      "speaker": null,
-      "kind": "narration",
-      "text": "광장 등 밑에 짧은 쪽지가 끼워져 있었다. 「약속 장소에 경비가 먼저 와 있었어. 자리를 바꿨어. 새 표식을 봐 줘.」",
+      "speaker": "resident_lamplighter",
+      "kind": "dialogue",
+      "text": "답이 왔습니다. 예전 은신처 말고 지금 보내는 신호를 확인하라는군요.",
       "editable": true,
       "usage": "active",
       "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
       "call_sites": [
         {
           "file": "game/room13_week2.rpy",
-          "line": 39,
+          "line": 35,
           "label": "r13_week2_events",
           "guards": [
-            "if r13_has(\"contact_compromised\") and \"contact_relocated\" not in room13[\"events\"]:"
+            "if room13.get(\"reply_due\") is not None and r13_abs_time()>=room13[\"reply_due\"] and not r13_has(\"E19\") and not r13_has(\"chorong_dead\") and not r13_has(\"mom_reunited\"):"
           ]
         }
       ],
-      "line": 39,
+      "line": 35,
+      "scene_title": "r13_week2_events",
       "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
-      "baseline_hash": "e9d1430bbe1e580aac1174ed63bd469a8850f144843c0813b2b5b79541c5808e",
-      "uid": "f687c6efd7bef255b7f41687",
+      "baseline_hash": "ff1823b8436636e8b5e9697496e75239d4677b20339722350a469b4fe7586911",
+      "uid": "b80b1516b7c5f495e42fde48",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_week2_events|rpy_literal|r13_week2_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:35:96",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        2368,
+        2430
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_week2_events",
+      "block": "r13_week2_events",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:35:96",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "「폐온실 아래 등 표식을 봐 줘. 주소를 다른 사람에게 말하지 마. 뒤따르는 사람이 있으면 들어오지 말고.」",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 35,
+          "label": "r13_week2_events",
+          "guards": [
+            "if room13.get(\"reply_due\") is not None and r13_abs_time()>=room13[\"reply_due\"] and not r13_has(\"E19\") and not r13_has(\"chorong_dead\") and not r13_has(\"mom_reunited\"):"
+          ]
+        }
+      ],
+      "line": 35,
+      "scene_title": "r13_week2_events",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "f9b81801da53080bf6658d143b5c078774a5f242730190a880ffa6fa24f47914",
+      "uid": "3dbca759401caf5f3ae0fb7b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_week2_events|rpy_literal|r13_week2_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:42:33",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        3188,
+        3231
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_week2_events",
+      "block": "r13_week2_events",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:42:33",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "사람을 끌고 가는 경비 조가 바뀌었습니다. 전에 보신 순번과 다를 겁니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 42,
+          "label": "r13_week2_events",
+          "guards": [
+            "if r13_has(\"convoy_changed\") and \"convoy_changed_notice\" not in room13[\"events\"]:"
+          ]
+        }
+      ],
+      "line": 42,
+      "scene_title": "r13_week2_events",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "4e59994a8266bf960ecc78dd98cbcedc8cc0b546059f77607349847620aa7f25",
+      "uid": "e1e67b3f6c9345dc9ee76c4f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_week2_events|rpy_literal|r13_week2_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:42:84",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        3239,
+        3288
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_week2_events",
+      "block": "r13_week2_events",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:42:84",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "갖고 있던 기록은 그대로 남아 있다. 하지만 지금 내려진 명령은 다시 확인해야 한다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 42,
+          "label": "r13_week2_events",
+          "guards": [
+            "if r13_has(\"convoy_changed\") and \"convoy_changed_notice\" not in room13[\"events\"]:"
+          ]
+        }
+      ],
+      "line": 42,
+      "scene_title": "r13_week2_events",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "d34b714769a955921857f1c37ddc47cadf4055900c52a327f622f6b620c5654e",
+      "uid": "765139996a3cf68422779e6b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_week2_events|rpy_literal|r13_week2_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:46:41",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        3540,
+        3586
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_week2_events",
+      "block": "r13_week2_events",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:46:41",
+      "when": null,
+      "speaker": "resident_ppul",
+      "kind": "dialogue",
+      "text": "불이 들어오지 않는 집은 학교로 모이십시오. 보호시설 환자들은 별도로 옮깁니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 46,
+          "label": "r13_week2_events",
+          "guards": [
+            "if room13[\"day\"]>=r13_tl(11) and \"day11_warning\" not in room13[\"events\"]:"
+          ]
+        }
+      ],
+      "line": 46,
+      "scene_title": "r13_week2_events",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "7b2c9c8030a02b39eae15441981eb59e47c854e471a9edd952318cb5de9a659d",
+      "uid": "014172ece559b71a7ae75de3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_week2_events|rpy_literal|r13_week2_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:46:106",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        3605,
+        3631
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_week2_events",
+      "block": "r13_week2_events",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:46:106",
+      "when": null,
+      "speaker": "resident_bori",
+      "kind": "dialogue",
+      "text": "왜 보호시설에 계신 분들은 학교로 안 와요?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 46,
+          "label": "r13_week2_events",
+          "guards": [
+            "if room13[\"day\"]>=r13_tl(11) and \"day11_warning\" not in room13[\"events\"]:"
+          ]
+        }
+      ],
+      "line": 46,
+      "scene_title": "r13_week2_events",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "576f059d5290bbf8984f57031353c52ce54cb6c9a9c5d7ed4fb99423cf7de6a1",
+      "uid": "ce5823a30638851593c43bae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_week2_events|rpy_literal|r13_week2_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:46:151",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        3650,
+        3675
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_week2_events",
+      "block": "r13_week2_events",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:46:151",
+      "when": null,
+      "speaker": "resident_ppul",
+      "kind": "dialogue",
+      "text": "함께 있으면 서로 다칠 수 있기 때문이오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 46,
+          "label": "r13_week2_events",
+          "guards": [
+            "if room13[\"day\"]>=r13_tl(11) and \"day11_warning\" not in room13[\"events\"]:"
+          ]
+        }
+      ],
+      "line": 46,
+      "scene_title": "r13_week2_events",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "30d385d5673282e7a2a97b3d66d8cfa101183b59df99df9d29f4eadc14e9dca7",
+      "uid": "080d2614654d726b25a585c3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_week2_events|rpy_literal|r13_week2_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:46:184",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        3683,
+        3736
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_week2_events",
+      "block": "r13_week2_events",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:46:184",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "옮길 사람 명단에 붉은 줄이 그어졌다. 치료하러 옮긴다기에는 준비해 둔 장비가 맞지 않았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 46,
+          "label": "r13_week2_events",
+          "guards": [
+            "if room13[\"day\"]>=r13_tl(11) and \"day11_warning\" not in room13[\"events\"]:"
+          ]
+        }
+      ],
+      "line": 46,
+      "scene_title": "r13_week2_events",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "e7399383cfde092af0bfe0ab5ab058006556fe509d4cf84b7d20831627dc7162",
+      "uid": "9f046c1c7afdb769b6d473d1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_week2_events|rpy_literal|r13_week2_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:48:37",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        3841,
+        3902
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_week2_events",
+      "block": "r13_week2_events",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:48:37",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "아이 이름도 따로 옮길 사람 명단에 올라 있습니다. 명령이 바뀌기 전에 확인할 일이 있으면 지금 하십시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 48,
+          "label": "r13_week2_events",
+          "guards": [
+            "if room13[\"day\"]>=r13_tl(11) and \"day11_warning\" not in room13[\"events\"]:",
+            "if room13[\"daram_state\"]==\"held\":"
+          ]
+        }
+      ],
+      "line": 48,
+      "scene_title": "r13_week2_events",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "1feceaa2046a570f6b353e297bef895fbffd408952894187793ddb3f9fe1dd2b",
+      "uid": "e9276bb996c6190ea1ca6005",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_week2_events|rpy_literal|r13_week2_events|행 조건 없음",

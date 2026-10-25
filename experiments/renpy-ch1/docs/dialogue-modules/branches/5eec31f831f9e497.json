@@ -1,7 +1,127 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/room13_life.rpy:195:42",
+      "file": "game/room13_life.rpy",
+      "path": [
+        10845,
+        10907
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_topic_choice",
+      "block": "r13_topic_choice",
+      "placement": "literal",
+      "ref": "game/room13_life.rpy:195:42",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "회복 기록의 그 줄은 제가 지웠습니다. 환자가 다시 나빠졌으니 회복이라고 쓰면 안 된다고 할머니가 그러셨죠.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_life.rpy",
+          "line": 195,
+          "label": "r13_topic_choice",
+          "guards": [
+            "if key==\"w2_erased\":"
+          ]
+        }
+      ],
+      "line": 195,
+      "scene_title": "r13_topic_choice",
+      "source_hash": "ff6367277bd80f51605a562a690b9994a298289796fb1dd7f1222258428131b7",
+      "baseline_hash": "af6b9547e3af53694296dcc696e86990b4abfc735d5d8b534339b7a70719c495",
+      "uid": "8758d8e59af8a10889392d9c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_topic_choice|rpy_literal|r13_topic_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_life.rpy:195:113",
+      "file": "game/room13_life.rpy",
+      "path": [
+        10916,
+        10946
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_topic_choice",
+      "block": "r13_topic_choice",
+      "placement": "literal",
+      "ref": "game/room13_life.rpy:195:113",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "잠깐이라도 나아진 사실까지 없어진 건 아니잖습니까.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_life.rpy",
+          "line": 195,
+          "label": "r13_topic_choice",
+          "guards": [
+            "if key==\"w2_erased\":"
+          ]
+        }
+      ],
+      "line": 195,
+      "scene_title": "r13_topic_choice",
+      "source_hash": "ff6367277bd80f51605a562a690b9994a298289796fb1dd7f1222258428131b7",
+      "baseline_hash": "52dea92cfe6065aa1e3f15a5bb8de9f1896087958ba293d51fb331d8056558db",
+      "uid": "9403d16458389f4a28421956",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_topic_choice|rpy_literal|r13_topic_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_life.rpy:195:163",
+      "file": "game/room13_life.rpy",
+      "path": [
+        10966,
+        11016
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_topic_choice",
+      "block": "r13_topic_choice",
+      "placement": "literal",
+      "ref": "game/room13_life.rpy:195:163",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "압니다. 하지만 원본을 내놓으면 사람들이 제가 한 검사도 전부 다시 따지려 들 겁니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_life.rpy",
+          "line": 195,
+          "label": "r13_topic_choice",
+          "guards": [
+            "if key==\"w2_erased\":"
+          ]
+        }
+      ],
+      "line": 195,
+      "scene_title": "r13_topic_choice",
+      "source_hash": "ff6367277bd80f51605a562a690b9994a298289796fb1dd7f1222258428131b7",
+      "baseline_hash": "92816fedc0f144cd506e52c1737c3c865fea548e5f8cac1e969bff4bd7d1d1e4",
+      "uid": "4dd2a5ecb3ebf97c56b79ade",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_topic_choice|rpy_literal|r13_topic_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/room13_life.rpy:200:50",
       "file": "game/room13_life.rpy",
@@ -38,6 +158,88 @@
       "source_hash": "ff6367277bd80f51605a562a690b9994a298289796fb1dd7f1222258428131b7",
       "baseline_hash": "21a08145b8a7554c003e45a707bf9b8482d5b34ae45925e9ea4c3d19f96b49b2",
       "uid": "42dc4c4d968bc795ba888ecc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_topic_choice|rpy_literal|r13_topic_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_life.rpy:200:86",
+      "file": "game/room13_life.rpy",
+      "path": [
+        11276,
+        11315
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_topic_choice",
+      "block": "r13_topic_choice",
+      "placement": "literal",
+      "ref": "game/room13_life.rpy:200:86",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "책임까지 없던 일로 만들어 버리면 이 기록도 믿을 수 없게 됩니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_life.rpy",
+          "line": 200,
+          "label": "r13_topic_choice",
+          "guards": [
+            "if key==\"w2_erased\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 200,
+      "scene_title": "r13_topic_choice",
+      "source_hash": "ff6367277bd80f51605a562a690b9994a298289796fb1dd7f1222258428131b7",
+      "baseline_hash": "712d5995c3218b8ee6c2597633b74c183af78acaf260027f52b9ba73374ade1c",
+      "uid": "84eef33e11eb783b71879790",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_topic_choice|rpy_literal|r13_topic_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_life.rpy:200:145",
+      "file": "game/room13_life.rpy",
+      "path": [
+        11335,
+        11397
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_topic_choice",
+      "block": "r13_topic_choice",
+      "placement": "literal",
+      "ref": "game/room13_life.rpy:200:145",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "……가족에게는 제가 먼저 말하겠습니다. 고치기 전에 베껴 둔 기록에는 할머니가 확인한 흔적도 남아 있습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_life.rpy",
+          "line": 200,
+          "label": "r13_topic_choice",
+          "guards": [
+            "if key==\"w2_erased\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 200,
+      "scene_title": "r13_topic_choice",
+      "source_hash": "ff6367277bd80f51605a562a690b9994a298289796fb1dd7f1222258428131b7",
+      "baseline_hash": "de80b70f3708ecfda38ae9590cbe3c11b05ce394c793807a9376361f90608790",
+      "uid": "35397cfe2e93d48465ec4ce8",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_topic_choice|rpy_literal|r13_topic_choice|행 조건 없음",
@@ -126,6 +328,47 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
+      "id": "game/room13_life.rpy:204:129",
+      "file": "game/room13_life.rpy",
+      "path": [
+        11686,
+        11735
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_topic_choice",
+      "block": "r13_topic_choice",
+      "placement": "literal",
+      "ref": "game/room13_life.rpy:204:129",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "서명을 잘라 내는 건 기록을 또 한 번 지우는 일입니다. 다른 방법을 찾아 주십시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_life.rpy",
+          "line": 204,
+          "label": "r13_topic_choice",
+          "guards": [
+            "if key==\"w2_erased\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 204,
+      "scene_title": "r13_topic_choice",
+      "source_hash": "ff6367277bd80f51605a562a690b9994a298289796fb1dd7f1222258428131b7",
+      "baseline_hash": "788f94190dcc2a39d7411d02d8b839d418c43c15b74160f7615594a934cca302",
+      "uid": "c88b78ba0b221a5c9cba1c43",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_topic_choice|rpy_literal|r13_topic_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
       "id": "game/room13_life.rpy:207:50",
       "file": "game/room13_life.rpy",
       "path": [
@@ -161,6 +404,47 @@
       "source_hash": "ff6367277bd80f51605a562a690b9994a298289796fb1dd7f1222258428131b7",
       "baseline_hash": "ea07843735cf4ec867bb1b26ea5e5c3dd22bfcd3765e1b80cf4b2e9e8b6b113f",
       "uid": "890a403f25548496bdd237bd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_topic_choice|rpy_literal|r13_topic_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_life.rpy:207:123",
+      "file": "game/room13_life.rpy",
+      "path": [
+        11954,
+        12002
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_topic_choice",
+      "block": "r13_topic_choice",
+      "placement": "literal",
+      "ref": "game/room13_life.rpy:207:123",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "검사원이 말없이 서류를 접었다. 언성을 높인다고 받아 낼 수 있는 서명이 아니었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_life.rpy",
+          "line": 207,
+          "label": "r13_topic_choice",
+          "guards": [
+            "if key==\"w2_erased\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 207,
+      "scene_title": "r13_topic_choice",
+      "source_hash": "ff6367277bd80f51605a562a690b9994a298289796fb1dd7f1222258428131b7",
+      "baseline_hash": "ce559ed3c422d9bd0bef307fc87862d0bedba2161fe329a4954e13608e7c07ae",
+      "uid": "533d6e823fb3edb3ef4db7f5",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_topic_choice|rpy_literal|r13_topic_choice|행 조건 없음",
@@ -208,6 +492,88 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
+      "id": "game/room13_life.rpy:218:94",
+      "file": "game/room13_life.rpy",
+      "path": [
+        12545,
+        12593
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_topic_choice",
+      "block": "r13_topic_choice",
+      "placement": "literal",
+      "ref": "game/room13_life.rpy:218:94",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "적어도 사장님 댁만 굶기자는 약속은 아닙니다. 갚을 몫도 공동 기록에 남기겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_life.rpy",
+          "line": 218,
+          "label": "r13_topic_choice",
+          "guards": [
+            "if key==\"w2_eunho\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 218,
+      "scene_title": "r13_topic_choice",
+      "source_hash": "ff6367277bd80f51605a562a690b9994a298289796fb1dd7f1222258428131b7",
+      "baseline_hash": "74fe0b70e25b8fdb966497fa30b95b7b3967d6b5ec85ea54c3ccc9d0534bce5f",
+      "uid": "e879f68b1aa5bb35a90b4815",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_topic_choice|rpy_literal|r13_topic_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_life.rpy:218:162",
+      "file": "game/room13_life.rpy",
+      "path": [
+        12613,
+        12660
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_topic_choice",
+      "block": "r13_topic_choice",
+      "placement": "literal",
+      "ref": "game/room13_life.rpy:218:162",
+      "when": null,
+      "speaker": "resident_eunho",
+      "kind": "dialogue",
+      "text": "서리가 창고 수량을 확인하면 물건을 내놓겠습니다. 빈 자루도 함께 세어야 합니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_life.rpy",
+          "line": 218,
+          "label": "r13_topic_choice",
+          "guards": [
+            "if key==\"w2_eunho\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 218,
+      "scene_title": "r13_topic_choice",
+      "source_hash": "ff6367277bd80f51605a562a690b9994a298289796fb1dd7f1222258428131b7",
+      "baseline_hash": "e6af9b16e8458b5feedf796860ad4180a784074d9a36f614c951a0452efd61be",
+      "uid": "95604a6403927a3e6949941b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_topic_choice|rpy_literal|r13_topic_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
       "id": "game/room13_life.rpy:221:50",
       "file": "game/room13_life.rpy",
       "path": [
@@ -243,6 +609,88 @@
       "source_hash": "ff6367277bd80f51605a562a690b9994a298289796fb1dd7f1222258428131b7",
       "baseline_hash": "6c99449c2c16c925f5b4af83e9103403684059a0953cc7cc0d22aa9d3176e631",
       "uid": "f5dee2d41868f326091dfed3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_topic_choice|rpy_literal|r13_topic_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_life.rpy:221:97",
+      "file": "game/room13_life.rpy",
+      "path": [
+        12860,
+        12880
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_topic_choice",
+      "block": "r13_topic_choice",
+      "placement": "literal",
+      "ref": "game/room13_life.rpy:221:97",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "갚을 몫은 기록으로 남기겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_life.rpy",
+          "line": 221,
+          "label": "r13_topic_choice",
+          "guards": [
+            "if key==\"w2_eunho\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 221,
+      "scene_title": "r13_topic_choice",
+      "source_hash": "ff6367277bd80f51605a562a690b9994a298289796fb1dd7f1222258428131b7",
+      "baseline_hash": "4976fa306d327fec3ac92ba0404e2365497dac9b0e804f4234102a1fa0a53984",
+      "uid": "0e810a1cb6f7804d37b21e00",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_topic_choice|rpy_literal|r13_topic_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_life.rpy:221:137",
+      "file": "game/room13_life.rpy",
+      "path": [
+        12900,
+        12950
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_topic_choice",
+      "block": "r13_topic_choice",
+      "placement": "literal",
+      "ref": "game/room13_life.rpy:221:137",
+      "when": null,
+      "speaker": "resident_eunho",
+      "kind": "dialogue",
+      "text": "빚진 사람 이름만 적힌 종이는 이미 많습니다. 오늘 누구 몫이 남는지부터 따져 봅시다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_life.rpy",
+          "line": 221,
+          "label": "r13_topic_choice",
+          "guards": [
+            "if key==\"w2_eunho\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 221,
+      "scene_title": "r13_topic_choice",
+      "source_hash": "ff6367277bd80f51605a562a690b9994a298289796fb1dd7f1222258428131b7",
+      "baseline_hash": "9cabba4f30810c7f8ea81107bde45deb38ea74afbba8d545159c96f27e3bb553",
+      "uid": "4bde6caa4d0ed589f8f9e96f",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_topic_choice|rpy_literal|r13_topic_choice|행 조건 없음",

@@ -1,0 +1,82 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:546:26",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        29349,
+        29399
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_deadline",
+      "block": "r13_ep1_deadline",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:546:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "광장에 판자가 덧대진 기둥이 섰다. 톡이 그 앞에 묶여 있었다. 회의는 열리지 않았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 546,
+          "label": "r13_ep1_deadline",
+          "guards": []
+        }
+      ],
+      "line": 546,
+      "scene_title": "r13_ep1_deadline",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "d5470fd106c1eae16ed7eca1bbfd81285582eead504b3fe811eb58256ebc4fae",
+      "uid": "3ab35d33f9c27d0ee83292e0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_deadline|rpy_literal|r13_ep1_deadline|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:547:15",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        29417,
+        29442
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_deadline",
+      "block": "r13_ep1_deadline",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:547:15",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(진짜 범인은 아직 마을 어딘가에 있다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 547,
+          "label": "r13_ep1_deadline",
+          "guards": []
+        }
+      ],
+      "line": 547,
+      "scene_title": "r13_ep1_deadline",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "659c668b94fc37044b3c0fb2a79c265f1b6082b0d833470ebc2e64c5d7a8d5b5",
+      "uid": "8026882751c21f8452958111",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_deadline|rpy_literal|r13_ep1_deadline|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

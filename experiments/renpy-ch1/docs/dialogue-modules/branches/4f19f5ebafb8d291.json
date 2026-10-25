@@ -1,7 +1,615 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/room13_week2.rpy:126:31",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        8107,
+        8164
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:126:31",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(전에 확인한 교대 순서와 지금 경비들 움직임이 다르다. 그러니 지금 기록을 다시 확인해야 한다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 126,
+          "label": "r13_rescue",
+          "guards": [
+            "if route not in r13_rescue_routes():"
+          ]
+        }
+      ],
+      "line": 126,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "fa3e50edce12f5b189882ed91a78baf89a3ff8738459588acd67f0ee40219645",
+      "uid": "2fab8c20cf4543c4fe15b94e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:130:35",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        8300,
+        8352
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:130:35",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "너울 씨. 제가 대조해 본 명령서에는 이 아이 이름이 없었습니다. 지금도 같은 명령입니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 130,
+          "label": "r13_rescue",
+          "guards": [
+            "if at_altar:",
+            "if route==\"order\":"
+          ]
+        }
+      ],
+      "line": 130,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "25aa15b7cb0e208c727f8b15f355f0ca852a671d6748734ee2942e9d69f7d53d",
+      "uid": "8a0d487de8cf20a9ff9dc04f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:130:98",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        8363,
+        8396
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:130:98",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "예. 이 수레를 멈추십시오. 아이는 제가 넘겨받겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 130,
+          "label": "r13_rescue",
+          "guards": [
+            "if at_altar:",
+            "if route==\"order\":"
+          ]
+        }
+      ],
+      "line": 130,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "58a687b84eecf17be36d8e9852c2eaf626b513279e3db3fe440126f92cb5f07c",
+      "uid": "ba9f44087a3799f86f13c55d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:130:139",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        8404,
+        8478
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:130:139",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "너울이 끌고 가라는 명령서의 서명 칸을 경비에게 들이밀었다. 경비가 다른 서류를 뒤지는 사이, 나는 아이를 수레에서 안아 내렸다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 130,
+          "label": "r13_rescue",
+          "guards": [
+            "if at_altar:",
+            "if route==\"order\":"
+          ]
+        }
+      ],
+      "line": 130,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "40ad27ca681ad151d2667c14cc8cdbd76532818cb1436b39813cab1efd4a5ab6",
+      "uid": "d837f3619d8c9295ea5f56ba",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:132:45",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        8579,
+        8618
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:132:45",
+      "when": null,
+      "speaker": "resident_nubi",
+      "kind": "dialogue",
+      "text": "담요 받으러 오면 안쪽 매듭부터 보세요. 제가 수레를 가리겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 132,
+          "label": "r13_rescue",
+          "guards": [
+            "if at_altar:",
+            "elif route==\"laundry\":"
+          ]
+        }
+      ],
+      "line": 132,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "93792872c8c27db60ddad8b3411f8fa75f407fa1e15b79dbc9553429e0070ae7",
+      "uid": "7237c097fe3c728436d4aed5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:132:92",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        8626,
+        8697
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:132:92",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "아이를 넘겨받기로 미리 약속해 둔 사람들이 담요를 내렸다. 누비가 반대편을 붙드는 동안, 나는 아이 손을 묶은 끈을 풀었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 132,
+          "label": "r13_rescue",
+          "guards": [
+            "if at_altar:",
+            "elif route==\"laundry\":"
+          ]
+        }
+      ],
+      "line": 132,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "bf08f3a8838f7cfe8ca23a5298b9d8ce1e35eb6367ad7fc7419c37ba5e98cd29",
+      "uid": "7d2c3b05a6a62e2b2bfade8d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:132:172",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        8706,
+        8723
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:132:172",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "여기로 와. 엄마가 잡았어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 132,
+          "label": "r13_rescue",
+          "guards": [
+            "if at_altar:",
+            "elif route==\"laundry\":"
+          ]
+        }
+      ],
+      "line": 132,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "b90a94265b883ed16435b38dd2b6ef8e393925253040d960457f36baa44560f9",
+      "uid": "153b7ac61c30952f70f2715e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:134:36",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        8800,
+        8840
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:134:36",
+      "when": null,
+      "speaker": "buri",
+      "kind": "dialogue",
+      "text": "점검하는 문은 제가 열어 뒀어요. 끌고 가는 수레 뒤쪽으로 나오세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 134,
+          "label": "r13_rescue",
+          "guards": [
+            "if at_altar:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 134,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "5ae5ff3fa28b70253a4c112640f47fb09dba388b9e7ec2be18900efbf8d324e4",
+      "uid": "3c181159198c9e73f286cc5b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:134:84",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        8848,
+        8900
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:134:84",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "부리가 확인한 점검문으로 들어가 연결대 앞을 막았다. 수레가 멈춘 틈에 아이를 끌어안았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 134,
+          "label": "r13_rescue",
+          "guards": [
+            "if at_altar:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 134,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "2720f079b13dde991531d1f65f0ff4704b897739f6d10ce38100bb70f6b3c33d",
+      "uid": "fd25cc75675d3dab02b1dcca",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:138:42",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        9080,
+        9134
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:138:42",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "옮길 사람을 적는 칸과 실제로 태운 사람 명단이 다릅니다. 원본 명령대로 하고 있지 않습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 138,
+          "label": "r13_rescue",
+          "guards": [
+            "if not at_altar and route==\"order\":"
+          ]
+        }
+      ],
+      "line": 138,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "3dfc1670a99ee0c786369f2df00444430dea56e8797757df311a001085eba3e6",
+      "uid": "ed94a6026957cae99e8f5679",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:138:107",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        9145,
+        9177
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:138:107",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "이 명령에는 오늘 이 아이를 옮기라는 내용이 없습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 138,
+          "label": "r13_rescue",
+          "guards": [
+            "if not at_altar and route==\"order\":"
+          ]
+        }
+      ],
+      "line": 138,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "f07e1117888c86a416489db71394c68f8645b22534faea4e6e22b08277a1bd85",
+      "uid": "9dc0bf3f8638d0574c9063f3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:138:148",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        9186,
+        9204
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:138:148",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "그럼 이 문을 열어 주십시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 138,
+          "label": "r13_rescue",
+          "guards": [
+            "if not at_altar and route==\"order\":"
+          ]
+        }
+      ],
+      "line": 138,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "af6218672f6dbcc6be35e0d6745a0e8e239f4b28777c6c6585c136f6019557d0",
+      "uid": "c6511885f750db3114f3059d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:138:177",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        9215,
+        9256
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:138:177",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "나가는 데까지는 제가 함께 가겠습니다. 그 뒤는 약속드릴 수 없습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 138,
+          "label": "r13_rescue",
+          "guards": [
+            "if not at_altar and route==\"order\":"
+          ]
+        }
+      ],
+      "line": 138,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "be0fb972ffc3a7394edcdc42a1bec6a0fbe1efacdcb3b4f28f94110bcdd0155b",
+      "uid": "476b560ffa100bd92e187d3b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:140:41",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        9360,
+        9393
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:140:41",
+      "when": null,
+      "speaker": "resident_nubi",
+      "kind": "dialogue",
+      "text": "수레는 여기에 두겠습니다. 안에서 오래 기다리면 들켜요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 140,
+          "label": "r13_rescue",
+          "guards": [
+            "elif not at_altar and route==\"laundry\":"
+          ]
+        }
+      ],
+      "line": 140,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "025f444c22aac9d04a8906e8bc00fc249657931ac0f4aff1b1fab31fff51fef0",
+      "uid": "fcde671f537b786d34e10648",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:140:82",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        9401,
+        9470
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:140:82",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "오늘 확인한 교대 시간에 맞춰, 지키는 사람이 없는 문으로 들어갔다. 누비는 다음 운반자가 올 때까지 그 자리를 지켰다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 140,
+          "label": "r13_rescue",
+          "guards": [
+            "elif not at_altar and route==\"laundry\":"
+          ]
+        }
+      ],
+      "line": 140,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "7c5d048d5f48f37cbd7c9dcb281ff3ee6701a460668bff3730742b08d03531de",
+      "uid": "3457aa799103a041bc93b1e3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/room13_week2.rpy:140:160",
       "file": "game/room13_week2.rpy",
@@ -37,6 +645,402 @@
       "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
       "baseline_hash": "92377cab27e66724bfa433f6dfe155c4af01f6732a88c16cb4b68a82f1948a90",
       "uid": "382e4ddda50e6686dc79eea7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:142:32",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        9574,
+        9613
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:142:32",
+      "when": null,
+      "speaker": "buri",
+      "kind": "dialogue",
+      "text": "점검문은 확인했어요. 제가 잡고 있을 테니 아이부터 데려와 주세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 142,
+          "label": "r13_rescue",
+          "guards": [
+            "elif not at_altar:"
+          ]
+        }
+      ],
+      "line": 142,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "efb744c766dc55a28bafb77bbe07f3184fc060d8940ab9b489d9e35886eab2b8",
+      "uid": "ad5dbbd07a25b51f317e3d90",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:142:79",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        9621,
+        9704
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:142:79",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "지금 자물쇠가 어느 쪽으로 걸렸는지, 걸쇠는 어떤지 먼저 확인했다. 그런 뒤 점검문을 열었다. 도면에만 있던 길을 믿고 무작정 뛰어들지는 않았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 142,
+          "label": "r13_rescue",
+          "guards": [
+            "elif not at_altar:"
+          ]
+        }
+      ],
+      "line": 142,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "ca62d9c4596e837844b90c1c8a1d089ac236ac3c53f921dbb3b3354227d2ffdf",
+      "uid": "a4a59d98e477de90763684a6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:143:29",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        9758,
+        9773
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:143:29",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "이번엔 같이 가는 거지?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 143,
+          "label": "r13_rescue",
+          "guards": []
+        }
+      ],
+      "line": 143,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "ce6016ea2420c7a2f112e0ec82fefa9bc952241e810fd2990cc48d4cf76f6e9a",
+      "uid": "3f0d788abd01fa3396129463",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:143:53",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        9782,
+        9799
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:143:53",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "응. 여기서부터는 같이 가.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 143,
+          "label": "r13_rescue",
+          "guards": []
+        }
+      ],
+      "line": 143,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "f34b7a14a42e937e4d3a48d3d83ae4816248e26a5040ff81c08da707f2e6a40a",
+      "uid": "b95e32d27593eb16177dafe1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:145:31",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        9866,
+        9883
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:145:31",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "여기 있어. 둘 다 손 줘.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 145,
+          "label": "r13_rescue",
+          "guards": [
+            "if at_altar:"
+          ]
+        }
+      ],
+      "line": 145,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "5e1b69ca9c20b53d9223a49e5e03142d1de3b1e084ef06a42a3e925274bf8119",
+      "uid": "d218eb6a1affea4eb1289d5e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:145:56",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        9891,
+        9919
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:145:56",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이가 양손으로 엄마와 나를 하나씩 붙잡았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 145,
+          "label": "r13_rescue",
+          "guards": [
+            "if at_altar:"
+          ]
+        }
+      ],
+      "line": 145,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "07e69c587c19d8d72e4f4b4f73e53258d53105ab72b1785509737bbb0cf3d13e",
+      "uid": "1599eba52ebadfff4f08746a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:147:33",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        10011,
+        10022
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:147:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "엄마도 같이 와?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 147,
+          "label": "r13_rescue",
+          "guards": [
+            "elif r13_has(\"mom_reunited\"):"
+          ]
+        }
+      ],
+      "line": 147,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "5fd574042a4668b4d38cb6ad5c13b9b6e8c91fb6981bd620b8ec6c0b6decafc2",
+      "uid": "00ad09cbcb6c05cdf5656125",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:147:53",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        10031,
+        10043
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:147:53",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "엄마 만나러 가자.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 147,
+          "label": "r13_rescue",
+          "guards": [
+            "elif r13_has(\"mom_reunited\"):"
+          ]
+        }
+      ],
+      "line": 147,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "d33590894966eb020576a2cac4ca72542d3129f1714757bdd29bc2ee4f2e2e6a",
+      "uid": "3fa949dbc42770c99887960a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:149:33",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        10112,
+        10124
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:149:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "엄마는 어디 있어?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 149,
+          "label": "r13_rescue",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 149,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "4c4d1c866196769e01b52a6dda3cebbcfa67a91c4519253191fb797327afb9dc",
+      "uid": "2ed40a2498eaf73a4a499622",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:149:54",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        10133,
+        10180
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_rescue",
+      "block": "r13_rescue",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:149:54",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "엄마는 아직 찾고 있어. 엄마가 네가 어디 있는지도 모른 채 찾게 하지는 않을게.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 149,
+          "label": "r13_rescue",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 149,
+      "scene_title": "r13_rescue",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "52400ac14277a67e3dcb09d93fb090ba4c7f48b3838c3fa208a04c24d22830f5",
+      "uid": "a89096dd921e080c5a99c028",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_rescue|rpy_literal|r13_rescue|행 조건 없음",

@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:162:8",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        9298,
+        9316
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_cv_store",
+      "block": "r13_cv_store",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:162:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "수레의 결박 끈 이야기를 한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 162,
+          "label": "r13_cv_store",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 162,
+      "scene_title": "r13_cv_store",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "50d7fed22a5aa8be2c4bba6e505b59624d1da9fe5e7f34b4c88c5c644aaa387c",
+      "uid": "02805e98919b95055697fa03",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_store|rpy_menu|r13_cv_store|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:168:8",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        9652,
+        9661
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_cv_store",
+      "block": "r13_cv_store",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:168:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "그냥 돌아간다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 168,
+          "label": "r13_cv_store",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 168,
+      "scene_title": "r13_cv_store",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "08f488bae8c1595e4d06e216fe37c6b57ed71a587e88b2efe4fb1bac9b8afb42",
+      "uid": "747ee456b0137922e764e1c1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_store|rpy_menu|r13_cv_store|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

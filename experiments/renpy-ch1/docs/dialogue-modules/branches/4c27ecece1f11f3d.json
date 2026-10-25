@@ -1,0 +1,82 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/room13_v111_days123.rpy:922:39",
+      "file": "game/room13_v111_days123.rpy",
+      "path": [
+        43658,
+        43671
+      ],
+      "origin": "rpy_menu",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": "r13_v111_clinic3",
+      "placement": "literal",
+      "ref": "game/room13_v111_days123.rpy:922:39",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "꺼낸 시각부터 묻는다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 922,
+          "label": "r13_v111_clinic3",
+          "guards": []
+        }
+      ],
+      "line": 922,
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "456f94ff2e8310cc392465f4cf6e8b4751192ba306a52edeb7646cb6546fd0ef",
+      "baseline_hash": "765f6209fb0814873e3b5f17c40e9cacdd06f8b7815ba977d34d327d6f78441e",
+      "uid": "f066801648023ae981aeeb86",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|rpy_menu|r13_v111_clinic3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_v111_days123.rpy:922:57",
+      "file": "game/room13_v111_days123.rpy",
+      "path": [
+        43676,
+        43694
+      ],
+      "origin": "rpy_menu",
+      "day": 3,
+      "scene": "MS14_D03_S03",
+      "block": "r13_v111_clinic3",
+      "placement": "literal",
+      "ref": "game/room13_v111_days123.rpy:922:57",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "다시 넣은 게 확실한지 묻는다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 922,
+          "label": "r13_v111_clinic3",
+          "guards": []
+        }
+      ],
+      "line": 922,
+      "scene_title": "3. 공방과 진료소 / 돌려놓았다는 말",
+      "source_hash": "456f94ff2e8310cc392465f4cf6e8b4751192ba306a52edeb7646cb6546fd0ef",
+      "baseline_hash": "38bffc95e0d0cd0ccfd3d331f110a43c6bdae1eebd296f596834168d61d3d33a",
+      "uid": "9ff60af78f5b644dd9fafb54",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d03|MS14_D03_S03|rpy_menu|r13_v111_clinic3|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

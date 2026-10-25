@@ -1,7 +1,45 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_bundle3.rpy:100:55",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        6319,
+        6342
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_scale",
+      "block": "r13_b3_scale",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:100:55",
+      "when": null,
+      "speaker": "resident_eunho",
+      "kind": "dialogue",
+      "text": "……그래서, 저한테 무엇을 원하십니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 100,
+          "label": "r13_b3_scale",
+          "guards": []
+        }
+      ],
+      "line": 100,
+      "scene_title": "r13_b3_scale",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "863382e5c35959ecb31bceff401f6b44e23138abc63e1fb98b48437a1c0cf3ca",
+      "uid": "cf149b62201be71a76d1bdba",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_scale|rpy_literal|r13_b3_scale|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_bundle3.rpy:109:50",
       "file": "game/systems/room13_bundle3.rpy",
@@ -38,6 +76,88 @@
       "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
       "baseline_hash": "bf3763db873789b054ea21273fc69d301c2573274e88a56e66d2659ff3f775bd",
       "uid": "eb8e42d91bb4b48e81b39922",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_scale|rpy_literal|r13_b3_scale|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:110:27",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        6814,
+        6853
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_scale",
+      "block": "r13_b3_scale",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:110:27",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "그래도 사람들은 자기가 그동안 얼마나 덜 받았는지는 알아야 합니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 110,
+          "label": "r13_b3_scale",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 110,
+      "scene_title": "r13_b3_scale",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "467f5c295383a6f6ed7dc6d8e5d57fb9ff9b52628bee7d8fcfa30648ddbaa293",
+      "uid": "8f6952deebcfcea60f7703bf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_scale|rpy_literal|r13_b3_scale|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:111:26",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        6882,
+        6956
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_scale",
+      "block": "r13_b3_scale",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:111:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "그날 오후, 광장 게시판에 쪽지가 붙었다. 은호가 저울 바늘을 바로잡았다는 쪽지였다. 사람들이 줄을 서서 다시 무게를 달아 갔다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 111,
+          "label": "r13_b3_scale",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 111,
+      "scene_title": "r13_b3_scale",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "7f569bde879e08739ddb656cd3bdb3f8eace03d9ea3531152a18c91982561982",
+      "uid": "1e1f5506df3edb17fb8c7e54",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_b3_scale|rpy_literal|r13_b3_scale|행 조건 없음",
@@ -85,6 +205,47 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
+      "id": "game/systems/room13_bundle3.rpy:115:27",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        7229,
+        7270
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_scale",
+      "block": "r13_b3_scale",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:115:27",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(이러면 나만 값을 덜 내고, 다른 사람들은 계속 물건을 덜 받는다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 115,
+          "label": "r13_b3_scale",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 115,
+      "scene_title": "r13_b3_scale",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "95210df426be23db2e1c75200fcea75d876a627581a43b08a606ce9148f783f7",
+      "uid": "cdbf68776d895ac0370b50f2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_scale|rpy_literal|r13_b3_scale|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
       "id": "game/systems/room13_bundle3.rpy:118:50",
       "file": "game/systems/room13_bundle3.rpy",
       "path": [
@@ -120,6 +281,88 @@
       "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
       "baseline_hash": "25fd7b4e1678c6d446f3f03f1f60cf9e5d3165e9085577b2c441b328d15f4ebb",
       "uid": "554c7006c48cda3f1f9e4a05",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_scale|rpy_literal|r13_b3_scale|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:119:38",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        7597,
+        7657
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_scale",
+      "block": "r13_b3_scale",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:119:38",
+      "when": null,
+      "speaker": "resident_eunho",
+      "kind": "dialogue",
+      "text": "백 부인의 부탁이었습니다. 배급이 가벼우면 부인 창고 물건이 팔리고, 그 물건을 나르는 일은 내가 맡소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 119,
+          "label": "r13_b3_scale",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 119,
+      "scene_title": "r13_b3_scale",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "ed6d1e0d5af1541a5fec7cad5e92d1f4a0eb8de65223ec27b5e095b3f9858d49",
+      "uid": "97c8d7432c650ac0ba6a2586",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_scale|rpy_literal|r13_b3_scale|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:120:38",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        7698,
+        7751
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_scale",
+      "block": "r13_b3_scale",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:120:38",
+      "when": null,
+      "speaker": "resident_eunho",
+      "kind": "dialogue",
+      "text": "하지만 배급소 저울은 이제 내가 손댈 수 없습니다. 저울 열쇠를 너울이 갖고 있기 때문이오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 120,
+          "label": "r13_b3_scale",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 120,
+      "scene_title": "r13_b3_scale",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "e68b3f14a3125a8509c266df2cce2bf948ae52768b26f480fbcb994774cd2f4f",
+      "uid": "622e035f04149942ff924767",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_b3_scale|rpy_literal|r13_b3_scale|행 조건 없음",

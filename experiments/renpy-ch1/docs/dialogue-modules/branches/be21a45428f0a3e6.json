@@ -1,0 +1,123 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:319:29",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        19402,
+        19414
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_wf_nabi_blame",
+      "block": "r13_wf_nabi_blame",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:319:29",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "여관 1층 · 주방",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 319,
+          "label": "r13_wf_nabi_blame",
+          "guards": []
+        }
+      ],
+      "line": 319,
+      "scene_title": "r13_wf_nabi_blame",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "00e766f99dc53ca5b9661fbb6289a96f5309ea59599beeed7a22b5291d13a08b",
+      "uid": "0ed7e999582340bd14e67080",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_nabi_blame|rpy_inventory|r13_wf_nabi_blame|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:322:18",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        19569,
+        19583
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_wf_nabi_blame",
+      "block": "r13_wf_nabi_blame",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:322:18",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "제가 꼬미를 죽였어요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 322,
+          "label": "r13_wf_nabi_blame",
+          "guards": []
+        }
+      ],
+      "line": 322,
+      "scene_title": "r13_wf_nabi_blame",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "c8dc91b801ef03252e3ac310869035cc567bd983f67033462c9900c85b209109",
+      "uid": "5c1bebbe3592e12753417dd8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_nabi_blame|rpy_inventory|r13_wf_nabi_blame|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:330:36",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        20034,
+        20050
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_wf_nabi_blame",
+      "block": "r13_wf_nabi_blame",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:330:36",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "나비에게 들은 등잔 이야기",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 330,
+          "label": "r13_wf_nabi_blame",
+          "guards": [
+            "menu:",
+            "if not r13_has(\"F03\"):"
+          ]
+        }
+      ],
+      "line": 330,
+      "scene_title": "r13_wf_nabi_blame",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "2776c8aff21d21a7c2520143db81c76d2e3243854d68400146c2f196b3f0195a",
+      "uid": "365fa7c5458e75ebc88ce1ee",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_nabi_blame|rpy_inventory|r13_wf_nabi_blame|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

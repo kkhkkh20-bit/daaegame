@@ -1,0 +1,166 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events.rpy:461:8",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        24114,
+        24123
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_ev_yeoni_goods",
+      "block": "r13_ev_yeoni_goods",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:461:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "3냥에 되산다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 461,
+          "label": "r13_ev_yeoni_goods",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 461,
+      "scene_title": "r13_ev_yeoni_goods",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "295586d8d814918ac02865020130c55738c688172919a6f8c3b455470b49a3c1",
+      "uid": "8ea32e315af005cbaab6dca5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_yeoni_goods|rpy_menu|r13_ev_yeoni_goods|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:465:8",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        24376,
+        24399
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_ev_yeoni_goods",
+      "block": "r13_ev_yeoni_goods",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:465:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "누가 팔았는지만 확인하고 따지지 않는다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 465,
+          "label": "r13_ev_yeoni_goods",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 465,
+      "scene_title": "r13_ev_yeoni_goods",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "10b384b19dc4293dfb31f8815dada2895fc803e466171b64e10a124be8691006",
+      "uid": "bebf8363a025b535cd09bd52",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_yeoni_goods|rpy_menu|r13_ev_yeoni_goods|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:468:8",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        24577,
+        24593
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_ev_yeoni_goods",
+      "block": "r13_ev_yeoni_goods",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:468:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "너울에게 장물이라고 알린다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 468,
+          "label": "r13_ev_yeoni_goods",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 468,
+      "scene_title": "r13_ev_yeoni_goods",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "370de02513069216598a67b9762a852bf1d8f1234c0e2b69f87f50e917f6d288",
+      "uid": "2082d19a4951c420c1274a4f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_yeoni_goods|rpy_menu|r13_ev_yeoni_goods|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:473:8",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        24924,
+        24933
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_ev_yeoni_goods",
+      "block": "r13_ev_yeoni_goods",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:473:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "그냥 가져간다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 473,
+          "label": "r13_ev_yeoni_goods",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 473,
+      "scene_title": "r13_ev_yeoni_goods",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "4cb9aae1129c49d02459459ee7069b7697a05ed349293a3ba47fae944033d373",
+      "uid": "19b3998cc1759b9f78b19b1a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_yeoni_goods|rpy_menu|r13_ev_yeoni_goods|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

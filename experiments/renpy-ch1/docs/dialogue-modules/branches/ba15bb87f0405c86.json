@@ -1,7 +1,45 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/room13_week2.rpy:8:27",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        318,
+        337
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_week2_opening",
+      "block": "r13_week2_opening",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:8:27",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "월요일 아침 · 꺼져 가는 난방",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 8,
+          "label": "r13_week2_opening",
+          "guards": []
+        }
+      ],
+      "line": 8,
+      "scene_title": "r13_week2_opening",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "108ec7570e9f7ec8ded85a11f887f7f04c5c813954d8431ddc9ceb1445991ecb",
+      "uid": "03d7b6bd6ecac59273afc1c9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_week2_opening|rpy_inventory|r13_week2_opening|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/room13_week2.rpy:21:30",
       "file": "game/room13_week2.rpy",
@@ -37,6 +75,46 @@
       "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
       "baseline_hash": "3576805c23a78fc4bfca97b40a68a5cd154fd8902e6bc44818c263b84745c92c",
       "uid": "a0c6e1cd75d36c46fbede765",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_week2_opening|rpy_inventory|r13_week2_opening|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:21:147",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        1704,
+        1759
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_week2_opening",
+      "block": "r13_week2_opening",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:21:147",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "여관에서 편지 이야기가 새어 나갔어요. 다음 편지를 누가 가져오는지 묻고 다니는 사람이 있어요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 21,
+          "label": "r13_week2_opening",
+          "guards": [
+            "if r13_has(\"warning_exposed\"):"
+          ]
+        }
+      ],
+      "line": 21,
+      "scene_title": "r13_week2_opening",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "df3523f08d8e06149ccef62661711eb4b8fa40291e308ab24f39f816739f7af5",
+      "uid": "b4bd2eb7833e557cf4c02771",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_week2_opening|rpy_inventory|r13_week2_opening|행 조건 없음",

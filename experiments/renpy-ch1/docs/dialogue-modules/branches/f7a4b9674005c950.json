@@ -1,7 +1,207 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:414:27",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        24615,
+        24651
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_choice",
+      "block": "r13_wf_choice",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:414:27",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(시간이 한 칸뿐이다. 나비를 감쌀지, 누비의 말을 들을지.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 414,
+          "label": "r13_wf_choice",
+          "guards": []
+        }
+      ],
+      "line": 414,
+      "scene_title": "r13_wf_choice",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "25ab103993669bc4f42fe8b6e11a9a880b17aa64edf98e2072f93361068389b4",
+      "uid": "4e54be8438f9904b4af9eed3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_choice|rpy_literal|r13_wf_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:418:34",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        24813,
+        24853
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_choice",
+      "block": "r13_wf_choice",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:418:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나비가 작은 보따리를 싸고 있었다. 할머니가 팔짱을 끼고 서 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 418,
+          "label": "r13_wf_choice",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 418,
+      "scene_title": "r13_wf_choice",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "53acd9871771f81767547eee4a708cb24544f1ccdddb4ce0ee9a378c35b437b0",
+      "uid": "bb1bd187ded49c68ecc16ae5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_choice|rpy_literal|r13_wf_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:419:26",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        24882,
+        24916
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_choice",
+      "block": "r13_wf_choice",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:419:26",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "그 등잔 값은 누가 물어요? 불은 그 등잔에서 났다면서요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 419,
+          "label": "r13_wf_choice",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 419,
+      "scene_title": "r13_wf_choice",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "614dd2a3051c0261edc7eb981aac6a8ee7f5197ef600b7ef89a7e5dd9e0e7a95",
+      "uid": "69e5609e07153c2ce1cb3577",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_choice|rpy_literal|r13_wf_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:422:43",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        25051,
+        25113
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_choice",
+      "block": "r13_wf_choice",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:422:43",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "창고 안쪽 구석에서 나왔습니다. 뚜껑이 닫혀 있고, 기름도 그대로입니다. 불은 이 등잔에서 나지 않았습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 422,
+          "label": "r13_wf_choice",
+          "guards": [
+            "menu:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 422,
+      "scene_title": "r13_wf_choice",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "10733761fe4e9c4bf3da10a762a8d0b6992169bf30230c2d1f48fef8381a8d5d",
+      "uid": "f812f41c911286fc204d8e9a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_choice|rpy_literal|r13_wf_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:423:32",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        25148,
+        25167
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_choice",
+      "block": "r13_wf_choice",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:423:32",
+      "when": null,
+      "speaker": "nabi",
+      "kind": "dialogue",
+      "text": "……꼬미가 닫았어요. 약속대로.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 423,
+          "label": "r13_wf_choice",
+          "guards": [
+            "menu:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 423,
+      "scene_title": "r13_wf_choice",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "3f2a142cb2418e49036625ff2d2f6072c1f501af5eea83c0d1faad9d3344b71d",
+      "uid": "b26e9871f666414202338806",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_choice|rpy_literal|r13_wf_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_ep3_woodfire.rpy:424:30",
       "file": "game/systems/room13_ep3_woodfire.rpy",
@@ -44,6 +244,88 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
+      "id": "game/systems/room13_ep3_woodfire.rpy:425:34",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        25276,
+        25318
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_choice",
+      "block": "r13_wf_choice",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:425:34",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "……등잔은 돌아왔으니 됐어요. 이번만은 넘어가지요. 품삯도 그대로 주고.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 425,
+          "label": "r13_wf_choice",
+          "guards": [
+            "menu:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 425,
+      "scene_title": "r13_wf_choice",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "764064a5639007783bdd2afd461257d19281ec580f214a7b10957a0d952286dd",
+      "uid": "b33e30fbe2d65a0d1936d925",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_choice|rpy_literal|r13_wf_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:428:46",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        25493,
+        25517
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_choice",
+      "block": "r13_wf_choice",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:428:46",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "증거도 없이 우리 집 일에 끼지 마세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 428,
+          "label": "r13_wf_choice",
+          "guards": [
+            "menu:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 428,
+      "scene_title": "r13_wf_choice",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "ec339b7bff3d816543825a1ef14b0b2dc922a5ce6c96ec2f1d8622cb1155d133",
+      "uid": "efc76645b599763af0566f92",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_choice|rpy_literal|r13_wf_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
       "id": "game/systems/room13_ep3_woodfire.rpy:429:30",
       "file": "game/systems/room13_ep3_woodfire.rpy",
       "path": [
@@ -79,6 +361,293 @@
       "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
       "baseline_hash": "32ef78d40113b81136fc500069e8a5de9c3afcd8f5326ea4fce41cac2d2733aa",
       "uid": "266bcf86c38ff669b5ec56d2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_choice|rpy_literal|r13_wf_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:434:39",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        25848,
+        25887
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_choice",
+      "block": "r13_wf_choice",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:434:39",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "창고 문 앞에 등유가 부어져 있었습니다. 이 통이 반이나 줄었고요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 434,
+          "label": "r13_wf_choice",
+          "guards": [
+            "menu:",
+            "if sum(1 for k in (\"F09\",\"F10\",\"F11\") if r13_has(k))>=2:"
+          ]
+        }
+      ],
+      "line": 434,
+      "scene_title": "r13_wf_choice",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "97acf9c7ef3db74580c9791ea5763db6955f6c906b9d40f93c42f25af23f4e71",
+      "uid": "f60b3466ed153e35ad3242b8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_choice|rpy_literal|r13_wf_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:435:37",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        25927,
+        25953
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_choice",
+      "block": "r13_wf_choice",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:435:37",
+      "when": null,
+      "speaker": "resident_nubi",
+      "kind": "dialogue",
+      "text": "(오래 말이 없다) ……불만 내려고 했어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 435,
+          "label": "r13_wf_choice",
+          "guards": [
+            "menu:",
+            "if sum(1 for k in (\"F09\",\"F10\",\"F11\") if r13_has(k))>=2:"
+          ]
+        }
+      ],
+      "line": 435,
+      "scene_title": "r13_wf_choice",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "37d70e47440d41d62a283c44db8761daa3af77487e6e32c0b25e206440a1007d",
+      "uid": "d4bd638c58a49ff1a2b13e4f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_choice|rpy_literal|r13_wf_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:436:37",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        25993,
+        26067
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_choice",
+      "block": "r13_wf_choice",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:436:37",
+      "when": null,
+      "speaker": "resident_nubi",
+      "kind": "dialogue",
+      "text": "문 앞에 조금만. 애들이 놀라서 나가면, 창고가 비면, 그럼 그 애들이 다른 데로 가면…… 그 몫이 우리 애들한테 온다고 했어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 436,
+          "label": "r13_wf_choice",
+          "guards": [
+            "menu:",
+            "if sum(1 for k in (\"F09\",\"F10\",\"F11\") if r13_has(k))>=2:"
+          ]
+        }
+      ],
+      "line": 436,
+      "scene_title": "r13_wf_choice",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "50d38f8cdaf22ad51482edd5f3c4ab31292106f58175dfde2db99b77b4975886",
+      "uid": "0e11da1ad70ef1db0dfd5f3e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_choice|rpy_literal|r13_wf_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:437:37",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        26107,
+        26139
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_choice",
+      "block": "r13_wf_choice",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:437:37",
+      "when": null,
+      "speaker": "resident_nubi",
+      "kind": "dialogue",
+      "text": "너울 님이 그랬어요. 그 애들 몫을 우리 집에 준다고.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 437,
+          "label": "r13_wf_choice",
+          "guards": [
+            "menu:",
+            "if sum(1 for k in (\"F09\",\"F10\",\"F11\") if r13_has(k))>=2:"
+          ]
+        }
+      ],
+      "line": 437,
+      "scene_title": "r13_wf_choice",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "0894aa56454db45f7bf1b85b97ae1bcbe983827426031e209e1a8b2ad6378928",
+      "uid": "272d8656459653685801af28",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_choice|rpy_literal|r13_wf_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:438:37",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        26179,
+        26213
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_choice",
+      "block": "r13_wf_choice",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:438:37",
+      "when": null,
+      "speaker": "resident_nubi",
+      "kind": "dialogue",
+      "text": "그런데 바람이 바뀌었어요. 문 쪽으로 확, 불이 안으로……",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 438,
+          "label": "r13_wf_choice",
+          "guards": [
+            "menu:",
+            "if sum(1 for k in (\"F09\",\"F10\",\"F11\") if r13_has(k))>=2:"
+          ]
+        }
+      ],
+      "line": 438,
+      "scene_title": "r13_wf_choice",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "128f3347aebe8e93dc31272ca623790b244d3d4d9afe22605143503b358d3ea1",
+      "uid": "881b977bf2c80313b9c3ee02",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_choice|rpy_literal|r13_wf_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:442:49",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        26496,
+        26527
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_choice",
+      "block": "r13_wf_choice",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:442:49",
+      "when": null,
+      "speaker": "resident_nubi",
+      "kind": "dialogue",
+      "text": "……무슨 말씀이신지 모르겠어요. 빨래 일이 바빠서요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 442,
+          "label": "r13_wf_choice",
+          "guards": [
+            "menu:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 442,
+      "scene_title": "r13_wf_choice",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "6c553160b2d50f9121b44d7e0628efef82f95678813dfc9655b0822ecf328fa5",
+      "uid": "aea1d102f91c7e82588654d6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_choice|rpy_literal|r13_wf_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:443:27",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        26557,
+        26603
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_choice",
+      "block": "r13_wf_choice",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:443:27",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(물어볼 근거가 모자랐다. 기름통, 손, 아이의 말 가운데 둘은 있어야 했다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 443,
+          "label": "r13_wf_choice",
+          "guards": [
+            "menu:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 443,
+      "scene_title": "r13_wf_choice",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "a0ed24337ebaabcd10b018e97b84337b2f81d9aef797c21470c089053ddad6e4",
+      "uid": "f35d6722bae6ec9f406bfec6",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_wf_choice|rpy_literal|r13_wf_choice|행 조건 없음",

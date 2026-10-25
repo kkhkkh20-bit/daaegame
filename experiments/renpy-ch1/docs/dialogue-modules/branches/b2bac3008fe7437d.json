@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
     {
       "id": "game/room13_week2.rpy:265:50",
@@ -167,6 +167,252 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
+      "id": "game/room13_week2.rpy:273:112",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        16949,
+        17025
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_final_reason",
+      "block": "r13_final_reason",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:273:112",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "힘을 다르게 쓸 때도 남은 힘이 옮겨 가는 걸 확인했습니다. 새로 힘을 채우는 건 아니지만, 사람을 잇지 않고 버틸 방법은 있습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 273,
+          "label": "r13_final_reason",
+          "guards": [
+            "elif claim==\"F2\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 273,
+      "scene_title": "r13_final_reason",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "88c7bba6022bf1d5faff6bae177e17f4e5f83aff3d6e71384621fafc5af3143b",
+      "uid": "bfec989c4ae3d306f1cbd582",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_final_reason|rpy_literal|r13_final_reason|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:273:207",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        17044,
+        17063
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_final_reason",
+      "block": "r13_final_reason",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:273:207",
+      "when": null,
+      "speaker": "resident_ppul",
+      "kind": "dialogue",
+      "text": "그것도 결국 다 쓰면 끝이잖소!",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 273,
+          "label": "r13_final_reason",
+          "guards": [
+            "elif claim==\"F2\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 273,
+      "scene_title": "r13_final_reason",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "b439562b1079f3fdf72b7af940b10bb82d2abccb4bf9fd33ff03de2560340d85",
+      "uid": "4e17ae94633af0fb813e9ed7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_final_reason|rpy_literal|r13_final_reason|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:273:235",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        17072,
+        17144
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_final_reason",
+      "block": "r13_final_reason",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:273:235",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "맞아요. 그러니까 필요한 곳에 모여서, 그동안 장작과 식량을 마련해야 해요. 다음에 바칠 사람을 정할 날을 기다리는 대신에요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 273,
+          "label": "r13_final_reason",
+          "guards": [
+            "elif claim==\"F2\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 273,
+      "scene_title": "r13_final_reason",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "1c738f5621142de042b5b2a48eb4da3e8310afd3420c2fbafd344028203ee89f",
+      "uid": "f760cf438ffcd4552010354f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_final_reason|rpy_literal|r13_final_reason|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:273:315",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        17152,
+        17222
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_final_reason",
+      "block": "r13_final_reason",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:273:315",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "작업자가 손을 멈췄다. 환자 쪽 관이 내려왔다. 대피소를 맡은 사람들이 실제로 얼마나 버틸 수 있을지 따져 보기 시작했다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 273,
+          "label": "r13_final_reason",
+          "guards": [
+            "elif claim==\"F2\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 273,
+      "scene_title": "r13_final_reason",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "1aafa71dcfb967a1e2de1027d63cfc4c18ad1d4c1f4645e75a648771492640e3",
+      "uid": "79fb5b62287a23fe52c003e6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_final_reason|rpy_literal|r13_final_reason|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:276:39",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        17352,
+        17408
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_final_reason",
+      "block": "r13_final_reason",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:276:39",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "그 뒤에 힘이 떨어진 걸 별개의 사고로 떼어 보려면 근거가 있어야 해. 옛 기록도 같은 순서잖아.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 276,
+          "label": "r13_final_reason",
+          "guards": [
+            "elif claim==\"F2\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 276,
+      "scene_title": "r13_final_reason",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "2e73265ba0d10343bdab879c3b97e360c37aa1379275134705a9ac2ed964839f",
+      "uid": "16658d4ec7165b737ee375d3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_final_reason|rpy_literal|r13_final_reason|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:276:115",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        17428,
+        17481
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_final_reason",
+      "block": "r13_final_reason",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:276:115",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "한 번 올랐다는 것과 계속 버틸 수 있다는 주장은 다릅니다. 다음 관측까지 함께 보겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 276,
+          "label": "r13_final_reason",
+          "guards": [
+            "elif claim==\"F2\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 276,
+      "scene_title": "r13_final_reason",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "b303fd9c125d4f0d832aa27b9aae88f9b53f0f6e207cef61ce4d92e335443cd8",
+      "uid": "63a1cc98c86da54b32c86177",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_final_reason|rpy_literal|r13_final_reason|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
       "id": "game/room13_week2.rpy:281:40",
       "file": "game/room13_week2.rpy",
       "path": [
@@ -208,6 +454,129 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
+      "id": "game/room13_week2.rpy:281:93",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        17697,
+        17732
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_final_reason",
+      "block": "r13_final_reason",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:281:93",
+      "when": null,
+      "speaker": "resident_bori",
+      "kind": "dialogue",
+      "text": "장작을 집집마다 나누면 모자라요. 한곳에 모여 있어야 해요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 281,
+          "label": "r13_final_reason",
+          "guards": [
+            "elif claim==\"F3\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 281,
+      "scene_title": "r13_final_reason",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "f64f272153e5ab0943fe9d1ac4ae9ef4e632566590f2d5959752941680a123cf",
+      "uid": "c97cc93ceacc1282a8725956",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_final_reason|rpy_literal|r13_final_reason|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:281:138",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        17742,
+        17769
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_final_reason",
+      "block": "r13_final_reason",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:281:138",
+      "when": null,
+      "speaker": "buri",
+      "kind": "dialogue",
+      "text": "이쪽은 내가 잡을게요. 다음 교대도 정했어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 281,
+          "label": "r13_final_reason",
+          "guards": [
+            "elif claim==\"F3\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 281,
+      "scene_title": "r13_final_reason",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "b8bb02fe14709105310e6c0708e662879493efb9cce1bf1c5190656e8b15d035",
+      "uid": "40d1e63cf584003ede3816db",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_final_reason|rpy_literal|r13_final_reason|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:284:49",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        17903,
+        17944
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_final_reason",
+      "block": "r13_final_reason",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:284:49",
+      "when": null,
+      "speaker": "resident_bori",
+      "kind": "dialogue",
+      "text": "집집마다 불을 살리면 장작이 모자라요. 빈 방까지 덥힐 몫은 없다고요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 284,
+          "label": "r13_final_reason",
+          "guards": [
+            "elif claim==\"F3\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 284,
+      "scene_title": "r13_final_reason",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "7035dcccbce1fc4f053046aa199eb0c847e3fee1985b29b9d3aa958e5c23c20c",
+      "uid": "64e8b82c484c6c8f70dfa2f6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_final_reason|rpy_literal|r13_final_reason|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
       "id": "game/room13_week2.rpy:284:100",
       "file": "game/room13_week2.rpy",
       "path": [
@@ -243,6 +612,211 @@
       "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
       "baseline_hash": "ad05a741cdb904e7d4af646be39a187150b0c3b1de70cdfd93068f37828b1ea8",
       "uid": "2c25503f9335ab548bd8908f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_final_reason|rpy_literal|r13_final_reason|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:289:39",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        18147,
+        18218
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_final_reason",
+      "block": "r13_final_reason",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:289:39",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "아내가 돌아오기를 거절한 뒤에, 아내 이름으로 이 편지를 써서 보내셨습니다. 가족을 떼어 놓을 지시도 미리 준비해 두셨고요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 289,
+          "label": "r13_final_reason",
+          "guards": [
+            "else:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 289,
+      "scene_title": "r13_final_reason",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "ce9efe57dc3db88cf6e645956c30eea006fab7f13cc5b5bea44c3eb0ab4c2e76",
+      "uid": "3fea240358e4d35d01661f88",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_final_reason|rpy_literal|r13_final_reason|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:289:122",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        18230,
+        18260
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_final_reason",
+      "block": "r13_final_reason",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:289:122",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "그 여자가 돌아왔으면 아이는 다치지 않아도 됐어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 289,
+          "label": "r13_final_reason",
+          "guards": [
+            "else:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 289,
+      "scene_title": "r13_final_reason",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "8b36832b1c98ff6eb37b81878e5cafac1343ef4bce1298301f4f46138e9a67f5",
+      "uid": "0d200cb45fde85178b4cc133",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_final_reason|rpy_literal|r13_final_reason|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:289:161",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        18269,
+        18316
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_final_reason",
+      "block": "r13_final_reason",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:289:161",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "할머니를 만나러 돌아갈 수는 없었어요. 가족에게 돌아갈 방법을 찾고 있었으니까요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 289,
+          "label": "r13_final_reason",
+          "guards": [
+            "else:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 289,
+      "scene_title": "r13_final_reason",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "d81803258e3d8c80149459a3f09e6c4c51493e333fd5574710bc61bc29d74804",
+      "uid": "09bc3f45b14d584eccec5d85",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_final_reason|rpy_literal|r13_final_reason|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:289:217",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        18325,
+        18346
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_final_reason",
+      "block": "r13_final_reason",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:289:217",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "대답하지 않으셔도 기록은 남습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 289,
+          "label": "r13_final_reason",
+          "guards": [
+            "else:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 289,
+      "scene_title": "r13_final_reason",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "17e3cb0fa47bfce34646a663612b76ee5ef2f18a4765e7193e4a2f113b2ef158",
+      "uid": "a63c2c6dbde4cf9579ea6d26",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_final_reason|rpy_literal|r13_final_reason|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:289:249",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        18357,
+        18391
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_final_reason",
+      "block": "r13_final_reason",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:289:249",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "이제부터 그 지시는 따르지 않겠습니다. 자료부터 챙깁시다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 289,
+          "label": "r13_final_reason",
+          "guards": [
+            "else:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 289,
+      "scene_title": "r13_final_reason",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "af6b132802eab86f1a54c2225df4ca43ff6ca54fb09e3b333f2f43002811db67",
+      "uid": "83a56eba8d65fe9ce0a3914e",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_final_reason|rpy_literal|r13_final_reason|행 조건 없음",

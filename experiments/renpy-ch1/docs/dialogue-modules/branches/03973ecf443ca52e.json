@@ -1,0 +1,460 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:383:26",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        22909,
+        22979
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_nubi",
+      "block": "r13_wf_nubi",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:383:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "솥 밑 불은 꺼져 있었다. 누비 아주머니가 손을 젖은 천으로 감은 채 빨래를 개고 있었다. 등에는 막내, 옆에는 아이 둘.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 383,
+          "label": "r13_wf_nubi",
+          "guards": []
+        }
+      ],
+      "line": 383,
+      "scene_title": "r13_wf_nubi",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "49dd0f3631d8ccd821232dc6f30865c90b5dc8c92e119e2801509bf22a867a25",
+      "uid": "1355bd0aec49b259dc2d29c9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_nubi|rpy_literal|r13_wf_nubi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:384:25",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        23007,
+        23038
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_nubi",
+      "block": "r13_wf_nubi",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:384:25",
+      "when": null,
+      "speaker": "resident_nubi",
+      "kind": "dialogue",
+      "text": "손님…… 오늘은 빨래 못 받아요. 손을 좀 다쳐서요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 384,
+          "label": "r13_wf_nubi",
+          "guards": []
+        }
+      ],
+      "line": 384,
+      "scene_title": "r13_wf_nubi",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "b44e5f6457257c188a78ab987e98a3d3f15e8adc2945a6ea2b6bafd90ce0636f",
+      "uid": "558140e635c9307750741470",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_nubi|rpy_literal|r13_wf_nubi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:394:38",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        23486,
+        23507
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_nubi",
+      "block": "r13_wf_nubi",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:394:38",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "솥 옆 기름통. 반쯤 비어 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 394,
+          "label": "r13_wf_nubi",
+          "guards": [
+            "while _wf_left:",
+            "else:",
+            "if _wf_pick==\"can\":"
+          ]
+        }
+      ],
+      "line": 394,
+      "scene_title": "r13_wf_nubi",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "d31ebcd6ac0dfc7c89614b40862660099b204dd9ee8ece82601a1b83a781aa89",
+      "uid": "159963978c93eb168851cd9e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_nubi|rpy_literal|r13_wf_nubi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:396:38",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        23671,
+        23688
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_nubi",
+      "block": "r13_wf_nubi",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:396:38",
+      "when": null,
+      "speaker": "resident_nubi",
+      "kind": "dialogue",
+      "text": "요즘 솥을 많이 데워서요……",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 396,
+          "label": "r13_wf_nubi",
+          "guards": [
+            "while _wf_left:",
+            "else:",
+            "if _wf_pick==\"can\":"
+          ]
+        }
+      ],
+      "line": 396,
+      "scene_title": "r13_wf_nubi",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "48c9fbd634dbd0182b6bd4923e2a79ce66c680103b9c84cbc56ec79f93e6f19d",
+      "uid": "d81cbd76b647296e44348cb0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_nubi|rpy_literal|r13_wf_nubi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:399:38",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        23861,
+        23898
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_nubi",
+      "block": "r13_wf_nubi",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:399:38",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "천 밑으로 손등이 보였다. 새로 덴 자리가 물집이 잡혀 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 399,
+          "label": "r13_wf_nubi",
+          "guards": [
+            "while _wf_left:",
+            "else:",
+            "elif _wf_pick==\"hand\":"
+          ]
+        }
+      ],
+      "line": 399,
+      "scene_title": "r13_wf_nubi",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "94e93e95d4beae4cda6fab43478c796af65c9c0bf572f4cd65ec992ec09eefcf",
+      "uid": "12a503b1b7d977a73fee8edb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_nubi|rpy_literal|r13_wf_nubi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:400:37",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        23938,
+        23963
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_nubi",
+      "block": "r13_wf_nubi",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:400:37",
+      "when": null,
+      "speaker": "resident_nubi",
+      "kind": "dialogue",
+      "text": "솥에 데었어요. 빨래하다 보면 늘 그래요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 400,
+          "label": "r13_wf_nubi",
+          "guards": [
+            "while _wf_left:",
+            "else:",
+            "elif _wf_pick==\"hand\":"
+          ]
+        }
+      ],
+      "line": 400,
+      "scene_title": "r13_wf_nubi",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "53870c2a5e56e0812f4c66abac61cf5365c54c853a73c0943c29b12276e7807e",
+      "uid": "c0869abb577fc9cdd7fb7f38",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_nubi|rpy_literal|r13_wf_nubi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:401:27",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        23993,
+        24044
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_nubi",
+      "block": "r13_wf_nubi",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:401:27",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(솥에 데면 손바닥이나 팔이다. 손등은, 확 피어오르는 불 앞에 손을 뻗었을 때 덴다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 401,
+          "label": "r13_wf_nubi",
+          "guards": [
+            "while _wf_left:",
+            "else:",
+            "elif _wf_pick==\"hand\":"
+          ]
+        }
+      ],
+      "line": 401,
+      "scene_title": "r13_wf_nubi",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "476e45d381da6283d29e79ec22ade7253f7a8584e9366030520bad49d7b7c9ca",
+      "uid": "43396c89bf43482428cc0f41",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_nubi|rpy_literal|r13_wf_nubi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:404:45",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        24194,
+        24221
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_nubi",
+      "block": "r13_wf_nubi",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:404:45",
+      "when": null,
+      "speaker": "kid_nubi1",
+      "kind": "dialogue",
+      "text": "엄마가 어젯밤에 늦게 왔어. 우리 다 잘 때.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 404,
+          "label": "r13_wf_nubi",
+          "guards": [
+            "while _wf_left:",
+            "else:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 404,
+      "scene_title": "r13_wf_nubi",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "185b38bf55b59ceb75f2a00e4da7586bd6c7bc3d6f4bd6cc43f03dff4e04d3f9",
+      "uid": "e46477bfa7a708da35463bae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_nubi|rpy_literal|r13_wf_nubi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:405:33",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        24257,
+        24298
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_nubi",
+      "block": "r13_wf_nubi",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:405:33",
+      "when": null,
+      "speaker": "kid_nubi1",
+      "kind": "dialogue",
+      "text": "엄마한테 빨래터 기름 냄새 났어. 엄마가 막 손 씻었어. 계속 씻었어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 405,
+          "label": "r13_wf_nubi",
+          "guards": [
+            "while _wf_left:",
+            "else:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 405,
+      "scene_title": "r13_wf_nubi",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "a0ed06db778102709e187c348e3a7336d2916298234c742baac06262336e5b1d",
+      "uid": "dbdd54c587a9374104ad1a69",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_nubi|rpy_literal|r13_wf_nubi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:406:33",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        24334,
+        24370
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_nubi",
+      "block": "r13_wf_nubi",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:406:33",
+      "when": null,
+      "speaker": "kid_nubi2",
+      "kind": "dialogue",
+      "text": "엄마, 이제 밥 많이 먹을 수 있어? 너울 아저씨가 그랬잖아.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 406,
+          "label": "r13_wf_nubi",
+          "guards": [
+            "while _wf_left:",
+            "else:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 406,
+      "scene_title": "r13_wf_nubi",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "10ea7305f22b2370142a9706d9de19f8a2b1a14593d4451f0e071a5b67fb4936",
+      "uid": "ad2522d07e0d61b50b90b0c6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_nubi|rpy_literal|r13_wf_nubi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:407:37",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        24410,
+        24428
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_nubi",
+      "block": "r13_wf_nubi",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:407:37",
+      "when": null,
+      "speaker": "resident_nubi",
+      "kind": "dialogue",
+      "text": "(아이 입을 막는다) ……쉿.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 407,
+          "label": "r13_wf_nubi",
+          "guards": [
+            "while _wf_left:",
+            "else:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 407,
+      "scene_title": "r13_wf_nubi",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "4ad81a5ce470319b603b2ff8514e4def22cf9ea98748bc6e02cad19f46987131",
+      "uid": "8e53208685ed17b3b6ee6d96",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_nubi|rpy_literal|r13_wf_nubi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

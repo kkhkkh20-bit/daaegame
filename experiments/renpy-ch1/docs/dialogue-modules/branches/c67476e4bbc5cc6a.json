@@ -1,0 +1,129 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_owl_buri.rpy:80:12",
+      "file": "game/systems/room13_owl_buri.rpy",
+      "path": [
+        4827,
+        4848
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_owl_threshold",
+      "block": "r13_owl_threshold",
+      "placement": "literal",
+      "ref": "game/systems/room13_owl_buri.rpy:80:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "“수리가 끝나면 다시 오겠습니다.”",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_owl_buri.rpy",
+          "line": 80,
+          "label": "r13_owl_threshold",
+          "guards": [
+            "while _ow_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 80,
+      "scene_title": "r13_owl_threshold",
+      "source_hash": "db5bd71cd78f8a37555c256d5aa1064675f5c6d6a3560b1af22518f20f98d9e9",
+      "baseline_hash": "3cd316655338d86ac354f861709d06ffeb9dda703f7a3907b52c47816f946370",
+      "uid": "2b26cd70b16acf383ded78d7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_owl_threshold|rpy_menu|r13_owl_threshold|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_owl_buri.rpy:83:12",
+      "file": "game/systems/room13_owl_buri.rpy",
+      "path": [
+        5026,
+        5043
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_owl_threshold",
+      "block": "r13_owl_threshold",
+      "placement": "literal",
+      "ref": "game/systems/room13_owl_buri.rpy:83:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "“문턱이 어떻게 됐습니까?”",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_owl_buri.rpy",
+          "line": 83,
+          "label": "r13_owl_threshold",
+          "guards": [
+            "while _ow_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 83,
+      "scene_title": "r13_owl_threshold",
+      "source_hash": "db5bd71cd78f8a37555c256d5aa1064675f5c6d6a3560b1af22518f20f98d9e9",
+      "baseline_hash": "a05e604b7bd102f922cc162436fa8bda5735a7e0d36ac79ee7a005c3dc6f049f",
+      "uid": "19276082a91973397ecafcb8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_owl_threshold|rpy_menu|r13_owl_threshold|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_owl_buri.rpy:87:12",
+      "file": "game/systems/room13_owl_buri.rpy",
+      "path": [
+        5287,
+        5306
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_owl_threshold",
+      "block": "r13_owl_threshold",
+      "placement": "literal",
+      "ref": "game/systems/room13_owl_buri.rpy:87:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "“제 방 앞을 왜 막으십니까?”",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_owl_buri.rpy",
+          "line": 87,
+          "label": "r13_owl_threshold",
+          "guards": [
+            "while _ow_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 87,
+      "scene_title": "r13_owl_threshold",
+      "source_hash": "db5bd71cd78f8a37555c256d5aa1064675f5c6d6a3560b1af22518f20f98d9e9",
+      "baseline_hash": "a726da7b6d9633f9697021989f0d0b31305ee49f5c6eb519b34eca4ce3643364",
+      "uid": "77a226ea4a4b48da7b769984",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_owl_threshold|rpy_menu|r13_owl_threshold|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

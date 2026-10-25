@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/room13_v111_days610.rpy:459:8",
+      "file": "game/room13_v111_days610.rpy",
+      "path": [
+        23685,
+        23705
+      ],
+      "origin": "rpy_menu",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": "r13_v111_day7",
+      "placement": "literal",
+      "ref": "game/room13_v111_days610.rpy:459:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "아이들은 학교에서 기다리게 하자.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 459,
+          "label": "r13_v111_day7",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 459,
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "f011b8f5c19d05730644cea78bfeca82c00f7397382ee04ae91de01865360dde",
+      "baseline_hash": "1338af1ccf4658fb4bf9e4f35b45e60b460476851252d5572272c175d846de4b",
+      "uid": "d94e23a45d4ff0bcaae002cd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|rpy_menu|r13_v111_day7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_v111_days610.rpy:463:8",
+      "file": "game/room13_v111_days610.rpy",
+      "path": [
+        23869,
+        23882
+      ],
+      "origin": "rpy_menu",
+      "day": 7,
+      "scene": "MS14_D07_S01",
+      "block": "r13_v111_day7",
+      "placement": "literal",
+      "ref": "game/room13_v111_days610.rpy:463:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "여기서 계속 묻는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days610.rpy",
+          "line": 463,
+          "label": "r13_v111_day7",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 463,
+      "scene_title": "7-1. 오전 / 빨래터 — 내 아이들 몫",
+      "source_hash": "f011b8f5c19d05730644cea78bfeca82c00f7397382ee04ae91de01865360dde",
+      "baseline_hash": "6535198a3553eedfc7030ffab6efe6a103810722f7beb5b14607227e3e70532c",
+      "uid": "9714a97a66ba1f25a0bffa88",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d07|MS14_D07_S01|rpy_menu|r13_v111_day7|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

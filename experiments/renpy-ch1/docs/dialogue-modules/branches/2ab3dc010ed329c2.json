@@ -1,7 +1,47 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:156:42",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        9590,
+        9645
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_events",
+      "block": "r13_ws_events",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:156:42",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "긴 밤 뒤라 진료소가 어수선합니다. 약장에 새 자물쇠를 달았습니다. 열쇠는 제 목에만 있습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 156,
+          "label": "r13_ws_events",
+          "guards": [
+            "if _wsd==R13_WEEK2_DAY+1 and r13_has(\"seori_trust\") and not r13_has(\"ws_cabinet_locked\"):"
+          ]
+        }
+      ],
+      "line": 156,
+      "scene_title": "r13_ws_events",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "fb0c424693173d9f25f26094552629e58ba82b3f8c5b30e2874845d08ab664cb",
+      "uid": "a4ce8cda954d6219f8330f02",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_events|rpy_literal|r13_ws_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_ep5_soup.rpy:157:30",
       "file": "game/systems/room13_ep5_soup.rpy",

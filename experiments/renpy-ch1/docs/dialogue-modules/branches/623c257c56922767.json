@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/room13_v111_days123.rpy:611:26",
+      "file": "game/room13_v111_days123.rpy",
+      "path": [
+        28082,
+        28095
+      ],
+      "origin": "rpy_literal",
+      "day": 2,
+      "scene": "r13_v111_lamp_seen_2",
+      "block": "r13_v111_lamp_seen_2",
+      "placement": "literal",
+      "ref": "game/room13_v111_days123.rpy:611:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "피코의 담요는 얇다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 611,
+          "label": "r13_v111_lamp_seen_2",
+          "guards": []
+        }
+      ],
+      "line": 611,
+      "scene_title": "r13_v111_lamp_seen_2",
+      "source_hash": "456f94ff2e8310cc392465f4cf6e8b4751192ba306a52edeb7646cb6546fd0ef",
+      "baseline_hash": "4df9a44bdfe5d7b542764ccda8ce87a8f1b4283c1f53cea16c50589162d7140d",
+      "uid": "a1f4160a939fde84643b2f1c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d02|r13_v111_lamp_seen_2|rpy_literal|r13_v111_lamp_seen_2|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

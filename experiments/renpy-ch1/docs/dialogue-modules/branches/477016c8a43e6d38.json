@@ -1,0 +1,162 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_carryover.rpy:104:44",
+      "file": "game/systems/room13_carryover.rpy",
+      "path": [
+        6175,
+        6215
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_carry_vouch",
+      "block": "r13_carry_vouch",
+      "placement": "literal",
+      "ref": "game/systems/room13_carryover.rpy:104:44",
+      "when": null,
+      "speaker": "resident_teacher",
+      "kind": "dialogue",
+      "text": "보증해 줄 분이 있으면 데려오세요. 지금은 나쁜 소문밖에 안 들려요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_carryover.rpy",
+          "line": 104,
+          "label": "r13_carry_vouch",
+          "guards": [
+            "if not _v:"
+          ]
+        }
+      ],
+      "line": 104,
+      "scene_title": "r13_carry_vouch",
+      "source_hash": "f10306dfce96df81431a8d3c357b4d31023a0ef3afd42beef4d1a8184ca40d9d",
+      "baseline_hash": "f235e1d3a00a821268b9516e13051a6ba02c2f5b89402a0989a06fbb8958c20d",
+      "uid": "974a901546c3d94bf3e8d22e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_carry_vouch|rpy_literal|r13_carry_vouch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_carryover.rpy:105:19",
+      "file": "game/systems/room13_carryover.rpy",
+      "path": [
+        6237,
+        6280
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_carry_vouch",
+      "block": "r13_carry_vouch",
+      "placement": "literal",
+      "ref": "game/systems/room13_carryover.rpy:105:19",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(지난주에 나는 이 마을에서 나를 믿어 줄 사람을 하나도 만들지 못했다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_carryover.rpy",
+          "line": 105,
+          "label": "r13_carry_vouch",
+          "guards": [
+            "if not _v:"
+          ]
+        }
+      ],
+      "line": 105,
+      "scene_title": "r13_carry_vouch",
+      "source_hash": "f10306dfce96df81431a8d3c357b4d31023a0ef3afd42beef4d1a8184ca40d9d",
+      "baseline_hash": "6d521be9dff3d16ffd7aa26990dd6980cb4c1613ceefc90c5d4d1e93096861f4",
+      "uid": "52f27a4999dba6bcf0a9a5ce",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_carry_vouch|rpy_literal|r13_carry_vouch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_carryover.rpy:108:26",
+      "file": "game/systems/room13_carryover.rpy",
+      "path": [
+        6378,
+        6415
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_carry_vouch",
+      "block": "r13_carry_vouch",
+      "placement": "literal",
+      "ref": "game/systems/room13_carryover.rpy:108:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "이분은 제가 압니다. 소문이랑은 달라요. 지난주에 직접 봤어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_carryover.rpy",
+          "line": 108,
+          "label": "r13_carry_vouch",
+          "guards": []
+        }
+      ],
+      "line": 108,
+      "scene_title": "r13_carry_vouch",
+      "source_hash": "f10306dfce96df81431a8d3c357b4d31023a0ef3afd42beef4d1a8184ca40d9d",
+      "baseline_hash": "98e692347b2046a89e29c0e7526f4fa3c1cbfd57924704fc09fcaa550b73d684",
+      "uid": "8e5c4a7320453a2d1388fc0d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_carry_vouch|rpy_literal|r13_carry_vouch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_carryover.rpy:109:28",
+      "file": "game/systems/room13_carryover.rpy",
+      "path": [
+        6446,
+        6495
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_carry_vouch",
+      "block": "r13_carry_vouch",
+      "placement": "literal",
+      "ref": "game/systems/room13_carryover.rpy:109:28",
+      "when": null,
+      "speaker": "resident_teacher",
+      "kind": "dialogue",
+      "text": "……보증해 줄 분이 있다면요. 교실을 쓰세요. 다만 아이들 자리는 따로 남겨 두고요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_carryover.rpy",
+          "line": 109,
+          "label": "r13_carry_vouch",
+          "guards": []
+        }
+      ],
+      "line": 109,
+      "scene_title": "r13_carry_vouch",
+      "source_hash": "f10306dfce96df81431a8d3c357b4d31023a0ef3afd42beef4d1a8184ca40d9d",
+      "baseline_hash": "fcfd185d32a0fad545833400862684988dd566176798d22f8c102e178bc5f7ed",
+      "uid": "ba0cbb27f9907248d0ddac94",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_carry_vouch|rpy_literal|r13_carry_vouch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

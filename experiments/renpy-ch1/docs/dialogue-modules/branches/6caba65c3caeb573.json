@@ -1,0 +1,282 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_new_cast.rpy:269:26",
+      "file": "game/systems/room13_new_cast.rpy",
+      "path": [
+        17674,
+        17727
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_nc_mulgyeol_ice",
+      "block": "r13_nc_mulgyeol_ice",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_cast.rpy:269:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "쩍, 하는 소리와 함께 썰매 배 앞의 얼음이 갈라졌다. 물결이 밧줄을 붙잡은 채 미끄러진다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_cast.rpy",
+          "line": 269,
+          "label": "r13_nc_mulgyeol_ice",
+          "guards": []
+        }
+      ],
+      "line": 269,
+      "scene_title": "r13_nc_mulgyeol_ice",
+      "source_hash": "1ca2e2ca3bfab19cf96bff538f9165f970ad4d6405095ae9a5862a44f44e94db",
+      "baseline_hash": "3949ca21e1ea0961ca9401f9d4f4f1b03d7c981f107cb7718057da887a5704be",
+      "uid": "74ebeb5c1d1ed925ddcb9f1c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nc_mulgyeol_ice|rpy_literal|r13_nc_mulgyeol_ice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_cast.rpy:270:29",
+      "file": "game/systems/room13_new_cast.rpy",
+      "path": [
+        17759,
+        17778
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_nc_mulgyeol_ice",
+      "block": "r13_nc_mulgyeol_ice",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_cast.rpy:270:29",
+      "when": null,
+      "speaker": "resident_mulgyeol",
+      "kind": "dialogue",
+      "text": "밧줄! 밧줄 끝 좀 잡아 줘요!",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_cast.rpy",
+          "line": 270,
+          "label": "r13_nc_mulgyeol_ice",
+          "guards": []
+        }
+      ],
+      "line": 270,
+      "scene_title": "r13_nc_mulgyeol_ice",
+      "source_hash": "1ca2e2ca3bfab19cf96bff538f9165f970ad4d6405095ae9a5862a44f44e94db",
+      "baseline_hash": "f3d3fa557849e815c1fee690c1ea17775cfb9bb6bf4b821cd1ea2c50428ae85c",
+      "uid": "3a41bd18ae5fd8a12182a708",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nc_mulgyeol_ice|rpy_literal|r13_nc_mulgyeol_ice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_cast.rpy:273:34",
+      "file": "game/systems/room13_new_cast.rpy",
+      "path": [
+        17875,
+        17912
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_nc_mulgyeol_ice",
+      "block": "r13_nc_mulgyeol_ice",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_cast.rpy:273:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "밧줄을 힘껏 당기자 썰매 배가 단단한 얼음 위로 끌려 올라왔다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_cast.rpy",
+          "line": 273,
+          "label": "r13_nc_mulgyeol_ice",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 273,
+      "scene_title": "r13_nc_mulgyeol_ice",
+      "source_hash": "1ca2e2ca3bfab19cf96bff538f9165f970ad4d6405095ae9a5862a44f44e94db",
+      "baseline_hash": "ecbecaa907ec9e89b3637eb0edba426cfcc8657cafca7738d222553629c16f27",
+      "uid": "b2337e549ba616227dd41e65",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nc_mulgyeol_ice|rpy_literal|r13_nc_mulgyeol_ice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_cast.rpy:274:37",
+      "file": "game/systems/room13_new_cast.rpy",
+      "path": [
+        17952,
+        17987
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_nc_mulgyeol_ice",
+      "block": "r13_nc_mulgyeol_ice",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_cast.rpy:274:37",
+      "when": null,
+      "speaker": "resident_mulgyeol",
+      "kind": "dialogue",
+      "text": "……휴. 살았다. 고마워요. 이 은혜는 강가 일로 갚을게요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_cast.rpy",
+          "line": 274,
+          "label": "r13_nc_mulgyeol_ice",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 274,
+      "scene_title": "r13_nc_mulgyeol_ice",
+      "source_hash": "1ca2e2ca3bfab19cf96bff538f9165f970ad4d6405095ae9a5862a44f44e94db",
+      "baseline_hash": "17bc39d04ce9d5dd1016db17d816b1563c2df748d1dcd4e62b9ac11d078aa235",
+      "uid": "96c7b332c9b27a45cc01aeff",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nc_mulgyeol_ice|rpy_literal|r13_nc_mulgyeol_ice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_cast.rpy:275:37",
+      "file": "game/systems/room13_new_cast.rpy",
+      "path": [
+        18027,
+        18063
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_nc_mulgyeol_ice",
+      "block": "r13_nc_mulgyeol_ice",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_cast.rpy:275:37",
+      "when": null,
+      "speaker": "resident_mulgyeol",
+      "kind": "dialogue",
+      "text": "궁금한 거 있으면 물어봐요. 강가에서 본 건 다 말해 줄게요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_cast.rpy",
+          "line": 275,
+          "label": "r13_nc_mulgyeol_ice",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 275,
+      "scene_title": "r13_nc_mulgyeol_ice",
+      "source_hash": "1ca2e2ca3bfab19cf96bff538f9165f970ad4d6405095ae9a5862a44f44e94db",
+      "baseline_hash": "ad4850d6ae46fef40987b5dc191f0e39b53b2fb5e80b006bfd2ff6ca08248962",
+      "uid": "0baa8a77842793a04d0b05bb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nc_mulgyeol_ice|rpy_literal|r13_nc_mulgyeol_ice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_cast.rpy:278:34",
+      "file": "game/systems/room13_new_cast.rpy",
+      "path": [
+        18193,
+        18237
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_nc_mulgyeol_ice",
+      "block": "r13_nc_mulgyeol_ice",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_cast.rpy:278:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "꽥순을 데리고 돌아왔을 때 물결은 혼자 기어 올라와 젖은 몸을 떨고 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_cast.rpy",
+          "line": 278,
+          "label": "r13_nc_mulgyeol_ice",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 278,
+      "scene_title": "r13_nc_mulgyeol_ice",
+      "source_hash": "1ca2e2ca3bfab19cf96bff538f9165f970ad4d6405095ae9a5862a44f44e94db",
+      "baseline_hash": "5245f17841e8376d83235518e6606d9342bbdb86c05a79ea0216efdab795c8e7",
+      "uid": "8d67845253b54d73fa018533",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nc_mulgyeol_ice|rpy_literal|r13_nc_mulgyeol_ice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_cast.rpy:279:37",
+      "file": "game/systems/room13_new_cast.rpy",
+      "path": [
+        18277,
+        18313
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_nc_mulgyeol_ice",
+      "block": "r13_nc_mulgyeol_ice",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_cast.rpy:279:37",
+      "when": null,
+      "speaker": "resident_mulgyeol",
+      "kind": "dialogue",
+      "text": "……다음엔 그냥 밧줄을 잡아 줘요. 그래도 와 줘서 고마워요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_cast.rpy",
+          "line": 279,
+          "label": "r13_nc_mulgyeol_ice",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 279,
+      "scene_title": "r13_nc_mulgyeol_ice",
+      "source_hash": "1ca2e2ca3bfab19cf96bff538f9165f970ad4d6405095ae9a5862a44f44e94db",
+      "baseline_hash": "b8799275ea298ea67b58f5f6fec1a6ebe185016564d500bb49264cea00e98cad",
+      "uid": "d920f20a6c8e25122bbbaf5a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nc_mulgyeol_ice|rpy_literal|r13_nc_mulgyeol_ice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

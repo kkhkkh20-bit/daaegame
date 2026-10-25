@@ -1,0 +1,294 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_gimmicks.rpy:79:11",
+      "file": "game/systems/room13_gimmicks.rpy",
+      "path": [
+        4783,
+        4837
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_gm_package",
+      "block": "r13_gm_package",
+      "placement": "literal",
+      "ref": "game/systems/room13_gimmicks.rpy:79:11",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "잡화점 구석의 포장천 자루다. 장부에는 ‘바닥남’이라고 적힌 물건들이 이 근처에 쌓여 있었다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_gimmicks.rpy",
+          "line": 79,
+          "label": "r13_gm_package",
+          "guards": []
+        }
+      ],
+      "line": 79,
+      "scene_title": "r13_gm_package",
+      "source_hash": "a7934a16c859d49f7210cf9089b5edaccfdf3fba61af94c771454df8f9891eab",
+      "baseline_hash": "8241deeb160da5a932e255109a675af17f8c4d51a36bcadc4cf582805fbdd034",
+      "uid": "002946808952edd9008b5be1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_gm_package|rpy_inventory|r13_gm_package|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_gimmicks.rpy:82:144",
+      "file": "game/systems/room13_gimmicks.rpy",
+      "path": [
+        5041,
+        5047
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_gm_package",
+      "block": "r13_gm_package",
+      "placement": "literal",
+      "ref": "game/systems/room13_gimmicks.rpy:82:144",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "돌아간다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_gimmicks.rpy",
+          "line": 82,
+          "label": "r13_gm_package",
+          "guards": [
+            "while True:"
+          ]
+        }
+      ],
+      "line": 82,
+      "scene_title": "r13_gm_package",
+      "source_hash": "a7934a16c859d49f7210cf9089b5edaccfdf3fba61af94c771454df8f9891eab",
+      "baseline_hash": "d7b36828d73b322876ba5b595ab6ac22812d6628f6f25340a1a8fcf32d873719",
+      "uid": "e1277dd01c9c4f8115abb81b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_gm_package|rpy_inventory|r13_gm_package|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_gimmicks.rpy:88:23",
+      "file": "game/systems/room13_gimmicks.rpy",
+      "path": [
+        5275,
+        5317
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_gm_package",
+      "block": "r13_gm_package",
+      "placement": "literal",
+      "ref": "game/systems/room13_gimmicks.rpy:88:23",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "입구 쪽은 헐렁하다. 손을 넣어 보니 겉겨 섞인 곡식이 조금 들어 있다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_gimmicks.rpy",
+          "line": 88,
+          "label": "r13_gm_package",
+          "guards": [
+            "while True:",
+            "if _stage==\"closed\":",
+            "if _t==\"mouth\":"
+          ]
+        }
+      ],
+      "line": 88,
+      "scene_title": "r13_gm_package",
+      "source_hash": "a7934a16c859d49f7210cf9089b5edaccfdf3fba61af94c771454df8f9891eab",
+      "baseline_hash": "c99e616e3c9b93479012260f250691c31149a67aed728202542fb146d2870963",
+      "uid": "4fb757af0396456a19aab4e0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_gm_package|rpy_inventory|r13_gm_package|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_gimmicks.rpy:91:23",
+      "file": "game/systems/room13_gimmicks.rpy",
+      "path": [
+        5456,
+        5502
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_gm_package",
+      "block": "r13_gm_package",
+      "placement": "literal",
+      "ref": "game/systems/room13_gimmicks.rpy:91:23",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "칼끝으로 아래쪽 실밥만 끊었다. 천 아래에 나무 덮개가 보인다. 칼은 그대로다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_gimmicks.rpy",
+          "line": 91,
+          "label": "r13_gm_package",
+          "guards": [
+            "while True:",
+            "if _stage==\"closed\":",
+            "elif _tool==\"knife\":"
+          ]
+        }
+      ],
+      "line": 91,
+      "scene_title": "r13_gm_package",
+      "source_hash": "a7934a16c859d49f7210cf9089b5edaccfdf3fba61af94c771454df8f9891eab",
+      "baseline_hash": "74916a1e8c684be711c3f2b3642055c89c80f54c43307e2368d33baac01f20ce",
+      "uid": "6fbd0963d4a7e1412f48b478",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_gm_package|rpy_inventory|r13_gm_package|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_gimmicks.rpy:94:23",
+      "file": "game/systems/room13_gimmicks.rpy",
+      "path": [
+        5623,
+        5680
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_gm_package",
+      "block": "r13_gm_package",
+      "placement": "literal",
+      "ref": "game/systems/room13_gimmicks.rpy:94:23",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "아래쪽을 눌러 보았다. 곡식이 아니라 단단한 판에 손이 닿는다. 겉천 실밥은 다른 곳보다 새것이다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_gimmicks.rpy",
+          "line": 94,
+          "label": "r13_gm_package",
+          "guards": [
+            "while True:",
+            "if _stage==\"closed\":",
+            "else:"
+          ]
+        }
+      ],
+      "line": 94,
+      "scene_title": "r13_gm_package",
+      "source_hash": "a7934a16c859d49f7210cf9089b5edaccfdf3fba61af94c771454df8f9891eab",
+      "baseline_hash": "7d80cb028b9403e62025bc6e26a74dea8c84945e519d98729cee7d34ffb4e6ef",
+      "uid": "1135a82bcf41b7f8b3f345f8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_gm_package|rpy_inventory|r13_gm_package|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_gimmicks.rpy:98:23",
+      "file": "game/systems/room13_gimmicks.rpy",
+      "path": [
+        5848,
+        5889
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_gm_package",
+      "block": "r13_gm_package",
+      "placement": "literal",
+      "ref": "game/systems/room13_gimmicks.rpy:98:23",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "나무 덮개를 손으로 들어 올렸다. 아래에 무언가가 차곡차곡 들어 있다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_gimmicks.rpy",
+          "line": 98,
+          "label": "r13_gm_package",
+          "guards": [
+            "while True:",
+            "elif _stage==\"seam\":",
+            "if _t==\"insert\":"
+          ]
+        }
+      ],
+      "line": 98,
+      "scene_title": "r13_gm_package",
+      "source_hash": "a7934a16c859d49f7210cf9089b5edaccfdf3fba61af94c771454df8f9891eab",
+      "baseline_hash": "238a653da6be3e103619d637a54796f6a11f09fba4e185b13a5419ac21f5cb3e",
+      "uid": "4f738985e979f58b94c9d67c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_gm_package|rpy_inventory|r13_gm_package|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_gimmicks.rpy:100:23",
+      "file": "game/systems/room13_gimmicks.rpy",
+      "path": [
+        5931,
+        5963
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_gm_package",
+      "block": "r13_gm_package",
+      "placement": "literal",
+      "ref": "game/systems/room13_gimmicks.rpy:100:23",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "입구 쪽은 헐렁하다. 위에서 보면 평범한 곡식 자루다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_gimmicks.rpy",
+          "line": 100,
+          "label": "r13_gm_package",
+          "guards": [
+            "while True:",
+            "elif _stage==\"seam\":",
+            "else:"
+          ]
+        }
+      ],
+      "line": 100,
+      "scene_title": "r13_gm_package",
+      "source_hash": "a7934a16c859d49f7210cf9089b5edaccfdf3fba61af94c771454df8f9891eab",
+      "baseline_hash": "01130c0ca53786f3ce315471d051ad8c90257a1dd4fa30fcd14fc2e6b31b1909",
+      "uid": "58e87760d1a0c34678459f43",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_gm_package|rpy_inventory|r13_gm_package|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

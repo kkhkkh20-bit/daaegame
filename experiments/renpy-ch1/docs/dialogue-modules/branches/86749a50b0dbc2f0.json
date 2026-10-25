@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/room13_v111_days45.rpy:298:26",
+      "file": "game/room13_v111_days45.rpy",
+      "path": [
+        16316,
+        16345
+      ],
+      "origin": "rpy_literal",
+      "day": 4,
+      "scene": "r13_v111_bucket_seen4",
+      "block": "r13_v111_bucket_seen4",
+      "placement": "literal",
+      "ref": "game/room13_v111_days45.rpy:298:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "양동이가 엎어져 있다. 옆의 발자국도 겹쳐 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days45.rpy",
+          "line": 298,
+          "label": "r13_v111_bucket_seen4",
+          "guards": []
+        }
+      ],
+      "line": 298,
+      "scene_title": "r13_v111_bucket_seen4",
+      "source_hash": "27e28e6717bb04d2c845aba8f74ba5cb96e6bc0c38aa62f7b3f8a70c5df8d87e",
+      "baseline_hash": "1ab9685155e0331bec648df749c77e740600c6d5db58ab92a6a32a923747b2e6",
+      "uid": "7d43430ae6ef57bdb7723e2b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d04|r13_v111_bucket_seen4|rpy_literal|r13_v111_bucket_seen4|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

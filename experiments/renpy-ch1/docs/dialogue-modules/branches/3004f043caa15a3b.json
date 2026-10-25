@@ -1,0 +1,202 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:330:28",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        19272,
+        19316
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_teacher_talk",
+      "block": "r13_ws_teacher_talk",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:330:28",
+      "when": null,
+      "speaker": "resident_teacher",
+      "kind": "dialogue",
+      "text": "오늘 저녁은 수프를 끓이려고요. 아이들이 좋아하는 노래도 부르고. 따뜻하게.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 330,
+          "label": "r13_ws_teacher_talk",
+          "guards": []
+        }
+      ],
+      "line": 330,
+      "scene_title": "r13_ws_teacher_talk",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "bbcdd3d0e568b31ca34af13b2e5a307a626f38f2ccdaaea12fbf68d9ba40d1e0",
+      "uid": "5cff212af395bce381fc927e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_teacher_talk|rpy_literal|r13_ws_teacher_talk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:331:28",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        19347,
+        19400
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_teacher_talk",
+      "block": "r13_ws_teacher_talk",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:331:28",
+      "when": null,
+      "speaker": "resident_teacher",
+      "kind": "dialogue",
+      "text": "(아이들을 보며, 아주 작게) ……이제 아무도 추운 데로 안 보낼 겁니다. 제가 약속했어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 331,
+          "label": "r13_ws_teacher_talk",
+          "guards": []
+        }
+      ],
+      "line": 331,
+      "scene_title": "r13_ws_teacher_talk",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "8157faf016f50e12cd650442190cd68a6fdaea20b9a5b1406116ce3f799c3d6f",
+      "uid": "2a4e527970c8d352728e65e3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_teacher_talk|rpy_literal|r13_ws_teacher_talk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:333:31",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        19534,
+        19569
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_teacher_talk",
+      "block": "r13_ws_teacher_talk",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:333:31",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "선생님. 잠깐 이야기 좀 할 수 있을까요. 아이들 일이에요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 333,
+          "label": "r13_ws_teacher_talk",
+          "guards": [
+            "if r13_has(\"mom_reunited\") and r13_has(\"Y06\"):"
+          ]
+        }
+      ],
+      "line": 333,
+      "scene_title": "r13_ws_teacher_talk",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "f3e957e56783ed0829d44e4fc86b03e8b80c549ba330049b83946184c1b6c2d5",
+      "uid": "bbddcdac093f8f2a31442890",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_teacher_talk|rpy_literal|r13_ws_teacher_talk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:338:44",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        19746,
+        19762
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_teacher_talk",
+      "block": "r13_ws_teacher_talk",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:338:44",
+      "when": null,
+      "speaker": "resident_teacher",
+      "kind": "dialogue",
+      "text": "고맙습니다. 걱정 마세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 338,
+          "label": "r13_ws_teacher_talk",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 338,
+      "scene_title": "r13_ws_teacher_talk",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "4093ec0810395699fbc36000fa8428dfa3d34c42d88f68197946d6aa57e97f52",
+      "uid": "68a01482b46ab9329c0d25f5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_teacher_talk|rpy_literal|r13_ws_teacher_talk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:339:19",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        19784,
+        19805
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_teacher_talk",
+      "block": "r13_ws_teacher_talk",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:339:19",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(다정한 말인데, 등이 서늘하다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 339,
+          "label": "r13_ws_teacher_talk",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 339,
+      "scene_title": "r13_ws_teacher_talk",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "8205dd3fd328a2ff8992bcd1b3dfd0d9c3c463912e069ed2b155aaaca9789f63",
+      "uid": "c349b78ed53b09964bce45a4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_teacher_talk|rpy_literal|r13_ws_teacher_talk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

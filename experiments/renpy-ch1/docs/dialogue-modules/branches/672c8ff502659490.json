@@ -1,7 +1,135 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_life_closeups.rpy:156:43",
+      "file": "game/systems/room13_life_closeups.rpy",
+      "path": [
+        8716,
+        8747
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_life_door",
+      "block": "r13_life_door",
+      "placement": "literal",
+      "ref": "game/systems/room13_life_closeups.rpy:156:43",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "현관 바닥에 둔 이 낡은 천, 잠깐 써도 되겠습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_life_closeups.rpy",
+          "line": 156,
+          "label": "r13_life_door",
+          "guards": [
+            "while True:",
+            "if _return[0]==\"look\":",
+            "elif _t==\"cloth\" and not _dr_sealed:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 156,
+      "scene_title": "r13_life_door",
+      "source_hash": "ff9e09dda506d96806b7e62ed92cf7d8c9b9dca5fa0547afc1d000e4ca902e0b",
+      "baseline_hash": "d9d67eddb30e6ded3ac3650090e0619646eb99fc17cbdcd7f2f14542a7c0dd77",
+      "uid": "77cf9b5217ef8cc80151c82f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_door|rpy_literal|r13_life_door|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_life_closeups.rpy:157:34",
+      "file": "game/systems/room13_life_closeups.rpy",
+      "path": [
+        8784,
+        8805
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_life_door",
+      "block": "r13_life_door",
+      "placement": "literal",
+      "ref": "game/systems/room13_life_closeups.rpy:157:34",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "그거요? 버리려던 거예요. 쓰세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_life_closeups.rpy",
+          "line": 157,
+          "label": "r13_life_door",
+          "guards": [
+            "while True:",
+            "if _return[0]==\"look\":",
+            "elif _t==\"cloth\" and not _dr_sealed:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 157,
+      "scene_title": "r13_life_door",
+      "source_hash": "ff9e09dda506d96806b7e62ed92cf7d8c9b9dca5fa0547afc1d000e4ca902e0b",
+      "baseline_hash": "7957442704ca097f3acdd9a649204562ae81caeba6f2aebddfaff84cada9b1b4",
+      "uid": "c1c1ac69740a0198e508a28d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_door|rpy_literal|r13_life_door|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_life_closeups.rpy:166:38",
+      "file": "game/systems/room13_life_closeups.rpy",
+      "path": [
+        9225,
+        9279
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_life_door",
+      "block": "r13_life_door",
+      "placement": "literal",
+      "ref": "game/systems/room13_life_closeups.rpy:166:38",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "천을 길게 말아 문 아래 틈에 대었다. 문을 열어 보니 천이 함께 밀렸다가 제자리로 돌아왔다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_life_closeups.rpy",
+          "line": 166,
+          "label": "r13_life_door",
+          "guards": [
+            "while True:",
+            "else:",
+            "if _return[1]==\"cloth\" and _return[2] in (\"draft_gap\",\"door\") and not _dr_sealed:"
+          ]
+        }
+      ],
+      "line": 166,
+      "scene_title": "r13_life_door",
+      "source_hash": "ff9e09dda506d96806b7e62ed92cf7d8c9b9dca5fa0547afc1d000e4ca902e0b",
+      "baseline_hash": "fa71c377d7758204bddb2499b786d317948323327cbd707461fd01e28a3af3cf",
+      "uid": "85d8281bb0bf715f1f8160f7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_door|rpy_literal|r13_life_door|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_life_closeups.rpy:167:30",
       "file": "game/systems/room13_life_closeups.rpy",

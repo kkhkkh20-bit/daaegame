@@ -1,7 +1,45 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_new_cast.rpy:296:42",
+      "file": "game/systems/room13_new_cast.rpy",
+      "path": [
+        19072,
+        19113
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_nc_dalgeurak_news",
+      "block": "r13_nc_dalgeurak_news",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_cast.rpy:296:42",
+      "when": null,
+      "speaker": "resident_dalgeurak",
+      "kind": "dialogue",
+      "text": "바깥 소식이오, 바깥 소식! 한 냥이면 고개 너머 이야기를 들려드리지!",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_cast.rpy",
+          "line": 296,
+          "label": "r13_nc_dalgeurak_news",
+          "guards": []
+        }
+      ],
+      "line": 296,
+      "scene_title": "r13_nc_dalgeurak_news",
+      "source_hash": "1ca2e2ca3bfab19cf96bff538f9165f970ad4d6405095ae9a5862a44f44e94db",
+      "baseline_hash": "073b19119d36ea7679d130219ee4cd09e49d4804b88be855a73eaaed39895772",
+      "uid": "d922db6e51cd168b183a3b55",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nc_dalgeurak_news|rpy_literal|r13_nc_dalgeurak_news|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_new_cast.rpy:300:50",
       "file": "game/systems/room13_new_cast.rpy",
@@ -37,6 +75,86 @@
       "source_hash": "1ca2e2ca3bfab19cf96bff538f9165f970ad4d6405095ae9a5862a44f44e94db",
       "baseline_hash": "3b4fb2c797856df5daa61f2f593246efc96604dd85cd545f324d67b4459c14fe",
       "uid": "6e76db2c607bcb9ea630e9a6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nc_dalgeurak_news|rpy_literal|r13_nc_dalgeurak_news|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_cast.rpy:301:38",
+      "file": "game/systems/room13_new_cast.rpy",
+      "path": [
+        19369,
+        19424
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_nc_dalgeurak_news",
+      "block": "r13_nc_dalgeurak_news",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_cast.rpy:301:38",
+      "when": null,
+      "speaker": "resident_dalgeurak",
+      "kind": "dialogue",
+      "text": "그리고 고개 아래 마을에선 이 마을 이름만 나와도 고개를 돌리더이다. 해마다 사람이 줄어든다고.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_cast.rpy",
+          "line": 301,
+          "label": "r13_nc_dalgeurak_news",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 301,
+      "scene_title": "r13_nc_dalgeurak_news",
+      "source_hash": "1ca2e2ca3bfab19cf96bff538f9165f970ad4d6405095ae9a5862a44f44e94db",
+      "baseline_hash": "f2fb152ae130263b13abe4a1107653915adc16846a160a595b46cda61235ed7b",
+      "uid": "1a4b24e3ba29a6e1b8a0ba5c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nc_dalgeurak_news|rpy_literal|r13_nc_dalgeurak_news|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_cast.rpy:302:23",
+      "file": "game/systems/room13_new_cast.rpy",
+      "path": [
+        19450,
+        19481
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_nc_dalgeurak_news",
+      "block": "r13_nc_dalgeurak_news",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_cast.rpy:302:23",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(바깥에서도 이 마을이 이상하다는 걸 알고 있었다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_cast.rpy",
+          "line": 302,
+          "label": "r13_nc_dalgeurak_news",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 302,
+      "scene_title": "r13_nc_dalgeurak_news",
+      "source_hash": "1ca2e2ca3bfab19cf96bff538f9165f970ad4d6405095ae9a5862a44f44e94db",
+      "baseline_hash": "aeaf4fcb9a55caf917d4cd4d4f01bdb1bbf41d81d067ad3c6cadeb617e1b85a2",
+      "uid": "9ccc549a2ddfa01f31b06bb6",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_nc_dalgeurak_news|rpy_literal|r13_nc_dalgeurak_news|행 조건 없음",

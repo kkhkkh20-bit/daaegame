@@ -1,0 +1,174 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/story.rpy:389:16",
+      "file": "game/story.rpy",
+      "path": [
+        14155,
+        14166
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "council_evidence",
+      "block": "council_evidence",
+      "placement": "literal",
+      "ref": "game/story.rpy:389:16",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "첫눈이 내린 자정",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/story.rpy",
+          "line": 389,
+          "label": "council_evidence",
+          "guards": [
+            "elif speaker in (\"bami\",\"doto\") and evidence_choice in (\"clock\",\"snow\",\"bami\"):",
+            "else:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 389,
+      "scene_title": "council_evidence",
+      "source_hash": "f80d7c11bcc5cbd41c2c14cdcbbd42a9dd944b4719a4552fdd392a29341d5aed",
+      "baseline_hash": "0a0b053804acd4702249b553b0bbfbef015d1849c026db13acf645f76102ca4e",
+      "uid": "e9f1917f5c72b4d5a87f18a5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|council_evidence|rpy_menu|council_evidence|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/story.rpy:391:16",
+      "file": "game/story.rpy",
+      "path": [
+        14209,
+        14220
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "council_evidence",
+      "block": "council_evidence",
+      "placement": "literal",
+      "ref": "game/story.rpy:391:16",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "아침 여섯 시 반",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/story.rpy",
+          "line": 391,
+          "label": "council_evidence",
+          "guards": [
+            "elif speaker in (\"bami\",\"doto\") and evidence_choice in (\"clock\",\"snow\",\"bami\"):",
+            "else:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 391,
+      "scene_title": "council_evidence",
+      "source_hash": "f80d7c11bcc5cbd41c2c14cdcbbd42a9dd944b4719a4552fdd392a29341d5aed",
+      "baseline_hash": "ddba2174eb614daf6e229e4cf523512bfda05ce580b9400065e9b4309f7df730",
+      "uid": "a6cf166c5e2c0f2863631dde",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|council_evidence|rpy_menu|council_evidence|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/story.rpy:419:16",
+      "file": "game/story.rpy",
+      "path": [
+        15440,
+        15459
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "council_evidence",
+      "block": "council_evidence",
+      "placement": "literal",
+      "ref": "game/story.rpy:419:16",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "주머니의 도장이 솜솜에게 닿았다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/story.rpy",
+          "line": 419,
+          "label": "council_evidence",
+          "guards": [
+            "elif speaker == \"seryeon\" and evidence_choice in (\"pouch\",\"fur\",\"seal\"):",
+            "else:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 419,
+      "scene_title": "council_evidence",
+      "source_hash": "f80d7c11bcc5cbd41c2c14cdcbbd42a9dd944b4719a4552fdd392a29341d5aed",
+      "baseline_hash": "144c3d23f7a26fd3c035e6ced0033adcac557818ffbcaa3d5be32d4540710de4",
+      "uid": "ae23da4c41afc77fa71308c3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|council_evidence|rpy_menu|council_evidence|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/story.rpy:421:16",
+      "file": "game/story.rpy",
+      "path": [
+        15502,
+        15517
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "council_evidence",
+      "block": "council_evidence",
+      "placement": "literal",
+      "ref": "game/story.rpy:421:16",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "세련이 이백 냥을 훔쳤다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/story.rpy",
+          "line": 421,
+          "label": "council_evidence",
+          "guards": [
+            "elif speaker == \"seryeon\" and evidence_choice in (\"pouch\",\"fur\",\"seal\"):",
+            "else:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 421,
+      "scene_title": "council_evidence",
+      "source_hash": "f80d7c11bcc5cbd41c2c14cdcbbd42a9dd944b4719a4552fdd392a29341d5aed",
+      "baseline_hash": "66e0eb05bfb1ce32ed9b03b86b142b33af6d0b16d09f6ecb13f851559e1860c4",
+      "uid": "c6c39df8dce3589b5bb51a7c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|council_evidence|rpy_menu|council_evidence|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

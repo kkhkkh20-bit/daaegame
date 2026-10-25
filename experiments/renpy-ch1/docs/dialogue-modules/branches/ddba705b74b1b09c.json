@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_sling_confidence.rpy:106:8",
+      "file": "game/systems/room13_sling_confidence.rpy",
+      "path": [
+        6053,
+        6068
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_sling_earned_confront",
+      "block": "r13_sling_earned_confront",
+      "placement": "literal",
+      "ref": "game/systems/room13_sling_confidence.rpy:106:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "편지 일을 끝까지 듣는다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_sling_confidence.rpy",
+          "line": 106,
+          "label": "r13_sling_earned_confront",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 106,
+      "scene_title": "r13_sling_earned_confront",
+      "source_hash": "7cef4bb3376c2e30151d6e4ff2356175ccb70833018e4d4ecc2e208013214abc",
+      "baseline_hash": "207c197f1b9458a2ef353aa4422ad318347ae54741ab5f1e7a40d2949f06b969",
+      "uid": "3b6427a1b48ec96281fda6bb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_sling_earned_confront|rpy_menu|r13_sling_earned_confront|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_sling_confidence.rpy:117:8",
+      "file": "game/systems/room13_sling_confidence.rpy",
+      "path": [
+        6675,
+        6689
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_sling_earned_confront",
+      "block": "r13_sling_earned_confront",
+      "placement": "literal",
+      "ref": "game/systems/room13_sling_confidence.rpy:117:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "지금은 더 묻지 않는다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_sling_confidence.rpy",
+          "line": 117,
+          "label": "r13_sling_earned_confront",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 117,
+      "scene_title": "r13_sling_earned_confront",
+      "source_hash": "7cef4bb3376c2e30151d6e4ff2356175ccb70833018e4d4ecc2e208013214abc",
+      "baseline_hash": "756ff5f58cefa293525601282a68423ce18e232fe917fc7d9709ffea87de2141",
+      "uid": "8b73aec90acd7207f2c70ac6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_sling_earned_confront|rpy_menu|r13_sling_earned_confront|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

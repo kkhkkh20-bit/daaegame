@@ -1,7 +1,159 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/room13.rpy:730:31",
+      "file": "game/room13.rpy",
+      "path": [
+        42947,
+        42989
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_prevention_hearing",
+      "block": "r13_prevention_hearing",
+      "placement": "literal",
+      "ref": "game/room13.rpy:730:31",
+      "when": null,
+      "speaker": "seryeon",
+      "kind": "dialogue",
+      "text": "아이가 함께 들어왔다는 기록과, 따로 맡아 달라는 요청을 확인하겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 730,
+          "label": "r13_prevention_hearing",
+          "guards": []
+        }
+      ],
+      "line": 730,
+      "scene_title": "r13_prevention_hearing",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "36c25543b3aa0c73244b582b2435e824f34873df6b3b8a7239c6dadaee383df2",
+      "uid": "db65e3af519514150b33666a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_prevention_hearing|rpy_literal|r13_prevention_hearing|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:730:93",
+      "file": "game/room13.rpy",
+      "path": [
+        43009,
+        43066
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_prevention_hearing",
+      "block": "r13_prevention_hearing",
+      "placement": "literal",
+      "ref": "game/room13.rpy:730:93",
+      "when": null,
+      "speaker": "resident_owlgp",
+      "kind": "dialogue",
+      "text": "아이는 나와 함께 있었소. 죽은 사람도, 아이가 저지른 살인도 없소. 없는 사건을 만들지는 맙시다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 730,
+          "label": "r13_prevention_hearing",
+          "guards": []
+        }
+      ],
+      "line": 730,
+      "scene_title": "r13_prevention_hearing",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "722be60747c24a2623a35569c6d3c1b4dd5c92e891b3899e11a76007cb36ec6e",
+      "uid": "18c87448c443e5995edd7ad7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_prevention_hearing|rpy_literal|r13_prevention_hearing|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:730:162",
+      "file": "game/room13.rpy",
+      "path": [
+        43078,
+        43109
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_prevention_hearing",
+      "block": "r13_prevention_hearing",
+      "placement": "literal",
+      "ref": "game/room13.rpy:730:162",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "낯선 아이를 가족과 따로 떼어 보호하자는 뜻이었어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 730,
+          "label": "r13_prevention_hearing",
+          "guards": []
+        }
+      ],
+      "line": 730,
+      "scene_title": "r13_prevention_hearing",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "5de1d1b43e9592a5b167e61604020af839999b7d4f61a89f8453dc32d53a1bcd",
+      "uid": "4fab68c680f034330e961a12",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_prevention_hearing|rpy_literal|r13_prevention_hearing|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:730:202",
+      "file": "game/room13.rpy",
+      "path": [
+        43118,
+        43163
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_prevention_hearing",
+      "block": "r13_prevention_hearing",
+      "placement": "literal",
+      "ref": "game/room13.rpy:730:202",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "아이 보호자는 여기 있습니다. 마을 입구 초소에서 함께 등록한 원본도 있고요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 730,
+          "label": "r13_prevention_hearing",
+          "guards": []
+        }
+      ],
+      "line": 730,
+      "scene_title": "r13_prevention_hearing",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "57c2f0da48182519d24b770ed3910351f16d9fe3d6deaf31a8d78a6dec503e92",
+      "uid": "bd73cbbf6f6d1aae6aad2a7e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_prevention_hearing|rpy_literal|r13_prevention_hearing|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/room13.rpy:735:50",
       "file": "game/room13.rpy",
@@ -79,6 +231,127 @@
       "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
       "baseline_hash": "17a848ff222d35e0e61ae08b3c2f84eadf62f87aaf182451ccacc25ecbaa1e6c",
       "uid": "8d2f9bd7c0bd5a384a1d4421",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_prevention_hearing|rpy_literal|r13_prevention_hearing|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:737:102",
+      "file": "game/room13.rpy",
+      "path": [
+        43598,
+        43648
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_prevention_hearing",
+      "block": "r13_prevention_hearing",
+      "placement": "literal",
+      "ref": "game/room13.rpy:737:102",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "초소 담당자를 불러 원본을 확인했다. 그동안 우리 부녀는 떨어지지 않고 함께 기다렸다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 737,
+          "label": "r13_prevention_hearing",
+          "guards": [
+            "menu:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 737,
+      "scene_title": "r13_prevention_hearing",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "485bd0ec845db19d78a69870065457d1f9437316b946849443ceadac2962c3fc",
+      "uid": "0b87ffe702c1a105465911fe",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_prevention_hearing|rpy_literal|r13_prevention_hearing|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:739:46",
+      "file": "game/room13.rpy",
+      "path": [
+        43761,
+        43804
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_prevention_hearing",
+      "block": "r13_prevention_hearing",
+      "placement": "literal",
+      "ref": "game/room13.rpy:739:46",
+      "when": null,
+      "speaker": "resident_owlgp",
+      "kind": "dialogue",
+      "text": "그날 아이는 나와 같이 있었소. 원본과 그걸 확인한 사람을 함께 부르시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 739,
+          "label": "r13_prevention_hearing",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 739,
+      "scene_title": "r13_prevention_hearing",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "c0ffd4a63ddc1be4406857b565078e12c0b1d2c14157183e40fab50d8bbc1985",
+      "uid": "bf6d4d15852e88ecb6f10f28",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_prevention_hearing|rpy_literal|r13_prevention_hearing|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:739:109",
+      "file": "game/room13.rpy",
+      "path": [
+        43824,
+        43862
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_prevention_hearing",
+      "block": "r13_prevention_hearing",
+      "placement": "literal",
+      "ref": "game/room13.rpy:739:109",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "사람들 앞에서 원본을 대조하기 전까지 가족을 떼어 놓지 마십시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 739,
+          "label": "r13_prevention_hearing",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 739,
+      "scene_title": "r13_prevention_hearing",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "ebe7c198f92d33676a92bf036bcbb4476f89d4d055506b8acbd81832257f9d8a",
+      "uid": "2cbb2bf23ccf4d49e3972e34",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_prevention_hearing|rpy_literal|r13_prevention_hearing|행 조건 없음",

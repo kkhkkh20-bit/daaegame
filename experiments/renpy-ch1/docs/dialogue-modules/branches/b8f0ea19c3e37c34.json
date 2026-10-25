@@ -1,0 +1,82 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_q1_arguments.rpy:312:29",
+      "file": "game/systems/room13_q1_arguments.rpy",
+      "path": [
+        18496,
+        18521
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_q1_argument_failure",
+      "block": "r13_q1_argument_failure",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_arguments.rpy:312:29",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "이 회의에서 톡의 처분을 바꾸지는 않겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_arguments.rpy",
+          "line": 312,
+          "label": "r13_q1_argument_failure",
+          "guards": []
+        }
+      ],
+      "line": 312,
+      "scene_title": "r13_q1_argument_failure",
+      "source_hash": "8289e6e0adc4c6de94e5f0acadafcaced13c74af938b712712356a7bd5a6fa22",
+      "baseline_hash": "0cdebb4983364a9fb75a61a38116763e6c73dd3fbb9ffb9bc4b6a583449b9df4",
+      "uid": "d763d05a2887617db2eae0ac",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_q1_argument_failure|rpy_literal|r13_q1_argument_failure|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_q1_arguments.rpy:312:62",
+      "file": "game/systems/room13_q1_arguments.rpy",
+      "path": [
+        18529,
+        18552
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_q1_argument_failure",
+      "block": "r13_q1_argument_failure",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_arguments.rpy:312:62",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "톡이 끌려가며 수리점 쪽을 돌아보았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_arguments.rpy",
+          "line": 312,
+          "label": "r13_q1_argument_failure",
+          "guards": []
+        }
+      ],
+      "line": 312,
+      "scene_title": "r13_q1_argument_failure",
+      "source_hash": "8289e6e0adc4c6de94e5f0acadafcaced13c74af938b712712356a7bd5a6fa22",
+      "baseline_hash": "751b805978df5fe71dfe82fe421d02f6670ad9ad972cc1759785c8a46d6d596b",
+      "uid": "ed001af8d4042138e13eff79",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_q1_argument_failure|rpy_literal|r13_q1_argument_failure|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,7 +1,685 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/room13_v111.rpy:492:31",
+      "file": "game/room13_v111.rpy",
+      "path": [
+        33066,
+        33084
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_v111_travel",
+      "block": "r13_v111_travel",
+      "placement": "literal",
+      "ref": "game/room13_v111.rpy:492:31",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "다람이 이어 그린 엄마의 초상",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_v111.rpy",
+          "line": 492,
+          "label": "r13_v111_travel",
+          "guards": [
+            "if key==\"V111:E09\":",
+            "if portrait==\"child_completed\":"
+          ]
+        }
+      ],
+      "line": 492,
+      "scene_title": "r13_v111_travel",
+      "source_hash": "efe9e588eaaa5dabb748fd34f13f6ac736d7d0b6064487f12e951ff4d422eddd",
+      "baseline_hash": "0bb8909d63cc2c59dfcc28bfa920185150fdb840abcac1fc3e9a4d8d05bd8d62",
+      "uid": "e65ad653f8a0fe7a86f2aed2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_v111_travel|rpy_inventory|r13_v111_travel|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_v111.rpy:493:38",
+      "file": "game/room13_v111.rpy",
+      "path": [
+        33123,
+        33166
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_v111_travel",
+      "block": "r13_v111_travel",
+      "placement": "literal",
+      "ref": "game/room13_v111.rpy:493:38",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "다람이 빈 코를 이어 그렸다. 피코가 완성한 초상이나 목격 증언은 아니다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_v111.rpy",
+          "line": 493,
+          "label": "r13_v111_travel",
+          "guards": [
+            "if key==\"V111:E09\":",
+            "if portrait==\"child_completed\":"
+          ]
+        }
+      ],
+      "line": 493,
+      "scene_title": "r13_v111_travel",
+      "source_hash": "efe9e588eaaa5dabb748fd34f13f6ac736d7d0b6064487f12e951ff4d422eddd",
+      "baseline_hash": "62e85042827417220b5f4fc28f8448ecf6ae75569f9bb568fdb907a83c130d78",
+      "uid": "2024e9da1468fa78a13d39b2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_v111_travel|rpy_inventory|r13_v111_travel|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_v111.rpy:495:31",
+      "file": "game/room13_v111.rpy",
+      "path": [
+        33238,
+        33252
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_v111_travel",
+      "block": "r13_v111_travel",
+      "placement": "literal",
+      "ref": "game/room13_v111.rpy:495:31",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "엄마의 초상 · 미완성",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_v111.rpy",
+          "line": 495,
+          "label": "r13_v111_travel",
+          "guards": [
+            "if key==\"V111:E09\":",
+            "elif variant==\"unfinished\":"
+          ]
+        }
+      ],
+      "line": 495,
+      "scene_title": "r13_v111_travel",
+      "source_hash": "efe9e588eaaa5dabb748fd34f13f6ac736d7d0b6064487f12e951ff4d422eddd",
+      "baseline_hash": "f466c1b7c5ad3a2669f09873eeddcc412038bf443558b122d196e7bdd9abe605",
+      "uid": "c2e8e609f633fbe06074d02d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_v111_travel|rpy_inventory|r13_v111_travel|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_v111.rpy:496:38",
+      "file": "game/room13_v111.rpy",
+      "path": [
+        33291,
+        33326
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_v111_travel",
+      "block": "r13_v111_travel",
+      "placement": "literal",
+      "ref": "game/room13_v111.rpy:496:38",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "눈과 입이 그려져 있고, 코가 있어야 할 자리는 비어 있다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_v111.rpy",
+          "line": 496,
+          "label": "r13_v111_travel",
+          "guards": [
+            "if key==\"V111:E09\":",
+            "elif variant==\"unfinished\":"
+          ]
+        }
+      ],
+      "line": 496,
+      "scene_title": "r13_v111_travel",
+      "source_hash": "efe9e588eaaa5dabb748fd34f13f6ac736d7d0b6064487f12e951ff4d422eddd",
+      "baseline_hash": "a5f1f772f335d82f528cc20a405709f81fb574fecf360d41e2725f3f58d7b263",
+      "uid": "3d72d454b9b875b6c98afa0b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_v111_travel|rpy_inventory|r13_v111_travel|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_v111.rpy:498:31",
+      "file": "game/room13_v111.rpy",
+      "path": [
+        33376,
+        33389
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_v111_travel",
+      "block": "r13_v111_travel",
+      "placement": "literal",
+      "ref": "game/room13_v111.rpy:498:31",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "엄마의 초상 · 완성",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_v111.rpy",
+          "line": 498,
+          "label": "r13_v111_travel",
+          "guards": [
+            "if key==\"V111:E09\":",
+            "else:"
+          ]
+        }
+      ],
+      "line": 498,
+      "scene_title": "r13_v111_travel",
+      "source_hash": "efe9e588eaaa5dabb748fd34f13f6ac736d7d0b6064487f12e951ff4d422eddd",
+      "baseline_hash": "cebb69d61b2e5a9155c67ef3881f8998e9d31fc75aff134f0dcd997e981eef63",
+      "uid": "0766d0fefb5849aa9c0bbe40",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_v111_travel|rpy_inventory|r13_v111_travel|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_v111.rpy:499:38",
+      "file": "game/room13_v111.rpy",
+      "path": [
+        33428,
+        33482
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_v111_travel",
+      "block": "r13_v111_travel",
+      "placement": "literal",
+      "ref": "game/room13_v111.rpy:499:38",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "피코가 완성해 건네준 엄마의 초상. 등 절도 순간은 피코가 식당 안에 있었으므로 보지 못했다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_v111.rpy",
+          "line": 499,
+          "label": "r13_v111_travel",
+          "guards": [
+            "if key==\"V111:E09\":",
+            "else:"
+          ]
+        }
+      ],
+      "line": 499,
+      "scene_title": "r13_v111_travel",
+      "source_hash": "efe9e588eaaa5dabb748fd34f13f6ac736d7d0b6064487f12e951ff4d422eddd",
+      "baseline_hash": "5b717eff82bc58e6420774fb2a08c479a04356ff0be7c8b0575a87de507966c4",
+      "uid": "337582206c1b7e270f0b11b7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_v111_travel|rpy_inventory|r13_v111_travel|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_v111.rpy:502:35",
+      "file": "game/room13_v111.rpy",
+      "path": [
+        33587,
+        33651
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_v111_travel",
+      "block": "r13_v111_travel",
+      "placement": "literal",
+      "ref": "game/room13_v111.rpy:502:35",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "아빠와 까로가 운반한 장작 묶음을 선생님이 인수했고, 학교에서 실제로 때고 있다. 쓴 양과 남은 양을 확인했다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_v111.rpy",
+          "line": 502,
+          "label": "r13_v111_travel",
+          "guards": [
+            "elif key==\"V111:E14_SUPPLY\":"
+          ]
+        }
+      ],
+      "line": 502,
+      "scene_title": "r13_v111_travel",
+      "source_hash": "efe9e588eaaa5dabb748fd34f13f6ac736d7d0b6064487f12e951ff4d422eddd",
+      "baseline_hash": "59b7c45995c0171e1c4801271234f687149c4e987e7b4d3886ccd3a24fecfe1d",
+      "uid": "bc9184d2ab66c8a370ffcc61",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_v111_travel|rpy_inventory|r13_v111_travel|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_v111.rpy:502:148",
+      "file": "game/room13_v111.rpy",
+      "path": [
+        33700,
+        33750
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_v111_travel",
+      "block": "r13_v111_travel",
+      "placement": "literal",
+      "ref": "game/room13_v111.rpy:502:148",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "아빠와 까로가 운반한 장작 묶음을 선생님이 인수했다. 오늘 밤 쓸 양은 따로 확인한다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_v111.rpy",
+          "line": 502,
+          "label": "r13_v111_travel",
+          "guards": [
+            "elif key==\"V111:E14_SUPPLY\":"
+          ]
+        }
+      ],
+      "line": 502,
+      "scene_title": "r13_v111_travel",
+      "source_hash": "efe9e588eaaa5dabb748fd34f13f6ac736d7d0b6064487f12e951ff4d422eddd",
+      "baseline_hash": "49198ff1792cba2f30f02db1ef9e548332ec6c38dadc43fd642a0c4ac577d55f",
+      "uid": "e5d086ff0fc183eb39cc01ae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_v111_travel|rpy_inventory|r13_v111_travel|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_v111.rpy:506:27",
+      "file": "game/room13_v111.rpy",
+      "path": [
+        33923,
+        33933
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_v111_travel",
+      "block": "r13_v111_travel",
+      "placement": "literal",
+      "ref": "game/room13_v111.rpy:506:27",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "가족 침구 · ",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_v111.rpy",
+          "line": 506,
+          "label": "r13_v111_travel",
+          "guards": [
+            "elif key==\"V111:E35\":"
+          ]
+        }
+      ],
+      "line": 506,
+      "scene_title": "r13_v111_travel",
+      "source_hash": "efe9e588eaaa5dabb748fd34f13f6ac736d7d0b6064487f12e951ff4d422eddd",
+      "baseline_hash": "f88e2411b076b73c714219177ed4babfff04a7b82be750efa00e674154f42700",
+      "uid": "69a0ecdab8f5c6f994d1b869",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_v111_travel|rpy_inventory|r13_v111_travel|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_v111.rpy:506:39",
+      "file": "game/room13_v111.rpy",
+      "path": [
+        33935,
+        33942
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_v111_travel",
+      "block": "r13_v111_travel",
+      "placement": "literal",
+      "ref": "game/room13_v111.rpy:506:39",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "수령 완료",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_v111.rpy",
+          "line": 506,
+          "label": "r13_v111_travel",
+          "guards": [
+            "elif key==\"V111:E35\":"
+          ]
+        }
+      ],
+      "line": 506,
+      "scene_title": "r13_v111_travel",
+      "source_hash": "efe9e588eaaa5dabb748fd34f13f6ac736d7d0b6064487f12e951ff4d422eddd",
+      "baseline_hash": "123884044d56d6f1eeb914929f2110996488f59aa121454288e5190bab7404b1",
+      "uid": "1a26fe6c88ce7db28bf3ebce",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_v111_travel|rpy_inventory|r13_v111_travel|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_v111.rpy:506:64",
+      "file": "game/room13_v111.rpy",
+      "path": [
+        33960,
+        33964
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_v111_travel",
+      "block": "r13_v111_travel",
+      "placement": "literal",
+      "ref": "game/room13_v111.rpy:506:64",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "예약",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_v111.rpy",
+          "line": 506,
+          "label": "r13_v111_travel",
+          "guards": [
+            "elif key==\"V111:E35\":"
+          ]
+        }
+      ],
+      "line": 506,
+      "scene_title": "r13_v111_travel",
+      "source_hash": "efe9e588eaaa5dabb748fd34f13f6ac736d7d0b6064487f12e951ff4d422eddd",
+      "baseline_hash": "a04df23492bdcfa7ff7ba9dc1ac0e5406db351840a01733f34d1100a02fa05d2",
+      "uid": "eb6030509083d46bc05dd98d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_v111_travel|rpy_inventory|r13_v111_travel|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_v111.rpy:507:34",
+      "file": "game/room13_v111.rpy",
+      "path": [
+        34000,
+        34021
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_v111_travel",
+      "block": "r13_v111_travel",
+      "placement": "literal",
+      "ref": "game/room13_v111.rpy:507:34",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "마른 담요 두 장을 실제로 받았다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_v111.rpy",
+          "line": 507,
+          "label": "r13_v111_travel",
+          "guards": [
+            "elif key==\"V111:E35\":"
+          ]
+        }
+      ],
+      "line": 507,
+      "scene_title": "r13_v111_travel",
+      "source_hash": "efe9e588eaaa5dabb748fd34f13f6ac736d7d0b6064487f12e951ff4d422eddd",
+      "baseline_hash": "666fd82157fcf4abe42ac58f1ee4f6f79f152acd890e2c8705c50f2fc1ec972a",
+      "uid": "5fc91548080cfdb645550624",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_v111_travel|rpy_inventory|r13_v111_travel|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_v111.rpy:507:73",
+      "file": "game/room13_v111.rpy",
+      "path": [
+        34039,
+        34068
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_v111_travel",
+      "block": "r13_v111_travel",
+      "placement": "literal",
+      "ref": "game/room13_v111.rpy:507:73",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "마른 담요 두 장을 예약했다. 아직 받지 않았다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_v111.rpy",
+          "line": 507,
+          "label": "r13_v111_travel",
+          "guards": [
+            "elif key==\"V111:E35\":"
+          ]
+        }
+      ],
+      "line": 507,
+      "scene_title": "r13_v111_travel",
+      "source_hash": "efe9e588eaaa5dabb748fd34f13f6ac736d7d0b6064487f12e951ff4d422eddd",
+      "baseline_hash": "727f5e1bf9eb6b57971d90e84cb8f924186187c9dec17991c50b4e454d75c73d",
+      "uid": "0732c03b3433fe4e05b85039",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_v111_travel|rpy_inventory|r13_v111_travel|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_v111.rpy:511:33",
+      "file": "game/room13_v111.rpy",
+      "path": [
+        34142,
+        34150
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_v111_travel",
+      "block": "r13_v111_travel",
+      "placement": "literal",
+      "ref": "game/room13_v111.rpy:511:33",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "근거에 추가",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_v111.rpy",
+          "line": 511,
+          "label": "r13_v111_travel",
+          "guards": []
+        }
+      ],
+      "line": 511,
+      "scene_title": "r13_v111_travel",
+      "source_hash": "efe9e588eaaa5dabb748fd34f13f6ac736d7d0b6064487f12e951ff4d422eddd",
+      "baseline_hash": "c545115d65d2877f6b6b6d6090cb5c8b0b4949a2d7a7b29d157bc4d60a09f0e0",
+      "uid": "ba24a7685493a8afa745fd6a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_v111_travel|rpy_inventory|r13_v111_travel|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_v111.rpy:511:42",
+      "file": "game/room13_v111.rpy",
+      "path": [
+        34151,
+        34161
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_v111_travel",
+      "block": "r13_v111_travel",
+      "placement": "literal",
+      "ref": "game/room13_v111.rpy:511:42",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "근거로 낼 자료",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_v111.rpy",
+          "line": 511,
+          "label": "r13_v111_travel",
+          "guards": []
+        }
+      ],
+      "line": 511,
+      "scene_title": "r13_v111_travel",
+      "source_hash": "efe9e588eaaa5dabb748fd34f13f6ac736d7d0b6064487f12e951ff4d422eddd",
+      "baseline_hash": "05dbf5689b6f3d401750389665df56e53eb317cad7bb11b3f3ec0e751c81fc19",
+      "uid": "19c80b5a5fad0cf644f4023e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_v111_travel|rpy_inventory|r13_v111_travel|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_v111.rpy:511:59",
+      "file": "game/room13_v111.rpy",
+      "path": [
+        34168,
+        34179
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_v111_travel",
+      "block": "r13_v111_travel",
+      "placement": "literal",
+      "ref": "game/room13_v111.rpy:511:59",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "이 기록을 꺼낸다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_v111.rpy",
+          "line": 511,
+          "label": "r13_v111_travel",
+          "guards": []
+        }
+      ],
+      "line": 511,
+      "scene_title": "r13_v111_travel",
+      "source_hash": "efe9e588eaaa5dabb748fd34f13f6ac736d7d0b6064487f12e951ff4d422eddd",
+      "baseline_hash": "1881f72c37f999a3afc5243c8e8ae31a0ded4c790d539a1a2d6e3b0217534d7c",
+      "uid": "51fef055e4c2bc7764cb089d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_v111_travel|rpy_inventory|r13_v111_travel|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_v111.rpy:511:71",
+      "file": "game/room13_v111.rpy",
+      "path": [
+        34180,
+        34187
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_v111_travel",
+      "block": "r13_v111_travel",
+      "placement": "literal",
+      "ref": "game/room13_v111.rpy:511:71",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "꺼낼 기록",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_v111.rpy",
+          "line": 511,
+          "label": "r13_v111_travel",
+          "guards": []
+        }
+      ],
+      "line": 511,
+      "scene_title": "r13_v111_travel",
+      "source_hash": "efe9e588eaaa5dabb748fd34f13f6ac736d7d0b6064487f12e951ff4d422eddd",
+      "baseline_hash": "e8bf5c9d9eff566edca5cd23a0118e9764d87c5865a8b980205b959ae23addda",
+      "uid": "011a057e956b99df8c4ca629",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_v111_travel|rpy_inventory|r13_v111_travel|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/room13_v111.rpy:436:29670",
       "file": "game/room13_v111.rpy",

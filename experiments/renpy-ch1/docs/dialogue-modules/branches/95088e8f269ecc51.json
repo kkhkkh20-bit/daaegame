@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_carryover.rpy:82:8",
+      "file": "game/systems/room13_carryover.rpy",
+      "path": [
+        5340,
+        5354
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_carry_sled",
+      "block": "r13_carry_sled",
+      "placement": "literal",
+      "ref": "game/systems/room13_carryover.rpy:82:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "썰매를 열 냥에 빌린다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_carryover.rpy",
+          "line": 82,
+          "label": "r13_carry_sled",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 82,
+      "scene_title": "r13_carry_sled",
+      "source_hash": "f10306dfce96df81431a8d3c357b4d31023a0ef3afd42beef4d1a8184ca40d9d",
+      "baseline_hash": "2b1e7a089caac59baea89353ae844b8e674c4735ebde54bc16a3e40df3293c3b",
+      "uid": "129aeda5c8466d47fa6062cb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_carry_sled|rpy_menu|r13_carry_sled|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_carryover.rpy:86:8",
+      "file": "game/systems/room13_carryover.rpy",
+      "path": [
+        5581,
+        5594
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_carry_sled",
+      "block": "r13_carry_sled",
+      "placement": "literal",
+      "ref": "game/systems/room13_carryover.rpy:86:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "썰매는 다음에 빌린다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_carryover.rpy",
+          "line": 86,
+          "label": "r13_carry_sled",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 86,
+      "scene_title": "r13_carry_sled",
+      "source_hash": "f10306dfce96df81431a8d3c357b4d31023a0ef3afd42beef4d1a8184ca40d9d",
+      "baseline_hash": "3ed605b40a2e7db4e837188294b4457c5a8e84b47f96ed1d9501f3baf3cecd67",
+      "uid": "9fd7de4405b6598738463990",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_carry_sled|rpy_menu|r13_carry_sled|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
     {
       "id": "game/systems/room13_ep5_soup.rpy:448:30",
@@ -37,6 +37,126 @@
       "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
       "baseline_hash": "c54f92436f0e06e7f42f9620b2fc3e41de00373141776e7f0825753316451e56",
       "uid": "819c1c502d2206d586845414",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_after|rpy_literal|r13_ws_after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:449:21",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        25632,
+        25668
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_after",
+      "block": "r13_ws_after",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:449:21",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "그림쟁이 아저씨가 그린 거야. 코는 내가 그렸어. 약속했거든.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 449,
+          "label": "r13_ws_after",
+          "guards": [
+            "if r13_has(\"portrait_finished_by_daram\") and r13_has(\"mom_reunited\") and r13_ws_daram():"
+          ]
+        }
+      ],
+      "line": 449,
+      "scene_title": "r13_ws_after",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "155a746988f5dffed3afda3a40f04f435e7ae7448534f90f4102d308e6950ce8",
+      "uid": "b5e8594c3e2ce3df80c84029",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_after|rpy_literal|r13_ws_after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:450:19",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        25690,
+        25703
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_after",
+      "block": "r13_ws_after",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:450:19",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "……코를, 찡그렸네.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 450,
+          "label": "r13_ws_after",
+          "guards": [
+            "if r13_has(\"portrait_finished_by_daram\") and r13_has(\"mom_reunited\") and r13_ws_daram():"
+          ]
+        }
+      ],
+      "line": 450,
+      "scene_title": "r13_ws_after",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "0db26c7b4ab143911bd3b426a640547a9d856d1906390958d4acc4a0590f5463",
+      "uid": "8f8a52996517d1b334377732",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_after|rpy_literal|r13_ws_after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:451:18",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        25724,
+        25758
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_after",
+      "block": "r13_ws_after",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:451:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "엄마가 판자를 끌어안고 울었다. 웃으면서. 코를 찡그리며.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 451,
+          "label": "r13_ws_after",
+          "guards": [
+            "if r13_has(\"portrait_finished_by_daram\") and r13_has(\"mom_reunited\") and r13_ws_daram():"
+          ]
+        }
+      ],
+      "line": 451,
+      "scene_title": "r13_ws_after",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "fce2892ba7abac183e9562a305e865c601bdca05ecbbaa77f98b6fa369d7beef",
+      "uid": "fe045f967bf586232cee2a3a",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_ws_after|rpy_literal|r13_ws_after|행 조건 없음",
@@ -83,6 +203,86 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
+      "id": "game/systems/room13_ep5_soup.rpy:455:29",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        26111,
+        26131
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_after",
+      "block": "r13_ws_after",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:455:29",
+      "when": null,
+      "speaker": "resident_bori",
+      "kind": "dialogue",
+      "text": "내 애 하나 잃고…… 셋 얻었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 455,
+          "label": "r13_ws_after",
+          "guards": [
+            "if r13_has(\"ws_some_alive\"):"
+          ]
+        }
+      ],
+      "line": 455,
+      "scene_title": "r13_ws_after",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "bacca42aeba4067822e2cb3d2c948834a08e9efe82c0db066d65ad0300cb28c4",
+      "uid": "dc49cef80080ecb836bd55cb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_after|rpy_literal|r13_ws_after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:456:29",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        26163,
+        26175
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_after",
+      "block": "r13_ws_after",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:456:29",
+      "when": null,
+      "speaker": "resident_bori",
+      "kind": "dialogue",
+      "text": "이번엔 안 놓친다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 456,
+          "label": "r13_ws_after",
+          "guards": [
+            "if r13_has(\"ws_some_alive\"):"
+          ]
+        }
+      ],
+      "line": 456,
+      "scene_title": "r13_ws_after",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "29408f6d7625e4fd53180f74e1d840cd9ef621d06c55fe9e1181ade100fa1f80",
+      "uid": "2f43a407f4d3258f7f423a78",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_after|rpy_literal|r13_ws_after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
       "id": "game/systems/room13_ep5_soup.rpy:458:30",
       "file": "game/systems/room13_ep5_soup.rpy",
       "path": [
@@ -123,6 +323,86 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
+      "id": "game/systems/room13_ep5_soup.rpy:459:29",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        26427,
+        26454
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_after",
+      "block": "r13_ws_after",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:459:29",
+      "when": null,
+      "speaker": "resident_bori",
+      "kind": "dialogue",
+      "text": "우리 집 좁다. ……그래도 넷이면 덜 춥겠지.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 459,
+          "label": "r13_ws_after",
+          "guards": [
+            "elif r13_has(\"bori_adopts\") and r13_has(\"ws_kids_alive\"):"
+          ]
+        }
+      ],
+      "line": 459,
+      "scene_title": "r13_ws_after",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "4a5931d657bb770b8a39e2d032993d78e5b40b29668ea148c7651aa58bbca035",
+      "uid": "a3b024dc36e958296a5669b5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_after|rpy_literal|r13_ws_after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:460:29",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        26486,
+        26498
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_after",
+      "block": "r13_ws_after",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:460:29",
+      "when": null,
+      "speaker": "resident_bori",
+      "kind": "dialogue",
+      "text": "이번엔 안 놓친다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 460,
+          "label": "r13_ws_after",
+          "guards": [
+            "elif r13_has(\"bori_adopts\") and r13_has(\"ws_kids_alive\"):"
+          ]
+        }
+      ],
+      "line": 460,
+      "scene_title": "r13_ws_after",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "29408f6d7625e4fd53180f74e1d840cd9ef621d06c55fe9e1181ade100fa1f80",
+      "uid": "294cea3030ef1981e6a29602",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_after|rpy_literal|r13_ws_after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
       "id": "game/systems/room13_ep5_soup.rpy:462:30",
       "file": "game/systems/room13_ep5_soup.rpy",
       "path": [
@@ -157,6 +437,272 @@
       "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
       "baseline_hash": "6e993b7900ea14ceabcdb0914914b72ea69cabf5e1a0586bb8840bc83f58013a",
       "uid": "26203852b526cdefb2555d1b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_after|rpy_literal|r13_ws_after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:464:26",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        26781,
+        26807
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_after",
+      "block": "r13_ws_after",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:464:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "모두 잠든 밤. 교실 구석에서 작은 목소리.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 464,
+          "label": "r13_ws_after",
+          "guards": []
+        }
+      ],
+      "line": 464,
+      "scene_title": "r13_ws_after",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "1a692b8a23808e02083803854f694ed7f4c4046ef9523106bac80335eb2f4017",
+      "uid": "29b30bc65d1e199a61a8ef3e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_after|rpy_literal|r13_ws_after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:465:21",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        26831,
+        26864
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_after",
+      "block": "r13_ws_after",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:465:21",
+      "when": null,
+      "speaker": "kid_saemi",
+      "kind": "dialogue",
+      "text": "(노래) 휘휘 저어라 겨울 수프, 감자 하나 당근 하나.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 465,
+          "label": "r13_ws_after",
+          "guards": []
+        }
+      ],
+      "line": 465,
+      "scene_title": "r13_ws_after",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "2738c75f913472e78eda6af96436305d4e72db6bca4512eb9fb7bf9fbdf113a9",
+      "uid": "696e2eb79e0c474a836b9ede",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_after|rpy_literal|r13_ws_after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:466:21",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        26888,
+        26909
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_after",
+      "block": "r13_ws_after",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:466:21",
+      "when": null,
+      "speaker": "kid_saemi",
+      "kind": "dialogue",
+      "text": "(노래) 다 같이 먹으면 따뜻해……",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 466,
+          "label": "r13_ws_after",
+          "guards": []
+        }
+      ],
+      "line": 466,
+      "scene_title": "r13_ws_after",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "be8ee0c95a421fc300c579e7bd29ffbe01d9626b30bf3c0b55d02be12d262567",
+      "uid": "5e2982a5a3cc9fa798c6ab2d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_after|rpy_literal|r13_ws_after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:467:14",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        26926,
+        26954
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_after",
+      "block": "r13_ws_after",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:467:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "노래가 거기서 멈췄다. 한참 뒤에, 아주 작게.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 467,
+          "label": "r13_ws_after",
+          "guards": []
+        }
+      ],
+      "line": 467,
+      "scene_title": "r13_ws_after",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "34801154b3c460b90a7b6e387f4af41a7acac02abe27aa9c1b1eeccb74167ce2",
+      "uid": "5e8da6faa580d004b0545558",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_after|rpy_literal|r13_ws_after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:468:21",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        26978,
+        26997
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_after",
+      "block": "r13_ws_after",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:468:21",
+      "when": null,
+      "speaker": "kid_saemi",
+      "kind": "dialogue",
+      "text": "(노래) ……내일도 같이 먹자.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 468,
+          "label": "r13_ws_after",
+          "guards": []
+        }
+      ],
+      "line": 468,
+      "scene_title": "r13_ws_after",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "b95af1317b761a4a29fab85ae643be6e74e8aa494c27d7af51d22f90a80fbdfe",
+      "uid": "f9ef3baa1e6430ee06f4a174",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_after|rpy_literal|r13_ws_after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:469:14",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        27014,
+        27047
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_after",
+      "block": "r13_ws_after",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:469:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "(그림책) 공주는 물레 바늘에 찔려 깊은 잠에 빠졌어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 469,
+          "label": "r13_ws_after",
+          "guards": []
+        }
+      ],
+      "line": 469,
+      "scene_title": "r13_ws_after",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "2202519374fc7492f29cbd514e4c0a25b9a744345629d365aa7e4044718f39bd",
+      "uid": "e43080c3c9b5a69fc5f74e38",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_after|rpy_literal|r13_ws_after|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:470:14",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        27087,
+        27117
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_after",
+      "block": "r13_ws_after",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:470:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "(그림책) 성 안의 사람들도 모두 함께 잠들었어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 470,
+          "label": "r13_ws_after",
+          "guards": []
+        }
+      ],
+      "line": 470,
+      "scene_title": "r13_ws_after",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "ff95c0583b47f3a8ee4b71d603903a548cb8d723cae4229eda280f5a85ec3643",
+      "uid": "1d35b5b0bc3648c1e07018a1",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_ws_after|rpy_literal|r13_ws_after|행 조건 없음",

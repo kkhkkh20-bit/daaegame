@@ -1,0 +1,123 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events.rpy:388:31",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        20488,
+        20501
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_ev_c_wedge",
+      "block": "r13_ev_c_wedge",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:388:31",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "백 부인 창고 · 밤",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 388,
+          "label": "r13_ev_c_wedge",
+          "guards": []
+        }
+      ],
+      "line": 388,
+      "scene_title": "r13_ev_c_wedge",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "bc7dfd22de686421d198bf6705d9a419e7b9924951e52467373b8320a6ddaee8",
+      "uid": "668a80e46c81e2a24aeee6d0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_wedge|rpy_inventory|r13_ev_c_wedge|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:399:35",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        21125,
+        21140
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_ev_c_wedge",
+      "block": "r13_ev_c_wedge",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:399:35",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "백 부인 창고 안쪽 선반",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 399,
+          "label": "r13_ev_c_wedge",
+          "guards": [
+            "while _c_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 399,
+      "scene_title": "r13_ev_c_wedge",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "8d3b4173f1c685914c70ced5421d90e0ad956464bd874b34c08d1a6ed06cb7a4",
+      "uid": "af8e3ce901eb9f8d76a3507a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_wedge|rpy_inventory|r13_ev_c_wedge|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:403:18",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        21340,
+        21352
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_ev_c_wedge",
+      "block": "r13_ev_c_wedge",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:403:18",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "백 부인 창고 정리",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 403,
+          "label": "r13_ev_c_wedge",
+          "guards": []
+        }
+      ],
+      "line": 403,
+      "scene_title": "r13_ev_c_wedge",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "65fc9c69eebd989f9d94ff93ce56eef667cd5542425eec5d36a4912712925c01",
+      "uid": "b5ce3613af7bb4595722664a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_wedge|rpy_inventory|r13_ev_c_wedge|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

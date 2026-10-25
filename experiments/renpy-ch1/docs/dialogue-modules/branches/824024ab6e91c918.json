@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:239:12",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        13290,
+        13313
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_cv_tea",
+      "block": "r13_cv_tea",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:239:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "설이에게 네 겨울의 수레 이야기를 한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 239,
+          "label": "r13_cv_tea",
+          "guards": [
+            "if r13_has(\"V03\") or r13_has(\"V05\"):",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 239,
+      "scene_title": "r13_cv_tea",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "6c1f47fc4d519e1e01c1119175984281b3e97259d73324fdd4b3e32c46f23238",
+      "uid": "d7ed80cadc911fb56406c86f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_tea|rpy_menu|r13_cv_tea|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:244:12",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        13608,
+        13618
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_cv_tea",
+      "block": "r13_cv_tea",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:244:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "종탑을 지나친다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 244,
+          "label": "r13_cv_tea",
+          "guards": [
+            "if r13_has(\"V03\") or r13_has(\"V05\"):",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 244,
+      "scene_title": "r13_cv_tea",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "46aa982b5537bce6224d843d364c8710389bb6a23ab77b9eb3d1ee23c4530f57",
+      "uid": "17331f09b2903cf04478879e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_tea|rpy_menu|r13_cv_tea|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

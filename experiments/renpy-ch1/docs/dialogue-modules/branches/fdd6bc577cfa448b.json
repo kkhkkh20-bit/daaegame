@@ -1,7 +1,127 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/room13.rpy:158:31",
+      "file": "game/room13.rpy",
+      "path": [
+        8046,
+        8127
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_entry_dispatch",
+      "block": "r13_entry_dispatch",
+      "placement": "literal",
+      "ref": "game/room13.rpy:158:31",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "초소 입장 명단: 같은 도착일 / 다돌 / 신청 2명 / 신규 일꾼 본인 1명 / 동행 아동 모집 제외 / 내일부터 장작 운반 / 처리 너울.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 158,
+          "label": "r13_entry_dispatch",
+          "guards": [
+            "if r13_choice==(\"entry\",\"explain\"):"
+          ]
+        }
+      ],
+      "line": 158,
+      "scene_title": "r13_entry_dispatch",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "7f440f1347219204fa93810049ab088b6188c3449dde3b03dfa7f9e7dd04c60d",
+      "uid": "2d478814890a5740818097de",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_entry_dispatch|rpy_literal|r13_entry_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:158:123",
+      "file": "game/room13.rpy",
+      "path": [
+        8138,
+        8177
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_entry_dispatch",
+      "block": "r13_entry_dispatch",
+      "placement": "literal",
+      "ref": "game/room13.rpy:158:123",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "장작이요? 그런 신청 안 했습니다. 제가 낸 종이부터 보여 주세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 158,
+          "label": "r13_entry_dispatch",
+          "guards": [
+            "if r13_choice==(\"entry\",\"explain\"):"
+          ]
+        }
+      ],
+      "line": 158,
+      "scene_title": "r13_entry_dispatch",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "c92a37bc99f5ded3584b43ef7faedf5a5ce244ca70a4e752d0dfc7b85e445b58",
+      "uid": "9bb00b5975d19ca566706a1b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_entry_dispatch|rpy_literal|r13_entry_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:158:175",
+      "file": "game/room13.rpy",
+      "path": [
+        8190,
+        8217
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_entry_dispatch",
+      "block": "r13_entry_dispatch",
+      "placement": "literal",
+      "ref": "game/room13.rpy:158:175",
+      "when": null,
+      "speaker": "guard",
+      "kind": "dialogue",
+      "text": "날짜와 이름을 찾으면 되오. 잠깐 기다리시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 158,
+          "label": "r13_entry_dispatch",
+          "guards": [
+            "if r13_choice==(\"entry\",\"explain\"):"
+          ]
+        }
+      ],
+      "line": 158,
+      "scene_title": "r13_entry_dispatch",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "eb544f06537f0663cb9399d6d808d3c8df8c09ba3f334b11e54861686494ad8c",
+      "uid": "297b824a2c5be7fb4899871a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_entry_dispatch|rpy_literal|r13_entry_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/room13.rpy:166:30",
       "file": "game/room13.rpy",
@@ -79,6 +199,502 @@
       "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
       "baseline_hash": "78028fa3011b6e43bc10e898a5fcbb656d803df52b17f5975f5659ffed1a9524",
       "uid": "91e7cccf0643894fae26fab7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_entry_dispatch|rpy_literal|r13_entry_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:177:98",
+      "file": "game/room13.rpy",
+      "path": [
+        9250,
+        9270
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_entry_dispatch",
+      "block": "r13_entry_dispatch",
+      "placement": "literal",
+      "ref": "game/room13.rpy:177:98",
+      "when": null,
+      "speaker": "guard",
+      "kind": "dialogue",
+      "text": "가족 방문을 일꾼으로 옮겨 놨군.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 177,
+          "label": "r13_entry_dispatch",
+          "guards": [
+            "elif r13_choice[1]==\"argue\":",
+            "if r13_item in (\"G1\",\"G3\"):",
+            "if r13_item == \"G1\" and all(key in room13[\"evidence\"] for key in (\"G2\",\"G3\")):"
+          ]
+        }
+      ],
+      "line": 177,
+      "scene_title": "r13_entry_dispatch",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "8ef18b3e1686b7756fa74eaa7144365b2ed6e0714741f6f1753589842f97558b",
+      "uid": "1a92cb46fe407472453660fc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_entry_dispatch|rpy_literal|r13_entry_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:177:129",
+      "file": "game/room13.rpy",
+      "path": [
+        9281,
+        9300
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_entry_dispatch",
+      "block": "r13_entry_dispatch",
+      "placement": "literal",
+      "ref": "game/room13.rpy:177:129",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "네. 그래서 아이가 빠졌습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 177,
+          "label": "r13_entry_dispatch",
+          "guards": [
+            "elif r13_choice[1]==\"argue\":",
+            "if r13_item in (\"G1\",\"G3\"):",
+            "if r13_item == \"G1\" and all(key in room13[\"evidence\"] for key in (\"G2\",\"G3\")):"
+          ]
+        }
+      ],
+      "line": 177,
+      "scene_title": "r13_entry_dispatch",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "43098721d6d15a5ef537b87aa884280b6d30d3c24150aa555d7ecf7c6a42ab69",
+      "uid": "be63c17baaa313736fb567cf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_entry_dispatch|rpy_literal|r13_entry_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:177:161",
+      "file": "game/room13.rpy",
+      "path": [
+        9313,
+        9324
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_entry_dispatch",
+      "block": "r13_entry_dispatch",
+      "placement": "literal",
+      "ref": "game/room13.rpy:177:161",
+      "when": null,
+      "speaker": "guard",
+      "kind": "dialogue",
+      "text": "여기서 고치겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 177,
+          "label": "r13_entry_dispatch",
+          "guards": [
+            "elif r13_choice[1]==\"argue\":",
+            "if r13_item in (\"G1\",\"G3\"):",
+            "if r13_item == \"G1\" and all(key in room13[\"evidence\"] for key in (\"G2\",\"G3\")):"
+          ]
+        }
+      ],
+      "line": 177,
+      "scene_title": "r13_entry_dispatch",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "6de6fd6101c7762b1e24f31f01c2af481331a469137f17f216dab9b16411629b",
+      "uid": "d49a0a6bd77edc1a10998f10",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_entry_dispatch|rpy_literal|r13_entry_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:180:42",
+      "file": "game/room13.rpy",
+      "path": [
+        9445,
+        9490
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_entry_dispatch",
+      "block": "r13_entry_dispatch",
+      "placement": "literal",
+      "ref": "game/room13.rpy:180:42",
+      "when": null,
+      "speaker": "guard",
+      "kind": "dialogue",
+      "text": "둘인 건 봤소. 가족을 만나러 왔는지, 둘이 잘 방은 있는지도 확인해야 하오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 180,
+          "label": "r13_entry_dispatch",
+          "guards": [
+            "elif r13_choice[1]==\"argue\":",
+            "if r13_item in (\"G1\",\"G3\"):",
+            "else:"
+          ]
+        }
+      ],
+      "line": 180,
+      "scene_title": "r13_entry_dispatch",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "d258b4e444aa5e9dd367e6ace98f9e4c4e59e53e775c5cfb8dd0ee3b600c18e4",
+      "uid": "931fcd156b665953a30cbe90",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_entry_dispatch|rpy_literal|r13_entry_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:182:38",
+      "file": "game/room13.rpy",
+      "path": [
+        9579,
+        9607
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_entry_dispatch",
+      "block": "r13_entry_dispatch",
+      "placement": "literal",
+      "ref": "game/room13.rpy:182:38",
+      "when": null,
+      "speaker": "guard",
+      "kind": "dialogue",
+      "text": "같이 온 건 알겠소. 둘이 묵을 방은 확인됐소?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 182,
+          "label": "r13_entry_dispatch",
+          "guards": [
+            "elif r13_choice[1]==\"argue\":",
+            "elif r13_item == \"G2\":"
+          ]
+        }
+      ],
+      "line": 182,
+      "scene_title": "r13_entry_dispatch",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "71087d93e90131c56f7439914e3bacd4eb0f80d32fbc5590eeae1897b6e2b822",
+      "uid": "d7c1db97e60023cbb66adbca",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_entry_dispatch|rpy_literal|r13_entry_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:184:36",
+      "file": "game/room13.rpy",
+      "path": [
+        9687,
+        9700
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_entry_dispatch",
+      "block": "r13_entry_dispatch",
+      "placement": "literal",
+      "ref": "game/room13.rpy:184:36",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "이 편지도 있습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 184,
+          "label": "r13_entry_dispatch",
+          "guards": [
+            "elif r13_choice[1]==\"argue\":",
+            "elif r13_item:"
+          ]
+        }
+      ],
+      "line": 184,
+      "scene_title": "r13_entry_dispatch",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "af088eb028898a7dfc8e50ac3ccb8f20ccbbef76de69f1d1b14446188b0726d9",
+      "uid": "c44c8fa99c9b029cd41d7b50",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_entry_dispatch|rpy_literal|r13_entry_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:184:62",
+      "file": "game/room13.rpy",
+      "path": [
+        9713,
+        9747
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_entry_dispatch",
+      "block": "r13_entry_dispatch",
+      "placement": "literal",
+      "ref": "game/room13.rpy:184:62",
+      "when": null,
+      "speaker": "guard",
+      "kind": "dialogue",
+      "text": "초대받은 건 알겠소. 두 사람이 묵을 방도 확인해야 하오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 184,
+          "label": "r13_entry_dispatch",
+          "guards": [
+            "elif r13_choice[1]==\"argue\":",
+            "elif r13_item:"
+          ]
+        }
+      ],
+      "line": 184,
+      "scene_title": "r13_entry_dispatch",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "bfbedc9e98504a8a7c06e07990837b9248e6480d6d36d164c40a7d3eec7057b1",
+      "uid": "106147ac99df8c01b3115d02",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_entry_dispatch|rpy_literal|r13_entry_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:184:107",
+      "file": "game/room13.rpy",
+      "path": [
+        9758,
+        9785
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_entry_dispatch",
+      "block": "r13_entry_dispatch",
+      "placement": "literal",
+      "ref": "game/room13.rpy:184:107",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "여관으로 신청했습니다. 원본을 찾아 주십시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 184,
+          "label": "r13_entry_dispatch",
+          "guards": [
+            "elif r13_choice[1]==\"argue\":",
+            "elif r13_item:"
+          ]
+        }
+      ],
+      "line": 184,
+      "scene_title": "r13_entry_dispatch",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "176e3c9ccaf71db88b09034c1f0b21cd7fa999ead0d3440a90c8ce74c352f6dc",
+      "uid": "0455136688e9c8bec9fbc29b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_entry_dispatch|rpy_literal|r13_entry_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:191:36",
+      "file": "game/room13.rpy",
+      "path": [
+        10101,
+        10146
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_entry_dispatch",
+      "block": "r13_entry_dispatch",
+      "placement": "literal",
+      "ref": "game/room13.rpy:191:36",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "가족 방문이고 둘이 잘 방도 확인됐습니다. 저 규칙대로 딸도 들여보내 주세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 191,
+          "label": "r13_entry_dispatch",
+          "guards": [
+            "elif r13_choice[1]==\"wait\":",
+            "if _return:"
+          ]
+        }
+      ],
+      "line": 191,
+      "scene_title": "r13_entry_dispatch",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "78028fa3011b6e43bc10e898a5fcbb656d803df52b17f5975f5659ffed1a9524",
+      "uid": "a09b7fc3babf1b116b51374d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_entry_dispatch|rpy_literal|r13_entry_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:191:94",
+      "file": "game/room13.rpy",
+      "path": [
+        10159,
+        10179
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_entry_dispatch",
+      "block": "r13_entry_dispatch",
+      "placement": "literal",
+      "ref": "game/room13.rpy:191:94",
+      "when": null,
+      "speaker": "guard",
+      "kind": "dialogue",
+      "text": "가족 방문을 일꾼으로 옮겨 놨군.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 191,
+          "label": "r13_entry_dispatch",
+          "guards": [
+            "elif r13_choice[1]==\"wait\":",
+            "if _return:"
+          ]
+        }
+      ],
+      "line": 191,
+      "scene_title": "r13_entry_dispatch",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "8ef18b3e1686b7756fa74eaa7144365b2ed6e0714741f6f1753589842f97558b",
+      "uid": "7a60d4329d6a836464fcafcc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_entry_dispatch|rpy_literal|r13_entry_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:191:125",
+      "file": "game/room13.rpy",
+      "path": [
+        10190,
+        10209
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_entry_dispatch",
+      "block": "r13_entry_dispatch",
+      "placement": "literal",
+      "ref": "game/room13.rpy:191:125",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "네. 그래서 아이가 빠졌습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 191,
+          "label": "r13_entry_dispatch",
+          "guards": [
+            "elif r13_choice[1]==\"wait\":",
+            "if _return:"
+          ]
+        }
+      ],
+      "line": 191,
+      "scene_title": "r13_entry_dispatch",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "43098721d6d15a5ef537b87aa884280b6d30d3c24150aa555d7ecf7c6a42ab69",
+      "uid": "584436cf32057dcd1cf17795",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_entry_dispatch|rpy_literal|r13_entry_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:191:157",
+      "file": "game/room13.rpy",
+      "path": [
+        10222,
+        10233
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_entry_dispatch",
+      "block": "r13_entry_dispatch",
+      "placement": "literal",
+      "ref": "game/room13.rpy:191:157",
+      "when": null,
+      "speaker": "guard",
+      "kind": "dialogue",
+      "text": "여기서 고치겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 191,
+          "label": "r13_entry_dispatch",
+          "guards": [
+            "elif r13_choice[1]==\"wait\":",
+            "if _return:"
+          ]
+        }
+      ],
+      "line": 191,
+      "scene_title": "r13_entry_dispatch",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "6de6fd6101c7762b1e24f31f01c2af481331a469137f17f216dab9b16411629b",
+      "uid": "16a69f2cff1c226f0cace133",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_entry_dispatch|rpy_literal|r13_entry_dispatch|행 조건 없음",

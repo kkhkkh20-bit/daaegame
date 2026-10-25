@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_new_cast.rpy:272:8",
+      "file": "game/systems/room13_new_cast.rpy",
+      "path": [
+        17828,
+        17839
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_nc_mulgyeol_ice",
+      "block": "r13_nc_mulgyeol_ice",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_cast.rpy:272:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "밧줄을 잡아당긴다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_cast.rpy",
+          "line": 272,
+          "label": "r13_nc_mulgyeol_ice",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 272,
+      "scene_title": "r13_nc_mulgyeol_ice",
+      "source_hash": "1ca2e2ca3bfab19cf96bff538f9165f970ad4d6405095ae9a5862a44f44e94db",
+      "baseline_hash": "3650b74e65c2d4ce9540fbb43e52b3dd9a992c49c90208ae3e721b7ce59be167",
+      "uid": "c96604a88bb70ecd69ccc7fe",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nc_mulgyeol_ice|rpy_menu|r13_nc_mulgyeol_ice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_cast.rpy:277:8",
+      "file": "game/systems/room13_new_cast.rpy",
+      "path": [
+        18145,
+        18157
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_nc_mulgyeol_ice",
+      "block": "r13_nc_mulgyeol_ice",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_cast.rpy:277:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "사람을 부르러 간다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_cast.rpy",
+          "line": 277,
+          "label": "r13_nc_mulgyeol_ice",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 277,
+      "scene_title": "r13_nc_mulgyeol_ice",
+      "source_hash": "1ca2e2ca3bfab19cf96bff538f9165f970ad4d6405095ae9a5862a44f44e94db",
+      "baseline_hash": "d8a5c51ccdef617f31066948e703844ba7ad592cfd7e881e10b04b69a70d5277",
+      "uid": "99d5234ed7236079cf55246d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nc_mulgyeol_ice|rpy_menu|r13_nc_mulgyeol_ice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

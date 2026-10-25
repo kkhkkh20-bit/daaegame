@@ -1,0 +1,278 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:178:32",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        10712,
+        10723
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_ws_greenhouse",
+      "block": "r13_ws_greenhouse",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:178:32",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "폐온실 가는 숲길",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 178,
+          "label": "r13_ws_greenhouse",
+          "guards": []
+        }
+      ],
+      "line": 178,
+      "scene_title": "r13_ws_greenhouse",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "5092ea96c00cde4bec45fee4ee07637fdf12b109d49f8dbeab3680db22112582",
+      "uid": "66766f8f2d4a4641f851caa3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_greenhouse|rpy_inventory|r13_ws_greenhouse|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:188:28",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        11289,
+        11308
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_ws_greenhouse",
+      "block": "r13_ws_greenhouse",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:188:28",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "폐온실 길에서 토실에게 들은 말",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 188,
+          "label": "r13_ws_greenhouse",
+          "guards": [
+            "if not r13_has(\"ws_tosil_met\"):"
+          ]
+        }
+      ],
+      "line": 188,
+      "scene_title": "r13_ws_greenhouse",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "a09d0eed8cd81aaff6e07fd07424675ac2a1af0fd17f592fab74b4b25e2d9407",
+      "uid": "a57181c1f27f63cc43cb63d8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_greenhouse|rpy_inventory|r13_ws_greenhouse|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:196:36",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        11678,
+        11683
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_ws_greenhouse",
+      "block": "r13_ws_greenhouse",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:196:36",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "폐온실",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 196,
+          "label": "r13_ws_greenhouse",
+          "guards": []
+        }
+      ],
+      "line": 196,
+      "scene_title": "r13_ws_greenhouse",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "6e2aab5e1a6d5fcda11231cb9575dd672fe5f383291b9fb15a6ffce6466273aa",
+      "uid": "6885594bd679942065ede37f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_greenhouse|rpy_inventory|r13_ws_greenhouse|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:207:23",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        12262,
+        12296
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_ws_greenhouse",
+      "block": "r13_ws_greenhouse",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:207:23",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "엄마, 나 탐정단 단장이야. 진짜야. 도토리도 나눠 줬어.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 207,
+          "label": "r13_ws_greenhouse",
+          "guards": [
+            "if r13_ws_daram():"
+          ]
+        }
+      ],
+      "line": 207,
+      "scene_title": "r13_ws_greenhouse",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "06e5af173ff1ba5639e13293d7a74235278d510f8a3e6a42d3bd449ea368c0e7",
+      "uid": "aa58b70c27abc5e051ad4a47",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_greenhouse|rpy_inventory|r13_ws_greenhouse|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:207:66",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        12305,
+        12315
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_ws_greenhouse",
+      "block": "r13_ws_greenhouse",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:207:66",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "우리 다람이가?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 207,
+          "label": "r13_ws_greenhouse",
+          "guards": [
+            "if r13_ws_daram():"
+          ]
+        }
+      ],
+      "line": 207,
+      "scene_title": "r13_ws_greenhouse",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "4b67a1d37ffbf948f4e1744cebe884cf7a43ec02ec9657d427237841bd44f773",
+      "uid": "b99a736363c5e24acf4388ab",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_greenhouse|rpy_inventory|r13_ws_greenhouse|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:213:17",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        12663,
+        12699
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_ws_greenhouse",
+      "block": "r13_ws_greenhouse",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:213:17",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "네가 토실이구나. ……아줌마가 네 엄마 이름, 꼭 찾아 줄게.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 213,
+          "label": "r13_ws_greenhouse",
+          "guards": []
+        }
+      ],
+      "line": 213,
+      "scene_title": "r13_ws_greenhouse",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "0e3d9c07e12685960d516b3298e56c0818d747f620628b2f915fa5d561a75e7e",
+      "uid": "c21287b64187c9ae98296e77",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_greenhouse|rpy_inventory|r13_ws_greenhouse|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:217:24",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        12981,
+        13002
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_ws_greenhouse",
+      "block": "r13_ws_greenhouse",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:217:24",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "엄마가 보관한 연구 원본 직접 확인",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 217,
+          "label": "r13_ws_greenhouse",
+          "guards": []
+        }
+      ],
+      "line": 217,
+      "scene_title": "r13_ws_greenhouse",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "69efee94906cd0a975f2fb377ae68d98db560740d8dd104d85e83326288fd220",
+      "uid": "970433796f4e681928c0a7f0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_greenhouse|rpy_inventory|r13_ws_greenhouse|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

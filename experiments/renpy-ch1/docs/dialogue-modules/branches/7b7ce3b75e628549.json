@@ -1,0 +1,200 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_inn_change.rpy:48:26",
+      "file": "game/systems/room13_inn_change.rpy",
+      "path": [
+        3251,
+        3269
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_case_noticed",
+      "block": "r13_case_noticed",
+      "placement": "literal",
+      "ref": "game/systems/room13_inn_change.rpy:48:26",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "여관 2층 · 연기가 새는 문",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_inn_change.rpy",
+          "line": 48,
+          "label": "r13_case_noticed",
+          "guards": []
+        }
+      ],
+      "line": 48,
+      "scene_title": "r13_case_noticed",
+      "source_hash": "a9c983ee613d47d1ec413067b3a47e3525c4acde09e9944f5bef52aabe62c038",
+      "baseline_hash": "fb60d0d0650d0e9200beeeeab70823e28d07c68a3821d9e568da862fb6ad6c34",
+      "uid": "585c0cadb869f674ac40b54e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_case_noticed|rpy_inventory|r13_case_noticed|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_inn_change.rpy:58:26",
+      "file": "game/systems/room13_inn_change.rpy",
+      "path": [
+        3665,
+        3678
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_case_noticed",
+      "block": "r13_case_noticed",
+      "placement": "literal",
+      "ref": "game/systems/room13_inn_change.rpy:58:26",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "여관 2층 · 13호",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_inn_change.rpy",
+          "line": 58,
+          "label": "r13_case_noticed",
+          "guards": []
+        }
+      ],
+      "line": 58,
+      "scene_title": "r13_case_noticed",
+      "source_hash": "a9c983ee613d47d1ec413067b3a47e3525c4acde09e9944f5bef52aabe62c038",
+      "baseline_hash": "11fb7ce811a004ecd6095fa71ea74be557b3abf013512c5ad41df2c70d31fd85",
+      "uid": "35dca2a394c920d658ce109c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_case_noticed|rpy_inventory|r13_case_noticed|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_inn_change.rpy:68:28",
+      "file": "game/systems/room13_inn_change.rpy",
+      "path": [
+        4247,
+        4263
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_case_noticed",
+      "block": "r13_case_noticed",
+      "placement": "literal",
+      "ref": "game/systems/room13_inn_change.rpy:68:28",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "사건 뒤 13호 책장 아래",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_inn_change.rpy",
+          "line": 68,
+          "label": "r13_case_noticed",
+          "guards": [
+            "if _was_wedged:"
+          ]
+        }
+      ],
+      "line": 68,
+      "scene_title": "r13_case_noticed",
+      "source_hash": "a9c983ee613d47d1ec413067b3a47e3525c4acde09e9944f5bef52aabe62c038",
+      "baseline_hash": "64b079939660a33f56be38c523b2723b7ea2dabb4e4ac83d801bede5f31c633c",
+      "uid": "5b67d9f418b541a2224dd32d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_case_noticed|rpy_inventory|r13_case_noticed|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_inn_change.rpy:71:28",
+      "file": "game/systems/room13_inn_change.rpy",
+      "path": [
+        4431,
+        4446
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_case_noticed",
+      "block": "r13_case_noticed",
+      "placement": "literal",
+      "ref": "game/systems/room13_inn_change.rpy:71:28",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "사건 뒤 주방 찬장 아래",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_inn_change.rpy",
+          "line": 71,
+          "label": "r13_case_noticed",
+          "guards": [
+            "if room13[\"kitchen_switch\"]:"
+          ]
+        }
+      ],
+      "line": 71,
+      "scene_title": "r13_case_noticed",
+      "source_hash": "a9c983ee613d47d1ec413067b3a47e3525c4acde09e9944f5bef52aabe62c038",
+      "baseline_hash": "6c964abdeb281e6c6eb13f0eac0799584920f0f858247bb164f01cced065c881",
+      "uid": "5361d274f471a2c1b9811a6b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_case_noticed|rpy_inventory|r13_case_noticed|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_inn_change.rpy:75:24",
+      "file": "game/systems/room13_inn_change.rpy",
+      "path": [
+        4785,
+        4809
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_case_noticed",
+      "block": "r13_case_noticed",
+      "placement": "literal",
+      "ref": "game/systems/room13_inn_change.rpy:75:24",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "살아 있는 어르신이 간직해 온 베낀 기록",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_inn_change.rpy",
+          "line": 75,
+          "label": "r13_case_noticed",
+          "guards": []
+        }
+      ],
+      "line": 75,
+      "scene_title": "r13_case_noticed",
+      "source_hash": "a9c983ee613d47d1ec413067b3a47e3525c4acde09e9944f5bef52aabe62c038",
+      "baseline_hash": "a74697eb8ed1e3dac628f4a3185973df8a7a61edd3886cda7d7897c38e78081e",
+      "uid": "5ee355735cfbcf9d6094ef5f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_case_noticed|rpy_inventory|r13_case_noticed|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

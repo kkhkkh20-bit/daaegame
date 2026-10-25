@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
     {
       "id": "game/systems/room13_new_places.rpy:265:30",
@@ -37,6 +37,46 @@
       "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
       "baseline_hash": "c00a907662515d6133acb85233070b52bb73e8cdd423cf848f08fccef500edfe",
       "uid": "8e276d9f405806a58248564a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_market_cloth|rpy_literal|r13_market_cloth|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_places.rpy:266:19",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        15743,
+        15789
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_market_cloth",
+      "block": "r13_market_cloth",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:266:19",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(숲 뿌리 밑에 있던 담요와 같은 무늬다. 아내는 이 노점에서 담요를 샀을까.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 266,
+          "label": "r13_market_cloth",
+          "guards": [
+            "if r13_has(\"mom_hideout_found\"):"
+          ]
+        }
+      ],
+      "line": 266,
+      "scene_title": "r13_market_cloth",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "39e56b3dfd048c010d576bf2b51db15e0ebb23a769df29a4a9fdd13996589b4d",
+      "uid": "6262dd959ae3d843cb843683",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_market_cloth|rpy_literal|r13_market_cloth|행 조건 없음",

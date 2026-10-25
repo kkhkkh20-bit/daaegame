@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:216:8",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        11075,
+        11088
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_ep2_at_market",
+      "block": "r13_ep2_at_market",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:216:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "구운 밤을 나눠 준다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 216,
+          "label": "r13_ep2_at_market",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 216,
+      "scene_title": "r13_ep2_at_market",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "41ddf68232fe915883f9af339b890c02b68e5fee40da176c2947179df00eb227",
+      "uid": "126617f1ed6eba744145bb1a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_at_market|rpy_menu|r13_ep2_at_market|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:221:8",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        11365,
+        11377
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_ep2_at_market",
+      "block": "r13_ep2_at_market",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:221:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "“너 그거 봤어?”",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 221,
+          "label": "r13_ep2_at_market",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 221,
+      "scene_title": "r13_ep2_at_market",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "58bb6ba4e96478a7b86d0048cc29de479c1a4fa3cab9354be98cd565b1bbb350",
+      "uid": "3958571c400671304c849bfd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_at_market|rpy_menu|r13_ep2_at_market|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

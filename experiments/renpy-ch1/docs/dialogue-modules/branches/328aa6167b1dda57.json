@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_new_cast.rpy:255:8",
+      "file": "game/systems/room13_new_cast.rpy",
+      "path": [
+        16908,
+        16919
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_nc_tosil_errand",
+      "block": "r13_nc_tosil_errand",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_cast.rpy:255:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "몰래 따라가 본다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_cast.rpy",
+          "line": 255,
+          "label": "r13_nc_tosil_errand",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 255,
+      "scene_title": "r13_nc_tosil_errand",
+      "source_hash": "1ca2e2ca3bfab19cf96bff538f9165f970ad4d6405095ae9a5862a44f44e94db",
+      "baseline_hash": "f466bb8a7a712444e4a922740d65cdbfefa01d1dfbb9188f79058a4087eb0f08",
+      "uid": "50cb866da7f49685a19ae508",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nc_tosil_errand|rpy_menu|r13_nc_tosil_errand|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_cast.rpy:263:8",
+      "file": "game/systems/room13_new_cast.rpy",
+      "path": [
+        17444,
+        17451
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_nc_tosil_errand",
+      "block": "r13_nc_tosil_errand",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_cast.rpy:263:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "그냥 둔다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_cast.rpy",
+          "line": 263,
+          "label": "r13_nc_tosil_errand",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 263,
+      "scene_title": "r13_nc_tosil_errand",
+      "source_hash": "1ca2e2ca3bfab19cf96bff538f9165f970ad4d6405095ae9a5862a44f44e94db",
+      "baseline_hash": "664407e4eec99f7458cc4c99c1622ea52faa8d694971715e057b3295d52cbfd1",
+      "uid": "275b39b7c52d3b46c7590a17",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nc_tosil_errand|rpy_menu|r13_nc_tosil_errand|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

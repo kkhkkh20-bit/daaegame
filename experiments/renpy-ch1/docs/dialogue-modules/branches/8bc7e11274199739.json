@@ -1,0 +1,206 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events2.rpy:331:8",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        17780,
+        17801
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_siluk_advance_followup",
+      "block": "r13_siluk_advance_followup",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:331:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "맡긴 짐은 어디까지 확인하셨습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 331,
+          "label": "r13_siluk_advance_followup",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 331,
+      "scene_title": "r13_siluk_advance_followup",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "98044e5d29679445234db5b25fced53115ba5d881792240d95c2c15fb6af7963",
+      "uid": "a9536fc3b3abc3b003ee2db2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_siluk_advance_followup|rpy_menu|r13_siluk_advance_followup|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:335:8",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        18056,
+        18082
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_siluk_advance_followup",
+      "block": "r13_siluk_advance_followup",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:335:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "약속한 때가 지났습니다. 어떻게 된 겁니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 335,
+          "label": "r13_siluk_advance_followup",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 335,
+      "scene_title": "r13_siluk_advance_followup",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "928fd1cacb1247b80443f353aad64016bf0f05a89d215c29ff231db38fc0052f",
+      "uid": "bd1f35b51966a7e4ace8d0aa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_siluk_advance_followup|rpy_menu|r13_siluk_advance_followup|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:340:8",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        18385,
+        18409
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_siluk_advance_followup",
+      "block": "r13_siluk_advance_followup",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:340:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "짐을 못 가져오셨으면 선금을 돌려주세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 340,
+          "label": "r13_siluk_advance_followup",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 340,
+      "scene_title": "r13_siluk_advance_followup",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "9fafd888b905625df73813f5833fb7fe04200db4ab002622653bc49679aa756a",
+      "uid": "6ec4aa0a0b61b20e1d30f5d2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_siluk_advance_followup|rpy_menu|r13_siluk_advance_followup|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:346:8",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        18752,
+        18777
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_siluk_advance_followup",
+      "block": "r13_siluk_advance_followup",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:346:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "선금은 드렸으니 부탁한 짐을 가져와 주세요",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 346,
+          "label": "r13_siluk_advance_followup",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 346,
+      "scene_title": "r13_siluk_advance_followup",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "d6682ba4117216ab55408208bd5a3a01f8a6f9c1ad6c7657626c3213a6e17d69",
+      "uid": "983bbe15f5590bfe805d9b9b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_siluk_advance_followup|rpy_menu|r13_siluk_advance_followup|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:350:8",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        19020,
+        19030
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_siluk_advance_followup",
+      "block": "r13_siluk_advance_followup",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:350:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "지금은 돌아간다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 350,
+          "label": "r13_siluk_advance_followup",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 350,
+      "scene_title": "r13_siluk_advance_followup",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "b05bfc33810a6fcad0ce5b47403498efe7ad8140cf64560af7ee511a56e127b9",
+      "uid": "9b8e51b352f032f7e30adae4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_siluk_advance_followup|rpy_menu|r13_siluk_advance_followup|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

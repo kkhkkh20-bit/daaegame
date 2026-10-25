@@ -1,0 +1,158 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:67:29",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        3614,
+        3664
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_first_day_arrival",
+      "block": "r13_first_day_arrival",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:67:29",
+      "when": null,
+      "speaker": "guard",
+      "kind": "dialogue",
+      "text": "신청서를 확인했습니다. 다돌 님과 다람이, 두 분이구려. 여관은 광장 안쪽에 있습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 67,
+          "label": "r13_first_day_arrival",
+          "guards": []
+        }
+      ],
+      "line": 67,
+      "scene_title": "r13_first_day_arrival",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "b82760ca0373b9414a9be7ec238b555b5c8fc1c9aa74438fef480bd8f471ab39",
+      "uid": "6f5f0cf73653fe683070ce08",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_first_day_arrival|rpy_literal|r13_first_day_arrival|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:67:89",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        3674,
+        3718
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_first_day_arrival",
+      "block": "r13_first_day_arrival",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:67:89",
+      "when": null,
+      "speaker": "karo",
+      "kind": "dialogue",
+      "text": "짐은 제가 옮겨 드릴게요. 바퀴 축은 손을 봐야 하니 내일 다시 말씀드리죠.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 67,
+          "label": "r13_first_day_arrival",
+          "guards": []
+        }
+      ],
+      "line": 67,
+      "scene_title": "r13_first_day_arrival",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "2a4d6dd69ced938de6877836aed6b26f70a723ecf8e32e272961c96c55af8941",
+      "uid": "8e8963361d88896349827b42",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_first_day_arrival|rpy_literal|r13_first_day_arrival|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:70:29",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        3856,
+        3883
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_first_day_arrival",
+      "block": "r13_first_day_arrival",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:70:29",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "아빠, 빨리 여관 가자. 엄마가 기다릴 거야.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 70,
+          "label": "r13_first_day_arrival",
+          "guards": []
+        }
+      ],
+      "line": 70,
+      "scene_title": "r13_first_day_arrival",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "cba3979b975c3a353834cd07cfedd342b4ab58e9971fae19fab63ab53144cc50",
+      "uid": "8cb674a8b8ba0f5172641250",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_first_day_arrival|rpy_literal|r13_first_day_arrival|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:70:65",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        3892,
+        3909
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_first_day_arrival",
+      "block": "r13_first_day_arrival",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:70:65",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "그래. 13호실이라고 했지.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 70,
+          "label": "r13_first_day_arrival",
+          "guards": []
+        }
+      ],
+      "line": 70,
+      "scene_title": "r13_first_day_arrival",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "1591c92c35dd5edbe6a3fed50680810704db47d5516936a28f2c547de63da5ef",
+      "uid": "ef98e135629026112c517098",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_first_day_arrival|rpy_literal|r13_first_day_arrival|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

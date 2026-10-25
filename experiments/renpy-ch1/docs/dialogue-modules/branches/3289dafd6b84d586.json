@@ -1,7 +1,47 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_town_events.rpy:303:42",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        16530,
+        16570
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_offer",
+      "block": "r13_ev_c_offer",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:303:42",
+      "when": null,
+      "speaker": "resident_madam",
+      "kind": "dialogue",
+      "text": "낮에 도와준 일은 고마웠어요. 믿을 만한 일손이 필요해서 그러는데요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 303,
+          "label": "r13_ev_c_offer",
+          "guards": [
+            "if r13_has(\"madam_trust\"):"
+          ]
+        }
+      ],
+      "line": 303,
+      "scene_title": "r13_ev_c_offer",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "6207c64e7ee86444647e5a9ceedb074d0e542e1bc572d4a8929e85f1eca6aa5f",
+      "uid": "1ff586540cff00e2dfd4bca6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_offer|rpy_literal|r13_ev_c_offer|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_town_events.rpy:304:30",
       "file": "game/systems/room13_town_events.rpy",
@@ -37,6 +77,206 @@
       "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
       "baseline_hash": "68502c613ca70f7f8df6075bb613599893f64bff6bef95c61e0cb480a1ade6be",
       "uid": "ea746ba7803e49d8c4801042",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_offer|rpy_literal|r13_ev_c_offer|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:306:42",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        16727,
+        16791
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_offer",
+      "block": "r13_ev_c_offer",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:306:42",
+      "when": null,
+      "speaker": "resident_madam",
+      "kind": "dialogue",
+      "text": "탐정 양반, 요즘 한가해 보이네요. 오늘 밤 창고 재고 좀 세어 줘요. 늦게 끝나도 품삯은 열다섯 냥 드릴게요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 306,
+          "label": "r13_ev_c_offer",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 306,
+      "scene_title": "r13_ev_c_offer",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "87e7aa5de4b9b51ae25cc8a35c51c2f43bc3e0d52e060ea7111676fd821a8ff3",
+      "uid": "d9cbbdf6276578a4fef588be",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_offer|rpy_literal|r13_ev_c_offer|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:307:19",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        16813,
+        16849
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_offer",
+      "block": "r13_ev_c_offer",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:307:19",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(보통 일당의 두 배다. 밤일이라 해도 이상할 만큼 후하다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 307,
+          "label": "r13_ev_c_offer",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 307,
+      "scene_title": "r13_ev_c_offer",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "d261010169f44432b24c3a8f51c4f7a848d07277b31aa616558f86dfd81b4e07",
+      "uid": "1f5bd5d218b1d7bb81c2c459",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_offer|rpy_literal|r13_ev_c_offer|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:311:46",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        16983,
+        17009
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_offer",
+      "block": "r13_ev_c_offer",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:311:46",
+      "when": null,
+      "speaker": "resident_madam",
+      "kind": "dialogue",
+      "text": "그래요? 아쉽네. 다른 일손을 찾아보지 뭐.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 311,
+          "label": "r13_ev_c_offer",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 311,
+      "scene_title": "r13_ev_c_offer",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "d31869e68c3d793eb8958d2fde2e5ad948411b549f8806fa6f24c9da1113a3b4",
+      "uid": "9667aef9a0ef1ccc03a1d47b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_offer|rpy_literal|r13_ev_c_offer|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:318:35",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        17315,
+        17362
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_offer",
+      "block": "r13_ev_c_offer",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:318:35",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "아빠 창고 일하러 다녀올게. 누가 와도 문 열지 말고, 문 너머로 이름만 물어봐.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 318,
+          "label": "r13_ev_c_offer",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 318,
+      "scene_title": "r13_ev_c_offer",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "c08139d20f00c6a94a3c8df2fa532b11b255fc67dea59dd141bea6f6614fc72e",
+      "uid": "b9b8c171949c5ffb618c0170",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_offer|rpy_literal|r13_ev_c_offer|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:319:25",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        17390,
+        17404
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_offer",
+      "block": "r13_ev_c_offer",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:319:25",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "응. 내가 방 지킬게.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 319,
+          "label": "r13_ev_c_offer",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 319,
+      "scene_title": "r13_ev_c_offer",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "23d2fa969dc76264409c3d7029019ea0c18e7e610ed61190eef89365410a1dc6",
+      "uid": "404694c62e964748eac48de7",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_ev_c_offer|rpy_literal|r13_ev_c_offer|행 조건 없음",

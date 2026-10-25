@@ -1,7 +1,86 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_town_events.rpy:337:26",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        18097,
+        18140
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_door",
+      "block": "r13_ev_c_door",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:337:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "창고 문은 반쯤 열려 있었다. 안쪽 선반 위에서 등잔 하나가 타고 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 337,
+          "label": "r13_ev_c_door",
+          "guards": []
+        }
+      ],
+      "line": 337,
+      "scene_title": "r13_ev_c_door",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "7246cd3fa64d69c33a482eff2b56b4db35886f6c39bcd26fe06f0596f9232649",
+      "uid": "b0fd0687236b0fef9192a2e3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_door|rpy_literal|r13_ev_c_door|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:343:38",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        18291,
+        18305
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_door",
+      "block": "r13_ev_c_door",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:343:38",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "빗장은 바깥쪽에 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 343,
+          "label": "r13_ev_c_door",
+          "guards": [
+            "while _c_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 343,
+      "scene_title": "r13_ev_c_door",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "23fe8beed437ff348e9fd1e5b44ded5331630a84b0632c4dc521dec7c596cd2e",
+      "uid": "00ca670fc5983a99993a84f9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_door|rpy_literal|r13_ev_c_door|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_town_events.rpy:343:60",
       "file": "game/systems/room13_town_events.rpy",
@@ -38,6 +117,90 @@
       "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
       "baseline_hash": "c4f37c7e2cb34b561a28ca016c965fa1bace37037de77ef2519f1bbb796da720",
       "uid": "a3e8771ed748bbef7549ceaa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_door|rpy_literal|r13_ev_c_door|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:348:42",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        18699,
+        18718
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_door",
+      "block": "r13_ev_c_door",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:348:42",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "문 아래에 나무 조각을 끼웠다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 348,
+          "label": "r13_ev_c_door",
+          "guards": [
+            "while _c_loop:",
+            "menu:",
+            "if _c_item==\"wedge\":"
+          ]
+        }
+      ],
+      "line": 348,
+      "scene_title": "r13_ev_c_door",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "026abd0f4cf1cb17b781da884e096cbb0fd1471ec5f74afe0bd215f6d2f0f9bb",
+      "uid": "d6b8933f18eb930ff1bac757",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_door|rpy_literal|r13_ev_c_door|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:351:42",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        18849,
+        18867
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_door",
+      "block": "r13_ev_c_door",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:351:42",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "문에 쓸 만한 물건이 아니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 351,
+          "label": "r13_ev_c_door",
+          "guards": [
+            "while _c_loop:",
+            "menu:",
+            "elif _c_item:"
+          ]
+        }
+      ],
+      "line": 351,
+      "scene_title": "r13_ev_c_door",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "6f5c54a620afbd6d35fa4fd0bb11c124127dd067c915900243d03fcefa6efc6e",
+      "uid": "2b039fc53056bed36e5f5e9d",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_ev_c_door|rpy_literal|r13_ev_c_door|행 조건 없음",

@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/room13_v111_days123.rpy:103:28",
+      "file": "game/room13_v111_days123.rpy",
+      "path": [
+        5123,
+        5133
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "MS14_D01_S02",
+      "block": "r13_v111_gate_arrival",
+      "placement": "literal",
+      "ref": "game/room13_v111_days123.rpy:103:28",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "눈에 막힌 입구",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 103,
+          "label": "r13_v111_gate_arrival",
+          "guards": []
+        }
+      ],
+      "line": 103,
+      "scene_title": "2. 초소 / 한 사람의 허가",
+      "source_hash": "456f94ff2e8310cc392465f4cf6e8b4751192ba306a52edeb7646cb6546fd0ef",
+      "baseline_hash": "892adb37e266f821fc40a69e7e9eb4866a8b3be53a14432ea0e1f6b7c4e8313d",
+      "uid": "7d8d96fe35bb67ae2bb4b868",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|MS14_D01_S02|rpy_inventory|r13_v111_gate_arrival|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

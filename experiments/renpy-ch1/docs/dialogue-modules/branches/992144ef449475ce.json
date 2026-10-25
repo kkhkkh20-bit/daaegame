@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
     {
       "id": "game/systems/room13_use_knowledge.rpy:65:30",
@@ -35,6 +35,166 @@
       "source_hash": "ed57493544805bb109f813298a02a73868d7c6c91a7fe6b3cb718d6acac0b5f6",
       "baseline_hash": "9fe85261dd5bd7632ec8f517689c86abbeacc29c1d6f28fa780375fc89f6b06d",
       "uid": "dff40ab100009b6b6896c87d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_granny_letter_ask|rpy_literal|r13_granny_letter_ask|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_use_knowledge.rpy:68:35",
+      "file": "game/systems/room13_use_knowledge.rpy",
+      "path": [
+        4951,
+        4966
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_granny_letter_ask",
+      "block": "r13_granny_letter_ask",
+      "placement": "literal",
+      "ref": "game/systems/room13_use_knowledge.rpy:68:35",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "아직 기다리고 있습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_use_knowledge.rpy",
+          "line": 68,
+          "label": "r13_granny_letter_ask",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 68,
+      "scene_title": "r13_granny_letter_ask",
+      "source_hash": "ed57493544805bb109f813298a02a73868d7c6c91a7fe6b3cb718d6acac0b5f6",
+      "baseline_hash": "64e43f575b976079113d17a431b5ae3ba6b86a0df0e6710a33a26dbcdc9bab39",
+      "uid": "1970372b074705d9e6ee1dd6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_granny_letter_ask|rpy_literal|r13_granny_letter_ask|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_use_knowledge.rpy:69:26",
+      "file": "game/systems/room13_use_knowledge.rpy",
+      "path": [
+        4995,
+        5025
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_granny_letter_ask",
+      "block": "r13_granny_letter_ask",
+      "placement": "literal",
+      "ref": "game/systems/room13_use_knowledge.rpy:69:26",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "그래요……. 무슨 소식이 오면 나한테도 알려 줘요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_use_knowledge.rpy",
+          "line": 69,
+          "label": "r13_granny_letter_ask",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 69,
+      "scene_title": "r13_granny_letter_ask",
+      "source_hash": "ed57493544805bb109f813298a02a73868d7c6c91a7fe6b3cb718d6acac0b5f6",
+      "baseline_hash": "98f579a77730fa8dc86dac49d0df673cae77e344133c71a1dcc096dd4da854e6",
+      "uid": "c66f63ef31882682209f3f96",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_granny_letter_ask|rpy_literal|r13_granny_letter_ask|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_use_knowledge.rpy:70:22",
+      "file": "game/systems/room13_use_knowledge.rpy",
+      "path": [
+        5050,
+        5087
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_granny_letter_ask",
+      "block": "r13_granny_letter_ask",
+      "placement": "literal",
+      "ref": "game/systems/room13_use_knowledge.rpy:70:22",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "할머니는 대답을 듣고 접수대 아래 서랍을 한 번 열었다 닫았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_use_knowledge.rpy",
+          "line": 70,
+          "label": "r13_granny_letter_ask",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 70,
+      "scene_title": "r13_granny_letter_ask",
+      "source_hash": "ed57493544805bb109f813298a02a73868d7c6c91a7fe6b3cb718d6acac0b5f6",
+      "baseline_hash": "35eb601299bbe71cc42b651f5a81979e053e39792d10afe515d3df280edfd319",
+      "uid": "f53e46e3dff1947e212fef04",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_granny_letter_ask|rpy_literal|r13_granny_letter_ask|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_use_knowledge.rpy:75:38",
+      "file": "game/systems/room13_use_knowledge.rpy",
+      "path": [
+        5419,
+        5433
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_granny_letter_ask",
+      "block": "r13_granny_letter_ask",
+      "placement": "literal",
+      "ref": "game/systems/room13_use_knowledge.rpy:75:38",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "그래요. 바쁘시겠지요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_use_knowledge.rpy",
+          "line": 75,
+          "label": "r13_granny_letter_ask",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 75,
+      "scene_title": "r13_granny_letter_ask",
+      "source_hash": "ed57493544805bb109f813298a02a73868d7c6c91a7fe6b3cb718d6acac0b5f6",
+      "baseline_hash": "1f876dca495b260cda27fe38cf99a914b89f5bcf074cc1ce50b6c2bd0d5f3566",
+      "uid": "3678e8b9b3b2cde55ebfb8f0",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_granny_letter_ask|rpy_literal|r13_granny_letter_ask|행 조건 없음",

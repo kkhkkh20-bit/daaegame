@@ -1,0 +1,82 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:533:26",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        31471,
+        31516
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_missed",
+      "block": "r13_wf_missed",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:533:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "학교 회의는 끝났다고 했다. 보리가 장작 도둑이자 불을 낸 사람으로 끌려갔다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 533,
+          "label": "r13_wf_missed",
+          "guards": []
+        }
+      ],
+      "line": 533,
+      "scene_title": "r13_wf_missed",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "4b13b3899230631e430918dc1df69b353fa8dbf6cc472d7b1fb55e95a9bcc568",
+      "uid": "5ddff329314c57e12d9ed985",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_missed|rpy_literal|r13_wf_missed|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:534:15",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        31534,
+        31551
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_missed",
+      "block": "r13_wf_missed",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:534:15",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(그 회의에 갔어야 했다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 534,
+          "label": "r13_wf_missed",
+          "guards": []
+        }
+      ],
+      "line": 534,
+      "scene_title": "r13_wf_missed",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "a82cdfb6b1fb8fc0812e547d46bafba55cd5a3201c5f3ab4dcd9f579ec75abfc",
+      "uid": "6453a2e1f4a1253ad71402c4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_missed|rpy_literal|r13_wf_missed|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
     {
       "id": "game/systems/room13_ep2_kids.rpy:390:30",
@@ -43,6 +43,46 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
+      "id": "game/systems/room13_ep2_kids.rpy:391:21",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        19501,
+        19533
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_tell_somi",
+      "block": "r13_ep2_tell_somi",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:391:21",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "(솜이한테 할아버지 강 이야기를 해 줘야 하는데…….)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 391,
+          "label": "r13_ep2_tell_somi",
+          "guards": [
+            "if r13_has(\"K07\") and r13_has(\"kd_named\"):"
+          ]
+        }
+      ],
+      "line": 391,
+      "scene_title": "r13_ep2_tell_somi",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "88423dce9d17804986ef9f212bcd42316a4994bfff7059c1b6dfd62b7db52f4b",
+      "uid": "39f119066969e2c8a54d5125",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_tell_somi|rpy_literal|r13_ep2_tell_somi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
       "id": "game/systems/room13_ep2_kids.rpy:394:30",
       "file": "game/systems/room13_ep2_kids.rpy",
       "path": [
@@ -77,6 +117,129 @@
       "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
       "baseline_hash": "38c5592a30c804b0199cc2500e1b3997b4798a14b80748ff1dfb0540b0e4f6ab",
       "uid": "d54a1beff00e949a124162d4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_tell_somi|rpy_literal|r13_ep2_tell_somi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:397:41",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        19811,
+        19858
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_tell_somi",
+      "block": "r13_ep2_tell_somi",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:397:41",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "솜이야. 할아버지가 아까 그랬어. 강물 소리가 좋다고. 할머니가 거기서 기다린대.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 397,
+          "label": "r13_ep2_tell_somi",
+          "guards": [
+            "if r13_has(\"K07\") and not r13_has(\"kd_seori\"):",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 397,
+      "scene_title": "r13_ep2_tell_somi",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "bda6f7574d33a9cfda96b964a7edbea73e88dd993772a2c21cb30bcced9f5a40",
+      "uid": "9ee1b184ebf369689d96fb45",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_tell_somi|rpy_literal|r13_ep2_tell_somi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:398:37",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        19898,
+        19908
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_tell_somi",
+      "block": "r13_ep2_tell_somi",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:398:37",
+      "when": null,
+      "speaker": "resident_somi",
+      "kind": "dialogue",
+      "text": "……할아버지가?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 398,
+          "label": "r13_ep2_tell_somi",
+          "guards": [
+            "if r13_has(\"K07\") and not r13_has(\"kd_seori\"):",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 398,
+      "scene_title": "r13_ep2_tell_somi",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "fa239b9a4fa47c2d3a61aca563791e3303fa421987495e93dfe19c5325d1564f",
+      "uid": "b523832bd7660f29c6e4504c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_tell_somi|rpy_literal|r13_ep2_tell_somi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:399:26",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        19937,
+        19952
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_tell_somi",
+      "block": "r13_ep2_tell_somi",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:399:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "솜이의 얼굴이 하얘졌다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 399,
+          "label": "r13_ep2_tell_somi",
+          "guards": [
+            "if r13_has(\"K07\") and not r13_has(\"kd_seori\"):",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 399,
+      "scene_title": "r13_ep2_tell_somi",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "a7950748c7e5d611daf73a5f0667123050568021410bc41d18943921867a5f7f",
+      "uid": "87acc44954ad9c1bad00ecc4",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_ep2_tell_somi|rpy_literal|r13_ep2_tell_somi|행 조건 없음",

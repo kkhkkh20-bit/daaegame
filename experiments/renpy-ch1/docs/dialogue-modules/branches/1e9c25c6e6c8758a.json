@@ -1,0 +1,246 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_episodes.rpy:183:8",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        11226,
+        11244
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_ep1_eaves",
+      "block": "r13_ep1_eaves",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:183:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "네로에게 부탁해 헛간에 숨긴다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 183,
+          "label": "r13_ep1_eaves",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 183,
+      "scene_title": "r13_ep1_eaves",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "b27f31ce182bcb28fd64e3050f79867424e75daaf0c5a67ad3149633290f0c4f",
+      "uid": "c121015b0ac2c9d1c08ddc84",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_eaves|rpy_menu|r13_ep1_eaves|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_episodes.rpy:189:8",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        11600,
+        11626
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_ep1_eaves",
+      "block": "r13_ep1_eaves",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:189:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "피코에게 등록증을 그려 달라고 한다 (5냥)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 189,
+          "label": "r13_ep1_eaves",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 189,
+      "scene_title": "r13_ep1_eaves",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "9be9ff3eb0495407dd56b75607c396ed9f70cf7c931318c9ff091491bd9eeb0f",
+      "uid": "4dd091d871389e91a1a5d7c2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_eaves|rpy_menu|r13_ep1_eaves|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_episodes.rpy:196:8",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        12063,
+        12085
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_ep1_eaves",
+      "block": "r13_ep1_eaves",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:196:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "서리 검사원에게 관찰 확인서를 받는다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 196,
+          "label": "r13_ep1_eaves",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 196,
+      "scene_title": "r13_ep1_eaves",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "cbccb2767ca9ecb2adb1d348dc6c7da0eb46ec2d67cade6d40de8cfdbd2bc289",
+      "uid": "47a21842d927f3f83be7dc68",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_eaves|rpy_menu|r13_ep1_eaves|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_episodes.rpy:201:8",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        12438,
+        12461
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_ep1_eaves",
+      "block": "r13_ep1_eaves",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:201:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "바둑이에게 처마 순찰을 빼 달라고 한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 201,
+          "label": "r13_ep1_eaves",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 201,
+      "scene_title": "r13_ep1_eaves",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "729223038d5d45543dca87a0c772191eb34308fe65c01410281892ec65e2ed3f",
+      "uid": "7974064eb460bb7b88edbcb8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_eaves|rpy_menu|r13_ep1_eaves|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_episodes.rpy:205:8",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        12752,
+        12771
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_ep1_eaves",
+      "block": "r13_ep1_eaves",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:205:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "13호 창 안쪽에서 지내게 한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 205,
+          "label": "r13_ep1_eaves",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 205,
+      "scene_title": "r13_ep1_eaves",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "7cab9c7bcf44abc95acccbd8f0323dab2fc63633325e63ef7f8817fd5fa08d51",
+      "uid": "408396f86ab7f6e4cddbacf8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_eaves|rpy_menu|r13_ep1_eaves|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_episodes.rpy:209:8",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        12978,
+        13000
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_ep1_eaves",
+      "block": "r13_ep1_eaves",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:209:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "지금은 할 수 있는 게 없다고 말한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 209,
+          "label": "r13_ep1_eaves",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 209,
+      "scene_title": "r13_ep1_eaves",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "effb7a686aa269ea75daeae813ca50dd595e19fea82a23362ca521d00db50e35",
+      "uid": "7412da3f772626134317504d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_eaves|rpy_menu|r13_ep1_eaves|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

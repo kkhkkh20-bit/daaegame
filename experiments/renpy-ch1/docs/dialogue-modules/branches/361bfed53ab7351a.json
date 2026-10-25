@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events.rpy:484:94",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        25444,
+        25450
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_ev_kongi_errand",
+      "block": "r13_ev_kongi_errand",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:484:94",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "그만둔다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 484,
+          "label": "r13_ev_kongi_errand",
+          "guards": []
+        }
+      ],
+      "line": 484,
+      "scene_title": "r13_ev_kongi_errand",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "917eea52f23b49b71f5a40e68deaf813d4502d21a8c036ed1e528c4adecf8629",
+      "uid": "d2eb220e3f526c07f7b738bf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_kongi_errand|rpy_menu|r13_ev_kongi_errand|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

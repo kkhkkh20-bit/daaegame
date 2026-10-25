@@ -1,7 +1,539 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:303:26",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        17586,
+        17640
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_lab",
+      "block": "r13_ws_lab",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:303:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "엄마는 13호 뒤 통로로 내려갔다. 갈라진 벽 너머 돌계단. 아래에서 따뜻한 바람이 올라왔다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 303,
+          "label": "r13_ws_lab",
+          "guards": []
+        }
+      ],
+      "line": 303,
+      "scene_title": "r13_ws_lab",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "b221cf0800d85fc7af8f936b5a291fb83cdbce371aea03a0ace6895bd9e9a961",
+      "uid": "f4ecec8abc77d15d5408de17",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_lab|rpy_literal|r13_ws_lab|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:304:15",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        17658,
+        17707
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_lab",
+      "block": "r13_ws_lab",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:304:15",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "여관 아래에 옛사람들이 돌을 만들던 곳이 있어. 할머니가 예전에 나를 여기 데려왔어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 304,
+          "label": "r13_ws_lab",
+          "guards": []
+        }
+      ],
+      "line": 304,
+      "scene_title": "r13_ws_lab",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "481ce08f11da8db26073595928e62ce0f72240c882feb05277cecc0118d77fc2",
+      "uid": "5604400e01bbcc54abb56d36",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_lab|rpy_literal|r13_ws_lab|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:305:14",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        17724,
+        17774
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_lab",
+      "block": "r13_ws_lab",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:305:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "돌기둥 사이에 유리관이 줄지어 있다. 유리관 안에서 초록빛 조각들이 숨 쉬듯 깜빡였다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 305,
+          "label": "r13_ws_lab",
+          "guards": []
+        }
+      ],
+      "line": 305,
+      "scene_title": "r13_ws_lab",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "d2ea8329470983e27f2354f36bed5107055ced957a65aaf9366047c87348ac1d",
+      "uid": "64888d0cfc753cf83b1f0d0a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_lab|rpy_literal|r13_ws_lab|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:307:15",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        17864,
+        17921
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_lab",
+      "block": "r13_ws_lab",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:307:15",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "유리관 줄 끝 돌 선반에 두꺼운 장부. 할머니 글씨로 겉장에 '보호소'. 안은 죽은 사람 칸이었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 307,
+          "label": "r13_ws_lab",
+          "guards": []
+        }
+      ],
+      "line": 307,
+      "scene_title": "r13_ws_lab",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "d87492d12187b556e0f50f834501e2c7863c1c18069835098a17c698bef683c8",
+      "uid": "6df00ffa0183ae2c0a23a871",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_lab|rpy_literal|r13_ws_lab|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:308:14",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        17938,
+        18001
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_lab",
+      "block": "r13_ws_lab",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:308:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "지난겨울 칸에 '모과'. 세 해 전 칸에 '보미 — 여관'. 올겨울 칸은 벌써 차 있었다. '판돌 — 이송'.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 308,
+          "label": "r13_ws_lab",
+          "guards": []
+        }
+      ],
+      "line": 308,
+      "scene_title": "r13_ws_lab",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "e876d77955d756b1be742638f388c9560f6106367428e16646d5d6e565a828d3",
+      "uid": "238fc1754a10decbb1d78db4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_lab|rpy_literal|r13_ws_lab|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:309:15",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        18019,
+        18066
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_lab",
+      "block": "r13_ws_lab",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:309:15",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "‘이송’은 다른 곳으로 옮겨 보낸다는 말이야. 보호소로 보낸다는 뜻으로 써 왔지.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 309,
+          "label": "r13_ws_lab",
+          "guards": []
+        }
+      ],
+      "line": 309,
+      "scene_title": "r13_ws_lab",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "63d486e871c3e6ff5309e5d340c8dc1345a6c1057d7f81b51820953e723f1837",
+      "uid": "54cbbdf18129fd64567e4a87",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_lab|rpy_literal|r13_ws_lab|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:310:15",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        18084,
+        18128
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_lab",
+      "block": "r13_ws_lab",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:310:15",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(보호소에 간 사람은 죽은 사람 칸에 있다. 아직 떠나지도 않은 사람까지.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 310,
+          "label": "r13_ws_lab",
+          "guards": []
+        }
+      ],
+      "line": 310,
+      "scene_title": "r13_ws_lab",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "2187532b35e7c251a756c78a5fe3169a333b06eaa00a8da0707724d375a6cafc",
+      "uid": "7f419078a2563d76cb39ea54",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_lab|rpy_literal|r13_ws_lab|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:311:27",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        18175,
+        18225
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_lab",
+      "block": "r13_ws_lab",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:311:27",
+      "when": null,
+      "speaker": "resident_guldol",
+      "kind": "dialogue",
+      "text": "(벽의 글자를 손가락으로 짚으며) \"돌은…… 하나가 아니었다. 나눠서…… 데웠다.\"",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 311,
+          "label": "r13_ws_lab",
+          "guards": []
+        }
+      ],
+      "line": 311,
+      "scene_title": "r13_ws_lab",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "45bc93629ab81935d3a70622b60a48290f59f554cc18a6c0cb382fdfd8c1a7ab",
+      "uid": "4aaab6b71711d1ea5703e150",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_lab|rpy_literal|r13_ws_lab|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:312:15",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        18243,
+        18299
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_lab",
+      "block": "r13_ws_lab",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:312:15",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "조각이 하나씩 식으니까, 마을은 남은 큰 돌 하나만 붙잡았어. 그리고 그 돌에…… 사람을 바쳤어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 312,
+          "label": "r13_ws_lab",
+          "guards": []
+        }
+      ],
+      "line": 312,
+      "scene_title": "r13_ws_lab",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "e9e5e70716d2a671321205564d864bc02432feda89dded5416c6ca359d844cca",
+      "uid": "16de27a1cab0b45c776e8231",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_lab|rpy_literal|r13_ws_lab|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:313:15",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        18317,
+        18341
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_lab",
+      "block": "r13_ws_lab",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:313:15",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "이 조각 셋을 한데 모아 볼게. 잘 봐.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 313,
+          "label": "r13_ws_lab",
+          "guards": []
+        }
+      ],
+      "line": 313,
+      "scene_title": "r13_ws_lab",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "36fd5e874a7c590cc5027f880e7bae26c71d4bbc0421d2b5f5a93dd44d43571d",
+      "uid": "07df4913ff26dfb96da3089a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_lab|rpy_literal|r13_ws_lab|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:314:14",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        18384,
+        18418
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_lab",
+      "block": "r13_ws_lab",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:314:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "처음엔 미지근했다. 숨 몇 번 사이에, 초록빛이 짙어졌다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 314,
+          "label": "r13_ws_lab",
+          "guards": []
+        }
+      ],
+      "line": 314,
+      "scene_title": "r13_ws_lab",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "aa421471b76e4ed9af770e8d270550e915ef178611574c59aaee319d135ba1e7",
+      "uid": "4db14409317775be52f7f983",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_lab|rpy_literal|r13_ws_lab|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:315:15",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        18436,
+        18473
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_lab",
+      "block": "r13_ws_lab",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:315:15",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "따로 두면 식어. 모으면 서로 데워. 사람을 바치지 않아도 돼.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 315,
+          "label": "r13_ws_lab",
+          "guards": []
+        }
+      ],
+      "line": 315,
+      "scene_title": "r13_ws_lab",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "fcc779720520191ea610e84e943b65650d3f09e230f0c0056d2fc82d020ecff0",
+      "uid": "37ae1f0f0f16db03708e12ce",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_lab|rpy_literal|r13_ws_lab|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:316:27",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        18503,
+        18524
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_lab",
+      "block": "r13_ws_lab",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:316:27",
+      "when": null,
+      "speaker": "resident_guldol",
+      "kind": "dialogue",
+      "text": "밤새 지켜봅시다. 정말 안 식는지.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 316,
+          "label": "r13_ws_lab",
+          "guards": []
+        }
+      ],
+      "line": 316,
+      "scene_title": "r13_ws_lab",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "1fe00d14990ae30bedf9b75d6dd98592c1f44a6381c5e9b032815ee58d732a3f",
+      "uid": "53332a796e0411539d97d1a3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_lab|rpy_literal|r13_ws_lab|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:317:15",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        18542,
+        18571
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_lab",
+      "block": "r13_ws_lab",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:317:15",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "다만 시간이 걸려. 오늘 밤 안에는 데워질 거야.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 317,
+          "label": "r13_ws_lab",
+          "guards": []
+        }
+      ],
+      "line": 317,
+      "scene_title": "r13_ws_lab",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "2506caa0f39bdc0a54b600a42c48c34ebabbc8f6de468c4bb1da29afedeb9ba3",
+      "uid": "62d154109abc96b624190192",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_lab|rpy_literal|r13_ws_lab|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_ep5_soup.rpy:320:30",
       "file": "game/systems/room13_ep5_soup.rpy",
@@ -37,6 +569,86 @@
       "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
       "baseline_hash": "8550f4208012cea7431e0d00ef53afa225b5df6d9f542c3c70357af5f1cf7156",
       "uid": "918942e67f810d899315bc5b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_lab|rpy_literal|r13_ws_lab|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:321:29",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        18803,
+        18853
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_lab",
+      "block": "r13_ws_lab",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:321:29",
+      "when": null,
+      "speaker": "resident_somi",
+      "kind": "dialogue",
+      "text": "……다람아. 방금 누가 내 이름 불렀어. 할아버지 목소리였어. \"솜이야.\" 그렇게.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 321,
+          "label": "r13_ws_lab",
+          "guards": [
+            "if r13_has(\"kd_farewell_seen\"):"
+          ]
+        }
+      ],
+      "line": 321,
+      "scene_title": "r13_ws_lab",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "7c0277984ad9601814ea3765f1b1ba50a20f8a479b5df39bbe9e7e4515f55549",
+      "uid": "54be0ad85b83f10a0a3bd038",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_lab|rpy_literal|r13_ws_lab|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:322:18",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        18874,
+        18919
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_lab",
+      "block": "r13_ws_lab",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:322:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "관 속 조각 하나가 한 번, 크게 깜빡였다. 아무도 그 이유를 말하지 않았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 322,
+          "label": "r13_ws_lab",
+          "guards": [
+            "if r13_has(\"kd_farewell_seen\"):"
+          ]
+        }
+      ],
+      "line": 322,
+      "scene_title": "r13_ws_lab",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "fc3be2c5dd0291835d5a12e10add7c32be1b87e1fb5e0d8dd928afb60038f3a7",
+      "uid": "19fe1865856b109c91217c49",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_ws_lab|rpy_literal|r13_ws_lab|행 조건 없음",

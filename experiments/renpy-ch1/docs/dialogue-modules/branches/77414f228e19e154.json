@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
     {
       "id": "game/systems/room13_ep1_lamp_thief.rpy:278:30",
@@ -83,6 +83,128 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:280:18",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        16407,
+        16442
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_dawn",
+      "block": "r13_ep1_dawn",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:280:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "사람들이 피코를 들어 옮겼다. 손에서 붓이 떨어지지 않았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 280,
+          "label": "r13_ep1_dawn",
+          "guards": [
+            "if r13_has(\"piko_sheltered\"):"
+          ]
+        }
+      ],
+      "line": 280,
+      "scene_title": "r13_ep1_dawn",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "c8a3d356d6f3d0b2065848daeaec557954975de252aa13795b5c4cf31676d12f",
+      "uid": "008fe3b4ee8ad7cd9c4689de",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_dawn|rpy_literal|r13_ep1_dawn|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:282:34",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        16539,
+        16591
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_dawn",
+      "block": "r13_ep1_dawn",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:282:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "피코의 품에서 판자 하나가 나왔다. 엄마의 얼굴. 코를 찡그린 모양까지 다 그려져 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 282,
+          "label": "r13_ep1_dawn",
+          "guards": [
+            "if r13_has(\"piko_sheltered\"):",
+            "if r13_has(\"lt_piko_promise\"):"
+          ]
+        }
+      ],
+      "line": 282,
+      "scene_title": "r13_ep1_dawn",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "080131412428bdaa1f19d738852b6406f8eddc29f50abb09fc9c298c75523715",
+      "uid": "3b0f208ee20b21edcb02727d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_dawn|rpy_literal|r13_ep1_dawn|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:283:25",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        16619,
+        16639
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_dawn",
+      "block": "r13_ep1_dawn",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:283:25",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "엄마다! 아주머니가 약속 지켰어!",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 283,
+          "label": "r13_ep1_dawn",
+          "guards": [
+            "if r13_has(\"piko_sheltered\"):",
+            "if r13_has(\"lt_piko_promise\"):"
+          ]
+        }
+      ],
+      "line": 283,
+      "scene_title": "r13_ep1_dawn",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "12b8670ec0a6d5716ba2ae3fb8a78da36fb969d1f8d96ec489f57025b0088601",
+      "uid": "1336214848db0ec5e81d41a4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_dawn|rpy_literal|r13_ep1_dawn|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
       "id": "game/systems/room13_ep1_lamp_thief.rpy:290:30",
       "file": "game/systems/room13_ep1_lamp_thief.rpy",
       "path": [
@@ -123,6 +245,166 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:291:36",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        17083,
+        17111
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_dawn",
+      "block": "r13_ep1_dawn",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:291:36",
+      "when": null,
+      "speaker": "resident_lamplighter",
+      "kind": "dialogue",
+      "text": "새벽에 돌 때만 해도…… 미지근했어요. 분명히.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 291,
+          "label": "r13_ep1_dawn",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 291,
+      "scene_title": "r13_ep1_dawn",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "a657430ae17202548d7c0e438bd2f350bfca2cb56044bcc46395ca46513b4231",
+      "uid": "2eb6089b51371fc9a2c4f522",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_dawn|rpy_literal|r13_ep1_dawn|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:292:21",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        17160,
+        17179
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_dawn",
+      "block": "r13_ep1_dawn",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:292:21",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "아빠, 아주머니 왜 안 일어나?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 292,
+          "label": "r13_ep1_dawn",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 292,
+      "scene_title": "r13_ep1_dawn",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "263ddb461839d27345c05bc27867560c7b4527b279b52afbecaf15fee3603e44",
+      "uid": "37c86ccea4ff9bc7730f39f0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_dawn|rpy_literal|r13_ep1_dawn|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:293:18",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        17225,
+        17263
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_dawn",
+      "block": "r13_ep1_dawn",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:293:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 다람이의 손을 잡았다. 담요 아래의 피코는 움직이지 않았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 293,
+          "label": "r13_ep1_dawn",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 293,
+      "scene_title": "r13_ep1_dawn",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "8ad0b4ff7311767bb61f185bef94448af91ea91622d0c3909616ab913f371206",
+      "uid": "c457f335480213ffb00505ce",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_dawn|rpy_literal|r13_ep1_dawn|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:294:19",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        17285,
+        17306
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_dawn",
+      "block": "r13_ep1_dawn",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:294:19",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "……다람아. 아주머니는 돌아가셨어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 294,
+          "label": "r13_ep1_dawn",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 294,
+      "scene_title": "r13_ep1_dawn",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "0094c66c617b3630a30b59d07d8bbe129743c55c8a2bc62c73c8e04d144cad4e",
+      "uid": "a93486ee50f9300772cb254a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_dawn|rpy_literal|r13_ep1_dawn|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
       "id": "game/systems/room13_ep1_lamp_thief.rpy:295:30",
       "file": "game/systems/room13_ep1_lamp_thief.rpy",
       "path": [
@@ -157,6 +439,170 @@
       "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
       "baseline_hash": "b3c9aab73abdb81c9c34d1d3f53789ee8a5b4d7b1fc9afadc871c0e966eb59a9",
       "uid": "c3109da08e33213f70ae4087",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_dawn|rpy_literal|r13_ep1_dawn|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:297:34",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        17470,
+        17512
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_dawn",
+      "block": "r13_ep1_dawn",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:297:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "붓 옆에 판자 하나. 엄마의 얼굴이었다. 코만 아직 그려져 있지 않았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 297,
+          "label": "r13_ep1_dawn",
+          "guards": [
+            "else:",
+            "if r13_has(\"lt_piko_promise\"):"
+          ]
+        }
+      ],
+      "line": 297,
+      "scene_title": "r13_ep1_dawn",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "13472f716ed054f6554e6b8aa311fcb98c0df2eef6a904de8f79f29c8cd23b06",
+      "uid": "c46a83e0f17a643d12882fbc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_dawn|rpy_literal|r13_ep1_dawn|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:298:25",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        17540,
+        17561
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_dawn",
+      "block": "r13_ep1_dawn",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:298:25",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "……엄마다. 코를 아직 안 그렸어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 298,
+          "label": "r13_ep1_dawn",
+          "guards": [
+            "else:",
+            "if r13_has(\"lt_piko_promise\"):"
+          ]
+        }
+      ],
+      "line": 298,
+      "scene_title": "r13_ep1_dawn",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "2d385e7519baf6692c5ea0fddb2cfd2f35d1284589e8be8682ff71b80c3674aa",
+      "uid": "81c0632c1aa39cdc825c687c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_dawn|rpy_literal|r13_ep1_dawn|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:301:34",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        17684,
+        17730
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_dawn",
+      "block": "r13_ep1_dawn",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:301:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "판자 사이에서 오래된 스케치가 나왔다. 다람쥐 여인이 소포를 안고 울고 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 301,
+          "label": "r13_ep1_dawn",
+          "guards": [
+            "else:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 301,
+      "scene_title": "r13_ep1_dawn",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "59c12a5c100a1c603c9d44bf6f4cc0e2f24fcb5b73f4898d853bfe307cf55ef9",
+      "uid": "15cbd605509c7fc1538c7069",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_dawn|rpy_literal|r13_ep1_dawn|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:302:23",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        17756,
+        17789
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_dawn",
+      "block": "r13_ep1_dawn",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:302:23",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(눈썹의 흉터. 아내다. 피코는 아내를 본 적이 있다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 302,
+          "label": "r13_ep1_dawn",
+          "guards": [
+            "else:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 302,
+      "scene_title": "r13_ep1_dawn",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "d6e641310434c12b658310293da7ec3f7f8e243b8e70563474c69162b2a858d2",
+      "uid": "db56a8941837ffcfc660600a",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_ep1_dawn|rpy_literal|r13_ep1_dawn|행 조건 없음",

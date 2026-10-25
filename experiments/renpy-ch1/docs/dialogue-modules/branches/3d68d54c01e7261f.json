@@ -1,7 +1,986 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/winter_opening.rpy:63:33",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        4151,
+        4188
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:63:33",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "눈에 덮인 바닥과 문턱을 살폈다. 떨어진 물건은 보이지 않는다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 63,
+          "label": "winter_entry_loop",
+          "guards": [
+            "if isinstance(winter_entry_choice,tuple):"
+          ]
+        }
+      ],
+      "line": 63,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "840d1be3b85974423ea4dbcffd42d4e6279aba1dcc42e4fa125e4a6d1a83f99a",
+      "uid": "dbfcc9c3b089b7d83b33af11",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:66:12",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        4272,
+        4293
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:66:12",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "까로는 옷 안주머니를 뒤지고 있다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 66,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"permit\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 66,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "a326f1732d3b63a97c5c718cf4e503cf95f782832ee1c9bb46d70f8776e2d70d",
+      "uid": "fec2fdcc6cdb5194793d546d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:68:42",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        4370,
+        4396
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:68:42",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "두 사람 온다고 적힌 종이, 아직 있습니까?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 68,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"permit\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 68,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "2fd6aed5751b9bdbbaa9fcab3727e0637221a7bc2230d173b26ba5222521189f",
+      "uid": "4d7a185a6d0dcc3dc1be7294",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:68:78",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        4406,
+        4432
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:68:78",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "네. 젖을까 봐 안주머니에 넣었어요. 여기.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 68,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"permit\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 68,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "125e6e137a786fb7d8c57232bc8d609270d36b8507471a2bc03a37223a629cfe",
+      "uid": "3e578c8c3c2239bae00f3b7b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:68:115",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        4443,
+        4461
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:68:115",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "내 이름도 있네. 아빠 옆에.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 68,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"permit\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 68,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "bf682b91463b1767784b9ca57e8fdad455b2cec66a3f1028b17ab574becff429",
+      "uid": "40aba57492747a0438d0ffba",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:68:141",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        4469,
+        4516
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:68:141",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "겨울잠 여관. 손님 두 사람. 번호 73-2. 할머니의 이름 아래 도장이 찍혔다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 68,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"permit\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 68,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "a397cde31b8efa0608100476177a22dbb5ef258ab479ebbd16e63977b2ea24fe",
+      "uid": "14f330ab9c3b42926c424ff0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:68:198",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        4526,
+        4566
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:68:198",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "경비가 보는 것과 같은 번호인지 봐요. 내가 내밀면 잘 안 읽더라고.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 68,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"permit\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 68,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "c4efde5a301de5c6883153b1a86f9052a432cb631c1dd9b3f9480622cc9ceb05",
+      "uid": "86d2f70e9be4913e6d8d151a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:71:43",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        4714,
+        4746
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:71:43",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "수리점에 맡겨야죠. 그래도 눈보라가 그쳐야 길을 봐요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 71,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"permit\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 71,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "4a189acee52e3639c9c70407054dbe8501e931aa307e245f8b36fa755da00fe0",
+      "uid": "770230321b5911af90ac9d28",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:71:84",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        4755,
+        4771
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:71:84",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "그동안 여관에 있겠습니다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 71,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"permit\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 71,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "f92327e3a4b33941a3fc9df5ad455e607dd025c5d96aabe17700c28e1b051e1d",
+      "uid": "1acf1f4792058ef5f1c915f9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:71:110",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        4781,
+        4809
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:71:110",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "나도 멀리 못 가요. 먼저 둘이 같이 들어가요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 71,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"permit\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 71,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "692fb8d7aba136b50f5e5786ccba44bed6d47d2c7a65ce31d51e0228218fe1f6",
+      "uid": "72f6efc59311ef9880ea01bb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:76:12",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        4942,
+        4965
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:76:12",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "경비는 펼친 책을 손으로 누르고 있다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 76,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"ledger\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 76,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "6807e6338c52eb4f1e83ba91b1505c3e324cbe11f5a5fc62d53513c740f0139b",
+      "uid": "7a0f47bbba6fccc5b4d95371",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:78:42",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        5046,
+        5080
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:78:42",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "다른 사람 이름은 안 보겠습니다. 우리 줄만 보여 주세요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 78,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"ledger\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 78,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "56d5c2c4f268946e4e4f499ca1a64d635212214409bf3f35f85048263fedc1dc",
+      "uid": "cd57c4cbc2bd20192175a3a6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:78:87",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        5091,
+        5118
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:78:87",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "73-2. 성인 한 명. 아이 칸은 비었어요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 78,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"ledger\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 78,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "4e090ece5c1a6c8333ad092b26ac49c97f3f868c1cc2d2f5d0c898574e34a87f",
+      "uid": "6d36001692b51a2e82c57e1c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:78:125",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        5129,
+        5144
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:78:125",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "누가 내 이름 지웠어요?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 78,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"ledger\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 78,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "c7c5d2505812bec796bb238a61b3873b6c38ac19ffcd8501dd6b7e63394a45ad",
+      "uid": "cdf4c5a30e245a2db0f926d9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:78:151",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        5155,
+        5184
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:78:151",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "난 이대로 받았어. 네 이름은 방금 처음 들었고.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 78,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"ledger\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 78,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "80af53e4b8e23b8c256e889f41aad3c1335f63b4786da47abb0ff27cbe29415e",
+      "uid": "67806148bb8926548dfafbd7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:78:189",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        5193,
+        5215
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:78:189",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "번호와 적힌 인원만 옮겨 적겠습니다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 78,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"ledger\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 78,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "e35fb97e4cf0f207f426c9c0b6a11bf89d4139f9b1e04f79b14fc3725a0ed61f",
+      "uid": "96a90ad43c96b04aae2306b3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:78:222",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        5226,
+        5234
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:78:222",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "그 줄만요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 78,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"ledger\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 78,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "761bc5a79e0f89b808595a46bb2564dda207fc0a23b9874d004842757c7a4597",
+      "uid": "b3a38a2e35a6868bc3a213b8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:81:44",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        5382,
+        5405
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:81:44",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "처음 오는 사람들은 저쪽부터 확인해요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 81,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"ledger\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 81,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "fca6dda081e9f36b8c257fac3a4fbed9750534730243057fa188dc1022b03a11",
+      "uid": "38eb64f4f34048deaf95609e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:81:76",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        5414,
+        5426
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:81:76",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "함께 온 가족도요?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 81,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"ledger\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 81,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "a169b52acf85670a2034b7c497bafbfb4d2667d584cb3c1e9cb779860d3706f5",
+      "uid": "045e4047a5d57f99be728903",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:81:99",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        5437,
+        5474
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:81:99",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "문 옆에 붙인 안내 보셨습니까? 난 늘 하던 대로 하는 겁니다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 81,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"ledger\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 81,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "5d3a0736523afcfca479d147d239a63a6e4457ddd4e0c6972288198815c40536",
+      "uid": "1f80018b91f5ce8ff322913f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:85:36",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        5614,
+        5635
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:85:36",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "아래가 접혔어. 여기 글씨도 있네.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 85,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"rule\":"
+          ]
+        }
+      ],
+      "line": 85,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "1fe2242f1ed7dbd0f974dfb64c4cc855ce0aef159dd17856c9a413010983424d",
+      "uid": "9c48e2d52b9a15220397d640",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:85:66",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        5644,
+        5661
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:85:66",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "종이 젖었으니 살살 펴 봐.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 85,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"rule\":"
+          ]
+        }
+      ],
+      "line": 85,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "04206020edbf9c3bea662262494ee5186dc70bb9b1aef098096f9ce979d04170",
+      "uid": "08f2e27cfb4c54170865deb0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:85:91",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        5669,
+        5731
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:85:91",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "「이름이 서로 다르면 처음 받은 종이와 맞춰 볼 것. 함께 온 가족은 확인이 끝날 때까지 함께 기다릴 것.」",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 85,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"rule\":"
+          ]
+        }
+      ],
+      "line": 85,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "d89ea8af11b9fb8d835c7a37066c94bbbe4192598eeb8cf024265d956eacbeb9",
+      "uid": "398c7388a5265415d7cce9a9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:85:164",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        5742,
+        5759
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:85:164",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "같이 기다리라고 써 있는데.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 85,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"rule\":"
+          ]
+        }
+      ],
+      "line": 85,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "9647e2e197a85b02c3105f4a2f698eed89a5b583861f909a8f2a203593f92ee4",
+      "uid": "b66dea3d50248d4d7a84b5f3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/winter_opening.rpy:85:190",
       "file": "game/winter_opening.rpy",
@@ -37,6 +1016,292 @@
       "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
       "baseline_hash": "e1c2486999e2ca90feceda01bd744475b9c32fc5dbfbcfb336c2a691967662ad",
       "uid": "f8a1c4646e4f0d038fd104a0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:88:33",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        5914,
+        5974
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:88:33",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "바퀴 축에 갈라진 선이 보였다. 까로가 천으로 표시해 두었다. 문 너머에서는 눈이 다시 옆으로 몰아쳤다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 88,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"road\":"
+          ]
+        }
+      ],
+      "line": 88,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "ec36d8b7ddf114460af09aacf7e682c38270f17978caff882e74417b9d5369e9",
+      "uid": "dfb2e10d9c427f7f4e3992ef",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:88:104",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        5985,
+        6005
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:88:104",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "저거 고쳐도 산은 못 넘는 거네.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 88,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"road\":"
+          ]
+        }
+      ],
+      "line": 88,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "4d87e182869dc0354d145ccf93485dde54ac32b7bf3300c8400527bff7e2c1fc",
+      "uid": "e5f120c11ade8d1e4d285c22",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:88:133",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        6014,
+        6050
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:88:133",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "눈보라가 그쳐야 길도 볼 수 있어. 우선 둘이 같이 들어가자.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 88,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"road\":"
+          ]
+        }
+      ],
+      "line": 88,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "97ceab7af1f4c953ab5d51065f6c63676778f989acf1d0bd1178161a1df029c3",
+      "uid": "15810333f698032028675cc3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:90:33",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        6138,
+        6195
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:90:33",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "문 옆 종이의 아래쪽이 접혔다. 경비는 책을 펼친 채 기다리고, 까로는 주머니에서 무언가를 찾는다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 90,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"look\":"
+          ]
+        }
+      ],
+      "line": 90,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "b79b0497a08d4cd42b5c9a4717052879be81dbb22ee85f520861acd72a9470cb",
+      "uid": "973e18ae98c4f64ded8d3a9c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:100:44",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        6655,
+        6708
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:100:44",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "가족이 보낸 편지인 건 알겠습니다. 하지만 여관에서 두 분을 기다린다는 확인도 있어야 해요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 100,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"present\":",
+            "if _return:",
+            "elif \"invitation\" in winter_selected:"
+          ]
+        }
+      ],
+      "line": 100,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "a197bff89362aae0423c8f07193139e7e9050b0f7c3cd7db51ed87447833f686",
+      "uid": "cb2711570a3de479492094ee",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:100:107",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        6718,
+        6748
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:100:107",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "여관에서 준 종이도 봐 주세요. 도장 있는 쪽이요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 100,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"present\":",
+            "if _return:",
+            "elif \"invitation\" in winter_selected:"
+          ]
+        }
+      ],
+      "line": 100,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "b5df30441a4b713c2e057b2ada72acc0eb142355ea38dccb430c0edbbe9a81ae",
+      "uid": "a479e30cc12f8539fa1be845",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_opening.rpy:102:44",
+      "file": "game/winter_opening.rpy",
+      "path": [
+        6835,
+        6889
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_entry_loop",
+      "block": "winter_entry_loop",
+      "placement": "literal",
+      "ref": "game/winter_opening.rpy:102:44",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "같은 손님인지, 몇 명인지 확인해야 해요. 지금 보여 주신 것만으론 이름을 고치기 어렵습니다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_opening.rpy",
+          "line": 102,
+          "label": "winter_entry_loop",
+          "guards": [
+            "elif winter_entry_choice==\"present\":",
+            "if _return:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 102,
+      "scene_title": "winter_entry_loop",
+      "source_hash": "89baf12562e1b6bba832f0d18acc2c8108245471c26a87ebf96985896f0f84fc",
+      "baseline_hash": "d855a72a1b5842ddfdf99944bc526119afb6cb30f8c07d9af6cb598835ffe47a",
+      "uid": "0ecd97adaee34d985da59067",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|winter_entry_loop|rpy_inventory|winter_entry_loop|행 조건 없음",

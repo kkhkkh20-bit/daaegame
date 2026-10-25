@@ -1,0 +1,170 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:191:12",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        12520,
+        12539
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_final_hub",
+      "block": "r13_final_hub",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:191:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "첫 방어와 사망 원인을 구분한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 191,
+          "label": "r13_final_hub",
+          "guards": [
+            "elif r13_choice==\"case\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 191,
+      "scene_title": "r13_final_hub",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "22d729c2579b8f8d51829b2f4eb9871bb7b756ed2956dd7ef46a6513b6192974",
+      "uid": "c7adecfa130015572e23bdac",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_final_hub|rpy_menu|r13_final_hub|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:193:12",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        12651,
+        12672
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_final_hub",
+      "block": "r13_final_hub",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:193:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "할머니의 실제 목격 구간을 확인한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 193,
+          "label": "r13_final_hub",
+          "guards": [
+            "elif r13_choice==\"case\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 193,
+      "scene_title": "r13_final_hub",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "cfab453b8c23817cf3e9f3f197f7d93d1c6e46a6d012ea7235181d458c0e2b20",
+      "uid": "bd6b7fe246f03ac276c8fa0a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_final_hub|rpy_menu|r13_final_hub|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:195:12",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        12784,
+        12807
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_final_hub",
+      "block": "r13_final_hub",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:195:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "손대고 숨긴 일의 마지막 모순을 짚는다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 195,
+          "label": "r13_final_hub",
+          "guards": [
+            "elif r13_choice==\"case\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 195,
+      "scene_title": "r13_final_hub",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "5c9fb948de31f0a78a17be5f4df494973c391230a92242a21604de6e9cb845f7",
+      "uid": "55195c8ca231cd850562536a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_final_hub|rpy_menu|r13_final_hub|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:199:12",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        13026,
+        13043
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_final_hub",
+      "block": "r13_final_hub",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:199:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "지금의 제단 문제로 돌아간다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 199,
+          "label": "r13_final_hub",
+          "guards": [
+            "elif r13_choice==\"case\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 199,
+      "scene_title": "r13_final_hub",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "c29c6a49f52faa52b038cf7ca4c068f7751f34c494dbeda3e3becf30f1262799",
+      "uid": "76cb696a002864f50e0b7fec",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_final_hub|rpy_menu|r13_final_hub|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

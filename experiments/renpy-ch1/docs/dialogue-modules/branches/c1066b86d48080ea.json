@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/room13.rpy:551:8",
+      "file": "game/room13.rpy",
+      "path": [
+        30379,
+        30390
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_first_night",
+      "block": "r13_first_night",
+      "placement": "literal",
+      "ref": "game/room13.rpy:551:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "현관 밖을 살핀다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 551,
+          "label": "r13_first_night",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 551,
+      "scene_title": "r13_first_night",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "8682f65cbc73cf30c1530597f309610e8c8b611e5bf76c4db3ea110159e44343",
+      "uid": "ced0bb6b851566a6c74520f4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_first_night|rpy_menu|r13_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:554:8",
+      "file": "game/room13.rpy",
+      "path": [
+        30589,
+        30601
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_first_night",
+      "block": "r13_first_night",
+      "placement": "literal",
+      "ref": "game/room13.rpy:554:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "다람이 옆에 앉는다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 554,
+          "label": "r13_first_night",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 554,
+      "scene_title": "r13_first_night",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "4bdf0189e78c6ae557d8e6414b93d911601fbee84cdbb305d07d64e52c5d6986",
+      "uid": "076f79d3a29d8582d11029ef",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_first_night|rpy_menu|r13_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:304:8",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        18684,
+        18695
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_wf_morning",
+      "block": "r13_wf_morning",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:304:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "보리의 손을 본다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 304,
+          "label": "r13_wf_morning",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 304,
+      "scene_title": "r13_wf_morning",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "6c3ab7aaac68e5f790817f7efd4b4b96d4f76c3a4431e526144c886f091e35e3",
+      "uid": "dc17c5050cfe8ecf666ea1a7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_morning|rpy_menu|r13_wf_morning|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:309:8",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        18988,
+        19007
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_wf_morning",
+      "block": "r13_wf_morning",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:309:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "“증거도 없이 내보낼 겁니까?”",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 309,
+          "label": "r13_wf_morning",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 309,
+      "scene_title": "r13_wf_morning",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "a359329584ac515d352770705f64f8ab20fff4885b5f9c68c1cfa51eb1ce5558",
+      "uid": "185e9f9d35fa26dac580877d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_morning|rpy_menu|r13_wf_morning|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:312:8",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        19140,
+        19158
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_wf_morning",
+      "block": "r13_wf_morning",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:312:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "“불을 냈을 수도 있겠군요.”",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 312,
+          "label": "r13_wf_morning",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 312,
+      "scene_title": "r13_wf_morning",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "972bc48598717aa097948eb03f73f36ad29ed315584260087579fc6ca26918d7",
+      "uid": "6a0f3d9607f39751f943505b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_morning|rpy_menu|r13_wf_morning|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

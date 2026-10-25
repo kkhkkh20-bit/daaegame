@@ -1,0 +1,82 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_new_cast.rpy:216:39",
+      "file": "game/systems/room13_new_cast.rpy",
+      "path": [
+        14616,
+        14633
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_hyeoni_song",
+      "block": "r13_hyeoni_song",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_cast.rpy:216:39",
+      "when": null,
+      "speaker": "resident_hyeoni",
+      "kind": "dialogue",
+      "text": "그럼 오늘 소문으로 한 곡.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_cast.rpy",
+          "line": 216,
+          "label": "r13_hyeoni_song",
+          "guards": []
+        }
+      ],
+      "line": 216,
+      "scene_title": "r13_hyeoni_song",
+      "source_hash": "1ca2e2ca3bfab19cf96bff538f9165f970ad4d6405095ae9a5862a44f44e94db",
+      "baseline_hash": "7b78e979af5528a0834f28640f71603bff89b1a40e8685947134e27ae0406826",
+      "uid": "686674a5fa29f583d647c999",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_hyeoni_song|rpy_literal|r13_hyeoni_song|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_cast.rpy:217:15",
+      "file": "game/systems/room13_new_cast.rpy",
+      "path": [
+        14697,
+        14727
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_hyeoni_song",
+      "block": "r13_hyeoni_song",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_cast.rpy:217:15",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(노래는 오늘 마을에 퍼진 말을 그대로 따라간다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_cast.rpy",
+          "line": 217,
+          "label": "r13_hyeoni_song",
+          "guards": []
+        }
+      ],
+      "line": 217,
+      "scene_title": "r13_hyeoni_song",
+      "source_hash": "1ca2e2ca3bfab19cf96bff538f9165f970ad4d6405095ae9a5862a44f44e94db",
+      "baseline_hash": "7c76e16fce7a636680748d4302eb81ee326c81bcb1607c5a2799244614ef4bf0",
+      "uid": "cf007790b12f94ea47cb7019",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_hyeoni_song|rpy_literal|r13_hyeoni_song|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

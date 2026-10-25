@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
     {
       "id": "game/systems/room13_ep2_kids.rpy:252:30",
@@ -157,6 +157,362 @@
       "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
       "baseline_hash": "d169139b2b503beb44034d77d9ca07a357dee6f3f31941eb24a1ac315612b653",
       "uid": "f82ada5502974abe33ed7c99",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_at_eaves|rpy_literal|r13_ep2_at_eaves|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:260:26",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        13003,
+        13044
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_at_eaves",
+      "block": "r13_ep2_at_eaves",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:260:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "여관 처마 밑에 낡은 망토가 웅크려 있었다. 다가가자 망토가 움찔했다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 260,
+          "label": "r13_ep2_at_eaves",
+          "guards": []
+        }
+      ],
+      "line": 260,
+      "scene_title": "r13_ep2_at_eaves",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "24c7b1f252f104694988cd8ee879cd402d98dfb9dbe4da8fc65e719593351b2f",
+      "uid": "96716a084e53321739a320bb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_at_eaves|rpy_literal|r13_ep2_at_eaves|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:261:16",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        13063,
+        13083
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_at_eaves",
+      "block": "r13_ep2_at_eaves",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:261:16",
+      "when": null,
+      "speaker": "bami",
+      "kind": "dialogue",
+      "text": "오지 마. 너도 나 잡으러 왔지.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 261,
+          "label": "r13_ep2_at_eaves",
+          "guards": []
+        }
+      ],
+      "line": 261,
+      "scene_title": "r13_ep2_at_eaves",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "11adf013f9304939ddae3bb9b08df3ba96ea4da12b31c250e8640bd535afc420",
+      "uid": "92379ce40d24f46759182edf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_at_eaves|rpy_literal|r13_ep2_at_eaves|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:264:37",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        13165,
+        13191
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_at_eaves",
+      "block": "r13_ep2_at_eaves",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:264:37",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "아니야. 이거, 탐정단 표시야. 너도 하자.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 264,
+          "label": "r13_ep2_at_eaves",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 264,
+      "scene_title": "r13_ep2_at_eaves",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "8bbf63309eefc4c90c8141474254837ebc0e6e92351cf78d62c5437fdca18eb5",
+      "uid": "3d545ecf9661623937e20b24",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_at_eaves|rpy_literal|r13_ep2_at_eaves|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:265:22",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        13216,
+        13238
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_at_eaves",
+      "block": "r13_ep2_at_eaves",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:265:22",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "밤이가 한참 보다가 도토리를 받았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 265,
+          "label": "r13_ep2_at_eaves",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 265,
+      "scene_title": "r13_ep2_at_eaves",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "430a13a66e613a1e22cb85110f58def751bf09b018dcc50fb219a285dcc51070",
+      "uid": "b05b9377eed34f17a8664d3a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_at_eaves|rpy_literal|r13_ep2_at_eaves|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:266:24",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        13265,
+        13304
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_at_eaves",
+      "block": "r13_ep2_at_eaves",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:266:24",
+      "when": null,
+      "speaker": "bami",
+      "kind": "dialogue",
+      "text": "나 아니야. 그날 밤 나는 【처마 위】에 있었어. 별 보고 있었어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 266,
+          "label": "r13_ep2_at_eaves",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 266,
+      "scene_title": "r13_ep2_at_eaves",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "7188fe30a47bc1ba057a3bbb69a7022fbf84fd86584ce92d9714a195bf4f507a",
+      "uid": "49b76398b00e7438e41a4ca6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_at_eaves|rpy_literal|r13_ep2_at_eaves|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:267:24",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        13331,
+        13372
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_at_eaves",
+      "block": "r13_ep2_at_eaves",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:267:24",
+      "when": null,
+      "speaker": "bami",
+      "kind": "dialogue",
+      "text": "할아버지 같은 사람이 비틀비틀 입구 쪽으로 걸어갔어. 신발도 안 신고.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 267,
+          "label": "r13_ep2_at_eaves",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 267,
+      "scene_title": "r13_ep2_at_eaves",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "d169139b2b503beb44034d77d9ca07a357dee6f3f31941eb24a1ac315612b653",
+      "uid": "401b01d21d62d0688afb1c9c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_at_eaves|rpy_literal|r13_ep2_at_eaves|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:271:36",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        13542,
+        13557
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_at_eaves",
+      "block": "r13_ep2_at_eaves",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:271:36",
+      "when": null,
+      "speaker": "bami",
+      "kind": "dialogue",
+      "text": "……거봐. 너도 똑같아.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 271,
+          "label": "r13_ep2_at_eaves",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 271,
+      "scene_title": "r13_ep2_at_eaves",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "f7bb53183815399f1006eefa1971e14607e595d705d38378f4f6987ee6f74c1a",
+      "uid": "340176b8131fbb9dbb6214ed",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_at_eaves|rpy_literal|r13_ep2_at_eaves|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:272:22",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        13582,
+        13607
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_at_eaves",
+      "block": "r13_ep2_at_eaves",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:272:22",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "망토가 펄럭 하더니 지붕 너머로 사라졌다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 272,
+          "label": "r13_ep2_at_eaves",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 272,
+      "scene_title": "r13_ep2_at_eaves",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "dc4f8eb221b24a3bf62b7a0c4672d4b0f9b3dfd4cc6b5171b532d4260234dc98",
+      "uid": "f354d429c5fa6edd438f5b38",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_at_eaves|rpy_literal|r13_ep2_at_eaves|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:273:25",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        13635,
+        13658
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_at_eaves",
+      "block": "r13_ep2_at_eaves",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:273:25",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "(묻는 게 아니라 믿어 줬어야 했어.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 273,
+          "label": "r13_ep2_at_eaves",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 273,
+      "scene_title": "r13_ep2_at_eaves",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "e48ba1409ba7f256f9f3705ba84e7133a83add9209a281f3d7e5b9d0d4c9bb2b",
+      "uid": "973216118eb6f1dd962a972b",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_ep2_at_eaves|rpy_literal|r13_ep2_at_eaves|행 조건 없음",

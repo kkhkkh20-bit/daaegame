@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
     {
       "id": "game/systems/room13_new_places.rpy:276:30",
@@ -37,6 +37,548 @@
       "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
       "baseline_hash": "fc751c1bf1542cc076481fdbbbd91686a6141639edfd2dde63f645d0f59d4fd6",
       "uid": "99282766a50094e4e4b26766",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_mom_hideout|rpy_literal|r13_mom_hideout|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_places.rpy:277:19",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        16200,
+        16226
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_mom_hideout",
+      "block": "r13_mom_hideout",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:277:19",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(아내는 여기서 여관 굴뚝을 보고 있었다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 277,
+          "label": "r13_mom_hideout",
+          "guards": [
+            "if r13_has(\"mom_hideout_found\"):"
+          ]
+        }
+      ],
+      "line": 277,
+      "scene_title": "r13_mom_hideout",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "98e6512b1b1d36408b34b58a3ae139752e0ee83b3e005dd156c674430fc743df",
+      "uid": "5fde3d70ad2ec635db38d850",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_mom_hideout|rpy_literal|r13_mom_hideout|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_places.rpy:280:26",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        16387,
+        16436
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_mom_hideout",
+      "block": "r13_mom_hideout",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:280:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "엉킨 뿌리 사이의 눈이 유난히 단단하게 다져져 있다. 누가 여러 번 드나든 자국이다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 280,
+          "label": "r13_mom_hideout",
+          "guards": []
+        }
+      ],
+      "line": 280,
+      "scene_title": "r13_mom_hideout",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "966a308b5294baff49d884bb8dfcda7e9a8954e1ca5b6d11df284437c8496ee9",
+      "uid": "1252bef33bdf62fd4398a293",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_mom_hideout|rpy_literal|r13_mom_hideout|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_places.rpy:281:14",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        16453,
+        16495
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_mom_hideout",
+      "block": "r13_mom_hideout",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:281:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "몸을 숙이자 뿌리 밑으로 어른 하나가 웅크려 들어갈 만한 구멍이 보였다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 281,
+          "label": "r13_mom_hideout",
+          "guards": []
+        }
+      ],
+      "line": 281,
+      "scene_title": "r13_mom_hideout",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "47f92c811ef54c67af8549e17e55f20da5859de7485349a983af581ead8787c4",
+      "uid": "20974811e80e958862a98ad6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_mom_hideout|rpy_literal|r13_mom_hideout|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_places.rpy:282:14",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        16512,
+        16569
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_mom_hideout",
+      "block": "r13_mom_hideout",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:282:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "안쪽에는 마른 솔잎이 깔려 있고, 접은 담요와 다 타 버린 초 토막, 이 빠진 찻잔이 놓여 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 282,
+          "label": "r13_mom_hideout",
+          "guards": []
+        }
+      ],
+      "line": 282,
+      "scene_title": "r13_mom_hideout",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "80eef111e7b3c61f41bc9c7a9419833ff3d92a02d63ba84fb55f90b806506585",
+      "uid": "ea3d096d2f50bf016563d4cf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_mom_hideout|rpy_literal|r13_mom_hideout|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_places.rpy:283:15",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        16587,
+        16631
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_mom_hideout",
+      "block": "r13_mom_hideout",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:283:15",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(뿌리 안쪽 껍질에 【도토리】가 새겨져 있다. 우리 가족만 쓰는 표식이다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 283,
+          "label": "r13_mom_hideout",
+          "guards": []
+        }
+      ],
+      "line": 283,
+      "scene_title": "r13_mom_hideout",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "22df52e687b7a5d739bf3198900ce32a7c8dae95c361f9c5777336f4aa59e906",
+      "uid": "71147d5fdc03976f81819400",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_mom_hideout|rpy_literal|r13_mom_hideout|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_places.rpy:284:15",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        16666,
+        16700
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_mom_hideout",
+      "block": "r13_mom_hideout",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:284:15",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(아내가 여기 숨어 있었다. 초는 꺼진 지 며칠은 됐다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 284,
+          "label": "r13_mom_hideout",
+          "guards": []
+        }
+      ],
+      "line": 284,
+      "scene_title": "r13_mom_hideout",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "88ba70f7edf715f3d2fd3232c4db90143a35cb8c25e15b3230ccb0bcd0550622",
+      "uid": "c4ceeb231b2703f9cc56accb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_mom_hideout|rpy_literal|r13_mom_hideout|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_places.rpy:285:14",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        16734,
+        16785
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_mom_hideout",
+      "block": "r13_mom_hideout",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:285:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "담요 아래에서 접힌 종이 한 장이 나왔다. 앞면에는 룬을 옮겨 적다 만 연습이 빽빽했다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 285,
+          "label": "r13_mom_hideout",
+          "guards": []
+        }
+      ],
+      "line": 285,
+      "scene_title": "r13_mom_hideout",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "6cc4db135d67354aa1decaf875a96157d38c38bf162f5622bdf04f69102463aa",
+      "uid": "555c208a1902c28b20c42fc4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_mom_hideout|rpy_literal|r13_mom_hideout|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_places.rpy:286:14",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        16802,
+        16850
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_mom_hideout",
+      "block": "r13_mom_hideout",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:286:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "뒷면에는 서둘러 쓴 한 줄이 있었다. 「따라오는 발소리. 여기는 들켰다. 옮긴다.」",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 286,
+          "label": "r13_mom_hideout",
+          "guards": []
+        }
+      ],
+      "line": 286,
+      "scene_title": "r13_mom_hideout",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "4cf2be95d471583056cabefb022507ef1ded00c1a30763c881c8ca75a3460ac3",
+      "uid": "a530e264b3c17e0cf19a8526",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_mom_hideout|rpy_literal|r13_mom_hideout|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_places.rpy:287:15",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        16868,
+        16922
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_mom_hideout",
+      "block": "r13_mom_hideout",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:287:15",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(구멍 입구에서 나무 사이로 여관 굴뚝이 보인다. 아내는 여기서 여관 쪽을 지켜보고 있었다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 287,
+          "label": "r13_mom_hideout",
+          "guards": []
+        }
+      ],
+      "line": 287,
+      "scene_title": "r13_mom_hideout",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "894596e78a2db74c7e7783aa7832404e535b0c5f2f4d4fda4a1e0c1ad87e8a27",
+      "uid": "42fbf04d5b6ce1680752eb9d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_mom_hideout|rpy_literal|r13_mom_hideout|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_places.rpy:289:33",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        17024,
+        17054
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_mom_hideout",
+      "block": "r13_mom_hideout",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:289:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "이 담요, 엄마 거야. 끝에 내가 꿰맨 실이 있어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 289,
+          "label": "r13_mom_hideout",
+          "guards": [
+            "if r13_hideout_daram:"
+          ]
+        }
+      ],
+      "line": 289,
+      "scene_title": "r13_mom_hideout",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "cbfe8b9031c80491e5632db4ff48e38101f7fdcf84ed03fdbbb54887f424cd5d",
+      "uid": "26b5d49f67f999ff719ce236",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_mom_hideout|rpy_literal|r13_mom_hideout|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_places.rpy:290:19",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        17101,
+        17129
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_mom_hideout",
+      "block": "r13_mom_hideout",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:290:19",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "그래. 엄마는 여기서 우리를 기다렸던 것 같아.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 290,
+          "label": "r13_mom_hideout",
+          "guards": [
+            "if r13_hideout_daram:"
+          ]
+        }
+      ],
+      "line": 290,
+      "scene_title": "r13_mom_hideout",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "675eb252ce76ce6bd162dc46bf7240c5d54ae9f1919ce39e54b0f7d99854c59b",
+      "uid": "322aae67b5253d98f0ea0684",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_mom_hideout|rpy_literal|r13_mom_hideout|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_places.rpy:291:21",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        17153,
+        17170
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_mom_hideout",
+      "block": "r13_mom_hideout",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:291:21",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "그런데 왜 내려오지 않았어?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 291,
+          "label": "r13_mom_hideout",
+          "guards": [
+            "if r13_hideout_daram:"
+          ]
+        }
+      ],
+      "line": 291,
+      "scene_title": "r13_mom_hideout",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "8b8b3b64eea71ca9139c3ed20ca448a5f05a9119f19c63b7648741e554bea1b8",
+      "uid": "116be3c71dce9b4e4f2b6d36",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_mom_hideout|rpy_literal|r13_mom_hideout|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_places.rpy:292:19",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        17192,
+        17231
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_mom_hideout",
+      "block": "r13_mom_hideout",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:292:19",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "누가 엄마를 따라왔대. 엄마가 내려오면 그 사람도 같이 왔을 거야.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 292,
+          "label": "r13_mom_hideout",
+          "guards": [
+            "if r13_hideout_daram:"
+          ]
+        }
+      ],
+      "line": 292,
+      "scene_title": "r13_mom_hideout",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "211c64cb34419d7584203a8ec44c40315736f404abbbf603febb460abf16257a",
+      "uid": "bd1e0f9fd9e6a09c4fac142e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_mom_hideout|rpy_literal|r13_mom_hideout|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_places.rpy:293:27",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        17285,
+        17332
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_mom_hideout",
+      "block": "r13_mom_hideout",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:293:27",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(누가 아내를 따라왔을까. 지금은 알 수 없다. 이 자리는 남에게 말하지 말자.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 293,
+          "label": "r13_mom_hideout",
+          "guards": []
+        }
+      ],
+      "line": 293,
+      "scene_title": "r13_mom_hideout",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "b7c01672f6909a8dbfee8c90f3a28fac9aa8a7049eab4860e7826a944c98312f",
+      "uid": "bc5f8bef4dd578ba1d2ac341",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_mom_hideout|rpy_literal|r13_mom_hideout|행 조건 없음",

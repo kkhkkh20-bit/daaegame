@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
     {
       "id": "game/room13.rpy:607:30",
@@ -43,6 +43,246 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
+      "id": "game/room13.rpy:607:109",
+      "file": "game/room13.rpy",
+      "path": [
+        34952,
+        34985
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_prevented",
+      "block": "r13_prevented",
+      "placement": "literal",
+      "ref": "game/room13.rpy:607:109",
+      "when": null,
+      "speaker": "resident_owlgp",
+      "kind": "dialogue",
+      "text": "그럼 이 방에서 기다리지 맙시다. 아래층으로 내려갑시다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 607,
+          "label": "r13_prevented",
+          "guards": [
+            "if r13_has(\"route_watched\"):"
+          ]
+        }
+      ],
+      "line": 607,
+      "scene_title": "r13_prevented",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "2fb5133d0b1538938eb0276158619d7a537af8193e5a89a5a2c54926e8357247",
+      "uid": "2a8718d8369664a9785a6268",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_prevented|rpy_literal|r13_prevented|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:609:42",
+      "file": "game/room13.rpy",
+      "path": [
+        35064,
+        35089
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_prevented",
+      "block": "r13_prevented",
+      "placement": "literal",
+      "ref": "game/room13.rpy:609:42",
+      "when": null,
+      "speaker": "resident_owlgp",
+      "kind": "dialogue",
+      "text": "댁은 되돌아온 짐을 찾으러 간 줄 알았소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 609,
+          "label": "r13_prevented",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 609,
+      "scene_title": "r13_prevented",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "334f0f3e77d05ed2783e3a10bedf32b125ac7dcd826dba9a30054fdc30684f40",
+      "uid": "dfe1d9e4cceacf38c90c0159",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_prevented|rpy_literal|r13_prevented|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:609:76",
+      "file": "game/room13.rpy",
+      "path": [
+        35098,
+        35120
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_prevented",
+      "block": "r13_prevented",
+      "placement": "literal",
+      "ref": "game/room13.rpy:609:76",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "되돌아온 짐은 내일 확인해도 됩니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 609,
+          "label": "r13_prevented",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 609,
+      "scene_title": "r13_prevented",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "413817394f4a8196be3ecb43252267e711a5a2e342e4950da7277d1e244e271d",
+      "uid": "bc117c18a758bea68463cf60",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_prevented|rpy_literal|r13_prevented|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:609:109",
+      "file": "game/room13.rpy",
+      "path": [
+        35131,
+        35172
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_prevented",
+      "block": "r13_prevented",
+      "placement": "literal",
+      "ref": "game/room13.rpy:609:109",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "아빠랑 같이 왔어요. 할아버지가 보여 주신다던 물건, 이제 봐도 돼요?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 609,
+          "label": "r13_prevented",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 609,
+      "scene_title": "r13_prevented",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "26d374dc031abeaa53c2f0bdec4f7bf621f3ccea1570da6ba8db831fc13e2704",
+      "uid": "ef2043094f11b537d36d7167",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_prevented|rpy_literal|r13_prevented|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:609:158",
+      "file": "game/room13.rpy",
+      "path": [
+        35180,
+        35234
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_prevented",
+      "block": "r13_prevented",
+      "placement": "literal",
+      "ref": "game/room13.rpy:609:158",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "어르신의 손이 잠깐 떨렸다. 내가 옆에 앉아 기다리자, 어르신은 쥐고 있던 봉투를 내려놓았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 609,
+          "label": "r13_prevented",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 609,
+      "scene_title": "r13_prevented",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "bcb69a3b858c4ec400a2eb47eeeaffa3252d495bdb3aea4a62afce74e80e5649",
+      "uid": "3a1aef5523d4af9e76244975",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_prevented|rpy_literal|r13_prevented|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:609:232",
+      "file": "game/room13.rpy",
+      "path": [
+        35254,
+        35283
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_prevented",
+      "block": "r13_prevented",
+      "placement": "literal",
+      "ref": "game/room13.rpy:609:232",
+      "when": null,
+      "speaker": "resident_owlgp",
+      "kind": "dialogue",
+      "text": "아래층에서 이야기합시다. 이 방은 너무 답답하오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 609,
+          "label": "r13_prevented",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 609,
+      "scene_title": "r13_prevented",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "bf11d286b4b5a2f1781314f87a336f6e2af316f82e46278a1d0f36f3de33a029",
+      "uid": "c060ccac8303eafbd2db694a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_prevented|rpy_literal|r13_prevented|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
       "id": "game/room13.rpy:610:30",
       "file": "game/room13.rpy",
       "path": [
@@ -75,6 +315,82 @@
       "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
       "baseline_hash": "a94c14c36e7270faf9d0844b37b174061a1fd8ea1fb810a61555a66d3260933a",
       "uid": "9fcb74b2fdb274626a774ab7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_prevented|rpy_literal|r13_prevented|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:610:82",
+      "file": "game/room13.rpy",
+      "path": [
+        35396,
+        35422
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_prevented",
+      "block": "r13_prevented",
+      "placement": "literal",
+      "ref": "game/room13.rpy:610:82",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "차는 아래층 식당에서 다 함께 마시겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 610,
+          "label": "r13_prevented",
+          "guards": []
+        }
+      ],
+      "line": 610,
+      "scene_title": "r13_prevented",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "996134af8814e3f6f1ec5b5fd8dd7dfd5a73d88dedc9cc2b71b9d1a5157ff443",
+      "uid": "6c86437fad992d33b10b11aa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_prevented|rpy_literal|r13_prevented|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:610:116",
+      "file": "game/room13.rpy",
+      "path": [
+        35430,
+        35490
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_prevented",
+      "block": "r13_prevented",
+      "placement": "literal",
+      "ref": "game/room13.rpy:610:116",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "그날 13호에서는 아무도 죽지 않았다. 그렇다고 누군가 하려던 일을 막았다는 증거를 얻은 것은 아니었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 610,
+          "label": "r13_prevented",
+          "guards": []
+        }
+      ],
+      "line": 610,
+      "scene_title": "r13_prevented",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "d01c675050e21c9af2a76db9a4daec77c4f4570af8fca8ab7cb00e68521fa95d",
+      "uid": "0b398f946d01cdca7b5845f4",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_prevented|rpy_literal|r13_prevented|행 조건 없음",

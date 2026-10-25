@@ -1,7 +1,87 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:416:46",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        23001,
+        23033
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_library_dawn",
+      "block": "r13_ep1_library_dawn",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:416:46",
+      "when": null,
+      "speaker": "resident_librarian",
+      "kind": "dialogue",
+      "text": "밤에 누가 창으로 들어왔어요. 장작이 있어서 버텼어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 416,
+          "label": "r13_ep1_library_dawn",
+          "guards": [
+            "if r13_has(\"lt_lib_saved\"):"
+          ]
+        }
+      ],
+      "line": 416,
+      "scene_title": "r13_ep1_library_dawn",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "d11881855eea387ddd47d02d35b1b054dde5cb2d5abf90d68c0467fd3a6d46bb",
+      "uid": "ef912045cbd0ae87a04385f3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_library_dawn|rpy_literal|r13_ep1_library_dawn|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:417:34",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        23070,
+        23101
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_library_dawn",
+      "block": "r13_ep1_library_dawn",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:417:34",
+      "when": null,
+      "speaker": "resident_librarian",
+      "kind": "dialogue",
+      "text": "얼굴은 못 봤지만, 허리에 【노끈】을 감고 있었어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 417,
+          "label": "r13_ep1_library_dawn",
+          "guards": [
+            "if r13_has(\"lt_lib_saved\"):"
+          ]
+        }
+      ],
+      "line": 417,
+      "scene_title": "r13_ep1_library_dawn",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "4ec5757b936d0b04237b7724f5368bb0598e49c8c41bd22804000c662f9d1583",
+      "uid": "1001e6bd860a150cbe217bfc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_library_dawn|rpy_literal|r13_ep1_library_dawn|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_ep1_lamp_thief.rpy:420:30",
       "file": "game/systems/room13_ep1_lamp_thief.rpy",
@@ -77,6 +157,206 @@
       "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
       "baseline_hash": "fae2f1411576a0a4fbb9a13f640b802cf5396d95674587cb09e46006bac4e071",
       "uid": "fabfc1f876293387d7cfce9e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_library_dawn|rpy_literal|r13_ep1_library_dawn|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:426:18",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        23544,
+        23593
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_library_dawn",
+      "block": "r13_ep1_library_dawn",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:426:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "사서 선생님은 의자에 앉아 있었다. 무릎 위 기록 묶음에 자기 숄을 덮어 둔 채였다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 426,
+          "label": "r13_ep1_library_dawn",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 426,
+      "scene_title": "r13_ep1_library_dawn",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "c4d7c9878da3e9c1a0d747647314391109791e88b3f99c6d15758e110ed992e6",
+      "uid": "689ea28450a684747b9e9179",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_library_dawn|rpy_literal|r13_ep1_library_dawn|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:427:18",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        23614,
+        23632
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_library_dawn",
+      "block": "r13_ep1_library_dawn",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:427:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "……눈 내리는 소리만 들렸다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 427,
+          "label": "r13_ep1_library_dawn",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 427,
+      "scene_title": "r13_ep1_library_dawn",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "b3c9aab73abdb81c9c34d1d3f53789ee8a5b4d7b1fc9afadc871c0e966eb59a9",
+      "uid": "86fdd9ffbf534745b354ac25",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_library_dawn|rpy_literal|r13_ep1_library_dawn|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:428:19",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        23654,
+        23675
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_library_dawn",
+      "block": "r13_ep1_library_dawn",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:428:19",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(기록이 젖지 않게. 마지막까지.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 428,
+          "label": "r13_ep1_library_dawn",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 428,
+      "scene_title": "r13_ep1_library_dawn",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "3fa0d6a721741bdd4d58ffc59750bfd30ec9e40d3daf7d2add45fe7203574a59",
+      "uid": "aa2fd05c9c0dc4e85ab12d99",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_library_dawn|rpy_literal|r13_ep1_library_dawn|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:429:18",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        23713,
+        23741
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_library_dawn",
+      "block": "r13_ep1_library_dawn",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:429:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "묶음 맨 위 대출 카드에 아내의 이름이 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 429,
+          "label": "r13_ep1_library_dawn",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 429,
+      "scene_title": "r13_ep1_library_dawn",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "a64a6053e3151b85b07458f5fda8b1c2d5c92f6bd3df9bdc79611a256a3ce55d",
+      "uid": "16e8b6f82cc3ca4424a0be15",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_library_dawn|rpy_literal|r13_ep1_library_dawn|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:430:19",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        23763,
+        23805
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_library_dawn",
+      "block": "r13_ep1_library_dawn",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:430:19",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(여기 난로 조각도 사라졌다. 3번 등에서 벌어진 일과 이어져 있을까?)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 430,
+          "label": "r13_ep1_library_dawn",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 430,
+      "scene_title": "r13_ep1_library_dawn",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "672b1156dcce5b6b561d64f20a0f3a0dd4d3474a8053919804bd4f6a3df4ba6a",
+      "uid": "1aee6df066f0c36eafec3cd6",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_ep1_library_dawn|rpy_literal|r13_ep1_library_dawn|행 조건 없음",

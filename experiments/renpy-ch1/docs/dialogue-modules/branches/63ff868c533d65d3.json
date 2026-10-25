@@ -1,0 +1,164 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events.rpy:483:38",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        25300,
+        25335
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_kongi_errand",
+      "block": "r13_ev_kongi_errand",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:483:38",
+      "when": null,
+      "speaker": "resident_kongi",
+      "kind": "dialogue",
+      "text": "망을 봐 달라고요? 하루에 두 냥이에요. 어디를 지켜볼까요?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 483,
+          "label": "r13_ev_kongi_errand",
+          "guards": []
+        }
+      ],
+      "line": 483,
+      "scene_title": "r13_ev_kongi_errand",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "34f6367b67337b3f8f194611064074999be0c2f922db59866447efe211c8227a",
+      "uid": "f487820ded6d6eed69c0a68b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_kongi_errand|rpy_literal|r13_ev_kongi_errand|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:490:46",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        25649,
+        25688
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_kongi_errand",
+      "block": "r13_ev_kongi_errand",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:490:46",
+      "when": null,
+      "speaker": "resident_kongi",
+      "kind": "dialogue",
+      "text": "첫 손님이니까 이번만 외상이에요. 대신 내일 구운 밤 하나 주세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 490,
+          "label": "r13_ev_kongi_errand",
+          "guards": [
+            "if r13_cash_now()<2:",
+            "if room13[\"day\"]==1:"
+          ]
+        }
+      ],
+      "line": 490,
+      "scene_title": "r13_ev_kongi_errand",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "6883812edd9fdb104965a04ec46b1b35e8ad722b1ae50c471e1a1d0b13780466",
+      "uid": "406c581c494db694daf51d8e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_kongi_errand|rpy_literal|r13_ev_kongi_errand|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:492:46",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        25764,
+        25787
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_kongi_errand",
+      "block": "r13_ev_kongi_errand",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:492:46",
+      "when": null,
+      "speaker": "resident_kongi",
+      "kind": "dialogue",
+      "text": "돈부터 주세요. 저도 먹고살아야 해요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 492,
+          "label": "r13_ev_kongi_errand",
+          "guards": [
+            "if r13_cash_now()<2:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 492,
+      "scene_title": "r13_ev_kongi_errand",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "00796bc85558ca83889af8b9600f8c41016c4b31ae61c4757555389129c9ad21",
+      "uid": "529c21818b8c2feb0b83b2ae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_kongi_errand|rpy_literal|r13_ev_kongi_errand|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:499:38",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        26070,
+        26116
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_kongi_errand",
+      "block": "r13_ev_kongi_errand",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:499:38",
+      "when": null,
+      "speaker": "resident_kongi",
+      "kind": "dialogue",
+      "text": "알았어요. 내일 다시 찾아오세요. 본 것만 말할게요. 안 본 건 안 본 거예요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 499,
+          "label": "r13_ev_kongi_errand",
+          "guards": []
+        }
+      ],
+      "line": 499,
+      "scene_title": "r13_ev_kongi_errand",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "8e014480ece02d7ab5aac6afa66e98a45e39fd3233ddb9a08f1461429d04d8bd",
+      "uid": "1631f6c92a95e21f5ec63fc8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_kongi_errand|rpy_literal|r13_ev_kongi_errand|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

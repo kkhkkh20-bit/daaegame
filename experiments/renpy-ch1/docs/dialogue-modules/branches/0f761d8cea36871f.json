@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
     {
       "id": "game/systems/room13_week1_cases.rpy:148:30",
@@ -43,6 +43,46 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
+      "id": "game/systems/room13_week1_cases.rpy:149:19",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        8468,
+        8492
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:149:19",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "실례합니다. 여기 우편을 맡고 계십니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 149,
+          "label": "r13_w1c_letters",
+          "guards": [
+            "if \"resident_sling\" not in r13_met_people():"
+          ]
+        }
+      ],
+      "line": 149,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "86b060bdbbf6a783752a9b16f3cce859d1b67d90a38002a044d3fb1c368454fa",
+      "uid": "f6eb1c689847692f7f15e236",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
       "id": "game/systems/room13_week1_cases.rpy:150:30",
       "file": "game/systems/room13_week1_cases.rpy",
       "path": [
@@ -77,6 +117,977 @@
       "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
       "baseline_hash": "e3fb665e6a832bec12c86d3d8e55f01a285b9ff500e7ce92e26633c113baf97a",
       "uid": "b306bd19b61b22c178b13eb2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:151:26",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        8592,
+        8654
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:151:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "주전자에서 김이 올랐다. 슬링은 봉투의 붙인 입구만 그 김에 대고 있었다. 풀 붙인 귀퉁이가 조금씩 들렸다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 151,
+          "label": "r13_w1c_letters",
+          "guards": []
+        }
+      ],
+      "line": 151,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "49b628219c4de6c8c4d1835815911c15a88d4ad54d300971c9cfd1b22235e1da",
+      "uid": "14876eaa58ec56bf40487c2e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:152:26",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        8683,
+        8708
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:152:26",
+      "when": null,
+      "speaker": "resident_sling",
+      "kind": "dialogue",
+      "text": "……! 아, 봉투가 젖어서 말리는 거예요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 152,
+          "label": "r13_w1c_letters",
+          "guards": []
+        }
+      ],
+      "line": 152,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "1e30a5e36bcfae329bcb8936d67f0b483ed43adae130f94c1ac181e4cd20c3f4",
+      "uid": "5a7b6a2b9b85c638ee02fed5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:153:15",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        8726,
+        8774
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:153:15",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "말리는 게 아니라 붙인 데를 떼고 계신데요. 받는 분이 열어 달라고 한 편지입니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 153,
+          "label": "r13_w1c_letters",
+          "guards": []
+        }
+      ],
+      "line": 153,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "a93b51de73d647f3b729585544663df81318915215bec0960cfd05466755169c",
+      "uid": "2a7a4ac2769f2349e785245c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:154:26",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        8803,
+        8811
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:154:26",
+      "when": null,
+      "speaker": "resident_sling",
+      "kind": "dialogue",
+      "text": "……아니요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 154,
+          "label": "r13_w1c_letters",
+          "guards": []
+        }
+      ],
+      "line": 154,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "b4b23ead981d5bc583c30a4bd18b096cbc5c3ba521c1d3049eb9b7fcbc9f02b1",
+      "uid": "cd5acb58747fc1c22177f171",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:159:34",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        9034,
+        9084
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:159:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "슬링은 김으로 연 봉투에서 편지 한 줄을 베꼈다. 받는 사람 칸에 여관 이름이 보였다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 159,
+          "label": "r13_w1c_letters",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 159,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "4ae3ac5a713387300f53967d9fc140581747f057c4dd143d7871befdff2b4657",
+      "uid": "49f6d2b3a2dea128d322fc62",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:163:39",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        9263,
+        9285
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:163:39",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "편지를 열어서 무엇을 보려는 겁니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 163,
+          "label": "r13_w1c_letters",
+          "guards": [
+            "menu:",
+            "if r13_sling_knows_requester():"
+          ]
+        }
+      ],
+      "line": 163,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "f2c3af859093decb232bea5fdc8d82bc460e722ff22d2a6e6a17e0830ddb7489",
+      "uid": "83a01d56e03a41937d6e48b7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:164:38",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        9326,
+        9379
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:164:38",
+      "when": null,
+      "speaker": "resident_sling",
+      "kind": "dialogue",
+      "text": "전에 말씀드린 할머니의 부탁이에요. 손님 편지를 베껴 오지 않으면 일자리를 잃는다고 하셨죠.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 164,
+          "label": "r13_w1c_letters",
+          "guards": [
+            "menu:",
+            "if r13_sling_knows_requester():"
+          ]
+        }
+      ],
+      "line": 164,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "7c8310992ef604b0d141a11a0c1fc2f972a41e653fbddae03bbb45af359834f5",
+      "uid": "cece9c85f72fd1801fbcf8d8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:166:39",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        9466,
+        9488
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:166:39",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "편지를 열어서 무엇을 보려는 겁니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 166,
+          "label": "r13_w1c_letters",
+          "guards": [
+            "menu:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 166,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "f2c3af859093decb232bea5fdc8d82bc460e722ff22d2a6e6a17e0830ddb7489",
+      "uid": "85de4f74e15faeb3a0a94b1e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:167:38",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        9529,
+        9590
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:167:38",
+      "when": null,
+      "speaker": "resident_sling",
+      "kind": "dialogue",
+      "text": "……편지 내용을 베끼려던 거예요. 시킨 사람이 있지만, 이름은 말 못 해요. 일자리를 잃을 수도 있어서요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 167,
+          "label": "r13_w1c_letters",
+          "guards": [
+            "menu:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 167,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "e29280312a70b642fd2f66251fa4498884a60e0a6222d54e49c9ce8bfe8883a3",
+      "uid": "8fe4440d8425f4c1060c542a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:171:39",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        9761,
+        9779
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:171:39",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "전에 말씀하신 그 부탁입니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 171,
+          "label": "r13_w1c_letters",
+          "guards": [
+            "menu:",
+            "if r13_sling_knows_requester():"
+          ]
+        }
+      ],
+      "line": 171,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "52a985122162c7a149b4e7075e6278680c065ff41f181563615439a4721bd504",
+      "uid": "588a55f12248a43618baba80",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:172:38",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        9820,
+        9853
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:172:38",
+      "when": null,
+      "speaker": "resident_sling",
+      "kind": "dialogue",
+      "text": "네. 할머니가 손님 편지를 베껴 오라고 하셨던 일이에요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 172,
+          "label": "r13_w1c_letters",
+          "guards": [
+            "menu:",
+            "if r13_sling_knows_requester():"
+          ]
+        }
+      ],
+      "line": 172,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "618043cc52970d7df01c614f0665652423bd9a1bc2709ae13e42902c63daae91",
+      "uid": "36ef031a4d722bda725c9c2e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:174:39",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        9938,
+        9964
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:174:39",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "직접 읽으려는 겁니까, 누가 부탁한 겁니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 174,
+          "label": "r13_w1c_letters",
+          "guards": [
+            "menu:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 174,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "c0ccda47da7076f093319a1c43fb7f5e1443e6c5c6a0c9b910499037cf7d774d",
+      "uid": "935a2b76c6a2c5e59f1b4213",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:175:38",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        10005,
+        10056
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:175:38",
+      "when": null,
+      "speaker": "resident_sling",
+      "kind": "dialogue",
+      "text": "……부탁받은 일이에요. 누구인지는 말 못 해요. 거절하면 일자리가 없어질 수도 있어서요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 175,
+          "label": "r13_w1c_letters",
+          "guards": [
+            "menu:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 175,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "f7d4d52a4b351e25a090f0fdec1becbd08a9384e60f0753245b590a9c5e1617b",
+      "uid": "7c5ffeebf3b71b4ee18b0857",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:178:35",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        10179,
+        10207
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:178:35",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "남의 편지를 열려던 일을 경비에게 알리겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 178,
+          "label": "r13_w1c_letters",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 178,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "54e5020093fdcec11ce165712d3c8f79bc9b6886ee587b594ce30d7ef357ad27",
+      "uid": "b947ba9ac6f5551aed7e44bf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:179:34",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        10244,
+        10273
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:179:34",
+      "when": null,
+      "speaker": "resident_sling",
+      "kind": "dialogue",
+      "text": "너울한테요? 그러면 저는 우체국에서 일 못 해요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 179,
+          "label": "r13_w1c_letters",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 179,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "e02feb42d598fc265abae6948915d121bd969e668971ab277f1b6be94701f7d2",
+      "uid": "8bf98e84b9cacfa9de645d42",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:182:42",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        10398,
+        10448
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:182:42",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 경비 너울을 찾아가, 슬링이 배달할 봉투의 입구를 김으로 떼고 있던 일을 전했다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 182,
+          "label": "r13_w1c_letters",
+          "guards": [
+            "menu:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 182,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "6255fa52572223b3012fc80b57c33127945fd4d779c529ec0764fb0ace7ef39e",
+      "uid": "a7204c8479a09b0336666a83",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:183:33",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        10484,
+        10532
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:183:33",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "받는 사람 허락도 없이 편지를 열려 했소? 슬링은 오늘부터 우체국에 나오지 마시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 183,
+          "label": "r13_w1c_letters",
+          "guards": [
+            "menu:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 183,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "fd292c92819089d9b5e118a9387cc4a59064cad467ab27ded0400c36cd70fc23",
+      "uid": "837ea28626ba92350438775b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:184:42",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        10577,
+        10581
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:184:42",
+      "when": null,
+      "speaker": "resident_sling",
+      "kind": "dialogue",
+      "text": "……",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 184,
+          "label": "r13_w1c_letters",
+          "guards": [
+            "menu:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 184,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "a7f878b8ced1a7957c560d573e30ddbbc1696e38c370513aacbbf4bff12e7f43",
+      "uid": "1939a59858d576c49e7443ff",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:188:47",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        10787,
+        10811
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:188:47",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "전에 말씀하신 사정부터 다시 듣겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 188,
+          "label": "r13_w1c_letters",
+          "guards": [
+            "menu:",
+            "menu:",
+            "if r13_sling_knows_requester():"
+          ]
+        }
+      ],
+      "line": 188,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "bf3fcb0bec5b99d55277f801a216b2340690c1d46d2cb985bd19c65ac62c0d2d",
+      "uid": "9f48bd4e2b11f040bf83561b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:189:46",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        10860,
+        10910
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:189:46",
+      "when": null,
+      "speaker": "resident_sling",
+      "kind": "dialogue",
+      "text": "할머니가 손님 편지를 베껴 오라고 했다는 말씀은 드렸죠. 거절하면 일자리를 잃는다고요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 189,
+          "label": "r13_w1c_letters",
+          "guards": [
+            "menu:",
+            "menu:",
+            "if r13_sling_knows_requester():"
+          ]
+        }
+      ],
+      "line": 189,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "6603586cc1450326d6a8d76944c5683386afe351623d8a151351f2f74db0ea73",
+      "uid": "272fa6a933f37ffe35859db5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:191:47",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        11021,
+        11039
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:191:47",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "먼저 왜 그랬는지 듣겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 191,
+          "label": "r13_w1c_letters",
+          "guards": [
+            "menu:",
+            "menu:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 191,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "4e132e836bd8b8c34d6e6e929335b14f407731e798cee17711fee8263586e59b",
+      "uid": "e04b4d2d004b4dd287f8e218",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:192:46",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        11088,
+        11152
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:192:46",
+      "when": null,
+      "speaker": "resident_sling",
+      "kind": "dialogue",
+      "text": "……편지를 베껴 오라는 부탁을 받았어요. 누구 부탁인지는 말 못 해요. 그 이름을 꺼내면 일자리를 잃을까 봐요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 192,
+          "label": "r13_w1c_letters",
+          "guards": [
+            "menu:",
+            "menu:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 192,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "20a527ae59035957041008a81c7e519a4b7e44f1a1125f8019ef7fae4cadba56",
+      "uid": "042d070536b910cfc9a33f27",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:195:35",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        11355,
+        11387
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:195:35",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "이 초상, 전에 보여 드렸지요. 이분은 제 아내입니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 195,
+          "label": "r13_w1c_letters",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 195,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "84551ee051105bc4d0cbafd753208a48984e41013b805789c0c2c87c4467cf34",
+      "uid": "4a23a715f2ef83ea9de12bfc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:196:34",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        11424,
+        11462
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:196:34",
+      "when": null,
+      "speaker": "resident_sling",
+      "kind": "dialogue",
+      "text": "그분 가족이었군요. 그러면 이 편지를 함부로 다루면 안 되겠네요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 196,
+          "label": "r13_w1c_letters",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 196,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "35f8f0c29aa496c76fcac4c34b344b3fb586d8d61e7e9f5bb7a9696bf2ed3d0d",
+      "uid": "bd5c9e42724c8fa07d653479",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
@@ -124,6 +1135,47 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
+      "id": "game/systems/room13_week1_cases.rpy:199:27",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        11648,
+        11685
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:199:27",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "그대로 보내 주세요. 이 이야기를 함부로 퍼뜨리지는 않겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 199,
+          "label": "r13_w1c_letters",
+          "guards": [
+            "menu:",
+            "if r13_sling_knows_requester():"
+          ]
+        }
+      ],
+      "line": 199,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "7680bfb0167ac269bba166ea012be95d41008f066a9d85e21bf7f130cc77754d",
+      "uid": "a02f65c56a2240ca9e39ee89",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
       "id": "game/systems/room13_week1_cases.rpy:201:50",
       "file": "game/systems/room13_week1_cases.rpy",
       "path": [
@@ -159,6 +1211,47 @@
       "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
       "baseline_hash": "12118a0721d2a8e284858ae35e906551794690ab2ebbf073b1f5c8d53b64ecdf",
       "uid": "daa2b7d25900bb6fe0a69b3d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:202:27",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        11858,
+        11907
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_letters",
+      "block": "r13_w1c_letters",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:202:27",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "편지는 그대로 보내 주세요. 말씀하지 않은 이름을 제가 짐작해 퍼뜨리지는 않겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 202,
+          "label": "r13_w1c_letters",
+          "guards": [
+            "menu:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 202,
+      "scene_title": "r13_w1c_letters",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "70f9c59ce79befca73746e0f2d2a728dab2a15f936641c2b8e1816b0eae18077",
+      "uid": "8afddacadf4946f24efc883a",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_w1c_letters|rpy_literal|r13_w1c_letters|행 조건 없음",

@@ -1,0 +1,876 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_evening.rpy:209:26",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        11476,
+        11525
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_eve_trial",
+      "block": "r13_ev_eve_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:209:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "식당에는 내일 재판에 나올 사람들이 흩어져 앉아 있었다. 누구도 크게 말하지 않았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 209,
+          "label": "r13_ev_eve_trial",
+          "guards": []
+        }
+      ],
+      "line": 209,
+      "scene_title": "r13_ev_eve_trial",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "d80f6204481f6dde0a72984df1b5736cdd0a6377bef04960f19685e8bb121b1c",
+      "uid": "b2993170c4b1af325614e7da",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_eve_trial|rpy_literal|r13_ev_eve_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:210:15",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        11543,
+        11581
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_eve_trial",
+      "block": "r13_ev_eve_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:210:15",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(내일 재판에서 누가 무엇을 말해 줄지, 오늘 밤 확인해 두자.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 210,
+          "label": "r13_ev_eve_trial",
+          "guards": []
+        }
+      ],
+      "line": 210,
+      "scene_title": "r13_ev_eve_trial",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "01250f62d50115b3aed5bde389952d1e3de29b5e8251a6f646dfb4c0b0155668",
+      "uid": "956eeb11a2d4ee98d11d0bec",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_eve_trial|rpy_literal|r13_ev_eve_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:218:44",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        11873,
+        11917
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_eve_trial",
+      "block": "r13_ev_eve_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:218:44",
+      "when": null,
+      "speaker": "nabi",
+      "kind": "dialogue",
+      "text": "내일 재판에서 본 대로 말할게요. 아이들 밥은 이제 걱정 안 해도 되니까요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 218,
+          "label": "r13_ev_eve_trial",
+          "guards": [
+            "while _eve_left>0:",
+            "menu:",
+            "if r13_has(\"witness:nabi\"):"
+          ]
+        }
+      ],
+      "line": 218,
+      "scene_title": "r13_ev_eve_trial",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "7adb5d98473ea8baa5bf3a1742b4aa0e627233da6373696aec8d82907c1642fd",
+      "uid": "4529090cdcf0ae50ebbbc12c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_eve_trial|rpy_literal|r13_ev_eve_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:220:44",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        12025,
+        12066
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_eve_trial",
+      "block": "r13_ev_eve_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:220:44",
+      "when": null,
+      "speaker": "nabi",
+      "kind": "dialogue",
+      "text": "아이들은 이제 괜찮아요. ……그래도 할머니 앞에서 말하는 건 무서워요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 220,
+          "label": "r13_ev_eve_trial",
+          "guards": [
+            "while _eve_left>0:",
+            "menu:",
+            "elif r13_has(\"kids_fed\"):"
+          ]
+        }
+      ],
+      "line": 220,
+      "scene_title": "r13_ev_eve_trial",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "33feb49eb91f4de60450811291a10fec0be8f2db31fe3ade5707ab4840e1b725",
+      "uid": "a2f665f7d86b13450d4e8c03",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_eve_trial|rpy_literal|r13_ev_eve_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:221:31",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        12100,
+        12133
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_eve_trial",
+      "block": "r13_ev_eve_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:221:31",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(나비가 무서워하는 것은 할머니일까, 아이들 끼니일까.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 221,
+          "label": "r13_ev_eve_trial",
+          "guards": [
+            "while _eve_left>0:",
+            "menu:",
+            "elif r13_has(\"kids_fed\"):"
+          ]
+        }
+      ],
+      "line": 221,
+      "scene_title": "r13_ev_eve_trial",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "945e8f83c02ed91d862333bd30a35c484e5b2c886cef40dbe834dd57d71e04ae",
+      "uid": "97f21acbd9eda3957bdf56ef",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_eve_trial|rpy_literal|r13_ev_eve_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:223:44",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        12238,
+        12291
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_eve_trial",
+      "block": "r13_ev_eve_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:223:44",
+      "when": null,
+      "speaker": "nabi",
+      "kind": "dialogue",
+      "text": "……내일은 할머니랑 계속 같이 있었다고만 할 거예요. 아이들 밥이 할머니한테 걸려 있거든요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 223,
+          "label": "r13_ev_eve_trial",
+          "guards": [
+            "while _eve_left>0:",
+            "menu:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 223,
+      "scene_title": "r13_ev_eve_trial",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "0a4fd9f40c445e9e94b884e919ecc2ac3f506da01afc571ed4ec8d06377581b6",
+      "uid": "9e2b775f94de0bd5ac721e06",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_eve_trial|rpy_literal|r13_ev_eve_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:224:31",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        12325,
+        12361
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_eve_trial",
+      "block": "r13_ev_eve_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:224:31",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(나비의 입을 막고 있는 건 할머니가 아니라 아이들 끼니다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 224,
+          "label": "r13_ev_eve_trial",
+          "guards": [
+            "while _eve_left>0:",
+            "menu:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 224,
+      "scene_title": "r13_ev_eve_trial",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "4bc1fa72dc4bcfe2f8dd8afb31fdf0b3628181bccffe0b126c487b4ec6c211f6",
+      "uid": "d5bb8a43b0dd954e952476dd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_eve_trial|rpy_literal|r13_ev_eve_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:228:52",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        12580,
+        12622
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_eve_trial",
+      "block": "r13_ev_eve_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:228:52",
+      "when": null,
+      "speaker": "resident_tok",
+      "kind": "dialogue",
+      "text": "핀은 제가 고친 거예요. 그 핀이 누구 것인지도 재판에서 제가 말할게요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 228,
+          "label": "r13_ev_eve_trial",
+          "guards": [
+            "while _eve_left>0:",
+            "menu:",
+            "if r13_has(\"witness:tok\"):"
+          ]
+        }
+      ],
+      "line": 228,
+      "scene_title": "r13_ev_eve_trial",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "27a2f3862e619eaf98b63b06b312969fd7e5132cbac694d2bdfd29246fe7dded",
+      "uid": "39674b518b50a5ea7aa731ab",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_eve_trial|rpy_literal|r13_ev_eve_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:230:42",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        12762,
+        12804
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_eve_trial",
+      "block": "r13_ev_eve_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:230:42",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "톡의 자리는 비어 있었다. 아직 수리점 문에 판자가 덧대져 있다고 했다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 230,
+          "label": "r13_ev_eve_trial",
+          "guards": [
+            "while _eve_left>0:",
+            "menu:",
+            "elif r13_has(\"tok_detained\") and not r13_has(\"tok_cleared\"):"
+          ]
+        }
+      ],
+      "line": 230,
+      "scene_title": "r13_ev_eve_trial",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "3cd11524649a7d2b1e50c100bab07bec6d2a28dfcf853a2407b396ffda848789",
+      "uid": "545284776613afb7b1227b55",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_eve_trial|rpy_literal|r13_ev_eve_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:231:31",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        12838,
+        12875
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_eve_trial",
+      "block": "r13_ev_eve_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:231:31",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(톡이 갇혀 있으면 재판에서 핀 이야기를 해 줄 사람이 없다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 231,
+          "label": "r13_ev_eve_trial",
+          "guards": [
+            "while _eve_left>0:",
+            "menu:",
+            "elif r13_has(\"tok_detained\") and not r13_has(\"tok_cleared\"):"
+          ]
+        }
+      ],
+      "line": 231,
+      "scene_title": "r13_ev_eve_trial",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "f937dfc50b84fb18c1cbd043012d509e5c453535889d581f891d638aae72af3f",
+      "uid": "4c1bf819fadea6573199ac40",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_eve_trial|rpy_literal|r13_ev_eve_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:233:52",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        12988,
+        13019
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_eve_trial",
+      "block": "r13_ev_eve_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:233:52",
+      "when": null,
+      "speaker": "resident_tok",
+      "kind": "dialogue",
+      "text": "재판요? 저는 일만 해요. 제 일이 아니면 안 껴요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 233,
+          "label": "r13_ev_eve_trial",
+          "guards": [
+            "while _eve_left>0:",
+            "menu:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 233,
+      "scene_title": "r13_ev_eve_trial",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "081850cc54b586bec0a537b15e7586d5215297b769e50c2432f8330ee479ca0b",
+      "uid": "de4daba091958d3d953e4242",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_eve_trial|rpy_literal|r13_ev_eve_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:234:31",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        13053,
+        13077
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_eve_trial",
+      "block": "r13_ev_eve_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:234:31",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(톡에게 이 재판은 아직 남의 일이다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 234,
+          "label": "r13_ev_eve_trial",
+          "guards": [
+            "while _eve_left>0:",
+            "menu:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 234,
+      "scene_title": "r13_ev_eve_trial",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "2cfe9569f9e26a2fd15e2fc45fe9e870d963c48b7eb788db30a96472647e5dc6",
+      "uid": "6e25380cea3f5267da908d54",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_eve_trial|rpy_literal|r13_ev_eve_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:238:42",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        13287,
+        13332
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_eve_trial",
+      "block": "r13_ev_eve_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:238:42",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "처마 밑은 비어 있었다. 검사를 받으러 끌려간 뒤로 밤이를 본 사람은 없었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 238,
+          "label": "r13_ev_eve_trial",
+          "guards": [
+            "while _eve_left>0:",
+            "menu:",
+            "if r13_has(\"bami_taken\"):"
+          ]
+        }
+      ],
+      "line": 238,
+      "scene_title": "r13_ev_eve_trial",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "3de80f83228213b8e467d1dedbeca4032c0168ec95cc9b93a597928aeb2ea589",
+      "uid": "d69245531625e890292c2932",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_eve_trial|rpy_literal|r13_ev_eve_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:239:31",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        13366,
+        13399
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_eve_trial",
+      "block": "r13_ev_eve_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:239:31",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(밤이가 그날 본 것은 이제 아무도 말해 줄 수 없다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 239,
+          "label": "r13_ev_eve_trial",
+          "guards": [
+            "while _eve_left>0:",
+            "menu:",
+            "if r13_has(\"bami_taken\"):"
+          ]
+        }
+      ],
+      "line": 239,
+      "scene_title": "r13_ev_eve_trial",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "94295a914dc5ee0335e2e6706c6685fc38f1101f9d59e9449f653dabd05d3b86",
+      "uid": "cdf416a3c0c225b6afaafd0b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_eve_trial|rpy_literal|r13_ev_eve_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:241:44",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        13529,
+        13574
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_eve_trial",
+      "block": "r13_ev_eve_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:241:44",
+      "when": null,
+      "speaker": "bami",
+      "kind": "dialogue",
+      "text": "제가 그날 본 거, 내일 재판에서 말할게요. 대신 아저씨가 옆에 있어 주세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 241,
+          "label": "r13_ev_eve_trial",
+          "guards": [
+            "while _eve_left>0:",
+            "menu:",
+            "elif r13_has(\"bami_consent\"):"
+          ]
+        }
+      ],
+      "line": 241,
+      "scene_title": "r13_ev_eve_trial",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "a8e939626615a376013cd2722f28a7a183a575bfb149643500a60d0a6cf21a20",
+      "uid": "a5f899bc57c2bea342d8d14d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_eve_trial|rpy_literal|r13_ev_eve_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:243:44",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        13662,
+        13708
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_eve_trial",
+      "block": "r13_ev_eve_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:243:44",
+      "when": null,
+      "speaker": "bami",
+      "kind": "dialogue",
+      "text": "……사람 많은 데는 싫어요. 제가 나서서 말하면 경비들이 저도 데려갈 거잖아요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 243,
+          "label": "r13_ev_eve_trial",
+          "guards": [
+            "while _eve_left>0:",
+            "menu:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 243,
+      "scene_title": "r13_ev_eve_trial",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "afef76ae2c3441243e35ecb6a672763842305804bed32a3b63c74afd3026a4e8",
+      "uid": "3eaf50c20c33ddba0953dce9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_eve_trial|rpy_literal|r13_ev_eve_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:244:31",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        13742,
+        13779
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_eve_trial",
+      "block": "r13_ev_eve_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:244:31",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(밤이는 말하기 싫은 게 아니다. 끌려갈까 봐 무서운 것이다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 244,
+          "label": "r13_ev_eve_trial",
+          "guards": [
+            "while _eve_left>0:",
+            "menu:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 244,
+      "scene_title": "r13_ev_eve_trial",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "83d82bb03090cb851d1648dc7fa5b31b298336bef0976ab62e6e9edee2e36c6d",
+      "uid": "6f2543e57665ddaea33a521b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_eve_trial|rpy_literal|r13_ev_eve_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:248:53",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        14009,
+        14039
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_eve_trial",
+      "block": "r13_ev_eve_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:248:53",
+      "when": null,
+      "speaker": "resident_ppul",
+      "kind": "dialogue",
+      "text": "약속은 지키오. 재판은 증거대로, 집행은 판결대로.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 248,
+          "label": "r13_ev_eve_trial",
+          "guards": [
+            "while _eve_left>0:",
+            "menu:",
+            "if r13_has(\"fair_hearing\"):"
+          ]
+        }
+      ],
+      "line": 248,
+      "scene_title": "r13_ev_eve_trial",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "f847c6b2c0997d95f055f28035bafb61ae650f33491acffc2a8899462cc86688",
+      "uid": "b36ec778e7bb3ecdc342b791",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_eve_trial|rpy_literal|r13_ev_eve_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:250:53",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        14136,
+        14175
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_eve_trial",
+      "block": "r13_ev_eve_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:250:53",
+      "when": null,
+      "speaker": "resident_ppul",
+      "kind": "dialogue",
+      "text": "내일은 마을 법대로 하오. 누가 옳든, 겨울을 넘길 방법이 먼저요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 250,
+          "label": "r13_ev_eve_trial",
+          "guards": [
+            "while _eve_left>0:",
+            "menu:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 250,
+      "scene_title": "r13_ev_eve_trial",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "134216128023405813bac911a95e8ea918e8cec9996a8d53549cbc8d2df38372",
+      "uid": "c73728b7dbddbcfec5b0306d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_eve_trial|rpy_literal|r13_ev_eve_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:251:31",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        14209,
+        14242
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_eve_trial",
+      "block": "r13_ev_eve_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:251:31",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(재판에서 이겨도 촌장이 판결을 따르지 않을 수 있다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 251,
+          "label": "r13_ev_eve_trial",
+          "guards": [
+            "while _eve_left>0:",
+            "menu:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 251,
+      "scene_title": "r13_ev_eve_trial",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "4e9f551038a67472d5e25acde8fc6444a4bb4a7ab14c428ead005d09ebf3ecfd",
+      "uid": "8cad1132ef7d2890a77bdd45",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_eve_trial|rpy_literal|r13_ev_eve_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_evening.rpy:254:27",
+      "file": "game/systems/room13_evening.rpy",
+      "path": [
+        14360,
+        14397
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_eve_trial",
+      "block": "r13_ev_eve_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_evening.rpy:254:27",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(남은 건 오늘 밤뿐이다. 자기 전에 할 수 있는 일을 하자.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_evening.rpy",
+          "line": 254,
+          "label": "r13_ev_eve_trial",
+          "guards": []
+        }
+      ],
+      "line": 254,
+      "scene_title": "r13_ev_eve_trial",
+      "source_hash": "59f7be12ab0af1fb9336333c028459871ec5f6df66447a83ce8699db100f75d4",
+      "baseline_hash": "58457d8a9ae0db0d7dccecb31a0b2e028fe6678377cb733038903a0d01d15b02",
+      "uid": "6753cdaf356e9c4dd5be6fcf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_eve_trial|rpy_literal|r13_ev_eve_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

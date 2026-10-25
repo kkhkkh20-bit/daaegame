@@ -1,7 +1,159 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_bundle3.rpy:131:26",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        8061,
+        8111
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_ration",
+      "block": "r13_b3_ration",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:131:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "광장 배급대 앞에서 줄이 멈춰 있었다. 너울이 보리의 수레 손잡이를 꽉 붙잡고 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 131,
+          "label": "r13_b3_ration",
+          "guards": []
+        }
+      ],
+      "line": 131,
+      "scene_title": "r13_b3_ration",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "dee703e4513b1ba6f9288e7acf65adeb8442a6382d064a344d5a913e0d3df081",
+      "uid": "2f88af90f3c5b46810134381",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_ration|rpy_literal|r13_b3_ration|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:132:17",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        8131,
+        8189
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_ration",
+      "block": "r13_b3_ration",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:132:17",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "배급 장부에 적힌 것보다 감자 한 자루, 장작 세 짐이 모자라오. 이번 주 배급 운반은 보리가 했소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 132,
+          "label": "r13_b3_ration",
+          "guards": []
+        }
+      ],
+      "line": 132,
+      "scene_title": "r13_b3_ration",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "5ab75fa7dfedd9eb8820930713f5a624185592325ca24d65cabfbc465d33c228",
+      "uid": "8a333d5ade0ac91861e5acb2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_ration|rpy_literal|r13_b3_ration|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:133:25",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        8217,
+        8252
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_ration",
+      "block": "r13_b3_ration",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:133:25",
+      "when": null,
+      "speaker": "resident_bori",
+      "kind": "dialogue",
+      "text": "전 장부에 적힌 대로 실었어요! 배급소 저울에 단 그대로요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 133,
+          "label": "r13_b3_ration",
+          "guards": []
+        }
+      ],
+      "line": 133,
+      "scene_title": "r13_b3_ration",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "35f478590a0a4a03c40ca51a44fb90fd2743e5f6a8b4c5da86ca2a2d397adcb0",
+      "uid": "b1a417c57f312fa3ca47dddb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_ration|rpy_literal|r13_b3_ration|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:134:17",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        8272,
+        8316
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_ration",
+      "block": "r13_b3_ration",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:134:17",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "그럼 저울이 거짓말이라도 한다는 거요? 다음 배급 때까지 보리네 몫은 없소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 134,
+          "label": "r13_b3_ration",
+          "guards": []
+        }
+      ],
+      "line": 134,
+      "scene_title": "r13_b3_ration",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "69895590642ee86ce4b5db3dad7440507b0b37b14202bbe356c83ea36551633e",
+      "uid": "c0662432774cfdad3c350f29",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_ration|rpy_literal|r13_b3_ration|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_bundle3.rpy:140:40",
       "file": "game/systems/room13_bundle3.rpy",
@@ -38,6 +190,539 @@
       "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
       "baseline_hash": "0a79511bfed7519df611ce311e06aa892968cd1b548ad871a015ac1852f985a0",
       "uid": "e81b35a203215ddf6bf822a1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_ration|rpy_literal|r13_b3_ration|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:141:27",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        8607,
+        8634
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_ration",
+      "block": "r13_b3_ration",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:141:27",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(문제는 장부가 아니다. 저울을 봐야 한다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 141,
+          "label": "r13_b3_ration",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 141,
+      "scene_title": "r13_b3_ration",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "51c1adc6d25a559fd4ef0c7228dc49aaa55b0bc7b2ba4470563f5a7ec9311161",
+      "uid": "eb4d9b7f5f88fd6ad3a1fe9b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_ration|rpy_literal|r13_b3_ration|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:145:39",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        8889,
+        8950
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_ration",
+      "block": "r13_b3_ration",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:145:39",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "표준 추로 배급소 저울이 맞는지 다시 대조해 봅시다. 가게 저울은 이미 눈금이 한 칸 더 나가 있었습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 145,
+          "label": "r13_b3_ration",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 145,
+      "scene_title": "r13_b3_ration",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "ad621416fd0baeaef305c6c8f4938ac454ffe672d15e412dbede6b511297de4e",
+      "uid": "a612bf86aa6011ac2ddd1532",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_ration|rpy_literal|r13_b3_ration|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:146:26",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        8979,
+        9034
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_ration",
+      "block": "r13_b3_ration",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:146:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "도토가 표준 추를 올렸다. 바늘이 제 눈금보다 한 칸 더 기울었다. 줄 선 사람들이 웅성거렸다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 146,
+          "label": "r13_b3_ration",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 146,
+      "scene_title": "r13_b3_ration",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "7d22c9e74d9be51b0638a312441469c151943e9396c55ab45ce9f4beae5f08fb",
+      "uid": "1cb6fd218ace666cc6fc0813",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_ration|rpy_literal|r13_b3_ration|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:147:28",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        9065,
+        9123
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_ration",
+      "block": "r13_b3_ration",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:147:28",
+      "when": null,
+      "speaker": "doto",
+      "kind": "dialogue",
+      "text": "……한 칸이나 틀리면 집마다 감자 서너 알씩 덜 받은 거예요. 모자란 건 보리가 가져간 게 아니에요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 147,
+          "label": "r13_b3_ration",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 147,
+      "scene_title": "r13_b3_ration",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "5e6b75461468801b8e5172a75f1dd69341aee0c829b40aae03eda602863bdf31",
+      "uid": "dc04f247e1e4cd60187598b9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_ration|rpy_literal|r13_b3_ration|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:148:29",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        9155,
+        9191
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_ration",
+      "block": "r13_b3_ration",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:148:29",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "배급소 저울은 내가 직접 확인하겠소. 보리는 이만 가도 좋소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 148,
+          "label": "r13_b3_ration",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 148,
+      "scene_title": "r13_b3_ration",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "fd64415c294cde1ea1b322e19b040112d864cfd455464968666500e0509fc60b",
+      "uid": "bb9256d00345ed725c901acb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_ration|rpy_literal|r13_b3_ration|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:151:39",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        9402,
+        9461
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_ration",
+      "block": "r13_b3_ration",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:151:39",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "배급이 모자랐던 날마다 백 부인 창고에는 같은 물건이 그만큼 늘었습니다. 이 장부에 다 적혀 있습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 151,
+          "label": "r13_b3_ration",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 151,
+      "scene_title": "r13_b3_ration",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "c5ebb233b677e5db0ef736876f6edbb8b8390c30d6b6a6764e9ea13d910a1ba2",
+      "uid": "1e1b9b6cd099f4ffa289fb3e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_ration|rpy_literal|r13_b3_ration|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:152:37",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        9501,
+        9522
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_ration",
+      "block": "r13_b3_ration",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:152:37",
+      "when": null,
+      "speaker": "resident_ppul",
+      "kind": "dialogue",
+      "text": "……이 장부는 대체 누가 쓴 거요?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 152,
+          "label": "r13_b3_ration",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 152,
+      "scene_title": "r13_b3_ration",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "047c81655bfcf2cb27d8ecbb5527d5e21a38eb2445045b426b517cb056653784",
+      "uid": "dbe32970cea542edd35a044d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_ration|rpy_literal|r13_b3_ration|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:153:29",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        9554,
+        9597
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_ration",
+      "block": "r13_b3_ration",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:153:29",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "백 부인 글씨구려. 보리는 가시오. 장부 일은 내가 부인에게 따로 묻겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 153,
+          "label": "r13_b3_ration",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 153,
+      "scene_title": "r13_b3_ration",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "cdd3c100af8401fe833008407382e1fcea38e7862e7903ac9d30f25942ef09a0",
+      "uid": "c0a742b4beb1dd025e8da1ce",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_ration|rpy_literal|r13_b3_ration|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:157:41",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        9841,
+        9890
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_ration",
+      "block": "r13_b3_ration",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:157:41",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "외지 사람이 왜 남의 집 몫을 대신 내오? ……뭐, 돈은 받겠소. 보리는 가도 좋소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 157,
+          "label": "r13_b3_ration",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 157,
+      "scene_title": "r13_b3_ration",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "aadc39886bf7b1140270ae1f28853be5e05bd6b5a1580fbdedead642fcf62f65",
+      "uid": "61c36dd0d465729dbf966315",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_ration|rpy_literal|r13_b3_ration|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:158:37",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        9930,
+        9956
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_ration",
+      "block": "r13_b3_ration",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:158:37",
+      "when": null,
+      "speaker": "resident_bori",
+      "kind": "dialogue",
+      "text": "이 돈은 꼭 갚을게요. 장작으로든 뭐로든요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 158,
+          "label": "r13_b3_ration",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 158,
+      "scene_title": "r13_b3_ration",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "2ed409349bfba7a85fb8e490023b0fa7eb04b70a6ce337a4e9a640b589639e37",
+      "uid": "35ef758b4511f45b5ab4ab3c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_ration|rpy_literal|r13_b3_ration|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:161:39",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        10136,
+        10167
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_ration",
+      "block": "r13_b3_ration",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:161:39",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "보리가 모자란 몫을 가져갔다는 증거는 없지 않습니까.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 161,
+          "label": "r13_b3_ration",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 161,
+      "scene_title": "r13_b3_ration",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "e8e39e43fe0a6ba5fd12b3efbac0b584c4a4dcbdee1c09b5d8c16a6a3a74a5c7",
+      "uid": "2af828b6b13a37b290b1e787",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_ration|rpy_literal|r13_b3_ration|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:162:29",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        10199,
+        10235
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_ration",
+      "block": "r13_b3_ration",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:162:29",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "그럼 누가 가져갔는지 증거를 대 보시오. 말만으로는 안 되오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 162,
+          "label": "r13_b3_ration",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 162,
+      "scene_title": "r13_b3_ration",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "33a5a6215232402e78628e410417869b1c6b0687bcf6753cde1cf10e21b6ac06",
+      "uid": "ee3772e28739ebb620cfe7e2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_ration|rpy_literal|r13_b3_ration|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:166:38",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        10413,
+        10459
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_ration",
+      "block": "r13_b3_ration",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:166:38",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "보리는 빈 수레를 끌고 줄 끝으로 물러났다. 아무도 보리 쪽을 쳐다보지 않았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 166,
+          "label": "r13_b3_ration",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 166,
+      "scene_title": "r13_b3_ration",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "068d2153de7a48598cdd5c04ae57aee523a1560035602b9bdac6f8daf87677b2",
+      "uid": "16369ad7741fbaf769da9250",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_b3_ration|rpy_literal|r13_b3_ration|행 조건 없음",

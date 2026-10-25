@@ -1,7 +1,207 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:355:33",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        20647,
+        20659
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_nt_after_trial",
+      "block": "r13_nt_after_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:355:33",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "식당 · 따닥의 일",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 355,
+          "label": "r13_nt_after_trial",
+          "guards": [
+            "if room13.get(\"trial_result\")==\"culprit_proven\" and r13_has(\"N03\") and r13_has(\"N07\") and (r13_has(\"ttadak_dead\") or r13_has(\"nt_ttadak_half\")):"
+          ]
+        }
+      ],
+      "line": 355,
+      "scene_title": "r13_nt_after_trial",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "f45dd8748773c98ad82947a9fc1a1396f50e29e348a49159860f3cf3f7768746",
+      "uid": "bd795b03eb8475836c9370e6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nt_after_trial|rpy_inventory|r13_nt_after_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:356:42",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        20713,
+        20755
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_nt_after_trial",
+      "block": "r13_nt_after_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:356:42",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "하나 더 있습니다. 9일 새벽, 통로 안에서 목수 따닥 씨가 얼었습니다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 356,
+          "label": "r13_nt_after_trial",
+          "guards": [
+            "if room13.get(\"trial_result\")==\"culprit_proven\" and r13_has(\"N03\") and r13_has(\"N07\") and (r13_has(\"ttadak_dead\") or r13_has(\"nt_ttadak_half\")):"
+          ]
+        }
+      ],
+      "line": 356,
+      "scene_title": "r13_nt_after_trial",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "a5f571f11a8cf88cd85c98104b7c8c9e49e45e8403c179aec2cc26f4b665b266",
+      "uid": "e55649d40a49eb67c1ceacd9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nt_after_trial|rpy_inventory|r13_nt_after_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:356:116",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        20787,
+        20848
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_nt_after_trial",
+      "block": "r13_nt_after_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:356:116",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "하나 더 있습니다. 9일 새벽, 목수 따닥 씨가 통로 안에 갇혔습니다. 손이 얼어 지금 진료소에 있습니다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 356,
+          "label": "r13_nt_after_trial",
+          "guards": [
+            "if room13.get(\"trial_result\")==\"culprit_proven\" and r13_has(\"N03\") and r13_has(\"N07\") and (r13_has(\"ttadak_dead\") or r13_has(\"nt_ttadak_half\")):"
+          ]
+        }
+      ],
+      "line": 356,
+      "scene_title": "r13_nt_after_trial",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "0d1de5f2df9842c26994dfec35d9559235a1d53a4c082e658534c874a9a45631",
+      "uid": "6f85a9403bb9b41952aa581e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nt_after_trial|rpy_inventory|r13_nt_after_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:370:39",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        21672,
+        21692
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_nt_after_trial",
+      "block": "r13_nt_after_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:370:39",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "식당 앞 계단 · 할아버지의 모자",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 370,
+          "label": "r13_nt_after_trial",
+          "guards": [
+            "if r13_has(\"nt_buri_together\") and room13.get(\"daram_state\")==\"with_dad\":"
+          ]
+        }
+      ],
+      "line": 370,
+      "scene_title": "r13_nt_after_trial",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "cb85862b63fee06e2bb41358bb2e60ba74f5cfe9b3347663de3f5735d6d87d40",
+      "uid": "1a6a6f9d6b357ea84f08afab",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nt_after_trial|rpy_inventory|r13_nt_after_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:382:39",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        22296,
+        22308
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_nt_after_trial",
+      "block": "r13_nt_after_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:382:39",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "광장 · 초롱의 등",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 382,
+          "label": "r13_nt_after_trial",
+          "guards": [
+            "if r13_has(\"nt_lit_lamps\"):"
+          ]
+        }
+      ],
+      "line": 382,
+      "scene_title": "r13_nt_after_trial",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "bd3196d091abac8d0e1204b436c7735b8ac6ee45d439cb22eac5fcf5fc8b9140",
+      "uid": "609ae0295bf6a6a46ad081f9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nt_after_trial|rpy_inventory|r13_nt_after_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_ep4_night13.rpy:383:30",
       "file": "game/systems/room13_ep4_night13.rpy",
@@ -37,6 +237,126 @@
       "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
       "baseline_hash": "e3a22b23fc55ace88fdb96f99356f52a0ea28176213cb4e58fa36fa709d41aaa",
       "uid": "5e577f712c11957e4c504ee7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nt_after_trial|rpy_inventory|r13_nt_after_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:383:61",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        22379,
+        22385
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_nt_after_trial",
+      "block": "r13_nt_after_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:383:61",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": " 따닥.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 383,
+          "label": "r13_nt_after_trial",
+          "guards": [
+            "if r13_has(\"nt_lit_lamps\"):"
+          ]
+        }
+      ],
+      "line": 383,
+      "scene_title": "r13_nt_after_trial",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "525624e73364c75019aa5d01dd155758e5fcda5ab7cda0b4c11a61c1cc6351fa",
+      "uid": "03692fe8e0db4388be4ea652",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nt_after_trial|rpy_inventory|r13_nt_after_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:391:39",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        23021,
+        23033
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_nt_after_trial",
+      "block": "r13_nt_after_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:391:39",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "광장 · 초롱의 등",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 391,
+          "label": "r13_nt_after_trial",
+          "guards": [
+            "elif r13_has(\"nt_chorong_safe\"):"
+          ]
+        }
+      ],
+      "line": 391,
+      "scene_title": "r13_nt_after_trial",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "bd3196d091abac8d0e1204b436c7735b8ac6ee45d439cb22eac5fcf5fc8b9140",
+      "uid": "99c0dd5810510c2c229986dc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nt_after_trial|rpy_inventory|r13_nt_after_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:393:47",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        23156,
+        23176
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_nt_after_trial",
+      "block": "r13_nt_after_trial",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:393:47",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "오늘은 이름 판에 새 이름 없지?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 393,
+          "label": "r13_nt_after_trial",
+          "guards": [
+            "elif r13_has(\"nt_chorong_safe\"):"
+          ]
+        }
+      ],
+      "line": 393,
+      "scene_title": "r13_nt_after_trial",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "a4466d2bdebefdd3561c07dedfeac79d7f0d98b2886a319cf197ed9b5cf23e54",
+      "uid": "1f060cb7d0b34da172780b54",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_nt_after_trial|rpy_inventory|r13_nt_after_trial|행 조건 없음",

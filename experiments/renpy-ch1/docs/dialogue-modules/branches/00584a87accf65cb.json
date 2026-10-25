@@ -1,7 +1,45 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_q1_difficulty.rpy:277:43",
+      "file": "game/systems/room13_q1_difficulty.rpy",
+      "path": [
+        15254,
+        15307
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_q1_hard_counter",
+      "block": "r13_q1_hard_counter",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_difficulty.rpy:277:43",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "\n\n이 반박을 확정합니다. 무너진 정식 반박이 세 번이면 회의가 끝납니다. 현재 %d회.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_difficulty.rpy",
+          "line": 277,
+          "label": "r13_q1_hard_counter",
+          "guards": []
+        }
+      ],
+      "line": 277,
+      "scene_title": "r13_q1_hard_counter",
+      "source_hash": "9a354ff6a98b8cac565ba817f440cdf209f2fbe11dd7b9392b809128818ad3a3",
+      "baseline_hash": "232f4ccaaaf962e53428f373858c55f6accc67a34ba653ebc07c4e8717988ba5",
+      "uid": "08409f467db0638d6716ed3d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_q1_hard_counter|rpy_inventory|r13_q1_hard_counter|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_q1_difficulty.rpy:277:120",
       "file": "game/systems/room13_q1_difficulty.rpy",
@@ -35,6 +73,44 @@
       "source_hash": "9a354ff6a98b8cac565ba817f440cdf209f2fbe11dd7b9392b809128818ad3a3",
       "baseline_hash": "e0e860415b3019970e3f47577a3bba58e37ad48cbf4f12462dbdbb120b605775",
       "uid": "29972bd51f962c15079d25b7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_q1_hard_counter|rpy_inventory|r13_q1_hard_counter|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_q1_difficulty.rpy:277:134",
+      "file": "game/systems/room13_q1_difficulty.rpy",
+      "path": [
+        15345,
+        15357
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_q1_hard_counter",
+      "block": "r13_q1_hard_counter",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_difficulty.rpy:277:134",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "자료를 더 검토한다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_difficulty.rpy",
+          "line": 277,
+          "label": "r13_q1_hard_counter",
+          "guards": []
+        }
+      ],
+      "line": 277,
+      "scene_title": "r13_q1_hard_counter",
+      "source_hash": "9a354ff6a98b8cac565ba817f440cdf209f2fbe11dd7b9392b809128818ad3a3",
+      "baseline_hash": "4496bd53a55536614046f2850068a7ca9bbd9145ac2c74d6fd79e3098d25b79c",
+      "uid": "e256bc5d42da71c527aebcd0",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_q1_hard_counter|rpy_inventory|r13_q1_hard_counter|행 조건 없음",

@@ -1,7 +1,167 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_life_closeups.rpy:176:14",
+      "file": "game/systems/room13_life_closeups.rpy",
+      "path": [
+        9606,
+        9665
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_life_meal",
+      "block": "r13_life_meal",
+      "placement": "literal",
+      "ref": "game/systems/room13_life_closeups.rpy:176:14",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "나비: “이 한 벌은 따로 놓아 줘요.” 세 자리는 차려졌고, 오른쪽 파란 잎 무늬 자리만 비어 있다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_life_closeups.rpy",
+          "line": 176,
+          "label": "r13_life_meal",
+          "guards": []
+        }
+      ],
+      "line": 176,
+      "scene_title": "r13_life_meal",
+      "source_hash": "ff9e09dda506d96806b7e62ed92cf7d8c9b9dca5fa0547afc1d000e4ca902e0b",
+      "baseline_hash": "f30a8ecccdf527e8bcc11c51a0aa0fedfa2edea6f1978b34dd9fbc928d6a9a79",
+      "uid": "b54dd47e7a55e0f6a0295578",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_meal|rpy_inventory|r13_life_meal|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_life_closeups.rpy:178:81",
+      "file": "game/systems/room13_life_closeups.rpy",
+      "path": [
+        9763,
+        9774
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_life_meal",
+      "block": "r13_life_meal",
+      "placement": "literal",
+      "ref": "game/systems/room13_life_closeups.rpy:178:81",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "맡은 일만 마친다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_life_closeups.rpy",
+          "line": 178,
+          "label": "r13_life_meal",
+          "guards": [
+            "while True:"
+          ]
+        }
+      ],
+      "line": 178,
+      "scene_title": "r13_life_meal",
+      "source_hash": "ff9e09dda506d96806b7e62ed92cf7d8c9b9dca5fa0547afc1d000e4ca902e0b",
+      "baseline_hash": "98d39b54ef312961f43469d952439ffb337717ecc07e1cefb6e49ef9076d9c3e",
+      "uid": "82babf5a2db6d4ef6b8fd372",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_meal|rpy_inventory|r13_life_meal|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_life_closeups.rpy:186:22",
+      "file": "game/systems/room13_life_closeups.rpy",
+      "path": [
+        10121,
+        10178
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_life_meal",
+      "block": "r13_life_meal",
+      "placement": "literal",
+      "ref": "game/systems/room13_life_closeups.rpy:186:22",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "파란 잎 무늬 그릇에 국을 뜨고, 쟁반의 빵 하나를 옆 접시에 옮겼다. 쟁반에는 빵이 하나 남았다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_life_closeups.rpy",
+          "line": 186,
+          "label": "r13_life_meal",
+          "guards": [
+            "while True:",
+            "if _t in (\"fourth_bowl\",\"fourth_plate\") and not _ml_served:"
+          ]
+        }
+      ],
+      "line": 186,
+      "scene_title": "r13_life_meal",
+      "source_hash": "ff9e09dda506d96806b7e62ed92cf7d8c9b9dca5fa0547afc1d000e4ca902e0b",
+      "baseline_hash": "efe2e4a1a353228a7536a2452b45703747b05ff898af40ff56f5ccf6c42c760b",
+      "uid": "fb419020e69520f45114f517",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_meal|rpy_inventory|r13_life_meal|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_life_closeups.rpy:188:22",
+      "file": "game/systems/room13_life_closeups.rpy",
+      "path": [
+        10230,
+        10254
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_life_meal",
+      "block": "r13_life_meal",
+      "placement": "literal",
+      "ref": "game/systems/room13_life_closeups.rpy:188:22",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "국 냄비다. 한 그릇 분량이 남아 있다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_life_closeups.rpy",
+          "line": 188,
+          "label": "r13_life_meal",
+          "guards": [
+            "while True:",
+            "elif _t==\"soup_pot\":"
+          ]
+        }
+      ],
+      "line": 188,
+      "scene_title": "r13_life_meal",
+      "source_hash": "ff9e09dda506d96806b7e62ed92cf7d8c9b9dca5fa0547afc1d000e4ca902e0b",
+      "baseline_hash": "659c0e35ea2bc823db7d9646c701ecc6a26620d16c2bbf31c45f562e5a265b7e",
+      "uid": "c55b8465b93383a61bc7280a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_meal|rpy_inventory|r13_life_meal|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_life_closeups.rpy:188:70",
       "file": "game/systems/room13_life_closeups.rpy",
@@ -38,6 +198,129 @@
       "source_hash": "ff9e09dda506d96806b7e62ed92cf7d8c9b9dca5fa0547afc1d000e4ca902e0b",
       "baseline_hash": "97bcb47c5de931c26580de19f70733b6d7485f84339e39a37e1ee5862d2c4a40",
       "uid": "8d06096045efeda7b8cbf531",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_meal|rpy_inventory|r13_life_meal|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_life_closeups.rpy:190:23",
+      "file": "game/systems/room13_life_closeups.rpy",
+      "path": [
+        10352,
+        10368
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_life_meal",
+      "block": "r13_life_meal",
+      "placement": "literal",
+      "ref": "game/systems/room13_life_closeups.rpy:190:23",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "쟁반에 빵이 두 개 있다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_life_closeups.rpy",
+          "line": 190,
+          "label": "r13_life_meal",
+          "guards": [
+            "while True:",
+            "elif _t==\"bread_source\":"
+          ]
+        }
+      ],
+      "line": 190,
+      "scene_title": "r13_life_meal",
+      "source_hash": "ff9e09dda506d96806b7e62ed92cf7d8c9b9dca5fa0547afc1d000e4ca902e0b",
+      "baseline_hash": "7639de23c3d7ea7a8d1df8f2b434820a75ac590e41661856b1aa0ea9f842eea3",
+      "uid": "cd0f280c052538bc867a06df",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_meal|rpy_inventory|r13_life_meal|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_life_closeups.rpy:190:63",
+      "file": "game/systems/room13_life_closeups.rpy",
+      "path": [
+        10392,
+        10408
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_life_meal",
+      "block": "r13_life_meal",
+      "placement": "literal",
+      "ref": "game/systems/room13_life_closeups.rpy:190:63",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "쟁반에 빵이 하나 남았다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_life_closeups.rpy",
+          "line": 190,
+          "label": "r13_life_meal",
+          "guards": [
+            "while True:",
+            "elif _t==\"bread_source\":"
+          ]
+        }
+      ],
+      "line": 190,
+      "scene_title": "r13_life_meal",
+      "source_hash": "ff9e09dda506d96806b7e62ed92cf7d8c9b9dca5fa0547afc1d000e4ca902e0b",
+      "baseline_hash": "b6217af313ec483a94784f2f9a72d29a608726ba8c28e645e38697455603b0f4",
+      "uid": "3cca804c062a54699c676a12",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_meal|rpy_inventory|r13_life_meal|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_life_closeups.rpy:192:22",
+      "file": "game/systems/room13_life_closeups.rpy",
+      "path": [
+        10446,
+        10459
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_life_meal",
+      "block": "r13_life_meal",
+      "placement": "literal",
+      "ref": "game/systems/room13_life_closeups.rpy:192:22",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "이 자리는 차려졌다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_life_closeups.rpy",
+          "line": 192,
+          "label": "r13_life_meal",
+          "guards": [
+            "while True:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 192,
+      "scene_title": "r13_life_meal",
+      "source_hash": "ff9e09dda506d96806b7e62ed92cf7d8c9b9dca5fa0547afc1d000e4ca902e0b",
+      "baseline_hash": "b4342e0934fd284f47c81968d0021cd6232e918d8052eee212b2a8fa0c66f56f",
+      "uid": "56577594bed5e4866d2018a1",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_life_meal|rpy_inventory|r13_life_meal|행 조건 없음",

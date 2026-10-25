@@ -1,0 +1,272 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events.rpy:417:27",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        21913,
+        21964
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_seori",
+      "block": "r13_ev_c_seori",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:417:27",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "검사원님, 오늘 밤 백 부인 창고에서 일합니다. 자정쯤 한 번 들러 주실 수 있겠습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 417,
+          "label": "r13_ev_c_seori",
+          "guards": []
+        }
+      ],
+      "line": 417,
+      "scene_title": "r13_ev_c_seori",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "3a4bf48c92cc4bf9b99eb7894dd1482086f97f80bef4df0a2575ace93adf8600",
+      "uid": "40efb8753502444714284d5f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_seori|rpy_literal|r13_ev_c_seori|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:418:26",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        21993,
+        22038
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_seori",
+      "block": "r13_ev_c_seori",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:418:26",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "창고 일에 검사원이 왜 필요합니까? ……알겠습니다. 이유는 그때 직접 듣지요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 418,
+          "label": "r13_ev_c_seori",
+          "guards": []
+        }
+      ],
+      "line": 418,
+      "scene_title": "r13_ev_c_seori",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "40e1937d2d2862d625dba29061d49416fef3a23a218f58b6333bbd59994cf51d",
+      "uid": "94daa9fab7e455f6873ffd13",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_seori|rpy_literal|r13_ev_c_seori|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:420:26",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        22139,
+        22177
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_seori",
+      "block": "r13_ev_c_seori",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:420:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "자루를 세는 사이 등 뒤에서 문이 닫히고, 밖에서 빗장이 걸렸다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 420,
+          "label": "r13_ev_c_seori",
+          "guards": []
+        }
+      ],
+      "line": 420,
+      "scene_title": "r13_ev_c_seori",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "d3e4650f5238614bc8642ac4cc6a9c4019bac1c7d7d01657181466d25934f6f1",
+      "uid": "03e2a6b4e62f2fd71c6a0fd6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_seori|rpy_literal|r13_ev_c_seori|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:421:14",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        22194,
+        22215
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_seori",
+      "block": "r13_ev_c_seori",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:421:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "잠시 뒤 문밖에서 목소리가 들렸다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 421,
+          "label": "r13_ev_c_seori",
+          "guards": []
+        }
+      ],
+      "line": 421,
+      "scene_title": "r13_ev_c_seori",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "d3029c8242d6f3f92bba4d8251e13296deb7732fe109ed1e6c3eab9e4caf398a",
+      "uid": "6ab9694dcb255f8c8dea7979",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_seori|rpy_literal|r13_ev_c_seori|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:422:26",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        22244,
+        22284
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_seori",
+      "block": "r13_ev_c_seori",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:422:26",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "부인, 안에 사람이 있는데 빗장을 지르셨군요. 이건 기록에 남습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 422,
+          "label": "r13_ev_c_seori",
+          "guards": []
+        }
+      ],
+      "line": 422,
+      "scene_title": "r13_ev_c_seori",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "d4d35a07b51fe706e07a4bf87f59077fcfac203b1601257a20f690e8f2b09edc",
+      "uid": "34ec73ab8a5b34ff71c5037b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_seori|rpy_literal|r13_ev_c_seori|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:423:26",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        22313,
+        22336
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_seori",
+      "block": "r13_ev_c_seori",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:423:26",
+      "when": null,
+      "speaker": "resident_madam",
+      "kind": "dialogue",
+      "text": "……바람에 빗장이 저절로 걸린 거예요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 423,
+          "label": "r13_ev_c_seori",
+          "guards": []
+        }
+      ],
+      "line": 423,
+      "scene_title": "r13_ev_c_seori",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "77cb080602ce62494480c74eca9a0bf08fb7df8e7be589a4bfef5625bf671cba",
+      "uid": "68f5ce6036ed6e9f86a9bbd9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_seori|rpy_literal|r13_ev_c_seori|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:424:26",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        22365,
+        22395
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_seori",
+      "block": "r13_ev_c_seori",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:424:26",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "바람이 빗장을 지르는 마을이면 그것도 적어 두지요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 424,
+          "label": "r13_ev_c_seori",
+          "guards": []
+        }
+      ],
+      "line": 424,
+      "scene_title": "r13_ev_c_seori",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "53faf288abd2c7e803c1ff181cffefcecd8c9a54afbbf0c1204e1d92157c90c6",
+      "uid": "0c49ae4be38ebf321667601d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_seori|rpy_literal|r13_ev_c_seori|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

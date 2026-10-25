@@ -1,0 +1,434 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:142:33",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        7970,
+        7989
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_bite",
+      "block": "r13_ep2_bite",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:142:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "아빠, 오늘은 내가 읽어 줄게.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 142,
+          "label": "r13_ep2_bite",
+          "guards": [
+            "if not late and room13[\"location\"] in (\"room13\",\"guestroom\"):"
+          ]
+        }
+      ],
+      "line": 142,
+      "scene_title": "r13_ep2_bite",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "fc4aac4040df2ef337b01e3c0dd21496e17b0c38c692002b6e7d52a443583686",
+      "uid": "225dbcf9a3136023711d7117",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_bite|rpy_literal|r13_ep2_bite|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:143:18",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        8010,
+        8045
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_bite",
+      "block": "r13_ep2_bite",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:143:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "(그림책) 남매는 숲에 들어가며 빵 부스러기를 떨어뜨렸어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 143,
+          "label": "r13_ep2_bite",
+          "guards": [
+            "if not late and room13[\"location\"] in (\"room13\",\"guestroom\"):"
+          ]
+        }
+      ],
+      "line": 143,
+      "scene_title": "r13_ep2_bite",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "1ed1309b9db71b4e016f397821a5d7a4e825c3615797bf88b05d6671c1b69618",
+      "uid": "6bf4a760094f31a11ce2fe4f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_bite|rpy_literal|r13_ep2_bite|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:144:18",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        8089,
+        8121
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_bite",
+      "block": "r13_ep2_bite",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:144:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "(그림책) 그런데 새들이 부스러기를 다 먹어 버렸어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 144,
+          "label": "r13_ep2_bite",
+          "guards": [
+            "if not late and room13[\"location\"] in (\"room13\",\"guestroom\"):"
+          ]
+        }
+      ],
+      "line": 144,
+      "scene_title": "r13_ep2_bite",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "c3dad8673ef0f020ee7182d29705a385b5e96d66424b416bc5ccc1f7d9088f33",
+      "uid": "5b86fc313618f0fa2e7d9f2a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_bite|rpy_literal|r13_ep2_bite|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:145:18",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        8142,
+        8175
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_bite",
+      "block": "r13_ep2_bite",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:145:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "(그림책) 남매는 별을 보고 길을 찾아 집에 돌아갔어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 145,
+          "label": "r13_ep2_bite",
+          "guards": [
+            "if not late and room13[\"location\"] in (\"room13\",\"guestroom\"):"
+          ]
+        }
+      ],
+      "line": 145,
+      "scene_title": "r13_ep2_bite",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "b9be2c8f38c442188ccd5b71c3c5a6f9e36775f97b552f62221cdb774edd05fa",
+      "uid": "c9cc4c50908b2bb282a9546e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_bite|rpy_literal|r13_ep2_bite|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:146:21",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        8199,
+        8223
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_bite",
+      "block": "r13_ep2_bite",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:146:21",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "나는 길 안 잃어버려. 아빠가 있으니까.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 146,
+          "label": "r13_ep2_bite",
+          "guards": [
+            "if not late and room13[\"location\"] in (\"room13\",\"guestroom\"):"
+          ]
+        }
+      ],
+      "line": 146,
+      "scene_title": "r13_ep2_bite",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "8eb221380933355ce4c6c49cf4768f24fc980686bb58b819d185d968ba61f1ac",
+      "uid": "ac60579a561510d3549a6ca4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_bite|rpy_literal|r13_ep2_bite|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:149:17",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        8439,
+        8458
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_bite",
+      "block": "r13_ep2_bite",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:149:17",
+      "when": null,
+      "speaker": "guard",
+      "kind": "dialogue",
+      "text": "뭔가가…… 어둠 속에서 물었소!",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 149,
+          "label": "r13_ep2_bite",
+          "guards": []
+        }
+      ],
+      "line": 149,
+      "scene_title": "r13_ep2_bite",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "079ca2e0d02a3aec653f42f380f5dd755ce671e735dc8ee28caa0254962f4746",
+      "uid": "d0da34e660924f0978224d13",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_bite|rpy_literal|r13_ep2_bite|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:150:17",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        8478,
+        8521
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_bite",
+      "block": "r13_ep2_bite",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:150:17",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "처마 밑의 그 들짐승 아이 짓이오. 날이 밝으면 찾아서 보호소로 보내겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 150,
+          "label": "r13_ep2_bite",
+          "guards": []
+        }
+      ],
+      "line": 150,
+      "scene_title": "r13_ep2_bite",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "0f8229dd1122ecc7805bf484cee2f2d784bf207a003ccb2f8caea2815e6d123c",
+      "uid": "3b58ff1f7945a549727c0912",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_bite|rpy_literal|r13_ep2_bite|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:151:15",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        8539,
+        8560
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_bite",
+      "block": "r13_ep2_bite",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:151:15",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "보호소에서 돌아온 사람은 있습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 151,
+          "label": "r13_ep2_bite",
+          "guards": []
+        }
+      ],
+      "line": 151,
+      "scene_title": "r13_ep2_bite",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "313967b79b0f4d33500a1cdf43f249019d479875b1e9e44a5911ca1275679272",
+      "uid": "e4e02a8757aafcefbb142044",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_bite|rpy_literal|r13_ep2_bite|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:152:17",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        8580,
+        8603
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_bite",
+      "block": "r13_ep2_bite",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:152:17",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "……그건 보호소에서 알아서 할 일이오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 152,
+          "label": "r13_ep2_bite",
+          "guards": []
+        }
+      ],
+      "line": 152,
+      "scene_title": "r13_ep2_bite",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "9bbe58c33559f3a8900e78645a7cf66c973a05735043ea6bf605b25170fc2277",
+      "uid": "d8b66c75e27cbdd8ab7fe20e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_bite|rpy_literal|r13_ep2_bite|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:153:14",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        8620,
+        8643
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_bite",
+      "block": "r13_ep2_bite",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:153:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "너울이 돌아서자 바둑이가 낮게 말했다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 153,
+          "label": "r13_ep2_bite",
+          "guards": []
+        }
+      ],
+      "line": 153,
+      "scene_title": "r13_ep2_bite",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "5fb871485ab3521b07e8f4d0ab7bc73fdcdb65969024c45075350d883100731a",
+      "uid": "e1d7ff99688ebc9f9e8903d7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_bite|rpy_literal|r13_ep2_bite|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:154:27",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        8673,
+        8706
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_bite",
+      "block": "r13_ep2_bite",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:154:27",
+      "when": null,
+      "speaker": "resident_badook",
+      "kind": "dialogue",
+      "text": "저는 돌아온 사람을 본 적이 없습니다. 아직 한 번도요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 154,
+          "label": "r13_ep2_bite",
+          "guards": []
+        }
+      ],
+      "line": 154,
+      "scene_title": "r13_ep2_bite",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "49d3d7b0a11bbd3e327a826495782b00b6caf596f26a7b670c1fb430a50df056",
+      "uid": "7bcb066685d14b1dbd43202d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_bite|rpy_literal|r13_ep2_bite|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

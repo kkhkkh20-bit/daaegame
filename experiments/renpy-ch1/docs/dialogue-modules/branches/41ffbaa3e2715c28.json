@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
     {
       "id": "game/systems/room13_ep6_cart.rpy:177:30",
@@ -117,6 +117,46 @@
       "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
       "baseline_hash": "6b4775dae7944d4cf9d0b7703930792015c870aeb8bbdd869fef95efdf0a3ea6",
       "uid": "fbe82fdd63a57b5ef4c8425c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_stable|rpy_literal|r13_cv_stable|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:181:42",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        10107,
+        10148
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_stable",
+      "block": "r13_cv_stable",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:181:42",
+      "when": null,
+      "speaker": "resident_siluk",
+      "kind": "dialogue",
+      "text": "나더러 몰라고 했소. 안 몰면 애들 배급표를 뺀다고 너울이 그러더이다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 181,
+          "label": "r13_cv_stable",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 181,
+      "scene_title": "r13_cv_stable",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "9fae384ca9945e2bb6cf37e2b10d540c3cf320f84b2e600f83368fe622d9d338",
+      "uid": "7891ceea0dc6d3541ef8e671",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_cv_stable|rpy_literal|r13_cv_stable|행 조건 없음",

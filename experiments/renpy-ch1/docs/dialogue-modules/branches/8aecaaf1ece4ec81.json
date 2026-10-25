@@ -1,0 +1,206 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_granny_reply.rpy:27:8",
+      "file": "game/systems/room13_granny_reply.rpy",
+      "path": [
+        1328,
+        1351
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_granny_warning_reply",
+      "block": "r13_granny_warning_reply",
+      "placement": "literal",
+      "ref": "game/systems/room13_granny_reply.rpy:27:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "광장 등 밑 점검함에서 꺼냈다고 말한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_granny_reply.rpy",
+          "line": 27,
+          "label": "r13_granny_warning_reply",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 27,
+      "scene_title": "r13_granny_warning_reply",
+      "source_hash": "864543f55c278744fcf8f32bfca41a7d4d43e24693b556ca0b133868e243221e",
+      "baseline_hash": "9ba722dc7d3cebf78346260ad617f8f5cec810cccf7a68db43295bf899d58b96",
+      "uid": "b12a7b65f84d620e89947471",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_granny_warning_reply|rpy_menu|r13_granny_warning_reply|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_granny_reply.rpy:31:8",
+      "file": "game/systems/room13_granny_reply.rpy",
+      "path": [
+        1627,
+        1649
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_granny_warning_reply",
+      "block": "r13_granny_warning_reply",
+      "placement": "literal",
+      "ref": "game/systems/room13_granny_reply.rpy:31:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "어디서 받았는지 왜 궁금한지 되묻는다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_granny_reply.rpy",
+          "line": 31,
+          "label": "r13_granny_warning_reply",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 31,
+      "scene_title": "r13_granny_warning_reply",
+      "source_hash": "864543f55c278744fcf8f32bfca41a7d4d43e24693b556ca0b133868e243221e",
+      "baseline_hash": "6593b23a2a914cbfb85d89763c0e5fe890816c4cd89892e40b94e00cc82536c4",
+      "uid": "6c05baa669b02ed0261070b6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_granny_warning_reply|rpy_menu|r13_granny_warning_reply|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_granny_reply.rpy:34:8",
+      "file": "game/systems/room13_granny_reply.rpy",
+      "path": [
+        1848,
+        1871
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_granny_warning_reply",
+      "block": "r13_granny_warning_reply",
+      "placement": "literal",
+      "ref": "game/systems/room13_granny_reply.rpy:34:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "출처는 밝히지 않고 초대 편지를 묻는다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_granny_reply.rpy",
+          "line": 34,
+          "label": "r13_granny_warning_reply",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 34,
+      "scene_title": "r13_granny_warning_reply",
+      "source_hash": "864543f55c278744fcf8f32bfca41a7d4d43e24693b556ca0b133868e243221e",
+      "baseline_hash": "1d5060ab6449311e863896cc42d8eeaddcdb25cdea092747ac4a5f85d3f6c9ee",
+      "uid": "b88905cca35fa3168c495f39",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_granny_warning_reply|rpy_menu|r13_granny_warning_reply|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_granny_reply.rpy:37:8",
+      "file": "game/systems/room13_granny_reply.rpy",
+      "path": [
+        2038,
+        2063
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_granny_warning_reply",
+      "block": "r13_granny_warning_reply",
+      "placement": "literal",
+      "ref": "game/systems/room13_granny_reply.rpy:37:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "받은 곳은 밝히지 않고 다른 질문을 고른다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_granny_reply.rpy",
+          "line": 37,
+          "label": "r13_granny_warning_reply",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 37,
+      "scene_title": "r13_granny_warning_reply",
+      "source_hash": "864543f55c278744fcf8f32bfca41a7d4d43e24693b556ca0b133868e243221e",
+      "baseline_hash": "bed7bd8ff185259875138b4ee5fb2e0fb02455739ece1e560afd00c4e41717a1",
+      "uid": "6f1dce9440438b1768a60a92",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_granny_warning_reply|rpy_menu|r13_granny_warning_reply|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_granny_reply.rpy:40:8",
+      "file": "game/systems/room13_granny_reply.rpy",
+      "path": [
+        2192,
+        2209
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_granny_warning_reply",
+      "block": "r13_granny_warning_reply",
+      "placement": "literal",
+      "ref": "game/systems/room13_granny_reply.rpy:40:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "봉투를 거두고 대화를 마친다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_granny_reply.rpy",
+          "line": 40,
+          "label": "r13_granny_warning_reply",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 40,
+      "scene_title": "r13_granny_warning_reply",
+      "source_hash": "864543f55c278744fcf8f32bfca41a7d4d43e24693b556ca0b133868e243221e",
+      "baseline_hash": "6ceb725b01662e88382ecb5b5f5a486f8002b56677f8c0c06873745a198abec8",
+      "uid": "0bd4064ec745dee1f3bb7246",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_granny_warning_reply|rpy_menu|r13_granny_warning_reply|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

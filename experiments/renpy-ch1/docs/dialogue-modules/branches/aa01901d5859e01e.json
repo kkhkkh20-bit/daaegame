@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
     {
       "id": "game/systems/room13_q1_difficulty.rpy:294:30",
@@ -37,6 +37,46 @@
       "source_hash": "9a354ff6a98b8cac565ba817f440cdf209f2fbe11dd7b9392b809128818ad3a3",
       "baseline_hash": "b225db49e02b833fcacb83a09120485c0702f0b00787e07d3a0e6080fe90f0d2",
       "uid": "1f84a1d6dda2e3808370c9d4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_q1_hard_rules|rpy_literal|r13_q1_hard_rules|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_q1_difficulty.rpy:295:18",
+      "file": "game/systems/room13_q1_difficulty.rpy",
+      "path": [
+        16061,
+        16141
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_q1_hard_rules",
+      "block": "r13_q1_hard_rules",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_difficulty.rpy:295:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "회의에서 내세운 논증은 끝까지 이어야 한다. 오답 세 번이면 이번 회의가 끝난다. 같은 자료로 다시 시작할 때는 다른 논증을 고를 수 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_difficulty.rpy",
+          "line": 295,
+          "label": "r13_q1_hard_rules",
+          "guards": [
+            "if r13_q1_hard():"
+          ]
+        }
+      ],
+      "line": 295,
+      "scene_title": "r13_q1_hard_rules",
+      "source_hash": "9a354ff6a98b8cac565ba817f440cdf209f2fbe11dd7b9392b809128818ad3a3",
+      "baseline_hash": "c01c86a2aef3d2d3c285d68285afc087dd35f093093541e29954d3ac86891aa1",
+      "uid": "71b20cfe00049d4293c99d9e",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_q1_hard_rules|rpy_literal|r13_q1_hard_rules|행 조건 없음",

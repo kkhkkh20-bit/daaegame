@@ -1,0 +1,200 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_week1_cases.rpy:233:42",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        13380,
+        13413
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_fake_letter",
+      "block": "r13_w1c_fake_letter",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:233:42",
+      "when": null,
+      "speaker": "resident_sling",
+      "kind": "dialogue",
+      "text": "누구에게 쪽지를 전하라는 건지, 아직 얘기가 안 됐어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 233,
+          "label": "r13_w1c_fake_letter",
+          "guards": [
+            "if not r13_sling_knows_requester():"
+          ]
+        }
+      ],
+      "line": 233,
+      "scene_title": "r13_w1c_fake_letter",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "ea600d05435fee6ba7e3e42e63bdd8277a84ad3eeaead769cd61f3902a98697d",
+      "uid": "db738088f0cb808af2df3f7f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_fake_letter|rpy_literal|r13_w1c_fake_letter|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:237:42",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        13653,
+        13701
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_fake_letter",
+      "block": "r13_w1c_fake_letter",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:237:42",
+      "when": null,
+      "speaker": "resident_sling",
+      "kind": "dialogue",
+      "text": "할머니가 요즘은 제가 가져가는 편지를 잘 안 믿으세요. 누가 알아챘다고 하시면서요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 237,
+          "label": "r13_w1c_fake_letter",
+          "guards": [
+            "if r13_has(\"granny_knows_found_out\"):"
+          ]
+        }
+      ],
+      "line": 237,
+      "scene_title": "r13_w1c_fake_letter",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "09d086b274a073c1a1dcf8d9c57adfe4f522677cda1f9b5a4f9fd522a6bbec85",
+      "uid": "5c33fb210869c9c20b269e88",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_fake_letter|rpy_literal|r13_w1c_fake_letter|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:239:27",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        13771,
+        13827
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_fake_letter",
+      "block": "r13_w1c_fake_letter",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:239:27",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "할머니께 이 쪽지를 베껴 드리세요. ‘목요일 밤, 북쪽 초소에서 기다린다.’ 서명은 비워 두고요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 239,
+          "label": "r13_w1c_fake_letter",
+          "guards": []
+        }
+      ],
+      "line": 239,
+      "scene_title": "r13_w1c_fake_letter",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "ec367e3883a5774fe4e14874587cedfe23ed287af0495a25645076bffdc6fa82",
+      "uid": "7329baec64704e99edaef206",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_fake_letter|rpy_literal|r13_w1c_fake_letter|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:240:26",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        13856,
+        13879
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_fake_letter",
+      "block": "r13_w1c_fake_letter",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:240:26",
+      "when": null,
+      "speaker": "resident_sling",
+      "kind": "dialogue",
+      "text": "……할머니가 이 가짜 쪽지를 믿으면요?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 240,
+          "label": "r13_w1c_fake_letter",
+          "guards": []
+        }
+      ],
+      "line": 240,
+      "scene_title": "r13_w1c_fake_letter",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "511f65a5a954ba6cb99e4b91b70764fb433d2de505de11cd77364ba80f4eafe3",
+      "uid": "570f32589171dfb3572915d7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_fake_letter|rpy_literal|r13_w1c_fake_letter|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:241:15",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        13897,
+        13929
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_fake_letter",
+      "block": "r13_w1c_fake_letter",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:241:15",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "그럼 목요일 밤에 할머니가 어디로 가는지 보게 되겠죠.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 241,
+          "label": "r13_w1c_fake_letter",
+          "guards": []
+        }
+      ],
+      "line": 241,
+      "scene_title": "r13_w1c_fake_letter",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "9eb2f65ed5f8cf6976ec718f641079a66ead5361e4b1cff83f67990c46dcfc7e",
+      "uid": "0f2d88b45da12764b3890c8c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_fake_letter|rpy_literal|r13_w1c_fake_letter|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

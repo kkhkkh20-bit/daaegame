@@ -1,0 +1,246 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_q1_arguments.rpy:293:33",
+      "file": "game/systems/room13_q1_arguments.rpy",
+      "path": [
+        17537,
+        17586
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_q1_argument_conclude",
+      "block": "r13_q1_argument_conclude",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_arguments.rpy:293:33",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "톡이 가져갔다는 혐의는 거두겠소. 실룩이 허락 없이 꺼내 팔았다는 것으로 정리하겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_arguments.rpy",
+          "line": 293,
+          "label": "r13_q1_argument_conclude",
+          "guards": [
+            "if _q1_final==\"correct\" and r13_debate_ready(\"Q1\"):"
+          ]
+        }
+      ],
+      "line": 293,
+      "scene_title": "r13_q1_argument_conclude",
+      "source_hash": "8289e6e0adc4c6de94e5f0acadafcaced13c74af938b712712356a7bd5a6fa22",
+      "baseline_hash": "4f12a488873c1259994f0773c65568a37cb03dbf1a1bf47b30d524ab3e47b6f0",
+      "uid": "0685c96517224a8dc626e6bb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_q1_argument_conclude|rpy_literal|r13_q1_argument_conclude|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_q1_arguments.rpy:294:28",
+      "file": "game/systems/room13_q1_arguments.rpy",
+      "path": [
+        17617,
+        17663
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_q1_argument_conclude",
+      "block": "r13_q1_argument_conclude",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_arguments.rpy:294:28",
+      "when": null,
+      "speaker": "resident_tok",
+      "kind": "dialogue",
+      "text": "고맙습니다. 하지만 그 등 밑에 있던 사람을 생각하면… 마음이 편하지는 않네요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_arguments.rpy",
+          "line": 294,
+          "label": "r13_q1_argument_conclude",
+          "guards": [
+            "if _q1_final==\"correct\" and r13_debate_ready(\"Q1\"):"
+          ]
+        }
+      ],
+      "line": 294,
+      "scene_title": "r13_q1_argument_conclude",
+      "source_hash": "8289e6e0adc4c6de94e5f0acadafcaced13c74af938b712712356a7bd5a6fa22",
+      "baseline_hash": "66567724fea0850ac20999bf1942554e363356b5b3126238b6a36f5bf31b2ffd",
+      "uid": "e1cb8f395cc962f7750d8d89",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_q1_argument_conclude|rpy_literal|r13_q1_argument_conclude|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_q1_arguments.rpy:297:33",
+      "file": "game/systems/room13_q1_arguments.rpy",
+      "path": [
+        17763,
+        17821
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_q1_argument_conclude",
+      "block": "r13_q1_argument_conclude",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_arguments.rpy:297:33",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "조각을 가져갔다는 것과 죽일 생각이었다는 것은 다른 말이오. 그 결론을 뒷받침할 근거를 듣지 못했소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_arguments.rpy",
+          "line": 297,
+          "label": "r13_q1_argument_conclude",
+          "guards": [
+            "if _q1_final==\"over\":"
+          ]
+        }
+      ],
+      "line": 297,
+      "scene_title": "r13_q1_argument_conclude",
+      "source_hash": "8289e6e0adc4c6de94e5f0acadafcaced13c74af938b712712356a7bd5a6fa22",
+      "baseline_hash": "6b7c711c72bb3487a5194250a6fee073e07120cb1fecca04e963877c4acd44da",
+      "uid": "10147285661a717b4439dbec",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_q1_argument_conclude|rpy_literal|r13_q1_argument_conclude|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_q1_arguments.rpy:299:33",
+      "file": "game/systems/room13_q1_arguments.rpy",
+      "path": [
+        17897,
+        17932
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_q1_argument_conclude",
+      "block": "r13_q1_argument_conclude",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_arguments.rpy:299:33",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "온도를 쟀다는 것만으로 조각을 가져갔다고 확정할 수는 없소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_arguments.rpy",
+          "line": 299,
+          "label": "r13_q1_argument_conclude",
+          "guards": [
+            "elif _q1_final==\"weak\":"
+          ]
+        }
+      ],
+      "line": 299,
+      "scene_title": "r13_q1_argument_conclude",
+      "source_hash": "8289e6e0adc4c6de94e5f0acadafcaced13c74af938b712712356a7bd5a6fa22",
+      "baseline_hash": "93c4a700086259dce1aa8de8d98b6beca0c63b7222d8e0ddd3799df4819fc2ad",
+      "uid": "5471a2c83deaf4c79ec6a00d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_q1_argument_conclude|rpy_literal|r13_q1_argument_conclude|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_q1_arguments.rpy:301:33",
+      "file": "game/systems/room13_q1_arguments.rpy",
+      "path": [
+        18004,
+        18062
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_q1_argument_conclude",
+      "block": "r13_q1_argument_conclude",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_arguments.rpy:301:33",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "그 결론까지 이어지는 근거를 듣지 못했소. 확인한 사실만으로 그 주장이 성립하는지 다시 따져 보시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_arguments.rpy",
+          "line": 301,
+          "label": "r13_q1_argument_conclude",
+          "guards": [
+            "elif r13_q1_hard():"
+          ]
+        }
+      ],
+      "line": 301,
+      "scene_title": "r13_q1_argument_conclude",
+      "source_hash": "8289e6e0adc4c6de94e5f0acadafcaced13c74af938b712712356a7bd5a6fa22",
+      "baseline_hash": "ded8fd4e1c2bc0432b611f3523b5f8e52ebdd688291a9ccfeb369a359058ca6a",
+      "uid": "0c00cc62f1a8d212b5ac8cad",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_q1_argument_conclude|rpy_literal|r13_q1_argument_conclude|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_q1_arguments.rpy:303:33",
+      "file": "game/systems/room13_q1_arguments.rpy",
+      "path": [
+        18126,
+        18176
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_q1_argument_conclude",
+      "block": "r13_q1_argument_conclude",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_arguments.rpy:303:33",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "그 결론까지 이어지는 근거를 듣지 못했소. 확인한 부분은 남기되 처분은 그대로 두겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_arguments.rpy",
+          "line": 303,
+          "label": "r13_q1_argument_conclude",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 303,
+      "scene_title": "r13_q1_argument_conclude",
+      "source_hash": "8289e6e0adc4c6de94e5f0acadafcaced13c74af938b712712356a7bd5a6fa22",
+      "baseline_hash": "85aa090732a8b7eafbdc5ec45f02b45920d842c3d593380b69ab2f27d685c6a2",
+      "uid": "e8b0acb71256a197d601d933",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_q1_argument_conclude|rpy_literal|r13_q1_argument_conclude|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/room13_v111_days1114.rpy:1183:27",
+      "file": "game/room13_v111_days1114.rpy",
+      "path": [
+        56087,
+        56106
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "MS14_D12_S02",
+      "block": "r13_v111_meal12",
+      "placement": "literal",
+      "ref": "game/room13_v111_days1114.rpy:1183:27",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "흰 그릇을 작은 배식대로 나른다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1183,
+          "label": "r13_v111_meal12",
+          "guards": []
+        }
+      ],
+      "line": 1183,
+      "scene_title": "장면 12-2. 배식 전의 손",
+      "source_hash": "aa56cffba0a29954c119b1d0616327b29579646f32f2520278a4f21d02f69444",
+      "baseline_hash": "7a58e17b8c3640ecf23463d8756e0d71dfc1a3d2573173da61ec4f6058f20389",
+      "uid": "75496cf8b108653ef44d8a54",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|MS14_D12_S02|rpy_menu|r13_v111_meal12|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

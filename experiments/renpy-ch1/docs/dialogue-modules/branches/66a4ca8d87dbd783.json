@@ -1,0 +1,82 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_q1_difficulty.rpy:309:29",
+      "file": "game/systems/room13_q1_difficulty.rpy",
+      "path": [
+        16602,
+        16650
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_q1_thesis_opening",
+      "block": "r13_q1_thesis_opening",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_difficulty.rpy:309:29",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "등을 돌보는 톡이 조각을 가져간 것 아니오? 다르게 본다면 그 근거를 말해 보시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_difficulty.rpy",
+          "line": 309,
+          "label": "r13_q1_thesis_opening",
+          "guards": []
+        }
+      ],
+      "line": 309,
+      "scene_title": "r13_q1_thesis_opening",
+      "source_hash": "9a354ff6a98b8cac565ba817f440cdf209f2fbe11dd7b9392b809128818ad3a3",
+      "baseline_hash": "25570dc649ca3a13a2d3431d8240c4508b106d9b2995385a75d2dcb2d5300db2",
+      "uid": "5eb432f3f37b0c73496d953e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_q1_thesis_opening|rpy_literal|r13_q1_thesis_opening|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_q1_difficulty.rpy:319:77",
+      "file": "game/systems/room13_q1_difficulty.rpy",
+      "path": [
+        17357,
+        17387
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_q1_thesis_opening",
+      "block": "r13_q1_thesis_opening",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_difficulty.rpy:319:77",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "좋소. 그 주장에 필요한 연결을 하나씩 설명하시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_difficulty.rpy",
+          "line": 319,
+          "label": "r13_q1_thesis_opening",
+          "guards": []
+        }
+      ],
+      "line": 319,
+      "scene_title": "r13_q1_thesis_opening",
+      "source_hash": "9a354ff6a98b8cac565ba817f440cdf209f2fbe11dd7b9392b809128818ad3a3",
+      "baseline_hash": "196a449cd1c3bae06ae0ca351729eae6f40c003290358f19f61cbfebbb98224f",
+      "uid": "227efee7cf0461fbc667da0a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_q1_thesis_opening|rpy_literal|r13_q1_thesis_opening|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

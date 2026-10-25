@@ -1,0 +1,242 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_week1_cases.rpy:299:26",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        16709,
+        16767
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_seal",
+      "block": "r13_w1c_seal",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:299:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "봉해 둔 13호 문 앞에 뜯긴 봉인 종이가 떨어져 있었다. 곧 방 안에서 뭉치가 자루를 들고 나왔다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 299,
+          "label": "r13_w1c_seal",
+          "guards": []
+        }
+      ],
+      "line": 299,
+      "scene_title": "r13_w1c_seal",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "f1fa4b679e7dd9da2842f452653433f01d31d3e378dd5e1c966846c3c352ed00",
+      "uid": "fa868675afb2cee8b2a843af",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_seal|rpy_literal|r13_w1c_seal|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:300:28",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        16798,
+        16854
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_seal",
+      "block": "r13_w1c_seal",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:300:28",
+      "when": null,
+      "speaker": "resident_mungchi",
+      "kind": "dialogue",
+      "text": "……! 버, 버린 물건인 줄 알았어요. 모모 관장님이 사건 난 방 물건은 비싸게 쳐 준다고 해서.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 300,
+          "label": "r13_w1c_seal",
+          "guards": []
+        }
+      ],
+      "line": 300,
+      "scene_title": "r13_w1c_seal",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "79379a865cbeda09aa8a20bf1f98b90494bf494c3b9e1a95fd69a1739747a4be",
+      "uid": "68d3504c3461d97aee77ac3e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_seal|rpy_literal|r13_w1c_seal|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:304:34",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        16979,
+        17017
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_seal",
+      "block": "r13_w1c_seal",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:304:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "자루 안에는 다람이의 그림책과 아내가 쓰던 털실 바구니가 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 304,
+          "label": "r13_w1c_seal",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 304,
+      "scene_title": "r13_w1c_seal",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "64116dcbfb36febbe72ed928facf1ef87cf8e572b05ff6027ce27af2215ed831",
+      "uid": "bf476e3a7e4b8a58bd1e7589",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_seal|rpy_literal|r13_w1c_seal|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:308:34",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        17373,
+        17426
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_seal",
+      "block": "r13_w1c_seal",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:308:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "뭉치는 박물관 뒷문에서 모모 관장에게 자루를 넘겼다. 모모는 값을 묻지도 않고 동전을 셌다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 308,
+          "label": "r13_w1c_seal",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 308,
+      "scene_title": "r13_w1c_seal",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "99672a717f2bd33eec641f96dc24fd65e38860013eaaeb794c74ecaae4097bc1",
+      "uid": "ddb7e0fbee0363af4b31c03c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_seal|rpy_literal|r13_w1c_seal|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:309:33",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        17462,
+        17505
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_seal",
+      "block": "r13_w1c_seal",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:309:33",
+      "when": null,
+      "speaker": "resident_momo",
+      "kind": "dialogue",
+      "text": "사건 현장 물건은 오래 남지요. 사람들은 무서운 걸 보러 박물관에 옵니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 309,
+          "label": "r13_w1c_seal",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 309,
+      "scene_title": "r13_w1c_seal",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "6ed5ca73da47401922c4063c05145aaf7ef4aa37addaf8b3fca1ab452bb737e7",
+      "uid": "a55499d6d1595df69af1cc0a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_seal|rpy_literal|r13_w1c_seal|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week1_cases.rpy:313:37",
+      "file": "game/systems/room13_week1_cases.rpy",
+      "path": [
+        17680,
+        17726
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w1c_seal",
+      "block": "r13_w1c_seal",
+      "placement": "literal",
+      "ref": "game/systems/room13_week1_cases.rpy:313:37",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "사건 현장 봉인을 뜯었소? 뭉치, 따라오시오. 13호 봉인은 내가 다시 하겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week1_cases.rpy",
+          "line": 313,
+          "label": "r13_w1c_seal",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 313,
+      "scene_title": "r13_w1c_seal",
+      "source_hash": "9e0ed245594c505625b7a40e0ad3e14718c75b3d17e302645fbcda8d131d9915",
+      "baseline_hash": "76bfb949278e87c34b55dd886104f31e353ce6065b62ecdd96a6a6646e15da9e",
+      "uid": "9a8922ce9120cee131c74cdf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w1c_seal|rpy_literal|r13_w1c_seal|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

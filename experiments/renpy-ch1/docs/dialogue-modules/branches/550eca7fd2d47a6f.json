@@ -1,0 +1,126 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_q1_review.rpy:173:8",
+      "file": "game/systems/room13_q1_review.rpy",
+      "path": [
+        8860,
+        8870
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_q1_preflight",
+      "block": "r13_q1_preflight",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_review.rpy:173:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "회의에 들어간다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_review.rpy",
+          "line": 173,
+          "label": "r13_q1_preflight",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 173,
+      "scene_title": "r13_q1_preflight",
+      "source_hash": "51dcc7e0e65d83314ee167c79b5a474f29d05946b65650187256bc616d676842",
+      "baseline_hash": "12b3eed99434777f9cfa37550998374c13cdb79fa80addeda5d4f0c410981ff8",
+      "uid": "a4babbfd15c7028dd11a318d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_q1_preflight|rpy_menu|r13_q1_preflight|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_q1_review.rpy:175:8",
+      "file": "game/systems/room13_q1_review.rpy",
+      "path": [
+        8904,
+        8914
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_q1_preflight",
+      "block": "r13_q1_preflight",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_review.rpy:175:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "조사를 더 한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_review.rpy",
+          "line": 175,
+          "label": "r13_q1_preflight",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 175,
+      "scene_title": "r13_q1_preflight",
+      "source_hash": "51dcc7e0e65d83314ee167c79b5a474f29d05946b65650187256bc616d676842",
+      "baseline_hash": "61052dac53b97b1e50e1aef3024cb893b7d3b7938ffd493af5f3b5b145007a16",
+      "uid": "78f9d8bddd581d3d28b4069d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_q1_preflight|rpy_menu|r13_q1_preflight|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_q1_review.rpy:177:8",
+      "file": "game/systems/room13_q1_review.rpy",
+      "path": [
+        8949,
+        8964
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_q1_preflight",
+      "block": "r13_q1_preflight",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_review.rpy:177:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "보관한 이전 결과를 본다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_review.rpy",
+          "line": 177,
+          "label": "r13_q1_preflight",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 177,
+      "scene_title": "r13_q1_preflight",
+      "source_hash": "51dcc7e0e65d83314ee167c79b5a474f29d05946b65650187256bc616d676842",
+      "baseline_hash": "91d0a2c86493e25a8942707b9b62f43b331e79f021f9da7d93f3ddd3f2f34bc9",
+      "uid": "2a22270d449d1bb2434682bc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_q1_preflight|rpy_menu|r13_q1_preflight|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

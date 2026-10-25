@@ -1,7 +1,47 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:528:41",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        28451,
+        28488
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_aftermath",
+      "block": "r13_ep1_aftermath",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:528:41",
+      "when": null,
+      "speaker": "resident_ubak",
+      "kind": "dialogue",
+      "text": "조각을 돌려놔도 오래 따뜻하지 않아요. 돌 자체가 식고 있어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 528,
+          "label": "r13_ep1_aftermath",
+          "guards": [
+            "if r13_has(\"know_stone_failing\") and r13_has(\"madam_store_opened\") and r13_has(\"tok_cleared\"):"
+          ]
+        }
+      ],
+      "line": 528,
+      "scene_title": "r13_ep1_aftermath",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "90a569c610dddb4ef1e428466ddc8c51ac62dadcb5c73179b80339077388de11",
+      "uid": "d1fd6509490e871dae5cff04",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_aftermath|rpy_literal|r13_ep1_aftermath|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_ep1_lamp_thief.rpy:531:30",
       "file": "game/systems/room13_ep1_lamp_thief.rpy",
@@ -43,6 +83,166 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:532:18",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        28698,
+        28740
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_aftermath",
+      "block": "r13_ep1_aftermath",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:532:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "「아침이 되자, 아주머니는 엄마 코를 다 못 그린 채 잠들어 있었어요.」",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 532,
+          "label": "r13_ep1_aftermath",
+          "guards": [
+            "if r13_has(\"piko_dead\"):"
+          ]
+        }
+      ],
+      "line": 532,
+      "scene_title": "r13_ep1_aftermath",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "93120bbb7866d9a476b3be22fba725b572dc20d3c444c72441e3cc67a878d3b2",
+      "uid": "38719f59eafa3f0b558df635",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_aftermath|rpy_literal|r13_ep1_aftermath|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:533:21",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        28786,
+        28808
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_aftermath",
+      "block": "r13_ep1_aftermath",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:533:21",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "……아빠. 이 책, 이제 안 읽을래.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 533,
+          "label": "r13_ep1_aftermath",
+          "guards": [
+            "if r13_has(\"piko_dead\"):"
+          ]
+        }
+      ],
+      "line": 533,
+      "scene_title": "r13_ep1_aftermath",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "14e7ee7ab8a4b332d480560c5dce63c6588c88fa1b4f1214eae392a862246387",
+      "uid": "18527535f63e94d75beb88c8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_aftermath|rpy_literal|r13_ep1_aftermath|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:534:19",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        28830,
+        28845
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_aftermath",
+      "block": "r13_ep1_aftermath",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:534:19",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "응. 지금은 덮어 두자.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 534,
+          "label": "r13_ep1_aftermath",
+          "guards": [
+            "if r13_has(\"piko_dead\"):"
+          ]
+        }
+      ],
+      "line": 534,
+      "scene_title": "r13_ep1_aftermath",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "622c4c98e76a98493ff57ede69ce7ea204501e47429ea9504da23ef7a1ee95c8",
+      "uid": "b38e15a6c155fe8351c86025",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_aftermath|rpy_literal|r13_ep1_aftermath|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:535:18",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        28866,
+        28906
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_aftermath",
+      "block": "r13_ep1_aftermath",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:535:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이가 책을 닫았다. 나는 아이의 손을 잡고 잠시 곁에 서 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 535,
+          "label": "r13_ep1_aftermath",
+          "guards": [
+            "if r13_has(\"piko_dead\"):"
+          ]
+        }
+      ],
+      "line": 535,
+      "scene_title": "r13_ep1_aftermath",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "bc347606bd2c4ed8166d94df27480beb0f8b2ab770e4259903dd9572ff9c329c",
+      "uid": "452ec8a6f2aeee83f71302de",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_aftermath|rpy_literal|r13_ep1_aftermath|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
       "id": "game/systems/room13_ep1_lamp_thief.rpy:537:30",
       "file": "game/systems/room13_ep1_lamp_thief.rpy",
       "path": [
@@ -77,6 +277,126 @@
       "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
       "baseline_hash": "c4b0e696e714029aa3cadb72d49d94e47d14e917b9a3ae958c3e35f929a7c6fd",
       "uid": "13c6a32b81ff108dd0e7e9f9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_aftermath|rpy_literal|r13_ep1_aftermath|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:538:18",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        29035,
+        29070
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_aftermath",
+      "block": "r13_ep1_aftermath",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:538:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "「아침이 되자, 누군가 아주머니에게 담요를 덮어 주었어요.」",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 538,
+          "label": "r13_ep1_aftermath",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 538,
+      "scene_title": "r13_ep1_aftermath",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "091f3788d0ce0e057059b147507f510f413ca8512dc65c03f3743992dca10932",
+      "uid": "c25dd0f5e7489bb3d6ea6f87",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_aftermath|rpy_literal|r13_ep1_aftermath|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:539:21",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        29116,
+        29134
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_aftermath",
+      "block": "r13_ep1_aftermath",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:539:21",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "아빠, 이번엔 끝이 바뀌었어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 539,
+          "label": "r13_ep1_aftermath",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 539,
+      "scene_title": "r13_ep1_aftermath",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "754cf9a7f7d0c5a53ff5f5b7ba63e549e0b14333e01394c2aafa8df1aad625d6",
+      "uid": "0a44c64075b9ea13853da345",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_aftermath|rpy_literal|r13_ep1_aftermath|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:540:19",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        29156,
+        29181
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_aftermath",
+      "block": "r13_ep1_aftermath",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:540:19",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "그러네. 담요를 덮어 준 사람이 있었구나.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 540,
+          "label": "r13_ep1_aftermath",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 540,
+      "scene_title": "r13_ep1_aftermath",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "78b99b8c68d6117e556fdc6f49ff63afadac470f3a20228cd112c9a04f411ed0",
+      "uid": "8f2b66f3e2c44db3075e60b7",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_ep1_aftermath|rpy_literal|r13_ep1_aftermath|행 조건 없음",

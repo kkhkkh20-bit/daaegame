@@ -1,7 +1,47 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:360:21",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        18002,
+        18013
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_ep2_decision",
+      "block": "r13_ep2_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:360:21",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "누구라고 말할까?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 360,
+          "label": "r13_ep2_decision",
+          "guards": [
+            "if r13_has(\"K05\"):"
+          ]
+        }
+      ],
+      "line": 360,
+      "scene_title": "r13_ep2_decision",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "4b1971376eaf81aa27083b9d2bbf792387667e324b4dad45501ea608620c54f1",
+      "uid": "8b327903c0e60fbba3b2b6a4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_decision|rpy_inventory|r13_ep2_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_ep2_kids.rpy:360:40",
       "file": "game/systems/room13_ep2_kids.rpy",
@@ -37,6 +77,127 @@
       "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
       "baseline_hash": "23f3933ad29847168558de118e292e5d07199ca7d39703b2e8fb146ceb510094",
       "uid": "dab522f02f6e2395b28eca68",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_decision|rpy_inventory|r13_ep2_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:360:73",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        18054,
+        18078
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_ep2_decision",
+      "block": "r13_ep2_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:360:73",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "“누군지는 몰라. 근데 밤이는 아니야.”",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 360,
+          "label": "r13_ep2_decision",
+          "guards": [
+            "if r13_has(\"K05\"):"
+          ]
+        }
+      ],
+      "line": 360,
+      "scene_title": "r13_ep2_decision",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "979152a170a908d8825b96111ef77f88332a90fa0d9320e26c4121ad4550d176",
+      "uid": "eec0198ab1929a7c247bf7f9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_decision|rpy_inventory|r13_ep2_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:362:31",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        18155,
+        18174
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_ep2_decision",
+      "block": "r13_ep2_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:362:31",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "“서리 선생님한테 데려가 줘.”",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 362,
+          "label": "r13_ep2_decision",
+          "guards": [
+            "if r13_has(\"K05\"):",
+            "if r13_has(\"seori_trust\"):"
+          ]
+        }
+      ],
+      "line": 362,
+      "scene_title": "r13_ep2_decision",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "4526dee40cdaeee6008b440e882b1e1b146d71dd57a7456378bbdda52833fe4a",
+      "uid": "b7c12087c3c211c5073f23c4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_decision|rpy_inventory|r13_ep2_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:364:21",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        18216,
+        18227
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_ep2_decision",
+      "block": "r13_ep2_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:364:21",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "누구라고 말할까?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 364,
+          "label": "r13_ep2_decision",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 364,
+      "scene_title": "r13_ep2_decision",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "4b1971376eaf81aa27083b9d2bbf792387667e324b4dad45501ea608620c54f1",
+      "uid": "a1b05b43822e7bfa9fb77151",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_ep2_decision|rpy_inventory|r13_ep2_decision|행 조건 없음",

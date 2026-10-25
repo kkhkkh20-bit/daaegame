@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
     {
       "id": "game/systems/room13_ep6_cart.rpy:160:40",
@@ -35,6 +35,166 @@
       "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
       "baseline_hash": "b18b6064d19b88f978987536db9cd5770d811b707467ca48154c944b2d11ac53",
       "uid": "b09aad576e37ea86846e9195",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_store|rpy_literal|r13_cv_store|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:163:35",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        9353,
+        9380
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_store",
+      "block": "r13_cv_store",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:163:35",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "저 수레엔 담요가 한 장도 없어. 끈만 있지.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 163,
+          "label": "r13_cv_store",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 163,
+      "scene_title": "r13_cv_store",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "45480c013deb4c9ba92aad4c8e79d0d01e1c0bd6a0efd7619cf081d179667ba1",
+      "uid": "6afd7d32499411eff4d3f8bd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_store|rpy_literal|r13_cv_store|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:164:36",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        9419,
+        9450
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_store",
+      "block": "r13_cv_store",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:164:36",
+      "when": null,
+      "speaker": "resident_mungchi",
+      "kind": "dialogue",
+      "text": "……보호소 가는데 담요도 없어요? 거기 추운 데예요?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 164,
+          "label": "r13_cv_store",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 164,
+      "scene_title": "r13_cv_store",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "a1aaa14219a4b8de4c3dd21dfececc6a67eaa1f62e1b083ed200eb09a48f2bd0",
+      "uid": "0444af46a59a41d12af1139e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_store|rpy_literal|r13_cv_store|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:165:22",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        9475,
+        9502
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_store",
+      "block": "r13_cv_store",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:165:22",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "쪽문 안쪽, 천장까지 쌓인 담요. 곡식 자루.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 165,
+          "label": "r13_cv_store",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 165,
+      "scene_title": "r13_cv_store",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "58bb81dd50cbcdf680aead5bcd12756949e91150ab1e155ee1e8e3591a094f5e",
+      "uid": "14e7eda053136c80cc3e32e8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_store|rpy_literal|r13_cv_store|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:166:36",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        9541,
+        9571
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_store",
+      "block": "r13_cv_store",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:166:36",
+      "when": null,
+      "speaker": "resident_mungchi",
+      "kind": "dialogue",
+      "text": "마흔 장이요. 제가 셌어요. 마님 식구는 넷이에요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 166,
+          "label": "r13_cv_store",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 166,
+      "scene_title": "r13_cv_store",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "86c58068d41c3a468e7d7b2e3d6526e73ee4ab0b3d428b32444be071542632cb",
+      "uid": "3beb280b16bf5765966abeda",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_cv_store|rpy_literal|r13_cv_store|행 조건 없음",

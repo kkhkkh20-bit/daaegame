@@ -1,7 +1,273 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/room13_family_bundle.rpy:3:27",
+      "file": "game/room13_family_bundle.rpy",
+      "path": [
+        135,
+        197
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_family_bundle_content",
+      "block": "r13_family_bundle_content",
+      "placement": "literal",
+      "ref": "game/room13_family_bundle.rpy:3:27",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "책상 아래: 여벌 목도리, 연필 두 자루, 다람의 가족 그림. 밑바닥까지 보았으나 주소나 다른 봉투는 없다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_family_bundle.rpy",
+          "line": 3,
+          "label": "r13_family_bundle_content",
+          "guards": []
+        }
+      ],
+      "line": 3,
+      "scene_title": "r13_family_bundle_content",
+      "source_hash": "8a0a55186fe8d95d4943cad79fa3e50d87b9a9a9c65ab8fb4a7aa71c7adfaf7f",
+      "baseline_hash": "30a38c69439c0db486fe381357fd7032fd391ca8a27784986e0b68b85ef3df6f",
+      "uid": "6d74ef403ef04f7e6eca0d9f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_family_bundle_content|rpy_literal|r13_family_bundle_content|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_family_bundle.rpy:3:102",
+      "file": "game/room13_family_bundle.rpy",
+      "path": [
+        210,
+        236
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_family_bundle_content",
+      "block": "r13_family_bundle_content",
+      "placement": "literal",
+      "ref": "game/room13_family_bundle.rpy:3:102",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "이 그림 가져왔네. 나 팔 세 개 그린 거.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_family_bundle.rpy",
+          "line": 3,
+          "label": "r13_family_bundle_content",
+          "guards": []
+        }
+      ],
+      "line": 3,
+      "scene_title": "r13_family_bundle_content",
+      "source_hash": "8a0a55186fe8d95d4943cad79fa3e50d87b9a9a9c65ab8fb4a7aa71c7adfaf7f",
+      "baseline_hash": "3933fe72ed45db024e1b9601d27d16fdeb043378b4f15635a6ea54f4e9788fbf",
+      "uid": "314cb13e5bb325ea4697f9b9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_family_bundle_content|rpy_literal|r13_family_bundle_content|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_family_bundle.rpy:3:139",
+      "file": "game/room13_family_bundle.rpy",
+      "path": [
+        247,
+        259
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_family_bundle_content",
+      "block": "r13_family_bundle_content",
+      "placement": "literal",
+      "ref": "game/room13_family_bundle.rpy:3:139",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "엄마가 좋아했잖아.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_family_bundle.rpy",
+          "line": 3,
+          "label": "r13_family_bundle_content",
+          "guards": []
+        }
+      ],
+      "line": 3,
+      "scene_title": "r13_family_bundle_content",
+      "source_hash": "8a0a55186fe8d95d4943cad79fa3e50d87b9a9a9c65ab8fb4a7aa71c7adfaf7f",
+      "baseline_hash": "eb123e0e1cf7434e11cfce8c75b343d9753b5515a764621ad54c12a57966e808",
+      "uid": "c6e07c4b95d1b13b3e1fb9e7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_family_bundle_content|rpy_literal|r13_family_bundle_content|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_family_bundle.rpy:3:164",
+      "file": "game/room13_family_bundle.rpy",
+      "path": [
+        272,
+        282
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_family_bundle_content",
+      "block": "r13_family_bundle_content",
+      "placement": "literal",
+      "ref": "game/room13_family_bundle.rpy:3:164",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "왜 두고 갔지?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_family_bundle.rpy",
+          "line": 3,
+          "label": "r13_family_bundle_content",
+          "guards": []
+        }
+      ],
+      "line": 3,
+      "scene_title": "r13_family_bundle_content",
+      "source_hash": "8a0a55186fe8d95d4943cad79fa3e50d87b9a9a9c65ab8fb4a7aa71c7adfaf7f",
+      "baseline_hash": "6e3b24d6f2cc60220849291d073925c55efa15657bd92cacd494daf574edadf5",
+      "uid": "f6a2b06ce06ab11d26069261",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_family_bundle_content|rpy_literal|r13_family_bundle_content|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_family_bundle.rpy:3:184",
+      "file": "game/room13_family_bundle.rpy",
+      "path": [
+        292,
+        324
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_family_bundle_content",
+      "block": "r13_family_bundle_content",
+      "placement": "literal",
+      "ref": "game/room13_family_bundle.rpy:3:184",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 목도리 속까지 풀었다. 아무것도 떨어지지 않았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_family_bundle.rpy",
+          "line": 3,
+          "label": "r13_family_bundle_content",
+          "guards": []
+        }
+      ],
+      "line": 3,
+      "scene_title": "r13_family_bundle_content",
+      "source_hash": "8a0a55186fe8d95d4943cad79fa3e50d87b9a9a9c65ab8fb4a7aa71c7adfaf7f",
+      "baseline_hash": "42ecb7e50c9cd659c9dc0ddf679f33a0d44f2556d7e9b994b7d78eb5229064f0",
+      "uid": "97c0b333c52897d3182e1de5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_family_bundle_content|rpy_literal|r13_family_bundle_content|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_family_bundle.rpy:3:227",
+      "file": "game/room13_family_bundle.rpy",
+      "path": [
+        335,
+        354
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_family_bundle_content",
+      "block": "r13_family_bundle_content",
+      "placement": "literal",
+      "ref": "game/room13_family_bundle.rpy:3:227",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "급해서 놓고 갔나…… 모르겠다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_family_bundle.rpy",
+          "line": 3,
+          "label": "r13_family_bundle_content",
+          "guards": []
+        }
+      ],
+      "line": 3,
+      "scene_title": "r13_family_bundle_content",
+      "source_hash": "8a0a55186fe8d95d4943cad79fa3e50d87b9a9a9c65ab8fb4a7aa71c7adfaf7f",
+      "baseline_hash": "32b1bf5d95dffc649cbdbf484cbb341d5fc21abf59e030c82dcd2f41124c9640",
+      "uid": "2c75e6169323a7f6ef249275",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_family_bundle_content|rpy_literal|r13_family_bundle_content|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_family_bundle.rpy:3:259",
+      "file": "game/room13_family_bundle.rpy",
+      "path": [
+        367,
+        387
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_family_bundle_content",
+      "block": "r13_family_bundle_content",
+      "placement": "literal",
+      "ref": "game/room13_family_bundle.rpy:3:259",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "다시 와서 가져가려고 그런 거면?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_family_bundle.rpy",
+          "line": 3,
+          "label": "r13_family_bundle_content",
+          "guards": []
+        }
+      ],
+      "line": 3,
+      "scene_title": "r13_family_bundle_content",
+      "source_hash": "8a0a55186fe8d95d4943cad79fa3e50d87b9a9a9c65ab8fb4a7aa71c7adfaf7f",
+      "baseline_hash": "23ee835f54a5c07d813fdbbfe6196863ceb03407567e28b788ea068b4e3affb2",
+      "uid": "1d5b77f95dad35ffc4daeba6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_family_bundle_content|rpy_literal|r13_family_bundle_content|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/room13_family_bundle.rpy:3:290",
       "file": "game/room13_family_bundle.rpy",
@@ -35,6 +301,44 @@
       "source_hash": "8a0a55186fe8d95d4943cad79fa3e50d87b9a9a9c65ab8fb4a7aa71c7adfaf7f",
       "baseline_hash": "9476acf549b9e8f1ed548fd2c37d66c362d1bf3062ef7e8e07adacb3b0a017b0",
       "uid": "46ac4f906c30b7356c3080e0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_family_bundle_content|rpy_literal|r13_family_bundle_content|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_family_bundle.rpy:3:332",
+      "file": "game/room13_family_bundle.rpy",
+      "path": [
+        440,
+        448
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_family_bundle_content",
+      "block": "r13_family_bundle_content",
+      "placement": "literal",
+      "ref": "game/room13_family_bundle.rpy:3:332",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "편지도 봐.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_family_bundle.rpy",
+          "line": 3,
+          "label": "r13_family_bundle_content",
+          "guards": []
+        }
+      ],
+      "line": 3,
+      "scene_title": "r13_family_bundle_content",
+      "source_hash": "8a0a55186fe8d95d4943cad79fa3e50d87b9a9a9c65ab8fb4a7aa71c7adfaf7f",
+      "baseline_hash": "77562bab28a67433e9022d4cf7049cc74b8d2eaf40697ae1222fe67f4ca88610",
+      "uid": "5580a5fe2f5cbb9924e6ec58",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_family_bundle_content|rpy_literal|r13_family_bundle_content|행 조건 없음",

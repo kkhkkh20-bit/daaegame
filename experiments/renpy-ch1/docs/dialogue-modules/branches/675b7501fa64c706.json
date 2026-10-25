@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
     {
       "id": "game/systems/room13_ep2_kids.rpy:249:30",
@@ -35,6 +35,86 @@
       "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
       "baseline_hash": "1a39f6ded6fb325df13a3766848d1f9ebbf9ec41d2c85e50200616bd1bb068b0",
       "uid": "43c3eca36ee58cc4cc9be9fe",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_at_eaves|rpy_inventory|r13_ep2_at_eaves|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:256:28",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        12878,
+        12896
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_ep2_at_eaves",
+      "block": "r13_ep2_at_eaves",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:256:28",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "처마 밑에서 밤이에게 들은 말",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 256,
+          "label": "r13_ep2_at_eaves",
+          "guards": [
+            "if r13_has(\"own:blanket\"):"
+          ]
+        }
+      ],
+      "line": 256,
+      "scene_title": "r13_ep2_at_eaves",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "1965da7a3200aa7fe80b9422dda6650e44b9984cca023accd515ef13510adcb5",
+      "uid": "d5126c86b885922ea43c20ad",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_at_eaves|rpy_inventory|r13_ep2_at_eaves|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:268:32",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        13425,
+        13443
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_ep2_at_eaves",
+      "block": "r13_ep2_at_eaves",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:268:32",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "처마 밑에서 밤이에게 들은 말",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 268,
+          "label": "r13_ep2_at_eaves",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 268,
+      "scene_title": "r13_ep2_at_eaves",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "1965da7a3200aa7fe80b9422dda6650e44b9984cca023accd515ef13510adcb5",
+      "uid": "4b02257bcb6e1dbad04a808c",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_ep2_at_eaves|rpy_inventory|r13_ep2_at_eaves|행 조건 없음",

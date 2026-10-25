@@ -1,7 +1,283 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:357:26",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        17837,
+        17871
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_decision",
+      "block": "r13_ep2_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:357:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "모두가 나를 보았다. 사람들 틈에서 솜이가 고개를 저었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 357,
+          "label": "r13_ep2_decision",
+          "guards": []
+        }
+      ],
+      "line": 357,
+      "scene_title": "r13_ep2_decision",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "e623184fa7fa49734330d80ea64aabfbe1ae70b5a2d5be4c1f28fb98d765d667",
+      "uid": "6b8934bf786e40f5a53c4e07",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_decision|rpy_literal|r13_ep2_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:358:17",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        17891,
+        17917
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_decision",
+      "block": "r13_ep2_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:358:17",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "(말하면 밤이는 살아. 말하지 않으면…….)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 358,
+          "label": "r13_ep2_decision",
+          "guards": []
+        }
+      ],
+      "line": 358,
+      "scene_title": "r13_ep2_decision",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "7f26cb495914eb3c3c817c75fa02c161450bbc14767f1a20d599109f6e78f351",
+      "uid": "ca26de2af0824ec0a85fe0c6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_decision|rpy_literal|r13_ep2_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:367:33",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        18372,
+        18407
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_decision",
+      "block": "r13_ep2_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:367:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "……무쇠 할아버지야. 아파서 그래. 일부러 그런 거 아니야.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 367,
+          "label": "r13_ep2_decision",
+          "guards": [
+            "if _kd_pick==\"name\":"
+          ]
+        }
+      ],
+      "line": 367,
+      "scene_title": "r13_ep2_decision",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "90b5018d371f8d8c99c28a7eb83d34bdfb9db8cd019f80e4ae17255fada29de5",
+      "uid": "2c971eb63fe5be806001c193",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_decision|rpy_literal|r13_ep2_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:368:21",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        18431,
+        18451
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_decision",
+      "block": "r13_ep2_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:368:21",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "내일 아침 그 노인을 데려가겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 368,
+          "label": "r13_ep2_decision",
+          "guards": [
+            "if _kd_pick==\"name\":"
+          ]
+        }
+      ],
+      "line": 368,
+      "scene_title": "r13_ep2_decision",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "ec48c8765923b983bb3de48db9b50ded03966f8d3268329b30dd490a14c7e76b",
+      "uid": "680e53995a8002ca0cbc1ed7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_decision|rpy_literal|r13_ep2_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:369:18",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        18472,
+        18504
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_decision",
+      "block": "r13_ep2_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:369:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "밤이의 팔이 풀렸다. 솜이가 나를 노려보더니 뛰어갔다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 369,
+          "label": "r13_ep2_decision",
+          "guards": [
+            "if _kd_pick==\"name\":"
+          ]
+        }
+      ],
+      "line": 369,
+      "scene_title": "r13_ep2_decision",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "c23b8669ee6c974bf87b506942b43a0a91a5e73cc2ed2fcc661630049ad29c02",
+      "uid": "8fbdf6711ff7a8cbaf6f36b9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_decision|rpy_literal|r13_ep2_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:372:33",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        18633,
+        18658
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_decision",
+      "block": "r13_ep2_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:372:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "서리 선생님한테 데려가 줘. 보호소 말고.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 372,
+          "label": "r13_ep2_decision",
+          "guards": [
+            "elif _kd_pick==\"seori\":"
+          ]
+        }
+      ],
+      "line": 372,
+      "scene_title": "r13_ep2_decision",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "c95809278d8a2be548902117d4a4068c91f6ff679a3980d16871642b76fd2c87",
+      "uid": "aa8c1fb984f50a08bfbf4f9d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_decision|rpy_literal|r13_ep2_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:373:18",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        18679,
+        18711
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_decision",
+      "block": "r13_ep2_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:373:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 손바닥에 이름이 빽빽하던 할아버지 이야기를 했다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 373,
+          "label": "r13_ep2_decision",
+          "guards": [
+            "elif _kd_pick==\"seori\":"
+          ]
+        }
+      ],
+      "line": 373,
+      "scene_title": "r13_ep2_decision",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "37a3d4a28497f49db57da227b3c62efa29cc6abb29751d602c270b3cc3d1bfda",
+      "uid": "348d90162dd1f759d935086c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_decision|rpy_literal|r13_ep2_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_ep2_kids.rpy:374:30",
       "file": "game/systems/room13_ep2_kids.rpy",
@@ -37,6 +313,244 @@
       "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
       "baseline_hash": "e51be5b019ea09b6cf772a94a3de1b3aa5bf5f9bdcc2bb14dd3b696717f0e2c4",
       "uid": "0dd1bd561e15a5fd0e2d98c8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_decision|rpy_literal|r13_ep2_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:375:21",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        18796,
+        18811
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_decision",
+      "block": "r13_ep2_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:375:21",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "……검사원이 책임진다면.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 375,
+          "label": "r13_ep2_decision",
+          "guards": [
+            "elif _kd_pick==\"seori\":"
+          ]
+        }
+      ],
+      "line": 375,
+      "scene_title": "r13_ep2_decision",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "161095cdc26437b35a8d06115bf955157c553ded8770b2ea1e60084ccf487b2c",
+      "uid": "5791910a0d3d066b026ed59b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_decision|rpy_literal|r13_ep2_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:376:18",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        18832,
+        18856
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_decision",
+      "block": "r13_ep2_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:376:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "솜이가 내 손을 잡았다. 손이 차가웠다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 376,
+          "label": "r13_ep2_decision",
+          "guards": [
+            "elif _kd_pick==\"seori\":"
+          ]
+        }
+      ],
+      "line": 376,
+      "scene_title": "r13_ep2_decision",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "b9cad222de1230dc6e629974647405305d64f2c38db5202a656937c6e206710d",
+      "uid": "f2a1c609337ce2c9150185f2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_decision|rpy_literal|r13_ep2_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:379:33",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        18968,
+        18990
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_decision",
+      "block": "r13_ep2_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:379:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "누군지는 몰라. 근데 밤이는 아니야.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 379,
+          "label": "r13_ep2_decision",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 379,
+      "scene_title": "r13_ep2_decision",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "ebc784e7845dde8a412642ba3a49054d3189467ab0c62ecaeba54a306b80503a",
+      "uid": "a2f61825b8108a8128acfb7d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_decision|rpy_literal|r13_ep2_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:380:21",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        19014,
+        19035
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_decision",
+      "block": "r13_ep2_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:380:21",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "풀어 주겠소. 앞으로 눈여겨보겠소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 380,
+          "label": "r13_ep2_decision",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 380,
+      "scene_title": "r13_ep2_decision",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "6f255d3a30f30cb2f4f1a09a4d1f00107db5aa59d4df0bc9c633675cbe2385ba",
+      "uid": "79414c7e7e8241c0c7b1135d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_decision|rpy_literal|r13_ep2_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:381:18",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        19056,
+        19073
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_decision",
+      "block": "r13_ep2_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:381:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "솜이가 내 손을 꼭 잡았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 381,
+          "label": "r13_ep2_decision",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 381,
+      "scene_title": "r13_ep2_decision",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "6be18d96dc56a083f642a7830494d82dc9476021968c688f67d5afdc6307b627",
+      "uid": "f167434c827cb586ce9440a8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_decision|rpy_literal|r13_ep2_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:383:28",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        19187,
+        19204
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep2_decision",
+      "block": "r13_ep2_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:383:28",
+      "when": null,
+      "speaker": "bami",
+      "kind": "dialogue",
+      "text": "……너, 내 친구 해도 돼.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 383,
+          "label": "r13_ep2_decision",
+          "guards": []
+        }
+      ],
+      "line": 383,
+      "scene_title": "r13_ep2_decision",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "98951f9e6855827b514414c7f62b66b84dff16f857eb14c20c3f66f10ee129de",
+      "uid": "8491d517c19ede792a222216",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_ep2_decision|rpy_literal|r13_ep2_decision|행 조건 없음",

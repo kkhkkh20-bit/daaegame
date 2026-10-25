@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
     {
       "id": "game/systems/room13_ep3_woodfire.rpy:505:30",
@@ -43,6 +43,246 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
+      "id": "game/systems/room13_ep3_woodfire.rpy:507:22",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        29886,
+        29916
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_aftermath",
+      "block": "r13_wf_aftermath",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:507:22",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "여기 꼬미 아지트야. 비밀이었는데, 이제 다 알아.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 507,
+          "label": "r13_wf_aftermath",
+          "guards": [
+            "if r13_has(\"kkomi_dead\"):"
+          ]
+        }
+      ],
+      "line": 507,
+      "scene_title": "r13_wf_aftermath",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "8f816100e40d053bc9efbd410e90e7362c939819852eeb98613ae4352176e3fc",
+      "uid": "dd34b01467dd694738b2fe69",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_aftermath|rpy_literal|r13_wf_aftermath|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:508:21",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        29940,
+        29975
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_aftermath",
+      "block": "r13_wf_aftermath",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:508:21",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "(그을린 도토리를 넣는다) 대장 표시는 아지트에 있어야 돼.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 508,
+          "label": "r13_wf_aftermath",
+          "guards": [
+            "if r13_has(\"kkomi_dead\"):"
+          ]
+        }
+      ],
+      "line": 508,
+      "scene_title": "r13_wf_aftermath",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "a799b27c664b0942a6f96c3c1da6bb23a603c89db01c7e2838342a4c66910102",
+      "uid": "6f7a248b6401bba159367f51",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_aftermath|rpy_literal|r13_wf_aftermath|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:509:21",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        29999,
+        30024
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_aftermath",
+      "block": "r13_wf_aftermath",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:509:21",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "꼬미야. 나 왔어. 다음엔 온다고 했잖아.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 509,
+          "label": "r13_wf_aftermath",
+          "guards": [
+            "if r13_has(\"kkomi_dead\"):"
+          ]
+        }
+      ],
+      "line": 509,
+      "scene_title": "r13_wf_aftermath",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "e38874f28c7109525982cefb730f1e7e4e3d7d80e608a5b8da35b62c922b16c8",
+      "uid": "a3b2e6802b09ecefd8fe9e0d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_aftermath|rpy_literal|r13_wf_aftermath|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:510:18",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        30045,
+        30049
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_aftermath",
+      "block": "r13_wf_aftermath",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:510:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "……",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 510,
+          "label": "r13_wf_aftermath",
+          "guards": [
+            "if r13_has(\"kkomi_dead\"):"
+          ]
+        }
+      ],
+      "line": 510,
+      "scene_title": "r13_wf_aftermath",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "a7f878b8ced1a7957c560d573e30ddbbc1696e38c370513aacbbf4bff12e7f43",
+      "uid": "fa219f30c8d1117a1ce7d4fd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_aftermath|rpy_literal|r13_wf_aftermath|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:514:37",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        30321,
+        30360
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_aftermath",
+      "block": "r13_wf_aftermath",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:514:37",
+      "when": null,
+      "speaker": "kid_kkomi",
+      "kind": "dialogue",
+      "text": "대장 표시는 탐정단 단장이 갖고 있어. 아지트 새로 지으면 돌려줘.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 514,
+          "label": "r13_wf_aftermath",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 514,
+      "scene_title": "r13_wf_aftermath",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "372092020e342421375db648affdacbea3f98254af12414598e07c7402356820",
+      "uid": "0041f900df0488847bd36aa5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_aftermath|rpy_literal|r13_wf_aftermath|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:515:18",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        30381,
+        30408
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_aftermath",
+      "block": "r13_wf_aftermath",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:515:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "꼬미가 도토리를 다람 손에 다시 쥐여 주었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 515,
+          "label": "r13_wf_aftermath",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 515,
+      "scene_title": "r13_wf_aftermath",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "884cac65ad671c85fba59b3dbeac0d214c847f5e7ca8b9715ac24910a36ca05b",
+      "uid": "a03f31c04c2d3a86dceef06e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_aftermath|rpy_literal|r13_wf_aftermath|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
       "id": "game/systems/room13_ep3_woodfire.rpy:517:30",
       "file": "game/systems/room13_ep3_woodfire.rpy",
       "path": [
@@ -77,6 +317,278 @@
       "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
       "baseline_hash": "510dd7de4453973bd4dc28fdfa2321d2f4bb20d1e23a03f8b2085e74525c244d",
       "uid": "63bc640e2bc3cf3dd8cb7eb4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_aftermath|rpy_literal|r13_wf_aftermath|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:518:29",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        30632,
+        30668
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_aftermath",
+      "block": "r13_wf_aftermath",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:518:29",
+      "when": null,
+      "speaker": "resident_bori",
+      "kind": "dialogue",
+      "text": "우리 집 좁다. 시끄럽고, 장작도 모자라. ……그래도 오든가.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 518,
+          "label": "r13_wf_aftermath",
+          "guards": [
+            "if r13_has(\"wf_bori_freed\") and r13_has(\"wf_bori_trusted\") and r13_has(\"kkomi_dead\"):"
+          ]
+        }
+      ],
+      "line": 518,
+      "scene_title": "r13_wf_aftermath",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "ea3c9950910da7c639be2a8113987101c92de0a13a57d61b8c3efc6a64e3adbd",
+      "uid": "7221413fc7bb8d881d8c96ae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_aftermath|rpy_literal|r13_wf_aftermath|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:519:24",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        30695,
+        30708
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_aftermath",
+      "block": "r13_wf_aftermath",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:519:24",
+      "when": null,
+      "speaker": "kid_kkam",
+      "kind": "dialogue",
+      "text": "아저씨네 애도 있어?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 519,
+          "label": "r13_wf_aftermath",
+          "guards": [
+            "if r13_has(\"wf_bori_freed\") and r13_has(\"wf_bori_trusted\") and r13_has(\"kkomi_dead\"):"
+          ]
+        }
+      ],
+      "line": 519,
+      "scene_title": "r13_wf_aftermath",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "2cd03e888a57adf0a138d584971981299f37728aa57c4dead839c4593f1d92fd",
+      "uid": "5e857df8f2604b488e085437",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_aftermath|rpy_literal|r13_wf_aftermath|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:520:29",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        30740,
+        30775
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_aftermath",
+      "block": "r13_wf_aftermath",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:520:29",
+      "when": null,
+      "speaker": "resident_bori",
+      "kind": "dialogue",
+      "text": "있어. 대피소에 맡겨 놨어. 열이 나서. 낫으면 같이 살자.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 520,
+          "label": "r13_wf_aftermath",
+          "guards": [
+            "if r13_has(\"wf_bori_freed\") and r13_has(\"wf_bori_trusted\") and r13_has(\"kkomi_dead\"):"
+          ]
+        }
+      ],
+      "line": 520,
+      "scene_title": "r13_wf_aftermath",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "31c5bbf8f184fb89b6b8ae35bc255b9edf3c6f64932fd55aee21339653859843",
+      "uid": "d859e1a9f347cf6f3a865e19",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_aftermath|rpy_literal|r13_wf_aftermath|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:522:26",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        30855,
+        30879
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_aftermath",
+      "block": "r13_wf_aftermath",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:522:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "(그림책) 그레텔이 마녀를 힘껏 밀었고,",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 522,
+          "label": "r13_wf_aftermath",
+          "guards": []
+        }
+      ],
+      "line": 522,
+      "scene_title": "r13_wf_aftermath",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "4c1613cbbca9d9a9e2023cf3f9aeb2689e2b829bcc5a0082f0dc3d53632b4a41",
+      "uid": "d32b54d4fd541713ef4a54cf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_aftermath|rpy_literal|r13_wf_aftermath|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:523:14",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        30919,
+        30949
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_aftermath",
+      "block": "r13_wf_aftermath",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:523:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "(그림책) 마녀도 집에 배고픈 아이가 셋 있었어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 523,
+          "label": "r13_wf_aftermath",
+          "guards": []
+        }
+      ],
+      "line": 523,
+      "scene_title": "r13_wf_aftermath",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "886053d6d0a7883206aaf77666e3d61fd6c5ac67a70da737567ee3adb569ff1c",
+      "uid": "802f8b9fb3ed27abc4e0d5b4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_aftermath|rpy_literal|r13_wf_aftermath|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:525:18",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        31076,
+        31109
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_aftermath",
+      "block": "r13_wf_aftermath",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:525:18",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "……아빠. 그럼 그레텔이 나쁜 거야? 마녀가 나쁜 거야?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 525,
+          "label": "r13_wf_aftermath",
+          "guards": []
+        }
+      ],
+      "line": 525,
+      "scene_title": "r13_wf_aftermath",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "c1968ad63bfacd371a1cd81d1b418d5b4ced16408dc5f31ef4eb3d3b56705f88",
+      "uid": "00d78dbe3909ef342870bc48",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_aftermath|rpy_literal|r13_wf_aftermath|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:526:17",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        31129,
+        31149
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_aftermath",
+      "block": "r13_wf_aftermath",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:526:17",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "마녀네 애들은 이제 누가 밥 줘?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 526,
+          "label": "r13_wf_aftermath",
+          "guards": []
+        }
+      ],
+      "line": 526,
+      "scene_title": "r13_wf_aftermath",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "80055e945b66842609975d7ef07517c795885a7d94e0e3674eca24668de113a7",
+      "uid": "6da34647f67e022861576cdd",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_wf_aftermath|rpy_literal|r13_wf_aftermath|행 조건 없음",

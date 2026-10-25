@@ -1,7 +1,277 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/room13_revision.rpy:73:29",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        3250,
+        3281
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_case_interview",
+      "block": "r13_case_interview",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:73:29",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "아빠가 내 탓이 아니라고 말하면…… 그럼 아닌 거야?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 73,
+          "label": "r13_case_interview",
+          "guards": []
+        }
+      ],
+      "line": 73,
+      "scene_title": "r13_case_interview",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "fdf48623b3d283e364a5aa5e5d5de1efbc4be15ce0d6be9597e089c9de3e0dfe",
+      "uid": "4d43cbc62690c4c5257e84a1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_case_interview|rpy_literal|r13_case_interview|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:73:69",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        3290,
+        3315
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_case_interview",
+      "block": "r13_case_interview",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:73:69",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "아빠가 우긴다고 사실이 바뀌는 건 아니야.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 73,
+          "label": "r13_case_interview",
+          "guards": []
+        }
+      ],
+      "line": 73,
+      "scene_title": "r13_case_interview",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "b9d7ec33370181980ed60df84ea361afa2ae2e2b08c805a09a755043ffe7cc48",
+      "uid": "59efabf26b6bc6529427fa8b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_case_interview|rpy_literal|r13_case_interview|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:73:105",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        3326,
+        3349
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_case_interview",
+      "block": "r13_case_interview",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:73:105",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "그런데 왜 자꾸 내 탓이 아니라고 해?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 73,
+          "label": "r13_case_interview",
+          "guards": []
+        }
+      ],
+      "line": 73,
+      "scene_title": "r13_case_interview",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "744e82c93251b049072d358becdc4b8ab498c8ae27cc40d476ad7dbf52f86129",
+      "uid": "61134e1977855c17b76301d6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_case_interview|rpy_literal|r13_case_interview|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:73:137",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        3358,
+        3402
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_case_interview",
+      "block": "r13_case_interview",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:73:137",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "네가 한 일하고, 사람들이 네가 했다고 말하는 일이 같은지 알아보려는 거야.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 73,
+          "label": "r13_case_interview",
+          "guards": []
+        }
+      ],
+      "line": 73,
+      "scene_title": "r13_case_interview",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "f692e9f2cc3c8c124b9912ec6115654c4748fc15cf6b4452b407c87cf930d2b2",
+      "uid": "83e5392dac248f845551d1cf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_case_interview|rpy_literal|r13_case_interview|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:73:192",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        3413,
+        3431
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_case_interview",
+      "block": "r13_case_interview",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:73:192",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "내가 할아버지 때린 건 맞아.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 73,
+          "label": "r13_case_interview",
+          "guards": []
+        }
+      ],
+      "line": 73,
+      "scene_title": "r13_case_interview",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "db14342fe46748c76e97a9313382c07001b51f588db0fccde40c28bf10d75632",
+      "uid": "8e601d091ea3f39148149e72",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_case_interview|rpy_literal|r13_case_interview|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:77:35",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        3557,
+        3572
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_case_interview",
+      "block": "r13_case_interview",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:77:35",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "할아버지 어디를 때렸어?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 77,
+          "label": "r13_case_interview",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 77,
+      "scene_title": "r13_case_interview",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "294fc756437bbaf7b02ebd0307bdad463e87345642239edf4946e11bdfc0cf40",
+      "uid": "843714f329caaa081271df75",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_case_interview|rpy_literal|r13_case_interview|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:77:61",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        3583,
+        3633
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_case_interview",
+      "block": "r13_case_interview",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:77:61",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "여기, 나 잡은 팔. 할아버지가 안 놔줘서 때렸어. 촛대가 무거워서 두 손으로 들었어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 77,
+          "label": "r13_case_interview",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 77,
+      "scene_title": "r13_case_interview",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "b3cf9cd4d5a93109fecde7754046090ce50a95c450b689e057854b10fac89d19",
+      "uid": "82a063b787d1d0957b313651",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_case_interview|rpy_literal|r13_case_interview|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/room13_revision.rpy:77:120",
       "file": "game/room13_revision.rpy",
@@ -83,6 +353,356 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
+      "id": "game/room13_revision.rpy:79:35",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        3786,
+        3813
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_case_interview",
+      "block": "r13_case_interview",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:79:35",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "침대 밑에 숨은 다음에 밖으로 나온 적 있어?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 79,
+          "label": "r13_case_interview",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 79,
+      "scene_title": "r13_case_interview",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "060302061feaf6292d63560ed8f414ea986890344b3d919e99b42790643776ee",
+      "uid": "4901a9837ec0677994f33cf9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_case_interview|rpy_literal|r13_case_interview|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:79:73",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        3824,
+        3845
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_case_interview",
+      "block": "r13_case_interview",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:79:73",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "아빠가 부르기 전엔 한 번도 없어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 79,
+          "label": "r13_case_interview",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 79,
+      "scene_title": "r13_case_interview",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "d11eea294ecb09bc22db4aaf9c1a220107a8c578cd2957f6595dd812c034b8e9",
+      "uid": "2bbb27af076588f3593fd8f5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_case_interview|rpy_literal|r13_case_interview|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:79:103",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        3854,
+        3876
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_case_interview",
+      "block": "r13_case_interview",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:79:103",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "그동안 누가 방에 들어오는 건 봤어?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 79,
+          "label": "r13_case_interview",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 79,
+      "scene_title": "r13_case_interview",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "cafe78bc1e6c50d5d1537f9be835774ca32e773c3693b3b179e4e89d482a4854",
+      "uid": "ddbc03aa34bb588379b84543",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_case_interview|rpy_literal|r13_case_interview|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:79:136",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        3887,
+        3943
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_case_interview",
+      "block": "r13_case_interview",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:79:136",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "침대 밑이라 이불밖에 안 보였어. 바닥은 연기 때문에 매웠고. 누가 문 두드릴 때마다 눈 감았어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 79,
+          "label": "r13_case_interview",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 79,
+      "scene_title": "r13_case_interview",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "e6c9ac084b33649af65814024de603ab9bcc9d50faef91fb16a022fb1fe40cbe",
+      "uid": "0f684b29b4228e3a90eaa3c7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_case_interview|rpy_literal|r13_case_interview|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:80:27",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        3998,
+        4015
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_case_interview",
+      "block": "r13_case_interview",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:80:27",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "할아버지 손이 풀린 뒤에는?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 80,
+          "label": "r13_case_interview",
+          "guards": []
+        }
+      ],
+      "line": 80,
+      "scene_title": "r13_case_interview",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "6deb3a6b7ca9ca42a6ab53bdd9e88ee7c499dc344d57e1316715bebf28d24f20",
+      "uid": "0697edf2edd62376b0316437",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_case_interview|rpy_literal|r13_case_interview|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:80:55",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        4026,
+        4071
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_case_interview",
+      "block": "r13_case_interview",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:80:55",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "촛대 놓쳤어. 바닥에 떨어져서 쨍 했고. 또 잡힐까 봐 침대 밑으로 들어갔어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 80,
+          "label": "r13_case_interview",
+          "guards": []
+        }
+      ],
+      "line": 80,
+      "scene_title": "r13_case_interview",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "39c375382111901bb3abb87101d3bba8e42ef4d4bc9770ef8457c24dbfb05728",
+      "uid": "1eccfef4a74d3928e9fec7aa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_case_interview|rpy_literal|r13_case_interview|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:80:109",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        4080,
+        4093
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_case_interview",
+      "block": "r13_case_interview",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:80:109",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "방문은 누가 잠갔어?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 80,
+          "label": "r13_case_interview",
+          "guards": []
+        }
+      ],
+      "line": 80,
+      "scene_title": "r13_case_interview",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "e5ea901d856cc0e2e9f46084c6dac9e985fc899c1f4068551270064f5787d516",
+      "uid": "073a87b190ab8e2ab3a114e3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_case_interview|rpy_literal|r13_case_interview|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:80:133",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        4104,
+        4150
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_case_interview",
+      "block": "r13_case_interview",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:80:133",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "할아버지가 잠갔어. 종이를 꺼내다가 밖에서 발소리가 나니까 문에 빗장을 걸었어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 80,
+          "label": "r13_case_interview",
+          "guards": []
+        }
+      ],
+      "line": 80,
+      "scene_title": "r13_case_interview",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "a83b6861aa23ad7c76bb4f51e323efb553ae3807209fa73bfd2e21712d928bc9",
+      "uid": "dee577f4ec649af70c4399eb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_case_interview|rpy_literal|r13_case_interview|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:80:188",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        4159,
+        4180
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_case_interview",
+      "block": "r13_case_interview",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:80:188",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "할아버지가 넘어지는 걸 직접 봤어?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 80,
+          "label": "r13_case_interview",
+          "guards": []
+        }
+      ],
+      "line": 80,
+      "scene_title": "r13_case_interview",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "50b6693f2b8788ef3761fb4935e7ab1189a8c889ff4e17e85c50f6ff2e2af535",
+      "uid": "f9a604477a643e3216422971",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_case_interview|rpy_literal|r13_case_interview|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
       "id": "game/room13_revision.rpy:80:220",
       "file": "game/room13_revision.rpy",
       "path": [
@@ -115,6 +735,82 @@
       "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
       "baseline_hash": "f1b44db5828011486afeb356f986f95a34af8bad0b373d5521f7d958e1eb8ee4",
       "uid": "f07a0b57f9af91e5ff8603aa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_case_interview|rpy_literal|r13_case_interview|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:80:267",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        4238,
+        4288
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_case_interview",
+      "block": "r13_case_interview",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:80:267",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "모르는 건 모른다고 적을게. 억지로 더 기억해 내야만 여기서 나갈 수 있는 건 아니야.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 80,
+          "label": "r13_case_interview",
+          "guards": []
+        }
+      ],
+      "line": 80,
+      "scene_title": "r13_case_interview",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "3b128bdacbc8ccf1a46fd072ca06aded98dd2300f9f5e5c15ed86920331b319f",
+      "uid": "f3c561a5aa22cda10a21dee0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_case_interview|rpy_literal|r13_case_interview|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_revision.rpy:80:325",
+      "file": "game/room13_revision.rpy",
+      "path": [
+        4296,
+        4370
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_case_interview",
+      "block": "r13_case_interview",
+      "placement": "literal",
+      "ref": "game/room13_revision.rpy:80:325",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "면회 기록에는 다람이의 말과, 확인하지 못한 부분을 나누어 적었다. 아이의 말만으로는 어르신이 죽음에 이른 순서를 정할 수 없다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_revision.rpy",
+          "line": 80,
+          "label": "r13_case_interview",
+          "guards": []
+        }
+      ],
+      "line": 80,
+      "scene_title": "r13_case_interview",
+      "source_hash": "608000b46ad11cb681b5ea65bb9a2ed3f5d96632f9b487d9f08fa4436d0eb2be",
+      "baseline_hash": "a0546493b46ccba7fafcd9e2b094ac131f446ccab6bfd8866f85cb2611d94ee0",
+      "uid": "d813ce099dfe64f7c61a7ace",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_case_interview|rpy_literal|r13_case_interview|행 조건 없음",

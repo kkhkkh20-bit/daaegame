@@ -1,0 +1,292 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:343:34",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        19459,
+        19514
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_lamp",
+      "block": "r13_ep1_lamp",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:343:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "조각이 있던 자리에 작은 쪽지가 끼어 있었다. 숫자가 몇 개 적혀 있다. 온도를 잰 숫자 같다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 343,
+          "label": "r13_ep1_lamp",
+          "guards": [
+            "while _e1_loop:",
+            "if _e1_pick==\"inside\":"
+          ]
+        }
+      ],
+      "line": 343,
+      "scene_title": "r13_ep1_lamp",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "b643f8fae5f1af437436d0041a0f8fe7df4c06654c07dd61ab5f7e5a69ddf240",
+      "uid": "f75604cf533d6978ffb3855d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_lamp|rpy_literal|r13_ep1_lamp|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:344:23",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        19540,
+        19561
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_lamp",
+      "block": "r13_ep1_lamp",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:344:23",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(누군가 등을 열고 온도를 쟀다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 344,
+          "label": "r13_ep1_lamp",
+          "guards": [
+            "while _e1_loop:",
+            "if _e1_pick==\"inside\":"
+          ]
+        }
+      ],
+      "line": 344,
+      "scene_title": "r13_ep1_lamp",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "b9d4800f30825d2e60c785464895555990134dce3c7f0e5f18eae76d925e1cc7",
+      "uid": "b87cbe276ef10e7906997b8f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_lamp|rpy_literal|r13_ep1_lamp|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:348:34",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        19737,
+        19783
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_lamp",
+      "block": "r13_ep1_lamp",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:348:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "뚜껑 틈에 갈색 노끈 한 가닥이 걸려 있었다. 짐을 묶을 때 쓰는 거친 끈이다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 348,
+          "label": "r13_ep1_lamp",
+          "guards": [
+            "while _e1_loop:",
+            "elif _e1_pick==\"gap\":"
+          ]
+        }
+      ],
+      "line": 348,
+      "scene_title": "r13_ep1_lamp",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "10c1b090d037f9b6ae8754ab37753912be045989c8946ba1ce9345493c487253",
+      "uid": "c4f01f6917790abbc03026eb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_lamp|rpy_literal|r13_ep1_lamp|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:349:23",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        19809,
+        19859
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_lamp",
+      "block": "r13_ep1_lamp",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:349:23",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(온도를 적은 쪽지와 노끈. 같은 사람이 남긴 걸까, 서로 다른 사람이 열었던 걸까?)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 349,
+          "label": "r13_ep1_lamp",
+          "guards": [
+            "while _e1_loop:",
+            "elif _e1_pick==\"gap\":"
+          ]
+        }
+      ],
+      "line": 349,
+      "scene_title": "r13_ep1_lamp",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "b956307fac62446b4068e27bae399e10607a21fd3295a425ba1807685c9478e2",
+      "uid": "fe031084aa3694f80ca4dc67",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_lamp|rpy_literal|r13_ep1_lamp|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:353:34",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        20033,
+        20071
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_lamp",
+      "block": "r13_ep1_lamp",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:353:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "숯으로 문지르자 나사 둘레의 흔적이 종이 위에 고스란히 떠올랐다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 353,
+          "label": "r13_ep1_lamp",
+          "guards": [
+            "while _e1_loop:",
+            "elif _e1_pick==\"rub\":"
+          ]
+        }
+      ],
+      "line": 353,
+      "scene_title": "r13_ep1_lamp",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "859e58a7c9423d7d8a97876cb1d02d7c92c514885351ec9d0d449d84a097b430",
+      "uid": "cd6d47851c2a823273118d3b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_lamp|rpy_literal|r13_ep1_lamp|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:354:23",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        20097,
+        20120
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_lamp",
+      "block": "r13_ep1_lamp",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:354:23",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(너울이 등을 닦아도, 이건 남는다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 354,
+          "label": "r13_ep1_lamp",
+          "guards": [
+            "while _e1_loop:",
+            "elif _e1_pick==\"rub\":"
+          ]
+        }
+      ],
+      "line": 354,
+      "scene_title": "r13_ep1_lamp",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "c87dae1b82905b8cda2ef34dd72465268adbfa5b4ec846e9d7959771282e048f",
+      "uid": "3e51ce3d7e563a38cc7e0ba5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_lamp|rpy_literal|r13_ep1_lamp|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:359:31",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        20376,
+        20428
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_lamp",
+      "block": "r13_ep1_lamp",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:359:31",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(온도를 잰 사람과 노끈의 주인. 같은 사람인지, 언제 등을 열었는지 확인할 수 있을까?)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 359,
+          "label": "r13_ep1_lamp",
+          "guards": [
+            "if r13_has(\"L03\") and r13_has(\"L04\") and r13_ep_first(\"lt_two_people\"):"
+          ]
+        }
+      ],
+      "line": 359,
+      "scene_title": "r13_ep1_lamp",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "ca08f8764f19610ab571c7f25e97895340ceef5f0950dc42f89ab3ef5382474f",
+      "uid": "76127a1584a5c22c4257972d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_lamp|rpy_literal|r13_ep1_lamp|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

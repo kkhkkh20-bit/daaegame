@@ -1,7 +1,47 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_week2_events.rpy:122:31",
+      "file": "game/systems/room13_week2_events.rpy",
+      "path": [
+        6755,
+        6809
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w2e_expose",
+      "block": "r13_w2e_expose",
+      "placement": "literal",
+      "ref": "game/systems/room13_week2_events.rpy:122:31",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "지난주 기록입니다. 우박이 잰 출력과 초롱이 센 등입니다. 촌장 장부의 숫자와 맞지 않습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week2_events.rpy",
+          "line": 122,
+          "label": "r13_w2e_expose",
+          "guards": [
+            "if \"W4\" in room13[\"evidence\"] or \"W6\" in room13[\"evidence\"]:"
+          ]
+        }
+      ],
+      "line": 122,
+      "scene_title": "r13_w2e_expose",
+      "source_hash": "bd106ab951275b7b2a06d9b6705a142790d202b883e7f2e6d4f37241b21c87c0",
+      "baseline_hash": "15bf24233ac95a7f086833b2e59343d6bf6b3e034cf62d184d79e9e7fcd76233",
+      "uid": "2b04d0d7ae1fc5b9375b08f4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w2e_expose|rpy_literal|r13_w2e_expose|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_week2_events.rpy:123:30",
       "file": "game/systems/room13_week2_events.rpy",
@@ -37,6 +77,86 @@
       "source_hash": "bd106ab951275b7b2a06d9b6705a142790d202b883e7f2e6d4f37241b21c87c0",
       "baseline_hash": "23a749e14cb1c49e1859d520e6fddd4de260e8aee6628ff7f6594f09c83806dd",
       "uid": "c9ebcb6984cdf3c947f18594",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w2e_expose|rpy_literal|r13_w2e_expose|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week2_events.rpy:127:42",
+      "file": "game/systems/room13_week2_events.rpy",
+      "path": [
+        7049,
+        7100
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w2e_expose",
+      "block": "r13_w2e_expose",
+      "placement": "literal",
+      "ref": "game/systems/room13_week2_events.rpy:127:42",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "장부를 고쳤다는 말만으로는 안 됩니다. 고치기 전 원래 숫자가 어딘가 남아 있어야 해요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week2_events.rpy",
+          "line": 127,
+          "label": "r13_w2e_expose",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 127,
+      "scene_title": "r13_w2e_expose",
+      "source_hash": "bd106ab951275b7b2a06d9b6705a142790d202b883e7f2e6d4f37241b21c87c0",
+      "baseline_hash": "f96e23289b532c70fe0749b26260aa5bf6dd15c0875e994935bc862480c2cd4f",
+      "uid": "9e0069b981a42c216ebb3b2b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w2e_expose|rpy_literal|r13_w2e_expose|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week2_events.rpy:128:19",
+      "file": "game/systems/room13_week2_events.rpy",
+      "path": [
+        7122,
+        7160
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w2e_expose",
+      "block": "r13_w2e_expose",
+      "placement": "literal",
+      "ref": "game/systems/room13_week2_events.rpy:128:19",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(지난주에 돌이나 등의 숫자를 따로 남겨 뒀다면 달랐을 것이다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week2_events.rpy",
+          "line": 128,
+          "label": "r13_w2e_expose",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 128,
+      "scene_title": "r13_w2e_expose",
+      "source_hash": "bd106ab951275b7b2a06d9b6705a142790d202b883e7f2e6d4f37241b21c87c0",
+      "baseline_hash": "cb37307ddf8507e535d368bea5a7e38526497b1bb50b0f3de85ec780565ea0ee",
+      "uid": "25a15d75403046d404f50370",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_w2e_expose|rpy_literal|r13_w2e_expose|행 조건 없음",

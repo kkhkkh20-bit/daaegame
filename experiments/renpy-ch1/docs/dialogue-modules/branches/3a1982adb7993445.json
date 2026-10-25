@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_q1_arguments.rpy:251:24",
+      "file": "game/systems/room13_q1_arguments.rpy",
+      "path": [
+        15679,
+        15699
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_q1_patrol",
+      "block": "r13_q1_patrol",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_arguments.rpy:251:24",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "초롱에게 첫 순찰의 관찰을 물었다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_arguments.rpy",
+          "line": 251,
+          "label": "r13_q1_patrol",
+          "guards": []
+        }
+      ],
+      "line": 251,
+      "scene_title": "r13_q1_patrol",
+      "source_hash": "8289e6e0adc4c6de94e5f0acadafcaced13c74af938b712712356a7bd5a6fa22",
+      "baseline_hash": "0726f5f3c23bba47793fa3ac5f7e0942c8a5b08887503646b6c4447c376aab23",
+      "uid": "31ced8690d9232a3d41aed3a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_q1_patrol|rpy_inventory|r13_q1_patrol|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

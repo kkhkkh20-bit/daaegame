@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/room13_v111_days1114.rpy:1615:8",
+      "file": "game/room13_v111_days1114.rpy",
+      "path": [
+        78877,
+        78891
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_v111_aftermath_pre12",
+      "block": "r13_v111_aftermath_pre12",
+      "placement": "literal",
+      "ref": "game/room13_v111_days1114.rpy:1615:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "돌목에게 감독을 맡긴다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1615,
+          "label": "r13_v111_aftermath_pre12",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 1615,
+      "scene_title": "r13_v111_aftermath_pre12",
+      "source_hash": "aa56cffba0a29954c119b1d0616327b29579646f32f2520278a4f21d02f69444",
+      "baseline_hash": "1036e7f3b9f66ccfa7a5c5d6c584779afbe3abd23f0c7ea89ef9aba4051aea8a",
+      "uid": "4f6a41323fb6e7447415d959",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_v111_aftermath_pre12|rpy_menu|r13_v111_aftermath_pre12|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_v111_days1114.rpy:1617:8",
+      "file": "game/room13_v111_days1114.rpy",
+      "path": [
+        78947,
+        78961
+      ],
+      "origin": "rpy_menu",
+      "day": 12,
+      "scene": "r13_v111_aftermath_pre12",
+      "block": "r13_v111_aftermath_pre12",
+      "placement": "literal",
+      "ref": "game/room13_v111_days1114.rpy:1617:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "너울에게 신병을 넘긴다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days1114.rpy",
+          "line": 1617,
+          "label": "r13_v111_aftermath_pre12",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 1617,
+      "scene_title": "r13_v111_aftermath_pre12",
+      "source_hash": "aa56cffba0a29954c119b1d0616327b29579646f32f2520278a4f21d02f69444",
+      "baseline_hash": "7d73fbfe84834965eff72156df7ca9d41c30e33a5ded3cce5a716e422cdac0bc",
+      "uid": "b2c97ee492f91edc896e048e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "d12|r13_v111_aftermath_pre12|rpy_menu|r13_v111_aftermath_pre12|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

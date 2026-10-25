@@ -1,0 +1,126 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:195:8",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        13020,
+        13032
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_wf_laundry",
+      "block": "r13_wf_laundry",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:195:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "빨래 줄 뒤에 선다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 195,
+          "label": "r13_wf_laundry",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 195,
+      "scene_title": "r13_wf_laundry",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "291784dbc6ca58d7846e7ed6aea3ac1409dddb9f2fe9c41939046effbd601c76",
+      "uid": "b4d5d9e5e2d5e9ad17c1861c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_laundry|rpy_menu|r13_wf_laundry|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:208:8",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        13811,
+        13817
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_wf_laundry",
+      "block": "r13_wf_laundry",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:208:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "인사한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 208,
+          "label": "r13_wf_laundry",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 208,
+      "scene_title": "r13_wf_laundry",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "2163a8b49149219de58936ae96a48727f687dc8294fb649b4be15d9a9b9f8415",
+      "uid": "5527e8577eff5628e7db4163",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_laundry|rpy_menu|r13_wf_laundry|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:211:8",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        13959,
+        13966
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_wf_laundry",
+      "block": "r13_wf_laundry",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:211:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "그냥 간다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 211,
+          "label": "r13_wf_laundry",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 211,
+      "scene_title": "r13_wf_laundry",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "1f7225ba6bee51e899ec9f2a061cbdc300695d24093d38a490d1caf726a3325a",
+      "uid": "93dbf5c1b919fff5463c7450",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_laundry|rpy_menu|r13_wf_laundry|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

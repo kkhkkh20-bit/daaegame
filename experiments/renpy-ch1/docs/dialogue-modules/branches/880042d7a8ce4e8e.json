@@ -1,0 +1,126 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_episodes.rpy:217:34",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        13240,
+        13298
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_eaves_retry",
+      "block": "r13_ep1_eaves_retry",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:217:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "네로는 아무것도 묻지 않고 헛간 문을 열었다. 안에는 이름표 없는 사람들이 담요를 나눠 덮고 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 217,
+          "label": "r13_ep1_eaves_retry",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 217,
+      "scene_title": "r13_ep1_eaves_retry",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "b3fcfe2ac7650ace0d38a8dbc759e4115eecebeef743204a509acf91055479ab",
+      "uid": "454c8b357f345d027b2a6cda",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_eaves_retry|rpy_literal|r13_ep1_eaves_retry|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_episodes.rpy:218:33",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        13334,
+        13381
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_eaves_retry",
+      "block": "r13_ep1_eaves_retry",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:218:33",
+      "when": null,
+      "speaker": "resident_nero",
+      "kind": "dialogue",
+      "text": "여기 있는 사람들은 다 표가 없다. 검사도 안 받지. 대신 밖에 나가면 안 된다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 218,
+          "label": "r13_ep1_eaves_retry",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 218,
+      "scene_title": "r13_ep1_eaves_retry",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "e2e572f395aab6ad34ca86733960aaf7a75c2a59a01984919aca23e5ed7c3300",
+      "uid": "a4e12660e67d6df770b5b8c6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_eaves_retry|rpy_literal|r13_ep1_eaves_retry|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_episodes.rpy:221:46",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        13549,
+        13595
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_eaves_retry",
+      "block": "r13_ep1_eaves_retry",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:221:46",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "‘야생화 증상 없음.’ 너울이 이 확인서를 무시하면, 그 일은 제가 기록합니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 221,
+          "label": "r13_ep1_eaves_retry",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 221,
+      "scene_title": "r13_ep1_eaves_retry",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "1d2392e714ca1053b6bb4d9062b2c55d294be07e9a243870f7b831b81c459a66",
+      "uid": "b4848aca07ff4496f53fccf2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_eaves_retry|rpy_literal|r13_ep1_eaves_retry|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

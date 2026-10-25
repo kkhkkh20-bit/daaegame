@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
     {
       "id": "game/room13_week2.rpy:73:50",
@@ -44,6 +44,47 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
+      "id": "game/room13_week2.rpy:73:105",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        4834,
+        4896
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_special_activity",
+      "block": "r13_special_activity",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:73:105",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "장치를 늘린다고 새 힘이 생기는 건 아니에요. 공급할 곳을 줄여서 장작과 식량을 마련할 시간을 버는 거예요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 73,
+          "label": "r13_special_activity",
+          "guards": [
+            "if key==\"w2_measure2\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 73,
+      "scene_title": "r13_special_activity",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "5abc3b0929e1cd31605da233a0c911cc6ac6a1b34bdea90b3c4857d966aecfad",
+      "uid": "2e937910db9a69009093db5d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_special_activity|rpy_literal|r13_special_activity|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
       "id": "game/room13_week2.rpy:76:50",
       "file": "game/room13_week2.rpy",
       "path": [
@@ -79,6 +120,88 @@
       "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
       "baseline_hash": "e8fe2141fd7f1f390e4e14537f31688d023cf98eeabc17700fb8a38f097134e7",
       "uid": "41d2ce3ff64aa85ce5035426",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_special_activity|rpy_literal|r13_special_activity|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:85:36",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        5449,
+        5505
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_special_activity",
+      "block": "r13_special_activity",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:85:36",
+      "when": null,
+      "speaker": "karo",
+      "kind": "dialogue",
+      "text": "뒤에서 누가 등불을 들고 우리를 따라오고 있어요. 이대로 가면 돌아갈 길까지 알려 주는 셈이에요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 85,
+          "label": "r13_special_activity",
+          "guards": [
+            "if key==\"w2_escape\":",
+            "if r13_has(\"pursuit_active\") and not r13_has(\"pursuit_managed\"):"
+          ]
+        }
+      ],
+      "line": 85,
+      "scene_title": "r13_special_activity",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "648511848ddd25fbe3469517e2942f125aaa73c3e2bc673668153b1cf0668d2f",
+      "uid": "ccbf849dfb571e5ab73bbe90",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_special_activity|rpy_literal|r13_special_activity|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:85:101",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        5514,
+        5534
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_special_activity",
+      "block": "r13_special_activity",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:85:101",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "그럼 출발 지점을 바꿔서 나가죠.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 85,
+          "label": "r13_special_activity",
+          "guards": [
+            "if key==\"w2_escape\":",
+            "if r13_has(\"pursuit_active\") and not r13_has(\"pursuit_managed\"):"
+          ]
+        }
+      ],
+      "line": 85,
+      "scene_title": "r13_special_activity",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "2960b59d9143e412ab1f6d3e054fabaf565aa5192087cb0ab18b15b792faa8ac",
+      "uid": "abbe2f924f9f8fbccd994638",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_special_activity|rpy_literal|r13_special_activity|행 조건 없음",

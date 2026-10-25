@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_q1_difficulty.rpy:270:40",
+      "file": "game/systems/room13_q1_difficulty.rpy",
+      "path": [
+        14823,
+        14837
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_q1_hard_counter",
+      "block": "r13_q1_hard_counter",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_difficulty.rpy:270:40",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "어떤 설명을 주장할까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_difficulty.rpy",
+          "line": 270,
+          "label": "r13_q1_hard_counter",
+          "guards": [
+            "while _qh_index<len(_qh_counter[\"rounds\"]):"
+          ]
+        }
+      ],
+      "line": 270,
+      "scene_title": "r13_q1_hard_counter",
+      "source_hash": "9a354ff6a98b8cac565ba817f440cdf209f2fbe11dd7b9392b809128818ad3a3",
+      "baseline_hash": "b71503ef0befed08dfab2f4d5ed653c10817c58e2d640858613bc237383e9c84",
+      "uid": "09432fa9d8c402c0273353d3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_q1_hard_counter|rpy_menu|r13_q1_hard_counter|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_q1_difficulty.rpy:270:105",
+      "file": "game/systems/room13_q1_difficulty.rpy",
+      "path": [
+        14888,
+        14910
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_q1_hard_counter",
+      "block": "r13_q1_hard_counter",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_difficulty.rpy:270:105",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "아직 주장하지 않고 자료를 다시 본다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_difficulty.rpy",
+          "line": 270,
+          "label": "r13_q1_hard_counter",
+          "guards": [
+            "while _qh_index<len(_qh_counter[\"rounds\"]):"
+          ]
+        }
+      ],
+      "line": 270,
+      "scene_title": "r13_q1_hard_counter",
+      "source_hash": "9a354ff6a98b8cac565ba817f440cdf209f2fbe11dd7b9392b809128818ad3a3",
+      "baseline_hash": "06564bb6433ecd16e545aeb00232a573aa60955e8e8cb753b79260d4b460eef3",
+      "uid": "1960e5bae80fab59874c9eae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_q1_hard_counter|rpy_menu|r13_q1_hard_counter|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

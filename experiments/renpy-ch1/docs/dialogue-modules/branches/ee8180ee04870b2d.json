@@ -1,0 +1,290 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/room13_week2.rpy:190:12",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        12488,
+        12507
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_final_hub",
+      "block": "r13_final_hub",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:190:12",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "13호 사건에서 아직 따질 문제",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 190,
+          "label": "r13_final_hub",
+          "guards": [
+            "elif r13_choice==\"case\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 190,
+      "scene_title": "r13_final_hub",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "e8b8b179aaaab3ccb070595331267e8c6d5c92b0a434ad00db0ef6014b852a80",
+      "uid": "e4544cadfbbb73c347e0bd41",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_final_hub|rpy_inventory|r13_final_hub|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:205:36",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        13334,
+        13384
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_final_hub",
+      "block": "r13_final_hub",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:205:36",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "가족과 낮은 고갯길을 건넙니다. 여기 남은 주민들의 문제는 해결되지 않을 수 있습니다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 205,
+          "label": "r13_final_hub",
+          "guards": [
+            "elif r13_choice==\"escape\":",
+            "else:"
+          ]
+        }
+      ],
+      "line": 205,
+      "scene_title": "r13_final_hub",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "115e23ee7243c375027b574746ec043e85614439e745373cc371a1a0fab72e39",
+      "uid": "234c22c4a7f42fbe4d3497c2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_final_hub|rpy_inventory|r13_final_hub|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:205:87",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        13385,
+        13393
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_final_hub",
+      "block": "r13_final_hub",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:205:87",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "함께 떠난다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 205,
+          "label": "r13_final_hub",
+          "guards": [
+            "elif r13_choice==\"escape\":",
+            "else:"
+          ]
+        }
+      ],
+      "line": 205,
+      "scene_title": "r13_final_hub",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "88583700db7abb6bd243bd4388c88f69c28c4b70381b1a89a9ccd93e9c016ea1",
+      "uid": "ac7ece89a514bddbf869c698",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_final_hub|rpy_inventory|r13_final_hub|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:205:96",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        13394,
+        13399
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_final_hub",
+      "block": "r13_final_hub",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:205:96",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "남는다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 205,
+          "label": "r13_final_hub",
+          "guards": [
+            "elif r13_choice==\"escape\":",
+            "else:"
+          ]
+        }
+      ],
+      "line": 205,
+      "scene_title": "r13_final_hub",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "43d742e26c49cf6539dbc4efd4b5ee37278d4a2321299c476012991a791cea47",
+      "uid": "33d2546a58579aee003e8a9b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_final_hub|rpy_inventory|r13_final_hub|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:210:32",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        13557,
+        13616
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_final_hub",
+      "block": "r13_final_hub",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:210:32",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "지금 모은 증거와 실제로 해 둔 준비로 움직입니다. 준비하지 않은 식량이나 도움은 없는 것으로 칩니다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 210,
+          "label": "r13_final_hub",
+          "guards": [
+            "elif r13_choice==\"finish\":"
+          ]
+        }
+      ],
+      "line": 210,
+      "scene_title": "r13_final_hub",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "1d7d57c664a45e345d9f44c4ef8586b59f1e404925f96fb1484be27e00da835d",
+      "uid": "a8be9fb2c29b82222ca94590",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_final_hub|rpy_inventory|r13_final_hub|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:210:92",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        13617,
+        13628
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_final_hub",
+      "block": "r13_final_hub",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:210:92",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "사람들과 움직인다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 210,
+          "label": "r13_final_hub",
+          "guards": [
+            "elif r13_choice==\"finish\":"
+          ]
+        }
+      ],
+      "line": 210,
+      "scene_title": "r13_final_hub",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "c498aed8a231336ecc93d7f929b5b579d05d13aa1c26298271637c8bb07d92b8",
+      "uid": "23401f4712915e32b7603fdf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_final_hub|rpy_inventory|r13_final_hub|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_week2.rpy:210:104",
+      "file": "game/room13_week2.rpy",
+      "path": [
+        13629,
+        13638
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_final_hub",
+      "block": "r13_final_hub",
+      "placement": "literal",
+      "ref": "game/room13_week2.rpy:210:104",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "더 이야기한다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/room13_week2.rpy",
+          "line": 210,
+          "label": "r13_final_hub",
+          "guards": [
+            "elif r13_choice==\"finish\":"
+          ]
+        }
+      ],
+      "line": 210,
+      "scene_title": "r13_final_hub",
+      "source_hash": "6fbc7733aebf6e1c42503b4d5f14851abe6cd9cfe29eaf574493bc66770cb07b",
+      "baseline_hash": "abfec4a71073d5bb86628104878be4acd3dcfc6ca16fbe32f9f23079a96feac6",
+      "uid": "cf3da6646be7f9d582b70535",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_final_hub|rpy_inventory|r13_final_hub|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

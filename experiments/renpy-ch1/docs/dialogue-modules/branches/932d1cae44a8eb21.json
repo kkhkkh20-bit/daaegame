@@ -1,0 +1,293 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/room13.rpy:426:35",
+      "file": "game/room13.rpy",
+      "path": [
+        22678,
+        22730
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_talk",
+      "block": "r13_talk",
+      "placement": "literal",
+      "ref": "game/room13.rpy:426:35",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "밤이는 나를 쳐다보기 전에 복도 양옆부터 경계하며 살폈다. 나는 그 행동이 마음에 걸렸다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 426,
+          "label": "r13_talk",
+          "guards": [
+            "if not r13_has(r13_encounter_key):",
+            "if r13_target not in R13_OPENING_SCENES[\"first_meetings\"] and r13_target==\"bami\" and r13_has(\"bami_pressured\"):"
+          ]
+        }
+      ],
+      "line": 426,
+      "scene_title": "r13_talk",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "05a591058771fa045dd8e9cce5e7ca178af2e312ead214d49d2df619e61b7c62",
+      "uid": "bb7929daf44e92b0680f986e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_talk|rpy_literal|r13_talk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:426:99",
+      "file": "game/room13.rpy",
+      "path": [
+        22742,
+        22790
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_talk",
+      "block": "r13_talk",
+      "placement": "literal",
+      "ref": "game/room13.rpy:426:99",
+      "when": null,
+      "speaker": "bami",
+      "kind": "dialogue",
+      "text": "누가 제가 그날 밤 처마 밑에 있었다고 말했대요. 아저씨가 제 이름을 말씀하셨어요?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 426,
+          "label": "r13_talk",
+          "guards": [
+            "if not r13_has(r13_encounter_key):",
+            "if r13_target not in R13_OPENING_SCENES[\"first_meetings\"] and r13_target==\"bami\" and r13_has(\"bami_pressured\"):"
+          ]
+        }
+      ],
+      "line": 426,
+      "scene_title": "r13_talk",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "db7b72ab211d55955f12f3fdb6c8916158be9b6ce73e0c945fab9f74df2c2171",
+      "uid": "8eb1059bc367674a9d3a8935",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_talk|rpy_literal|r13_talk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:426:158",
+      "file": "game/room13.rpy",
+      "path": [
+        22801,
+        22828
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_talk",
+      "block": "r13_talk",
+      "placement": "literal",
+      "ref": "game/room13.rpy:426:158",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "……다시는 너를 위험 속에 혼자 두지 않을게.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 426,
+          "label": "r13_talk",
+          "guards": [
+            "if not r13_has(r13_encounter_key):",
+            "if r13_target not in R13_OPENING_SCENES[\"first_meetings\"] and r13_target==\"bami\" and r13_has(\"bami_pressured\"):"
+          ]
+        }
+      ],
+      "line": 426,
+      "scene_title": "r13_talk",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "d9e8810a0fa98d0531838c939bc8b24050e175f9c13c371ca374ba35f6c0d26d",
+      "uid": "8133508d1432d4342f93a9d2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_talk|rpy_literal|r13_talk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:426:197",
+      "file": "game/room13.rpy",
+      "path": [
+        22840,
+        22857
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_talk",
+      "block": "r13_talk",
+      "placement": "literal",
+      "ref": "game/room13.rpy:426:197",
+      "when": null,
+      "speaker": "bami",
+      "kind": "dialogue",
+      "text": "말뿐인 약속은 또 하시네요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 426,
+          "label": "r13_talk",
+          "guards": [
+            "if not r13_has(r13_encounter_key):",
+            "if r13_target not in R13_OPENING_SCENES[\"first_meetings\"] and r13_target==\"bami\" and r13_has(\"bami_pressured\"):"
+          ]
+        }
+      ],
+      "line": 426,
+      "scene_title": "r13_talk",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "e508588cf8e064ce8bc647f1eaab3ff4dfb0ab01c3859e645cbf035ca95626e6",
+      "uid": "693e95036d118d08a247c62f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_talk|rpy_literal|r13_talk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:426:224",
+      "file": "game/room13.rpy",
+      "path": [
+        22867,
+        22913
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_talk",
+      "block": "r13_talk",
+      "placement": "literal",
+      "ref": "game/room13.rpy:426:224",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "밤이가 방문 쪽으로 휙 몸을 돌렸다. 내 대답은 아이의 등 뒤에 힘없이 남았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 426,
+          "label": "r13_talk",
+          "guards": [
+            "if not r13_has(r13_encounter_key):",
+            "if r13_target not in R13_OPENING_SCENES[\"first_meetings\"] and r13_target==\"bami\" and r13_has(\"bami_pressured\"):"
+          ]
+        }
+      ],
+      "line": 426,
+      "scene_title": "r13_talk",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "5843fa890b4dd4e8b783ae0bff04d288e5022c00f9d5c75cb993046f746c7fa7",
+      "uid": "24c5adcbef314e3197f5df03",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_talk|rpy_literal|r13_talk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:426:282",
+      "file": "game/room13.rpy",
+      "path": [
+        22925,
+        22979
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_talk",
+      "block": "r13_talk",
+      "placement": "literal",
+      "ref": "game/room13.rpy:426:282",
+      "when": null,
+      "speaker": "bami",
+      "kind": "dialogue",
+      "text": "아저씨가 안 계실 때 경비들을 피해 숨어야 하는 건 저예요. 이번에는 말로만 약속하지 마세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 426,
+          "label": "r13_talk",
+          "guards": [
+            "if not r13_has(r13_encounter_key):",
+            "if r13_target not in R13_OPENING_SCENES[\"first_meetings\"] and r13_target==\"bami\" and r13_has(\"bami_pressured\"):"
+          ]
+        }
+      ],
+      "line": 426,
+      "scene_title": "r13_talk",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "f018aa3b11dbd0908ff0a6718debd69cb26ce245d40892439efb0289591c0509",
+      "uid": "9b7e7f40c90285e1154b2c1f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_talk|rpy_literal|r13_talk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:428:36",
+      "file": "game/room13.rpy",
+      "path": [
+        23172,
+        23230
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_talk",
+      "block": "r13_talk",
+      "placement": "literal",
+      "ref": "game/room13.rpy:428:36",
+      "when": null,
+      "speaker": "buri",
+      "kind": "dialogue",
+      "text": "물건 수리하러 오신 거 아니죠. 돌아가신 할아버지 이야기를 꺼내실 거면 용건부터 먼저 말씀해 주세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 428,
+          "label": "r13_talk",
+          "guards": [
+            "if not r13_has(r13_encounter_key):",
+            "elif r13_target not in R13_OPENING_SCENES[\"first_meetings\"] and r13_target==\"buri\" and room13[\"victim_state\"]==\"dead\":"
+          ]
+        }
+      ],
+      "line": 428,
+      "scene_title": "r13_talk",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "2f275dfda6783dd869d2b8f6ce52f5858eab30c1401ba9645d72974ddd12340e",
+      "uid": "e751b5d92da54d52883b0293",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_talk|rpy_literal|r13_talk|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

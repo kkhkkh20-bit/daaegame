@@ -1,0 +1,88 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/winter_events.rpy:29:12",
+      "file": "game/winter_events.rpy",
+      "path": [
+        1513,
+        1533
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "winter_timed_cart",
+      "block": "winter_timed_cart",
+      "placement": "literal",
+      "ref": "game/winter_events.rpy:29:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "가까이 나가 어디로 가는지 묻는다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/winter_events.rpy",
+          "line": 29,
+          "label": "winter_timed_cart",
+          "guards": [
+            "if winter_cart_available(winter):",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 29,
+      "scene_title": "winter_timed_cart",
+      "source_hash": "c243df8d1e60cf0363929033d609f45d8b16e19ec39edab44c858674085e0fd6",
+      "baseline_hash": "a3b7c92f60223c73c734461f13487fd9d4105dce9a5a302f394a24395856f51e",
+      "uid": "8a67882390b7e1b2b3e29b9b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_timed_cart|rpy_menu|winter_timed_cart|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_events.rpy:32:12",
+      "file": "game/winter_events.rpy",
+      "path": [
+        1813,
+        1838
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "winter_timed_cart",
+      "block": "winter_timed_cart",
+      "placement": "literal",
+      "ref": "game/winter_events.rpy:32:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "몸을 숨기고 수레가 지나간 자리를 확인한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/winter_events.rpy",
+          "line": 32,
+          "label": "winter_timed_cart",
+          "guards": [
+            "if winter_cart_available(winter):",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 32,
+      "scene_title": "winter_timed_cart",
+      "source_hash": "c243df8d1e60cf0363929033d609f45d8b16e19ec39edab44c858674085e0fd6",
+      "baseline_hash": "53e0d586c9d997bfb6a26d0732f611b0459132e1c49def3135ba574813648207",
+      "uid": "095fef97b7d5a38203c21641",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_timed_cart|rpy_menu|winter_timed_cart|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

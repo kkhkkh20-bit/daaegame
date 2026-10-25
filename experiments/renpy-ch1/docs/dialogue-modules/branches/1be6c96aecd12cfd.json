@@ -1,7 +1,463 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:253:26",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        14819,
+        14860
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_long_night",
+      "block": "r13_ws_long_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:253:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "해가 지자마자 추위가 내려앉았다. 광장 등이 하나, 또 하나 흐려졌다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 253,
+          "label": "r13_ws_long_night",
+          "guards": []
+        }
+      ],
+      "line": 253,
+      "scene_title": "r13_ws_long_night",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "a5d0fc9490e733ddc7fa04fd67e274213b0263c7ba1463d510f5015a0b42b786",
+      "uid": "694d6ff7deb7365f38d7bcbb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_long_night|rpy_literal|r13_ws_long_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:254:14",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        14877,
+        14921
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_long_night",
+      "block": "r13_ws_long_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:254:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "불 꺼진 집에서 사람들이 담요를 둘러쓰고 나왔다. 모두 학교 쪽으로 걸었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 254,
+          "label": "r13_ws_long_night",
+          "guards": []
+        }
+      ],
+      "line": 254,
+      "scene_title": "r13_ws_long_night",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "1ba04f1987453d5de3ecb47acbd4a7faea93196685e18d67f8c33c1e16eb05ad",
+      "uid": "2d3ee1d0b9d7cc4e2dfbb2c9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_long_night|rpy_literal|r13_ws_long_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:255:17",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        14941,
+        14966
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_long_night",
+      "block": "r13_ws_long_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:255:17",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "줄 서시오! 명단에 있는 사람만 들어가오!",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 255,
+          "label": "r13_ws_long_night",
+          "guards": []
+        }
+      ],
+      "line": 255,
+      "scene_title": "r13_ws_long_night",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "a31f7e349376ed306abebbb080984e9c7dae6128f4cd61948cfe259af0e494cb",
+      "uid": "320e2d8acfafa010604122c9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_long_night|rpy_literal|r13_ws_long_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:257:21",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        15125,
+        15155
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_long_night",
+      "block": "r13_ws_long_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:257:21",
+      "when": null,
+      "speaker": "kid_saemi",
+      "kind": "dialogue",
+      "text": "우리 집 불이 꺼졌어요. 엄마는 옆 교실에 있어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 257,
+          "label": "r13_ws_long_night",
+          "guards": []
+        }
+      ],
+      "line": 257,
+      "scene_title": "r13_ws_long_night",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "ca531f4a2cee6ddee87df23b9f6bd620deb5cd72faa2a786c58a79a20f9fd975",
+      "uid": "942f0debd2ef3eba37824599",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_long_night|rpy_literal|r13_ws_long_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:258:28",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        15186,
+        15208
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_long_night",
+      "block": "r13_ws_long_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:258:28",
+      "when": null,
+      "speaker": "resident_teacher",
+      "kind": "dialogue",
+      "text": "그럼 오늘부터 새미도 우리 반이에요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 258,
+          "label": "r13_ws_long_night",
+          "guards": []
+        }
+      ],
+      "line": 258,
+      "scene_title": "r13_ws_long_night",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "c722c21a6a600fce2b3163e69fad435e2a4b56500740fb6d44d737e1f3e1631d",
+      "uid": "0e46effa2cc18c911c9c8917",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_long_night|rpy_literal|r13_ws_long_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:259:14",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        15225,
+        15283
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_long_night",
+      "block": "r13_ws_long_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:259:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "복도 게시판에 너울의 대피 명단. 깜이, 몽이, 방울. 세 이름에 줄이 그어져 있다. 옆에 '수레'.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 259,
+          "label": "r13_ws_long_night",
+          "guards": []
+        }
+      ],
+      "line": 259,
+      "scene_title": "r13_ws_long_night",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "c2aeb10f7a02012316d524ed3fbaf40446f706cd32791339b74ca1c2d606f124",
+      "uid": "d8ba5d3f690e1813cc69e3e6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_long_night|rpy_literal|r13_ws_long_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:260:14",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        15300,
+        15339
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_long_night",
+      "block": "r13_ws_long_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:260:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "그 앞에 사자 선생님이 서 있었다. 손에 든 분필이 부러져 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 260,
+          "label": "r13_ws_long_night",
+          "guards": []
+        }
+      ],
+      "line": 260,
+      "scene_title": "r13_ws_long_night",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "ab7ed5301d20a36af8daa9d235ee2f02dadda979ba96c15eec8dc4c2d89f2376",
+      "uid": "290875da550f8d9c65a9c224",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_long_night|rpy_literal|r13_ws_long_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:261:28",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        15370,
+        15429
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_long_night",
+      "block": "r13_ws_long_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:261:28",
+      "when": null,
+      "speaker": "resident_teacher",
+      "kind": "dialogue",
+      "text": "……표가 없으면 이름도 없는 거라더군요. 보호소에 간 사람이 돌아오는 걸, 저는 한 번도 못 봤습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 261,
+          "label": "r13_ws_long_night",
+          "guards": []
+        }
+      ],
+      "line": 261,
+      "scene_title": "r13_ws_long_night",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "072d39646cc72d38fb521d98658dc0cfa59cea01c59d583414fbe209713734aa",
+      "uid": "1b7dd58c0a50be32db66db53",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_long_night|rpy_literal|r13_ws_long_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:273:26",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        15943,
+        15969
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_long_night",
+      "block": "r13_ws_long_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:273:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "눈이 그쳐 있었다. 아랫길은 소리가 없었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 273,
+          "label": "r13_ws_long_night",
+          "guards": []
+        }
+      ],
+      "line": 273,
+      "scene_title": "r13_ws_long_night",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "0062a5b3b20184ddf62fd2bd865f4e2511f0cf8037dc499250f810e5547faa8a",
+      "uid": "8cd2f902d8ada4013747cf2f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_long_night|rpy_literal|r13_ws_long_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:274:14",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        15986,
+        16035
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_long_night",
+      "block": "r13_ws_long_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:274:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "천막 안. 사람들이 서로 어깨를 기댄 채 앉아 있었다. 담요 하나를 셋이 나눠 덮고.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 274,
+          "label": "r13_ws_long_night",
+          "guards": []
+        }
+      ],
+      "line": 274,
+      "scene_title": "r13_ws_long_night",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "de5f560414878ab1902fdae92fcd87c0305fcddabd3244a8384b0089f6ebf088",
+      "uid": "9e22256627d2a368ab2116a7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_long_night|rpy_literal|r13_ws_long_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:275:14",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        16052,
+        16092
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_long_night",
+      "block": "r13_ws_long_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:275:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "모두 같은 쪽을 보고 있었다. 천막 벽 너머, 광장의 돌이 있는 쪽.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 275,
+          "label": "r13_ws_long_night",
+          "guards": []
+        }
+      ],
+      "line": 275,
+      "scene_title": "r13_ws_long_night",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "757c7278048f0c4fc93cafd5f522c0fa3c2c0bbf0288f7f41891b370214daf36",
+      "uid": "ddc81c4dfdd9ebd68caed43c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_long_night|rpy_literal|r13_ws_long_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:276:14",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        16109,
+        16113
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_long_night",
+      "block": "r13_ws_long_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:276:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "……",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 276,
+          "label": "r13_ws_long_night",
+          "guards": []
+        }
+      ],
+      "line": 276,
+      "scene_title": "r13_ws_long_night",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "a7f878b8ced1a7957c560d573e30ddbbc1696e38c370513aacbbf4bff12e7f43",
+      "uid": "5da40e99cc6841d3427e4890",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_long_night|rpy_literal|r13_ws_long_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_ep5_soup.rpy:278:30",
       "file": "game/systems/room13_ep5_soup.rpy",
@@ -43,6 +499,46 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
+      "id": "game/systems/room13_ep5_soup.rpy:279:29",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        16401,
+        16429
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_long_night",
+      "block": "r13_ws_long_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:279:29",
+      "when": null,
+      "speaker": "resident_nero",
+      "kind": "dialogue",
+      "text": "……내가 다 못 데려왔다. 이름이라도 데려가라.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 279,
+          "label": "r13_ws_long_night",
+          "guards": [
+            "if _ws_dead<=2:"
+          ]
+        }
+      ],
+      "line": 279,
+      "scene_title": "r13_ws_long_night",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "df214b1077ef7e1fe710c2a49ea1068db9adeee53cd8aad8bfa94fd586559d6c",
+      "uid": "8720e9bb1450797ca5174169",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_long_night|rpy_literal|r13_ws_long_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
       "id": "game/systems/room13_ep5_soup.rpy:282:30",
       "file": "game/systems/room13_ep5_soup.rpy",
       "path": [
@@ -77,6 +573,84 @@
       "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
       "baseline_hash": "c9d4f9916a08e4524e3142f522b6cf99d6d4ae164f3cc2c432c65745baecbbc4",
       "uid": "c4f415b3889404626dd85c1f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_long_night|rpy_literal|r13_ws_long_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:283:19",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        16602,
+        16621
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_long_night",
+      "block": "r13_ws_long_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:283:19",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(이름은 잃어버리면 안 된다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 283,
+          "label": "r13_ws_long_night",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 283,
+      "scene_title": "r13_ws_long_night",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "28da6292d26e31691eb8973a66feefd33e666b14dfce1b515761495713810b3e",
+      "uid": "7352a307f4a4d393cc38db50",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_long_night|rpy_literal|r13_ws_long_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:287:26",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        16833,
+        16865
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_long_night",
+      "block": "r13_ws_long_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:287:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "광장의 이름 판. 오늘 아침, 이름이 한꺼번에 늘었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 287,
+          "label": "r13_ws_long_night",
+          "guards": []
+        }
+      ],
+      "line": 287,
+      "scene_title": "r13_ws_long_night",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "3f5f346816ebccabde776a9737a414614dc5f51762de6c5a0671c7acf9769d4f",
+      "uid": "733b7a0a86fbf8d6861e7d71",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_ws_long_night|rpy_literal|r13_ws_long_night|행 조건 없음",

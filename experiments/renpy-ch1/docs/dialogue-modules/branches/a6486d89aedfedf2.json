@@ -1,0 +1,580 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events2.rpy:297:34",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        16160,
+        16195
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_siluk_advance_events",
+      "block": "r13_siluk_advance_events",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:297:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "해가 졌지만, 실룩이 가져오기로 한 짐은 아직 받지 못했다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 297,
+          "label": "r13_siluk_advance_events",
+          "guards": [
+            "if _siluk_notice:",
+            "if _siluk_notice==\"sunset\":"
+          ]
+        }
+      ],
+      "line": 297,
+      "scene_title": "r13_siluk_advance_events",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "452a3687eb68711318c1e9acab658729d02238fdc57e5780c0628f8cbdafa2d4",
+      "uid": "7ba03de8fbbcfe89647f0648",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_siluk_advance_events|rpy_literal|r13_siluk_advance_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:299:34",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        16291,
+        16332
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_siluk_advance_events",
+      "block": "r13_siluk_advance_events",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:299:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "실룩이 짐을 가져오겠다고 약속한 날이 지났다. 아직 짐은 받지 못했다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 299,
+          "label": "r13_siluk_advance_events",
+          "guards": [
+            "if _siluk_notice:",
+            "elif _siluk_notice==\"late\":"
+          ]
+        }
+      ],
+      "line": 299,
+      "scene_title": "r13_siluk_advance_events",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "c475c41bd2a0faa7a92d408ec921aefd2f90f093e28a13aef6bd9c912884b990",
+      "uid": "2f06349057fe8a58be7eb7c2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_siluk_advance_events|rpy_literal|r13_siluk_advance_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:301:34",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        16430,
+        16459
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_siluk_advance_events",
+      "block": "r13_siluk_advance_events",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:301:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "날이 바뀌어도 실룩에게 부탁한 짐은 오지 않았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 301,
+          "label": "r13_siluk_advance_events",
+          "guards": [
+            "if _siluk_notice:",
+            "elif _siluk_notice==\"next_day\":"
+          ]
+        }
+      ],
+      "line": 301,
+      "scene_title": "r13_siluk_advance_events",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "970d57578b2804798f98917725f29b919b6d43b331f76f246813379bb3c64141",
+      "uid": "b8153cfe53855ce375e88d0c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_siluk_advance_events|rpy_literal|r13_siluk_advance_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:303:35",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        16536,
+        16575
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_siluk_advance_events",
+      "block": "r13_siluk_advance_events",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:303:35",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(실룩에게 선금을 준 일은 기억난다. 부탁한 짐부터 확인해야겠다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 303,
+          "label": "r13_siluk_advance_events",
+          "guards": [
+            "if _siluk_notice:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 303,
+      "scene_title": "r13_siluk_advance_events",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "a41af9c86434177acecb7bccfadbb29919699aef6b4aa052d4b58363b64ea28e",
+      "uid": "adfc4e43980701990d4165d7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_siluk_advance_events|rpy_literal|r13_siluk_advance_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:308:35",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        16841,
+        16880
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_siluk_advance_events",
+      "block": "r13_siluk_advance_events",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:308:35",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "콩이야, 실룩 아저씨 봤니? 맡긴 짐을 아직 못 받아서 찾고 있어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 308,
+          "label": "r13_siluk_advance_events",
+          "guards": [
+            "if r13_siluk_witness_ready():",
+            "if room13[\"day\"]==r13_siluk_advance_record()[\"payment_day\"]+1:"
+          ]
+        }
+      ],
+      "line": 308,
+      "scene_title": "r13_siluk_advance_events",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "00c95c767eabd3abe4522822c614a42839696377ad06ceac48d8c800aa73a614",
+      "uid": "6ac9e1703bbc38f28e057e98",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_siluk_advance_events|rpy_literal|r13_siluk_advance_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:309:34",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        16917,
+        16944
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_siluk_advance_events",
+      "block": "r13_siluk_advance_events",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:309:34",
+      "when": null,
+      "speaker": "resident_kongi",
+      "kind": "dialogue",
+      "text": "어제 백 부인네 뒷문으로 들어가는 걸 봤어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 309,
+          "label": "r13_siluk_advance_events",
+          "guards": [
+            "if r13_siluk_witness_ready():",
+            "if room13[\"day\"]==r13_siluk_advance_record()[\"payment_day\"]+1:"
+          ]
+        }
+      ],
+      "line": 309,
+      "scene_title": "r13_siluk_advance_events",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "05a98608496832735e7b1760da3f0e620c4f84eead7aa2e41b16ee03b98c37ce",
+      "uid": "031ccaad4064b216b5cb658b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_siluk_advance_events|rpy_literal|r13_siluk_advance_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:310:23",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        16970,
+        16986
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_siluk_advance_events",
+      "block": "r13_siluk_advance_events",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:310:23",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "안에서 뭘 했는지도 봤니?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 310,
+          "label": "r13_siluk_advance_events",
+          "guards": [
+            "if r13_siluk_witness_ready():",
+            "if room13[\"day\"]==r13_siluk_advance_record()[\"payment_day\"]+1:"
+          ]
+        }
+      ],
+      "line": 310,
+      "scene_title": "r13_siluk_advance_events",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "6080100b551fe21da780d77c26813fe0c675151a3c65f9d4d3d257c5e6a0b2fa",
+      "uid": "f09723aaaea38f6bb65ac44d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_siluk_advance_events|rpy_literal|r13_siluk_advance_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:311:34",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        17023,
+        17041
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_siluk_advance_events",
+      "block": "r13_siluk_advance_events",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:311:34",
+      "when": null,
+      "speaker": "resident_kongi",
+      "kind": "dialogue",
+      "text": "아뇨. 들어가는 것만 봤어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 311,
+          "label": "r13_siluk_advance_events",
+          "guards": [
+            "if r13_siluk_witness_ready():",
+            "if room13[\"day\"]==r13_siluk_advance_record()[\"payment_day\"]+1:"
+          ]
+        }
+      ],
+      "line": 311,
+      "scene_title": "r13_siluk_advance_events",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "fd089cfcba6d5830fb6d5e080fdea369d60a12b309e5b0d8b51c83ea9ae029af",
+      "uid": "6ff2ec9723c2d39e5ae681a2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_siluk_advance_events|rpy_literal|r13_siluk_advance_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:312:23",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        17067,
+        17079
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_siluk_advance_events",
+      "block": "r13_siluk_advance_events",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:312:23",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "그랬구나. 고마워.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 312,
+          "label": "r13_siluk_advance_events",
+          "guards": [
+            "if r13_siluk_witness_ready():",
+            "if room13[\"day\"]==r13_siluk_advance_record()[\"payment_day\"]+1:"
+          ]
+        }
+      ],
+      "line": 312,
+      "scene_title": "r13_siluk_advance_events",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "c3cdb662b9e717120880c851daeae4bb379b0a5ce600bf0f598892979c37d853",
+      "uid": "0b344c7524499fdc14612e7f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_siluk_advance_events|rpy_literal|r13_siluk_advance_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:314:35",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        17156,
+        17195
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_siluk_advance_events",
+      "block": "r13_siluk_advance_events",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:314:35",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "콩이야, 실룩 아저씨 봤니? 맡긴 짐을 아직 못 받아서 찾고 있어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 314,
+          "label": "r13_siluk_advance_events",
+          "guards": [
+            "if r13_siluk_witness_ready():",
+            "else:"
+          ]
+        }
+      ],
+      "line": 314,
+      "scene_title": "r13_siluk_advance_events",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "00c95c767eabd3abe4522822c614a42839696377ad06ceac48d8c800aa73a614",
+      "uid": "cf817fb0f54bb09693049352",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_siluk_advance_events|rpy_literal|r13_siluk_advance_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:315:34",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        17232,
+        17262
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_siluk_advance_events",
+      "block": "r13_siluk_advance_events",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:315:34",
+      "when": null,
+      "speaker": "resident_kongi",
+      "kind": "dialogue",
+      "text": "며칠 전에 백 부인네 뒷문으로 들어가는 걸 봤어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 315,
+          "label": "r13_siluk_advance_events",
+          "guards": [
+            "if r13_siluk_witness_ready():",
+            "else:"
+          ]
+        }
+      ],
+      "line": 315,
+      "scene_title": "r13_siluk_advance_events",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "ad8ea6159dfc4dd9ce41cf93532b18d67dd10579bf5e86422fa21e2e6a94b726",
+      "uid": "aa4a2aa4fbf4c7fd9e4ff321",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_siluk_advance_events|rpy_literal|r13_siluk_advance_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:316:23",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        17288,
+        17304
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_siluk_advance_events",
+      "block": "r13_siluk_advance_events",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:316:23",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "안에서 뭘 했는지도 봤니?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 316,
+          "label": "r13_siluk_advance_events",
+          "guards": [
+            "if r13_siluk_witness_ready():",
+            "else:"
+          ]
+        }
+      ],
+      "line": 316,
+      "scene_title": "r13_siluk_advance_events",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "6080100b551fe21da780d77c26813fe0c675151a3c65f9d4d3d257c5e6a0b2fa",
+      "uid": "650dd02f330ba089dc12cdd2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_siluk_advance_events|rpy_literal|r13_siluk_advance_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:317:34",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        17341,
+        17359
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_siluk_advance_events",
+      "block": "r13_siluk_advance_events",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:317:34",
+      "when": null,
+      "speaker": "resident_kongi",
+      "kind": "dialogue",
+      "text": "아뇨. 들어가는 것만 봤어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 317,
+          "label": "r13_siluk_advance_events",
+          "guards": [
+            "if r13_siluk_witness_ready():",
+            "else:"
+          ]
+        }
+      ],
+      "line": 317,
+      "scene_title": "r13_siluk_advance_events",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "fd089cfcba6d5830fb6d5e080fdea369d60a12b309e5b0d8b51c83ea9ae029af",
+      "uid": "f9be04abb151c2c0d2db5f52",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_siluk_advance_events|rpy_literal|r13_siluk_advance_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events2.rpy:318:23",
+      "file": "game/systems/room13_town_events2.rpy",
+      "path": [
+        17385,
+        17397
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_siluk_advance_events",
+      "block": "r13_siluk_advance_events",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events2.rpy:318:23",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "그랬구나. 고마워.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events2.rpy",
+          "line": 318,
+          "label": "r13_siluk_advance_events",
+          "guards": [
+            "if r13_siluk_witness_ready():",
+            "else:"
+          ]
+        }
+      ],
+      "line": 318,
+      "scene_title": "r13_siluk_advance_events",
+      "source_hash": "bcab2e86471a4dd289aa7bf67d74d2c96786a72a67a66ba03e9beef0d1e22227",
+      "baseline_hash": "c3cdb662b9e717120880c851daeae4bb379b0a5ce600bf0f598892979c37d853",
+      "uid": "d12a302636413c95be904cfd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_siluk_advance_events|rpy_literal|r13_siluk_advance_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

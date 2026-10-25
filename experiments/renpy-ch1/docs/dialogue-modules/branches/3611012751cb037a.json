@@ -1,0 +1,46 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_week2_events.rpy:143:27",
+      "file": "game/systems/room13_week2_events.rpy",
+      "path": [
+        7780,
+        7789
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_w2e_tools",
+      "block": "r13_w2e_tools",
+      "placement": "literal",
+      "ref": "game/systems/room13_week2_events.rpy:143:27",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "부리의 공구함",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week2_events.rpy",
+          "line": 143,
+          "label": "r13_w2e_tools",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 143,
+      "scene_title": "r13_w2e_tools",
+      "source_hash": "bd106ab951275b7b2a06d9b6705a142790d202b883e7f2e6d4f37241b21c87c0",
+      "baseline_hash": "62a84dc5f1b97272fcb3b3f53be56b8b213760c3bb0d7d0b4334d8dcf30a32a0",
+      "uid": "11147a8e19203eff01393f0b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w2e_tools|rpy_inventory|r13_w2e_tools|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

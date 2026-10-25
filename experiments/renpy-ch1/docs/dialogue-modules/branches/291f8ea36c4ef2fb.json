@@ -1,0 +1,206 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_carryover.rpy:60:61",
+      "file": "game/systems/room13_carryover.rpy",
+      "path": [
+        3893,
+        3950
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_carryover_events",
+      "block": "r13_carryover_events",
+      "placement": "literal",
+      "ref": "game/systems/room13_carryover.rpy:60:61",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "수레를 끌어 달라고요? 배급대 앞에서 다들 구경만 했죠. 그러니 이번엔 저도 우리 집부터 챙길래요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_carryover.rpy",
+          "line": 60,
+          "label": "r13_carryover_events",
+          "guards": [
+            "if (r13_has(\"bori_hostile\") or r13_has(\"bori_punished\")) and not (r13_has(\"bori_ally\") or r13_has(\"bori_cleared\")):"
+          ]
+        }
+      ],
+      "line": 60,
+      "scene_title": "r13_carryover_events",
+      "source_hash": "f10306dfce96df81431a8d3c357b4d31023a0ef3afd42beef4d1a8184ca40d9d",
+      "baseline_hash": "07578f2a1ed86f69f3e978f322bc602814920584261f5f4e28675c9ac9ba111f",
+      "uid": "5b3fe095bf64be76d7bcd5be",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_carryover_events|rpy_inventory|r13_carryover_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_carryover.rpy:62:63",
+      "file": "game/systems/room13_carryover.rpy",
+      "path": [
+        4144,
+        4205
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_carryover_events",
+      "block": "r13_carryover_events",
+      "placement": "literal",
+      "ref": "game/systems/room13_carryover.rpy:62:63",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "저울 일에 반값 받고 입 다문 분이 이제 와서 나눠 달라는 거요? 장부에 적을 이름만 하나 더 늘 뿐이오.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_carryover.rpy",
+          "line": 62,
+          "label": "r13_carryover_events",
+          "guards": [
+            "if r13_has(\"eunho_blackmailed\") and not r13_has(\"supply_terms\") and not any(\"supply_terms\" in fl for fl,l in _carry):"
+          ]
+        }
+      ],
+      "line": 62,
+      "scene_title": "r13_carryover_events",
+      "source_hash": "f10306dfce96df81431a8d3c357b4d31023a0ef3afd42beef4d1a8184ca40d9d",
+      "baseline_hash": "64e7ea1b272484aae40d2ebb38dda7f4ed53ab9ccae1480f7f109d20286fa3cb",
+      "uid": "e307346d0c204088473ffb8e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_carryover_events|rpy_inventory|r13_carryover_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_carryover.rpy:64:66",
+      "file": "game/systems/room13_carryover.rpy",
+      "path": [
+        4377,
+        4428
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_carryover_events",
+      "block": "r13_carryover_events",
+      "placement": "literal",
+      "ref": "game/systems/room13_carryover.rpy:64:66",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "좋은 이야기도, 나쁜 이야기도 들었어요. 어느 쪽이 맞는지는 제가 직접 본 적이 없어요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_carryover.rpy",
+          "line": 64,
+          "label": "r13_carryover_events",
+          "guards": [
+            "if len(r13_bad_rumors())>=2 and not any(f==\"shelter_agreed\" for fl,l in _carry for f in fl):"
+          ]
+        }
+      ],
+      "line": 64,
+      "scene_title": "r13_carryover_events",
+      "source_hash": "f10306dfce96df81431a8d3c357b4d31023a0ef3afd42beef4d1a8184ca40d9d",
+      "baseline_hash": "b0a53870631611880187f20dd8273fcc3000fb80045262e5a205b088e20ba30f",
+      "uid": "ea8c9952e3db1847d9cd5364",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_carryover_events|rpy_inventory|r13_carryover_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_carryover.rpy:64:139",
+      "file": "game/systems/room13_carryover.rpy",
+      "path": [
+        4450,
+        4489
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_carryover_events",
+      "block": "r13_carryover_events",
+      "placement": "literal",
+      "ref": "game/systems/room13_carryover.rpy:64:139",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "아이들이 있는 교실이니, 손님을 아는 분이 보증해 주시면 좋겠어요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_carryover.rpy",
+          "line": 64,
+          "label": "r13_carryover_events",
+          "guards": [
+            "if len(r13_bad_rumors())>=2 and not any(f==\"shelter_agreed\" for fl,l in _carry for f in fl):"
+          ]
+        }
+      ],
+      "line": 64,
+      "scene_title": "r13_carryover_events",
+      "source_hash": "f10306dfce96df81431a8d3c357b4d31023a0ef3afd42beef4d1a8184ca40d9d",
+      "baseline_hash": "00aedebf84cc0fe52970781db0911bb913233ccc8dc7e8ac7e66aa13ec4f85bf",
+      "uid": "22ad3ed432bec4e8c96de72e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_carryover_events|rpy_inventory|r13_carryover_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_carryover.rpy:64:232",
+      "file": "game/systems/room13_carryover.rpy",
+      "path": [
+        4543,
+        4594
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_carryover_events",
+      "block": "r13_carryover_events",
+      "placement": "literal",
+      "ref": "game/systems/room13_carryover.rpy:64:232",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "그 소문들, 저도 들었어요. 그래서 아이들이 있는 교실에 누구를 들일지는 조심해야 해요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_carryover.rpy",
+          "line": 64,
+          "label": "r13_carryover_events",
+          "guards": [
+            "if len(r13_bad_rumors())>=2 and not any(f==\"shelter_agreed\" for fl,l in _carry for f in fl):"
+          ]
+        }
+      ],
+      "line": 64,
+      "scene_title": "r13_carryover_events",
+      "source_hash": "f10306dfce96df81431a8d3c357b4d31023a0ef3afd42beef4d1a8184ca40d9d",
+      "baseline_hash": "be456c3894e0be7bb5a26da705f85a57a84258da63a48056717547f167f7293d",
+      "uid": "60a3773f149e129999e38a52",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_carryover_events|rpy_inventory|r13_carryover_events|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

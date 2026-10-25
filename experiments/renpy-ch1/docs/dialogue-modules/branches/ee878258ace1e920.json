@@ -1,7 +1,252 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:259:36",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        15433,
+        15467
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_nabi_shelter",
+      "block": "r13_ep1_nabi_shelter",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:259:36",
+      "when": null,
+      "speaker": "nabi",
+      "kind": "dialogue",
+      "text": "그림쟁이 아주머니를 여기서요? 할머니가 아시면 큰일 나요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 259,
+          "label": "r13_ep1_nabi_shelter",
+          "guards": [
+            "if r13_has(\"nabi_helped\") or r13_has(\"lt_piko_promise\"):",
+            "if r13_has(\"nabi_helped\"):"
+          ]
+        }
+      ],
+      "line": 259,
+      "scene_title": "r13_ep1_nabi_shelter",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "88dbb96283b18be7058eae247c820b788c700d8744e77adcbf165ae5ff546d81",
+      "uid": "ba413626ac4b45b248b48846",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_nabi_shelter|rpy_literal|r13_ep1_nabi_shelter|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:260:24",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        15494,
+        15554
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_nabi_shelter",
+      "block": "r13_ep1_nabi_shelter",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:260:24",
+      "when": null,
+      "speaker": "nabi",
+      "kind": "dialogue",
+      "text": "……손님은 제 일 도와주셨으니까요. 식당 의자라도 괜찮다면요. 불 꺼진 뒤에만, 새벽엔 꼭 나가야 해요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 260,
+          "label": "r13_ep1_nabi_shelter",
+          "guards": [
+            "if r13_has(\"nabi_helped\") or r13_has(\"lt_piko_promise\"):",
+            "if r13_has(\"nabi_helped\"):"
+          ]
+        }
+      ],
+      "line": 260,
+      "scene_title": "r13_ep1_nabi_shelter",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "cbb02fc59b8f55d2591a826dff1cb5708d47df486776e8264af5d6a9a4bbfbc9",
+      "uid": "a5fcb3cdffab3212c232d008",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_nabi_shelter|rpy_literal|r13_ep1_nabi_shelter|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:262:36",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        15629,
+        15663
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_nabi_shelter",
+      "block": "r13_ep1_nabi_shelter",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:262:36",
+      "when": null,
+      "speaker": "nabi",
+      "kind": "dialogue",
+      "text": "그림쟁이 아주머니를 여기서요? 할머니가 아시면 큰일 나요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 262,
+          "label": "r13_ep1_nabi_shelter",
+          "guards": [
+            "if r13_has(\"nabi_helped\") or r13_has(\"lt_piko_promise\"):",
+            "else:"
+          ]
+        }
+      ],
+      "line": 262,
+      "scene_title": "r13_ep1_nabi_shelter",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "88dbb96283b18be7058eae247c820b788c700d8744e77adcbf165ae5ff546d81",
+      "uid": "53a157ab436beba240662b9d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_nabi_shelter|rpy_literal|r13_ep1_nabi_shelter|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:263:23",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        15689,
+        15733
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_nabi_shelter",
+      "block": "r13_ep1_nabi_shelter",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:263:23",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "그 사람이 내 아내를 그려 주고 있어. 아내를 찾는 데 꼭 필요한 그림이야.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 263,
+          "label": "r13_ep1_nabi_shelter",
+          "guards": [
+            "if r13_has(\"nabi_helped\") or r13_has(\"lt_piko_promise\"):",
+            "else:"
+          ]
+        }
+      ],
+      "line": 263,
+      "scene_title": "r13_ep1_nabi_shelter",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "cc571b54621dadcf97d40211e99731c90fa231f66c9e3a497d6f1f0e33b8ee01",
+      "uid": "2670afc218d7e449256b32d5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_nabi_shelter|rpy_literal|r13_ep1_nabi_shelter|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:264:24",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        15760,
+        15783
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_nabi_shelter",
+      "block": "r13_ep1_nabi_shelter",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:264:24",
+      "when": null,
+      "speaker": "nabi",
+      "kind": "dialogue",
+      "text": "……손님 부인을요? 오늘 하루만이에요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 264,
+          "label": "r13_ep1_nabi_shelter",
+          "guards": [
+            "if r13_has(\"nabi_helped\") or r13_has(\"lt_piko_promise\"):",
+            "else:"
+          ]
+        }
+      ],
+      "line": 264,
+      "scene_title": "r13_ep1_nabi_shelter",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "b85455fc9d282291e09ec92badf2be8d675859a21fdf629c513e892078980a0f",
+      "uid": "666bc4cab8c41d2882f63542",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_nabi_shelter|rpy_literal|r13_ep1_nabi_shelter|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:268:32",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        15910,
+        15944
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_nabi_shelter",
+      "block": "r13_ep1_nabi_shelter",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:268:32",
+      "when": null,
+      "speaker": "nabi",
+      "kind": "dialogue",
+      "text": "그림쟁이 아주머니를 여기서요? 할머니가 아시면 큰일 나요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 268,
+          "label": "r13_ep1_nabi_shelter",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 268,
+      "scene_title": "r13_ep1_nabi_shelter",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "88dbb96283b18be7058eae247c820b788c700d8744e77adcbf165ae5ff546d81",
+      "uid": "b5cae1164b08c87f242ce396",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_nabi_shelter|rpy_literal|r13_ep1_nabi_shelter|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_ep1_lamp_thief.rpy:269:20",
       "file": "game/systems/room13_ep1_lamp_thief.rpy",

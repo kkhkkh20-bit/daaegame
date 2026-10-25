@@ -1,0 +1,126 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_bundle3.rpy:247:8",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        14753,
+        14763
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_b3_buy_pages",
+      "block": "r13_b3_buy_pages",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:247:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "열두 냥에 산다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 247,
+          "label": "r13_b3_buy_pages",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 247,
+      "scene_title": "r13_b3_buy_pages",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "74e7cbcfee4b5df5002199cdf83029bd1a076e195780b63c263a5db686e52edb",
+      "uid": "7bc907953452128cf0fafb9e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_buy_pages|rpy_menu|r13_b3_buy_pages|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:254:8",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        15178,
+        15198
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_b3_buy_pages",
+      "block": "r13_b3_buy_pages",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:254:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "사서 선생님이 베낀 사본을 묻는다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 254,
+          "label": "r13_b3_buy_pages",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 254,
+      "scene_title": "r13_b3_buy_pages",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "15df82b759d7467df0b457fc1cf79a0de6eff8184daf11ba0617bf05b70182b0",
+      "uid": "2dbb9bf1a41c8e4731573e83",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_buy_pages|rpy_menu|r13_b3_buy_pages|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:257:8",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        15392,
+        15400
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_b3_buy_pages",
+      "block": "r13_b3_buy_pages",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:257:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "다음에 산다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 257,
+          "label": "r13_b3_buy_pages",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 257,
+      "scene_title": "r13_b3_buy_pages",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "60e800f820eadc8c37ade0f1482a18d2f2dbf5d740dcefbf7b622a089beb4e35",
+      "uid": "afab88ece0417cec0a139a9f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_buy_pages|rpy_menu|r13_b3_buy_pages|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

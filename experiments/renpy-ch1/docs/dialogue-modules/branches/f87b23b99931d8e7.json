@@ -1,7 +1,391 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/room13.rpy:547:28",
+      "file": "game/room13.rpy",
+      "path": [
+        29973,
+        30002
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_first_night",
+      "block": "r13_first_night",
+      "placement": "literal",
+      "ref": "game/room13.rpy:547:28",
+      "when": null,
+      "speaker": "nabi",
+      "kind": "dialogue",
+      "text": "탐정님, 그릇이 뜨거워요. 밑받침을 잡고 드세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 547,
+          "label": "r13_first_night",
+          "guards": []
+        }
+      ],
+      "line": 547,
+      "scene_title": "r13_first_night",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "5a47a5e6d85a876dc722956009adb3d513a376521633cdaae2f3594d6cfcfd61",
+      "uid": "f6329c2247edb06423fd7646",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_first_night|rpy_literal|r13_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:547:68",
+      "file": "game/room13.rpy",
+      "path": [
+        30013,
+        30032
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_first_night",
+      "block": "r13_first_night",
+      "placement": "literal",
+      "ref": "game/room13.rpy:547:68",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "아빠 밥그릇은 제가 가져갈게요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 547,
+          "label": "r13_first_night",
+          "guards": []
+        }
+      ],
+      "line": 547,
+      "scene_title": "r13_first_night",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "f6a88536006fe74aa076c5d22062fac45468ebca3930fdb737a9a9516b6672ab",
+      "uid": "264e3a1ffbf5d3508a34377f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_first_night|rpy_literal|r13_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:547:97",
+      "file": "game/room13.rpy",
+      "path": [
+        30042,
+        30080
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_first_night",
+      "block": "r13_first_night",
+      "placement": "literal",
+      "ref": "game/room13.rpy:547:97",
+      "when": null,
+      "speaker": "nabi",
+      "kind": "dialogue",
+      "text": "두 번 왔다 갔다 하면 되잖아. 무리해서 한 번에 다 들지 말고.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 547,
+          "label": "r13_first_night",
+          "guards": []
+        }
+      ],
+      "line": 547,
+      "scene_title": "r13_first_night",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "2c9ce48dc47622890556cc11ffcbc73648a3bdeb64bc49c917ef678a149067e1",
+      "uid": "effdf170b074551c18750eac",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_first_night|rpy_literal|r13_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:549:26",
+      "file": "game/room13.rpy",
+      "path": [
+        30149,
+        30214
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_first_night",
+      "block": "r13_first_night",
+      "placement": "literal",
+      "ref": "game/room13.rpy:549:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "식당 현관문을 일정한 박자로 둔탁하게 두드리는 소리가 이어졌다. 식사하던 손님 한 명이 말없이 창문 커튼을 쳤다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 549,
+          "label": "r13_first_night",
+          "guards": []
+        }
+      ],
+      "line": 549,
+      "scene_title": "r13_first_night",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "a05cff0ce854cffbd0d2943b310dc19fbf30eed503ef681e669626768bdb7547",
+      "uid": "c7a7fee1f2f8a059027d62ae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_first_night|rpy_literal|r13_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:549:102",
+      "file": "game/room13.rpy",
+      "path": [
+        30225,
+        30239
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_first_night",
+      "block": "r13_first_night",
+      "placement": "literal",
+      "ref": "game/room13.rpy:549:102",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "밖에 누가 왔나 봐요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 549,
+          "label": "r13_first_night",
+          "guards": []
+        }
+      ],
+      "line": 549,
+      "scene_title": "r13_first_night",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "6dc6bef841781f440f0e94e6f19d9a0791fb76000b471df4650f5a4773dc97ad",
+      "uid": "04714d598a72d25e45ef5338",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_first_night|rpy_literal|r13_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:549:128",
+      "file": "game/room13.rpy",
+      "path": [
+        30251,
+        30279
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_first_night",
+      "block": "r13_first_night",
+      "placement": "literal",
+      "ref": "game/room13.rpy:549:128",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "경비들이 알아서 살피고 있어. 신경 쓰지 마라.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 549,
+          "label": "r13_first_night",
+          "guards": []
+        }
+      ],
+      "line": 549,
+      "scene_title": "r13_first_night",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "116be489a101ecb93955256bcc566bea6ab012c3bc73fdaba6ee3b4138a6823e",
+      "uid": "87c6b7899d27141375031c8f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_first_night|rpy_literal|r13_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:549:167",
+      "file": "game/room13.rpy",
+      "path": [
+        30290,
+        30311
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_first_night",
+      "block": "r13_first_night",
+      "placement": "literal",
+      "ref": "game/room13.rpy:549:167",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "스스로 문을 못 여는 것 같은데요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 549,
+          "label": "r13_first_night",
+          "guards": []
+        }
+      ],
+      "line": 549,
+      "scene_title": "r13_first_night",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "78cc1c0af777ee0e1199e18a99d7a2cb0f847e843a8ca5893d35bdede8f72e6c",
+      "uid": "88087cc225f9e7ea3781080b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_first_night|rpy_literal|r13_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:549:198",
+      "file": "game/room13.rpy",
+      "path": [
+        30321,
+        30339
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_first_night",
+      "block": "r13_first_night",
+      "placement": "literal",
+      "ref": "game/room13.rpy:549:198",
+      "when": null,
+      "speaker": "nabi",
+      "kind": "dialogue",
+      "text": "……밥 식기 전에 얼른 먹어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 549,
+          "label": "r13_first_night",
+          "guards": []
+        }
+      ],
+      "line": 549,
+      "scene_title": "r13_first_night",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "c454e86046923392b575114382e7389a582910bce8ef34f621377e0155858f96",
+      "uid": "1d33c5d9cdc12c8d7446f2fb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_first_night|rpy_literal|r13_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:552:34",
+      "file": "game/room13.rpy",
+      "path": [
+        30426,
+        30518
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_first_night",
+      "block": "r13_first_night",
+      "placement": "literal",
+      "ref": "game/room13.rpy:552:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "주민 한 명이 자기 집이 어느 쪽인지 말하지 못했다. 경비가 그 주민의 목덜미에 번호표를 달고 어디론가 데려갔다. 지켜보던 사람 중 아무도 소리를 지르지 않았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 552,
+          "label": "r13_first_night",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 552,
+      "scene_title": "r13_first_night",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "14ef4bc83f4ccc9f94a55ea197fcb20646c466810ac17fdbed26e0421c6105f8",
+      "uid": "986be4b16cdc70349d71c56d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_first_night|rpy_literal|r13_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:555:37",
+      "file": "game/room13.rpy",
+      "path": [
+        30640,
+        30674
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_first_night",
+      "block": "r13_first_night",
+      "placement": "literal",
+      "ref": "game/room13.rpy:555:37",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "아빠, 우리도 길 잃어버리면 저 아저씨처럼 저기로 끌려가?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 555,
+          "label": "r13_first_night",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 555,
+      "scene_title": "r13_first_night",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "74e2bf7d411693cd8f133f95f9b692b0c1809eddb450461ba50e9e2320191460",
+      "uid": "6b896f36948f8802c50f9ad0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_first_night|rpy_literal|r13_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/room13.rpy:555:80",
       "file": "game/room13.rpy",

@@ -1,0 +1,166 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_bundle3.rpy:213:8",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        12838,
+        12859
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_b3_pages",
+      "block": "r13_b3_pages",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:213:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "팔기 전에 장부를 보여 달라고 한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 213,
+          "label": "r13_b3_pages",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 213,
+      "scene_title": "r13_b3_pages",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "76ad9f5e60ba8aab9d1cd003ea199edc9418dbf5683e9a4c746bfb70d53678ba",
+      "uid": "bb3ef83c344caf88d9624a94",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_pages|rpy_menu|r13_b3_pages|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:218:8",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        13208,
+        13234
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_b3_pages",
+      "block": "r13_b3_pages",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:218:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "감자 값을 대신 내고 장부를 지킨다 (6냥)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 218,
+          "label": "r13_b3_pages",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 218,
+      "scene_title": "r13_b3_pages",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "e53093fa00fb3b822bda94cd2d964560cb8784a98c8a66bfc866e2bb4a96b94a",
+      "uid": "8f757e4f41b255463187bcc0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_pages|rpy_menu|r13_b3_pages|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:225:8",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        13730,
+        13749
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_b3_pages",
+      "block": "r13_b3_pages",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:225:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "장부를 베낄 시간을 달라고 한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 225,
+          "label": "r13_b3_pages",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 225,
+      "scene_title": "r13_b3_pages",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "c20bcc379d53517a9629a2f2d4a751063671605c0673e31d40ff0e6416b2f5f2",
+      "uid": "f45861e8164710b5fb176f91",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_pages|rpy_menu|r13_b3_pages|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:229:8",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        13996,
+        14007
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_b3_pages",
+      "block": "r13_b3_pages",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:229:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "모른 척 지나간다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 229,
+          "label": "r13_b3_pages",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 229,
+      "scene_title": "r13_b3_pages",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "949cca9ab00fc76495c470e1a00d27a01d51e9dd1a6c37cfb75cc0fb9b245258",
+      "uid": "c5f19edc3a05b2faf64a53fe",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_pages|rpy_menu|r13_b3_pages|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

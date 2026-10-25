@@ -1,7 +1,87 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_q1_arguments.rpy:317:31",
+      "file": "game/systems/room13_q1_arguments.rpy",
+      "path": [
+        18663,
+        18686
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_q1_public_recovery",
+      "block": "r13_q1_public_recovery",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_arguments.rpy:317:31",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "팔았다는 조각이 지금 어디에 있습니까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_arguments.rpy",
+          "line": 317,
+          "label": "r13_q1_public_recovery",
+          "guards": [
+            "if r13_q1_v2():"
+          ]
+        }
+      ],
+      "line": 317,
+      "scene_title": "r13_q1_public_recovery",
+      "source_hash": "8289e6e0adc4c6de94e5f0acadafcaced13c74af938b712712356a7bd5a6fa22",
+      "baseline_hash": "960a2c5843189e1c6d0b0a78f584ba66c3a55f06002b55eaf7a041ef0dfcc47d",
+      "uid": "4d44b9ce7dc6af27eb2210e5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_q1_public_recovery|rpy_literal|r13_q1_public_recovery|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_q1_arguments.rpy:317:74",
+      "file": "game/systems/room13_q1_arguments.rpy",
+      "path": [
+        18706,
+        18740
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_q1_public_recovery",
+      "block": "r13_q1_public_recovery",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_arguments.rpy:317:74",
+      "when": null,
+      "speaker": "resident_siluk",
+      "kind": "dialogue",
+      "text": "백 부인 창고에 있소. 밑에 광장 3이라는 이름표가 있소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_arguments.rpy",
+          "line": 317,
+          "label": "r13_q1_public_recovery",
+          "guards": [
+            "if r13_q1_v2():"
+          ]
+        }
+      ],
+      "line": 317,
+      "scene_title": "r13_q1_public_recovery",
+      "source_hash": "8289e6e0adc4c6de94e5f0acadafcaced13c74af938b712712356a7bd5a6fa22",
+      "baseline_hash": "65cec592bc4a7ddb6a533106a365a50af9b72f7afb798b033c92be3f61b05901",
+      "uid": "c67cab7c733c4583431f5657",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_q1_public_recovery|rpy_literal|r13_q1_public_recovery|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_q1_arguments.rpy:318:30",
       "file": "game/systems/room13_q1_arguments.rpy",
@@ -37,6 +117,86 @@
       "source_hash": "8289e6e0adc4c6de94e5f0acadafcaced13c74af938b712712356a7bd5a6fa22",
       "baseline_hash": "459b597a8841dbe436eb25004a6d0f6facc3ea82c04f933faccdf3dec91631f3",
       "uid": "dae1eafdefdebbefa0fcee0c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_q1_public_recovery|rpy_literal|r13_q1_public_recovery|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_q1_arguments.rpy:318:49",
+      "file": "game/systems/room13_q1_arguments.rpy",
+      "path": [
+        18792,
+        18832
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_q1_public_recovery",
+      "block": "r13_q1_public_recovery",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_arguments.rpy:318:49",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "사람들이 보는 앞에서 조각을 꺼냈다. 톡이 이름표와 장부를 대조했다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_arguments.rpy",
+          "line": 318,
+          "label": "r13_q1_public_recovery",
+          "guards": [
+            "if r13_q1_v2():"
+          ]
+        }
+      ],
+      "line": 318,
+      "scene_title": "r13_q1_public_recovery",
+      "source_hash": "8289e6e0adc4c6de94e5f0acadafcaced13c74af938b712712356a7bd5a6fa22",
+      "baseline_hash": "3c278fc4516ff328a633d95215663625f27e04344f082ef3500dcdd179da61eb",
+      "uid": "fbc900f50a1e03ba50755816",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_q1_public_recovery|rpy_literal|r13_q1_public_recovery|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_q1_arguments.rpy:319:28",
+      "file": "game/systems/room13_q1_arguments.rpy",
+      "path": [
+        18863,
+        18885
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_q1_public_recovery",
+      "block": "r13_q1_public_recovery",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_arguments.rpy:319:28",
+      "when": null,
+      "speaker": "resident_tok",
+      "kind": "dialogue",
+      "text": "제가 3번 등에 넣은 조각이 맞아요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_arguments.rpy",
+          "line": 319,
+          "label": "r13_q1_public_recovery",
+          "guards": [
+            "if r13_q1_v2():"
+          ]
+        }
+      ],
+      "line": 319,
+      "scene_title": "r13_q1_public_recovery",
+      "source_hash": "8289e6e0adc4c6de94e5f0acadafcaced13c74af938b712712356a7bd5a6fa22",
+      "baseline_hash": "415997fc882421076808650ceb31804a6fa4d8b1b7167ae0e71b8385d21f7099",
+      "uid": "e91ac4ec946ddae3fb507a51",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_q1_public_recovery|rpy_literal|r13_q1_public_recovery|행 조건 없음",

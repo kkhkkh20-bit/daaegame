@@ -1,7 +1,48 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_episodes.rpy:231:34",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        13933,
+        13983
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_morning",
+      "block": "r13_ep1_morning",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:231:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "새벽에 처마 쪽에서 너울의 목소리가 들렸다. 잠시 뒤, 발소리는 처마를 그냥 지나갔다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 231,
+          "label": "r13_ep1_morning",
+          "guards": [
+            "if r13_has(\"bami_safe\"):",
+            "if r13_has(\"bami_at_eaves\") and r13_has(\"patrol_suspicious\"):"
+          ]
+        }
+      ],
+      "line": 231,
+      "scene_title": "r13_ep1_morning",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "fae69c50531fc897a15be96488a5011a1998d86ea29ed111518476b25cc81b8a",
+      "uid": "01707c98de42ab6d5b20302d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_morning|rpy_literal|r13_ep1_morning|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_episodes.rpy:235:30",
       "file": "game/systems/room13_episodes.rpy",
@@ -37,6 +78,86 @@
       "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
       "baseline_hash": "9da09f34794d29b30945c1adf020b8a9822b294da37f7a6fb5448388473b87f2",
       "uid": "b974f1fcf569878cc52b18dc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_morning|rpy_literal|r13_ep1_morning|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_episodes.rpy:236:18",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        14275,
+        14322
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_morning",
+      "block": "r13_ep1_morning",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:236:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "아침에 나가 보니 처마 밑은 비어 있었다. 바닥에 작은 발톱 자국만 남아 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 236,
+          "label": "r13_ep1_morning",
+          "guards": [
+            "if r13_has(\"bami_reported\") or r13_has(\"patrol_suspicious\") or not r13_has(\"ep1_patrol_seen\"):"
+          ]
+        }
+      ],
+      "line": 236,
+      "scene_title": "r13_ep1_morning",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "a9b355716b5e10b367a3af8531ef09f58da167f78181bede2e334155cd38a08e",
+      "uid": "7dc84627f32b86e084a6a5d0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_morning|rpy_literal|r13_ep1_morning|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_episodes.rpy:237:19",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        14344,
+        14373
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_morning",
+      "block": "r13_ep1_morning",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:237:19",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(밤이가 검사를 받으러 북쪽 보호소로 끌려갔다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 237,
+          "label": "r13_ep1_morning",
+          "guards": [
+            "if r13_has(\"bami_reported\") or r13_has(\"patrol_suspicious\") or not r13_has(\"ep1_patrol_seen\"):"
+          ]
+        }
+      ],
+      "line": 237,
+      "scene_title": "r13_ep1_morning",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "3a31d81d19499b2a462d9841858baa06a49dc21c6b49586f19805201b31e4179",
+      "uid": "686d27cd5e07c911f9103798",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_ep1_morning|rpy_literal|r13_ep1_morning|행 조건 없음",

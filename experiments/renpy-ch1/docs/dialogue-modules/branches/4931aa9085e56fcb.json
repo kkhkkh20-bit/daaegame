@@ -1,7 +1,121 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/room13.rpy:625:31",
+      "file": "game/room13.rpy",
+      "path": [
+        36065,
+        36117
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_trial",
+      "block": "r13_trial",
+      "placement": "literal",
+      "ref": "game/room13.rpy:625:31",
+      "when": null,
+      "speaker": "seryeon",
+      "kind": "dialogue",
+      "text": "부엉이 어르신이 발견된 13호는 안에서 잠겨 있었습니다. 그 안에는 다람 양이 있었습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 625,
+          "label": "r13_trial",
+          "guards": []
+        }
+      ],
+      "line": 625,
+      "scene_title": "r13_trial",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "bf61699c173394cb0115baeb49ddb75d136bddb4bb5d70fb7df5491769ce970e",
+      "uid": "24b0f5b987ef2f677443553a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_trial|rpy_literal|r13_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:625:93",
+      "file": "game/room13.rpy",
+      "path": [
+        36127,
+        36162
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_trial",
+      "block": "r13_trial",
+      "placement": "literal",
+      "ref": "game/room13.rpy:625:93",
+      "when": null,
+      "speaker": "buri",
+      "kind": "dialogue",
+      "text": "그냥 ‘발견된 사람’처럼 말하지 마세요. 우리 할아버지예요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 625,
+          "label": "r13_trial",
+          "guards": []
+        }
+      ],
+      "line": 625,
+      "scene_title": "r13_trial",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "646d21c8b5fa68f891e78a1a8263da866f6bb2097944c0058454f2e91bec01a7",
+      "uid": "fb62bea419d2e5b0c547a778",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_trial|rpy_literal|r13_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:625:148",
+      "file": "game/room13.rpy",
+      "path": [
+        36182,
+        36235
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_trial",
+      "block": "r13_trial",
+      "placement": "literal",
+      "ref": "game/room13.rpy:625:148",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "오늘 확인할 것은 아이가 그 죽음에 책임이 있는지입니다. 소문을 본 일처럼 말하지 마십시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 625,
+          "label": "r13_trial",
+          "guards": []
+        }
+      ],
+      "line": 625,
+      "scene_title": "r13_trial",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "607f8628d27bcc45356bf6cae23b883c428532f9d088873606866c60f139bfbc",
+      "uid": "7ae8f4d8d1ba15d84d5fb0bd",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_trial|rpy_literal|r13_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/room13.rpy:625:220",
       "file": "game/room13.rpy",
@@ -35,6 +149,44 @@
       "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
       "baseline_hash": "d4dcbe71dc5bc2ce6bb236d29aec892f91aa051f2b5c059f4180925c34ad70b0",
       "uid": "b30a03a4ecea98aaf4e2e1cc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_trial|rpy_literal|r13_trial|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:625:262",
+      "file": "game/room13.rpy",
+      "path": [
+        36296,
+        36329
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_trial",
+      "block": "r13_trial",
+      "placement": "literal",
+      "ref": "game/room13.rpy:625:262",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "아이가 위험하다는 판단도 확인된 사실에 근거해 주십시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 625,
+          "label": "r13_trial",
+          "guards": []
+        }
+      ],
+      "line": 625,
+      "scene_title": "r13_trial",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "bab55cc4dd614809b55a497af052a41f95e975b67414a57bc4484513f864e2fe",
+      "uid": "2f442daf911fbf193c6fe3f2",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_trial|rpy_literal|r13_trial|행 조건 없음",

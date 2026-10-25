@@ -1,0 +1,82 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_episodes.rpy:461:26",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        26459,
+        26504
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep4_deadline",
+      "block": "r13_ep4_deadline",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:461:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "수리점 문에 판자가 덧대져 있었다. 결국 조각을 찾지 못한 채 기한이 지났다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 461,
+          "label": "r13_ep4_deadline",
+          "guards": []
+        }
+      ],
+      "line": 461,
+      "scene_title": "r13_ep4_deadline",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "d8ce7df27309001bb670a38a69216e465c93bc0b685cf70efb251ee3612cf39c",
+      "uid": "0f4a36fff3923966e4176399",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep4_deadline|rpy_literal|r13_ep4_deadline|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_episodes.rpy:462:15",
+      "file": "game/systems/room13_episodes.rpy",
+      "path": [
+        26522,
+        26555
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep4_deadline",
+      "block": "r13_ep4_deadline",
+      "placement": "literal",
+      "ref": "game/systems/room13_episodes.rpy:462:15",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(톡이 갇혔다. 너울은 끝내 다른 사람을 찾지 않았다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_episodes.rpy",
+          "line": 462,
+          "label": "r13_ep4_deadline",
+          "guards": []
+        }
+      ],
+      "line": 462,
+      "scene_title": "r13_ep4_deadline",
+      "source_hash": "8707f9d2bf29d4a5300bb77915e2082703d21dd403cd8e9cb449bc9777d79517",
+      "baseline_hash": "95f5f1474421743c1819392491fc7ade3bae64c25dbd42cb84c90874a5fa0253",
+      "uid": "a944ab8642cf13f3de3ef4b1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep4_deadline|rpy_literal|r13_ep4_deadline|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

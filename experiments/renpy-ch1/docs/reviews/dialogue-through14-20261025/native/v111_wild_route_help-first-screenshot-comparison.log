@@ -1,0 +1,60 @@
+[rpytest] [log] Running 2 test(s) marked with 'only' flag.
+[rpytest] [log] - global::v111_wild_route_help
+[rpytest] [log] - global::v111_wild_route_help
+
+[rpytest] Starting test run
+[rpytest] Platform:      Linux-6.18.55-x86_64-with-glibc2.41
+[rpytest] Python:        3.12.8
+[rpytest] Ren'Py:        Ren'Py 8.5.3.26051504
+[rpytest] Game Version:  0.20.54
+
+[rpytest] [exc] + global
+[rpytest] [exc]   - v111_wild_route_help
+
+Full traceback:
+  File "renpy/test/testexecution.py", line 549, in update
+    node_executor.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "renpy/test/testexecution.py", line 471, in execute
+    self.node_state = self.node.execute(self.node_state, elapsed)
+                      ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/test/testast.py", line 1561, in execute
+    raise RenpyTestScreenshotError(
+    ...<3 lines>...
+    )
+renpy.test.types.RenpyTestScreenshotError: /workspace/daaegame/experiments/renpy-ch1/tests/screenshots/wild-guard.png (pixel difference: 26898 > 0)
+Current image saved to /workspace/daaegame/experiments/renpy-ch1/tests/screenshots/wild-guard.new.png
+Difference image saved to /workspace/daaegame/experiments/renpy-ch1/tests/screenshots/wild-guard.diff.png
+
+While running game code:
+renpy.test.types.RenpyTestScreenshotError: /workspace/daaegame/experiments/renpy-ch1/tests/screenshots/wild-guard.png (pixel difference: 26898 > 0)
+Current image saved to /workspace/daaegame/experiments/renpy-ch1/tests/screenshots/wild-guard.new.png
+Difference image saved to /workspace/daaegame/experiments/renpy-ch1/tests/screenshots/wild-guard.diff.png
+File "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days123.rpy", line 109, in script call
+  call r13_v111_wait('gate_request')
+File "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111_days1114.rpy", line 3695, in script call
+  call r13_v111_wait('wild_road14')
+File "/workspace/daaegame/experiments/renpy-ch1/game/room13_v111.rpy", line 227, in script
+  call screen r13_hub
+
+During testcase execution:
+  File "/workspace/daaegame/experiments/renpy-ch1/.", line 0, in None
+    
+  File "/workspace/daaegame/experiments/renpy-ch1/game/qa_tests/v111_wild_night.rpy", line 118, in testsuite global
+    testcase v111_wild_route_help:
+  File "/workspace/daaegame/experiments/renpy-ch1/game/qa_tests/v111_wild_night.rpy", line 151, in testcase v111_wild_route_help
+    screenshot "wild-guard.png"
+
+====================
+[rpytest] [exc]   - v111_wild_route_help (22.782 s)
+[rpytest] [exc]   - v111_wild_route_help (22.782 s)
+
+[rpytest] Test outcomes (Summary)
+[rpytest] Test suites:     1 |     0 passed |     0 xfailed |     1 failed |     0 xpassed |     0 skipped |     0 not run
+[rpytest] Test cases :   455 |     0 passed |     0 xfailed |     1 failed |     0 xpassed |   454 skipped |     0 not run
+[rpytest] Test hooks :     0 |     0 passed |     0 xfailed |     0 failed |     0 xpassed |     0 skipped |     0 not run
+[rpytest] Assertions :     1 |     1 passed |     0 xfailed |     0 failed |     0 xpassed | 
+
+[rpytest] Time: 24.763 s
+[rpytest] Status: FAILED 
+

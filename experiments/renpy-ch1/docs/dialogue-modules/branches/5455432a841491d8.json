@@ -1,0 +1,126 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:235:8",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        13367,
+        13383
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_nt_ttadak_signal",
+      "block": "r13_nt_ttadak_signal",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:235:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "수첩과 레버 이야기를 한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 235,
+          "label": "r13_nt_ttadak_signal",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 235,
+      "scene_title": "r13_nt_ttadak_signal",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "c67a9253f3f6db805a6ca0557d16388deace652c8326e17c3261495187de4a58",
+      "uid": "7e8a115bfc21bea9e63b3274",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nt_ttadak_signal|rpy_menu|r13_nt_ttadak_signal|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:247:8",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        14330,
+        14341
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_nt_ttadak_signal",
+      "block": "r13_nt_ttadak_signal",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:247:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "수첩만 보여 준다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 247,
+          "label": "r13_nt_ttadak_signal",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 247,
+      "scene_title": "r13_nt_ttadak_signal",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "72f9720d839b436c2c5265c725a72a029ae5d19817e579281788f971b674680c",
+      "uid": "cef5ce6ab5257730f9ae5eaf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nt_ttadak_signal|rpy_menu|r13_nt_ttadak_signal|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep4_night13.rpy:249:8",
+      "file": "game/systems/room13_ep4_night13.rpy",
+      "path": [
+        14482,
+        14492
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_nt_ttadak_signal",
+      "block": "r13_nt_ttadak_signal",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep4_night13.rpy:249:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "“조심하세요.”",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep4_night13.rpy",
+          "line": 249,
+          "label": "r13_nt_ttadak_signal",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 249,
+      "scene_title": "r13_nt_ttadak_signal",
+      "source_hash": "577a6fb510722288b7112ce4363839f44cd023b7afc01d9f21ee07a8af35f6ab",
+      "baseline_hash": "1c49248d9f7efc395f8c11378b1efa1ea1312424d501601e47efa0751e50b055",
+      "uid": "14bd72c7d981094ccc1481ac",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nt_ttadak_signal|rpy_menu|r13_nt_ttadak_signal|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

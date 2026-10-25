@@ -1,7 +1,83 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_bundle3.rpy:209:26",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        12563,
+        12640
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_pages",
+      "block": "r13_b3_pages",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:209:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "사서 선생님이 우체국 구석 책상에서 낡은 장부를 뜯고 있었다. 뜯은 장은 끈으로 묶었다. 맞은편에 은호 사장이 감자 자루를 내려놓았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 209,
+          "label": "r13_b3_pages",
+          "guards": []
+        }
+      ],
+      "line": 209,
+      "scene_title": "r13_b3_pages",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "f7b3188e70669b9965e029c86fc4e8d8a12a6811dc8f4df8c60dc3c5a59b6a90",
+      "uid": "dcea04987aee3dfb50cd5d33",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_pages|rpy_literal|r13_b3_pages|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:210:26",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        12669,
+        12721
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_pages",
+      "block": "r13_b3_pages",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:210:26",
+      "when": null,
+      "speaker": "resident_eunho",
+      "kind": "dialogue",
+      "text": "도시 수집가들은 옛 마을 기록을 좋아합니다. 이 장부 묶음이면 감자 사흘 치 값은 됩니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 210,
+          "label": "r13_b3_pages",
+          "guards": []
+        }
+      ],
+      "line": 210,
+      "scene_title": "r13_b3_pages",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "f78893b10255b733eaf47027274267a5cc02eb96630416e45198a3740bef5edc",
+      "uid": "2fddfcb7b985bab53756f02c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_pages|rpy_literal|r13_b3_pages|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_bundle3.rpy:211:30",
       "file": "game/systems/room13_bundle3.rpy",
@@ -75,6 +151,206 @@
       "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
       "baseline_hash": "5ad2956f7b15ea0ae047a4a3ce2deb74c74d18c50a64731901a1913d7ebb08d8",
       "uid": "9a55c8bba31c9b5126795dbf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_pages|rpy_literal|r13_b3_pages|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:220:46",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        13343,
+        13379
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_pages",
+      "block": "r13_b3_pages",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:220:46",
+      "when": null,
+      "speaker": "resident_eunho",
+      "kind": "dialogue",
+      "text": "돈을 받았으니 장사는 장사요. 감자는 그대로 두고 가겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 220,
+          "label": "r13_b3_pages",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 220,
+      "scene_title": "r13_b3_pages",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "0f7dd38f493d1edafb101a620a74e138e8fe25cc1616c5a1f0c48497f13c2908",
+      "uid": "b8147cdaf0d58e47b1d31a52",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_pages|rpy_literal|r13_b3_pages|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:221:38",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        13420,
+        13467
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_pages",
+      "block": "r13_b3_pages",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:221:38",
+      "when": null,
+      "speaker": "resident_librarian",
+      "kind": "dialogue",
+      "text": "……이 장부, 아무도 안 읽는다고 했지만 실은 제가 매일 읽어요. 보여 드릴게요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 221,
+          "label": "r13_b3_pages",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 221,
+      "scene_title": "r13_b3_pages",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "ad15d0841692b395d4006dc4fc1e574e5d09272baf52791b164b9657156279ba",
+      "uid": "9c1c428ffcf4e0e2eb6fa367",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_pages|rpy_literal|r13_b3_pages|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:226:46",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        13797,
+        13833
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_pages",
+      "block": "r13_b3_pages",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:226:46",
+      "when": null,
+      "speaker": "resident_eunho",
+      "kind": "dialogue",
+      "text": "베끼는 건 마음대로 하십시오. 저는 원본만 넘겨받으면 됩니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 226,
+          "label": "r13_b3_pages",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 226,
+      "scene_title": "r13_b3_pages",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "79e44e6a914f4f19094758df4f269a14cbd4d27e650f0f7d81d48a478be3f727",
+      "uid": "3193df754e55859fcb62ed2e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_pages|rpy_literal|r13_b3_pages|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:227:38",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        13874,
+        13909
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_pages",
+      "block": "r13_b3_pages",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:227:38",
+      "when": null,
+      "speaker": "resident_librarian",
+      "kind": "dialogue",
+      "text": "그럼 오늘 밤에 장부를 베껴 둘게요. 내일 다시 와 보세요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 227,
+          "label": "r13_b3_pages",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 227,
+      "scene_title": "r13_b3_pages",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "0a4fb95fc0a08bb51093b4263e6e2436250ecd5aee1f5d10c039fd2c4cb863f8",
+      "uid": "7140167b797fafa58df19b7e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_pages|rpy_literal|r13_b3_pages|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:230:34",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        14043,
+        14073
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_b3_pages",
+      "block": "r13_b3_pages",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:230:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "끈으로 묶인 장부는 결국 은호의 자루 위에 얹혔다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 230,
+          "label": "r13_b3_pages",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 230,
+      "scene_title": "r13_b3_pages",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "d0cdf8895e748c2342585c6d0f31076b2350e40787e20040b728389ea4cdb47a",
+      "uid": "4f0f455a84bbe24b6c3393b3",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_b3_pages|rpy_literal|r13_b3_pages|행 조건 없음",

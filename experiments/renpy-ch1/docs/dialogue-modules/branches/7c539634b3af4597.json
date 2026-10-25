@@ -1,7 +1,159 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:395:26",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        22076,
+        22122
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_funeral",
+      "block": "r13_ep1_funeral",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:395:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "톡이 꺼진 등 옆에 피코의 판자 그림들을 하나씩 세웠다. 부리가 등잔을 들었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 395,
+          "label": "r13_ep1_funeral",
+          "guards": []
+        }
+      ],
+      "line": 395,
+      "scene_title": "r13_ep1_funeral",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "a2d54b3344183b4faedb84f8809c3225e95e5340e93692c83f3b92dbf6da4f4c",
+      "uid": "6d6319b5edd83b0628f4cde5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_funeral|rpy_literal|r13_ep1_funeral|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:396:24",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        22149,
+        22191
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_funeral",
+      "block": "r13_ep1_funeral",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:396:24",
+      "when": null,
+      "speaker": "resident_tok",
+      "kind": "dialogue",
+      "text": "내가 고친 등 밑에서 잤어요. 내 탓이 아니라고 해도…… 편하진 않네요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 396,
+          "label": "r13_ep1_funeral",
+          "guards": []
+        }
+      ],
+      "line": 396,
+      "scene_title": "r13_ep1_funeral",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "7d221c5181b6bbb6b56c340c664805d366d1e80682b413625b516297250c0749",
+      "uid": "3c607e03819c0771e70b8b4e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_funeral|rpy_literal|r13_ep1_funeral|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:397:25",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        22219,
+        22244
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_funeral",
+      "block": "r13_ep1_funeral",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:397:25",
+      "when": null,
+      "speaker": "resident_momo",
+      "kind": "dialogue",
+      "text": "……세 냥이면 하룻밤 방값은 됐을 거예요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 397,
+          "label": "r13_ep1_funeral",
+          "guards": []
+        }
+      ],
+      "line": 397,
+      "scene_title": "r13_ep1_funeral",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "17aab8e84233c33b6d0a131c86f374d29929f1e68c789fe7d7cd67ba3ea2e121",
+      "uid": "1334a0b328e11edb2f47d1f8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_funeral|rpy_literal|r13_ep1_funeral|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:398:14",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        22261,
+        22276
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_funeral",
+      "block": "r13_ep1_funeral",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:398:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "아무도 대답하지 않았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 398,
+          "label": "r13_ep1_funeral",
+          "guards": []
+        }
+      ],
+      "line": 398,
+      "scene_title": "r13_ep1_funeral",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "8a76f2f4690a7f5a258070ea8f85c2969a954a35055b759c92952433ee05bbdf",
+      "uid": "3a519650aa1dc35dbc1cc744",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_funeral|rpy_literal|r13_ep1_funeral|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_ep1_lamp_thief.rpy:400:30",
       "file": "game/systems/room13_ep1_lamp_thief.rpy",
@@ -43,6 +195,166 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:401:21",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        22402,
+        22420
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_funeral",
+      "block": "r13_ep1_funeral",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:401:21",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "아주머니. 약속 내가 지킬게.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 401,
+          "label": "r13_ep1_funeral",
+          "guards": [
+            "if r13_has(\"L12\"):"
+          ]
+        }
+      ],
+      "line": 401,
+      "scene_title": "r13_ep1_funeral",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "83b9cd4ec5b818a8266487f160c71c7f978b6433ba5c5eddbd1a515726f63250",
+      "uid": "c8abf96a91e6e726ebe43218",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_funeral|rpy_literal|r13_ep1_funeral|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:402:18",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        22441,
+        22476
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_funeral",
+      "block": "r13_ep1_funeral",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:402:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이 삐뚤빼뚤, 엄마의 코를 찡그린 모양으로 그려 넣었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 402,
+          "label": "r13_ep1_funeral",
+          "guards": [
+            "if r13_has(\"L12\"):"
+          ]
+        }
+      ],
+      "line": 402,
+      "scene_title": "r13_ep1_funeral",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "8f8f2bc1fa7d07af62b7bcbb9349305d48ed498240b7d1ec0c0d56e8f21315b0",
+      "uid": "3892494d75a5ec5042e922a6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_funeral|rpy_literal|r13_ep1_funeral|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:403:18",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        22497,
+        22515
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_funeral",
+      "block": "r13_ep1_funeral",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:403:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "……눈 내리는 소리만 들렸다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 403,
+          "label": "r13_ep1_funeral",
+          "guards": [
+            "if r13_has(\"L12\"):"
+          ]
+        }
+      ],
+      "line": 403,
+      "scene_title": "r13_ep1_funeral",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "b3c9aab73abdb81c9c34d1d3f53789ee8a5b4d7b1fc9afadc871c0e966eb59a9",
+      "uid": "d0765a49058bc44221e07aa4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_funeral|rpy_literal|r13_ep1_funeral|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:404:21",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        22539,
+        22553
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_funeral",
+      "block": "r13_ep1_funeral",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:404:21",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "……이제 엄마 웃는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 404,
+          "label": "r13_ep1_funeral",
+          "guards": [
+            "if r13_has(\"L12\"):"
+          ]
+        }
+      ],
+      "line": 404,
+      "scene_title": "r13_ep1_funeral",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "05738319b72353dd4f372bdfd3285089b479e27d1efe9cecff238d5d9c3b97b7",
+      "uid": "7d12238393bb362c412334b9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_funeral|rpy_literal|r13_ep1_funeral|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
       "id": "game/systems/room13_ep1_lamp_thief.rpy:408:30",
       "file": "game/systems/room13_ep1_lamp_thief.rpy",
       "path": [
@@ -77,6 +389,46 @@
       "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
       "baseline_hash": "aa29dcf336b99491308a659b9eee2d7e8438e9cce096b08510c085fa4d2d0bac",
       "uid": "7f52c78d957e9ef02c8de007",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_funeral|rpy_literal|r13_ep1_funeral|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:408:65",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        22765,
+        22780
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_funeral",
+      "block": "r13_ep1_funeral",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:408:65",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "아주머니 그림 예뻤어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 408,
+          "label": "r13_ep1_funeral",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 408,
+      "scene_title": "r13_ep1_funeral",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "60f4adbe71aca3ad208dc2e22137a826e281712a8a03c7a5f5db4854d9482794",
+      "uid": "53b054b06c8a0cea9e3e33cb",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_ep1_funeral|rpy_literal|r13_ep1_funeral|행 조건 없음",

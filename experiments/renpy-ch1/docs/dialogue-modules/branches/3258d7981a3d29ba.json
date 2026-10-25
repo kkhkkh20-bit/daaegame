@@ -1,0 +1,200 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:466:17",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        27587,
+        27600
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_wf_decision",
+      "block": "r13_wf_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:466:17",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "누비를 어떻게 할까?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 466,
+          "label": "r13_wf_decision",
+          "guards": []
+        }
+      ],
+      "line": 466,
+      "scene_title": "r13_wf_decision",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "625c7ce3a32a3d8170dbfc3a2a6b4a0c55e5ff63e8d627743c3a3ac207c5db9d",
+      "uid": "3b858bfd9d94aaa410ced39c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_decision|rpy_inventory|r13_wf_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:466:38",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        27608,
+        27621
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_wf_decision",
+      "block": "r13_wf_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:466:38",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "누비를 데려가게 둔다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 466,
+          "label": "r13_wf_decision",
+          "guards": []
+        }
+      ],
+      "line": 466,
+      "scene_title": "r13_wf_decision",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "a0c4aca98d7b9f513b35b1b81c1442e8ac006c1519fae5508ef599a617cf7a6c",
+      "uid": "3935cc4386f3d4f49e88ecff",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_decision|rpy_inventory|r13_wf_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:468:27",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        27699,
+        27713
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_wf_decision",
+      "block": "r13_wf_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:468:27",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "너울의 약속을 내놓는다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 468,
+          "label": "r13_wf_decision",
+          "guards": [
+            "if r13_has(\"F01\") or r13_has(\"F12\"):"
+          ]
+        }
+      ],
+      "line": 468,
+      "scene_title": "r13_wf_decision",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "b31fa902e2e0822b83c59091129642845f7bbe47bdc7d41bc2e20e29591e1d80",
+      "uid": "8dd9d1a6a06fea47ec7d73e5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_decision|rpy_inventory|r13_wf_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:469:23",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        27748,
+        27766
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_wf_decision",
+      "block": "r13_wf_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:469:23",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "누비를 감싸고 아이들을 학교에",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 469,
+          "label": "r13_wf_decision",
+          "guards": []
+        }
+      ],
+      "line": 469,
+      "scene_title": "r13_wf_decision",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "0c0a00730b9259241271276fd4ce8fb82270a5c4c384a8a3a866e381a1a771af",
+      "uid": "c6402d1d53fddbfdbec47bd2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_decision|rpy_inventory|r13_wf_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:471:27",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        27870,
+        27887
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_wf_decision",
+      "block": "r13_wf_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:471:27",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "“약속은 여기서 끝냅니다.”",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 471,
+          "label": "r13_wf_decision",
+          "guards": [
+            "if r13_has(\"wf_overheard\") and r13_has(\"wf_nabi_defended\"):"
+          ]
+        }
+      ],
+      "line": 471,
+      "scene_title": "r13_wf_decision",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "a292503d0ae7a89341ff9dbcff3a1ac68cfb2e2af4f46728edddda38b9bb21ba",
+      "uid": "219630d860eddbb7b6283705",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_decision|rpy_inventory|r13_wf_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

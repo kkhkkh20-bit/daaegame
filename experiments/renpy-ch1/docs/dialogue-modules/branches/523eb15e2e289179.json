@@ -1,0 +1,170 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_reinspect.rpy:45:12",
+      "file": "game/systems/room13_reinspect.rpy",
+      "path": [
+        2981,
+        2991
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_seal_look",
+      "block": "r13_seal_look",
+      "placement": "literal",
+      "ref": "game/systems/room13_reinspect.rpy:45:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "전체를 살펴본다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_reinspect.rpy",
+          "line": 45,
+          "label": "r13_seal_look",
+          "guards": [
+            "while _sl_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 45,
+      "scene_title": "r13_seal_look",
+      "source_hash": "925f5636795b050f9825ef43480d0c8746711baa5084d7db9933328b44c45d44",
+      "baseline_hash": "bb29f8d20e6b056368076fd002d678e2d5e18cc015e03a8080b67710ac906e1b",
+      "uid": "d7c704303078ebb388e0a0c4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_seal_look|rpy_menu|r13_seal_look|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_reinspect.rpy:47:12",
+      "file": "game/systems/room13_reinspect.rpy",
+      "path": [
+        3112,
+        3125
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_seal_look",
+      "block": "r13_seal_look",
+      "placement": "literal",
+      "ref": "game/systems/room13_reinspect.rpy:47:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "갈라진 면을 살펴본다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_reinspect.rpy",
+          "line": 47,
+          "label": "r13_seal_look",
+          "guards": [
+            "while _sl_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 47,
+      "scene_title": "r13_seal_look",
+      "source_hash": "925f5636795b050f9825ef43480d0c8746711baa5084d7db9933328b44c45d44",
+      "baseline_hash": "df437f0a0187f83944b8975f48d713884c5e93ed2b0c5abf6eee664cac60b95d",
+      "uid": "76620c8cad872ee30654b23b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_seal_look|rpy_menu|r13_seal_look|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_reinspect.rpy:49:12",
+      "file": "game/systems/room13_reinspect.rpy",
+      "path": [
+        3237,
+        3250
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_seal_look",
+      "block": "r13_seal_look",
+      "placement": "literal",
+      "ref": "game/systems/room13_reinspect.rpy:49:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "장식 고리를 살펴본다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_reinspect.rpy",
+          "line": 49,
+          "label": "r13_seal_look",
+          "guards": [
+            "while _sl_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 49,
+      "scene_title": "r13_seal_look",
+      "source_hash": "925f5636795b050f9825ef43480d0c8746711baa5084d7db9933328b44c45d44",
+      "baseline_hash": "9c60d0b8e704930d3078460c51377483918b0d035ef94b7cfdeb062ade8dc61c",
+      "uid": "aff18ffbce1f1fa70d2fd39e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_seal_look|rpy_menu|r13_seal_look|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_reinspect.rpy:55:12",
+      "file": "game/systems/room13_reinspect.rpy",
+      "path": [
+        3659,
+        3666
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_seal_look",
+      "block": "r13_seal_look",
+      "placement": "literal",
+      "ref": "game/systems/room13_reinspect.rpy:55:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "그만 본다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_reinspect.rpy",
+          "line": 55,
+          "label": "r13_seal_look",
+          "guards": [
+            "while _sl_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 55,
+      "scene_title": "r13_seal_look",
+      "source_hash": "925f5636795b050f9825ef43480d0c8746711baa5084d7db9933328b44c45d44",
+      "baseline_hash": "a3b682c95cfbafc3a4e1b9b6a650faa430fe115f765d8f662575cb92ace15de1",
+      "uid": "e3c2369d27ce85b208894fa2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_seal_look|rpy_menu|r13_seal_look|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

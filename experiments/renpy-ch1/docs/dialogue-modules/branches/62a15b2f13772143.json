@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/ms14_story.rpy:311:8",
+      "file": "game/ms14_story.rpy",
+      "path": [
+        16200,
+        16210
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "ms14_review_end",
+      "block": "ms14_review_end",
+      "placement": "literal",
+      "ref": "game/ms14_story.rpy:311:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "기록을 살펴본다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/ms14_story.rpy",
+          "line": 311,
+          "label": "ms14_review_end",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 311,
+      "scene_title": "ms14_review_end",
+      "source_hash": "4532fcb1f112e5860e4ce3e37219337a5840d5fc429a92390df4893681171b9a",
+      "baseline_hash": "6ca21a84ceaa477b5d1f1b6c2b53165da44766a4b4544d3a073ed95e0f97ff71",
+      "uid": "1638e7e8477cea352c011c1a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|ms14_review_end|rpy_menu|ms14_review_end|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/ms14_story.rpy:314:8",
+      "file": "game/ms14_story.rpy",
+      "path": [
+        16312,
+        16321
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "ms14_review_end",
+      "block": "ms14_review_end",
+      "placement": "literal",
+      "ref": "game/ms14_story.rpy:314:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "메인 화면으로",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/ms14_story.rpy",
+          "line": 314,
+          "label": "ms14_review_end",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 314,
+      "scene_title": "ms14_review_end",
+      "source_hash": "4532fcb1f112e5860e4ce3e37219337a5840d5fc429a92390df4893681171b9a",
+      "baseline_hash": "4c3e53a98448fb58fa4ac8f9d92253c639e602673c5f2c3393b4dfffde26f56b",
+      "uid": "e9dcf10d809bd933f5926639",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|ms14_review_end|rpy_menu|ms14_review_end|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

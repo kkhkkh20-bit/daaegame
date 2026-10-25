@@ -1,7 +1,197 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_town_events.rpy:431:38",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        22623,
+        22655
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_mungchi",
+      "block": "r13_ev_c_mungchi",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:431:38",
+      "when": null,
+      "speaker": "resident_madam",
+      "kind": "dialogue",
+      "text": "그럼 오늘 밤에 창고로 와요. 창고 문은 열어 둘게요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 431,
+          "label": "r13_ev_c_mungchi",
+          "guards": []
+        }
+      ],
+      "line": 431,
+      "scene_title": "r13_ev_c_mungchi",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "ba552064bb7740ed30b7e99d36e652d6e18b408a22711023e2511673ac45b8db",
+      "uid": "ace8fdc9556cb158d6effed9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_mungchi|rpy_literal|r13_ev_c_mungchi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:432:14",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        22672,
+        22715
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_mungchi",
+      "block": "r13_ev_c_mungchi",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:432:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "창고로 가는 대신 13호로 돌아왔다. 등을 끄고 장롱 옆에 앉아 기다렸다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 432,
+          "label": "r13_ev_c_mungchi",
+          "guards": []
+        }
+      ],
+      "line": 432,
+      "scene_title": "r13_ev_c_mungchi",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "1d8efd89fe3f67fa6463abfd51a79a42d5ad1880b0fa8a15990074e72edcd9cc",
+      "uid": "8cf492598e0df707a6b2dfc1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_mungchi|rpy_literal|r13_ev_c_mungchi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:434:26",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        22814,
+        22871
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_mungchi",
+      "block": "r13_ev_c_mungchi",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:434:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "자정이 지나자 13호 문고리가 천천히 돌았다. 작은 등불 하나가 들어오더니 곧장 수첩 쪽으로 갔다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 434,
+          "label": "r13_ev_c_mungchi",
+          "guards": []
+        }
+      ],
+      "line": 434,
+      "scene_title": "r13_ev_c_mungchi",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "7561f801f295d1aa4b7824a55d442458f52bc1f8b954eae3386ce232274c85bd",
+      "uid": "c90c21faab51563099727358",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_mungchi|rpy_literal|r13_ev_c_mungchi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:435:15",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        22889,
+        22908
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_mungchi",
+      "block": "r13_ev_c_mungchi",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:435:15",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "뭉치야, 여기서 뭘 찾고 있니?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 435,
+          "label": "r13_ev_c_mungchi",
+          "guards": []
+        }
+      ],
+      "line": 435,
+      "scene_title": "r13_ev_c_mungchi",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "10795cd97c0dc1b2d773a6148cc1710fd6ed8b1b906beac8230f848415e031f7",
+      "uid": "dc618f3152009bd7e2337965",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_mungchi|rpy_literal|r13_ev_c_mungchi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:436:28",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        22939,
+        22952
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_mungchi",
+      "block": "r13_ev_c_mungchi",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:436:28",
+      "when": null,
+      "speaker": "resident_mungchi",
+      "kind": "dialogue",
+      "text": "으악! 저, 저는……",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 436,
+          "label": "r13_ev_c_mungchi",
+          "guards": []
+        }
+      ],
+      "line": 436,
+      "scene_title": "r13_ev_c_mungchi",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "fd43fc6c0abd82b183aaacfaa76b8ec46a5cbb0dfe5a5e0ba27c31168ddf5974",
+      "uid": "72d02901e93ac980dbc30f58",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_mungchi|rpy_literal|r13_ev_c_mungchi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_town_events.rpy:437:40",
       "file": "game/systems/room13_town_events.rpy",
@@ -35,6 +225,44 @@
       "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
       "baseline_hash": "37727e2ddf8666d139357e1318438022babea1f8ca7483b43b9bcf37a27f3675",
       "uid": "93658e360139c5a4700d6f84",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_mungchi|rpy_literal|r13_ev_c_mungchi|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:438:28",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        23102,
+        23134
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_mungchi",
+      "block": "r13_ev_c_mungchi",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:438:28",
+      "when": null,
+      "speaker": "resident_mungchi",
+      "kind": "dialogue",
+      "text": "부인한테는 말하지 마세요. 저 내쫓기면 갈 데 없어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 438,
+          "label": "r13_ev_c_mungchi",
+          "guards": []
+        }
+      ],
+      "line": 438,
+      "scene_title": "r13_ev_c_mungchi",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "b2996af543e6503470fc06b15dcc0f67e90b97b0500f2ab0ad56f1f410d57f42",
+      "uid": "441540e7bdd581c324f5f56f",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_ev_c_mungchi|rpy_literal|r13_ev_c_mungchi|행 조건 없음",

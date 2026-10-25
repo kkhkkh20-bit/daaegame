@@ -1,0 +1,252 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_bundle3.rpy:139:12",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        8428,
+        8448
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_b3_ration",
+      "block": "r13_b3_ration",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:139:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "도토에게 배급 장부를 보자고 한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 139,
+          "label": "r13_b3_ration",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 139,
+      "scene_title": "r13_b3_ration",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "11268347605fa52e058dc29d448f37e2a21766d990017f270d3f5c98a132dc94",
+      "uid": "712d08adbcb8d9e9f1f10f14",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_ration|rpy_menu|r13_b3_ration|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:144:12",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        8767,
+        8786
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_b3_ration",
+      "block": "r13_b3_ration",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:144:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "배급소 저울을 다시 재자고 한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 144,
+          "label": "r13_b3_ration",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 144,
+      "scene_title": "r13_b3_ration",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "f44388db46cebe7b4c156b68fcbf86a128d1fd331a12c36ba33ab63c8e0507b7",
+      "uid": "2ce5b59a1f04dd52fae47a0e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_ration|rpy_menu|r13_b3_ration|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:150:12",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        9312,
+        9331
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_b3_ration",
+      "block": "r13_b3_ration",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:150:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "백 부인 비축 장부를 보여 준다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 150,
+          "label": "r13_b3_ration",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 150,
+      "scene_title": "r13_b3_ration",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "7578fe8f374d2e51f382b7f72c746ad56d3f6c6366814228a5c4229a0a6f96cf",
+      "uid": "c78c13025ab7e43fd85d738c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_ration|rpy_menu|r13_b3_ration|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:155:12",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        9716,
+        9735
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_b3_ration",
+      "block": "r13_b3_ration",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:155:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "모자란 몫을 대신 낸다 (6냥)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 155,
+          "label": "r13_b3_ration",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 155,
+      "scene_title": "r13_b3_ration",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "ed01b0b5c6f8b531b9a37fc43d4a3d949cb8cacd12a8fd41c7ad7bb9a23582d8",
+      "uid": "6c4438f4b23efcdec4729582",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_ration|rpy_menu|r13_b3_ration|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:160:12",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        10040,
+        10063
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_b3_ration",
+      "block": "r13_b3_ration",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:160:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "“보리가 가져갔다는 증거가 있습니까?”",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 160,
+          "label": "r13_b3_ration",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 160,
+      "scene_title": "r13_b3_ration",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "4a5ab2b50c9a2437334ebd9f4803a66237a32e47af8c4578e68eb4a565c7a146",
+      "uid": "a52a8337ccceb19dd8755aa3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_ration|rpy_menu|r13_b3_ration|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_bundle3.rpy:165:12",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        10359,
+        10373
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_b3_ration",
+      "block": "r13_b3_ration",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:165:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "끼어들지 않고 지켜본다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 165,
+          "label": "r13_b3_ration",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 165,
+      "scene_title": "r13_b3_ration",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "38ed7cec037062d3b4314489c38c20439ec0c4868575372668e79c85da3aec74",
+      "uid": "48dd06d59fded11374c408d2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_ration|rpy_menu|r13_b3_ration|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
     {
       "id": "game/systems/room13_new_places.rpy:192:30",
@@ -37,6 +37,44 @@
       "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
       "baseline_hash": "6e13ecf65d32c5c9fc6c774ce00da85d8a5e04b7b989fd8ce11d2c3fa06f8f3a",
       "uid": "093d025ba5101d40787685ff",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_market_stall|rpy_literal|r13_market_stall|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_places.rpy:194:26",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        11866,
+        11912
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_market_stall",
+      "block": "r13_market_stall",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:194:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "노점 주인이 진열대 위 물건을 하나씩 가리켰다. 값은 공동 창고와 같다고 했다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 194,
+          "label": "r13_market_stall",
+          "guards": []
+        }
+      ],
+      "line": 194,
+      "scene_title": "r13_market_stall",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "5bf056d435748ac649ec7e1ab3ce5515ed1f0cf82c334961f610be8b78be2258",
+      "uid": "72f2b8188bf3ada2ab8a7dd9",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_market_stall|rpy_literal|r13_market_stall|행 조건 없음",

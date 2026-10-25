@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
     {
       "id": "game/systems/room13_ep6_cart.rpy:310:30",
@@ -43,6 +43,367 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
+      "id": "game/systems/room13_ep6_cart.rpy:310:72",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        17478,
+        17487
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_decision",
+      "block": "r13_cv_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:310:72",
+      "when": null,
+      "speaker": "resident_ppul",
+      "kind": "dialogue",
+      "text": "……내리시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 310,
+          "label": "r13_cv_decision",
+          "guards": [
+            "if _cv_pick in (\"stop\",\"granny\"):"
+          ]
+        }
+      ],
+      "line": 310,
+      "scene_title": "r13_cv_decision",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "b547caccc1b6bb9c3db279433a15d09dd6dcce96d97e782e6d7819570ed1c50e",
+      "uid": "123cbc6b5e1407adf53753ab",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_decision|rpy_literal|r13_cv_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:311:18",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        17508,
+        17561
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_decision",
+      "block": "r13_cv_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:311:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "고리가 하나씩 풀렸다. 굴돌 할아버지가 끌을 주머니에 넣었다. 판돌 영감이 손목을 문질렀다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 311,
+          "label": "r13_cv_decision",
+          "guards": [
+            "if _cv_pick in (\"stop\",\"granny\"):"
+          ]
+        }
+      ],
+      "line": 311,
+      "scene_title": "r13_cv_decision",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "4d45d6e0e6239e4620b8ec5e01b16be89a8533c67c197f90fda2d829d7429076",
+      "uid": "42ddb08f8286de4de747fb8b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_decision|rpy_literal|r13_cv_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:314:45",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        17695,
+        17726
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_decision",
+      "block": "r13_cv_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:314:45",
+      "when": null,
+      "speaker": "resident_ppul",
+      "kind": "dialogue",
+      "text": "……그건 내일, 산에서 하시오. 할멈도 올라갈 거요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 314,
+          "label": "r13_cv_decision",
+          "guards": [
+            "if _cv_pick in (\"stop\",\"granny\"):",
+            "if _cv_pick==\"granny\":"
+          ]
+        }
+      ],
+      "line": 314,
+      "scene_title": "r13_cv_decision",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "2ea90d53f542d321d915295da06aec92f02de2edd7f91bc63cae35ea9ee6b545",
+      "uid": "0da3871149d18c50b968458a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_decision|rpy_literal|r13_cv_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:317:31",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        17857,
+        17883
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_decision",
+      "block": "r13_cv_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:317:31",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "……모과. 판돌의 아내. 보낸 사람, 너울.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 317,
+          "label": "r13_cv_decision",
+          "guards": [
+            "elif _cv_pick==\"publish\":"
+          ]
+        }
+      ],
+      "line": 317,
+      "scene_title": "r13_cv_decision",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "e60a9b1061694b06973db716ad663ab734b42e3014a8028c32f1e98f040025d9",
+      "uid": "2760ff954b074b3d6929466f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_decision|rpy_literal|r13_cv_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:318:18",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        17904,
+        17954
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_decision",
+      "block": "r13_cv_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:318:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "엄마는 읽기를 멈추지 않았다. 이름이 하나씩 불릴 때마다 사람들이 한 걸음씩 다가왔다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 318,
+          "label": "r13_cv_decision",
+          "guards": [
+            "elif _cv_pick==\"publish\":"
+          ]
+        }
+      ],
+      "line": 318,
+      "scene_title": "r13_cv_decision",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "cde2f9654e103c84ecf41ca7f8952d916076582f3c74c17a11464eb09ce87fda",
+      "uid": "9a74fec8d4466ddf95c1a6d2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_decision|rpy_literal|r13_cv_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:319:29",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        17986,
+        18006
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_decision",
+      "block": "r13_cv_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:319:29",
+      "when": null,
+      "speaker": "resident_bori",
+      "kind": "dialogue",
+      "text": "너울. 네가 실었구나. 다 네가.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 319,
+          "label": "r13_cv_decision",
+          "guards": [
+            "elif _cv_pick==\"publish\":"
+          ]
+        }
+      ],
+      "line": 319,
+      "scene_title": "r13_cv_decision",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "ddc71c3bdde9ca20e8fec33d20613c3f64aa3d8a42d576be07cae46fe22326f3",
+      "uid": "1ba2656c23a5bea0796112d3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_decision|rpy_literal|r13_cv_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:320:21",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        18030,
+        18051
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_decision",
+      "block": "r13_cv_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:320:21",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "나는 명령서대로 했소! 명령서대로!",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 320,
+          "label": "r13_cv_decision",
+          "guards": [
+            "elif _cv_pick==\"publish\":"
+          ]
+        }
+      ],
+      "line": 320,
+      "scene_title": "r13_cv_decision",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "927f457897a95b6a89106ed2affd961af4b32afbd2459db1e65c0ac8413b2dc0",
+      "uid": "190bdc158bf483a657dbad37",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_decision|rpy_literal|r13_cv_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:321:18",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        18072,
+        18128
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_decision",
+      "block": "r13_cv_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:321:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "누가 먼저 손을 뻗었는지는 아무도 몰랐다. 너울이 사람들 사이로 끌려 들어갔다. 횃불이 흔들렸다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 321,
+          "label": "r13_cv_decision",
+          "guards": [
+            "elif _cv_pick==\"publish\":"
+          ]
+        }
+      ],
+      "line": 321,
+      "scene_title": "r13_cv_decision",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "f5d3aba46428cb30c06f0b0bad04c055d19e1489d6193f6ac196b4a374223d81",
+      "uid": "56a95f157032558f6251271d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_decision|rpy_literal|r13_cv_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:322:19",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        18150,
+        18163
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_decision",
+      "block": "r13_cv_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:322:19",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "그만해요! 그만…….",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 322,
+          "label": "r13_cv_decision",
+          "guards": [
+            "elif _cv_pick==\"publish\":"
+          ]
+        }
+      ],
+      "line": 322,
+      "scene_title": "r13_cv_decision",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "7ae9c7337fa6b503f94a9e269a39af7064f4b356349d8152cb5daf1ef2c789a3",
+      "uid": "37ff00bb6634e48682b95422",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_decision|rpy_literal|r13_cv_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
       "id": "game/systems/room13_ep6_cart.rpy:325:30",
       "file": "game/systems/room13_ep6_cart.rpy",
       "path": [
@@ -77,6 +438,46 @@
       "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
       "baseline_hash": "c86b2eb7831a4c6924cb6d5153cfb66c45cda883f7176d8a4e01cb126c575be4",
       "uid": "ee82c998629acbfe860e1ad2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_decision|rpy_literal|r13_cv_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:327:19",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        18535,
+        18554
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_decision",
+      "block": "r13_cv_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:327:19",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "새벽, 수레가 산길로 올라갔다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 327,
+          "label": "r13_cv_decision",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 327,
+      "scene_title": "r13_cv_decision",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "a4b261ddc8fde51d266ae505cc12d60a24a8c1d453a1f71272989af4927186c2",
+      "uid": "8e35ade35a8849697e177fce",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_cv_decision|rpy_literal|r13_cv_decision|행 조건 없음",

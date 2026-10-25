@@ -1,7 +1,459 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:339:26",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        20333,
+        20355
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_ruins",
+      "block": "r13_wf_ruins",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:339:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "타고 남은 창고 터. 어디부터 볼까.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 339,
+          "label": "r13_wf_ruins",
+          "guards": []
+        }
+      ],
+      "line": 339,
+      "scene_title": "r13_wf_ruins",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "005779ede5cbbfa8c1169ef93876164a2255d2a0d0125c108b71d4e98892b855",
+      "uid": "94ee5a886b23f158e091659d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_ruins|rpy_literal|r13_wf_ruins|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:349:38",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        20820,
+        20873
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_ruins",
+      "block": "r13_wf_ruins",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:349:38",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "담요 자리보다 더 안쪽, 쓰러진 장작 밑에서 작은 등잔이 나왔다. 그을렸지만 깨지지 않았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 349,
+          "label": "r13_wf_ruins",
+          "guards": [
+            "while _wf_left:",
+            "else:",
+            "if _wf_pick==\"inside\":"
+          ]
+        }
+      ],
+      "line": 349,
+      "scene_title": "r13_wf_ruins",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "96edc95f307ed6aa6e0720ab39af3df69d89fada1f401a815be865618abef22e",
+      "uid": "bcbf10d70d3bdf1a41d66d92",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_ruins|rpy_literal|r13_wf_ruins|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:350:26",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        20902,
+        20941
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_ruins",
+      "block": "r13_wf_ruins",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:350:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "뚜껑이 꼭 닫혀 있었다. 흔들어 보니 안에 기름이 그대로 찰랑였다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 350,
+          "label": "r13_wf_ruins",
+          "guards": [
+            "while _wf_left:",
+            "else:",
+            "if _wf_pick==\"inside\":"
+          ]
+        }
+      ],
+      "line": 350,
+      "scene_title": "r13_wf_ruins",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "1d5d2646cb4ec4d7694c367e8d5579f92769e1511cd147ba06ecc46e389a790b",
+      "uid": "337f744f363fbd83cd97263c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_ruins|rpy_literal|r13_wf_ruins|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:351:27",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        20971,
+        21013
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_ruins",
+      "block": "r13_wf_ruins",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:351:27",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(꼬미는 약속대로 뚜껑을 닫았다. 이 등잔은 그 밤 켜져 있지 않았다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 351,
+          "label": "r13_wf_ruins",
+          "guards": [
+            "while _wf_left:",
+            "else:",
+            "if _wf_pick==\"inside\":"
+          ]
+        }
+      ],
+      "line": 351,
+      "scene_title": "r13_wf_ruins",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "5f45668df53d700ea13894625813d27ad80e14c3c5ad892a4717f84af1287e6e",
+      "uid": "42c77c13f48bee1c8e7f2add",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_ruins|rpy_literal|r13_wf_ruins|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:354:38",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        21183,
+        21220
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_ruins",
+      "block": "r13_wf_ruins",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:354:38",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "문틀이 숯처럼 새까맸다. 그런데 안쪽 장작더미는 겉만 그을렸다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 354,
+          "label": "r13_wf_ruins",
+          "guards": [
+            "while _wf_left:",
+            "else:",
+            "elif _wf_pick==\"door\":"
+          ]
+        }
+      ],
+      "line": 354,
+      "scene_title": "r13_wf_ruins",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "b65426812f67970c9daf4465cd92af5fd06b239acf46bc55491138840372e2da",
+      "uid": "9e1ce07ff8469b752800fed2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_ruins|rpy_literal|r13_wf_ruins|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:355:27",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        21250,
+        21312
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_ruins",
+      "block": "r13_wf_ruins",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:355:27",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(안에서 불이 났다면 안쪽이 제일 많이 탔겠지. 불은 문에서 시작됐다. 그래서 아이들이 문으로 못 나왔다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 355,
+          "label": "r13_wf_ruins",
+          "guards": [
+            "while _wf_left:",
+            "else:",
+            "elif _wf_pick==\"door\":"
+          ]
+        }
+      ],
+      "line": 355,
+      "scene_title": "r13_wf_ruins",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "d039c25db7c1981f0ed693198fc0545a7e78e2622e3213325d0a54bb472d73bb",
+      "uid": "0bdfd8f5f5fdb7bbff678b80",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_ruins|rpy_literal|r13_wf_ruins|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:358:38",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        21458,
+        21515
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_ruins",
+      "block": "r13_wf_ruins",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:358:38",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "문 앞 눈이 녹아 웅덩이가 져 있었다. 물 위에 무지개 같은 기름막. 코를 대자 독한 냄새가 났다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 358,
+          "label": "r13_wf_ruins",
+          "guards": [
+            "while _wf_left:",
+            "else:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 358,
+      "scene_title": "r13_wf_ruins",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "a05c085128da7cbd639f5497c1f4774ad252fbb89ced207391350c98dddbaf64",
+      "uid": "44be276e37b1b76145665899",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_ruins|rpy_literal|r13_wf_ruins|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:359:27",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        21545,
+        21592
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_ruins",
+      "block": "r13_wf_ruins",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:359:27",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(등유다. 등잔 기름이 아니라, 솥에 쓰는 독한 기름. 누군가 문 앞에 부었다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 359,
+          "label": "r13_wf_ruins",
+          "guards": [
+            "while _wf_left:",
+            "else:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 359,
+      "scene_title": "r13_wf_ruins",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "d60439ec5ae8a19469681c885e05b1abfd10cc37dccb12a95027f5cc7c390301",
+      "uid": "61a0fe55192bbb6db32b7453",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_ruins|rpy_literal|r13_wf_ruins|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:362:31",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        21755,
+        21824
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_ruins",
+      "block": "r13_wf_ruins",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:362:31",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(불은 등잔에서 나지 않았다. 누가 문 앞에 등유를 붓고 불을 붙였다. 마을에서 등유를 통째로 쓰는 곳은…… 빨래터다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 362,
+          "label": "r13_wf_ruins",
+          "guards": [
+            "if r13_has(\"F06\") or r13_has(\"F07\"):"
+          ]
+        }
+      ],
+      "line": 362,
+      "scene_title": "r13_wf_ruins",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "bc423cb6bd971c1c3208f127a1a02b73c378031b7a9a8a5070187d361b82aceb",
+      "uid": "ef9652f90fd13542ae36b86b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_ruins|rpy_literal|r13_wf_ruins|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:365:37",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        21987,
+        22025
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_ruins",
+      "block": "r13_wf_ruins",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:365:37",
+      "when": null,
+      "speaker": "kid_kkomi",
+      "kind": "dialogue",
+      "text": "우린 학교 돌창고에 있었어. 선생님이 우리 이름 불렀어. 넷 다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 365,
+          "label": "r13_wf_ruins",
+          "guards": [
+            "if r13_has(\"wf_kkomi_alive\"):"
+          ]
+        }
+      ],
+      "line": 365,
+      "scene_title": "r13_wf_ruins",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "29f2684979b948fa6fc573b16d75bb745a0d08f8dfc1fe1149eb65fc47ab2a5c",
+      "uid": "0c3e171181451034ee309b74",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_ruins|rpy_literal|r13_wf_ruins|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:366:32",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        22060,
+        22089
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_ruins",
+      "block": "r13_wf_ruins",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:366:32",
+      "when": null,
+      "speaker": "resident_teacher",
+      "kind": "dialogue",
+      "text": "그 밤 아이들은 여기 있었어요. 제가 증인이에요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 366,
+          "label": "r13_wf_ruins",
+          "guards": [
+            "if r13_has(\"wf_kkomi_alive\"):"
+          ]
+        }
+      ],
+      "line": 366,
+      "scene_title": "r13_wf_ruins",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "27df0c2f2e514d0f3c96dc26c5d833f21d94d904db37f11ee2aed531b3161fde",
+      "uid": "5b9dba716d0e54ced3f822af",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_ruins|rpy_literal|r13_wf_ruins|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_ep3_woodfire.rpy:369:30",
       "file": "game/systems/room13_ep3_woodfire.rpy",
@@ -37,6 +489,246 @@
       "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
       "baseline_hash": "e2bd85a90709c3e0371242dec9d0aea3271976ebab8ec8f9590a46290c57fb98",
       "uid": "831d5202da6d2a05ad192ee1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_ruins|rpy_literal|r13_wf_ruins|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:370:18",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        22256,
+        22319
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_ruins",
+      "block": "r13_wf_ruins",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:370:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "사자 선생님이 낮은 목소리로 노래를 불렀다. 냄비를 젓는 시늉을 하는 노래였다. 아이들은 따라 부르지 않았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 370,
+          "label": "r13_wf_ruins",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 370,
+      "scene_title": "r13_wf_ruins",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "cce270934b61d3ce3dd43633b0861c1badc59c34b1f9b04445454c5d8f41be1d",
+      "uid": "c614b8914c7184b38c78689b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_ruins|rpy_literal|r13_wf_ruins|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:371:32",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        22354,
+        22380
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_ruins",
+      "block": "r13_wf_ruins",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:371:32",
+      "when": null,
+      "speaker": "resident_teacher",
+      "kind": "dialogue",
+      "text": "수프 노래예요. 대피소에서 늘 부르는 거죠.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 371,
+          "label": "r13_wf_ruins",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 371,
+      "scene_title": "r13_wf_ruins",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "33a37a6028b77abf374a9f7220aed6abae45b6facb779c23f7e89842c44475de",
+      "uid": "0baab6678543b9b99b47ce65",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_ruins|rpy_literal|r13_wf_ruins|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:372:32",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        22415,
+        22455
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_ruins",
+      "block": "r13_wf_ruins",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:372:32",
+      "when": null,
+      "speaker": "resident_teacher",
+      "kind": "dialogue",
+      "text": "이 애들 이름을 부르는 건 이제 나밖에 없어요. 깜이, 몽이, 방울.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 372,
+          "label": "r13_wf_ruins",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 372,
+      "scene_title": "r13_wf_ruins",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "a5f5bbb5764c095beaf604697473ad90759d131f3961745196f8f95d06e9e107",
+      "uid": "865dac0f7f4e48934f9ce575",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_ruins|rpy_literal|r13_wf_ruins|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:373:24",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        22482,
+        22540
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_ruins",
+      "block": "r13_wf_ruins",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:373:24",
+      "when": null,
+      "speaker": "kid_kkam",
+      "kind": "dialogue",
+      "text": "……곰 아저씨가 우리 살렸어. 문 쪽이 먼저 빨갰어. 문으로 못 나가서, 아저씨가 뒤에 벽을 부쉈어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 373,
+          "label": "r13_wf_ruins",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 373,
+      "scene_title": "r13_wf_ruins",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "6d57a059b355ec36e50fc69777722a5056a96ee47880a1035e79f3ae41fca777",
+      "uid": "ace619be18185e85c674fc65",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_ruins|rpy_literal|r13_wf_ruins|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:374:24",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        22567,
+        22601
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_ruins",
+      "block": "r13_wf_ruins",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:374:24",
+      "when": null,
+      "speaker": "kid_mong",
+      "kind": "dialogue",
+      "text": "꼬미가 우리 다 깨웠어. 대장은 맨 나중에 나온다고 했어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 374,
+          "label": "r13_wf_ruins",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 374,
+      "scene_title": "r13_wf_ruins",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "98f1b1767006e0ec69631300abd7312bec9ea7ed4c398e673f3d2f8fb00eb71e",
+      "uid": "00cc293e0e202786101a7c10",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_wf_ruins|rpy_literal|r13_wf_ruins|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep3_woodfire.rpy:375:24",
+      "file": "game/systems/room13_ep3_woodfire.rpy",
+      "path": [
+        22628,
+        22654
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_wf_ruins",
+      "block": "r13_wf_ruins",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep3_woodfire.rpy:375:24",
+      "when": null,
+      "speaker": "kid_bang",
+      "kind": "dialogue",
+      "text": "곰 아저씨 손 다 데었어. 아저씨 잡혀갔어?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep3_woodfire.rpy",
+          "line": 375,
+          "label": "r13_wf_ruins",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 375,
+      "scene_title": "r13_wf_ruins",
+      "source_hash": "59904e065793eb2070aa0556a9fd6fc05b44c23c35f69c2446a39cdbc11b137d",
+      "baseline_hash": "b40aa3b35e3198c6be02a0391c4b779d225037b2e3726fcf1499796c40726c28",
+      "uid": "5fd5b3de953b6c14fbef2725",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_wf_ruins|rpy_literal|r13_wf_ruins|행 조건 없음",

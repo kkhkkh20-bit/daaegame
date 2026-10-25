@@ -1,0 +1,47 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_debate.rpy:683:35",
+      "file": "game/systems/room13_debate.rpy",
+      "path": [
+        41223,
+        41265
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_debate_dispatch",
+      "block": "r13_debate_dispatch",
+      "placement": "literal",
+      "ref": "game/systems/room13_debate.rpy:683:35",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(맞는 자료를 찾지 못했다. 저 말은 반박되지 않은 채 그대로 남는다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_debate.rpy",
+          "line": 683,
+          "label": "r13_debate_dispatch",
+          "guards": [
+            "elif r13_debate_action[0]==\"leave\":",
+            "if _return:"
+          ]
+        }
+      ],
+      "line": 683,
+      "scene_title": "r13_debate_dispatch",
+      "source_hash": "e522a9da5723c7f36391b949f7859938b3d15bb6b924594f6878838b865736be",
+      "baseline_hash": "e30a75cb7794fce4c91251c0c9a809bb92b2dd27eeaf6781effe20183ef49ef1",
+      "uid": "5e1786ee51073cbda07fc429",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_debate_dispatch|rpy_literal|r13_debate_dispatch|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

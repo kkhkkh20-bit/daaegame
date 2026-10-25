@@ -1,0 +1,1318 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/winter_exploration.rpy:78:12",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        5309,
+        5333
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:78:12",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "남은 짐으로 어디까지 짐작할 수 있을까?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 78,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "if winter_action_id==\"room_reason\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 78,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "b384bb9a0701ecb1724fb6976a37c2f1897c728e527bff6d5ce33762c293fe61",
+      "uid": "17eda941b4b083a4996f9c58",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:81:42",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        5481,
+        5512
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:81:42",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "그럴 가능성은 있어. 식사 약속을 했는지도 물어보자.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 81,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "if winter_action_id==\"room_reason\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 81,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "3a6ace35c2836a1be1ed5e53e261873d1b2eee8e7ea99e666cff746d5d007a99",
+      "uid": "c3b948aab40d493f4617b6cf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:81:84",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        5523,
+        5548
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:81:84",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "메모에 이름 쓴 분은 어디 있는지 알겠지?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 81,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "if winter_action_id==\"room_reason\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 81,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "11bfbe17893222037dd8f167ac3bc619a3c1a248138ae2707e843350b427fd4c",
+      "uid": "66787051631eb3c6f708196f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:84:42",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        5718,
+        5750
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:84:42",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "그럴 수도 있지. 다만 이 짐만으로 단정할 수는 없어.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 84,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "if winter_action_id==\"room_reason\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 84,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "8cbc10d61a6fe68630edfc87e0a94d65f6cd389d111ed9f3ccb5240617c7dc8d",
+      "uid": "8ad4d03b2e846746e7804502",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:84:85",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        5761,
+        5790
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:84:85",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "마지막에 본 사람부터 찾자. 엄마가 혼자였는지도.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 84,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "if winter_action_id==\"room_reason\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 84,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "d510ae18d3d065a9fc02afd022f1933ceff7a4b36997adc96d745ba5699fc5b2",
+      "uid": "aa6c240ab74344576be0520c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:87:44",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        5966,
+        5990
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:87:44",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "부리한테 물어볼 게 있었다는 건 알겠어.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 87,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "if winter_action_id==\"room_reason\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 87,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "5c3502027f860b39514c88fb40997c28ce1908b80875db7d73ad58529b9cfc36",
+      "uid": "5b4edea9be7b06944f62c510",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:87:77",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        5999,
+        6025
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:87:77",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "그래. 무엇을 확인하려 했는지부터 찾아보자.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 87,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "if winter_action_id==\"room_reason\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 87,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "3d96a00cd57b0904e541271e2eeb3f358b01ed834ad435679a5a5fffd226757b",
+      "uid": "874d9d58f955f8310be5e6f0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:90:12",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        6118,
+        6138
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:90:12",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "세 문서로 확인할 수 있는 것은?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 90,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "elif winter_action_id==\"ration_compare\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 90,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "73eab819ce05ac66b7678f62a55477a65dac31c02eda2546a8f25cc95993e767",
+      "uid": "5938e48e1ed684e4b2df9268",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:92:44",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        6221,
+        6269
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:92:44",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "번호 41, 42는 여관, 그 뒤 넷은 보관소야. 여섯을 받았다가 숨긴 게 아니네.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 92,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "elif winter_action_id==\"ration_compare\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 92,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "44636190f4f58f76dc643f6f46557bd002cc2143b168472ea47a059b41365214",
+      "uid": "e943515bcd119a5c6bb3beec",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:92:102",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        6279,
+        6314
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:92:102",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "우리 인수증도 같이 남겨 줘. 내가 서명한 건 거기까지니까.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 92,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "elif winter_action_id==\"ration_compare\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 92,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "2d22fb85c0a64c143b44576d03ed3ee1e6ea5b8ad15c9e0a47efe687ae95fe10",
+      "uid": "06de1013a30683add0111b7c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:94:42",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        6417,
+        6453
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:94:42",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "여관 도착 전의 변경입니다. 원본 세 장을 함께 봐야 합니다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 94,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "elif winter_action_id==\"ration_compare\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 94,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "7b8c044e8d5ecd8c79e7e29b9553bc926c24ca873744aa740709413171997f49",
+      "uid": "4f16e4eee78afb2991d86754",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:94:88",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        6463,
+        6497
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:94:88",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "그러니 여관에서 사라진 돈이나 먹을 것처럼 쓰면 안 되지.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 94,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "elif winter_action_id==\"ration_compare\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 94,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "38763d6445c09e74ab726251860ee405cb1d6168e09023874e751ec131ca5709",
+      "uid": "73efce3d24a131f2864307ad",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:96:43",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        6602,
+        6652
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:96:43",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "어디로 보냈는지와 누가 먹었는지는 다르지. 나도 억울하지만 없는 말로 갚지는 말아 줘.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 96,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "elif winter_action_id==\"ration_compare\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 96,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "0c4f84ba3f9728739f7a89cd6a76cff38f6deb2418468a1717847f77db890e26",
+      "uid": "1c574c231620130b88658ce8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:96:104",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        6663,
+        6684
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:96:104",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "안에 뭐가 있는지는 아직 못 봤어.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 96,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "elif winter_action_id==\"ration_compare\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 96,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "a6e208fe4b072a6426a590c1a3c90ba4735802d15f5429b1b807e90f9bf0fc2e",
+      "uid": "d6adc47b1685fcf9996e339c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:100:12",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        6807,
+        6825
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:100:12",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "확인한 내용을 어떻게 알릴까?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 100,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "elif winter_action_id==\"ration_share\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 100,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "304291e0377e5e80e98008c36a825592a0a2f0599279349cc0adbd13b6bad311",
+      "uid": "66c494bdd6cc338b72961ed6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:103:43",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        6970,
+        7009
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:103:43",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "내 서명이 있는 인수증은 써도 돼. 밥 먹던 손님 이름은 가려 줘.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 103,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "elif winter_action_id==\"ration_share\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 103,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "cadafc84e9d305c8caa1f8523e2bf8bf2a88358ff03e03fb486305d58593eb85",
+      "uid": "317ae386d09da2afee692f57",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:103:91",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        7018,
+        7038
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:103:91",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "예. 배급 경로만 대조하겠습니다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 103,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "elif winter_action_id==\"ration_share\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 103,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "dc497eaafc0e2c1e75736890addc2c68d62ca7914a8d02dfe61ed34f84061183",
+      "uid": "695a378722adc36f256f0a06",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:103:119",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        7046,
+        7093
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:103:119",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "배급표 담당자에게 원본 번호와 인수증을 함께 전달했다. 정정 접수 도장을 받았다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 103,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "elif winter_action_id==\"ration_share\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 103,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "e9477a32a2b0ff1f97eb559f8a011e04dcc62d243d8913d002d44295fc0355d7",
+      "uid": "32f25f88149869117f6c5cf5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:103:176",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        7103,
+        7139
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:103:176",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "회의에서 또 네 탓이라고 하면, 나도 이 기록을 들고 말할게.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 103,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "elif winter_action_id==\"ration_share\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 103,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "ef7fe154aa527f388dff6a7f85f94642c843f31117b2b5ceb47ea7222a6444d9",
+      "uid": "19eda5b0dc19dbcd9f3164aa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:106:42",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        7303,
+        7334
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:106:42",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "원본은 보관하고 왜 보관소가 우선인지 더 보겠습니다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 106,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "elif winter_action_id==\"ration_share\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 106,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "01a3d727655edfe5f55b73f164a8ea485ad27d876a373d465c6adb6e9f73b300",
+      "uid": "5de282d1bdb5b42b845fed2b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:106:83",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        7344,
+        7380
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:106:83",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "알겠어. 마음 바뀌면 말해. 내 인수증을 공개하는 건 괜찮아.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 106,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "elif winter_action_id==\"ration_share\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 106,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "b6c3c9be50e2f3f392341e7b866965dc7dcd0e7dd1845aa20085cf874fa77dff",
+      "uid": "6d2243386dcfe62288b7cbc2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:109:12",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        7478,
+        7506
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:109:12",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "엄마의 답장과 점검 기록은 어느 곳을 가리킬까?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 109,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "elif winter_action_id==\"mother_reply_reason\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 109,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "477442acc32ce3072d3bcb2756800bbd03ba2cf72a83c30250f7f3adb03d66b8",
+      "uid": "cf25998e0035c6cdde1ae096",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:111:44",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        7590,
+        7624
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:111:44",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "부리 씨한테도 그 관을 물었어. 등불지기는 거길 점검했고.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 111,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "elif winter_action_id==\"mother_reply_reason\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 111,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "b069823731f821aa5aed41380b8757cb432e1600bfa4ff1e11b9af25edd7c0c0",
+      "uid": "3edbd1e3653bb8d05cc979ff",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:111:87",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        7633,
+        7667
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:111:87",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "불빛 말고 열이 남은 곳. 답장과 맞아. 입구를 찾아보자.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 111,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "elif winter_action_id==\"mother_reply_reason\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 111,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "024c6921ef2aa2003d8600c59353f9a134d2f6a9277009de4a2a35dc1481e7c5",
+      "uid": "f3a17069a5487b6b29f83965",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:114:44",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        7832,
+        7864
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:114:44",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "꺼진 등은 여러 갠데…… 엄마는 눈이 녹는다고도 썼어.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 114,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "elif winter_action_id==\"mother_reply_reason\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 114,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "ba8d854621749879248595e6c20f9424b18240ec43e13b0ca6974d8acb106d46",
+      "uid": "4ec63b5f017fd703a03a00f5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:114:85",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        7873,
+        7892
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:114:85",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "그래. 점검한 곳과 함께 보자.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 114,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "elif winter_action_id==\"mother_reply_reason\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 114,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "869b19fab10b18a3da353b8134722bd1a17fcd4f4538d17908d3102d30c74700",
+      "uid": "92fa61c24d7d18781fb9b2ba",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:120:12",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        8075,
+        8097
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:120:12",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "토리는 짐을 묶으며 대답을 기다린다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 120,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "elif winter_action_id==\"plaza_plans\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 120,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "68dc8bb893fff5ae3cab8decbb5356146e9c3585dd4e3432cd1525391d3b67ef",
+      "uid": "2f634bef1446d329f6205689",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:124:42",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        8337,
+        8349
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:124:42",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "내일 가 보려고요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 124,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "elif winter_action_id==\"plaza_plans\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 124,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "493181af05be401edb4f770f563b9db0235c5b276d6f7426ce6259d2193043a1",
+      "uid": "a0ea3a180e3442f0f8829171",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:124:73",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        8368,
+        8394
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:124:73",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "그럼 길만 알아 두세요. 큰 돌 왼쪽이에요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 124,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "elif winter_action_id==\"plaza_plans\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 124,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "9f90e0d40a9540915f9fd61215144d70c7f3b79c2e195a904c3e0416c60fc2f5",
+      "uid": "ac354f521f85799bea64336e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:124:110",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        8405,
+        8413
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:124:110",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "응. 왼쪽.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 124,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "elif winter_action_id==\"plaza_plans\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 124,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "0bf90d34cca41d27da66ca05e668707a5f137ebd60dac75fde6c46b2ba497c5b",
+      "uid": "50c00bf54ef63a6a5f0b17e2",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:126:42",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        8508,
+        8539
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:126:42",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "언제 갈지는 아직 모르겠습니다. 길만 알아 두려고요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 126,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "elif winter_action_id==\"plaza_plans\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 126,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "7b4b845bc970e9ef9793860e5f3061a2ee8a40e44db6ae1d7e71136fe71087b0",
+      "uid": "e8b5cab703fb8ee1218d9435",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter_exploration.rpy:126:92",
+      "file": "game/winter_exploration.rpy",
+      "path": [
+        8558,
+        8587
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_exploration_decision",
+      "block": "winter_exploration_decision",
+      "placement": "literal",
+      "ref": "game/winter_exploration.rpy:126:92",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "알겠어요. 이 짐 떨어지기 전에 좀 묶어야 해서.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter_exploration.rpy",
+          "line": 126,
+          "label": "winter_exploration_decision",
+          "guards": [
+            "elif winter_action_id==\"plaza_plans\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 126,
+      "scene_title": "winter_exploration_decision",
+      "source_hash": "2140bdc341a75d4b4464e25d6cec7095001b547c0e33787278134fe71a2bd37d",
+      "baseline_hash": "8bb2ade1048e4fcca8b74c9f989c28aa7803c7823c5786d5f2e1bc8fe5469b40",
+      "uid": "497b78c0b5799a6c160a2fb3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_exploration_decision|rpy_inventory|winter_exploration_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_debate.rpy:771:15",
+      "file": "game/systems/room13_debate.rpy",
+      "path": [
+        46710,
+        46751
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_debate_answer_counter",
+      "block": "r13_debate_answer_counter",
+      "placement": "literal",
+      "ref": "game/systems/room13_debate.rpy:771:15",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(내 말이 그대로 되돌아왔다. 자료는 맞다. 답을 다시 생각해 보자.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_debate.rpy",
+          "line": 771,
+          "label": "r13_debate_answer_counter",
+          "guards": []
+        }
+      ],
+      "line": 771,
+      "scene_title": "r13_debate_answer_counter",
+      "source_hash": "e522a9da5723c7f36391b949f7859938b3d15bb6b924594f6878838b865736be",
+      "baseline_hash": "3aa8d5255ebc3f74c8d6351c85d95b3625124a2d8d94c77aa621400dc4c98859",
+      "uid": "19336916a8de0ea42244021f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_debate_answer_counter|rpy_literal|r13_debate_answer_counter|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

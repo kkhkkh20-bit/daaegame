@@ -1,0 +1,129 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_materials.rpy:114:36",
+      "file": "game/systems/room13_materials.rpy",
+      "path": [
+        5688,
+        5711
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_show_catalog_object",
+      "block": "r13_show_catalog_object",
+      "placement": "literal",
+      "ref": "game/systems/room13_materials.rpy:114:36",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "빌려 드린 물건, 이제 돌려주시려고요?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_materials.rpy",
+          "line": 114,
+          "label": "r13_show_catalog_object",
+          "guards": [
+            "else:",
+            "if r13_offer_topic.startswith(\"return:\"):"
+          ]
+        }
+      ],
+      "line": 114,
+      "scene_title": "r13_show_catalog_object",
+      "source_hash": "73f6126938bd63c8da9c96c46aaaee4f4bf0171f23ab8d7270375478564ae68f",
+      "baseline_hash": "8b3d6f33af62796fa5ca181b37e32f33ded2cf480117b023a0a669ef70fab140",
+      "uid": "1cc8044d634dd813733ee94a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_show_catalog_object|rpy_literal|r13_show_catalog_object|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_materials.rpy:117:37",
+      "file": "game/systems/room13_materials.rpy",
+      "path": [
+        5912,
+        5935
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_show_catalog_object",
+      "block": "r13_show_catalog_object",
+      "placement": "literal",
+      "ref": "game/systems/room13_materials.rpy:117:37",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "구운 밤이다! 아빠, 같이 먹어도 돼?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_materials.rpy",
+          "line": 117,
+          "label": "r13_show_catalog_object",
+          "guards": [
+            "else:",
+            "elif r13_offer_topic==\"life:snack\":"
+          ]
+        }
+      ],
+      "line": 117,
+      "scene_title": "r13_show_catalog_object",
+      "source_hash": "73f6126938bd63c8da9c96c46aaaee4f4bf0171f23ab8d7270375478564ae68f",
+      "baseline_hash": "18f5797198ab9ea7e628052f3dc3dbb8a1ad53de4f221b693b563704dadd00fd",
+      "uid": "ca4c1a067b002303af7785d3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_show_catalog_object|rpy_literal|r13_show_catalog_object|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_materials.rpy:120:37",
+      "file": "game/systems/room13_materials.rpy",
+      "path": [
+        6106,
+        6131
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_show_catalog_object",
+      "block": "r13_show_catalog_object",
+      "placement": "literal",
+      "ref": "game/systems/room13_materials.rpy:120:37",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "이 엽서에 엄마한테 보낼 그림 그려도 돼?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_materials.rpy",
+          "line": 120,
+          "label": "r13_show_catalog_object",
+          "guards": [
+            "else:",
+            "elif r13_offer_topic==\"item:postcard\":"
+          ]
+        }
+      ],
+      "line": 120,
+      "scene_title": "r13_show_catalog_object",
+      "source_hash": "73f6126938bd63c8da9c96c46aaaee4f4bf0171f23ab8d7270375478564ae68f",
+      "baseline_hash": "bbc1a24e8092bd614d22a09e89ab8d489b39e5b29b1f2b3342d8131b17bc80ab",
+      "uid": "ac6644d0c617ee25b3f12148",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_show_catalog_object|rpy_literal|r13_show_catalog_object|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

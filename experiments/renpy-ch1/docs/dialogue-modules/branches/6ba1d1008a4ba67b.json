@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
     {
       "id": "game/systems/room13_new_cast.rpy:285:40",
@@ -35,6 +35,196 @@
       "source_hash": "1ca2e2ca3bfab19cf96bff538f9165f970ad4d6405095ae9a5862a44f44e94db",
       "baseline_hash": "6a0dfdc69c900c3b09f9867a5545d9dc94e619a053b752868c3769017f4c7ed2",
       "uid": "b28003cbcf8679f101747911",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nc_solbang_herbs|rpy_literal|r13_nc_solbang_herbs|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_cast.rpy:286:15",
+      "file": "game/systems/room13_new_cast.rpy",
+      "path": [
+        18584,
+        18598
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_nc_solbang_herbs",
+      "block": "r13_nc_solbang_herbs",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_cast.rpy:286:15",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "같이 가 드리겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_cast.rpy",
+          "line": 286,
+          "label": "r13_nc_solbang_herbs",
+          "guards": []
+        }
+      ],
+      "line": 286,
+      "scene_title": "r13_nc_solbang_herbs",
+      "source_hash": "1ca2e2ca3bfab19cf96bff538f9165f970ad4d6405095ae9a5862a44f44e94db",
+      "baseline_hash": "3bb6f83d21bf53b80bcfbb37ef0a2ea2880ea5ee6e3825052fb46ce878b1a8b8",
+      "uid": "196ddf889daf9a0348cb4c32",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nc_solbang_herbs|rpy_literal|r13_nc_solbang_herbs|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_cast.rpy:287:26",
+      "file": "game/systems/room13_new_cast.rpy",
+      "path": [
+        18651,
+        18701
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_nc_solbang_herbs",
+      "block": "r13_nc_solbang_herbs",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_cast.rpy:287:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "붉은 표식 천을 따라 숲 안쪽으로 들어갔다. 솔방울이 눈을 헤치고 마른 뿌리를 캐낸다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_cast.rpy",
+          "line": 287,
+          "label": "r13_nc_solbang_herbs",
+          "guards": []
+        }
+      ],
+      "line": 287,
+      "scene_title": "r13_nc_solbang_herbs",
+      "source_hash": "1ca2e2ca3bfab19cf96bff538f9165f970ad4d6405095ae9a5862a44f44e94db",
+      "baseline_hash": "1955ebd1cd839508d706f864a6cea8afda1644c3c1f6f4511377682aef9a8241",
+      "uid": "6da16474cdd6ab153c00eca8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nc_solbang_herbs|rpy_literal|r13_nc_solbang_herbs|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_cast.rpy:288:14",
+      "file": "game/systems/room13_new_cast.rpy",
+      "path": [
+        18718,
+        18759
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_nc_solbang_herbs",
+      "block": "r13_nc_solbang_herbs",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_cast.rpy:288:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "돌아오는 길, 큰 전나무 뿌리 쪽 눈이 유난히 단단하게 다져져 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_cast.rpy",
+          "line": 288,
+          "label": "r13_nc_solbang_herbs",
+          "guards": []
+        }
+      ],
+      "line": 288,
+      "scene_title": "r13_nc_solbang_herbs",
+      "source_hash": "1ca2e2ca3bfab19cf96bff538f9165f970ad4d6405095ae9a5862a44f44e94db",
+      "baseline_hash": "96551c4b462017eb904ae30d2d45d53cc8368ca45339aa4b9fd8bbd8611c758f",
+      "uid": "2aba791b1ddea5cfbc838ced",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nc_solbang_herbs|rpy_literal|r13_nc_solbang_herbs|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_cast.rpy:289:28",
+      "file": "game/systems/room13_new_cast.rpy",
+      "path": [
+        18790,
+        18826
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_nc_solbang_herbs",
+      "block": "r13_nc_solbang_herbs",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_cast.rpy:289:28",
+      "when": null,
+      "speaker": "resident_solbang",
+      "kind": "dialogue",
+      "text": "저기는 요즘 누가 자꾸 드나드나 봐요. 동물 자국은 아니고요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_cast.rpy",
+          "line": 289,
+          "label": "r13_nc_solbang_herbs",
+          "guards": []
+        }
+      ],
+      "line": 289,
+      "scene_title": "r13_nc_solbang_herbs",
+      "source_hash": "1ca2e2ca3bfab19cf96bff538f9165f970ad4d6405095ae9a5862a44f44e94db",
+      "baseline_hash": "85c3da228b7c5dec45fb869021b7d8d5f8b6e625141a874a03b24bc1d8498aa6",
+      "uid": "2ea2abd9f0522b17979e3e9f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_nc_solbang_herbs|rpy_literal|r13_nc_solbang_herbs|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_cast.rpy:290:28",
+      "file": "game/systems/room13_new_cast.rpy",
+      "path": [
+        18857,
+        18900
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_nc_solbang_herbs",
+      "block": "r13_nc_solbang_herbs",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_cast.rpy:290:28",
+      "when": null,
+      "speaker": "resident_solbang",
+      "kind": "dialogue",
+      "text": "덕분에 약초를 넉넉히 캤어요. 무쇠 할아버지 약도 이걸로 지을 수 있어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_cast.rpy",
+          "line": 290,
+          "label": "r13_nc_solbang_herbs",
+          "guards": []
+        }
+      ],
+      "line": 290,
+      "scene_title": "r13_nc_solbang_herbs",
+      "source_hash": "1ca2e2ca3bfab19cf96bff538f9165f970ad4d6405095ae9a5862a44f44e94db",
+      "baseline_hash": "9a576fd70fc7a0518ed7c22902a14f453399bf566b60400435027e883f4cf8c8",
+      "uid": "c2d5d7da4bc3b4c46d362129",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_nc_solbang_herbs|rpy_literal|r13_nc_solbang_herbs|행 조건 없음",

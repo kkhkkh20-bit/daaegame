@@ -1,0 +1,334 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/room13_life.rpy:199:12",
+      "file": "game/room13_life.rpy",
+      "path": [
+        11164,
+        11188
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_topic_choice",
+      "block": "r13_topic_choice",
+      "placement": "literal",
+      "ref": "game/room13_life.rpy:199:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "서명은 두고, 사실과 지시를 나눠 주세요",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_life.rpy",
+          "line": 199,
+          "label": "r13_topic_choice",
+          "guards": [
+            "if key==\"w2_erased\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 199,
+      "scene_title": "r13_topic_choice",
+      "source_hash": "ff6367277bd80f51605a562a690b9994a298289796fb1dd7f1222258428131b7",
+      "baseline_hash": "19f38204eda1bcdc28927bdaebbe6f4bb12751b71dbdf9d4c1377172c4a10f61",
+      "uid": "d982a786eea5ea9c88385011",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_topic_choice|rpy_menu|r13_topic_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_life.rpy:203:12",
+      "file": "game/room13_life.rpy",
+      "path": [
+        11531,
+        11555
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_topic_choice",
+      "block": "r13_topic_choice",
+      "placement": "literal",
+      "ref": "game/room13_life.rpy:203:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "서명 부분만 잘라 내면 서로 편할 겁니다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_life.rpy",
+          "line": 203,
+          "label": "r13_topic_choice",
+          "guards": [
+            "if key==\"w2_erased\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 203,
+      "scene_title": "r13_topic_choice",
+      "source_hash": "ff6367277bd80f51605a562a690b9994a298289796fb1dd7f1222258428131b7",
+      "baseline_hash": "9f11b614e7887178a27eff49c00ea2687b046202236e92ad393ee51f5bc0ac0a",
+      "uid": "18235cf06451c37685acb3f4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_topic_choice|rpy_menu|r13_topic_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_life.rpy:206:12",
+      "file": "game/room13_life.rpy",
+      "path": [
+        11805,
+        11829
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_topic_choice",
+      "block": "r13_topic_choice",
+      "placement": "literal",
+      "ref": "game/room13_life.rpy:206:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "지금 서명하지 않으면 한패로 알리겠습니다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_life.rpy",
+          "line": 206,
+          "label": "r13_topic_choice",
+          "guards": [
+            "if key==\"w2_erased\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 206,
+      "scene_title": "r13_topic_choice",
+      "source_hash": "ff6367277bd80f51605a562a690b9994a298289796fb1dd7f1222258428131b7",
+      "baseline_hash": "47ca2b8f3a9a89fb32d434e101e5884991309c06ef5d19251680f43d00212cae",
+      "uid": "8904ce5ff15e317dbd49f988",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_topic_choice|rpy_menu|r13_topic_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_life.rpy:210:12",
+      "file": "game/room13_life.rpy",
+      "path": [
+        12122,
+        12144
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_topic_choice",
+      "block": "r13_topic_choice",
+      "placement": "literal",
+      "ref": "game/room13_life.rpy:210:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "원본을 더 확인한 뒤 이야기하겠습니다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_life.rpy",
+          "line": 210,
+          "label": "r13_topic_choice",
+          "guards": [
+            "if key==\"w2_erased\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 210,
+      "scene_title": "r13_topic_choice",
+      "source_hash": "ff6367277bd80f51605a562a690b9994a298289796fb1dd7f1222258428131b7",
+      "baseline_hash": "ba6b998ce14c402b9fcb909345f7c937c20d4bb1409a05cdf01dff5705c60c00",
+      "uid": "ebe58bdfa0fe86d4f1ec9584",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_topic_choice|rpy_menu|r13_topic_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_life.rpy:217:12",
+      "file": "game/room13_life.rpy",
+      "path": [
+        12423,
+        12449
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_topic_choice",
+      "block": "r13_topic_choice",
+      "placement": "literal",
+      "ref": "game/room13_life.rpy:217:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "모두 같은 기준으로 수량과 받는 집을 적는다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_life.rpy",
+          "line": 217,
+          "label": "r13_topic_choice",
+          "guards": [
+            "if key==\"w2_eunho\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 217,
+      "scene_title": "r13_topic_choice",
+      "source_hash": "ff6367277bd80f51605a562a690b9994a298289796fb1dd7f1222258428131b7",
+      "baseline_hash": "c7c20e637014e2104e23bf2e4e0c5fb946be65ffaf6814f4df27dac38a05614e",
+      "uid": "3962ef85d4f6bfbfbb3be26e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_topic_choice|rpy_menu|r13_topic_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_life.rpy:220:12",
+      "file": "game/room13_life.rpy",
+      "path": [
+        12737,
+        12761
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_topic_choice",
+      "block": "r13_topic_choice",
+      "placement": "literal",
+      "ref": "game/room13_life.rpy:220:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "위기 뒤 매입가로 전부 갚겠다고 약속한다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_life.rpy",
+          "line": 220,
+          "label": "r13_topic_choice",
+          "guards": [
+            "if key==\"w2_eunho\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 220,
+      "scene_title": "r13_topic_choice",
+      "source_hash": "ff6367277bd80f51605a562a690b9994a298289796fb1dd7f1222258428131b7",
+      "baseline_hash": "434bb47e9e71334e8cdbdeb8040dce6d21a2f5a660b0012a306c0bd39808953a",
+      "uid": "a0a22831e47f071ee9b55740",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_topic_choice|rpy_menu|r13_topic_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_life.rpy:223:12",
+      "file": "game/room13_life.rpy",
+      "path": [
+        13027,
+        13050
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_topic_choice",
+      "block": "r13_topic_choice",
+      "placement": "literal",
+      "ref": "game/room13_life.rpy:223:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "먼저 내놓으면 주민들이 편이 될 겁니다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_life.rpy",
+          "line": 223,
+          "label": "r13_topic_choice",
+          "guards": [
+            "if key==\"w2_eunho\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 223,
+      "scene_title": "r13_topic_choice",
+      "source_hash": "ff6367277bd80f51605a562a690b9994a298289796fb1dd7f1222258428131b7",
+      "baseline_hash": "b06226ac030e7bad8d0bd23549d76aff8dabe6e547f74fbd9965fc13bc28f6b3",
+      "uid": "2096caba0f915844af7e356c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_topic_choice|rpy_menu|r13_topic_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13_life.rpy:226:12",
+      "file": "game/room13_life.rpy",
+      "path": [
+        13258,
+        13282
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_topic_choice",
+      "block": "r13_topic_choice",
+      "placement": "literal",
+      "ref": "game/room13_life.rpy:226:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "창고의 실제 수량부터 살펴보고 다시 온다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_life.rpy",
+          "line": 226,
+          "label": "r13_topic_choice",
+          "guards": [
+            "if key==\"w2_eunho\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 226,
+      "scene_title": "r13_topic_choice",
+      "source_hash": "ff6367277bd80f51605a562a690b9994a298289796fb1dd7f1222258428131b7",
+      "baseline_hash": "a1f8dd34b58645073e2a5efcde3b91266886ac1c37b55293ae9301a22a3b4d50",
+      "uid": "52456406d6f137ce8e41036b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_topic_choice|rpy_menu|r13_topic_choice|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

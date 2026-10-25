@@ -1,7 +1,206 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_town_events.rpy:389:26",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        20537,
+        20625
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_wedge",
+      "block": "r13_ev_c_wedge",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:389:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "자루를 세는 사이 등 뒤에서 문이 닫히고, 밖에서 빗장이 걸렸다. 문 아래 나무 조각 때문에 문은 끝까지 닫히지 않았다. 손가락 하나 들어갈 틈이 남았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 389,
+          "label": "r13_ev_c_wedge",
+          "guards": []
+        }
+      ],
+      "line": 389,
+      "scene_title": "r13_ev_c_wedge",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "47a2afd888e5543023833de59b99e55b6fc69c3bb47986e459f1f7439e723b67",
+      "uid": "3222de78e35436bd82f4cad9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_wedge|rpy_literal|r13_ev_c_wedge|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:395:38",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        20782,
+        20815
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_wedge",
+      "block": "r13_ev_c_wedge",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:395:38",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "자루마다 배급소 도장이 찍혀 있다. 묶은 끈은 새것이다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 395,
+          "label": "r13_ev_c_wedge",
+          "guards": [
+            "while _c_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 395,
+      "scene_title": "r13_ev_c_wedge",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "4a7473e45cfe84217a6a89b1b85177731b5ae0864f85f78117ad5188bc178d77",
+      "uid": "4e1b76a731a5cfed268b013a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_wedge|rpy_literal|r13_ev_c_wedge|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:397:38",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        20936,
+        20972
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_wedge",
+      "block": "r13_ev_c_wedge",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:397:38",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "선반 맨 아래, 곡식 자루 뒤에 장부 한 권이 끼워져 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 397,
+          "label": "r13_ev_c_wedge",
+          "guards": [
+            "while _c_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 397,
+      "scene_title": "r13_ev_c_wedge",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "1a426d4e1de12e91cfa659f30790b61664d172be320607794c0b2c224ab23db0",
+      "uid": "ea3bf93d3ccea1216a719351",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_wedge|rpy_literal|r13_ev_c_wedge|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:398:26",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        21001,
+        21067
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_wedge",
+      "block": "r13_ev_c_wedge",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:398:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "날짜마다 곡식과 약초의 수가 적혀 있다. 배급이 모자랐다는 날과 같은 날짜들이다. 날짜 옆에는 뭉치의 서명이 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 398,
+          "label": "r13_ev_c_wedge",
+          "guards": [
+            "while _c_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 398,
+      "scene_title": "r13_ev_c_wedge",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "cea2f22e30e4313ec7016b98a975d80a27c44ce782c795580a4aba600113da97",
+      "uid": "4129e1ae94b9bf8f8242d359",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_wedge|rpy_literal|r13_ev_c_wedge|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:402:26",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        21234,
+        21301
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_wedge",
+      "block": "r13_ev_c_wedge",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:402:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "새벽이 오기 전에 문틈으로 빗장을 들어 올리고 나왔다. 백 부인은 열려 있는 문을 보고 말없이 열다섯 냥을 내밀었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 402,
+          "label": "r13_ev_c_wedge",
+          "guards": []
+        }
+      ],
+      "line": 402,
+      "scene_title": "r13_ev_c_wedge",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "b846775a05dbdd14a34f5f7a39faa902fd675a73e9f552500f0890954dfb9a76",
+      "uid": "9399faab9050c24f57d34874",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_wedge|rpy_literal|r13_ev_c_wedge|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_town_events.rpy:407:30",
       "file": "game/systems/room13_town_events.rpy",
@@ -37,6 +236,46 @@
       "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
       "baseline_hash": "a36a79d63a0801449489717c0f7a1fa1e58a4875b96d4ac0bb77689db4de6c95",
       "uid": "2da365ce2b9a8e763b1e4ad3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_wedge|rpy_literal|r13_ev_c_wedge|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:408:21",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        21540,
+        21587
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_wedge",
+      "block": "r13_ev_c_wedge",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:408:21",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "밤에 누가 왔었어. 이름 물어보니까 그냥 돌아갔어. 목소리는 뭉치 아저씨 같았어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 408,
+          "label": "r13_ev_c_wedge",
+          "guards": [
+            "if room_safe:"
+          ]
+        }
+      ],
+      "line": 408,
+      "scene_title": "r13_ev_c_wedge",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "a5c37653a51f8b7a7855eb1d91387ca904a738f9a4c3113bbaef3a616808514b",
+      "uid": "3e78e86871daa1f96e66bec5",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_ev_c_wedge|rpy_literal|r13_ev_c_wedge|행 조건 없음",

@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_carryover.rpy:91:38",
+      "file": "game/systems/room13_carryover.rpy",
+      "path": [
+        5691,
+        5729
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_carry_eunho_full",
+      "block": "r13_carry_eunho_full",
+      "placement": "literal",
+      "ref": "game/systems/room13_carryover.rpy:91:38",
+      "when": null,
+      "speaker": "resident_eunho",
+      "kind": "dialogue",
+      "text": "반값 거래는 끝났소. 대피소에 쓸 몫을 다 사려면 열다섯 냥이오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_carryover.rpy",
+          "line": 91,
+          "label": "r13_carry_eunho_full",
+          "guards": []
+        }
+      ],
+      "line": 91,
+      "scene_title": "r13_carry_eunho_full",
+      "source_hash": "f10306dfce96df81431a8d3c357b4d31023a0ef3afd42beef4d1a8184ca40d9d",
+      "baseline_hash": "0feb154a946f3b6e15d51e718b77db4d8b104d71bc0ba2c60082ec50c47d5cbd",
+      "uid": "6a41cc4545939c12e634e9bf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_carry_eunho_full|rpy_literal|r13_carry_eunho_full|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_carryover.rpy:95:46",
+      "file": "game/systems/room13_carryover.rpy",
+      "path": [
+        5892,
+        5936
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_carry_eunho_full",
+      "block": "r13_carry_eunho_full",
+      "placement": "literal",
+      "ref": "game/systems/room13_carryover.rpy:95:46",
+      "when": null,
+      "speaker": "resident_eunho",
+      "kind": "dialogue",
+      "text": "장부에는 당신 이름으로 적겠소. 사람들에게 나눠 주는 일도 당신이 맡으시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_carryover.rpy",
+          "line": 95,
+          "label": "r13_carry_eunho_full",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 95,
+      "scene_title": "r13_carry_eunho_full",
+      "source_hash": "f10306dfce96df81431a8d3c357b4d31023a0ef3afd42beef4d1a8184ca40d9d",
+      "baseline_hash": "2896af720c696ff5fdc2ed80902279342d40b9f79a99cd1643b2d5bf20494f07",
+      "uid": "24bae86cfa3c019f871b460b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_carry_eunho_full|rpy_literal|r13_carry_eunho_full|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

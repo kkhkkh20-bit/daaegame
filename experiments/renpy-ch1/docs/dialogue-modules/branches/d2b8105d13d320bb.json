@@ -1,7 +1,281 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:303:17",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        17060,
+        17073
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_cv_decision",
+      "block": "r13_cv_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:303:17",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "수레를 어떻게 할까?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 303,
+          "label": "r13_cv_decision",
+          "guards": []
+        }
+      ],
+      "line": 303,
+      "scene_title": "r13_cv_decision",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "983019f0756a2ee70ec09efa3022e9c7ac69829de31a681ad82d98ddfd531962",
+      "uid": "429a5ba65c4f938353e5e636",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_decision|rpy_inventory|r13_cv_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:303:38",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        17081,
+        17090
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_cv_decision",
+      "block": "r13_cv_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:303:38",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "수레를 멈춘다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 303,
+          "label": "r13_cv_decision",
+          "guards": []
+        }
+      ],
+      "line": 303,
+      "scene_title": "r13_cv_decision",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "c6efe08bf01dc0cebda76eb1014082387e811111c419771681a937f8cee7871d",
+      "uid": "077ea3e68f817b0282fbb44d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_decision|rpy_inventory|r13_cv_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:303:57",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        17100,
+        17114
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_cv_decision",
+      "block": "r13_cv_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:303:57",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "명단을 광장에 공개한다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 303,
+          "label": "r13_cv_decision",
+          "guards": []
+        }
+      ],
+      "line": 303,
+      "scene_title": "r13_cv_decision",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "fd46cad1cf45e71f346bc04de192d834f9d709c7464ce06695208010e7c08919",
+      "uid": "c736029a21bc5faddf82f8c3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_decision|rpy_inventory|r13_cv_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:305:27",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        17189,
+        17204
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_cv_decision",
+      "block": "r13_cv_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:305:27",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "가족만 빨래 수레로 뺀다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 305,
+          "label": "r13_cv_decision",
+          "guards": [
+            "if r13_has(\"cv_laundry_cart\"):"
+          ]
+        }
+      ],
+      "line": 305,
+      "scene_title": "r13_cv_decision",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "3e9d9a75338c78cd24ad0f3e9b99ea912240430dffcce24babe5bfbc55d0c68b",
+      "uid": "eecc533dd651d605cd5e3215",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_decision|rpy_inventory|r13_cv_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:307:27",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        17296,
+        17312
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_cv_decision",
+      "block": "r13_cv_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:307:27",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "명령서를 쓴 사람을 세운다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 307,
+          "label": "r13_cv_decision",
+          "guards": [
+            "if room13.get(\"trial_result\")==\"culprit_proven\":"
+          ]
+        }
+      ],
+      "line": 307,
+      "scene_title": "r13_cv_decision",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "eb92eab21b13da1be5d4480e3c2266feef20c4b2f3ed08b9a627aafce0e3be37",
+      "uid": "79b13f89b25c158a43973b05",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_decision|rpy_inventory|r13_cv_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:322:46",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        18177,
+        18193
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_cv_decision",
+      "block": "r13_cv_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:322:46",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "아빠, 우리가 이긴 거야?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 322,
+          "label": "r13_cv_decision",
+          "guards": [
+            "elif _cv_pick==\"publish\":"
+          ]
+        }
+      ],
+      "line": 322,
+      "scene_title": "r13_cv_decision",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "c0c16d988ab025d882178771d3d0d33a8cd16f24d8d9e9ee1cb9f36a25a5f17e",
+      "uid": "ade349a0a1973a9a22019a17",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_decision|rpy_inventory|r13_cv_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:322:71",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        18202,
+        18207
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_cv_decision",
+      "block": "r13_cv_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:322:71",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "…….",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 322,
+          "label": "r13_cv_decision",
+          "guards": [
+            "elif _cv_pick==\"publish\":"
+          ]
+        }
+      ],
+      "line": 322,
+      "scene_title": "r13_cv_decision",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "7e428bfac963e979a36c34565ac48fb5ecee5c830adfb7369fe7ce653be4c521",
+      "uid": "afe7fc8e815227783988df14",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_decision|rpy_inventory|r13_cv_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_ep6_cart.rpy:326:20",
       "file": "game/systems/room13_ep6_cart.rpy",
@@ -37,6 +311,86 @@
       "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
       "baseline_hash": "7aed3e0e29e0e56d41b3ade1546fe727f1d4a85ef70e2bdcc2a59a5f41974de9",
       "uid": "dc08aeaf00c152cd57064fc7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_decision|rpy_inventory|r13_cv_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:327:52",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        18568,
+        18581
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_cv_decision",
+      "block": "r13_cv_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:327:52",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "아빠, 할아버지들은?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 327,
+          "label": "r13_cv_decision",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 327,
+      "scene_title": "r13_cv_decision",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "42b909a673585f082473ec8b6c156cbad01dd7f6be90a63ff62b800de04ca63a",
+      "uid": "72a277911e6b9670b552d8be",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_decision|rpy_inventory|r13_cv_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:327:74",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        18590,
+        18595
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_cv_decision",
+      "block": "r13_cv_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:327:74",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "…….",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 327,
+          "label": "r13_cv_decision",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 327,
+      "scene_title": "r13_cv_decision",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "7e428bfac963e979a36c34565ac48fb5ecee5c830adfb7369fe7ce653be4c521",
+      "uid": "53a1f6b018bedb86d559a3e7",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_cv_decision|rpy_inventory|r13_cv_decision|행 조건 없음",

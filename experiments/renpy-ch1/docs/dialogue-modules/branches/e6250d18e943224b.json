@@ -1,0 +1,44 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/room13_v111_days123.rpy:322:27",
+      "file": "game/room13_v111_days123.rpy",
+      "path": [
+        14699,
+        14717
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "MS14_D01_S05",
+      "block": "r13_v111_inn",
+      "placement": "literal",
+      "ref": "game/room13_v111_days123.rpy:322:27",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "다람의 손을 천으로 감싸 준다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13_v111_days123.rpy",
+          "line": 322,
+          "label": "r13_v111_inn",
+          "guards": []
+        }
+      ],
+      "line": 322,
+      "scene_title": "5. 여관 13호 / 기다리지 않는 방",
+      "source_hash": "456f94ff2e8310cc392465f4cf6e8b4751192ba306a52edeb7646cb6546fd0ef",
+      "baseline_hash": "9d27e6dc4ffe3feff521ccfcaf5301a7fe2368fa85a7bfa8ef6be5064b345b1b",
+      "uid": "cb4ac0c354b2243fee8c7c43",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|MS14_D01_S05|rpy_menu|r13_v111_inn|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

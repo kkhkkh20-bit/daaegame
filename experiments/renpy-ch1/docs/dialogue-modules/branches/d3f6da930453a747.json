@@ -1,0 +1,85 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:484:26",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        26110,
+        26181
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_meeting",
+      "block": "r13_ep1_meeting",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:484:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "톡이 묶인 채 돌 앞에 서 있었다. 사람들 틈에 실룩의 아이 둘이 빵 봉지를 쥐고 서 있었다. 백 부인은 맨 앞줄에 앉았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 484,
+          "label": "r13_ep1_meeting",
+          "guards": []
+        }
+      ],
+      "line": 484,
+      "scene_title": "r13_ep1_meeting",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "3a67844aa5a8d29a5d8255f7caba0f03882fdcc649a0501b856dc92603b90742",
+      "uid": "64487f4bf5120b5038f7db1a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_meeting|rpy_literal|r13_ep1_meeting|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:493:156",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        26654,
+        26677
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_meeting",
+      "block": "r13_ep1_meeting",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:493:156",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "톡이 끌려가며 수리점 쪽을 돌아보았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 493,
+          "label": "r13_ep1_meeting",
+          "guards": [
+            "else:",
+            "else:"
+          ]
+        }
+      ],
+      "line": 493,
+      "scene_title": "r13_ep1_meeting",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "751b805978df5fe71dfe82fe421d02f6670ad9ad972cc1759785c8a46d6d596b",
+      "uid": "083a0f0d7a400fcf7a10bebf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_meeting|rpy_literal|r13_ep1_meeting|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

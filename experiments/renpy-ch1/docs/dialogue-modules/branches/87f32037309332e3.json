@@ -1,0 +1,807 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:109:28",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        6928,
+        6942
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:109:28",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "아내는 어디 있습니까?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 109,
+          "label": "r13_life_first_night",
+          "guards": [
+            "if store.room13.get(\"life_poc\") and key==\"granny_letter\":"
+          ]
+        }
+      ],
+      "line": 109,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "b3b1998c0c61de24bccb1355ad15a651aaaf843ff53272fe48cc105929e85826",
+      "uid": "0d1d55b43fa08ebae3c7a1b1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_inventory|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:109:56",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        6956,
+        6990
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:109:56",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "며칠째 안 보여요. 조사하러 나가면 밤낮이 없던 사람이라.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 109,
+          "label": "r13_life_first_night",
+          "guards": [
+            "if store.room13.get(\"life_poc\") and key==\"granny_letter\":"
+          ]
+        }
+      ],
+      "line": 109,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "020eaff29e476e3e6dc62c152e6c6348e6e1cc58be3c8bda6ea6c91500ae7a80",
+      "uid": "479e9e1bf95c9b19b1a957bf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_inventory|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:109:103",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        7003,
+        7012
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:109:103",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "기다린댔는데.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 109,
+          "label": "r13_life_first_night",
+          "guards": [
+            "if store.room13.get(\"life_poc\") and key==\"granny_letter\":"
+          ]
+        }
+      ],
+      "line": 109,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "6696f86ce1c24c6af30f0821a50970bad6b783d385af7cf0e3fc3ec221ddf080",
+      "uid": "14660aeb72f10265f2bfdd7c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_inventory|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:109:126",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        7026,
+        7046
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:109:126",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "방은 그대로 뒀지. 올라가 봐요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 109,
+          "label": "r13_life_first_night",
+          "guards": [
+            "if store.room13.get(\"life_poc\") and key==\"granny_letter\":"
+          ]
+        }
+      ],
+      "line": 109,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "0a4566abedbb88a485b2b55469e4a5d02e151201d966449ead4d22fb7f9dd0eb",
+      "uid": "462d6486a305bc54966eb8f9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_inventory|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:109:157",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        7057,
+        7077
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:109:157",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "마지막으로 어디 간다고 했습니까?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 109,
+          "label": "r13_life_first_night",
+          "guards": [
+            "if store.room13.get(\"life_poc\") and key==\"granny_letter\":"
+          ]
+        }
+      ],
+      "line": 109,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "75236e8ba2ea3a8b6c77186bdb1a930d38b0cb459264225a60acde432d3e89c0",
+      "uid": "3fdf2ae7456654c1fa9fcefc",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_inventory|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:109:191",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        7091,
+        7125
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:109:191",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "내게 일일이 말하진 않았어요. 밥도 식혀 놓고 들어오던걸.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 109,
+          "label": "r13_life_first_night",
+          "guards": [
+            "if store.room13.get(\"life_poc\") and key==\"granny_letter\":"
+          ]
+        }
+      ],
+      "line": 109,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "339c26e3dadf90db3b9bb961f17ca37540630751d449a55aa620041f3ce8aa81",
+      "uid": "bc14ff1c648c15ebdf98edba",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_inventory|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:109:236",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        7136,
+        7158
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:109:236",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "마지막으로 돌아온 날은 기억하십니까?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 109,
+          "label": "r13_life_first_night",
+          "guards": [
+            "if store.room13.get(\"life_poc\") and key==\"granny_letter\":"
+          ]
+        }
+      ],
+      "line": 109,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "e5f9cd2fd9966c5bf4d504dc3afdfaad5156ce427af7d5d95766a7d014ba87e6",
+      "uid": "0207e5ae75335d86aebafc7f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_inventory|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:109:272",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        7172,
+        7222
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:109:272",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "밥상은 매일 차렸죠. 어느 날부터 안 왔더라…… 방부터 보세요. 아이가 떨고 있잖아요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 109,
+          "label": "r13_life_first_night",
+          "guards": [
+            "if store.room13.get(\"life_poc\") and key==\"granny_letter\":"
+          ]
+        }
+      ],
+      "line": 109,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "1a833f0b65658dfa19561c851b9f3265122d92377e666bee24a21f5b6bda7485",
+      "uid": "51769d66881d298ec0b54ce3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_inventory|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:112:34",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        7364,
+        7394
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:112:34",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "13호실 그대로 쓰세요. 부인이 잡아 둔 방이에요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 112,
+          "label": "r13_life_first_night",
+          "guards": [
+            "if store.room13.get(\"life_poc\") and key==\"register\":",
+            "if store.room13.get(\"day\",1)>1:"
+          ]
+        }
+      ],
+      "line": 112,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "a8aa38d40fc0641cb6893403940554b314ba776c957425f87f8eae40b814b9ac",
+      "uid": "b0f089b9f4da933765dc1f2a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_inventory|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:113:31",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        7428,
+        7459
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:113:31",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "다돌 씨죠? 아이구, 손이 빨갛네. 난로부터 쬐어요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 113,
+          "label": "r13_life_first_night",
+          "guards": [
+            "if store.room13.get(\"life_poc\") and key==\"register\":"
+          ]
+        }
+      ],
+      "line": 113,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "0b932727419f9754941880ae109a28d045f8350960159d2e2f708dacbcba5e9b",
+      "uid": "3519ce0626577d2edb3ac607",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_inventory|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:113:76",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        7473,
+        7499
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:113:76",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "손 바로 대면 아파. 이걸로 감싸고 천천히.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 113,
+          "label": "r13_life_first_night",
+          "guards": [
+            "if store.room13.get(\"life_poc\") and key==\"register\":"
+          ]
+        }
+      ],
+      "line": 113,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "b6a8b250a772472ae820ef9a4a8cf68e11cc507beb35fd3f17698ed49c08ed0f",
+      "uid": "af9c8e63a6e11ca875f75a9e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_inventory|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:113:115",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        7512,
+        7520
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:113:115",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "고맙습니다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 113,
+          "label": "r13_life_first_night",
+          "guards": [
+            "if store.room13.get(\"life_poc\") and key==\"register\":"
+          ]
+        }
+      ],
+      "line": 113,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "35640463217803b43a7b50c4ee80c263852939f244e045a751dc874643882a26",
+      "uid": "6f0f3752aaa19209e78b6642",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_inventory|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:113:134",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        7531,
+        7545
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:113:134",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "아내는 어디 있습니까?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 113,
+          "label": "r13_life_first_night",
+          "guards": [
+            "if store.room13.get(\"life_poc\") and key==\"register\":"
+          ]
+        }
+      ],
+      "line": 113,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "b3b1998c0c61de24bccb1355ad15a651aaaf843ff53272fe48cc105929e85826",
+      "uid": "d2934c2a3b7d39e300b240ef",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_inventory|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:113:162",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        7559,
+        7593
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:113:162",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "며칠째 안 보여요. 조사하러 나가면 밤낮이 없던 사람이라.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 113,
+          "label": "r13_life_first_night",
+          "guards": [
+            "if store.room13.get(\"life_poc\") and key==\"register\":"
+          ]
+        }
+      ],
+      "line": 113,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "020eaff29e476e3e6dc62c152e6c6348e6e1cc58be3c8bda6ea6c91500ae7a80",
+      "uid": "4a635b2bcaa673cdb6299780",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_inventory|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:113:209",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        7606,
+        7615
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:113:209",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "기다린댔는데.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 113,
+          "label": "r13_life_first_night",
+          "guards": [
+            "if store.room13.get(\"life_poc\") and key==\"register\":"
+          ]
+        }
+      ],
+      "line": 113,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "6696f86ce1c24c6af30f0821a50970bad6b783d385af7cf0e3fc3ec221ddf080",
+      "uid": "6606ecbc93c3b2becb950571",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_inventory|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:113:232",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        7629,
+        7649
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:113:232",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "방은 그대로 뒀지. 올라가 봐요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 113,
+          "label": "r13_life_first_night",
+          "guards": [
+            "if store.room13.get(\"life_poc\") and key==\"register\":"
+          ]
+        }
+      ],
+      "line": 113,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "0a4566abedbb88a485b2b55469e4a5d02e151201d966449ead4d22fb7f9dd0eb",
+      "uid": "b33f5068b400770ff157bd1b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_inventory|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:113:263",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        7660,
+        7680
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:113:263",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "마지막으로 어디 간다고 했습니까?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 113,
+          "label": "r13_life_first_night",
+          "guards": [
+            "if store.room13.get(\"life_poc\") and key==\"register\":"
+          ]
+        }
+      ],
+      "line": 113,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "75236e8ba2ea3a8b6c77186bdb1a930d38b0cb459264225a60acde432d3e89c0",
+      "uid": "e2af6a32f21e5b87ba7ff5fb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_inventory|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:113:297",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        7694,
+        7728
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:113:297",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "내게 일일이 말하진 않았어요. 밥도 식혀 놓고 들어오던걸.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 113,
+          "label": "r13_life_first_night",
+          "guards": [
+            "if store.room13.get(\"life_poc\") and key==\"register\":"
+          ]
+        }
+      ],
+      "line": 113,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "339c26e3dadf90db3b9bb961f17ca37540630751d449a55aa620041f3ce8aa81",
+      "uid": "bf82c7577447cd736761cf54",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_inventory|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:113:342",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        7739,
+        7761
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:113:342",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "마지막으로 돌아온 날은 기억하십니까?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 113,
+          "label": "r13_life_first_night",
+          "guards": [
+            "if store.room13.get(\"life_poc\") and key==\"register\":"
+          ]
+        }
+      ],
+      "line": 113,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "e5f9cd2fd9966c5bf4d504dc3afdfaad5156ce427af7d5d95766a7d014ba87e6",
+      "uid": "d30dc5290f9ffe3b4277e916",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_inventory|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:113:378",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        7775,
+        7825
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:113:378",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "밥상은 매일 차렸죠. 어느 날부터 안 왔더라…… 방부터 보세요. 아이가 떨고 있잖아요.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 113,
+          "label": "r13_life_first_night",
+          "guards": [
+            "if store.room13.get(\"life_poc\") and key==\"register\":"
+          ]
+        }
+      ],
+      "line": 113,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "1a833f0b65658dfa19561c851b9f3265122d92377e666bee24a21f5b6bda7485",
+      "uid": "5c6fc52891745c867c50d3ca",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_inventory|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

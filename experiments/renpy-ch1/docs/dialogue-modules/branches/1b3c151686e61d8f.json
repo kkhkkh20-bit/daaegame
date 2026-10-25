@@ -1,7 +1,123 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:89:29",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        5084,
+        5119
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:89:29",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "엄마가 여기 있었던 건 맞지? 이불도 엄마가 꿰맨 것 같아.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 89,
+          "label": "r13_life_first_night",
+          "guards": []
+        }
+      ],
+      "line": 89,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "9b74ad1f81c4478e52924a6281eb50412798c0ec2e83a8f22fb071fd5f2e3e73",
+      "uid": "4ed1218e07405d27ef1c4a19",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_literal|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:89:73",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        5128,
+        5172
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:89:73",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "응. 메모도 남겨 뒀고. 그런데 엄마가 지금 어디 있는지는 더 알아봐야겠어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 89,
+          "label": "r13_life_first_night",
+          "guards": []
+        }
+      ],
+      "line": 89,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "8ea0b978230750bd8e73d925a56781f12510ddefab07444dbe0b48de90348a9c",
+      "uid": "f0842cc6434cb4748cd32a21",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_literal|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:91:32",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        5272,
+        5287
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:91:32",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "편지에는 도토리가 없네.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 91,
+          "label": "r13_life_first_night",
+          "guards": [
+            "if r13_has(\"mother_expected_family\"):"
+          ]
+        }
+      ],
+      "line": 91,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "1d63f3f0b0580d84008a5d6354ce4971f2995b82efe83dcbccb93ab268ee30c0",
+      "uid": "751efbbe6ea38c060a484e60",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_literal|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_first_day_flow.rpy:91:60",
       "file": "game/systems/room13_first_day_flow.rpy",
@@ -37,6 +153,406 @@
       "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
       "baseline_hash": "c8b643e349ef49b8d0ce19b11fce15c7a8724a886e12322ae38ab4962df33946",
       "uid": "80dbd69dc57cd1406150838a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_literal|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:91:81",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        5321,
+        5350
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:91:81",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "그럴 수도 있고, 누가 대신 써 줬을 수도 있어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 91,
+          "label": "r13_life_first_night",
+          "guards": [
+            "if r13_has(\"mother_expected_family\"):"
+          ]
+        }
+      ],
+      "line": 91,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "4763add320e6c6cd6b592dbcd98ef93036e9f9b005154a2d9eb085d48f87e90f",
+      "uid": "5230a32b90be3eaedbe5ffa9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_literal|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:91:123",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        5363,
+        5378
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:91:123",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "그럼 초롱한테 물어보자.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 91,
+          "label": "r13_life_first_night",
+          "guards": [
+            "if r13_has(\"mother_expected_family\"):"
+          ]
+        }
+      ],
+      "line": 91,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "7bdf6411f76325581aa57fc46a07655706127d01689481d6a4c3d9373dd7406a",
+      "uid": "140510685073f152dcd19c3c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_literal|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:93:33",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        5526,
+        5549
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:93:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "초롱 아저씨가 엄마 봉투를 맡고 있대.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 93,
+          "label": "r13_life_first_night",
+          "guards": [
+            "if r13_mother_knowledge()[\"promised\"] and not r13_mother_knowledge()[\"received\"]:"
+          ]
+        }
+      ],
+      "line": 93,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "8c45917ca7f13f417e8d5266a8cdc7df39bc7c69d834083ca666ece87f46a60a",
+      "uid": "3e8f272cf2dc44486ba5e2be",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_literal|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:93:65",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        5558,
+        5604
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:93:65",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "응. 어디서 받을 수 있는지 바로 물어볼 수 있어. 엄마가 어떤 글을 남겼을까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 93,
+          "label": "r13_life_first_night",
+          "guards": [
+            "if r13_mother_knowledge()[\"promised\"] and not r13_mother_knowledge()[\"received\"]:"
+          ]
+        }
+      ],
+      "line": 93,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "e5d06f7c35a47bf1739a95fe43bc8e8fdb03b6ec11b38cdc1407345f94c9234e",
+      "uid": "d1c72b17645d741883ce401c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_literal|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:95:33",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        5711,
+        5730
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:95:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "초롱 아저씨가 엄마를 알아봤지.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 95,
+          "label": "r13_life_first_night",
+          "guards": [
+            "elif r13_mother_knowledge()[\"recognized\"]:"
+          ]
+        }
+      ],
+      "line": 95,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "c1ccbf55f1ba701112ceef9d801946b26adb54d3c4a9dd6fa7d2ea879f7b578a",
+      "uid": "a0f7a8e4e4a14fa71305fa07",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_literal|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:95:61",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        5739,
+        5772
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:95:61",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "응. 엄마와 언제 어디서 만났는지도 더 들어 보고 싶어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 95,
+          "label": "r13_life_first_night",
+          "guards": [
+            "elif r13_mother_knowledge()[\"recognized\"]:"
+          ]
+        }
+      ],
+      "line": 95,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "9b7b794ca5713708ec029e25f8ccb5b2544cc005c8952ab290a69b836503436d",
+      "uid": "1f1b0471884df5c2b6a35376",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_literal|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:97:33",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        5876,
+        5896
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:97:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "메모에 적힌 분은 초롱 아저씨지?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 97,
+          "label": "r13_life_first_night",
+          "guards": [
+            "elif r13_mother_knowledge()[\"named\"]:"
+          ]
+        }
+      ],
+      "line": 97,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "44685842ecad3d6ab72d760a303764331d09e3b0e1ea59352f270e1001af6552",
+      "uid": "98ead8c3b106950e6e0b10ae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_literal|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:97:62",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        5905,
+        5923
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:97:62",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "응. 그분도 엄마를 기억할까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 97,
+          "label": "r13_life_first_night",
+          "guards": [
+            "elif r13_mother_knowledge()[\"named\"]:"
+          ]
+        }
+      ],
+      "line": 97,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "3aa3fa4f2c5838ec6050dfc2392502cfd98f7c391318a35573d2bd174c4e4478",
+      "uid": "9460626abc5afdaad8124737",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_literal|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:99:33",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        5995,
+        6020
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:99:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "등불 돌보는 분이 누구인지는 아직 모르지?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 99,
+          "label": "r13_life_first_night",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 99,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "21c08df4b6bdc90367bb999a7a21b4178079aaf5d3037b13fda1e83aa8737fc4",
+      "uid": "58c018b8ce00d8af3f9dcd03",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_literal|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:99:67",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        6029,
+        6057
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:99:67",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "응. 이 마을 사람이라면 누구 말인지 알 텐데.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 99,
+          "label": "r13_life_first_night",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 99,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "ca9589867ee412017243643a43245a2f2ddb8f801202c68ffb9c7d820debeff0",
+      "uid": "91f7597899c74326f02c1b5e",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_life_first_night|rpy_literal|r13_life_first_night|행 조건 없음",
@@ -81,6 +597,348 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
+      "id": "game/systems/room13_first_day_flow.rpy:100:55",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        6143,
+        6190
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:100:55",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "나는 방금 펴 놓은 침구를 다시 눌렀다. 마차에서 가운데 자리를 달라던 아이였다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 100,
+          "label": "r13_life_first_night",
+          "guards": []
+        }
+      ],
+      "line": 100,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "d2e54758156691d692855e89116a498d674a67437c156b7601e8f970ac70d301",
+      "uid": "8ed83db9b8754fbf91a414ec",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_literal|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:100:113",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        6201,
+        6249
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:100:113",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "아침에 초롱 만나고, 돌아갈 차도 알아볼게. 여기 앉아 기다리기만 하진 않을 거야.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 100,
+          "label": "r13_life_first_night",
+          "guards": []
+        }
+      ],
+      "line": 100,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "260f5d6b1279cf0875378076a24415d0c401eb8eb84399492a372a4ce86dbcf9",
+      "uid": "f1da039a08ce4df9e2077bdf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_literal|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:100:174",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        6262,
+        6271
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:100:174",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "차도 없으면?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 100,
+          "label": "r13_life_first_night",
+          "guards": []
+        }
+      ],
+      "line": 100,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "f0e5dc481e1dd6294f6ee579facbe5fd6db0c5f8d02b6797ef691e425fc0333d",
+      "uid": "61a4c26573313fb4d5166476",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_literal|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:100:194",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        6282,
+        6314
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:100:194",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "그다음 방법을 알아봐야지. 너 혼자 남겨 두지는 않아.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 100,
+          "label": "r13_life_first_night",
+          "guards": []
+        }
+      ],
+      "line": 100,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "bfea5f993caed9699a3ec9cf3a3b83b2c1cd9f3a43d17cde7f78435827daf4be",
+      "uid": "0515aad1b7014c45f371887c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_literal|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:100:236",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        6324,
+        6348
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:100:236",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "다람이가 과자 봉지 끝을 두 번 접었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 100,
+          "label": "r13_life_first_night",
+          "guards": []
+        }
+      ],
+      "line": 100,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "eee825ab487efc8ba539b6a23a35ae5594fc5fdacf342242ad2164457f3158fe",
+      "uid": "600a2cb4569ca4a794e1414b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_literal|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:100:273",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        6361,
+        6370
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:100:273",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "눅눅해지겠다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 100,
+          "label": "r13_life_first_night",
+          "guards": []
+        }
+      ],
+      "line": 100,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "a30fd069d948c27f0a0c6a4cd5770aa90bfaa3b0f6b72f262d0c6e1f7c34b367",
+      "uid": "8393a24e8cdb2ba401ad6e3b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_literal|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:100:293",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        6381,
+        6390
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:100:293",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "잘 싸 두자.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 100,
+          "label": "r13_life_first_night",
+          "guards": []
+        }
+      ],
+      "line": 100,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "15cb9c0a5667cc4f2d70f2ab9784bdf51d41c25f2c1464857c07015182367f95",
+      "uid": "1bcc5d24ef3a0c4cd886ff00",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_literal|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:100:315",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        6403,
+        6429
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:100:315",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "여기 놓을래. 엄마가 먼저 올 수도 있잖아.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 100,
+          "label": "r13_life_first_night",
+          "guards": []
+        }
+      ],
+      "line": 100,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "6aac5d14c0ff0784e7211653b23a61a75e3cf8d2edaccb34e29e8421ceac2b52",
+      "uid": "c59fe82729105f7a6deaa44f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_literal|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:100:352",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        6440,
+        6445
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:100:352",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "그래.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 100,
+          "label": "r13_life_first_night",
+          "guards": []
+        }
+      ],
+      "line": 100,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "47dd1707211c7354d813fcd6c66319369aef44dca3d28aedf2278035f5fb055c",
+      "uid": "bee681fdc9dbb1e12ea82ff3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_literal|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
       "id": "game/systems/room13_first_day_flow.rpy:100:370",
       "file": "game/systems/room13_first_day_flow.rpy",
       "path": [
@@ -113,6 +971,82 @@
       "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
       "baseline_hash": "68040bcaee981dea6206644d7399754cfd1123090bbd1bbfe83b8760a5ad1702",
       "uid": "b16731a267cd801c8425faf0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_literal|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:100:394",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        6482,
+        6486
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:100:394",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "응.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 100,
+          "label": "r13_life_first_night",
+          "guards": []
+        }
+      ],
+      "line": 100,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "8025c713f26164a6787608a6cbce1b8ac0cfe963a42e1416578db60193e95224",
+      "uid": "aecd9befed19e707844fa2ff",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_life_first_night|rpy_literal|r13_life_first_night|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_first_day_flow.rpy:100:408",
+      "file": "game/systems/room13_first_day_flow.rpy",
+      "path": [
+        6496,
+        6561
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_life_first_night",
+      "block": "r13_life_first_night",
+      "placement": "literal",
+      "ref": "game/systems/room13_first_day_flow.rpy:100:408",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "문밖에서 발소리가 멈췄다. 노크하고 들어온 사람은 침구를 가져온 종업원이었다. 나는 한참 문손잡이를 놓지 못했다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_first_day_flow.rpy",
+          "line": 100,
+          "label": "r13_life_first_night",
+          "guards": []
+        }
+      ],
+      "line": 100,
+      "scene_title": "r13_life_first_night",
+      "source_hash": "a4016022f04e8c247005e2b7bfaf39f1b074316b1e17a5d6b439d6c8bc550091",
+      "baseline_hash": "83be35c8eef3a79366d1f1e805204140debafccfe95ab4f6ccac992e556ea680",
+      "uid": "51cff5e1a71d56a2658fb5f7",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_life_first_night|rpy_literal|r13_life_first_night|행 조건 없음",

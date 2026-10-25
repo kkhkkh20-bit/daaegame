@@ -1,7 +1,536 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/winter.rpy:206:51",
+      "file": "game/winter.rpy",
+      "path": [
+        9400,
+        9430
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_action_run",
+      "block": "winter_action_run",
+      "placement": "literal",
+      "ref": "game/winter.rpy:206:51",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "지금은 듣는 사람이 있어. 아까 그 말은 넣어 둬.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 206,
+          "label": "winter_action_run",
+          "guards": [
+            "if winter_action_id in (\"lamp_confidence\",\"mother_send_reply\") and not winter_private_conversation(winter,\"resident_lamplighter\"):"
+          ]
+        }
+      ],
+      "line": 206,
+      "scene_title": "winter_action_run",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "17928672d6265af07bb5006aae79d65ef1edd70d91fb41666c79bba013dde31a",
+      "uid": "a789230032d72c143789857a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_action_run|rpy_inventory|winter_action_run|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:213:64",
+      "file": "game/winter.rpy",
+      "path": [
+        9685,
+        9698
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_action_run",
+      "block": "winter_action_run",
+      "placement": "literal",
+      "ref": "game/winter.rpy:213:64",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "\n마치고 돌아오면 ",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 213,
+          "label": "winter_action_run",
+          "guards": [
+            "if winter_action[\"cost\"]:"
+          ]
+        }
+      ],
+      "line": 213,
+      "scene_title": "winter_action_run",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "4e0e88b4c335d330c65503b9afdd4a6c7e22f263268225a20caad0f55c48eb97",
+      "uid": "101481cd640a5878af8ea47a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_action_run|rpy_inventory|winter_action_run|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:213:113",
+      "file": "game/winter.rpy",
+      "path": [
+        9734,
+        9742
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_action_run",
+      "block": "winter_action_run",
+      "placement": "literal",
+      "ref": "game/winter.rpy:213:113",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": " 일정 마침",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 213,
+          "label": "winter_action_run",
+          "guards": [
+            "if winter_action[\"cost\"]:"
+          ]
+        }
+      ],
+      "line": 213,
+      "scene_title": "winter_action_run",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "545d5f7699800fede03a0a1369190fff72f778c1ca7a32a7974ac83434ee72f4",
+      "uid": "dbe93de836585fc127fd0e6f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_action_run|rpy_inventory|winter_action_run|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:213:123",
+      "file": "game/winter.rpy",
+      "path": [
+        9744,
+        9753
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_action_run",
+      "block": "winter_action_run",
+      "placement": "literal",
+      "ref": "game/winter.rpy:213:123",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "이 깊어집니다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 213,
+          "label": "winter_action_run",
+          "guards": [
+            "if winter_action[\"cost\"]:"
+          ]
+        }
+      ],
+      "line": 213,
+      "scene_title": "winter_action_run",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "dff2b2452c4aedefcf610a498b1f9b30ee038bcab87af2ee09119167d11de7af",
+      "uid": "6d0815c75d66dd7d34b4898d",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_action_run|rpy_inventory|winter_action_run|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:218:12",
+      "file": "game/winter.rpy",
+      "path": [
+        9864,
+        9881
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_action_run",
+      "block": "winter_action_run",
+      "placement": "literal",
+      "ref": "game/winter.rpy:218:12",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "두 목격이 모두 사실이라면?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 218,
+          "label": "winter_action_run",
+          "guards": [
+            "if winter_action_id==\"hidden\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 218,
+      "scene_title": "winter_action_run",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "26b6548a227f55667440344a16f44bf03b9dfc3f0535a7545d40b9068c2e2004",
+      "uid": "54b4d6cd011ad9450170bbaa",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_action_run|rpy_inventory|winter_action_run|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:222:42",
+      "file": "game/winter.rpy",
+      "path": [
+        10018,
+        10067
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_action_run",
+      "block": "winter_action_run",
+      "placement": "literal",
+      "ref": "game/winter.rpy:222:42",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "가능하지만 아직 누구의 말이 틀렸는지는 몰라. 두 기록이 함께 성립할 길도 확인하자.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 222,
+          "label": "winter_action_run",
+          "guards": [
+            "if winter_action_id==\"hidden\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 222,
+      "scene_title": "winter_action_run",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "d70a52a104c17fb851966dfc678f92dc048e104928e77755a92a2720af557791",
+      "uid": "2313216179caf2c752a34601",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_action_run|rpy_inventory|winter_action_run|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:243:38",
+      "file": "game/winter.rpy",
+      "path": [
+        11115,
+        11136
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_action_run",
+      "block": "winter_action_run",
+      "placement": "literal",
+      "ref": "game/winter.rpy:243:38",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "오는 길에 누가 따라오지는 않았어?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 243,
+          "label": "winter_action_run",
+          "guards": [
+            "if winter_action_id==\"mother\":",
+            "if winter_has(winter,\"mother_secure\"):"
+          ]
+        }
+      ],
+      "line": 243,
+      "scene_title": "winter_action_run",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "9dd5df0e3f8277cf0da18726b3e20d9a7280095e4095cfc1531d8943d54fda59",
+      "uid": "2f02244d709b0a65b6250989",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_action_run|rpy_inventory|winter_action_run|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:243:68",
+      "file": "game/winter.rpy",
+      "path": [
+        11145,
+        11180
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_action_run",
+      "block": "winter_action_run",
+      "placement": "literal",
+      "ref": "game/winter.rpy:243:68",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "교대를 확인하고 다른 길로 왔어. 오늘은 여기서 이야기하자.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 243,
+          "label": "winter_action_run",
+          "guards": [
+            "if winter_action_id==\"mother\":",
+            "if winter_has(winter,\"mother_secure\"):"
+          ]
+        }
+      ],
+      "line": 243,
+      "scene_title": "winter_action_run",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "4b5d7809e126480744b7e422ccfb36355c001b4a98a78d46a4b44c2d4b7ab501",
+      "uid": "33e3b8f105b1abccaf343ca9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_action_run|rpy_inventory|winter_action_run|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:245:37",
+      "file": "game/winter.rpy",
+      "path": [
+        11249,
+        11268
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_action_run",
+      "block": "winter_action_run",
+      "placement": "literal",
+      "ref": "game/winter.rpy:245:37",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "통로 바깥에서 발소리가 멈췄다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 245,
+          "label": "winter_action_run",
+          "guards": [
+            "if winter_action_id==\"mother\":",
+            "else:"
+          ]
+        }
+      ],
+      "line": 245,
+      "scene_title": "winter_action_run",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "e9e8c37b43dea6aba4b5e49ace5ae2fadcdb1c3b9518506be2615f4b9bdd04e9",
+      "uid": "c261dfde26a40ec27c3ce285",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_action_run|rpy_inventory|winter_action_run|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:245:65",
+      "file": "game/winter.rpy",
+      "path": [
+        11277,
+        11295
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_action_run",
+      "block": "winter_action_run",
+      "placement": "literal",
+      "ref": "game/winter.rpy:245:65",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "문 닫아. 여기까지 따라왔어.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 245,
+          "label": "winter_action_run",
+          "guards": [
+            "if winter_action_id==\"mother\":",
+            "else:"
+          ]
+        }
+      ],
+      "line": 245,
+      "scene_title": "winter_action_run",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "40367f975dc0318d947318cb4634c230a3f5491c49308504aa5214c57fc91cfc",
+      "uid": "5396d8c3069f73e6dde1ffa1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_action_run|rpy_inventory|winter_action_run|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:245:92",
+      "file": "game/winter.rpy",
+      "path": [
+        11304,
+        11329
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_action_run",
+      "block": "winter_action_run",
+      "placement": "literal",
+      "ref": "game/winter.rpy:245:92",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "순찰 시간을 알아내서 은신처를 옮겨야 해.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 245,
+          "label": "winter_action_run",
+          "guards": [
+            "if winter_action_id==\"mother\":",
+            "else:"
+          ]
+        }
+      ],
+      "line": 245,
+      "scene_title": "winter_action_run",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "05dfa28138e96f80a084a99ef5660557fd390a0b58498876bffd785077075977",
+      "uid": "81c27810f4cb4903603dd8ac",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_action_run|rpy_inventory|winter_action_run|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:248:12",
+      "file": "game/winter.rpy",
+      "path": [
+        11411,
+        11429
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_action_run",
+      "block": "winter_action_run",
+      "placement": "literal",
+      "ref": "game/winter.rpy:248:12",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "누비의 말을 누구에게 전할까?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 248,
+          "label": "winter_action_run",
+          "guards": [
+            "if winter_action_id==\"witness\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 248,
+      "scene_title": "winter_action_run",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "c8c1f527bbf9575dee7921bef31650b1a26015034af7dab6ea88303e975c479b",
+      "uid": "99a9e059b63a75ae28fd0c68",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_action_run|rpy_inventory|winter_action_run|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:255:46",
+      "file": "game/winter.rpy",
+      "path": [
+        11846,
+        11871
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_action_run",
+      "block": "winter_action_run",
+      "placement": "literal",
+      "ref": "game/winter.rpy:255:46",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "직접 확인해 보겠습니다. 어느 집이라고요?",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 255,
+          "label": "winter_action_run",
+          "guards": [
+            "if winter_action_id==\"witness\":",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 255,
+      "scene_title": "winter_action_run",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "00e164a1334c938c08e9aefe8d1a448647c854ab757545de0312db9609426a87",
+      "uid": "40495b3a7966a89f925de874",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_action_run|rpy_inventory|winter_action_run|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/winter.rpy:255:80",
       "file": "game/winter.rpy",
@@ -79,6 +608,46 @@
       "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
       "baseline_hash": "5c1f2845002a3af28407d42b0b29faad322f87a34b743348aa18f678618225d0",
       "uid": "b00a6531c9ab8d87add9e20c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|winter_action_run|rpy_inventory|winter_action_run|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/winter.rpy:258:34",
+      "file": "game/winter.rpy",
+      "path": [
+        12105,
+        12130
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "winter_action_run",
+      "block": "winter_action_run",
+      "placement": "literal",
+      "ref": "game/winter.rpy:258:34",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "누비의 번호도 있어. 추출은 이미 끝났어.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/winter.rpy",
+          "line": 258,
+          "label": "winter_action_run",
+          "guards": [
+            "if winter_action_id==\"death\" and winter[\"witness\"]==\"dead\":"
+          ]
+        }
+      ],
+      "line": 258,
+      "scene_title": "winter_action_run",
+      "source_hash": "bf290cec88157b238edfc835a021662f69621a6c22b92a27d7a0ff48c6b78ff2",
+      "baseline_hash": "595d8a4f4adf01b537913b4827386dddfa28c7f01d5b5c58cb9d68d3e6fb4ccf",
+      "uid": "4683d3901b193125e8c72c80",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|winter_action_run|rpy_inventory|winter_action_run|행 조건 없음",

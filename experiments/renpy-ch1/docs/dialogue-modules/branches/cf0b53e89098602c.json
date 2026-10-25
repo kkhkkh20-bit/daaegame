@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:234:8",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        11847,
+        11859
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_ep2_at_gate",
+      "block": "r13_ep2_at_gate",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:234:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "토실이와 같이 간다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 234,
+          "label": "r13_ep2_at_gate",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 234,
+      "scene_title": "r13_ep2_at_gate",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "5ba8ce94586b38d975923e0ae7f3e7a9953d9be64a1acad2295bd3e50918914b",
+      "uid": "3419e15e3dda17f45ac02f00",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_at_gate|rpy_menu|r13_ep2_at_gate|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep2_kids.rpy:240:8",
+      "file": "game/systems/room13_ep2_kids.rpy",
+      "path": [
+        12183,
+        12190
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_ep2_at_gate",
+      "block": "r13_ep2_at_gate",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep2_kids.rpy:240:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "혼자 간다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep2_kids.rpy",
+          "line": 240,
+          "label": "r13_ep2_at_gate",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 240,
+      "scene_title": "r13_ep2_at_gate",
+      "source_hash": "cddd67a7a1a92cac9e16a693cb277441b4f7d00e93573e0b1922b16f5a2e6c60",
+      "baseline_hash": "83ab104afb555410b4f66df4c3817068de302a19a2ec1a40ea57a20f56575931",
+      "uid": "ba156d591303ecd7524b228e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep2_at_gate|rpy_menu|r13_ep2_at_gate|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

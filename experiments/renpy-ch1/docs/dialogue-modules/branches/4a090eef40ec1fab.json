@@ -1,0 +1,84 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_week2_events.rpy:168:38",
+      "file": "game/systems/room13_week2_events.rpy",
+      "path": [
+        9056,
+        9096
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w2e_buy_tools",
+      "block": "r13_w2e_buy_tools",
+      "placement": "literal",
+      "ref": "game/systems/room13_week2_events.rpy:168:38",
+      "when": null,
+      "speaker": "resident_eunho",
+      "kind": "dialogue",
+      "text": "도시로 보낼 짐은 아직 안 떠났소. 공구함을 되사려면 열여덟 냥이오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week2_events.rpy",
+          "line": 168,
+          "label": "r13_w2e_buy_tools",
+          "guards": []
+        }
+      ],
+      "line": 168,
+      "scene_title": "r13_w2e_buy_tools",
+      "source_hash": "bd106ab951275b7b2a06d9b6705a142790d202b883e7f2e6d4f37241b21c87c0",
+      "baseline_hash": "b48f0444b5eb1f443847a66ed4851eba0270c14f2148a513ad95431ff8f9fa73",
+      "uid": "fcb2a2eb60cffbc1a5ffdc85",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w2e_buy_tools|rpy_literal|r13_w2e_buy_tools|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_week2_events.rpy:172:36",
+      "file": "game/systems/room13_week2_events.rpy",
+      "path": [
+        9247,
+        9277
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_w2e_buy_tools",
+      "block": "r13_w2e_buy_tools",
+      "placement": "literal",
+      "ref": "game/systems/room13_week2_events.rpy:172:36",
+      "when": null,
+      "speaker": "buri",
+      "kind": "dialogue",
+      "text": "……할아버지 공구가 돌아왔네요. 이번엔 안 팔아요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_week2_events.rpy",
+          "line": 172,
+          "label": "r13_w2e_buy_tools",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 172,
+      "scene_title": "r13_w2e_buy_tools",
+      "source_hash": "bd106ab951275b7b2a06d9b6705a142790d202b883e7f2e6d4f37241b21c87c0",
+      "baseline_hash": "e3c0879ef732b55b331c138d092933f2afa429497dc1df4e69aa20bfbffbe2e5",
+      "uid": "dc95873f8ab2fb93a1bed8bf",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_w2e_buy_tools|rpy_literal|r13_w2e_buy_tools|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

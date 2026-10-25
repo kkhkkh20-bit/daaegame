@@ -1,6 +1,6 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
     {
       "id": "game/systems/room13_ep5_soup.rpy:168:30",
@@ -37,6 +37,169 @@
       "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
       "baseline_hash": "777108803fffe2ffc392810ecc5d07f052776b735f633e5f3e3fc9cf2b0869fa",
       "uid": "04d85556490ca81a0c605756",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_roots|rpy_literal|r13_ws_roots|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:169:19",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        10280,
+        10314
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_roots",
+      "block": "r13_ws_roots",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:169:19",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(숲에서 이런 유리를 쓰는 곳은 하나다. 무너진 폐온실.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 169,
+          "label": "r13_ws_roots",
+          "guards": [
+            "if room13[\"day\"]>=R13_WEEK2_DAY and r13_has(\"mom_hideout_found\") and not r13_has(\"Y03\"):"
+          ]
+        }
+      ],
+      "line": 169,
+      "scene_title": "r13_ws_roots",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "94eaf5ebb7cf3c87e207bdea780f8d78e4d44f9b5fc6b54fb861f88b2bb083e3",
+      "uid": "8a6cd2feb1decf128cc3762b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_roots|rpy_literal|r13_ws_roots|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:172:34",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        10466,
+        10503
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_roots",
+      "block": "r13_ws_roots",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:172:34",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "담요 안쪽에 크레용 그림이 접혀 있었다. 삐뚤빼뚤한 다람쥐 셋.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 172,
+          "label": "r13_ws_roots",
+          "guards": [
+            "if room13[\"day\"]>=R13_WEEK2_DAY and r13_has(\"mom_hideout_found\") and not r13_has(\"Y03\"):",
+            "if r13_ws_daram():"
+          ]
+        }
+      ],
+      "line": 172,
+      "scene_title": "r13_ws_roots",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "995b6847b125aad4d91579f5edb2c9e97da40c915be5d167a4f41f0ec6f452fd",
+      "uid": "41cda271df1a9f08e197f41c",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_roots|rpy_literal|r13_ws_roots|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:173:25",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        10531,
+        10561
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_roots",
+      "block": "r13_ws_roots",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:173:25",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "이거 내가 그린 거야! 엄마 가방에 넣어 줬던 거!",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 173,
+          "label": "r13_ws_roots",
+          "guards": [
+            "if room13[\"day\"]>=R13_WEEK2_DAY and r13_has(\"mom_hideout_found\") and not r13_has(\"Y03\"):",
+            "if r13_ws_daram():"
+          ]
+        }
+      ],
+      "line": 173,
+      "scene_title": "r13_ws_roots",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "8885e85e389f27111564916cf3210458e372121b8b7a72d80abe860333310820",
+      "uid": "fadeb156e0734e209194f4e6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ws_roots|rpy_literal|r13_ws_roots|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep5_soup.rpy:174:25",
+      "file": "game/systems/room13_ep5_soup.rpy",
+      "path": [
+        10589,
+        10620
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ws_roots",
+      "block": "r13_ws_roots",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep5_soup.rpy:174:25",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "……엄마가 이거 가지고 있었구나. 버린 게 아니구나.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep5_soup.rpy",
+          "line": 174,
+          "label": "r13_ws_roots",
+          "guards": [
+            "if room13[\"day\"]>=R13_WEEK2_DAY and r13_has(\"mom_hideout_found\") and not r13_has(\"Y03\"):",
+            "if r13_ws_daram():"
+          ]
+        }
+      ],
+      "line": 174,
+      "scene_title": "r13_ws_roots",
+      "source_hash": "2559d2ebe258939d6f6af725408c0457519fe49165331c382416129286ad55c2",
+      "baseline_hash": "2f50e4fa8e42de7133e42df459bc01df21a1ac4ce68a3289d9848a9954c238eb",
+      "uid": "c7917d5144736a3f0aa9380b",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_ws_roots|rpy_literal|r13_ws_roots|행 조건 없음",

@@ -1,3 +1,5 @@
+최신 이야기 인계는 [클로드 인계서](../HANDOFF_CLAUDE_20261025.md)와 [현재 상태](../STORY_HANDOFF.md)부터 읽는다. 1~14일 후속 통독·수정은 0.20.54에서 마쳤으며 전체 경로 자연완주와는 구분한다.
+
 # 다른 채팅에 전달할 말
 
 다람탐정 저장소의 `experiments/renpy-ch1/docs/story-workbench/`에서 시작한다.

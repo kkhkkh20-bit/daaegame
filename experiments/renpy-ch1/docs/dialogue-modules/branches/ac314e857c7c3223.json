@@ -1,0 +1,122 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_new_places.rpy:201:26",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        12107,
+        12165
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ancient_crack",
+      "block": "r13_ancient_crack",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:201:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "갈라진 회벽에 손을 대자 판자 한 장이 안쪽으로 밀렸다. 그 뒤로 좁은 【돌계단】이 아래로 이어졌다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 201,
+          "label": "r13_ancient_crack",
+          "guards": []
+        }
+      ],
+      "line": 201,
+      "scene_title": "r13_ancient_crack",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "8c6b3ed3b98ae9c1ca7d39d5ff9fb15177ad92a9a5bd9a1ccf92250060339533",
+      "uid": "66915e3711a7472c3c80ca1a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ancient_crack|rpy_literal|r13_ancient_crack|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_places.rpy:202:15",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        12183,
+        12226
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ancient_crack",
+      "block": "r13_ancient_crack",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:202:15",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(위층 통로보다 훨씬 오래된 계단이다. 아래에서 따뜻한 바람이 올라온다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 202,
+          "label": "r13_ancient_crack",
+          "guards": []
+        }
+      ],
+      "line": 202,
+      "scene_title": "r13_ancient_crack",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "be7235471dbc7ce194c0169b114ff24a71b264fcac5fc55043896dd02e752d46",
+      "uid": "69ad7dc88e064e1742ce6209",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ancient_crack|rpy_literal|r13_ancient_crack|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_new_places.rpy:209:35",
+      "file": "game/systems/room13_new_places.rpy",
+      "path": [
+        12478,
+        12514
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ancient_crack",
+      "block": "r13_ancient_crack",
+      "placement": "literal",
+      "ref": "game/systems/room13_new_places.rpy:209:35",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(갈라진 자리를 기억해 두자. 다시 오면 판자를 밀면 된다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_new_places.rpy",
+          "line": 209,
+          "label": "r13_ancient_crack",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 209,
+      "scene_title": "r13_ancient_crack",
+      "source_hash": "712c512727cc882b399bb7b863e9eff6811d65abea2008bbd4510f474cecf80e",
+      "baseline_hash": "3c5b9b06282f44e2db7ea3fb32ae4871857d1d2417eec3a5d014b954516f1968",
+      "uid": "5d6db1355edb92781e0fc7a4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ancient_crack|rpy_literal|r13_ancient_crack|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

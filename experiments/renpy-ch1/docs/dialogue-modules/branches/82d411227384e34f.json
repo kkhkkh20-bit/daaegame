@@ -1,7 +1,48 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_bundle3.rpy:184:35",
+      "file": "game/systems/room13_bundle3.rpy",
+      "path": [
+        11234,
+        11257
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_b3_firewood",
+      "block": "r13_b3_firewood",
+      "placement": "literal",
+      "ref": "game/systems/room13_bundle3.rpy:184:35",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "학교 장작더미 옆에서 들은 보리의 사정",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_bundle3.rpy",
+          "line": 184,
+          "label": "r13_b3_firewood",
+          "guards": [
+            "while _ep_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 184,
+      "scene_title": "r13_b3_firewood",
+      "source_hash": "852ebaa2b95099a673bf532f23ec1cd6a507d53a58e600decaadda49cc8e970f",
+      "baseline_hash": "755556b31b71ecd0e710a4c40353565b1f05726b1e995bdd2644d63d67b0cc7f",
+      "uid": "5eb82e9afd6dffa480c1d448",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_b3_firewood|rpy_inventory|r13_b3_firewood|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_bundle3.rpy:197:30",
       "file": "game/systems/room13_bundle3.rpy",

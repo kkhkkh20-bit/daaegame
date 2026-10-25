@@ -1,7 +1,83 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:353:26",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        19465,
+        19502
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_altar",
+      "block": "r13_cv_altar",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:353:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "(그림책) 마을 한가운데 금으로 덮인 왕자 동상이 서 있었어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 353,
+          "label": "r13_cv_altar",
+          "guards": []
+        }
+      ],
+      "line": 353,
+      "scene_title": "r13_cv_altar",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "14e4d0a349436e5a091cbc52faaa7701d8c3e02a4062e32b013d482dc0e08a3d",
+      "uid": "50baac02b2265fb59a4c7aca",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_altar|rpy_literal|r13_cv_altar|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:354:14",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        19542,
+        19581
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_altar",
+      "block": "r13_cv_altar",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:354:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "(그림책) 다 내주고 잿빛이 된 왕자 발밑에서, 제비는 잠들었어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 354,
+          "label": "r13_cv_altar",
+          "guards": []
+        }
+      ],
+      "line": 354,
+      "scene_title": "r13_cv_altar",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "72377cf45162002579b46c39474197ae373e9c68444424953b00aabdd1102404",
+      "uid": "046d430c1977372f5f26c342",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_altar|rpy_literal|r13_cv_altar|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_ep6_cart.rpy:359:30",
       "file": "game/systems/room13_ep6_cart.rpy",
@@ -37,6 +113,198 @@
       "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
       "baseline_hash": "fdcba60be21940855c2e2e82bde17a695b9dd3980b0c9ebe7c306eb0a79b7aaa",
       "uid": "e2f057ea5e6ee914fe10cee0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_altar|rpy_literal|r13_cv_altar|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:360:18",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        19976,
+        20030
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_altar",
+      "block": "r13_cv_altar",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:360:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "굴돌 할아버지의 끌이 눈 위에 떨어져 있었다. 돌에 새 손자국 하나가 아주 얕게 파여 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 360,
+          "label": "r13_cv_altar",
+          "guards": [
+            "if r13_has(\"cart_left\"):"
+          ]
+        }
+      ],
+      "line": 360,
+      "scene_title": "r13_cv_altar",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "40b72555fdab06c9a227b318224c0346b6004f0ec1f0e6bb04a177987a73feee",
+      "uid": "313d641e630ce442ce0f6c95",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_altar|rpy_literal|r13_cv_altar|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:362:26",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        20178,
+        20241
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_altar",
+      "block": "r13_cv_altar",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:362:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "돌 표면을 보았다. 손자국이었다. 위에서 아래까지, 겹겹이. 어른 손. 굽은 노인 손. 그리고 아주 작은 손.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 362,
+          "label": "r13_cv_altar",
+          "guards": []
+        }
+      ],
+      "line": 362,
+      "scene_title": "r13_cv_altar",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "13f11f4c74a3d70c2658e6bbb7923cdb31ec0304c42a61539e424dd346410777",
+      "uid": "4a8f4692da03a73c8de44d5f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_altar|rpy_literal|r13_cv_altar|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:368:16",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        20567,
+        20589
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_altar",
+      "block": "r13_cv_altar",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:368:16",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "……사람 온기였어. 돌을 데우는 건.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 368,
+          "label": "r13_cv_altar",
+          "guards": []
+        }
+      ],
+      "line": 368,
+      "scene_title": "r13_cv_altar",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "e5e95eb8ec57664501955fe03da053f254fc5816b6c0eaa04cd94e55a2f30e97",
+      "uid": "30568a5d84f40984dd4aedac",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_altar|rpy_literal|r13_cv_altar|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:369:15",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        20607,
+        20656
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_altar",
+      "block": "r13_cv_altar",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:369:15",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "옛날 사람들은 여기 와서 손을 얹었던 거야. 다 같이. 데워지면 손을 떼고 내려갔어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 369,
+          "label": "r13_cv_altar",
+          "guards": []
+        }
+      ],
+      "line": 369,
+      "scene_title": "r13_cv_altar",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "6082c9a15099259810e78c1138a58b4bb5767a7687c72966a46cce5f94130e55",
+      "uid": "9f8d24587fd1560f4f2e8dae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_altar|rpy_literal|r13_cv_altar|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:370:15",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        20674,
+        20726
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_altar",
+      "block": "r13_cv_altar",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:370:15",
+      "when": null,
+      "speaker": "mom",
+      "kind": "dialogue",
+      "text": "그래서 손자국이 이렇게 많은 거야. 죽은 사람 손이 아니라, 왔다가 내려간 사람들 손이야.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 370,
+          "label": "r13_cv_altar",
+          "guards": []
+        }
+      ],
+      "line": 370,
+      "scene_title": "r13_cv_altar",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "4b3234b11efc55a11c8def19c64695e8830030a054c82efa72535fa42b123d7f",
+      "uid": "1b45add9b73a67a76a365d92",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_cv_altar|rpy_literal|r13_cv_altar|행 조건 없음",
@@ -83,6 +351,246 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
+      "id": "game/systems/room13_ep6_cart.rpy:374:22",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        21055,
+        21075
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_altar",
+      "block": "r13_cv_altar",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:374:22",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "손을 얹고…… 내려가면 됐다고요?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 374,
+          "label": "r13_cv_altar",
+          "guards": [
+            "if r13_has(\"cv_granny_tomorrow\") or room13.get(\"granny_state\")!=\"detained\":"
+          ]
+        }
+      ],
+      "line": 374,
+      "scene_title": "r13_cv_altar",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "6d2e1755fa90b5048b36aece922ddd2455c30f0edc8b4d994afc329870ae3865",
+      "uid": "5ccc740cb9685f2d729320c3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_altar|rpy_literal|r13_cv_altar|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:375:22",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        21100,
+        21154
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_altar",
+      "block": "r13_cv_altar",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:375:22",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "내 딸, 보미도 이름을 잊기 시작했어요. 처음엔 장 보러 가는 길을. 다음엔 토실이 이름을요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 375,
+          "label": "r13_cv_altar",
+          "guards": [
+            "if r13_has(\"cv_granny_tomorrow\") or room13.get(\"granny_state\")!=\"detained\":"
+          ]
+        }
+      ],
+      "line": 375,
+      "scene_title": "r13_cv_altar",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "efe176782ea91fa60a4f2a68fdb5510bae12404123c7a84b4acfb21c62e33ce9",
+      "uid": "1736c003ddb543c4c0bd251e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_altar|rpy_literal|r13_cv_altar|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:376:22",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        21179,
+        21217
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_altar",
+      "block": "r13_cv_altar",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:376:22",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "내가 여기로 데려왔어요. 이 손으로. 그 애 목도리를 여며 주고.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 376,
+          "label": "r13_cv_altar",
+          "guards": [
+            "if r13_has(\"cv_granny_tomorrow\") or room13.get(\"granny_state\")!=\"detained\":"
+          ]
+        }
+      ],
+      "line": 376,
+      "scene_title": "r13_cv_altar",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "fef30d7abd4b56198de4f62bc42eb7c7207e4f40e47c1fdf0c3389679fb390af",
+      "uid": "d830b53d111e7b88728c3aae",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_altar|rpy_literal|r13_cv_altar|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:377:22",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        21242,
+        21299
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_altar",
+      "block": "r13_cv_altar",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:377:22",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "그게 마을을 살린다고 믿어야 살 수 있었어요. 그래서 아가를 붙잡으려 했어요. 편지도 내가 썼어요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 377,
+          "label": "r13_cv_altar",
+          "guards": [
+            "if r13_has(\"cv_granny_tomorrow\") or room13.get(\"granny_state\")!=\"detained\":"
+          ]
+        }
+      ],
+      "line": 377,
+      "scene_title": "r13_cv_altar",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "1fffc5b6530959817ab09fb2eac281100234b87c228caa0bead80de9c76928af",
+      "uid": "052518cf871786e4dcc21bd3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_altar|rpy_literal|r13_cv_altar|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:378:22",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        21324,
+        21358
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_altar",
+      "block": "r13_cv_altar",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:378:22",
+      "when": null,
+      "speaker": "granny",
+      "kind": "dialogue",
+      "text": "아가 방법이 맞다면, 내 딸은 죽지 않아도 됐다는 거예요.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 378,
+          "label": "r13_cv_altar",
+          "guards": [
+            "if r13_has(\"cv_granny_tomorrow\") or room13.get(\"granny_state\")!=\"detained\":"
+          ]
+        }
+      ],
+      "line": 378,
+      "scene_title": "r13_cv_altar",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "6fb927af428f5c5b8c01ff820d7bdb5c8f0aa62780dca56fa233ad74d606710e",
+      "uid": "a5bb2ebe04cc1e6d07c70f98",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_altar|rpy_literal|r13_cv_altar|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:379:18",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        21379,
+        21383
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_altar",
+      "block": "r13_cv_altar",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:379:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "……",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 379,
+          "label": "r13_cv_altar",
+          "guards": [
+            "if r13_has(\"cv_granny_tomorrow\") or room13.get(\"granny_state\")!=\"detained\":"
+          ]
+        }
+      ],
+      "line": 379,
+      "scene_title": "r13_cv_altar",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "a7f878b8ced1a7957c560d573e30ddbbc1696e38c370513aacbbf4bff12e7f43",
+      "uid": "90259951d09bc6bc48e65da3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_altar|rpy_literal|r13_cv_altar|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
       "id": "game/systems/room13_ep6_cart.rpy:380:30",
       "file": "game/systems/room13_ep6_cart.rpy",
       "path": [
@@ -117,6 +625,120 @@
       "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
       "baseline_hash": "b1eb074ac4974455309ff87ffd6c5ef9eda74c8cdc72ddc119243d1538e133f1",
       "uid": "3c9f114d2a32697fc6aca082",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_altar|rpy_literal|r13_cv_altar|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:382:26",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        21624,
+        21677
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_altar",
+      "block": "r13_cv_altar",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:382:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "촌장이 지팡이를 내려놓았다. 돌 아래쪽, 손가락을 쫙 벌린 작은 손자국 앞에 무릎을 꿇었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 382,
+          "label": "r13_cv_altar",
+          "guards": []
+        }
+      ],
+      "line": 382,
+      "scene_title": "r13_cv_altar",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "f4f257407b4002b5ac17504ffd25651a58251bdd6472b4e591819f022dbd7d78",
+      "uid": "2462df47872d28e622c15fe0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_altar|rpy_literal|r13_cv_altar|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:383:25",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        21705,
+        21736
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_altar",
+      "block": "r13_cv_altar",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:383:25",
+      "when": null,
+      "speaker": "resident_ppul",
+      "kind": "dialogue",
+      "text": "그 애는 손을 대면 꼭 손가락을 쫙 벌렸소. 이렇게.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 383,
+          "label": "r13_cv_altar",
+          "guards": []
+        }
+      ],
+      "line": 383,
+      "scene_title": "r13_cv_altar",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "503d2a8eb3bf9d153e8ba60c5033c0e8a33ad1d724d43711abf362132281adeb",
+      "uid": "47ff7646b09e510b774b1334",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_cv_altar|rpy_literal|r13_cv_altar|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep6_cart.rpy:384:25",
+      "file": "game/systems/room13_ep6_cart.rpy",
+      "path": [
+        21764,
+        21799
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_cv_altar",
+      "block": "r13_cv_altar",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep6_cart.rpy:384:25",
+      "when": null,
+      "speaker": "resident_ppul",
+      "kind": "dialogue",
+      "text": "손을 얹고 내려왔으면 됐다니. 나는 그 애를 두고 내려왔소.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep6_cart.rpy",
+          "line": 384,
+          "label": "r13_cv_altar",
+          "guards": []
+        }
+      ],
+      "line": 384,
+      "scene_title": "r13_cv_altar",
+      "source_hash": "b18090358f1a9f1c380231e77e7931405b0276c01b1efe89a399754aa33287d8",
+      "baseline_hash": "2258ac5db66f7e2413da42928f21972a6a9d0f67f50b8ccd209184bea5337e1d",
+      "uid": "a6d719c656168ea524295788",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_cv_altar|rpy_literal|r13_cv_altar|행 조건 없음",

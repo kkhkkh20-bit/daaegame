@@ -1,7 +1,128 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/room13.rpy:715:42",
+      "file": "game/room13.rpy",
+      "path": [
+        41687,
+        41742
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_verdict",
+      "block": "r13_verdict",
+      "placement": "literal",
+      "ref": "game/room13.rpy:715:42",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "다람 양이 죽였다는 의심을 뒷받침하던 설명은 더 이상 성립하지 않습니다. 아이를 풀어 주십시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 715,
+          "label": "r13_verdict",
+          "guards": [
+            "if \"C2\" in room13[\"propositions\"]:"
+          ]
+        }
+      ],
+      "line": 715,
+      "scene_title": "r13_verdict",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "b0a447b89e384e5b76944c5d9ef7214eb0ee9c9f5ee5295c6b7d86c6ed9665dc",
+      "uid": "202f620bb56575deec5df333",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_verdict|rpy_literal|r13_verdict|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:715:116",
+      "file": "game/room13.rpy",
+      "path": [
+        41761,
+        41798
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_verdict",
+      "block": "r13_verdict",
+      "placement": "literal",
+      "ref": "game/room13.rpy:715:116",
+      "when": null,
+      "speaker": "resident_ppul",
+      "kind": "dialogue",
+      "text": "아이는 가족에게 돌려보내겠습니다. 남은 사안은 따로 기록하시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 715,
+          "label": "r13_verdict",
+          "guards": [
+            "if \"C2\" in room13[\"propositions\"]:"
+          ]
+        }
+      ],
+      "line": 715,
+      "scene_title": "r13_verdict",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "30a4e44e816173de93f55e62d2b0d9ff03a749b02a47151aa763eaed96846d52",
+      "uid": "a8b64104eb18c5497bb1fe71",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_verdict|rpy_literal|r13_verdict|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:718:46",
+      "file": "game/room13.rpy",
+      "path": [
+        41987,
+        42070
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_verdict",
+      "block": "r13_verdict",
+      "placement": "literal",
+      "ref": "game/room13.rpy:718:46",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "할머니가 어르신에게 손을 대고 그 사실을 숨긴 일, 어르신을 죽게 한 일은 따로 확인됐습니다. 증거를 훼손하지 못하도록 할머니를 붙잡아 두십시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 718,
+          "label": "r13_verdict",
+          "guards": [
+            "if \"C2\" in room13[\"propositions\"]:",
+            "if \"C4\" in room13[\"propositions\"]:"
+          ]
+        }
+      ],
+      "line": 718,
+      "scene_title": "r13_verdict",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "fc2cd5e38053b8ebee2816db411ee12eea878a62844ac4b2996a59963ac13ec5",
+      "uid": "5b6a16f8025d4905e47fc57a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_verdict|rpy_literal|r13_verdict|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/room13.rpy:718:140",
       "file": "game/room13.rpy",
@@ -44,6 +165,326 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
+      "id": "game/room13.rpy:719:33",
+      "file": "game/room13.rpy",
+      "path": [
+        42149,
+        42169
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_verdict",
+      "block": "r13_verdict",
+      "placement": "literal",
+      "ref": "game/room13.rpy:719:33",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "이제 할아버지는 다시 못 만나지.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 719,
+          "label": "r13_verdict",
+          "guards": [
+            "if \"C2\" in room13[\"propositions\"]:"
+          ]
+        }
+      ],
+      "line": 719,
+      "scene_title": "r13_verdict",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "a8d2a51d9ad735ca4b52698ad7473888679a78c4a828dee5e079ec9f36e54b6e",
+      "uid": "ca8d4fecf8b225086332272f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_verdict|rpy_literal|r13_verdict|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:719:62",
+      "file": "game/room13.rpy",
+      "path": [
+        42178,
+        42182
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_verdict",
+      "block": "r13_verdict",
+      "placement": "literal",
+      "ref": "game/room13.rpy:719:62",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "응.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 719,
+          "label": "r13_verdict",
+          "guards": [
+            "if \"C2\" in room13[\"propositions\"]:"
+          ]
+        }
+      ],
+      "line": 719,
+      "scene_title": "r13_verdict",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "8025c713f26164a6787608a6cbce1b8ac0cfe963a42e1416578db60193e95224",
+      "uid": "ddc28daf842f7784cf8e3122",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_verdict|rpy_literal|r13_verdict|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:719:77",
+      "file": "game/room13.rpy",
+      "path": [
+        42193,
+        42217
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_verdict",
+      "block": "r13_verdict",
+      "placement": "literal",
+      "ref": "game/room13.rpy:719:77",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "나 할아버지 안 죽였다고 말하고 싶은데.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 719,
+          "label": "r13_verdict",
+          "guards": [
+            "if \"C2\" in room13[\"propositions\"]:"
+          ]
+        }
+      ],
+      "line": 719,
+      "scene_title": "r13_verdict",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "9fd1de2c66fa1c12cf6ec2b615a3b78e575f8d268328f2b4d005d7020f33830f",
+      "uid": "6ee80f423d71c5b8eada9c65",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_verdict|rpy_literal|r13_verdict|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:719:110",
+      "file": "game/room13.rpy",
+      "path": [
+        42226,
+        42252
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_verdict",
+      "block": "r13_verdict",
+      "placement": "literal",
+      "ref": "game/room13.rpy:719:110",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "부리한테도 네가 준비되면 그때 같이 말하자.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 719,
+          "label": "r13_verdict",
+          "guards": [
+            "if \"C2\" in room13[\"propositions\"]:"
+          ]
+        }
+      ],
+      "line": 719,
+      "scene_title": "r13_verdict",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "7dbf4daa9efaeb26f7a038d04d0ca39180309511563604f2bbce57abb4e86941",
+      "uid": "2e46ce2f52ba26596eeb28a9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_verdict|rpy_literal|r13_verdict|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:722:42",
+      "file": "game/room13.rpy",
+      "path": [
+        42387,
+        42453
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_verdict",
+      "block": "r13_verdict",
+      "placement": "literal",
+      "ref": "game/room13.rpy:722:42",
+      "when": null,
+      "speaker": "resident_seori",
+      "kind": "dialogue",
+      "text": "뒤집힌 부분은 기록에 남겼습니다. 하지만 오늘 모은 자료만으로는 아이를 풀어 달라는 요청이 받아들여지지 않았습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 722,
+          "label": "r13_verdict",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 722,
+      "scene_title": "r13_verdict",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "1452df62a23509fb7bac43c50eda1ccbf93421b8a65a9b3f357bec6144f4fb4a",
+      "uid": "d36f6f2f0dbf214fa2a5c237",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_verdict|rpy_literal|r13_verdict|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:722:127",
+      "file": "game/room13.rpy",
+      "path": [
+        42472,
+        42501
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_verdict",
+      "block": "r13_verdict",
+      "placement": "literal",
+      "ref": "game/room13.rpy:722:127",
+      "when": null,
+      "speaker": "resident_ppul",
+      "kind": "dialogue",
+      "text": "추가 확인은 아이를 보호시설로 옮겨서 하겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 722,
+          "label": "r13_verdict",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 722,
+      "scene_title": "r13_verdict",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "bbe2c0e24cdc5bf2f87f5810e27bbc08e95411f61a16489024cb3253abea692e",
+      "uid": "9fcf7f3e644691de2a84566f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_verdict|rpy_literal|r13_verdict|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:722:165",
+      "file": "game/room13.rpy",
+      "path": [
+        42510,
+        42540
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_verdict",
+      "block": "r13_verdict",
+      "placement": "literal",
+      "ref": "game/room13.rpy:722:165",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "확인하지 못한 일까지 아이 죄로 못 박지 마십시오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 722,
+          "label": "r13_verdict",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 722,
+      "scene_title": "r13_verdict",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "a1babdc4d1d23715c45531d3275b843b469b981d24b0cf80e3063fb13c531fc4",
+      "uid": "011d6d75d50a5572082460e5",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_verdict|rpy_literal|r13_verdict|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:722:206",
+      "file": "game/room13.rpy",
+      "path": [
+        42551,
+        42564
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_verdict",
+      "block": "r13_verdict",
+      "placement": "literal",
+      "ref": "game/room13.rpy:722:206",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "아빠는 같이 못 와?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 722,
+          "label": "r13_verdict",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 722,
+      "scene_title": "r13_verdict",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "23ba19dd2521954d3fa0cf5e1344128ef9e8038b2c603f9e7e7db36c2ee1af3b",
+      "uid": "ba044e5db753fbb28584a574",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_verdict|rpy_literal|r13_verdict|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
       "id": "game/room13.rpy:722:230",
       "file": "game/room13.rpy",
       "path": [
@@ -78,6 +519,86 @@
       "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
       "baseline_hash": "24d8d95e04c9384a730c7158a885afe9adcc4d7ef482f8f4b7640e81d7aa1f2d",
       "uid": "18e32dcd18506c7562154565",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_verdict|rpy_literal|r13_verdict|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:722:253",
+      "file": "game/room13.rpy",
+      "path": [
+        42598,
+        42627
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_verdict",
+      "block": "r13_verdict",
+      "placement": "literal",
+      "ref": "game/room13.rpy:722:253",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "다시 올게. 다른 데로 옮겨지면 꼭 말 남겨 줘.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 722,
+          "label": "r13_verdict",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 722,
+      "scene_title": "r13_verdict",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "18488667068afae9ee392cbd270070c8b9f26ba322eda47515e0f9a84f3fc0e8",
+      "uid": "e75380b764f710fec9b3fd09",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_verdict|rpy_literal|r13_verdict|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/room13.rpy:722:293",
+      "file": "game/room13.rpy",
+      "path": [
+        42638,
+        42671
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_verdict",
+      "block": "r13_verdict",
+      "placement": "literal",
+      "ref": "game/room13.rpy:722:293",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "아빠도. 아빠가 못 오면…… 누가 대신 오는지 말해 줘.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/room13.rpy",
+          "line": 722,
+          "label": "r13_verdict",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 722,
+      "scene_title": "r13_verdict",
+      "source_hash": "c85169c768796e400320f2ce517c8cf90b46ebdd2c6e118b9e37e245cc1f4dbd",
+      "baseline_hash": "1ad52a6a828f007f341c038fe0b027111773ec3a8648488a99da3fea7e845f21",
+      "uid": "bd76fd2f2982c9460282279e",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_verdict|rpy_literal|r13_verdict|행 조건 없음",

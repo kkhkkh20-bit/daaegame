@@ -1,0 +1,546 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_life_closeups.rpy:91:14",
+      "file": "game/systems/room13_life_closeups.rpy",
+      "path": [
+        5111,
+        5137
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_delivery_inspect",
+      "block": "r13_delivery_inspect",
+      "placement": "literal",
+      "ref": "game/systems/room13_life_closeups.rpy:91:14",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "까로가 수레 옆에 짐 두 개를 내려 두었다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_life_closeups.rpy",
+          "line": 91,
+          "label": "r13_delivery_inspect",
+          "guards": []
+        }
+      ],
+      "line": 91,
+      "scene_title": "r13_delivery_inspect",
+      "source_hash": "ff9e09dda506d96806b7e62ed92cf7d8c9b9dca5fa0547afc1d000e4ca902e0b",
+      "baseline_hash": "434530735ef42f2a00392aba8d126d35a42d629cc699c2cb4aaf3b50cf9625d5",
+      "uid": "d03a2ad63f48bcb5bcf20e50",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_delivery_inspect|rpy_inventory|r13_delivery_inspect|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_life_closeups.rpy:98:52",
+      "file": "game/systems/room13_life_closeups.rpy",
+      "path": [
+        5600,
+        5611
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_delivery_inspect",
+      "block": "r13_delivery_inspect",
+      "placement": "literal",
+      "ref": "game/systems/room13_life_closeups.rpy:98:52",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "짐을 나르러 간다",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_life_closeups.rpy",
+          "line": 98,
+          "label": "r13_delivery_inspect",
+          "guards": [
+            "while True:"
+          ]
+        }
+      ],
+      "line": 98,
+      "scene_title": "r13_delivery_inspect",
+      "source_hash": "ff9e09dda506d96806b7e62ed92cf7d8c9b9dca5fa0547afc1d000e4ca902e0b",
+      "baseline_hash": "4a7de3908d0f2e3cb6d0e86c8c347b26bd2c16a7ee1476bac597f9d8f0ec1be7",
+      "uid": "49059bf35851084254a80e60",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_delivery_inspect|rpy_inventory|r13_delivery_inspect|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_life_closeups.rpy:115:26",
+      "file": "game/systems/room13_life_closeups.rpy",
+      "path": [
+        6497,
+        6543
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_delivery_inspect",
+      "block": "r13_delivery_inspect",
+      "placement": "literal",
+      "ref": "game/systems/room13_life_closeups.rpy:115:26",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "큰 상자 짐표 · 받는 곳: 광장 뒤 세 번째 집, 솔 씨 댁. 큰 나무 상자.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_life_closeups.rpy",
+          "line": 115,
+          "label": "r13_delivery_inspect",
+          "guards": [
+            "while True:",
+            "if _kind==\"look\":",
+            "if _a==\"large_tag\":"
+          ]
+        }
+      ],
+      "line": 115,
+      "scene_title": "r13_delivery_inspect",
+      "source_hash": "ff9e09dda506d96806b7e62ed92cf7d8c9b9dca5fa0547afc1d000e4ca902e0b",
+      "baseline_hash": "24b2046a47614bde8e78965da4419308ff51f4688581c331fc0b2d06234917fd",
+      "uid": "1e591152478f99827e379460",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_delivery_inspect|rpy_inventory|r13_delivery_inspect|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_life_closeups.rpy:117:26",
+      "file": "game/systems/room13_life_closeups.rpy",
+      "path": [
+        6604,
+        6659
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_delivery_inspect",
+      "block": "r13_delivery_inspect",
+      "placement": "literal",
+      "ref": "game/systems/room13_life_closeups.rpy:117:26",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "작은 상자 짐표 · 받는 곳: 광장 뒤 세 번째 집, 솔 씨 댁. 작은 상자. 바닥이 매끈하다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_life_closeups.rpy",
+          "line": 117,
+          "label": "r13_delivery_inspect",
+          "guards": [
+            "while True:",
+            "if _kind==\"look\":",
+            "elif _a==\"small_tag\":"
+          ]
+        }
+      ],
+      "line": 117,
+      "scene_title": "r13_delivery_inspect",
+      "source_hash": "ff9e09dda506d96806b7e62ed92cf7d8c9b9dca5fa0547afc1d000e4ca902e0b",
+      "baseline_hash": "981dab85b9078ad2264f144315a2b906edf2ef0c1a5593ac262088cce85a9344",
+      "uid": "ca90d30f9ace288227b604b1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_delivery_inspect|rpy_inventory|r13_delivery_inspect|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_life_closeups.rpy:119:26",
+      "file": "game/systems/room13_life_closeups.rpy",
+      "path": [
+        6737,
+        6813
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_delivery_inspect",
+      "block": "r13_delivery_inspect",
+      "placement": "literal",
+      "ref": "game/systems/room13_life_closeups.rpy:119:26",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "큰 상자 위에 작은 상자를 얹어 보았다. 수레가 기울 때마다 작은 상자가 미끄러졌다. 까로: “위에 올리면 작은 게 자꾸 떨어져요.”",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_life_closeups.rpy",
+          "line": 119,
+          "label": "r13_delivery_inspect",
+          "guards": [
+            "while True:",
+            "if _kind==\"look\":",
+            "elif _a==\"small_box\" and not _dv_tied:"
+          ]
+        }
+      ],
+      "line": 119,
+      "scene_title": "r13_delivery_inspect",
+      "source_hash": "ff9e09dda506d96806b7e62ed92cf7d8c9b9dca5fa0547afc1d000e4ca902e0b",
+      "baseline_hash": "d0f07e2e443153270ae69382ab393f0b241baaaa11bf15117d1bd806e27f710c",
+      "uid": "852a1551e2f095d0f7bdb921",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_delivery_inspect|rpy_inventory|r13_delivery_inspect|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_life_closeups.rpy:121:27",
+      "file": "game/systems/room13_life_closeups.rpy",
+      "path": [
+        6870,
+        6913
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_delivery_inspect",
+      "block": "r13_delivery_inspect",
+      "placement": "literal",
+      "ref": "game/systems/room13_life_closeups.rpy:121:27",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "굵은 짐 끈이다. 아래쪽 쓸 물건에서 고른 뒤 상자를 누르면 쓸 수 있다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_life_closeups.rpy",
+          "line": 121,
+          "label": "r13_delivery_inspect",
+          "guards": [
+            "while True:",
+            "if _kind==\"look\":",
+            "elif _a==\"rope\":"
+          ]
+        }
+      ],
+      "line": 121,
+      "scene_title": "r13_delivery_inspect",
+      "source_hash": "ff9e09dda506d96806b7e62ed92cf7d8c9b9dca5fa0547afc1d000e4ca902e0b",
+      "baseline_hash": "cecf1ed000e92102191f1d65850531f221a96717e2e54757e210b9fa3e7d7c66",
+      "uid": "8e968817544292b6028c89d6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_delivery_inspect|rpy_inventory|r13_delivery_inspect|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_life_closeups.rpy:121:105",
+      "file": "game/systems/room13_life_closeups.rpy",
+      "path": [
+        6948,
+        6996
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_delivery_inspect",
+      "block": "r13_delivery_inspect",
+      "placement": "literal",
+      "ref": "game/systems/room13_life_closeups.rpy:121:105",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "까로의 수레에 걸려 있던 굵은 끈이다. 까로가 허락하기 전에는 함부로 쓰지 않는다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_life_closeups.rpy",
+          "line": 121,
+          "label": "r13_delivery_inspect",
+          "guards": [
+            "while True:",
+            "if _kind==\"look\":",
+            "elif _a==\"rope\":"
+          ]
+        }
+      ],
+      "line": 121,
+      "scene_title": "r13_delivery_inspect",
+      "source_hash": "ff9e09dda506d96806b7e62ed92cf7d8c9b9dca5fa0547afc1d000e4ca902e0b",
+      "baseline_hash": "e2ccf5a6b15e0f298c56e49c1456de328d1883e925b1536cc2668262d5016dd0",
+      "uid": "07bf5f4ee99333ce4e45c0a8",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_delivery_inspect|rpy_inventory|r13_delivery_inspect|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_life_closeups.rpy:121:175",
+      "file": "game/systems/room13_life_closeups.rpy",
+      "path": [
+        7018,
+        7035
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_delivery_inspect",
+      "block": "r13_delivery_inspect",
+      "placement": "literal",
+      "ref": "game/systems/room13_life_closeups.rpy:121:175",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "끈은 두 상자를 감고 있다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_life_closeups.rpy",
+          "line": 121,
+          "label": "r13_delivery_inspect",
+          "guards": [
+            "while True:",
+            "if _kind==\"look\":",
+            "elif _a==\"rope\":"
+          ]
+        }
+      ],
+      "line": 121,
+      "scene_title": "r13_delivery_inspect",
+      "source_hash": "ff9e09dda506d96806b7e62ed92cf7d8c9b9dca5fa0547afc1d000e4ca902e0b",
+      "baseline_hash": "9eaff8c2c53c1ab61955844f826b23184c32914ca61344d39dd9d8e262a9bfde",
+      "uid": "f848587c4205a351ab33fdc9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_delivery_inspect|rpy_inventory|r13_delivery_inspect|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_life_closeups.rpy:123:26",
+      "file": "game/systems/room13_life_closeups.rpy",
+      "path": [
+        7090,
+        7130
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_delivery_inspect",
+      "block": "r13_delivery_inspect",
+      "placement": "literal",
+      "ref": "game/systems/room13_life_closeups.rpy:123:26",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "두 상자가 끈으로 함께 묶여 있다. 수레가 기울어도 움직이지 않는다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_life_closeups.rpy",
+          "line": 123,
+          "label": "r13_delivery_inspect",
+          "guards": [
+            "while True:",
+            "if _kind==\"look\":",
+            "elif _dv_tied:"
+          ]
+        }
+      ],
+      "line": 123,
+      "scene_title": "r13_delivery_inspect",
+      "source_hash": "ff9e09dda506d96806b7e62ed92cf7d8c9b9dca5fa0547afc1d000e4ca902e0b",
+      "baseline_hash": "d080dd2747724b56289401514ae97b95ebb6aae6ff11cced22f2c295e94e8de2",
+      "uid": "600fe874f535310d6cdfda07",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_delivery_inspect|rpy_inventory|r13_delivery_inspect|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_life_closeups.rpy:125:26",
+      "file": "game/systems/room13_life_closeups.rpy",
+      "path": [
+        7175,
+        7198
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_delivery_inspect",
+      "block": "r13_delivery_inspect",
+      "placement": "literal",
+      "ref": "game/systems/room13_life_closeups.rpy:125:26",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "큰 나무 상자다. 바닥이 넓고 무겁다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_life_closeups.rpy",
+          "line": 125,
+          "label": "r13_delivery_inspect",
+          "guards": [
+            "while True:",
+            "if _kind==\"look\":",
+            "else:"
+          ]
+        }
+      ],
+      "line": 125,
+      "scene_title": "r13_delivery_inspect",
+      "source_hash": "ff9e09dda506d96806b7e62ed92cf7d8c9b9dca5fa0547afc1d000e4ca902e0b",
+      "baseline_hash": "9036e57796132c2b6a634f40afec4f8b88c7121f46376077c2a421f43f093387",
+      "uid": "5679491dd2db712e8d6df6fb",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_delivery_inspect|rpy_inventory|r13_delivery_inspect|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_life_closeups.rpy:130:26",
+      "file": "game/systems/room13_life_closeups.rpy",
+      "path": [
+        7402,
+        7462
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_delivery_inspect",
+      "block": "r13_delivery_inspect",
+      "placement": "literal",
+      "ref": "game/systems/room13_life_closeups.rpy:130:26",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "작은 상자를 큰 상자 위에 올리고 굵은 끈으로 함께 묶었다. 까로: “이렇게 실으면 한 번에 되겠네요.”",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_life_closeups.rpy",
+          "line": 130,
+          "label": "r13_delivery_inspect",
+          "guards": [
+            "while True:",
+            "elif _kind==\"use\":",
+            "if _a==\"cord\" and _b in (\"small_box\",\"large_box\") and not _dv_tied:"
+          ]
+        }
+      ],
+      "line": 130,
+      "scene_title": "r13_delivery_inspect",
+      "source_hash": "ff9e09dda506d96806b7e62ed92cf7d8c9b9dca5fa0547afc1d000e4ca902e0b",
+      "baseline_hash": "7dfad3fcef5e16ea5e6d252bd5d7980a4d9f92bbf1bf49643fe4edab4add13dd",
+      "uid": "5bb25e88162eccd55fed15d1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_delivery_inspect|rpy_inventory|r13_delivery_inspect|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_life_closeups.rpy:132:26",
+      "file": "game/systems/room13_life_closeups.rpy",
+      "path": [
+        7556,
+        7584
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_delivery_inspect",
+      "block": "r13_delivery_inspect",
+      "placement": "literal",
+      "ref": "game/systems/room13_life_closeups.rpy:132:26",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "상자를 고정할 수 없다. 물건은 그대로 두었다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_life_closeups.rpy",
+          "line": 132,
+          "label": "r13_delivery_inspect",
+          "guards": [
+            "while True:",
+            "elif _kind==\"use\":",
+            "elif _b in (\"small_box\",\"large_box\") and not _dv_tied:"
+          ]
+        }
+      ],
+      "line": 132,
+      "scene_title": "r13_delivery_inspect",
+      "source_hash": "ff9e09dda506d96806b7e62ed92cf7d8c9b9dca5fa0547afc1d000e4ca902e0b",
+      "baseline_hash": "7c37897ab7adbc8484f06b5d3ca3a16d7256b55beb8a062e6d3628b1701fc05a",
+      "uid": "0933a9101312efa41356cf7a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_delivery_inspect|rpy_inventory|r13_delivery_inspect|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_life_closeups.rpy:134:26",
+      "file": "game/systems/room13_life_closeups.rpy",
+      "path": [
+        7629,
+        7657
+      ],
+      "origin": "rpy_inventory",
+      "day": null,
+      "scene": "r13_delivery_inspect",
+      "block": "r13_delivery_inspect",
+      "placement": "literal",
+      "ref": "game/systems/room13_life_closeups.rpy:134:26",
+      "when": null,
+      "speaker": null,
+      "kind": "unknown",
+      "text": "여기에는 쓸 데가 없다. 물건은 그대로 두었다.",
+      "editable": false,
+      "usage": "unknown",
+      "note": "직접 실행 위치를 안전하게 확정하지 못한 한국어 문자열: 읽기 전용",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_life_closeups.rpy",
+          "line": 134,
+          "label": "r13_delivery_inspect",
+          "guards": [
+            "while True:",
+            "elif _kind==\"use\":",
+            "else:"
+          ]
+        }
+      ],
+      "line": 134,
+      "scene_title": "r13_delivery_inspect",
+      "source_hash": "ff9e09dda506d96806b7e62ed92cf7d8c9b9dca5fa0547afc1d000e4ca902e0b",
+      "baseline_hash": "7e448536bbfd1b18c1fa73ca93f5aec971bc02bdee3e395e138d9b6e60fddb05",
+      "uid": "78fac8681dd60a2e2644bc18",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_delivery_inspect|rpy_inventory|r13_delivery_inspect|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

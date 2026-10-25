@@ -1,0 +1,129 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_town_events.rpy:368:12",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        19398,
+        19408
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_ev_c_locked",
+      "block": "r13_ev_c_locked",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:368:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "문을 밀어 본다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 368,
+          "label": "r13_ev_c_locked",
+          "guards": [
+            "while _c_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 368,
+      "scene_title": "r13_ev_c_locked",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "025a507c7ca1edf70ec21ff05c51bc83351e70aa8266721e1539b015c97a256b",
+      "uid": "987dfb042995be839834816e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_locked|rpy_menu|r13_ev_c_locked|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:370:12",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        19520,
+        19532
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_ev_c_locked",
+      "block": "r13_ev_c_locked",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:370:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "안쪽 선반을 살핀다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 370,
+          "label": "r13_ev_c_locked",
+          "guards": [
+            "while _c_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 370,
+      "scene_title": "r13_ev_c_locked",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "c47d03cbfedd413af47cd2098b60e0e1f885d091e8757f9932e2eae2573430d9",
+      "uid": "8cae8afa39714f45917f5171",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_locked|rpy_menu|r13_ev_c_locked|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:372:12",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        19656,
+        19670
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_ev_c_locked",
+      "block": "r13_ev_c_locked",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:372:12",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "문을 두드리며 기다린다",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 372,
+          "label": "r13_ev_c_locked",
+          "guards": [
+            "while _c_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 372,
+      "scene_title": "r13_ev_c_locked",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "8953298a8708af43d89bbdb10cd9c6d8349a9da3756f4f05f5d443df6c73f42d",
+      "uid": "5f827d5e5c12458951d78a42",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_locked|rpy_menu|r13_ev_c_locked|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

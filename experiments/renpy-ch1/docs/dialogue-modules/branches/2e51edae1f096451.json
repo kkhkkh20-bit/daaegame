@@ -1,0 +1,86 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_q1_difficulty.rpy:311:47",
+      "file": "game/systems/room13_q1_difficulty.rpy",
+      "path": [
+        16749,
+        16770
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_q1_thesis_opening",
+      "block": "r13_q1_thesis_opening",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_difficulty.rpy:311:47",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "톡을 지목한 말에 어떻게 반박할까?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_difficulty.rpy",
+          "line": 311,
+          "label": "r13_q1_thesis_opening",
+          "guards": [
+            "while not r13_q1_thesis():"
+          ]
+        }
+      ],
+      "line": 311,
+      "scene_title": "r13_q1_thesis_opening",
+      "source_hash": "9a354ff6a98b8cac565ba817f440cdf209f2fbe11dd7b9392b809128818ad3a3",
+      "baseline_hash": "4db432c7e5f4f04b01e8060abbf88244ee39f6a993ab2101aa1e8294b4de1834",
+      "uid": "5c04c105afd2f5ae408e3ca4",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_q1_thesis_opening|rpy_menu|r13_q1_thesis_opening|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_q1_difficulty.rpy:311:139",
+      "file": "game/systems/room13_q1_difficulty.rpy",
+      "path": [
+        16841,
+        16858
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_q1_thesis_opening",
+      "block": "r13_q1_thesis_opening",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_difficulty.rpy:311:139",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "자료를 다시 살펴보겠습니다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_difficulty.rpy",
+          "line": 311,
+          "label": "r13_q1_thesis_opening",
+          "guards": [
+            "while not r13_q1_thesis():"
+          ]
+        }
+      ],
+      "line": 311,
+      "scene_title": "r13_q1_thesis_opening",
+      "source_hash": "9a354ff6a98b8cac565ba817f440cdf209f2fbe11dd7b9392b809128818ad3a3",
+      "baseline_hash": "049b9bfc234a16321186032837f612fca35029459518757bf3cf19d57ca2be52",
+      "uid": "d732fafa4df19cb694f82cd7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_q1_thesis_opening|rpy_menu|r13_q1_thesis_opening|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

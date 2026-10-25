@@ -1,7 +1,241 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_town_events.rpy:362:26",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        19190,
+        19234
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_locked",
+      "block": "r13_ev_c_locked",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:362:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "창고 안은 생각보다 넓었다. 자루를 세는 사이 등 뒤에서 창고 문이 닫혔다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 362,
+          "label": "r13_ev_c_locked",
+          "guards": []
+        }
+      ],
+      "line": 362,
+      "scene_title": "r13_ev_c_locked",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "ca0ff08addca94069181690b76351f92908e89be5fed50b2ecac23291c05817e",
+      "uid": "acb0b87950d6da1ca2eee9b9",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_locked|rpy_literal|r13_ev_c_locked|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:363:14",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        19251,
+        19272
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_locked",
+      "block": "r13_ev_c_locked",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:363:14",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "밖에서 빗장이 걸리는 소리가 났다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 363,
+          "label": "r13_ev_c_locked",
+          "guards": []
+        }
+      ],
+      "line": 363,
+      "scene_title": "r13_ev_c_locked",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "b9d33f73ee6d8ea18f2f927aa8cb55aeab5d7e76a9d614d032a69c4ddf2038c8",
+      "uid": "c6da8030ba979a8877b434de",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_locked|rpy_literal|r13_ev_c_locked|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:364:15",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        19290,
+        19316
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_locked",
+      "block": "r13_ev_c_locked",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:364:15",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "부인? 안에 사람이 있는데 문이 잠겼습니다!",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 364,
+          "label": "r13_ev_c_locked",
+          "guards": []
+        }
+      ],
+      "line": 364,
+      "scene_title": "r13_ev_c_locked",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "d09a2049b5ba13446a9be85ca1a9d73f7b2ff0ebc603b0fb2fc4e07acb298fd8",
+      "uid": "9ea26d73532758cf77cf9095",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_locked|rpy_literal|r13_ev_c_locked|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:369:38",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        19448,
+        19485
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_locked",
+      "block": "r13_ev_c_locked",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:369:38",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "문은 조금 움직이지만 열리지 않는다. 바깥에 무언가 걸려 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 369,
+          "label": "r13_ev_c_locked",
+          "guards": [
+            "while _c_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 369,
+      "scene_title": "r13_ev_c_locked",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "2027363e28f9b49877a5b84881dde85785a3a2c7e70763f879a82b86c0509aa2",
+      "uid": "a6137c25ac0f8951559af6c0",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_locked|rpy_literal|r13_ev_c_locked|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:371:38",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        19572,
+        19621
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_locked",
+      "block": "r13_ev_c_locked",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:371:38",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "등잔 불이 점점 작아졌다. 선반 위 종이 묶음의 글씨는 이 불빛으로는 읽히지 않는다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 371,
+          "label": "r13_ev_c_locked",
+          "guards": [
+            "while _c_loop:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 371,
+      "scene_title": "r13_ev_c_locked",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "9a8e9d23f1cdbe379f771224ec5d280a9eab4032361fe4f71ccc3864d787a43e",
+      "uid": "cbb211a19ce394e0c5f93a5b",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_locked|rpy_literal|r13_ev_c_locked|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:374:26",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        19730,
+        19775
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_locked",
+      "block": "r13_ev_c_locked",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:374:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "대답은 없었다. 등잔 기름이 다 탈 때까지 문을 두드렸다. 밤은 길기만 했다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 374,
+          "label": "r13_ev_c_locked",
+          "guards": []
+        }
+      ],
+      "line": 374,
+      "scene_title": "r13_ev_c_locked",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "cc97e9878122541ad4719aab3fc55f8ccbc7f0641e25349390aa5245953a71e1",
+      "uid": "03db432fc4fb7b41a814aabe",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_locked|rpy_literal|r13_ev_c_locked|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_town_events.rpy:377:40",
       "file": "game/systems/room13_town_events.rpy",
@@ -35,6 +269,44 @@
       "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
       "baseline_hash": "2d624505ebc54339693a6c61082dc0c7a004c8c33712c09b8422507373d1b421",
       "uid": "bae3a103000e9b79904667f7",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_locked|rpy_literal|r13_ev_c_locked|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:378:26",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        19975,
+        20010
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_locked",
+      "block": "r13_ev_c_locked",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:378:26",
+      "when": null,
+      "speaker": "resident_madam",
+      "kind": "dialogue",
+      "text": "재고 세는 일을 다 못 끝냈으니 절반만 드릴게요. 일곱 냥.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 378,
+          "label": "r13_ev_c_locked",
+          "guards": []
+        }
+      ],
+      "line": 378,
+      "scene_title": "r13_ev_c_locked",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "c71bfecddae38c80f4d59829ac937f656d0402360478f5bcae3cf79c1d1b5db0",
+      "uid": "ac3efa70416ba2d65d750272",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_ev_c_locked|rpy_literal|r13_ev_c_locked|행 조건 없음",
@@ -81,6 +353,46 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
+      "id": "game/systems/room13_town_events.rpy:381:21",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        20139,
+        20186
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_locked",
+      "block": "r13_ev_c_locked",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:381:21",
+      "when": null,
+      "speaker": "daram",
+      "kind": "dialogue",
+      "text": "밤에 누가 왔었어. 이름 물어보니까 그냥 돌아갔어. 목소리는 뭉치 아저씨 같았어.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 381,
+          "label": "r13_ev_c_locked",
+          "guards": [
+            "if room_safe:"
+          ]
+        }
+      ],
+      "line": 381,
+      "scene_title": "r13_ev_c_locked",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "a5c37653a51f8b7a7855eb1d91387ca904a738f9a4c3113bbaef3a616808514b",
+      "uid": "bc07d7f53d4750a9a20767d1",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_locked|rpy_literal|r13_ev_c_locked|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
       "id": "game/systems/room13_town_events.rpy:383:30",
       "file": "game/systems/room13_town_events.rpy",
       "path": [
@@ -115,6 +427,46 @@
       "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
       "baseline_hash": "4356155665f4357ba7a1b491ce3349550195d24ba91effba76fdab7f8537b0cc",
       "uid": "22e6098634a438c70e77331a",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ev_c_locked|rpy_literal|r13_ev_c_locked|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_town_events.rpy:384:19",
+      "file": "game/systems/room13_town_events.rpy",
+      "path": [
+        20324,
+        20364
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ev_c_locked",
+      "block": "r13_ev_c_locked",
+      "placement": "literal",
+      "ref": "game/systems/room13_town_events.rpy:384:19",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(누군가 밤새 이 방을 뒤졌다. 그러려고 나를 창고에 가둔 것이다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_town_events.rpy",
+          "line": 384,
+          "label": "r13_ev_c_locked",
+          "guards": [
+            "else:"
+          ]
+        }
+      ],
+      "line": 384,
+      "scene_title": "r13_ev_c_locked",
+      "source_hash": "e40b0340f380f7a19df49e7831fc55ae8d13de3ead3a1ecb699f2b529b244770",
+      "baseline_hash": "ac3855857b51dc13d3ad5688b23ea01592d2a576a090b203f8ed09e06d182e10",
+      "uid": "22b8c51be4348b800bd53eb5",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_ev_c_locked|rpy_literal|r13_ev_c_locked|행 조건 없음",

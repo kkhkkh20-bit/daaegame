@@ -1,0 +1,90 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_gimmicks.rpy:155:38",
+      "file": "game/systems/room13_gimmicks.rpy",
+      "path": [
+        8680,
+        8755
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_gm_scale",
+      "block": "r13_gm_scale",
+      "placement": "literal",
+      "ref": "game/systems/room13_gimmicks.rpy:155:38",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "같은 모양의 표준 추를 왼쪽 접시에 올렸다. 저울은 가게 추 쪽으로 기울었다. 가운데 조정 나사 둘레에는 새로 긁힌 자국이 있었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_gimmicks.rpy",
+          "line": 155,
+          "label": "r13_gm_scale",
+          "guards": [
+            "while True:",
+            "if _return[0]==\"action\":",
+            "elif _return[1]==\"note\":"
+          ]
+        }
+      ],
+      "line": 155,
+      "scene_title": "r13_gm_scale",
+      "source_hash": "a7934a16c859d49f7210cf9089b5edaccfdf3fba61af94c771454df8f9891eab",
+      "baseline_hash": "776ba5bb7d25eefec671f2eec45faeba16b1ee4d8ca4a43225bbce5559f3e3f5",
+      "uid": "b100d2e43179bdb5114ea539",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_gm_scale|rpy_literal|r13_gm_scale|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_gimmicks.rpy:156:27",
+      "file": "game/systems/room13_gimmicks.rpy",
+      "path": [
+        8785,
+        8851
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_gm_scale",
+      "block": "r13_gm_scale",
+      "placement": "literal",
+      "ref": "game/systems/room13_gimmicks.rpy:156:27",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "(가게 추가 정말 무거운지, 누가 나사를 돌렸는지는 아직 모른다. 다만 이 저울로 잰 무게는 그대로 믿기 어렵다.)",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_gimmicks.rpy",
+          "line": 156,
+          "label": "r13_gm_scale",
+          "guards": [
+            "while True:",
+            "if _return[0]==\"action\":",
+            "elif _return[1]==\"note\":"
+          ]
+        }
+      ],
+      "line": 156,
+      "scene_title": "r13_gm_scale",
+      "source_hash": "a7934a16c859d49f7210cf9089b5edaccfdf3fba61af94c771454df8f9891eab",
+      "baseline_hash": "7b912f3f806ad1021f0db223c3ed56c42c36059495573dad6bda2a10c51a3a02",
+      "uid": "705a8c1781c5413e12faa103",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_gm_scale|rpy_literal|r13_gm_scale|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

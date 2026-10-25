@@ -1,0 +1,208 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_owl_buri.rpy:111:8",
+      "file": "game/systems/room13_owl_buri.rpy",
+      "path": [
+        6234,
+        6252
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_ledger_madam_approach",
+      "block": "r13_ledger_madam_approach",
+      "placement": "literal",
+      "ref": "game/systems/room13_owl_buri.rpy:111:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "“어느 항목이 달라졌습니까?”",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_owl_buri.rpy",
+          "line": 111,
+          "label": "r13_ledger_madam_approach",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 111,
+      "scene_title": "r13_ledger_madam_approach",
+      "source_hash": "db5bd71cd78f8a37555c256d5aa1064675f5c6d6a3560b1af22518f20f98d9e9",
+      "baseline_hash": "21f9dd7eb422396c0ed60677c2bbe96278a6b6349787c9502ddd04192df6119e",
+      "uid": "bb5b0edd8610eeb8ec6092b6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ledger_madam_approach|rpy_menu|r13_ledger_madam_approach|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_owl_buri.rpy:115:8",
+      "file": "game/systems/room13_owl_buri.rpy",
+      "path": [
+        6454,
+        6474
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_ledger_madam_approach",
+      "block": "r13_ledger_madam_approach",
+      "placement": "literal",
+      "ref": "game/systems/room13_owl_buri.rpy:115:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "“먼저 설명부터 듣고 싶습니다.”",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_owl_buri.rpy",
+          "line": 115,
+          "label": "r13_ledger_madam_approach",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 115,
+      "scene_title": "r13_ledger_madam_approach",
+      "source_hash": "db5bd71cd78f8a37555c256d5aa1064675f5c6d6a3560b1af22518f20f98d9e9",
+      "baseline_hash": "99fbf8ee9dffb35e0a4e4062baa62db69cf73f2e160cfe2a2748b6f30e517c50",
+      "uid": "a12c240d6bc5218f8d053350",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ledger_madam_approach|rpy_menu|r13_ledger_madam_approach|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_owl_buri.rpy:119:16",
+      "file": "game/systems/room13_owl_buri.rpy",
+      "path": [
+        6680,
+        6697
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_ledger_madam_approach",
+      "block": "r13_ledger_madam_approach",
+      "placement": "literal",
+      "ref": "game/systems/room13_owl_buri.rpy:119:16",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "“그 조건이면 받겠습니다.”",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_owl_buri.rpy",
+          "line": 119,
+          "label": "r13_ledger_madam_approach",
+          "guards": [
+            "menu:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 119,
+      "scene_title": "r13_ledger_madam_approach",
+      "source_hash": "db5bd71cd78f8a37555c256d5aa1064675f5c6d6a3560b1af22518f20f98d9e9",
+      "baseline_hash": "3f760eb59ff9074bf31b43f1a3a4a6b66e3e0393f30e951308b85e690614e96a",
+      "uid": "2776f8197e8f9cd9cf133162",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ledger_madam_approach|rpy_menu|r13_ledger_madam_approach|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_owl_buri.rpy:122:16",
+      "file": "game/systems/room13_owl_buri.rpy",
+      "path": [
+        6876,
+        6896
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_ledger_madam_approach",
+      "block": "r13_ledger_madam_approach",
+      "placement": "literal",
+      "ref": "game/systems/room13_owl_buri.rpy:122:16",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "“그 조건은 받을 수 없습니다.”",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_owl_buri.rpy",
+          "line": 122,
+          "label": "r13_ledger_madam_approach",
+          "guards": [
+            "menu:",
+            "menu:"
+          ]
+        }
+      ],
+      "line": 122,
+      "scene_title": "r13_ledger_madam_approach",
+      "source_hash": "db5bd71cd78f8a37555c256d5aa1064675f5c6d6a3560b1af22518f20f98d9e9",
+      "baseline_hash": "9789b61de09911a4421820ceb9aaaf9d94af440a4c0a41f925b36e7acc4f8d50",
+      "uid": "8ef7131eac5a5fa015948be3",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ledger_madam_approach|rpy_menu|r13_ledger_madam_approach|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_owl_buri.rpy:124:8",
+      "file": "game/systems/room13_owl_buri.rpy",
+      "path": [
+        6999,
+        7017
+      ],
+      "origin": "rpy_menu",
+      "day": null,
+      "scene": "r13_ledger_madam_approach",
+      "block": "r13_ledger_madam_approach",
+      "placement": "literal",
+      "ref": "game/systems/room13_owl_buri.rpy:124:8",
+      "when": null,
+      "speaker": null,
+      "kind": "choice",
+      "text": "“서리에게도 확인받겠습니다.”",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_owl_buri.rpy",
+          "line": 124,
+          "label": "r13_ledger_madam_approach",
+          "guards": [
+            "menu:"
+          ]
+        }
+      ],
+      "line": 124,
+      "scene_title": "r13_ledger_madam_approach",
+      "source_hash": "db5bd71cd78f8a37555c256d5aa1064675f5c6d6a3560b1af22518f20f98d9e9",
+      "baseline_hash": "b2fc7d7f4e2c265b4da21b7765c27cd4c3cd8778d719dcb4a74007634bcb09d3",
+      "uid": "0c9c05eb403d2ef8e90b6303",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ledger_madam_approach|rpy_menu|r13_ledger_madam_approach|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

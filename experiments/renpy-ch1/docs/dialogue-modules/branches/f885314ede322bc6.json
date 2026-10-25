@@ -1,0 +1,82 @@
+{
+  "schema": "room13.dialogue-edit.v1",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
+  "entries": [
+    {
+      "id": "game/systems/room13_q1_review.rpy:170:26",
+      "file": "game/systems/room13_q1_review.rpy",
+      "path": [
+        8708,
+        8759
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_q1_preflight",
+      "block": "r13_q1_preflight",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_review.rpy:170:26",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "회의에서는 지금 가진 자료로 이야기한다. 회의는 4일 오후가 끝나기 전까지 열 수 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_review.rpy",
+          "line": 170,
+          "label": "r13_q1_preflight",
+          "guards": []
+        }
+      ],
+      "line": 170,
+      "scene_title": "r13_q1_preflight",
+      "source_hash": "51dcc7e0e65d83314ee167c79b5a474f29d05946b65650187256bc616d676842",
+      "baseline_hash": "2ac3fb43771aeeef30aa669466d18f9147194a674b46433ba0d3e9bdbd4dcff8",
+      "uid": "4bccf90fd9a0e2b003df868f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_q1_preflight|rpy_literal|r13_q1_preflight|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_q1_review.rpy:170:85",
+      "file": "game/systems/room13_q1_review.rpy",
+      "path": [
+        8767,
+        8795
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_q1_preflight",
+      "block": "r13_q1_preflight",
+      "placement": "literal",
+      "ref": "game/systems/room13_q1_review.rpy:170:85",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "조사나 추리가 끝나지 않았어도 들어갈 수 있다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_q1_review.rpy",
+          "line": 170,
+          "label": "r13_q1_preflight",
+          "guards": []
+        }
+      ],
+      "line": 170,
+      "scene_title": "r13_q1_preflight",
+      "source_hash": "51dcc7e0e65d83314ee167c79b5a474f29d05946b65650187256bc616d676842",
+      "baseline_hash": "5d6927e49fb1863bf4eaa1bea9c33e760bb2183e25d91b48ecef947e05752b2c",
+      "uid": "a57d17a67b85c3c5a9100a72",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_q1_preflight|rpy_literal|r13_q1_preflight|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    }
+  ]
+}

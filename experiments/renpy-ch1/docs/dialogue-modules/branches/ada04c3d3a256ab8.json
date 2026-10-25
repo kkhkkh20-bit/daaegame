@@ -1,7 +1,45 @@
 {
   "schema": "room13.dialogue-edit.v1",
-  "source_stamp": "e2cde60a24c7ae94c4b5711291d9440794007b0534e6787c40fe4ea92bdec709",
+  "source_stamp": "395b99ce7de740fe9a7f2275a8c89e4c506cf229dd47086614a63b3f1d357da1",
   "entries": [
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:503:29",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        26986,
+        27011
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_decision",
+      "block": "r13_ep1_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:503:29",
+      "when": null,
+      "speaker": "neoul",
+      "kind": "dialogue",
+      "text": "톡은 풀어 주겠소. 실룩은 내가 데려가오.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 503,
+          "label": "r13_ep1_decision",
+          "guards": []
+        }
+      ],
+      "line": 503,
+      "scene_title": "r13_ep1_decision",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "fdbc916d7334d30d77c7727be9cdf83399c656a93ead754933d4bc8f3d1cf9c7",
+      "uid": "27b0d55fdbb3d83b8c668f31",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_decision|rpy_literal|r13_ep1_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
     {
       "id": "game/systems/room13_ep1_lamp_thief.rpy:509:30",
       "file": "game/systems/room13_ep1_lamp_thief.rpy",
@@ -83,6 +121,86 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:513:42",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        27639,
+        27653
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_decision",
+      "block": "r13_ep1_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:513:42",
+      "when": null,
+      "speaker": "resident_madam",
+      "kind": "dialogue",
+      "text": "내 돈으로 산 거예요!",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 513,
+          "label": "r13_ep1_decision",
+          "guards": [
+            "if _e1_pick in (\"store\",\"both\"):"
+          ]
+        }
+      ],
+      "line": 513,
+      "scene_title": "r13_ep1_decision",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "85b93d01b77e4dcf4e9ccde017983a7c1c6e267cc9ede8129ff3a12473393795",
+      "uid": "e7a3505f7f292ccc678fe7e6",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_decision|rpy_literal|r13_ep1_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:513:64",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        27661,
+        27680
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_decision",
+      "block": "r13_ep1_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:513:64",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "사람들이 창고 쪽으로 움직였다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 513,
+          "label": "r13_ep1_decision",
+          "guards": [
+            "if _e1_pick in (\"store\",\"both\"):"
+          ]
+        }
+      ],
+      "line": 513,
+      "scene_title": "r13_ep1_decision",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "f4102192f6f0001b09e672eb63d694d68b5f48b19bbe9d6f6f82e6a8573bebf2",
+      "uid": "fc6d7df189adf0571d699833",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_decision|rpy_literal|r13_ep1_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
       "id": "game/systems/room13_ep1_lamp_thief.rpy:514:30",
       "file": "game/systems/room13_ep1_lamp_thief.rpy",
       "path": [
@@ -123,6 +241,126 @@
       "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
     },
     {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:517:42",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        27889,
+        27898
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_decision",
+      "block": "r13_ep1_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:517:42",
+      "when": null,
+      "speaker": "resident_madam",
+      "kind": "dialogue",
+      "text": "……뭐라고요?",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 517,
+          "label": "r13_ep1_decision",
+          "guards": [
+            "if _e1_pick==\"debt\":"
+          ]
+        }
+      ],
+      "line": 517,
+      "scene_title": "r13_ep1_decision",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "fe3caa6d8960fca7a1ef8b029ea452105c24cd8244b5b8910f21676400bc6948",
+      "uid": "fb87cd13363ec59fc5b26619",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_decision|rpy_literal|r13_ep1_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:518:19",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        27920,
+        27965
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_decision",
+      "block": "r13_ep1_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:518:19",
+      "when": null,
+      "speaker": "dad",
+      "kind": "dialogue",
+      "text": "부인이 산 조각은 훔친 물건입니다. 돌려주시든지, 그 값으로 빚을 지우시든지.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 518,
+          "label": "r13_ep1_decision",
+          "guards": [
+            "if _e1_pick==\"debt\":"
+          ]
+        }
+      ],
+      "line": 518,
+      "scene_title": "r13_ep1_decision",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "e9fca32c45b8d834b5b6bf4b6707ea608bcb842e61973ef1909fc16f6188da57",
+      "uid": "2471bf6947be09f2cc53439e",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_decision|rpy_literal|r13_ep1_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:519:18",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        27986,
+        28023
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_decision",
+      "block": "r13_ep1_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:519:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "사람들의 눈이 백 부인에게 쏠렸다. 백 부인이 입술을 깨물었다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 519,
+          "label": "r13_ep1_decision",
+          "guards": [
+            "if _e1_pick==\"debt\":"
+          ]
+        }
+      ],
+      "line": 519,
+      "scene_title": "r13_ep1_decision",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "146b93311ba4b248a64c7e356290c47898e8534a44209b086578f92a990d622e",
+      "uid": "9099d48a500feb4240ec4a7f",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_decision|rpy_literal|r13_ep1_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
       "id": "game/systems/room13_ep1_lamp_thief.rpy:520:30",
       "file": "game/systems/room13_ep1_lamp_thief.rpy",
       "path": [
@@ -157,6 +395,46 @@
       "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
       "baseline_hash": "6ac5fbe3bfe7f259d400ab07a9a36b78b4b57312f915eee97e27465174a37616",
       "uid": "4ba8c54c46b104226f5f1e79",
+      "review_status": "draft",
+      "baseline_review_status": "draft",
+      "branch_key": "공통|r13_ep1_decision|rpy_literal|r13_ep1_decision|행 조건 없음",
+      "activation_note": "when은 이 행의 조건만 표시한다. 상위 호출·선택·앞선 변형 우선순위가 추가로 적용될 수 있다."
+    },
+    {
+      "id": "game/systems/room13_ep1_lamp_thief.rpy:521:18",
+      "file": "game/systems/room13_ep1_lamp_thief.rpy",
+      "path": [
+        28110,
+        28127
+      ],
+      "origin": "rpy_literal",
+      "day": null,
+      "scene": "r13_ep1_decision",
+      "block": "r13_ep1_decision",
+      "placement": "literal",
+      "ref": "game/systems/room13_ep1_lamp_thief.rpy:521:18",
+      "when": null,
+      "speaker": null,
+      "kind": "narration",
+      "text": "실룩이 아이들을 끌어안았다.",
+      "editable": true,
+      "usage": "active",
+      "note": "리터럴 범위만 수정; 호출 조건은 실행해 판정하지 않음",
+      "call_sites": [
+        {
+          "file": "game/systems/room13_ep1_lamp_thief.rpy",
+          "line": 521,
+          "label": "r13_ep1_decision",
+          "guards": [
+            "if _e1_pick==\"debt\":"
+          ]
+        }
+      ],
+      "line": 521,
+      "scene_title": "r13_ep1_decision",
+      "source_hash": "8f740230d1d7c4b6b7e264875fcfa82cb25f7b261dc6ff096f53ab092241cf04",
+      "baseline_hash": "b8ea242f1359fc40cc54b3bfcc3d670579c55f8c20ca33978dd9475e87e34af2",
+      "uid": "21a2d926716091a68c3a8ddc",
       "review_status": "draft",
       "baseline_review_status": "draft",
       "branch_key": "공통|r13_ep1_decision|rpy_literal|r13_ep1_decision|행 조건 없음",
