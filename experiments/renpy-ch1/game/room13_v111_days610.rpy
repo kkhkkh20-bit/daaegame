@@ -1095,7 +1095,8 @@ label r13_v111_passage9:
         call r13_lines(r13_nw_block('daram_door9'),'nw:daram_door9')
     $ room13["v111"]["people"]=[]
     call r13_v111_travel('kitchen','passage9',[])
-    $ r13_v111_arrive(['doto', 'resident_ttadak', 'granny'])
+    # 2026-10-26 소유자: 다람이 갇힌 동안 부리가 아빠의 임시 짝이 된다.
+    $ r13_v111_arrive(['doto', 'resident_ttadak', 'granny', 'buri'])
     $ r13_v111_score()
     jump r13_v111_safe_passage9
 
