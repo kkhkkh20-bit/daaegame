@@ -213,6 +213,10 @@ async def main():
      if gate=='morning_prep12' and os.environ.get('V111_MADAM') and not values.get('madam_observer_consent'):idx=4
      if gate=='transport_cleanup13' and idx==5 and os.environ.get('V111_BURI') and not values.get('buri_device_consent'):idx=6
      opt=opts[idx] if opts else None
+     # 경로 계획: {관문: [제목...]} 중 지금 열려 있는 첫 제목을 고른다(예방·실패 경로를 실제 클릭으로 돌릴 때).
+     plan=json.loads(os.environ.get('V111_TITLE_PLAN','{}')).get(gate,[])
+     planned=next((o for t in plan for o in opts if o.get('title')==t),None)
+     if planned:opt=planned
      # 0.20.44: 꼬미는 깡통 줄을 풀어 도토리를 챙기기 전에는 따라나서지 않는다(can_wait6). 자리를 받은 뒤 그 두 단계를 먼저 한다.
      if gate=='afternoon6' and values.get('kkomi_seat6') and not values.get('acorn_recovered'):
       opt=next((o for o in opts if o.get('index') in (80,81)),opt)
