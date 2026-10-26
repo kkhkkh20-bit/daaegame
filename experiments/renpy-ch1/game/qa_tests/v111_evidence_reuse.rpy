@@ -176,9 +176,9 @@ testcase evidence_reuse_portrait_needle:
     # 10일: 초상을 덧붙였을 때만 아빠가 짚고 할머니가 받아친다.
     $ qa_reuse_start(10,route7="prevented",OWL_ALIVE=True)
     $ qa_reuse_given("반송·필사본·초대 발송을 대조한다",["E01","E07","E09_MAIL"])
-    assert eval "바늘을 쥐고 있습니다" not in qa_reuse_text(r13_v111_lines(["MS14_D10_P01_L0032"]))
+    assert eval "이 초상만으로 아내가 글씨를 부탁했는지까지" not in qa_reuse_text(r13_v111_lines(["MS14_D10_P01_L0032"]))
     $ qa_reuse_given("반송·필사본·초대 발송을 대조한다",["E01","E07","E09_MAIL","E09"])
-    assert eval ("바늘을 쥐고 있습니다" in qa_reuse_text(r13_v111_lines(["MS14_D10_P01_L0032"])) and "그림이야 좋게 그리죠" in qa_reuse_text(r13_v111_lines(["MS14_D10_P01_L0032"])))
+    assert eval ("이 초상만으로 아내가 글씨를 부탁했는지까지" in qa_reuse_text(r13_v111_lines(["MS14_D10_P01_L0032"])) and "그림이야 좋게 그리죠" in qa_reuse_text(r13_v111_lines(["MS14_D10_P01_L0032"])))
 
 testcase evidence_reuse_portrait_proof:
     # 10일 기록 회의를 실제 증명 화면에서 정답 세 장 + 초상으로 이기고, 초상을 짚는 줄이 나온다.
@@ -206,4 +206,4 @@ testcase evidence_reuse_portrait_proof:
     click "선택한 근거 제출"
     click pos (900,600) until screen "r13_hub" timeout 120
     assert eval (r13_v111_value("meeting:records")=="win")
-    assert eval (qa_nw_seen("바늘을 쥐고 있습니다") and qa_nw_seen("그림이야 좋게 그리죠") and qa_nw_seen("본보기를 만들었고"))
+    assert eval (qa_nw_seen("이 초상만으로 아내가 글씨를 부탁했는지까지") and qa_nw_seen("그림이야 좋게 그리죠") and qa_nw_seen("본보기를 만들었고"))

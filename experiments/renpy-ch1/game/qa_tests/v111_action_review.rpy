@@ -58,7 +58,7 @@ testcase v111_ar_d05_iron:
     run Function(r13_v111_set,"meeting:gate_post","win")
     run Jump("r13_v111_night5")
     click pos (900,600) until eval (room13["v111"].get("gate")=="travel" and renpy.get_screen("r13_hub")) timeout 90
-    assert eval (qa_nw_seen("할아버지 옷 이야기는 아저씨가 했어") and qa_nw_seen("약속은 못 지켰다"))
+    assert eval (qa_nw_seen("할아버지 옷 이야기는 아저씨가 했어") and qa_nw_seen("옷 이야기를 아저씨가 꺼냈어"))
     click "지도" until screen "r13_map" timeout 30
     click "여관 안"
     pause 0.5

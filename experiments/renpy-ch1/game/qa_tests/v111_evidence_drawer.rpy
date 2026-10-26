@@ -59,8 +59,8 @@ testcase v111_evidence_drawer:
     pause 0.5
     $ qa_drawer_entries=r13_catalog_entries()
     run Function(qa_drawer_dump)
-    # 81장 전부 받았고, 쪽지 여섯 장은 목록에서 빠지며, 나머지는 이번 사건이나 지난 사건 한 곳에만 있다.
-    assert eval (len([k for k in room13["evidence"] if k.startswith("V111:")])==81)
+    # 82장 전부 받았고(옛 배급 기록 NW_OLD_RATIONS 가 뒤에 더해졌다), 쪽지 여섯 장은 목록에서 빠지며, 나머지는 이번 사건이나 지난 사건 한 곳에만 있다.
+    assert eval (len([k for k in room13["evidence"] if k.startswith("V111:")])==82)
     assert eval (sorted(r13_drawer_folded())==sorted("V111:"+k for k in ("E26","E19","E05","E30","E10_PUMP","E08_RECENT_LETTER")))
     assert eval (sorted(r13_drawer_notes("V111:E21"))==["V111:E19","V111:E26"])
     # 두 배 장부(⑩)와 맡긴 기록(⑥) 회의는 자기 사건에서 새로 얻는 자료가 없어(뒤 자료는 다음 사건으로) 묶음이 비고, 목록에 나오지 않는다.

@@ -64,7 +64,7 @@ testcase v111_bonds_momo2:
     run Function(r13_edit,day=2,location="post")
     run Jump("r13_v111_post_return")
     click pos (900,600) until screen "r13_hub" timeout 90
-    assert eval (qa_nw_seen("모모 관장님?") and qa_nw_seen("값은 깎지 말고요") and qa_nw_seen("정확한 그림은 무서워요") and qa_nw_seen("먼저 우체국을 나선다"))
+    assert eval (qa_nw_seen("모모 관장님?") and qa_nw_seen("값은 깎지 말고요") and qa_nw_seen("그림이 날 빤히 보는 게 싫어요") and qa_nw_seen("먼저 우체국을 나선다"))
     assert eval (not qa_nw_seen("광장 3번 등 아래 화가가 있어요"))
 
 testcase v111_bonds_owl3:

@@ -17,7 +17,7 @@ testcase v111_nw_d06_afternoon_today:
     click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day6_afternoon)
-    assert eval (qa_nw_afternoon6_titles("v111_woodshed")==["내일 아침에 데리러 올게"])
+    assert eval (qa_nw_afternoon6_titles("v111_woodshed")==["내일 아침에 데리러 올게","장작더미 옆 깡통 줄을 살핀다"])  # 0.20.44 깡통 회수 사전 준비가 더해졌다
     assert eval (qa_nw_afternoon6_titles("school")==["아이들 자리를 여쭌다"])
     run Function(r13_edit,location="school")
     run Jump("r13_v111_afternoon6")
@@ -28,13 +28,18 @@ testcase v111_nw_d06_afternoon_today:
     click "아이들 자리를 여쭌다"
     click pos (900,600) until eval (r13_v111_value("kkomi_seat6") is True and r13_v111_value("school_permission") is True) timeout 30
     assert eval (qa_nw_seen("창가 쪽 네 자리") and qa_nw_afternoon6_titles("school")==[])
-    assert eval (qa_nw_afternoon6_titles("v111_woodshed")==["자리 났어. 지금 같이 가자","내일 아침에 데리러 올게"])
+    assert eval (qa_nw_afternoon6_titles("v111_woodshed")==["학교에 자리가 났어. 같이 갈래?","내일 아침에 데리러 올게","장작더미 옆 깡통 줄을 살핀다"])
+    # 0.20.44: 깡통 줄을 풀어 도토리를 챙겨야 「같이 가자」가 이어진다(can_wait6). 그 단계는 따로 본다.
+    run Function(r13_v111_set,"acorn_recovered",True)
     run Function(r13_edit,location="v111_woodshed")
     run Jump("r13_v111_afternoon6")
     pause 1.0
+    # 창고는 너비 2400 이고 꼬미는 x 1454 에 선다. 처음 화면(카메라 0)에는 없으므로 오른쪽으로 민다.
+    click "오른쪽 구역" until "꼬미" timeout 20
+    pause 0.5
     click "꼬미"
     pause 1.0
-    click "자리 났어. 지금 같이 가자"
+    click "학교에 자리가 났어. 같이 갈래?"
     click pos (900,600) until eval (qa_nw_seen("가서 또 쫓겨나는 거 아니지")) timeout 30
     assert eval (r13_v111_value("choice:MS14_D06_S02")=="today" and r13_v111_value("evacuation_requested") is True)
     screenshot "v111_nw_d06_fetch.png"
@@ -58,6 +63,9 @@ testcase v111_nw_d06_afternoon_tomorrow:
     run Function(r13_v111_set,"kkomi_seat6",True)
     run Jump("r13_v111_afternoon6")
     pause 1.0
+    # 창고는 너비 2400 이고 꼬미는 x 1454 에 선다. 처음 화면(카메라 0)에는 없으므로 오른쪽으로 민다.
+    click "오른쪽 구역" until "꼬미" timeout 20
+    pause 0.5
     click "꼬미"
     pause 1.0
     click "내일 아침에 데리러 올게"
