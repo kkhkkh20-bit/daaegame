@@ -192,6 +192,9 @@ async def main():
       claim=extra['claim'];title=claim[5:];correct=PROOFS[title]
       candidates=await q.py('import renpy;s=renpy.store;result=[sorted(x) for x in s.r13_v111_proof_sets('+repr(title)+','+repr(correct)+')]')
       owned=set(room['evidence']);accepted=next((x for x in candidates if set(x)<=owned),None)
+      # 대승리 경로(V111_PREFER_PROOF=자료,자료): 가진 정답 묶음 중 그 자료가 든 묶음을 먼저 낸다.
+      prefer=[k for k in os.environ.get('V111_PREFER_PROOF','').split(',') if k]
+      accepted=next((x for x in candidates if set(x)<=owned and any('V111:'+k in x for k in prefer)),accepted)
       assert accepted,('No owned proof set',title,candidates,room['evidence'])
       correct=[x[5:] for x in accepted]
       selected=room['arguments'].get(claim,[])
