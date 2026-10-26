@@ -45,7 +45,10 @@ class ObservationTests(unittest.TestCase):
         remember('object:square:cart')
         self.assertEqual(len(self.make()), 1)
         remember('object:square:stall')
-        self.assertEqual(len(self.make('object:inn:door')), 1)
+        # 2026-10-26 같은 때 네 번까지(소유자: 반응이 너무 빨리 사라짐).
+        self.assertEqual(len(self.make('object:inn:door')), 3)
+        remember('object:inn:door');remember('object:inn:knitting')
+        self.assertEqual(len(self.make('object:inn:coats')), 1)
         self.assertEqual((self.state['day'], self.state['period'], self.state['evidence']), (1, 1, ['E01']))
         self.state['period'] = 2
         self.assertEqual(len(self.make()), 3)
