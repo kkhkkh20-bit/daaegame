@@ -13,7 +13,12 @@ class Fast(UIQA):
   for t,x,y,w,h in pans or []:st['buttons'].append({'text':t,'value':'pan','rect':[x,y,w,h]})
   return st
  async def py(self,code):
-  return await super().py('ns={};exec('+repr(code)+',ns);result=ns.get("result")')
+  # 화면이 닫히는 순간 그 화면을 읽으면 None.scope 로 실패한다. 화면이 바뀔 시간을 주고 두 번 더 본다.
+  for attempt in range(3):
+   try:return await super().py('ns={};exec('+repr(code)+',ns);result=ns.get("result")')
+   except Exception as e:
+    if attempt==2 or "'NoneType' object has no attribute" not in str(e):raise
+    await asyncio.sleep(.6)
  async def input(self,x,y):
   vp=self.p.viewport_size;s=min(vp['width']/1280,vp['height']/720);x=(vp['width']-1280*s)/2+x*s;y=(vp['height']-720*s)/2+y*s
   await self.p.mouse.click(x,y);await asyncio.sleep(.08)
