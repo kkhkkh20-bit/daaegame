@@ -54,7 +54,9 @@ class GrannyScarf(unittest.TestCase):
             def walk(value):
                 if isinstance(value,dict):
                     for key,child in value.items():
-                        if key=='file' and 'granny' in child:
+                        # 2026-10-26 전신 묶음(dialogue-source-master-v2)은 처음부터 승인 목도리(버건디·은핀·찢어짐 없음)로
+                        # 그려 온 새 그림이라 이 일괄 수정 목록 밖이다. 육안 확인: docs/art-requests/납품검수_20261026.md
+                        if key=='file' and 'granny' in child and not child.startswith('assets/dialogue-source-master-v2/'):
                             self.assertIn('game/'+child,paths)
                         else:walk(child)
                 elif isinstance(value,list):

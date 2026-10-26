@@ -21,16 +21,20 @@ class CharacterLoading(unittest.TestCase):
     def test_cast_and_all_source_profiles_are_classified(self):
         files = character_files(ROOT / 'game')
         self.assertIn('assets/room13-pixel-world-daram-gray-gutter.webp', files)
-        self.assertIn('assets/dialogue-source-master/granny/760/neutral.webp', files)
+        self.assertIn('assets/dialogue-source-master/granny/760/neutral.webp', files)  # 예전 판도 공개본에 남긴다
+        self.assertIn('assets/dialogue-source-master-v2/granny/760/neutral.webp', files)
         self.assertNotIn('assets/room13-title-winter020.webp', files)
 
     def test_day_one_warms_only_runtime_profile_in_story_order(self):
         files = character_prefetch(ROOT / 'game')
         self.assertEqual(len(files), len(set(files)))
         self.assertTrue(all('/560/' not in f and '/760/' not in f for f in files))
-        self.assertLess(files.index('assets/dialogue-source-master/karo/840/neutral.webp'),
-                        files.index('assets/dialogue-source-master/granny/840/neutral.webp'))
-        self.assertIn('assets/dialogue-source-master/neoul/840/neutral.webp', files)
+        # 2026-10-26 전신 묶음으로 경로가 dialogue-source-master-v2 로 바뀐 인물이 있다. 연결표가 가리키는 파일로 본다.
+        import json
+        talk = json.loads((ROOT / 'game/assets/room13-dialogue-talk-art.json').read_text())['people']
+        neutral = lambda who: talk[who]['profiles']['840']['frames']['neutral']['file']
+        self.assertLess(files.index(neutral('karo')), files.index(neutral('granny')))
+        self.assertIn(neutral('neoul'), files)
 
     def test_background_fetch_concurrency_is_bounded(self):
         script = """const assert=require('assert');const Module={preRun:[]};

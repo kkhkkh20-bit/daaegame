@@ -144,7 +144,9 @@ init 170 python:
         # expression it was written with, not only meeting lines and reviewed cues. Lines with no
         # expression are still neutral; a missing frame keeps the nearest approved one below.
         emotion=r13_fullbody_emotion(pose)
-        emotion={"surprise":"surprise_talk","flustered":"anxious"}.get(emotion,emotion)
+        emotion={"surprise":"surprise_talk"}.get(emotion,emotion)
+        # 2026-10-26 전신 묶음은 당황을 따로 그렸다. 없는 인물은 예전처럼 불안 그림을 빌린다.
+        if emotion=="flustered" and "flustered" not in profile["frames"]:emotion="anxious"
         frame=profile["frames"].get(emotion,profile["frames"]["neutral"])
         if renpy.loadable(frame["file"]):
             art=Fixed(Transform(frame["file"],xpos=frame["offset"][0],ypos=frame["offset"][1],zoom=frame.get("scale",1.0),nearest=False,subpixel=True),xysize=tuple(profile["canvas"]))

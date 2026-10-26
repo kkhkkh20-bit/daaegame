@@ -7,6 +7,9 @@ ROOT=Path(__file__).resolve().parents[1]
 class BDialogueArt(unittest.TestCase):
  def setUp(self):
   self.old=json.loads((ROOT/'game/assets/room13-dialogue-talk-art.json').read_text())['people']
+  # B 묶음은 그때의 대화 그림 표에 맞춰 만들었다. 2026-10-26 전신 묶음(art_v2)으로 표가 바뀌었으므로
+  # B 그림의 정합성은 바뀌기 전 표(보관본)와 견준다. B 그림 자체는 지금 꺼져 있다(R13_DIALOGUE_B_ART_ON).
+  self.before=json.loads((ROOT/'art/dialogue-fullbody-v2-20261026/talk-art-before.json').read_text())['people']
   self.new=json.loads((ROOT/'game/assets/room13-dialogue-b-primary50.json').read_text())
   source=(ROOT/'game/systems/room13_dialogue_beats.rpy').read_text().split('init 170 python:\n',1)[1]
   tree=ast.parse(textwrap.dedent(source));tree.body=[n for n in tree.body if isinstance(n,ast.FunctionDef)]
@@ -21,8 +24,8 @@ class BDialogueArt(unittest.TestCase):
  def test_neutral_unchanged_and_all_delivered_expressions_connected(self):
   for person,profiles in self.new.items():
    for h,p in profiles.items():
-    self.assertEqual(p['canvas'],self.old[person]['profiles'][h]['canvas'])
-    self.assertEqual(p['frames']['neutral'],self.old[person]['profiles'][h]['frames']['neutral'])
+    self.assertEqual(p['canvas'],self.before[person]['profiles'][h]['canvas'])
+    self.assertEqual(p['frames']['neutral'],self.before[person]['profiles'][h]['frames']['neutral'])
   for person,emotion in [('resident_lamplighter','angry'),('resident_lamplighter','joy'),('resident_lamplighter','surprise_talk'),('resident_teacher','surprise_talk')]:
    for h,p in self.new[person].items():self.assertTrue(p['frames'][emotion]['file'].startswith('assets/dialogue-b-primary50/'))
  def test_all_50_frames_preserve_visible_height_and_fit_canvas(self):
@@ -31,7 +34,7 @@ class BDialogueArt(unittest.TestCase):
    for h,p in profiles.items():
     for emotion,f in p['frames'].items():
      if not f['file'].startswith('assets/dialogue-b-primary50/'):continue
-     count+=1;self.assertTrue(all(type(v) is int for v in f['offset']));old=self.old[person]['profiles'][h]['frames'][emotion]
+     count+=1;self.assertTrue(all(type(v) is int for v in f['offset']));old=self.before[person]['profiles'][h]['frames'][emotion]
      with Image.open(ROOT/'game'/old['file']) as im:ob=im.getbbox()
      with Image.open(ROOT/'game'/f['file']) as im:nb=im.getbbox()
      os=old.get('scale',1);ns=f['scale']

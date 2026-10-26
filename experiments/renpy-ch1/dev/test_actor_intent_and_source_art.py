@@ -76,13 +76,16 @@ class SourceMasterArt(unittest.TestCase):
    self.assertEqual(entry['status'],'approved_runtime')
    self.assertEqual(set(entry['profiles']),{'560','760','840'})
    for profile in entry['profiles'].values():
-    self.assertEqual(set(profile['frames']),{'neutral','joy','angry','anxious','surprise_talk','surprise_react'})
+    six={'neutral','joy','angry','anxious','surprise_talk','surprise_react'}
+    # 2026-10-26 전신 묶음(art_v2)은 당황(flustered)을 따로 그렸다.
+    self.assertEqual(set(profile['frames']),six|({'flustered'} if entry.get('art_v2') else set()))
     hashes=set()
     for frame in profile['frames'].values():
      path=ROOT/'game'/frame['file'];self.assertTrue(path.is_file())
      self.assertEqual(path.suffix,'.webp') # Keep frequently used portraits out of progressive PNG unloading.
      hashes.add(hashlib.sha256(path.read_bytes()).hexdigest())
-    self.assertEqual(len(hashes),6,person)
+    # 서로 다른 파일은 서로 다른 그림이어야 한다(2026-10-26 묶음은 놀람 두 칸이 한 파일을 같이 쓴다).
+    self.assertEqual(len(hashes),len({f['file'] for f in profile['frames'].values()}),person)
  def test_approved_fifty_source_registry_and_smooth_renderer(self):
   data=json.loads((ROOT/'game/assets/room13-dialogue-talk-art.json').read_text());self.assertEqual(len(data['people']),59)
   fullbody=json.loads((ROOT/'game/assets/room13-fullbody-dialogue.json').read_text())['people']
