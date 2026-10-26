@@ -81,8 +81,8 @@ init 311 python:
         return bool(check and check())
 
 init 312 python:
-    MS14_SPEAKERS.update({"굴돌":"resident_guldol","판돌":"npc_pandol","순찰대원":"v111_patrol","실룩의 아이":"v111_siluk_child","아랫길 주민":"v111_lower_resident","아랫길 노인":"v111_lowerroad_elder","주민":"v111_resident","아이":"v111_child"})
-    for _key,_name in (("v111_patrol","순찰대원"),("v111_siluk_child","실룩의 아이"),("v111_lower_resident","아랫길 주민"),("v111_lowerroad_elder","아랫길 노인"),("v111_resident","주민"),("v111_child","아이")):
+    MS14_SPEAKERS.update({"굴돌":"resident_guldol","판돌":"npc_pandol","순찰대원":"v111_patrol","실룩의 아이":"v111_siluk_child","아랫길 주민":"v111_lower_resident","아랫길 노인":"v111_lowerroad_elder","판설":"npc_panseol","주민":"v111_resident","아이":"v111_child"})
+    for _key,_name in (("v111_patrol","순찰대원"),("v111_siluk_child","실룩의 아이"),("v111_lower_resident","아랫길 주민"),("v111_lowerroad_elder","아랫길 노인"),("npc_panseol","판설"),("v111_resident","주민"),("v111_child","아이")):
         R13_NAMES[_key]=_name
         R13_CHARS[_key]=Character(_name,cb_who_id=_key)
     R13_REL_DEAD["resident_owlgp"]="v111:owl_dead"

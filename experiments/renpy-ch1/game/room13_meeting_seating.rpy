@@ -21,6 +21,10 @@ init 99 python:
     import functools as r13_meeting_functools
     R13_MEETING_SEATED=r13_meeting_json.load(renpy.file("assets/room13-meeting-seated.json")) if renpy.loadable("assets/room13-meeting-seated.json") else {}
     R13_MEETING_STANDING_FACING={"resident_bori":"right"}
+    # 2026-10-26 소유자: "서서로 해". 원탁 회의도 모두 탁자 앞에 선다(R13_MEETING_SEATED 는 남겨 두되 원탁에서 쓰지 않는다).
+    # 원탁 입석 그림이 온 사람은 그 그림을, 나머지는 대화 전신 그림을 세운다. 얼굴 방향은 오른쪽을 보는 그림만 적는다.
+    R13_MEETING_STAND={who:"assets/meeting-stand/%s.webp"%who for who in ("granny","nabi","buri","doto","resident_bori")}
+    R13_MEETING_STAND_FACING={"granny":"right","resident_bori":"right"}
     # Presentation metadata; never supplies a meeting's date, availability or proof.
     R13_MEETING_VENUES={
         "trial":("dining","round","식당 · 원탁 회의"),
@@ -192,7 +196,7 @@ screen r13_meeting_stage(claim,focus=None,close=False,ready=False,selected=None,
 screen r13_meeting_camera_frame(claim,focus=None,close=False,ready=False,selected=None,ballot=False,outgoing=False):
     $ session=r13_debate_session(claim)
     $ venue_kind=r13_meeting_kind(session)
-    $ seated=venue_kind=="round"
+    $ seated=False  # 2026-10-26 원탁도 서서(소유자). 앉은 그림 갈래는 남겨 둔다.
     $ seats=r13_meeting_cast(claim,session)
     fixed:
         id "meeting_camera"
@@ -241,7 +245,13 @@ screen r13_meeting_camera_frame(claim,focus=None,close=False,ready=False,selecte
                 else:
                     $ stand_width,height,top=r13_meeting_standing_slot(who,len(seats),edge,session)
                     $ source_profile=r13_dialogue_source_profile(who,"neutral",840)
-                    if source_profile:
+                    if venue_kind=="round" and who in R13_MEETING_STAND:
+                        $ stand_width=min(int(1024*306.0/1536),int(1160.0/max(1,len(seats))*.90))
+                        $ height=int(round(stand_width*1536/1024.0))
+                        $ top=int(edge-height*.60)
+                        $ stand_flip=R13_MEETING_STAND_FACING.get(who)=="right" and cx>640
+                        add Transform(R13_MEETING_STAND[who],xysize=(stand_width,height),xzoom=(-1 if stand_flip else 1)) xcenter cx ypos top
+                    elif source_profile:
                         $ source_width,source_height=source_profile["canvas"]
                         $ stand_width=min(int(source_width*306.0/source_height),int((980.0 if venue_kind=="room" else 1160.0)/max(1,len(seats))*.90))
                         $ height=int(round(stand_width*source_height/float(source_width)))
