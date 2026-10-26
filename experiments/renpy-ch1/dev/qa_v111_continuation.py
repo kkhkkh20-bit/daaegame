@@ -194,7 +194,15 @@ async def main():
       owned=set(room['evidence']);accepted=next((x for x in candidates if set(x)<=owned),None)
       assert accepted,('No owned proof set',title,candidates,room['evidence'])
       correct=[x[5:] for x in accepted]
-      selected=room['arguments'].get(claim,[]);missing=[k for k in correct if 'V111:'+k not in selected]
+      selected=room['arguments'].get(claim,[])
+      # 회의 패배 경로(V111_LOSE_DAY=날짜): 어느 정답 묶음에도 없는 자료 하나만 골라 낸다. 기회를 다 쓰면 진다.
+      if os.environ.get('V111_LOSE_DAY') and room['day']==int(os.environ['V111_LOSE_DAY']):
+       right={k for x in candidates for k in x};wrong=next((e for e in room['evidence'] if e not in right and e.startswith('V111:')),None)
+       assert wrong,('No wrong material to lose with',title)
+       if wrong in selected:await q.press('선택한 근거 제출')
+       else:book=wrong;await q.press('자료 고르기')
+       continue
+      missing=[k for k in correct if 'V111:'+k not in selected]
       if missing:book='V111:'+missing[0];await q.press('자료 고르기')
       else:await q.press('선택한 근거 제출')
       continue

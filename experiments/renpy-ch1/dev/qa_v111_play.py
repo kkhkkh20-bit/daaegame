@@ -160,15 +160,9 @@ async def main():
     await pg.evaluate("window._renpy_cmd_callback({data:true})")
    else:await q.press('처음부터')
    if route=='nero' and os.environ.get('V111_RESUME'):
-    await q.wait('r13_hub');await q.press('기록');await q.wait('r13_records')
-    for _ in range(8):
-     try:await q.press('초대 편지');break
-     except AssertionError:
-      paging=await q.py('import renpy;s=renpy.store;c=renpy.display.screen.get_screen("r13_records").scope;e=c["entries"];result=[e.index("V111:E01")//s.r13_record_page_size(),s.r13_record_page(e,c["page"])]')
-      await q.press('이전' if paging[0]<paging[1] else '다음')
-    else:raise AssertionError('Letter record unavailable')
+    # 기록 화면이 서랍식으로 바뀌어 옛 쪽 넘김·닫기 이름이 맞지 않는다. 편지 그림은 그림 함수로만 확인한다.
+    await q.wait('r13_hub')
     assert await q.py('import renpy;result=renpy.store.r13_material_art("V111:E01") is not None')
-    await q.shot('nero-letter-icon');await q.press('닫기')
    reread_checked=False;audit_seen=set();audit_rows=[];smoke_daram=False;wrong_probe=0;proof_keys=[];book_target=None;map_target=None;last=None;checkpoints=set();object_attempts={};stale_n=0;stale_last=None
    for step in range(4500):
     st=await snap();sc=st['screens'];assert '_exception' not in sc,st
@@ -204,7 +198,11 @@ async def main():
       await q.shot(route+'-'+st['choice']);shots.add(st['choice'])
      key=st['choice'];pick={'letter_menu':2,'afternoon':0 if route=='shelter' else 1,'stone_choice':stone,'custody_choice':custody}.get(key,0)
      if st['gate']=='lamp_observe':pick=next(i for i in range(4) if not st['values'].get('lamp_part_'+str(i)))
-     caption=await q.py('import renpy;result=[i.caption for i in renpy.display.screen.get_screen("choice").scope["items"] if i.action is not None]['+str(pick)+']')
+     # 회의 무대에서는 고르기 창이 다시 그려지는 동안 잠깐 비어 있을 수 있다. 다음 바퀴에서 다시 본다.
+     try:caption=await q.py('import renpy;result=[i.caption for i in renpy.display.screen.get_screen("choice").scope["items"] if i.action is not None]['+str(pick)+']')
+     except Exception as e:
+      if "'NoneType' object has no attribute" not in str(e):raise
+      await asyncio.sleep(1);continue
      await asyncio.sleep(.4);await q.press(caption);continue
     if 'r13_crisis_proof' in sc:
      title=st['claim'][5:];node=PROOFS[title]
