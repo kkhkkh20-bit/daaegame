@@ -118,6 +118,9 @@ class Fast(UIQA):
    st=await self.state();bs=[b for b in st['buttons'] if ''.join(label.split()) in ''.join(b['text'].split()) and b['rect'][3]>12]
    if bs:
     b=min(bs,key=lambda b:b['rect'][2]*b['rect'][3]);x,y,w,h=b['rect'];await self.input(x+w/2,y+h/2);return
+   # 대사 한 줄이 아직 떠 있는 사이에는 찾는 버튼이 없다. 그 줄을 넘기고 다시 본다.
+   if attempt and attempt%10==0 and 'say' in st['screens'] and 'choice' not in st['screens']:
+    await self.input(900,590);await asyncio.sleep(.4)
    if attempt and attempt%5==0 and 'choice' in st['screens']:
     pages=[b for b in st['buttons'] if '다음 →' in b['text'] or '← 이전' in b['text']]
     if pages:
