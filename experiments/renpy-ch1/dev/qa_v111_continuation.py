@@ -164,7 +164,10 @@ async def main():
      if 'say' in screens:
       if extra.get('skipping') and stale<3:await asyncio.sleep(.15)
       elif extra.get('skipping'):await q.input(900,590)
-      elif any('건너뛰기' in b['text'] for b in st.get('buttons',[])):await q.press('건너뛰기')
+      elif any('건너뛰기' in b['text'] for b in st.get('buttons',[])):
+       # 대사가 끝나며 건너뛰기 버튼이 사라지는 사이에 누르면 실패한다. 그때는 다음 바퀴에서 다시 본다.
+       try:await q.press('건너뛰기')
+       except AssertionError:pass
       else:await q.input(900,590)
       continue
      if 'choice' in screens:
@@ -189,8 +192,8 @@ async def main():
       assert accepted,('No owned proof set',title,candidates,room['evidence'])
       correct=[x[5:] for x in accepted]
       selected=room['arguments'].get(claim,[]);missing=[k for k in correct if 'V111:'+k not in selected]
-      if missing:book='V111:'+missing[0];await q.press('근거를 내놓는다')
-      else:await q.press('논리를 연결한다')
+      if missing:book='V111:'+missing[0];await q.press('자료 고르기')
+      else:await q.press('선택한 근거 제출')
       continue
      if 'r13_book' in screens:
       if not book:
