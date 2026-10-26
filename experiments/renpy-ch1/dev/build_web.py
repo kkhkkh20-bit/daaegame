@@ -143,7 +143,7 @@ def character_manifests(game):
 
 def character_files(game):
     result = {f for manifest in character_manifests(game) for f in asset_files(manifest)}
-    patterns = ("dialogue-source-master/*", "dialogue-source-master-v2/*", "dialogue-context-master/*", "dialogue-pose-source/*",
+    patterns = ("dialogue-source-master/*", "dialogue-source-master-v2/*", "dialogue-dot-v2/*", "dialogue-context-master/*", "dialogue-pose-source/*",
                 "profile-source-master/*", "room13-fullbody-*", "room13-redesign-*",
                 "room13-role-*", "room13-canonical-*", "room13-meeting-*",
                 "room13-pixel-acting-*", "room13-pixel-dialogue-*")

@@ -84,7 +84,7 @@ init 170 python:
             for key in (plan["talk"],plan["react"]):
                 if key and key not in self.frames:
                     frame=profile["frames"][key]
-                    self.frames[key]=Fixed(Transform(frame["file"],xpos=frame["offset"][0],ypos=frame["offset"][1],zoom=frame.get("scale",1.0),nearest=False,subpixel=True),xysize=tuple(profile["canvas"]))
+                    self.frames[key]=Fixed(Transform(frame["file"],xpos=frame["offset"][0],ypos=frame["offset"][1],zoom=frame.get("scale",1.0),nearest=bool(frame.get("nearest")),subpixel=not frame.get("nearest")),xysize=tuple(profile["canvas"]))
                     if profile.get("pixel_grid")==2 and not frame.get("native_detail"):
                         self.frames[key]=r13_pixel_scale(self.frames[key],profile["canvas"][0],profile["canvas"][1],2)
         def visit(self):
@@ -112,6 +112,13 @@ init 170 python:
         if not profiles:return None
         base=min(profiles,key=lambda h:abs(int(h)-int(height)))
         ratio=float(height)/int(base);profile=profiles[base]
+        k=profile.get("dot_scale")
+        if k:
+            # 도트 그림은 비정수 배율로 늘리면 칸 크기가 다시 들쭉날쭉해진다. 한 칸이 정수 px 가 되는
+            # 배율로만 늘리고, 발 밑과 가운데(anchor)는 요청한 높이의 자리에 맞춘다.
+            zoom=max(1,int(round(k*ratio)))/float(k)
+            frames={key:dict(frame,offset=[int(round(ratio*(o+a)-zoom*a)) for o,a in zip(frame["offset"],frame.get("anchor",(0,0)))],scale=zoom) for key,frame in profile["frames"].items()}
+            return dict(canvas=[max(1,int(round(v*ratio))) for v in profile["canvas"]],frames=frames,dot_scale=k*zoom)
         frames={key:dict(frame,offset=[int(round(v*ratio)) for v in frame["offset"]],scale=frame.get("scale",1.0)*ratio) for key,frame in profile["frames"].items()}
         return dict(canvas=[max(1,int(round(v*ratio))) for v in profile["canvas"]],frames=frames,**({"pixel_grid":2} if profile.get("pixel_grid")==2 else {}))
 
@@ -149,7 +156,7 @@ init 170 python:
         if emotion=="flustered" and "flustered" not in profile["frames"]:emotion="anxious"
         frame=profile["frames"].get(emotion,profile["frames"]["neutral"])
         if renpy.loadable(frame["file"]):
-            art=Fixed(Transform(frame["file"],xpos=frame["offset"][0],ypos=frame["offset"][1],zoom=frame.get("scale",1.0),nearest=False,subpixel=True),xysize=tuple(profile["canvas"]))
+            art=Fixed(Transform(frame["file"],xpos=frame["offset"][0],ypos=frame["offset"][1],zoom=frame.get("scale",1.0),nearest=bool(frame.get("nearest")),subpixel=not frame.get("nearest")),xysize=tuple(profile["canvas"]))
             return r13_pixel_scale(art,profile["canvas"][0],profile["canvas"][1],2) if profile.get("pixel_grid")==2 and not frame.get("native_detail") else art
         # An approved character must never silently revert to the old pixel design.
         # A second shipped size is the same approved neutral, with its whole canvas scaled.

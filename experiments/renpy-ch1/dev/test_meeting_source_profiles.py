@@ -10,7 +10,7 @@ class MeetingSources(unittest.TestCase):
   get=self.env['r13_dialogue_source_profile']
   for who in self.env['R13_DIALOGUE_TALK_ART']['people']:
    for height in (740,776,840,876):
-    p=get(who,'neutral',height);self.assertIsNotNone(p);self.assertTrue(p['frames']['neutral']['file'].startswith(('assets/dialogue-source-master/','assets/dialogue-source-master-v2/')))
+    p=get(who,'neutral',height);self.assertIsNotNone(p);self.assertTrue(p['frames']['neutral']['file'].startswith(('assets/dialogue-source-master/','assets/dialogue-source-master-v2/','assets/dialogue-dot-v2/')))
     for n in p['canvas']:self.assertGreater(n,0)
  def test_chair_keys_have_letter_bust_without_changing_field_pose(self):
   get=self.env['r13_dialogue_source_profile'];self.env['store'].r13_meeting_active=False
