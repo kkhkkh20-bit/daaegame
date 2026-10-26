@@ -2,7 +2,13 @@
 # 숨은 장소는 기존 판정(r13_map_nodes)만 따르는지, 숨은 동안 버튼·이름표가 아예 없는지 본다.
 init 999 python:
     def r13_qa_bmap_center(region,key):
-        sx,sy,sw,sh=r13_bmap_target(region,key)["sticker"]
+        # 0.20.42 수첩 틀 뒤로 지도가 화면에서 아래로 내려앉았다(숲 70px). 대상 표의 좌표 대신
+        # 실제 버튼이 놓인 자리에서 스티커 가운데를 잡는다. 못 찾으면 예전처럼 표 좌표를 쓴다.
+        t=r13_bmap_target(region,key);sx,sy,sw,sh=t["sticker"];ax,ay=t["area"][:2]
+        ids=("map_room_"+key,"map_building_"+key,"map_locked_"+key)
+        for f in renpy.display.focus.focus_list:
+            if getattr(getattr(f,"widget",None),"id",None) in ids:
+                return (int(f.x+sx-ax+sw//2),int(f.y+sy-ay+sh//2))
         return (sx+sw//2,sy+sh//2)
 
     def r13_qa_bmap_widget(key):
