@@ -6,6 +6,12 @@ from webqa import UIQA
 ROOT=Path(__file__).resolve().parents[1];OUT=Path(os.environ.get('ROOM13_QA_OUT','/workspace/work/v111/browser'));OUT.mkdir(parents=True,exist_ok=True)
 PLAN=json.loads((ROOT/'docs/story-v111/compiled-reference.json').read_text());PROOFS={v['title']:v for v in PLAN.values() if v['kind']=='proof'}
 class Fast(UIQA):
+ async def state(self):
+  # 0.20.42 부터 현장 좌우 이동은 글자 없는 그림 버튼이다. 이름(alt)으로 찾아 예전 '‹'/'›' 버튼처럼 보이게 한다.
+  st=await super().state()
+  pans=await UIQA.py(self,'import renpy\nresult=[[("‹" if f.widget.style.alt=="왼쪽 구역" else "›"),f.x,f.y,f.w,f.h] for f in renpy.display.focus.focus_list if f.x is not None and getattr(getattr(f.widget,"style",None),"alt",None) in ("왼쪽 구역","오른쪽 구역")]')
+  for t,x,y,w,h in pans or []:st['buttons'].append({'text':t,'value':'pan','rect':[x,y,w,h]})
+  return st
  async def py(self,code):
   return await super().py('ns={};exec('+repr(code)+',ns);result=ns.get("result")')
  async def input(self,x,y):
@@ -155,7 +161,7 @@ async def main():
     else:raise AssertionError('Letter record unavailable')
     assert await q.py('import renpy;result=renpy.store.r13_material_art("V111:E01") is not None')
     await q.shot('nero-letter-icon');await q.press('닫기')
-   reread_checked=False;audit_seen=set();audit_rows=[];smoke_daram=False;wrong_probe=0;proof_keys=[];book_target=None;map_target=None;last=None;checkpoints=set();object_attempts={}
+   reread_checked=False;audit_seen=set();audit_rows=[];smoke_daram=False;wrong_probe=0;proof_keys=[];book_target=None;map_target=None;last=None;checkpoints=set();object_attempts={};stale_n=0;stale_last=None
    for step in range(4500):
     st=await snap();sc=st['screens'];assert '_exception' not in sc,st
     state=(st['gate'],tuple(sc),st['choice'],st['claim'])
@@ -164,6 +170,12 @@ async def main():
     if os.environ.get('V111_SMOKE') and st['gate']=='room_observe' and 'r13_hub' in sc:
      await q.shot('smoke-room-observe');break
     if state!=last:events.append(dict(step=step,**st));last=state;print('STATE',step,st['gate'],sc,st['choice'],st['location'],flush=True)
+    # 같은 화면·값에서 입력이 아무것도 바꾸지 못하면 조용히 돌지 말고 화면을 남기고 멈춘다.
+    finger=json.dumps([st['gate'],sc,st['location'],st.get('values'),st.get('evidence'),st.get('say')],sort_keys=True,default=str)
+    stale_n=stale_n+1 if finger==stale_last else 0;stale_last=finger
+    if stale_n>=80:
+     dump=await q.state();print('STALE',st['gate'],st['location'],[b['text'] for b in dump['buttons']][:40],flush=True)
+     raise AssertionError(('Input did not progress',st['gate'],st['location']))
     if st['gate']=='checkpoint' and 'r13_confirm' in sc:
      assert st['values']['piko_alive']==(route=='shelter'),st
      assert st['values']['carried_dry_blankets']==(0 if route=='shelter' else 2),st
