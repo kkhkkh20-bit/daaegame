@@ -205,7 +205,7 @@ screen say(who,what):
             $ r13_name_track(who)
             hbox:
                 xpos b_text_x ypos (r13_night_say_top(what)-60) spacing 12
-                at r13_name_fade
+                # 2026-10-26 소유자: 이름표가 스르륵 생기면 이상하다. 화자가 바뀌면 바로 보인다(r13_name_fade 는 쓰지 않음).
                 frame:
                     background Frame(Crop((16,12,168,32),r13_asset_path("file:assets/ui-b-dialogue/b_ribbon_name.png")),16,6,32,6) padding (22,8,36,10) yalign .5
                     text who id "who" color "#fff3df" font R13_UI_BOLD_FONT size r13_read_size(27,30) xmaximum 640 outlines []

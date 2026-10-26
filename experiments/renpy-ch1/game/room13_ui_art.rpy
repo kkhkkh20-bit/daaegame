@@ -34,6 +34,22 @@ init 58 python:
             r.blit(renpy.render(Transform(face,xysize=(w,h)),w,h,st,at),(0,0))
             return r
 
+    class R13SoftButtonSurface(renpy.Displayable):
+        """2026-10-26 시안: 눈이 덜 피로한 보조 버튼 판. 연한 종이 바탕에 가는 갈색 테두리, 올리면 빨강."""
+        def __init__(self,hovered=False,chosen=False,disabled=False,**kwargs):
+            super(R13SoftButtonSurface,self).__init__(**kwargs)
+            self.hovered=hovered;self.chosen=chosen;self.disabled=disabled
+        def render(self,width,height,st,at):
+            w=max(1,int(width));h=max(1,int(height));r=renpy.Render(w,h);c=r.canvas()
+            edge="#c9b49a" if self.disabled else "#a3352c" if (self.hovered or self.chosen) else "#b39572"
+            face="#efe6d6" if self.disabled else "#f3dfbb" if (self.hovered or self.chosen) else "#f8efdf"
+            rad=min(10,h//3)
+            for (x,y,ww,hh,col) in ((0,0,w,h,edge),(2,2,w-4,h-4,face)):
+                c.rect(col,(x+rad,y,ww-2*rad,hh));c.rect(col,(x,y+rad,ww,hh-2*rad))
+                for cx,cy in ((x+rad,y+rad),(x+ww-rad-1,y+rad),(x+rad,y+hh-rad-1),(x+ww-rad-1,y+hh-rad-1)):
+                    c.circle(col,(cx,cy),rad)
+            return r
+
     class R13PaperFrame(renpy.Displayable):
         """Clean inset paper card. Flat colour groups, no texture or metal casing."""
         def __init__(self,corner=6,ink=False,**kwargs):

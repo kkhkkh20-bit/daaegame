@@ -76,6 +76,9 @@ init 321 python:
     def r13_nw_stage_label(name,abnormal=False):
         if name in R13_NW_MEETING_KEEP:return
         if name=="r13_lines":
+            # 2026-10-26 소유자: 입구 조사 중 수레를 누르니 돌목·다람이 크게 떴다. 현장 물건 설명(r13_field_reading)은
+            # 현장 화면 그대로 읽는다. 회의 무대는 회의 대사에서만 다시 연다.
+            if getattr(store,"r13_field_reading",False):return
             pending=getattr(store,"r13_nw_pending",None)
             if pending and getattr(store,"r13_meeting_claim",None)!="NW:"+pending and not (getattr(store,"r13_meeting_active",False) and getattr(store,"r13_meeting_claim",None) in R13_DEBATE):
                 r13_nw_stage_begin(pending)

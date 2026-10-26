@@ -45,7 +45,7 @@ class CompactDialogue(unittest.TestCase):
         self.assertIn('$ b_text_top = r13_night_say_top(what)',speech)
         self.assertIn('xpos b_text_x ypos b_text_top',speech)
         offset=int(re.search(r'xpos b_text_x ypos \(r13_night_say_top\(what\)-(\d+)\)',speech).group(1))
-        name=speech.split('at r13_name_fade',1)[1]
+        name=speech.split('if who:',1)[1]  # 2026-10-26 이름표 페이드를 뺐다. 이름표 덩어리는 if who: 뒤에 있다
         padding=tuple(map(int,re.search(r'padding \((\d+),(\d+),(\d+),(\d+)\)',name).groups()))
         sizes=tuple(map(int,re.search(r'text who[^\n]+size r13_read_size\((\d+),(\d+)\)',name).groups()))
         for size in sizes:self.assertGreaterEqual(offset-size-padding[1]-padding[3],8)

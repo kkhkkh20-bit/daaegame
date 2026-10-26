@@ -98,9 +98,11 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
             text "다람탐정 · 마을 지도" font R13_UI_BOLD_FONT size 28 color "#493324" yalign .5
     textbutton "×":
         id "r13_village_close_x"
-        area ((1180,48,88,88) if r13_touch_ui() else (1190,64,48,48)) padding (0,0) background None
+        area ((1180,48,88,88) if r13_touch_ui() else (1176,56,62,62)) padding (0,0)
+        # 2026-10-26 소유자: 「X 버튼이 너무 작고 눈에 안 띈다」. 다른 버튼과 같은 판 위에 크게 둔다.
+        background R13ControlSurface() hover_background R13ControlSurface(hovered=True) insensitive_background R13ControlSurface(disabled=True)
         text_xalign .5 text_yalign .5
-        text_font R13_UI_BOLD_FONT text_size 28 text_color "#493324" text_align .5
+        text_font R13_UI_BOLD_FONT text_size 40 text_color "#493324" text_hover_color "#963b2f" text_align .5
         action close_action sensitive ready
     fixed:
         area (920,72,248,38)

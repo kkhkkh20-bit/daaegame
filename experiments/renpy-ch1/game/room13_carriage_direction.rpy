@@ -102,6 +102,14 @@ init 306 python:
                 store.r13_carriage_seat_shown=seat
             store.r13_motion_person="daram"
             return
+        # 2026-10-26 소유자: "다람이는 앞에 있고 표정만 바뀌어야". 마차에는 다람이 늘 맞은편에 앉아 있다.
+        # 장면이 바뀌며 지워진 뒤 지문·아빠 줄이 먼저 오면 자리가 비어 보였다. 마지막 앉은 그림으로 다시 앉힌다.
+        if (store.place=="마차 안" and who in (None,"dad",r13_viewpoint()) and not getattr(store,"r13_meeting_active",False)
+                and "r13_carriage_background" in renpy.get_showing_tags() and "r13_visitor" not in renpy.get_showing_tags()):
+            seat=getattr(store,"r13_carriage_seat_shown",None) or "neutral"
+            renpy.show("r13_actor",what=r13_carriage_daram_seat_art(seat),tag="r13_visitor",at_list=[Transform(xanchor=.5,xpos=850,yanchor=0,ypos=96)])
+            store.r13_carriage_seat_shown=seat
+            store.r13_motion_person="daram"
         return _r13_carriage_speaker(who,expression,pose)
 
 default r13_carriage_seat_shown = None

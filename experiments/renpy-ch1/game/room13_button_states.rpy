@@ -1,5 +1,6 @@
 # 동일한 상태 캔버스를 함께 잘라 투명 여백만 제외한다. 모든 상태의 배율·클릭 영역은 같다.
 init 67 python:
+    R13_SOFT_FLAT_BUTTONS = False  # 시안 스위치(소유자 확인 전 꺼 둠)
     import pygame as r13_button_pygame
 
     class R13ButtonStateVisual(renpy.Displayable):
@@ -15,7 +16,7 @@ init 67 python:
             self.update_skins()
 
         def update_skins(self):
-            if self.asset_revision==r13_asset_revision():return
+            if self.asset_revision==(r13_asset_revision(),getattr(store,"R13_SOFT_FLAT_BUTTONS",False)):return
             role="button."+self.family
             self.flat_scope=self.family.startswith(("question_flat_","map_flat_"))
             layout_family=("topic_" if self.family.startswith("question_flat_") else "")+self.family.rsplit("_",1)[-1] if self.flat_scope else self.family
@@ -31,8 +32,15 @@ init 67 python:
             if self.flat_scope:
                 # 원본 전체를 균일 확대한다. 기존 종이 폭/높이 안에 알파 경계만 맞춘다.
                 flat_scale=min(self.paper_size[0]/128.0,self.paper_size[1]/32.0)
-                self.shared_skins={state:Transform(r13_asset(role,state),zoom=flat_scale) for state in ("basic","pressed","selected","disabled")}
-            self.asset_revision=r13_asset_revision()
+                # 2026-10-26 소유자: 하단 「자료 제시·기록·더보기·돌아가기」가 눈이 아프다. 시안: 남색 굵은 테두리를
+                # 갈색 계열로 낮추고(세피아), 빨간 주 버튼은 채도를 조금 낮춘다. R13_SOFT_FLAT_BUTTONS 가 켜질 때만.
+                soft=getattr(store,"R13_SOFT_FLAT_BUTTONS",False)
+                if soft and not self.family.endswith("primary"):
+                    self.shared_skins={state:Transform(R13SoftButtonSurface(hovered=state=="pressed",chosen=state=="selected",disabled=state=="disabled"),xysize=self.paper_size) for state in ("basic","pressed","selected","disabled")}
+                else:
+                    tone=SaturationMatrix(.85) if soft else None
+                    self.shared_skins={state:Transform(r13_asset(role,state),zoom=flat_scale,matrixcolor=tone) for state in ("basic","pressed","selected","disabled")}
+            self.asset_revision=(r13_asset_revision(),getattr(store,"R13_SOFT_FLAT_BUTTONS",False))
 
         def visit(self):
             self.update_skins()
@@ -50,7 +58,7 @@ init 67 python:
             render_spec=r13_asset_spec("button."+self.family,state).get("render",{})
             if self.flat_scope:
                 render_spec=dict(r13_asset_spec(self.layout_role,state).get("render",{}))
-                render_spec["text_color"]="#8b8175" if not self.enabled else "#fff5e5" if self.family.endswith("primary") else "#263953"
+                render_spec["text_color"]="#8b8175" if not self.enabled else "#fff5e5" if self.family.endswith("primary") else ("#4b3420" if getattr(store,"R13_SOFT_FLAT_BUTTONS",False) else "#263953")
             color=render_spec.get("text_color", "#8b8175" if not self.enabled else "#fff5e5" if self.family=="primary" else "#493324")
             text=Text(self.caption,font=R13_UI_TYPE["button"]["font"],size=self.text_size,color=color)
             tr=renpy.render(text,w,h,st,at);tw,th=tr.get_size()
