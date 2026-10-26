@@ -13,6 +13,10 @@ init 126 python:
         "dining":(0.642,-128),"post":(0.38,0),
     }
     R13_PERSPECTIVE_COUNTER_DEPTH={"post":60}
+    # 2026-10-27: 원근은 서 있는 깊이만 보고 아이 키는 보지 않았다. 11일 광장 앞줄의 솜이가 어른보다 크게 섰다.
+    # 대화 그림과 같은 아이 키 비율(어른 210도트 대비 아이 165, 도담 132)을 곱한다. 장소 표에 그 사람 키가 이미
+    # 적혀 있으면(복도의 밤이 등) 겹쳐 곱하지 않는다. 다람은 따로 자리 크기를 정하므로 뺀다.
+    R13_CHILD_STATURE=dict({k:165/210.0 for k in ("resident_somi","kid_kkomi","resident_kongi","resident_tosil","bami","kid_saemi")},kid_dodam=132/210.0)
     R13_PERSPECTIVE_CONTACTS={"standing","self-contained","held_ledger","held_notebook","sorting",
         "carrying_tray","counter_front","floor_sit","kneeling","portable_stool","portable_crate",
         "portable_bucket","squatting","crouching"}
@@ -52,6 +56,7 @@ init 126 python:
             if behind_counter:depth_feet-=R13_PERSPECTIVE_COUNTER_DEPTH.get(location,0)
             shape=r13_world_display_height(actor["person"],actor["pose"],1000.0,probe_layout)/1000.0
             target=r13_perspective_height(location,depth_feet)*shape
+            if actor["person"] not in layout.get("standing_heights",{}):target*=globals().get("R13_CHILD_STATURE",{}).get(actor["person"],1.0)
             factor=max(.75,min(1.25,target/float(actor["height"])))
             if abs(factor-1)<.04:
                 result.append(actor);continue
