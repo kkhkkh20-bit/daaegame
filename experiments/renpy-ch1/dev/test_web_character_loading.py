@@ -28,10 +28,12 @@ class CharacterLoading(unittest.TestCase):
     def test_day_one_warms_only_runtime_profile_in_story_order(self):
         files = character_prefetch(ROOT / 'game')
         self.assertEqual(len(files), len(set(files)))
-        self.assertTrue(all('/560/' not in f and '/760/' not in f for f in files))
         # 2026-10-26 전신 묶음으로 경로가 dialogue-source-master-v2 로 바뀐 인물이 있다. 연결표가 가리키는 파일로 본다.
         import json
         talk = json.loads((ROOT / 'game/assets/room13-dialogue-talk-art.json').read_text())['people']
+        # 도트 통일(0.20.61)은 840 도 3배라 760 그림을 같이 쓴다. 840 연결표가 가리키는 파일은 허용한다.
+        runtime = {f['file'] for e in talk.values() for f in e.get('profiles', {}).get('840', {}).get('frames', {}).values()}
+        self.assertTrue(all(f in runtime or ('/560/' not in f and '/760/' not in f) for f in files))
         neutral = lambda who: talk[who]['profiles']['840']['frames']['neutral']['file']
         self.assertLess(files.index(neutral('karo')), files.index(neutral('granny')))
         self.assertIn(neutral('neoul'), files)
