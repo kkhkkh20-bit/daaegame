@@ -246,18 +246,22 @@ screen r13_meeting_camera_frame(claim,focus=None,close=False,ready=False,selecte
                     $ stand_width,height,top=r13_meeting_standing_slot(who,len(seats),edge,session)
                     $ source_profile=r13_dialogue_source_profile(who,"neutral",840)
                     if venue_kind=="round" and who in R13_MEETING_STAND:
-                        $ stand_width=min(int(1024*306.0/1536),int(1160.0/max(1,len(seats))*.90))
-                        $ height=int(round(stand_width*1536/1024.0))
+                        # 2026-10-26 도트 통일: 입석 그림은 도트 한 칸 = 1px 로 다시 찍었다. 늘리지 않고 그대로 둔다.
+                        $ stand_width,height=renpy.image_size(R13_MEETING_STAND[who])
                         $ top=int(edge-height*.60)
                         $ stand_flip=R13_MEETING_STAND_FACING.get(who)=="right" and cx>640
-                        add Transform(R13_MEETING_STAND[who],xysize=(stand_width,height),xzoom=(-1 if stand_flip else 1)) xcenter cx ypos top
+                        add Transform(R13_MEETING_STAND[who],xzoom=(-1 if stand_flip else 1),nearest=True) xcenter cx ypos top
                     elif source_profile:
                         $ source_width,source_height=source_profile["canvas"]
                         $ stand_width=min(int(source_width*306.0/source_height),int((980.0 if venue_kind=="room" else 1160.0)/max(1,len(seats))*.90))
                         $ height=int(round(stand_width*source_height/float(source_width)))
+                        # 도트 그림은 대화 배율(3배)로 정확히 나눠 도트 한 칸 = 1px 로 세운다(비정수 축소는 칸을 뭉갠다).
+                        $ stand_k=source_profile.get("dot_scale")
+                        if stand_k:
+                            $ stand_width,height=int(source_width/stand_k),int(source_height/stand_k)
                         $ source_top=int(edge-height*(1.0 if venue_kind in ("field","room") else .60))
                         $ top=source_top
-                        add Transform(r13_fullbody_close_art(who,"neutral",840),xysize=(stand_width,height),nearest=False) xcenter cx ypos source_top
+                        add Transform(r13_fullbody_close_art(who,"neutral",840),xysize=(stand_width,height),nearest=bool(stand_k)) xcenter cx ypos source_top
                     else:
                         add r13_pixel_scale(r13_meeting_actor(who,focus,cx),stand_width,height,R13_CLOSE_PIXEL_GRID) xcenter cx ypos top
                 $ own=[st for st in r13_debate_statements(claim) if st["who"]==who and r13_debate_visible(claim,st)]

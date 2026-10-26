@@ -76,14 +76,15 @@ init 306 python:
     R13_CARRIAGE_SEATS=("neutral","quiz","pout","angry","secret","bravado","joy","wistful")
     R13_CARRIAGE_SEAT_OF={"neutral":"neutral","thinking":"neutral","joy":"joy","expressive":"joy","angry":"pout",
         "anxious":"wistful","distressed":"wistful","flustered":"secret","surprise":"quiz","panic":"quiz"}
-    R13_CARRIAGE_SEAT_ZOOM=.62
+    # 2026-10-26 도트 통일: 앉은 그림을 149x227 도트로 다시 찍어 대화와 같은 3배(한 칸 3px)로 그린다.
+    R13_CARRIAGE_SEAT_ZOOM=3
     def r13_carriage_seat(pose):
         key=(pose or "neutral").replace("interview_","")
         if key.startswith("seat_") and key[5:] in R13_CARRIAGE_SEATS:return key[5:]
         if key=="intake21_01_bravado" or key.endswith("bravado"):return "bravado"
         return R13_CARRIAGE_SEAT_OF.get(key,"neutral")
     def r13_carriage_daram_seat_art(seat):
-        return Transform("assets/room13-carriage-daram-seat-%s.webp"%seat,zoom=R13_CARRIAGE_SEAT_ZOOM)
+        return Transform("assets/room13-carriage-daram-seat-%s.webp"%seat,zoom=R13_CARRIAGE_SEAT_ZOOM,nearest=True)
     _r13_carriage_line_performance=r13_line_performance
     def r13_line_performance(identity,index,packet):
         # Keep an authored seated picture; the general path would fold it into "neutral".

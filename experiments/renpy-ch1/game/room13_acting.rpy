@@ -31,7 +31,9 @@ init 59 python:
     R13_WORLD_PIXEL_GRID = 2
     R13_CLOSE_PIXEL_GRID = 3
 
-    def r13_pixel_scale(art,width,height,grid):
+    def r13_pixel_scale(art,width,height,grid,smooth=False):
+        # smooth: 고해상 원본은 칸 평균으로 줄인다(최근접으로 줄이면 한 점만 집어 칸마다 들쭉날쭉하다).
+        # grid 는 소수일 수 있다: 75% 현장에서 화면 한 칸이 정수 px 가 되게 2/0.75 를 넘긴다.
         width=max(1,int(round(width)));height=max(1,int(round(height)))
         if grid>1:
             # Flatten creates an actual low-resolution render texture. Merely
@@ -40,8 +42,8 @@ init 59 python:
             # width//grid scaled up to width made e.g. 133 cells fill 400 px, so every ~130th
             # column/row became grid+1 px wide; the box now ends on a whole cell (at most
             # grid-1 px narrower/shorter, top-left unchanged).
-            lw,lh=max(1,width//grid),max(1,height//grid)
-            low=Transform(art,size=(lw,lh),nearest=True,subpixel=False)
+            lw,lh=max(1,int(width//grid)),max(1,int(height//grid))
+            low=Transform(art,size=(lw,lh),nearest=not smooth,subpixel=False)
             art=Flatten(low)
             # Keep the bottom edge (feet) where it was: the trimmed rows come off the top.
             return Transform(art,size=(lw*grid,lh*grid),yoffset=height-lh*grid,nearest=True,subpixel=False,rotate_pad=False)
@@ -532,10 +534,11 @@ init 59 python:
     def r13_staged_art(actor,still=False):
         art=r13_art(actor["person"],actor["pose"])
         spec=r13_acting_spec(actor["person"],actor["pose"]) or {}
-        if spec.get("native_detail"):
-            art=Transform(art,size=(max(1,int(round(actor["width"]))),max(1,int(round(actor["height"])))),nearest=True,subpixel=False)
-        else:
-            art=r13_pixel_scale(art,actor["width"],actor["height"],R13_WORLD_PIXEL_GRID)
+        # 2026-10-26 도트 통일(소유자 "캐릭터별로 도트 비율도 다르고 깨져 있잖아"): 고해상 몸동작 그림도
+        # 같은 격자로 그린다. 화면에서 한 칸이 늘 2px 이 되게, 축소된 현장(입구 75%)은 격자를 2/0.75 로 키운다.
+        zoom=r13_field_zoom()
+        grid=R13_WORLD_PIXEL_GRID/zoom if zoom<1 else R13_WORLD_PIXEL_GRID
+        art=r13_pixel_scale(art,actor["width"],actor["height"],grid,smooth=bool(spec.get("native_detail")))
         return r13_idle_art(art,actor["person"],actor["pose"],r13_acting_spec(actor["person"],actor["pose"]),actor["width"],actor["height"],contact=actor["contact"],still=still)
 
     def r13_staged_visible_art(actor,still=False):

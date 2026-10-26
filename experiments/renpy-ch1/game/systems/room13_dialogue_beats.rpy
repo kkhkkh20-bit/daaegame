@@ -8,6 +8,8 @@ init 170 python:
     R13_DIALOGUE_B_ART_ON = False
     R13_DIALOGUE_BEATS = json.load(renpy.file("assets/room13-dialogue-beats.json"))
     R13_DIALOGUE_TALK_ART = json.load(renpy.file("assets/room13-dialogue-talk-art.json"))
+    # 2026-10-26 도트 통일 때 새로 든 인물(판설·아랫길 노인). 승인 59명 표와 나눠 두고 여기서 합친다.
+    R13_DIALOGUE_TALK_ART["people"].update(json.load(renpy.file("assets/room13-dialogue-talk-art-extra.json"))["people"])
 
     def r13_dialogue_plan(identity, index, packet, pose, cues, people, binding=None):
         """Exact text/speaker/scene binding; never infer emotion from keywords."""

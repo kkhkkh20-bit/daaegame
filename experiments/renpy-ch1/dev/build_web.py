@@ -125,7 +125,7 @@ def asset_files(value, profile=None):
 
 def character_manifests(game):
     names = ("cast", "resident-art", "room13-avatars", "room13-portraits",
-             "room13-fullbody-dialogue", "room13-dialogue-talk-art",
+             "room13-fullbody-dialogue", "room13-dialogue-talk-art", "room13-dialogue-talk-art-extra",
              "room13-dialogue-context-art", "room13-dialogue-pose-source-art",
              "room13-meeting-seated", "room13-meeting-source-art", "room13-profile-source-art",
              "room13-pixel-acting", "room13-pixel-motion")
