@@ -1,5 +1,5 @@
 # 2026-10-25 소유자 승인: 조각을 대조한 진엔딩 판의 선택 정비실.
-# 정답·진엔딩 자격은 바꾸지 않는다. 전용 그림 전에는 기존 옛 시설을 독립 장소에 재사용한다.
+# 정답·진엔딩 자격은 바꾸지 않는다. 배경·물건 그림은 systems/room13_hidden_art.rpy(2026-10-26 납품).
 init 324 python:
     def r13_hidden_base_value(key):
         return r13_v111_value('hidden_base:'+key)
@@ -108,8 +108,9 @@ label r13_hidden_base_door14:
         $ r13_v111_set('hidden_base:aligned',False)
     elif _return==4:
         if r13_hidden_base_value('aligned'):
-            call r13_lines(r13_nw_block('hidden_base_open14'),'nw:hidden_base_open14')
+            # 2026-10-26 열린 문 그림: 문이 열리는 줄에서 그림도 열려 있게 대사보다 먼저 세운다.
             $ r13_v111_set('hidden_base:opened',True)
+            call r13_lines(r13_nw_block('hidden_base_open14'),'nw:hidden_base_open14')
             jump r13_hidden_base_room14
         call r13_lines(r13_nw_block('hidden_base_stuck14'),'nw:hidden_base_stuck14')
     elif _return==5:

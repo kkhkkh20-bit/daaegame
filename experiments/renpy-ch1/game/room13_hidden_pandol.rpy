@@ -1,5 +1,5 @@
 # 승인 2026-10-25: 판돌의 누나, 식기 수리·난방 교체·실제 돌봄 인계.
-# 전용 그림 납품 전: 기존 실내 배경만 임시 사용하며 누나는 지문 속 목소리로 표현한다.
+# 배경·물건 그림은 systems/room13_hidden_art.rpy(2026-10-26 납품). 누나는 이름이 정해질 때까지 지문 속 목소리로 둔다.
 init 324 python:
     def r13_hp_value(key):
         return r13_v111_value('hidden_pandol:'+key)
