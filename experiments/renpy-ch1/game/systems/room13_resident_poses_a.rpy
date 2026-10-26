@@ -40,10 +40,10 @@ init 186 python:
             if r13_poses_a_is_spec(spec):
                 yield spec, None
 
-    # 2026-10-26 소유자: 인물 그림은 흰 테두리 스티커 없이 간다. A안 46장은 스티커라 끄고 옛 그림(테두리 없음)으로
-    # 돌아간다. 테두리 없는 판이 오면 room13-resident-poses-a.json 의 file 을 바꾸고 다시 켠다
-    # (docs/art-requests/스티커_교체_요청서_20261026.md).
-    R13_RESIDENT_POSES_A_ON = False
+    # 2026-10-26 소유자: 인물 그림은 흰 테두리 스티커 없이 간다. 같은 날 흰 외곽만 걷어 낸 판(-noborder, 크기·발 위치
+    # 동일)을 받아 연결표를 바꿨으므로 다시 켠다. 스티커 원본은 지우지 않고 남긴다
+    # (docs/art-requests/스티커_교체_요청서_20261026.md, 납품검수_20261026.md).
+    R13_RESIDENT_POSES_A_ON = True
 
     def r13_poses_a_apply():
         changed = set()
