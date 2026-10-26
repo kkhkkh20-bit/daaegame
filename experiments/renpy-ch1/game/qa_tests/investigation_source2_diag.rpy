@@ -17,6 +17,10 @@ init 999 python:
         assert actor['pose']==r13_s2_pose,(actor['pose'],r13_s2_pose)
         spec=r13_acting_spec(r13_s2_person,r13_s2_pose)
         expected=R13_S2_EXPECTED[r13_s2_person]
+        # 2026-10-26: A안을 끈 동안에는 옛 그림이 서 있어야 하고, 아래 지문·키 비교는 A안 전용이다.
+        if not R13_RESIDENT_POSES_A_ON:
+            assert not spec.get('resident_pose_a'),('A pose still active',spec.get('file'))
+            return
         for key in ('file','crop','foot','head','source_sha256','native_detail','stature_ratio','resident_pose_a'):
             assert spec.get(key)==expected[key],('Wrong source2 registry',key,spec.get(key),expected[key])
         row=r13_pd_row(actor,'r13_hub')

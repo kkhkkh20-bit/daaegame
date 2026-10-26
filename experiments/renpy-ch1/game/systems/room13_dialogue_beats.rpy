@@ -3,6 +3,9 @@ default r13_dialogue_beat = None
 
 init 170 python:
     R13_DIALOGUE_B_ART = json.load(renpy.file("assets/room13-dialogue-b-primary50.json"))
+    # 2026-10-26 소유자: 인물 그림은 흰 테두리 스티커 없이 간다. B 표정 50장은 스티커라 끄고,
+    # 테두리 없는 원래 대화 그림으로 돌아간다. 2026-10-26 받은 전신 묶음으로 바꾼 뒤 다시 켠다.
+    R13_DIALOGUE_B_ART_ON = False
     R13_DIALOGUE_BEATS = json.load(renpy.file("assets/room13-dialogue-beats.json"))
     R13_DIALOGUE_TALK_ART = json.load(renpy.file("assets/room13-dialogue-talk-art.json"))
 
@@ -120,7 +123,7 @@ init 170 python:
 
     def r13_dialogue_render_profiles(person,entry):
         # Approved B expressions are dialogue-only; meeting art keeps its original profiles.
-        if not getattr(store,"r13_meeting_active",False) and R13_DIALOGUE_B_ART.get(person):
+        if not getattr(store,"r13_meeting_active",False) and globals().get("R13_DIALOGUE_B_ART_ON",True) and R13_DIALOGUE_B_ART.get(person):
             return R13_DIALOGUE_B_ART[person]
         return entry.get("profiles",{})
 

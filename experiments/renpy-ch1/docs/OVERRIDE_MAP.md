@@ -74,7 +74,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 9 | 180 | `systems/room13_investigation_balance.rpy:43` | _r13_life_groups_stage |
 | 10 | 181 | `systems/room13_life_groups.rpy:73` | _r13_story_pose_stage |
 | 11 | 182 | `systems/room13_story_pose.rpy:27` | _r13_poses_a_stage |
-| 12 | 186 | `systems/room13_resident_poses_a.rpy:71` | _r13_v111_stage_people |
+| 12 | 186 | `systems/room13_resident_poses_a.rpy:77` | _r13_v111_stage_people |
 | 13 | 301 | `room13_v111.rpy:151` | _r13_order_stage_people |
 | 14 | 336 | `room13_v111_field_layout.rpy:46` | _r13_clear_stage_people |
 | 15 | 337 | `room13_v111_field_layout.rpy:131` |  |
@@ -465,7 +465,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 171 | `room13_bdialogue_faces.rpy:5` | _r13_assets_dialogue_face |
+| 1 | 171 | `room13_bdialogue_faces.rpy:7` | _r13_assets_dialogue_face |
 | 2 | 995 | `systems/room13_asset_domains.rpy:22` |  |
 
 ## `r13_calendar_promises` (2층)
@@ -542,14 +542,14 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 170 | `systems/room13_dialogue_beats.rpy:164` | _r13_context_beat_art |
+| 1 | 170 | `systems/room13_dialogue_beats.rpy:167` | _r13_context_beat_art |
 | 2 | 172 | `systems/room13_dialogue_context_art.rpy:28` |  |
 
 ## `r13_dialogue_beat_begin` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 170 | `systems/room13_dialogue_beats.rpy:44` | _r13_context_beat_begin |
+| 1 | 170 | `systems/room13_dialogue_beats.rpy:47` | _r13_context_beat_begin |
 | 2 | 172 | `systems/room13_dialogue_context_art.rpy:14` |  |
 
 ## `r13_dialogue_context_match` (2층)

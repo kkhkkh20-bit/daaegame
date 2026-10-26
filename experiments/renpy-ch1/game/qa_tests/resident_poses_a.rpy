@@ -42,7 +42,8 @@ testcase poses_a_field:
     click "처음부터"
     pause 3.0
     $ r13_qa_note("poses_a start changed=%d" % r13_qa_poses_a_changed())
-    assert eval (r13_qa_poses_a_changed()>=40)
+    # 2026-10-26 소유자: A안은 스티커라 꺼 두었다. 켜면 40 이상이어야 한다.
+    assert eval (r13_qa_poses_a_changed()>=40 if R13_RESIDENT_POSES_A_ON else r13_qa_poses_a_changed()==0)
     run Call("r13_qa_roam",dict(day=2,period=0,location="market",life_poc=True),R13_QA_POSES_A_FLAGS,(),12)
     click pos (1150,90) until screen "r13_hub" timeout 40
     $ r13_qa_poses_a_focus()

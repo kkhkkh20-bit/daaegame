@@ -14,7 +14,7 @@ testcase lowerroad_elder_ticket_art:
     pause until screen "say" timeout 30
     assert eval (R13_FULLBODY["people"]["v111_lowerroad_elder"] is not R13_FULLBODY["people"]["elder"])
     assert eval (r13_fullbody_spec("v111_lowerroad_elder","neutral")["file"]==R13_LOWERROAD_ELDER_BODY)
-    assert eval (r13_bdialogue_face("v111_lowerroad_elder","neutral")==R13_LOWERROAD_ELDER_FACE)
+    assert eval (r13_bdialogue_face("v111_lowerroad_elder","neutral") is None)  # 2026-10-26 얼굴 스티커 쓰지 않음
     pause 1.0
     assert eval (not r13_black_card and "r13_visitor" in renpy.get_showing_tags())
     screenshot "elder-01-normal.png"
