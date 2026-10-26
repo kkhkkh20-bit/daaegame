@@ -119,6 +119,12 @@ class Fast(UIQA):
    await asyncio.sleep(.1)
   raise AssertionError((label,st))
 
+def shelter_step2(route,v):
+ # 피코 보호: 포대 → 천 → 벤치 살피기(80) → 벤치 닦기(81) → 자리 전하기. 벤치 두 단계는 0.20.4x 에 더해졌다.
+ if route!='shelter':return 3
+ for key,idx in (('piko_sacks2',0),('piko_cloth2',1),('piko_bench_seen2',80),('piko_bench_clean2',81)):
+  if not v.get(key):return idx
+ return 2
 async def main():
  route=os.environ.get('V111_ROUTE','shelter');stone=int(os.environ.get('V111_STONE','0'));custody=int(os.environ.get('V111_CUSTODY','0'))
  async with async_playwright() as p:
@@ -211,7 +217,7 @@ async def main():
      if gate=='gate_investigate' and any(k not in st['evidence'] for k in ('V111:E03','V111:E04')):
       await q.press('돌아가기');continue
      if gate=='afternoon2':
-      wanted=3 if route!='shelter' else 0 if not st['values'].get('piko_sacks2') else 1 if not st['values'].get('piko_cloth2') else 2
+      wanted=shelter_step2(route,st['values'])
       desired=next(o for o in options if o['index']==wanted)
       if desired.get('person')!=person or desired.get('location')!=st['location']:
        await q.press('돌아가기');continue
@@ -291,7 +297,7 @@ async def main():
      elif gate=='lamp_observe':idx=next(i for i in range(4) if not st['values'].get('lamp_part_'+str(i)));option=next(o for o in options if o['index']==idx)
      elif gate=='registered_menu':option=next(o for o in options if o.get('move'))
      elif gate=='afternoon2':
-      wanted=3 if route!='shelter' else 0 if not st['values'].get('piko_sacks2') else 1 if not st['values'].get('piko_cloth2') else 2
+      wanted=shelter_step2(route,st['values'])
       option=next(o for o in options if o['index']==wanted)
      else:option=options[0]
      if option.get('location') and option['location']!=st['location']:
