@@ -213,6 +213,9 @@ async def main():
      if gate=='morning_prep12' and os.environ.get('V111_MADAM') and not values.get('madam_observer_consent'):idx=4
      if gate=='transport_cleanup13' and idx==5 and os.environ.get('V111_BURI') and not values.get('buri_device_consent'):idx=6
      opt=opts[idx] if opts else None
+     # 0.20.44: 꼬미는 깡통 줄을 풀어 도토리를 챙기기 전에는 따라나서지 않는다(can_wait6). 자리를 받은 뒤 그 두 단계를 먼저 한다.
+     if gate=='afternoon6' and values.get('kkomi_seat6') and not values.get('acorn_recovered'):
+      opt=next((o for o in opts if o.get('index') in (80,81)),opt)
      if gate=='portrait_show4' and os.environ.get('V111_WRONG_RECIPIENT') and wrong_recipient==0:opt=dict(opt,person='resident_somi')
      if 'r13_topics' in screens:
       person_id=await q.py('import renpy;result=renpy.display.screen.get_screen("r13_topics").scope["person"]')
