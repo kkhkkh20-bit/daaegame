@@ -1,6 +1,6 @@
 # 동일한 상태 캔버스를 함께 잘라 투명 여백만 제외한다. 모든 상태의 배율·클릭 영역은 같다.
 init 67 python:
-    R13_SOFT_FLAT_BUTTONS = False  # 시안 스위치(소유자 확인 전 꺼 둠)
+    R13_SOFT_FLAT_BUTTONS = True  # 2026-10-27 소유자 "추천안대로 해"로 켬
     import pygame as r13_button_pygame
 
     class R13ButtonStateVisual(renpy.Displayable):

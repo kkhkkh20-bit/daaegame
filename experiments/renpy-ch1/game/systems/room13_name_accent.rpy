@@ -4,11 +4,11 @@
 #   장소 이름   초록 + 더 굵게
 #   「자료」【핵심어】 빨강 + 더 굵게
 #   아빠 생각   괄호 + 또렷한 파랑(지금 회청색보다 진하게)
-# 시안 단계라 스위치는 꺼 둔다. 소유자 확인 뒤 R13_NAME_ACCENT_ON 을 켠다.
+# 2026-10-27 소유자 "추천안대로 해"로 켰다(시안 단계에서는 꺼 두었다).
 # 이름 뒤에 조사·띄어쓰기·문장부호가 올 때만 이름으로 본다("도토리" 의 "도토" 는 건드리지 않는다).
 init 142 python:
     import re as _r13_na_re
-    R13_NAME_ACCENT_ON = False
+    R13_NAME_ACCENT_ON = True  # 2026-10-27 소유자 "추천안대로 해"로 켬
     R13_ACCENT_FONT = "assets/Pretendard-ExtraBold.otf"
     R13_ACCENT_COLORS = dict(person="#B4531B", place="#2F6B4A", key="#B3261E", thought="#2A5FA8")
     # 관계·직함은 고유명사가 아니다.
