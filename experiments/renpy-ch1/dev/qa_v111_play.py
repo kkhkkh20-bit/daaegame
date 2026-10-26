@@ -51,7 +51,10 @@ class Fast(UIQA):
     await self.press('주변 살피기');return
    x=await self.py('import renpy;s=renpy.store;result=s.ROOM13["objects"][s.room13["location"]]['+repr(key)+']["rect"][0]-s.r13_world_offset()')
    arrows=[b['text'].strip() for b in state['buttons'] if b['text'].strip() in ('‹','›')]
-   wanted='‹' if x<640 else '›'
+   # 화면을 옮긴 직후에는 물건 자리가 아직 갱신되지 않는다. 이미 화면 안이면 옮기지 말고 기다린다(좌우로 오가며 멈췄다).
+   if 0<=x<1280:
+    await asyncio.sleep(.6);return
+   wanted='‹' if x<0 else '›'
    if wanted in arrows:await self.press(wanted)
    elif arrows:await self.press(arrows[0])
    else:
