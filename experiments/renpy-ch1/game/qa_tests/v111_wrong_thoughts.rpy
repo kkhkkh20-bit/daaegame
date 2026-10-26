@@ -52,6 +52,7 @@ testcase v111_wrong_thoughts_room13:
     pause 0.5
     click "선택한 근거 제출"
     click pos (900,600) until screen "r13_crisis_proof" timeout 90
+    pause 0.5  # 화면이 다시 열린 뒤 0.15초 동안 버튼이 잠겨 있다(ready 타이머)
     assert eval (r13_v111_value("tries:room13")==1 and qa_wt_upto("구리선과 수선 출처를 대조한다",1))
     click "자료 고르기"
     pause 0.5
@@ -61,6 +62,7 @@ testcase v111_wrong_thoughts_room13:
     pause 0.5
     click "선택한 근거 제출"
     click pos (900,600) until screen "r13_crisis_proof" timeout 90
+    pause 0.5  # 화면이 다시 열린 뒤 0.15초 동안 버튼이 잠겨 있다(ready 타이머)
     assert eval (r13_v111_value("tries:room13")==2 and qa_wt_upto("구리선과 수선 출처를 대조한다",2))
     click "자료 고르기"
     pause 0.5
@@ -70,6 +72,7 @@ testcase v111_wrong_thoughts_room13:
     pause 0.5
     click "선택한 근거 제출"
     click pos (900,600) until screen "r13_crisis_proof" timeout 90
+    pause 0.5  # 화면이 다시 열린 뒤 0.15초 동안 버튼이 잠겨 있다(ready 타이머)
     assert eval (r13_v111_value("tries:room13")==3 and qa_wt_upto("구리선과 수선 출처를 대조한다",3) and r13_v111_value("meeting:room13") is None)
 
 testcase v111_wrong_thoughts_hyp_store:
@@ -112,6 +115,7 @@ testcase v111_wrong_thoughts_soup_list:
     pause 0.5
     click "선택한 근거 제출"
     click pos (900,600) until screen "r13_crisis_proof" timeout 90
+    pause 0.5  # 화면이 다시 열린 뒤 0.15초 동안 버튼이 잠겨 있다(ready 타이머)
     assert eval (r13_v111_value("tries:soup")==1 and qa_wt_upto("명단과 흰 그릇을 대조한다",1))
     click "자료 고르기"
     pause 0.5
@@ -121,6 +125,7 @@ testcase v111_wrong_thoughts_soup_list:
     pause 0.5
     click "선택한 근거 제출"
     click pos (900,600) until screen "r13_crisis_proof" timeout 90
+    pause 0.5  # 화면이 다시 열린 뒤 0.15초 동안 버튼이 잠겨 있다(ready 타이머)
     assert eval (r13_v111_value("tries:soup")==2 and qa_wt_upto("명단과 흰 그릇을 대조한다",2))
     click "자료 고르기"
     pause 0.5
@@ -130,4 +135,5 @@ testcase v111_wrong_thoughts_soup_list:
     pause 0.5
     click "선택한 근거 제출"
     click pos (900,600) until screen "r13_crisis_proof" timeout 90
+    pause 0.5  # 화면이 다시 열린 뒤 0.15초 동안 버튼이 잠겨 있다(ready 타이머)
     assert eval (r13_v111_value("tries:soup")==3 and qa_wt_upto("명단과 흰 그릇을 대조한다",3) and r13_v111_value("meeting:soup") is None)

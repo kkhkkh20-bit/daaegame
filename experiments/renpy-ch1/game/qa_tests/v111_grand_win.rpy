@@ -156,11 +156,16 @@ testcase v111_gw_bowl_cart11:
     pause 1.0
     click "손수레"
     pause 1.0
+    # 11일 구조 준비(수레 비우기·학교 인계)가 같은 수레에 붙어 누르면 고르는 창이 뜬다.
+    # 수첩 선택지는 한 쪽에 하나씩 보이므로 다음 버튼으로 넘긴다.
+    click "다음 →" until "수레 짐칸을 살핀다" timeout 10
+    click "수레 짐칸을 살핀다"
     click pos (900,600) until screen "r13_hub" timeout 60
     assert eval (r13_v111_value("grand_bowl_seen11") is True and not r13_v111_value("grand_bowl_pocket") and qa_nw_seen("학교로 돌려보내는 그릇이에요"))
     pause 1.0
     click "손수레"
     pause 1.0
+    click "다음 →" until "그릇 하나를 집는다" timeout 10
     click "그릇 하나를 집는다"
     click pos (900,600) until screen "r13_hub" timeout 60
     assert eval (r13_v111_value("grand_bowl_pocket") is True and qa_nw_seen("외투 주머니에 넣는다"))
