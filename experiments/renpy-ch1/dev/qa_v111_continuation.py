@@ -29,7 +29,7 @@ async def main():
   async with async_playwright() as pw:
    profile=OUT/'profile'
    if not profile.exists():shutil.copytree(os.environ.get('V111_PROFILE_SOURCE','/workspace/work/v111/browser/profile-shelter'),profile,ignore=shutil.ignore_patterns('Singleton*','LOCK','lockfile'))
-   b=await pw.chromium.launch_persistent_context(str(profile),executable_path='/usr/bin/chromium',viewport=dict(width=1280,height=720),headless=True,args=['--no-sandbox','--remote-debugging-port=9223','--enable-unsafe-swiftshader','--autoplay-policy=no-user-gesture-required'])
+   b=await pw.chromium.launch_persistent_context(str(profile),executable_path=os.environ.get('ROOM13_CHROME','/opt/pw-browsers/chromium-1194/chrome-linux/chrome'),viewport=dict(width=1280,height=720),headless=True,args=['--no-sandbox','--remote-debugging-port=9223','--enable-unsafe-swiftshader','--autoplay-policy=no-user-gesture-required'])
    try:
     for page in b.pages:await page.close()
     pg=await b.new_page();q=Fast(pg,OUT);events=[];heard=[];book=None;wrong_recipient=0;map_target=None;shots=set();tries={};last=None;stale=0
