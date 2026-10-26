@@ -15,11 +15,20 @@ class ElderTicketArt(unittest.TestCase):
   exec(textwrap.dedent(source),env)
   self.assertEqual(elder,saved_body);self.assertEqual(cast,saved_cast)
   actor=env['R13_FULLBODY']['people']['v111_lowerroad_elder']
-  self.assertIsNot(actor,elder);self.assertEqual(set(actor['images']),{'neutral'})
+  self.assertIsNot(actor,elder);self.assertEqual(set(actor['images']),{'neutral','joy','flustered','angry','anxious','surprise'})  # 2026-10-26 테두리 없는 6감정
   self.assertEqual(set(env['CAST']['v111_lowerroad_elder']),set(cast))
   self.assertTrue(all(row['file'].startswith('assets/lowerroad-elder/') for row in env['CAST']['v111_lowerroad_elder'].values()))
   self.assertEqual(env['R13_BDIALOGUE_FACES']['v111_lowerroad_elder'],{'neutral':env['R13_LOWERROAD_ELDER_FACE']})
-  self.assertIn(actor['images']['neutral']['file'],env['R13_FULLBODY_FILES'])
+  for row in actor['images'].values():self.assertIn(row['file'],env['R13_FULLBODY_FILES'])
+
+ def test_six_emotions_binary_alpha_and_shared_feet(self):
+  # 받은 후보는 반투명 가장자리와 발 높이가 제각각이었다. 이진 알파·같은 발 밑줄을 지킨다.
+  import numpy as np
+  for e in ('neutral','joy','flustered','angry','anxious','surprise'):
+   with Image.open(ROOT/'game/assets/lowerroad-elder'/('v111_lowerroad_elder-%s.webp'%e)) as im:
+    a=np.asarray(im.convert('RGBA'))[:,:,3]
+    self.assertEqual(im.size,(1024,1536),e);self.assertTrue(set(np.unique(a))<={0,255},e)
+    self.assertEqual(im.getchannel('A').getbbox()[3],1503,e)
 
  def test_elder_original_rgba_and_ticket_runtime_bytes_preserved(self):
   source=REPO/'design/resource-intake-20261025/batch-02'
