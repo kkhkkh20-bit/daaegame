@@ -1,0 +1,51 @@
+[
+  {
+    "id": "ROOM13-STOVE-inner-v2",
+    "size": [
+      2172,
+      724
+    ],
+    "webp_exact": true,
+    "ashtray": "half_gray_ash_no_stone"
+  },
+  {
+    "id": "ROOM13-STOVE-empty-v2",
+    "size": [
+      2172,
+      724
+    ],
+    "webp_exact": true,
+    "ashtray": "half_gray_ash_no_stone"
+  },
+  {
+    "id": "ROOM13-STOVE-ration-v2",
+    "size": [
+      2172,
+      724
+    ],
+    "webp_exact": true,
+    "ashtray": "half_gray_ash_no_stone"
+  },
+  {
+    "id": "ROOM13-ASHBIN-ration-overlay",
+    "size": [
+      1536,
+      1024
+    ],
+    "binary_alpha": true,
+    "visible_bounds": [
+      376,
+      293,
+      1162,
+      657
+    ],
+    "webp_exact": true,
+    "suggested_visible_rect_on_2172x724": [
+      1920,
+      492,
+      38,
+      18
+    ],
+    "note": "Crop to visible_bounds before runtime scaling; position is proposed, confirm in game. Show while ration stone remains in ashtray, hide when pocket_ration7 acquired; independent of stove state."
+  }
+]

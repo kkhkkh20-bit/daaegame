@@ -31,8 +31,9 @@ testcase v111_op_free_day7_places:
     assert eval (qa_nw_seen("해 지려면 아직 멀었다") and room13["v111"]["gate"]=="free_day7")
     assert eval (qa_op_at("school")==["다람아, 이제 13호에 가 보자."])
     assert eval (qa_op_at("hall")==["돌 바구니가 무거워 보입니다.","아래서 누가 부르면 어떻게 하십니까?"])
-    assert eval (qa_op_at("room13")==["난로를 살핀다","재받이를 들여다본다"])
-    assert eval (qa_op_at("workshop")==["집게 하나만 빌릴 수 있을까?"])
+    # 0.20.4x 빗장 받이 수리(owl_repair)가 13호에 선택 하나를 더했다. 그 뒤로 이 기대값이 낡아 있었다.
+    assert eval (qa_op_at("room13")==["난로를 살핀다","재받이를 들여다본다","13호 빗장 받이를 살핀다"])
+    assert eval (qa_op_at("workshop")==["집게 하나만 빌릴 수 있을까?","버리는 문고리 부품을 살핀다"])  # 숨은 장소(hidden_base) 시작점이 뒤에 더해졌다
     assert eval (set(r13_places())>={"school","hall","room13","workshop"})
 
 testcase v111_op_first_run_murder:
@@ -71,14 +72,14 @@ testcase v111_op_stone_swap:
     click "재받이"
     click pos (900,600) until screen "r13_hub" timeout 60
     assert eval (r13_v111_value("pocket_ration7") is True and qa_nw_seen("표시가 또렷하고"))
-    assert eval (qa_op_options("free_day7")==["난로를 살핀다","집게로 돌을 꺼내고, 주머니의 배급 돌을 넣는다"])
+    assert eval (qa_op_options("free_day7")==["난로를 살핀다","집게로 돌을 꺼내고, 주머니의 배급 돌을 넣는다","13호 빗장 받이를 살핀다"])
     pause 0.5
     click "난로"
     pause 0.8
     click "집게로 돌을 꺼내고, 주머니의 배급 돌을 넣는다"
     click pos (900,600) until screen "r13_hub" timeout 60
     assert eval (r13_v111_value("stove13_7")=="ration" and r13_v111_owned("NW_STONE") and r13_v111_value("NW_STONE.variant")=="swapped")
-    assert eval (qa_op_options("free_day7")==["난로를 살핀다"])
+    assert eval (qa_op_options("free_day7")==["난로를 살핀다","13호 빗장 받이를 살핀다"])
     run Jump("r13_v111_room_visit7")
     click pos (900,600) until eval (room13["v111"].get("gate")=="travel" and renpy.get_screen("r13_hub")) timeout 150
     assert eval (r13_v111_value("route7")=="prevented" and r13_v111_value("prevention")=="stone" and r13_v111_value("OWL_ALIVE") is True and r13_v111_value("fate:fate_owl")=="stone")
@@ -93,7 +94,7 @@ testcase v111_op_stone_hide:
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_op_day7,tongs7=True)
     run Function(r13_edit,location="room13")
-    assert eval (qa_op_options("free_day7")==["난로를 살핀다","재받이를 들여다본다","집게로 돌을 꺼낸다"])
+    assert eval (qa_op_options("free_day7")==["난로를 살핀다","재받이를 들여다본다","집게로 돌을 꺼낸다","13호 빗장 받이를 살핀다"])
     run Call("qa_op_pick",7)
     click pos (900,600) until screen "r13_hub" timeout 60
     assert eval (r13_v111_value("stove13_7")=="empty" and qa_nw_seen("검푸르게 타는 돌을 꺼낸다") and qa_nw_seen("머리가 맑아진다"))

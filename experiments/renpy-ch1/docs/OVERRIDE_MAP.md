@@ -790,6 +790,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 57 | `room13_life.rpy:164` | _r13_new_places_resident_where |
 | 2 | 130 | `systems/room13_new_places.rpy:105` |  |
 
+## `r13_scene_treatment` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 163 | `systems/room13_scene_contrast.rpy:14` | _r13_stove_treatment |
+| 2 | 330 | `systems/room13_stove_art.rpy:27` |  |
+
 ## `r13_secret_route_available` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |

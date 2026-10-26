@@ -13,7 +13,7 @@ init 322 python:
         if r13_v111_value('busy:resident_tok')=='owl_repair7':
             r13_v111_set('busy:resident_tok',False)
             r13_v111_set('location:resident_tok',None)
-    # 13호 그림에는 난로가 그려져 있지 않다(전용 그림 필요). 책장과 화분 사이 빈 벽에 조사 자리만 둔다.
+    # 난로 그림과 조사 자리 좌표는 systems/room13_stove_art.rpy 가 덮는다(2026-10-26 납품). 아래는 그림이 없을 때의 자리다.
     # 오른쪽 끝으로 밀었을 때 오른쪽 아래 조작 버튼(새 생각·기록)에 가리지 않는 높이다.
     # 글이 빈 물건은 그 단계의 선택이 있을 때만 눌린다(7일 낮 자유 시간에만).
     ROOM13["objects"].setdefault("room13",{})["v111_stove"]=dict(rect=[1820,250,170,190],need=[],give=[],flags=[],text="")
