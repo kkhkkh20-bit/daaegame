@@ -179,6 +179,9 @@ async def main():
       preferred=next((t for t in ['꺼낸 아르카 곁에 오래 있던 사람부터 무너진다','만지는 것보다 곁에서 오래 지내는 게 문제다','백 부인은 그 돌 곁에서 잠을 자지 않는다','요즘 태우는 돌이 더 독하다','아이 방에도 아르카등이 밤새 켜져 있었다','한 방의 돌이 바뀌자 한 사람이 한 저녁 사이에 무너졌다','한 방의 돌을 치우자 무너지던 사람이 돌아왔다','한 방의 돌을 꺼내자 그 앞에서 흐려지던 머리가 맑아졌다','하차한 사람부터 부축한다','그릇을 돌려주러 같이 가자.','오늘 안에 학교 자리를 확인하고 옮긴다.','아이들은 학교에서 기다리게 하자.','다람과 남고 까로를 의료진에게 보낸다','짐 안에 둔다','준비된 물자를 학교로 옮긴다','없는 운반수단을 지금 구한다','배식 전에 더 살핀다','돌목에게 너울을 맡긴다','돌목에게 감독을 맡긴다','조건을 더 묻는다','거절하고 현장에 남는다','엄마와 다람이 곁에 남게 한다','안에서 직접 듣는다','토실이 이름을 쓰겠다면 기다린다'] if t in items),items[0])
       # Once the family offer has been clarified, refuse it rather than looping.
       if '거절하고 현장에 남는다' in items and values.get('family_offer_terms_seen'):preferred='거절하고 현장에 남는다'
+      # 물건 하나에 행동이 둘 이상이면 고르는 창이 뜬다. 경로 계획의 제목이 있으면 그것을 고른다.
+      plan_titles=json.loads(os.environ.get('V111_TITLE_PLAN','{}')).get(gate,[])
+      preferred=next((t for t in plan_titles if t in items),preferred)
       overrides=json.loads(os.environ.get('V111_BRANCHES','{}'))
       requested=overrides.get(str(sc),[])
       if isinstance(requested,str):requested=[requested]
