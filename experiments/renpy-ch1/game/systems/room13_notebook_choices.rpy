@@ -10,22 +10,27 @@ init 81 python:
             label=r13_question_caption(entry[0],False,False)
             text=Text(label,font=R13_UI_BOLD_FONT,size=(r13_type("display") if R13_TYPE_V2 else r13_read_size(32,34)),xsize=width-184,line_spacing=4)
             measured=int(renpy.render(text,width-184,720,0,0).get_size()[1])
-            rows.append((entry,max(96,measured+28)))
+            rows.append((entry,max(96,measured+28),measured+20))
         # Equal paper cards: the longest option sets the shared row height.
-        row_height=max((height for entry,height in rows),default=88 if r13_touch_ui() else 80)
-        rows=[(entry,row_height) for entry,height in rows]
+        row_height=max((h for entry,h,m in rows),default=88 if r13_touch_ui() else 80)
+        floor=max((m for entry,h,m in rows),default=64)
         # 2026-10-27 소유자: "선택지 하나짜리 선택지창이 존재하면 안 되지". 쪽을 나눠도 한 쪽에 하나만 남기지 않는다.
-        # 넷 이하는 늘 한 쪽에 둔다(높이가 모자라면 칸 높이를 줄여서라도). 다섯 이상은 쪽마다 둘 이상이 되게 고르게 나눈다.
-        per=max(1,(height+16)//(row_height+16))
-        if len(rows)<=4 and per<len(rows):
-            row_height=max(56,(height-16*(len(rows)-1))//len(rows))
-            rows=[(entry,row_height) for entry,h in rows];per=len(rows)
-        per=min(per,9)
-        count=max(1,-(-len(rows)//per))
-        if count>1 and len(rows)%count==1:count+=1
-        size=-(-len(rows)//count)
-        pages=[rows[i:i+size] for i in range(0,len(rows),size)]
+        # 넷 이하는 늘 한 쪽에 둔다. 칸은 글자가 든 높이(floor) 아래로는 줄이지 않는다 — 그보다 모자라면 호출한 쪽이 머리글을 줄인다.
+        n=len(rows)
+        if n<=4:
+            if n*row_height+16*(n-1)>height:row_height=max(floor,(height-16*(n-1))//max(1,n))
+            return [[(entry,row_height) for entry,h,m in rows]] if rows else [[]]
+        per=max(2,min(9,(height+16)//(row_height+16)))
+        count=max(1,-(-n//per))
+        base,extra=divmod(n,count)
+        if base<2 and count>1:count-=1;base,extra=divmod(n,count)
+        pages=[];i=0
+        for k in range(count):
+            size=base+(1 if k<extra else 0);pages.append([(entry,row_height) for entry,h,m in rows[i:i+size]]);i+=size
         return pages or [[]]
+
+    def r13_notebook_choice_fits(pages,height):
+        return all(sum(h for e,h in page)+16*(len(page)-1)<=height for page in pages)
 
     def r13_notebook_note():
         # Crop the paper body before nine-slicing; the original large transparent
@@ -46,11 +51,17 @@ init 81 python:
         header=max(112,measured+44)
         cap=max(120,460-header-28)
         pages=r13_notebook_choice_pages(entries,width,cap)
-        if len(pages)>1 and subline and _retry:
-            # 작은 줄 때문에 선택지가 두 쪽으로 갈리면(13일 가족 제안, 좁은 판) 작은 줄을 뺀다.
+        if (len(pages)>1 or not r13_notebook_choice_fits(pages,cap)) and subline and _retry:
+            # 작은 줄 때문에 선택지가 두 쪽으로 갈리거나 칸이 모자라면(13일 가족 제안, 좁은 판) 작은 줄을 뺀다.
             # 한 쪽에 다 보이는 것이 직전 대사보다 중요하다.
-            header,pages,_=r13_notebook_choice_geometry(entries,width,heading,None,False)
-            return header,pages,None
+            return r13_notebook_choice_geometry(entries,width,heading,None,False)
+        if len(pages)==1 and not r13_notebook_choice_fits(pages,cap):
+            # 넷 이하인데 머리글이 커서 칸이 안 들어가면 머리글을 한 단 작게 재고, 그래도 모자라면 칸을 아래로 더 내린다(최대 60).
+            small=Text(heading,font=R13_UI_BOLD_FONT,size=r13_read_size(28,30),xsize=width-102,line_spacing=4)
+            header=max(112,int(renpy.render(small,width-102,720,0,0).get_size()[1])+44)
+            cap=max(120,460-header-28+60)
+            pages=r13_notebook_choice_pages(entries,width,cap)
+            return header,pages,"__small__"
         if len(pages)>1:
             pages=r13_notebook_choice_pages(entries,width,max(120,cap-(100 if r13_touch_ui() else 66)))
         return header,pages,subline
@@ -66,6 +77,8 @@ screen r13_notebook_choice_list(person,pose,title,entries,ready,return_action=No
     $ heading=issue or caption or (context[1] if context else "어떻게 할까?" if title=="선택" else title)
     $ subline=r13_choice_issue_subline(caption,context,20 if width<900 else 34) if issue else None
     $ header_height,pages,subline=r13_notebook_choice_geometry(entries,width,heading,subline)
+    $ heading_small=(subline=="__small__")
+    $ subline=None if heading_small else subline
     $ page=min(page,len(pages)-1)
     $ visible=pages[page]
     $ rows_height=sum(row[1] for row in visible)+max(0,len(visible)-1)*16
@@ -80,10 +93,10 @@ screen r13_notebook_choice_list(person,pose,title,entries,ready,return_action=No
         if subline:
             vbox:
                 align (.5,.5) spacing 8
-                text heading id "r13_choice_issue" xsize width-106 text_align .5 size (r13_type("hero") if R13_TYPE_V2 else r13_read_size(36,38)) color (r13_type_color("ink") if R13_TYPE_V2 else "#4b3022") font R13_UI_BOLD_FONT line_spacing 4
+                text heading id "r13_choice_issue" xsize width-106 text_align .5 size (r13_read_size(28,30) if heading_small else r13_type("hero") if R13_TYPE_V2 else r13_read_size(36,38)) color (r13_type_color("ink") if R13_TYPE_V2 else "#4b3022") font R13_UI_BOLD_FONT line_spacing 4
                 text subline xsize width-106 text_align .5 size (r13_type("emphasis") if R13_TYPE_V2 else r13_read_size(22,26)) color (r13_type_color("muted") if R13_TYPE_V2 else "#7a5a40") font R13_UI_BOLD_FONT line_spacing 2
         else:
-            text heading xsize width-106 align (.5,.5) text_align .5 size (r13_type("hero") if R13_TYPE_V2 else r13_read_size(36,38)) color (r13_type_color("ink") if R13_TYPE_V2 else "#4b3022") font R13_UI_BOLD_FONT line_spacing 4
+            text heading xsize width-106 align (.5,.5) text_align .5 size (r13_read_size(28,30) if heading_small else r13_type("hero") if R13_TYPE_V2 else r13_read_size(36,38)) color (r13_type_color("ink") if R13_TYPE_V2 else "#4b3022") font R13_UI_BOLD_FONT line_spacing 4
     add Transform(r13_asset_path("file:assets/ui-b-question/b_tape_red.png"),xysize=(64,22),rotate=-16) xpos left+8 ypos header_top-24
     vbox:
         pos (left,rows_top) spacing 16

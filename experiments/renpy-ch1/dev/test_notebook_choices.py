@@ -27,6 +27,7 @@ class NotebookChoices(unittest.TestCase):
                     Text=lambda text,**kw:text,
                     renpy=SimpleNamespace(render=lambda text,*args:SimpleNamespace(get_size=lambda:(600,72 if len(text)>20 else 30))))
             function('systems/room13_notebook_choices.rpy','r13_notebook_choice_pages',ns)
+            function('systems/room13_notebook_choices.rpy','r13_notebook_choice_fits',ns)
             geometry=function('systems/room13_notebook_choices.rpy','r13_notebook_choice_geometry',ns)
             entries=[('이미 들은 말을 다시 확인하는 긴 선택지 '+str(i),object(),i%2==0) for i in range(17)]
             header,pages,_=geometry(entries,650,'방금 들은 이야기에 대해 어떻게 대답할까?')
@@ -35,7 +36,7 @@ class NotebookChoices(unittest.TestCase):
             self.assertEqual(len({height for page in pages for entry,height in page}),1)
             for page in pages:
                 content=sum(height for entry,height in page)+16*(len(page)-1)
-                self.assertLessEqual(header+24+content+(100 if touch else 66),540)
+                self.assertLessEqual(header+24+content+((100 if touch else 66) if len(pages)>1 else 0),600)
                 if touch:self.assertTrue(all(height>=88 for entry,height in page))
 
     def test_stage_displayable_is_restored_without_rebuilding_its_pose(self):

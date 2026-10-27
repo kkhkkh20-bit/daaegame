@@ -100,6 +100,7 @@ class NotebookHeaderWithIssue(unittest.TestCase):
                     r13_read_size=lambda a,b:b if touch else a,r13_touch_ui=lambda:touch,Text=lambda text,**kw:text,
                     renpy=SimpleNamespace(render=lambda text,*args:SimpleNamespace(get_size=lambda:(600,72 if len(text)>20 else 30))))
             function('systems/room13_notebook_choices.rpy','r13_notebook_choice_pages',ns)
+            function('systems/room13_notebook_choices.rpy','r13_notebook_choice_fits',ns)
             geometry=function('systems/room13_notebook_choices.rpy','r13_notebook_choice_geometry',ns)
             entries=[('가족 셋이 수락하고 물러난다',object(),False),('거절하고 현장에 남는다',object(),False),('조건을 더 묻는다',object(),False)]
             issue='가족 셋이 물러날까, 현장에 남을까 하는 자리'
