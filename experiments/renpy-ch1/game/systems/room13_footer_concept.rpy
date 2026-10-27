@@ -24,11 +24,12 @@ screen r13_concept_more():
     $ panel_height=menu_rows*(row_height+16)+74
     # Same paper and navy notebook material as the approved settings screen.
     frame:
-        xpos 584 ypos (min(r13_control_y(),R13_NIGHT_CONTROL_Y-28)-panel_height-16) xysize (648,panel_height) padding (28,22) background Frame(Crop((35,25,550,245),r13_asset_path("file:assets/ui-b-main/b_main_panel.png")),48,40)
+        # 2026-10-27 소유자: 제목이 왼쪽에 쏠리고 고리가 버튼 왼쪽을 덮었다. 왼쪽 여백을 고리 폭만큼(56) 둔다.
+        xpos 584 ypos (min(r13_control_y(),R13_NIGHT_CONTROL_Y-28)-panel_height-16) xysize (676,panel_height) padding (56,22,28,22) background Frame(Crop((35,25,550,245),r13_asset_path("file:assets/ui-b-main/b_main_panel.png")),48,40)
         vbox:
             spacing 16
             # 2026-10-27 타이포 시안: 더보기 판 제목 subtitle, 항목 body(종이 위 ink, 비활성 disabled).
-            text "대화 도구" size (r13_type("subtitle")) color (r13_type_color("ink")) font r13_ui_font()
+            text "대화 도구" size (r13_type("subtitle")) color (r13_type_color("ink")) font R13_UI_BOLD_FONT
             # 항목이 홀수면 마지막 것은 두 칸 폭으로 두어 빈칸이 남지 않게 한다(2026-10-27 검수).
             $ paired=items[:len(items)-(len(items)%2)]
             $ paired_rows=len(paired)//2
@@ -47,4 +48,4 @@ screen r13_concept_more_item(title,icon,command,enabled,width,row_height):
         hbox:
             align (.5,.5) spacing 10
             add R13AntiqueIcon(icon,size=(26 if r13_touch_ui() else 20)) yalign .5 alpha (1.0 if enabled else .5)
-            text title size (r13_type("body")) font r13_ui_font() yalign .5 color ((r13_type_color("ink")) if enabled else (r13_type_color("disabled")))
+            text title size (r13_type("body")) font R13_UI_BOLD_FONT yalign .5 color ((r13_type_color("ink")) if enabled else (r13_type_color("disabled")))

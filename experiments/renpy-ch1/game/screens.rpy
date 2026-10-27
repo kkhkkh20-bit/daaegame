@@ -676,20 +676,21 @@ screen pause_menu():
     # 2026-10-27 검수: 오른쪽 위 테이프·별 스티커는 소리 탭의 「0%」와 「소리 켜짐」을 덮어 지웠다. 장식은 왼쪽 아래 빈 자리에만 둔다.
     # 탭이 넷이 되어(저장) 왼쪽 아래 자리가 줄었다. 휴대폰(탭 88 높이)은 자리가 없어 장식을 두지 않는다.
     if not r13_touch_ui():
-        add Transform(r13_asset_path("file:assets/ui-b-options/daram_diary_sticker_acorn.png"),zoom=72.0/437,rotate=-9) xpos 112 ypos 452
-        add Transform(r13_asset_path("file:assets/ui-b-options/daram_diary_sticker_letter.png"),zoom=56.0/408,rotate=8) xpos 204 ypos 460
+        add Transform(r13_asset_path("file:assets/ui-b-options/daram_diary_sticker_acorn.png"),zoom=72.0/437,rotate=-9) xpos 136 ypos 452
+        add Transform(r13_asset_path("file:assets/ui-b-options/daram_diary_sticker_letter.png"),zoom=56.0/408,rotate=8) xpos 224 ypos 460
     # Keep the index clear of the unscaled binder rings.
     add Crop((16,16,150,44),r13_asset_path("file:assets/ui-b-options/b_opt_title_tape.png")) xpos 96 ypos 42
     text "설정" xpos 120 ypos 42 font R13_UI_BOLD_FONT size (r13_opt_title_size()+8) color "#4b3420"
+    # 2026-10-27 소유자: 탭이 왼쪽 고리(화면 x 90~127)와 겹쳤다. 수첩 안쪽 선(R13_NB_LEFT=132)에서 시작한다.
     vbox:
-        xpos 96 ypos 136 spacing 0
+        xpos R13_NB_LEFT ypos 136 spacing 0
         for key,name in (("reading","읽기"),("sound","소리"),("screen","화면"),("save","불러오기" if main_menu else "저장")):
             fixed:
-                xsize 200 ysize (88 if r13_touch_ui() else 76)
-                add Frame(Crop((16,16,206,62),r13_asset_path("file:assets/ui-b-options/b_opt_tab_selected.png") if tab==key else r13_asset_path("file:assets/ui-b-options/b_opt_tab.png")),32,20) xpos 0 yalign .5 xysize (200,62)
+                xsize 168 ysize (88 if r13_touch_ui() else 76)
+                add Frame(Crop((16,16,206,62),r13_asset_path("file:assets/ui-b-options/b_opt_tab_selected.png") if tab==key else r13_asset_path("file:assets/ui-b-options/b_opt_tab.png")),32,20) xpos 0 yalign .5 xysize (168,62)
                 add Crop((18,18,28,28),r13_asset_path("file:"+("assets/ui-b-options/b_icon_opt_%s.png"%key))) xpos 28 yalign .5
                 textbutton name style "r13opt_tab_button":
-                    xsize 200 ysize (88 if r13_touch_ui() else 76) text_size (r13_opt_title_size()-2)
+                    xsize 168 ysize (88 if r13_touch_ui() else 76) text_size (r13_opt_title_size()-2)
                     text_style "r13opt_tab_button_text"
                     selected tab==key
                     action [SetScreenVariable("tab",key),SetField(persistent,"room13_option_tab",key),Function(renpy.save_persistent)]
@@ -763,7 +764,7 @@ screen pause_menu():
                         textbutton "끄기" xsize 136 action Function(r13_admin_toggle) text_size r13_opt_size() ysize r13_opt_button_height()
                     else:
                         textbutton "핀 번호로 켜기" xsize 284 action Show("r13_admin_pin") text_size r13_opt_size() ysize r13_opt_button_height()
-    text ("v"+config.version) xpos 120 ypos (516 if r13_touch_ui() else 540) size (r13_opt_size()-6) color "#8f8778"
+    text ("v"+config.version) xpos R13_NB_LEFT ypos (516 if r13_touch_ui() else 540) size (r13_opt_size()-6) color "#8f8778"
     add Crop((16,16,1080,6),r13_asset_path("file:assets/ui-b-options/b_opt_divider.png")) xpos 112 ypos (536 if r13_touch_ui() else 560)
     # 2026-10-27 검수: 메인 메뉴에서는 「메인화면」「저장 · 불러오기」가 없어 세 개가 띄엄띄엄 놓였다.
     # 보이는 버튼 수로 폭을 나눈다(1080 을 12 간격으로 n 등분: 4개 261, 3개 352). 저장·불러오기는 탭으로 들어갔다.
