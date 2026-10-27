@@ -1,4 +1,5 @@
 """2026-10-27 외부 리뷰: 쟁점 제목 표가 실제 메뉴와 맞고, 처음 한 번 안내가 실제 기능만 말한다."""
+from type_stub import r13_type_stub
 import re
 import textwrap
 import unittest
@@ -39,7 +40,7 @@ def load(persistent=None,mornings=()):
             persistent=persistent or SimpleNamespace(r13_proof_guide_done=False,r13_recovery_hint_retry=False,r13_recovery_hint_morning=False),
             renpy=SimpleNamespace(show_screen=lambda *a:shown.append(a)),
             # 2026-10-27 타이포 V2: 단계 표시 색이 스위치를 따른다. 끈 상태의 이전 색을 아래 시험이 확인한다.
-            R13_TYPE_V2=False,r13_type_color=lambda token:{"accent":"#a63a2e","muted":"#6b5641"}[token],
+            r13_type_color=lambda token:{"accent":"#a63a2e","muted":"#6b5641"}[token],
             r13_morning_days=lambda:list(mornings))
     block=SOURCE.split('init 80 python:\n')[1]
     block=re.split(r'^(?=\S)',block,flags=re.M)[0]
@@ -98,7 +99,7 @@ class NotebookHeaderWithIssue(unittest.TestCase):
         import sys;sys.path.insert(0,str(Path(__file__).resolve().parent))
         from test_notebook_choices import function
         for touch in (False,True):
-            ns=dict(r13_question_caption=lambda title,*args,**kw:title,R13_UI_BOLD_FONT='bold',R13_TYPE_V2=False,
+            ns=dict(r13_question_caption=lambda title,*args,**kw:title,R13_UI_BOLD_FONT='bold',r13_type=r13_type_stub(touch=touch),
                     r13_read_size=lambda a,b:b if touch else a,r13_touch_ui=lambda:touch,Text=lambda text,**kw:text,
                     renpy=SimpleNamespace(render=lambda text,*args:SimpleNamespace(get_size=lambda:(600,72 if len(text)>20 else 30))))
             function('systems/room13_notebook_choices.rpy','r13_notebook_choice_pages',ns)
@@ -124,10 +125,9 @@ class FirstTimeGuides(unittest.TestCase):
         steps0=ns['r13_proof_guide_steps'](0);steps2=ns['r13_proof_guide_steps'](2)
         for name in ('1 자료 고르기','2 확인','3 선택한 근거 제출'):
             self.assertIn(name,re.sub(r'\{/?color[^}]*\}','',steps0))
-        self.assertIn('{color=#bc4134}1 자료 고르기',steps0)
-        self.assertIn('{color=#bc4134}2 확인',steps2)
+        self.assertIn('{color=#a63a2e}1 자료 고르기',steps0)
+        self.assertIn('{color=#a63a2e}2 확인',steps2)
         # 스위치를 켜면 지금 단계는 accent, 나머지는 muted 로 바뀐다.
-        ns['R13_TYPE_V2']=True
         self.assertIn('{color=#a63a2e}1 자료 고르기',ns['r13_proof_guide_steps'](0))
         self.assertIn('{color=#6b5641}2 확인',ns['r13_proof_guide_steps'](0))
         self.assertIn('자료 고르기',ns['r13_proof_guide_help'](0,'남은 기회 3 / 3'))
@@ -138,18 +138,21 @@ class FirstTimeGuides(unittest.TestCase):
         self.assertFalse(ns['r13_proof_guide_active']())
 
     def test_retry_note_names_only_features_that_exist(self):
+        # 2026-10-27: 저장·불러오기는 「설정」의 「저장」 탭, 「다시 시작할 아침」은 메뉴에서 뺐다. 안내도 그것만 말한다.
         ns,_=load(mornings=())
         note=ns['r13_recovery_retry_note']()
-        self.assertIn('저장 · 불러오기',note);self.assertNotIn('다시 시작할 아침',note)
+        self.assertIn('「설정」의 「저장」 탭',note);self.assertNotIn('다시 시작할 아침',note);self.assertNotIn('더보기',note)
         ns,_=load(mornings=(1,2))
-        self.assertIn('다시 시작할 아침',ns['r13_recovery_retry_note']())
+        self.assertNotIn('다시 시작할 아침',ns['r13_recovery_retry_note']())
         ns['r13_recovery_retry_seen']()
         self.assertIsNone(ns['r13_recovery_retry_note']())
-        # 이름이 실제 버튼과 같다.
-        # 더보기 버튼은 밤 조작 줄(room13_night_ui.rpy)에 있다. 옛 대사 하단 띠(footer_concept 의 r13_concept_dock)는 2026-10-27 에 지웠다.
-        tools=(GAME/'systems/room13_playback.rpy').read_text()+(GAME/'systems/room13_footer_concept.rpy').read_text()+(GAME/'systems/room13_night_ui.rpy').read_text()
-        for name in ('"저장 · 불러오기"','"다시 시작할 아침"','"더보기"'):
-            self.assertIn(name,tools)
+        # 이름이 실제 화면과 같다: 설정 탭 「저장」, 밤 조작 줄의 「더보기」. 메뉴에서 뺀 이름은 남아 있으면 안 된다.
+        screens=(GAME/'screens.rpy').read_text()
+        self.assertIn('("save","불러오기" if main_menu else "저장")',screens)
+        self.assertIn('"더보기"',(GAME/'systems/room13_night_ui.rpy').read_text())
+        tools=(GAME/'systems/room13_playback.rpy').read_text()+(GAME/'systems/room13_footer_concept.rpy').read_text()
+        for gone in ('"다시 시작할 아침"','"저장 · 불러오기"','"메인화면"'):
+            self.assertNotIn(gone,tools)
         self.assertIn('"회의를 처음부터 다시"',(GAME/'room13_meeting_retry_ui.rpy').read_text())
 
     def test_morning_note_once_and_only_for_a_saved_later_morning(self):

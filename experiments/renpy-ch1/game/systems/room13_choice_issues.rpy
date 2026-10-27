@@ -99,8 +99,8 @@ init 80 python:
 
     def r13_proof_guide_steps(chosen_count,current=None,rest=None):
         # 타이포 V2: 지금 단계는 accent(테이프 빨강보다 한 단 어두운 글자용 빨강), 나머지는 muted. 끄면 이전 색.
-        current=current or (r13_type_color("accent") if R13_TYPE_V2 else "#bc4134")
-        rest=rest or (r13_type_color("muted") if R13_TYPE_V2 else "#9a8a74")
+        current=current or (r13_type_color("accent"))
+        rest=rest or (r13_type_color("muted"))
         step=r13_proof_guide_step(chosen_count)
         return "  →  ".join("{color=%s}%d %s{/color}"%(current if i==step else rest,i+1,name) for i,name in enumerate(R13_PROOF_STEPS))
 
@@ -130,9 +130,8 @@ init 80 python:
     # 「저장 · 불러오기」, 아침 저장이 있을 때만 보이는 「다시 시작할 아침」.
     def r13_recovery_retry_note():
         if persistent.r13_recovery_hint_retry:return None
-        if r13_morning_days():
-            return "받아들여도 「더보기」의 「저장 · 불러오기」나 「다시 시작할 아침」으로 되돌아갈 수 있습니다."
-        return "받아들여도 「더보기」의 「저장 · 불러오기」로 저장해 둔 곳에 돌아갈 수 있습니다."
+        # 2026-10-27: 저장·불러오기는 「설정」의 「저장」 탭으로 갔고 「다시 시작할 아침」은 메뉴에서 뺐다.
+        return "받아들여도 「설정」의 「저장」 탭에서 저장해 둔 곳에 돌아갈 수 있습니다."
 
     def r13_recovery_retry_seen():
         if not persistent.r13_recovery_hint_retry:
@@ -154,5 +153,5 @@ screen r13_recovery_note(message):
         hover_background r13_sticker_button(focused=True)
         action Hide("r13_recovery_note")
         alt message
-        text message size (r13_type("small") if R13_TYPE_V2 else r13_read_size(21,24)) color (r13_type_color("ink") if R13_TYPE_V2 else "#4b3022") font R13_UI_BOLD_FONT xmaximum 396 line_spacing 4
+        text message size (r13_type("small")) color (r13_type_color("ink")) font R13_UI_BOLD_FONT xmaximum 396 line_spacing 4
     timer 7.0 action Hide("r13_recovery_note")
