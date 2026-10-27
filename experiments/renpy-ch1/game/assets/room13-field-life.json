@@ -1,11 +1,13 @@
 {
  "schema": "room13-field-life/1",
- "note": "생활 동작 배치표(docs/design/FIELD_LIFE_STAGING_20261027.md)를 코드로 옮긴 것. 좌표는 그 장소 배경(가로 1920/1800/2160, 세로 720) 기준의 발 위치. 입구는 옛 1920 그림 기준이고 넓은 그림은 wide_shift 로 옮긴다. world_width 가 그때의 r13_world_width 와 다르면(우체국 낮·저녁의 옛 1280 배경 등) 행을 쓰지 않는다.",
+ "note": "생활 동작 배치표(docs/design/FIELD_LIFE_STAGING_20261027.md)를 코드로 옮긴 것. 좌표는 그 장소 배경(가로 1920/1800/2160, 세로 720) 기준의 발 위치. 입구는 옛 1920 그림 기준이고 넓은 그림은 wide_shift 로 옮긴다. world_width 가 그때의 r13_world_width 와 다르면 행을 쓰지 않는다 — 우체국 낮·저녁은 옛 1280 배경이라 world_width 1280 행을 따로 둔다. occlusion: \"layout\" 이면 매대 안(넓은 그림은 layout.occlusion, 옛 1280 배경은 R13_STAGE_COUNTERS 의 카운터 마스크로 다리를 가린다), 없으면 매대 앞 전신. 매대 안 행은 contacts 에 behind_counter 를 적어 조사 물건 회피가 밀지 않게 한다(소유자 2026-10-27 매대 안/앞 구분).",
  "contacts": {
   "resident_tori:life_sew_bench": "bench_sit",
   "resident_seori:life_write_desk_seated": "self_seated",
   "karo:life_wheel_check": "squatting",
-  "resident_tok:life_fix_stove": "squatting"
+  "resident_tok:life_fix_stove": "squatting",
+  "seryeon:life_stamp_ledger": "behind_counter",
+  "resident_ppul:life_pin_notice": "behind_counter"
  },
  "rows": [
   {
@@ -813,12 +815,13 @@
     "neutral"
    ],
    "target": [
-    1830,
-    475
+    1720,
+    560
    ],
    "activity": "접수대에서 접수 도장을 찍는다.",
    "world_width": 2160,
-   "note": "우체국 낮·저녁은 옛 1280 배경(layout.periods 가 morning 뿐)이라 넓은 그림 좌표가 맞지 않는다. 아침만 건다."
+   "note": "접수대 안. 문과 소포 더미 사이 빈 자리. 발을 상판 뒷선 아래(560)에 두고 layout 가림으로 다리를 가린다. 475 에 두면 소포 위에 선 것처럼 보였다.",
+   "occlusion": "layout"
   },
   {
    "id": "post_eunho_parcel",
@@ -833,14 +836,15 @@
     "neutral"
    ],
    "target": [
-    1400,
-    680
+    880,
+    700
    ],
    "activity": "소포를 접수대 너머로 건넨다.",
    "days": [
     1
    ],
-   "world_width": 2160
+   "world_width": 2160,
+   "note": "접수대 앞(전신). 손님이라 상판 왼쪽 모서리(x 1131) 앞 바닥. 1400 은 상판 앞면 위에 서는 자리였고, 1040 은 종종(993~1091)·모모(1006~1102)를 덮었다. 난로 앞에서 소포를 들고 접수대 쪽으로 선다."
   },
   {
    "id": "market_madam_pick",
@@ -889,6 +893,7 @@
    "pose": "life_peek_listen",
    "location": "market",
    "periods": [
+    0,
     1
    ],
    "replace_poses": [
@@ -900,7 +905,8 @@
     660
    ],
    "activity": "가게 사이에서 소문을 듣는다.",
-   "world_width": 2160
+   "world_width": 2160,
+   "note": "3·10일 아침도 시장(activity 정면)이라 아침까지 건다."
   },
   {
    "id": "market_ppul_knots",
@@ -1024,6 +1030,398 @@
    ],
    "activity": "아내를 찾아 숲을 돈다.",
    "world_width": 2160
+  },
+  {
+   "id": "post_ppul_pin",
+   "person": "resident_ppul",
+   "pose": "life_pin_notice",
+   "location": "post",
+   "periods": [
+    0
+   ],
+   "replace_poses": [
+    "activity",
+    "neutral"
+   ],
+   "target": [
+    1590,
+    560
+   ],
+   "activity": "문의 게시물을 핀으로 고정한다.",
+   "world_width": 2160,
+   "occlusion": "layout",
+   "note": "접수대 안. 공지(notice 1602,252)는 접수대 뒤 문에 붙어 있어 안에서만 손이 닿는다. 세련(1720)과 나란히."
+  },
+  {
+   "id": "post_seryeon_stamp_old",
+   "person": "seryeon",
+   "pose": "life_stamp_ledger",
+   "location": "post",
+   "periods": [
+    1,
+    2
+   ],
+   "replace_poses": [
+    "chair_read",
+    "action_1",
+    "action_2",
+    "neutral"
+   ],
+   "target": [
+    900,
+    560
+   ],
+   "activity": "접수대에서 접수 도장을 찍는다.",
+   "world_width": 1280,
+   "occlusion": "layout",
+   "note": "옛 1280 배경(낮·저녁). 접수대 안, 문 앞 틈(x 870~1080). 카운터 마스크(R13_STAGE_COUNTERS post) 윗선이 x 900 에서 y 483 라 가슴 위가 보인다. 촌장(975)과 37px 만 겹친다. 세련은 저녁에는 우체국에 없어(r13_where) 저녁 행은 예비다."
+  },
+  {
+   "id": "post_ppul_pin_old",
+   "person": "resident_ppul",
+   "pose": "life_pin_notice",
+   "location": "post",
+   "periods": [
+    1
+   ],
+   "replace_poses": [
+    "neutral",
+    "activity"
+   ],
+   "target": [
+    975,
+    560
+   ],
+   "activity": "문의 게시물을 핀으로 고정한다.",
+   "world_width": 1280,
+   "occlusion": "layout",
+   "note": "옛 1280 배경(낮). 접수대 안, 공지(notice 982,239,66,134) 바로 아래. x 1030 부터는 마스크 윗선이 392 로 올라가 오른팔이 세로로 잘리므로 몸 오른쪽 끝(1028)을 그 왼쪽에 둔다."
+  },
+  {
+   "id": "post_momo_lamp_old",
+   "person": "resident_momo",
+   "pose": "living_lampnumber",
+   "location": "post",
+   "periods": [
+    1
+   ],
+   "replace_poses": [
+    "living_lampnumber",
+    "neutral"
+   ],
+   "target": [
+    820,
+    560
+   ],
+   "activity": "등 번호를 적는다.",
+   "world_width": 1280,
+   "occlusion": "layout",
+   "note": "옛 1280 배경(낮). 접수대 안. 카운터 칸(1110,635)에 들어가면 마스크 윗선 392 에 머리까지 묻혀 이름표만 남았다. 세련(900)·촌장(975) 왼쪽, 끈 묶음(twine 576~808)과는 36px 만 겹친다(1/5 미만)."
+  },
+  {
+   "id": "post_eunho_parcel_old",
+   "person": "resident_eunho",
+   "pose": "life_hand_parcel",
+   "location": "post",
+   "periods": [
+    1,
+    2
+   ],
+   "replace_poses": [
+    "living_prices",
+    "neutral"
+   ],
+   "target": [
+    235,
+    655
+   ],
+   "activity": "소포를 접수대 너머로 건넨다.",
+   "world_width": 1280,
+   "days": [
+    1
+   ],
+   "note": "옛 1280 배경. 접수대 앞 바닥(x<366, 전신). 은호의 일정은 우체국 아침뿐이라(weekly post/store/inn) 낮·저녁에는 실제로 서지 않는 예비 행."
+  },
+  {
+   "id": "post_guseul_stamp_old",
+   "person": "resident_guseul",
+   "pose": "living_stamp",
+   "location": "post",
+   "periods": [
+    1
+   ],
+   "replace_poses": [
+    "neutral",
+    "activity"
+   ],
+   "target": [
+    300,
+    655
+   ],
+   "activity": "도장 찍을 서류를 들고 접수대 앞에서 기다린다.",
+   "world_width": 1280,
+   "note": "옛 1280 배경(낮, 1·8일). 접수대 앞 바닥 오른쪽 끝(전신, 오른쪽 끝 x 345 < 접수대 모서리 366). 카운터 칸에 들어가면 머리까지 묻혔다."
+  },
+  {
+   "id": "post_kongi_peek_old",
+   "person": "resident_kongi",
+   "pose": "life_peek_listen",
+   "location": "post",
+   "periods": [
+    1
+   ],
+   "replace_poses": [
+    "neutral",
+    "activity"
+   ],
+   "target": [
+    130,
+    690
+   ],
+   "activity": "어른들 말을 기웃거리며 듣는다.",
+   "world_width": 1280,
+   "note": "옛 1280 배경(낮, 1일). 접수대 앞 바닥 왼쪽(전신). 카운터 칸에서는 머리 꼭대기만 보였다."
+  },
+  {
+   "id": "market_eunho_front",
+   "person": "resident_eunho",
+   "pose": "map27_mk_2",
+   "location": "market",
+   "periods": [
+    0,
+    1
+   ],
+   "replace_poses": [
+    "map27_mk_2",
+    "neutral"
+   ],
+   "target": [
+    1600,
+    660
+   ],
+   "activity": "치즈 가게 앞에서 떼올 값을 장부에 적는다.",
+   "world_width": 2160,
+   "note": "매대 앞 전신(소유자 2026-10-27: 은호는 장수가 아니다). map27 MK-2 는 치즈 가게 상판 안(1270,432)이라 다리가 상판에 어정쩡하게 잘렸다. 치즈 가게와 천 가게 사이 통 앞. 1480 은 뭉치(1405~1510) 뒤에 묻혔다."
+  },
+  {
+   "id": "market_guseul_front",
+   "person": "resident_guseul",
+   "pose": "map27_mk_3",
+   "location": "market",
+   "periods": [
+    0,
+    1
+   ],
+   "replace_poses": [
+    "map27_mk_3",
+    "neutral",
+    "living_stamp"
+   ],
+   "target": [
+    1100,
+    690
+   ],
+   "activity": "심부름 온 치즈를 들고 아치 계단 아래를 지난다.",
+   "world_width": 2160,
+   "note": "매대 앞 전신. map27 MK-3 는 치즈 가게 안(1520,438)이었다. 구슬은 심부름이지 장수가 아니다."
+  },
+  {
+   "id": "market_nubi_front",
+   "person": "resident_nubi",
+   "pose": "map27_mk_4",
+   "location": "market",
+   "periods": [
+    0,
+    1
+   ],
+   "replace_poses": [
+    "map27_mk_4",
+    "neutral"
+   ],
+   "target": [
+    1820,
+    700
+   ],
+   "activity": "천 가게 앞에서 줄무늬 천을 펼쳐 본다.",
+   "world_width": 2160,
+   "note": "매대 앞 전신. map27 MK-4 는 천 가게 안(1772,497)이라 허리 아래가 잘렸다."
+  },
+  {
+   "id": "market_yeoni_front",
+   "person": "resident_yeoni",
+   "pose": "map27_mk_5",
+   "location": "market",
+   "periods": [
+    0,
+    1
+   ],
+   "replace_poses": [
+    "map27_mk_5",
+    "neutral"
+   ],
+   "target": [
+    1960,
+    705
+   ],
+   "activity": "천 가게 앞에서 장갑 구멍을 꿰맨다.",
+   "world_width": 2160,
+   "note": "매대 앞 전신. map27 MK-5 는 천 가게 안(1915,497)이었다."
+  },
+  {
+   "id": "market_jongjong_run",
+   "person": "resident_jongjong",
+   "pose": "life_run_satchel",
+   "location": "market",
+   "periods": [
+    1
+   ],
+   "replace_poses": [
+    "neutral"
+   ],
+   "target": [
+    1000,
+    700
+   ],
+   "activity": "편지 가방을 메고 아치 아래를 달려 지난다.",
+   "world_width": 2160,
+   "days": [
+    4
+   ],
+   "note": "정면 자리 보강(4일 낮). 광장 행과 같은 자세."
+  },
+  {
+   "id": "market_mulgyeol_rope",
+   "person": "resident_mulgyeol",
+   "pose": "map9_rope_coiling",
+   "location": "market",
+   "periods": [
+    0,
+    1
+   ],
+   "replace_poses": [
+    "neutral"
+   ],
+   "target": [
+    1660,
+    690
+   ],
+   "activity": "장에서 산 썰매 밧줄을 감아 본다.",
+   "world_width": 2160,
+   "note": "정면 자리 보강(4일 낮·7·14일 아침). 강가 자세 재사용(3/4 앞이지만 손이 밧줄을 본다). 치즈 가게 옆 통 앞, 매대 앞 전신."
+  },
+  {
+   "id": "inn_tori_handover_evening",
+   "person": "resident_tori",
+   "pose": "life_handover_cloth",
+   "location": "inn",
+   "periods": [
+    2
+   ],
+   "replace_poses": [
+    "activity",
+    "neutral",
+    "inn_activity"
+   ],
+   "target": [
+    1000,
+    690
+   ],
+   "activity": "수선한 천을 할머니에게 건넨다.",
+   "days": [
+    7,
+    14
+   ],
+   "world_width": 1920,
+   "note": "정면 자리 보강(7·14일 저녁). 낮 행과 같은 문 안 자리."
+  },
+  {
+   "id": "workshop_musoe_tool",
+   "person": "resident_musoe",
+   "pose": "job_inspect_old_tool",
+   "location": "workshop",
+   "periods": [
+    0
+   ],
+   "replace_poses": [
+    "neutral",
+    "living_foldmap"
+   ],
+   "target": [
+    124,
+    650
+   ],
+   "activity": "문가에서 옛 공구를 살핀다.",
+   "world_width": 1800,
+   "note": "정면 자리 보강(4일 아침). 배치표 '문가 장작 옆 x 124'."
+  },
+  {
+   "id": "workshop_tori_handover",
+   "person": "resident_tori",
+   "pose": "life_handover_cloth",
+   "location": "workshop",
+   "periods": [
+    0
+   ],
+   "replace_poses": [
+    "activity",
+    "neutral"
+   ],
+   "target": [
+    345,
+    655
+   ],
+   "activity": "수선거리를 받으러 공방 문 안에 섰다.",
+   "days": [
+    4
+   ],
+   "world_width": 1800,
+   "note": "정면 자리 보강(4일 아침). 여니(215) 오른쪽, 문 안."
+  },
+  {
+   "id": "workshop_yeoni_bundle_morning",
+   "person": "resident_yeoni",
+   "pose": "life_hold_bundle",
+   "location": "workshop",
+   "periods": [
+    0
+   ],
+   "replace_poses": [
+    "neutral",
+    "activity"
+   ],
+   "target": [
+    215,
+    640
+   ],
+   "activity": "수선거리를 안고 공방 문 안에 섰다.",
+   "days": [
+    4
+   ],
+   "world_width": 1800,
+   "note": "정면 자리 보강(4일 아침). 무쇠(63~185)와 31px, 토리(279~)와 겹치지 않게 그 사이. 190 은 무쇠 외투에 왼쪽이 묻혔다."
+  },
+  {
+   "id": "store_yeoni_bundle",
+   "person": "resident_yeoni",
+   "pose": "life_hold_bundle",
+   "location": "store",
+   "periods": [
+    1
+   ],
+   "replace_poses": [
+    "neutral",
+    "activity"
+   ],
+   "target": [
+    1600,
+    700
+   ],
+   "activity": "천 선반 앞에서 수선거리를 안고 있다.",
+   "days": [
+    4
+   ],
+   "world_width": 1920,
+   "note": "정면 자리 보강(4일 낮). 바닥 칸(216,666)은 네로(215,690)와 겹쳐 뒤에 숨었다."
   }
  ]
 }

@@ -78,7 +78,17 @@ init 183 python:
                     tx,ty=row["target"]
                     placed=r13_ma_place(actor,row["pose"],tx+dx,ty+dy,height)
                     placed["slot"]=None
-                    placed["occlusion"]=list(layout.get("occlusion",[])) if row.get("occlusion")=="layout" else []
+                    # 매대 안/앞(소유자 2026-10-27 "확실하게 매대 앞에서 하는 것인지 매대 안인지 구분"):
+                    # 안은 "layout"(넓은 그림의 카운터 폴리곤, 옛 1280 배경은 layout 이 비므로 그 장면의 R13_STAGE_COUNTERS)
+                    # 또는 행에 직접 적은 폴리곤으로 다리를 상판에 가린다. 앞은 가림 없음 = 전신.
+                    occ=row.get("occlusion")
+                    if occ=="layout":
+                        mask=list(layout.get("occlusion",[])) if layout else list(R13_STAGE_COUNTERS.get(location,[]))
+                    elif isinstance(occ,list):mask=[tuple(p) for p in occ]
+                    else:mask=[]
+                    placed["occlusion"]=mask
+                    # map27 층이 준 매대 마스크는 그 자리에서만 뜻이 있다. 자리를 옮기면 전신이 보여야 하므로 지운다.
+                    placed["map27_occlusion"]=[];placed["map27_keepouts"]=[]
                     placed["activity"]=row.get("activity",actor.get("activity",""))
                     placed["field_life"]=row.get("id")
             out.append(placed)

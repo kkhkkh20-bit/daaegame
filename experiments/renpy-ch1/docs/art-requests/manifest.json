@@ -1648,9 +1648,69 @@
         "notes": [
           "까로 life_wheel_check 는 원화에서 손·지팡이 끝이 프레임에 닿아 잘려 있다(등록은 함)",
           "현장에는 좌우 반전이 없어 원화 방향 그대로 쓴다. 배치표의 향함과 다른 자리는 docs/art-requests/현장_생활동작_도트_요청서_20261027.md 납품 기록 참조",
-          "서리 life_write_desk_seated(다시 그릴 기존 자세)도 같은 묶음으로 받아 진료소 책상에 연결"
+          "서리 life_write_desk_seated(다시 그릴 기존 자세)도 같은 묶음으로 받아 진료소 책상에 연결",
+          "우체국 낮·저녁(옛 1280 배경)은 world_width 1280 행으로 따로 연결했다(세련 life_stamp_ledger·촌장 life_pin_notice 접수대 안, 은호 life_hand_parcel 접수대 앞). 2026-10-27 후속.",
+          "까로 life_wheel_check 는 2차 요청서(FIELD-LIFE-2)로 다시 그린다."
         ]
       }
+    },
+    {
+      "id": "FIELD-LIFE-2",
+      "title": "현장 생활 동작 도트 2차(까로 바퀴 살피기 재요청 1장)",
+      "kind": "인물",
+      "status": "needs_delivery",
+      "priority": "P2",
+      "description": "1차 34장 납품 뒤 남은 것. 까로 life_wheel_check 원화에서 손·지팡이 끝이 프레임에 잘려 여백을 두고 다시 그린다. 답변서 4-3 의 1~3일 보강 6장(꽥순 물통·콩이 기웃·슬링 대필·촌장 게시·은호 소포·물결 불쬐기)은 1차 납품에 이미 들어와 제외. 정면 자세가 남았던 자리는 전부 등록된 자세로 채워 새 그림 없음. docs/art-requests/현장_생활동작_도트_2차요청서_20261027.md",
+      "scenes": [
+        "1~14일 입구 낮(까로 마차 바퀴)"
+      ],
+      "branches": [
+        "공통"
+      ],
+      "references": [
+        "game/assets/field-dot-v2/karo/life_wheel_check.webp",
+        "art/field-life-20261027/karo-life_wheel_check-dot.png",
+        "game/assets/room13-field-dot-v2.json"
+      ],
+      "sources": [
+        "docs/art-requests/현장_생활동작_도트_2차요청서_20261027.md",
+        "docs/art-requests/현장_생활동작_도트_요청서_20261027.md",
+        "docs/design/FIELD_LIFE_STAGING_20261027.md"
+      ],
+      "approved_scope": "2026-10-27 소유자 「실무 의견 적용」(1차 요청서 납품 기록의 「다시 그릴 때 고친다」 후속).",
+      "contract": {
+        "states": [
+          "까로 life_wheel_check 1장"
+        ],
+        "transparent": true,
+        "delivery": [
+          "원본 PNG",
+          "무손실 WebP",
+          "인물id·자세id·방향·파일 대응표 CSV"
+        ],
+        "size_rule": "덩치 230칸 기준, 쪼그린 키는 현행 등록본(214x230)과 같은 비율. 1칸=1px, 알파 0/255, karo 48색. 손·지팡이 끝 사방 4px 이상 여백."
+      },
+      "required": [
+        "쪼그려 바퀴 살을 쥔 1차와 같은 구도, 우(마차) 향함",
+        "손·지팡이 끝이 프레임 안에 다 들어오게 여백",
+        "1칸=1px, 알파 0/255, 대화 평온 그림 48색",
+        "파일 room13-fielddot-karo-life_wheel_check.png + 대응표 CSV"
+      ],
+      "avoid": [
+        "정면 응시",
+        "프레임에 닿는 손·소품",
+        "흰 테두리 스티커",
+        "늘려 그린 도트",
+        "그림 안 글자",
+        "기존 파일 덮어쓰기"
+      ],
+      "acceptance": [
+        "손·지팡이 끝이 잘리지 않는다(알파 bbox 가 캔버스 가장자리에 닿지 않음).",
+        "발 위치·크롭 기준을 현행 등록본과 맞춘다.",
+        "원본 PNG와 런타임용 WebP, 대응표를 함께 납품한다.",
+        "이미 등록된 원본 파일은 덮어쓰지 않고 별도 경로에 납품한다.",
+        "입구 1일 낮 캡처로 마차 바퀴 옆 자리가 그대로인지 확인한다."
+      ]
     },
     {
       "id": "FIRE-DIAGRAM",

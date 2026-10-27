@@ -2627,7 +2627,7 @@
     "periods": [
       "morning"
     ],
-    "note": "0.18.59 wide post, morning only. Afternoon/evening art was withheld (3-12px drift): those periods keep the 1280 backdrop, rects and staging. Source art/wide-maps-20261015/source/post-morning.png 2160x728, explicit crop [0,0,2160,720] (no scaling). Six public-floor slots in front of the counter: the owner's five candidates plus [585,712,240] in place of [675,635,205], which hid the scarf on six-resident mornings.",
+    "note": "0.18.59 wide post, morning only. Afternoon/evening art was withheld (3-12px drift): those periods keep the 1280 backdrop, rects and staging. Source art/wide-maps-20261015/source/post-morning.png 2160x728, explicit crop [0,0,2160,720] (no scaling). Six public-floor slots in front of the counter: the owner's five candidates plus [585,712,240] in place of [675,635,205], which hid the scarf on six-resident mornings. 2026-10-27: occlusion = counter top (field-life rows with occlusion \"layout\" hide the legs of the clerk behind it; the slot allocator has no counter slots here, so it is unused elsewhere).",
     "files": {
       "morning": "assets/room13-pixel-wide-post-morning.webp"
     },
@@ -2741,7 +2741,28 @@
         "waiting"
       ]
     ],
-    "occlusion": [],
+    "occlusion": [
+      [
+        1131,
+        560
+      ],
+      [
+        1766,
+        466
+      ],
+      [
+        2160,
+        500
+      ],
+      [
+        2160,
+        720
+      ],
+      [
+        1131,
+        720
+      ]
+    ],
     "ignore_legacy_positions": true,
     "capacity": 6,
     "critical": [
