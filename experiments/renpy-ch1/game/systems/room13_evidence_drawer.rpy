@@ -328,7 +328,7 @@ screen r13_drawer_group_list(mode,entries,chosen,gpage,owner,header):
     if not groups:
         text ("끝난 사건이 아직 없습니다. 회의가 끝나면 그 사건 자료가 여기로 옵니다." if mode=="past" else "자료에 나오는 사람이 아직 없습니다."):
             xpos (R13_EV_GRID_X+4) ypos (R13_EV_ROWS_Y+20) xsize (R13_EV_GRID_W-4) size label_size color "#8a7664" font R13_UI_BOLD_FONT
-    add Solid("#c9a86a66") xpos R13_EV_DIVIDER_X ypos (R13_EV_TOP+4) xsize 1 ysize (R13_EV_BOTTOM-R13_EV_TOP-12)
+    add Solid("#c9a86a66") xpos R13_EV_DIVIDER_X ypos (R13_EV_TOP+4) xsize 1 ysize (R13_EV_TEXT_BOTTOM-R13_EV_TOP-4)
 
 # 오른쪽: 고른 묶음의 자료 카드 격자. 누르면 기존 상세(왼쪽 목록 + 큰 그림)로 간다.
 screen r13_drawer_group_grid(mode,entries,chosen,ipage,owner):

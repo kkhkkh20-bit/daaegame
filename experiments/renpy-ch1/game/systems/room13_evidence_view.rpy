@@ -40,6 +40,7 @@ init 330 python:
     R13_EV_RIGHT_X=910
     R13_EV_RIGHT_W=296
     R13_EV_RIGHT=globals().get("R13_NB_RIGHT",1206)
+    R13_EV_TEXT_BOTTOM=globals().get("R13_NB_TEXT_BOTTOM",640)   # 맨글씨·뷰포트는 종이 안에서 끝난다
 
     def r13_evidence_facts_load(path=None):
         path=path or R13_EVIDENCE_FACTS_PATH
@@ -413,7 +414,7 @@ screen r13_evidence_grid(entries,detail,page,owner,pair=None,pair_slot=1,archive
             use r13_control("›",None,Function(r13_record_select,owner,"page",actual_page+1,False),enabled=actual_page+1<r13_record_pages(entries),width=pw,height=ph,control_id="r13_ev_next")
     if not entries:
         text ("아직 모은 자료가 없습니다." if not r13_catalog_entries(archive) else "이 분류에 해당하는 자료가 없습니다.") xpos (gx+4) ypos (gy+20) xsize (R13_EV_GRID_W-4) size label_size color (r13_type_color("muted") if R13_TYPE_V2 else "#8a7664") font R13_UI_BOLD_FONT
-    add Solid("#c9a86a66") xpos R13_EV_DIVIDER_X ypos (R13_EV_TOP+4) xsize 1 ysize (R13_EV_BOTTOM-R13_EV_TOP-12)
+    add Solid("#c9a86a66") xpos R13_EV_DIVIDER_X ypos (R13_EV_TOP+4) xsize 1 ysize (R13_EV_TEXT_BOTTOM-R13_EV_TOP-4)
 
 screen r13_evidence_heading(key,width,title_size):
     $ badge_size=r13_ev_small_size()
@@ -456,7 +457,7 @@ screen r13_evidence_single(detail,owner,archive=False,view_context=("records",),
             timer .7 action [Function(r13_record_mark_seen,detail),Function(r13_drawer_mark_notes,detail)]
         viewport:
             id "r13_ev_single_reading"
-            area (cx,R13_EV_TOP,R13_EV_CENTER_W,R13_EV_BOTTOM-R13_EV_TOP)
+            area (cx,R13_EV_TOP,R13_EV_CENTER_W,R13_EV_TEXT_BOTTOM-R13_EV_TOP)
             mousewheel True draggable True scrollbars "vertical"
             vscrollbar_unscrollable "hide"
             vbox:

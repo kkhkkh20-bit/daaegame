@@ -140,7 +140,9 @@ screen r13_learning_notes_content(focus=None):
     $ ink=(r13_type_color("ink") if R13_TYPE_V2 else "#493b30")
     $ muted=(r13_type_color("muted") if R13_TYPE_V2 else "#65503b")
     $ accent=(r13_type_color("accent") if R13_TYPE_V2 else "#765426")
-    text "조사 메모" xpos (R13_NB_LEFT+4) ypos R13_NB_TOP xsize (nb_w-8) size (r13_type("subtitle") if R13_TYPE_V2 else 26) color ink font R13_UI_BOLD_FONT
+    text "조사 메모" xpos (R13_NB_LEFT+4) ypos R13_NB_TOP xsize 150 size (r13_type("subtitle") if R13_TYPE_V2 else 26) color ink font R13_UI_BOLD_FONT
+    # 안내는 제목 오른쪽(종이 안). 하단 버튼 줄은 종이 가장자리에 걸쳐 맨글씨가 묻힌다.
+    text "메모를 읽고 정리해도 시간은 흐르지 않습니다." xpos (R13_NB_LEFT+160) ypos (R13_NB_TOP+6) xsize (nb_w-170) size (r13_type("small") if R13_TYPE_V2 else 17) color muted
     hbox:
         xpos R13_NB_LEFT ypos (R13_NB_TOP+48) spacing 14
         for key,title in (("questions","지금 궁금한 것"),("observations","자세히 본 것"),("world","알게 된 세계")):
@@ -203,5 +205,3 @@ screen r13_learning_notes_content(focus=None):
                             spacing 12
                             text note["title"] style "r13_key_text" size head_size color accent xsize text_w
                             text note["text"] size body_size color ink xsize text_w
-    # 안내는 하단 버튼 줄 왼쪽(버튼은 오른쪽)에 같은 높이로.
-    text "메모를 읽고 정리해도 시간은 흐르지 않습니다." xpos (R13_NB_LEFT+4) ypos (r13_nb_footer_y()+r13_control_height()//2) yanchor .5 xsize (r13_nb_footer_x(1)-R13_NB_LEFT-20) size (r13_type("small") if R13_TYPE_V2 else 17) color muted

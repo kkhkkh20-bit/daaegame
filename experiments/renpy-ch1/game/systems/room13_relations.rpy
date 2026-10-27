@@ -193,14 +193,16 @@ screen r13_relations_content(owner,selected,filt,focused=True):
     $ linked={other for other,k,lab in r13_rel_lines_of(selected)}
     # 2026-10-27 수첩 공통 틀: 관계도 판은 틀 안쪽 왼쪽(132,184 588x436), 인물 상세는 오른쪽(736~1206),
     # 「전체 관계도 / 인물 중심」 전환은 하단 버튼 줄(닫기 왼쪽)로 갔다.
-    text "알게 된 관계" xpos (R13_NB_LEFT+4) ypos R13_NB_TOP xsize 580 size (r13_type("subtitle") if R13_TYPE_V2 else r13_read_size(23,26)) color (r13_type_color("ink") if R13_TYPE_V2 else "#654b30") font R13_UI_BOLD_FONT
-    use r13_nb_footer_button(1,("전체 관계도" if focused else "인물 중심"),Function(r13_record_select,owner,"rel_focus",not focused),control_id="r13_rel_mode")
-    add R13PaperFrame() xpos R13_NB_LEFT ypos (R13_NB_TOP+44) xsize 588 ysize 436
+    text "알게 된 관계" xpos (R13_NB_LEFT+4) ypos R13_NB_TOP xsize 190 size (r13_type("subtitle") if R13_TYPE_V2 else r13_read_size(23,26)) color (r13_type_color("ink") if R13_TYPE_V2 else "#654b30") font R13_UI_BOLD_FONT
+    # 안내는 제목 오른쪽(종이 안). 아래 줄에 두면 종이 가장자리(646)에 걸린다.
+    text ("아래 얼굴을 누르면 그 인물의 관계를 봅니다." if focused else "인물을 고른 뒤 「인물 중심」으로 크게 봅니다.") xpos (R13_NB_LEFT+198) ypos (R13_NB_TOP-2) xsize 390 size (r13_type("small") if R13_TYPE_V2 else r13_read_size(16,18)) color (r13_type_color("muted") if R13_TYPE_V2 else "#79654e")
+    use r13_nb_footer_button(1,("전체 관계도" if focused else "인물 중심"),Function(r13_record_select,owner,"rel_focus",not focused),width=176,control_id="r13_rel_mode")  # 큰 글씨에서 「전체 관계도」가 136 에 안 들어간다
+    add R13PaperFrame() xpos R13_NB_LEFT ypos (R13_NB_TOP+62) xsize 588 ysize 414
     if focused:
         use r13_relation_focus(owner,selected,filt)
     else:
       fixed:
-        xpos (R13_NB_LEFT+6) ypos (R13_NB_TOP+52) xsize R13_REL_COLS*R13_REL_CELL[0] ysize R13_REL_ROWS*R13_REL_CELL[1]
+        xpos (R13_NB_LEFT+6) ypos (R13_NB_TOP+68) xsize R13_REL_COLS*R13_REL_CELL[0] ysize R13_REL_ROWS*R13_REL_CELL[1]
         add R13RelLines(edges,layout,selected)
         for who in [p for p in people if p in layout]:
             $ x,y=layout[who]
@@ -242,13 +244,12 @@ screen r13_relations_content(owner,selected,filt,focused=True):
                     text (("{s}"+node_name+"{/s}") if kind=="dead" else node_name) xpos 48 xanchor .5 ypos (48 if two_lines else 57) xsize 94 text_align .5 size 16 line_spacing -2 color ("#817366" if kind in ("dead","gone") else "#493b30")
     use r13_relation_detail(owner,selected)
     hbox:
-        xpos (R13_NB_LEFT+6) ypos (R13_NB_TOP+488) spacing 22
+        xpos (R13_NB_LEFT+6) ypos (R13_NB_TOP+482) spacing 22
         for kind,title in (("family","가족"),("work","함께 일함·도움"),("suspect","의심·갈등")):
             hbox:
                 spacing 7
                 add R13RelKey(kind) yalign .5
                 text title size (r13_type("small") if R13_TYPE_V2 else r13_read_size(16,18)) color (r13_type_color("muted") if R13_TYPE_V2 else "#65503b")
-    text ("아래 얼굴을 누르면 그 인물의 관계를 봅니다." if focused else "인물을 고른 뒤 「인물 중심」으로 크게 봅니다.") xpos (R13_NB_LEFT+6) ypos (R13_NB_TOP+516) xsize 580 size (r13_type("small") if R13_TYPE_V2 else r13_read_size(16,18)) color (r13_type_color("muted") if R13_TYPE_V2 else "#79654e")
 
 screen r13_relation_focus(owner,person,filt):
     $ rows=r13_rel_lines_of(person)
@@ -256,7 +257,7 @@ screen r13_relation_focus(owner,person,filt):
     $ layout={person:(222,92)}
     $ layout.update({other:positions[i] for i,(other,k,lab) in enumerate(rows[:4])})
     fixed:
-        xpos (R13_NB_LEFT+6) ypos (R13_NB_TOP+52) xysize (576,326)
+        xpos (R13_NB_LEFT+6) ypos (R13_NB_TOP+68) xysize (576,326)
         add R13RelLines([(person,other,k,lab) for other,k,lab in rows[:4]],layout,person,{p:((66,56) if p==person else (56,40)) for p in layout})
         use r13_relation_focus_card(owner,person,222,92,True)
         for i,(other,k,lab) in enumerate(rows[:4]):
@@ -270,7 +271,7 @@ screen r13_relation_focus(owner,person,filt):
     # A stable index keeps unrelated residents reachable without tiny graph text.
     viewport:
         id "r13_relation_index"
-        area (R13_NB_LEFT+10,R13_NB_TOP+386,572,88) mousewheel "horizontal" draggable True scrollbars "horizontal" scrollbar_ysize 6 scrollbar_thumb Solid("#a89571") scrollbar_base_bar Solid("#d6bd96")
+        area (R13_NB_LEFT+10,R13_NB_TOP+382,572,88) mousewheel "horizontal" draggable True scrollbars "horizontal" scrollbar_ysize 6 scrollbar_thumb Solid("#a89571") scrollbar_base_bar Solid("#d6bd96")
         hbox:
             spacing 6
             for who in r13_rel_people():

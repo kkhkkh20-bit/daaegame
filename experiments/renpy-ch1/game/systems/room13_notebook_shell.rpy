@@ -24,6 +24,10 @@ init 60 python:
     R13_NB_RIGHT=R13_NB_INNER[0]+R13_NB_INNER[2]
     R13_NB_BOTTOM=R13_NB_INNER[1]+R13_NB_INNER[3]
     R13_NB_WIDTH=R13_NB_INNER[2]
+    # 종이(크림)는 y 646 에서 끝나고 그 아래 20px 은 겹친 종이 가장자리·남색 테두리다. 하단 버튼 줄(684 까지)은
+    # 갈림길과 같이 그 위에 걸쳐도 버튼 바탕이 있어 읽히지만, 맨글씨·목록·뷰포트는 이 선 위에서 끝낸다.
+    R13_NB_PAPER_BOTTOM=646
+    R13_NB_TEXT_BOTTOM=640
     R13_NB_BUTTON_W=136         # 하단 버튼 한 칸(갈림길 「닫기」와 같다)
     R13_NB_GAP=16
 

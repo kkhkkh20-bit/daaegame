@@ -54,7 +54,7 @@ class RecordCleanup(unittest.TestCase):
   self.assertIn('$ filt="all"',REL)
   self.assertNotIn('selected filt==key',REL)
   self.assertNotIn('살아 있음 %d',REL)
-  self.assertIn('xpos R13_NB_LEFT ypos (R13_NB_TOP+44) xsize 588 ysize 436',REL)  # 2026-10-27 수첩 공통 틀 안쪽
+  self.assertIn('xpos R13_NB_LEFT ypos (R13_NB_TOP+62) xsize 588 ysize 414',REL)  # 2026-10-27 수첩 공통 틀 안쪽(종이 646 위)
  def test_admin_exit_does_not_cover_header_arrows(self):
   self.assertIn('xpos 942 ypos 92 xsize 314 ysize (80 if r13_touch_ui() else 56)',ADMIN)
   self.assertGreaterEqual(92-84,8)

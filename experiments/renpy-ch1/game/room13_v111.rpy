@@ -133,6 +133,9 @@ init 301 python:
         people=[] if r13_v111_value("wild_night14") or store.room13["location"] in ("hidden_pandol","hidden_base14") else list(_r13_v111_visible_people())
         if store.room13["v111"].get("gate")=="crowd_prepare13" and not r13_crowd_guard_available13(True):people=[p for p in people if p!="guard"]
         people=[p for p in people if not r13_v111_value("busy:"+p) or r13_v111_value("location:"+p) in (None,store.room13["location"])]
+        # 2026-10-27 소유자: "처음에 다람이가 나올 필요가 없어, 초소에서도 아빠랑 같이 있는데". 1일 입구에서는 아빠 곁에
+        # 붙어 있으므로 현장에 따로 세우지 않는다. 대사 근접·주고받기(r13_child_is_along)는 상태로 판단해 그대로 나온다.
+        if store.room13["day"]==1 and store.room13["location"]=="gate":people=[p for p in people if p!="daram"]
         if r13_v111_value("piko.location") and r13_v111_value("piko.location")!=store.room13["location"]:
             people=[p for p in people if p!="resident_piko"]
         if r13_v111_value("silluk_status") in ("detained_work_waiting_station","supervised_compulsory_labor"):
@@ -308,7 +311,9 @@ label r13_v111_wait_again:
         $ v111_ambient=r13_v111_ambient_text(v111_pick[1],v111_object_spec)
         if v111_ambient:
             $ r13_field_reading=True
-            call r13_lines([(None,v111_ambient)],"v111:ambient:"+room13["location"]+":"+v111_pick[1])
+            # 2026-10-27 소유자 플레이: 물건을 눌러도 지문 한 줄뿐이고 아빠·다람 주고받기(R13_OBSERVATION_CHAT)가 안 붙었다.
+            # 반응 표는 옛 경로(room13.rpy)의 r13_observe 에만 걸려 있었다. 같은 라벨로 돌려 생각 줄과 주고받기를 붙인다.
+            call r13_observe([(None,v111_ambient)],"object:"+room13["location"]+":"+v111_pick[1])
             $ r13_field_reading=False
     jump r13_v111_wait_again
 
