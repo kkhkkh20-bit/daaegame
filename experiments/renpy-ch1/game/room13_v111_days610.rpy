@@ -524,7 +524,7 @@ label r13_v111_bori_witness_heard7:
 
 label r13_v111_nubi_proof7:
     $ r13_meeting_checkpoint("fire")
-    call r13_v111_proof('불이 시작된 곳과 진술을 대조한다',['E06_FIRE'],'r13_v111_nubi_admission7','r13_v111_nubi_wrong7',None,review_return='r13_v111_bori_witness7')
+    call r13_v111_proof('불이 시작된 곳과 진술을 대조한다',['E06_FIRE'],'r13_v111_nubi_first_question7','r13_v111_nubi_wrong7',None,review_return='r13_v111_bori_witness7')
     jump expression _return
 
 label r13_v111_nubi_wrong7:
@@ -539,6 +539,23 @@ label r13_v111_nubi_wrong7:
     $ r13_v111_join(['neoul'])
     call r13_lines(r13_nw_block('fire_lose_neoul7'),'nw:fire_lose_neoul7')
     jump r13_v111_responsibility7
+
+label r13_v111_nubi_first_question7:
+    # 2026-10-27 D09(소유자 "둘 다 적용해"): 자료가 받아들여진 뒤 자백으로 가기 전, 어느 관찰 사실을 문제 삼을지 플레이어가 한 번 고른다.
+    # 어느 것을 골라도 자백·결과는 같다. 다른 것은 누비의 첫 대답 한 줄뿐. 기회를 쓰지 않는다.
+    if not r13_v111_value("bori_nubi_door_witness_heard"):
+        jump r13_v111_bori_witness7
+    menu:
+        '문 앞의 기름 흔적을 설명해 주십시오.':
+            $ r13_v111_set("fire_first_question","oil")
+            call r13_lines(r13_nw_block('nubi_ask_oil'),'nw:nubi_ask_oil')
+        '등잔은 뒷벽 물통 옆에 있었습니다. 뚜껑도 닫혀 있었고요.':
+            $ r13_v111_set("fire_first_question","lamp")
+            call r13_lines(r13_nw_block('nubi_ask_lamp'),'nw:nubi_ask_lamp')
+        '창고 문 앞에 서 계신 걸 보리 씨가 봤습니다.':
+            $ r13_v111_set("fire_first_question","door")
+            call r13_lines(r13_nw_block('nubi_ask_door'),'nw:nubi_ask_door')
+    jump r13_v111_nubi_admission7
 
 label r13_v111_nubi_admission7:
     if not r13_v111_value("bori_nubi_door_witness_heard"):
