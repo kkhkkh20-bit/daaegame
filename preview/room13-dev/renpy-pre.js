@@ -478,19 +478,73 @@ Module.preRun = Module.preRun || [ ];
         await Promise.all([worker(), worker()]);
     }
 
+    // On failure the stock status line grows upward over the loading hint and
+    // auto-scrolls to the English console notice (external QA 0.20.66). Hide both
+    // and gather a Korean explanation plus the retry button in one panel; keep the
+    // engine log, folded under "technical info", for support requests.
+    const R13_LOAD_ERROR_CSS = [
+        ".r13-load-failed #loading-brand,.r13-load-failed #statusDiv{display:none!important}",
+        "#r13-load-error{position:fixed;z-index:2147483647;left:50%;top:50%;transform:translate(-50%,-50%);box-sizing:border-box;width:min(560px,calc(100vw - 32px));max-height:calc(100vh - 24px);overflow:auto;padding:clamp(12px,3vh,20px) clamp(14px,3vw,24px);background:#101b37f0;border:1px solid #777b9b;border-radius:8px;color:#edf0ff;font-family:Galmuri,sans-serif;text-shadow:none}",
+        "#r13-load-error h2{margin:0 0 6px;font-size:clamp(16px,2.6vh,22px);color:#ffdc91}",
+        "#r13-load-error .r13-load-error-message{margin:0 0 12px;font-size:clamp(13px,2.2vh,17px);line-height:1.5}",
+        "#r13-load-error button{display:block;box-sizing:border-box;width:100%;min-height:48px;padding:10px 12px;border:0;border-radius:6px;background:#fff4df;color:#172a2a;font-family:inherit;font-size:clamp(15px,2.6vh,20px);cursor:pointer}",
+        "#r13-load-error details{margin-top:8px;color:#d5d8ea}",
+        "#r13-load-error summary{display:flex;align-items:center;min-height:44px;font-size:13px;cursor:pointer;list-style:none}",
+        "#r13-load-error summary::-webkit-details-marker{display:none}",
+        "#r13-load-error summary::before{content:\"\\25B8\";margin-right:6px}",
+        "#r13-load-error details[open] summary::before{content:\"\\25BE\"}",
+        "#r13-load-error #statusTextDiv{max-height:none;overflow:visible;font-size:12px;line-height:1.5;color:#d5d8ea;overflow-wrap:anywhere}"
+    ].join("\n");
+
+    function r13ShowLoadFailure(error) {
+        const old = document.getElementById("r13-load-error");
+        if (old) return old;
+        const style = document.createElement("style");
+        style.id = "r13-load-error-style";
+        style.textContent = R13_LOAD_ERROR_CSS;
+        (document.head || document.body).appendChild(style);
+        document.documentElement.classList.add("r13-load-failed");
+
+        const panel = document.createElement("div");
+        panel.id = "r13-load-error";
+        panel.setAttribute("role", "alert");
+        const title = document.createElement("h2");
+        title.textContent = "게임 파일을 받지 못했습니다";
+        const message = document.createElement("p");
+        message.className = "r13-load-error-message";
+        message.textContent = "인터넷 연결을 확인한 뒤 다시 시도해 주세요. 저장 기록은 그대로 남아 있습니다.";
+        const retry = document.createElement("button");
+        retry.type = "button";
+        retry.textContent = "게임 다시 불러오기 (저장 기록은 유지됩니다)";
+        retry.onclick = () => location.reload();
+        const details = document.createElement("details");
+        const summary = document.createElement("summary");
+        summary.textContent = "기술 정보 보기";
+        details.appendChild(summary);
+        // Move the live status line so later engine messages land in the same place.
+        const log = document.getElementById("statusTextDiv");
+        if (log) {
+            details.appendChild(log);
+        } else {
+            const pre = document.createElement("pre");
+            pre.textContent = String(error && error.message || error || "");
+            details.appendChild(pre);
+        }
+        for (const child of [title, message, retry, details]) panel.appendChild(child);
+        document.body.appendChild(panel);
+        try { retry.focus({ preventScroll: true }); } catch (e) { /* focus is optional */ }
+        return panel;
+    }
+
     function runLoadGameZip() {
         Module.addRunDependency('loadGameZip');
 
         loadGameZip().then(() => {
             Module.removeRunDependency('loadGameZip');
             setTimeout(r13PrefetchLater, 1000);
-        }).catch(() => {
+        }).catch((error) => {
             // Do not start a partially populated filesystem and silently show legacy art.
-            const retry = document.createElement("button");
-            retry.textContent = "게임 다시 불러오기 (저장 기록은 유지됩니다)";
-            retry.style.cssText = "position:fixed;z-index:2147483647;left:15%;right:15%;bottom:20%;padding:18px;font-size:20px;background:#fff4df;color:#172a2a";
-            retry.onclick = () => location.reload();
-            document.body.appendChild(retry);
+            r13ShowLoadFailure(error);
         });
 
     }
