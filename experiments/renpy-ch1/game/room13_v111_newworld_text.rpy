@@ -324,6 +324,11 @@ init 319 python:
         # 12일 국을 막은 판(early/premeal)에도 선생님의 목적(이송 칸 아이를 보내지 않으려는 것)은 남는다.
         # 이송 칸이 무효가 된 판(수프 대승리)에는 숨길 까닭이 없다.
         "teacher_hides13":lambda:r13_v111_value("fate:fate_soup") in ("early","premeal") and r13_v111_value("transfer_list_voided") is not True and r13_v111_actor_ready("resident_teacher"),
+        # 2026-10-27 엄마 줄기 짚기(외부 리뷰 1순위): 사건이 끝난 저녁, 부녀가 엄마에 대해 안 것과 모르는 것을 주고받는다.
+        # 피코·꼬미가 죽은 판은 장난을 빼고 담담하게 간다.
+        "mom03_piko_alive":_r13_bd_with_daram(lambda:r13_v111_value("piko_alive") is not False),
+        "mom03_piko_dead":_r13_bd_with_daram(lambda:r13_v111_value("piko_alive") is False),
+        "mom07_kkomi_alive":_r13_bd_with_daram(lambda:r13_v111_value("KKOMI_ALIVE") is not False),
     })
     # Impact direction names (systems/room13_impact_fx.rpy; that file loads later, so the names live here).
     R13_NW_FX=("jolt","shake","slam","flash")

@@ -35,6 +35,10 @@ screen r13_meeting_retry_choice():
         text "회의를 처음부터 다시" align (.5,.5) size (28 if r13_touch_ui() else 26) color "#263b52" font R13_UI_BOLD_FONT
     text "이 결과로 이야기를 이어갑니다." xpos 423 ypos 539 xanchor .5 yanchor .5 size 22 color "#756f66" font R13_UI_BOLD_FONT
     text "같은 회의의 첫머리로 돌아갑니다." xpos 857 ypos 539 xanchor .5 yanchor .5 size 22 color "#756f66" font R13_UI_BOLD_FONT
+    # 2026-10-27 외부 리뷰: 첫 패배 때만 되돌아갈 수 있는 범위를 한 줄로 알린다(실제로 있는 기능만).
+    $ recovery_note=r13_recovery_retry_note()
+    if recovery_note:
+        text recovery_note id "r13_recovery_retry_note" xpos 640 ypos 590 xanchor .5 yanchor .5 xmaximum 900 text_align .5 size (22 if r13_touch_ui() else 20) color "#263b52" font R13_UI_BOLD_FONT
     # 닫기·타이머는 결정을 대신하지 않는다. 받아들임은 기존 패배 분기로 전달한다.
     key "game_menu" action NullAction()
 

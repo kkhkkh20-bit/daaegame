@@ -27,10 +27,15 @@ init 81 python:
     def r13_notebook_choice_surface(width,hovered=False):
         return r13_sticker_button(focused=hovered)
 
-    def r13_notebook_choice_geometry(entries,width,heading):
+    def r13_notebook_choice_geometry(entries,width,heading,subline=None):
         size=r13_read_size(36,38)
         text=Text(heading,font=R13_UI_BOLD_FONT,size=size,xsize=width-102,line_spacing=4)
-        header=max(112,int(renpy.render(text,width-102,720,0,0).get_size()[1])+44)
+        measured=int(renpy.render(text,width-102,720,0,0).get_size()[1])
+        if subline:
+            # 2026-10-27 쟁점 제목: 직전 대사는 쟁점 아래 작은 줄로 남고, 머리 칸이 그만큼 자란다.
+            small=Text(subline,font=R13_UI_BOLD_FONT,size=r13_read_size(22,26),xsize=width-102,line_spacing=2)
+            measured+=8+int(renpy.render(small,width-102,720,0,0).get_size()[1])
+        header=max(112,measured+44)
         cap=max(120,460-header-28)
         pages=r13_notebook_choice_pages(entries,width,cap)
         if len(pages)>1:
@@ -43,8 +48,11 @@ screen r13_notebook_choice_list(person,pose,title,entries,ready,return_action=No
     $ left=220 if person or carriage else 190
     $ width=560 if person or carriage else 900
     $ context=r13_choice_context() if title=="선택" else None
-    $ heading=caption or (context[1] if context else "어떻게 할까?" if title=="선택" else title)
-    $ header_height,pages=r13_notebook_choice_geometry(entries,width,heading)
+    # 2026-10-27: 표(room13_choice_issues.rpy)에 있는 무거운 선택만 쟁점을 제목으로 쓴다. 나머지는 예전 그대로.
+    $ issue=r13_choice_issue(entries) if title=="선택" else None
+    $ heading=issue or caption or (context[1] if context else "어떻게 할까?" if title=="선택" else title)
+    $ subline=r13_choice_issue_subline(caption,context,20 if width<900 else 34) if issue else None
+    $ header_height,pages=r13_notebook_choice_geometry(entries,width,heading,subline)
     $ page=min(page,len(pages)-1)
     $ visible=pages[page]
     $ rows_height=sum(row[1] for row in visible)+max(0,len(visible)-1)*16
@@ -56,7 +64,13 @@ screen r13_notebook_choice_list(person,pose,title,entries,ready,return_action=No
             xpos r13_close_x(person,pose,760)+390 xanchor .5 ypos r13_close_y(person,760,70,pose)
     frame:
         xpos left+20 ypos header_top xsize width-40 ysize header_height padding (42,22,24,22) background r13_notebook_note()
-        text heading xsize width-106 align (.5,.5) text_align .5 size r13_read_size(36,38) color "#4b3022" font R13_UI_BOLD_FONT line_spacing 4
+        if subline:
+            vbox:
+                align (.5,.5) spacing 8
+                text heading id "r13_choice_issue" xsize width-106 text_align .5 size r13_read_size(36,38) color "#4b3022" font R13_UI_BOLD_FONT line_spacing 4
+                text subline xsize width-106 text_align .5 size r13_read_size(22,26) color "#7a5a40" font R13_UI_BOLD_FONT line_spacing 2
+        else:
+            text heading xsize width-106 align (.5,.5) text_align .5 size r13_read_size(36,38) color "#4b3022" font R13_UI_BOLD_FONT line_spacing 4
     add Transform(r13_asset_path("file:assets/ui-b-question/b_tape_red.png"),xysize=(64,22),rotate=-16) xpos left+8 ypos header_top-24
     vbox:
         pos (left,rows_top) spacing 16

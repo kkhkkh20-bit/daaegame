@@ -1349,6 +1349,38 @@
         "text": "다람이는 제 옆에 있습니다. 오늘은 그것만 지켰습니다.",
         "expression": "neutral",
         "when": "room13_not_win"
+      },
+      {
+        "id": "NW_MOM10_L01",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "엄마 이름으로 편지 보낸 사람은…… 오늘도 몰라?",
+        "expression": "anxious",
+        "when": "room13_not_win"
+      },
+      {
+        "id": "NW_MOM10_L02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "응. 그건 못 밝혔어. 엄마 있는 데도 아직 모르고.",
+        "expression": "neutral",
+        "when": "room13_not_win"
+      },
+      {
+        "id": "NW_MOM10_L03",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "그럼 오늘 찾은 건 나 하나네.",
+        "expression": "neutral",
+        "when": "room13_not_win"
+      },
+      {
+        "id": "NW_MOM10_L04",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "응. 그거면 오늘은 많이 찾았어.",
+        "expression": "neutral",
+        "when": "room13_not_win"
       }
     ],
     "MS14_D10_S04_L0026": [
@@ -1957,6 +1989,40 @@
         "speaker": "아빠",
         "kind": "dialogue",
         "text": "……그러니까 내일 밝을 때 가자. 같이."
+      }
+    ],
+    "MS14_D10_S04_L0008": [
+      {
+        "id": "NW_MOM10_W01",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "‘돌아오게 하려면 가족이 와야 했다’는 거, 엄마 얘기야?",
+        "expression": "anxious",
+        "when": "room13_win"
+      },
+      {
+        "id": "NW_MOM10_W02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "응. 엄마를 돌아오게 하려고, 엄마 글씨를 본떠서 우리를 불렀대.",
+        "expression": "neutral",
+        "when": "room13_win"
+      },
+      {
+        "id": "NW_MOM10_W03",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "엄마는 안 불렀는데, 우리는 엄마 찾으러 왔네.",
+        "expression": "neutral",
+        "when": "room13_win"
+      },
+      {
+        "id": "NW_MOM10_W04",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "응. 그건 그대로야. 이제 엄마 있는 데만 알면 돼.",
+        "expression": "neutral",
+        "when": "room13_win"
       }
     ]
   },

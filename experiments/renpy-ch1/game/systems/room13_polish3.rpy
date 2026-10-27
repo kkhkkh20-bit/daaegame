@@ -87,6 +87,8 @@ init 172 python:
         rec_ids=dict(rec.get("ids") or {});rec_ids[str(day)]=mid;rec["ids"]=rec_ids
         persistent.r13_mornings=rec
         renpy.save_persistent()
+        # 2026-10-27 외부 리뷰: 날짜가 처음 바뀐 아침에 한 번, 이 아침으로 돌아올 수 있다고 알린다.
+        if "r13_recovery_morning_note" in globals():r13_recovery_morning_note(day)
 
     def r13_morning_days():
         s=store.room13 or {}

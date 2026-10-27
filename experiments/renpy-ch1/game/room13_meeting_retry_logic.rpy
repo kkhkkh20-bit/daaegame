@@ -36,6 +36,8 @@ init 324 python:
         if not checkpoint or checkpoint["meeting"] != meeting:
             return
         answer = renpy.call_screen("r13_meeting_retry_choice")
+        # 2026-10-27: 되돌아갈 수 있는 범위 안내는 처음 본 한 번으로 줄인다.
+        r13_recovery_retry_seen()
         # 화면 자체가 마지막 속말을 보여 주므로 뒤 대사 묶음에 중복 삽입하지 않는다.
         store.r13_nw_wrong_pending = None
         if answer == R13_MEETING_RETRY_RETRY and r13_meeting_restore(meeting):

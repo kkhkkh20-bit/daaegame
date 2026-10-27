@@ -63,6 +63,9 @@ screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장",can_p
                     text chances size 22 color "#795d40" xalign 1.0
             text R13_CLAIMS[claim]["assertion"] font R13_UI_TYPE["title"]["font"] ypos 40 size r13_read_size(30,32) color "#765426" xsize 1090
             text ("고른 자료 · %d개"%len(room13["arguments"].get(claim,[]))) ypos 116 size 22
+            # 2026-10-27 외부 리뷰: 고르기·확인·제출이 다른 행동임을 첫 제출 성공 전까지만 단계로 보인다.
+            if need_evidence and r13_proof_guide_active():
+                text r13_proof_guide_steps(len(room13["arguments"].get(claim,[]))) id "r13_proof_steps" xpos 1090 xanchor 1.0 ypos 116 size 22 font R13_UI_BOLD_FONT
             frame:
                 area (0,142,1090,190) padding (20,16) background r13_sticker_button()
             viewport:
@@ -81,7 +84,7 @@ screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장",can_p
                             spacing 12
                             text "아직 고른 자료가 없습니다." font R13_UI_BOLD_FONT size 24 color "#493b30"
                             text "아래 ‘자료 고르기’에서 대조할 자료를 골라 주세요." size 22 color "#717367" xmaximum 1000
-            text r13_proof_edit_help(chances) ypos 350 size (26 if r13_touch_ui() else 22) color "#795d40" xsize 1090
+            text (r13_proof_guide_help(len(room13["arguments"].get(claim,[])),chances) if need_evidence and r13_proof_guide_active() else r13_proof_edit_help(chances)) ypos 350 size (26 if r13_touch_ui() else 22) color "#795d40" xsize 1090
             hbox:
                 ypos 414 spacing 16
                 use r13_control("자료 고르기",None,Return("present"),enabled=ready,width=258,height=control_height,label_size=24,control_id="r13_proof_pick")
