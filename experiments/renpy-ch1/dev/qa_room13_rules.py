@@ -26,7 +26,7 @@ def load_rules():
         notify=lambda text: None, save_persistent=lambda: None, config=config,
         get_showing_tags=lambda *args, **kwargs: [])
     ns = dict(json=json, renpy=renpy, persistent=persistent, store=store,
-        winter_copy=copy, WINTER_NAMES={}, CAST={}, Character=lambda *a, **k: None,
+        winter_copy=copy, NAMES={}, CAST={}, Character=lambda *a, **k: None,
         source_fx=lambda *a: None, config=config, R13_RESIDENTS={},
         R13_CORE_PEOPLE={'granny','buri','bami','nabi','karo','neoul','seryeon','doto'},
         r13_resident_where=lambda person: None)

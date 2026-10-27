@@ -24,7 +24,7 @@ NW = GAME / 'v111/newworld'
 
 
 def speakers():
-    src = (GAME / 'ms14_story.rpy').read_text()
+    src = (GAME / 'room13_v111_source_cast.rpy').read_text()
     names = dict(re.findall(r'"([^"]+)"\s*:\s*"([a-z_0-9]+)"', src.split('MS14_SPEAKERS', 1)[1].split('}', 1)[0]))
     later = (GAME / 'room13_v111_later_bindings.rpy').read_text()
     for block in re.findall(r'MS14_SPEAKERS\.update\(\{(.*?)\}\)', later, re.S):

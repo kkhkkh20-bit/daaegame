@@ -37,18 +37,27 @@ def write(path,data):path.write_text(json.dumps(data,ensure_ascii=False,indent=2
 def current_source_packets():
     # Inspect the real packet adapter, without running the campaign/init block.
     import textwrap
-    source=(ROOT/'game/ms14_story.rpy').read_text()
+    source=(ROOT/'game/room13_v111_source_cast.rpy').read_text()
     mapping=ast.literal_eval(source.split('    MS14_SPEAKERS = ',1)[1].split('\n    R13_CHARS',1)[0])
-    body='def ms14_line'+source.split('    def ms14_line',1)[1].split('    def ms14_menu_options',1)[0]
-    env={'MS14_SPEAKERS':mapping}
-    exec('def ms14_line(record):\n'+textwrap.indent(textwrap.dedent(body.split('\n',1)[1]),'    '),env)
+    # 2026-10-27: 옛 MS14 실행기(ms14_story.rpy 의 ms14_line)를 지웠다. 원본 기록을 대사 묶음으로 바꾸는 규칙은
+    # 그때와 같다 — 화자 매핑, 5일 경고 기록(MS14_D05_S04_L0006)만 첫 문장과 나머지로 가른다.
+    def ms14_line(record):
+        speaker = mapping.get(record.get("speaker"))
+        if record.get("speaker") and speaker is None:raise Exception("Unmapped speaker: "+record["speaker"])
+        if record["id"] == "MS14_D05_S04_L0006":
+            anchor='“당신과 다람이를 부른 적 없어.'
+            if not record["text"].startswith(anchor):raise ValueError('Warning anchor changed')
+            first, rest = record["text"][:len(anchor)], record["text"][len(anchor):]
+            return [(speaker,first,{"no_lead":True,"expression":"neutral","ms14_silence_after":True}),
+                (speaker,rest,{"no_lead":True,"expression":"neutral"})]
+        return [(speaker, record["text"], {"no_lead":True,"expression":"neutral"})]
     records=json.loads((ROOT/'game/ms14/route.json').read_text())['records']
-    return {rid:env['ms14_line'](r) for rid,r in records.items()
+    return {rid:ms14_line(r) for rid,r in records.items()
         if r.get('kind')=='dialogue' and r.get('player_visible') and r.get('speaker') not in (None,'아빠') and mapping.get(r.get('speaker'))}
 
 def main():
     route=json.loads((ROOT/'game/ms14/route.json').read_text())
-    source=(ROOT/'game/ms14_story.rpy').read_text().split('    MS14_SPEAKERS = ',1)[1].split('\n    R13_CHARS',1)[0]
+    source=(ROOT/'game/room13_v111_source_cast.rpy').read_text().split('    MS14_SPEAKERS = ',1)[1].split('\n    R13_CHARS',1)[0]
     speakers=ast.literal_eval(source)
     available=json.loads((ROOT/'game/assets/room13-dialogue-talk-art.json').read_text())['people']
     beats_path=ROOT/'game/assets/room13-dialogue-beats.json';full_path=ROOT/'game/assets/room13-fullbody-line-emotions.json'

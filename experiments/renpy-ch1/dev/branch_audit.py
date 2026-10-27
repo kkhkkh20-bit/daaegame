@@ -310,7 +310,7 @@ def load_game():
         if p.exists():g.patches[name]=json.loads(p.read_text(encoding='utf-8'))
     p = GAME / 'v111/newworld/reactions.json'
     g.reactions = json.loads(p.read_text(encoding='utf-8')) if p.exists() else {}
-    src = (GAME / 'ms14_story.rpy').read_text(encoding='utf-8')
+    src = (GAME / 'room13_v111_source_cast.rpy').read_text(encoding='utf-8')
     g.speakers = dict(re.findall(r'"([^"]+)"\s*:\s*"([a-z_0-9]+)"', src.split('MS14_SPEAKERS', 1)[1].split('}', 1)[0]))
     later = (GAME / 'room13_v111_later_bindings.rpy').read_text(encoding='utf-8')
     for block in re.findall(r'MS14_SPEAKERS\.update\(\{(.*?)\}\)', later, re.S):

@@ -44,8 +44,8 @@ def names():
     opts=(GAME/'options.rpy').read_text(encoding='utf-8')
     m=re.search(r'NAMES\s*=\s*\{([^}]*)\}',opts)
     if m:out.update(re.findall(r'"([a-z_]+)"\s*:\s*"([^"]+)"',m.group(1)))
-    win=(GAME/'winter.rpy').read_text(encoding='utf-8')
-    m=re.search(r'WINTER_NAMES\s*=\s*dict\(NAMES,([^)]*)\)',win)
+    win=(GAME/'room13_rules.rpy').read_text(encoding='utf-8')
+    m=re.search(r'R13_NAMES\s*=\s*dict\(NAMES,([^)]*)\)',win)
     if m:out.update(re.findall(r'([a-z_]+)\s*=\s*"([^"]+)"',m.group(1)))
     for f,rel in rpy_files():
         for block in re.findall(r'R13_NAMES\.update\((.*?)\)',f.read_text(encoding='utf-8'),re.S):

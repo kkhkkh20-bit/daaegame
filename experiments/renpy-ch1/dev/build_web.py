@@ -157,7 +157,7 @@ def character_prefetch(game):
     # r13_speaker / r13_question_list call r13_close_art(..., 840).
     # Never warm the alternate 560/760 profiles or the old fullbody atlases.
     people = ["daram", "dad", "karo"]
-    speakers = ast.literal_eval(re.search(r"MS14_SPEAKERS\s*=\s*({.*?})", (game / "ms14_story.rpy").read_text(), re.S).group(1))
+    speakers = ast.literal_eval(re.search(r"MS14_SPEAKERS\s*=\s*({.*?})", (game / "room13_v111_source_cast.rpy").read_text(), re.S).group(1))
     records = json.loads((game / "v111/records.json").read_text())["records"]
     for key, record in records.items():
         if key.startswith("MS14_D01_"):

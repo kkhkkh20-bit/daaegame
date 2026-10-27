@@ -10,8 +10,6 @@ label r13_scene(bg,title,mood="calm"):
     $ r13_last_partner = None
     window hide
     hide r13_visitor
-    hide winter_visitor
-    hide visitor
     $ dialogue_speaker=None
     $ dialogue_expression="neutral"
     $ place=title
@@ -89,13 +87,23 @@ label r13_lines(entries,identity,binding_route=None):
     $ r13_conv_skip=False
     return
 
+label start:
+    # 메인 메뉴의 「처음부터」는 여기로 온다. 옛 겨울 판(winter.rpy)이 들고 있던 입구를 2026-10-27 옮겼다.
+    jump room13_start
+
+label after_load:
+    # 불러오기 뒤 상태 올리기. 옛 겨울 판 저장 처리는 뺐다(v111 이전 저장 호환은 포기, 소유자 승인).
+    if room13_mode and room13:
+        $ r13_upgrade()
+        if room13.get("revision_restart_required"):
+            jump r13_revision_resume
+        $ r13_fullbody_refresh_after_load()
+    return
+
 label room13_start:
     $ r13_meeting_direct_end()
     $ r13_meeting_direction_seen=[]
     $ room13_mode=True
-    $ winter_mode=True
-    $ winter=winter_new()
-    $ source_mode=False
     $ room13=r13_new()
     $ r13_world_cameras={}
     $ r13_inspection_location=None
@@ -104,161 +112,12 @@ label room13_start:
     $ r13_scene_key=None
     $ r13_upgrade()
     $ typing_allowed=True
-    hide screen winter_hud
-    hide screen hud
-    hide screen source_world
-    hide screen source_proof
     hide screen r13_handoff
     hide screen r13_book
     hide screen r13_calendar
     show screen r13_hud
-    jump r13_v111_start # Updated story; original labels remain available to old saves.
-    call r13_carriage
-    $ r13_grant(["E01"],"여행 중 가지고 온 편지")
-    $ r13_edit(period=1)
-    call r13_scene("winter","눈에 막힌 입구","calm")
-    $ r13_note_encounter("karo")
-    $ r13_note_encounter("guard")
-    $ r13_note_encounter("daram")
-    call r13_lines([('daram', '안아 주지는 마.'), ('dad', '손만 잡을게.'), ('karo', '큰 짐은 두고 가세요. 축에 금이 갔네. 돌아가는 건 수리부터 해야겠어요.'), ('dad', '어디로 가면 됩니까?'), ('karo', '초소요. 방문 확인 먼저.')],"entry:karo:arrival")
-    call r13_lines([('guard', '성함.'), ('dad', '다돌입니다. 딸하고 왔습니다.'), ('guard', '아버지만 들어가실 수 있소. 아이는 일꾼으로 받을 수 없소.'), ('dad', '일꾼이요? 아내 만나러 왔는데요.'), ('guard', '내게 온 종이엔 그렇게 적혀 있소.'), ('dad', '그럼 얘는 어쩌고요?'), ('guard', '혼자 두라는 말 아니오. 둘 다 여기서 기다리시오.'), ('daram', '아빠, 나 때문에 못 들어가?'), ('dad', '아니야. 잘못 적힌 게 있나 봐. 같이 보자.')],"entry:arrival")
-label r13_entry:
-    hide r13_visitor
-    $ dialogue_speaker=None
-    window hide
-    call screen r13_hub(entry=True)
-    $ r13_choice=_return
-    # 0.18.79: a hub result is always a (kind, value) pair. Anything else is not a choice:
-    # show the same screen again (no time, record or story step), and stop with an error after
-    # repeated bad results instead of looping (systems/room13_boot_guard.rpy).
-    if not r13_screen_choice_ok(r13_choice,"r13_hub:entry"):
-        jump r13_entry
-    if r13_choice[0]=="person":
-        if r13_choice[1]=="guard":
-            jump r13_entry_guard_menu
-        else:
-            call r13_entry_person(r13_choice[1])
-            jump r13_entry
-    if r13_choice==("entry","talk"):
-        jump r13_entry_guard_menu
-    jump r13_entry_dispatch
-
-label r13_entry_guard_menu:
-    $ r13_note_encounter("guard")
-    window hide
-    hide r13_visitor
-    $ dialogue_speaker=None
-    call screen r13_entry_topics
-    $ r13_choice=_return
-    if not r13_screen_choice_ok(r13_choice,"r13_entry_topics"):
-        jump r13_entry_guard_menu
-    if r13_choice != ("entry","back"):
-        $ r13_speaker("guard","neutral")
-label r13_entry_dispatch:
-    if r13_choice==("entry","explain"):
-        call r13_lines([(None, '초소 입장 명단: 같은 도착일 / 다돌 / 신청 2명 / 신규 일꾼 본인 1명 / 동행 아동 모집 제외 / 내일부터 장작 운반 / 처리 너울.'), ('dad', '장작이요? 그런 신청 안 했습니다. 제가 낸 종이부터 보여 주세요.'), ('guard', '날짜와 이름을 찾으면 되오. 잠깐 기다리시오.')],"entry:explain:v2")
-        $ r13_flag("question_read:entry:explain")
-        # The list is earned by asking for it; granted after the lines (0.18.22).
-        $ r13_grant(["G3"],"돌목이 직접 보여 준 초소 명단")
-    elif r13_choice[0]=="object":
-        call r13_object(r13_choice[1])
-    elif r13_choice[0]=="empty":
-        $ r13_mark("empty:%d:%d"%(r13_choice[1][0]//70,r13_choice[1][1]//70),*r13_choice[1])
-        call r13_lines([(None,"흩날리는 눈을 털어 냈다. 특별히 눈에 띄는 흔적은 없다.")],"entry:empty")
-    elif r13_choice[1]=="argue":
-        call screen r13_book("guard",present=True)
-        $ r13_item=_return
-        if r13_catalog_object(r13_item):
-            call r13_show_catalog_object("guard",r13_item)
-            jump r13_entry_guard_menu
-        if r13_item:
-            show screen r13_material_corner(r13_item)
-        if r13_item in ("G1","G3"):
-            if r13_item == "G1" and all(key in room13["evidence"] for key in ("G2","G3")):
-                call r13_lines([('dad', '가족 방문이고 둘이 잘 방도 확인됐습니다. 저 규칙대로 딸도 들여보내 주세요.'), ('guard', '가족 방문을 일꾼으로 옮겨 놨군.'), ('dad', '네. 그래서 아이가 빠졌습니다.'), ('guard', '여기서 고치겠소.')],"entry:corrected:v2")
-                jump r13_entry_done
-            else:
-                call r13_lines([('guard', '둘인 건 봤소. 가족을 만나러 왔는지, 둘이 잘 방은 있는지도 확인해야 하오.')],"entry:copy:v2")
-        elif r13_item == "G2":
-            call r13_lines([('guard', '같이 온 건 알겠소. 둘이 묵을 방은 확인됐소?')],"entry:rules:v2")
-        elif r13_item:
-            call r13_lines([('dad', '이 편지도 있습니다.'), ('guard', '초대받은 건 알겠소. 두 사람이 묵을 방도 확인해야 하오.'), ('dad', '여관으로 신청했습니다. 원본을 찾아 주십시오.')],"entry:letter")
-        hide screen r13_material_corner
-    elif r13_choice[1]=="wait":
-        call screen r13_confirm("대기소 앞에서 원본 담당자가 돌아오기를 기다린다.")
-        if _return:
-            $ r13_flag("question_read:entry:wait")
-            call r13_scene("winter","눈에 막힌 입구","calm")
-            call r13_lines([('dad', '가족 방문이고 둘이 잘 방도 확인됐습니다. 저 규칙대로 딸도 들여보내 주세요.'), ('guard', '가족 방문을 일꾼으로 옮겨 놨군.'), ('dad', '네. 그래서 아이가 빠졌습니다.'), ('guard', '여기서 고치겠소.')],"entry:wait")
-            jump r13_entry_done
-    if r13_choice[0]=="entry" and r13_choice[1] in ("explain","argue","wait"):
-        jump r13_entry_guard_menu
-    jump r13_entry
-
-label r13_entry_person(person):
-    if person in ("daram", "karo"):
-        $ r13_note_encounter(person)
-    if person=="daram":
-        call r13_lines([('daram', '여기 아빠 이름.'), ('dad', '맞아. 날짜도 같네.'), ('daram', '‘외 한 명’은 나야? 내 이름도 썼는데.'), ('dad', '아래에 있네. 다람. 둘이 온다고 제대로 썼어.')],"entry:daram:waiting")
-        call r13_entry_daram_menu from r13_entry_daram_questions_return
-        return
-    if person!="karo":
-        $ r13_target=person
-        call r13_talk
-        return
-label r13_entry_karo_menu:
-    window hide
-    hide r13_visitor
-    call screen r13_entry_karo_topics
-    $ r13_entry_karo_choice=_return
-    if r13_entry_karo_choice != "back":
-        $ r13_speaker("karo","neutral")
-    if r13_entry_karo_choice=="road":
-        call r13_lines([('dad', '아까 보신 마차 바퀴 축은 수리가 되겠습니까?'), ('karo', '고쳐야죠. 금 간 곳을 우선 묶어 두긴 했는데, 이대로 손님을 태울 수는 없어요.'), ('dad', '수리가 끝나면 바로 돌아갈 수 있습니까?'), ('karo', '마차만 고친다고 갈 수 있는 게 아닙니다. 고갯길도 폭설로 막혔거든요. 길이 열리면 가장 먼저 알려 드릴게요.')],"entry:karo:road")
-        $ r13_flag("road_known")
-    elif r13_entry_karo_choice=="witness":
-        call r13_lines([('dad', '까로 씨, 저희 두 사람을 태워 오셨다고 증언해 주실 수 있습니까? 명단에서 아이 이름이 빠져서요.'), ('karo', '그럼요. 제 마차에 두 분 다 타셨습니다. 짐도 제가 직접 내려 드렸고요.'), ('guard', '함께 타고 오신 건 알겠습니다. 하지만 명단을 고치려면 예약 서류 원본과 대조해 봐야 합니다.'), ('dad', '알겠습니다. 그럼 원본 서류부터 찾아보겠습니다.'), ('karo', '아, 손님 예약 서류는 아까 제가 초소에 넘겼어요. 선반 금요일 묶음에 끼워 두더라고요.'), ('karo', '저는 여기서 짐을 지키고 있을게요. 확인이 끝나면 불러 주세요.')],"entry:karo:witness:v2")
-    elif r13_entry_karo_choice=="bags":
-        call r13_lines([("karo","가방은 이 담요 밑에 넣어 둘게요. 눈에 젖으면 방에 가서도 한참 말려야 하니까요.")],"entry:karo:bags")
-    elif r13_entry_karo_choice=="present":
-        call screen r13_book("karo",present=True)
-        $ r13_item=_return
-        if r13_catalog_object(r13_item):
-            call r13_show_catalog_object("karo",r13_item)
-        elif r13_item:
-            $ r13_defer_grants=True
-            $ r13_reaction=r13_present("karo",r13_item)
-            $ r13_defer_grants=False
-            show screen r13_material_corner(r13_item)
-            call r13_lines(r13_reaction,"entry:karo:present:"+r13_item, binding_route="dynamic:013")
-            hide screen r13_material_corner
-            $ r13_flush_grants()
-    elif r13_entry_karo_choice=="back":
-        hide r13_visitor
-        $ dialogue_speaker=None
-        return
-    if r13_entry_karo_choice in ("road","witness","bags"):
-        $ r13_flag("question_read:entry:karo:"+r13_entry_karo_choice)
-    jump r13_entry_karo_menu
-
-label r13_entry_done:
-    hide screen r13_material_corner
-    $ r13_inspection_location=None
-    $ r13_grant(["E02"],"원본과 맞춰 보고 바로잡은 입장 기록")
-    $ r13_flag("entry_corrected")
-    call r13_lines([(None, '여관에 들어간 뒤 묵는 곳을 옮기면 알려 주시오.'), ('dad', '아내 만나고 정하겠습니다.'), (None, '부인이 나타나도 여관에 먼저 연락해 달라고 했소, 돌목 씨.'), ('guard', '지금은 이 두 사람 등록 중이오.')],"entry:departure")
-    if room13.get("life_poc"):
-        call r13_lines([("daram","아빠, 이제 빨리 여관 가자. 엄마가 기다릴 거야."),("dad","그래. 13호실이라고 했지.")],"life:arrival:direction") from r13_intro_direction_return
-    jump r13_roam
-
-label r13_carriage:
-    $ r13_carriage_skip = False
-    call r13_carriage_departure
-    call r13_lines([(None, '다람이 과자 봉지를 외투 안쪽으로 당긴다.'), ('dad', '아빠는 안 잡아 줘?', {'carriage_jolt':True}), ('daram', '아빠는 안 부서지잖아.'), ('dad', '부서질 수도 있는데.'), (None, '아이가 내 소매를 붙잡았다. 빈손으로만.'), ('dad', '많이 남았어?'), ('daram', '하나. 엄마 거.'), ('dad', '제일 큰 거네.'), ('daram', '엄마는 못 먹었잖아.'), ('daram', '또 읽어?', {'carriage_letter':True}), ('dad', '방 번호.'), ('daram', '십삼 호. 내가 외웠어. 아빠는 짐 들어.'), ('daram', '오늘은 엄마랑 자?', {'carriage_letter':False}), ('dad', '엄마부터 만나 보자.'), ('daram', '만나면 내가 가운데야.'), ('karo', '지붕 보입니다. 일어나지 마요. 아직 안 섰어요.', {'carriage_reveal':True}), (None, '다람이를 데리고 와 줘. 여관 13호실에서 기다릴게.')],R13_CARRIAGE_IDENTITY, binding_route="dynamic:016")
-    $ persistent.room13_opening_seen=True; r13_carriage_finish()
-    $ r13_carriage_skip = False
-    return
-
+    # 새 세계(v111) 이야기로 바로 간다. 옛 이야기 입구(마차·초소 라벨)는 2026-10-27 지웠다.
+    jump r13_v111_start
 label r13_day:
     if room13["day"]==R13_CASE_DAY and not r13_has("elder_appointment"):
         call r13_scene("hall","여관 계단","calm")
@@ -668,47 +527,6 @@ label r13_argument_menu:
     if r13_argument_result is True and r13_claim=="C4":
         call r13_cinematic("proof")
     return r13_argument_result
-
-# r13_link_reason은 0.16.2 이전 저장의 복귀 지점을 위해 남겨 둔다. 새 흐름은 쓰지 않는다.
-label r13_link_reason(claim):
-    if claim=="C1":
-        menu:
-            "도면과 실제 통로 조사를 어떻게 연결할까?"
-            "정문만 봐서는 다른 길을 배제할 수 없다":
-                call r13_lines([("resident_seori","정문 말고도 방에 드나들 길이 있었군요. 아이만 들어갈 수 있었다는 말은 고치십시오."),("seryeon","그 통로에 아이 어머니 물건도 있었다면서요. 그날 그 길로 들어간 사람이 부인입니까?")],"trial:C1:counter")
-                menu:
-                    "오래된 흔적은 그날의 출입 증거가 아니다":
-                        call r13_lines([("resident_seori","맞습니다. 그날 실제로 누가 드나들었는지는 따로 확인해야 합니다.")],"trial:C1:done")
-                        return True
-                    "엄마는 절대 그럴 사람이 아니다":
-                        call r13_lines([("seryeon","가족을 믿는다는 대답만으로는 그날 출입했는지 확인할 수 없습니다.")],"trial:C1:wrong")
-            "통로가 있으니 할머니가 범인이다":
-                call r13_lines([("resident_seori","통로가 있으니 누군가 드나들 수 있었다는 건 알겠습니다. 하지만 누가 그 통로를 썼는지는 아직 밝혀지지 않았습니다.")],"trial:C1:overreach")
-    elif claim=="C2":
-        menu:
-            "촛대가 부서진 순서와 상처를 이어 보면?"
-            "죽게 한 상처는 촛대가 갈라진 뒤에 생겼다":
-                call r13_lines([("seryeon","아이의 첫 공격 때문에 어르신이 나중에 쓰러졌을 가능성은요?"),("dad","팔의 상처로는 목숨을 앗아 간 머리 상처가 설명되지 않습니다. 떨어져 나간 촛대 윗부분이 그 뒤에 한 번 더 쓰였습니다. 그사이 아이가 어디 있었는지, 누가 다른 길로 드나들었는지 함께 봐야 합니다."),("resident_seori","지금까지 나온 관찰과 방의 기록을 함께 봤습니다. 아이가 한 것으로 확인된 일과 어르신을 죽게 한 공격은 같은 일로 적을 수 없습니다."),("daram","그럼…… 내가 때린 건 어떻게 돼?"),("dad","그건 네가 붙잡힌 손을 빼려고 한 일이야. 사람을 죽게 한 공격과는 달라.")],"trial:C2:done")
-                return True
-            "다람이는 착한 아이니 사람을 죽일 수 없다":
-                call r13_lines([("buri","할아버지도 착한 사람이었어요. 그런 말로 대충 끝내지 마세요.")],"trial:C2:wrong")
-    elif claim=="C3":
-        menu:
-            "나비의 참인 목격과 통로 이동 시간을 연결하면?"
-            "식당에 있던 건 첫 비명 때뿐이다":
-                call r13_lines([("nabi","제가 할머니를 본 건 첫 비명 때뿐이에요. 그 뒤로 주방 안까지 들여다본 건 아니에요."),("granny","그러니까 내가 잠깐 안 보였다는 것 말고는 아무것도 없잖아요."),("resident_seori","그것만으로는 어르신이 해를 입었을 수 있는 시간 내내 다른 곳에 있었다는 증거가 되지 못합니다. 실제로 손을 댔는지는 이어서 보겠습니다.")],"trial:C3:done")
-                return True
-            "나비가 할머니 편이므로 전부 거짓말이다":
-                call r13_lines([("nabi","제가 할머니와 같이 있었던 시간까지 없던 일로 만들지는 마세요.")],"trial:C3:wrong")
-    else:
-        menu:
-            "핀 조각과 그날 뒷정리 기록으로 어떤 변명을 막을까?"
-            "핀과 도구로 ‘구하다 만졌다’를 반박한다":
-                call r13_lines([("dad","첫 비명 때 나비가 채워 준 핀입니다. 구조 직후 봉해 둔 촛대 조각에 그 핀 조각이 끼어 있었습니다. 그러니 도구를 거둬 간 뒤에 들어간 게 아닙니다."),("granny","그래서 내가 들어갔다고 해도, 어르신이 도와달라고 한 거라면요?"),("dad","내려친 방향으로 눌린 고리 안에서 핀도 같이 휘었습니다. 주워 들다가 나중에 끼어든 조각이 아닙니다. 첫 비명 때만 해도 그 핀은 목도리에 달려 있었습니다."),("resident_seori","할머니가 전날 어르신이 크게 변할 낌새를 알고 있었다는 것도 확인됐습니다. 위험을 모른 채 둘만 두었다는 설명도 기록과 다릅니다. 이 사실은 방에서 나온 자료와 따로 남기겠습니다."),("granny","……."),("resident_seori","대답하지 않으셔도 됩니다. 지금까지 모은 자료로 판단하겠습니다.")],"trial:C4:done")
-                return True
-            "핀 주인이니 다른 자료는 필요 없다":
-                call r13_lines([("resident_seori","물건의 주인이 곧 범인인 것은 아닙니다. 그 물건이 언제 어떻게 옮겨 갔는지 밝혀야 합니다.")],"trial:C4:wrong")
-    return False
 
 label r13_verdict:
     if "C2" in room13["propositions"]:

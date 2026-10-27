@@ -7,7 +7,7 @@ REC=json.loads((ROOT/'game/v111/records.json').read_text())
 EV=set(REC['evidence'])
 for f in (ROOT/'game/v111/newworld').glob('d*.json'):EV|=set(json.loads(f.read_text()).get('new_evidence',{}))
 NAMES={}
-for f in ('game/ms14_story.rpy','game/room13_v111_later_bindings.rpy'):
+for f in ('game/room13_v111_source_cast.rpy','game/room13_v111_later_bindings.rpy'):
  for block in re.findall(r'MS14_SPEAKERS(?: = |\.update\()\{(.*?)\}',(ROOT/f).read_text(),re.S):NAMES.update(dict(re.findall(r'"([^"]+)":"([a-z0-9_]+)"',block)))
 class Reactions(unittest.TestCase):
  def test_references_exist(self):

@@ -40,7 +40,10 @@ init 55 python:
         "passage":("13호 뒤 서비스 통로", "winter_passage"),
     }
     # Reuse actual art/face mappings; do not give a narrator the father's face.
-    R13_NAMES = dict(WINTER_NAMES)
+    # 2026-10-27: 옛 겨울 판(WINTER_NAMES)을 지우면서 그 이름표를 여기서 직접 만든다.
+    # dev/dialogue_tool.py 가 이 줄을 글자로 읽는다. 줄 모양을 바꾸지 않는다.
+    R13_NAMES = dict(NAMES, mom="엄마", guard="돌목", mayor="촌장")
+    for _r13_key,_r13_spec in json.load(renpy.file("village-residents.json"))["profiles"].items():R13_NAMES[_r13_key]=_r13_spec["name"]
     R13_NAMES.update(resident_owlgp="부엉이 할아버지", resident_lamplighter="초롱",
         resident_tok="톡", resident_piko="피코", resident_seori="서리 검사원",
         resident_ppul="뿔이 촌장")

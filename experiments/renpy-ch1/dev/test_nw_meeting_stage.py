@@ -7,7 +7,7 @@ SRC=(GAME/'room13_v111_meeting_stage.rpy').read_text()
 def meetings():
     block=re.search(r'    R13_NW_MEETINGS=(\{.*?\n    \})\n',SRC,re.S).group(1)
     return eval(block,{'dict':dict})
-SPEAKERS=ast.literal_eval(re.search(r'MS14_SPEAKERS = (\{.*?\})\n',(GAME/'ms14_story.rpy').read_text(),re.S).group(1))
+SPEAKERS=ast.literal_eval(re.search(r'MS14_SPEAKERS = (\{.*?\})\n',(GAME/'room13_v111_source_cast.rpy').read_text(),re.S).group(1))
 for _m in re.finditer(r'MS14_SPEAKERS\.update\((\{.*?\})\)',(GAME/'room13_v111_later_bindings.rpy').read_text()):SPEAKERS.update(ast.literal_eval(_m.group(1)))
 GENERATED=''.join((GAME/f).read_text() for f in ('room13_v111_days123.rpy','room13_v111_days45.rpy','room13_v111_days610.rpy','room13_v111_days1114.rpy'))
 LABELS=set(re.findall(r'^label (r13_v111_\w+):',GENERATED,re.M))
