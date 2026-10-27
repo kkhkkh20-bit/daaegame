@@ -146,6 +146,6 @@ screen r13_event_offers(ready=False):
             xpos 24 ypos 236 spacing 8
             for key,text in offers:
                 textbutton ("! "+text):
-                    style "r13_action_button" xmaximum 620 padding (14,8) text_size r13_read_size(19,23)
+                    style "r13_action_button" xmaximum 620 padding (14,8) text_size r13_type("small")
                     action Return(("offer",key)) sensitive ready
                     tooltip "가까이 가서 본다"

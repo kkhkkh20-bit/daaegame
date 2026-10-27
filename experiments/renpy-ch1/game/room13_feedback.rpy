@@ -59,7 +59,7 @@ screen r13_evidence_card(key,caption="",conversation=False,notice=False,compact=
             hbox:
                 spacing 10
                 add Transform(r13_record_icon(key),size=(36,36),fit="contain",nearest=True) yalign .5
-                text r13_catalog_title(key) size 20 color "#fff4df" yalign .5 xmaximum 360
+                text r13_catalog_title(key) size r13_type("small") color "#fff4df" yalign .5 xmaximum 360
     else:
         frame:
             xanchor .5 xpos card_center[0] ypos card_center[1] padding (R13_EVIDENCE_CARD_PAD,8,R13_EVIDENCE_CARD_PAD,8)
@@ -68,7 +68,7 @@ screen r13_evidence_card(key,caption="",conversation=False,notice=False,compact=
             vbox:
                 spacing 3
                 add Transform(r13_record_icon(key),size=(R13_EVIDENCE_ICON_SIZE,R13_EVIDENCE_ICON_SIZE),fit="contain",nearest=True) xalign .5
-                text r13_catalog_title(key) size 20 color "#fff4df" xalign .5 text_align .5 xmaximum R13_EVIDENCE_NAME_WIDTH
+                text r13_catalog_title(key) size r13_type("small") color "#fff4df" xalign .5 text_align .5 xmaximum R13_EVIDENCE_NAME_WIDTH
 
 screen r13_evidence_found(keys,conversation=False):
     # 0.18.48: above the desk close-up (90) and the item bag (95), which reopen right after a

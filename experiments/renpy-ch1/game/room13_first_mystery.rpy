@@ -134,35 +134,35 @@ screen r13_plan_comparison():
     default lens=False
     add Solid("#102725f5")
     text "13호실 · 도면 맞춰 보기" style "r13_title_text" xpos 40 ypos 26 color "#efd4a1"
-    text ("%d / 3 · "% (stage+1)+("빈 공간 찾기","연결선 따라가기","가설 세우기")[stage]) xpos 40 ypos 81 size r13_read_size(22,26) color "#d4dfd8"
+    text ("%d / 3 · "% (stage+1)+("빈 공간 찾기","연결선 따라가기","가설 세우기")[stage]) xpos 40 ypos 81 size r13_type("small") color "#d4dfd8"
     frame:
         area (32,127,730,425) padding (15,15) background R13PaperPanel()
         add R13PlanDrawing(stage,gap,lens)
     if stage==0:
-        text "외벽에서 확인한 폭" xpos 110 ypos 160 size 24 color "#493e2d"
-        text "방 안에서 확인한 폭" xpos 110 ypos 314 size 24 color "#493e2d"
+        text "외벽에서 확인한 폭" xpos 110 ypos 160 size r13_type("body") color "#493e2d"
+        text "방 안에서 확인한 폭" xpos 110 ypos 314 size r13_type("body") color "#493e2d"
         for value,title,x,w in (("window","창문 쪽",112,128),("center","방 가운데",280,150),("books","책장 뒤",544,130)):
             button:
                 area (x,432,w,48) padding (10,6)
                 background Solid("#b4853b55" if gap==value else "#00000000")
                 hover_background Solid("#b4853b33")
                 action SetScreenVariable("gap",value)
-                text title color "#493e2d" size r13_read_size(23,27) yalign .5 xalign .5
+                text title color "#493e2d" size r13_type("small") yalign .5 xalign .5
         for value,x,w in (("window",112,128),("center",280,150),("books",544,130)):
             button:
                 area (x,354,w,70) padding (0,0) background None hover_background Solid("#b4853b33")
                 action SetScreenVariable("gap",value)
                 alt {"window":"창문 쪽 폭","center":"방 가운데 폭","books":"책장 뒤 빈 폭"}[value]
-        text "두 그림은 창문 쪽 기준을 맞춰 놓았다." xpos 64 ypos 487 size 22 color "#536158"
+        text "두 그림은 창문 쪽 기준을 맞춰 놓았다." xpos 64 ypos 487 size r13_type("small") color "#536158"
     else:
-        text "2층 · 13호실" xpos 102 ypos 179 size 23 color "#493e2d"
-        text "1층 · 주방" xpos 102 ypos 320 size 23 color "#493e2d"
+        text "2층 · 13호실" xpos 102 ypos 179 size r13_type("small") color "#493e2d"
+        text "1층 · 주방" xpos 102 ypos 320 size r13_type("small") color "#493e2d"
         for key,title,x,y in (("books","책장 아래",135,254),("flue","굴뚝 관",350,181),("kitchen","선반 아래",145,410),("stove","화덕",425,410)):
             textbutton title:
-                style "r13_paper_tab_button" xpos x ypos y xsize 180 ysize 60 text_size r13_read_size(22,26)
+                style "r13_paper_tab_button" xpos x ypos y xsize 180 ysize 60 text_size r13_type("small")
                 background R13PaperPanel(key in endpoints)
                 sensitive stage==1 action SetScreenVariable("endpoints",r13_plan_pair(endpoints,key))
-        text "회색: 배관    붉은색: 나중에 덧그린 선" xpos 64 ypos 487 size 22 color "#536158"
+        text "회색: 배관    붉은색: 나중에 덧그린 선" xpos 64 ypos 487 size r13_type("small") color "#536158"
     frame:
         area (786,127,462,425) padding R13_UI_PADDING["panel"] background R13ActionPanel()
         viewport:
@@ -170,30 +170,30 @@ screen r13_plan_comparison():
             vbox:
                 spacing 16
                 if stage==0:
-                    text "어느 쪽에 남는 공간이 있을까?" size r13_read_size(25,29) color "#fff2cf" xsize 405
+                    text "어느 쪽에 남는 공간이 있을까?" size r13_type("body") color "#fff2cf" xsize 405
                 elif stage==1:
-                    text "붉은 선의 양 끝을 골라 보자." size r13_read_size(25,29) color "#fff2cf" xsize 405
+                    text "붉은 선의 양 끝을 골라 보자." size r13_type("body") color "#fff2cf" xsize 405
                     if r13_plan_has_lens():
                         textbutton ("돋보기 내려놓기" if lens else "돋보기로 겹친 선 보기"):
-                            style "r13_action_button" xsize 410 yminimum 58 text_size 21 action ToggleScreenVariable("lens")
+                            style "r13_action_button" xsize 410 yminimum 58 text_size r13_type("small") action ToggleScreenVariable("lens")
                         if lens:
-                            text "두 끝에 작은 걸쇠 고리가 그려져 있다. 굵은 회색 관은 그 아래로 지난다." size 21 color "#efd4a1" xsize 400
+                            text "두 끝에 작은 걸쇠 고리가 그려져 있다. 굵은 회색 관은 그 아래로 지난다." size r13_type("small") color "#efd4a1" xsize 400
                 else:
-                    text "이 빈 공간과 선은 무엇일까?" size r13_read_size(25,29) color "#fff2cf" xsize 405
+                    text "이 빈 공간과 선은 무엇일까?" size r13_type("body") color "#fff2cf" xsize 405
                     for key,title in (("insulation","열을 가두는 이중 벽이다"),("latch","아래층에서 위층 잠금을 푸는 장치다")):
                         textbutton title:
-                            style "r13_action_button" xsize 410 yminimum 84 text_size r13_read_size(22,26)
+                            style "r13_action_button" xsize 410 yminimum 84 text_size r13_type("small")
                             selected reason==key action SetScreenVariable("reason",key)
                 textbutton ("도움말 접기" if hint else "생각이 막혔다면"):
-                    style "r13_action_button" xsize 410 ysize 56 text_size 21 action ToggleScreenVariable("hint")
+                    style "r13_action_button" xsize 410 ysize 56 text_size r13_type("small") action ToggleScreenVariable("hint")
                 if hint:
-                    text ("왼쪽 시작점은 같다. 두 폭의 오른쪽 끝을 비교하자.","갈림길에서도 붉은색만 따라가 보자.","보온용 벽에도 움직이는 걸쇠가 필요할까?")[stage] size 21 color "#d4dfd8" xsize 400
-    text feedback xpos 40 ypos 565 xsize 1192 size r13_read_size(22,26) color "#efd4a1"
+                    text ("왼쪽 시작점은 같다. 두 폭의 오른쪽 끝을 비교하자.","갈림길에서도 붉은색만 따라가 보자.","보온용 벽에도 움직이는 걸쇠가 필요할까?")[stage] size r13_type("small") color "#d4dfd8" xsize 400
+    text feedback xpos 40 ypos 565 xsize 1192 size r13_type("small") color "#efd4a1"
     textbutton "돌아가기":
-        style "r13_action_button" xpos 40 ypos 641 xsize 235 ysize 62 text_size 24 action Return(False)
-    text ("완료하면 "+r13_time_target()+" · 취소하면 시간은 흐르지 않는다") xpos 299 ypos 659 size 20 color "#d4dfd8"
+        style "r13_action_button" xpos 40 ypos 641 xsize 235 ysize 62 text_size r13_type("body") action Return(False)
+    text ("완료하면 "+r13_time_target()+" · 취소하면 시간은 흐르지 않는다") xpos 299 ypos 659 size r13_type("small") color "#d4dfd8"
     textbutton ("이 가설로 기록" if stage==2 else "선택한 부분 비교"):
-        style "r13_action_button" xpos 905 ypos 641 xsize 335 ysize 62 text_size 24
+        style "r13_action_button" xpos 905 ypos 641 xsize 335 ysize 62 text_size r13_type("body")
         sensitive (gap is not None if stage==0 else len(endpoints)==2 if stage==1 else reason is not None)
         action ([SetScreenVariable("feedback",r13_plan_check(stage,gap,endpoints,reason)[1]),SetScreenVariable("hint",False),SetScreenVariable("stage",stage+1)] if stage<2 and r13_plan_check(stage,gap,endpoints,reason)[0] else Return(True) if stage==2 and r13_plan_check(stage,gap,endpoints,reason)[0] else SetScreenVariable("feedback",r13_plan_check(stage,gap,endpoints,reason)[1]))
     key "game_menu" action Return(False)
@@ -219,32 +219,32 @@ screen r13_plan_read():
     default page=0
     default lens=False
     add Solid("#102725f5")
-    text "여관 보수 도면" xpos 46 ypos 36 size 32 color "#efd4a1"
+    text "여관 보수 도면" xpos 46 ypos 36 size r13_type("title") color "#efd4a1"
     hbox:
         xpos 46 ypos 94 spacing 14
         textbutton "치수 스케치" style "r13_action_button" selected page==0 action SetScreenVariable("page",0)
         textbutton "보수 기록" style "r13_action_button" selected page==1 action SetScreenVariable("page",1)
     add R13PlanDrawing(page,None,lens) xpos 46 ypos 180
     if page==0:
-        text "외벽" xpos 132 ypos 246 color "#493e2d" size 23
-        text "방 안" xpos 132 ypos 366 color "#493e2d" size 23
-        text "창문" xpos 128 ypos 489 color "#493e2d" size 21
-        text "책장" xpos 565 ypos 489 color "#493e2d" size 21
+        text "외벽" xpos 132 ypos 246 color "#493e2d" size r13_type("small")
+        text "방 안" xpos 132 ypos 366 color "#493e2d" size r13_type("small")
+        text "창문" xpos 128 ypos 489 color "#493e2d" size r13_type("small")
+        text "책장" xpos 565 ypos 489 color "#493e2d" size r13_type("small")
     else:
-        text "2층 · 13호실" xpos 100 ypos 233 color "#493e2d" size 23
-        text "1층 · 주방" xpos 100 ypos 372 color "#493e2d" size 23
+        text "2층 · 13호실" xpos 100 ypos 233 color "#493e2d" size r13_type("small")
+        text "1층 · 주방" xpos 100 ypos 372 color "#493e2d" size r13_type("small")
     frame:
         area (780,180,450,360) padding (24,24)
         background R13ActionPanel()
         vbox:
             spacing 24
-            text ("치수 기록" if page==0 else "여백의 메모") size 27 color "#efd4a1"
-            text ("외벽과 실내를 같은 비율로 줄여 옮긴 그림이다. 창문 쪽 끝에는 같은 기준선이 그어져 있다." if page==0 else "회색: 기존 배관\n붉은색: 나중에 덧그린 선\n\n두 층을 가로지르는 선 옆에 작은 기호가 남아 있다.") size r13_read_size(24,28) color "#eee5d5" xsize 402 line_spacing 8
+            text ("치수 기록" if page==0 else "여백의 메모") size r13_type("emphasis") color "#efd4a1"
+            text ("외벽과 실내를 같은 비율로 줄여 옮긴 그림이다. 창문 쪽 끝에는 같은 기준선이 그어져 있다." if page==0 else "회색: 기존 배관\n붉은색: 나중에 덧그린 선\n\n두 층을 가로지르는 선 옆에 작은 기호가 남아 있다.") size r13_type("body") color "#eee5d5" xsize 402 line_spacing 8
     if r13_plan_has_lens():
         textbutton ("돋보기 내려놓기" if lens else "돋보기로 보기") style "r13_action_button" xpos 780 ypos 554 action SetScreenVariable("lens",not lens)
     textbutton "돌아가기" style "r13_action_button" area (46,640,260,58) action Return(False)
     textbutton "실제 폭과 맞춰 본다" style "r13_action_button" area (910,640,320,58) action Return(True)
-    text ("맞춰 보기를 마치면 "+r13_time_target()) xpos 350 ypos 658 size 22 color "#d4dfd8"
+    text ("맞춰 보기를 마치면 "+r13_time_target()) xpos 350 ypos 658 size r13_type("small") color "#d4dfd8"
     key "game_menu" action Return(False)
 
 screen r13_mystery_notebook():

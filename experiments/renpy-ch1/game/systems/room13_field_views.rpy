@@ -100,4 +100,4 @@ screen r13_field_top_button(caption,icon,command,ready=True,width=144,chosen=Fal
             hbox:
                 xalign .5 yalign .5 spacing 7
                 add top_icon yalign .5
-                text caption font R13_UI_BOLD_FONT size 22 color "#29364b" yalign .5
+                text caption font R13_UI_BOLD_FONT size r13_type("small") color "#29364b" yalign .5

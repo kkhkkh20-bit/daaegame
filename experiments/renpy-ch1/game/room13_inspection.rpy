@@ -316,27 +316,27 @@ screen r13_desk_inspection():
         area (16,14,1248,68) padding (18,10) background R13ActionPanel()
         hbox:
             spacing 20
-            text ("책상 · 여행 필기함" if view=="desk" else "열린 서랍") size 27 color "#fff2cf" yalign .5 xsize 330
-            text ("사용 중: "+R13_INSPECTION_ITEMS[selected][0] if selected else "물건을 눌러 살펴보기") size 21 color "#d9bc80" yalign .5 xsize 400
+            text ("책상 · 여행 필기함" if view=="desk" else "열린 서랍") size r13_type("emphasis") color "#fff2cf" yalign .5 xsize 330
+            text ("사용 중: "+R13_INSPECTION_ITEMS[selected][0] if selected else "물건을 눌러 살펴보기") size r13_type("small") color "#d9bc80" yalign .5 xsize 400
             if selected:
-                textbutton "선택 해제" style "r13_action_button" text_size 19 xsize 155 ysize 46 action SetScreenVariable("selected",None) sensitive (lens is None)
+                textbutton "선택 해제" style "r13_action_button" text_size r13_type("small") xsize 155 ysize 46 action SetScreenVariable("selected",None) sensitive (lens is None)
             textbutton ("책상으로" if view=="drawer" else "방으로"):
-                style "r13_action_button" text_size 20 xsize 160 ysize 46
+                style "r13_action_button" text_size r13_type("small") xsize 160 ysize 46
                 action ([SetScreenVariable("view","desk"),SetScreenVariable("selected",None),SetScreenVariable("message","필기함에서 손을 떼고 책상을 다시 보았다.")] if view=="drawer" else Return("exit"))
                 sensitive (lens is None)
     $ hint=GetTooltip()
     if hint and not lens:
         frame:
             xpos 24 ypos 518 padding (12,7) background R13ActionPanel()
-            text hint size 20 color "#fff2cf"
+            text hint size r13_type("small") color "#fff2cf"
     frame:
         area (16,564,1248,80) padding (18,12) background R13ActionPanel()
-        text message size 22 color "#fff2cf" xsize 1200
+        text message size r13_type("small") color "#fff2cf" xsize 1200
     frame:
         area (16,652,1248,60) padding (14,4) background R13ActionPanel()
         hbox:
             spacing 12
-            text "아이템" size 21 color "#d9bc80" yalign .5 xsize 100
+            text "아이템" size r13_type("small") color "#d9bc80" yalign .5 xsize 100
             for key in r13_inspection_state()["inventory"]:
                 button:
                     style "r13_action_button" xsize 222 ysize 52 padding (8,2)
@@ -346,9 +346,9 @@ screen r13_desk_inspection():
                     hbox:
                         spacing 8 yalign .5
                         add r13_inspection_icon(key,44,44) yalign .5
-                        text R13_INSPECTION_ITEMS[key][0] size 21 color "#fff2cf" yalign .5
+                        text R13_INSPECTION_ITEMS[key][0] size r13_type("small") color "#fff2cf" yalign .5
             if not r13_inspection_state()["inventory"]:
-                text "챙긴 물건이 여기에 놓입니다." size 21 color "#c1c9c2" yalign .5
+                text "챙긴 물건이 여기에 놓입니다." size r13_type("small") color "#c1c9c2" yalign .5
     if lens:
         button:
             area (0,0,1280,720) padding (0,0) background Solid("#081820e8")
@@ -357,9 +357,9 @@ screen r13_desk_inspection():
             area (270,90,740,550) padding (20,16) background R13ActionPanel()
             vbox:
                 spacing 12
-                text ("돋보기 · "+R13_INSPECTION_NAMES[lens[1]]) size 25 color "#f6d18a"
+                text ("돋보기 · "+R13_INSPECTION_NAMES[lens[1]]) size r13_type("body") color "#f6d18a"
                 add r13_inspection_lens(lens[0],lens[1]) xalign .5
-                textbutton "돋보기 내려놓기" style "r13_action_button" text_size 22 xsize 690 ysize 54 action SetScreenVariable("lens",None)
+                textbutton "돋보기 내려놓기" style "r13_action_button" text_size r13_type("small") xsize 690 ysize 54 action SetScreenVariable("lens",None)
         key "game_menu" action SetScreenVariable("lens",None)
     elif selected:
         key "game_menu" action SetScreenVariable("selected",None)
@@ -375,7 +375,7 @@ screen r13_item_bag():
 
 screen r13_item_bag_content():
     # 2026-10-27 수첩 공통 틀 좌표. (r13_item_bag 은 initial_tab="all" 로 열어 실제로는 자료 탭이 보인다.)
-    text "아이템" xpos (R13_NB_LEFT+4) ypos R13_NB_TOP size (r13_type("subtitle") if R13_TYPE_V2 else 26) color (r13_type_color("ink") if R13_TYPE_V2 else "#765426") font R13_UI_BOLD_FONT
+    text "아이템" xpos (R13_NB_LEFT+4) ypos R13_NB_TOP size (r13_type("subtitle")) color (r13_type_color("ink")) font R13_UI_BOLD_FONT
     viewport:
         area (R13_NB_LEFT,R13_NB_TOP+48,R13_NB_WIDTH,r13_nb_body_bottom()-(R13_NB_TOP+48)) mousewheel True draggable True scrollbars "vertical"
         vbox:
@@ -388,10 +388,10 @@ screen r13_item_bag_content():
                         add r13_inspection_icon(key,62,56)
                         vbox:
                             spacing 8
-                            text R13_INSPECTION_ITEMS[key][0] size (r13_type("emphasis") if R13_TYPE_V2 else r13_read_size(23,27)) color (r13_type_color("accent") if R13_TYPE_V2 else "#765426") xsize (R13_NB_WIDTH-150)
-                            text R13_INSPECTION_ITEMS[key][1] size (r13_type("body") if R13_TYPE_V2 else r13_read_size(20,24)) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30") xsize (R13_NB_WIDTH-150)
+                            text R13_INSPECTION_ITEMS[key][0] size (r13_type("emphasis")) color (r13_type_color("accent")) xsize (R13_NB_WIDTH-150)
+                            text R13_INSPECTION_ITEMS[key][1] size (r13_type("body")) color (r13_type_color("ink")) xsize (R13_NB_WIDTH-150)
             if not r13_inspection_state()["inventory"]:
-                text "아직 챙긴 도구가 없다." size (r13_type("body") if R13_TYPE_V2 else 22) color (r13_type_color("muted") if R13_TYPE_V2 else "#796044")
+                text "아직 챙긴 도구가 없다." size (r13_type("body")) color (r13_type_color("muted"))
     if r13_tool_notes():
         use r13_nb_footer_button(1,"돋보기 관찰 메모",Show("r13_tool_notebook"),width=R13_CONTROL["width"],control_id="r13_nb_tool_notes")
 

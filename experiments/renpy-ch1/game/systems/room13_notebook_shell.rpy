@@ -49,37 +49,29 @@ init 60 python:
         return R13_NB_RIGHT-(index*(R13_NB_BUTTON_W+R13_NB_GAP))-width
 
     def r13_nb_title_size():
-        if R13_TYPE_V2:return r13_type("hero")
-        return 34
+        return r13_type("display")
 
     def r13_nb_small_size():
-        if R13_TYPE_V2:return r13_type("small")
-        return 18 if r13_touch_ui() else 16
+        return r13_type("small")
 
     def r13_nb_heading_size():
         """탭 안의 묶음 제목(알게 된 관계, 조사 메모, 달력 …)."""
-        if R13_TYPE_V2:return r13_type("subtitle")
-        return 26
+        return r13_type("subtitle")
 
     def r13_nb_body_size():
-        if R13_TYPE_V2:return r13_type("body")
-        return r13_read_size(21,25)
+        return r13_type("body")
 
     def r13_nb_emphasis_size():
-        if R13_TYPE_V2:return r13_type("emphasis")
-        return r13_read_size(23,27)
+        return r13_type("emphasis")
 
     def r13_nb_ink():
-        if R13_TYPE_V2:return r13_type_color("ink")
-        return "#493323"
+        return r13_type_color("ink")
 
     def r13_nb_muted():
-        if R13_TYPE_V2:return r13_type_color("muted")
-        return "#756f66"
+        return r13_type_color("muted")
 
     def r13_nb_accent():
-        if R13_TYPE_V2:return r13_type_color("accent")
-        return "#8d4b2d"
+        return r13_type_color("accent")
 
 # 틀 한 벌: 어두운 막, 수첩 판, 제목(과 부제·회차), 상단 탭 줄, 닫기 X, 금색 선.
 #   tabs    [(key, title, action), ...] — 제목 오른쪽에 90px 간격으로 놓는다(r13_ev_tab_x 가 제목 길이를 피한다).

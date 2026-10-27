@@ -218,7 +218,7 @@ screen r13_fork_card(column,row,small=16):
                     xysize (151,thumb_height)
                     add Transform(r13_fork_image(row['record'],column['place']),xysize=(151,thumb_height),fit='cover',matrixcolor=SepiaMatrix() if row['kind']=='old' else BrightnessMatrix(0))
                 text result_label xpos 0 ypos (thumb_height+2) xsize 151 size (small+2) line_spacing -2 color '#263b52' font R13_UI_BOLD_FONT
-                text ('이번 회차' if row['kind']=='current' else '%d회차에서 봄'%(row['record'] or {}).get('run',1)) xpos 0 ypos 82 xsize 151 size 14 color '#756f66' font R13_UI_BOLD_FONT
+                text ('이번 회차' if row['kind']=='current' else '%d회차에서 봄'%(row['record'] or {}).get('run',1)) xpos 0 ypos 82 xsize 151 size r13_type("small") color '#756f66' font R13_UI_BOLD_FONT
 
 screen r13_fork_card_stack(column,small,height):
     default scroll=ui.adjustment()

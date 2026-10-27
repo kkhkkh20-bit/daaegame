@@ -62,7 +62,7 @@ init 80:
         hover_background Solid("#2c524c")
     style r13_footer_button_text is text:
         font R13_UI_FONT
-        size 20
+        size r13_type("small")
         color "#e9e2cf"
         hover_color "#ffe39a"
         insensitive_color "#6d7b77"

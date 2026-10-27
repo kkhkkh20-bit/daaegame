@@ -334,7 +334,7 @@ screen r13_meeting_objection(claim,sid):
     add Transform("assets/room13-ui-objection01917.webp",xysize=(1120,420),fit="contain",nearest=True) xpos 80 ypos 132
     frame:
         area (160,548,960,96) padding (20,14) background R13PaperFrame()
-        text r13_meeting_statement_text(claim,sid) size (r13_type("body") if R13_TYPE_V2 else r13_read_size(23,26)) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30") xmaximum 920
+        text r13_meeting_statement_text(claim,sid) size (r13_type("body")) color (r13_type_color("ink")) xmaximum 920
 
 screen r13_meeting_evidence_hold(claim,sid,key):
     zorder 35
@@ -343,8 +343,8 @@ screen r13_meeting_evidence_hold(claim,sid,key):
         area (80,400,910,88) padding (16,10) background R13PaperFrame()
         vbox:
             spacing 2
-            text "붙잡은 발언" size (r13_type("small") if R13_TYPE_V2 else 14) color (r13_type_color("muted") if R13_TYPE_V2 else "#795d40")
-            text r13_meeting_statement_text(claim,sid) size (r13_type("body") if R13_TYPE_V2 else r13_read_size(19,22)) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30") xmaximum 878
+            text "붙잡은 발언" size (r13_type("small")) color (r13_type_color("muted"))
+            text r13_meeting_statement_text(claim,sid) size (r13_type("body")) color (r13_type_color("ink")) xmaximum 878
 
 label r13_meeting_direct_interrupt(claim,sid,key):
     $ r13_meeting_direct_beat("interrupt",claim,sid,key)

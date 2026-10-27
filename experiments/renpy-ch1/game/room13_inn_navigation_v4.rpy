@@ -101,7 +101,7 @@ screen r13_inn_v4_world_chips(ready=False):
             insensitive_background r13_inn_v4_chip_background(w, h, locked=True)
             action Return(("travel", key)) sensitive (ready and active)
             alt label
-            text ("› "+label) size 23 color "#65503b" hover_color "#493b30" insensitive_color "#82745e" xalign .5 ypos (h//2) yanchor .5
+            text ("› "+label) size r13_type("small") color "#65503b" hover_color "#493b30" insensitive_color "#82745e" xalign .5 ypos (h//2) yanchor .5
 
 screen r13_inn_v4_screen_chips(ready=False):
     for key, label, (x, y, w, h), active in r13_inn_v4_chips(room13["location"], world=False):
@@ -113,7 +113,7 @@ screen r13_inn_v4_screen_chips(ready=False):
             insensitive_background r13_inn_v4_chip_background(w, h, locked=True)
             action Return(("travel", key)) sensitive (ready and active)
             alt label
-            text ("› "+label) size 23 color "#65503b" hover_color "#493b30" insensitive_color "#82745e" xalign .5 ypos (h//2) yanchor .5
+            text ("› "+label) size r13_type("small") color "#65503b" hover_color "#493b30" insensitive_color "#82745e" xalign .5 ypos (h//2) yanchor .5
 
 # Saved actions keep this screen name and the local travel tuple contract.
 screen r13_inn_guide():

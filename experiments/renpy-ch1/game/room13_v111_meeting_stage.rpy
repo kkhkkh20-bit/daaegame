@@ -194,8 +194,8 @@ screen r13_nw_meeting_chrome(claim):
             xpos 42 xsize 812
             spacing 3
             # 타이포 V2 단계는 r13_meeting_chrome 과 같다(머리띠 86px 안에 subtitle+title 이 안 들어가 small+body).
-            text (r13_meeting_header(r13_debate_session(claim))+("" if r13_nw_unlimited(key) else "  ·  남은 기회 %d / %d"%(left,r13_nw_tries_max(key)))) size (r13_type("small") if R13_TYPE_V2 else r13_read_size(17,19)) color (r13_type_color("muted") if R13_TYPE_V2 else "#795d40") font R13_UI_BOLD_FONT
-            text ("쟁점 · "+r13_nw_meeting_issue(key)) size (r13_type("body") if R13_TYPE_V2 else r13_read_size(21,25)) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30") font R13_UI_BOLD_FONT
+            text (r13_meeting_header(r13_debate_session(claim))+("" if r13_nw_unlimited(key) else "  ·  남은 기회 %d / %d"%(left,r13_nw_tries_max(key)))) size (r13_type("small")) color (r13_type_color("muted")) font R13_UI_BOLD_FONT
+            text ("쟁점 · "+r13_nw_meeting_issue(key)) size (r13_type("body")) color (r13_type_color("ink")) font R13_UI_BOLD_FONT
         add Solid("#d6bf98") xpos 0 ypos 64 xysize (860,3)
         if left<r13_nw_tries_max(key):
             add Solid("#a88043") xpos 0 ypos 64 xysize (int(860*left/float(r13_nw_tries_max(key))),3)

@@ -57,7 +57,7 @@ init 81:
         padding (24,14)
     style r13_title_button_text is r13_button_text:
         font R13_UI_FONT
-        size 25
+        size r13_type("body")
         bold False
         color '#503a2c'
         hover_color '#fff5df'

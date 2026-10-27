@@ -52,35 +52,35 @@ screen r13_life_closeup(scene,after=False,tools=(),actions=(),message="",overlay
         area (16,14,1248,68) padding (18,10) background R13ActionPanel()
         hbox:
             spacing 20
-            text spec["title"] size 27 color "#fff2cf" yalign .5 xsize 420
-            text ("사용 중: "+r13_life_tool_name(selected) if selected else "물건을 눌러 살펴보기") size 21 color "#d9bc80" yalign .5 xsize 380
+            text spec["title"] size r13_type("emphasis") color "#fff2cf" yalign .5 xsize 420
+            text ("사용 중: "+r13_life_tool_name(selected) if selected else "물건을 눌러 살펴보기") size r13_type("small") color "#d9bc80" yalign .5 xsize 380
             if selected:
-                textbutton "선택 해제" style "r13_action_button" text_size 19 xsize 155 ysize 46 action SetScreenVariable("selected",None)
+                textbutton "선택 해제" style "r13_action_button" text_size r13_type("small") xsize 155 ysize 46 action SetScreenVariable("selected",None)
     $ hint=GetTooltip()
     if hint:
         frame:
             xpos 24 ypos 518 padding (12,7) background R13ActionPanel()
-            text hint size 20 color "#fff2cf"
+            text hint size r13_type("small") color "#fff2cf"
     frame:
         area (16,564,1248,80) padding (18,12) background R13ActionPanel()
-        text message size 22 color "#fff2cf" xsize 1200
+        text message size r13_type("small") color "#fff2cf" xsize 1200
     frame:
         area (16,652,1248,60) padding (14,4) background R13ActionPanel()
         hbox:
             spacing 12
-            text "쓸 물건" size 21 color "#d9bc80" yalign .5 xsize 100
+            text "쓸 물건" size r13_type("small") color "#d9bc80" yalign .5 xsize 100
             for key in tools:
                 textbutton r13_life_tool_name(key):
-                    style "r13_action_button" text_size 21 xsize 222 ysize 52
+                    style "r13_action_button" text_size r13_type("small") xsize 222 ysize 52
                     background (Solid("#675635") if selected==key else R13ActionPanel())
                     action SetScreenVariable("selected",None if selected==key else key) sensitive ready
             if not tools:
-                text "지금 쓸 수 있는 물건이 없다." size 21 color "#c1c9c2" yalign .5
+                text "지금 쓸 수 있는 물건이 없다." size r13_type("small") color "#c1c9c2" yalign .5
     vbox:
         xpos 1250 xanchor 1.0 ypos 96 spacing 8
         for value,title in actions:
             textbutton title:
-                style "r13_action_button" text_size 21 xmaximum 560 padding (16,10)
+                style "r13_action_button" text_size r13_type("small") xmaximum 560 padding (16,10)
                 action Return(("action",value)) sensitive ready
     if selected:
         key "game_menu" action SetScreenVariable("selected",None)

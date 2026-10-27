@@ -27,15 +27,15 @@ screen r13_admin_meeting_picker():
         xalign .5 yalign .5 xsize 900 padding (28,24) background R13ActionPanel()
         vbox:
             spacing 14
-            text "회의 바로 테스트" size 30 color "#f6d18a"
-            text "실제 회의 로직 · 앞 논점 완료 · 테스트 자료/밤이 동의 포함" size 21 color "#fff4df"
-            text "현재 진행과 저장은 유지됩니다. 나가서 같은 회의를 고르면 처음부터 다시 시작합니다." size 21 color "#ced9d4" xsize 840
+            text "회의 바로 테스트" size r13_type("title") color "#f6d18a"
+            text "실제 회의 로직 · 앞 논점 완료 · 테스트 자료/밤이 동의 포함" size r13_type("small") color "#fff4df"
+            text "현재 진행과 저장은 유지됩니다. 나가서 같은 회의를 고르면 처음부터 다시 시작합니다." size r13_type("small") color "#ced9d4" xsize 840
             if persistent.room13_admin:
                 for claim in R13_ADMIN_MEETINGS:
                     textbutton (claim+" · "+R13_DEBATE[claim]["title"]):
-                        style "r13_action_button" text_size 22 padding (16,10)
+                        style "r13_action_button" text_size r13_type("small") padding (16,10)
                         action Replay("r13_admin_meeting_replay",scope={"r13_admin_meeting_claim":claim},locked=False)
-            textbutton "닫기" style "r13_action_button" text_size 22 action Hide("r13_admin_meeting_picker")
+            textbutton "닫기" style "r13_action_button" text_size r13_type("small") action Hide("r13_admin_meeting_picker")
     key "game_menu" action Hide("r13_admin_meeting_picker")
 
 label r13_admin_meeting_replay:
@@ -59,7 +59,7 @@ label r13_admin_meeting_replay:
 screen r13_admin_meeting_controls():
     zorder 200
     textbutton "테스트 종료 · 다시 선택":
-        style "r13_action_button" xpos 942 ypos 92 xsize 314 ysize (80 if r13_touch_ui() else 56) text_size 18
+        style "r13_action_button" xpos 942 ypos 92 xsize 314 ysize (80 if r13_touch_ui() else 56) text_size r13_type("small")
         action EndReplay(confirm=False)
     key "game_menu" action EndReplay(confirm=False)
     if "quick_save" in config.keymap:
@@ -75,7 +75,7 @@ screen r13_admin_meeting_finished():
         xalign .5 yalign .5 xsize 720 padding (28,24) background R13ActionPanel()
         vbox:
             spacing 18
-            text "회의 테스트가 끝났습니다" size 28 color "#f6d18a"
-            text "결과는 본편 진행에 반영되지 않습니다." size 22 color "#fff4df"
-            textbutton "회의 다시 선택 / 나가기" style "r13_action_button" text_size 23 action EndReplay(confirm=False)
+            text "회의 테스트가 끝났습니다" size r13_type("subtitle") color "#f6d18a"
+            text "결과는 본편 진행에 반영되지 않습니다." size r13_type("small") color "#fff4df"
+            textbutton "회의 다시 선택 / 나가기" style "r13_action_button" text_size r13_type("small") action EndReplay(confirm=False)
     key "game_menu" action EndReplay(confirm=False)

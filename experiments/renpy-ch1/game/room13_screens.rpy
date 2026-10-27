@@ -21,17 +21,17 @@ screen r13_hud():
                 # Pretendard 실측(진행폭·ascent+descent)으로 상한을 둔다 — 숫자 32(줄 39, 「14」 36px)·일째 24(줄 29, 42px)
                 # ·요일 26(줄 33, 67px)·시간대 24(줄 29, 「늦은 저녁」 89px). 왼쪽 열 3+39, 41+29=70 / 오른쪽 열 10+33, 42+29=71.
                 # 칸을 키우지 않는 것은 이름표 충돌 판정(r13_field_ui_rects)이 이 칸을 기준으로 해서다.
-                text ("%02d"%room13.get("day",1)) xpos 14 ypos (1 if R13_TYPE_V2 else 8) xsize (60 if R13_TYPE_V2 else 48) text_align .5 size (min(r13_type("title") if R13_TYPE_V2 else 28,32)) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30") font R13_UI_BOLD_FONT
-                text "일째" xpos 14 ypos (37 if R13_TYPE_V2 else 42) xsize (60 if R13_TYPE_V2 else 48) text_align .5 size (min(r13_type("small") if R13_TYPE_V2 else 14,24)) color (r13_type_color("muted") if R13_TYPE_V2 else "#796044") font r13_ui_font()
-                text r13_clock().split(" · ")[1] xpos 76 ypos (6 if R13_TYPE_V2 else 12) xsize (104 if R13_TYPE_V2 else 92) size (min(r13_type("body") if R13_TYPE_V2 else 20,26)) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30") font R13_UI_BOLD_FONT
-                text r13_clock().split(" · ")[-1] xpos 76 ypos (37 if R13_TYPE_V2 else 40) xsize (104 if R13_TYPE_V2 else 92) size (min(r13_type("small") if R13_TYPE_V2 else 18,24)) color (r13_type_color("muted") if R13_TYPE_V2 else "#65503b") font r13_ui_font()
+                text ("%02d"%room13.get("day",1)) xpos 14 ypos (1) xsize (60) text_align .5 size (min(r13_type("title"),32)) color (r13_type_color("ink")) font R13_UI_BOLD_FONT
+                text "일째" xpos 14 ypos (37) xsize (60) text_align .5 size (min(r13_type("small"),24)) color (r13_type_color("muted")) font r13_ui_font()
+                text r13_clock().split(" · ")[1] xpos 76 ypos (6) xsize (104) size (min(r13_type("body"),26)) color (r13_type_color("ink")) font R13_UI_BOLD_FONT
+                text r13_clock().split(" · ")[-1] xpos 76 ypos (37) xsize (104) size (min(r13_type("small"),24)) color (r13_type_color("muted")) font r13_ui_font()
                 add R13TimeDial() xpos 182 ypos 16
         frame:
             xpos 24 ypos 20 padding (12,8) background r13_field_paper(tape=True)
             hbox:
                 spacing 1
                 add Transform(Crop((16,16,32,32),r13_asset_path("file:assets/ui-b-field/b_icon_pin.png")),xysize=(28,28)) yalign .5
-                text r13_hud_place() size (r13_type("title") if R13_TYPE_V2 else r13_read_size(20,23)) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30") font R13_UI_BOLD_FONT yalign .5
+                text r13_hud_place() size (r13_type("title")) color (r13_type_color("ink")) font R13_UI_BOLD_FONT yalign .5
 
 init 80:
     style r13_toolbar_button is r13_action_button:
@@ -117,7 +117,7 @@ screen r13_hub(entry=False):
         # gives it, goods are bought from the seller in person; only the purse is shown.
         frame:
             xpos 510 ypos 100 padding (12,6) background r13_field_paper(label=True)
-            text ("가진 돈 %d냥"%r13_wallet(room13)["cash"]) size (r13_type("small") if R13_TYPE_V2 else r13_read_size(18,21)) color (r13_type_color("ink") if R13_TYPE_V2 else "#664932")
+            text ("가진 돈 %d냥"%r13_wallet(room13)["cash"]) size (r13_type("small")) color (r13_type_color("ink"))
     if not entry and not r13_v111_active():
         use r13_event_offers(input_ready)
     use r13_admin_key()
@@ -134,7 +134,7 @@ screen r13_hub(entry=False):
             xpos max(12,min(980,renpy.get_mouse_pos()[0]+18)) ypos max(90,min(594,renpy.get_mouse_pos()[1]+22)) padding (14,9) background r13_field_paper()
             hbox:
                 spacing 6
-                text hint size (r13_type("body") if R13_TYPE_V2 else 20) color (r13_type_color("ink") if R13_TYPE_V2 else "#4b3021") yalign .5
+                text hint size (r13_type("body")) color (r13_type_color("ink")) yalign .5
 
     if world_moving:
         timer .05 repeat True action Function(r13_world_pan_finish,world_adjustment,_update_screens=False)
@@ -195,7 +195,7 @@ screen r13_world_contents(entry=False,ready=False):
             frame:
                 xpos nameplate["rect"][0]-38 ypos nameplate["rect"][1]+4 xsize 34 ysize 40 padding (0,0)
                 background Solid("#d9a441")
-                text "!" size 28 color "#2a1d10" xalign .5 yalign .5
+                text "!" size r13_type("subtitle") color "#2a1d10" xalign .5 yalign .5
 
     use r13_life_group_labels(entry,ready)
 
@@ -289,16 +289,16 @@ screen r13_activities():
         area (180,160,920,495) padding (26,25)
         vbox:
             spacing 20
-            text "이곳에서 할 수 있는 일" size 32 color "#765426"
+            text "이곳에서 할 수 있는 일" size r13_type("title") color "#765426"
             viewport:
                 xsize 850 ysize 305 draggable True mousewheel True scrollbars "vertical"
                 vbox:
                     spacing 16
                     for key,a in r13_actions():
                         textbutton (a["title"]+" · "+r13_learning_time_text(a.get("cost",1),ending=key=="w2_escape")):
-                            action Return(key) sensitive ready and (room13["period"]<3 or not a.get("cost",1)) xsize 810 text_size 24
+                            action Return(key) sensitive ready and (room13["period"]<3 or not a.get("cost",1)) xsize 810 text_size r13_type("body")
                     if not r13_actions():
-                        text "주변을 살피거나 주민과 이야기하며 확인할 일을 찾아보자." size 24 xsize 780
+                        text "주변을 살피거나 주민과 이야기하며 확인할 일을 찾아보자." size r13_type("body") xsize 780
             textbutton "돌아가기" action Return(False) sensitive ready
 
 screen r13_book(target=None,present=False,hearing=False,called=False,purpose=None,chosen=()):
@@ -386,27 +386,27 @@ screen r13_book(target=None,present=False,hearing=False,called=False,purpose=Non
 screen r13_calendar_content():
     default week=min(1,(room13["day"]-1)//7)
     # 2026-10-27 수첩 공통 틀: 달력 한 주(7칸 x 128)는 틀 안쪽 132 부터, 지난 주·다음 주는 하단 버튼 줄로.
-    $ body_size=(r13_type("body") if R13_TYPE_V2 else r13_read_size(21,25))
-    $ small_size=(r13_type("small") if R13_TYPE_V2 else 18)
-    $ ink=(r13_type_color("ink") if R13_TYPE_V2 else "#493b30")
-    $ muted=(r13_type_color("muted") if R13_TYPE_V2 else "#796044")
-    $ accent=(r13_type_color("accent") if R13_TYPE_V2 else "#765426")
-    text "달력" xpos (R13_NB_LEFT+4) ypos R13_NB_TOP size (r13_type("subtitle") if R13_TYPE_V2 else 26) color ink font R13_UI_BOLD_FONT
-    text ("%d주째"%(week+1)) xpos R13_NB_RIGHT xanchor 1.0 ypos (R13_NB_TOP+6) size (r13_type("body") if R13_TYPE_V2 else 22) color muted font R13_UI_BOLD_FONT
+    $ body_size=(r13_type("body"))
+    $ small_size=(r13_type("small"))
+    $ ink=(r13_type_color("ink"))
+    $ muted=(r13_type_color("muted"))
+    $ accent=(r13_type_color("accent"))
+    text "달력" xpos (R13_NB_LEFT+4) ypos R13_NB_TOP size (r13_type("subtitle")) color ink font R13_UI_BOLD_FONT
+    text ("%d주째"%(week+1)) xpos R13_NB_RIGHT xanchor 1.0 ypos (R13_NB_TOP+6) size (r13_type("body")) color muted font R13_UI_BOLD_FONT
     for i in range(7):
-        text r13_weekday(week*7+1+i) xpos (R13_NB_LEFT+18+i*128) ypos (R13_NB_TOP+52) size (r13_type("body") if R13_TYPE_V2 else 22) color ink
+        text r13_weekday(week*7+1+i) xpos (R13_NB_LEFT+18+i*128) ypos (R13_NB_TOP+52) size (r13_type("body")) color ink
     for day in range(week*7+1,week*7+8):
         frame:
             area (R13_NB_LEFT+((day-1)%7)*128,R13_NB_TOP+86,120,116)
             background R13PaperPanel(day==room13["day"]) padding (10,12)
             vbox:
                 spacing 10
-                text (str(day)+"일") size (r13_type("emphasis") if R13_TYPE_V2 else r13_read_size(23,27)) color ink
+                text (str(day)+"일") size (r13_type("emphasis")) color ink
                 if day==room13["day"]:
                     text "오늘" size small_size color accent
                 elif day<room13["day"]:
                     text "지난 날" size small_size color muted
-    text "확인한 약속" xpos (R13_NB_LEFT+4) ypos (R13_NB_TOP+220) size (r13_type("body") if R13_TYPE_V2 else 23) color accent font R13_UI_BOLD_FONT
+    text "확인한 약속" xpos (R13_NB_LEFT+4) ypos (R13_NB_TOP+220) size (r13_type("body")) color accent font R13_UI_BOLD_FONT
     viewport:
         area (R13_NB_LEFT,R13_NB_TOP+256,R13_NB_WIDTH,max(60,r13_nb_body_bottom()-(R13_NB_TOP+256))) mousewheel True draggable True scrollbars "vertical"
         vbox:
@@ -427,22 +427,22 @@ screen r13_debate(claim):
         area (50,155,1180,425) padding (26,22) background R13PaperPanel()
         vbox:
             spacing 22
-            text R13_CLAIMS[claim]["assertion"] size 32 color "#765426"
-            text "내가 내놓은 근거" size 23
+            text R13_CLAIMS[claim]["assertion"] size r13_type("title") color "#765426"
+            text "내가 내놓은 근거" size r13_type("small")
             viewport:
                 xsize 1110 ysize 180 draggable True mousewheel True scrollbars "vertical"
                 vbox:
                     spacing 7
                     for key in room13["arguments"].get(claim,[]):
-                        text ("· "+ROOM13["evidence"][key]["name"]) size 22
+                        text ("· "+ROOM13["evidence"][key]["name"]) size r13_type("small")
                     if not room13["arguments"].get(claim):
-                        text "아직 내놓지 않았다." size 22 color "#817e70"
+                        text "아직 내놓지 않았다." size r13_type("small") color "#817e70"
             hbox:
                 spacing 18
                 textbutton "근거 내놓기" action Return("present") sensitive ready
                 textbutton "되묻기" action Return("press") sensitive ready
                 textbutton "선택한 근거 제출" action Return("argue") sensitive ready
-                textbutton "이 문제는 남겨 둔다" action Return("leave") sensitive ready text_size 22
+                textbutton "이 문제는 남겨 둔다" action Return("leave") sensitive ready text_size r13_type("small")
 
 screen r13_handoff():
     style_prefix "r13"
@@ -453,10 +453,10 @@ screen r13_handoff():
         area (175,135,930,465) padding (35,30)
         vbox:
             spacing 25
-            text "13호 사건 · 둘째 주 이어가기" size 35 color "#765426"
-            text "이전 개발본의 끝에 도착했습니다.\n이번에 내려진 결정과, 갇혔는지 풀려났는지를 그대로 이어 갑니다." size 27 xsize 840
-            text ("다람이: "+("아빠와 동행" if room13["daram_state"]=="with_dad" else "보호시설에 갇힘")+"\n할머니: "+("갇힘" if room13["granny_state"]=="detained" else "자유 상태")) size 25
-            text "이 화면은 이야기 속 엔딩이 아닙니다." size 22 color "#717367"
+            text "13호 사건 · 둘째 주 이어가기" size r13_type("title") color "#765426"
+            text "이전 개발본의 끝에 도착했습니다.\n이번에 내려진 결정과, 갇혔는지 풀려났는지를 그대로 이어 갑니다." size r13_type("emphasis") xsize 840
+            text ("다람이: "+("아빠와 동행" if room13["daram_state"]=="with_dad" else "보호시설에 갇힘")+"\n할머니: "+("갇힘" if room13["granny_state"]=="detained" else "자유 상태")) size r13_type("body")
+            text "이 화면은 이야기 속 엔딩이 아닙니다." size r13_type("small") color "#717367"
             hbox:
                 spacing 18
                 textbutton "저장하기" action ShowMenu("save")

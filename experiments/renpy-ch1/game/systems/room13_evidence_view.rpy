@@ -147,7 +147,7 @@ init 330 python:
     def r13_ev_tab_x(title):
         """0.20.5 (UI review): the first tab starts after the sheet title, never under it.
         2026-10-27 공통 틀: 제목은 x114(갈림길과 같다), 크기는 hero 단계."""
-        size=(r13_type("hero") if R13_TYPE_V2 else 34)
+        size=(r13_type("display"))
         return max(R13_EV_TAB_X,R13_EV_TITLE_X+r13_ev_title_width(title,size)+24)
     def r13_ev_text_units(text):
         # 0.20.12: a space or Latin letter is narrower than a Hangul syllable.
@@ -262,16 +262,13 @@ init 330 python:
 
     def r13_ev_small_size():
         # Touch: small text is never under 18px.
-        if R13_TYPE_V2:return r13_type("small")  # 2026-10-27 타이포 시안: 15px 를 18 로 올린다
-        return r13_read_size(18,21) if r13_touch_ui() else r13_read_size(15,18)  # 0.20.5 (Codex A04): large text on phones too
+        return r13_type("small")  # 2026-10-27 타이포 시안: 15px 를 18 로 올린다
 
     def r13_ev_fact_size():
-        if R13_TYPE_V2:return r13_type("emphasis")  # 2026-10-27 타이포 시안: 자료 본문. 휴대폰은 30 에서 26 으로 준다
-        return r13_read_size(30,32) if r13_touch_ui() else r13_read_size(19,23)
+        return r13_type("emphasis")  # 2026-10-27 타이포 시안: 자료 본문. 휴대폰은 30 에서 26 으로 준다
 
     def r13_ev_reading_size():
-        if R13_TYPE_V2:return r13_type("small")  # 2026-10-27 타이포 시안: 출처·안내는 PC·휴대폰 모두 small
-        return r13_read_size(26,28) if r13_touch_ui() else r13_ev_small_size()
+        return r13_type("small")  # 2026-10-27 타이포 시안: 출처·안내는 PC·휴대폰 모두 small
 
     def r13_ev_label_size(label,width):
         # A long name in a fixed-width control shrinks instead of spilling out (never under the small size).
@@ -335,7 +332,7 @@ init 331:
     style r13ev_tab_button is button:
         background None hover_background None selected_background None padding (0,0)
     style r13ev_tab_button_text is text:
-        font R13_UI_BOLD_FONT size 24 color "#493323" hover_color "#8d4b2d" selected_color "#fff6e2" xalign .5 yalign .5
+        font R13_UI_BOLD_FONT size r13_type("body") color "#493323" hover_color "#8d4b2d" selected_color "#fff6e2" xalign .5 yalign .5
     style r13ev_chip_button is button:
         background r13_field_button_art() hover_background r13_field_button_art()
         selected_background r13_field_button_art(True) selected_hover_background r13_field_button_art(True)
@@ -367,12 +364,12 @@ screen r13_evidence_grid(entries,detail,page,owner,pair=None,pair_slot=1,archive
     $ gx=R13_EV_GRID_X
     $ gy=R13_EV_ROWS_Y
     # 2026-10-27 시안 확인: 목록 칸은 높이가 고정이라 2줄 이름이 칸 밖으로 나왔다. 목록 이름만 22 를 넘기지 않는다.
-    $ label_size=min(22,(r13_type("small") if R13_TYPE_V2 else r13_read_size(22,24) if touch else r13_read_size(18,22)))
+    $ label_size=min(22,(r13_type("small")))
     $ actual_page=r13_record_page(entries,page)
     $ page_size=r13_record_page_size()
     $ visible=entries[actual_page*page_size:][:page_size]
     $ first,second=r13_compare_slots(pair)
-    text header xpos (gx+4) ypos R13_EV_TOP xsize (R13_EV_GRID_W-4) size label_size color (r13_type_color("muted") if R13_TYPE_V2 else "#80654e") font R13_UI_BOLD_FONT
+    text header xpos (gx+4) ypos R13_EV_TOP xsize (R13_EV_GRID_W-4) size label_size color (r13_type_color("muted")) font R13_UI_BOLD_FONT
     for index,key in enumerate(visible):
         $ cell_w=R13_EV_GRID_W
         $ cell_h=pitch_y
@@ -398,22 +395,22 @@ screen r13_evidence_grid(entries,detail,page,owner,pair=None,pair_slot=1,archive
                     if not archive and r13_catalog_transferable(key):
                         add r13_asset_path("file:"+(R13_NIGHT_UI+"diamond.png")) xpos 9 ypos 7
                     if pair and key in (first,second):
-                        text ("①" if key==first else "②") xpos 65 xanchor 1.0 ypos 2 size 22 color "#fff0ce" outlines [(3,"#8b1f2a",0,0)] font R13_UI_BOLD_FONT
+                        text ("①" if key==first else "②") xpos 65 xanchor 1.0 ypos 2 size r13_type("small") color "#fff0ce" outlines [(3,"#8b1f2a",0,0)] font R13_UI_BOLD_FONT
                     # 0.20.12: the unread mark sits on the picture's corner instead of taking name width.
                     if not pair and not archive and r13_drawer_unread(key):
-                        text "●" xpos 65 xanchor 1.0 ypos 3 size 13 color "#f0c66a" font R13_UI_BOLD_FONT
+                        text "●" xpos 65 xanchor 1.0 ypos 3 size r13_type("small") color "#f0c66a" font R13_UI_BOLD_FONT
     if r13_record_pages(entries)>1:
         $ ph=r13_ev_button_height()
         $ pw=88 if touch else 72
         fixed:
             xpos gx ypos (R13_EV_BOTTOM-ph) xysize (pw,ph)
             use r13_control("‹",None,Function(r13_record_select,owner,"page",actual_page-1,False),enabled=actual_page>0,width=pw,height=ph,control_id="r13_ev_prev")
-        text ("%d / %d"%(actual_page+1,r13_record_pages(entries))) xpos (gx+R13_EV_GRID_W//2) xanchor .5 ypos (R13_EV_BOTTOM-ph//2) yanchor .5 size label_size color (r13_type_color("muted") if R13_TYPE_V2 else "#80654e") font R13_UI_BOLD_FONT
+        text ("%d / %d"%(actual_page+1,r13_record_pages(entries))) xpos (gx+R13_EV_GRID_W//2) xanchor .5 ypos (R13_EV_BOTTOM-ph//2) yanchor .5 size label_size color (r13_type_color("muted")) font R13_UI_BOLD_FONT
         fixed:
             xpos (gx+R13_EV_GRID_W-pw) ypos (R13_EV_BOTTOM-ph) xysize (pw,ph)
             use r13_control("›",None,Function(r13_record_select,owner,"page",actual_page+1,False),enabled=actual_page+1<r13_record_pages(entries),width=pw,height=ph,control_id="r13_ev_next")
     if not entries:
-        text ("아직 모은 자료가 없습니다." if not r13_catalog_entries(archive) else "이 분류에 해당하는 자료가 없습니다.") xpos (gx+4) ypos (gy+20) xsize (R13_EV_GRID_W-4) size label_size color (r13_type_color("muted") if R13_TYPE_V2 else "#8a7664") font R13_UI_BOLD_FONT
+        text ("아직 모은 자료가 없습니다." if not r13_catalog_entries(archive) else "이 분류에 해당하는 자료가 없습니다.") xpos (gx+4) ypos (gy+20) xsize (R13_EV_GRID_W-4) size label_size color (r13_type_color("muted")) font R13_UI_BOLD_FONT
     add Solid("#c9a86a66") xpos R13_EV_DIVIDER_X ypos (R13_EV_TOP+4) xsize 1 ysize (R13_EV_TEXT_BOTTOM-R13_EV_TOP-4)
 
 screen r13_evidence_heading(key,width,title_size):
@@ -421,10 +418,10 @@ screen r13_evidence_heading(key,width,title_size):
     $ badge_title=r13_evidence_kind_label(key)
     hbox:
         spacing 10
-        text r13_catalog_title(key) size title_size color (r13_type_color("ink") if R13_TYPE_V2 else "#493323") font R13_UI_BOLD_FONT xmaximum max(100,width-r13_ev_title_width(badge_title,badge_size)-26) yalign .5
+        text r13_catalog_title(key) size title_size color (r13_type_color("ink")) font R13_UI_BOLD_FONT xmaximum max(100,width-r13_ev_title_width(badge_title,badge_size)-26) yalign .5
         frame:
             yalign .5 padding (8,2) background None
-            text badge_title size badge_size color (r13_type_color("accent") if R13_TYPE_V2 else "#8d4b2d") font R13_UI_BOLD_FONT
+            text badge_title size badge_size color (r13_type_color("accent")) font R13_UI_BOLD_FONT
 
 screen r13_evidence_picture_box(key,box):
     frame:
@@ -438,7 +435,7 @@ screen r13_evidence_fact_list(key,width):
             hbox:
                 spacing 10
                 add r13_asset_path("file:"+(R13_NIGHT_UI+"diamond.png")) yoffset ((r13_ev_fact_size()-8)//2+2)
-                text line size r13_ev_fact_size() color (r13_type_color("ink") if R13_TYPE_V2 else "#503525") font R13_UI_BOLD_FONT xsize (width-18)
+                text line size r13_ev_fact_size() color (r13_type_color("ink")) font R13_UI_BOLD_FONT xsize (width-18)
 
 # One record: big picture, facts, and on the right the hint or the folded original text.
 screen r13_evidence_single(detail,owner,archive=False,view_context=("records",),can_compare=False,present=False,present_label="",present_ok=False,present_action=None,stop_action=None,ready=True,statement=None,present_note=None,empty=False,stop_label="돌아가기",present_help=None):
@@ -462,7 +459,7 @@ screen r13_evidence_single(detail,owner,archive=False,view_context=("records",),
             vscrollbar_unscrollable "hide"
             vbox:
                 xsize cw spacing 12
-                use r13_evidence_heading(detail,cw,(r13_type("title") if R13_TYPE_V2 else r13_read_size(30,32) if touch else r13_read_size(26,30)))
+                use r13_evidence_heading(detail,cw,(r13_type("title")))
                 $ picture=280 if touch else 360
                 fixed:
                     xsize cw ysize picture
@@ -474,7 +471,7 @@ screen r13_evidence_single(detail,owner,archive=False,view_context=("records",),
                 if not archive:
                     use r13_drawer_note_blocks(detail,cw)
     elif not empty:  # 0.20.5 (UI review): nothing to pick -> no "pick one" line; the grid says why
-        text ("보여줄 자료를 왼쪽에서 직접 고르세요." if present else "자료를 선택하세요.") xpos cx ypos (R13_EV_TOP+160) xsize R13_EV_CENTER_W text_align .5 size r13_ev_fact_size() color (r13_type_color("muted") if R13_TYPE_V2 else "#8a7664") font R13_UI_BOLD_FONT
+        text ("보여줄 자료를 왼쪽에서 직접 고르세요." if present else "자료를 선택하세요.") xpos cx ypos (R13_EV_TOP+160) xsize R13_EV_CENTER_W text_align .5 size r13_ev_fact_size() color (r13_type_color("muted")) font R13_UI_BOLD_FONT
     for scroll_key index scroll_key in [r13_record_scroll_key(view_context,detail,archive)]:
         $ detail_scroll=r13_record_scroll_adjustment(view_context,detail,archive)
         viewport:
@@ -486,30 +483,30 @@ screen r13_evidence_single(detail,owner,archive=False,view_context=("records",),
                 spacing 12
                 if present:
                     if statement:
-                        text (statement[0]+"의 발언") size small color (r13_type_color("accent") if R13_TYPE_V2 else "#8d4b2d") font R13_UI_BOLD_FONT
-                        text statement[1] size r13_ev_fact_size() color (r13_type_color("ink") if R13_TYPE_V2 else "#503525") font R13_UI_BOLD_FONT xsize rw
+                        text (statement[0]+"의 발언") size small color (r13_type_color("accent")) font R13_UI_BOLD_FONT
+                        text statement[1] size r13_ev_fact_size() color (r13_type_color("ink")) font R13_UI_BOLD_FONT xsize rw
                     else:
                         if present_note:
-                            text present_note size small color (r13_type_color("accent") if R13_TYPE_V2 else "#8d4b2d") font R13_UI_BOLD_FONT xsize rw
-                        text (present_help or "먼저 보여주고, 건넬지는 대화 후 결정합니다.") size small color (r13_type_color("muted") if R13_TYPE_V2 else "#8a7664") font R13_UI_BOLD_FONT xsize rw
+                            text present_note size small color (r13_type_color("accent")) font R13_UI_BOLD_FONT xsize rw
+                        text (present_help or "먼저 보여주고, 건넬지는 대화 후 결정합니다.") size small color (r13_type_color("muted")) font R13_UI_BOLD_FONT xsize rw
                 elif can_compare and not origin_open:
-                    text "「나란히 놓기」를 누른 뒤 왼쪽에서 함께 볼 자료를 고르세요." size small color (r13_type_color("muted") if R13_TYPE_V2 else "#8a7664") font R13_UI_BOLD_FONT xsize rw
+                    text "「나란히 놓기」를 누른 뒤 왼쪽에서 함께 볼 자료를 고르세요." size small color (r13_type_color("muted")) font R13_UI_BOLD_FONT xsize rw
                 if detail and origin_open:
                     $ ev=r13_catalog_record(detail)
-                    text ("들은 말" if ev.get("kind")=="증언" else "확인한 내용") size small color (r13_type_color("accent") if R13_TYPE_V2 else "#8d4b2d") font R13_UI_BOLD_FONT
-                    text r13_material_body(ev) size r13_ev_fact_size() color (r13_type_color("ink") if R13_TYPE_V2 else "#503525") font R13_UI_BOLD_FONT xsize rw
+                    text ("들은 말" if ev.get("kind")=="증언" else "확인한 내용") size small color (r13_type_color("accent")) font R13_UI_BOLD_FONT
+                    text r13_material_body(ev) size r13_ev_fact_size() color (r13_type_color("ink")) font R13_UI_BOLD_FONT xsize rw
                     if not archive and r13_catalog_transferable(detail):
-                        text "전달 가능 · 보여준 뒤 결정" size small color (r13_type_color("accent") if R13_TYPE_V2 else "#8d4b2d") font R13_UI_BOLD_FONT xsize rw
+                        text "전달 가능 · 보여준 뒤 결정" size small color (r13_type_color("accent")) font R13_UI_BOLD_FONT xsize rw
                     $ source_person=r13_material_source_person(detail) if not archive and not isinstance(owner,str) else None
                     if source_person:
                         fixed:
                             xysize (rw,bh)
                             use r13_control(R13_NAMES[source_person]+" · 관계도 ›",None,Function(r13_open_record_relation,owner,source_person),width=rw,height=bh,label_size=small,control_id="r13_ev_relation")
-                    text ("지난 플레이에서 찾은 것 · 지금은 보여줄 수 없음" if archive else r13_catalog_origin(detail)) size small color (r13_type_color("muted") if R13_TYPE_V2 else "#8a7664") font R13_UI_BOLD_FONT xsize rw
+                    text ("지난 플레이에서 찾은 것 · 지금은 보여줄 수 없음" if archive else r13_catalog_origin(detail)) size small color (r13_type_color("muted")) font R13_UI_BOLD_FONT xsize rw
                     if not archive and detail in ROOM13["evidence"]:
-                        text r13_learning_record_status(detail) size small color (r13_type_color("muted") if R13_TYPE_V2 else "#8a7664") font R13_UI_BOLD_FONT xsize rw
+                        text r13_learning_record_status(detail) size small color (r13_type_color("muted")) font R13_UI_BOLD_FONT xsize rw
                     if not archive and detail in room13.get("records",{}):
-                        text ("얻은 곳: "+r13_record_source_label(detail)) size small color (r13_type_color("muted") if R13_TYPE_V2 else "#8a7664") font R13_UI_BOLD_FONT xsize rw
+                        text ("얻은 곳: "+r13_record_source_label(detail)) size small color (r13_type_color("muted")) font R13_UI_BOLD_FONT xsize rw
     $ by=R13_EV_BOTTOM-bh
     if present:
         fixed:
@@ -538,10 +535,10 @@ screen r13_evidence_pair(entries,pair,pair_slot,owner,archive=False):
     $ col_w=(R13_EV_RIGHT-R13_EV_CENTER_X-26)//2
     $ col1=R13_EV_RIGHT-col_w
     $ top=R13_EV_TOP+30
-    text "나란히 놓기 · 두 자료를 함께 봅니다. 맞는지 아닌지는 표시하지 않습니다." xpos R13_EV_CENTER_X ypos (R13_EV_TOP-4) xsize (R13_EV_RIGHT-R13_EV_CENTER_X) size r13_ev_small_size() color (r13_type_color("muted") if R13_TYPE_V2 else "#80654e") font R13_UI_BOLD_FONT
+    text "나란히 놓기 · 두 자료를 함께 봅니다. 맞는지 아닌지는 표시하지 않습니다." xpos R13_EV_CENTER_X ypos (R13_EV_TOP-4) xsize (R13_EV_RIGHT-R13_EV_CENTER_X) size r13_ev_small_size() color (r13_type_color("muted")) font R13_UI_BOLD_FONT
     add Solid("#c9a86a66") xpos (R13_EV_CENTER_X+col_w+12) ypos (top+8) xsize 1 ysize (by-top-20)
     add r13_asset_path("file:"+(R13_NIGHT_UI+"diamond.png")) xpos (R13_EV_CENTER_X+col_w+8) ypos ((top+8+by-12)//2)
-    $ pair_title=(r13_type("title") if R13_TYPE_V2 else r13_read_size(28,30) if touch else r13_read_size(24,27))
+    $ pair_title=(r13_type("title"))
     $ pic=r13_ev_pair_picture(pair,by,pair_title,top)
     for column,key index (column,key) in enumerate(r13_compare_slots(pair)):
         viewport:
@@ -560,10 +557,10 @@ screen r13_evidence_pair(entries,pair,pair_slot,owner,archive=False):
                             use r13_evidence_picture_box(key,pic)
                     use r13_evidence_fact_list(key,col_w-12)
                 else:
-                    text ("%d번 자리"%(column+1)) size pair_title color (r13_type_color("muted") if R13_TYPE_V2 else "#8a7664") font R13_UI_BOLD_FONT
+                    text ("%d번 자리"%(column+1)) size pair_title color (r13_type_color("muted")) font R13_UI_BOLD_FONT
                     frame:
                         xsize pic ysize pic xoffset ((col_w-12-pic)//2) padding (24,24) background R13PaperFrame()
-                        text "왼쪽에서 함께 볼 자료를 고르세요." align (.5,.5) text_align .5 size r13_ev_fact_size() color (r13_type_color("muted") if R13_TYPE_V2 else "#8a7664") font R13_UI_BOLD_FONT
+                        text "왼쪽에서 함께 볼 자료를 고르세요." align (.5,.5) text_align .5 size r13_ev_fact_size() color (r13_type_color("muted")) font R13_UI_BOLD_FONT
     $ single=r13_compare_single(pair)
     fixed:
         xpos R13_EV_CENTER_X ypos by xysize (198,bh)

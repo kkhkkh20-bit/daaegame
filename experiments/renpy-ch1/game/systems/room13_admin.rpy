@@ -95,7 +95,7 @@ screen r13_admin_key():
         key "shift_K_a" action Function(r13_admin_toggle)
         if persistent.room13_admin:
             textbutton "관리자":
-                style "r13_action_button" xpos 620 ypos 96 xanchor .5 padding (14,6) text_size 18
+                style "r13_action_button" xpos 620 ypos 96 xanchor .5 padding (14,6) text_size r13_type("small")
                 background Solid("#7a2a1ee6") hover_background Solid("#a83a28")
                 action Show("r13_admin")
 
@@ -106,7 +106,7 @@ screen r13_admin_hitboxes():
                 $ x,y,w,h=spec["rect"]
                 add Solid("#ff3b3b30",xsize=w,ysize=h) xpos x ypos y
                 add R13HoverCorners(w,h,"#ff5a3c",3) xpos x ypos y
-                text r13_object_name(key) xpos x+4 ypos y+2 size 16 color "#fff" outlines [(2,"#000",0,0)]
+                text r13_object_name(key) xpos x+4 ypos y+2 size r13_type("small") color "#fff" outlines [(2,"#000",0,0)]
 
 screen r13_admin():
     modal True
@@ -114,59 +114,59 @@ screen r13_admin():
     style_prefix "r13"
     default tab="next"
     add Solid("#071015ee")
-    text "관리자 도구 · 테스트 전용" xpos 40 ypos 24 size 30 color "#ff9a7a"
+    text "관리자 도구 · 테스트 전용" xpos 40 ypos 24 size r13_type("title") color "#ff9a7a"
     hbox:
         xpos 40 ypos 72 spacing 10
         for key,title in (("next","다음 진행 조건"),("jump","이동·시점"),("give","돈·물건·자료")):
-            textbutton title style "r13_action_button" xsize 230 ysize 46 text_size 20 selected tab==key action SetScreenVariable("tab",key)
-        textbutton ("클릭 영역 보기: "+("켬" if r13_admin_hitboxes else "끔")) style "r13_action_button" xsize 260 ysize 46 text_size 20 action ToggleVariable("r13_admin_hitboxes")
+            textbutton title style "r13_action_button" xsize 230 ysize 46 text_size r13_type("small") selected tab==key action SetScreenVariable("tab",key)
+        textbutton ("클릭 영역 보기: "+("켬" if r13_admin_hitboxes else "끔")) style "r13_action_button" xsize 260 ysize 46 text_size r13_type("small") action ToggleVariable("r13_admin_hitboxes")
     viewport:
         area (40,134,1200,500) mousewheel True draggable True scrollbars "vertical"
         vbox:
             spacing 10
             if tab=="next":
-                textbutton "회의 바로 테스트 (진행 보존)" style "r13_action_button" text_size 21 padding (16,10) action Show("r13_admin_meeting_picker")
+                textbutton "회의 바로 테스트 (진행 보존)" style "r13_action_button" text_size r13_type("small") padding (16,10) action Show("r13_admin_meeting_picker")
                 for line in r13_admin_next():
-                    text line size 21 color ("#ffd27a" if line.startswith("필요 ·") else "#e8efe8") xsize 1150
+                    text line size r13_type("small") color ("#ffd27a" if line.startswith("필요 ·") else "#e8efe8") xsize 1150
             elif tab=="jump":
-                text "시작 지점 (새 회차 상태로 바꿈)" size 21 color "#f6d18a"
+                text "시작 지점 (새 회차 상태로 바꿈)" size r13_type("small") color "#f6d18a"
                 hbox:
                     box_wrap True spacing 8 xsize 1150
                     for i,(title,_s,_f,_e) in enumerate(R13_ADMIN_PRESETS):
-                        textbutton title style "r13_action_button" text_size 18 padding (12,8) action [Function(r13_admin_preset,i),Hide("r13_admin"),Jump("r13_field")]
-                text "날짜·시간 (지금 상태에서)" size 21 color "#f6d18a"
+                        textbutton title style "r13_action_button" text_size r13_type("small") padding (12,8) action [Function(r13_admin_preset,i),Hide("r13_admin"),Jump("r13_field")]
+                text "날짜·시간 (지금 상태에서)" size r13_type("small") color "#f6d18a"
                 hbox:
                     spacing 8
-                    textbutton "하루 앞으로" style "r13_action_button" text_size 18 padding (12,8) action [Function(r13_admin_apply,dict(day=min(14,room13["day"]+1),period=0)),Hide("r13_admin"),Jump("r13_field")]
-                    textbutton "하루 뒤로" style "r13_action_button" text_size 18 padding (12,8) action [Function(r13_admin_apply,dict(day=max(1,room13["day"]-1),period=0)),Hide("r13_admin"),Jump("r13_field")]
+                    textbutton "하루 앞으로" style "r13_action_button" text_size r13_type("small") padding (12,8) action [Function(r13_admin_apply,dict(day=min(14,room13["day"]+1),period=0)),Hide("r13_admin"),Jump("r13_field")]
+                    textbutton "하루 뒤로" style "r13_action_button" text_size r13_type("small") padding (12,8) action [Function(r13_admin_apply,dict(day=max(1,room13["day"]-1),period=0)),Hide("r13_admin"),Jump("r13_field")]
                     for p,title in ((0,"아침"),(1,"오후"),(2,"저녁")):
-                        textbutton title style "r13_action_button" text_size 18 padding (12,8) action [Function(r13_admin_apply,dict(period=p)),Hide("r13_admin"),Jump("r13_field")]
-                text "장소 (조건 무시하고 바로 이동)" size 21 color "#f6d18a"
+                        textbutton title style "r13_action_button" text_size r13_type("small") padding (12,8) action [Function(r13_admin_apply,dict(period=p)),Hide("r13_admin"),Jump("r13_field")]
+                text "장소 (조건 무시하고 바로 이동)" size r13_type("small") color "#f6d18a"
                 hbox:
                     box_wrap True spacing 8 xsize 1150
                     for key in R13_PLACES:
-                        textbutton R13_PLACES[key][0] style "r13_action_button" text_size 18 padding (12,8) action [Function(r13_admin_apply,dict(location=key)),Hide("r13_admin"),Jump("r13_field")]
+                        textbutton R13_PLACES[key][0] style "r13_action_button" text_size r13_type("small") padding (12,8) action [Function(r13_admin_apply,dict(location=key)),Hide("r13_admin"),Jump("r13_field")]
             else:
                 hbox:
                     spacing 8
-                    textbutton "+10냥" style "r13_action_button" text_size 18 padding (12,8) action Function(r13_admin_cash,10)
-                    textbutton "+50냥" style "r13_action_button" text_size 18 padding (12,8) action Function(r13_admin_cash,50)
-                    textbutton "일자리 열기" style "r13_action_button" text_size 18 padding (12,8) action Function(r13_flag,"livelihood_open")
-                text "물건 받기" size 21 color "#f6d18a"
+                    textbutton "+10냥" style "r13_action_button" text_size r13_type("small") padding (12,8) action Function(r13_admin_cash,10)
+                    textbutton "+50냥" style "r13_action_button" text_size r13_type("small") padding (12,8) action Function(r13_admin_cash,50)
+                    textbutton "일자리 열기" style "r13_action_button" text_size r13_type("small") padding (12,8) action Function(r13_flag,"livelihood_open")
+                text "물건 받기" size r13_type("small") color "#f6d18a"
                 hbox:
                     box_wrap True spacing 8 xsize 1150
                     for key,title in r13_admin_items():
-                        textbutton title style "r13_action_button" text_size 17 padding (10,6) action Function(r13_admin_give_item,key) selected key in r13_wallet(room13)["items"]
-                text "자료 받기 (누르면 바로 기록됨)" size 21 color "#f6d18a"
+                        textbutton title style "r13_action_button" text_size r13_type("small") padding (10,6) action Function(r13_admin_give_item,key) selected key in r13_wallet(room13)["items"]
+                text "자료 받기 (누르면 바로 기록됨)" size r13_type("small") color "#f6d18a"
                 hbox:
                     box_wrap True spacing 6 xsize 1150
                     for key in sorted(ROOM13["evidence"]):
                         textbutton (key+" "+ROOM13["evidence"][key]["name"]):
-                            style "r13_action_button" text_size 15 padding (8,5)
+                            style "r13_action_button" text_size r13_type("small") padding (8,5)
                             selected key in room13["evidence"]
                             action Function(r13_admin_apply,None,(),(key,))
-    textbutton "닫기" style "r13_action_button" area (1040,650,200,54) text_size 22 action Hide("r13_admin")
-    textbutton "관리자 끄기" style "r13_action_button" area (40,650,200,54) text_size 20 action [Function(r13_admin_toggle),Hide("r13_admin")]
+    textbutton "닫기" style "r13_action_button" area (1040,650,200,54) text_size r13_type("small") action Hide("r13_admin")
+    textbutton "관리자 끄기" style "r13_action_button" area (40,650,200,54) text_size r13_type("small") action [Function(r13_admin_toggle),Hide("r13_admin")]
     key "game_menu" action Hide("r13_admin")
 
 # PIN entry from the settings screen (0.18.50, owner). Big buttons so it works on a phone.
@@ -182,10 +182,10 @@ screen r13_admin_pin():
         xalign .5 yalign .5 xsize 420 padding (24,20) background R13InkPanel()
         vbox:
             spacing 12 xalign .5
-            text "관리자 핀 번호" size 26 color "#f6d18a" xalign .5
-            text (("●"*len(typed)+"○"*(4-len(typed))) if len(typed)<=4 else "●●●●") size 34 color "#fff4df" xalign .5
+            text "관리자 핀 번호" size r13_type("emphasis") color "#f6d18a" xalign .5
+            text (("●"*len(typed)+"○"*(4-len(typed))) if len(typed)<=4 else "●●●●") size r13_type("title") color "#fff4df" xalign .5
             if wrong:
-                text "번호가 맞지 않아요" size 19 color "#ff9a7a" xalign .5
+                text "번호가 맞지 않아요" size r13_type("small") color "#ff9a7a" xalign .5
             grid 3 4:
                 spacing 8 xalign .5
                 for k in ("1","2","3","4","5","6","7","8","9","지우기","0","확인"):
@@ -194,7 +194,7 @@ screen r13_admin_pin():
                         action (SetScreenVariable("typed",typed[:-1]) if k=="지우기"
                             else Function(r13_admin_pin_check,typed) if k=="확인"
                             else [SetScreenVariable("typed",(typed+k)[:4]),SetScreenVariable("wrong",False)])
-            textbutton "닫기" xalign .5 xsize 200 ysize 52 text_size 21 action Hide("r13_admin_pin")
+            textbutton "닫기" xalign .5 xsize 200 ysize 52 text_size r13_type("small") action Hide("r13_admin_pin")
     key "game_menu" action Hide("r13_admin_pin")
 
 init 132 python:

@@ -211,11 +211,11 @@ screen r13_rebuttal_cutin(struck):
             at r13_cutin_banner(motion)
             add Solid("#d9a648",xsize=1700,ysize=150)
             add Solid("#8a2f1f",xsize=1700,ysize=128) ypos 11
-            text "그 말, 맞지 않습니다!" xalign .5 yalign .5 size 74 color "#fff3dc" font r13_ui_font() outlines [(4,"#3a1a10",0,3)]
+            text "그 말, 맞지 않습니다!" xalign .5 yalign .5 size r13_type("display") color "#fff3dc" font r13_ui_font() outlines [(4,"#3a1a10",0,3)]
         frame:
             xalign .5 ypos 430 padding (22,12) background R13PaperFrame()
             at r13_cutin_card(motion)
-            text ("{s}"+struck+"{/s}") size r13_read_size(25,29) color "#7a2c1c" font r13_ui_font() xmaximum 900
+            text ("{s}"+struck+"{/s}") size r13_type("body") color "#7a2c1c" font r13_ui_font() xmaximum 900
 
 label r13_rebuttal_cutin_play(claim,sid):
     if renpy.is_skipping() or r13_fast_all:
@@ -248,8 +248,8 @@ screen r13_morning_pick():
         area (140,70,1000,560) padding (30,24) background R13PaperFrame()
         vbox:
             spacing 12
-            text "다시 시작할 아침" size 32 color "#6c512a" font r13_ui_font()
-            text "지나온 날의 아침으로 돌아간다. 그 뒤에 얻은 기록과 결과는 사라지고, 그날 아침의 수첩으로 다시 시작한다." size r13_read_size(17,20) color "#795d40" xsize 930
+            text "다시 시작할 아침" size r13_type("title") color "#6c512a" font r13_ui_font()
+            text "지나온 날의 아침으로 돌아간다. 그 뒤에 얻은 기록과 결과는 사라지고, 그날 아침의 수첩으로 다시 시작한다." size r13_type("small") color "#795d40" xsize 930
             grid 7 2:
                 spacing 12
                 for day in range(1,15):
@@ -260,27 +260,27 @@ screen r13_morning_pick():
                         action ([SetScreenVariable("pick",day),SetScreenVariable("asking",False)] if ok else NullAction()) sensitive ok
                         vbox:
                             xalign .5 yalign .5 spacing 6
-                            text ("%d일"%day) size r13_read_size(28,32) color ("#493b30" if ok else "#a99a83") xalign .5
-                            text (R13_DAY_TAGS.get(day,"") if ok else ("아직" if day>today else "기록 없음")) size r13_read_size(15,18) color ("#65503b" if ok else "#a99a83") xalign .5
+                            text ("%d일"%day) size r13_type("subtitle") color ("#493b30" if ok else "#a99a83") xalign .5
+                            text (R13_DAY_TAGS.get(day,"") if ok else ("아직" if day>today else "기록 없음")) size r13_type("small") color ("#65503b" if ok else "#a99a83") xalign .5
             # The confirmation lives inside this panel: Ren'Py's confirm screen would sit under it.
             if asking and chosen:
-                text ("%d일 아침으로 돌아갈까요? 지금 진행은 저장하지 않으면 사라집니다."%chosen) size r13_read_size(19,22) color "#8a2f1f" xalign .5
+                text ("%d일 아침으로 돌아갈까요? 지금 진행은 저장하지 않으면 사라집니다."%chosen) size r13_type("small") color "#8a2f1f" xalign .5
             hbox:
                 xalign .5 spacing 16
                 if asking and chosen:
                     textbutton "돌아간다":
-                        style "r13_action_button" xsize 260 ysize (60 if r13_big_ui() else 52) text_size r13_read_size(20,24)
+                        style "r13_action_button" xsize 260 ysize (60 if r13_big_ui() else 52) text_size r13_type("small")
                         action Function(r13_morning_restore,chosen)
                     textbutton "그만두기":
-                        style "r13_action_button" xsize 200 ysize (60 if r13_big_ui() else 52) text_size r13_read_size(20,24)
+                        style "r13_action_button" xsize 200 ysize (60 if r13_big_ui() else 52) text_size r13_type("small")
                         action SetScreenVariable("asking",False)
                 else:
                     textbutton (("%d일 아침부터"%chosen) if chosen else "돌아갈 아침이 없다"):
-                        style "r13_action_button" xsize 260 ysize (60 if r13_big_ui() else 52) text_size r13_read_size(20,24)
+                        style "r13_action_button" xsize 260 ysize (60 if r13_big_ui() else 52) text_size r13_type("small")
                         sensitive chosen is not None
                         action SetScreenVariable("asking",True)
                     textbutton "돌아가기":
-                        style "r13_action_button" xsize 200 ysize (60 if r13_big_ui() else 52) text_size r13_read_size(20,24)
+                        style "r13_action_button" xsize 200 ysize (60 if r13_big_ui() else 52) text_size r13_type("small")
                         action Hide("r13_morning_pick")
     key "game_menu" action (SetScreenVariable("asking",False) if asking else Hide("r13_morning_pick"))
 
@@ -307,57 +307,57 @@ screen r13_winter_board(key):
         area (108,48,1064,624) padding (30,22) background R13PaperFrame()
         vbox:
             spacing 10
-            text "이번 겨울의 이름 판" size 34 color "#6c512a" font r13_ui_font()
-            text ("결말 %s · %d일 · %s"%(key,(room13 or {}).get("day",14),R13_ENDINGS[key]["title"])) size r13_read_size(16,19) color "#795d40"
+            text "이번 겨울의 이름 판" size r13_type("title") color "#6c512a" font r13_ui_font()
+            text ("결말 %s · %d일 · %s"%(key,(room13 or {}).get("day",14),R13_ENDINGS[key]["title"])) size r13_type("small") color "#795d40"
             hbox:
                 spacing 40
                 vbox:
                     spacing 6
-                    text ("구한 사람 %d"%len(saved)) size r13_read_size(18,21) color "#2f7a45"
+                    text ("구한 사람 %d"%len(saved)) size r13_type("small") color "#2f7a45"
                     hbox:
                         spacing 8
                         for who in saved[:8]:
                             use r13_board_face(who,"saved")
                         if not saved:
-                            text "—" size 22 color "#8d8579"
+                            text "—" size r13_type("small") color "#8d8579"
                 vbox:
                     spacing 6
-                    text ("잃은 사람 %d"%len(lost)) size r13_read_size(18,21) color "#8a2f1f"
+                    text ("잃은 사람 %d"%len(lost)) size r13_type("small") color "#8a2f1f"
                     hbox:
                         spacing 8
                         for who in lost[:8]:
                             use r13_board_face(who,"dead")
                         if len(lost)>8:
-                            text ("+%d"%(len(lost)-8)) size 20 color "#8a2f1f" yalign .5
+                            text ("+%d"%(len(lost)-8)) size r13_type("small") color "#8a2f1f" yalign .5
                         if not lost:
-                            text "—" size 22 color "#8d8579"
+                            text "—" size r13_type("small") color "#8d8579"
             null height 2
             hbox:
                 spacing 0
-                text "에피소드" size r13_read_size(17,20) color "#795d40" min_width 220
-                text "찾은 자료" size r13_read_size(17,20) color "#795d40" min_width 150
-                text "깨지 못한 말" size r13_read_size(17,20) color "#795d40" min_width 150
-                text "결과" size r13_read_size(17,20) color "#795d40"
+                text "에피소드" size r13_type("small") color "#795d40" min_width 220
+                text "찾은 자료" size r13_type("small") color "#795d40" min_width 150
+                text "깨지 못한 말" size r13_type("small") color "#795d40" min_width 150
+                text "결과" size r13_type("small") color "#795d40"
             add Solid("#b39060",xsize=1000,ysize=2)
             for row in r13_board_rows():
                 $ ink="#493b30" if row["reached"] else "#a99a83"
                 hbox:
                     spacing 0
-                    text (row["mark"]+" "+row["title"]) size r13_read_size(18,21) color ink min_width 220
-                    text row["found"] size r13_read_size(18,21) color ink min_width 150
-                    text row["left"] size r13_read_size(18,21) color ink min_width 150
-                    text row["result"] size r13_read_size(17,20) color ink min_width 480 xmaximum 480
+                    text (row["mark"]+" "+row["title"]) size r13_type("small") color ink min_width 220
+                    text row["found"] size r13_type("small") color ink min_width 150
+                    text row["left"] size r13_type("small") color ink min_width 150
+                    text row["result"] size r13_type("small") color ink min_width 480 xmaximum 480
                 add Solid("#d8c6a2",xsize=1000,ysize=1)
-            text "못 찾은 자료가 무엇인지는 보여 주지 않는다. 다시 하면 그 장소를 다른 때에 찾아가 보자." size r13_read_size(15,18) color "#795d40"
+            text "못 찾은 자료가 무엇인지는 보여 주지 않는다. 다시 하면 그 장소를 다른 때에 찾아가 보자." size r13_type("small") color "#795d40"
             hbox:
                 xalign .5 spacing 16
                 textbutton "새 여정 시작":
-                    style "r13_action_button" xsize 260 ysize (60 if r13_big_ui() else 52) text_size r13_read_size(20,24)
+                    style "r13_action_button" xsize 260 ysize (60 if r13_big_ui() else 52) text_size r13_type("small")
                     action Return("restart") sensitive ready
                 textbutton "다시 시작할 아침":
-                    style "r13_action_button" xsize 260 ysize (60 if r13_big_ui() else 52) text_size r13_read_size(20,24)
+                    style "r13_action_button" xsize 260 ysize (60 if r13_big_ui() else 52) text_size r13_type("small")
                     action Show("r13_morning_pick") sensitive ready and bool(r13_morning_days())
                 textbutton "닫기":
-                    style "r13_action_button" xsize 160 ysize (60 if r13_big_ui() else 52) text_size r13_read_size(20,24)
+                    style "r13_action_button" xsize 160 ysize (60 if r13_big_ui() else 52) text_size r13_type("small")
                     action Return("close") sensitive ready
     key "game_menu" action Return("close")

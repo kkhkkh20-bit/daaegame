@@ -390,7 +390,7 @@ screen r13_pw_pair(pair,x,y,w,h,observe=False,ready=True):
                                         area (sx,sy,sw,sh) padding (0,0)
                                         background Solid("#a63a2e22") hover_background Solid("#a63a2e55")
                                         action Return(("observe",spot_id)) sensitive ready alt (spot_name+" 짚기")
-                                        text spot_name size 14 color r13_nb_accent() font R13_UI_BOLD_FONT xpos 4 ypos 2
+                                        text spot_name size r13_type("small") color r13_nb_accent() font R13_UI_BOLD_FONT xpos 4 ypos 2
                     use r13_evidence_fact_list(key,inner)
                 else:
                     text ("%d번 자리"%(column+1)) size title_size color r13_nb_muted() font R13_UI_BOLD_FONT

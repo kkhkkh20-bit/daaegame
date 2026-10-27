@@ -232,12 +232,12 @@ screen r13_music_credits():
         area (120,40,1040,640) background Solid("#14272b") padding (40,28)
         vbox:
             spacing 14
-            text "음악 · 효과음 출처" size 32 color R13_UI_COLORS["menu_accent"]
-            text "배경음" size 22 color "#f2d493"
-            text "\"Sleep (Piano Only)\", \"The Long Way Home\", \"Home Was You\", \"Childhood\", \"Midvinter\", \"Snowfall\", \"First Snow\", \"Sanctuary\", \"The Long Dark\", \"Shadows and Dust\" by Scott Buckley – released under CC-BY 4.0. www.scottbuckley.com.au" size 18 color "#e6ece2"
-            text "\"Heartwarming\", \"Water Lily\", \"Investigations\", \"Comfortable Mystery 4\", \"Measured Paces\", \"Iron Horse\" Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/" size 18 color "#e6ece2"
-            text "앞뒤 무음을 자르고 음량만 맞췄습니다. 작곡가가 이 게임을 보증한다는 뜻은 아닙니다." size 17 color R13_UI_COLORS["menu_secondary"]
-            text "효과음" size 22 color "#f2d493"
-            text "Kenney (kenney.nl), OpenGameArt.org 작가 1j01 · railkill · pwl · voltiment555 · cough-e · rubberduck · ignasd · pagdev · bart · antumdeluge · mousebyte 의 CC0 소리" size 18 color "#e6ece2"
+            text "음악 · 효과음 출처" size r13_type("title") color R13_UI_COLORS["menu_accent"]
+            text "배경음" size r13_type("small") color "#f2d493"
+            text "\"Sleep (Piano Only)\", \"The Long Way Home\", \"Home Was You\", \"Childhood\", \"Midvinter\", \"Snowfall\", \"First Snow\", \"Sanctuary\", \"The Long Dark\", \"Shadows and Dust\" by Scott Buckley – released under CC-BY 4.0. www.scottbuckley.com.au" size r13_type("small") color "#e6ece2"
+            text "\"Heartwarming\", \"Water Lily\", \"Investigations\", \"Comfortable Mystery 4\", \"Measured Paces\", \"Iron Horse\" Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/" size r13_type("small") color "#e6ece2"
+            text "앞뒤 무음을 자르고 음량만 맞췄습니다. 작곡가가 이 게임을 보증한다는 뜻은 아닙니다." size r13_type("small") color R13_UI_COLORS["menu_secondary"]
+            text "효과음" size r13_type("small") color "#f2d493"
+            text "Kenney (kenney.nl), OpenGameArt.org 작가 1j01 · railkill · pwl · voltiment555 · cough-e · rubberduck · ignasd · pagdev · bart · antumdeluge · mousebyte 의 CC0 소리" size r13_type("small") color "#e6ece2"
             null height 6
-            textbutton "닫기" style "r13opt_button" xsize 170 action Hide("r13_music_credits") text_size 22
+            textbutton "닫기" style "r13opt_button" xsize 170 action Hide("r13_music_credits") text_size r13_type("small")
