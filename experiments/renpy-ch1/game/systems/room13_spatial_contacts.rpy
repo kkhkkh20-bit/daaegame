@@ -21,7 +21,7 @@ init 179 python:
         # 2026-10-27 한 명씩 검수: 두 사람의 「높은 자리」(우체국 계단·종탑)는 지금 광장 그림에 없다. 설이가 가게 차양 앞
         # 허공(발 414)에 떠 있었다. 둘 다 바닥에 세우고, 설이는 종 줄이 없으니 줄 당기는 자세 대신 기본 자세로 선다.
         "resident_sling": dict(poses=("activity","neutral"),foot=(1600,690),ground=690,elevation=0,standing=210),
-        "resident_seol": dict(poses=("living_bellrope","neutral"),pose="neutral",foot=(600,665),ground=665,elevation=0,standing=210),
+        "resident_seol": dict(poses=("living_bellrope","neutral"),pose="neutral",foot=(660,665),ground=665,elevation=0,standing=210),
     }
 
     def r13_contact_geometry(actor,pose,anchor,target,height,depth):
