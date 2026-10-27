@@ -29,7 +29,7 @@ class NotebookChoices(unittest.TestCase):
             function('systems/room13_notebook_choices.rpy','r13_notebook_choice_pages',ns)
             geometry=function('systems/room13_notebook_choices.rpy','r13_notebook_choice_geometry',ns)
             entries=[('이미 들은 말을 다시 확인하는 긴 선택지 '+str(i),object(),i%2==0) for i in range(17)]
-            header,pages=geometry(entries,650,'방금 들은 이야기에 대해 어떻게 대답할까?')
+            header,pages,_=geometry(entries,650,'방금 들은 이야기에 대해 어떻게 대답할까?')
             self.assertGreater(len(pages),1)
             self.assertEqual([entry for page in pages for entry,height in page],entries)
             self.assertEqual(len({height for page in pages for entry,height in page}),1)

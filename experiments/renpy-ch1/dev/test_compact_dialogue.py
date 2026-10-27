@@ -47,7 +47,8 @@ class CompactDialogue(unittest.TestCase):
         offset=int(re.search(r'xpos b_text_x ypos \(r13_night_say_top\(what\)-(\d+)\)',speech).group(1))
         name=speech.split('if who:',1)[1]  # 2026-10-26 이름표 페이드를 뺐다. 이름표 덩어리는 if who: 뒤에 있다
         padding=tuple(map(int,re.search(r'padding \((\d+),(\d+),(\d+),(\d+)\)',name).groups()))
-        sizes=tuple(map(int,re.search(r'text who[^\n]+size r13_read_size\((\d+),(\d+)\)',name).groups()))
+        # 2026-10-27 타이포 시안: size 는 `(r13_type(...) if R13_TYPE_V2 else r13_read_size(a,b))` 꼴. 꺼진 값을 본다.
+        sizes=tuple(map(int,re.search(r'text who[^\n]+r13_read_size\((\d+),(\d+)\)',name).groups()))
         for size in sizes:self.assertGreaterEqual(offset-size-padding[1]-padding[3],8)
         self.assertIn('background None padding (0,0)',speech)
 
