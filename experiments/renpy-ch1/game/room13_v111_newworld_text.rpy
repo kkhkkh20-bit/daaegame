@@ -326,9 +326,10 @@ init 319 python:
         "teacher_hides13":lambda:r13_v111_value("fate:fate_soup") in ("early","premeal") and r13_v111_value("transfer_list_voided") is not True and r13_v111_actor_ready("resident_teacher"),
         # 2026-10-27 엄마 줄기 짚기(외부 리뷰 1순위): 사건이 끝난 저녁, 부녀가 엄마에 대해 안 것과 모르는 것을 주고받는다.
         # 피코·꼬미가 죽은 판은 장난을 빼고 담담하게 간다.
-        "mom03_piko_alive":_r13_bd_with_daram(lambda:r13_v111_value("piko_alive") is not False),
-        "mom03_piko_dead":_r13_bd_with_daram(lambda:r13_v111_value("piko_alive") is False),
-        "mom07_kkomi_alive":_r13_bd_with_daram(lambda:r13_v111_value("KKOMI_ALIVE") is not False),
+        # 3일 저녁 갈래(r13_v111_memorial_route)와 같은 값으로 가른다: piko_alive 가 True 일 때만 저녁 진료소 장면이다.
+        "mom03_piko_alive":_r13_bd_with_daram(lambda:r13_v111_value("piko_alive") is True),
+        "mom03_piko_dead":_r13_bd_with_daram(lambda:r13_v111_value("piko_alive") is not True),
+        "mom07_kkomi_alive":_r13_bd_with_daram(lambda:bool(r13_v111_value("KKOMI_ALIVE"))),
     })
     # Impact direction names (systems/room13_impact_fx.rpy; that file loads later, so the names live here).
     R13_NW_FX=("jolt","shake","slam","flash")

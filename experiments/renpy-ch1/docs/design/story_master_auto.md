@@ -5,7 +5,7 @@
 > 읽은 곳: `game/room13_v111_days123.rpy`, `game/room13_v111_days45.rpy`, `game/room13_v111_days610.rpy`, `game/room13_v111_days1114.rpy`, `game/room13_v111_owl_prevent.rpy`, `game/room13_hidden_pandol.rpy`, `game/room13_hidden_base.rpy`, `game/room13_lamp_attempt.rpy`, `game/room13_v111_newworld_rules.rpy`, `game/room13_v111_newworld_text.rpy`, `game/room13_fork_screen.rpy`, 장면 제목은 `docs/story-ms14/source/` 원본.
 > 글자로 읽은 것이라 갈래 순서·조건이 실제 재생과 다를 수 있다. 의심스러우면 표에 적힌 파일:줄을 연다.
 
-자동 추출 실패: 1곳 (맨 아래 목록)
+자동 추출 실패: 12곳 (맨 아래 목록)
 
 ## 차례
 
@@ -2010,14 +2010,14 @@ def r13_nw_true_ending_ready():
 | `room13_partial_accident` | `r13_v111_value("meeting:room13")=="partial" and r13_v111_value("room13_partial_kind")=="accident"` | d10 |
 | `room13_partial_unknown` | `r13_v111_value("meeting:room13")=="partial" and r13_v111_value("room13_partial_kind")=="unknown"` | d10 |
 | `room13_unchecked_d1` | `not r13_v111_owned("E06")` | d01 |
-| `room13_win` | `r13_v111_value("meeting:room13")=="win"` | d11 |
+| `room13_win` | `r13_v111_value("meeting:room13")=="win"` | d10, d11 |
 | `route12_late` | `r13_v111_value("route12")=="late_exposure"` | d12 |
 | `route12_stayed` | `r13_v111_value("route12")!="late_exposure"` | d12 |
 | `school_supply_pending` | `not r13_v111_value("school_supply_handed")` | d11 |
 | `siluk_not_listed` | `r13_v111_value("listed:resident_siluk") is not True` | d13 |
 | `snack_bagged5` | `r13_v111_value("snack_bagged5") is True` | d05 |
 | `snack_unbagged5` | `r13_v111_value("snack_bagged5") is not True` | d05 |
-| `soup_lose_nabi` | `r13_v111_value("meeting:soup")=="lose" and r13_v111_value("soup_lose_kind")=="nabi"` | d12 |
+| `soup_lose_nabi` | `r13_v111_value("meeting:soup")=="lose" and r13_v111_value("soup_lose_kind")=="nabi"` | d12, newworld_text |
 | `soup_lose_nabi_murder` | `r13_v111_value("meeting:soup")=="lose" and r13_v111_value("soup_lose_kind")=="nabi" and r13_v111_value("route7")=="murder"` | d12 |
 | `soup_lose_nabi_prevented` | `r13_v111_value("meeting:soup")=="lose" and r13_v111_value("soup_lose_kind")=="nabi" and r13_v111_value("route7")!="murder"` | d12 |
 | `soup_lose_stolen` | `r13_v111_value("meeting:soup")=="lose" and r13_v111_value("soup_lose_kind")=="stolen"` | d12 |
@@ -2052,3 +2052,14 @@ def r13_nw_true_ending_ready():
 ## 5. 자동 추출 실패
 
 - 자동 추출 실패: room13_v111_days45.rpy:364 — 세우는 인물을 읽지 못함(변수)
+- 자동 추출 실패: room13_v111_newworld_text.rpy:0 — 정의를 찾지 못한 조건 이름: bami_listed_daram
+- 자동 추출 실패: room13_v111_newworld_text.rpy:0 — 정의를 찾지 못한 조건 이름: bori_listed_daram
+- 자동 추출 실패: room13_v111_newworld_text.rpy:0 — 정의를 찾지 못한 조건 이름: guldol_daram
+- 자동 추출 실패: room13_v111_newworld_text.rpy:0 — 정의를 찾지 못한 조건 이름: guldol_daram13
+- 자동 추출 실패: room13_v111_newworld_text.rpy:0 — 정의를 찾지 못한 조건 이름: mom03_piko_alive
+- 자동 추출 실패: room13_v111_newworld_text.rpy:0 — 정의를 찾지 못한 조건 이름: mom03_piko_dead
+- 자동 추출 실패: room13_v111_newworld_text.rpy:0 — 정의를 찾지 못한 조건 이름: mom07_kkomi_alive
+- 자동 추출 실패: room13_v111_newworld_text.rpy:0 — 정의를 찾지 못한 조건 이름: nabi_list12_daram
+- 자동 추출 실패: room13_v111_newworld_text.rpy:0 — 정의를 찾지 못한 조건 이름: nabi_listed_daram
+- 자동 추출 실패: room13_v111_newworld_text.rpy:0 — 정의를 찾지 못한 조건 이름: teacher_hides13
+- 자동 추출 실패: room13_v111_newworld_text.rpy:0 — 정의를 찾지 못한 조건 이름: tok_listed_daram
