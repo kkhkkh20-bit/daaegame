@@ -31,6 +31,27 @@
       "id": "QA-MAP",
       "reason": "장소 시험 갱신은 QA 작업이며 그림 납품 요청이 아님.",
       "source": "docs/reviews/requests-20261025/그림_화면_요청서.md"
+    },
+    {
+      "id": "FIELD-DOT",
+      "title": "현장 몸동작 도트 원본 353장(63명)",
+      "kind": "인물",
+      "status": "needs_delivery",
+      "priority": "P2",
+      "description": "조사 화면 몸동작 자세를 대화 도트판과 같은 칸(어른 210도트 등, 1칸=1px)으로 처음부터 도트로. 지금은 매끈한 원본을 줄여 임시로 맞춤(0.20.70). 1~3일 장면의 6벌이 P1. docs/art-requests/현장_몸동작_도트_요청서_20261027.md",
+      "scenes": [
+        "1~14일 현장"
+      ],
+      "branches": [
+        "공통"
+      ],
+      "references": [
+        "game/assets/room13-field-dot-v2.json"
+      ],
+      "sources": [
+        "docs/art-requests/현장_몸동작_도트_요청서_20261027.md"
+      ],
+      "approved_scope": "2026-10-27 소유자 「조사해서 디자인 요청서를 달라고 하든」."
     }
   ],
   "requests": [

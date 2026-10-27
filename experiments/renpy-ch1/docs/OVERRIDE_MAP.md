@@ -59,7 +59,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 21 | 191 | `systems/room13_q1_arguments.rpy:61` | _r13_sling_confidence_present |
 | 22 | 206 | `systems/room13_sling_confidence.rpy:74` |  |
 
-## `r13_stage_people` (15층)
+## `r13_stage_people` (16층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
@@ -77,7 +77,8 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 12 | 186 | `systems/room13_resident_poses_a.rpy:77` | _r13_v111_stage_people |
 | 13 | 301 | `room13_v111.rpy:151` | _r13_order_stage_people |
 | 14 | 336 | `room13_v111_field_layout.rpy:46` | _r13_clear_stage_people |
-| 15 | 337 | `room13_v111_field_layout.rpy:131` |  |
+| 15 | 337 | `room13_v111_field_layout.rpy:131` | _r13_field_dot_stage |
+| 16 | 340 | `systems/room13_field_dot.rpy:57` |  |
 
 ## `r13_object_visible` (11층)
 
@@ -822,7 +823,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 59 | `room13_acting.rpy:544` | _r13_map27_visible |
+| 1 | 59 | `room13_acting.rpy:550` | _r13_map27_visible |
 | 2 | 178 | `systems/room13_map_action27.rpy:87` |  |
 
 ## `r13_topic_current_context` (2층)

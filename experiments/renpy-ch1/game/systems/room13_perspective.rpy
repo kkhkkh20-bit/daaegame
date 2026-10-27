@@ -58,6 +58,9 @@ init 126 python:
             target=r13_perspective_height(location,depth_feet)*shape
             if actor["person"] not in layout.get("standing_heights",{}):target*=globals().get("R13_CHILD_STATURE",{}).get(actor["person"],1.0)
             factor=max(.75,min(1.25,target/float(actor["height"])))
+            # 2026-10-27 도트 통일(systems/room13_field_dot.rpy): 연속 배율은 그대로 남기되, 도트층이 정수 단계로만 받도록
+            # 배율을 actor 에 적어 둔다. 여기서 바꾼 크기는 도트층이 발 위치만 지키고 덮어쓴다.
+            actor=dict(actor,perspective_factor=factor)
             if abs(factor-1)<.04:
                 result.append(actor);continue
             new_scale=scale*factor

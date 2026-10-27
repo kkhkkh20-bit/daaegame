@@ -532,6 +532,12 @@ init 59 python:
         return r13_calendar_activity(person) if person in R13_CALENDAR else spec.get("activity_label",spec.get("action_ko",spec.get("action",r13_activity_text(person))))
 
     def r13_staged_art(actor,still=False):
+        dot=actor.get("dot")
+        if dot:
+            # 2026-10-27 도트 통일(systems/room13_field_dot.rpy): 모든 인물을 같은 도트 수로 다시 찍은 1배 그림을
+            # 정수 화면 배율(축소 현장은 k/zoom)로 최근접 확대만 한다. Flatten 을 거치지 않아 화면 1px 단위로 정확히 맞는다.
+            art=Transform(dot["file"],zoom=dot["scale"],nearest=True,subpixel=False,rotate_pad=False)
+            return r13_idle_art(art,actor["person"],actor["pose"],r13_acting_spec(actor["person"],actor["pose"]),actor["width"],actor["height"],contact=actor["contact"],still=still)
         art=r13_art(actor["person"],actor["pose"])
         spec=r13_acting_spec(actor["person"],actor["pose"]) or {}
         # 2026-10-26 도트 통일(소유자 "캐릭터별로 도트 비율도 다르고 깨져 있잖아"): 고해상 몸동작 그림도
@@ -555,6 +561,11 @@ init 59 python:
         return Crop((x-actor["x"],y-actor["y"],w,h),r13_staged_visible_art(actor,still=True))
 
     def r13_actor_face(actor,margin=10):
+        dot=actor.get("dot")
+        if dot and dot.get("head"):
+            # 도트 통일 그림은 표의 머리 상자(도트 좌표)를 같은 배율로 옮긴다. 원본 잘라낸 영역과 비율이 다를 수 있어서다.
+            hx,hy,hw,hh=dot["head"];sc=dot["scale"]
+            return (actor["x"]+hx*sc-margin,actor["y"]+hy*sc-margin,hw*sc+2*margin,hh*sc+2*margin)
         cs=r13_acting_spec(actor["person"],actor["pose"]) or {}
         cw,ch=r13_actor_geometry(actor["person"],actor["pose"])
         head=cs.get("head",[cw*.25,0,cw*.5,ch*.35])

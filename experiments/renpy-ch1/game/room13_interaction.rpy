@@ -105,10 +105,10 @@ init 61 python:
         return store.room13["location"]==("guestroom" if displaced else "room13")
 
     def r13_actor_face_target(actor):
-        spec=r13_acting_spec(actor["person"],actor["pose"])
-        if not spec or not spec.get("head"):return None
-        hx,hy,hw,hh=spec["head"]
-        scale=float(actor["width"])/spec["crop"][2]
+        dot=actor.get("dot") if actor.get("dot",{}).get("head") else None;spec=r13_acting_spec(actor["person"],actor["pose"])  # 2026-10-27 도트 통일: 다시 찍은 그림은 표의 머리 상자(도트 좌표)를 쓴다(원본 crop 과 비율이 다르다). 아래 줄 수는 대화 연결표의 줄 번호 때문에 늘리지 않는다.
+        if not dot and (not spec or not spec.get("head")):return None
+        hx,hy,hw,hh=dot["head"] if dot else spec["head"]
+        scale=dot["scale"] if dot else float(actor["width"])/spec["crop"][2]
         x=max(0,int(actor["x"]+hx*scale));y=max(100,int(actor["y"]+hy*scale))
         right=min(r13_world_width(),int(actor["x"]+(hx+hw)*scale))
         bottom=min(720,int(actor["y"]+(hy+hh)*scale))
