@@ -109,9 +109,11 @@ init 99 python:
     def r13_meeting_close_edge(x,session):
         # Close speaking view: keep the upper body above the table. Wide seats
         # retain their own contact geometry through r13_meeting_edge.
+        # 2026-10-27 소유자: "회의 테이블 높이 낮추고". 탁자선을 대사창 윗변(약 540) 바로 위까지 내려
+        # 대사창이 이미 가리는 곳보다 더 가리지 않게 한다.
         kind=r13_meeting_kind(session)
-        if kind=="round":return int(492+4*((x-640)/640.0)**2)
-        if kind=="stone":return r13_meeting_edge(x,session)+60
+        if kind=="round":return int(532+4*((x-640)/640.0)**2)
+        if kind=="stone":return r13_meeting_edge(x,session)+100
         return r13_meeting_edge(x,session)
 
     def r13_meeting_seat_position(index,count,session="trial"):

@@ -1,6 +1,6 @@
 {
   "schema": 2,
-  "status": "2026-10-26 도트 통일 때 대화 그림 표에 새로 든 인물(판설·아랫길 노인). 실행 중 본 표에 합친다.",
+  "status": "2026-10-26 도트 통일 때 대화 그림 표에 새로 든 인물(판설·아랫길 노인)과 2026-10-27 단역 공용 3벌(순찰대원·주민·아이)을 쓰는 단역 화자. 실행 중 본 표에 합친다.",
   "people": {
     "npc_panseol": {
       "status": "approved_runtime",
@@ -465,6 +465,2486 @@
         }
       },
       "art_dot_v2": "2026-10-26 같은 도트 크기, 자리는 할머니를 본뜸(195도트)"
+    },
+    "v111_patrol": {
+      "status": "approved_runtime",
+      "art_style": "storybook_source",
+      "source_kind": "source_master",
+      "stance": "standing",
+      "gaze": "player",
+      "profiles": {
+        "560": {
+          "canvas": [
+            384,
+            612
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-dot-v2/v111_patrol/560/neutral.webp",
+              "offset": [
+                62,
+                169
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                132,
+                436
+              ]
+            },
+            "joy": {
+              "file": "assets/dialogue-dot-v2/v111_patrol/560/joy.webp",
+              "offset": [
+                54,
+                169
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                140,
+                436
+              ]
+            },
+            "flustered": {
+              "file": "assets/dialogue-dot-v2/v111_patrol/560/flustered.webp",
+              "offset": [
+                60,
+                171
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                134,
+                434
+              ]
+            },
+            "angry": {
+              "file": "assets/dialogue-dot-v2/v111_patrol/560/angry.webp",
+              "offset": [
+                58,
+                169
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                136,
+                436
+              ]
+            },
+            "anxious": {
+              "file": "assets/dialogue-dot-v2/v111_patrol/560/anxious.webp",
+              "offset": [
+                69,
+                167
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                125,
+                438
+              ]
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-dot-v2/v111_patrol/560/surprise_talk.webp",
+              "offset": [
+                56,
+                169
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                138,
+                436
+              ]
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-dot-v2/v111_patrol/560/surprise_talk.webp",
+              "offset": [
+                56,
+                169
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                138,
+                436
+              ]
+            }
+          },
+          "dot_scale": 2
+        },
+        "760": {
+          "canvas": [
+            416,
+            663
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-dot-v2/v111_patrol/760/neutral.webp",
+              "offset": [
+                13,
+                0
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                198,
+                654
+              ]
+            },
+            "joy": {
+              "file": "assets/dialogue-dot-v2/v111_patrol/760/joy.webp",
+              "offset": [
+                1,
+                0
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                210,
+                654
+              ]
+            },
+            "flustered": {
+              "file": "assets/dialogue-dot-v2/v111_patrol/760/flustered.webp",
+              "offset": [
+                10,
+                3
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                201,
+                651
+              ]
+            },
+            "angry": {
+              "file": "assets/dialogue-dot-v2/v111_patrol/760/angry.webp",
+              "offset": [
+                7,
+                0
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                204,
+                654
+              ]
+            },
+            "anxious": {
+              "file": "assets/dialogue-dot-v2/v111_patrol/760/anxious.webp",
+              "offset": [
+                24,
+                -3
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                187,
+                657
+              ]
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-dot-v2/v111_patrol/760/surprise_talk.webp",
+              "offset": [
+                4,
+                0
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                207,
+                654
+              ]
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-dot-v2/v111_patrol/760/surprise_talk.webp",
+              "offset": [
+                4,
+                0
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                207,
+                654
+              ]
+            }
+          },
+          "dot_scale": 3
+        },
+        "840": {
+          "canvas": [
+            568,
+            906
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-dot-v2/v111_patrol/760/neutral.webp",
+              "offset": [
+                91,
+                245
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                198,
+                654
+              ]
+            },
+            "joy": {
+              "file": "assets/dialogue-dot-v2/v111_patrol/760/joy.webp",
+              "offset": [
+                79,
+                245
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                210,
+                654
+              ]
+            },
+            "flustered": {
+              "file": "assets/dialogue-dot-v2/v111_patrol/760/flustered.webp",
+              "offset": [
+                88,
+                248
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                201,
+                651
+              ]
+            },
+            "angry": {
+              "file": "assets/dialogue-dot-v2/v111_patrol/760/angry.webp",
+              "offset": [
+                85,
+                245
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                204,
+                654
+              ]
+            },
+            "anxious": {
+              "file": "assets/dialogue-dot-v2/v111_patrol/760/anxious.webp",
+              "offset": [
+                102,
+                242
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                187,
+                657
+              ]
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-dot-v2/v111_patrol/760/surprise_talk.webp",
+              "offset": [
+                82,
+                245
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                207,
+                654
+              ]
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-dot-v2/v111_patrol/760/surprise_talk.webp",
+              "offset": [
+                82,
+                245
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                207,
+                654
+              ]
+            }
+          },
+          "dot_scale": 3
+        }
+      },
+      "art_dot_v2": "2026-10-27 단역 공용 그림, 같은 도트 크기, 자리는 할머니 를 본뜸(210도트)"
+    },
+    "v111_resident": {
+      "status": "approved_runtime",
+      "art_style": "storybook_source",
+      "source_kind": "source_master",
+      "stance": "standing",
+      "gaze": "player",
+      "profiles": {
+        "560": {
+          "canvas": [
+            384,
+            612
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-dot-v2/v111_resident/560/neutral.webp",
+              "offset": [
+                52,
+                173
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                142,
+                432
+              ]
+            },
+            "joy": {
+              "file": "assets/dialogue-dot-v2/v111_resident/560/joy.webp",
+              "offset": [
+                48,
+                181
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                146,
+                424
+              ]
+            },
+            "flustered": {
+              "file": "assets/dialogue-dot-v2/v111_resident/560/flustered.webp",
+              "offset": [
+                41,
+                173
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                153,
+                432
+              ]
+            },
+            "angry": {
+              "file": "assets/dialogue-dot-v2/v111_resident/560/angry.webp",
+              "offset": [
+                53,
+                173
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                141,
+                432
+              ]
+            },
+            "anxious": {
+              "file": "assets/dialogue-dot-v2/v111_resident/560/anxious.webp",
+              "offset": [
+                44,
+                175
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                150,
+                430
+              ]
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-dot-v2/v111_resident/560/surprise_talk.webp",
+              "offset": [
+                49,
+                177
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                145,
+                428
+              ]
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-dot-v2/v111_resident/560/surprise_talk.webp",
+              "offset": [
+                49,
+                177
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                145,
+                428
+              ]
+            }
+          },
+          "dot_scale": 2
+        },
+        "760": {
+          "canvas": [
+            416,
+            663
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/neutral.webp",
+              "offset": [
+                -2,
+                6
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                213,
+                648
+              ]
+            },
+            "joy": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/joy.webp",
+              "offset": [
+                -8,
+                18
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                219,
+                636
+              ]
+            },
+            "flustered": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/flustered.webp",
+              "offset": [
+                -18,
+                6
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                229,
+                648
+              ]
+            },
+            "angry": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/angry.webp",
+              "offset": [
+                0,
+                6
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                211,
+                648
+              ]
+            },
+            "anxious": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/anxious.webp",
+              "offset": [
+                -14,
+                9
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                225,
+                645
+              ]
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/surprise_talk.webp",
+              "offset": [
+                -6,
+                12
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                217,
+                642
+              ]
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/surprise_talk.webp",
+              "offset": [
+                -6,
+                12
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                217,
+                642
+              ]
+            }
+          },
+          "dot_scale": 3
+        },
+        "840": {
+          "canvas": [
+            568,
+            906
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/neutral.webp",
+              "offset": [
+                76,
+                251
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                213,
+                648
+              ]
+            },
+            "joy": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/joy.webp",
+              "offset": [
+                70,
+                263
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                219,
+                636
+              ]
+            },
+            "flustered": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/flustered.webp",
+              "offset": [
+                60,
+                251
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                229,
+                648
+              ]
+            },
+            "angry": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/angry.webp",
+              "offset": [
+                78,
+                251
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                211,
+                648
+              ]
+            },
+            "anxious": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/anxious.webp",
+              "offset": [
+                64,
+                254
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                225,
+                645
+              ]
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/surprise_talk.webp",
+              "offset": [
+                72,
+                257
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                217,
+                642
+              ]
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/surprise_talk.webp",
+              "offset": [
+                72,
+                257
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                217,
+                642
+              ]
+            }
+          },
+          "dot_scale": 3
+        }
+      },
+      "art_dot_v2": "2026-10-27 단역 공용 그림, 같은 도트 크기, 자리는 할머니 를 본뜸(210도트)"
+    },
+    "v111_child": {
+      "status": "approved_runtime",
+      "art_style": "storybook_source",
+      "source_kind": "source_master",
+      "stance": "standing",
+      "gaze": "player",
+      "profiles": {
+        "560": {
+          "canvas": [
+            349,
+            524
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-dot-v2/v111_child/560/neutral.webp",
+              "offset": [
+                64,
+                170
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                113,
+                346
+              ]
+            },
+            "joy": {
+              "file": "assets/dialogue-dot-v2/v111_child/560/joy.webp",
+              "offset": [
+                66,
+                172
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                111,
+                344
+              ]
+            },
+            "flustered": {
+              "file": "assets/dialogue-dot-v2/v111_child/560/flustered.webp",
+              "offset": [
+                59,
+                170
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                118,
+                346
+              ]
+            },
+            "angry": {
+              "file": "assets/dialogue-dot-v2/v111_child/560/angry.webp",
+              "offset": [
+                62,
+                172
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                115,
+                344
+              ]
+            },
+            "anxious": {
+              "file": "assets/dialogue-dot-v2/v111_child/560/anxious.webp",
+              "offset": [
+                61,
+                172
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                116,
+                344
+              ]
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-dot-v2/v111_child/560/surprise_talk.webp",
+              "offset": [
+                66,
+                170
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                111,
+                346
+              ]
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-dot-v2/v111_child/560/surprise_talk.webp",
+              "offset": [
+                66,
+                170
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                111,
+                346
+              ]
+            }
+          },
+          "dot_scale": 2
+        },
+        "760": {
+          "canvas": [
+            416,
+            624
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/neutral.webp",
+              "offset": [
+                43,
+                97
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                169,
+                519
+              ]
+            },
+            "joy": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/joy.webp",
+              "offset": [
+                46,
+                100
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                166,
+                516
+              ]
+            },
+            "flustered": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/flustered.webp",
+              "offset": [
+                35,
+                97
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                177,
+                519
+              ]
+            },
+            "angry": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/angry.webp",
+              "offset": [
+                40,
+                100
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                172,
+                516
+              ]
+            },
+            "anxious": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/anxious.webp",
+              "offset": [
+                38,
+                100
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                174,
+                516
+              ]
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/surprise_talk.webp",
+              "offset": [
+                46,
+                97
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                166,
+                519
+              ]
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/surprise_talk.webp",
+              "offset": [
+                46,
+                97
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                166,
+                519
+              ]
+            }
+          },
+          "dot_scale": 3
+        },
+        "840": {
+          "canvas": [
+            516,
+            774
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/neutral.webp",
+              "offset": [
+                95,
+                247
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                169,
+                519
+              ]
+            },
+            "joy": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/joy.webp",
+              "offset": [
+                98,
+                250
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                166,
+                516
+              ]
+            },
+            "flustered": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/flustered.webp",
+              "offset": [
+                87,
+                247
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                177,
+                519
+              ]
+            },
+            "angry": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/angry.webp",
+              "offset": [
+                92,
+                250
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                172,
+                516
+              ]
+            },
+            "anxious": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/anxious.webp",
+              "offset": [
+                90,
+                250
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                174,
+                516
+              ]
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/surprise_talk.webp",
+              "offset": [
+                98,
+                247
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                166,
+                519
+              ]
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/surprise_talk.webp",
+              "offset": [
+                98,
+                247
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                166,
+                519
+              ]
+            }
+          },
+          "dot_scale": 3
+        }
+      },
+      "art_dot_v2": "2026-10-27 단역 공용 그림, 같은 도트 크기, 자리는 꼬미 를 본뜸(165도트)"
+    },
+    "v111_lower_resident": {
+      "status": "approved_runtime",
+      "art_style": "storybook_source",
+      "source_kind": "source_master",
+      "stance": "standing",
+      "gaze": "player",
+      "profiles": {
+        "560": {
+          "canvas": [
+            384,
+            612
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-dot-v2/v111_resident/560/neutral.webp",
+              "offset": [
+                52,
+                173
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                142,
+                432
+              ]
+            },
+            "joy": {
+              "file": "assets/dialogue-dot-v2/v111_resident/560/joy.webp",
+              "offset": [
+                48,
+                181
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                146,
+                424
+              ]
+            },
+            "flustered": {
+              "file": "assets/dialogue-dot-v2/v111_resident/560/flustered.webp",
+              "offset": [
+                41,
+                173
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                153,
+                432
+              ]
+            },
+            "angry": {
+              "file": "assets/dialogue-dot-v2/v111_resident/560/angry.webp",
+              "offset": [
+                53,
+                173
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                141,
+                432
+              ]
+            },
+            "anxious": {
+              "file": "assets/dialogue-dot-v2/v111_resident/560/anxious.webp",
+              "offset": [
+                44,
+                175
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                150,
+                430
+              ]
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-dot-v2/v111_resident/560/surprise_talk.webp",
+              "offset": [
+                49,
+                177
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                145,
+                428
+              ]
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-dot-v2/v111_resident/560/surprise_talk.webp",
+              "offset": [
+                49,
+                177
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                145,
+                428
+              ]
+            }
+          },
+          "dot_scale": 2
+        },
+        "760": {
+          "canvas": [
+            416,
+            663
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/neutral.webp",
+              "offset": [
+                -2,
+                6
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                213,
+                648
+              ]
+            },
+            "joy": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/joy.webp",
+              "offset": [
+                -8,
+                18
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                219,
+                636
+              ]
+            },
+            "flustered": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/flustered.webp",
+              "offset": [
+                -18,
+                6
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                229,
+                648
+              ]
+            },
+            "angry": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/angry.webp",
+              "offset": [
+                0,
+                6
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                211,
+                648
+              ]
+            },
+            "anxious": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/anxious.webp",
+              "offset": [
+                -14,
+                9
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                225,
+                645
+              ]
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/surprise_talk.webp",
+              "offset": [
+                -6,
+                12
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                217,
+                642
+              ]
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/surprise_talk.webp",
+              "offset": [
+                -6,
+                12
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                217,
+                642
+              ]
+            }
+          },
+          "dot_scale": 3
+        },
+        "840": {
+          "canvas": [
+            568,
+            906
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/neutral.webp",
+              "offset": [
+                76,
+                251
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                213,
+                648
+              ]
+            },
+            "joy": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/joy.webp",
+              "offset": [
+                70,
+                263
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                219,
+                636
+              ]
+            },
+            "flustered": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/flustered.webp",
+              "offset": [
+                60,
+                251
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                229,
+                648
+              ]
+            },
+            "angry": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/angry.webp",
+              "offset": [
+                78,
+                251
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                211,
+                648
+              ]
+            },
+            "anxious": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/anxious.webp",
+              "offset": [
+                64,
+                254
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                225,
+                645
+              ]
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/surprise_talk.webp",
+              "offset": [
+                72,
+                257
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                217,
+                642
+              ]
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/surprise_talk.webp",
+              "offset": [
+                72,
+                257
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                217,
+                642
+              ]
+            }
+          },
+          "dot_scale": 3
+        }
+      },
+      "art_dot_v2": "2026-10-27 단역 공용 그림, 같은 도트 크기, 자리는 할머니 를 본뜸(210도트) / v111_resident 그림을 같이 씀"
+    },
+    "ms14_clinician": {
+      "status": "approved_runtime",
+      "art_style": "storybook_source",
+      "source_kind": "source_master",
+      "stance": "standing",
+      "gaze": "player",
+      "profiles": {
+        "560": {
+          "canvas": [
+            384,
+            612
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-dot-v2/v111_resident/560/neutral.webp",
+              "offset": [
+                52,
+                173
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                142,
+                432
+              ]
+            },
+            "joy": {
+              "file": "assets/dialogue-dot-v2/v111_resident/560/joy.webp",
+              "offset": [
+                48,
+                181
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                146,
+                424
+              ]
+            },
+            "flustered": {
+              "file": "assets/dialogue-dot-v2/v111_resident/560/flustered.webp",
+              "offset": [
+                41,
+                173
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                153,
+                432
+              ]
+            },
+            "angry": {
+              "file": "assets/dialogue-dot-v2/v111_resident/560/angry.webp",
+              "offset": [
+                53,
+                173
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                141,
+                432
+              ]
+            },
+            "anxious": {
+              "file": "assets/dialogue-dot-v2/v111_resident/560/anxious.webp",
+              "offset": [
+                44,
+                175
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                150,
+                430
+              ]
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-dot-v2/v111_resident/560/surprise_talk.webp",
+              "offset": [
+                49,
+                177
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                145,
+                428
+              ]
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-dot-v2/v111_resident/560/surprise_talk.webp",
+              "offset": [
+                49,
+                177
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                145,
+                428
+              ]
+            }
+          },
+          "dot_scale": 2
+        },
+        "760": {
+          "canvas": [
+            416,
+            663
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/neutral.webp",
+              "offset": [
+                -2,
+                6
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                213,
+                648
+              ]
+            },
+            "joy": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/joy.webp",
+              "offset": [
+                -8,
+                18
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                219,
+                636
+              ]
+            },
+            "flustered": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/flustered.webp",
+              "offset": [
+                -18,
+                6
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                229,
+                648
+              ]
+            },
+            "angry": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/angry.webp",
+              "offset": [
+                0,
+                6
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                211,
+                648
+              ]
+            },
+            "anxious": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/anxious.webp",
+              "offset": [
+                -14,
+                9
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                225,
+                645
+              ]
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/surprise_talk.webp",
+              "offset": [
+                -6,
+                12
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                217,
+                642
+              ]
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/surprise_talk.webp",
+              "offset": [
+                -6,
+                12
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                217,
+                642
+              ]
+            }
+          },
+          "dot_scale": 3
+        },
+        "840": {
+          "canvas": [
+            568,
+            906
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/neutral.webp",
+              "offset": [
+                76,
+                251
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                213,
+                648
+              ]
+            },
+            "joy": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/joy.webp",
+              "offset": [
+                70,
+                263
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                219,
+                636
+              ]
+            },
+            "flustered": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/flustered.webp",
+              "offset": [
+                60,
+                251
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                229,
+                648
+              ]
+            },
+            "angry": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/angry.webp",
+              "offset": [
+                78,
+                251
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                211,
+                648
+              ]
+            },
+            "anxious": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/anxious.webp",
+              "offset": [
+                64,
+                254
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                225,
+                645
+              ]
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/surprise_talk.webp",
+              "offset": [
+                72,
+                257
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                217,
+                642
+              ]
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/surprise_talk.webp",
+              "offset": [
+                72,
+                257
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                217,
+                642
+              ]
+            }
+          },
+          "dot_scale": 3
+        }
+      },
+      "art_dot_v2": "2026-10-27 단역 공용 그림, 같은 도트 크기, 자리는 할머니 를 본뜸(210도트) / v111_resident 그림을 같이 씀"
+    },
+    "ms14_attendant": {
+      "status": "approved_runtime",
+      "art_style": "storybook_source",
+      "source_kind": "source_master",
+      "stance": "standing",
+      "gaze": "player",
+      "profiles": {
+        "560": {
+          "canvas": [
+            384,
+            612
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-dot-v2/v111_resident/560/neutral.webp",
+              "offset": [
+                52,
+                173
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                142,
+                432
+              ]
+            },
+            "joy": {
+              "file": "assets/dialogue-dot-v2/v111_resident/560/joy.webp",
+              "offset": [
+                48,
+                181
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                146,
+                424
+              ]
+            },
+            "flustered": {
+              "file": "assets/dialogue-dot-v2/v111_resident/560/flustered.webp",
+              "offset": [
+                41,
+                173
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                153,
+                432
+              ]
+            },
+            "angry": {
+              "file": "assets/dialogue-dot-v2/v111_resident/560/angry.webp",
+              "offset": [
+                53,
+                173
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                141,
+                432
+              ]
+            },
+            "anxious": {
+              "file": "assets/dialogue-dot-v2/v111_resident/560/anxious.webp",
+              "offset": [
+                44,
+                175
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                150,
+                430
+              ]
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-dot-v2/v111_resident/560/surprise_talk.webp",
+              "offset": [
+                49,
+                177
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                145,
+                428
+              ]
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-dot-v2/v111_resident/560/surprise_talk.webp",
+              "offset": [
+                49,
+                177
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                145,
+                428
+              ]
+            }
+          },
+          "dot_scale": 2
+        },
+        "760": {
+          "canvas": [
+            416,
+            663
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/neutral.webp",
+              "offset": [
+                -2,
+                6
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                213,
+                648
+              ]
+            },
+            "joy": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/joy.webp",
+              "offset": [
+                -8,
+                18
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                219,
+                636
+              ]
+            },
+            "flustered": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/flustered.webp",
+              "offset": [
+                -18,
+                6
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                229,
+                648
+              ]
+            },
+            "angry": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/angry.webp",
+              "offset": [
+                0,
+                6
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                211,
+                648
+              ]
+            },
+            "anxious": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/anxious.webp",
+              "offset": [
+                -14,
+                9
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                225,
+                645
+              ]
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/surprise_talk.webp",
+              "offset": [
+                -6,
+                12
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                217,
+                642
+              ]
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/surprise_talk.webp",
+              "offset": [
+                -6,
+                12
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                217,
+                642
+              ]
+            }
+          },
+          "dot_scale": 3
+        },
+        "840": {
+          "canvas": [
+            568,
+            906
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/neutral.webp",
+              "offset": [
+                76,
+                251
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                213,
+                648
+              ]
+            },
+            "joy": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/joy.webp",
+              "offset": [
+                70,
+                263
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                219,
+                636
+              ]
+            },
+            "flustered": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/flustered.webp",
+              "offset": [
+                60,
+                251
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                229,
+                648
+              ]
+            },
+            "angry": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/angry.webp",
+              "offset": [
+                78,
+                251
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                211,
+                648
+              ]
+            },
+            "anxious": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/anxious.webp",
+              "offset": [
+                64,
+                254
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                225,
+                645
+              ]
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/surprise_talk.webp",
+              "offset": [
+                72,
+                257
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                217,
+                642
+              ]
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-dot-v2/v111_resident/760/surprise_talk.webp",
+              "offset": [
+                72,
+                257
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                217,
+                642
+              ]
+            }
+          },
+          "dot_scale": 3
+        }
+      },
+      "art_dot_v2": "2026-10-27 단역 공용 그림, 같은 도트 크기, 자리는 할머니 를 본뜸(210도트) / v111_resident 그림을 같이 씀"
+    },
+    "v111_siluk_child": {
+      "status": "approved_runtime",
+      "art_style": "storybook_source",
+      "source_kind": "source_master",
+      "stance": "standing",
+      "gaze": "player",
+      "profiles": {
+        "560": {
+          "canvas": [
+            349,
+            524
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-dot-v2/v111_child/560/neutral.webp",
+              "offset": [
+                64,
+                170
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                113,
+                346
+              ]
+            },
+            "joy": {
+              "file": "assets/dialogue-dot-v2/v111_child/560/joy.webp",
+              "offset": [
+                66,
+                172
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                111,
+                344
+              ]
+            },
+            "flustered": {
+              "file": "assets/dialogue-dot-v2/v111_child/560/flustered.webp",
+              "offset": [
+                59,
+                170
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                118,
+                346
+              ]
+            },
+            "angry": {
+              "file": "assets/dialogue-dot-v2/v111_child/560/angry.webp",
+              "offset": [
+                62,
+                172
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                115,
+                344
+              ]
+            },
+            "anxious": {
+              "file": "assets/dialogue-dot-v2/v111_child/560/anxious.webp",
+              "offset": [
+                61,
+                172
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                116,
+                344
+              ]
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-dot-v2/v111_child/560/surprise_talk.webp",
+              "offset": [
+                66,
+                170
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                111,
+                346
+              ]
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-dot-v2/v111_child/560/surprise_talk.webp",
+              "offset": [
+                66,
+                170
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                111,
+                346
+              ]
+            }
+          },
+          "dot_scale": 2
+        },
+        "760": {
+          "canvas": [
+            416,
+            624
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/neutral.webp",
+              "offset": [
+                43,
+                97
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                169,
+                519
+              ]
+            },
+            "joy": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/joy.webp",
+              "offset": [
+                46,
+                100
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                166,
+                516
+              ]
+            },
+            "flustered": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/flustered.webp",
+              "offset": [
+                35,
+                97
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                177,
+                519
+              ]
+            },
+            "angry": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/angry.webp",
+              "offset": [
+                40,
+                100
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                172,
+                516
+              ]
+            },
+            "anxious": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/anxious.webp",
+              "offset": [
+                38,
+                100
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                174,
+                516
+              ]
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/surprise_talk.webp",
+              "offset": [
+                46,
+                97
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                166,
+                519
+              ]
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/surprise_talk.webp",
+              "offset": [
+                46,
+                97
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                166,
+                519
+              ]
+            }
+          },
+          "dot_scale": 3
+        },
+        "840": {
+          "canvas": [
+            516,
+            774
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/neutral.webp",
+              "offset": [
+                95,
+                247
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                169,
+                519
+              ]
+            },
+            "joy": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/joy.webp",
+              "offset": [
+                98,
+                250
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                166,
+                516
+              ]
+            },
+            "flustered": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/flustered.webp",
+              "offset": [
+                87,
+                247
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                177,
+                519
+              ]
+            },
+            "angry": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/angry.webp",
+              "offset": [
+                92,
+                250
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                172,
+                516
+              ]
+            },
+            "anxious": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/anxious.webp",
+              "offset": [
+                90,
+                250
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                174,
+                516
+              ]
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/surprise_talk.webp",
+              "offset": [
+                98,
+                247
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                166,
+                519
+              ]
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/surprise_talk.webp",
+              "offset": [
+                98,
+                247
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                166,
+                519
+              ]
+            }
+          },
+          "dot_scale": 3
+        }
+      },
+      "art_dot_v2": "2026-10-27 단역 공용 그림, 같은 도트 크기, 자리는 꼬미 를 본뜸(165도트) / v111_child 그림을 같이 씀"
+    },
+    "kid_nubi3": {
+      "status": "approved_runtime",
+      "art_style": "storybook_source",
+      "source_kind": "source_master",
+      "stance": "standing",
+      "gaze": "player",
+      "profiles": {
+        "560": {
+          "canvas": [
+            349,
+            524
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-dot-v2/v111_child/560/neutral.webp",
+              "offset": [
+                64,
+                170
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                113,
+                346
+              ]
+            },
+            "joy": {
+              "file": "assets/dialogue-dot-v2/v111_child/560/joy.webp",
+              "offset": [
+                66,
+                172
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                111,
+                344
+              ]
+            },
+            "flustered": {
+              "file": "assets/dialogue-dot-v2/v111_child/560/flustered.webp",
+              "offset": [
+                59,
+                170
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                118,
+                346
+              ]
+            },
+            "angry": {
+              "file": "assets/dialogue-dot-v2/v111_child/560/angry.webp",
+              "offset": [
+                62,
+                172
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                115,
+                344
+              ]
+            },
+            "anxious": {
+              "file": "assets/dialogue-dot-v2/v111_child/560/anxious.webp",
+              "offset": [
+                61,
+                172
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                116,
+                344
+              ]
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-dot-v2/v111_child/560/surprise_talk.webp",
+              "offset": [
+                66,
+                170
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                111,
+                346
+              ]
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-dot-v2/v111_child/560/surprise_talk.webp",
+              "offset": [
+                66,
+                170
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                111,
+                346
+              ]
+            }
+          },
+          "dot_scale": 2
+        },
+        "760": {
+          "canvas": [
+            416,
+            624
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/neutral.webp",
+              "offset": [
+                43,
+                97
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                169,
+                519
+              ]
+            },
+            "joy": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/joy.webp",
+              "offset": [
+                46,
+                100
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                166,
+                516
+              ]
+            },
+            "flustered": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/flustered.webp",
+              "offset": [
+                35,
+                97
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                177,
+                519
+              ]
+            },
+            "angry": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/angry.webp",
+              "offset": [
+                40,
+                100
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                172,
+                516
+              ]
+            },
+            "anxious": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/anxious.webp",
+              "offset": [
+                38,
+                100
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                174,
+                516
+              ]
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/surprise_talk.webp",
+              "offset": [
+                46,
+                97
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                166,
+                519
+              ]
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/surprise_talk.webp",
+              "offset": [
+                46,
+                97
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                166,
+                519
+              ]
+            }
+          },
+          "dot_scale": 3
+        },
+        "840": {
+          "canvas": [
+            516,
+            774
+          ],
+          "frames": {
+            "neutral": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/neutral.webp",
+              "offset": [
+                95,
+                247
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                169,
+                519
+              ]
+            },
+            "joy": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/joy.webp",
+              "offset": [
+                98,
+                250
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                166,
+                516
+              ]
+            },
+            "flustered": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/flustered.webp",
+              "offset": [
+                87,
+                247
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                177,
+                519
+              ]
+            },
+            "angry": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/angry.webp",
+              "offset": [
+                92,
+                250
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                172,
+                516
+              ]
+            },
+            "anxious": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/anxious.webp",
+              "offset": [
+                90,
+                250
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                174,
+                516
+              ]
+            },
+            "surprise_talk": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/surprise_talk.webp",
+              "offset": [
+                98,
+                247
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                166,
+                519
+              ]
+            },
+            "surprise_react": {
+              "file": "assets/dialogue-dot-v2/v111_child/760/surprise_talk.webp",
+              "offset": [
+                98,
+                247
+              ],
+              "nearest": true,
+              "native_detail": true,
+              "anchor": [
+                166,
+                519
+              ]
+            }
+          },
+          "dot_scale": 3
+        }
+      },
+      "art_dot_v2": "2026-10-27 단역 공용 그림, 같은 도트 크기, 자리는 꼬미 를 본뜸(165도트) / v111_child 그림을 같이 씀"
     }
   }
 }

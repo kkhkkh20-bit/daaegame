@@ -51,7 +51,8 @@ screen r13_notebook_choice_list(person,pose,title,entries,ready,return_action=No
     $ header_top=180 if header_height<=112 and len(pages)==1 else max(40,640-header_height-28-rows_height-((100 if r13_touch_ui() else 66) if len(pages)>1 else 0))
     $ rows_top=header_top+header_height+28
     if person and not carriage:
-        add R13StickerOutline(r13_close_art(person,pose,760)):
+        # 2026-10-26 소유자: 인물 그림은 스티커 없이 간다.
+        add r13_close_art(person,pose,760):
             xpos r13_close_x(person,pose,760)+390 xanchor .5 ypos r13_close_y(person,760,70,pose)
     frame:
         xpos left+20 ypos header_top xsize width-40 ysize header_height padding (42,22,24,22) background r13_notebook_note()

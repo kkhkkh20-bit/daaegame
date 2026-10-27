@@ -158,8 +158,21 @@ init 58 python:
         if not spec:return 640
         return int(round(640-R13_FULLBODY_CENTRE.get(person,0)*r13_fullbody_scale(person,height)*spec.get("fit",1.0)))
 
+    # 2026-10-27 소유자: "상반신은 적어도 다 나와야", "다람이가 대사창에 짤린다".
+    # 도트로 다시 찍은 그림은 캔버스 안 발 위치가 인물마다 달라(760 기준 547~694px) 캔버스 윗변으로
+    # 세우면 다람이 다른 아이보다 78px 낮게 서고, 840 에서는 어른도 머리·어깨만 대사창 위로 나왔다.
+    # 도트 그림은 모두 같은 발 선에 세운다. 어른(210도트 x3=630px)은 머리가 약 120, 허리가 대사창(약 540) 위다.
+    R13_DOT_FEET_LINE=640
+
+    def r13_dot_feet(profile):
+        frame=profile["frames"].get("neutral") or next(iter(profile["frames"].values()))
+        return frame["offset"][1]+frame.get("anchor",(0,0))[1]*frame.get("scale",1.0)
+
     def r13_fullbody_close_y(person,height,top,pose):
-        if r13_dialogue_source_profile(person,pose,height):return int(top+12*height/840.0)
+        profile=r13_dialogue_source_profile(person,pose,height)
+        if profile and profile.get("dot_scale"):
+            return int(round(top+R13_DOT_FEET_LINE*height/840.0-r13_dot_feet(profile)))
+        if profile:return int(top+12*height/840.0)
         spec=r13_fullbody_spec(person,pose)
         if not spec:return None
         scale=r13_fullbody_scale(person,height)*spec.get("fit",1.0)
