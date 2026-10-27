@@ -131,7 +131,12 @@ init 301 python:
         authored=binding.get("people",["daram"])
         # 2026-10-27 검수: 지도로 다른 곳에 가 있는 동안에도 장면의 등장인물(초소의 돌목·까로)이 그곳에 따라와 섰다.
         # 장면 묶음의 장소가 지금 장소와 다르면 그 인물들은 그 장소에 있는 것이지 여기 있는 것이 아니다. 경비는 초소를 비우지 않는다.
-        if binding.get("location") and binding.get("location")!=store.room13.get("location"):authored=[]
+        # 2026-10-27 14일 자동 플레이(2일 저녁 lamp_prep2)에서 드러난 것: 위 규칙이 장소별 인물표(people_by_location, 이미 지금
+        # 장소의 목록)까지 비워 광장의 초롱이 사라졌고, 선택지가 가리키는 사람(「남은 끈을 빌린다」)을 누를 수 없어 하루가 안 끝났다.
+        # 장소별 표가 있으면 그대로 두고, 없으면 이 장소의 선택지가 가리키는 사람만 남긴다.
+        here=store.room13.get("location")
+        needed={o["person"] for o in binding.get("options",[]) if o.get("person") and (o.get("location") or binding.get("location")) in (None,here)}
+        if binding.get("location") and binding.get("location")!=here and binding.get("people_by_location") is None:authored=[p for p in authored if p in needed]
         # Preserve the existing residents and their scheduled staging. Explicit
         # V1.1.1 survival, relocation and custody results still take precedence.
         people=[] if r13_v111_value("wild_night14") or store.room13["location"] in ("hidden_pandol","hidden_base14") else list(_r13_v111_visible_people())
@@ -148,8 +153,8 @@ init 301 python:
         # 현장에 주민처럼 세우지 않는다. 아빠와 떨어져 있을 때(location:daram 이 따로 잡힘)만, 그곳에 가면 보인다.
         # 대사 근접·주고받기(r13_child_is_along)는 상태로 판단해 그대로 나온다.
         # 「함께 다님」 판정은 이동(travel) 쪽과 같은 조건이다(붙잡힘·엄마가 맡음·학교에 맡김·13호에 둠이 아니면 곁에 있다).
-        here=store.room13.get("location")
-        daram_with_dad=(not r13_v111_value("DARAM_DETAINED") and r13_v111_value("location:daram") in (None,here)
+        # 다만 이 장소의 선택지가 다람을 가리키면(2일 「방으로 들어간다」, 6일 식사, 7일 자유 시간·누비 아이들) 눌러야 하므로 세운다.
+        daram_with_dad=("daram" not in needed) and (not r13_v111_value("DARAM_DETAINED") and r13_v111_value("location:daram") in (None,here)
             and not (r13_v111_value("busy:mom")=="daram_guard")
             and not (r13_v111_value("DARAM_location")=="school" and r13_v111_value("busy:nabi")=="daram_guard")
             and not (r13_v111_value("DARAM_location")=="room13" and store.room13["v111"].get("scene")=="MS14_D07_S04"))

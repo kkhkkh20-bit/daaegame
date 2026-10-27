@@ -141,7 +141,9 @@ init 80 python:
         # 아침 저장이 실제로 남은 뒤, 첫날이 아닌 첫 아침에 한 번만 알린다(날짜가 처음 바뀐 때).
         if persistent.r13_recovery_hint_morning or day<2 or day not in r13_morning_days():return
         persistent.r13_recovery_hint_morning=True
-        renpy.show_screen("r13_recovery_note","%d일 아침을 남겼습니다. 「더보기」의 「다시 시작할 아침」에서 이 아침으로 돌아올 수 있습니다."%day)
+        # 2026-10-27 14일 자동 플레이 2일: 「더보기」의 「다시 시작할 아침」은 메뉴에서 뺐는데 안내는 그 이름을 그대로 말했다.
+        # 아침 저장은 이어 갈 수 없는 저장을 열었을 때 자동으로 쓰인다(systems/room13_return_recovery.rpy). 그 사실만 말한다.
+        renpy.show_screen("r13_recovery_note","%d일 아침을 남겼습니다. 하던 장면을 이어 갈 수 없게 되면 이 아침부터 다시 시작합니다."%day)
 
 screen r13_recovery_note(message):
     # 알림 자리(오른쪽 위, 날짜판 아래)를 쓰되 한 번만 나오는 안내라 조금 더 오래 둔다. 누르면 닫힌다.

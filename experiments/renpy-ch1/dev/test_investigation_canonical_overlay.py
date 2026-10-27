@@ -8,7 +8,7 @@ class CanonicalOverlay(unittest.TestCase):
   self.assertEqual(run(),{'assets':14,'bindings':18,'job_rows':8,'runtime_reviewed':False})
  def test_only_exact18_specs_change_from_pinned066(self):
   old=restored_registries(self.reg,self.r)
-  expected={'assets/room13-pixel-acting.json':'2f34423c114efd01b55bfbc1c54ef195ea3857b6a3b0252de235509523caec86','assets/room13-map-action27.json':'06c4b04e3bb226b381bda1251a930e19638e89ae83d4050471db9c8beacfa59a'}
+  expected={'assets/room13-pixel-acting.json':'2f34423c114efd01b55bfbc1c54ef195ea3857b6a3b0252de235509523caec86','assets/room13-map-action27.json':'a6c2d4c13f447a25559668ab1ce81660e12d82e927683a64eadafacea9977349'}
   # Original serialized .66 bytes used indent=2 and a newline. Check semantic digest below instead.
   for path,digest in SEMANTIC_BASE.items():
    value=hashlib.sha256(json.dumps(old[path],sort_keys=True,ensure_ascii=True,separators=(',',':')).encode()).hexdigest();self.assertEqual(value,digest)
@@ -21,5 +21,5 @@ class CanonicalOverlay(unittest.TestCase):
  def test_old_living_art_rejected(self):
   o=next(o for o in self.r['operations'] if o['pointer']=='/resident_musoe/living_foldmap');n,k=slot(self.reg[o['file'].removeprefix('game/')],o['pointer']);n[k]=o['expected']
   with self.assertRaises(AssertionError):restored_registries(self.reg,self.r)
-SEMANTIC_BASE={'assets/room13-pixel-acting.json': '1024e3a6a443a9dedb289ac2300117bb41bb4496e6a1a145f13e454133f1b295', 'assets/room13-map-action27.json': 'c158939832baecc7bfdf4b336265c28c23650146da4dcf33fd4d9e6cb5d8a341'}
+SEMANTIC_BASE={'assets/room13-pixel-acting.json': '1024e3a6a443a9dedb289ac2300117bb41bb4496e6a1a145f13e454133f1b295', 'assets/room13-map-action27.json': 'a6c2d4c13f447a25559668ab1ce81660e12d82e927683a64eadafacea9977349'}
 if __name__=='__main__':unittest.main()

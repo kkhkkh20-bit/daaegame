@@ -48,7 +48,9 @@ define R13_EVIDENCE_CARD_PAD = 10
 screen r13_evidence_card(key,caption="",conversation=False,notice=False,compact=False):
     # 2026-10-27: 왼쪽 위 획득 알림이 현장 상단 지도·기록 버튼(y 40~75)을 덮었다. 그 아래로 내린다.
     # 2026-10-27: 알림 카드는 오른쪽 위(날짜판 아래). 왼쪽 위에 두니 자료 대조 화면의 발언 글과 겹쳤다.
-    $ card_center=(1100,190) if notice else R13_EVIDENCE_CARD_CENTER
+    # 2026-10-27 14일 자동 플레이 2일(등 살펴보기 선택창): 선택창 틀(195~1085)의 오른쪽 가장자리를 카드(1030~1170)가 덮었다.
+    # 선택창이 떠 있으면 틀 바깥(1110~1250)으로 비켜 둔다.
+    $ card_center=((1180,190) if renpy.get_screen("choice") else (1100,190)) if notice else R13_EVIDENCE_CARD_CENTER
     style_prefix "r13"
     if compact:
         # 2026-10-27: 자료 대조 패널(50,100)-(1230,670)이 떠 있는 동안은 왼쪽 위 카드가 주장 제목을 덮는다.
