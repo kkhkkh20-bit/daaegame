@@ -1,6 +1,7 @@
 """Two-line panel geometry, independent of the native renderer.
 Run native carriage / normal speech / large text checks before release.
 """
+from type_stub import r13_type_stub
 import re
 import textwrap
 import types
@@ -14,7 +15,7 @@ block = '    def _r13_say_size():' + block
 class CompactDialogue(unittest.TestCase):
     def env(self, large=False, touch=False, small=False):
         state = types.SimpleNamespace(room13_large_text=large)
-        env = dict(persistent=state, store=types.SimpleNamespace(r13_field_reading=False), r13_touch_ui=lambda:touch, R13_TYPE_V2=False,
+        env = dict(persistent=state, store=types.SimpleNamespace(r13_field_reading=False), r13_touch_ui=lambda:touch, r13_type=r13_type_stub(touch=touch,large=large,small=small),
                    r13_control_y=lambda:624 if large or touch else 640,
                    r13_read_size=lambda base,big:big if large else int(max(base-3,round(base*.9))) if small else base)
         for name in ('R13_SAY_TOP_NORMAL', 'R13_SAY_TOP_LARGE'):
@@ -47,8 +48,9 @@ class CompactDialogue(unittest.TestCase):
         offset=int(re.search(r'xpos b_text_x ypos \(r13_night_say_top\(what\)-(\d+)\)',speech).group(1))
         name=speech.split('if who:',1)[1]  # 2026-10-26 이름표 페이드를 뺐다. 이름표 덩어리는 if who: 뒤에 있다
         padding=tuple(map(int,re.search(r'padding \((\d+),(\d+),(\d+),(\d+)\)',name).groups()))
-        # 2026-10-27 타이포 시안: size 는 `(r13_type(...) if R13_TYPE_V2 else r13_read_size(a,b))` 꼴. 꺼진 값을 본다.
-        sizes=tuple(map(int,re.search(r'text who[^\n]+r13_read_size\((\d+),(\d+)\)',name).groups()))
+        # 2026-10-27 6단계 통일: 이름표 크기는 단계 이름 하나다. 보통·크게 두 값으로 잰다.
+        level=re.search(r'text who[^\n]+size \(?r13_type\("([a-z]+)"\)',name).group(1)
+        sizes=({'small':22,'body':24,'emphasis':26,'subtitle':28,'title':30,'display':36}[level],{'small':26,'body':28,'emphasis':30,'subtitle':32,'title':34,'display':38}[level])
         for size in sizes:self.assertGreaterEqual(offset-size-padding[1]-padding[3],8)
         self.assertIn('background None padding (0,0)',speech)
 

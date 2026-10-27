@@ -22,6 +22,8 @@ TOUCHED=['screens.rpy','systems/room13_night_ui.rpy','systems/room13_notebook_ch
          'room13_inspection.rpy','systems/room13_evidence_drawer.rpy',
          # 2026-10-27 UX 인계서 D01~D03·D06: 자료 대조 통합 화면(수첩 틀의 r13_nb_* 도우미를 쓴다).
          'systems/room13_proof_workspace.rpy']
+# 옛 모드 파일(2026-10-27 제거 중)은 검사에서 뺀다.
+LEGACY=('winter','source','arrival','council','village_','story.rpy','ms14','timeline','room13_week2','room13_ep','episodes','town_events','scene_runtime','room13_opening')
 GUARDED=re.compile(r'r13_type(?:_color)?\("[a-z]+"\)\s+if R13_TYPE_V2 else ')
 HEAD=re.compile(r'^\s+if R13_TYPE_V2:\s*return r13_type(?:_color)?\("[a-z]+"\)')
 
@@ -54,11 +56,11 @@ class TypeScale(unittest.TestCase):
 
     def test_scale_values(self):
         ns=load_scale()
-        self.assertEqual([ns['r13_type'](l) for l in ns['R13_TYPE_LEVELS']],[22,24,26,28,30,36,38])
+        self.assertEqual([ns['r13_type'](l) for l in ns['R13_TYPE_LEVELS']],[22,24,26,28,30,36])
         ns=load_scale(large=True)
-        self.assertEqual([ns['r13_type'](l) for l in ns['R13_TYPE_LEVELS']],[26,28,30,32,34,38,40])
+        self.assertEqual([ns['r13_type'](l) for l in ns['R13_TYPE_LEVELS']],[26,28,30,32,34,38])
         ns=load_scale(touch=True)
-        self.assertEqual([ns['r13_type'](l) for l in ns['R13_TYPE_LEVELS']],[26,28,30,32,34,36,38])
+        self.assertEqual([ns['r13_type'](l) for l in ns['R13_TYPE_LEVELS']],[26,28,30,32,34,36])
         ns=load_scale(small=True)
         self.assertEqual(ns['r13_type']('body'),22)
 
@@ -67,26 +69,19 @@ class TypeScale(unittest.TestCase):
         for token in ('ink','muted','disabled','accent','inverse'):
             self.assertRegex(ns['r13_type_color'](token),r'^#[0-9a-f]{6}$')
 
-    def test_every_use_is_guarded_by_switch(self):
-        unguarded=[];outside=[]
+    def test_six_levels_and_no_hardcoded_sizes(self):
+        # 2026-10-27 소유자 "전체적으로 폰트 사이즈 6단계 이하로 통일해": 단계는 여섯, 화면의 글자 크기는 단계 이름으로만 쓴다.
+        ns=load_scale()
+        self.assertEqual(len(ns['R13_TYPE_LEVELS']),6)
+        literal=[];switch=[]
         for f in sorted(GAME.rglob('*.rpy')):
-            if 'qa_tests' in f.parts or f==SCALE:continue
             rel=f.relative_to(GAME).as_posix()
+            if 'qa_tests' in f.parts or f==SCALE or any(k in rel for k in LEGACY):continue
             for n,line in enumerate(f.read_text(encoding='utf-8').splitlines(),1):
-                uses=len(re.findall(r'r13_type(?:_color)?\(',line))
-                if not uses:continue
-                if rel not in TOUCHED:outside.append('%s:%d'%(rel,n))
-                if HEAD.match(line):continue
-                if len(GUARDED.findall(line))!=uses:unguarded.append('%s:%d %s'%(rel,n,line.strip()))
-        self.assertEqual(outside,[],'r13_type outside the three proposal areas')
-        self.assertEqual(unguarded,[],'every r13_type use needs "... if R13_TYPE_V2 else <old>"')
-
-    def test_head_guards_keep_old_return(self):
-        # 함수 머리에서 켤 때는 바로 다음 줄에 이전 return 이 남아 있어야 꺼짐이 같다.
-        for rel in TOUCHED:
-            lines=(GAME/rel).read_text(encoding='utf-8').splitlines()
-            for i,line in enumerate(lines):
-                if HEAD.match(line):
-                    self.assertTrue(lines[i+1].strip().startswith('return'),'%s:%d'%(rel,i+1))
+                if line.lstrip().startswith('#'):continue
+                if re.search(r'(?<![xy_])(?:text_)?size (?:\d{2}\b|\(?r13_read_size\()',line):literal.append('%s:%d'%(rel,n))
+                if 'if R13_TYPE_V2' in line:switch.append('%s:%d'%(rel,n))
+        self.assertEqual(literal,[],'글자 크기는 r13_type("단계") 로만 적는다')
+        self.assertEqual(switch,[],'R13_TYPE_V2 이중 경로는 2026-10-27 에 걷어냈다')
 
 if __name__=='__main__':unittest.main()

@@ -137,8 +137,8 @@ screen r13_life_group_conversation(key, person=None):
             xpos 120 ypos 112 xsize 1040 padding (26,18) background R13InkPanel(alpha="e8")
             vbox:
                 spacing 12
-                text R13_NAMES[lines[line_index][0]] size 26 color "#f6d18a"
-                text lines[line_index][1] size r13_read_size(26,30) color "#fff2cf" xsize 980
+                text R13_NAMES[lines[line_index][0]] size r13_type("emphasis") color "#f6d18a"
+                text lines[line_index][1] size r13_type("emphasis") color "#fff2cf" xsize 980
         use r13_footer_control(0,"돌아가기" if line_index == len(lines)-1 else "계속 듣기","dialogue",Return(None) if line_index == len(lines)-1 else SetScreenVariable("line_index",line_index+1),enabled=ready)
         use r13_footer_control(1,"그만 듣기","dialogue",Return(None),enabled=ready)
         use r13_footer_control(3,"저장",None,ShowMenu("save"))

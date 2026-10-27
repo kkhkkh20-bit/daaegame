@@ -154,14 +154,14 @@ screen r13_cartography_layer(region,selected,ready,map_hover):
                 $ underline_width=max(36,int(round(R13_CARTOGRAPHY["regions"]["village"]["nodes"][key]["label_bounds"][2]*R13_MAP_SCALE)))
                 add R13MapInkUnderline(hovered=(key==map_hover)) xpos (hx-underline_width//2) ypos (hy+18) xysize (underline_width,6)
             if key==("inn" if room13["location"] in R13_INN_LOCATIONS else room13["location"]):
-                text "현재 위치" xpos hx ypos (hy+24 if hy<r13_cart_canvas(region)[1]-60 else hy-42) xanchor .5 size 14 color "#765b3e"
+                text "현재 위치" xpos hx ypos (hy+24 if hy<r13_cart_canvas(region)[1]-60 else hy-42) xanchor .5 size r13_type("small") color "#765b3e"
     elif map_hover in dict(r13_map_nodes(region)):
         $ hx,hy=r13_cart_point(region,map_hover)
         $ nw=max(118,min(304,32+len(r13_map_label(map_hover))*22))
         frame:
             xpos (max(24,min(1256-nw,hx-nw//2))) ypos (max(101,min(568,hy-62)))
             xysize (nw,38) padding (8,3) background r13_field_paper()
-            text r13_map_label(map_hover) size 21 color "#4b3021" align (.5,.5)
+            text r13_map_label(map_hover) size r13_type("small") color "#4b3021" align (.5,.5)
 
 transform r13_map_pop:
     subpixel True

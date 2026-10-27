@@ -11,21 +11,18 @@ class SettingsTypeScale(unittest.TestCase):
   self.assertEqual(A.count('size (r13_opt_title_size()+8)'),1)
  def test_scale_small_normal_large(self):
   block=A.split('init python:\n',1)[1].split('\nstyle ',1)[0]
-  for small,large,body,title,row in [(False,False,22,30,76),(True,False,20,27,76),(False,True,26,34,112)]:
-   def size(base,big):return big if large else int(max(base-3,round(base*.9))) if small else base
-   ns={'r13_read_size':size,'persistent':SimpleNamespace(room13_large_text=large),'R13_TYPE_V2':False};exec(textwrap.dedent(block),ns)
-   self.assertEqual((ns['r13_opt_size'](),ns['r13_opt_title_size'](),ns['r13_opt_row_height']()),(body,title,row))
-  # 2026-10-27 타이포 시안이 켜지면 본문 body·제목 subtitle 단계(PC 보통 24/28, 크게 28/32). 줄 높이는 그대로.
-  for large,body,title,row in [(False,24,28,76),(True,28,32,112)]:
-   def size(base,big):return big if large else base
+  # 2026-10-27 6단계 통일: 본문 body·제목 subtitle 단계(PC 보통 24/28, 크게 28/32). 큰 글씨 줄 높이는 92(한 쪽에 들어오는 값).
+  for large,body,title,row in [(False,24,28,76),(True,28,32,92)]:
    levels={'body':(24,28),'subtitle':(28,32)}
-   ns={'r13_read_size':size,'persistent':SimpleNamespace(room13_large_text=large),'R13_TYPE_V2':True,'r13_type':lambda l:levels[l][1 if large else 0]};exec(textwrap.dedent(block),ns)
+   ns={'persistent':SimpleNamespace(room13_large_text=large),'r13_type':lambda l:levels[l][1 if large else 0]};exec(textwrap.dedent(block),ns)
    self.assertEqual((ns['r13_opt_size'](),ns['r13_opt_title_size'](),ns['r13_opt_row_height']()),(body,title,row))
  def test_no_footer_overlap_all_tabs_even_large(self):
-  view=re.search(r'id "r13_settings_body"\n\s+area (\([^\n]+\)) mousewheel',A).group(1)
-  footer=A.split('textbutton "설정 초기화"',1)[1].split('key "game_menu"',1)[0]
-  footer_rects=re.findall(r'xpos (\d+) ypos (\([^\n]+?\)) xsize (\d+)',footer)
-  self.assertEqual(len(footer_rects),5)
+  view=re.search(r'id "r13_settings_body"\n\s+area (\([^\n]+\))\n',A).group(1)
+  footer=A.split('$ footer_items=[',1)[1].split('key "game_menu"',1)[0]
+  # 2026-10-27 검수: 하단 줄은 보이는 버튼 수(메뉴 3·게임 5)로 1080 을 나눠 같은 폭으로 채운다.
+  self.assertIn('footer_w=(1080-12*(len(footer_items)-1))//len(footer_items)',footer)
+  ypos_expr=re.search(r'xpos \(112\+footer_index\*\(footer_w\+12\)\) ypos (\([^\n]+?\)) xsize footer_w',footer).group(1)
+  self.assertEqual(footer.count('textbutton footer_caption'),1)
   row=A.split('screen r13_opt_row(',1)[1].split('\nscreen ',1)[0]
   row_width=int(re.search(r'xsize (\d+) ysize r13_opt_row_height',row).group(1))
   controls_x,gap=map(int,re.search(r'hbox:\n\s+xpos (\d+)[^\n]+spacing (\d+)',row).groups())
@@ -35,10 +32,12 @@ class SettingsTypeScale(unittest.TestCase):
    vx,vy,vw,vh=eval(view,ns)
    height=eval(height_expr,ns)
    self.assertLessEqual(row_width,vw-8)
-   rects=[(int(x),eval(y,ns),int(w),height) for x,y,w in footer_rects]
-   self.assertLessEqual(vy+vh,min(y for x,y,w,h in rects)-16)
-   for x,y,w,h in rects:self.assertLessEqual(y+h,720-16)
-   for (x,y,w,h),(nx,ny,nw,nh) in zip(rects,rects[1:]):self.assertGreaterEqual(nx-x-w,8)
+   for count in (3,5):
+    fw=(1080-12*(count-1))//count
+    rects=[(112+i*(fw+12),eval(ypos_expr,ns),fw,height) for i in range(count)]
+    self.assertLessEqual(vy+vh,min(y for x,y,w,h in rects)-16)
+    for x,y,w,h in rects:self.assertLessEqual(y+h,720-16);self.assertLessEqual(x+w,1206)
+    for (x,y,w,h),(nx,ny,nw,nh) in zip(rects,rects[1:]):self.assertGreaterEqual(nx-x-w,8)
   # Measure each row's real children, including repeated options and both
   # administrator states, against the current notebook content width.
   lines=A.splitlines()

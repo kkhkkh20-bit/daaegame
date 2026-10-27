@@ -69,14 +69,14 @@ screen r13_shortcut_help():
     add Solid("#0b151bcc")
     frame:
         # 2026-10-27 타이포 시안: 제목 subtitle, 줄 body. 「크게」(28)에서 설명 줄이 620 을 넘어 판을 720 으로 넓힌다.
-        xalign .5 yalign .5 xsize (720 if R13_TYPE_V2 else 620) padding (30,24) background R13PaperFrame()
+        xalign .5 yalign .5 xsize (720) padding (30,24) background R13PaperFrame()
         vbox:
             spacing 10
-            text "단축키 (PC)" size (r13_type("subtitle") if R13_TYPE_V2 else 28) color (r13_type_color("ink") if R13_TYPE_V2 else "#6c512a") font r13_ui_font()
+            text "단축키 (PC)" size (r13_type("subtitle")) color (r13_type_color("ink")) font r13_ui_font()
             for keys,what in R13_SHORTCUT_HELP:
                 hbox:
                     spacing 16
-                    text keys size (r13_type("body") if R13_TYPE_V2 else 20) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30") min_width 250 font r13_ui_font()
-                    text what size (r13_type("body") if R13_TYPE_V2 else 20) color (r13_type_color("muted") if R13_TYPE_V2 else "#65503b") font r13_ui_font()
+                    text keys size (r13_type("body")) color (r13_type_color("ink")) min_width 250 font r13_ui_font()
+                    text what size (r13_type("body")) color (r13_type_color("muted")) font r13_ui_font()
             null height 6
-            textbutton "닫기" style "r13_action_button" xsize 180 ysize 48 text_size (r13_type("body") if R13_TYPE_V2 else 20) xalign .5 action Hide("r13_shortcut_help")
+            textbutton "닫기" style "r13_action_button" xsize 180 ysize 48 text_size (r13_type("body")) xalign .5 action Hide("r13_shortcut_help")

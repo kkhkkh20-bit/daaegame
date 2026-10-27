@@ -16,8 +16,8 @@ screen r13_backlog():
     zorder 110
     # Opaque: the current line behind must not show through the history.
     add Solid("#10212aff")
-    text "백로그" xpos 90 ypos 36 size 32 color "#fff2cf"
-    text "실제로 읽은 대화 · 최근 기록부터" xpos 245 ypos 46 size 20 color "#b7ccd0"
+    text "백로그" xpos 90 ypos 36 size r13_type("title") color "#fff2cf"
+    text "실제로 읽은 대화 · 최근 기록부터" xpos 245 ypos 46 size r13_type("small") color "#b7ccd0"
     viewport:
         area (90,108,1100,500) mousewheel True draggable True scrollbars "vertical"
         vbox:
@@ -28,11 +28,11 @@ screen r13_backlog():
                     vbox:
                         spacing 8
                         text (row["who"]+" · "+row["stamp"]):
-                            size 20 color "#9fcbd9" xsize 1020
+                            size r13_type("small") color "#9fcbd9" xsize 1020
                         text row["what"]:
-                            size r13_read_size(25,31) color (r13_role_color("thought") if row["kind"]=="독백" else r13_role_color("narration") if row["kind"]=="서술" else r13_role_color("speech")) xsize 1020
+                            size r13_type("body") color (r13_role_color("thought") if row["kind"]=="독백" else r13_role_color("narration") if row["kind"]=="서술" else r13_role_color("speech")) xsize 1020
     textbutton "대화로 돌아가기":
-        style "r13_action_button" area (935,646,255,48) text_size 22 action Hide("r13_backlog")
+        style "r13_action_button" area (935,646,255,48) text_size r13_type("small") action Hide("r13_backlog")
     key "game_menu" action Hide("r13_backlog")
     key "K_h" action Hide("r13_backlog")
 
@@ -64,11 +64,8 @@ screen r13_meeting_more_tools():
         $ entries.append(("토론 멈추기" if live_listening else "건너뛰기","skip",[Hide("r13_more_tools"),Function(r13_meeting_request_live_action,"review")] if live_listening else [Hide("r13_more_tools"),SetVariable("r13_conv_skip",True),Function(renpy.end_interaction,True)],True,False))
     if line_active:
         $ entries.append(("대화창 숨기기","dialogue",[Hide("r13_more_tools"),HideInterface()],True,False))
-    $ entries.extend([
-        ("저장 · 불러오기","record",[Hide("r13_more_tools"),ShowMenu("save")],True,False),
-        ("다시 시작할 아침","auto",[Hide("r13_more_tools"),Show("r13_morning_pick")],bool(r13_morning_days()),False),
-        ("설정","settings",[Hide("r13_more_tools"),ShowMenu("pause_menu")],True,False),
-        ("메인화면","place_inn",[Hide("r13_more_tools"),Confirm("메인화면으로 돌아가시겠습니까?\n저장하지 않은 게임 진행은 사라집니다.",MainMenu(confirm=False))],True,False)])
+    # 2026-10-27 소유자: 저장·불러오기·메인화면은 설정 안에 있고, 다시 시작할 아침은 뺐다.
+    $ entries.append(("설정","settings",[Hide("r13_more_tools"),ShowMenu("pause_menu")],True,False))
     button:
         area (0,0,1280,720) background None action Hide("r13_more_tools") alt "닫기"
     frame:
@@ -78,7 +75,7 @@ screen r13_meeting_more_tools():
             if line_active:
                 hbox:
                     spacing 16
-                    text "빠르게" size 22 color "#efe2c2" yalign .5 xsize 104
+                    text "빠르게" size r13_type("small") color "#efe2c2" yalign .5 xsize 104
                     use r13_control("읽은 것만",None,[Hide("r13_more_tools"),Function(r13_toggle_read_skip)],enabled=not live_listening,chosen=r13_fast_read,width=268)
                     use r13_control("전부",None,[Hide("r13_more_tools"),Function(r13_toggle_fast_all)],enabled=not live_listening,chosen=r13_fast_all,width=268)
             $ menu_rows=(len(entries)+1)//2

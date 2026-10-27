@@ -20,10 +20,11 @@ init 59 python:
         "emphasis": (26, 30, 30, 32),   # 자료 본문(사실)·기록 대화·쟁점 작은 줄
         "subtitle": (28, 32, 32, 34),   # 묶음 제목·빈 상태 안내
         "title":    (30, 34, 34, 36),   # 자료 이름·이름 리본·선택지 번호
-        "display":  (36, 38, 36, 38),   # 대사·선택지 본문
-        "hero":     (38, 40, 38, 40),   # 선택지 머리·기록 제목
+        "display":  (36, 38, 36, 38),   # 대사·선택지 본문·선택지 머리·기록 제목
     }
-    R13_TYPE_LEVELS = ("small", "body", "emphasis", "subtitle", "title", "display", "hero")
+    # 2026-10-27 소유자 "전체적으로 폰트 사이즈 6단계 이하로 통일해": hero(38/40)를 display 에 합쳐 여섯 단계.
+    # 화면마다 박힌 숫자·r13_read_size(a,b)·「R13_TYPE_V2 꺼짐」 이중 경로는 같은 날 전부 이 단계로 바꿨다.
+    R13_TYPE_LEVELS = ("small", "body", "emphasis", "subtitle", "title", "display")
 
     # 크림 종이(#f5ecd9) 위 글자색. 대비는 TYPOGRAPHY_V2.md 표에 있다. 4.5:1 미만은 disabled 하나뿐이고
     # 비활성 조작은 WCAG 1.4.3 의 예외다. accent 는 테이프 빨강(#bc4134, 4.53:1)보다 한 단 어두운

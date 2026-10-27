@@ -33,7 +33,7 @@ screen r13_cinematic_view(key):
     add Solid("#111a2048") ysize 48
     add Solid("#111a2070") ypos 660 ysize 60
     text R13_CINEMATICS[key]["title"]:
-        xpos 34 ypos 12 size 23 color "#fff6df"
+        xpos 34 ypos 12 size r13_type("small") color "#fff6df"
     button:
         area (0,48,1280,612)
         background None
@@ -41,7 +41,7 @@ screen r13_cinematic_view(key):
         sensitive ready
     textbutton "계속  ›":
         xpos 1100 ypos 673
-        text_size 23 text_color "#fff6df"
+        text_size r13_type("small") text_color "#fff6df"
         background None
         action Return(True)
         sensitive ready

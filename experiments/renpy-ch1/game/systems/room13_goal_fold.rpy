@@ -41,17 +41,17 @@ screen r13_goal_fold(goal,ready=False):
                 area (24,188,624,panel_height) padding (24,20) background r13_field_paper()
                 fixed:
                     xsize 576 ysize (panel_height-40)
-                    text "아빠의 생각" size 26 color "#493b30" font R13_UI_BOLD_FONT
+                    text "아빠의 생각" size r13_type("emphasis") color "#493b30" font R13_UI_BOLD_FONT
                     textbutton "접기":
-                        xpos 480 ypos 0 text_size 20 text_color "#765426" text_font R13_UI_BOLD_FONT
+                        xpos 480 ypos 0 text_size r13_type("small") text_color "#765426" text_font R13_UI_BOLD_FONT
                         action SetVariable("r13_goal_open",False)
                     viewport:
                         xpos 0 ypos 64 xsize 566 ysize (panel_height-164)
                         mousewheel True draggable True scrollbars "vertical"
                         vbox:
                             spacing 16
-                            text thought size r13_read_size(22,24) color "#496579" xsize 542
+                            text thought size r13_type("small") color "#496579" xsize 542
                     textbutton ("모은 자료 보기" if r13_v111_active() else "조사 메모 열기 · 의문 %d개"%len(notes)):
                         ypos (panel_height-86) xsize 390 ysize 56
-                        text_size 20 text_color "#765426" background None hover_background Solid("#b28d4925")
+                        text_size r13_type("small") text_color "#765426" background None hover_background Solid("#b28d4925")
                         action [SetVariable("r13_goal_open",False),(Show("r13_records",initial_tab="evidence") if r13_v111_active() else Show("r13_learning_notes"))] sensitive ready

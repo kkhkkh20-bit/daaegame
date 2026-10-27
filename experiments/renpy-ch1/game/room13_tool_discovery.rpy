@@ -111,16 +111,16 @@ screen r13_tool_closeup(key):
                 xsize 408 ysize 340 mousewheel True draggable True scrollbars "vertical"
                 vbox:
                     spacing 14
-                    text spec["summary"] size 24 color "#fff2cf" xsize 386
+                    text spec["summary"] size r13_type("body") color "#fff2cf" xsize 386
                     if noted:
-                        text "관찰 메모를 남겼다" size 23 color "#efd4a1"
-                        text ("새 질문 · "+R13_NAMES[spec["person"]]) size 22 color "#efd4a1"
-                        text ROOM13["topics"][spec["topic"]]["title"] size 23 color "#fff2cf" xsize 386
-                        text "관찰 메모에서 다시 읽고, 상대를 만나 물어보자." size 20 color "#ced9d4" xsize 386
+                        text "관찰 메모를 남겼다" size r13_type("small") color "#efd4a1"
+                        text ("새 질문 · "+R13_NAMES[spec["person"]]) size r13_type("small") color "#efd4a1"
+                        text ROOM13["topics"][spec["topic"]]["title"] size r13_type("small") color "#fff2cf" xsize 386
+                        text "관찰 메모에서 다시 읽고, 상대를 만나 물어보자." size r13_type("small") color "#ced9d4" xsize 386
                     else:
-                        text "살핀 부분을 적어 두고, 아는 사람에게 물어보자." size 23 color "#ced9d4" xsize 386
+                        text "살핀 부분을 적어 두고, 아는 사람에게 물어보자." size r13_type("small") color "#ced9d4" xsize 386
             textbutton ("메모 남김" if noted else "관찰 메모 남기기"):
-                style "r13_action_button" xsize 408 ysize 64 text_size 22
+                style "r13_action_button" xsize 408 ysize 64 text_size r13_type("small")
                 sensitive not noted action Return("record")
     if r13_tool_can_ask_child(key):
         $ child_read="tool:seam" in room13.get("read_topics",[])
@@ -163,16 +163,16 @@ screen r13_tool_notebook():
                     xsize 1130 padding R13_UI_PADDING["panel"] background R13ActionPanel()
                     vbox:
                         spacing 14
-                        text note["title"] size 28 color "#efd4a1"
-                        text ("%d일 · %s · %s"%(note["day"],("오전","오후","저녁","늦은 저녁")[note["period"]],R13_PLACES[note["place"]][0])) size 21 color "#ced9d4"
-                        text note["summary"] size 24 color "#fff2cf" xsize 1060
+                        text note["title"] size r13_type("subtitle") color "#efd4a1"
+                        text ("%d일 · %s · %s"%(note["day"],("오전","오후","저녁","늦은 저녁")[note["period"]],R13_PLACES[note["place"]][0])) size r13_type("small") color "#ced9d4"
+                        text note["summary"] size r13_type("body") color "#fff2cf" xsize 1060
                         if note["topic"] in room13.get("read_topics",[]):
-                            text ("질문 완료 · "+R13_NAMES[note["person"]]) size 22 color "#efd4a1"
-                            text "들은 내용은 기록의 대화에서 다시 읽을 수 있다." size 22 color "#ced9d4" xsize 1060
+                            text ("질문 완료 · "+R13_NAMES[note["person"]]) size r13_type("small") color "#efd4a1"
+                            text "들은 내용은 기록의 대화에서 다시 읽을 수 있다." size r13_type("small") color "#ced9d4" xsize 1060
                         else:
-                            text note["followup"] size 22 color "#ced9d4" xsize 1060
+                            text note["followup"] size r13_type("small") color "#ced9d4" xsize 1060
             if not r13_tool_notes():
-                text "현장에서 돋보기로 살피고 메모를 남기면 여기에 모입니다." size 24 color "#ced9d4"
+                text "현장에서 돋보기로 살피고 메모를 남기면 여기에 모입니다." size r13_type("body") color "#ced9d4"
     textbutton "닫기" style "r13_action_button" xpos 790 ypos 630 xsize 434 ysize 62 action Hide("r13_tool_notebook")
     key "game_menu" action Hide("r13_tool_notebook")
 

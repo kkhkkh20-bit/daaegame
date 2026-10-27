@@ -185,7 +185,7 @@ init 62:
         color "#fff4df"
         hover_color "#ffffff"
         insensitive_color "#c3cecb"
-        size 23
+        size r13_type("small")
         xalign 0.5
 
 transform r13_portrait_close(top=110,x=640):

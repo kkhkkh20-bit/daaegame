@@ -1,6 +1,6 @@
 style default:
     font R13_UI_FONT
-    size 25
+    size r13_type("body")
     color "#f3e7ce"
     # Break Korean at spaces, never inside a word (비/켜).
     language "korean-with-spaces"
@@ -13,15 +13,15 @@ style button_text:
     color "#f3e7ce"
     hover_color "#ffdc91"
     insensitive_color "#91877a"
-    size 24
+    size r13_type("body")
 style frame:
     background Solid("#201b18ef")
     padding (24,20)
 style say_dialogue:
-    size 29
+    size r13_type("subtitle")
     line_spacing 9
 style say_label:
-    size 25
+    size r13_type("body")
     bold True
 style bar:
     left_bar Solid("#b39060")
@@ -51,7 +51,7 @@ screen topic_banner(caption, topic_action, done=False, enabled=True):
         fixed:
             add Solid("#293c39" if done else "#385952")
             add Solid("#dfd2af",xsize=10)
-            text (("{s}"+caption+"{/s}") if done else caption) size 23 xalign .5 yalign .5 color ("#bbcbd0" if done else "#fff4d9")
+            text (("{s}"+caption+"{/s}") if done else caption) size r13_type("small") xalign .5 yalign .5 color ("#bbcbd0" if done else "#fff4d9")
             if done:
                 add TopicTick() xpos 514 yalign .5
 
@@ -76,9 +76,9 @@ screen main_menu():
             use r13_cover_button("설정","settings","settings",184,ShowMenu("pause_menu"),title_focus)
     textbutton "음악 출처":
         xpos 44 ypos 696 padding (4,2) background None
-        text_font R13_UI_FONT text_size (r13_type("small") if R13_TYPE_V2 else 14) text_color "#c5c6d2" text_hover_color "#fff0ce"
+        text_font R13_UI_FONT text_size (r13_type("small")) text_color "#c5c6d2" text_hover_color "#fff0ce"
         action Show("r13_music_credits")
-    text config.version xpos 1172 ypos 674 font r13_ui_font() size (r13_type("small") if R13_TYPE_V2 else 13) color "#b2b8b8"
+    text config.version xpos 1172 ypos 674 font r13_ui_font() size (r13_type("small")) color "#b2b8b8"
 
 # Two-line panels end 16px above the unchanged shared gameplay footer.
 # Tops are expressed against the historical bottom=632 coordinate.
@@ -117,7 +117,7 @@ screen say(who,what):
     # 0.19.97: the opening narration on black (room13_coach_cut.rpy) — white text, no panel.
     if room13_mode and r13_black_card:
         add Solid("#000")
-        r13_dialogue_text what id "what" style "say_dialogue" xalign .5 yalign .46 xmaximum 980 text_align .5 layout "subtitle" size r13_read_size(26,30) line_spacing 8 font r13_ui_font() color "#e9e1d2"
+        r13_dialogue_text what id "what" style "say_dialogue" xalign .5 yalign .46 xmaximum 980 text_align .5 layout "subtitle" size r13_type("emphasis") line_spacing 8 font r13_ui_font() color "#e9e1d2"
         timer .02 repeat True action Function(r13_typing_tick, _update_screens=False)
         use r13_toolbar(mode="line")
     elif room13_mode and r13_meeting_active and r13_meeting_claim in R13_DEBATE and not r13_nw_meeting_claim(r13_meeting_claim):
@@ -126,13 +126,13 @@ screen say(who,what):
         window:
             id "window"
             area (80,r13_control_y()-148,1120,132) background Frame(Crop((16,16,1168,128),r13_asset_path("file:assets/ui-b-dialogue/b_panel_dialogue.png")),48,24,64,24) padding (56,50,28,14)
-            r13_dialogue_text what id "what" style "say_dialogue" size r13_read_size(23,29) line_spacing 5 xsize 1036 font R13_UI_BOLD_FONT color "#4b3420"
+            r13_dialogue_text what id "what" style "say_dialogue" size r13_type("small") line_spacing 5 xsize 1036 font R13_UI_BOLD_FONT color "#4b3420"
         if who:
             frame:
                 xpos 104 ypos (r13_control_y()-158) padding (16,5,24,7)
                 background Frame(Crop((16,12,168,32),r13_asset_path("file:assets/ui-b-dialogue/b_ribbon_name.png")),16,6,32,6)
-                text who id "who" size r13_read_size(24,26) color "#fff3df" font R13_UI_BOLD_FONT xmaximum 1000 outlines []
-        text "▸" xpos 1160 ypos (r13_control_y()-48) size 24 color "#4b3420"
+                text who id "who" size r13_type("body") color "#fff3df" font R13_UI_BOLD_FONT xmaximum 1000 outlines []
+        text "▸" xpos 1160 ypos (r13_control_y()-48) size r13_type("body") color "#4b3420"
         timer .02 repeat True action Function(r13_typing_tick, _update_screens=False)
         if r13_nw_meeting_claim(r13_meeting_claim):
             use r13_toolbar(mode="line")
@@ -167,14 +167,14 @@ screen say(who,what):
                 frame:
                     background Frame(Crop((16,12,168,32),r13_asset_path("file:assets/ui-b-dialogue/b_ribbon_name.png")),16,6,32,6) padding (22,8,36,10) yalign .5
                     # 2026-10-27 타이포 시안(R13_TYPE_V2): 이름은 title, 화면 밖 목소리는 body. 꺼지면 이전 값 그대로.
-                    text who id "who" color (r13_type_color("inverse") if R13_TYPE_V2 else "#fff3df") font R13_UI_BOLD_FONT size (r13_type("title") if R13_TYPE_V2 else r13_read_size(27,30)) xmaximum 640 outlines []
+                    text who id "who" color (r13_type_color("inverse")) font R13_UI_BOLD_FONT size (r13_type("title")) xmaximum 640 outlines []
                 if r13_offscreen_voice(who):
-                    text r13_offscreen_voice(who) yalign .5 size (r13_type("body") if R13_TYPE_V2 else r13_read_size(20,22)) color (r13_type_color("inverse") if R13_TYPE_V2 else "#fff3df") font r13_ui_font() outlines [(1,"#30261f",0,0)]
+                    text r13_offscreen_voice(who) yalign .5 size (r13_type("body")) color (r13_type_color("inverse")) font r13_ui_font() outlines [(1,"#30261f",0,0)]
         # Next-line mark at the end of the controls row (mockup: "더보기 ▸").
         if r13_fx_active():
-            text "▸" xanchor 1.0 xpos R13_CONCEPT_RIGHT yanchor .5 ypos r13_night_control_y() size 22 color "#4b3420" at r13_next_glow
+            text "▸" xanchor 1.0 xpos R13_CONCEPT_RIGHT yanchor .5 ypos r13_night_control_y() size r13_type("small") color "#4b3420" at r13_next_glow
         else:
-            text "▸" xanchor 1.0 xpos R13_CONCEPT_RIGHT yanchor .5 ypos r13_night_control_y() size 22 color "#4b3420"
+            text "▸" xanchor 1.0 xpos R13_CONCEPT_RIGHT yanchor .5 ypos r13_night_control_y() size r13_type("small") color "#4b3420"
         timer .02 repeat True action Function(r13_typing_tick, _update_screens=False)
         if r13_field_reading:
             pass
@@ -244,16 +244,16 @@ init python:
         # 2026-10-27 타이포 시안: 켜지면 설정 본문은 body 단계(단계표가 휴대폰 값을 따로 가진다).
         # 화면 줄은 r13_opt_size() 토큰만 쓰므로(dev/test_settings_type_scale.py) 여기서만 바꾼다.
         # 0.20.7 (UI review: phone text about 11px): +4 on a touch screen.
-        if R13_TYPE_V2:return r13_type("body")
-        return r13_read_size(22,26)+(4 if globals().get("r13_touch_ui",lambda:False)() else 0)
+        return r13_type("body")
 
     def r13_opt_title_size():
         # 2026-10-27 타이포 시안: 설정 제목은 subtitle 단계.
-        if R13_TYPE_V2:return r13_type("subtitle")
-        return r13_read_size(30,34)
+        return r13_type("subtitle")
 
     def r13_opt_row_height():
-        return max(96 if globals().get("r13_touch_ui",lambda:False)() else 76,112 if persistent.room13_large_text else 76)
+        # 2026-10-27 검수: 큰 글씨 112·휴대폰 96 이면 화면 탭(미리보기 64 + 4줄)이 본문 436~460 을 넘어 스크롤이 생기고
+        # 「관리자 도구」가 잘렸다. 92 면 64+4*92=432 로 어느 경우에도 한 쪽에 들어온다(버튼 88 도 들어간다).
+        return 92 if (globals().get("r13_touch_ui",lambda:False)() or persistent.room13_large_text) else 76
 
 style r13opt_text is text:
     font r13_ui_font() color "#4b3420" line_spacing 2
@@ -278,7 +278,8 @@ style r13opt_bar is bar:
 style r13opt_tab_button is button:
     background None hover_background None selected_background None padding (0,0)
 style r13opt_tab_button_text is text:
-    font R13_UI_BOLD_FONT color "#4b3420" hover_color "#4b3420" selected_color "#4b3420" xpos 62 yalign .5
+    # 2026-10-27 소유자: 탭 아이콘을 빼고 글자를 가운데에(「불러오기」가 잘렸다).
+    font R13_UI_BOLD_FONT color "#4b3420" hover_color "#4b3420" selected_color "#4b3420" xalign .5 yalign .5
 
 style r13opt_footer_button is r13opt_button:
     padding (10,4)
@@ -304,14 +305,13 @@ init python:
         # Match the rendered button in both native touch and short browser windows.
         return 88 if r13_touch_ui() else 52
 
-screen r13_opt_row(label,description=""):
+# 2026-10-27 소유자: 부제 설명·안내 글은 다 아는 내용이라 뺐다. 항목 이름 한 줄만 둔다.
+screen r13_opt_row(label):
     fixed:
         xsize 844 ysize r13_opt_row_height()
         vbox:
             xpos 0 yalign .5 xsize 232 spacing 4
             text label font R13_UI_TYPE["button"]["font"] size (r13_opt_size()+2) color "#4b3420"
-            if description:
-                text description size (r13_opt_size()-4) color "#765b3e" xsize 232
         hbox:
             xpos 248 ypos ((r13_opt_row_height()-r13_opt_button_height())//2) spacing 12
             transclude
@@ -323,71 +323,71 @@ screen pause_menu():
     zorder 50
     style_prefix "r13opt"
     default typing_preview = R13TypingPreview()
-    default tab=(persistent.room13_option_tab if persistent.room13_option_tab in ("sound","screen","reading") else "reading")
+    default tab=(persistent.room13_option_tab if persistent.room13_option_tab in ("sound","screen","reading","save") else "reading")
+    # 2026-10-27 소유자 "설정 안에 탭에 저장 불러오기를 넣고": 넷째 탭. 메인 메뉴에서는 불러오기만 된다.
+    default save_mode=(not main_menu)
     add Solid("#05070fa6")
     # Unscaled full panel: preserve the three rings and all border pixels.
     add r13_asset("file:assets/ui-b-options/b_opt_panel.png") xpos -4 ypos -4
-    # Supplied diary stickers: uniform scales, decorative only, clear of controls.
-    add Transform(r13_asset_path("file:assets/ui-b-options/daram_diary_sticker_gingham_tape.png"),zoom=120.0/464,rotate=-7) xpos 850 ypos 38
-    add Transform(r13_asset_path("file:assets/ui-b-options/daram_diary_sticker_star.png"),zoom=44.0/368,rotate=10) xpos 1014 ypos 58
-    add Transform(r13_asset_path("file:assets/ui-b-options/daram_diary_sticker_emphasis.png"),zoom=40.0/432,rotate=12) xpos 1070 ypos 72
-    add Transform(r13_asset_path("file:assets/ui-b-options/daram_diary_sticker_acorn.png"),zoom=84.0/437,rotate=-9) xpos 116 ypos 410
-    add Transform(r13_asset_path("file:assets/ui-b-options/daram_diary_sticker_letter.png"),zoom=64.0/408,rotate=8) xpos 216 ypos 406
-    add Transform(r13_asset_path("file:assets/ui-b-options/daram_diary_sticker_magnifier.png"),zoom=64.0/422,rotate=-10) xpos 216 ypos 460
+    # 2026-10-27 검수: 오른쪽 위 테이프·별 스티커는 소리 탭의 「0%」와 「소리 켜짐」을 덮어 지웠다. 장식은 왼쪽 아래 빈 자리에만 둔다.
+    # 탭이 넷이 되어(저장) 왼쪽 아래 자리가 줄었다. 휴대폰(탭 88 높이)은 자리가 없어 장식을 두지 않는다.
+    if not r13_touch_ui():
+        add Transform(r13_asset_path("file:assets/ui-b-options/daram_diary_sticker_acorn.png"),zoom=72.0/437,rotate=-9) xpos 136 ypos 452
+        add Transform(r13_asset_path("file:assets/ui-b-options/daram_diary_sticker_letter.png"),zoom=56.0/408,rotate=8) xpos 224 ypos 460
     # Keep the index clear of the unscaled binder rings.
     add Crop((16,16,150,44),r13_asset_path("file:assets/ui-b-options/b_opt_title_tape.png")) xpos 96 ypos 42
     text "설정" xpos 120 ypos 42 font R13_UI_BOLD_FONT size (r13_opt_title_size()+8) color "#4b3420"
+    # 2026-10-27 소유자: 탭이 왼쪽 고리(화면 x 90~127)와 겹쳤다. 수첩 안쪽 선(R13_NB_LEFT=132)에서 시작한다.
     vbox:
-        xpos 96 ypos 136 spacing 0
-        for key,name in (("reading","읽기"),("sound","소리"),("screen","화면")):
+        xpos R13_NB_LEFT ypos 136 spacing 0
+        for key,name in (("reading","읽기"),("sound","소리"),("screen","화면"),("save","불러오기" if main_menu else "저장")):
             fixed:
-                xsize 200 ysize (88 if r13_touch_ui() else 76)
-                add Frame(Crop((16,16,206,62),r13_asset_path("file:assets/ui-b-options/b_opt_tab_selected.png") if tab==key else r13_asset_path("file:assets/ui-b-options/b_opt_tab.png")),32,20) xpos 0 yalign .5 xysize (200,62)
-                add Crop((18,18,28,28),r13_asset_path("file:"+("assets/ui-b-options/b_icon_opt_%s.png"%key))) xpos 28 yalign .5
+                xsize 168 ysize (88 if r13_touch_ui() else 76)
+                add Frame(Crop((16,16,206,62),r13_asset_path("file:assets/ui-b-options/b_opt_tab_selected.png") if tab==key else r13_asset_path("file:assets/ui-b-options/b_opt_tab.png")),32,20) xpos 0 yalign .5 xysize (168,62)
                 textbutton name style "r13opt_tab_button":
-                    xsize 200 ysize (88 if r13_touch_ui() else 76) text_size (r13_opt_title_size()-2)
+                    xsize 168 ysize (88 if r13_touch_ui() else 76) text_size (r13_opt_title_size()-2)
                     text_style "r13opt_tab_button_text"
                     selected tab==key
                     action [SetScreenVariable("tab",key),SetField(persistent,"room13_option_tab",key),Function(renpy.save_persistent)]
     add Solid("#c9a86a66") xpos 305 ypos 56 xsize 1 ysize (472 if r13_touch_ui() else 496)
-    text "변경한 설정은 바로 적용됩니다." xpos 347 ypos 52 size (r13_opt_size()-3) color "#765b3e"
     imagebutton:
         idle r13_asset("file:assets/ui-b-options/b_opt_close.png") hover Transform(r13_asset_path("file:assets/ui-b-options/b_opt_close.png"),matrixcolor=BrightnessMatrix(.15))
         xpos 1130 ypos 48 xysize (64,64) padding (0,0) action Return() alt "닫기"
-    viewport:
+    # 탭마다 한 쪽, 스크롤 없음. 줄 높이(r13_opt_row_height)가 이 높이에 맞춰져 있다.
+    fixed:
         id "r13_settings_body"
-        area (347,92,854,(436 if r13_touch_ui() else 460)) mousewheel True draggable True scrollbars "vertical" vscrollbar_unscrollable "hide"
+        area (347,92,854,(436 if r13_touch_ui() else 460))
         vbox:
             spacing 0
             if tab=="sound":
-                use r13_opt_row("배경음", "음악의 크기"):
+                use r13_opt_row("배경음"):
                     bar value Preference("music volume") style "r13opt_bar" xsize 280 ysize 36 yalign .5 id "music_volume"
                     text ("%d%%"%r13_mixer_percent("music")) id "music_volume_percent" size r13_opt_size() xsize 64 yalign .5
                     textbutton ("음소거 중" if _preferences.get_mute("music") else "소리 켜짐"):
                         ysize r13_opt_button_height()
                         xsize 136 selected not _preferences.get_mute("music") action Preference("music mute","toggle") text_size r13_opt_size()
-                use r13_opt_row("효과음", "문·버튼·조사 소리"):
+                use r13_opt_row("효과음"):
                     bar value Preference("sound volume") style "r13opt_bar" xsize 280 ysize 36 yalign .5 id "fx_volume"
                     text ("%d%%"%r13_mixer_percent("sfx")) id "fx_volume_percent" size r13_opt_size() xsize 64 yalign .5
                     textbutton ("음소거 중" if _preferences.get_mute("sfx") else "소리 켜짐"):
                         ysize r13_opt_button_height()
                         xsize 136 selected not _preferences.get_mute("sfx") action Preference("sound mute","toggle") text_size r13_opt_size()
-                use r13_opt_row("대사 타이핑 소리", "글자가 나타날 때 나는 소리"):
+                use r13_opt_row("대사 타이핑 소리"):
                     for value,name in ((True,"켜기"),(False,"끄기")):
-                        textbutton name xsize 136 selected persistent.room13_typing_sound==value action Function(r13_set_option,"room13_typing_sound",value) text_size r13_opt_size() ysize r13_opt_button_height()
-                use r13_opt_row("소리 확인", "효과음 음량을 적용해 재생"):
+                        textbutton name xsize 284 selected persistent.room13_typing_sound==value action Function(r13_set_option,"room13_typing_sound",value) text_size r13_opt_size() ysize r13_opt_button_height()
+                use r13_opt_row("소리 확인"):
                     textbutton "효과음 듣기" xsize 284 action Function(r13_test_option_sound) text_size r13_opt_size() ysize r13_opt_button_height()
                     textbutton "음악 출처" xsize 284 action Show("r13_music_credits") text_size r13_opt_size() ysize r13_opt_button_height()
-                null height 12
-                text "음소거 중이거나 음량이 0%이면 소리가 나지 않습니다." xpos 248 size (r13_opt_size()-3) color "#765b3e"
+            elif tab=="save":
+                use r13_settings_save_tab(save_mode)
             elif tab=="reading":
-                use r13_opt_row("글자 크기", "대사와 메뉴에 함께 적용"):
+                use r13_opt_row("글자 크기"):
                     for key,name in (("small","작게"),("normal","보통"),("large","크게")):
-                        textbutton name id ("r13_text_size_"+key) xsize 136 selected r13_text_size()==key action Function(r13_set_text_size,key) text_size r13_opt_size() ysize r13_opt_button_height()
-                use r13_opt_row("대사 표시 속도", "글자가 나타나는 빠르기"):
+                        textbutton name id ("r13_text_size_"+key) xsize 185 selected r13_text_size()==key action Function(r13_set_text_size,key) text_size r13_opt_size() ysize r13_opt_button_height()
+                use r13_opt_row("대사 표시 속도"):
                     for speed_title,speed_value in (("느리게",24),("보통",34),("빠르게",55),("즉시",0)):
                         textbutton speed_title id ("r13_text_speed_%d"%speed_value) xsize 136 action [Preference("text speed",speed_value),Function(typing_preview.restart)] selected _preferences.text_cps==speed_value text_size r13_opt_size() ysize r13_opt_button_height()
-                use r13_opt_row("자동 넘김 대기", "다음 대사까지 대기"):
+                use r13_opt_row("자동 넘김 대기"):
                     for value,name in ((0,"수동"),(5,"짧게"),(15,"보통"),(25,"길게")):
                         textbutton name xsize 136 action Preference("auto-forward time",value) selected (_preferences.afm_time==0 if value==0 else (0<_preferences.afm_time<10) if value==5 else (10<=_preferences.afm_time<20) if value==15 else _preferences.afm_time>=20) text_size r13_opt_size() ysize r13_opt_button_height()
                 hbox:
@@ -397,48 +397,40 @@ screen pause_menu():
                         xsize 548 ysize 88 padding (18,12) background r13_sticker_button()
                         add typing_preview
             else:
-                null height 0
+                # 2026-10-27 검수: 미리보기는 실제 대사창과 같은 재질(r13_dialogue_frame)로, 고른 진하기가 바로 보이게.
                 frame:
-                    xsize 824 ysize 76 padding (26,16) background Frame(Crop((16,16,860,110),r13_asset_path("file:assets/ui-b-options/b_opt_preview_box.png")),26,16)
-                    text "대사창 미리보기 · 바꾼 진하기가 적용됩니다." font R13_UI_BOLD_FONT size r13_opt_size() color "#4b3420" xsize 772
-                use r13_opt_row("대사창 진하기", "배경이 비쳐 보이는 정도"):
+                    xsize 824 ysize 64 padding (26,12) background r13_dialogue_frame()
+                    text "창밖에 눈이 내린다. 대사창은 이렇게 보입니다." font r13_ui_font() size _r13_say_size() color (r13_type_color("inverse")) xsize 772 yalign .5
+                use r13_opt_row("대사창 진하기"):
                     for value,name in (("99","연하게"),("d4","보통"),("f5","진하게")):
-                        textbutton name xsize 136 selected persistent.room13_window_alpha==value action [SetField(persistent,"room13_window_alpha",value),Function(renpy.save_persistent)] text_size r13_opt_size() ysize r13_opt_button_height()
-                use r13_opt_row("화면 움직임", "눈·불빛·인물의 짧은 반응"):
+                        textbutton name xsize 185 selected persistent.room13_window_alpha==value action [SetField(persistent,"room13_window_alpha",value),Function(renpy.save_persistent)] text_size r13_opt_size() ysize r13_opt_button_height()
+                use r13_opt_row("화면 움직임"):
                     for value,name in ((True,"켜기"),(False,"끄기")):
-                        textbutton name xsize 136 selected persistent.room13_motion==value action Function(r13_set_option,"room13_motion",value) text_size r13_opt_size() ysize r13_opt_button_height()
-                use r13_opt_row("전체 화면", "지원 기기에서 전환"):
+                        textbutton name xsize 284 selected persistent.room13_motion==value action Function(r13_set_option,"room13_motion",value) text_size r13_opt_size() ysize r13_opt_button_height()
+                use r13_opt_row("전체 화면"):
                     textbutton "전체 화면 전환" xsize 284 action Function(r13_toggle_fullscreen) text_size r13_opt_size() ysize r13_opt_button_height()
                 # 0.18.50 (owner): test tool behind a PIN (systems/room13_admin.rpy).
-                use r13_opt_row("관리자 도구", "핀 번호를 넣으면 켜짐"):
+                use r13_opt_row("관리자 도구"):
                     if persistent.room13_admin:
                         text "켜짐 · 마을 화면 위쪽 ‘관리자’" xsize 330 size r13_opt_size() color "#765b3e" yalign .5
                         textbutton "끄기" xsize 136 action Function(r13_admin_toggle) text_size r13_opt_size() ysize r13_opt_button_height()
                     else:
                         textbutton "핀 번호로 켜기" xsize 284 action Show("r13_admin_pin") text_size r13_opt_size() ysize r13_opt_button_height()
-    text ("v"+config.version) xpos 120 ypos (516 if r13_touch_ui() else 540) size (r13_opt_size()-6) color "#8f8778"
     add Crop((16,16,1080,6),r13_asset_path("file:assets/ui-b-options/b_opt_divider.png")) xpos 112 ypos (536 if r13_touch_ui() else 560)
-    textbutton "설정 초기화" style "r13opt_footer_button":
-        ysize r13_opt_button_height()
-        xpos 112 ypos (552 if r13_touch_ui() else 576) xsize 206 text_size r13_opt_size()
-        action Confirm("읽기·소리·화면 설정을 기본값으로 돌릴까요? 게임 진행과 저장은 유지됩니다.",Function(r13_reset_options))
+    # 2026-10-27 검수: 메인 메뉴에서는 「메인화면」「저장 · 불러오기」가 없어 세 개가 띄엄띄엄 놓였다.
+    # 보이는 버튼 수로 폭을 나눈다(1080 을 12 간격으로 n 등분: 4개 261, 3개 352). 저장·불러오기는 탭으로 들어갔다.
+    $ footer_items=[("설정 초기화",Confirm("읽기·소리·화면 설정을 기본값으로 돌릴까요? 게임 진행과 저장은 유지됩니다.",Function(r13_reset_options)),False)]
     if not main_menu:
-        textbutton "메인화면" style "r13opt_footer_button":
-            ysize r13_opt_button_height()
-            xpos 330 ypos (552 if r13_touch_ui() else 576) xsize 206 text_size r13_opt_size()
-            action Confirm("메인화면으로 돌아가시겠습니까?\n저장하지 않은 게임 진행은 사라집니다.",MainMenu(confirm=False))
+        $ footer_items.append(("메인화면",Confirm("메인화면으로 돌아가시겠습니까?\n저장하지 않은 게임 진행은 사라집니다.",MainMenu(confirm=False)),False))
     # 0.19.2: 단축키 안내는 「더보기」에서 설정 안으로 옮겼다.
-    textbutton "단축키 PC" style "r13opt_footer_button":
-        ysize r13_opt_button_height()
-        xpos 548 ypos (552 if r13_touch_ui() else 576) xsize 206 text_size r13_opt_size() action Show("r13_shortcut_help")
-    # 0.20.3 (owner 2026-10-22: "저장버튼이 어차피 빈번한 게임이 아니니 옵션에 넣어줘도 되고").
-    if not main_menu:
-        textbutton "저장 · 불러오기" style "r13opt_footer_button":
+    $ footer_items.append(("단축키 PC",Show("r13_shortcut_help"),False))
+    $ footer_items.append(("닫기",Return(),True))
+    $ footer_w=(1080-12*(len(footer_items)-1))//len(footer_items)
+    for footer_index,(footer_caption,footer_action,footer_primary) in enumerate(footer_items):
+        textbutton footer_caption style ("r13opt_close_button" if footer_primary else "r13opt_footer_button"):
             ysize r13_opt_button_height()
-            xpos 766 ypos (552 if r13_touch_ui() else 576) xsize 206 text_size r13_opt_size() action ShowMenu("save")  # 0.20.7: wider so it stays on one line on a phone
-    textbutton "닫기" style "r13opt_close_button":
-        ysize r13_opt_button_height()
-        xpos 984 ypos (552 if r13_touch_ui() else 576) xsize 206 text_size r13_opt_size() action Return()
+            xpos (112+footer_index*(footer_w+12)) ypos (552 if r13_touch_ui() else 576) xsize footer_w text_size r13_opt_size()
+            action footer_action
     key "game_menu" action Return()
 
 screen save():
@@ -505,61 +497,86 @@ init python:
         # in a running game a compatible load also asks before losing progress.
         return r13_load_confirm(slot)
 
+# 설정의 「저장」 탭. 설정 본문(854x460) 안에 들어간다: 윗줄은 전환·쪽·자동저장·정리, 아래는 칸 여섯(420x124).
+screen r13_settings_save_tab(saving):
+    # 소유자 2026-10-27: 쪽 없이 여섯 칸만, 빈 칸은 「빈 칸」만 적는다. 칸 글은 굵은 글꼴.
+    $ ch=r13_opt_button_height()
+    $ slot_h=((436 if r13_touch_ui() else 460)-24-ch-12-28)//3
+    null height 24
+    hbox:
+        spacing 12
+        if not main_menu:
+            textbutton "저장" xsize 136 ysize ch selected saving action SetScreenVariable("save_mode",True) text_size r13_opt_size()
+            textbutton "불러오기" xsize 136 ysize ch selected (not saving) action SetScreenVariable("save_mode",False) text_size r13_opt_size()
+        if not saving:
+            textbutton "자동저장" xsize 136 ysize ch action r13_load_confirm("auto-1") sensitive FileLoadable(1,page="auto") text_size r13_opt_size()
+            textbutton "정리" xsize 88 ysize ch action Show("r13_save_cleanup",scope="old") text_size r13_opt_size()
+    null height 12
+    grid 2 3:
+        spacing 14
+        for i in range(6):
+            $ slot="1-%d"%(i+1)
+            button:
+                xsize 420 ysize slot_h padding (10,10)
+                action r13_slot_action(1,i+1,saving)
+                sensitive (saving or renpy.can_load(slot))
+                if renpy.can_load(slot):
+                    hbox:
+                        spacing 14 xalign 0.0 yalign .5
+                        add FileScreenshot(i+1,page="1") xsize 160 ysize 90 yalign .5
+                        vbox:
+                            spacing 3 yalign .5
+                            text (r13_slot_where(slot) or "저장 %d"%(i+1)) size r13_nb_body_size() color r13_nb_ink() xsize 210 font R13_UI_BOLD_FONT
+                            if r13_slot_info(slot,"r13_stage"):
+                                text r13_slot_info(slot,"r13_stage") size r13_nb_small_size() xsize 210 font R13_UI_BOLD_FONT
+                            text FileTime(i+1,format="%m-%d %H:%M",page="1") size r13_nb_small_size() color r13_nb_muted() xsize 210 font R13_UI_BOLD_FONT
+                else:
+                    text "빈 칸" size r13_nb_body_size() color r13_nb_muted() align (.5,.5) font R13_UI_BOLD_FONT
+
 screen file_slots(title,saving):
     modal True
     style_prefix "r13"
-    default page=persistent.r13_save_page or 1
-    add Solid("#0b151bf2" if room13_mode or main_menu else "#110d0af5")
-    frame:
-        xpos 60 ypos 40 xsize 1160 ysize 640
-        vbox:
-            spacing 14
-            hbox:
-                spacing 24
-                text title size (r13_type("title") if R13_TYPE_V2 else 34) color ("#765426" if room13_mode or main_menu else "#ffdc91") yalign .5
-                for p in (1,2,3):
-                    textbutton ("%d쪽"%p):
-                        action [SetLocalVariable("page",p),SetField(persistent,"r13_save_page",p)]
-                        selected page==p text_size (r13_type("body") if R13_TYPE_V2 else 21) padding (14,6)
-                # 0.19.2: 「더보기 → 저장 · 불러오기」 하나로 들어와 여기서 바꾼다.
-                if not main_menu:
-                    textbutton ("불러오기로 ›" if saving else "저장으로 ›"):
-                        action ShowMenu("load" if saving else "save") text_size (r13_type("body") if R13_TYPE_V2 else 21)
-                if not saving:
-                    textbutton "최근 자동저장":
-                        action r13_load_confirm("auto-1")
-                        sensitive FileLoadable(1,page="auto")
-                        text_size (r13_type("body") if R13_TYPE_V2 else 21)
-            grid 2 3:
-                spacing 14
-                for i in range(6):
-                    $ slot="%d-%d"%(page,i+1)
-                    button:
-                        xsize 556 ysize 150 padding (10,10)
-                        action r13_slot_action(page,i+1,saving)
-                        sensitive (saving or renpy.can_load(slot))
-                        hbox:
-                            spacing 14
-                            add FileScreenshot(i+1,page=str(page)) xsize 192 ysize 108 yalign .5
-                            # 0.18.46: read the story point first (day, time, place), then where in
-                            # the story and the last line; slot number and real time come last.
-                            vbox:
-                                spacing 3 yalign .5
-                                if renpy.can_load(slot):
-                                    text (r13_slot_where(slot) or "%d쪽 %d번"%(page,i+1)) size (r13_type("body") if R13_TYPE_V2 else r13_read_size(21,25)) color ("#765426" if room13_mode or main_menu else "#ffdc91") xsize 320
-                                    if r13_slot_info(slot,"r13_stage"):
-                                        text r13_slot_info(slot,"r13_stage") size (r13_type("small") if R13_TYPE_V2 else r13_read_size(17,21)) xsize 320
-                                    if r13_slot_info(slot,"r13_last"):
-                                        text ("“"+r13_slot_info(slot,"r13_last")+"”") size (r13_type("small") if R13_TYPE_V2 else r13_read_size(16,20)) color "#5d6a66" xsize 320
-                                    text ("%d쪽 %d번 · "%(page,i+1)+FileTime(i+1,format="%m-%d %H:%M",page=str(page))+" · "+r13_save_caption(renpy.slot_json(slot))) size (r13_type("small") if R13_TYPE_V2 else r13_read_size(14,17)) color "#7d8c90" xsize 320
-                                else:
-                                    text ("%d쪽 %d번 · 비어 있음"%(page,i+1)) size (r13_type("body") if R13_TYPE_V2 else r13_read_size(20,24))
-            hbox:
-                spacing 18
-                textbutton "돌아가기" action Return()
-                if not saving:
-                    textbutton "이전 저장 정리" action Show("r13_save_cleanup",scope="old") text_size (r13_type("body") if R13_TYPE_V2 else 20)
-                    textbutton "모든 진행 저장 정리" action Show("r13_save_cleanup",scope="all") text_size (r13_type("body") if R13_TYPE_V2 else 20)
+    # 메인 메뉴 「불러오기」와 옛 호출처가 쓴다. 규칙은 설정의 저장 탭과 같다 — 쪽 없이 여섯 칸, 빈 칸은 「빈 칸」만.
+    $ ch=r13_control_height()
+    add Solid("#05070fa6")
+    add r13_asset_path(R13_NB_PANEL) xpos R13_NB_PANEL_POS[0] ypos R13_NB_PANEL_POS[1]
+    text title xpos R13_NB_TITLE_X ypos R13_NB_TITLE_Y size r13_nb_title_size() color r13_nb_ink() font R13_UI_BOLD_FONT
+    hbox:
+        xpos 300 ypos (R13_NB_HEAD_CY-ch//2) spacing 12
+        if not main_menu:
+            use r13_control("불러오기로" if saving else "저장으로",None,ShowMenu("load" if saving else "save"),width=184,control_id="r13_save_switch")
+        if not saving:
+            use r13_control("자동저장",None,r13_load_confirm("auto-1"),enabled=FileLoadable(1,page="auto"),width=136,control_id="r13_save_auto")
+    add Solid("#c9a86a99") xpos (R13_NB_TITLE_X-10) ypos R13_NB_RULE_Y xsize (R13_NB_RIGHT-(R13_NB_TITLE_X-10)) ysize 1
+    $ slot_h=(r13_nb_body_bottom()-R13_NB_TOP-2*14)//3
+    grid 2 3:
+        xpos R13_NB_LEFT ypos R13_NB_TOP spacing 14
+        for i in range(6):
+            $ slot="1-%d"%(i+1)
+            button:
+                xsize 530 ysize slot_h padding (10,10)
+                action r13_slot_action(1,i+1,saving)
+                sensitive (saving or renpy.can_load(slot))
+                if renpy.can_load(slot):
+                    hbox:
+                        spacing 14 xalign 0.0 yalign .5
+                        add FileScreenshot(i+1,page="1") xsize 174 ysize 98 yalign .5
+                        vbox:
+                            spacing 3 yalign .5
+                            text (r13_slot_where(slot) or "저장 %d"%(i+1)) size r13_nb_body_size() color r13_nb_ink() xsize 320 font R13_UI_BOLD_FONT
+                            if r13_slot_info(slot,"r13_stage"):
+                                text r13_slot_info(slot,"r13_stage") size r13_nb_small_size() xsize 320 font R13_UI_BOLD_FONT
+                            if r13_slot_info(slot,"r13_last"):
+                                text ("“"+r13_slot_info(slot,"r13_last")+"”") size r13_nb_small_size() color "#5d6a66" xsize 320 font R13_UI_BOLD_FONT
+                            text (FileTime(i+1,format="%m-%d %H:%M",page="1")+" · "+r13_save_caption(renpy.slot_json(slot))) size r13_nb_small_size() color r13_nb_muted() xsize 320 font R13_UI_BOLD_FONT
+                else:
+                    text "빈 칸" size r13_nb_body_size() color r13_nb_muted() align (.5,.5) font R13_UI_BOLD_FONT
+    use r13_nb_footer_button(0,"돌아가기",Return(),primary=True,control_id="r13_save_back")
+    if not saving:
+        hbox:
+            xpos R13_NB_LEFT ypos r13_nb_footer_y() spacing 12
+            use r13_control("이전 저장 정리",None,Show("r13_save_cleanup",scope="old"),width=200,control_id="r13_save_cleanup_old")
+            use r13_control("모든 진행 저장 정리",None,Show("r13_save_cleanup",scope="all"),width=220,control_id="r13_save_cleanup_all")
 
 screen notify(message):
     style_prefix ("r13" if room13_mode else "")
@@ -570,11 +587,11 @@ screen notify(message):
         frame:
             xanchor 1.0 xpos 1256 ypos 92 xmaximum 424 padding (18,12)
             background R13ActionPanel()
-            text message size (r13_type("body") if R13_TYPE_V2 else 21) color (r13_type_color("inverse") if R13_TYPE_V2 else "#fff2d9") xmaximum 388
+            text message size (r13_type("body")) color (r13_type_color("inverse")) xmaximum 388
     else:
         frame:
             xalign 0.5 ypos 98
-            text message size 21
+            text message size r13_type("small")
     timer 2.2 action Hide("notify")
 
 screen confirm(message,yes_action,no_action):

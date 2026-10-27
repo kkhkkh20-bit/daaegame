@@ -97,9 +97,9 @@ screen r13_shop(close=Return(False)):
     add Solid("#000000a8")
     add r13_close_art("resident_eunho","neutral",760):
         xpos 220 xanchor .5 ypos r13_close_y("resident_eunho",760,126,"neutral")
-    text "은호 사장의 물건" xpos 450 ypos 26 size r13_read_size(28,32) color "#ebcd8a"
-    text ("가진 돈 %d냥 · 갚을 돈 %d냥"%(wallet["cash"],wallet["debt"])) xpos 452 ypos 68 size r13_read_size(19,22) color ("#ffb3a3" if blocked else "#e5ece6")
-    textbutton "돌아가기" xpos 1250 xanchor 1.0 ypos 24 xsize 170 action close text_size r13_read_size(22,26)
+    text "은호 사장의 물건" xpos 450 ypos 26 size r13_type("subtitle") color "#ebcd8a"
+    text ("가진 돈 %d냥 · 갚을 돈 %d냥"%(wallet["cash"],wallet["debt"])) xpos 452 ypos 68 size r13_type("small") color ("#ffb3a3" if blocked else "#e5ece6")
+    textbutton "돌아가기" xpos 1250 xanchor 1.0 ypos 24 xsize 170 action close text_size r13_type("small")
     grid 3 2:
         xpos 450 ypos 104 spacing 18
         for key,item in shown:
@@ -110,16 +110,16 @@ screen r13_shop(close=Return(False)):
                 vbox:
                     xalign .5 spacing 4
                     add R13PixelIcon(key,6) xalign .5
-                    text item["title"] size r13_read_size(18,21) xalign .5 color "#fff2cf"
-                    text (("가지고 있음" if key in wallet["items"] else "%d냥"%r13_shop_price(room13,key))) size r13_read_size(18,21) xalign .5 color ("#9fb0ab" if key in wallet["items"] else "#ffe39a")
+                    text item["title"] size r13_type("small") xalign .5 color "#fff2cf"
+                    text (("가지고 있음" if key in wallet["items"] else "%d냥"%r13_shop_price(room13,key))) size r13_type("small") xalign .5 color ("#9fb0ab" if key in wallet["items"] else "#ffe39a")
         for _empty in range(6-len(shown)):
             null
     if pages>1:
         hbox:
             xpos 450+402 xanchor .5 ypos 532 spacing 20
-            textbutton "‹" xsize 80 sensitive page>0 action [SetScreenVariable("page",page-1),SetScreenVariable("picked",None)] text_size 28
-            text ("%d / %d"%(page+1,pages)) yalign .5 size r13_read_size(20,24)
-            textbutton "›" xsize 80 sensitive page<pages-1 action [SetScreenVariable("page",page+1),SetScreenVariable("picked",None)] text_size 28
+            textbutton "‹" xsize 80 sensitive page>0 action [SetScreenVariable("page",page-1),SetScreenVariable("picked",None)] text_size r13_type("subtitle")
+            text ("%d / %d"%(page+1,pages)) yalign .5 size r13_type("small")
+            textbutton "›" xsize 80 sensitive page<pages-1 action [SetScreenVariable("page",page+1),SetScreenVariable("picked",None)] text_size r13_type("subtitle")
     frame:
         xpos 450 ypos 600 xsize 806 ysize 104 padding (20,12) background Solid("#14272bf0")
         if picked and picked in R13_SHOP:
@@ -128,17 +128,17 @@ screen r13_shop(close=Return(False)):
                 spacing 16
                 vbox:
                     xsize 560 spacing 4
-                    text item["title"] size r13_read_size(21,24) color "#ebcd8a"
-                    text item["detail"] size r13_read_size(18,21) color "#e5ece6" xsize 560
+                    text item["title"] size r13_type("small") color "#ebcd8a"
+                    text item["detail"] size r13_type("small") color "#e5ece6" xsize 560
                 textbutton (("가지고 있음") if picked in wallet["items"] else ("%d냥에 사기"%r13_shop_price(room13,picked))):
                     xsize 190 yalign .5
                     sensitive picked not in wallet["items"] and wallet["cash"]>=r13_shop_price(room13,picked) and not blocked
                     action [Function(r13_life_apply_purchase,picked),SetScreenVariable("picked",None)]
-                    text_size r13_read_size(20,24)
+                    text_size r13_type("small")
         else:
             vbox:
                 spacing 4 yalign .5
-                text ("외상이 %d냥이다. 먼저 갚아야 물건을 살 수 있다."%wallet["debt"] if blocked else "물건을 누르면 설명이 나온다. 외상이 %d냥을 넘으면 팔지 않는다."%R13_DEBT_LIMIT) size r13_read_size(19,22) color ("#ffb3a3" if blocked else "#cfd9d4")
+                text ("외상이 %d냥이다. 먼저 갚아야 물건을 살 수 있다."%wallet["debt"] if blocked else "물건을 누르면 설명이 나온다. 외상이 %d냥을 넘으면 팔지 않는다."%R13_DEBT_LIMIT) size r13_type("small") color ("#ffb3a3" if blocked else "#cfd9d4")
                 if wallet["items"]:
-                    text ("가진 물건 · "+", ".join(r13_item_label(k,wallet) for k in wallet["items"])) size r13_read_size(17,20) color "#ebcd8a" xsize 760
+                    text ("가진 물건 · "+", ".join(r13_item_label(k,wallet) for k in wallet["items"])) size r13_type("small") color "#ebcd8a" xsize 760
     key "game_menu" action close

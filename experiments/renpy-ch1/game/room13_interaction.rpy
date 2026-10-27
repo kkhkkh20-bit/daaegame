@@ -214,7 +214,7 @@ screen r13_object_context(key):
         xpos 650 ypos 248 xsize 560 padding (18,16) background R13ActionPanel()
         vbox:
             spacing 14
-            text r13_object_name(key) size 29 color "#f6d18a"
+            text r13_object_name(key) size r13_type("subtitle") color "#f6d18a"
             if option_count>3:
                 viewport:
                     xsize 524 ysize 270 mousewheel True draggable True scrollbars "vertical"
@@ -228,23 +228,23 @@ screen r13_object_context_options(key,ready):
         spacing 12
         if r13_tool_available(key):
             textbutton "돋보기로 자세히 살펴보기":
-                style "r13_action_button" xsize 498 yminimum 58 text_size 22
+                style "r13_action_button" xsize 498 yminimum 58 text_size r13_type("small")
                 action Return(("tool",key)) sensitive ready
         for action,spec in r13_object_actions(key):
             textbutton (spec["title"]+"\n"+r13_learning_time_text(spec.get("cost",1),ending=action=="w2_escape")):
-                style "r13_action_button" xsize 498 yminimum 58 text_size 22
+                style "r13_action_button" xsize 498 yminimum 58 text_size r13_type("small")
                 action Return(("activity",action)) sensitive ready and (room13["period"]<3 or not spec.get("cost",1))
         if r13_context_wait(key) and room13["period"]<3:
             textbutton (r13_context_wait(key)+"\n"+r13_learning_time_text(1)):
-                style "r13_action_button" xsize 498 yminimum 58 text_size 22
+                style "r13_action_button" xsize 498 yminimum 58 text_size r13_type("small")
                 action Return(("wait",key)) sensitive ready
         if r13_bed_available(key):
             textbutton "침대에서 잠자기\n오늘 일정을 마치고 다음 날 아침으로":
-                style "r13_action_button" xsize 498 yminimum 58 text_size 22
+                style "r13_action_button" xsize 498 yminimum 58 text_size r13_type("small")
                 action Return(("sleep",key)) sensitive ready
         elif r13_bed_blocked_reason(key):
             textbutton ("침대에서 잠자기\n"+r13_bed_blocked_reason(key)):
-                style "r13_action_button" xsize 498 yminimum 58 text_size 22
+                style "r13_action_button" xsize 498 yminimum 58 text_size r13_type("small")
                 action NullAction() sensitive False
 
 label r13_object_options(key):

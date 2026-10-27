@@ -343,7 +343,7 @@ screen r13_drawer_group_grid(mode,entries,chosen,ipage,owner):
     $ gx=R13_EV_CENTER_X
     $ gpitch=(R13_EV_RIGHT-gx-250)//max(1,R13_DRAWER_GRID_COLS-1)
     if chosen:
-        text r13_drawer_group_title(mode,chosen) xpos gx ypos R13_EV_TOP xsize (R13_EV_RIGHT-gx) size (r13_read_size(30,32) if touch else r13_read_size(28,30)) color "#493323" font R13_UI_BOLD_FONT
+        text r13_drawer_group_title(mode,chosen) xpos gx ypos R13_EV_TOP xsize (R13_EV_RIGHT-gx) size r13_type("title") color "#493323" font R13_UI_BOLD_FONT
         text ("회의가 끝난 사건의 자료입니다. 다른 회의에서도 낼 수 있습니다." if mode=="past" else "이 사람이 나오는 자료입니다."):
             xpos gx ypos (R13_EV_TOP+(48 if touch else 44)) xsize (R13_EV_RIGHT-gx) size r13_ev_small_size() color "#80654e" font R13_UI_BOLD_FONT
         for index,key in enumerate(keys[ipage*per:][:per]):
@@ -355,7 +355,7 @@ screen r13_drawer_group_grid(mode,entries,chosen,ipage,owner):
                     xysize (250,card_h)
                     use r13_drawer_card_body(key,250,card_h,label_size,False,56,166)
                     if r13_drawer_unread(key):
-                        text "●" xpos 63 xanchor 1.0 ypos 3 size 13 color "#f0c66a" font R13_UI_BOLD_FONT
+                        text "●" xpos 63 xanchor 1.0 ypos 3 size r13_type("small") color "#f0c66a" font R13_UI_BOLD_FONT
         if pages>1:
             $ ph=r13_ev_button_height()
             $ pw=88 if touch else 72

@@ -12,8 +12,7 @@ init 150 python:
     def r13_night_say_size():
         # The mockup's line is a step larger than the boxed window's (same size setting).
         # 2026-10-27 타이포 시안: 켜지면 display 단계. 줄 수·위치 계산이 모두 이 함수를 쓰므로 여기서 바꾼다.
-        if R13_TYPE_V2:return r13_type("display")
-        return 32 if r13_touch_ui() else _r13_say_size()+4
+        return r13_type("display")
 
     def r13_night_say_lines(what):
         if not isinstance(what,str):return 1
@@ -26,7 +25,10 @@ init 150 python:
         """Top of the dialogue text: lines stack upward from a fixed bottom, so one line sits
         low like the mockup and two lines never reach the controls row."""
         size=r13_night_say_size()
-        return (560 if r13_touch_ui() else 578)-max(0,r13_night_say_lines(what)-2)*(size+4)
+        # 2026-10-27 6단계 통일에서 드러난 것: 밑선을 560/578 로 박아 두면 대사가 36px 이 된 뒤 두 줄째가
+        # 하단 조작 줄(더보기)에 닿는다. 밑선은 조작 줄 위 6px 에서 두 줄 높이만큼 올려 잡는다.
+        base=r13_night_control_y()-(88 if r13_touch_ui() else 56)//2-6-(2*size+4)
+        return base-max(0,r13_night_say_lines(what)-2)*(size+4)
 
     def r13_night_text_color():
         # B dialogue uses paper-role colours on the cream notebook.
@@ -34,7 +36,7 @@ init 150 python:
         packet=getattr(store,"r13_packet",None)
         if packet and packet[0] is None:return r13_role_color("narration","paper")
         # 2026-10-27 타이포 시안: 말은 ink 토큰(값은 지금과 같다). 생각·서술의 역할색은 그대로 둔다.
-        return r13_type_color("ink") if R13_TYPE_V2 else R13_NIGHT_TEXT_COLOR
+        return r13_type_color("ink")
 
     def r13_night_shade_alpha():
         # The approved "대사창 진하기" setting still decides how dark the shade gets.
@@ -49,7 +51,7 @@ init 150 python:
         return Frame(r13_asset_path("file:"+(R13_NIGHT_UI+"name_ribbon.png")),44,0,44,0)
 
 style r13_night_link_text is text:
-    font r13_ui_font() size 20 color "#4b3420" hover_color "#b03730" insensitive_color "#8f8778"
+    font r13_ui_font() size r13_type("small") color "#4b3420" hover_color "#b03730" insensitive_color "#8f8778"
     outlines []
 
 screen r13_night_link(caption,glyph,icon,command,enabled=True,link_id=None):
@@ -65,7 +67,7 @@ screen r13_night_link(caption,glyph,icon,command,enabled=True,link_id=None):
             if on_paper:
                 add Transform(Frame(Crop((16,12,168,32),r13_asset_path("file:assets/ui-b-dialogue/b_ribbon_name.png")),16,6,32,6),xysize=(label_width,52 if r13_touch_ui() else 44),alpha=1.0 if enabled else .55) align (.5,.5)
             # 2026-10-27 타이포 시안: body 단계(값은 지금 24/28 과 같다). 리본 위라 inverse. 비활성 색은 어두운 면용이 없어 그대로.
-            text caption align (.5,.5) xoffset -6 font R13_UI_BOLD_FONT size (r13_type("body") if R13_TYPE_V2 else (28 if r13_touch_ui() else 24)) color ((r13_type_color("inverse") if R13_TYPE_V2 else "#fff6e7") if enabled else "#c0b6a5")
+            text caption align (.5,.5) xoffset -6 font R13_UI_BOLD_FONT size (r13_type("body")) color ((r13_type_color("inverse")) if enabled else "#c0b6a5")
 
 screen r13_night_controls(ready=True):
     $ line_active=renpy.get_screen("say") is not None and not any(renpy.get_screen(n) for n in ("choice","r13_topics","r13_resident_approach","r13_entry_karo_topics"))

@@ -134,21 +134,21 @@ screen r13_learning_notes_content(focus=None):
     $ nb_w=R13_NB_WIDTH
     $ card_w=nb_w-34
     $ text_w=card_w-40
-    $ body_size=(r13_type("body") if R13_TYPE_V2 else r13_read_size(21,25))
-    $ small_size=(r13_type("small") if R13_TYPE_V2 else r13_read_size(20,24))
-    $ head_size=(r13_type("emphasis") if R13_TYPE_V2 else r13_read_size(23,27))
-    $ ink=(r13_type_color("ink") if R13_TYPE_V2 else "#493b30")
-    $ muted=(r13_type_color("muted") if R13_TYPE_V2 else "#65503b")
-    $ accent=(r13_type_color("accent") if R13_TYPE_V2 else "#765426")
-    text "조사 메모" xpos (R13_NB_LEFT+4) ypos R13_NB_TOP xsize 150 size (r13_type("subtitle") if R13_TYPE_V2 else 26) color ink font R13_UI_BOLD_FONT
+    $ body_size=(r13_type("body"))
+    $ small_size=(r13_type("small"))
+    $ head_size=(r13_type("emphasis"))
+    $ ink=(r13_type_color("ink"))
+    $ muted=(r13_type_color("muted"))
+    $ accent=(r13_type_color("accent"))
+    text "조사 메모" xpos (R13_NB_LEFT+4) ypos R13_NB_TOP xsize 150 size (r13_type("subtitle")) color ink font R13_UI_BOLD_FONT
     # 안내는 제목 오른쪽(종이 안). 하단 버튼 줄은 종이 가장자리에 걸쳐 맨글씨가 묻힌다.
-    text "메모를 읽고 정리해도 시간은 흐르지 않습니다." xpos (R13_NB_LEFT+160) ypos (R13_NB_TOP+6) xsize (nb_w-170) size (r13_type("small") if R13_TYPE_V2 else 17) color muted
+    text "메모를 읽고 정리해도 시간은 흐르지 않습니다." xpos (R13_NB_LEFT+160) ypos (R13_NB_TOP+6) xsize (nb_w-170) size (r13_type("small")) color muted
     hbox:
         xpos R13_NB_LEFT ypos (R13_NB_TOP+48) spacing 14
         for key,title in (("questions","지금 궁금한 것"),("observations","자세히 본 것"),("world","알게 된 세계")):
             if key!="world" or r13_learning_terms():
                 textbutton title:
-                    style "r13_action_button" xsize 284 ysize (56 if r13_touch_ui() else 44) text_size (r13_type("body") if R13_TYPE_V2 else r13_read_size(20,24))
+                    style "r13_action_button" xsize 284 ysize (56 if r13_touch_ui() else 44) text_size (r13_type("body"))
                     selected tab==key action [Function(r13_record_select,_scope,"tab",key),Function(r13_record_select,_scope,"expanded",None)]
     viewport:
         area (R13_NB_LEFT,R13_NB_TOP+108,nb_w,r13_nb_body_bottom()-(R13_NB_TOP+108)) mousewheel True draggable True scrollbars "vertical"

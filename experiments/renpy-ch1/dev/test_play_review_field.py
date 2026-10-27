@@ -1,4 +1,5 @@
 """First-play review: touch geometry, repeatable reading and field hit targets."""
+from type_stub import r13_type_stub
 import ast
 import copy
 import re
@@ -52,7 +53,7 @@ class PlayReviewField(unittest.TestCase):
                 for lines in (1,2,3,4):
                     with self.subTest(touch=touch,large=large,lines=lines):
                         ns=dict(r13_touch_ui=lambda:touch,r13_read_size=lambda normal,big:big if large else normal,
-                                r13_night_say_lines=lambda what:lines,R13_TYPE_V2=False)
+                                r13_night_say_lines=lambda what:lines,r13_type=r13_type_stub(touch=touch,large=large))
                         load_function('game/screens.rpy','_r13_say_size',ns)
                         size=load_function('game/systems/room13_night_ui.rpy','r13_night_say_size',ns)()
                         center=load_function('game/systems/room13_night_ui.rpy','r13_night_control_y',ns)()
@@ -79,7 +80,7 @@ class PlayReviewField(unittest.TestCase):
         for touch in (False, True):
             for large in (False, True):
                 # 2026-10-27 타이포 시안: 줄 수 측정이 단계표를 참조한다. 꺼진 값으로 재야 기대값이 같다.
-                ns = dict(R13_SIDE_QUESTION_TOP=150, R13_TYPE_V2=False, r13_type=lambda level: 26,
+                ns = dict(R13_SIDE_QUESTION_TOP=150, r13_type=lambda level: 26,
                           r13_question_caption=lambda title, *a, **kw: title,
                           r13_ui_font=lambda: 'font', R13_UI_BOLD_FONT='bold-font', r13_read_size=lambda a,b: b if large else a,
                           r13_touch_ui=lambda: touch,

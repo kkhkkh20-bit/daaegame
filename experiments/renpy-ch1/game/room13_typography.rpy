@@ -5,7 +5,11 @@ init 57 python:
         height=64, large_height=80, icon=28, icon_gap=10,
         text=22, large_text=24, alpha="e6", padding=16)
     def r13_touch_ui():
-        return renpy.variant("touch") or renpy.get_physical_size()[1]<600
+        # style 블록(언어 초기화 때 평가)에서도 r13_type 을 쓰므로 화면이 아직 없으면 변형값만 본다.
+        try:
+            return renpy.variant("touch") or renpy.get_physical_size()[1]<600
+        except Exception:
+            return bool(renpy.variant("touch"))
 
     def r13_control_height():
         return 88 if r13_touch_ui() else R13_CONTROL["large_height" if persistent.room13_large_text else "height"]
@@ -62,17 +66,17 @@ init 70:
     style r13_compact_button is r13_action_button:
         padding R13_UI_PADDING["compact"]
     style r13_compact_button_text is r13_action_button_text:
-        size 20
+        size r13_type("small")
     style r13_title_text is r13_text:
-        size 30
+        size r13_type("title")
         color "#765426"
     style r13_secondary_text is r13_text:
-        size 20
+        size r13_type("small")
         color R13_UI_COLORS["paper_secondary"]
     style r13_secondary_dark_text is r13_secondary_text:
         color R13_UI_COLORS["dark_secondary"]
     style r13_key_text is r13_text:
-        size 24
+        size r13_type("body")
         color R13_UI_COLORS["evidence"]
     style r13_say_label:
         bold False

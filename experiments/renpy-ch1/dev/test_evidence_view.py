@@ -1,6 +1,7 @@
 """증거 비교 창 (plan5 m2a/m2b): data hooks, fallbacks and comparison state, without Ren'Py.
 
 Native screen QA (lint, screen tests) still decides the layout; these tests pin the rules."""
+from type_stub import r13_type_stub
 import io
 import json
 import re
@@ -51,7 +52,7 @@ class EvidenceView(unittest.TestCase):
             r13_record_category=lambda k: "testimony" if evidence[k]["kind"] == "증언" else "evidence",
             r13_record_page_size=lambda: 12,
             r13_touch_ui=lambda: touch, r13_read_size=lambda base, large=None: base,
-            R13_TYPE_V2=False,  # 2026-10-27 타이포 시안 스위치. 꺼진 상태를 검사한다
+            r13_type=r13_type_stub(touch=touch),
 
             r13_material_filter_choices=lambda current, allow=True: [("all", "전체"), ("testimony", "증언")],
             r13_record_select=lambda *a: self.selected.append(a),
@@ -151,7 +152,8 @@ class EvidenceView(unittest.TestCase):
         self.assertGreaterEqual(env["r13_ev_label_size"]("올빼미 할아버지에게 보여주기", 296), 18)
         env = self.build()
         self.assertEqual(env["r13_ev_label_size"]("다람이에게 보여주기", 296), 22)
-        self.assertLess(env["r13_ev_label_size"]("아주 긴 이름의 주민 할아버지에게 보여주기", 296), 22)
+        # 2026-10-27 6단계 통일: 가장 작은 단계(small=22) 아래로는 줄이지 않는다. 긴 이름은 22 에서 멈춘다.
+        self.assertEqual(env["r13_ev_label_size"]("아주 긴 이름의 주민 할아버지에게 보여주기", 296), 22)
 
     def test_chips_end_left_of_close_and_right_of_tabs(self):
         for touch in (False, True):

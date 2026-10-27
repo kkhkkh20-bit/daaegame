@@ -270,13 +270,13 @@ screen r13_person_brief(person,width=286):
         $ topics=r13_note_topics(person)
         $ shown=[e.split(":")[0] for e in room13.get("resident_knowledge",{}).get(person,[]) if e.split(":")[0] in ROOM13["evidence"]]
         if topics:
-            text ("들은 이야기 · %d"%len(topics)) size (r13_type("body") if R13_TYPE_V2 else r13_read_size(17,20)) color (r13_type_color("accent") if R13_TYPE_V2 else "#765426")
+            text ("들은 이야기 · %d"%len(topics)) size (r13_type("body")) color (r13_type_color("accent"))
             for title in topics:
-                text ("· "+title) size (r13_type("small") if R13_TYPE_V2 else r13_read_size(16,19)) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30") xsize width
+                text ("· "+title) size (r13_type("small")) color (r13_type_color("ink")) xsize width
         if shown:
-            text ("보여 준 자료 · %d"%len(shown)) size (r13_type("body") if R13_TYPE_V2 else r13_read_size(17,20)) color (r13_type_color("accent") if R13_TYPE_V2 else "#765426")
+            text ("보여 준 자료 · %d"%len(shown)) size (r13_type("body")) color (r13_type_color("accent"))
             for record_id in shown:
-                text ("· "+ROOM13["evidence"][record_id]["name"]) size (r13_type("small") if R13_TYPE_V2 else r13_read_size(16,19)) color (r13_type_color("muted") if R13_TYPE_V2 else "#625738") xsize width
+                text ("· "+ROOM13["evidence"][record_id]["name"]) size (r13_type("small")) color (r13_type_color("muted")) xsize width
 
 # 2026-10-27 타이포 시안(R13_TYPE_V2): 자료 탭의 크기·색은 systems/room13_evidence_view.rpy, 대화 기록·닫기는 여기서 바꾼다.
 screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=None,present_action=None):
@@ -361,7 +361,7 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
         elif tab=="items":
             use r13_item_bag_content()
         else:
-            text "실제로 지나간 대화" xpos (R13_NB_LEFT+4) ypos R13_NB_TOP xsize (R13_NB_WIDTH-8) size (r13_type("subtitle") if R13_TYPE_V2 else 23) color (r13_type_color("ink") if R13_TYPE_V2 else "#65503b") font R13_UI_BOLD_FONT
+            text "실제로 지나간 대화" xpos (R13_NB_LEFT+4) ypos R13_NB_TOP xsize (R13_NB_WIDTH-8) size (r13_type("subtitle")) color (r13_type_color("ink")) font R13_UI_BOLD_FONT
             viewport:
                 area (R13_NB_LEFT,R13_NB_TOP+48,R13_NB_WIDTH,r13_nb_body_bottom()-(R13_NB_TOP+48)) mousewheel True draggable True scrollbars "vertical"
                 vbox:
@@ -371,8 +371,8 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
                             xsize (R13_NB_WIDTH-34) padding (16,12) background R13PaperPanel()
                             vbox:
                                 spacing 6
-                                text (row["who"]+" · "+row["stamp"]) size (r13_type("small") if R13_TYPE_V2 else 17) color (r13_type_color("muted") if R13_TYPE_V2 else "#625738") xsize (R13_NB_WIDTH-70)
-                                text row["what"] size (r13_type("emphasis") if R13_TYPE_V2 else r13_read_size(21,26)) color (r13_role_color("thought","paper") if row["kind"]=="독백" else r13_role_color("narration","paper") if row["kind"]=="서술" else r13_role_color("speech","paper")) xsize (R13_NB_WIDTH-70)
+                                text (row["who"]+" · "+row["stamp"]) size (r13_type("small")) color (r13_type_color("muted")) xsize (R13_NB_WIDTH-70)
+                                text row["what"] size (r13_type("emphasis")) color (r13_role_color("thought","paper") if row["kind"]=="독백" else r13_role_color("narration","paper") if row["kind"]=="서술" else r13_role_color("speech","paper")) xsize (R13_NB_WIDTH-70)
         use r13_nb_footer_button(0,"닫기",(close_action or Hide("r13_records")),control_id="r13_nb_close")
     key "game_menu" action (close_action or Hide("r13_records"))
 
@@ -384,7 +384,7 @@ screen r13_resident_notes():
     default ready=False
     timer .15 action SetScreenVariable("ready",True)
     add Solid("#eee7d6")
-    text "다람이의 수첩 · 만난 사람들" xpos 55 ypos 35 size 32 color "#765426"
+    text "다람이의 수첩 · 만난 사람들" xpos 55 ypos 35 size r13_type("title") color "#765426"
     viewport:
         area (55,115,455,495) mousewheel True draggable True scrollbars "vertical"
         vbox:
@@ -397,28 +397,28 @@ screen r13_resident_notes():
                     hbox:
                         spacing 16
                         add Transform(r13_art(person,"avatar_neutral"),size=(60,62),fit="contain",nearest=r13_profile_nearest(person))
-                        text r13_display_name(person) size 23 yalign .5
+                        text r13_display_name(person) size r13_type("small") yalign .5
             if not r13_met_people():
-                text "직접 이야기한 사람부터 기록한다." size 23 xsize 410
+                text "직접 이야기한 사람부터 기록한다." size r13_type("small") xsize 410
     if selected:
-        text r13_display_name(selected) xpos 565 ypos 112 size 32 color "#765426"
-        text r13_display_role(selected) xpos 565 ypos 156 size 20 color "#625738"
+        text r13_display_name(selected) xpos 565 ypos 112 size r13_type("title") color "#765426"
+        text r13_display_role(selected) xpos 565 ypos 156 size r13_type("small") color "#625738"
         viewport:
             area (565,185,650,420) mousewheel True draggable True scrollbars "vertical"
             vbox:
                 spacing 14
-                text "직접 만난 때와 장소" size 24 color "#496450"
+                text "직접 만난 때와 장소" size r13_type("body") color "#496450"
                 for meeting in room13["encounters"]:
                     if isinstance(meeting,dict) and meeting["person"]==selected:
-                        text ("%d일 · %s · %s"%(meeting["day"],("오전","오후","저녁","늦은 저녁")[meeting["period"]],R13_PLACES[meeting["place"]][0])) size 21
-                text "들은 이야기" size 24 color "#496450"
+                        text ("%d일 · %s · %s"%(meeting["day"],("오전","오후","저녁","늦은 저녁")[meeting["period"]],R13_PLACES[meeting["place"]][0])) size r13_type("small")
+                text "들은 이야기" size r13_type("body") color "#496450"
                 for title in r13_note_topics(selected):
-                    text ("· "+title) size 21 xsize 600
+                    text ("· "+title) size r13_type("small") xsize 600
                 $ disclosed=room13["resident_knowledge"].get(selected,[])
                 if disclosed:
-                    text "내가 보여 준 자료" size 24 color "#765426"
+                    text "내가 보여 준 자료" size r13_type("body") color "#765426"
                     for item in disclosed:
                         $ eid=item.split(":")[0]
-                        text (ROOM13["evidence"][eid]["name"]+(" · 이름도 공개함" if item.endswith(":named") else " · 이름은 숨김" if eid=="E10" else "")) size 21 xsize 600
-    text "앞으로의 일정은 쓰여 있지 않다. 직접 만난 기록으로 짐작해 보자." xpos 55 ypos 625 size 20 color "#717367"
-    textbutton "닫기" xpos 55 ypos 670 action Hide("r13_resident_notes") sensitive ready text_size 23
+                        text (ROOM13["evidence"][eid]["name"]+(" · 이름도 공개함" if item.endswith(":named") else " · 이름은 숨김" if eid=="E10" else "")) size r13_type("small") xsize 600
+    text "앞으로의 일정은 쓰여 있지 않다. 직접 만난 기록으로 짐작해 보자." xpos 55 ypos 625 size r13_type("small") color "#717367"
+    textbutton "닫기" xpos 55 ypos 670 action Hide("r13_resident_notes") sensitive ready text_size r13_type("small")
