@@ -31,7 +31,8 @@ screen r13_village_b_control(label, rect, action, control_id, primary=False, ena
     $ bx,by,bw,bh=rect
     fixed:
         area (bx,by-((88 if r13_touch_ui() else 44)-bh)//2,bw,88 if r13_touch_ui() else 44)
-        use r13_state_button(label,action,bw,88 if r13_touch_ui() else 44,family="map_flat_primary" if primary else "map_flat_standard",chosen=chosen,enabled=enabled,text_size=19,control_id=control_id)
+        # 2026-10-27 외부 평가: 휴대폰 가로(844x390)에서 19는 약 10px 로 줄어 읽기 어려웠다. 터치 화면에서만 키운다.
+        use r13_state_button(label,action,bw,88 if r13_touch_ui() else 44,family="map_flat_primary" if primary else "map_flat_standard",chosen=chosen,enabled=enabled,text_size=(26 if r13_touch_ui() else 19),control_id=control_id)
 
 screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_action,extra_places,village_zoom):
     add Solid("#d9d7c6")
@@ -60,7 +61,9 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
                         $ hx,hy,hw,hh=place["provisional_hit_rect"]
                         $ cx,cy=place["label_center"]
                         $ label=r13_map_label(key)
-                        $ lw=max(144,len(label)*21+24)
+                        # 터치 화면에서는 장소 이름표를 1.3배로(휴대폰에서 글씨가 8px 안팎까지 줄었다).
+                        $ ls=1.3 if r13_touch_ui() else 1.0
+                        $ lw=max(144,len(label)*21+24)*ls
                         $ choose = [SetScreenVariable("selected",key),SetScreenVariable("map_notice",None)] if state!="locked" else SetScreenVariable("map_notice",label+" · 지금은 이곳으로 갈 수 없습니다.")
                         button:
                             id ("map_building_"+key)
@@ -69,13 +72,13 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
                             action choose sensitive ready alt label
                         button:
                             id ("map_name_"+key)
-                            area (int((cx-lw/2)*zoom),int((cy-19)*zoom),int(lw*zoom),int(38*zoom)) padding (0,0)
+                            area (int((cx-lw/2)*zoom),int((cy-19*ls)*zoom),int(lw*zoom),int(38*ls*zoom)) padding (0,0)
                             background None hover_background None
                             action choose sensitive ready alt label
                             fixed:
-                                xysize (int(lw*zoom),int(38*zoom))
-                                add Transform(Frame(r13_asset_path("file:assets/map-village-b/b_panel_small_trimmed.png"),12,10),xysize=(int(lw*zoom),int(38*zoom)))
-                                text label font R13_UI_BOLD_FONT size max(12,int(20*zoom)) color ("#963b2f" if key==selected else "#493324" if state=="open" else "#88796b") align (.5,.5)
+                                xysize (int(lw*zoom),int(38*ls*zoom))
+                                add Transform(Frame(r13_asset_path("file:assets/map-village-b/b_panel_small_trimmed.png"),12,10),xysize=(int(lw*zoom),int(38*ls*zoom)))
+                                text label font R13_UI_BOLD_FONT size max(12,int(20*ls*zoom)) color ("#963b2f" if key==selected else "#493324" if state=="open" else "#88796b") align (.5,.5)
                 # 공개된 행만 상태를 그린다. 미발견 장소에는 잠금 아이콘도 만들지 않는다.
                 for key,state in rows:
                     if key in R13_VILLAGE_B_PLACES:
@@ -154,7 +157,7 @@ screen r13_map_diary_footer(region,selected,ready,local_guide,close_action):
     fixed:
         area (102,643,180,40)
         add Frame(r13_asset_path("file:assets/map-village-b/b_panel_small_trimmed.png"),12,10) xysize (180,40)
-        text ("선택: "+r13_map_label(selected) if selected else "장소를 선택하세요") font R13_UI_BOLD_FONT size 19 color "#493324" xmaximum 168 align (.5,.5) text_align .5
+        text ("선택: "+r13_map_label(selected) if selected else "장소를 선택하세요") font R13_UI_BOLD_FONT size (22 if r13_touch_ui() else 19) color "#493324" xmaximum 168 align (.5,.5) text_align .5
     if not local_guide:
         for key,title,rect in (("village","마을",(300,643,106,40)),("inn","여관 안",(416,643,120,40)),("mountain","숲·산길",(546,643,132,40))):
             if r13_map_nodes(key):

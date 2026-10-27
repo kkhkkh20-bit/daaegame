@@ -371,6 +371,8 @@ screen r13_meeting_choices(items,ready):
         $ who=next((p for p,name in R13_NAMES.items() if name==item.caption and p!="dad"),None)
         button:
             style "r13_action_button"
+            # 2026-10-27 외부 평가: 무대 위 반투명 판에 밝은 글자가 겹쳐 읽기 어려웠다. 불투명 종이 판을 깐다.
+            background R13ControlSurface() hover_background R13ControlSurface(hovered=True) insensitive_background R13ControlSurface(disabled=True)
             xpos 160+(index%columns)*486 ypos 452+(index//columns)*74
             xsize (474 if columns==2 else 960) ysize 64
             action r13_safe_question_action(item.action) sensitive ready
@@ -378,6 +380,7 @@ screen r13_meeting_choices(items,ready):
                 align (.5,.5) spacing 14
                 if who and columns==2:
                     add Transform(r13_art(who,"avatar_neutral"),xysize=(48,48),fit="contain",nearest=r13_profile_nearest(who)) yalign .5
-                text (str(index+1)+"  "+item.caption) size r13_read_size(23,27) color "#fff0ce" yalign .5
+                # 2026-10-27 외부 평가: 밝은 글자(#fff0ce)가 밝은 공통 버튼 위에 놓여 읽기 어려웠다. 공통 버튼 글자 규칙을 따른다.
+                text (str(index+1)+"  "+item.caption) style "r13_action_button_text" size r13_read_size(23,27) hover_color "#a3352c" yalign .5
         if index<9 and ready:
             key ("K_%d"%(index+1)) action r13_safe_question_action(item.action)
