@@ -64,7 +64,8 @@ screen r13_night_link(caption,glyph,icon,command,enabled=True,link_id=None):
             xysize (label_width,88 if r13_touch_ui() else 56)
             if on_paper:
                 add Transform(Frame(Crop((16,12,168,32),r13_asset_path("file:assets/ui-b-dialogue/b_ribbon_name.png")),16,6,32,6),xysize=(label_width,52 if r13_touch_ui() else 44),alpha=1.0 if enabled else .55) align (.5,.5)
-            text caption align (.5,.5) xoffset -6 font R13_UI_BOLD_FONT size (28 if r13_touch_ui() else 24) color ("#fff6e7" if enabled else "#c0b6a5")
+            # 2026-10-27 타이포 시안: body 단계(값은 지금 24/28 과 같다). 리본 위라 inverse. 비활성 색은 어두운 면용이 없어 그대로.
+            text caption align (.5,.5) xoffset -6 font R13_UI_BOLD_FONT size (r13_type("body") if R13_TYPE_V2 else (28 if r13_touch_ui() else 24)) color ((r13_type_color("inverse") if R13_TYPE_V2 else "#fff6e7") if enabled else "#c0b6a5")
 
 screen r13_night_controls(ready=True):
     $ line_active=renpy.get_screen("say") is not None and not any(renpy.get_screen(n) for n in ("choice","r13_topics","r13_resident_approach","r13_entry_topics","r13_entry_karo_topics"))

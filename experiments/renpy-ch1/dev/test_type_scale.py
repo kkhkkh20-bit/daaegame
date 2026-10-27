@@ -9,7 +9,10 @@ GAME=Path(__file__).resolve().parents[1]/'game'
 SCALE=GAME/'systems'/'room13_type_scale.rpy'
 # 시안이 손대는 파일. 다른 파일에서 r13_type 를 쓰면 범위를 벗어난 것이다.
 TOUCHED=['screens.rpy','systems/room13_night_ui.rpy','systems/room13_notebook_choices.rpy',
-         'room13_notebook.rpy','systems/room13_evidence_view.rpy']
+         'room13_notebook.rpy','systems/room13_evidence_view.rpy',
+         # 2026-10-27 2차: 현장·지도·설정·질문·단축키·더보기 판(더보기 판 화면은 footer_concept 에 있다).
+         'room13_screens.rpy','room13_map_village_b.rpy','systems/room13_side_questions.rpy',
+         'systems/room13_shortcuts.rpy','systems/room13_footer_concept.rpy']
 GUARDED=re.compile(r'r13_type(?:_color)?\("[a-z]+"\)\s+if R13_TYPE_V2 else ')
 HEAD=re.compile(r'^\s+if R13_TYPE_V2:\s*return r13_type(?:_color)?\("[a-z]+"\)')
 

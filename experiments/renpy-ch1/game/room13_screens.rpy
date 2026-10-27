@@ -14,17 +14,19 @@ screen r13_hud():
             xpos (940 if renpy.get_screen("r13_hub") else R13_CONCEPT_RIGHT-238) ypos 20 xsize 238 ysize 72 padding (0,0) background r13_field_paper()
             fixed:
                 xysize (238,72)
-                text ("%02d"%room13.get("day",1)) xpos 14 ypos 8 xsize 48 text_align .5 size 28 color "#493b30" font R13_UI_BOLD_FONT
-                text "일째" xpos 14 ypos 42 xsize 48 text_align .5 size 14 color "#796044" font r13_ui_font()
-                text r13_clock().split(" · ")[1] xpos 76 ypos 12 xsize 92 size 20 color "#493b30" font R13_UI_BOLD_FONT
-                text r13_clock().split(" · ")[-1] xpos 76 ypos 40 xsize 92 size 18 color "#65503b" font r13_ui_font()
+                # 2026-10-27 타이포 시안: 큰 숫자 title, 작은 글자 small. 「일째」는 small(22~28)이 48px 에 안 들어가
+                # 두 줄로 꺾이므로 켜진 동안만 칸을 60(시계 글자 시작 76 앞)까지 넓힌다.
+                text ("%02d"%room13.get("day",1)) xpos 14 ypos 8 xsize 48 text_align .5 size (r13_type("title") if R13_TYPE_V2 else 28) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30") font R13_UI_BOLD_FONT
+                text "일째" xpos 14 ypos 42 xsize (60 if R13_TYPE_V2 else 48) text_align .5 size (r13_type("small") if R13_TYPE_V2 else 14) color (r13_type_color("muted") if R13_TYPE_V2 else "#796044") font r13_ui_font()
+                text r13_clock().split(" · ")[1] xpos 76 ypos 12 xsize (104 if R13_TYPE_V2 else 92) size (r13_type("body") if R13_TYPE_V2 else 20) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30") font R13_UI_BOLD_FONT
+                text r13_clock().split(" · ")[-1] xpos 76 ypos 40 xsize (104 if R13_TYPE_V2 else 92) size (r13_type("small") if R13_TYPE_V2 else 18) color (r13_type_color("muted") if R13_TYPE_V2 else "#65503b") font r13_ui_font()
                 add R13TimeDial() xpos 182 ypos 16
         frame:
             xpos 24 ypos 20 padding (12,8) background r13_field_paper(tape=True)
             hbox:
                 spacing 1
                 add Transform(Crop((16,16,32,32),r13_asset_path("file:assets/ui-b-field/b_icon_pin.png")),xysize=(28,28)) yalign .5
-                text r13_hud_place() size r13_read_size(20,23) color "#493b30" font R13_UI_BOLD_FONT yalign .5
+                text r13_hud_place() size (r13_type("title") if R13_TYPE_V2 else r13_read_size(20,23)) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30") font R13_UI_BOLD_FONT yalign .5
 
 init 80:
     style r13_toolbar_button is r13_action_button:
@@ -110,7 +112,7 @@ screen r13_hub(entry=False):
         # gives it, goods are bought from the seller in person; only the purse is shown.
         frame:
             xpos 510 ypos 100 padding (12,6) background r13_field_paper(label=True)
-            text ("가진 돈 %d냥"%r13_wallet(room13)["cash"]) size r13_read_size(18,21) color "#664932"
+            text ("가진 돈 %d냥"%r13_wallet(room13)["cash"]) size (r13_type("small") if R13_TYPE_V2 else r13_read_size(18,21)) color (r13_type_color("ink") if R13_TYPE_V2 else "#664932")
     if not entry and not r13_v111_active():
         use r13_event_offers(input_ready)
     use r13_admin_key()
@@ -127,7 +129,7 @@ screen r13_hub(entry=False):
             xpos max(12,min(980,renpy.get_mouse_pos()[0]+18)) ypos max(90,min(594,renpy.get_mouse_pos()[1]+22)) padding (14,9) background r13_field_paper()
             hbox:
                 spacing 6
-                text hint size 20 color "#4b3021" yalign .5
+                text hint size (r13_type("body") if R13_TYPE_V2 else 20) color (r13_type_color("ink") if R13_TYPE_V2 else "#4b3021") yalign .5
 
     if world_moving:
         timer .05 repeat True action Function(r13_world_pan_finish,world_adjustment,_update_screens=False)

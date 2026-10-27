@@ -32,7 +32,8 @@ screen r13_village_b_control(label, rect, action, control_id, primary=False, ena
     fixed:
         area (bx,by-((88 if r13_touch_ui() else 44)-bh)//2,bw,88 if r13_touch_ui() else 44)
         # 2026-10-27 외부 평가: 휴대폰 가로(844x390)에서 19는 약 10px 로 줄어 읽기 어려웠다. 터치 화면에서만 키운다.
-        use r13_state_button(label,action,bw,88 if r13_touch_ui() else 44,family="map_flat_primary" if primary else "map_flat_standard",chosen=chosen,enabled=enabled,text_size=(26 if r13_touch_ui() else 19),control_id=control_id)
+        # 2026-10-27 타이포 시안: body 단계(휴대폰 28)는 위 26 보다 작아지지 않는다.
+        use r13_state_button(label,action,bw,88 if r13_touch_ui() else 44,family="map_flat_primary" if primary else "map_flat_standard",chosen=chosen,enabled=enabled,text_size=(r13_type("body") if R13_TYPE_V2 else (26 if r13_touch_ui() else 19)),control_id=control_id)
 
 screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_action,extra_places,village_zoom):
     add Solid("#d9d7c6")
@@ -63,7 +64,10 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
                         $ label=r13_map_label(key)
                         # 터치 화면에서는 장소 이름표를 1.3배로(휴대폰에서 글씨가 8px 안팎까지 줄었다).
                         $ ls=1.3 if r13_touch_ui() else 1.0
-                        $ lw=max(144,len(label)*21+24)*ls
+                        # 2026-10-27 타이포 시안: 장소 이름은 body 단계. 터치의 1.3배(26)보다 작아지지 않게 큰 쪽을 쓰고,
+                        # 이름표 폭도 그 글자 크기로 잰다(글자당 20→24 가 되면 21px 칸에서 넘친다).
+                        $ lpx=max(20*ls,(r13_type("body") if R13_TYPE_V2 else 0))
+                        $ lw=(max(144,len(label)*(lpx+1)+24) if R13_TYPE_V2 else max(144,len(label)*21+24)*ls)
                         $ choose = [SetScreenVariable("selected",key),SetScreenVariable("map_notice",None)] if state!="locked" else SetScreenVariable("map_notice",label+" · 지금은 이곳으로 갈 수 없습니다.")
                         button:
                             id ("map_building_"+key)
@@ -78,13 +82,14 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
                             fixed:
                                 xysize (int(lw*zoom),int(38*ls*zoom))
                                 add Transform(Frame(r13_asset_path("file:assets/map-village-b/b_panel_small_trimmed.png"),12,10),xysize=(int(lw*zoom),int(38*ls*zoom)))
-                                text label font R13_UI_BOLD_FONT size max(12,int(20*ls*zoom)) color ("#963b2f" if key==selected else "#493324" if state=="open" else "#88796b") align (.5,.5)
+                                text label font R13_UI_BOLD_FONT size max(12,int(lpx*zoom)) color ((r13_type_color("accent") if R13_TYPE_V2 else "#963b2f") if key==selected else (r13_type_color("ink") if R13_TYPE_V2 else "#493324") if state=="open" else (r13_type_color("disabled") if R13_TYPE_V2 else "#88796b")) align (.5,.5)
                 # 공개된 행만 상태를 그린다. 미발견 장소에는 잠금 아이콘도 만들지 않는다.
                 for key,state in rows:
                     if key in R13_VILLAGE_B_PLACES:
                         $ place=R13_VILLAGE_B_PLACES[key]
                         $ cx,cy=place["label_center"]
-                        $ lw=max(144,len(r13_map_label(key))*21+24)
+                        $ lpx=max(20*(1.3 if r13_touch_ui() else 1.0),(r13_type("body") if R13_TYPE_V2 else 0))
+                        $ lw=(max(144,len(r13_map_label(key))*(lpx+1)+24) if R13_TYPE_V2 else max(144,len(r13_map_label(key))*21+24))
                         use r13_map_status_badges(key,state,selected,(int((cx-lw/2)*zoom),int((cy-19)*zoom),int(lw*zoom),int(38*zoom)))
     add r13_asset("file:assets/map-village-b/notebook_frame_1280x720.png")
     # 수첩 상단의 좁은 봉제선 대신 지도 창 안에 제목 전용 64px 공간을 확보한다.
@@ -98,7 +103,7 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
         hbox:
             align (.5,.5) spacing 12
             add Transform(Crop((16,16,32,32),r13_asset_path("file:assets/ui-b-field/b_icon_acorn.png")),zoom=1.0) yalign .5
-            text "다람탐정 · 마을 지도" font R13_UI_BOLD_FONT size 28 color "#493324" yalign .5
+            text "다람탐정 · 마을 지도" font R13_UI_BOLD_FONT size (r13_type("subtitle") if R13_TYPE_V2 else 28) color (r13_type_color("ink") if R13_TYPE_V2 else "#493324") yalign .5
     textbutton "×":
         id "r13_village_close_x"
         area ((1180,48,88,88) if r13_touch_ui() else (1176,56,62,62)) padding (0,0)
@@ -112,7 +117,7 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
         hbox:
             align (.5,.5) spacing 8
             add Transform(r13_asset_path("file:assets/map-status/current_location.png"),zoom=1.0/3) yalign .5
-            text ("현재 · "+(r13_map_label(room13["location"]) if r13_map_discovered(room13["location"]) else "마을")) font R13_UI_BOLD_FONT size 18 color "#765b3e" yalign .5 xmaximum 212
+            text ("현재 · "+(r13_map_label(room13["location"]) if r13_map_discovered(room13["location"]) else "마을")) font R13_UI_BOLD_FONT size (r13_type("small") if R13_TYPE_V2 else 18) color (r13_type_color("muted") if R13_TYPE_V2 else "#765b3e") yalign .5 xmaximum 212
     $ extras=[(key,state) for key,state in rows if key not in R13_VILLAGE_B_PLACES]
     if extras:
         add Solid("#f7e8cd") xpos 100 ypos 62 xysize (218,54)
@@ -120,7 +125,7 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
             id "r13_village_other_places"
             area (102,48 if r13_touch_ui() else 72,200,88 if r13_touch_ui() else 36) padding (0,0) background None
             text_yalign .5
-            text_font R13_UI_BOLD_FONT text_size 20 text_color "#493324"
+            text_font R13_UI_BOLD_FONT text_size (r13_type("body") if R13_TYPE_V2 else 20) text_color (r13_type_color("ink") if R13_TYPE_V2 else "#493324")
             action ToggleScreenVariable("extra_places") sensitive ready
     use r13_map_diary_footer("village",selected,ready,local_guide,close_action)
     $ meeting_venue=r13_meeting_map_venue(selected) if selected else None
@@ -129,7 +134,7 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
         frame:
             area (330,584,620,44) padding (12,6)
             background Frame(r13_asset_path("file:assets/map-village-b/b_panel_small_trimmed.png"),12,10)
-            text visible_notice font R13_UI_BOLD_FONT size 19 color "#963b2f" align (.5,.5)
+            text visible_notice font R13_UI_BOLD_FONT size (r13_type("body") if R13_TYPE_V2 else 19) color (r13_type_color("accent") if R13_TYPE_V2 else "#963b2f") align (.5,.5)
     if extra_places:
         # 뒤 버튼의 우발 선택을 막되 클릭 한 번으로 닫을 수 있는 공개 목적지 목록.
         button:
@@ -140,7 +145,7 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
             background Frame(r13_asset_path("file:assets/map-village-b/b_panel_small_trimmed.png"),16,16)
             vbox:
                 spacing 8
-                text "다른 장소" font R13_UI_BOLD_FONT size 26 color "#493324"
+                text "다른 장소" font R13_UI_BOLD_FONT size (r13_type("subtitle") if R13_TYPE_V2 else 26) color (r13_type_color("ink") if R13_TYPE_V2 else "#493324")
                 viewport:
                     xysize (472,404) mousewheel True draggable True
                     vbox:
@@ -150,14 +155,14 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
                                 id ("map_name_"+key)
                                 xsize 472 ysize (88 if r13_touch_ui() else 60) padding (12,6)
                                 background Solid("#ead8b866") hover_background Solid("#e0c19b99")
-                                text_font R13_UI_BOLD_FONT text_size 24 text_color ("#493324" if state=="open" else "#88796b")
+                                text_font R13_UI_BOLD_FONT text_size (r13_type("body") if R13_TYPE_V2 else 24) text_color ((r13_type_color("ink") if R13_TYPE_V2 else "#493324") if state=="open" else (r13_type_color("disabled") if R13_TYPE_V2 else "#88796b"))
                                 action ([SetScreenVariable("selected",key),SetScreenVariable("map_notice",None),SetScreenVariable("extra_places",False)] if state!="locked" else SetScreenVariable("map_notice",r13_map_label(key)+" · 지금은 이곳으로 갈 수 없습니다."))
 
 screen r13_map_diary_footer(region,selected,ready,local_guide,close_action):
     fixed:
         area (102,643,180,40)
         add Frame(r13_asset_path("file:assets/map-village-b/b_panel_small_trimmed.png"),12,10) xysize (180,40)
-        text ("선택: "+r13_map_label(selected) if selected else "장소를 선택하세요") font R13_UI_BOLD_FONT size (22 if r13_touch_ui() else 19) color "#493324" xmaximum 168 align (.5,.5) text_align .5
+        text ("선택: "+r13_map_label(selected) if selected else "장소를 선택하세요") font R13_UI_BOLD_FONT size (22 if r13_touch_ui() else 19) color (r13_type_color("ink") if R13_TYPE_V2 else "#493324") xmaximum 168 align (.5,.5) text_align .5
     if not local_guide:
         for key,title,rect in (("village","마을",(300,643,106,40)),("inn","여관 안",(416,643,120,40)),("mountain","숲·산길",(546,643,132,40))):
             if r13_map_nodes(key):

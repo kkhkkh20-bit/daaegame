@@ -17,7 +17,7 @@ testcase settings_typography:
     run Function(r13_set_text_size,"normal")
     run Show("pause_menu")
     pause 0.5
-    assert eval (r13_opt_size()==22 and r13_opt_title_size()==30)
+    assert eval (r13_opt_size()==(24 if R13_TYPE_V2 else 22) and r13_opt_title_size()==(28 if R13_TYPE_V2 else 30))
     screenshot "settings-type-01-normal-reading.png"
     click "소리"
     run Function(r13_qa_settings_offset)
@@ -31,7 +31,7 @@ testcase settings_typography:
     click id "r13_text_size_large"
     run Function(r13_qa_settings_offset)
     pause 0.3
-    assert eval (r13_opt_size()==26 and r13_opt_title_size()==34)
+    assert eval (r13_opt_size()==(28 if R13_TYPE_V2 else 26) and r13_opt_title_size()==(32 if R13_TYPE_V2 else 34))
     screenshot "settings-type-04-large-reading-top.png"
     run Function(r13_qa_settings_offset,True)
     pause 0.3
@@ -49,7 +49,7 @@ testcase settings_typography:
     run Function(r13_qa_settings_offset)
     click id "r13_text_size_small"
     pause 0.3
-    assert eval (r13_opt_size()==20 and r13_opt_title_size()==27)
+    assert eval (r13_opt_size()==(22 if R13_TYPE_V2 else 20) and r13_opt_title_size()==(25 if R13_TYPE_V2 else 27))
     screenshot "settings-type-08-small-reading.png"
     click id "r13_text_size_normal"
     run Hide("pause_menu")

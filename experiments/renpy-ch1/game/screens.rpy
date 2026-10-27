@@ -76,9 +76,9 @@ screen main_menu():
             use r13_cover_button("설정","settings","settings",184,ShowMenu("pause_menu"),title_focus)
     textbutton "음악 출처":
         xpos 44 ypos 696 padding (4,2) background None
-        text_font R13_UI_FONT text_size 14 text_color "#c5c6d2" text_hover_color "#fff0ce"
+        text_font R13_UI_FONT text_size (r13_type("small") if R13_TYPE_V2 else 14) text_color "#c5c6d2" text_hover_color "#fff0ce"
         action Show("r13_music_credits")
-    text config.version xpos 1172 ypos 674 font r13_ui_font() size 13 color "#b2b8b8"
+    text config.version xpos 1172 ypos 674 font r13_ui_font() size (r13_type("small") if R13_TYPE_V2 else 13) color "#b2b8b8"
 
 # Two-line panels end 16px above the unchanged shared gameplay footer.
 # Tops are expressed against the historical bottom=632 coordinate.
@@ -579,10 +579,15 @@ init python:
 # The same folio and left index as the records. Settings apply immediately.
 init python:
     def r13_opt_size():
+        # 2026-10-27 타이포 시안: 켜지면 설정 본문은 body 단계(단계표가 휴대폰 값을 따로 가진다).
+        # 화면 줄은 r13_opt_size() 토큰만 쓰므로(dev/test_settings_type_scale.py) 여기서만 바꾼다.
+        if R13_TYPE_V2:return r13_type("body")
         # 0.20.7 (UI review: phone text about 11px): +4 on a touch screen.
         return r13_read_size(22,26)+(4 if globals().get("r13_touch_ui",lambda:False)() else 0)
 
     def r13_opt_title_size():
+        # 2026-10-27 타이포 시안: 설정 제목은 subtitle 단계.
+        if R13_TYPE_V2:return r13_type("subtitle")
         return r13_read_size(30,34)
 
     def r13_opt_row_height():
@@ -852,20 +857,20 @@ screen file_slots(title,saving):
             spacing 14
             hbox:
                 spacing 24
-                text title size 34 color ("#765426" if room13_mode or main_menu else "#ffdc91") yalign .5
+                text title size (r13_type("title") if R13_TYPE_V2 else 34) color ("#765426" if room13_mode or main_menu else "#ffdc91") yalign .5
                 for p in (1,2,3):
                     textbutton ("%d쪽"%p):
                         action [SetLocalVariable("page",p),SetField(persistent,"r13_save_page",p)]
-                        selected page==p text_size 21 padding (14,6)
+                        selected page==p text_size (r13_type("body") if R13_TYPE_V2 else 21) padding (14,6)
                 # 0.19.2: 「더보기 → 저장 · 불러오기」 하나로 들어와 여기서 바꾼다.
                 if not main_menu:
                     textbutton ("불러오기로 ›" if saving else "저장으로 ›"):
-                        action ShowMenu("load" if saving else "save") text_size 21
+                        action ShowMenu("load" if saving else "save") text_size (r13_type("body") if R13_TYPE_V2 else 21)
                 if not saving:
                     textbutton "최근 자동저장":
                         action r13_load_confirm("auto-1")
                         sensitive FileLoadable(1,page="auto")
-                        text_size 21
+                        text_size (r13_type("body") if R13_TYPE_V2 else 21)
             grid 2 3:
                 spacing 14
                 for i in range(6):
@@ -882,20 +887,20 @@ screen file_slots(title,saving):
                             vbox:
                                 spacing 3 yalign .5
                                 if renpy.can_load(slot):
-                                    text (r13_slot_where(slot) or "%d쪽 %d번"%(page,i+1)) size r13_read_size(21,25) color ("#765426" if room13_mode or main_menu else "#ffdc91") xsize 320
+                                    text (r13_slot_where(slot) or "%d쪽 %d번"%(page,i+1)) size (r13_type("body") if R13_TYPE_V2 else r13_read_size(21,25)) color ("#765426" if room13_mode or main_menu else "#ffdc91") xsize 320
                                     if r13_slot_info(slot,"r13_stage"):
-                                        text r13_slot_info(slot,"r13_stage") size r13_read_size(17,21) xsize 320
+                                        text r13_slot_info(slot,"r13_stage") size (r13_type("small") if R13_TYPE_V2 else r13_read_size(17,21)) xsize 320
                                     if r13_slot_info(slot,"r13_last"):
-                                        text ("“"+r13_slot_info(slot,"r13_last")+"”") size r13_read_size(16,20) color "#5d6a66" xsize 320
-                                    text ("%d쪽 %d번 · "%(page,i+1)+FileTime(i+1,format="%m-%d %H:%M",page=str(page))+" · "+r13_save_caption(renpy.slot_json(slot))) size r13_read_size(14,17) color "#7d8c90" xsize 320
+                                        text ("“"+r13_slot_info(slot,"r13_last")+"”") size (r13_type("small") if R13_TYPE_V2 else r13_read_size(16,20)) color "#5d6a66" xsize 320
+                                    text ("%d쪽 %d번 · "%(page,i+1)+FileTime(i+1,format="%m-%d %H:%M",page=str(page))+" · "+r13_save_caption(renpy.slot_json(slot))) size (r13_type("small") if R13_TYPE_V2 else r13_read_size(14,17)) color "#7d8c90" xsize 320
                                 else:
-                                    text ("%d쪽 %d번 · 비어 있음"%(page,i+1)) size r13_read_size(20,24)
+                                    text ("%d쪽 %d번 · 비어 있음"%(page,i+1)) size (r13_type("body") if R13_TYPE_V2 else r13_read_size(20,24))
             hbox:
                 spacing 18
                 textbutton "돌아가기" action Return()
                 if not saving:
-                    textbutton "이전 저장 정리" action Show("r13_save_cleanup",scope="old") text_size 20
-                    textbutton "모든 진행 저장 정리" action Show("r13_save_cleanup",scope="all") text_size 20
+                    textbutton "이전 저장 정리" action Show("r13_save_cleanup",scope="old") text_size (r13_type("body") if R13_TYPE_V2 else 20)
+                    textbutton "모든 진행 저장 정리" action Show("r13_save_cleanup",scope="all") text_size (r13_type("body") if R13_TYPE_V2 else 20)
 
 screen trial_complete():
     modal True
@@ -920,7 +925,7 @@ screen notify(message):
         frame:
             xanchor 1.0 xpos 1256 ypos 92 xmaximum 424 padding (18,12)
             background R13ActionPanel()
-            text message size 21 color "#fff2d9" xmaximum 388
+            text message size (r13_type("body") if R13_TYPE_V2 else 21) color (r13_type_color("inverse") if R13_TYPE_V2 else "#fff2d9") xmaximum 388
     else:
         frame:
             xalign 0.5 ypos 98

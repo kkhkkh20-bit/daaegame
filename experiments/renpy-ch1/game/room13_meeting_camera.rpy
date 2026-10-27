@@ -1,5 +1,8 @@
 # A single world-space camera. Seats never animate from one UI card to another.
 # The near table, fixed cast and far architecture share the same continuous yaw.
+# 2026-10-27 소유자: "옆에 두 사람 있으니까 오히려 집중도만 흐려지는데 ... 그냥 한 면 띄워줄까?"
+# 시안 스위치(승인 전 꺼짐): 켜면 근접 화면에 말하는 사람 한 명만 두고, 배경만 돌아가며 누가 말하는지 바꾼다.
+define R13_MEETING_SOLO = False
 init 175 python:
     import math as r13_orbit_math
     import json as r13_meeting_art_json
@@ -157,9 +160,13 @@ init 175 python:
             a=renpy.render(self.plate,1280,720,st,at);b=renpy.render(self.flip,1280,720,st,at)
             r13_meeting_world_tiles(out,a,b,view*2560.0/max(1,len(self.people)))
             slots=[]
-            for index,person in enumerate(self.people):
-                slot=r13_meeting_world_slot(index,view,len(self.people))
-                if slot is not None:slots.append((abs(slot[2]),person,slot))
+            if globals().get("R13_MEETING_SOLO") and self.focus in self.people:
+                # 한 사람 모드: 말하는 사람만 가운데에, 한 단(6%) 크게. 옆 사람은 그리지 않는다.
+                slots.append((0.0,self.focus,(640.0,1.06,0.0)))
+            else:
+                for index,person in enumerate(self.people):
+                    slot=r13_meeting_world_slot(index,view,len(self.people))
+                    if slot is not None:slots.append((abs(slot[2]),person,slot))
             for _distance,person,(cx,depth,angle) in sorted(slots,reverse=True):
                 art=self.art[person]
                 scale=r13_orbit_math.cos(angle*.35)

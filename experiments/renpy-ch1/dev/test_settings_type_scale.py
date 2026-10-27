@@ -13,7 +13,13 @@ class SettingsTypeScale(unittest.TestCase):
   block=A.split('init python:\n',1)[1].split('\nstyle ',1)[0]
   for small,large,body,title,row in [(False,False,22,30,76),(True,False,20,27,76),(False,True,26,34,112)]:
    def size(base,big):return big if large else int(max(base-3,round(base*.9))) if small else base
-   ns={'r13_read_size':size,'persistent':SimpleNamespace(room13_large_text=large)};exec(textwrap.dedent(block),ns)
+   ns={'r13_read_size':size,'persistent':SimpleNamespace(room13_large_text=large),'R13_TYPE_V2':False};exec(textwrap.dedent(block),ns)
+   self.assertEqual((ns['r13_opt_size'](),ns['r13_opt_title_size'](),ns['r13_opt_row_height']()),(body,title,row))
+  # 2026-10-27 타이포 시안이 켜지면 본문 body·제목 subtitle 단계(PC 보통 24/28, 크게 28/32). 줄 높이는 그대로.
+  for large,body,title,row in [(False,24,28,76),(True,28,32,112)]:
+   def size(base,big):return big if large else base
+   levels={'body':(24,28),'subtitle':(28,32)}
+   ns={'r13_read_size':size,'persistent':SimpleNamespace(room13_large_text=large),'R13_TYPE_V2':True,'r13_type':lambda l:levels[l][1 if large else 0]};exec(textwrap.dedent(block),ns)
    self.assertEqual((ns['r13_opt_size'](),ns['r13_opt_title_size'](),ns['r13_opt_row_height']()),(body,title,row))
  def test_no_footer_overlap_all_tabs_even_large(self):
   view=re.search(r'id "r13_settings_body"\n\s+area (\([^\n]+\)) mousewheel',A).group(1)

@@ -54,7 +54,8 @@ screen r13_concept_more():
         xpos 584 ypos (min(r13_control_y(),R13_NIGHT_CONTROL_Y-28)-panel_height-16) xysize (648,panel_height) padding (28,22) background Frame(Crop((35,25,550,245),r13_asset_path("file:assets/ui-b-main/b_main_panel.png")),48,40)
         vbox:
             spacing 16
-            text "대화 도구" size (28 if r13_touch_ui() else 24) color "#493323" font r13_ui_font()
+            # 2026-10-27 타이포 시안: 더보기 판 제목 subtitle, 항목 body(종이 위 ink, 비활성 disabled).
+            text "대화 도구" size (r13_type("subtitle") if R13_TYPE_V2 else (28 if r13_touch_ui() else 24)) color (r13_type_color("ink") if R13_TYPE_V2 else "#493323") font r13_ui_font()
             grid 2 menu_rows:
                 spacing 16
                 for title,icon,command,enabled in items:
@@ -64,7 +65,7 @@ screen r13_concept_more():
                         hbox:
                             align (.5,.5) spacing 10
                             add R13AntiqueIcon(icon,size=(26 if r13_touch_ui() else 20)) yalign .5 alpha (1.0 if enabled else .5)
-                            text title size (26 if r13_touch_ui() else 20) font r13_ui_font() yalign .5 color ("#4b3420" if enabled else "#8f8778")
+                            text title size (r13_type("body") if R13_TYPE_V2 else (26 if r13_touch_ui() else 20)) font r13_ui_font() yalign .5 color ((r13_type_color("ink") if R13_TYPE_V2 else "#4b3420") if enabled else (r13_type_color("disabled") if R13_TYPE_V2 else "#8f8778"))
                 if len(items)%2:
                     null width 288 height row_height
     key "game_menu" action Hide("r13_more_tools")
