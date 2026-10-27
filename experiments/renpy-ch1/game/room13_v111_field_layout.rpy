@@ -139,8 +139,8 @@ init 337 python:
         for actor in rows:
             out.append(r13_clear_critical_x(actor,rects,rows,width) if actor.get("rect") else actor)
         out=r13_separate_overlaps(out,rects,width)
-        if location in ("square","forest"):
-            out=r13_clear_field_hud(out,rects,width)
+        # 조사 물건 위에 선 사람을 마지막으로 치우는 r13_clear_objects 는 여기서 부르지 않는다.
+        # 뒤 층(도트 환산)이 사각형을 바꾸므로 배치 사슬의 맨 끝(room13_field_dot.rpy)에서 한 번만 돈다.
         return sorted(out,key=lambda a:a.get("depth",0))
 
     # 0.20.10 (4~14일 리뷰: 5일 골목, 9일 주방, 11일 숲): 두 사람이 거의 같은 자리에 서면 뒤에 선
@@ -172,45 +172,43 @@ init 337 python:
         return rows
 
 
-    def r13_clear_field_hud(rows,critical,width):
-        # A04: fixed work poses and the final object-clearance pass run AFTER
-        # ordinary slot scoring. Recheck these two reviewed panoramas only.
-        # Reserve the largest existing touch dock at both camera endpoints;
-        # panning or changing text size must not make a face slide behind it.
-        ui=[]
-        for offset in (0,max(0,width-1280)):
-            ui.extend([(offset+772,616,480,88),(offset+1020,512,232,112)])
+    def r13_clear_objects(rows,critical,width):
+        # 소유자 2026-10-27 "캐릭터 배치를 증거랑 겹치게 하면 안 돼": 배치 사슬의 맨 끝에서 모든 장소에 적용한다.
+        # 규칙은 하나다 — 몸이 조사 물건(critical)을 1/5 넘게 덮거나 물건 가운데를 밟으면 옆으로 비킨다.
+        # 고정 자리(까로의 마차 등)도 예외가 아니다. 물건은 눌러야 하는 것이고 사람은 옆에 서면 된다.
+        # 발 선은 지킨다(아래로 내리면 화면 밖·앞사람 위로 간다). 가구에 붙은 자세는 그림에서 떼지 않는다.
         def overlap(a,b):
             return max(0,min(a[0]+a[2],b[0]+b[2])-max(a[0],b[0]))*max(0,min(a[1]+a[3],b[1]+b[3])-max(a[1],b[1]))
+        def covers(body,rect):
+            area=max(1,rect[2]*rect[3]);cx,cy=rect[0]+rect[2]/2.0,rect[1]+rect[3]/2.0
+            inside=body[0]<=cx<=body[0]+body[2] and body[1]<=cy<=body[1]+body[3]
+            return inside or overlap(body,rect)>area*0.2
+        height=r13_world_height()
         out=list(rows)
         for index,actor in enumerate(out):
-            face=r13_actor_face_target(actor) or actor["rect"]
-            if not any(overlap(face,r) for r in ui):continue
-            # Do not detach a seated/furniture-bound resident from authored art.
+            if not any(covers(actor["rect"],r) for r in critical):continue
             if actor.get("contact") in ("hanging","background_bench","bench_sit","behind_counter","background_chair"):continue
+            face=r13_actor_face_target(actor) or actor["rect"]
             dxs={0}
-            for rect in ui+list(critical):
+            for rect in critical:
                 dxs.update((int(rect[0]-8-face[0]-face[2]),int(rect[0]+rect[2]+8-face[0]),
                             int(rect[0]-8-actor["rect"][0]-actor["rect"][2]),int(rect[0]+rect[2]+8-actor["rect"][0])))
             dxs.update(d for n in (48,96,144,240,384,640) for d in (-n,n))
             candidates=[]
             for dx in sorted(dxs):
-                for dy in (0,-24,24,-48,48):
-                    candidate=r13_balance_translate(actor,dx,dy)
-                    x,y,w,h=candidate["rect"]
-                    if x<8 or x+w>width-8 or y<100 or y+h>720:continue
-                    cf=r13_actor_face_target(candidate) or candidate["rect"]
-                    ui_cover=sum(overlap(cf,r) for r in ui)
-                    object_cover=sum(overlap(candidate["rect"],r) for r in critical)
-                    faces=0
-                    for other_index,other in enumerate(out):
-                        if other_index==index:continue
-                        of=r13_actor_face_target(other) or other["rect"]
-                        faces+=overlap(cf,of)*4
-                        if candidate.get("depth",0)>other.get("depth",0):faces+=overlap(candidate["rect"],of)
-                        else:faces+=overlap(cf,other["rect"])
-                    body_cover=sum(overlap(candidate["rect"],r) for r in ui)
-                    score=(ui_cover,object_cover,faces,body_cover*.01+abs(dx)+abs(dy)*2)
-                    candidates.append((score,candidate))
+                candidate=r13_balance_translate(actor,dx,0)
+                x,y,w,h=candidate["rect"]
+                if x<8 or x+w>width-8 or y<100 or y+h>height:continue
+                cf=r13_actor_face_target(candidate) or candidate["rect"]
+                object_cover=sum(overlap(candidate["rect"],r) for r in critical if covers(candidate["rect"],r))
+                people=0
+                for other_index,other in enumerate(out):
+                    if other_index==index:continue
+                    of=r13_actor_face_target(other) or other["rect"]
+                    people+=overlap(cf,of)*4
+                    if candidate.get("depth",0)>other.get("depth",0):people+=overlap(candidate["rect"],of)
+                    else:people+=overlap(cf,other["rect"])
+                    people+=overlap(candidate["rect"],other["rect"])//2   # 몸끼리도 피한다(보리가 돌목 앞을 막았다)
+                candidates.append(((object_cover,people,abs(dx)),candidate))
             if candidates:out[index]=min(candidates,key=lambda item:item[0])[1]
         return out

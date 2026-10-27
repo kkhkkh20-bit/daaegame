@@ -58,7 +58,8 @@ init 340 python:
         actors=_r13_field_dot_stage(entry)
         s=store.room13 or {}
         location=s.get("location")
-        if not location or not R13_FIELD_DOT:return actors
+        if not location:return actors
+        if not R13_FIELD_DOT:return r13_clear_objects_last(actors,location)
         zoom=r13_field_zoom(location)
         layout=r13_layout(location)
         world_w=r13_world_width(location);world_h=r13_world_height(location)
@@ -98,4 +99,11 @@ init 340 python:
             changed.update(x=x,y=y,width=w,height=h,rect=[left,top,max(1,right-left),max(1,bottom-top)],depth=y+h,
                 dot=dict(file=dot["file"],scale=scale,size=[dw,dh],head=dot.get("head"),anchor_kind=kind))
             result.append(changed)
-        return sorted(result,key=lambda a:a["depth"])
+        return r13_clear_objects_last(result,location)
+
+    def r13_clear_objects_last(actors,location):
+        # 조사 물건 회피는 배치 사슬의 맨 끝, 도트 환산이 끝난 사각형으로 한 번만 한다.
+        if r13_v111_active():
+            rects=[tuple(r) for r in r13_stage_critical(location,r13_layout(location))]
+            if rects:actors=r13_clear_objects(actors,rects,r13_world_width(location))
+        return sorted(actors,key=lambda a:a.get("depth",0))

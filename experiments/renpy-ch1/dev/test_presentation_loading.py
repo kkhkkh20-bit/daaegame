@@ -35,9 +35,10 @@ class PresentationLoading(unittest.TestCase):
    self.assertEqual(f(0,0,'square','morning')[0][1],('square',expected))
    self.assertEqual(before,state.room13)
   self.assertEqual(f(0,0,'inn','morning')[0][1],('inn','morning'))
- def test_field_nameplates_reserve_the_actual_mobile_dock(self):
-  h=80;face=[1120,564,70,70]
-  env=dict(r13_touch_ui=lambda:True,r13_actor_face_target=lambda a:face,r13_actor_nameplate=lambda a:(1155,528),r13_world_width=lambda:1280,r13_world_offset=lambda:0,r13_view_width=lambda:1280,r13_field_zoom=lambda:1.0,r13_layout=lambda:{},r13_field_ui_rects=lambda o:[(o+772,624,480,h),(o+1020,528,232,h)],R13_NAMES={'daram':'다람'},R13_CONTROL={'width':232},r13_control_height=lambda:h,store=SimpleNamespace(R13_LIFE_GROUPS=[]))
+ def test_field_nameplates_keep_clear_of_fixed_ui(self):
+  # 이름표는 상단 고정 조작(지도·기록·생각 줄)을 덮지 않는다. 옛 하단 조작 띠는 없어졌다(2026-10-25).
+  h=80;face=[300,180,70,70]
+  env=dict(r13_touch_ui=lambda:True,r13_actor_face_target=lambda a:face,r13_actor_nameplate=lambda a:(335,144),r13_world_width=lambda:1280,r13_world_offset=lambda:0,r13_view_width=lambda:1280,r13_field_zoom=lambda:1.0,r13_layout=lambda:{},r13_field_ui_rects=lambda o:[(o+24,84,472,88),(o+24,20,400,54)],R13_NAMES={'daram':'다람'},R13_CONTROL={'width':232},r13_control_height=lambda:h,store=SimpleNamespace(R13_LIFE_GROUPS=[]))
   exec(function('game/room13_interaction.rpy','r13_actor_nameplates'),env)
   label=env['r13_actor_nameplates']([dict(person='daram',rect=face)])[0]['rect']
   def overlaps(a,b):return a[0]<b[0]+b[2] and a[0]+a[2]>b[0] and a[1]<b[1]+b[3] and a[1]+a[3]>b[1]
