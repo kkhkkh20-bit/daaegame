@@ -1,0 +1,35 @@
+자세id,인물,인물id,목표키_도트,방향(기준),자리,요청서 우선,유지·교체·신규,1~3일 등장(정적 재구성),파일명
+life_stamp_ledger,돌목,guard,210,좌,입구 초소 창구 안,P1,교체 대상 없음(낮 새 자세),1~3 낮(돌목 상시),room13-fielddot-guard-life_stamp_ledger.png
+life_stamp_ledger,세련,seryeon,210,좌,우체국 접수대 안,P1,"교체: chair_read/action_1 (살아 있음, 유지)",2~3 아침·낮,room13-fielddot-seryeon-life_stamp_ledger.png
+life_hold_bundle,여니,resident_yeoni,210,우,여관 문 안·학교 옷걸이·공방 문,P1,교체: neutral(정면),"여관 2·3 낮, 공방 1 낮",room13-fielddot-resident_yeoni-life_hold_bundle.png
+life_hold_bundle,누비,resident_nubi,210,우,상점 탁자 앞,P2,신규,상점 저녁 1~3,room13-fielddot-resident_nubi-life_hold_bundle.png
+life_fold_linen,누비,resident_nubi,210,우,여관 벽난로 앞·학교 긴 의자,P1,교체: map27_in_1(기존 유지),"여관 아침 1~3, 공방 낮 1~3",room13-fielddot-resident_nubi-life_fold_linen.png
+life_tap_ledger,백 부인,resident_madam,210,좌,여관 탁자·상점 저울 탁자 바깥,P1,교체: neutral(정면),"여관 저녁 1~3, 상점 낮 1~3",room13-fielddot-resident_madam-life_tap_ledger.png
+life_carry_bucket,꽥순,resident_kkwak,210,좌,입구 고갯길·상점 통 앞·강가,P2(1~3일 등장: 보강 후보),신규,"입구 낮 1~3, 상점 아침 1·2",room13-fielddot-resident_kkwak-life_carry_bucket.png
+life_carry_bucket,네로,resident_nero,210,좌,강가 바위 아래,P2,교체: activity,확인 못 함(강가 개방 조건),room13-fielddot-resident_nero-life_carry_bucket.png
+life_wait_hands_pocket,네로,resident_nero,210,우,입구 창구 앞·상점 문가,P1,"교체: activity(옆모습, 자리 불일치)","입구 아침 1~3, 상점 낮 1~3",room13-fielddot-resident_nero-life_wait_hands_pocket.png
+life_peek_listen,콩이,resident_kongi,165,우,상점 문가·시장 가게 사이,P2(1~3일 등장: 보강 후보),교체: activity(3/4 정면),상점 아침 1·2,room13-fielddot-resident_kongi-life_peek_listen.png
+life_pick_goods,백 부인,resident_madam,210,뒤(3/4),시장 치즈 가게,P2,신규,확인 못 함(시장 개방 조건),room13-fielddot-resident_madam-life_pick_goods.png
+life_pick_goods,여니,resident_yeoni,210,뒤(3/4),시장 천 가게,P2,신규,확인 못 함,room13-fielddot-resident_yeoni-life_pick_goods.png
+life_pick_goods,토리,resident_tori,210,뒤(3/4),시장 천 가게,P2,신규,확인 못 함,room13-fielddot-resident_tori-life_pick_goods.png
+life_walk_in,칼바람,resident_kalbaram,210,좌,입구 고갯길·숲,P2,교체: map27_fo_1(기존 유지),확인 못 함(정적 표에 없음),room13-fielddot-resident_kalbaram-life_walk_in.png
+life_carry_sack,실룩,resident_siluk,210,좌,숲 길,P2,교체: neutral(정면),확인 못 함(숲 개방 조건),room13-fielddot-resident_siluk-life_carry_sack.png
+life_patrol_day,바둑이,resident_badook,210,좌,숲 길,P2,신규(map27_lantern_patrol 의 낮 판),확인 못 함,room13-fielddot-resident_badook-life_patrol_day.png
+life_lamp_trim,돌목,guard,210,좌(요청서 우는 오기),입구 초소 창구 위 등,P1,신규,1~3 저녁,room13-fielddot-guard-life_lamp_trim.png
+life_wheel_check,까로,karo,230,우,입구 덮개 마차,P1,신규(living_axlewrap 유지),1~3 낮,room13-fielddot-karo-life_wheel_check.png
+life_stack_wood,보리,resident_bori,230,우,입구·학교 장작 더미,P1,신규(map27_carry_firewood_v2 유지),입구 아침 1~3,room13-fielddot-resident_bori-life_stack_wood.png
+life_chop_wood,보리,resident_bori,230,뒤(3/4),숲 나무 앞,P2,신규,7 아침,room13-fielddot-resident_bori-life_chop_wood.png
+life_abacus_ledger,너울,neoul,210,우,입구 창구 앞,P2,신규,4·5·7·9·10,room13-fielddot-neoul-life_abacus_ledger.png
+life_count_knots,촌장,resident_ppul,210,우(배치표 시장 행 뒤는 오기),광장 장작·시장 화덕 가게 장작,P1,"교체: activity(옆모습, 자리 불일치)",광장 아침 2,room13-fielddot-resident_ppul-life_count_knots.png
+life_run_satchel,종종,resident_jongjong,210,우,광장 우물 곁,P1,교체: neutral(정면),확인 못 함(정적 표에 없음),room13-fielddot-resident_jongjong-life_run_satchel.png
+life_write_letter_standing,슬링,resident_sling,210,좌,광장 가게 차양 아래,P2(1~3일 등장: 보강 후보),교체: activity (R13_SQUARE_LEVELS 코드 수정 필요),광장 낮 2,room13-fielddot-resident_sling-life_write_letter_standing.png
+life_sew_bench,토리,resident_tori,210,우,광장 벤치,P1,"중복 후보: world_bench_left(앉아 바느질, 옆모습) 와 같은 동작",광장 아침 1·2,room13-fielddot-resident_tori-life_sew_bench.png
+life_handover_cloth,토리,resident_tori,210,우,여관 문 안,P1,교체: activity,여관 낮 1~3,room13-fielddot-resident_tori-life_handover_cloth.png
+life_ladle_pot,나비,nabi,210,뒤(3/4),식당 긴 식탁 끝 솥,P1,교체: action_2(식당만; 학교에서는 유지). 부엌 map31_nabi_ladle_soup 와 중복 확인,식당 전일,room13-fielddot-nabi-life_ladle_pot.png
+life_warm_hands_fire,물결,resident_mulgyeol,210,뒤,식당 벽난로,P2(배치표 2 저녁),교체: neutral(정면),확인 못 함,room13-fielddot-resident_mulgyeol-life_warm_hands_fire.png
+life_chalk_board,사자 선생님,resident_teacher,230,뒤,학교 칠판,P1,신규(map27_sc_1 유지),학교 아침·낮 1~3,room13-fielddot-resident_teacher-life_chalk_board.png
+life_fix_stove,톡,resident_tok,210,우,학교 난로,P2,신규,12·14,room13-fielddot-resident_tok-life_fix_stove.png
+life_sort_tools,부리,buri,185,뒤(3/4),공방 작업대,P1,교체: action_1·action_2 (hand 기준점 필요),공방 전일,room13-fielddot-buri-life_sort_tools.png
+life_pin_notice,촌장,resident_ppul,210,뒤,우체국 게시,P2(1~3일 등장: 보강 후보),교체: activity(우체국),우체국 낮 1·3,room13-fielddot-resident_ppul-life_pin_notice.png
+life_hand_parcel,은호 사장,resident_eunho,210,우,우체국 접수대 앞,P2(1~3일 등장: 보강 후보),교체: living_prices(우체국만; 여관·상점 유지),우체국 아침 1~3,room13-fielddot-resident_eunho-life_hand_parcel.png
+life_write_desk_seated,서리,resident_seori,210,좌,진료소 책상(x≈700),P1,교체: inspect_paper_threequarter_front (living_notes 유지),진료소 전일,room13-fielddot-resident_seori-life_write_desk_seated.png
