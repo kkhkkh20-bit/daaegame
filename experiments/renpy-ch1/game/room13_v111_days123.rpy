@@ -183,13 +183,13 @@ label r13_v111_gate_investigate:
     jump r13_v111_gate_investigate
 
 label r13_v111_gate_read_original:
-    $ r13_v111_scene('MS14_D01_S03')
+    $ r13_v111_scene('MS14_D01_S03'); v111_reread_original=r13_has('v111:applied:MS14_D01_S03_L0002')   # 2026-10-27 외부 리뷰 R09: 두 번째부터는 문서 본문만. 줄 수를 늘리지 않는다 — 대사 검토표가 이 파일의 줄 번호를 든다.
     $ r13_v111_score()
     $ r13_field_reading=True
     call r13_lines(r13_v111_lines(['MS14_D01_S03_L0002']), 'v111:gate_read_original:MS14_D01_S03_L0002')
     $ r13_field_reading=False
     $ r13_v111_commit('MS14_D01_S03_L0002')
-    call r13_lines(r13_v111_lines(['MS14_D01_S03_L0003', 'MS14_D01_S03_L0004', 'MS14_D01_S03_L0005', 'MS14_D01_S03_L0006']), 'v111:gate_read_original:MS14_D01_S03_L0003')
+    call r13_lines([] if v111_reread_original else r13_v111_lines(['MS14_D01_S03_L0003', 'MS14_D01_S03_L0004', 'MS14_D01_S03_L0005', 'MS14_D01_S03_L0006']), 'v111:gate_read_original:MS14_D01_S03_L0003')
     jump r13_v111_gate_investigate
 
 label r13_v111_gate_read_rules:

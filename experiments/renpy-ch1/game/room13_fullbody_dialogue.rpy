@@ -179,6 +179,16 @@ init 58 python:
         above=spec["figure"][1]-spec["crop"][1]
         return int(top+R13_FULLBODY_TOP_PAD*height/840.0-above*scale)
 
+    # 2026-10-27 외부 리뷰 R07: 질문 화면은 대사창이 없어 발 선 640(+top 110 = 750)이 화면(720) 아래로 나가 돌목의 발끝이
+    # 잘렸다. 전신을 다 보이는 구성이라 도트 그림은 발을 화면 안 704 에 세운다(아래 여백 16px). 도트가 아닌 그림은 머리 기준 그대로.
+    R13_QUESTION_FEET_LINE=704
+
+    def r13_question_close_y(person,height=840,top=110,pose="interview_neutral"):
+        profile=r13_dialogue_source_profile(person,pose,height)
+        if profile and profile.get("dot_scale"):
+            return int(round(R13_QUESTION_FEET_LINE*height/840.0-r13_dot_feet(profile)))
+        return r13_close_y(person,height,top,pose)
+
     def r13_fullbody_line_emotion(identity,index,person,text,expression,pose):
         # Only plain emotion poses become full-body expressions; authored
         # acting poses (chairs, props, activities) keep their own meaning.

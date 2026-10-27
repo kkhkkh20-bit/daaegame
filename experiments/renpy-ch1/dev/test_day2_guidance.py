@@ -18,7 +18,8 @@ class Day2Guidance(unittest.TestCase):
   calls=[]
   env=dict(store=SimpleNamespace(room13=state),r13_object_name=lambda k:'원래 이름:'+k,
       r13_nw_added_line=lambda row:dict(row),r13_v111_goal=lambda:'원래 장면의 생각',
-      r13_v111_idle_lines=lambda p:calls.append(p) or [('old',p)],r13_met_people=lambda:[])
+      r13_v111_idle_lines=lambda p:calls.append(p) or [('old',p)],r13_met_people=lambda:[],
+      R13_V111_QUESTIONS={},r13_v111_value=lambda key:None)   # 2026-10-27 R04: 답이 난 장면 의문 치환(room13_v111_goal.rpy)이 읽는 값
   exec(textwrap.dedent(GUIDE.split('init 353 python:\n')[1]),env)
   goal_block=GOAL.split('init 341 python:\n')[1].split('\n# ',1)[0]
   exec(textwrap.dedent(goal_block),env)

@@ -441,7 +441,9 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
     $ remembered=(r13_pw_views or {}).get(claim,{})
     default tab=remembered.get("tab","all")
     default detail=remembered.get("detail")
-    default quote_open=remembered.get("quote_open",True)
+    # 2026-10-27 외부 리뷰 R03(확인): 휴대폰 844x390 「나란히 보기」에서 본문 읽기 영역이 약 95px 뿐이었다. 휴대폰은 발언 틀을 접은 채 열어
+    # 본문이 그만큼 늘어나게 한다(접힘이면 r13_pw_layout 의 quote_h 가 0). PC 는 왼쪽 열이라 그대로. 펼친 기억은 그대로 따른다.
+    default quote_open=remembered.get("quote_open",not r13_touch_ui())
     default pair=remembered.get("pair")
     default observe=False
     default origin_open=False

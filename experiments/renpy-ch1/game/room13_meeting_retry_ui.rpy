@@ -35,7 +35,8 @@ screen r13_meeting_retry_choice():
         alt "회의를 처음부터 다시"
         text "회의를 처음부터 다시" align (.5,.5) size (r13_type("emphasis")) color "#263b52" font R13_UI_BOLD_FONT
     text "이 결과로 이야기를 이어갑니다." xpos 423 ypos 539 xanchor .5 yanchor .5 size (r13_type("small")) color (r13_type_color("muted")) font R13_UI_BOLD_FONT
-    text "같은 회의의 첫머리로 돌아갑니다." xpos 857 ypos 539 xanchor .5 yanchor .5 size (r13_type("small")) color (r13_type_color("muted")) font R13_UI_BOLD_FONT
+    # 2026-10-27 외부 리뷰 R08: 되돌아가도 조사로 얻은 자료는 남는다는 것을 버튼 아래에 명시한다(room13_meeting_retry_logic.rpy 의 복원 규칙).
+    text "같은 회의의 첫머리로 돌아갑니다. 조사로 얻은 자료는 남습니다." xpos 857 ypos 539 xanchor .5 yanchor .5 xmaximum 400 text_align .5 size (r13_type("small")) color (r13_type_color("muted")) font R13_UI_BOLD_FONT
     # 2026-10-27 외부 리뷰: 첫 패배 때만 되돌아갈 수 있는 범위를 한 줄로 알린다(실제로 있는 기능만).
     $ recovery_note=r13_recovery_retry_note()
     if recovery_note:

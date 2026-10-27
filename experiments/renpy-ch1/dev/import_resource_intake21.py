@@ -51,6 +51,8 @@ def v111_bindings():
   start=m.end()-1;end=_match_bracket(source,start)
   call=ast.parse('f'+source[start:end+1],mode='eval').body
   first=call.args[0]
+  # 2026-10-27 R09: 다시 읽을 때 비우는 조건식([] if … else r13_v111_lines([...]))은 호출 쪽 가지를 읽는다.
+  if isinstance(first,ast.IfExp):first=first.orelse if isinstance(first.orelse,ast.Call) else first.body
   # 0.19.89: the day files call r13_v111_lines([...]) (new-world text layer).
   if isinstance(first,ast.Call) and getattr(first.func,'id',None)=='r13_v111_lines':ids=ast.literal_eval(first.args[0])
   elif isinstance(first,ast.ListComp):ids=ast.literal_eval(first.generators[0].iter)

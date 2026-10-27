@@ -22,8 +22,8 @@ init 310 python:
     ROOM13["objects"].setdefault("ms14_somi_inside",{})["v111_coat"]=dict(rect=[1400,350,300,300],need=[],give=[],flags=[],text="허락받고 벗어 놓은 회색 겉옷")
     ROOM13["objects"].setdefault("ms14_somi",{})["v111_bedding"]=dict(rect=[600,470,260,180],need=[],give=[],flags=[],text="처마 아래 젖은 침구와 물통")
     # No generated prop sprites: observations point to the existing gate scenery.
-    ROOM13["objects"]["gate"]["v111_fence"]=dict(rect=[850,300,170,240],need=[],give=[],flags=[],text="울타리 못에 회색 천이 걸렸다.")
-    ROOM13["objects"]["gate"]["v111_bucket"]=dict(rect=[1050,500,150,140],need=[],give=[],flags=[],text="엎어진 양동이 옆의 발자국은 겹쳐 있다.")
+    ROOM13["objects"]["gate"]["v111_fence"]=dict(rect=r13_gate_wide_rect([850,300,170,240]),need=[],give=[],flags=[],text="울타리 못에 회색 천이 걸렸다.")   # 2026-10-27 외부 리뷰 R01: 1920x720 그림에서 잰 좌표라 넓은 입구에서는 규칙 게시판 위에 걸쳤다. 배치표의 wide_shift 만큼 옮긴다(systems/room13_field_obstacles.rpy). 줄 수는 늘리지 않는다.
+    ROOM13["objects"]["gate"]["v111_bucket"]=dict(rect=r13_gate_wide_rect([1050,500,150,140]),need=[],give=[],flags=[],text="엎어진 양동이 옆의 발자국은 겹쳐 있다.")
     R13_OBJECT_NAMES.update(v111_coat="벗은 겉옷",v111_bedding="침구와 물통",v111_fence="울타리 천",v111_bucket="양동이")
     MS14_SPEAKERS.update({"사자 선생님":"resident_teacher","선생님":"resident_teacher","꼬미":"kid_kkomi","도담":"kid_dodam","새미":"kid_saemi","보리":"resident_bori","누비":"resident_nubi","도토":"doto","부엉이":"resident_owlgp","서리":"resident_seori","따닥":"resident_ttadak","슬링":"resident_sling","촌장":"resident_ppul","엄마":"mom","은호":"resident_eunho","창고 아이 1":"kid_kkam","창고 아이 2":"kid_mong","창고 아이 3":"kid_bang","누비의 큰아이":"kid_nubi1","누비의 둘째":"kid_nubi2","누비의 막내":"kid_nubi3","아이":"kid_nubi3"})
     # Existing unnamed child slot: retain the original script label, no new art.

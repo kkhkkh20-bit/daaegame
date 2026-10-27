@@ -33,10 +33,19 @@ init 341 python:
         "wild_road14":"초소에도 푸른 불이 켜졌다. 폐온실은 산길 첫 굽이에 있다.",
         "supply_inventory14":"오늘 밤 학교에서 쓸 몫과 남은 양을 확인하자.",
     }
+    # 2026-10-27 외부 리뷰 R04: 장면 의문은 이동 대기 동안 앞 장면 것이 남는다(r13_v111_thought_hold). 그래서 등록을
+    # 마치고 여관으로 가는 길에도 「우리 두 사람 모두 제대로 등록됐을까?」가 보였다. 그 의문에 답이 난 값이 있으면
+    # 다음 단계의 할 일로 바꾼다. 정답 자료·결과는 말하지 않는다.
+    R13_V111_RESOLVED_QUESTIONS={
+        "MS14_D01_S04":("gate_registered",True,"등록은 끝났다. 여관에서 13호 방과 아내의 소식을 확인하자."),
+    }
     _r13_step_goal=r13_v111_goal
     def r13_v111_goal():
         gate=(store.room13.get("v111") or {}).get("gate")
-        return r13_day2_guidance() or R13_V111_STEP_GOALS.get(gate) or _r13_step_goal()
+        text=r13_day2_guidance() or R13_V111_STEP_GOALS.get(gate) or _r13_step_goal()
+        for scene,(key,expected,resolved) in R13_V111_RESOLVED_QUESTIONS.items():
+            if text and text==R13_V111_QUESTIONS.get(scene) and r13_v111_value(key)==expected:return resolved
+        return text
 
 # 0.20.10 (4~14일 리뷰): 힌트 라벨이 없는 대조의 되묻기. 비교할 범위만 말하고 정답 자료는 말하지 않는다.
 init 342 python:

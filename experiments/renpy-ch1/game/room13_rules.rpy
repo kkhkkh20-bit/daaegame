@@ -118,10 +118,10 @@ init 55 python:
                     persistent.room13_knowledge=persistent.room13_knowledge+[key]
         store.room13=n
         if added:
-            source_fx("found")
-            if "r13_evidence_acquired" in globals():
+            if "r13_evidence_acquired" in globals():   # 2026-10-27 외부 리뷰 R10: found 효과음은 획득 알림 쪽(systems/room13_sound.rpy 래퍼가 종류별로 고른다)만 낸다. 여기서도 내면 자료 1건에 2회 요청됐다. 줄 수는 늘리지 않는다(대사 연결표가 이 파일 줄 번호를 든다).
                 r13_evidence_acquired(gained_keys)
             else:
+                source_fx("found")
                 renpy.notify("수첩에 기록: "+" · ".join(added))
 
     def r13_period():

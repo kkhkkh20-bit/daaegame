@@ -66,7 +66,7 @@ screen r13_side_question_list(person,pose,entries,ready,return_action=None,capti
     $ visible=pages[page]
     add Solid("#29232625")
     add r13_close_art(person,pose,840):
-        xpos r13_close_x(person,pose,840)-340 xanchor .5 ypos r13_close_y(person,840,110,pose)
+        xpos r13_close_x(person,pose,840)-340 xanchor .5 ypos r13_question_close_y(person,840,110,pose)   # 2026-10-27 외부 리뷰 R07: 발이 화면 안에 들어오는 발 선(room13_fullbody_dialogue.rpy)
     add r13_asset("file:assets/ui-b-question/b_panel_book.png") xpos 488 ypos 144
     add Transform(Frame(Crop((16,12,288,40),r13_asset_path("file:assets/ui-b-question/b_tab_title.png")),32,12),xysize=(420,52)) xpos 560 ypos 166
     add Transform(Crop((20,16,23,32),r13_asset_path("file:assets/ui-b-question/b_icon_acorn.png")),xysize=(29,40)) xpos 578 ypos 174

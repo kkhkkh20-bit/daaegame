@@ -15,11 +15,31 @@ init 324 python:
             meeting=meeting, room=winter_copy.deepcopy(store.room13),
             locals=winter_copy.deepcopy({k:v for k,v in vars(store).items() if k.startswith("v111_")}))
 
+    # 2026-10-27 외부 리뷰 R08: 복원이 room 전체를 되돌려 체크포인트 뒤 조사로 얻은 자료(방문 신청 원본 등)까지 지웠다.
+    # 자료·기록·읽은 주제·관찰·조사 표식은 지금 것을 두고, 회의 상태(논증·기회·쟁점 진행)만 체크포인트로 돌린다.
+    R13_MEETING_RESTORE_KEEP = ("evidence", "records", "read_topics", "observations", "checks")
+
+    def r13_meeting_restore_keep(current, restored):
+        for key in R13_MEETING_RESTORE_KEEP:
+            if key in current:
+                restored[key] = winter_copy.deepcopy(current[key])
+        # 관찰 깃발(observed:…)과 얻은 자료의 변형 값(E03.variant)도 조사 결과라 남긴다. 회의 안의 applied 깃발은 되돌린다.
+        for flag in current.get("flags", []):
+            if flag.startswith("observed:") and flag not in restored.get("flags", []):
+                restored.setdefault("flags", []).append(flag)
+        values = current.get("v111", {}).get("values", {})
+        kept = restored.get("v111", {}).get("values")
+        if kept is not None:
+            for key, value in values.items():
+                if key.endswith(".variant") and key not in kept:
+                    kept[key] = winter_copy.deepcopy(value)
+        return restored
+
     def r13_meeting_restore(meeting):
         checkpoint = store.r13_meeting_checkpoint_state
         if not checkpoint or checkpoint["meeting"] != meeting:
             return False
-        store.room13 = winter_copy.deepcopy(checkpoint["room"])
+        store.room13 = r13_meeting_restore_keep(store.room13, winter_copy.deepcopy(checkpoint["room"]))
         for key in list(vars(store)):
             if key.startswith("v111_") and key not in checkpoint["locals"]:
                 setattr(store,key,None)
