@@ -14,12 +14,18 @@ init 81 python:
         # Equal paper cards: the longest option sets the shared row height.
         row_height=max((height for entry,height in rows),default=88 if r13_touch_ui() else 80)
         rows=[(entry,row_height) for entry,height in rows]
-        pages=[];page=[];used=0
-        for entry,h in rows:
-            if page and (used+16+h>height or len(page)>=9):
-                pages.append(page);page=[];used=0
-            page.append((entry,h));used+=h+(16 if len(page)>1 else 0)
-        return pages+([page] if page else []) or [[]]
+        # 2026-10-27 소유자: "선택지 하나짜리 선택지창이 존재하면 안 되지". 쪽을 나눠도 한 쪽에 하나만 남기지 않는다.
+        # 넷 이하는 늘 한 쪽에 둔다(높이가 모자라면 칸 높이를 줄여서라도). 다섯 이상은 쪽마다 둘 이상이 되게 고르게 나눈다.
+        per=max(1,(height+16)//(row_height+16))
+        if len(rows)<=4 and per<len(rows):
+            row_height=max(56,(height-16*(len(rows)-1))//len(rows))
+            rows=[(entry,row_height) for entry,h in rows];per=len(rows)
+        per=min(per,9)
+        count=max(1,-(-len(rows)//per))
+        if count>1 and len(rows)%count==1:count+=1
+        size=-(-len(rows)//count)
+        pages=[rows[i:i+size] for i in range(0,len(rows),size)]
+        return pages or [[]]
 
     def r13_notebook_note():
         # Crop the paper body before nine-slicing; the original large transparent

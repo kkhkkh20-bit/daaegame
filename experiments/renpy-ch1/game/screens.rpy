@@ -252,8 +252,13 @@ screen choice(items):
         # a numbered choice (0.18.41).
         $ choice_entries=[(item.caption,item.action,False) for item in items if item.action is not None]
         $ choice_caption=" ".join(item.caption for item in items if item.action is None)
-        use r13_question_list(choice_actor,choice_pose,"선택",choice_entries,choice_ready,caption=choice_caption,actor_x=272,list_left=(500 if choice_actor else 190),list_width=(744 if choice_actor else 940),animate=False)
-        use r13_toolbar(mode="line",ready=choice_ready)
+        if len(choice_entries)==1:
+            # 2026-10-27 소유자: "선택지 하나짜리 선택지창이 존재하면 안 되지". 조건 때문에 하나만 남은 메뉴
+            # (13일 가족 제안은 조건을 묻기 전까지 「조건을 더 묻는다」뿐)는 고를 것이 없으므로 창을 띄우지 않고 그 길로 간다.
+            timer .01 action choice_entries[0][1]
+        else:
+            use r13_question_list(choice_actor,choice_pose,"선택",choice_entries,choice_ready,caption=choice_caption,actor_x=272,list_left=(500 if choice_actor else 190),list_width=(744 if choice_actor else 940),animate=False)
+            use r13_toolbar(mode="line",ready=choice_ready)
 
     else:
         frame:

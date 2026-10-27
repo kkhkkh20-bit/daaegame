@@ -111,7 +111,8 @@ class NotebookHeaderWithIssue(unittest.TestCase):
             self.assertEqual([e for page in pages for e,h in page],entries)
             for page in pages:
                 content=sum(h for e,h in page)+16*(len(page)-1)
-                self.assertLessEqual(header+24+content+(100 if touch else 66),540)
+                # 쪽이 하나면 쪽 넘김 줄이 없다. 2026-10-27: 넷 이하는 늘 한 쪽에 둔다.
+                self.assertLessEqual(header+24+content+((100 if touch else 66) if len(pages)>1 else 0),540)
 
 class FirstTimeGuides(unittest.TestCase):
     def test_proof_steps_follow_the_chosen_count_and_stop_after_first_success(self):
