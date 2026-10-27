@@ -165,6 +165,10 @@ init 301 python:
     R13_V111_RECORD_LATER={
         ("room13","mother_note"):"책상 위에 접힌 종이가 있다. 우선 다람이 짐부터 침대에 내려놓고 방을 둘러보자.",
         ("room13","family_bundle"):"책상 아래에 보따리가 보인다. 책상 위 종이부터 보고 열어 보자.",
+        # 2026-10-27 플레이 리뷰 P4: 「지금은 먼저 할 일이 있다」는 무엇을 하라는 건지 없다. 조작 순서만 알려 준다(정답은 아님).
+        ("gate","booth"):"초소 선반의 서류. 돌목 씨에게 신청서를 찾아 달라고 먼저 부탁하자.",
+        ("gate","gate_documents"):"초소 서류. 돌목 씨에게 신청서를 찾아 달라고 먼저 부탁하자.",
+        ("gate","rules"):"겨울철 입장 규칙. 돌목 씨가 명단을 어떻게 적었는지부터 확인하자.",
     }
     def r13_v111_object_key(key):
         if store.room13["location"]=="kitchen" and key in ("rear_after","rear_after_known"):return "rear"

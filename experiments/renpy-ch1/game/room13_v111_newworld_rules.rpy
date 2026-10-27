@@ -340,7 +340,14 @@ init 318 python:
     def r13_nw_wrong_issue():
         claim=getattr(store,"v111_claim",None) or ""
         return claim[5:] if claim.startswith("v111:") else claim
+    # 2026-10-27 플레이 리뷰 P1: 원본·규칙을 아직 읽지 않은 채 틀리면 「근거는 다 손에 있다」가 거짓이 된다.
+    # 그 쟁점의 정답 자료가 덜 모였을 때는 조합 힌트 대신 탐색 안내를 보인다. 자료 이름·정답은 말하지 않는다.
+    R13_NW_WRONG_MISSING={
+        '함께 들어갈 근거를 고른다':(("E03","E04"),"아직 이 창구에서 확인하지 않은 서류가 있다. 돌목 씨가 내놓은 것부터 직접 읽어 보자."),
+    }
     def r13_nw_wrong_text(issue,count):
+        missing=R13_NW_WRONG_MISSING.get(issue)
+        if missing and not all(r13_v111_owned(k) for k in missing[0]):return missing[1]
         rows=R13_NW_WRONG_THOUGHTS.get(issue) or {}
         for n in range(min(max(1,count),3),0,-1):
             if rows.get(n):return rows[n]
