@@ -310,6 +310,7 @@ screen r13_person_brief(person):
             for record_id in shown:
                 text ("· "+ROOM13["evidence"][record_id]["name"]) size r13_read_size(16,19) color "#625738" xsize 286
 
+# 2026-10-27 타이포 시안(R13_TYPE_V2): 자료 탭의 크기·색은 systems/room13_evidence_view.rpy, 대화 기록·닫기는 여기서 바꾼다.
 screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=None,present_action=None):
     style_prefix "r13"
     on "show" action Function(r13_unread_hold.clear)
@@ -391,7 +392,7 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
         elif tab=="items":
             use r13_item_bag_content()
         else:
-            text "실제로 지나간 대화" xpos 292 ypos 88 size 23 color "#65503b"
+            text "실제로 지나간 대화" xpos 292 ypos 88 size (r13_type("subtitle") if R13_TYPE_V2 else 23) color (r13_type_color("muted") if R13_TYPE_V2 else "#65503b")
             viewport:
                 area (280,134,930,472) mousewheel True draggable True scrollbars "vertical"
                 vbox:
@@ -401,9 +402,9 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
                             xsize 900 padding (16,12) background R13PaperPanel()
                             vbox:
                                 spacing 6
-                                text (row["who"]+" · "+row["stamp"]) size 17 color "#625738" xsize 864
-                                text row["what"] size r13_read_size(21,26) color (r13_role_color("thought","paper") if row["kind"]=="독백" else r13_role_color("narration","paper") if row["kind"]=="서술" else r13_role_color("speech","paper")) xsize 864
-        textbutton "닫기" style "r13_compact_button" xpos 66 ypos r13_record_footer_y() xsize 176 ysize r13_record_footer_height() text_size r13_read_size(20,23) action (close_action or Hide("r13_records"))
+                                text (row["who"]+" · "+row["stamp"]) size (r13_type("small") if R13_TYPE_V2 else 17) color (r13_type_color("muted") if R13_TYPE_V2 else "#625738") xsize 864
+                                text row["what"] size (r13_type("emphasis") if R13_TYPE_V2 else r13_read_size(21,26)) color (r13_role_color("thought","paper") if row["kind"]=="독백" else r13_role_color("narration","paper") if row["kind"]=="서술" else r13_role_color("speech","paper")) xsize 864
+        textbutton "닫기" style "r13_compact_button" xpos 66 ypos r13_record_footer_y() xsize 176 ysize r13_record_footer_height() text_size (r13_type("body") if R13_TYPE_V2 else r13_read_size(20,23)) action (close_action or Hide("r13_records"))
     key "game_menu" action (close_action or Hide("r13_records"))
 
 screen r13_resident_notes():

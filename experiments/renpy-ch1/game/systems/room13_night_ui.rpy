@@ -11,6 +11,8 @@ init 150 python:
 
     def r13_night_say_size():
         # The mockup's line is a step larger than the boxed window's (same size setting).
+        # 2026-10-27 타이포 시안: 켜지면 display 단계. 줄 수·위치 계산이 모두 이 함수를 쓰므로 여기서 바꾼다.
+        if R13_TYPE_V2:return r13_type("display")
         return 32 if r13_touch_ui() else _r13_say_size()+4
 
     def r13_night_say_lines(what):
@@ -31,7 +33,8 @@ init 150 python:
         if getattr(store,"r13_thought_active",False):return r13_role_color("thought","paper")
         packet=getattr(store,"r13_packet",None)
         if packet and packet[0] is None:return r13_role_color("narration","paper")
-        return R13_NIGHT_TEXT_COLOR
+        # 2026-10-27 타이포 시안: 말은 ink 토큰(값은 지금과 같다). 생각·서술의 역할색은 그대로 둔다.
+        return r13_type_color("ink") if R13_TYPE_V2 else R13_NIGHT_TEXT_COLOR
 
     def r13_night_shade_alpha():
         # The approved "대사창 진하기" setting still decides how dark the shade gets.
