@@ -12,7 +12,11 @@ TOUCHED=['screens.rpy','systems/room13_night_ui.rpy','systems/room13_notebook_ch
          'room13_notebook.rpy','systems/room13_evidence_view.rpy',
          # 2026-10-27 2차: 현장·지도·설정·질문·단축키·더보기 판(더보기 판 화면은 footer_concept 에 있다).
          'room13_screens.rpy','room13_map_village_b.rpy','systems/room13_side_questions.rpy',
-         'systems/room13_shortcuts.rpy','systems/room13_footer_concept.rpy']
+         'systems/room13_shortcuts.rpy','systems/room13_footer_concept.rpy',
+         # 2026-10-27 회의 쪽: 머리띠·이름표·발언 듣는 중·발언 검토·공개 의견·결과 판·자료 대조 패널·쪽지.
+         'room13_meeting_seating.rpy','room13_v111_meeting_stage.rpy','systems/room13_meeting_direction.rpy',
+         'systems/room13_meeting_flow.rpy','systems/room13_debate.rpy','room13_meeting_retry_ui.rpy',
+         'room13_week2_screens.rpy','systems/room13_choice_issues.rpy']
 GUARDED=re.compile(r'r13_type(?:_color)?\("[a-z]+"\)\s+if R13_TYPE_V2 else ')
 HEAD=re.compile(r'^\s+if R13_TYPE_V2:\s*return r13_type(?:_color)?\("[a-z]+"\)')
 

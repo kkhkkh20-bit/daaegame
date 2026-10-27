@@ -38,6 +38,8 @@ def load(persistent=None,mornings=()):
     ns=dict(store=SimpleNamespace(r13_meeting_active=False),
             persistent=persistent or SimpleNamespace(r13_proof_guide_done=False,r13_recovery_hint_retry=False,r13_recovery_hint_morning=False),
             renpy=SimpleNamespace(show_screen=lambda *a:shown.append(a)),
+            # 2026-10-27 타이포 V2: 단계 표시 색이 스위치를 따른다. 끈 상태의 이전 색을 아래 시험이 확인한다.
+            R13_TYPE_V2=False,r13_type_color=lambda token:{"accent":"#a63a2e","muted":"#6b5641"}[token],
             r13_morning_days=lambda:list(mornings))
     block=SOURCE.split('init 80 python:\n')[1]
     block=re.split(r'^(?=\S)',block,flags=re.M)[0]
@@ -124,6 +126,10 @@ class FirstTimeGuides(unittest.TestCase):
             self.assertIn(name,re.sub(r'\{/?color[^}]*\}','',steps0))
         self.assertIn('{color=#bc4134}1 자료 고르기',steps0)
         self.assertIn('{color=#bc4134}2 확인',steps2)
+        # 스위치를 켜면 지금 단계는 accent, 나머지는 muted 로 바뀐다.
+        ns['R13_TYPE_V2']=True
+        self.assertIn('{color=#a63a2e}1 자료 고르기',ns['r13_proof_guide_steps'](0))
+        self.assertIn('{color=#6b5641}2 확인',ns['r13_proof_guide_steps'](0))
         self.assertIn('자료 고르기',ns['r13_proof_guide_help'](0,'남은 기회 3 / 3'))
         self.assertIn('기회를 쓰지 않습니다',ns['r13_proof_guide_help'](0))
         self.assertIn('기회를 1회',ns['r13_proof_guide_help'](1,'남은 기회 3 / 3'))

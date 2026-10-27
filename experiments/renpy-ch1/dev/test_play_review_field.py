@@ -78,7 +78,8 @@ class PlayReviewField(unittest.TestCase):
     def test_long_question_pages_keep_every_row_above_the_pager(self):
         for touch in (False, True):
             for large in (False, True):
-                ns = dict(R13_SIDE_QUESTION_TOP=150,
+                # 2026-10-27 타이포 시안: 줄 수 측정이 단계표를 참조한다. 꺼진 값으로 재야 기대값이 같다.
+                ns = dict(R13_SIDE_QUESTION_TOP=150, R13_TYPE_V2=False, r13_type=lambda level: 26,
                           r13_question_caption=lambda title, *a, **kw: title,
                           r13_ui_font=lambda: 'font', R13_UI_BOLD_FONT='bold-font', r13_read_size=lambda a,b: b if large else a,
                           r13_touch_ui=lambda: touch,
