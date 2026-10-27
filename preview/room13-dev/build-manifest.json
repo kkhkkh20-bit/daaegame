@@ -1,13 +1,13 @@
 {
  "engine": "Ren'Py 8.5.3",
  "game_transport": {
-  "archive_bytes": 16931725,
-  "archive_sha256": "9268a3c3cfb7dba64125305f973992863776dbb4632e69aa393d13d6789b92fc",
+  "archive_bytes": 16953271,
+  "archive_sha256": "f77ddb0b49646cd9976fb6bf90f423664835b782eea6a6b42f060949da55aa51",
   "parts": [
    {
     "file": "game.part01",
-    "bytes": 16931725,
-    "sha256": "9268a3c3cfb7dba64125305f973992863776dbb4632e69aa393d13d6789b92fc"
+    "bytes": 16953271,
+    "sha256": "f77ddb0b49646cd9976fb6bf90f423664835b782eea6a6b42f060949da55aa51"
    }
   ]
  },
@@ -29,12 +29,12 @@
    "sha256": "6bb23b55d259a317d6c3a496f5c8892bd820bc4f0730a172d030b4497c534bfe"
   },
   "game-transport.json": {
-   "bytes": 367482,
-   "sha256": "e7a4fdef357feac00bfe45d81003a3e5029d2e196c34de7ae09a5e6d9b0725a3"
+   "bytes": 370250,
+   "sha256": "ab86ecb46dbdc99ceae1bf3b0bacd877c2f90a7222e91ad329b4d29454642366"
   },
   "game.part01": {
-   "bytes": 16931725,
-   "sha256": "9268a3c3cfb7dba64125305f973992863776dbb4632e69aa393d13d6789b92fc"
+   "bytes": 16953271,
+   "sha256": "f77ddb0b49646cd9976fb6bf90f423664835b782eea6a6b42f060949da55aa51"
   },
   "game/assets/Galmuri11.ttf": {
    "bytes": 1964416,
@@ -10260,6 +10260,10 @@
    "bytes": 4400,
    "sha256": "e388e85f2adb8def3a12e3bcf1a407e3fe595680587b5354f9d645ed1903281d"
   },
+  "game/assets/field-dot-v2/buri/life_sort_tools.webp": {
+   "bytes": 3930,
+   "sha256": "a1cd64094c94a9a60963eddca7dad45e8b7b9ade23c8d2793cb7f09a33a4998b"
+  },
   "game/assets/field-dot-v2/buri/neutral.webp": {
    "bytes": 4398,
    "sha256": "5371b9307c6e665db6019b846f4ffb02381f0203576bc05ab3548714730e74ce"
@@ -10456,6 +10460,14 @@
    "bytes": 4360,
    "sha256": "f6f38e9a565efb33bbc380bf79c8dfe3f0f52192bf920cde99a6b04ce9e128df"
   },
+  "game/assets/field-dot-v2/guard/life_lamp_trim.webp": {
+   "bytes": 5864,
+   "sha256": "4b1436ee66df3176d9054b0bf1bf84ea9293b9de835f1642efd42444c38e9fd1"
+  },
+  "game/assets/field-dot-v2/guard/life_stamp_ledger.webp": {
+   "bytes": 5424,
+   "sha256": "597b0e6da82ff1152351738a991c2860cda881f83ac065f56dbc4f36eb119257"
+  },
   "game/assets/field-dot-v2/guard/listen_left.webp": {
    "bytes": 4380,
    "sha256": "0f91abf70892a279e7bb05b9f942d7275145211f470174d5b919923478db24de"
@@ -10487,6 +10499,10 @@
   "game/assets/field-dot-v2/karo/expressive.webp": {
    "bytes": 7406,
    "sha256": "2463561604b98297b14f7f7e96d589b5466bec44930d7ecd73c3d1654ba3cfdd"
+  },
+  "game/assets/field-dot-v2/karo/life_wheel_check.webp": {
+   "bytes": 6362,
+   "sha256": "3fd5879b2e3b98170301cb089a36734c3e32c7f235ed1243a2c626e67a531f51"
   },
   "game/assets/field-dot-v2/karo/living_axlewrap.webp": {
    "bytes": 5614,
@@ -10740,6 +10756,10 @@
    "bytes": 7146,
    "sha256": "4bccef1f5b0ec68f617ce3e865bd51344946fed288042deff2ce58e42aed0765"
   },
+  "game/assets/field-dot-v2/nabi/life_ladle_pot.webp": {
+   "bytes": 6456,
+   "sha256": "e7418b7b20af82af2ca067ff35879a192ee21323a7cc44cdb53e3ad3e10c5d1a"
+  },
   "game/assets/field-dot-v2/nabi/map27_ki_1.webp": {
    "bytes": 6400,
    "sha256": "ebe8450b2a1b5661b48bc1aff1656efb5d9b1c29dba681288aab063321fefda0"
@@ -10775,6 +10795,10 @@
   "game/assets/field-dot-v2/neoul/expressive.webp": {
    "bytes": 6350,
    "sha256": "cddc10bb0a17069f2892005a95e1573d5ddca2c68084989876c50a3a2ca61eee"
+  },
+  "game/assets/field-dot-v2/neoul/life_abacus_ledger.webp": {
+   "bytes": 5452,
+   "sha256": "ad9b0a8715b120c982fa0b78c8ccc603f7b045ccadd6e5104f2f7565e37dc134"
   },
   "game/assets/field-dot-v2/neoul/map27_fa_1.webp": {
    "bytes": 6944,
@@ -10828,6 +10852,10 @@
    "bytes": 8664,
    "sha256": "a53affaa9ab11571cf2ad4d50ecb6a88d86856e51c1a4b5a3d4ab3a077df4ac6"
   },
+  "game/assets/field-dot-v2/resident_badook/life_patrol_day.webp": {
+   "bytes": 5468,
+   "sha256": "85a1f837c1c8022386d35177ec18c55f793d2c7ec6758c91276ee9797dcc557d"
+  },
   "game/assets/field-dot-v2/resident_badook/living_bootlace.webp": {
    "bytes": 7930,
    "sha256": "488fd83308ec7793bfea7bd2edb53cd598c05d1d7a86aa683a49fe751e20c9ec"
@@ -10855,6 +10883,14 @@
   "game/assets/field-dot-v2/resident_bori/expressive.webp": {
    "bytes": 10998,
    "sha256": "59546902f6b9c514c412b465fb7b288f5d9211d632aa9105013ac23bbacbbc48"
+  },
+  "game/assets/field-dot-v2/resident_bori/life_chop_wood.webp": {
+   "bytes": 7196,
+   "sha256": "4aa12cd3ba107a4b92eab9d23b4d4f31aae0efa197e5a4df0430c70af0200c23"
+  },
+  "game/assets/field-dot-v2/resident_bori/life_stack_wood.webp": {
+   "bytes": 9268,
+   "sha256": "af80ac40031c4b5f26cff274cf798a344d53f60c9a2d0e8c861962e1c678f0ea"
   },
   "game/assets/field-dot-v2/resident_bori/living_firewood.webp": {
    "bytes": 6086,
@@ -10915,6 +10951,10 @@
   "game/assets/field-dot-v2/resident_eunho/expressive.webp": {
    "bytes": 6974,
    "sha256": "14f161081a793e88550886e0eaeb0f29d10120d212e9781cd59a19b6a7511cec"
+  },
+  "game/assets/field-dot-v2/resident_eunho/life_hand_parcel.webp": {
+   "bytes": 4768,
+   "sha256": "db7c46a6722416c6562b02027a16b6f506e3eb64f6030a8e41db1d7c4816b74c"
   },
   "game/assets/field-dot-v2/resident_eunho/living_prices.webp": {
    "bytes": 6448,
@@ -11012,6 +11052,10 @@
    "bytes": 4886,
    "sha256": "5011acde32edd1a8db294c8c0babbd5b31cb300a0ad7ebd66a069d01e2efaea8"
   },
+  "game/assets/field-dot-v2/resident_jongjong/life_run_satchel.webp": {
+   "bytes": 5512,
+   "sha256": "4d51bd95e5a390a603520f6babb2fb129769cff7c86d7b929ec5ed9f8d259f99"
+  },
   "game/assets/field-dot-v2/resident_jongjong/map27_pack_satchel_v2.webp": {
    "bytes": 4648,
    "sha256": "5c7091d9a2eb2a6a7f83cf1f1860894d60ac246719d7be3dfeb5884b9d74e247"
@@ -11044,6 +11088,10 @@
    "bytes": 6024,
    "sha256": "5dfd9d8c295779a268f77b3da948f765678798598740c29c2f5876c99f5e5454"
   },
+  "game/assets/field-dot-v2/resident_kalbaram/life_walk_in.webp": {
+   "bytes": 6022,
+   "sha256": "d3a04996ab1ecc4d1a31a730f353fa7410428fe5cc9fdd87a8f731a559301f99"
+  },
   "game/assets/field-dot-v2/resident_kalbaram/map27_fo_1.webp": {
    "bytes": 5086,
    "sha256": "26712af8adefbb161410525957fd695cd40150ec663ddc7752216d268ac3270c"
@@ -11063,6 +11111,10 @@
   "game/assets/field-dot-v2/resident_kkwak/expressive.webp": {
    "bytes": 5550,
    "sha256": "7fe2323e0cb7f1acefb659222e1259e05a1686ba1f740cc75deb450617cfe501"
+  },
+  "game/assets/field-dot-v2/resident_kkwak/life_carry_bucket.webp": {
+   "bytes": 5880,
+   "sha256": "96ad48938ad8d5e8be3183abafeef92574d15650e54d25f818a054de9a5f6884"
   },
   "game/assets/field-dot-v2/resident_kkwak/map27_ri_1.webp": {
    "bytes": 4460,
@@ -11091,6 +11143,10 @@
   "game/assets/field-dot-v2/resident_kongi/expressive.webp": {
    "bytes": 4998,
    "sha256": "f26c3447e76172011a5160650f0c4f114bd45723c4697ad19dae12099984686f"
+  },
+  "game/assets/field-dot-v2/resident_kongi/life_peek_listen.webp": {
+   "bytes": 3808,
+   "sha256": "383f3778124e7c56b59d03a681e348eb0ed539851597020410cd0b50344d2efa"
   },
   "game/assets/field-dot-v2/resident_kongi/neutral.webp": {
    "bytes": 4240,
@@ -11160,6 +11216,14 @@
    "bytes": 5780,
    "sha256": "9eb2c00e259f6ba34cf835cde7a7728db2f81bc35dab5e5c66d534f6707b4148"
   },
+  "game/assets/field-dot-v2/resident_madam/life_pick_goods.webp": {
+   "bytes": 5030,
+   "sha256": "fda8b7bea01f40e93193d1a0f255412f88824b1ac5ce5bb425e7dc574735ebd3"
+  },
+  "game/assets/field-dot-v2/resident_madam/life_tap_ledger.webp": {
+   "bytes": 4836,
+   "sha256": "8f6c053944c71a4478626d02abbe2dc4b39cacc5efafff228d0d85465a2a6b89"
+  },
   "game/assets/field-dot-v2/resident_madam/neutral.webp": {
    "bytes": 5596,
    "sha256": "dad7e7f95383894efe704e09bd4e84385c266cb17b897c844ae1398b075187de"
@@ -11195,6 +11259,10 @@
   "game/assets/field-dot-v2/resident_mulgyeol/expressive.webp": {
    "bytes": 5686,
    "sha256": "f5e8c3fb12d1d2f6fcd35cc4387440182a0f6a8ce6e61f23dfa5398708021c61"
+  },
+  "game/assets/field-dot-v2/resident_mulgyeol/life_warm_hands_fire.webp": {
+   "bytes": 6018,
+   "sha256": "34a7e9acb22eb248449a9b0ce4191129a1acd8c174b5a1aedd1bd6638a6bfeb8"
   },
   "game/assets/field-dot-v2/resident_mulgyeol/map27_ri_2.webp": {
    "bytes": 5618,
@@ -11276,6 +11344,14 @@
    "bytes": 6660,
    "sha256": "7357fc96a334a8ef2a17877b1651948ed01049d1ca503fa061c7f2132480c05f"
   },
+  "game/assets/field-dot-v2/resident_nero/life_carry_bucket.webp": {
+   "bytes": 5364,
+   "sha256": "ba885dfeb3c65fb471d6f0ea629ef4a75985e047f3df0bfe63129860d9f8c610"
+  },
+  "game/assets/field-dot-v2/resident_nero/life_wait_hands_pocket.webp": {
+   "bytes": 5022,
+   "sha256": "85a66b9e1cdce5f615a4537962480206b3011f14a2f7e31b8b7d46333f388e6d"
+  },
   "game/assets/field-dot-v2/resident_nero/neutral.webp": {
    "bytes": 6304,
    "sha256": "5ecc7ea67f6b5e37ef3318769e0aaad43a374db75a7e2c0375f1d7a8222c1dfa"
@@ -11291,6 +11367,14 @@
   "game/assets/field-dot-v2/resident_nubi/expressive.webp": {
    "bytes": 5724,
    "sha256": "e2dd76c812f1ef56b387d890ae058eb28ea12e5badbbbc708abf85fdbb8f7810"
+  },
+  "game/assets/field-dot-v2/resident_nubi/life_fold_linen.webp": {
+   "bytes": 5352,
+   "sha256": "1698bf284a1c709f5a072aa11dc699817661f3821780596f0e9a86a79140d557"
+  },
+  "game/assets/field-dot-v2/resident_nubi/life_hold_bundle.webp": {
+   "bytes": 5366,
+   "sha256": "fe537a99386b6833c7a7b780484920d491698c383950a897d0087c391f507899"
   },
   "game/assets/field-dot-v2/resident_nubi/map27_in_1.webp": {
    "bytes": 6232,
@@ -11384,6 +11468,14 @@
    "bytes": 7426,
    "sha256": "f93220e176d2da90cf9c122c4d7e660782c7e95f863dcacdd80ea22d79534024"
   },
+  "game/assets/field-dot-v2/resident_ppul/life_count_knots.webp": {
+   "bytes": 5184,
+   "sha256": "c3a5c0661b9d300d0905b9faeb7a9c197743ac1b9c5033ff1f72149c2de2c2a0"
+  },
+  "game/assets/field-dot-v2/resident_ppul/life_pin_notice.webp": {
+   "bytes": 4470,
+   "sha256": "3f76d25b68c060320cc5ff6f126b6a1ac6b7b864b28c45b081a506309a4762ec"
+  },
   "game/assets/field-dot-v2/resident_ppul/neutral.webp": {
    "bytes": 5516,
    "sha256": "14a1d6659496cc1497d3c32fcaab19d9e58ae473c94028e048120a96e87046f1"
@@ -11424,6 +11516,10 @@
    "bytes": 6798,
    "sha256": "9b098dd16a21cb2c67e1bb15a836cab1614843a69b1597b773bee3919b0772d8"
   },
+  "game/assets/field-dot-v2/resident_seori/life_write_desk_seated.webp": {
+   "bytes": 6690,
+   "sha256": "876a538973cc65e33f8e368c7e1fe0c057829f46fcaa509b26ec15445705b410"
+  },
   "game/assets/field-dot-v2/resident_seori/living_notes.webp": {
    "bytes": 6400,
    "sha256": "270f091690201ae357abac9cdabdb3dbc0ecb85e43309f21e299c2d4e23d0aa3"
@@ -11447,6 +11543,10 @@
   "game/assets/field-dot-v2/resident_siluk/expressive.webp": {
    "bytes": 5310,
    "sha256": "9c109f8526a6b4f6273552a3d835ca5154f47a1737f06d42f075524bb43ae953"
+  },
+  "game/assets/field-dot-v2/resident_siluk/life_carry_sack.webp": {
+   "bytes": 6672,
+   "sha256": "6e665c173f984ae18eed80c41860d53d2d7ae33c510c0e8320eacd1b1ef68a5b"
   },
   "game/assets/field-dot-v2/resident_siluk/map27_st_2.webp": {
    "bytes": 5564,
@@ -11475,6 +11575,10 @@
   "game/assets/field-dot-v2/resident_sling/expressive.webp": {
    "bytes": 7662,
    "sha256": "9798013838218268cea3d847942357d6dc11e906b1560d9c93ba45ba339e6132"
+  },
+  "game/assets/field-dot-v2/resident_sling/life_write_letter_standing.webp": {
+   "bytes": 5124,
+   "sha256": "dc904e3f9d8ef977fe9a112b09033e9891188fcdbea45c7660be40288ee85831"
   },
   "game/assets/field-dot-v2/resident_sling/map27_po_1.webp": {
    "bytes": 6876,
@@ -11540,6 +11644,10 @@
    "bytes": 7982,
    "sha256": "2e80215727adbb77f56eb73205781a71b502097c888ad6554b8aa5f874c80bd8"
   },
+  "game/assets/field-dot-v2/resident_teacher/life_chalk_board.webp": {
+   "bytes": 6458,
+   "sha256": "5383cd6d4fad1f04fe4357f8708662fc7da819684b41656d760a6b7471f2534b"
+  },
   "game/assets/field-dot-v2/resident_teacher/map27_sc_1.webp": {
    "bytes": 8376,
    "sha256": "88778e730d88a9304897e20c53211e9309975bcec310c818dde8cf91129c60e6"
@@ -11572,6 +11680,10 @@
    "bytes": 7052,
    "sha256": "b9cc5ad5b712eaf30ae46757b664db583c80fc89c5b61c776c58e891adb523c0"
   },
+  "game/assets/field-dot-v2/resident_tok/life_fix_stove.webp": {
+   "bytes": 7658,
+   "sha256": "082da34cea604e4c2a5c39eee28d2c1420ef565b5a2ba25e11696fd82b2fd469"
+  },
   "game/assets/field-dot-v2/resident_tok/map27_di_1a.webp": {
    "bytes": 5080,
    "sha256": "2b92549dd78c65585a130a4c0822e68bee9c5f8c5f4078f45d50b5bc70def568"
@@ -11603,6 +11715,18 @@
   "game/assets/field-dot-v2/resident_tori/group_cooperative.webp": {
    "bytes": 4656,
    "sha256": "e791f8ea1b561f37a5bdd700a8b142b19aec99afdedee02deb3c8236748a7187"
+  },
+  "game/assets/field-dot-v2/resident_tori/life_handover_cloth.webp": {
+   "bytes": 3824,
+   "sha256": "8621f751639ccd09054ab9e07950a4ed86c4e1f09074a97e72532816365a41fd"
+  },
+  "game/assets/field-dot-v2/resident_tori/life_pick_goods.webp": {
+   "bytes": 3474,
+   "sha256": "ec055e68c843580e6766d6bb4b2fdf78eff924694c60271a93643f548e72f225"
+  },
+  "game/assets/field-dot-v2/resident_tori/life_sew_bench.webp": {
+   "bytes": 4552,
+   "sha256": "e6b572bb8b50d1e1d64e531421a58b3a1f1a9f9d44b3245d723c3dc5706000b4"
   },
   "game/assets/field-dot-v2/resident_tori/neutral.webp": {
    "bytes": 5092,
@@ -11692,6 +11816,14 @@
    "bytes": 5622,
    "sha256": "127a23aa772f7b3efd2a357d1dbb38a1e65e9dbbdb032908c35e6a6f0273c12d"
   },
+  "game/assets/field-dot-v2/resident_yeoni/life_hold_bundle.webp": {
+   "bytes": 4848,
+   "sha256": "22fe7c0525c3c224062327b09ab3c90582e034903a86d4d34a4cbbfb789c7c99"
+  },
+  "game/assets/field-dot-v2/resident_yeoni/life_pick_goods.webp": {
+   "bytes": 4590,
+   "sha256": "39891ad0935d092f827a2d2c843fb212fa395f722bb72fc91802ffafa5fe9664"
+  },
   "game/assets/field-dot-v2/resident_yeoni/living_mend.webp": {
    "bytes": 3882,
    "sha256": "c6385b0eb88acc9d51d7714a01993bfc2cb0cb7890c59c59212419262c768231"
@@ -11731,6 +11863,10 @@
   "game/assets/field-dot-v2/seryeon/expressive.webp": {
    "bytes": 6736,
    "sha256": "08f416b6e3b26848fb7c1c97bf620fbda94d6b538793f9bc52423c0330447e49"
+  },
+  "game/assets/field-dot-v2/seryeon/life_stamp_ledger.webp": {
+   "bytes": 4178,
+   "sha256": "d3d3eb35f1b352fc006b9ba2d9cc0f7f3c24ac4d8650ac52f40503e2c46e5033"
   },
   "game/assets/field-dot-v2/seryeon/neutral.webp": {
    "bytes": 5410,
@@ -18617,5 +18753,5 @@
    "sha256": "0ef27bfe65a2917248171666649a51d85e3a200a3ae87bbaaa7085748bc4f0c5"
   }
  },
- "total_bytes": 775196222
+ "total_bytes": 775406656
 }
