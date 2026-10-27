@@ -1588,7 +1588,7 @@
       "id": "FIELD-LIFE",
       "title": "현장 생활 동작 도트 34장(정면 금지·일하는 손·짝 대화)",
       "kind": "인물",
-      "status": "needs_delivery",
+      "status": "delivered_linked",
       "priority": "P1",
       "description": "조사 화면 주민이 화면을 정면으로 보고 서 있는 것을, 장소·시간대별로 자기 일을 하거나 서로 대화하는 옆모습·뒷모습 자세로 바꾼다. 누가 언제 왜 어디서 무엇을 하는지는 docs/design/FIELD_LIFE_STAGING_20261027.md. 요청 목록은 docs/art-requests/현장_생활동작_도트_요청서_20261027.md",
       "scenes": [
@@ -1639,7 +1639,18 @@
         "원본 PNG와 런타임용 WebP, 대응표를 함께 납품한다.",
         "이미 등록된 원본 파일은 덮어쓰지 않고 별도 경로에 납품한다.",
         "장소마다 실제 화면 캡처로 정면 0·눈밭 한가운데 0 을 확인한다."
-      ]
+      ],
+      "delivery": {
+        "date": "2026-10-27",
+        "received": "원화 시안 34장(1024x1536 안팎 PNG, 인물별 48색 밖 색 포함, 실행용 1px 규격 미인증) + 대응표 CSV",
+        "converted": "블록 격자화(블록 4.7~7.8px 추정) -> 인물 48색 팔레트 양자화 -> 알파 이진화(0/255) -> 알파 bbox 자르기. 키는 기존 현장 도트와 같게(어른 210, 덩치 230, 콩이 165, 부리 185). 1px 도트 PNG·변환 로그·대응표는 art/field-life-20261027/",
+        "registered": "game/assets/field-dot-v2/<인물>/<자세>.webp(무손실) + room13-field-dot-v2.json(origin life, 머리 상자·발 규칙은 기존과 동일) 34장. 연기 표 등록과 장소·시간대 배치는 game/systems/room13_field_life.rpy + assets/room13-field-life.json",
+        "notes": [
+          "까로 life_wheel_check 는 원화에서 손·지팡이 끝이 프레임에 닿아 잘려 있다(등록은 함)",
+          "현장에는 좌우 반전이 없어 원화 방향 그대로 쓴다. 배치표의 향함과 다른 자리는 docs/art-requests/현장_생활동작_도트_요청서_20261027.md 납품 기록 참조",
+          "서리 life_write_desk_seated(다시 그릴 기존 자세)도 같은 묶음으로 받아 진료소 책상에 연결"
+        ]
+      }
     },
     {
       "id": "FIRE-DIAGRAM",
