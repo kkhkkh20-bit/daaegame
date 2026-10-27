@@ -674,6 +674,22 @@
         "text": "네. 덕분에요.",
         "expression": "neutral"
       }
+    ],
+    "MS14_D13_S04_L0073": [
+      {
+        "id": "NW_TC13_01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "선생님이 새미의 손을 잡아 제 등 뒤로 감춘다. 명단을 든 순찰대원과 눈이 마주쳐도 손을 놓지 않는다.",
+        "when": "teacher_hides13"
+      },
+      {
+        "id": "NW_TC13_02",
+        "speaker": "아빠",
+        "kind": "thought",
+        "text": "새미는 이송 예정 칸에 있던 아이다. 국은 막았지만, 선생님이 막으려던 일은 아직 그대로다.",
+        "when": "teacher_hides13"
+      }
     ]
   },
   "after": {
@@ -1078,6 +1094,34 @@
         "kind": "dialogue",
         "text": "그냥 타고 가시라는 말은 못 하겠습니다. 지금은 일단 내려오세요."
       }
+    ],
+    "MS14_D13_S03_L0005": [
+      {
+        "id": "NW_BD13_PD01",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "모과 자리…… 숟가락 놓던 데요?",
+        "expression": "surprise",
+        "when": "daram_ready"
+      },
+      {
+        "id": "NW_BD13_PD02",
+        "speaker": "판돌",
+        "kind": "dialogue",
+        "text": "그 자리요. 이번엔 내가 가서 앉을 거요.",
+        "expression": "neutral",
+        "when": "daram_ready"
+      }
+    ],
+    "MS14_D13_S04_L0070": [
+      {
+        "id": "NW_BD13_GD01",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "할아버지, 이번엔 내가 받칠게요. 망치보다 안 무거워요.",
+        "expression": "neutral",
+        "when": "guldol_daram13"
+      }
     ]
   },
   "drop": [
@@ -1280,11 +1324,25 @@
         "when": "listed:resident_tok"
       },
       {
+        "id": "NW_BD13_TOK",
+        "speaker": null,
+        "kind": "narration",
+        "text": "다람이 주머니에서 걸쇠 고리를 꺼내 들어 보인다. 톡이 공구 자루를 더 꼭 안는다.",
+        "when": "tok_listed_daram"
+      },
+      {
         "id": "NW_CN_BAMI",
         "speaker": null,
         "kind": "narration",
         "text": "밤이가 맨발을 담요 속에 넣고 웅크려 있다.",
         "when": "listed:bami"
+      },
+      {
+        "id": "NW_BD13_BAMI",
+        "speaker": null,
+        "kind": "narration",
+        "text": "다람이 짐칸 끝에 도토리를 놓는다. 밤이가 그것을 담요 속으로 끌어당긴다.",
+        "when": "bami_listed_daram"
       },
       {
         "id": "NW_CN_BORI",
@@ -1294,11 +1352,35 @@
         "when": "listed:resident_bori"
       },
       {
+        "id": "NW_BD13_BORI",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "아저씨 손, 가시 뺐어요?",
+        "expression": "anxious",
+        "when": "bori_listed_daram"
+      },
+      {
         "id": "NW_CN_NABI",
         "speaker": null,
         "kind": "narration",
         "text": "나비가 앞치마를 두른 채 앉아 있다. 이쪽을 보지 않는다.",
         "when": "listed:nabi"
+      },
+      {
+        "id": "NW_BD13_NB01",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "누나, 국 식어요.",
+        "expression": "anxious",
+        "when": "nabi_listed_daram"
+      },
+      {
+        "id": "NW_BD13_NB02",
+        "speaker": "나비",
+        "kind": "dialogue",
+        "text": "……그건 내 말이잖아.",
+        "expression": "neutral",
+        "when": "nabi_listed_daram"
       },
       {
         "id": "NW_CN_OWL",
@@ -1586,6 +1668,13 @@
         "speaker": null,
         "kind": "narration",
         "text": "너울은 알을 줍지 않는다. 굴러가던 소리가 멎은 뒤에야 입을 연다."
+      },
+      {
+        "id": "NW_BD13_NE01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "다람이 굴러간 알을 보다가, 이번에는 줍지 않는다.",
+        "when": "daram_ready"
       },
       {
         "id": "NW_RW_03",
@@ -1887,6 +1976,13 @@
         "speaker": null,
         "kind": "narration",
         "text": "사람들이 흩어진 뒤, 수레 바퀴 옆에 너울이 엎어져 있다. 움직이지 않는다."
+      },
+      {
+        "id": "NW_BD13_NE02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "다람이 눈 속에서 주판알 하나를 줍는다. 이번에는 돌려줄 사람이 없다.",
+        "when": "daram_ready"
       },
       {
         "id": "NW_D13_RT05",

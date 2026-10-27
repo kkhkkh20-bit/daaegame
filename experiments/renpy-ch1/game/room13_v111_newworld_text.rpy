@@ -310,6 +310,21 @@ init 319 python:
     R13_NW_LIST_NAMES=("resident_tok","bami","resident_bori","nabi","daram","resident_owlgp","resident_piko","resident_siluk","resident_guldol","resident_teacher","mom","dad")
     for _nw_person in R13_NW_LIST_NAMES:
         R13_NW_WHEN["listed:"+_nw_person]=(lambda p=_nw_person:r13_v111_value("listed:"+p) is True)
+    # 2026-10-27 감정선 보강·예방판 선생님(감정선_검수.md 7~9장). 다람이 곁에 있을 때만 주고받는다.
+    def _r13_bd_with_daram(cond):
+        return lambda:r13_v111_actor_ready("daram") and cond()
+    R13_NW_WHEN.update({
+        "guldol_daram":_r13_bd_with_daram(lambda:r13_v111_actor_ready("resident_guldol")),
+        "guldol_daram13":_r13_bd_with_daram(lambda:r13_v111_actor_ready("resident_guldol")),
+        "tok_listed_daram":_r13_bd_with_daram(lambda:r13_v111_value("listed:resident_tok") is True),
+        "bami_listed_daram":_r13_bd_with_daram(lambda:r13_v111_value("listed:bami") is True),
+        "bori_listed_daram":_r13_bd_with_daram(lambda:r13_v111_value("listed:resident_bori") is True),
+        "nabi_listed_daram":_r13_bd_with_daram(lambda:r13_v111_value("listed:nabi") is True),
+        "nabi_list12_daram":_r13_bd_with_daram(lambda:R13_NW_WHEN["soup_lose_nabi"]()),
+        # 12일 국을 막은 판(early/premeal)에도 선생님의 목적(이송 칸 아이를 보내지 않으려는 것)은 남는다.
+        # 이송 칸이 무효가 된 판(수프 대승리)에는 숨길 까닭이 없다.
+        "teacher_hides13":lambda:r13_v111_value("fate:fate_soup") in ("early","premeal") and r13_v111_value("transfer_list_voided") is not True and r13_v111_actor_ready("resident_teacher"),
+    })
     # Impact direction names (systems/room13_impact_fx.rpy; that file loads later, so the names live here).
     R13_NW_FX=("jolt","shake","slam","flash")
     R13_NW_CUT_SPECIAL=("bell","v111_blanket_before","v111_blanket_after","v111_reunion_far","v111_reunion_close")

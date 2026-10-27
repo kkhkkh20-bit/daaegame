@@ -1608,6 +1608,62 @@
         "kind": "dialogue",
         "text": "글자가 잘 안 읽힌다고요. 그 집 오갈 때 네로가 도왔으니까, 네로한테 물어봐요."
       }
+    ],
+    "MS14_D03_S02_L0007": [
+      {
+        "id": "NW_BD3_TOK01",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "남는 고리도 나한테 줬잖아. 나쁜 사람 아니야.",
+        "expression": "angry"
+      }
+    ],
+    "MS14_D03_S06_L0008": [
+      {
+        "id": "NW_BD3_BAMI01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "처마 위에서 작은 그림자 하나가 이쪽을 내려다본다. 맨발이다."
+      },
+      {
+        "id": "NW_BD3_BAMI02",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "오늘 밤 3번 등 꺼져 있어. 거기서 자면 안 돼.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_BD3_BAMI03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "“알아요. 나는 5번 밑에서 자요.” 처마 위 아이가 고개만 내민다."
+      },
+      {
+        "id": "NW_BD3_BAMI04",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "그럼 이거. 다람 탐정단 도토리.",
+        "expression": "joy"
+      },
+      {
+        "id": "NW_BD3_BAMI05",
+        "speaker": null,
+        "kind": "narration",
+        "text": "“거기 둬요.” 아이는 손을 내밀지 않는다. 다람이 처마 끝에 도토리를 놓는다."
+      },
+      {
+        "id": "NW_BD3_BAMI06",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "손으로 받으면 안 되니?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_BD3_BAMI07",
+        "speaker": null,
+        "kind": "narration",
+        "text": "“손으로 받으면 뺏은 거래요. 놓고 간 건 주운 거고.” 그림자가 처마 너머로 사라진다."
+      }
     ]
   },
   "drop": [
@@ -1749,6 +1805,13 @@
         "kind": "dialogue",
         "text": "명단에 올랐대요, 저. 보호시설로 실려 가는 명단이요.",
         "expression": "anxious",
+        "when": "listed:resident_tok"
+      },
+      {
+        "id": "NW_BD3_TOK02",
+        "speaker": "아빠",
+        "kind": "thought",
+        "text": "하나 몫 품삯에 고리 하나를 내주던 사람이다.",
         "when": "listed:resident_tok"
       },
       {
