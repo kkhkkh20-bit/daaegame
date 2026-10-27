@@ -57,7 +57,12 @@ class Transactions(unittest.TestCase):
   self.state.room13['location']='square'
   self.env.update(r13_v111_active=lambda:True,_r13_v111_visible_people=lambda:['resident_kongi','resident_piko','resident_siluk'],r13_v111_binding=lambda:dict(people=['daram']))
   visible=self.env['r13_visible_people']
-  self.assertEqual(visible(),['resident_kongi','resident_piko','resident_siluk','daram'])
+  # 2026-10-27 소유자: 다람은 아빠 곁의 동행이라 현장에 세우지 않는다. 떨어져 있는 곳(location:daram)에 가면 보인다.
+  self.assertEqual(visible(),['resident_kongi','resident_piko','resident_siluk'])
+  # 떨어져 있는 경우(여기 있고, 엄마가 맡은 상태)에만 선다.
+  self.env['r13_v111_set']('location:daram','square');self.env['r13_v111_set']('busy:mom','daram_guard')
+  self.assertIn('daram',visible())
+  self.env['r13_v111_set']('location:daram',None);self.env['r13_v111_set']('busy:mom',None)
   self.env['r13_v111_set']('piko.location','clinic')
   self.assertNotIn('resident_piko',visible())
   self.env['r13_v111_set']('silluk_status','detained_work_waiting_station')
@@ -68,7 +73,7 @@ class Transactions(unittest.TestCase):
  def test_wild_night_only_stages_authored_people(self):
   self.env.update(r13_v111_active=lambda:True,_r13_v111_visible_people=lambda:['resident_kongi','resident_siluk'],r13_v111_binding=lambda:dict(people=['daram']))
   self.env['r13_v111_set']('wild_night14',True)
-  self.assertEqual(self.env['r13_visible_people'](),['daram'])
+  self.assertEqual(self.env['r13_visible_people'](),[])
   self.assertIn('연기',self.env['r13_v111_ambient_text']('road',{}))
  def test_reserved_blankets_are_not_possession_and_receipt_is_once(self):
   self.env['r13_v111_commit']('MS14_D02_S04_L0083');self.assertEqual(self.env['r13_v111_value']('carried_dry_blankets'),0)

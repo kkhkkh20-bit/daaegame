@@ -140,9 +140,16 @@ init 301 python:
         if r13_v111_value("grandmother_custody")=="detained":people=[p for p in people if p!="granny"]
         if r13_v111_value("teacher_custody") in ("guard","neoul"):people=[p for p in people if p!="resident_teacher"]
         people=list(dict.fromkeys(people+list(authored)))
-        # 2026-10-27 소유자: "처음에 다람이가 나올 필요가 없어, 초소에서도 아빠랑 같이 있는데". 1일 입구에서는 아빠 곁에
-        # 붙어 있으므로 현장에 따로 세우지 않는다. 대사 근접·주고받기(r13_child_is_along)는 상태로 판단해 그대로 나온다.
-        if store.room13.get("day")==1 and store.room13.get("location")=="gate":people=[p for p in people if p!="daram"]
+        # 2026-10-27 소유자: "다람이는 내 파트너인데 왜 (현장에) 있는 거야". 다람은 아빠 곁에 붙어 다니는 동행이라
+        # 현장에 주민처럼 세우지 않는다. 아빠와 떨어져 있을 때(location:daram 이 따로 잡힘)만, 그곳에 가면 보인다.
+        # 대사 근접·주고받기(r13_child_is_along)는 상태로 판단해 그대로 나온다.
+        # 「함께 다님」 판정은 이동(travel) 쪽과 같은 조건이다(붙잡힘·엄마가 맡음·학교에 맡김·13호에 둠이 아니면 곁에 있다).
+        here=store.room13.get("location")
+        daram_with_dad=(not r13_v111_value("DARAM_DETAINED") and r13_v111_value("location:daram") in (None,here)
+            and not (r13_v111_value("busy:mom")=="daram_guard")
+            and not (r13_v111_value("DARAM_location")=="school" and r13_v111_value("busy:nabi")=="daram_guard")
+            and not (r13_v111_value("DARAM_location")=="room13" and store.room13["v111"].get("scene")=="MS14_D07_S04"))
+        if daram_with_dad or r13_v111_value("location:daram") not in (None,here):people=[p for p in people if p!="daram"]
         if r13_v111_value("DARAM_DETAINED") and "daram" not in authored:people=[p for p in people if p!="daram"]
         for family_person in ("daram","mom"):
             physical=r13_v111_value("location:"+family_person)
