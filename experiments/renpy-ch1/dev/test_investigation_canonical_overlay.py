@@ -21,5 +21,5 @@ class CanonicalOverlay(unittest.TestCase):
  def test_old_living_art_rejected(self):
   o=next(o for o in self.r['operations'] if o['pointer']=='/resident_musoe/living_foldmap');n,k=slot(self.reg[o['file'].removeprefix('game/')],o['pointer']);n[k]=o['expected']
   with self.assertRaises(AssertionError):restored_registries(self.reg,self.r)
-SEMANTIC_BASE={'assets/room13-pixel-acting.json': '1024e3a6a443a9dedb289ac2300117bb41bb4496e6a1a145f13e454133f1b295', 'assets/room13-map-action27.json': '92cbb0b6347316d359ccfce4aa6bf672940ff3cde77c69abd4db9bb033217f63'}
+SEMANTIC_BASE={'assets/room13-pixel-acting.json': '1024e3a6a443a9dedb289ac2300117bb41bb4496e6a1a145f13e454133f1b295', 'assets/room13-map-action27.json': 'c158939832baecc7bfdf4b336265c28c23650146da4dcf33fd4d9e6cb5d8a341'}
 if __name__=='__main__':unittest.main()

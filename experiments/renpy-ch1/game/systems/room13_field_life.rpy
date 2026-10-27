@@ -41,9 +41,12 @@ init 183 python:
 
     R13_FIELD_LIFE_REGISTERED=r13_field_life_register()
 
-    def r13_field_life_row(actor,rows,day,period,flags,width):
+    def r13_field_life_row(actor,rows,day,period,flags,width,present=()):
         for row in rows:
             if row["person"]!=actor["person"] or period not in row["periods"]:continue
+            # 2026-10-27: 같이 선 사람이 있으면 쓰지 않는 행(not_with). 1일 아침 실룩이 돌목 어깨 뒤에서 속삭이는
+            # 승인 구도에서 돌목이 쪼그려 명부를 읽으면 실룩의 몸을 반 가린다.
+            if set(row.get("not_with",[]))&set(present):continue
             # 같은 장소라도 시간대에 따라 옛 1280 배경으로 돌아가는 곳(우체국 낮·저녁)이 있다. 좌표는 그림에 묶이므로 폭이 다르면 쓰지 않는다.
             if row.get("world_width") and row["world_width"]!=width:continue
             if "days" in row and day not in row["days"]:continue
@@ -66,11 +69,11 @@ init 183 python:
         dx,dy=layout.get("wide_shift",[0,0])
         zoom=r13_field_zoom(location);width=r13_world_width(location)
         day=s.get("day",1);period=min(s.get("period",0),2);flags=set(s.get("flags",[]))
-        out=[]
+        out=[];present=[a["person"] for a in actors]
         for actor in actors:
             placed=actor
             if not actor.get("life_group") and not r13_offer_for_person(actor["person"]):
-                row=r13_field_life_row(actor,rows,day,period,flags,width)
+                row=r13_field_life_row(actor,rows,day,period,flags,width,present)
                 if row:
                     spec=r13_acting_spec(actor["person"],row["pose"])
                     # 도트 그림은 1칸=화면 1px 이므로 월드 키는 도트 높이 / 장면 배율(입구 0.75).

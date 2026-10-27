@@ -63,12 +63,14 @@ init 336 python:
     # cart, crates, fence) have people beside them so the empty space is not a pointer.
     R13_STAND_SPOTS={
         "gate":dict(
+            # 2026-10-27 한 명씩 검수: 바둑이가 빈 자리(720,700)로 들어가 까로의 다리 위에 쪼그려 앉았다(겹침 45%).
+            # 까로의 수레와 네로 사이에 자기 자리를 준다.
             positions={"guard":[1234,592,222],"resident_siluk":[1290,545,212],"karo":[630,628,230],
-                       "daram":[730,704,205],"resident_bori":[1770,666,238]},
+                       "daram":[730,704,205],"resident_bori":[1770,666,238],"resident_badook":[870,690,212]},
             poses={"guard":"neutral","daram":"thinking","resident_siluk":"event_whisper","karo":"living_axlewrap",
                    "resident_bori":"map27_carry_firewood_v2"},
             pose_positions={"karo:living_axlewrap":[630,628]},
-            pinned=["karo","guard","daram","resident_siluk","resident_bori"],
+            pinned=["karo","guard","daram","resident_siluk","resident_bori","resident_badook"],
         ),
         # 0.20.9 (play review D23-01): the north exchange box (1150-1370) stays clear. Chorong stands
         # at its left edge with her lamp, Silluk a step behind her.

@@ -652,8 +652,8 @@
           "render_height": 210,
           "anchor": "foot",
           "target": [
-            1040,
-            640
+            720,
+            650
           ],
           "occlusion": []
         },
@@ -3108,124 +3108,22 @@
           "world_width": 2160,
           "render_height": 160,
           "anchor": "foot_baseline",
-          "target": [
-            2050,
-            503
-          ],
-          "occlusion": [
-            [
-              [
-                2010,
-                505
-              ],
-              [
-                2035,
-                452
-              ],
-              [
-                2075,
-                432
-              ],
-              [
-                2120,
-                440
-              ],
-              [
-                2160,
-                440
-              ],
-              [
-                2160,
-                600
-              ],
-              [
-                2010,
-                600
-              ]
-            ]
-          ]
+          "target": [2050, 600],
+          "occlusion": [[[2010, 455], [2160, 455], [2160, 620], [2010, 620]]]
         },
         "afternoon": {
           "world_width": 2160,
           "render_height": 160,
           "anchor": "foot_baseline",
-          "target": [
-            2050,
-            503
-          ],
-          "occlusion": [
-            [
-              [
-                2010,
-                505
-              ],
-              [
-                2035,
-                452
-              ],
-              [
-                2075,
-                432
-              ],
-              [
-                2120,
-                440
-              ],
-              [
-                2160,
-                440
-              ],
-              [
-                2160,
-                600
-              ],
-              [
-                2010,
-                600
-              ]
-            ]
-          ]
+          "target": [2050, 600],
+          "occlusion": [[[2010, 455], [2160, 455], [2160, 620], [2010, 620]]]
         },
         "evening": {
           "world_width": 2160,
           "render_height": 160,
           "anchor": "foot_baseline",
-          "target": [
-            2050,
-            503
-          ],
-          "occlusion": [
-            [
-              [
-                2010,
-                505
-              ],
-              [
-                2035,
-                452
-              ],
-              [
-                2075,
-                432
-              ],
-              [
-                2120,
-                440
-              ],
-              [
-                2160,
-                440
-              ],
-              [
-                2160,
-                600
-              ],
-              [
-                2010,
-                600
-              ]
-            ]
-          ]
+          "target": [2050, 600],
+          "occlusion": [[[2010, 455], [2160, 455], [2160, 620], [2010, 620]]]
         }
       },
       "spec": {
@@ -5938,10 +5836,7 @@
           "world_width": 2160,
           "render_height": 212,
           "anchor": "seat",
-          "target": [
-            660,
-            415
-          ],
+          "target": [660, 375],
           "occlusion": [
             [
               [
@@ -5963,20 +5858,14 @@
             ]
           ],
           "secondary_targets": {
-            "bowl_bottom": [
-              720,
-              365
-            ]
+            "bowl_bottom": [720, 325]
           }
         },
         "afternoon": {
           "world_width": 2160,
           "render_height": 212,
           "anchor": "seat",
-          "target": [
-            660,
-            415
-          ],
+          "target": [660, 375],
           "occlusion": [
             [
               [
@@ -5998,20 +5887,14 @@
             ]
           ],
           "secondary_targets": {
-            "bowl_bottom": [
-              720,
-              365
-            ]
+            "bowl_bottom": [720, 325]
           }
         },
         "evening": {
           "world_width": 2160,
           "render_height": 212,
           "anchor": "seat",
-          "target": [
-            660,
-            415
-          ],
+          "target": [660, 375],
           "occlusion": [
             [
               [
@@ -6033,10 +5916,7 @@
             ]
           ],
           "secondary_targets": {
-            "bowl_bottom": [
-              720,
-              365
-            ]
+            "bowl_bottom": [720, 325]
           }
         }
       },
@@ -6138,10 +6018,7 @@
           "world_width": 2160,
           "render_height": 236,
           "anchor": "seat",
-          "target": [
-            1965,
-            415
-          ],
+          "target": [1965, 345],
           "occlusion": [
             [
               [
@@ -6163,20 +6040,14 @@
             ]
           ],
           "secondary_targets": {
-            "bowl_bottom": [
-              1934,
-              356
-            ]
+            "bowl_bottom": [1934, 286]
           }
         },
         "afternoon": {
           "world_width": 2160,
           "render_height": 236,
           "anchor": "seat",
-          "target": [
-            1965,
-            415
-          ],
+          "target": [1965, 345],
           "occlusion": [
             [
               [
@@ -6198,20 +6069,14 @@
             ]
           ],
           "secondary_targets": {
-            "bowl_bottom": [
-              1934,
-              356
-            ]
+            "bowl_bottom": [1934, 286]
           }
         },
         "evening": {
           "world_width": 2160,
           "render_height": 236,
           "anchor": "seat",
-          "target": [
-            1965,
-            415
-          ],
+          "target": [1965, 345],
           "occlusion": [
             [
               [
@@ -6233,10 +6098,7 @@
             ]
           ],
           "secondary_targets": {
-            "bowl_bottom": [
-              1934,
-              356
-            ]
+            "bowl_bottom": [1934, 286]
           }
         }
       },

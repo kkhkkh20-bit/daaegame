@@ -16,8 +16,9 @@ class SpatialContacts(unittest.TestCase):
  def test_elevated_contact_preserves_pose_scale_and_ground_depth(self):
   a=dict(person='resident_sling',pose='activity',depth=600);original=copy.deepcopy(a)
   x=self.env([a])['r13_stage_people']()[0]
-  self.assertEqual(a,original);self.assertEqual(x['depth'],520);self.assertEqual(x['elevation'],86)
-  self.assertEqual(x['height'],148);self.assertLessEqual(abs(x['y']+x['height']-434),1)
+  # 2026-10-27 한 명씩 검수: 광장의 높은 자리(계단·종탑)가 지금 그림에 없어 바닥(690)에 세운다. 자세 배율은 그대로 보존된다.
+  self.assertEqual(a,original);self.assertEqual(x['depth'],690);self.assertEqual(x['elevation'],0)
+  self.assertEqual(x['height'],158);self.assertLessEqual(abs(x['y']+x['height']-690),1)
  def test_rest_is_seated_with_floor_contact(self):
   x=self.env([dict(person='daram',pose='neutral',depth=600)],'room13')['r13_stage_people']()[0]
   self.assertEqual(x['pose'],'action_1');self.assertEqual(x['y']+x['height'],620)
