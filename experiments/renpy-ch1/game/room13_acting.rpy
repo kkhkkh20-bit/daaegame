@@ -607,8 +607,22 @@ init 59 python:
             # 0.19.97 (owner 2026-10-22: "캐릭터 클릭해도 대사가 안뜨고"): pressing a resident's
             # body talks to them. The object keeps only the area outside every resident's box;
             # transparent padding inside the box still reaches the object drawn underneath.
-            if covered:result.append((key,tuple(spec["rect"]),r13_object_mask(spec["rect"],[tuple(a["rect"]) for a in actors]+later)))
+            if not covered:continue
+            # 2026-10-27 소유자 플레이: 오답 뒤 입구에서 까로가 규칙판 앞에 서서 규칙판을 누를 수 없었다. 지금 이야기 단계가
+            # 조사 대상으로 지정한 물건(바인딩 options 의 object)은 인물 상자에 구멍을 내지 않고 통째로 인물 위에 둔다.
+            # 인물은 이름표나 물건 밖 몸으로 여전히 닿는다.
+            if key in r13_story_needed_objects():result.append((key,tuple(spec["rect"]),r13_object_mask(spec["rect"],later)));continue
+            result.append((key,tuple(spec["rect"]),r13_object_mask(spec["rect"],[tuple(a["rect"]) for a in actors]+later)))
         return result
+
+    def r13_story_needed_objects():
+        """현재 대기 단계의 바인딩이 조사 물건으로 지정한 키(원래 키와 v111 매핑 키 둘 다)."""
+        if not globals().get("r13_v111_active",lambda:False)():return set()
+        needed=set()
+        for option in r13_v111_binding().get("options",[]):
+            if option.get("object") and option.get("location")==store.room13["location"]:
+                needed.add(option["object"]);needed.add(globals().get("r13_v111_object_key",lambda k:k)(option["object"]))
+        return needed
 
     def r13_conversation_pose(person,pose="neutral"):
         if person=="seryeon" and store.room13["location"]=="post" and min(store.room13["period"],2)==1:

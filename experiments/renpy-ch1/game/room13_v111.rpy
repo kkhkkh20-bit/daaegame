@@ -133,9 +133,6 @@ init 301 python:
         people=[] if r13_v111_value("wild_night14") or store.room13["location"] in ("hidden_pandol","hidden_base14") else list(_r13_v111_visible_people())
         if store.room13["v111"].get("gate")=="crowd_prepare13" and not r13_crowd_guard_available13(True):people=[p for p in people if p!="guard"]
         people=[p for p in people if not r13_v111_value("busy:"+p) or r13_v111_value("location:"+p) in (None,store.room13["location"])]
-        # 2026-10-27 소유자: "처음에 다람이가 나올 필요가 없어, 초소에서도 아빠랑 같이 있는데". 1일 입구에서는 아빠 곁에
-        # 붙어 있으므로 현장에 따로 세우지 않는다. 대사 근접·주고받기(r13_child_is_along)는 상태로 판단해 그대로 나온다.
-        if store.room13["day"]==1 and store.room13["location"]=="gate":people=[p for p in people if p!="daram"]
         if r13_v111_value("piko.location") and r13_v111_value("piko.location")!=store.room13["location"]:
             people=[p for p in people if p!="resident_piko"]
         if r13_v111_value("silluk_status") in ("detained_work_waiting_station","supervised_compulsory_labor"):
@@ -143,6 +140,9 @@ init 301 python:
         if r13_v111_value("grandmother_custody")=="detained":people=[p for p in people if p!="granny"]
         if r13_v111_value("teacher_custody") in ("guard","neoul"):people=[p for p in people if p!="resident_teacher"]
         people=list(dict.fromkeys(people+list(authored)))
+        # 2026-10-27 소유자: "처음에 다람이가 나올 필요가 없어, 초소에서도 아빠랑 같이 있는데". 1일 입구에서는 아빠 곁에
+        # 붙어 있으므로 현장에 따로 세우지 않는다. 대사 근접·주고받기(r13_child_is_along)는 상태로 판단해 그대로 나온다.
+        if store.room13.get("day")==1 and store.room13.get("location")=="gate":people=[p for p in people if p!="daram"]
         if r13_v111_value("DARAM_DETAINED") and "daram" not in authored:people=[p for p in people if p!="daram"]
         for family_person in ("daram","mom"):
             physical=r13_v111_value("location:"+family_person)
@@ -259,7 +259,10 @@ label r13_v111_wait_again:
             $ r13_v111_time("inspect:gate_request:ledger",15)
             return 0
         if v111_person in r13_visible_people() and r13_v111_idle_ok(v111_person):
+            # 2026-10-27 소유자: 회의(오답 뒤) 상태의 현장에서 다른 주민의 한가한 한 줄에도 돌목 무대가 떴다. 현장 관찰로 읽는다.
+            $ r13_field_reading=True
             call r13_lines(r13_v111_idle_lines(v111_person),"v111:idle:"+v111_person)
+            $ r13_field_reading=False
         elif v111_person in r13_visible_people():
             # 0.20.10 (4~14일 리뷰 P07): 물을 것이 없는 다람은 장면마다 처음 한 번 먼저 대답한다.
             if v111_person=="daram" and r13_v111_daram_hello_due():
