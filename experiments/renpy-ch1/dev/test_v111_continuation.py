@@ -71,7 +71,8 @@ class ContinuationGuards(unittest.TestCase):
   self.env.update(r13_v111_active=lambda:True,_r13_v111_visible_people=lambda:['daram'],r13_v111_binding=lambda:dict(people=['daram','v111_patrol']))
   self.env['r13_v111_arrive'](['daram','v111_patrol'])
   self.assertNotIn('v111_patrol',self.env['r13_visible_people']())
-  self.assertIn('daram',self.env['r13_visible_people']())
+  # 2026-10-27: 다람은 아빠 곁의 동행이라 현장에 세우지 않는다(도착 자체는 기록된다).
+  self.assertNotIn('daram',self.env['r13_visible_people']())
   self.assertEqual(self.env['r13_v111_value']('location:v111_patrol'),'school')
  def test_repair_material_survives_all_four_independent_attendance_combinations(self):
   setv=self.env['r13_v111_set'];attends=self.env['r13_v111_tok_attends']
