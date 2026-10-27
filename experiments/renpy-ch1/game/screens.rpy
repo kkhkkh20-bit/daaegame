@@ -618,7 +618,8 @@ style r13opt_bar is bar:
 style r13opt_tab_button is button:
     background None hover_background None selected_background None padding (0,0)
 style r13opt_tab_button_text is text:
-    font R13_UI_BOLD_FONT color "#4b3420" hover_color "#4b3420" selected_color "#4b3420" xpos 62 yalign .5
+    # 2026-10-27 소유자: 탭 아이콘을 빼고 글자를 가운데에(「불러오기」가 잘렸다).
+    font R13_UI_BOLD_FONT color "#4b3420" hover_color "#4b3420" selected_color "#4b3420" xalign .5 yalign .5
 
 style r13opt_footer_button is r13opt_button:
     padding (10,4)
@@ -668,7 +669,6 @@ screen pause_menu():
     default tab=(persistent.room13_option_tab if persistent.room13_option_tab in ("sound","screen","reading","save") else "reading")
     # 2026-10-27 소유자 "설정 안에 탭에 저장 불러오기를 넣고": 넷째 탭. 메인 메뉴에서는 불러오기만 된다.
     default save_mode=(not main_menu)
-    default save_page=(persistent.r13_save_page or 1)
     add Solid("#05070fa6")
     # Unscaled full panel: preserve the three rings and all border pixels.
     add r13_asset("file:assets/ui-b-options/b_opt_panel.png") xpos -4 ypos -4
@@ -687,7 +687,6 @@ screen pause_menu():
             fixed:
                 xsize 168 ysize (88 if r13_touch_ui() else 76)
                 add Frame(Crop((16,16,206,62),r13_asset_path("file:assets/ui-b-options/b_opt_tab_selected.png") if tab==key else r13_asset_path("file:assets/ui-b-options/b_opt_tab.png")),32,20) xpos 0 yalign .5 xysize (168,62)
-                add Crop((18,18,28,28),r13_asset_path("file:"+("assets/ui-b-options/b_icon_opt_%s.png"%key))) xpos 28 yalign .5
                 textbutton name style "r13opt_tab_button":
                     xsize 168 ysize (88 if r13_touch_ui() else 76) text_size (r13_opt_title_size()-2)
                     text_style "r13opt_tab_button_text"
@@ -723,7 +722,7 @@ screen pause_menu():
                     textbutton "효과음 듣기" xsize 284 action Function(r13_test_option_sound) text_size r13_opt_size() ysize r13_opt_button_height()
                     textbutton "음악 출처" xsize 284 action Show("r13_music_credits") text_size r13_opt_size() ysize r13_opt_button_height()
             elif tab=="save":
-                use r13_settings_save_tab(save_mode,save_page)
+                use r13_settings_save_tab(save_mode)
             elif tab=="reading":
                 use r13_opt_row("글자 크기"):
                     for key,name in (("small","작게"),("normal","보통"),("large","크게")):
@@ -842,9 +841,9 @@ init python:
         return r13_load_confirm(slot)
 
 # 설정의 「저장」 탭. 설정 본문(854x460) 안에 들어간다: 윗줄은 전환·쪽·자동저장·정리, 아래는 칸 여섯(420x124).
-screen r13_settings_save_tab(saving,page):
+screen r13_settings_save_tab(saving):
+    # 소유자 2026-10-27: 쪽 없이 여섯 칸만, 빈 칸은 「빈 칸」만 적는다. 칸 글은 굵은 글꼴.
     $ ch=r13_opt_button_height()
-    # 윗줄이 닫기 X(y 48~112)와 겹치지 않게 24 내려 시작한다. 칸 높이는 남은 본문 높이에서 계산한다.
     $ slot_h=((436 if r13_touch_ui() else 460)-24-ch-12-28)//3
     null height 24
     hbox:
@@ -852,8 +851,6 @@ screen r13_settings_save_tab(saving,page):
         if not main_menu:
             textbutton "저장" xsize 136 ysize ch selected saving action SetScreenVariable("save_mode",True) text_size r13_opt_size()
             textbutton "불러오기" xsize 136 ysize ch selected (not saving) action SetScreenVariable("save_mode",False) text_size r13_opt_size()
-        for p in (1,2,3):
-            textbutton ("%d쪽"%p) xsize 88 ysize ch selected page==p action [SetScreenVariable("save_page",p),SetField(persistent,"r13_save_page",p)] text_size r13_opt_size()
         if not saving:
             textbutton "자동저장" xsize 136 ysize ch action r13_load_confirm("auto-1") sensitive FileLoadable(1,page="auto") text_size r13_opt_size()
             textbutton "정리" xsize 88 ysize ch action Show("r13_save_cleanup",scope="old") text_size r13_opt_size()
@@ -861,85 +858,62 @@ screen r13_settings_save_tab(saving,page):
     grid 2 3:
         spacing 14
         for i in range(6):
-            $ slot="%d-%d"%(page,i+1)
+            $ slot="1-%d"%(i+1)
             button:
                 xsize 420 ysize slot_h padding (10,10)
-                action r13_slot_action(page,i+1,saving)
+                action r13_slot_action(1,i+1,saving)
                 sensitive (saving or renpy.can_load(slot))
-                hbox:
-                    spacing 14 xalign 0.0 yalign .5
-                    if renpy.can_load(slot):
-                        add FileScreenshot(i+1,page=str(page)) xsize 160 ysize 90 yalign .5
-                    else:
-                        frame:
-                            xysize (160,90) yalign .5 padding (0,0) background Solid("#4b342014")
-                            text "빈 칸" size r13_nb_small_size() color r13_nb_muted() align (.5,.5) font R13_UI_BOLD_FONT
-                    vbox:
-                        spacing 3 yalign .5
-                        if renpy.can_load(slot):
-                            text (r13_slot_where(slot) or "%d쪽 %d번"%(page,i+1)) size r13_nb_body_size() color r13_nb_ink() xsize 210 font R13_UI_BOLD_FONT
+                if renpy.can_load(slot):
+                    hbox:
+                        spacing 14 xalign 0.0 yalign .5
+                        add FileScreenshot(i+1,page="1") xsize 160 ysize 90 yalign .5
+                        vbox:
+                            spacing 3 yalign .5
+                            text (r13_slot_where(slot) or "저장 %d"%(i+1)) size r13_nb_body_size() color r13_nb_ink() xsize 210 font R13_UI_BOLD_FONT
                             if r13_slot_info(slot,"r13_stage"):
                                 text r13_slot_info(slot,"r13_stage") size r13_nb_small_size() xsize 210 font R13_UI_BOLD_FONT
-                            text ("%d쪽 %d번 · "%(page,i+1)+FileTime(i+1,format="%m-%d %H:%M",page=str(page))) size r13_nb_small_size() color r13_nb_muted() xsize 210 font R13_UI_BOLD_FONT
-                        else:
-                            text ("%d쪽 %d번"%(page,i+1)) size r13_nb_small_size() color r13_nb_muted() font R13_UI_BOLD_FONT
-                            text ("여기에 저장" if saving else "비어 있음") size r13_nb_body_size() color r13_nb_muted() font R13_UI_BOLD_FONT
+                            text FileTime(i+1,format="%m-%d %H:%M",page="1") size r13_nb_small_size() color r13_nb_muted() xsize 210 font R13_UI_BOLD_FONT
+                else:
+                    text "빈 칸" size r13_nb_body_size() color r13_nb_muted() align (.5,.5) font R13_UI_BOLD_FONT
 
 screen file_slots(title,saving):
     modal True
     style_prefix "r13"
-    default page=persistent.r13_save_page or 1
-    # 2026-10-27 검수: 다른 수첩 화면과 같은 판(b_opt_panel). 버튼은 전부 공통 부품(r13_control)이다 —
-    # 「돌아가기·이전 저장 정리 글자·아이콘 크기가 왜 다르냐」. 쪽 탭 88, 전환 184, 하단 정리 200, 돌아가기 136.
+    # 메인 메뉴 「불러오기」와 옛 호출처가 쓴다. 규칙은 설정의 저장 탭과 같다 — 쪽 없이 여섯 칸, 빈 칸은 「빈 칸」만.
     $ ch=r13_control_height()
     add Solid("#05070fa6")
     add r13_asset_path(R13_NB_PANEL) xpos R13_NB_PANEL_POS[0] ypos R13_NB_PANEL_POS[1]
     text title xpos R13_NB_TITLE_X ypos R13_NB_TITLE_Y size r13_nb_title_size() color r13_nb_ink() font R13_UI_BOLD_FONT
     hbox:
         xpos 300 ypos (R13_NB_HEAD_CY-ch//2) spacing 12
-        for p in (1,2,3):
-            use r13_control("%d쪽"%p,None,[SetLocalVariable("page",p),SetField(persistent,"r13_save_page",p)],chosen=page==p,width=88,control_id="r13_save_page_%d"%p)
-        null width 12
-        # 0.19.2: 「더보기 → 저장 · 불러오기」 하나로 들어와 여기서 바꾼다.
         if not main_menu:
             use r13_control("불러오기로" if saving else "저장으로",None,ShowMenu("load" if saving else "save"),width=184,control_id="r13_save_switch")
         if not saving:
-            use r13_control("최근 자동저장",None,r13_load_confirm("auto-1"),enabled=FileLoadable(1,page="auto"),width=184,control_id="r13_save_auto")
+            use r13_control("자동저장",None,r13_load_confirm("auto-1"),enabled=FileLoadable(1,page="auto"),width=136,control_id="r13_save_auto")
     add Solid("#c9a86a99") xpos (R13_NB_TITLE_X-10) ypos R13_NB_RULE_Y xsize (R13_NB_RIGHT-(R13_NB_TITLE_X-10)) ysize 1
     $ slot_h=(r13_nb_body_bottom()-R13_NB_TOP-2*14)//3
     grid 2 3:
         xpos R13_NB_LEFT ypos R13_NB_TOP spacing 14
         for i in range(6):
-            $ slot="%d-%d"%(page,i+1)
+            $ slot="1-%d"%(i+1)
             button:
                 xsize 530 ysize slot_h padding (10,10)
-                action r13_slot_action(page,i+1,saving)
+                action r13_slot_action(1,i+1,saving)
                 sensitive (saving or renpy.can_load(slot))
-                hbox:
-                    spacing 14 xalign 0.0 yalign .5
-                    # 빈 칸도 채워진 칸과 같은 틀(그림 자리 + 왼쪽 글 기둥). 가운데 정렬 큰 글씨 하나만 두면 모양이 달라진다(소유자 2026-10-27).
-                    if renpy.can_load(slot):
-                        add FileScreenshot(i+1,page=str(page)) xsize 174 ysize 98 yalign .5
-                    else:
-                        frame:
-                            xysize (174,98) yalign .5 padding (0,0) background Solid("#4b342014")
-                            text "빈 칸" size r13_nb_small_size() color r13_nb_muted() align (.5,.5) font R13_UI_BOLD_FONT
-                    # 0.18.46: read the story point first (day, time, place), then where in
-                    # the story and the last line; slot number and real time come last.
-                    vbox:
-                        spacing 3 yalign .5
-                        if renpy.can_load(slot):
-                            text (r13_slot_where(slot) or "%d쪽 %d번"%(page,i+1)) size r13_nb_body_size() color r13_nb_ink() xsize 320 font R13_UI_BOLD_FONT
+                if renpy.can_load(slot):
+                    hbox:
+                        spacing 14 xalign 0.0 yalign .5
+                        add FileScreenshot(i+1,page="1") xsize 174 ysize 98 yalign .5
+                        vbox:
+                            spacing 3 yalign .5
+                            text (r13_slot_where(slot) or "저장 %d"%(i+1)) size r13_nb_body_size() color r13_nb_ink() xsize 320 font R13_UI_BOLD_FONT
                             if r13_slot_info(slot,"r13_stage"):
                                 text r13_slot_info(slot,"r13_stage") size r13_nb_small_size() xsize 320 font R13_UI_BOLD_FONT
                             if r13_slot_info(slot,"r13_last"):
                                 text ("“"+r13_slot_info(slot,"r13_last")+"”") size r13_nb_small_size() color "#5d6a66" xsize 320 font R13_UI_BOLD_FONT
-                            text ("%d쪽 %d번 · "%(page,i+1)+FileTime(i+1,format="%m-%d %H:%M",page=str(page))+" · "+r13_save_caption(renpy.slot_json(slot))) size r13_nb_small_size() color r13_nb_muted() xsize 320 font R13_UI_BOLD_FONT
-                        else:
-                            text ("%d쪽 %d번"%(page,i+1)) size r13_nb_small_size() color r13_nb_muted() font R13_UI_BOLD_FONT
-                            text ("여기에 저장" if saving else "비어 있음") size r13_nb_body_size() color r13_nb_muted() font R13_UI_BOLD_FONT
-    # 하단 줄: 돌아가기는 오른쪽 끝(다른 수첩 화면의 닫기 자리), 정리 버튼은 왼쪽.
-    # (이 화면은 메인 메뉴 「불러오기」와 옛 호출처가 쓴다. 게임 안에서는 설정의 「저장」 탭이 같은 일을 한다.)
+                            text (FileTime(i+1,format="%m-%d %H:%M",page="1")+" · "+r13_save_caption(renpy.slot_json(slot))) size r13_nb_small_size() color r13_nb_muted() xsize 320 font R13_UI_BOLD_FONT
+                else:
+                    text "빈 칸" size r13_nb_body_size() color r13_nb_muted() align (.5,.5) font R13_UI_BOLD_FONT
     use r13_nb_footer_button(0,"돌아가기",Return(),primary=True,control_id="r13_save_back")
     if not saving:
         hbox:
