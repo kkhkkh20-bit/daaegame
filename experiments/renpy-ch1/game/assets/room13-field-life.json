@@ -1,0 +1,1029 @@
+{
+ "schema": "room13-field-life/1",
+ "note": "생활 동작 배치표(docs/design/FIELD_LIFE_STAGING_20261027.md)를 코드로 옮긴 것. 좌표는 그 장소 배경(가로 1920/1800/2160, 세로 720) 기준의 발 위치. 입구는 옛 1920 그림 기준이고 넓은 그림은 wide_shift 로 옮긴다. world_width 가 그때의 r13_world_width 와 다르면(우체국 낮·저녁의 옛 1280 배경 등) 행을 쓰지 않는다.",
+ "contacts": {
+  "resident_tori:life_sew_bench": "bench_sit",
+  "resident_seori:life_write_desk_seated": "self_seated",
+  "karo:life_wheel_check": "squatting",
+  "resident_tok:life_fix_stove": "squatting"
+ },
+ "rows": [
+  {
+   "id": "gate_guard_morning",
+   "person": "guard",
+   "pose": "check_records_low",
+   "location": "gate",
+   "periods": [
+    0
+   ],
+   "replace_poses": [
+    "neutral"
+   ],
+   "target": [
+    1234,
+    592
+   ],
+   "activity": "초소 명부를 읽는다.",
+   "world_width": 2560
+  },
+  {
+   "id": "gate_guard_day",
+   "person": "guard",
+   "pose": "life_stamp_ledger",
+   "location": "gate",
+   "periods": [
+    1
+   ],
+   "replace_poses": [
+    "neutral"
+   ],
+   "target": [
+    1234,
+    592
+   ],
+   "activity": "초소 장부에 도장을 찍는다.",
+   "world_width": 2560
+  },
+  {
+   "id": "gate_guard_evening",
+   "person": "guard",
+   "pose": "life_lamp_trim",
+   "location": "gate",
+   "periods": [
+    2
+   ],
+   "replace_poses": [
+    "neutral"
+   ],
+   "target": [
+    1234,
+    592
+   ],
+   "activity": "창구 등 심지를 손질한다.",
+   "world_width": 2560
+  },
+  {
+   "id": "gate_karo_day",
+   "person": "karo",
+   "pose": "life_wheel_check",
+   "location": "gate",
+   "periods": [
+    1
+   ],
+   "replace_poses": [
+    "living_axlewrap"
+   ],
+   "target": [
+    150,
+    640
+   ],
+   "activity": "마차 바퀴 살을 쥐고 살핀다.",
+   "note": "마차 왼쪽(배치표 A, 마차를 향해 우). 마차와 삽이 조사 물건이라 그 사이(660~950)에 두면 1일 이야기 상태에서 회피층이 어차피 이 자리로 민다. 1일 기본 카메라(옛 그림 x 320 부터) 밖이라 왼쪽으로 밀어야 보인다.",
+   "world_width": 2560
+  },
+  {
+   "id": "gate_bori_stack",
+   "person": "resident_bori",
+   "pose": "life_stack_wood",
+   "location": "gate",
+   "periods": [
+    0
+   ],
+   "replace_poses": [
+    "map27_carry_firewood_v2",
+    "living_firewood",
+    "neutral"
+   ],
+   "target": [
+    1770,
+    666
+   ],
+   "activity": "초소 장작 더미에 장작을 올린다.",
+   "days": [
+    1,
+    2,
+    3,
+    5,
+    9,
+    10
+   ],
+   "world_width": 2560
+  },
+  {
+   "id": "gate_nero_wait",
+   "person": "resident_nero",
+   "pose": "life_wait_hands_pocket",
+   "location": "gate",
+   "periods": [
+    0
+   ],
+   "replace_poses": [
+    "activity",
+    "neutral"
+   ],
+   "target": [
+    1150,
+    650
+   ],
+   "activity": "일거리가 있나 창구 앞에서 기다린다.",
+   "days": [
+    1
+   ],
+   "world_width": 2560
+  },
+  {
+   "id": "gate_neoul_ledger",
+   "person": "neoul",
+   "pose": "life_abacus_ledger",
+   "location": "gate",
+   "periods": [
+    0,
+    1,
+    2
+   ],
+   "replace_poses": [
+    "neutral",
+    "action_1"
+   ],
+   "target": [
+    1080,
+    615
+   ],
+   "activity": "이송 명단을 주판으로 대조한다.",
+   "days": [
+    4,
+    5,
+    7,
+    9,
+    10
+   ],
+   "world_width": 2560
+  },
+  {
+   "id": "gate_kalbaram_walk",
+   "person": "resident_kalbaram",
+   "pose": "life_walk_in",
+   "location": "gate",
+   "periods": [
+    1
+   ],
+   "replace_poses": [
+    "neutral"
+   ],
+   "target": [
+    1800,
+    690
+   ],
+   "activity": "숲에서 돌아오는 길에 마을로 들어선다.",
+   "days": [
+    1,
+    3,
+    5,
+    10,
+    12
+   ],
+   "world_width": 2560
+  },
+  {
+   "id": "gate_kkwak_bucket",
+   "person": "resident_kkwak",
+   "pose": "life_carry_bucket",
+   "location": "gate",
+   "periods": [
+    1
+   ],
+   "replace_poses": [
+    "neutral"
+   ],
+   "target": [
+    1620,
+    700
+   ],
+   "activity": "강가로 가는 길에 물통을 들고 지난다.",
+   "days": [
+    1
+   ],
+   "world_width": 2560
+  },
+  {
+   "id": "square_tori_sew",
+   "person": "resident_tori",
+   "pose": "life_sew_bench",
+   "location": "square",
+   "periods": [
+    0,
+    1
+   ],
+   "replace_poses": [
+    "world_bench_left",
+    "activity",
+    "neutral"
+   ],
+   "target": [
+    1800,
+    612
+   ],
+   "activity": "벤치에 앉아 수선거리를 바느질한다.",
+   "days": [
+    1,
+    5,
+    7,
+    12,
+    14
+   ],
+   "world_width": 1920
+  },
+  {
+   "id": "square_ppul_knots",
+   "person": "resident_ppul",
+   "pose": "life_count_knots",
+   "location": "square",
+   "periods": [
+    0,
+    1
+   ],
+   "replace_poses": [
+    "activity",
+    "neutral"
+   ],
+   "target": [
+    330,
+    700
+   ],
+   "activity": "매듭 끈으로 장작 묶음을 센다.",
+   "days": [
+    2,
+    5,
+    7,
+    9,
+    12,
+    14
+   ],
+   "note": "좌판 장작 더미 앞. x 240 은 부엉이 할아버지 자리(245)와 겹쳤다.",
+   "world_width": 1920
+  },
+  {
+   "id": "square_jongjong_run",
+   "person": "resident_jongjong",
+   "pose": "life_run_satchel",
+   "location": "square",
+   "periods": [
+    1
+   ],
+   "replace_poses": [
+    "neutral"
+   ],
+   "target": [
+    420,
+    700
+   ],
+   "activity": "편지 가방을 메고 우물 곁을 달려 지난다.",
+   "days": [
+    1,
+    3,
+    5,
+    7,
+    10,
+    12,
+    14
+   ],
+   "world_width": 1920
+  },
+  {
+   "id": "square_sling_letter",
+   "person": "resident_sling",
+   "pose": "life_write_letter_standing",
+   "location": "square",
+   "periods": [
+    1
+   ],
+   "replace_poses": [
+    "activity",
+    "neutral"
+   ],
+   "target": [
+    1480,
+    690
+   ],
+   "activity": "차양 아래서 편지를 대필한다.",
+   "days": [
+    2,
+    4,
+    9
+   ],
+   "world_width": 1920
+  },
+  {
+   "id": "inn_nubi_fold_morning",
+   "person": "resident_nubi",
+   "pose": "life_fold_linen",
+   "location": "inn",
+   "periods": [
+    0
+   ],
+   "replace_poses": [
+    "map27_in_1",
+    "neutral"
+   ],
+   "target": [
+    620,
+    705
+   ],
+   "activity": "벽난로 앞에서 수건을 갠다.",
+   "min_day": 1,
+   "max_day": 10,
+   "world_width": 1920
+  },
+  {
+   "id": "inn_nubi_fold_day",
+   "person": "resident_nubi",
+   "pose": "life_fold_linen",
+   "location": "inn",
+   "periods": [
+    1
+   ],
+   "replace_poses": [
+    "map27_in_1",
+    "neutral"
+   ],
+   "target": [
+    620,
+    705
+   ],
+   "activity": "벽난로 앞에서 수건을 갠다.",
+   "days": [
+    12,
+    14
+   ],
+   "world_width": 1920
+  },
+  {
+   "id": "inn_tori_handover",
+   "person": "resident_tori",
+   "pose": "life_handover_cloth",
+   "location": "inn",
+   "periods": [
+    1
+   ],
+   "replace_poses": [
+    "activity",
+    "neutral",
+    "inn_activity"
+   ],
+   "target": [
+    1000,
+    690
+   ],
+   "activity": "수선한 천을 할머니에게 건넨다.",
+   "days": [
+    1,
+    2,
+    3,
+    4,
+    9,
+    10
+   ],
+   "world_width": 1920
+  },
+  {
+   "id": "inn_yeoni_bundle",
+   "person": "resident_yeoni",
+   "pose": "life_hold_bundle",
+   "location": "inn",
+   "periods": [
+    1
+   ],
+   "replace_poses": [
+    "neutral",
+    "activity"
+   ],
+   "target": [
+    880,
+    700
+   ],
+   "activity": "천 뭉치를 안고 토리 말을 듣는다.",
+   "days": [
+    2,
+    3,
+    9,
+    10
+   ],
+   "world_width": 1920
+  },
+  {
+   "id": "inn_madam_tap",
+   "person": "resident_madam",
+   "pose": "life_tap_ledger",
+   "location": "inn",
+   "periods": [
+    2
+   ],
+   "replace_poses": [
+    "neutral"
+   ],
+   "target": [
+    300,
+    700
+   ],
+   "activity": "거래 장부를 손가락으로 톡톡 친다.",
+   "world_width": 1920
+  },
+  {
+   "id": "dining_nabi_ladle",
+   "person": "nabi",
+   "pose": "life_ladle_pot",
+   "location": "dining",
+   "periods": [
+    0,
+    1,
+    2
+   ],
+   "replace_poses": [
+    "action_2",
+    "action_1",
+    "neutral"
+   ],
+   "target": [
+    1060,
+    475
+   ],
+   "activity": "식탁 끝 솥에서 국을 뜬다.",
+   "world_width": 2160
+  },
+  {
+   "id": "dining_mulgyeol_fire",
+   "person": "resident_mulgyeol",
+   "pose": "life_warm_hands_fire",
+   "location": "dining",
+   "periods": [
+    2
+   ],
+   "replace_poses": [
+    "neutral"
+   ],
+   "target": [
+    330,
+    565
+   ],
+   "activity": "강에서 올라와 벽난로에 손을 쬔다.",
+   "days": [
+    2,
+    5,
+    9,
+    12
+   ],
+   "world_width": 2160
+  },
+  {
+   "id": "school_teacher_board",
+   "person": "resident_teacher",
+   "pose": "life_chalk_board",
+   "location": "school",
+   "periods": [
+    0,
+    1,
+    2
+   ],
+   "replace_poses": [
+    "map27_sc_1",
+    "activity",
+    "neutral"
+   ],
+   "target": [
+    150,
+    470
+   ],
+   "activity": "칠판에 수업 내용을 쓴다.",
+   "world_width": 1800
+  },
+  {
+   "id": "school_yeoni_bundle",
+   "person": "resident_yeoni",
+   "pose": "life_hold_bundle",
+   "location": "school",
+   "periods": [
+    1
+   ],
+   "replace_poses": [
+    "neutral",
+    "activity"
+   ],
+   "target": [
+    1150,
+    600
+   ],
+   "activity": "아이들 옷 수선거리를 안고 왔다.",
+   "days": [
+    7,
+    14
+   ],
+   "world_width": 1800
+  },
+  {
+   "id": "school_tok_stove",
+   "person": "resident_tok",
+   "pose": "life_fix_stove",
+   "location": "school",
+   "periods": [
+    2
+   ],
+   "replace_poses": [
+    "neutral"
+   ],
+   "target": [
+    800,
+    600
+   ],
+   "activity": "난로 문을 열고 손본다.",
+   "days": [
+    12,
+    14
+   ],
+   "world_width": 1800
+  },
+  {
+   "id": "school_nubi_fold",
+   "person": "resident_nubi",
+   "pose": "life_fold_linen",
+   "location": "school",
+   "periods": [
+    2
+   ],
+   "replace_poses": [
+    "map27_in_1",
+    "neutral"
+   ],
+   "target": [
+    1300,
+    610
+   ],
+   "activity": "긴 의자에서 이불을 갠다.",
+   "days": [
+    12,
+    14
+   ],
+   "world_width": 1800
+  },
+  {
+   "id": "school_bori_stack",
+   "person": "resident_bori",
+   "pose": "life_stack_wood",
+   "location": "school",
+   "periods": [
+    0
+   ],
+   "replace_poses": [
+    "neutral",
+    "living_firewood"
+   ],
+   "target": [
+    820,
+    630
+   ],
+   "activity": "난로 옆 장작을 쌓는다.",
+   "days": [
+    12,
+    14
+   ],
+   "world_width": 1800
+  },
+  {
+   "id": "workshop_buri_tools",
+   "person": "buri",
+   "pose": "life_sort_tools",
+   "location": "workshop",
+   "periods": [
+    0,
+    1,
+    2
+   ],
+   "replace_poses": [
+    "action_1",
+    "action_2"
+   ],
+   "target": [
+    620,
+    520
+   ],
+   "activity": "작업대에 공구를 펼쳐 정리한다.",
+   "occlusion": "layout",
+   "world_width": 1800
+  },
+  {
+   "id": "workshop_yeoni_bundle",
+   "person": "resident_yeoni",
+   "pose": "life_hold_bundle",
+   "location": "workshop",
+   "periods": [
+    1
+   ],
+   "replace_poses": [
+    "neutral",
+    "activity"
+   ],
+   "target": [
+    300,
+    600
+   ],
+   "activity": "수선거리를 안고 공방 문 안에 섰다.",
+   "days": [
+    1,
+    5,
+    12
+   ],
+   "world_width": 1800
+  },
+  {
+   "id": "workshop_nubi_fold",
+   "person": "resident_nubi",
+   "pose": "life_fold_linen",
+   "location": "workshop",
+   "periods": [
+    1
+   ],
+   "replace_poses": [
+    "neutral"
+   ],
+   "target": [
+    470,
+    655
+   ],
+   "activity": "빨래 바구니의 천을 갠다.",
+   "days": [
+    1
+   ],
+   "world_width": 1800
+  },
+  {
+   "id": "clinic_seori_desk",
+   "person": "resident_seori",
+   "pose": "life_write_desk_seated",
+   "location": "clinic",
+   "periods": [
+    0,
+    1,
+    2
+   ],
+   "replace_poses": [
+    "inspect_paper_threequarter_front",
+    "living_notes",
+    "neutral"
+   ],
+   "target": [
+    820,
+    495
+   ],
+   "activity": "책상에 앉아 검사 기록을 적는다.",
+   "world_width": 1920
+  },
+  {
+   "id": "clinic_solbang_herb",
+   "person": "resident_solbang",
+   "pose": "work_herb_bundle",
+   "location": "clinic",
+   "periods": [
+    1
+   ],
+   "replace_poses": [
+    "neutral"
+   ],
+   "target": [
+    300,
+    620
+   ],
+   "activity": "약장 앞에서 약초 다발을 납품한다.",
+   "days": [
+    1,
+    3,
+    5,
+    7,
+    10,
+    12,
+    14
+   ],
+   "world_width": 1920
+  },
+  {
+   "id": "store_madam_tap",
+   "person": "resident_madam",
+   "pose": "life_tap_ledger",
+   "location": "store",
+   "periods": [
+    1,
+    2
+   ],
+   "replace_poses": [
+    "neutral"
+   ],
+   "target": [
+    1270,
+    700
+   ],
+   "activity": "저울 탁자 앞에서 돌 값을 흥정한다.",
+   "world_width": 1920
+  },
+  {
+   "id": "store_nero_wait",
+   "person": "resident_nero",
+   "pose": "life_wait_hands_pocket",
+   "location": "store",
+   "periods": [
+    1
+   ],
+   "replace_poses": [
+    "activity",
+    "neutral"
+   ],
+   "target": [
+    215,
+    690
+   ],
+   "activity": "일거리가 있나 문가에서 기다린다.",
+   "world_width": 1920
+  },
+  {
+   "id": "store_kkwak_bucket",
+   "person": "resident_kkwak",
+   "pose": "life_carry_bucket",
+   "location": "store",
+   "periods": [
+    0
+   ],
+   "replace_poses": [
+    "neutral"
+   ],
+   "target": [
+    1260,
+    700
+   ],
+   "activity": "물통을 사러 와 통 앞에 섰다.",
+   "world_width": 1920
+  },
+  {
+   "id": "store_kongi_peek",
+   "person": "resident_kongi",
+   "pose": "life_peek_listen",
+   "location": "store",
+   "periods": [
+    0
+   ],
+   "replace_poses": [
+    "activity",
+    "neutral"
+   ],
+   "target": [
+    360,
+    705
+   ],
+   "activity": "어른들 말을 기웃거리며 듣는다.",
+   "world_width": 1920
+  },
+  {
+   "id": "store_nubi_bundle",
+   "person": "resident_nubi",
+   "pose": "life_hold_bundle",
+   "location": "store",
+   "periods": [
+    2
+   ],
+   "replace_poses": [
+    "neutral"
+   ],
+   "target": [
+    1480,
+    700
+   ],
+   "activity": "세탁 비누를 사러 왔다.",
+   "min_day": 1,
+   "max_day": 10,
+   "world_width": 1920
+  },
+  {
+   "id": "post_seryeon_stamp",
+   "person": "seryeon",
+   "pose": "life_stamp_ledger",
+   "location": "post",
+   "periods": [
+    0
+   ],
+   "replace_poses": [
+    "action_1",
+    "action_2",
+    "chair_read",
+    "neutral"
+   ],
+   "target": [
+    1830,
+    475
+   ],
+   "activity": "접수대에서 접수 도장을 찍는다.",
+   "world_width": 2160,
+   "note": "우체국 낮·저녁은 옛 1280 배경(layout.periods 가 morning 뿐)이라 넓은 그림 좌표가 맞지 않는다. 아침만 건다."
+  },
+  {
+   "id": "post_eunho_parcel",
+   "person": "resident_eunho",
+   "pose": "life_hand_parcel",
+   "location": "post",
+   "periods": [
+    0
+   ],
+   "replace_poses": [
+    "living_prices",
+    "neutral"
+   ],
+   "target": [
+    1400,
+    680
+   ],
+   "activity": "소포를 접수대 너머로 건넨다.",
+   "days": [
+    1
+   ],
+   "world_width": 2160
+  },
+  {
+   "id": "market_madam_pick",
+   "person": "resident_madam",
+   "pose": "life_pick_goods",
+   "location": "market",
+   "periods": [
+    0
+   ],
+   "replace_poses": [
+    "neutral"
+   ],
+   "target": [
+    1290,
+    600
+   ],
+   "activity": "치즈 가게 좌판에서 물건을 고른다.",
+   "world_width": 2160
+  },
+  {
+   "id": "market_tori_pick",
+   "person": "resident_tori",
+   "pose": "life_pick_goods",
+   "location": "market",
+   "periods": [
+    0
+   ],
+   "replace_poses": [
+    "activity",
+    "neutral"
+   ],
+   "target": [
+    1850,
+    620
+   ],
+   "activity": "천 가게에서 천을 고른다.",
+   "days": [
+    2,
+    9
+   ],
+   "world_width": 2160
+  },
+  {
+   "id": "market_kongi_peek",
+   "person": "resident_kongi",
+   "pose": "life_peek_listen",
+   "location": "market",
+   "periods": [
+    1
+   ],
+   "replace_poses": [
+    "activity",
+    "neutral"
+   ],
+   "target": [
+    1230,
+    660
+   ],
+   "activity": "가게 사이에서 소문을 듣는다.",
+   "world_width": 2160
+  },
+  {
+   "id": "market_ppul_knots",
+   "person": "resident_ppul",
+   "pose": "life_count_knots",
+   "location": "market",
+   "periods": [
+    0,
+    1
+   ],
+   "replace_poses": [
+    "activity",
+    "neutral"
+   ],
+   "target": [
+    1000,
+    650
+   ],
+   "activity": "장을 둘러보며 매듭 끈을 센다.",
+   "days": [
+    2,
+    4,
+    9
+   ],
+   "world_width": 2160
+  },
+  {
+   "id": "river_nero_bucket",
+   "person": "resident_nero",
+   "pose": "life_carry_bucket",
+   "location": "river",
+   "periods": [
+    0
+   ],
+   "replace_poses": [
+    "activity",
+    "neutral"
+   ],
+   "target": [
+    300,
+    700
+   ],
+   "activity": "바위 아래서 물을 긷는다.",
+   "world_width": 2160
+  },
+  {
+   "id": "forest_siluk_sack",
+   "person": "resident_siluk",
+   "pose": "life_carry_sack",
+   "location": "forest",
+   "periods": [
+    0
+   ],
+   "replace_poses": [
+    "neutral"
+   ],
+   "target": [
+    1700,
+    700
+   ],
+   "activity": "자루를 메고 숲길을 간다.",
+   "min_day": 2,
+   "max_day": 12,
+   "world_width": 2160
+  },
+  {
+   "id": "forest_badook_patrol",
+   "person": "resident_badook",
+   "pose": "life_patrol_day",
+   "location": "forest",
+   "periods": [
+    1
+   ],
+   "replace_poses": [
+    "neutral"
+   ],
+   "target": [
+    1900,
+    705
+   ],
+   "activity": "등 없이 낮 순찰을 돈다.",
+   "world_width": 2160
+  },
+  {
+   "id": "forest_bori_chop",
+   "person": "resident_bori",
+   "pose": "life_chop_wood",
+   "location": "forest",
+   "periods": [
+    0
+   ],
+   "replace_poses": [
+    "neutral"
+   ],
+   "target": [
+    960,
+    712
+   ],
+   "activity": "나무 앞에서 장작을 팬다.",
+   "days": [
+    7
+   ],
+   "world_width": 2160
+  },
+  {
+   "id": "forest_kalbaram_walk",
+   "person": "resident_kalbaram",
+   "pose": "life_walk_in",
+   "location": "forest",
+   "periods": [
+    0,
+    1,
+    2
+   ],
+   "replace_poses": [
+    "neutral"
+   ],
+   "target": [
+    1450,
+    706
+   ],
+   "activity": "아내를 찾아 숲을 돈다.",
+   "world_width": 2160
+  }
+ ]
+}

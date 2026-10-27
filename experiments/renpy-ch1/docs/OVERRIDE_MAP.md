@@ -59,7 +59,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 21 | 191 | `systems/room13_q1_arguments.rpy:61` | _r13_sling_confidence_present |
 | 22 | 206 | `systems/room13_sling_confidence.rpy:74` |  |
 
-## `r13_stage_people` (16층)
+## `r13_stage_people` (17층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
@@ -73,12 +73,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 8 | 179 | `systems/room13_spatial_contacts.rpy:38` | _r13_balance_stage |
 | 9 | 180 | `systems/room13_investigation_balance.rpy:43` | _r13_life_groups_stage |
 | 10 | 181 | `systems/room13_life_groups.rpy:73` | _r13_story_pose_stage |
-| 11 | 182 | `systems/room13_story_pose.rpy:27` | _r13_poses_a_stage |
-| 12 | 186 | `systems/room13_resident_poses_a.rpy:77` | _r13_v111_stage_people |
-| 13 | 301 | `room13_v111.rpy:154` | _r13_order_stage_people |
-| 14 | 336 | `room13_v111_field_layout.rpy:46` | _r13_clear_stage_people |
-| 15 | 337 | `room13_v111_field_layout.rpy:131` | _r13_field_dot_stage |
-| 16 | 340 | `systems/room13_field_dot.rpy:57` |  |
+| 11 | 182 | `systems/room13_story_pose.rpy:27` | _r13_field_life_stage |
+| 12 | 183 | `systems/room13_field_life.rpy:59` | _r13_poses_a_stage |
+| 13 | 186 | `systems/room13_resident_poses_a.rpy:77` | _r13_v111_stage_people |
+| 14 | 301 | `room13_v111.rpy:154` | _r13_order_stage_people |
+| 15 | 336 | `room13_v111_field_layout.rpy:46` | _r13_clear_stage_people |
+| 16 | 337 | `room13_v111_field_layout.rpy:131` | _r13_field_dot_stage |
+| 17 | 340 | `systems/room13_field_dot.rpy:57` |  |
 
 ## `r13_object_visible` (11층)
 
