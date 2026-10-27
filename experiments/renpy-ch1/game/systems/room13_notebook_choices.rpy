@@ -27,7 +27,7 @@ init 81 python:
     def r13_notebook_choice_surface(width,hovered=False):
         return r13_sticker_button(focused=hovered)
 
-    def r13_notebook_choice_geometry(entries,width,heading,subline=None):
+    def r13_notebook_choice_geometry(entries,width,heading,subline=None,_retry=True):
         size=r13_read_size(36,38)
         text=Text(heading,font=R13_UI_BOLD_FONT,size=size,xsize=width-102,line_spacing=4)
         measured=int(renpy.render(text,width-102,720,0,0).get_size()[1])
@@ -38,9 +38,14 @@ init 81 python:
         header=max(112,measured+44)
         cap=max(120,460-header-28)
         pages=r13_notebook_choice_pages(entries,width,cap)
+        if len(pages)>1 and subline and _retry:
+            # 작은 줄 때문에 선택지가 두 쪽으로 갈리면(13일 가족 제안, 좁은 판) 작은 줄을 뺀다.
+            # 한 쪽에 다 보이는 것이 직전 대사보다 중요하다.
+            header,pages,_=r13_notebook_choice_geometry(entries,width,heading,None,False)
+            return header,pages,None
         if len(pages)>1:
             pages=r13_notebook_choice_pages(entries,width,max(120,cap-(100 if r13_touch_ui() else 66)))
-        return header,pages
+        return header,pages,subline
 
 screen r13_notebook_choice_list(person,pose,title,entries,ready,return_action=None,caption="",carriage=False):
     default page=0
@@ -52,7 +57,7 @@ screen r13_notebook_choice_list(person,pose,title,entries,ready,return_action=No
     $ issue=r13_choice_issue(entries) if title=="선택" else None
     $ heading=issue or caption or (context[1] if context else "어떻게 할까?" if title=="선택" else title)
     $ subline=r13_choice_issue_subline(caption,context,20 if width<900 else 34) if issue else None
-    $ header_height,pages=r13_notebook_choice_geometry(entries,width,heading,subline)
+    $ header_height,pages,subline=r13_notebook_choice_geometry(entries,width,heading,subline)
     $ page=min(page,len(pages)-1)
     $ visible=pages[page]
     $ rows_height=sum(row[1] for row in visible)+max(0,len(visible)-1)*16

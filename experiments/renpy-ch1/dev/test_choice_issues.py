@@ -103,9 +103,11 @@ class NotebookHeaderWithIssue(unittest.TestCase):
             geometry=function('systems/room13_notebook_choices.rpy','r13_notebook_choice_geometry',ns)
             entries=[('가족 셋이 수락하고 물러난다',object(),False),('거절하고 현장에 남는다',object(),False),('조건을 더 묻는다',object(),False)]
             issue='가족 셋이 물러날까, 현장에 남을까 하는 자리'
-            plain,_=geometry(entries,560,issue)
-            header,pages=geometry(entries,560,issue,'까로 · 그러네. 조건이 하나 더 있소')
-            self.assertGreater(header,plain)
+            plain,_,_=geometry(entries,560,issue)
+            header,pages,sub=geometry(entries,560,issue,'까로 · 그러네. 조건이 하나 더 있소')
+            # 작은 줄이 남았으면 머리 칸이 자라고, 쪽이 갈려서 작은 줄을 뺐으면 머리 칸은 쟁점만의 높이다.
+            if sub:self.assertGreater(header,plain)
+            else:self.assertEqual(header,plain)
             self.assertEqual([e for page in pages for e,h in page],entries)
             for page in pages:
                 content=sum(h for e,h in page)+16*(len(page)-1)
