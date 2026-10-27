@@ -354,6 +354,10 @@ init 59 python:
         staged=[]
         for index,person in enumerate(people):
             pose=r13_living_pose(person,location,period)
+            # 2026-10-27 14일 자동 플레이 4일: 밤이(박쥐)의 기본·생각·action_1 은 천장에 매달린 그림이라 고리(hooks)가 없는
+            # 바깥 장소(광장·초소 앞·밝은 초소)에서는 화면 위 (514,48) 에 거꾸로 걸려 머리가 화면 밖이었다. 고리가 없는 곳에서는
+            # 바닥에 앉아 수첩을 쓰는 action_2 로 선다(매달림 그림은 바로 세우지 않는다는 규칙 그대로).
+            if person=="bami" and person not in layout.get("hooks",{}) and location not in ("hall","inn") and (R13_ACTING.get(person,{}).get(pose,{}).get("contact")=="hanging" or pose not in R13_ACTING.get(person,{})):pose="action_2"
             # The post has no free floor beyond its reserved chair. Visitors
             # listen standing behind the counter; their floor activities are
             # shown at other scheduled locations, never on this tabletop.
