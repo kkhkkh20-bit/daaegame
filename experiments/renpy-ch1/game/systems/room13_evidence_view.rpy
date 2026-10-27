@@ -366,8 +366,8 @@ screen r13_evidence_grid(entries,detail,page,owner,pair=None,pair_slot=1,archive
     # Full names beside their own artwork. Five 88px rows remain touchable at 844x390.
     $ pitch_y=88
     $ thumb=60
-    # 2026-10-27 시안 확인: 목록 칸은 높이가 고정이라 2줄 이름이 칸 밖으로 나왔다. 목록 이름만 24 를 넘기지 않는다.
-    $ label_size=min(24,(r13_type("small") if R13_TYPE_V2 else r13_read_size(22,24) if touch else r13_read_size(18,22)))
+    # 2026-10-27 시안 확인: 목록 칸은 높이가 고정이라 2줄 이름이 칸 밖으로 나왔다. 목록 이름만 22 를 넘기지 않는다.
+    $ label_size=min(22,(r13_type("small") if R13_TYPE_V2 else r13_read_size(22,24) if touch else r13_read_size(18,22)))
     $ actual_page=r13_record_page(entries,page)
     $ page_size=r13_record_page_size()
     $ visible=entries[actual_page*page_size:][:page_size]
