@@ -144,4 +144,4 @@ screen r13_notebook_choice_list(person,pose,title,entries,ready,return_action=No
             key ("K_%d"%(i+1)) action r13_safe_question_action(command)
             key ("K_KP%d"%(i+1)) action r13_safe_question_action(command)
     if return_action is not None:
-        use r13_notebook_topic_action(1044,152,"돌아가기",return_action,ready,icon="icon_arrow_left_bold")
+        use r13_notebook_topic_action(1044,152,"돌아가기",return_action,ready,icon=None)

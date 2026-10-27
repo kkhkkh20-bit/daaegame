@@ -46,7 +46,8 @@ define R13_EVIDENCE_NAME_WIDTH = 190
 define R13_EVIDENCE_CARD_PAD = 10
 
 screen r13_evidence_card(key,caption="",conversation=False,notice=False,compact=False):
-    $ card_center=(120,92) if notice else R13_EVIDENCE_CARD_CENTER
+    # 2026-10-27: 왼쪽 위 획득 알림이 현장 상단 지도·기록 버튼(y 40~75)을 덮었다. 그 아래로 내린다.
+    $ card_center=(120,166) if notice else R13_EVIDENCE_CARD_CENTER
     style_prefix "r13"
     if compact:
         # 2026-10-27: 자료 대조 패널(50,100)-(1230,670)이 떠 있는 동안은 왼쪽 위 카드가 주장 제목을 덮는다.

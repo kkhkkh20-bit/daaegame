@@ -54,9 +54,9 @@ screen r13_notebook_topic_action(x,w,caption,command,ready=True,primary=False,ic
 
 screen r13_notebook_topic_tools(ready,person,present_action):
     if present_action is not None:
-        use r13_notebook_topic_action(572,146,"자료 제시",present_action,ready,True,"icon_document")
-    use r13_notebook_topic_action(726,146,"기록",Show("r13_records",target=person,present_action=present_action),ready,icon="icon_book_open")
-    use r13_notebook_topic_action(880,146,"더보기",Show("r13_more_tools"),ready,icon="b_icon_more")
+        use r13_notebook_topic_action(572,146,"자료 제시",present_action,ready,True,None)
+    use r13_notebook_topic_action(726,146,"기록",Show("r13_records",target=person,present_action=present_action),ready,icon=None)
+    use r13_notebook_topic_action(880,146,"더보기",Show("r13_more_tools"),ready,icon=None)
 
 screen r13_side_question_list(person,pose,entries,ready,return_action=None,caption=""):
     default page=0
@@ -71,8 +71,8 @@ screen r13_side_question_list(person,pose,entries,ready,return_action=None,capti
     add Transform(Crop((20,16,23,32),r13_asset_path("file:assets/ui-b-question/b_icon_acorn.png")),xysize=(29,40)) xpos 578 ypos 174
     # 2026-10-27 타이포 시안: 제목과 인물 이름은 같은 subtitle 단계(2026-10-17 같은 크기 정렬 유지).
     text (caption or "묻고 싶은 이야기") xpos 618 ypos 176 xsize 340 size (r13_type("subtitle") if R13_TYPE_V2 else 30) color (r13_type_color("inverse") if R13_TYPE_V2 else "#fff4df") font R13_UI_BOLD_FONT
-    add Transform(r13_asset_path("file:assets/ui-b-question/b_lineart_book_corner.png"),xysize=(174,67),alpha=.45) xpos 1024 ypos 156
-    text ("질문 %d개"%len(entries) if len(pages)==1 else "%d / %d쪽"%(page+1,len(pages))) xpos 1100 ypos 204 size (r13_type("small") if R13_TYPE_V2 else 17) color (r13_type_color("muted") if R13_TYPE_V2 else "#816b53") font R13_UI_BOLD_FONT
+    # 2026-10-27 소유자: 「질문 N개」가 오른쪽 위 테이프·모서리 그림과 겹쳤다. 모서리 그림은 빼고 개수는 제목 띠 오른쪽 끝에 둔다.
+    text ("질문 %d개"%len(entries) if len(pages)==1 else "%d / %d쪽"%(page+1,len(pages))) xpos 966 xanchor 1.0 ypos 184 size (r13_type("small") if R13_TYPE_V2 else 17) color (r13_type_color("inverse") if R13_TYPE_V2 else "#fff4df") font R13_UI_BOLD_FONT
     # Name stays next to the speaker, clear of the notebook and their face.
     add Transform(r13_asset_path("file:assets/ui-b-question/nameplate_paper.png"),xysize=(246,94)) xpos 78 ypos 566
     add Transform(Crop((20,16,23,32),r13_asset_path("file:assets/ui-b-question/b_icon_acorn.png")),xysize=(25,34)) xpos 112 ypos 595
@@ -117,7 +117,7 @@ screen r13_side_question_list(person,pose,entries,ready,return_action=None,capti
             key ("K_%d"%(i+1)) action r13_safe_question_action(command)
             key ("K_KP%d"%(i+1)) action r13_safe_question_action(command)
     if return_action is not None:
-        use r13_notebook_topic_action(1034,146,"돌아가기",return_action,ready,icon="icon_arrow_left_bold")
+        use r13_notebook_topic_action(1034,146,"돌아가기",return_action,ready,icon=None)
 
 
 # 질문 한 줄: 올리면 살짝 오른쪽으로 나와 「누를 수 있다」를 보이고, 내리면 제자리.

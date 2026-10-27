@@ -298,11 +298,13 @@ screen r13_fork_screen():
             background R13PaperFrame()
             action SetScreenVariable('fate_open',None) alt R13_FORK_FATE_LINE
             text R13_FORK_FATE_LINE size small color '#263b52' font R13_UI_BOLD_FONT xsize 208
-    add r13_asset_path("file:"+(R13_NIGHT_UI+'diamond.png')) xpos 114 ypos (by-18)
-    add Solid('#c9a86a99') xpos 114 ypos (by-14) xsize (R13_NB_RIGHT-114) ysize 1
-    text '지나온 길을 모아, 다음 이야기를 찾아요.' xpos 114 ypos (by+ch//2) yanchor .5 size small color '#756f66' font R13_UI_BOLD_FONT
+    # 2026-10-27: 안내 글과 지난 결말 띠가 종이 가장자리(646) 아래에 걸쳤다. 버튼 줄은 그대로 두고 이 띠만 종이 안(640 위)으로 올린다.
+    $ fy = R13_NB_TEXT_BOTTOM-ch-4
+    add r13_asset_path("file:"+(R13_NIGHT_UI+'diamond.png')) xpos 114 ypos (fy-18)
+    add Solid('#c9a86a99') xpos 114 ypos (fy-14) xsize (R13_NB_RIGHT-114) ysize 1
+    text '지나온 길을 모아, 다음 이야기를 찾아요.' xpos 114 ypos (fy+ch//2) yanchor .5 size small color '#756f66' font R13_UI_BOLD_FONT
     viewport:
-        area (470,by,R13_NB_RIGHT-R13_NB_BUTTON_W-2*R13_NB_GAP-160-12-470,ch) draggable True mousewheel 'horizontal'
+        area (470,fy,R13_NB_RIGHT-470,ch) draggable True mousewheel 'horizontal'
         hbox:
             spacing 16 yalign .5
             for ending,record in sorted((persistent.r13_fork_endings or {}).items()):
@@ -312,7 +314,7 @@ screen r13_fork_screen():
                     vbox:
                         yalign .5
                         text ('지난 결말 · %d회차'%record['run']) size small color '#756f66' font R13_UI_BOLD_FONT
-                        text R13_FORK_ENDINGS.get(ending,'') size small color '#354151' font R13_UI_BOLD_FONT
+                        text R13_FORK_ENDINGS.get(ending,'') size small color '#354151' font R13_UI_BOLD_FONT xsize 220
     fixed:
         xpos (R13_NB_RIGHT-R13_NB_BUTTON_W-2*R13_NB_GAP-160) ypos by xysize (80,ch)
         use r13_control('‹',None,SetScreenVariable('first',max(0,first-1)),width=80,enabled=first>0,control_id='r13_fork_prev')
