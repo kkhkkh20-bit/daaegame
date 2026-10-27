@@ -105,6 +105,27 @@ init 350 python:
     def r13_pw_main_label(mode):
         return "비교 마치기" if mode=="compare" else "근거 제시"
 
+    def r13_pw_pages(sections,cols,cap,card_h,header_h,gap=8,pager_h=0):
+        """목록을 눈에 보이는 쪽으로 나눈다(소유자: 긴 목록은 명시적 쪽 넘김, 숨은 스크롤 없음).
+        2026-10-27 14일 자동 플레이: 1일 13호 「두 편지를 나란히 본다」에서 자료 7개 중 4개만 보이고 「방의 메모」가
+        숨은 스크롤 아래에 있어 제출이 막혔다. 줄 단위(묶음 제목 한 줄, 카드 한 줄)로 높이를 재서 한 쪽에 들어가는 만큼만
+        담는다. 한 쪽을 넘으면 쪽 넘김 줄 높이(pager_h)만큼 줄여 다시 나눈다. 반환: [[("header",글)|("cards",[키…]),…],…]."""
+        rows=[]
+        for header,keys in sections:
+            if header:rows.append(("header",header,header_h))
+            for i in range(0,len(keys),cols):rows.append(("cards",list(keys[i:i+cols]),card_h))
+        def pack(limit):
+            pages=[];page=[];used=0
+            for kind,value,height in rows:
+                need=height+(gap if page else 0)
+                if page and used+need>limit:
+                    pages.append(page);page=[];used=0;need=height
+                page.append((kind,value));used+=need
+            return pages+([page] if page else []) or [[]]
+        pages=pack(cap)
+        if len(pages)>1 and pager_h:pages=pack(cap-pager_h-gap)
+        return pages
+
 # store 에 기대는 도우미와 화면.
 default r13_pw_views = {}   # 쟁점(claim)별 UI 기억: 탭·열어 본 자료·발언 접힘. 구 저장에는 없어도 기본값으로 연다.
 
@@ -441,6 +462,7 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
     $ remembered=(r13_pw_views or {}).get(claim,{})
     default tab=remembered.get("tab","all")
     default detail=remembered.get("detail")
+    default page=0
     # 2026-10-27 외부 리뷰 R03(확인): 휴대폰 844x390 「나란히 보기」에서 본문 읽기 영역이 약 95px 뿐이었다. 휴대폰은 발언 틀을 접은 채 열어
     # 본문이 그만큼 늘어나게 한다(접힘이면 r13_pw_layout 의 quote_h 가 0). PC 는 왼쪽 열이라 그대로. 펼친 기억은 그대로 따른다.
     default quote_open=remembered.get("quote_open",not r13_touch_ui())
@@ -508,7 +530,7 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
                 style "r13ev_chip_button" text_style "r13ev_chip_button_text"
                 xpos tx ypos L["top"] xsize tw ysize L["tab_h"]
                 text_size min(small,(tw-12)//max(1,len(tab_title))) selected (tab_key==tab)
-                action [SetScreenVariable("tab",tab_key)]+([SetScreenVariable("detail",None)] if touch else []) sensitive ready
+                action [SetScreenVariable("tab",tab_key),SetScreenVariable("page",0)]+([SetScreenVariable("detail",None)] if touch else []) sensitive ready
     # 본문 ------------------------------------------------------------
     if pair_open:
         use r13_pw_pair(live_pair,L["list_x"],L["body_top"],(L["right"]-L["list_x"]),L["body_h"],observe,ready)
@@ -516,23 +538,40 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
         use r13_pw_detail(claim,detail,mode,L["detail_x"],L["body_top"],L["detail_w"],L["body_h"],origin_open,(mode=="proof" and len(owned)>1),ready)
     else:
         $ cols=L["cols"]
-        $ card_w=(L["list_w"]-20-8*(cols-1))//cols
-        viewport:
+        $ card_w=(L["list_w"]-8*(cols-1))//cols
+        $ pager_h=(48 if touch else 36)
+        $ pages=r13_pw_pages(sections,cols,L["body_h"],L["card_h"],small+6,8,pager_h)
+        $ page=min(page,len(pages)-1)
+        fixed:
             id "r13_pw_list"
-            area (L["list_x"],L["body_top"],L["list_w"],L["body_h"]) mousewheel True draggable True scrollbars "vertical"
-            vscrollbar_unscrollable "hide"
+            area (L["list_x"],L["body_top"],L["list_w"],L["body_h"])
             vbox:
-                xsize (L["list_w"]-20) spacing 8
-                for header,keys in sections:
-                    if header:
-                        text header size small color accent font R13_UI_BOLD_FONT xsize (L["list_w"]-20)
-                    for row in range(0,len(keys),cols):
+                xsize L["list_w"] spacing 8
+                for kind,value in pages[page]:
+                    if kind=="header":
+                        text value size small color accent font R13_UI_BOLD_FONT xsize L["list_w"]
+                    else:
                         hbox:
                             spacing 8
-                            for k in keys[row:row+cols]:
+                            for k in value:
                                 use r13_pw_card(claim,k,mode,card_w,L["card_h"],(k in chosen),(k==detail and not touch),ready)
                 if not any(keys for _,keys in sections):
-                    text ("아직 모은 자료가 없습니다." if not owned else "이 분류에 해당하는 자료가 없습니다.") size small color muted font R13_UI_BOLD_FONT xsize (L["list_w"]-20)
+                    text ("아직 모은 자료가 없습니다." if not owned else "이 분류에 해당하는 자료가 없습니다.") size small color muted font R13_UI_BOLD_FONT xsize L["list_w"]
+            if len(pages)>1:
+                # 쪽 넘김 줄: 질문 화면과 같은 꼴(← 이전 · N / M쪽 · 다음 →). 목록 칸 맨 아래에 둔다.
+                hbox:
+                    ypos (L["body_h"]-pager_h) xsize L["list_w"] ysize pager_h
+                    textbutton "← 이전":
+                        id "r13_pw_prev"
+                        xsize (L["list_w"]//3) ysize pager_h background None hover_background None
+                        text_color muted text_hover_color accent text_insensitive_color (r13_type_color("disabled")) text_font R13_UI_BOLD_FONT text_size small text_yalign .5 text_xalign 0.0 padding (4,0)
+                        action SetScreenVariable("page",page-1) sensitive ready and page>0
+                    text ("%d / %d쪽"%(page+1,len(pages))) xsize (L["list_w"]-2*(L["list_w"]//3)) ysize pager_h yalign .5 text_align .5 size small color muted font R13_UI_BOLD_FONT
+                    textbutton "다음 →":
+                        id "r13_pw_next"
+                        xsize (L["list_w"]//3) ysize pager_h background None hover_background None
+                        text_color muted text_hover_color accent text_insensitive_color (r13_type_color("disabled")) text_font R13_UI_BOLD_FONT text_size small text_yalign .5 text_xalign 1.0 padding (4,0)
+                        action SetScreenVariable("page",page+1) sensitive ready and page<len(pages)-1
         if not touch:
             if detail:
                 use r13_pw_detail(claim,detail,mode,L["detail_x"],L["body_top"],L["detail_w"],L["body_h"],origin_open,(mode=="proof" and len(owned)>1 and not pair_waiting),ready)

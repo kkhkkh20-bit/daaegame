@@ -106,4 +106,26 @@ class ProofWorkspacePure(unittest.TestCase):
         for name in ('r13_pw_toggle','r13_pw_replace','r13_pw_remove','r13_pw_submit_ok'):
             self.assertNotIn('tab',inspect.signature(self.ns[name]).parameters)
 
+class ProofWorkspacePages(unittest.TestCase):
+    """2026-10-27: 목록은 숨은 스크롤이 아니라 보이는 쪽으로 나눈다. 자료가 모두 어느 쪽엔가 한 번씩 들어간다."""
+    def setUp(self):
+        self.pages=load_pure()['r13_pw_pages']
+    def test_seven_cards_on_pc_make_visible_pages(self):
+        keys=['V111:E%02d'%i for i in (1,2,3,4,5,6,30)]
+        pages=self.pages([(None,keys)],1,332,72,28,8,36)
+        self.assertGreater(len(pages),1)
+        self.assertEqual([k for page in pages for kind,v in page for k in v],keys)
+        for page in pages:
+            used=sum(72 for kind,v in page)+8*(len(page)-1)
+            self.assertLessEqual(used,332-36-8)
+    def test_short_list_is_one_page_without_pager(self):
+        pages=self.pages([(None,['a','b','c','d'])],1,332,72,28,8,36)
+        self.assertEqual(len(pages),1);self.assertEqual(pages[0],[('cards',['a']),('cards',['b']),('cards',['c']),('cards',['d'])])
+    def test_headers_count_and_two_columns(self):
+        pages=self.pages([('사건 하나',['a','b','c']),('사건 둘',['d'])],2,200,88,28,8,48)
+        self.assertEqual(pages[0][0],('header','사건 하나'));self.assertEqual(pages[0][1],('cards',['a','b']))
+        self.assertEqual([k for page in pages for kind,v in page if kind=='cards' for k in v],['a','b','c','d'])
+    def test_empty_sections_give_one_empty_page(self):
+        self.assertEqual(self.pages([(None,[])],1,332,72,28,8,36),[[]])
+
 if __name__=='__main__':unittest.main()
