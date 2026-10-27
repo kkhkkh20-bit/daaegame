@@ -19,7 +19,9 @@ TOUCHED=['screens.rpy','systems/room13_night_ui.rpy','systems/room13_notebook_ch
          'room13_week2_screens.rpy','systems/room13_choice_issues.rpy',
          # 2026-10-27 수첩 공통 틀: 틀·사람·메모·달력·소지품 탭과 서랍(기록 화면 안의 조각들).
          'systems/room13_notebook_shell.rpy','systems/room13_relations.rpy','systems/room13_learning.rpy',
-         'room13_inspection.rpy','systems/room13_evidence_drawer.rpy']
+         'room13_inspection.rpy','systems/room13_evidence_drawer.rpy',
+         # 2026-10-27 UX 인계서 D01~D03·D06: 자료 대조 통합 화면(수첩 틀의 r13_nb_* 도우미를 쓴다).
+         'systems/room13_proof_workspace.rpy']
 GUARDED=re.compile(r'r13_type(?:_color)?\("[a-z]+"\)\s+if R13_TYPE_V2 else ')
 HEAD=re.compile(r'^\s+if R13_TYPE_V2:\s*return r13_type(?:_color)?\("[a-z]+"\)')
 

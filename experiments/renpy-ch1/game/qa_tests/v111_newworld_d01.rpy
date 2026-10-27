@@ -66,25 +66,22 @@ testcase v111_nw_d01_gate_extra_letter:
     run Function(r13_grant,["V111:E01","V111:E02","V111:E03","V111:E04"],"qa")
     run Jump("r13_v111_gate_proof")
     pause 1.5
-    assert screen "r13_crisis_proof"
-    click "자료 고르기"
-    pause 0.5
-    click "QA V111:E01"
-    pause 0.8
-    click "QA V111:E02"
-    pause 0.8
-    click "QA V111:E03"
-    pause 0.8
-    click "QA V111:E04"
-    pause 0.8
-    click "QA 닫기"  # 0.20.7: the proof book stays open between picks
-    pause 0.5
-    click "선택한 근거 제출"
+    # 2026-10-27 UX 인계서 D01: 입구 논증은 통합 화면(systems/room13_proof_workspace.rpy). 체크로 고르고 「근거 제시」.
+    assert screen "r13_proof_workspace"
+    click id "r13_pw_check_E01"
+    pause 0.4
+    click id "r13_pw_check_E02"
+    pause 0.4
+    click id "r13_pw_check_E03"
+    pause 0.4
+    click id "r13_pw_check_E04"
+    pause 0.4
+    click id "r13_pw_submit"
     click pos (900,600) until screen "r13_hub" timeout 90
     assert eval (r13_v111_value("meeting:gate")=="win" and r13_v111_value("gate_daram_unlisted") is not True)
     assert eval (qa_nw_seen("그 편지는 이 확인에 필요 없소") and r13_v111_value("proof_given:함께 들어갈 근거를 고른다")==["V111:E01","V111:E02","V111:E03","V111:E04"])
     run Function(r13_edit,location="room13")
     run Jump("r13_v111_letter_retry")
     pause 1.0
-    click pos (900,600) until screen "r13_crisis_proof" timeout 60
+    click pos (900,600) until screen "r13_proof_workspace" timeout 60
     assert eval (qa_nw_seen("두 종이를 다시 골라 보자"))

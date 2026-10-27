@@ -341,11 +341,21 @@ label r13_v111_proof(key,correct,success,wrong=None,hint=None,review_return=None
     $ R13_CLAIMS[v111_claim]=dict(assertion=R13_PROOF_TITLES.get(key,key))
     $ room13["arguments"].setdefault(v111_claim,[])
 label r13_v111_proof_again:
-    call screen r13_crisis_proof(v111_claim,heading="기록 · 자료 대조",can_press=bool(hint) or key in R13_PROOF_RANGE,need_evidence=True,leave_label="자료 다시 보기",chances=r13_v111_proof_chances(key),investigate=bool(review_return))
+    # 2026-10-27 UX 인계서 D01~D03·D06: 시범 쟁점(systems/room13_proof_workspace.rpy R13_PW_CONTEXT)은 통합 화면.
+    # 반환값("argue"/"press"/"investigate"/("remove",키)/("toggle",키))은 아래 기존 분기로 그대로 흐른다.
+    # 그 밖의 쟁점과 옛 캠페인은 기존 자료 대조 패널 + 자료 고르기 책(r13_v111_proof_pick)이다.
+    if r13_pw_active(key):
+        call screen r13_proof_workspace(v111_claim,key,can_press=bool(hint) or key in R13_PROOF_RANGE,investigate=bool(review_return),chances=r13_v111_proof_chances(key))
+    else:
+        call screen r13_crisis_proof(v111_claim,heading="기록 · 자료 대조",can_press=bool(hint) or key in R13_PROOF_RANGE,need_evidence=True,leave_label="자료 다시 보기",chances=r13_v111_proof_chances(key),investigate=bool(review_return))
     if _return=="investigate" and review_return:
         return review_return
     if _return=="present":
         jump r13_v111_proof_pick
+    if isinstance(_return,tuple) and len(_return)==2 and _return[0]=="toggle" and _return[1] in room13["evidence"]:
+        # 통합 화면의 체크(화면 안에서 r13_pw_toggle_action 이 처리하지만, 반환으로 와도 같은 규칙). 기회를 쓰지 않는다.
+        $ v111_copy=winter_copy.deepcopy(room13); v111_copy["arguments"][v111_claim]=r13_pw_toggle(v111_copy["arguments"][v111_claim],_return[1],room13["evidence"],(r13_pw_context(key) or {}).get("mode","proof"))[0]; room13=v111_copy
+        jump r13_v111_proof_again
     if isinstance(_return,tuple) and len(_return)==2 and _return[0]=="remove":
         # 0.20.7 (Codex A02): a record taken back before it is argued; no chance is spent.
         $ v111_copy=winter_copy.deepcopy(room13); v111_copy["arguments"][v111_claim]=[k for k in v111_copy["arguments"][v111_claim] if k!=_return[1]]; room13=v111_copy
