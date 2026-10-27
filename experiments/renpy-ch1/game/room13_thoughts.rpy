@@ -48,6 +48,17 @@ init 63 python:
         ("post","scarf"):[("daram","목도리 엄청 길다. 두 바퀴 감아도 남겠어."),("dad","그럼 주인도 키가 크겠지. ……아마.")],
         ("workshop","bolts"):[("daram","나사가 크기대로 줄 섰어. 학교 같아."),("dad","그럼 제일 작은 게 너다."),("daram","그럼 제일 큰 건 아빠네. 배 때문에.")],
         ("workshop","tools"):[("daram","벽에 도구 그림자가 남았어."),("dad","자주 쓰는 자리라 색이 바랜 거야. 우리 집 국자 걸던 자리처럼.")],
+        # 2026-10-27 소유자 "해줘": 4일 이후 장소. 진료소 병·기록, 학교 담요·장작, 창고 장부·자루, 온실 표식·기계,
+        # 시설(사람을 넘겨주는 곳)과 제단(마지막 회의)은 사건과 닿거나 무거운 자리라 넣지 않았다.
+        ("clinic","bed"):[("daram","침대 옆에 빨간 줄이 있어. 당기면 뭐가 나와?"),("dad","사람이 와. 아프지 않으면 당기지 말고.")],
+        ("clinic","basin"):[("daram","물이 두 그릇이야. 하나는 손 씻고 하나는 세수?"),("dad","치료할 때 쓰는 거야. 우리는 눈으로만 보자.")],
+        ("clinic","curtain"):[("daram","커튼에 접힌 줄이 잔뜩이야. 아빠 바지처럼."),("dad","……그건 다림질할 틈이 없어서 그래.")],
+        ("school","stove"):[("daram","솥은 엄청 큰데 장작은 조금이네."),("dad","그래서 다들 나무 한 토막도 아껴 쓰는 거야.")],
+        ("school","lessons"):[("daram","누가 공책에 글씨 연습했어. 나보다 삐뚤어!"),("dad","남의 공책 흉보는 거 아니다."),("daram","아빠도 지금 웃었잖아.")],
+        ("store","scale"):[("daram","저울 밑에 가루가 떨어졌어. 아깝다."),("dad","여기선 그 가루도 쓸어 담을걸.")],
+        ("store","burlap"):[("daram","포장천에 매듭 자국이 잔뜩이야. 나 매듭 묶을 줄 알아!"),("dad","그럼 네 신발 끈부터 다시 묶자. 풀렸어.")],
+        ("greenhouse","pots"):[("daram","깨진 화분도 그냥 쓰네. 반창고 붙인 것 같아."),("dad","버리지 않고 받침으로 쓰는 거야. 여기선 뭐든 그래.")],
+        ("greenhouse","watercan"):[("daram","물뿌리개가 비었어. 내가 눈 담아 올까?"),("dad","그 눈 녹을 때까지 기다리면 해 지겠다. 그냥 두자.")],
     }
 
     def r13_child_is_along():
@@ -76,7 +87,9 @@ init 63 python:
         # No light banter while examining an active murder scene.
         if store.room13.get("case_state")=="occurred" and key[0] in ("room13","hall"):return False
         # 3일 아침 광장은 피코가 죽은(죽을 수 있는) 현장이다(VOICE_GUIDE 1-2-2).
-        if key[0]=="square" and store.room13.get("day")==3:return False
+        if key[0]=="square" and store.room13.get("day") in (3,13):return False
+        # 12일 학교·진료소는 수프 사건의 자리(아이들이 앓거나 쓰러진다), 13일 광장은 군중·수레의 자리다.
+        if key[0] in ("school","clinic") and store.room13.get("day")==12:return False
         seen=store.room13.get("observation_chats",[])
         token=r13_observation_chat_key(identity)
         prefix="%s:%s:"%(store.room13["day"],store.room13["period"])
