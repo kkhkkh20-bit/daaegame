@@ -5,7 +5,7 @@
 > 읽은 곳: `game/room13_v111_days123.rpy`, `game/room13_v111_days45.rpy`, `game/room13_v111_days610.rpy`, `game/room13_v111_days1114.rpy`, `game/room13_v111_owl_prevent.rpy`, `game/room13_hidden_pandol.rpy`, `game/room13_hidden_base.rpy`, `game/room13_lamp_attempt.rpy`, `game/room13_v111_newworld_rules.rpy`, `game/room13_v111_newworld_text.rpy`, `game/room13_fork_screen.rpy`, 장면 제목은 `docs/story-ms14/source/` 원본.
 > 글자로 읽은 것이라 갈래 순서·조건이 실제 재생과 다를 수 있다. 의심스러우면 표에 적힌 파일:줄을 연다.
 
-자동 추출 실패: 12곳 (맨 아래 목록)
+자동 추출 실패: 9곳 (맨 아래 목록)
 
 ## 차례
 
@@ -1975,6 +1975,9 @@ def r13_nw_true_ending_ready():
 | `lower_elder_received12` | `r13_v111_value("lower_road_handover")==3 and r13_v111_value("alive:v111_lowerroad_elder") is not False` | d12 |
 | `medicine_locked` | `r13_v111_value("medicine_locked") is True` | d12 |
 | `medicine_unchecked` | `not r13_v111_value("medicine_locked")` | d12 |
+| `mom03_piko_alive` | `r13_v111_actor_ready("daram") and r13_v111_value("piko_alive") is True` | d03 |
+| `mom03_piko_dead` | `r13_v111_actor_ready("daram") and r13_v111_value("piko_alive") is not True` | d03 |
+| `mom07_kkomi_alive` | `r13_v111_actor_ready("daram") and bool(r13_v111_value("KKOMI_ALIVE"))` | d07 |
 | `mom_daram_ready14` | `r13_v111_actor_ready("mom") and r13_v111_actor_ready("daram")` | d14 |
 | `morning_with_loss14` | `r13_v111_value("ending14")=="morning" and r13_nw_loss_count()>0 and r13_v111_actor_ready("mom") and r13_v111_actor_ready("daram")` | d14 |
 | `no_ledger` | `not r13_v111_owned("NW_NEOUL_LEDGER")` | d14 |
@@ -2056,9 +2059,6 @@ def r13_nw_true_ending_ready():
 - 자동 추출 실패: room13_v111_newworld_text.rpy:0 — 정의를 찾지 못한 조건 이름: bori_listed_daram
 - 자동 추출 실패: room13_v111_newworld_text.rpy:0 — 정의를 찾지 못한 조건 이름: guldol_daram
 - 자동 추출 실패: room13_v111_newworld_text.rpy:0 — 정의를 찾지 못한 조건 이름: guldol_daram13
-- 자동 추출 실패: room13_v111_newworld_text.rpy:0 — 정의를 찾지 못한 조건 이름: mom03_piko_alive
-- 자동 추출 실패: room13_v111_newworld_text.rpy:0 — 정의를 찾지 못한 조건 이름: mom03_piko_dead
-- 자동 추출 실패: room13_v111_newworld_text.rpy:0 — 정의를 찾지 못한 조건 이름: mom07_kkomi_alive
 - 자동 추출 실패: room13_v111_newworld_text.rpy:0 — 정의를 찾지 못한 조건 이름: nabi_list12_daram
 - 자동 추출 실패: room13_v111_newworld_text.rpy:0 — 정의를 찾지 못한 조건 이름: nabi_listed_daram
 - 자동 추출 실패: room13_v111_newworld_text.rpy:0 — 정의를 찾지 못한 조건 이름: teacher_hides13

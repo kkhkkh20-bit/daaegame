@@ -71,6 +71,6 @@ class SettingsTypeScale(unittest.TestCase):
   self.assertNotIn('r13_read_size(24,30)',preview)
   self.assertIn('add typing_preview',A);self.assertNotIn('add typing_preview xsize',A)
  def test_replay_and_footer_share_padding_height(self):
-  self.assertIn('"다시 보기" id "r13_preview_replay" xsize 150 text_size r13_opt_size()',A)
+  self.assertIn('"다시 보기" id "r13_preview_replay" xsize 284 text_size r13_opt_size()',A)
   self.assertIn('padding (10,4) ysize 52',A)
   self.assertNotIn('text_size 21',A);self.assertNotIn('text_size 24',A)
