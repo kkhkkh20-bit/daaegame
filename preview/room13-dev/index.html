@@ -199,11 +199,17 @@
     </style>
 
 <style id="r13-title-loader">:root{--title-w:min(100vw,177.7778vh);--title-h:min(56.25vw,100vh);--title-left:calc((100vw - var(--title-w))/2 + var(--title-w)*.05)}
-html,body{background:#101b37}
+/* 로딩 그림(1280x720)은 엽서 뒤 남색 천이 가장자리라 letterbox 도 같은 남색으로 잇는다. */
+html,body{background:#0a2252}
 #presplash{object-fit:contain;filter:none;image-rendering:auto}
-#loading-brand{left:var(--title-left);top:calc((100vh - var(--title-h))/2 + var(--title-h)*.82);font-family:Galmuri,monospace;color:#edf0ff;text-shadow:0 1px 4px #101b37}
+/* 소유자 결정(2026-10-24) 고딕체. 글꼴 파일을 더 받지 않도록 시스템 고딕으로 떨어진다. */
+/* 안내 줄은 진행 막대(statusDiv) 바로 위에 아래쪽 기준으로 쌓는다. 위쪽 기준이면 음악 안내 줄이 붙을 때 막대와 겹친다. */
+#loading-brand{left:var(--title-left);top:auto;bottom:calc((100vh - var(--title-h))/2 + var(--title-h)*.07 + 2.8em);font-family:Pretendard,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;font-weight:700;color:#edf0ff;text-shadow:0 1px 4px #061535}
 #loading-brand .title-accessible{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 #loading-brand .loading-hint{margin:0;font-size:clamp(12px,calc(var(--title-w)*.015625),20px);color:#edf0ff}
+/* 자동재생이 막힌 동안만 보이는 줄. [hidden] 이 풀리면 안내 줄 바로 아래에 붙는다. */
+#loading-brand .loading-audio-hint{margin:.35em 0 0;font-size:clamp(11px,calc(var(--title-w)*.0125),16px);font-weight:400;color:#c9d0f2}
+#loading-brand .loading-audio-hint[hidden]{display:none}
 #statusDiv{left:var(--title-left);right:auto;bottom:calc((100vh - var(--title-h))/2 + var(--title-h)*.07);width:calc(var(--title-w)*.43);max-width:550px;min-width:0;padding:8px 0;background:transparent;border:0;border-radius:0}
 #statusTextDiv{max-height:10vh;font-size:clamp(11px,calc(var(--title-w)*.01328),17px);color:#d5d8ea}
 #statusProgress{accent-color:#b3b5ff;height:4px;border:0}
@@ -212,6 +218,11 @@ html,body{background:#101b37}
 #ContextContainer{pointer-events:none;right:3px;top:3px}
 #ContextButton{pointer-events:auto;display:block;width:16px;height:16px;padding:0;font-size:13px;line-height:16px}
 #ContextMenu,#ContextMenu a,#ContextMenu input{pointer-events:auto}
+/* 세로 휴대폰: 그림(16:9)이 가운데 띠로만 보이고 위아래가 남색 여백이다. 글을 그림 위에 얹지 않고 아래 여백에 둔다. */
+@media (max-aspect-ratio:1/1){
+#loading-brand{left:5vw;bottom:auto;top:calc(50vh + var(--title-h)/2 + 14px)}
+#statusDiv{left:5vw;bottom:auto;top:calc(50vh + var(--title-h)/2 + 14px + 3.2em);width:90vw;max-width:none}
+}
 </style>
 </head>
 
@@ -221,7 +232,7 @@ html,body{background:#101b37}
 
   <img id="presplash" src="loading-scene.webp">
 
-  <div id="loading-brand"><h1 class="title-accessible">다람탐정</h1><p class="loading-hint">마을의 문을 여는 중…</p></div>
+  <div id="loading-brand"><h1 class="title-accessible">다람탐정</h1><p class="loading-hint">마을의 문을 여는 중…</p><p class="loading-audio-hint" hidden>화면을 한 번 누르면 음악이 켜집니다</p></div>
     <div id="portrait-note">휴대폰을 가로로 돌리면 글씨와 조사 지점이 더 잘 보입니다.</div>
     <div id="ContextContainer">
     <a id="ContextButton">&#8801;</a><br />
@@ -271,14 +282,25 @@ html,body{background:#101b37}
     audio.preload = 'auto';
     document.body.appendChild(audio);
     let finished = false;
+    // 소유자(2026-10-27): "배경음은 로딩 나올때부터 나와야한다고". 브라우저는 사용자가 한 번 누르기 전에는
+    // 소리를 거부하므로 코드로 더 당길 수 없다. 대신 거부된 동안만 "누르면 켜진다"는 줄을 편다.
+    function audioHint() {
+        return (typeof document.querySelector === 'function') ? document.querySelector('#loading-brand .loading-audio-hint') : null;
+    }
+    function showHint(show) {
+        const hint = audioHint();
+        if (hint) hint.hidden = !show;
+    }
     function start() {
         if (finished || !audio.paused) return;
         // Call synchronously inside the gesture, including on iOS Safari.
-        audio.play().then(() => { if (finished) audio.pause(); }).catch(() => {});
+        audio.play().then(() => { if (finished) audio.pause(); else showHint(false); })
+            .catch(() => { if (!finished) showHint(true); });
     }
     function stop() {
         if (finished) return 0;
         finished = true;
+        showHint(false);
         const position = audio.currentTime || 0;
         audio.pause();
         audio.removeAttribute('src');
