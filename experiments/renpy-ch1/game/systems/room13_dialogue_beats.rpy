@@ -108,6 +108,33 @@ init 170 python:
 
     R13_DIALOGUE_POSE_SOURCE = json.load(renpy.file("assets/room13-dialogue-pose-source-art.json"))
 
+    # 2026-10-27 소유자 "이게 말이 되는 도트 화소니?": 근접 대화 도트판은 168칸 높이를 3~4px 칸으로 늘려 배경(1칸=1px)보다
+    # 3배 거칠었다. 추천안(나): 근접 대화만 붓 원본(dialogue-source-master-v2)으로 그린다. 도트판은 원본을 N칸으로 다시 찍은
+    # 것이라 같은 자리에 겹치도록 높이 비율만 곱한다(표 room13-closeup-smooth.json, dev/build_closeup_smooth.py).
+    # 끄면(R13_CLOSEUP_SMOOTH=False) 도트판으로 돌아간다. 1칸=1px 근접 도트 신규 작화는 요청서로 넘긴다.
+    R13_CLOSEUP_SMOOTH=True
+    R13_CLOSEUP_SMOOTH_TABLE=json.load(renpy.file("assets/room13-closeup-smooth.json")) if renpy.loadable("assets/room13-closeup-smooth.json") else {}
+    _r13_closeup_smooth_cache={}
+    def r13_closeup_smooth_profiles(person,profiles):
+        key=(person,id(profiles))
+        if key in _r13_closeup_smooth_cache:return _r13_closeup_smooth_cache[key]
+        result={}
+        for height,profile in profiles.items():
+            frames={}
+            changed=False
+            for name,frame in profile["frames"].items():
+                row=R13_CLOSEUP_SMOOTH_TABLE.get(frame.get("file"))
+                if row and renpy.loadable(row["master"]):
+                    r=float(row["dot"][1])/float(row["src"][1])
+                    # 발·머리 기준(anchor)은 도트 파일 픽셀 기준이라, 원본 픽셀 기준으로 나눠 둔다(anchor x scale 이 같게).
+                    frames[name]=dict(frame,file=row["master"],scale=frame.get("scale",1.0)*r,anchor=[a/r for a in frame.get("anchor",(0,0))],nearest=False,smooth_source=True)
+                    changed=True
+                else:frames[name]=frame
+            converted=dict(profile,frames=frames)
+            if changed:converted["smooth"]=True
+            result[height]=converted
+        _r13_closeup_smooth_cache[key]=result
+        return result
     def r13_dialogue_fit_profile(profiles,height):
         exact=profiles.get(str(int(height)))
         if exact:return exact
@@ -115,7 +142,8 @@ init 170 python:
         base=min(profiles,key=lambda h:abs(int(h)-int(height)))
         ratio=float(height)/int(base);profile=profiles[base]
         k=profile.get("dot_scale")
-        if k:
+        # 2026-10-27 붓 원본으로 바꾼 프로필(smooth)은 발 기준선(dot_scale)은 그대로 쓰되 정수 칸 배율은 쓰지 않는다.
+        if k and not profile.get("smooth"):
             # 도트 그림은 비정수 배율로 늘리면 칸 크기가 다시 들쭉날쭉해진다. 한 칸이 정수 px 가 되는
             # 배율로만 늘리고, 발 밑과 가운데(anchor)는 요청한 높이의 자리에 맞춘다.
             zoom=max(1,int(round(k*ratio)))/float(k)
@@ -133,8 +161,10 @@ init 170 python:
     def r13_dialogue_render_profiles(person,entry):
         # Approved B expressions are dialogue-only; meeting art keeps its original profiles.
         if not getattr(store,"r13_meeting_active",False) and globals().get("R13_DIALOGUE_B_ART_ON",True) and R13_DIALOGUE_B_ART.get(person):
-            return R13_DIALOGUE_B_ART[person]
-        return entry.get("profiles",{})
+            profiles=R13_DIALOGUE_B_ART[person]
+        else:profiles=entry.get("profiles",{})
+        # 시험(dev/test_b_dialogue_art.py)은 함수만 떼어 돌리므로 전역이 없으면 그대로 돌려준다.
+        return r13_closeup_smooth_profiles(person,profiles) if globals().get("R13_CLOSEUP_SMOOTH") else profiles
 
     def r13_dialogue_source_profile(person,pose,height):
         # Authored poses retain their own smooth source, even during narration/thought.
