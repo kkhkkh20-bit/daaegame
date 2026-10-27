@@ -696,14 +696,14 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 175 | `room13_meeting_camera.rpy:39` | _r13_nw_meeting_orbit_height |
+| 1 | 175 | `room13_meeting_camera.rpy:42` | _r13_nw_meeting_orbit_height |
 | 2 | 321 | `room13_v111_meeting_stage.rpy:122` |  |
 
 ## `r13_meeting_portrait_x` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 175 | `room13_meeting_camera.rpy:42` | _r13_nw_meeting_portrait_x |
+| 1 | 175 | `room13_meeting_camera.rpy:45` | _r13_nw_meeting_portrait_x |
 | 2 | 321 | `room13_v111_meeting_stage.rpy:129` |  |
 
 ## `r13_open_person_material` (2층)
