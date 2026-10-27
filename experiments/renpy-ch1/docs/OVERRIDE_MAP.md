@@ -79,7 +79,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 14 | 301 | `room13_v111.rpy:170` | _r13_order_stage_people |
 | 15 | 336 | `room13_v111_field_layout.rpy:46` | _r13_clear_stage_people |
 | 16 | 337 | `room13_v111_field_layout.rpy:138` | _r13_field_dot_stage |
-| 17 | 340 | `systems/room13_field_dot.rpy:57` |  |
+| 17 | 340 | `systems/room13_field_dot.rpy:61` |  |
 
 ## `r13_object_visible` (11층)
 
@@ -824,7 +824,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 59 | `room13_acting.rpy:555` | _r13_map27_visible |
+| 1 | 59 | `room13_acting.rpy:559` | _r13_map27_visible |
 | 2 | 178 | `systems/room13_map_action27.rpy:87` |  |
 
 ## `r13_topic_current_context` (2층)

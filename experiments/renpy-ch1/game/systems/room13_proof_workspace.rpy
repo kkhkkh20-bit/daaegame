@@ -460,7 +460,8 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
     $ ctx=r13_pw_context(key) or dict(mode="proof",speaker=None,quote=None,quote_when=None)
     $ mode=ctx["mode"]
     $ remembered=(r13_pw_views or {}).get(claim,{})
-    default tab=remembered.get("tab","all")
+    # 2026-10-27 14일 자동 플레이 7일: 「전체」로 열면 자료 39개가 13쪽이 된다. 처음 열 때는 「이번 사건」(있을 때)으로 연다. 기억된 탭은 그대로.
+    default tab=remembered.get("tab",("now" if (r13_drawer_active() and r13_drawer_now(r13_pw_entries())) else "all"))
     default detail=remembered.get("detail")
     default page=0
     # 2026-10-27 외부 리뷰 R03(확인): 휴대폰 844x390 「나란히 보기」에서 본문 읽기 영역이 약 95px 뿐이었다. 휴대폰은 발언 틀을 접은 채 열어

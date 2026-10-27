@@ -18,6 +18,10 @@
 # - 표에 없는 자세(실행 중에 생긴 것)는 예전 경로로 그리고 로그에 남긴다 — 조용히 틀어지지 않게.
 init 340 python:
     R13_FIELD_DOT=json.load(renpy.file("assets/room13-field-dot-v2.json"))["people"] if renpy.loadable("assets/room13-field-dot-v2.json") else {}
+    # 2026-10-27: 단역 그림을 빌려 쓰는 인물(누비의 막내·실룩의 아이 등, systems/room13_minor_extras_art.rpy)은 도트 표에 제 이름이
+    # 없어 예전 경로로 그려졌다. 빌려 준 그림의 도트 행을 같은 이름으로 쓴다.
+    for _fd_user,(_fd_art,_fd_name) in globals().get("R13_MINOR_ART_USERS",{}).items():
+        if _fd_user not in R13_FIELD_DOT and _fd_art in R13_FIELD_DOT:R13_FIELD_DOT[_fd_user]=R13_FIELD_DOT[_fd_art]
     # 장면별 "화면 1px 당 도트 칸 수"의 역수, 즉 도트 한 칸이 화면에서 몇 px 인가. 기본 1. 2 로 두면 앞줄 2배·뒷줄 1배가 된다.
     R13_FIELD_DOT_SCREEN_PX={}
     R13_FIELD_DOT_DEFAULT_PX=1

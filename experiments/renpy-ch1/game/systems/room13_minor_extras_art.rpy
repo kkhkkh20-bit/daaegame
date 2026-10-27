@@ -38,3 +38,8 @@ init 327 python:
             dedicated_avatar=True,facing="front",gaze="viewer")
         # 빌려 쓴 행과 같은 열쇠를 유지한다. 각 행은 따로 만든 사전이라 빌려 준 인물의 행은 그대로 남는다.
         CAST[_mn_user]={key:dict(_mn_avatar if key.startswith("avatar_") else _mn_body) for key in CAST.get(_mn_user,CAST["elder"])}
+        # 2026-10-27 14일 자동 플레이 7일 학교: 「누비의 막내」가 현장에 서는 순간 Image 'kid_nubi3 neutral' not found 가 글자로 찍혔다.
+        # 「인물 자세」 이름의 그림은 options.rpy 가 cast.json 을 읽을 때(이 층보다 앞) 한 번만 등록하므로, 여기서 빌려 만든 행은
+        # 그림 이름이 없다. 빌려 온 행마다 같은 이름으로 등록한다.
+        for _mn_key,_mn_spec in CAST[_mn_user].items():
+            renpy.image(_mn_user+" "+_mn_key,Transform(Crop(tuple(_mn_spec["crop"]),_mn_spec["file"]),nearest=True))
