@@ -877,17 +877,17 @@ screen r13_settings_save_tab(saving,page):
                     else:
                         frame:
                             xysize (160,90) yalign .5 padding (0,0) background Solid("#4b342014")
-                            text "빈 칸" size r13_nb_small_size() color r13_nb_muted() align (.5,.5)
+                            text "빈 칸" size r13_nb_small_size() color r13_nb_muted() align (.5,.5) font R13_UI_BOLD_FONT
                     vbox:
                         spacing 3 yalign .5
                         if renpy.can_load(slot):
-                            text (r13_slot_where(slot) or "%d쪽 %d번"%(page,i+1)) size r13_nb_body_size() color r13_nb_ink() xsize 210
+                            text (r13_slot_where(slot) or "%d쪽 %d번"%(page,i+1)) size r13_nb_body_size() color r13_nb_ink() xsize 210 font R13_UI_BOLD_FONT
                             if r13_slot_info(slot,"r13_stage"):
-                                text r13_slot_info(slot,"r13_stage") size r13_nb_small_size() xsize 210
-                            text ("%d쪽 %d번 · "%(page,i+1)+FileTime(i+1,format="%m-%d %H:%M",page=str(page))) size r13_nb_small_size() color r13_nb_muted() xsize 210
+                                text r13_slot_info(slot,"r13_stage") size r13_nb_small_size() xsize 210 font R13_UI_BOLD_FONT
+                            text ("%d쪽 %d번 · "%(page,i+1)+FileTime(i+1,format="%m-%d %H:%M",page=str(page))) size r13_nb_small_size() color r13_nb_muted() xsize 210 font R13_UI_BOLD_FONT
                         else:
-                            text ("%d쪽 %d번"%(page,i+1)) size r13_nb_small_size() color r13_nb_muted()
-                            text ("여기에 저장" if saving else "비어 있음") size r13_nb_body_size() color r13_nb_muted()
+                            text ("%d쪽 %d번"%(page,i+1)) size r13_nb_small_size() color r13_nb_muted() font R13_UI_BOLD_FONT
+                            text ("여기에 저장" if saving else "비어 있음") size r13_nb_body_size() color r13_nb_muted() font R13_UI_BOLD_FONT
 
 screen file_slots(title,saving):
     modal True
@@ -927,21 +927,21 @@ screen file_slots(title,saving):
                     else:
                         frame:
                             xysize (174,98) yalign .5 padding (0,0) background Solid("#4b342014")
-                            text "빈 칸" size r13_nb_small_size() color r13_nb_muted() align (.5,.5)
+                            text "빈 칸" size r13_nb_small_size() color r13_nb_muted() align (.5,.5) font R13_UI_BOLD_FONT
                     # 0.18.46: read the story point first (day, time, place), then where in
                     # the story and the last line; slot number and real time come last.
                     vbox:
                         spacing 3 yalign .5
                         if renpy.can_load(slot):
-                            text (r13_slot_where(slot) or "%d쪽 %d번"%(page,i+1)) size r13_nb_body_size() color r13_nb_ink() xsize 320
+                            text (r13_slot_where(slot) or "%d쪽 %d번"%(page,i+1)) size r13_nb_body_size() color r13_nb_ink() xsize 320 font R13_UI_BOLD_FONT
                             if r13_slot_info(slot,"r13_stage"):
-                                text r13_slot_info(slot,"r13_stage") size r13_nb_small_size() xsize 320
+                                text r13_slot_info(slot,"r13_stage") size r13_nb_small_size() xsize 320 font R13_UI_BOLD_FONT
                             if r13_slot_info(slot,"r13_last"):
-                                text ("“"+r13_slot_info(slot,"r13_last")+"”") size r13_nb_small_size() color "#5d6a66" xsize 320
-                            text ("%d쪽 %d번 · "%(page,i+1)+FileTime(i+1,format="%m-%d %H:%M",page=str(page))+" · "+r13_save_caption(renpy.slot_json(slot))) size r13_nb_small_size() color r13_nb_muted() xsize 320
+                                text ("“"+r13_slot_info(slot,"r13_last")+"”") size r13_nb_small_size() color "#5d6a66" xsize 320 font R13_UI_BOLD_FONT
+                            text ("%d쪽 %d번 · "%(page,i+1)+FileTime(i+1,format="%m-%d %H:%M",page=str(page))+" · "+r13_save_caption(renpy.slot_json(slot))) size r13_nb_small_size() color r13_nb_muted() xsize 320 font R13_UI_BOLD_FONT
                         else:
-                            text ("%d쪽 %d번"%(page,i+1)) size r13_nb_small_size() color r13_nb_muted()
-                            text ("여기에 저장" if saving else "비어 있음") size r13_nb_body_size() color r13_nb_muted()
+                            text ("%d쪽 %d번"%(page,i+1)) size r13_nb_small_size() color r13_nb_muted() font R13_UI_BOLD_FONT
+                            text ("여기에 저장" if saving else "비어 있음") size r13_nb_body_size() color r13_nb_muted() font R13_UI_BOLD_FONT
     # 하단 줄: 돌아가기는 오른쪽 끝(다른 수첩 화면의 닫기 자리), 정리 버튼은 왼쪽.
     # (이 화면은 메인 메뉴 「불러오기」와 옛 호출처가 쓴다. 게임 안에서는 설정의 「저장」 탭이 같은 일을 한다.)
     use r13_nb_footer_button(0,"돌아가기",Return(),primary=True,control_id="r13_save_back")
