@@ -630,11 +630,11 @@ label r13_v111_hyp1_q11:
     call r13_lines(r13_nw_block('hyp1_q11'),'nw:hyp1_q11')
     $ v111_claim='menu:hyp1'
     menu:
-        '만지는 것보다 곁에서 오래 지내는 게 문제다':
+        '두 사람이 아르카 곁에 머문 시간을 비교한다':
             jump r13_v111_hyp1_reason11
-        '초롱은 젊어서 버틴다':
+        '두 사람의 나이와 몸 상태를 비교한다':
             jump r13_v111_hyp1_badreason11
-        '초롱은 장갑을 끼고 만진다':
+        '두 사람이 아르카를 만진 방식을 비교한다':
             jump r13_v111_hyp1_badreason11
 
 label r13_v111_hyp1_badreason11:
@@ -753,11 +753,11 @@ label r13_v111_hyp4_q11:
     call r13_lines(r13_nw_block('hyp4_q11'),'nw:hyp4_q11')
     $ v111_claim='menu:hyp4'
     menu:
-        '아이 방에도 아르카등이 밤새 켜져 있었다':
+        '아이들이 밤을 어디서 보내는지 본다':
             jump r13_v111_hyp4_reason11
-        '아이들은 어른보다 약하다':
+        '아이와 어른의 몸을 비교한다':
             jump r13_v111_hyp4_badreason11
-        '아이들이 아르카를 만지고 논다':
+        '아이들이 아르카를 어떻게 다루는지 본다':
             jump r13_v111_hyp4_badreason11
 
 label r13_v111_hyp4_badreason11:

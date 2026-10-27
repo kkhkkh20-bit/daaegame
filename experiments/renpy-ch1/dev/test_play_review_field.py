@@ -52,7 +52,7 @@ class PlayReviewField(unittest.TestCase):
                 for lines in (1,2,3,4):
                     with self.subTest(touch=touch,large=large,lines=lines):
                         ns=dict(r13_touch_ui=lambda:touch,r13_read_size=lambda normal,big:big if large else normal,
-                                r13_night_say_lines=lambda what:lines)
+                                r13_night_say_lines=lambda what:lines,R13_TYPE_V2=False)
                         load_function('game/screens.rpy','_r13_say_size',ns)
                         size=load_function('game/systems/room13_night_ui.rpy','r13_night_say_size',ns)()
                         center=load_function('game/systems/room13_night_ui.rpy','r13_night_control_y',ns)()

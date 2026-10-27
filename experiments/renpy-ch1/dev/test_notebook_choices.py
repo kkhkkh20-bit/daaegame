@@ -23,7 +23,7 @@ class NotebookChoices(unittest.TestCase):
         for touch in (False,True):
             ns=dict(r13_question_caption=lambda title,*args,**kw:title,
                     r13_ui_font=lambda:'font',R13_UI_BOLD_FONT='bold-font',r13_read_size=lambda a,b:b if touch else a,
-                    r13_touch_ui=lambda:touch,
+                    r13_touch_ui=lambda:touch,R13_TYPE_V2=False,
                     Text=lambda text,**kw:text,
                     renpy=SimpleNamespace(render=lambda text,*args:SimpleNamespace(get_size=lambda:(600,72 if len(text)>20 else 30))))
             function('systems/room13_notebook_choices.rpy','r13_notebook_choice_pages',ns)

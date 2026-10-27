@@ -99,7 +99,7 @@ testcase zz_ui_review_plain_choice:
     run Jump("r13_v111_hyp1_q11")
     pause until screen "choice" timeout 60
     pause 1.0
-    assert eval (r13_choice_issue([("만지는 것보다 곁에서 오래 지내는 게 문제다",None,False)]) is None)
+    assert eval (r13_choice_issue([("두 사람이 아르카 곁에 머문 시간을 비교한다",None,False)]) is None)
     screenshot "ui-review-plain-choice.png"
 
 testcase zz_ui_review_first_proof:

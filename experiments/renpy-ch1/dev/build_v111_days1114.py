@@ -169,13 +169,13 @@ label('tosil_blanket_last11');late(s,57,57);lines.append('    return')
 def nwblock(name):lines.append('    call r13_lines(r13_nw_block(%r),%r)'%(name,'nw:'+name))
 HYP=[
  (1,'초롱과 피코의 하루를 대조한다',['E11','E08','NW_PIKO_TREMOR'],'돌목이 팔짱을 낀다. 초롱의 하루와 피코의 밤을 함께 놓아야 한다.',
-  [('만지는 것보다 곁에서 오래 지내는 게 문제다',True),('초롱은 젊어서 버틴다',False),('초롱은 장갑을 끼고 만진다',False)]),
+  [('두 사람이 아르카 곁에 머문 시간을 비교한다',True),('두 사람의 나이와 몸 상태를 비교한다',False),('두 사람이 아르카를 만진 방식을 비교한다',False)]),
  (2,'창고에서 잠자는 사람을 짚는다',['NW_KEEPER_DATE'],'백 부인이 고개를 돌린다. 창고에서 자는 사람을 짚어야 한다.',
   [('켜지 않고 쌓아 둔 돌은 아무 해가 없다',False),('백 부인은 그 돌 곁에서 잠을 자지 않는다',True),('백 부인은 돌을 팔기만 한다',False)]),
  (3,'요즘 돌이 어디서 오는지 대조한다',['NW_INNER_PRICE','NW_MUSOE_DEEP'],'판돌이 고개를 젓는다. “무쇠는 원래 고집이 셌소.” 돌값과 갱도 이야기를 함께 놓아야 한다.',
   [('요즘 사람들이 약해졌다',False),('외지 사람이 병을 들여왔다',False),('요즘 태우는 돌이 더 독하다',True)]),
  (4,'아르카가 없는 아이들과 대조한다',['NW_KKOMI_NOSTONE','NW_SICK_BEDS'],'주민이 아이를 끌어안는다. 돌이 없는 아이들과 표시가 붙은 아이들을 함께 놓아야 한다.',
-  [('아이 방에도 아르카등이 밤새 켜져 있었다',True),('아이들은 어른보다 약하다',False),('아이들이 아르카를 만지고 논다',False)]),
+  [('아이들이 밤을 어디서 보내는지 본다',True),('아이와 어른의 몸을 비교한다',False),('아이들이 아르카를 어떻게 다루는지 본다',False)]),
 ]
 label('hypothesis11');code('r13_v111_arrive(["daram","resident_teacher","guard","resident_madam","npc_pandol","resident_lamplighter"])')
 nwblock('hyp_open11');code('r13_nw_acquire("NW_SICK_BEDS")');goto('hyp0_menu11')

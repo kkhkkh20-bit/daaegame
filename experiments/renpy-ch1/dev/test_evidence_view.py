@@ -51,6 +51,8 @@ class EvidenceView(unittest.TestCase):
             r13_record_category=lambda k: "testimony" if evidence[k]["kind"] == "증언" else "evidence",
             r13_record_page_size=lambda: 12,
             r13_touch_ui=lambda: touch, r13_read_size=lambda base, large=None: base,
+            R13_TYPE_V2=False,  # 2026-10-27 타이포 시안 스위치. 꺼진 상태를 검사한다
+
             r13_material_filter_choices=lambda current, allow=True: [("all", "전체"), ("testimony", "증언")],
             r13_record_select=lambda *a: self.selected.append(a),
             Transform=Transform, Fixed=lambda *c, **k: ("fixed", c, k), R13ControlSurface=lambda **k: ("surface", k),

@@ -152,7 +152,7 @@ testcase evidence_reuse_hyp3_extra:
     click "QA 닫기"
     pause 0.5
     click "선택한 근거 제출"
-    click pos (640,300) until "아이 방에도 아르카등이 밤새 켜져 있었다" timeout 60
+    click pos (640,300) until "아이들이 밤을 어디서 보내는지 본다" timeout 60
     assert eval (r13_v111_value("hyp_issue:3")=="won" and qa_nw_seen("등에서 빠진 돌까지 그 창고로 갔어요") and qa_nw_seen("안쪽 돌은 오늘 끄겠소"))
 
 # 2026-10-24 새 사실 1번(docs/reviews/evidence-reuse-20261024/새사실_시안.md, 소유자 "추천안대로"):

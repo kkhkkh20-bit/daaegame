@@ -33,8 +33,8 @@ testcase v111_nw_d11_hyp_wrong_reason:
     run Function(qa_nw_day11)
     run Function(r13_v111_set,"tries:hypothesis",r13_nw_tries_max("hypothesis")-1)
     run Jump("r13_v111_hyp1_q11")
-    click pos (640,300) until "초롱은 젊어서 버틴다" timeout 60
-    click "초롱은 젊어서 버틴다"
+    click pos (640,300) until "두 사람의 나이와 몸 상태를 비교한다" timeout 60
+    click "두 사람의 나이와 몸 상태를 비교한다"
     click pos (640,300) until "백 부인은 그 돌 곁에서 잠을 자지 않는다" timeout 60
     assert eval (r13_v111_value("hyp_issue:1")=="lost" and qa_nw_seen("초소 불은 그대로 두겠소"))
 
