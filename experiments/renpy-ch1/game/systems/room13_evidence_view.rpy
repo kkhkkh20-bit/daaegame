@@ -26,7 +26,7 @@ init 330 python:
     # 2026-10-27 수첩 공통 틀(systems/room13_notebook_shell.rpy): 내용은 R13_NB_INNER(132,140 ~ 1206,684) 안에만.
     #   왼쪽 목록 136~392, 세로 선 406, 가운데 420~890, 오른쪽 열 910~1206(버튼 폭 296 그대로).
     #   제목이 갈림길과 같은 x114 로 가서 첫 탭은 220 부터, 90 간격. 아래는 갈림길 하단 버튼 줄과 같은 684.
-    R13_EV_BOTTOM=globals().get("R13_NB_BOTTOM",684)
+    R13_EV_BOTTOM=globals().get("R13_NB_BOTTOM",636)
     R13_EV_TAB_X=220
     R13_EV_TAB_PITCH=90
     R13_EV_TITLE_X=globals().get("R13_NB_TITLE_X",114)

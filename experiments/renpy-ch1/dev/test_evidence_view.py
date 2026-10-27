@@ -245,7 +245,10 @@ class EvidenceView(unittest.TestCase):
 
     def test_grid_rows_end_above_the_pager(self):
         bottom = self.build()["R13_EV_BOTTOM"]
-        self.assertLessEqual(140 + 5 * 88, bottom - 88)
+        # 2026-10-27 종이 안(636) 기준: 줄 높이는 r13_ev_grid_pitch() 가 88 과 남는 높이 중 작은 쪽을 고른다.
+        pitch = min(88, (bottom - 64 - 8 - 168) // 5)
+        self.assertGreaterEqual(pitch, 72)
+        self.assertLessEqual(168 + 5 * pitch, bottom - 64 - 8)
         self.assertGreaterEqual(88 * 360 / 720, 44)
 
     def test_all_current_names_fit_whole_words_without_ellipsis(self):

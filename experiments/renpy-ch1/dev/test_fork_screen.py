@@ -64,10 +64,10 @@ class ForkScreen(unittest.TestCase):
             self.assertEqual(set(self.call('outcomes',key)),expected,key)
     def test_row_tops_fit_above_the_footer(self):
         tops=self.call('row_tops',[{'kind':'current'},{'kind':'old'},{'kind':'old'}])
-        self.assertEqual(tops,[200,332,464])
-        self.assertLessEqual(tops[-1]+116,684-80-14)   # above the touch footer rule
-        self.assertIn('$ by = 684-ch',(ROOT/'game/room13_fork_screen.rpy').read_text())
-        self.assertEqual(self.call('row_tops',[{'kind':'current'},{'kind':'locked'}]),[200,332])
+        self.assertEqual(tops,[178,302,426])
+        self.assertLessEqual(tops[-1]+116,636-80-14)   # above the touch footer rule (2026-10-27: paper bottom 636)
+        self.assertIn('$ by = R13_NB_BOTTOM-ch',(ROOT/'game/room13_fork_screen.rpy').read_text())
+        self.assertEqual(self.call('row_tops',[{'kind':'current'},{'kind':'locked'}]),[178,302])
     def test_fate_badge_only_on_decided_fate_meetings_and_names_no_one(self):
         self.assertFalse(self.call('fate','lamp'))           # not decided yet
         self.values['meeting:lamp']='win'

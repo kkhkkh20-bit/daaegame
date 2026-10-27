@@ -158,53 +158,78 @@ screen r13_goal_strip(tabs_right,chips_left):
     if r13_goal_active():
         $ touch=r13_touch_ui()
         $ layout=r13_goal_pill_layout(tabs_right+10,chips_left-(6 if touch else 8),touch)
+        # 2026-10-27 소유자 캡처: 탭과 칩 사이가 좁으면 「목표」 글자만 찌그러져 남았다. 그때는 탭 줄에 끼우지 않고
+        # 제목 띠와 금색 선 사이의 가는 줄(y 102~126)에 오른쪽 맞춤 한 줄로 전부 보인다.
+        $ slim=(not touch) and (layout is None or not layout.get("label"))
+        if slim:
+            $ steps,current,note=r13_goal_state()
+            $ slim_size=r13_ev_small_size()
+            button:
+                id "r13_goal_pill"
+                style "r13ev_chip_button"
+                xanchor 1.0 xpos R13_NB_RIGHT ypos 102 ysize 24 padding (10,0) background None
+                action ToggleLocalVariable("goal_open")
+                alt r13_goal_alt(steps,current,note,goal_open)
+                hbox:
+                    spacing 8 yalign .5
+                    text "목표" size slim_size color R13_GOAL_GOLD font r13_ui_font() yalign .5
+                    hbox:
+                        yalign .5 spacing 6
+                        for index in range(3):
+                            add R13GoalDot(r13_goal_dot_state(index,current),4) yalign .5
+                    text steps[current] size slim_size color R13_GOAL_INK font r13_ui_font() yalign .5 xmaximum 360
+            $ layout=dict(x=R13_NB_RIGHT-380,w=380,stacked=False,word=slim_size,dots=True,label=None,label_size=0,pad=10,word_w=0,pitch=15,steps=steps,current=current,note=note)
         if layout:
             $ pill_y=16 if touch else 44
             $ pill_h=88 if touch else 42
             $ dot_r=6 if touch else 5
+            if slim:
+                $ pill_y=102
+                $ pill_h=24
             if goal_open:
                 # 바깥을 누르면 닫힌다. 판 아래 모든 것보다 위, 칸과 판보다는 아래.
                 button:
                     style "r13ev_tab_button"
                     xpos 0 ypos 0 xysize (1280,720)
                     action SetLocalVariable("goal_open",False) alt "목표 판 닫기"
-            button:
-                id "r13_goal_pill"
-                style "r13ev_chip_button"
-                xpos layout["x"] ypos pill_y xysize (layout["w"],pill_h) padding (0,0)
-                # 펼쳐도 버건디로 칠하지 않는다 — 지금 단계 점(버건디)이 바탕에 묻힌다.
-                action ToggleLocalVariable("goal_open")
-                alt r13_goal_alt(layout["steps"],layout["current"],layout["note"],goal_open)
-                if layout["stacked"]:
-                    vbox:
-                        xalign .5 yalign .5 spacing 6
-                        text "목표" size layout["word"] color R13_GOAL_GOLD font r13_ui_font() xalign .5
+            if not slim:
+                button:
+                    id "r13_goal_pill"
+                    style "r13ev_chip_button"
+                    xpos layout["x"] ypos pill_y xysize (layout["w"],pill_h) padding (0,0)
+                    # 펼쳐도 버건디로 칠하지 않는다 — 지금 단계 점(버건디)이 바탕에 묻힌다.
+                    action ToggleLocalVariable("goal_open")
+                    alt r13_goal_alt(layout["steps"],layout["current"],layout["note"],goal_open)
+                    if layout["stacked"]:
+                        vbox:
+                            xalign .5 yalign .5 spacing 6
+                            text "목표" size layout["word"] color R13_GOAL_GOLD font r13_ui_font() xalign .5
+                            hbox:
+                                xalign .5 spacing (layout["pitch"]-2*dot_r-2)
+                                for index in range(3):
+                                    add R13GoalDot(r13_goal_dot_state(index,layout["current"]),dot_r) yalign .5
+                    elif touch and layout["label"]:
+                        vbox:
+                            xpos layout["pad"] yalign .5 spacing 8
+                            hbox:
+                                spacing 8
+                                text "목표" size layout["word"] color R13_GOAL_GOLD font r13_ui_font() yalign .5
+                                hbox:
+                                    yalign .5 spacing (layout["pitch"]-2*dot_r-2)
+                                    for index in range(3):
+                                        add R13GoalDot(r13_goal_dot_state(index,layout["current"]),dot_r) yalign .5
+                            text layout["label"] size layout["label_size"] color R13_GOAL_INK font r13_ui_font()
+                    else:
                         hbox:
-                            xalign .5 spacing (layout["pitch"]-2*dot_r-2)
-                            for index in range(3):
-                                add R13GoalDot(r13_goal_dot_state(index,layout["current"]),dot_r) yalign .5
-                elif touch and layout["label"]:
-                    vbox:
-                        xpos layout["pad"] yalign .5 spacing 8
-                        hbox:
-                            spacing 8
+                            xpos layout["pad"] yalign .5 spacing (8 if touch else 10)
                             text "목표" size layout["word"] color R13_GOAL_GOLD font r13_ui_font() yalign .5
-                            hbox:
-                                yalign .5 spacing (layout["pitch"]-2*dot_r-2)
-                                for index in range(3):
-                                    add R13GoalDot(r13_goal_dot_state(index,layout["current"]),dot_r) yalign .5
-                        text layout["label"] size layout["label_size"] color R13_GOAL_INK font r13_ui_font()
-                else:
-                    hbox:
-                        xpos layout["pad"] yalign .5 spacing (8 if touch else 10)
-                        text "목표" size layout["word"] color R13_GOAL_GOLD font r13_ui_font() yalign .5
-                        if layout["dots"]:
-                            hbox:
-                                yalign .5 spacing (layout["pitch"]-2*dot_r-2)
-                                for index in range(3):
-                                    add R13GoalDot(r13_goal_dot_state(index,layout["current"]),dot_r) yalign .5
-                        if layout["label"]:
-                            text layout["label"] size layout["label_size"] color R13_GOAL_INK font r13_ui_font() yalign .5
+                            if layout["dots"]:
+                                hbox:
+                                    yalign .5 spacing (layout["pitch"]-2*dot_r-2)
+                                    for index in range(3):
+                                        add R13GoalDot(r13_goal_dot_state(index,layout["current"]),dot_r) yalign .5
+                            if layout["label"]:
+                                text layout["label"] size layout["label_size"] color R13_GOAL_INK font r13_ui_font() yalign .5
             if goal_open:
                 $ step_size=r13_read_size(24,26) if touch else r13_read_size(21,24)
                 $ note_size=r13_read_size(20,22) if touch else r13_read_size(16,19)

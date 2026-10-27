@@ -50,7 +50,8 @@ screen r13_notebook_topic_action(x,w,caption,command,ready=True,primary=False,ic
     fixed:
         area (x,r13_notebook_topic_y(),w,88 if r13_touch_ui() else 64)
         $ state_icon=r13_notebook_button_icon(icon) if icon else None
-        use r13_state_button(caption,command,w,88 if r13_touch_ui() else 64,family="question_flat_primary" if primary else "question_flat_standard",enabled=ready,icon=state_icon,text_size=(r13_type("body") if R13_TYPE_V2 else (24 if r13_touch_ui() else 22)),control_id=control_id or ("r13_notebook_"+caption))
+        # 2026-10-27 소유자: 네 버튼 크기 통일. 주 버튼도 같은 바탕(standard)을 쓰고 글자색으로만 구분한다(primary 바탕은 크기가 달랐다).
+        use r13_state_button(caption,command,w,88 if r13_touch_ui() else 64,family="question_flat_standard",enabled=ready,icon=state_icon,text_size=(r13_type("body") if R13_TYPE_V2 else (24 if r13_touch_ui() else 22)),control_id=control_id or ("r13_notebook_"+caption))
 
 screen r13_notebook_topic_tools(ready,person,present_action):
     if present_action is not None:

@@ -153,6 +153,7 @@ init 318 python:
     def r13_v111_proof_chances(key):
         meeting=R13_PROOF_MEETING.get(key)
         if not meeting or r13_v111_value("meeting:"+meeting) is not None:return None
+        if globals().get("r13_nw_unlimited",lambda m:False)(meeting):return None
         most=r13_nw_tries_max(meeting)
         left=max(0,most-(r13_v111_value("tries:"+meeting) or 0))
         # 0.20.7 (play review days 2-3): a wrong answer now settles the meeting; say so.
@@ -258,7 +259,12 @@ init 318 python:
     # (최소 3), 11일 가설만 결정점 수 + 2 = 13. 표에 없는 회의는 예전 값 R13_NW_TRIES 를 쓴다.
     R13_NW_TRIES=5
     R13_NW_TRIES_BY_MEETING=dict(gate=3,gate_post=3,fire=4,records=4,blanket=4,piko=4,soup=5,altar=6,lamp=7,room13=7,hypothesis=13)
+    # 2026-10-27 소유자 "돌목한테 물어보는데 횟수 제한이 왜 있어, 회의도 아니고": 1일 입구는 기회를 세지 않는다.
+    R13_NW_UNLIMITED={"gate"}
+    def r13_nw_unlimited(meeting):
+        return meeting in R13_NW_UNLIMITED
     def r13_nw_tries_max(meeting):
+        if r13_nw_unlimited(meeting):return 10**6
         return R13_NW_TRIES_BY_MEETING.get(meeting,R13_NW_TRIES)
     def r13_nw_tries_left(meeting):
         return max(0,r13_nw_tries_max(meeting)-(r13_v111_value("tries:"+meeting) or 0))
@@ -275,7 +281,7 @@ init 318 python:
             return False
         kept=bool((store.room13.get("arguments") or {}).get(getattr(store,"v111_claim",None) or ""))
         hint="맞는 근거는 남겨 두었다." if kept else "맞지 않는다."
-        renpy.notify("기회 1회 사용 · 남은 기회 %d번. %s"%(left,hint))
+        renpy.notify(hint if globals().get("r13_nw_unlimited",lambda m:False)(meeting) else "기회 1회 사용 · 남은 기회 %d번. %s"%(left,hint))
         r13_nw_wrong_queue(meeting,False)
         return True
 

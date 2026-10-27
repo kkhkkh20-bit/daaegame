@@ -166,8 +166,7 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
     add Solid("#f7e8cd") xpos 88 ypos 58 xysize (1136,64)
     add Solid("#b99a6b") xpos 100 ypos 120 xysize (1112,2)
     # 기존 수첩 에셋으로 가볍게 꾸미고, 제목과 현재 위치를 한 줄에 정렬한다.
-    add Transform(r13_asset_path("file:assets/map-village-b/b_tape_red.png"),zoom=.8,rotate=-8) xpos 112 ypos 67
-    add Transform(r13_asset_path("file:assets/map-village-b/b_tape_teal.png"),zoom=.65,rotate=9) xpos 156 ypos 88
+    # 2026-10-27 소유자: 왼쪽 위에 빨강·청록 조각만 찍혀 보였다(테이프 장식). 장식은 조사 화면 이름표 한 곳만 쓰므로 뺀다.
     fixed:
         area (360,62,540,54)
         hbox:
@@ -241,4 +240,4 @@ screen r13_map_diary_footer(region,selected,ready,local_guide,close_action):
     $ can_travel=selected and selected!=room13["location"] and (selected in dict(r13_local_connections()) if local_guide else selected in r13_places())
     use r13_village_b_control("이곳으로 이동",(746,643,196,40),[Hide("r13_inn_guide"),Return(("travel",selected))] if local_guide else Return(selected),"r13_map_travel",primary=True,enabled=ready and can_travel)
     use r13_village_b_control("현장으로",(954,643,136,40),close_action,"r13_map_close",enabled=ready)
-    add Transform(r13_asset_path("file:assets/map-village-b/sticker_daram_stubborn.png"),xysize=(67,67),fit="contain") xpos 1137 ypos 631
+    # 2026-10-27 소유자 "애매하게 뒷배경을 초과하면 안 돼": 오른쪽 아래 다람 스티커가 수첩 모서리 밖으로 걸쳐 있어 뺐다.

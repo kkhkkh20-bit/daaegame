@@ -37,7 +37,7 @@ class RecordCleanup(unittest.TestCase):
   # systems/room13_notebook_shell.rpy 의 r13_nb_footer_button(0,...) 으로 오른쪽 아래 한 줄에 선다.
   for height in (64,80):
    env=self.env(height=height);y=env['r13_record_footer_y']()
-   self.assertEqual(y+env['r13_record_footer_height'](),684)
+   self.assertEqual(y+env['r13_record_footer_height'](),636)
   self.assertIn('use r13_nb_footer_button(0,"닫기",(close_action or Hide("r13_records")),control_id="r13_nb_close")',NOTE)
   self.assertNotIn('screen r13_reference_record_shell',NOTE)
   self.assertNotIn('screen r13_reference_record_categories',NOTE)

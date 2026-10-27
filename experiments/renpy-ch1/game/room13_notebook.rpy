@@ -83,7 +83,7 @@ init 68 python:
         return r13_control_height()
 
     def r13_record_footer_y():
-        return globals().get("R13_NB_BOTTOM",684)-r13_record_footer_height()
+        return globals().get("R13_NB_BOTTOM",636)-r13_record_footer_height()
 
     def r13_material_filter_choices(current,allow_transfer=True):
         owned=r13_catalog_entries(False,False)

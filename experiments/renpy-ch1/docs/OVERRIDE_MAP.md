@@ -436,7 +436,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 301 | `room13_v111.rpy:71` | _r13_nw_binding |
-| 2 | 318 | `room13_v111_newworld_rules.rpy:383` | _r13_gw_binding |
+| 2 | 318 | `room13_v111_newworld_rules.rpy:389` | _r13_gw_binding |
 | 3 | 321 | `room13_v111_grand_win.rpy:17` |  |
 
 ## `r13_v111_present_reaction` (3층)
@@ -453,7 +453,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 301 | `room13_v111.rpy:12` | _r13_nw_rel_set |
 | 2 | 330 | `systems/room13_v111_relations.rpy:18` | _r13_fork_observed_set |
-| 3 | 331 | `room13_fork_screen.rpy:369` |  |
+| 3 | 331 | `room13_fork_screen.rpy:372` |  |
 
 ## `r13_acting_spec` (2층)
 
@@ -845,7 +845,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 311 | `room13_v111_later_bindings.rpy:69` | _r13_nw_arrive |
-| 2 | 318 | `room13_v111_newworld_rules.rpy:377` |  |
+| 2 | 318 | `room13_v111_newworld_rules.rpy:383` |  |
 
 ## `r13_v111_goal` (2층)
 

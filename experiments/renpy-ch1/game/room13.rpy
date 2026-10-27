@@ -51,7 +51,8 @@ label r13_lines(entries,identity,binding_route=None):
         $ r13_dialogue_beat_begin(identity,r13_index,r13_packet,r13_directed_pose)
         # 0.18.56 (owner): someone who "comes over" in the opening narration is on screen
         # from that line, not only from their first spoken line.
-        if r13_packet[0] in (None,r13_viewpoint()) and "r13_visitor" not in renpy.get_showing_tags() and not (len(r13_packet)>2 and isinstance(r13_packet[2],dict) and r13_packet[2].get("no_lead")):
+        # 2026-10-27 소유자: 아빠 생각(괄호) 줄인데 뒤에 말할 다람이 미리 서 있었다. 생각 줄에서는 아무도 세우지 않는다.
+        if r13_packet[0] in (None,r13_viewpoint()) and not r13_thought_active and "r13_visitor" not in renpy.get_showing_tags() and not (len(r13_packet)>2 and isinstance(r13_packet[2],dict) and r13_packet[2].get("no_lead")):
             $ r13_lead=next((p[0] for p in entries[r13_index:] if p[0] not in (None,r13_viewpoint()) and p[0] in CAST and not (len(p)>2 and isinstance(p[2],dict) and p[2].get("thought"))),None)
             if r13_lead:
                 $ r13_speaker(r13_lead,"neutral")

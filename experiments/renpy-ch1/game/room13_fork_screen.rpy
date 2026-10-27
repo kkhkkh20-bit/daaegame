@@ -181,7 +181,8 @@ init 322 python:
     def r13_fork_initial_page():
         return min(max(0,len(r13_fork_columns())-6),max(0,min(r13_fork_current(),len(R13_FORK_ORDER)-2)-4))
 
-    def r13_fork_row_tops(rows,top=200,gap=16):
+    # 2026-10-27: 종이 안(636) 하단 버튼 줄(휴대폰 80) 위에 세 줄이 들어오도록 시작 178·간격 8.
+    def r13_fork_row_tops(rows,top=178,gap=8):
         """Card tops in one column: result cards are 116 high, the count lock 56."""
         tops=[];y=top
         for row in rows:
@@ -242,7 +243,7 @@ screen r13_fork_screen():
     $ touch = r13_touch_ui()
     $ small = 18 if touch else 16
     $ ch = r13_control_height()
-    $ by = 684-ch
+    $ by = R13_NB_BOTTOM-ch   # 2026-10-27: 하단 버튼 줄도 종이 안(636)으로
     # 2026-10-27 수첩 공통 틀(systems/room13_notebook_shell.rpy): 판·제목·부제·회차·닫기 X·금색 선은 기록 화면과 같은 자리.
     use r13_notebook_shell('이야기의 갈림길',subtitle='기록 / 지나온 이야기',close_action=Hide('r13_fork_screen'),
         stamp=('%d회차 · %d일째' % (room13['v111'].get('fork_run',1),room13['day'])),rule_y=149)
@@ -299,12 +300,12 @@ screen r13_fork_screen():
             action SetScreenVariable('fate_open',None) alt R13_FORK_FATE_LINE
             text R13_FORK_FATE_LINE size small color '#263b52' font R13_UI_BOLD_FONT xsize 208
     # 2026-10-27: 안내 글과 지난 결말 띠가 종이 가장자리(646) 아래에 걸쳤다. 버튼 줄은 그대로 두고 이 띠만 종이 안(640 위)으로 올린다.
-    $ fy = R13_NB_TEXT_BOTTOM-ch-4
+    $ fy = by
     add r13_asset_path("file:"+(R13_NIGHT_UI+'diamond.png')) xpos 114 ypos (fy-18)
     add Solid('#c9a86a99') xpos 114 ypos (fy-14) xsize (R13_NB_RIGHT-114) ysize 1
     text '지나온 길을 모아, 다음 이야기를 찾아요.' xpos 114 ypos (fy+ch//2) yanchor .5 size small color '#756f66' font R13_UI_BOLD_FONT
     viewport:
-        area (470,fy,R13_NB_RIGHT-470,ch) draggable True mousewheel 'horizontal'
+        area (470,fy,R13_NB_RIGHT-R13_NB_BUTTON_W-2*R13_NB_GAP-160-12-470,ch) draggable True mousewheel 'horizontal'
         hbox:
             spacing 16 yalign .5
             for ending,record in sorted((persistent.r13_fork_endings or {}).items()):
