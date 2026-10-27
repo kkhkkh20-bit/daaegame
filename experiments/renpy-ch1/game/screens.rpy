@@ -624,6 +624,16 @@ init -1 python:
         return Fixed(Transform(d,xpos=8,yalign=.5),Transform(d,xalign=1.0,xoffset=-8,yalign=.5))
 
 init python:
+    # 2026-10-27 소유자: "옵션창 버튼 크기가 뒤죽박죽". 폭을 줄마다 손으로 적어 132~300px 아홉 가지가 섞였다.
+    # 시안(승인 전, 꺼짐): 선택 버튼 한 칸 136, 단독 버튼 두 칸(136x2+12), 아래 줄 다섯은 같은 폭 206.
+    R13_OPT_UNIFIED = False
+    R13_OPT_CELL = 136
+    R13_OPT_FOOT = 206
+    def r13_opt_w(legacy,cells=1):
+        return (R13_OPT_CELL*cells+12*(cells-1)) if R13_OPT_UNIFIED else legacy
+    def r13_opt_foot(legacy_x,legacy_w,slot):
+        return (112+slot*(R13_OPT_FOOT+12),R13_OPT_FOOT) if R13_OPT_UNIFIED else (legacy_x,legacy_w)
+
     def r13_opt_button_height():
         # Match the rendered button in both native touch and short browser windows.
         return 88 if r13_touch_ui() else 52
@@ -692,36 +702,36 @@ screen pause_menu():
                     text ("%d%%"%r13_mixer_percent("music")) id "music_volume_percent" size r13_opt_size() xsize 64 yalign .5
                     textbutton ("음소거 중" if _preferences.get_mute("music") else "소리 켜짐"):
                         ysize r13_opt_button_height()
-                        xsize 150 selected not _preferences.get_mute("music") action Preference("music mute","toggle") text_size r13_opt_size()
+                        xsize r13_opt_w(150) selected not _preferences.get_mute("music") action Preference("music mute","toggle") text_size r13_opt_size()
                 use r13_opt_row("효과음", "문·버튼·조사 소리"):
                     bar value Preference("sound volume") style "r13opt_bar" xsize 280 ysize 36 yalign .5 id "fx_volume"
                     text ("%d%%"%r13_mixer_percent("sfx")) id "fx_volume_percent" size r13_opt_size() xsize 64 yalign .5
                     textbutton ("음소거 중" if _preferences.get_mute("sfx") else "소리 켜짐"):
                         ysize r13_opt_button_height()
-                        xsize 150 selected not _preferences.get_mute("sfx") action Preference("sound mute","toggle") text_size r13_opt_size()
+                        xsize r13_opt_w(150) selected not _preferences.get_mute("sfx") action Preference("sound mute","toggle") text_size r13_opt_size()
                 use r13_opt_row("대사 타이핑 소리", "글자가 나타날 때 나는 소리"):
                     for value,name in ((True,"켜기"),(False,"끄기")):
-                        textbutton name xsize 150 selected persistent.room13_typing_sound==value action Function(r13_set_option,"room13_typing_sound",value) text_size r13_opt_size() ysize r13_opt_button_height()
+                        textbutton name xsize r13_opt_w(150) selected persistent.room13_typing_sound==value action Function(r13_set_option,"room13_typing_sound",value) text_size r13_opt_size() ysize r13_opt_button_height()
                 use r13_opt_row("소리 확인", "효과음 음량을 적용해 재생"):
-                    textbutton "효과음 듣기" xsize 190 action Function(r13_test_option_sound) text_size r13_opt_size() ysize r13_opt_button_height()
-                    textbutton "음악 출처" xsize 160 action Show("r13_music_credits") text_size r13_opt_size() ysize r13_opt_button_height()
+                    textbutton "효과음 듣기" xsize r13_opt_w(190,2) action Function(r13_test_option_sound) text_size r13_opt_size() ysize r13_opt_button_height()
+                    textbutton "음악 출처" xsize r13_opt_w(160,2) action Show("r13_music_credits") text_size r13_opt_size() ysize r13_opt_button_height()
                 null height 12
                 text "음소거 중이거나 음량이 0%이면 소리가 나지 않습니다." xpos 248 size (r13_opt_size()-3) color "#765b3e"
             elif tab=="reading":
                 use r13_opt_row("글자 크기", "대사와 메뉴에 함께 적용"):
                     for key,name in (("small","작게"),("normal","보통"),("large","크게")):
-                        textbutton name id ("r13_text_size_"+key) xsize 176 selected r13_text_size()==key action Function(r13_set_text_size,key) text_size r13_opt_size() ysize r13_opt_button_height()
+                        textbutton name id ("r13_text_size_"+key) xsize r13_opt_w(176) selected r13_text_size()==key action Function(r13_set_text_size,key) text_size r13_opt_size() ysize r13_opt_button_height()
                 use r13_opt_row("대사 표시 속도", "글자가 나타나는 빠르기"):
                     for speed_title,speed_value in (("느리게",24),("보통",34),("빠르게",55),("즉시",0)):
-                        textbutton speed_title id ("r13_text_speed_%d"%speed_value) xsize 132 action [Preference("text speed",speed_value),Function(typing_preview.restart)] selected _preferences.text_cps==speed_value text_size r13_opt_size() ysize r13_opt_button_height()
+                        textbutton speed_title id ("r13_text_speed_%d"%speed_value) xsize r13_opt_w(132) action [Preference("text speed",speed_value),Function(typing_preview.restart)] selected _preferences.text_cps==speed_value text_size r13_opt_size() ysize r13_opt_button_height()
                 use r13_opt_row("자동 넘김 대기", "다음 대사까지 대기"):
                     for value,name in ((0,"수동"),(5,"짧게"),(15,"보통"),(25,"길게")):
-                        textbutton name xsize 132 action Preference("auto-forward time",value) selected (_preferences.afm_time==0 if value==0 else (0<_preferences.afm_time<10) if value==5 else (10<=_preferences.afm_time<20) if value==15 else _preferences.afm_time>=20) text_size r13_opt_size() ysize r13_opt_button_height()
+                        textbutton name xsize r13_opt_w(132) action Preference("auto-forward time",value) selected (_preferences.afm_time==0 if value==0 else (0<_preferences.afm_time<10) if value==5 else (10<=_preferences.afm_time<20) if value==15 else _preferences.afm_time>=20) text_size r13_opt_size() ysize r13_opt_button_height()
                 hbox:
                     spacing 12
-                    textbutton "다시 보기" id "r13_preview_replay" xsize 150 text_size r13_opt_size() action Function(typing_preview.restart) ysize r13_opt_button_height()
+                    textbutton "다시 보기" id "r13_preview_replay" xsize r13_opt_w(150,2) text_size r13_opt_size() action Function(typing_preview.restart) ysize r13_opt_button_height()
                     frame:
-                        xsize 674 ysize 88 padding (18,12) background r13_sticker_button()
+                        xsize (844-12-r13_opt_w(150,2)) ysize 88 padding (18,12) background r13_sticker_button()
                         add typing_preview
             else:
                 null height 0
@@ -730,42 +740,42 @@ screen pause_menu():
                     text "대사창 미리보기 · 바꾼 진하기가 적용됩니다." font R13_UI_BOLD_FONT size r13_opt_size() color "#4b3420" xsize 772
                 use r13_opt_row("대사창 진하기", "배경이 비쳐 보이는 정도"):
                     for value,name in (("99","연하게"),("d4","보통"),("f5","진하게")):
-                        textbutton name xsize 176 selected persistent.room13_window_alpha==value action [SetField(persistent,"room13_window_alpha",value),Function(renpy.save_persistent)] text_size r13_opt_size() ysize r13_opt_button_height()
+                        textbutton name xsize r13_opt_w(176) selected persistent.room13_window_alpha==value action [SetField(persistent,"room13_window_alpha",value),Function(renpy.save_persistent)] text_size r13_opt_size() ysize r13_opt_button_height()
                 use r13_opt_row("화면 움직임", "눈·불빛·인물의 짧은 반응"):
                     for value,name in ((True,"켜기"),(False,"끄기")):
-                        textbutton name xsize 176 selected persistent.room13_motion==value action Function(r13_set_option,"room13_motion",value) text_size r13_opt_size() ysize r13_opt_button_height()
+                        textbutton name xsize r13_opt_w(176) selected persistent.room13_motion==value action Function(r13_set_option,"room13_motion",value) text_size r13_opt_size() ysize r13_opt_button_height()
                 use r13_opt_row("전체 화면", "지원 기기에서 전환"):
-                    textbutton "전체 화면 전환" xsize 300 action Function(r13_toggle_fullscreen) text_size r13_opt_size() ysize r13_opt_button_height()
+                    textbutton "전체 화면 전환" xsize r13_opt_w(300,2) action Function(r13_toggle_fullscreen) text_size r13_opt_size() ysize r13_opt_button_height()
                 # 0.18.50 (owner): test tool behind a PIN (systems/room13_admin.rpy).
                 use r13_opt_row("관리자 도구", "핀 번호를 넣으면 켜짐"):
                     if persistent.room13_admin:
                         text "켜짐 · 마을 화면 위쪽 ‘관리자’" xsize 330 size r13_opt_size() color "#765b3e" yalign .5
-                        textbutton "끄기" xsize 132 action Function(r13_admin_toggle) text_size r13_opt_size() ysize r13_opt_button_height()
+                        textbutton "끄기" xsize r13_opt_w(132) action Function(r13_admin_toggle) text_size r13_opt_size() ysize r13_opt_button_height()
                     else:
-                        textbutton "핀 번호로 켜기" xsize 220 action Show("r13_admin_pin") text_size r13_opt_size() ysize r13_opt_button_height()
+                        textbutton "핀 번호로 켜기" xsize r13_opt_w(220,2) action Show("r13_admin_pin") text_size r13_opt_size() ysize r13_opt_button_height()
     text ("v"+config.version) xpos 120 ypos (516 if r13_touch_ui() else 540) size (r13_opt_size()-6) color "#8f8778"
     add Crop((16,16,1080,6),r13_asset_path("file:assets/ui-b-options/b_opt_divider.png")) xpos 112 ypos (536 if r13_touch_ui() else 560)
     textbutton "설정 초기화" style "r13opt_footer_button":
         ysize r13_opt_button_height()
-        xpos 112 ypos (552 if r13_touch_ui() else 576) xsize 184 text_size r13_opt_size()
+        xpos r13_opt_foot(112,184,0)[0] ypos (552 if r13_touch_ui() else 576) xsize r13_opt_foot(112,184,0)[1] text_size r13_opt_size()
         action Confirm("읽기·소리·화면 설정을 기본값으로 돌릴까요? 게임 진행과 저장은 유지됩니다.",Function(r13_reset_options))
     if not main_menu:
         textbutton "메인화면" style "r13opt_footer_button":
             ysize r13_opt_button_height()
-            xpos 308 ypos (552 if r13_touch_ui() else 576) xsize 170 text_size r13_opt_size()
+            xpos r13_opt_foot(308,170,1)[0] ypos (552 if r13_touch_ui() else 576) xsize r13_opt_foot(308,170,1)[1] text_size r13_opt_size()
             action Confirm("메인화면으로 돌아가시겠습니까?\n저장하지 않은 게임 진행은 사라집니다.",MainMenu(confirm=False))
     # 0.19.2: 단축키 안내는 「더보기」에서 설정 안으로 옮겼다.
     textbutton "단축키 PC" style "r13opt_footer_button":
         ysize r13_opt_button_height()
-        xpos 490 ypos (552 if r13_touch_ui() else 576) xsize 170 text_size r13_opt_size() action Show("r13_shortcut_help")
+        xpos r13_opt_foot(490,170,2)[0] ypos (552 if r13_touch_ui() else 576) xsize r13_opt_foot(490,170,2)[1] text_size r13_opt_size() action Show("r13_shortcut_help")
     # 0.20.3 (owner 2026-10-22: "저장버튼이 어차피 빈번한 게임이 아니니 옵션에 넣어줘도 되고").
     if not main_menu:
         textbutton "저장 · 불러오기" style "r13opt_footer_button":
             ysize r13_opt_button_height()
-            xpos 672 ypos (552 if r13_touch_ui() else 576) xsize 260 text_size r13_opt_size() action ShowMenu("save")  # 0.20.7: wider so it stays on one line on a phone
+            xpos r13_opt_foot(672,260,3)[0] ypos (552 if r13_touch_ui() else 576) xsize r13_opt_foot(672,260,3)[1] text_size r13_opt_size() action ShowMenu("save")  # 0.20.7: wider so it stays on one line on a phone
     textbutton "닫기" style "r13opt_close_button":
         ysize r13_opt_button_height()
-        xpos 1040 ypos (552 if r13_touch_ui() else 576) xsize 150 text_size r13_opt_size() action Return()
+        xpos r13_opt_foot(1040,150,4)[0] ypos (552 if r13_touch_ui() else 576) xsize r13_opt_foot(1040,150,4)[1] text_size r13_opt_size() action Return()
     key "game_menu" action Return()
 
 screen save():
