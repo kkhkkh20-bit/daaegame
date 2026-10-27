@@ -12,17 +12,11 @@ init 999 python:
         return rows
 
 label r13_qa_field_dot_square3:
-    call r13_qa_setup(3, [], ["lodging","entry_corrected"])
-    $ qa_nw_day3_meeting_ready()
-    $ r13_edit(location="square",period=0)
     call r13_scene("winter_square","광장","calm")
     call screen r13_hub
     return
 
 label r13_qa_field_dot_post10:
-    call r13_qa_setup(10, [], ["lodging","entry_corrected"])
-    $ qa_nw_day(10,"murder")
-    $ r13_edit(location="post",period=0)
     call r13_scene("winter_post","우체국 입구","calm")
     call screen r13_hub
     return
@@ -38,23 +32,29 @@ testcase field_dot_gate_day1:
     screenshot "field-dot-gate-day1.png"
 
 testcase field_dot_square_day3:
-    pause 2.0
+    pause 1.0
     $ _preferences.text_cps=0
     click "처음부터"
-    pause 2.0
-    run Call("r13_qa_field_dot_square3")
-    pause until screen "r13_hub" timeout 30
+    click pos (900,600) until "편지를 외투 안에" timeout 60
+    click pos (900,600) until screen "r13_hub" timeout 90
+    run Function(qa_nw_day3_meeting_ready)
+    run Function(r13_edit,location="square",period=0)
+    run Jump("r13_qa_field_dot_square3")
+    pause until screen "r13_hub" timeout 60
     pause 1.0
     assert eval (qa_field_dot_check())
     screenshot "field-dot-square-day3.png"
 
 testcase field_dot_post_day10:
-    pause 2.0
+    pause 1.0
     $ _preferences.text_cps=0
     click "처음부터"
-    pause 2.0
-    run Call("r13_qa_field_dot_post10")
-    pause until screen "r13_hub" timeout 30
+    click pos (900,600) until "편지를 외투 안에" timeout 60
+    click pos (900,600) until screen "r13_hub" timeout 90
+    run Function(lambda: qa_nw_day(10,"murder"))
+    run Function(r13_edit,location="post",period=0)
+    run Jump("r13_qa_field_dot_post10")
+    pause until screen "r13_hub" timeout 60
     pause 1.0
     assert eval (qa_field_dot_check())
     screenshot "field-dot-post-day10.png"
