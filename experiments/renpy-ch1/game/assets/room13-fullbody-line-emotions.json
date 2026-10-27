@@ -94,38 +94,6 @@
         "legacy": "distressed"
       }
     },
-    "trial:C2:done": {
-      "3": {
-        "person": "daram",
-        "text": "그럼…… 내가 때린 건 어떻게 돼?",
-        "emotion": "anxious",
-        "legacy": "distressed"
-      }
-    },
-    "trial:C2:wrong": {
-      "0": {
-        "person": "buri",
-        "text": "할아버지도 착한 사람이었어요. 그런 말로 대충 끝내지 마세요.",
-        "emotion": "angry",
-        "legacy": "distressed"
-      }
-    },
-    "trial:C3:wrong": {
-      "0": {
-        "person": "nabi",
-        "text": "제가 할머니와 같이 있었던 시간까지 없던 일로 만들지는 마세요.",
-        "emotion": "angry",
-        "legacy": "expressive"
-      }
-    },
-    "trial:C4:done": {
-      "4": {
-        "person": "granny",
-        "text": "…….",
-        "emotion": "anxious",
-        "legacy": "distressed"
-      }
-    },
     "buri:consent:refused": {
       "0": {
         "person": "buri",
@@ -605,14 +573,6 @@
         "person": "daram",
         "text": "내가 할아버지를 때렸어. 할아버지가 안 놔줘서……",
         "emotion": "anxious",
-        "legacy": "distressed"
-      }
-    },
-    "entry:daram:together": {
-      "0": {
-        "person": "daram",
-        "text": "엄마 만나러 같이 왔는데 아빠만 먼저 들어가면 안 돼.",
-        "emotion": "angry",
         "legacy": "distressed"
       }
     },
@@ -4454,140 +4414,6 @@
         "text": "난 이제 교대하러 갑니다. 내일 아침에 여기서 봅시다.",
         "emotion": "neutral",
         "reason": "솜이의 보호·저항과 밤이의 불안, 가족 편지의 기대/두려움을 구분. 진료/인계·증거 설명을 기계적으로 과장하지 않음."
-      }
-    },
-    "entry:arrival": {
-      "0": {
-        "person": "guard",
-        "text": "성함.",
-        "emotion": "neutral",
-        "reason": "가족 재회를 기대하는 장난과 안도는 joy, 입구의 자기 탓 걱정과 빈방 이후 불안은 anxious. 돌목의 행정 설명과 너울의 통제는 담담하게 유지."
-      },
-      "2": {
-        "person": "guard",
-        "text": "아버지만 들어가실 수 있소. 아이는 일꾼으로 받을 수 없소.",
-        "emotion": "neutral",
-        "reason": "가족 재회를 기대하는 장난과 안도는 joy, 입구의 자기 탓 걱정과 빈방 이후 불안은 anxious. 돌목의 행정 설명과 너울의 통제는 담담하게 유지."
-      },
-      "4": {
-        "person": "guard",
-        "text": "내게 온 종이엔 그렇게 적혀 있소.",
-        "emotion": "neutral",
-        "reason": "가족 재회를 기대하는 장난과 안도는 joy, 입구의 자기 탓 걱정과 빈방 이후 불안은 anxious. 돌목의 행정 설명과 너울의 통제는 담담하게 유지."
-      },
-      "6": {
-        "person": "guard",
-        "text": "혼자 두라는 말 아니오. 둘 다 여기서 기다리시오.",
-        "emotion": "neutral",
-        "reason": "가족 재회를 기대하는 장난과 안도는 joy, 입구의 자기 탓 걱정과 빈방 이후 불안은 anxious. 돌목의 행정 설명과 너울의 통제는 담담하게 유지."
-      },
-      "7": {
-        "person": "daram",
-        "text": "아빠, 나 때문에 못 들어가?",
-        "emotion": "anxious",
-        "reason": "가족 재회를 기대하는 장난과 안도는 joy, 입구의 자기 탓 걱정과 빈방 이후 불안은 anxious. 돌목의 행정 설명과 너울의 통제는 담담하게 유지."
-      }
-    },
-    "entry:karo:arrival": {
-      "0": {
-        "person": "daram",
-        "text": "안아 주지는 마.",
-        "emotion": "neutral",
-        "reason": "가족 재회를 기대하는 장난과 안도는 joy, 입구의 자기 탓 걱정과 빈방 이후 불안은 anxious. 돌목의 행정 설명과 너울의 통제는 담담하게 유지."
-      },
-      "2": {
-        "person": "karo",
-        "text": "큰 짐은 두고 가세요. 축에 금이 갔네. 돌아가는 건 수리부터 해야겠어요.",
-        "emotion": "neutral",
-        "reason": "가족 재회를 기대하는 장난과 안도는 joy, 입구의 자기 탓 걱정과 빈방 이후 불안은 anxious. 돌목의 행정 설명과 너울의 통제는 담담하게 유지."
-      },
-      "4": {
-        "person": "karo",
-        "text": "초소요. 방문 확인 먼저.",
-        "emotion": "neutral",
-        "reason": "가족 재회를 기대하는 장난과 안도는 joy, 입구의 자기 탓 걱정과 빈방 이후 불안은 anxious. 돌목의 행정 설명과 너울의 통제는 담담하게 유지."
-      }
-    },
-    "entry:explain:v2": {
-      "2": {
-        "person": "guard",
-        "text": "날짜와 이름을 찾으면 되오. 잠깐 기다리시오.",
-        "emotion": "neutral",
-        "reason": "가족 재회를 기대하는 장난과 안도는 joy, 입구의 자기 탓 걱정과 빈방 이후 불안은 anxious. 돌목의 행정 설명과 너울의 통제는 담담하게 유지."
-      }
-    },
-    "entry:corrected:v2": {
-      "1": {
-        "person": "guard",
-        "text": "가족 방문을 일꾼으로 옮겨 놨군.",
-        "emotion": "neutral",
-        "reason": "가족 재회를 기대하는 장난과 안도는 joy, 입구의 자기 탓 걱정과 빈방 이후 불안은 anxious. 돌목의 행정 설명과 너울의 통제는 담담하게 유지."
-      },
-      "3": {
-        "person": "guard",
-        "text": "여기서 고치겠소.",
-        "emotion": "neutral",
-        "reason": "가족 재회를 기대하는 장난과 안도는 joy, 입구의 자기 탓 걱정과 빈방 이후 불안은 anxious. 돌목의 행정 설명과 너울의 통제는 담담하게 유지."
-      }
-    },
-    "entry:wait": {
-      "1": {
-        "person": "guard",
-        "text": "가족 방문을 일꾼으로 옮겨 놨군.",
-        "emotion": "neutral",
-        "reason": "가족 재회를 기대하는 장난과 안도는 joy, 입구의 자기 탓 걱정과 빈방 이후 불안은 anxious. 돌목의 행정 설명과 너울의 통제는 담담하게 유지."
-      },
-      "3": {
-        "person": "guard",
-        "text": "여기서 고치겠소.",
-        "emotion": "neutral",
-        "reason": "가족 재회를 기대하는 장난과 안도는 joy, 입구의 자기 탓 걱정과 빈방 이후 불안은 anxious. 돌목의 행정 설명과 너울의 통제는 담담하게 유지."
-      }
-    },
-    "entry:daram:waiting": {
-      "0": {
-        "person": "daram",
-        "text": "여기 아빠 이름.",
-        "emotion": "neutral",
-        "reason": "가족 재회를 기대하는 장난과 안도는 joy, 입구의 자기 탓 걱정과 빈방 이후 불안은 anxious. 돌목의 행정 설명과 너울의 통제는 담담하게 유지."
-      },
-      "2": {
-        "person": "daram",
-        "text": "‘외 한 명’은 나야? 내 이름도 썼는데.",
-        "emotion": "anxious",
-        "reason": "가족 재회를 기대하는 장난과 안도는 joy, 입구의 자기 탓 걱정과 빈방 이후 불안은 anxious. 돌목의 행정 설명과 너울의 통제는 담담하게 유지."
-      }
-    },
-    "entry:copy:v2": {
-      "0": {
-        "person": "guard",
-        "text": "둘인 건 봤소. 가족을 만나러 왔는지, 둘이 잘 방은 있는지도 확인해야 하오.",
-        "emotion": "neutral",
-        "reason": "가족 재회를 기대하는 장난과 안도는 joy, 입구의 자기 탓 걱정과 빈방 이후 불안은 anxious. 돌목의 행정 설명과 너울의 통제는 담담하게 유지."
-      }
-    },
-    "entry:rules:v2": {
-      "0": {
-        "person": "guard",
-        "text": "같이 온 건 알겠소. 둘이 묵을 방은 확인됐소?",
-        "emotion": "neutral",
-        "reason": "가족 재회를 기대하는 장난과 안도는 joy, 입구의 자기 탓 걱정과 빈방 이후 불안은 anxious. 돌목의 행정 설명과 너울의 통제는 담담하게 유지."
-      }
-    },
-    "entry:letter": {
-      "1": {
-        "person": "guard",
-        "text": "초대받은 건 알겠소. 두 사람이 묵을 방도 확인해야 하오.",
-        "emotion": "neutral",
-        "reason": "가족 재회를 기대하는 장난과 안도는 joy, 입구의 자기 탓 걱정과 빈방 이후 불안은 anxious. 돌목의 행정 설명과 너울의 통제는 담담하게 유지."
-      }
-    },
-    "entry:departure": {
-      "3": {
-        "person": "guard",
-        "text": "지금은 이 두 사람 등록 중이오.",
-        "emotion": "angry",
-        "reason": "가족 재회를 기대하는 장난과 안도는 joy, 입구의 자기 탓 걱정과 빈방 이후 불안은 anxious. 돌목의 행정 설명과 너울의 통제는 담담하게 유지."
       }
     }
   }
