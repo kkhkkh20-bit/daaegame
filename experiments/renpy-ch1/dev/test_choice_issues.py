@@ -171,7 +171,10 @@ class FirstTimeGuides(unittest.TestCase):
         self.assertIn('r13_recovery_retry_seen()',(GAME/'room13_meeting_retry_logic.rpy').read_text())
         self.assertIn('r13_recovery_morning_note(day)',(GAME/'systems/room13_polish3.rpy').read_text())
         screens=(GAME/'room13_week2_screens.rpy').read_text()
-        self.assertIn('r13_proof_guide_steps(',screens)
+        # 2026-10-27 패널 정리: 단계는 글줄(r13_proof_guide_steps)이 아니라 칩 셋(r13_proof_guide_chips)으로 그린다.
+        # 글줄 함수는 남아 있고 위 시험이 그 색·순서를 본다. 여기서는 화면이 칩과 안내를 실제로 쓰는지만 본다.
+        self.assertIn('r13_proof_guide_chips(',screens)
+        self.assertIn('id "r13_proof_steps"',screens)
         self.assertIn('r13_proof_guide_help(',screens)
 
 if __name__=='__main__':unittest.main()

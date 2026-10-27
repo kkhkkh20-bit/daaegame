@@ -47,51 +47,117 @@ screen r13_crisis():
                 if r13_has("E29"):
                     textbutton "가족과 빠져나갈 길" style "r13_action_button" xsize 370 ysize 54 text_size 19 action Return("escape") sensitive ready
 
+# 2026-10-27 자료 대조 패널 정리(소유자 "총체적 난국, 너무 안 이뻐"). 같은 기능, 배치만 다시 했다.
+#   위계는 셋뿐이다 — 제목(주장) title · 본문(고른 자료) body · 보조(남은 기회·단계·안내) small.
+#   위에서 아래로: 제목 + 남은 기회 칩 → 단계 칩 셋(첫 제출 성공 전까지) → 자료 카드 목록 → 안내 한 줄 → 버튼 넷.
+#   카드는 내용만큼 자라고, 한 열로 안 들어가면 두 열로 나눈다 — 스크롤 상자는 두지 않는다(휴대폰 큰 글씨에서
+#   자료 둘에도 스크롤이 생겼다). 동작·화면 id(r13_proof_steps, r13_proof_pick …)는 그대로다.
+init 112 python:
+    R13_PROOF_PANEL=(50,100,1180,570)
+    R13_PROOF_PAD=(48,32,28,24)
+    R13_PROOF_INNER_W=R13_PROOF_PANEL[2]-R13_PROOF_PAD[0]-R13_PROOF_PAD[2]   # 1104
+    R13_PROOF_INNER_H=R13_PROOF_PANEL[3]-R13_PROOF_PAD[1]-R13_PROOF_PAD[3]   # 514
+    R13_PROOF_GAP=10          # 머리·단계·목록·안내 사이
+    R13_PROOF_CARD_GAP=8      # 카드 사이(세로·가로 같다)
+    R13_PROOF_REMOVE_W=104    # 카드 안 「빼기」 폭
+
+    def r13_proof_text_size(text,size,width=None,heavy=True):
+        t=Text(text,font=(R13_UI_BOLD_FONT if heavy else R13_UI_FONT),size=size,xsize=width)
+        w,h=renpy.render(t,width or 1280,720,0,0).get_size()
+        return int(w),int(h)
+
+    def r13_proof_card_height():
+        # 썸네일 + 이름 두 줄(body)이 들어가는 높이. 휴대폰은 「빼기」 터치 영역 때문에 가장 높다.
+        #   PC 보통 64(안 56, body 24 두 줄 55) · PC 크게 72(안 64, 28 두 줄 64) · 휴대폰 80(안 72, 30 두 줄 69).
+        return 80 if r13_touch_ui() else (72 if persistent.room13_large_text else 64)
+
+    def r13_proof_layout(claim,count,chances,steps_shown,help_text):
+        """(열 수, 카드 높이, 제목 폭). 다섯 장까지 휴대폰 큰 글씨에서도 스크롤 없이 들어가게 남은 높이로 열을 정한다.
+        휴대폰 크게: 514 − 머리 48 − 단계 42 − 안내 39 − 버튼 88 − 사이 40 = 257 ≥ 두 열 세 줄 3×80+2×8 = 256."""
+        title_size=(r13_type("title") if R13_TYPE_V2 else r13_read_size(30,32))
+        small=(r13_type("small") if R13_TYPE_V2 else 22)
+        chip_w=(r13_proof_text_size(chances,small)[0]+28) if chances else 0
+        title_w=R13_PROOF_INNER_W-(chip_w+16 if chances else 0)
+        header=max(r13_proof_text_size(R13_CLAIMS[claim]["assertion"],title_size,title_w)[1],small+12)
+        steps=(small+14) if steps_shown else 0
+        help_h=r13_proof_text_size(help_text,small,R13_PROOF_INNER_W,heavy=False)[1]
+        gaps=R13_PROOF_GAP*(4 if steps_shown else 3)
+        avail=R13_PROOF_INNER_H-header-steps-help_h-r13_control_height()-gaps
+        card=r13_proof_card_height()
+        n=max(1,count)
+        cols=1 if n*card+R13_PROOF_CARD_GAP*(n-1)<=avail else 2
+        return cols,card,title_w
+
+# 작은 꼬리표. 테두리만 있는 칩은 빨강 판 안에 크림 판을 넣어 그린다 — 새 재질을 만들지 않는다.
+screen r13_proof_chip(label,filled=False):
+    frame:
+        padding (2,2) background Solid(r13_type_color("accent") if R13_TYPE_V2 else "#bc4134")
+        frame:
+            padding (12,3) background Solid((r13_type_color("accent") if R13_TYPE_V2 else "#bc4134") if filled else "#f5ecd9")
+            text label font R13_UI_BOLD_FONT size (r13_type("small") if R13_TYPE_V2 else 22) color ((r13_type_color("inverse") if R13_TYPE_V2 else "#fff3df") if filled else (r13_type_color("accent") if R13_TYPE_V2 else "#bc4134"))
+
 screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장",can_press=True,need_evidence=False,leave_label="다른 주장부터",chances=None):
     style_prefix "r13"
     modal True
     default ready=False
     timer .15 action SetScreenVariable("ready",True)
-    $ control_height=88 if r13_touch_ui() else 56
+    $ chosen=list(room13["arguments"].get(claim,[]))
+    $ steps_shown=bool(need_evidence and r13_proof_guide_active())
+    $ help_text=(r13_proof_guide_help(len(chosen),chances) if steps_shown else r13_proof_edit_help(chances))
+    $ cols,card_h,title_w=r13_proof_layout(claim,len(chosen),chances,steps_shown,help_text)
+    $ card_w=(R13_PROOF_INNER_W-R13_PROOF_CARD_GAP*(cols-1))//cols
+    $ thumb=card_h-8
+    $ name_w=card_w-20-thumb-14-((R13_PROOF_REMOVE_W+12) if need_evidence else 0)
+    $ body_size=(r13_type("body") if R13_TYPE_V2 else r13_read_size(23,26))
     frame:
-        area (50,100,1180,570) padding (48,32,28,24) background R13DiaryPanel()
+        area R13_PROOF_PANEL padding R13_PROOF_PAD background R13DiaryPanel()
         fixed:
+            vbox:
+                spacing R13_PROOF_GAP
+                # 머리: 주장 제목 왼쪽, 같은 줄 오른쪽에 남은 기회 칩. 「기록 · 자료 대조」 글자는 뺐다 — 패널 자체가 그것이다.
+                # fixed+yalign 으로 짜면 높이가 정해지지 않아 패널 전체로 늘어난다(첫 캡처에서 가운데가 비었다). hbox 로 둔다.
+                hbox:
+                    xsize R13_PROOF_INNER_W spacing 16
+                    text R13_CLAIMS[claim]["assertion"] font R13_UI_BOLD_FONT size (r13_type("title") if R13_TYPE_V2 else r13_read_size(30,32)) color (r13_type_color("ink") if R13_TYPE_V2 else "#4b3420") xsize title_w yalign .5
+                    if chances:
+                        frame:
+                            padding (0,0) background None yalign .5 xalign 1.0
+                            use r13_proof_chip(chances)
+                # 단계: 세 칩, 지금 단계만 빨강 채움. 첫 제출 성공 뒤에는 그대로 사라진다(r13_proof_guide_finish).
+                if steps_shown:
+                    hbox:
+                        id "r13_proof_steps" spacing 8
+                        for label,current in r13_proof_guide_chips(len(chosen)):
+                            use r13_proof_chip(label,current)
+                # 고른 자료: 빈 상자가 아니라 카드 목록. 썸네일은 기록 화면과 같은 그림(r13_evidence_picture).
+                if chosen:
+                    vbox:
+                        spacing R13_PROOF_CARD_GAP
+                        for row in range(0,len(chosen),cols):
+                            hbox:
+                                spacing R13_PROOF_CARD_GAP
+                                for key in chosen[row:row+cols]:
+                                    frame:
+                                        xysize (card_w,card_h) padding (10,4) background r13_sticker_button()
+                                        add r13_evidence_picture(key,thumb) xpos 0 yalign .5
+                                        text r13_ev_two_lines(ROOM13["evidence"][key]["name"],name_w,body_size,2) xpos (thumb+14) yalign .5 xsize name_w font R13_UI_BOLD_FONT size (r13_type("body") if R13_TYPE_V2 else r13_read_size(23,26)) color (r13_type_color("ink") if R13_TYPE_V2 else "#4b3420") line_spacing -1
+                                        if need_evidence:
+                                            fixed:
+                                                xalign 1.0 yalign .5 xysize (R13_PROOF_REMOVE_W,card_h-12)
+                                                use r13_control("빼기",None,Return(("remove",key)),enabled=ready,width=R13_PROOF_REMOVE_W,height=card_h-12,label_size=(r13_type("small") if R13_TYPE_V2 else 22))
+                else:
+                    fixed:
+                        xysize (R13_PROOF_INNER_W,card_h)
+                        text "「자료 고르기」로 담습니다." align (.5,.5) size (r13_type("body") if R13_TYPE_V2 else r13_read_size(23,26)) color (r13_type_color("muted") if R13_TYPE_V2 else "#6b5641")
+                # 안내 한 줄.
+                text help_text size (r13_type("small") if R13_TYPE_V2 else 22) color (r13_type_color("muted") if R13_TYPE_V2 else "#6b5641") xsize R13_PROOF_INNER_W
+            # 버튼 넷은 공통 부품 규격 한 줄. 주 버튼은 「선택한 근거 제출」 하나.
             hbox:
-                xsize 1090
-                # 타이포 V2: 머리 꼬리표 small·주장 제목 title·개수와 단계 small·본문과 안내 body. 네 버튼은 공통 부품 규격이라 두었다.
-                text heading font R13_UI_TYPE["title"]["font"] size (r13_type("small") if R13_TYPE_V2 else 22) color (r13_type_color("muted") if R13_TYPE_V2 else "#717367")
-                if chances:
-                    text chances size (r13_type("small") if R13_TYPE_V2 else 22) color (r13_type_color("muted") if R13_TYPE_V2 else "#795d40") xalign 1.0
-            text R13_CLAIMS[claim]["assertion"] font R13_UI_TYPE["title"]["font"] ypos 40 size (r13_type("title") if R13_TYPE_V2 else r13_read_size(30,32)) color (r13_type_color("ink") if R13_TYPE_V2 else "#765426") xsize 1090
-            text ("고른 자료 · %d개"%len(room13["arguments"].get(claim,[]))) ypos 116 size (r13_type("small") if R13_TYPE_V2 else 22)
-            # 2026-10-27 외부 리뷰: 고르기·확인·제출이 다른 행동임을 첫 제출 성공 전까지만 단계로 보인다.
-            if need_evidence and r13_proof_guide_active():
-                text r13_proof_guide_steps(len(room13["arguments"].get(claim,[]))) id "r13_proof_steps" xpos 1090 xanchor 1.0 ypos 116 size (r13_type("small") if R13_TYPE_V2 else 22) font R13_UI_BOLD_FONT
-            frame:
-                area (0,142,1090,190) padding (20,16) background r13_sticker_button()
-            viewport:
-                xpos 20 ypos 158 xsize 1050 ysize 158 draggable True mousewheel True scrollbars "vertical"
-                vscrollbar_unscrollable "hide"
-                vbox:
-                    spacing 8
-                    for key in room13["arguments"].get(claim,[]):
-                        hbox:
-                            spacing 16
-                            text ("· "+ROOM13["evidence"][key]["name"]) size (r13_type("body") if R13_TYPE_V2 else r13_read_size(23,26)) xsize 850 yalign .5
-                            if need_evidence:
-                                use r13_control("빼기",None,Return(("remove",key)),enabled=ready,width=128,height=control_height,label_size=24)
-                    if not room13["arguments"].get(claim):
-                        vbox:
-                            spacing 12
-                            text "아직 고른 자료가 없습니다." font R13_UI_BOLD_FONT size (r13_type("body") if R13_TYPE_V2 else 24) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30")
-                            text "아래 ‘자료 고르기’에서 대조할 자료를 골라 주세요." size (r13_type("body") if R13_TYPE_V2 else 22) color (r13_type_color("muted") if R13_TYPE_V2 else "#717367") xmaximum 1000
-            text (r13_proof_guide_help(len(room13["arguments"].get(claim,[])),chances) if need_evidence and r13_proof_guide_active() else r13_proof_edit_help(chances)) ypos 350 size (r13_type("body") if R13_TYPE_V2 else (26 if r13_touch_ui() else 22)) color (r13_type_color("muted") if R13_TYPE_V2 else "#795d40") xsize 1090
-            hbox:
-                ypos 414 spacing 16
-                use r13_control("자료 고르기",None,Return("present"),enabled=ready,width=258,height=control_height,label_size=24,control_id="r13_proof_pick")
-                use r13_control("되묻는다",None,Return("press"),enabled=(ready and can_press),width=258,height=control_height,label_size=24,control_id="r13_proof_hint")
-                use r13_control("선택한 근거 제출",None,Return("argue"),enabled=(ready and (bool(room13["arguments"].get(claim)) or not need_evidence)),primary=True,width=258,height=control_height,label_size=24,control_id="r13_proof_submit")
-                use r13_control(leave_label,None,Return("leave"),enabled=ready,width=258,height=control_height,label_size=24,control_id="r13_proof_back")
+                yalign 1.0 spacing R13_CONTROL["gap"]
+                use r13_control("자료 고르기",None,Return("present"),enabled=ready,width=264,control_id="r13_proof_pick")
+                use r13_control("되묻는다",None,Return("press"),enabled=(ready and can_press),width=264,control_id="r13_proof_hint")
+                use r13_control("선택한 근거 제출",None,Return("argue"),enabled=(ready and (bool(chosen) or not need_evidence)),primary=True,width=264,control_id="r13_proof_submit")
+                use r13_control(leave_label,None,Return("leave"),enabled=ready,width=264,control_id="r13_proof_back")
 
 screen r13_rescue_notes():
     style_prefix "r13"

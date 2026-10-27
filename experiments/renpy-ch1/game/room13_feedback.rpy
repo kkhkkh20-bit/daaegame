@@ -45,17 +45,29 @@ define R13_EVIDENCE_ICON_SIZE = 104
 define R13_EVIDENCE_NAME_WIDTH = 190
 define R13_EVIDENCE_CARD_PAD = 10
 
-screen r13_evidence_card(key,caption="",conversation=False,notice=False):
+screen r13_evidence_card(key,caption="",conversation=False,notice=False,compact=False):
     $ card_center=(120,92) if notice else R13_EVIDENCE_CARD_CENTER
     style_prefix "r13"
-    frame:
-        xanchor .5 xpos card_center[0] ypos card_center[1] padding (R13_EVIDENCE_CARD_PAD,8,R13_EVIDENCE_CARD_PAD,8)
-        background R13ActionPanel()
-        at r13_evidence_reveal
-        vbox:
-            spacing 3
-            add Transform(r13_record_icon(key),size=(R13_EVIDENCE_ICON_SIZE,R13_EVIDENCE_ICON_SIZE),fit="contain",nearest=True) xalign .5
-            text r13_catalog_title(key) size 20 color "#fff4df" xalign .5 text_align .5 xmaximum R13_EVIDENCE_NAME_WIDTH
+    if compact:
+        # 2026-10-27: 자료 대조 패널(50,100)-(1230,670)이 떠 있는 동안은 왼쪽 위 카드가 주장 제목을 덮는다.
+        # 패널 아래 띠(670~720)의 오른쪽 끝에 한 줄짜리로 내린다 — 그림 36 + 이름, 높이 44 로 패널에 닿지 않는다.
+        frame:
+            xanchor 1.0 xpos 1230 yanchor 1.0 ypos 718 padding (10,4,12,4)
+            background R13ActionPanel()
+            at r13_evidence_reveal
+            hbox:
+                spacing 10
+                add Transform(r13_record_icon(key),size=(36,36),fit="contain",nearest=True) yalign .5
+                text r13_catalog_title(key) size 20 color "#fff4df" yalign .5 xmaximum 360
+    else:
+        frame:
+            xanchor .5 xpos card_center[0] ypos card_center[1] padding (R13_EVIDENCE_CARD_PAD,8,R13_EVIDENCE_CARD_PAD,8)
+            background R13ActionPanel()
+            at r13_evidence_reveal
+            vbox:
+                spacing 3
+                add Transform(r13_record_icon(key),size=(R13_EVIDENCE_ICON_SIZE,R13_EVIDENCE_ICON_SIZE),fit="contain",nearest=True) xalign .5
+                text r13_catalog_title(key) size 20 color "#fff4df" xalign .5 text_align .5 xmaximum R13_EVIDENCE_NAME_WIDTH
 
 screen r13_evidence_found(keys,conversation=False):
     # 0.18.48: above the desk close-up (90) and the item bag (95), which reopen right after a
@@ -64,9 +76,13 @@ screen r13_evidence_found(keys,conversation=False):
     default item_index=0
     # Navigation and full record panes own their surface. Desk/item finds still show above the close-up.
     if not any(renpy.get_screen(name) for name in ("r13_map","r13_records","r13_learning_notes","r13_record_compare","r13_calendar","r13_work_board")):
-        if r13_fx_active():
-            add R13_STORYBOOK.get("card_glow", Null()) xpos 120 ypos (92+8+R13_EVIDENCE_ICON_SIZE//2+20) anchor (.5,.5) at r13_card_glow
-        use r13_evidence_card(keys[item_index],conversation=conversation,notice=True)
+        if renpy.get_screen("r13_crisis_proof"):
+            # 자료 대조 패널 위에서는 제목과 겹치지 않게 패널 아래로 보낸다(위 compact).
+            use r13_evidence_card(keys[item_index],conversation=conversation,notice=True,compact=True)
+        else:
+            if r13_fx_active():
+                add R13_STORYBOOK.get("card_glow", Null()) xpos 120 ypos (92+8+R13_EVIDENCE_ICON_SIZE//2+20) anchor (.5,.5) at r13_card_glow
+            use r13_evidence_card(keys[item_index],conversation=conversation,notice=True)
     if item_index+1<len(keys):
         timer 2.4 action SetScreenVariable("item_index",item_index+1)
     else:

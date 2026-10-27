@@ -27,13 +27,85 @@ init 65 python:
         # 납품 trimmed 비율(일반 약 3.2:1/원본 label 3.5:1)을 유지하는 고정 크기 그림.
         return r13_asset_path("file:"+(R13_VILLAGE_B_ART + ("b_button_primary_trimmed.png" if primary else "b_button_trimmed.png")))
 
+    def r13_village_b_label_px():
+        # 2026-10-27 소유자 「마을지도 글씨가 너무 큼」: 장소 이름표를 body(24) 에서 small(22) 로 내린다.
+        # 휴대폰은 r13_type 이 26 을 주지만 같은 지적이 그대로 보이므로 PC 단계값(22, 크게 26)으로 맞춘다.
+        # 다만 20 아래로는 내리지 않는다 — 휴대폰 가로(844x390)에서 20 이 약 10px 이라 그 밑이면 읽히지 않는다(0.20.67).
+        ls=1.3 if r13_touch_ui() else 1.0
+        px=(r13_type("small") if R13_TYPE_V2 else 20*ls)
+        if R13_TYPE_V2 and r13_touch_ui():
+            px=r13_read_size(22,26)
+        return max(20,px) if R13_TYPE_V2 else px
+
+    def r13_village_b_label_width(label,scaled=True):
+        # 이름표 폭은 그 글자 크기로 잰다(글자당 px+1). 꺼짐 동등성: 이름표 버튼은 터치 배율을 곱했고 배지 자리는 안 곱했다.
+        px=r13_village_b_label_px()
+        if R13_TYPE_V2:
+            return max(144,len(label)*(px+1)+24)
+        return max(144,len(label)*21+24)*((1.3 if r13_touch_ui() else 1.0) if scaled else 1.0)
+
+    class R13VillageBSurface(renpy.Displayable):
+        """지도 하단 조작(선택 표시판·지역 탭·이동·현장으로)이 함께 쓰는 한 가지 판.
+
+        2026-10-27 소유자 「버튼 크기·폰트가 각각이고 글씨가 눌린다」: 공통 R13ButtonStateVisual 은 160x52 원본의
+        비율(3.4:1)을 지키려고 버튼 안에 더 작은 종이를 놓고(「마을」 106x44 → 종이 31px) 글자를 그 종이에 맞춰
+        Transform(zoom) 으로 줄였다. 그래서 같은 줄에서 종이 높이가 31·42·44 로 갈리고 「마을」만 20px 로 흐릿하게
+        눌렸다. 그림을 늘이지도 글자를 줄이지도 않고 칸 크기 그대로 캔버스에 그린다 — 평면 버튼 자산과 같은 모양
+        (둥근 네모·남색 2px 테두리·빨강/크림 면). 보조 버튼은 R13_SOFT_FLAT_BUTTONS 가 켜진 동안 같은 연한 판을 쓴다."""
+        PRIMARY={"basic":("#d9434c","#c74850"),"pressed":("#b8323e","#a83641"),"selected":("#c12f3f","#b03441"),"disabled":("#d6b9b7","#d3bab8")}
+        STANDARD={"basic":"#fff5e3","pressed":"#e8dfcd","selected":"#dce8f0","disabled":"#eae6dc"}
+        def __init__(self,primary=False,chosen=False,hovered=False,disabled=False,**kwargs):
+            super(R13VillageBSurface,self).__init__(**kwargs)
+            self.primary=primary;self.chosen=chosen;self.hovered=hovered;self.disabled=disabled
+            self.soft=R13SoftButtonSurface(hovered=hovered,chosen=chosen,disabled=disabled)
+        def visit(self):
+            return [self.soft]
+        def render(self,width,height,st,at):
+            w=max(1,int(width));h=max(1,int(height));r=renpy.Render(w,h)
+            soft=getattr(store,"R13_SOFT_FLAT_BUTTONS",False)
+            if not self.primary and soft:
+                r.blit(renpy.render(self.soft,w,h,st,at),(0,0))
+                return r
+            state="disabled" if self.disabled else "pressed" if self.hovered else "selected" if self.chosen else "basic"
+            if self.primary:
+                face=self.PRIMARY[state][1 if soft else 0]  # 켜진 동안은 채도 .85 (SaturationMatrix 와 같은 값)
+            else:
+                face=self.STANDARD[state]
+            edge="#a9adb0" if self.disabled else "#293c53"
+            c=r.canvas();rad=min(10,h//3)
+            for (x,y,ww,hh,col) in ((0,0,w,h,edge),(2,2,w-4,h-4,face)):
+                c.rect(col,(x+rad,y,ww-2*rad,hh));c.rect(col,(x,y+rad,ww,hh-2*rad))
+                for cx,cy in ((x+rad,y+rad),(x+ww-rad-1,y+rad),(x+rad,y+hh-rad-1),(x+ww-rad-1,y+hh-rad-1)):
+                    c.circle(col,(cx,cy),rad)
+            return r
+
+    def r13_village_b_control_text():
+        # 네 조작의 공통 글자 크기. 2026-10-27 외부 평가: 휴대폰 가로에서 19는 약 10px 로 줄어 읽기 어려웠다.
+        return (r13_type("body") if R13_TYPE_V2 else (26 if r13_touch_ui() else 19))
+
 screen r13_village_b_control(label, rect, action, control_id, primary=False, enabled=True, chosen=False):
+    # 지도 하단 조작. 칸을 그대로 쓰는 판(R13VillageBSurface) 위에 글자를 줄이지 않고 놓는다. 글자가 안 들어가면
+    # 칸을 넓힌다 — 폭은 r13_map_diary_footer 의 표에서 큰 글씨·휴대폰(30px)까지 실측해 둔 값이다.
+    # 높이는 PC 44 / 휴대폰 88(740x360 가로에서 44 CSS px 손가락 표적). 줄의 중심선 663 은 그대로.
+    $ bx,by,bw,bh=rect
+    button:
+        id control_id
+        area (bx,by-((88 if r13_touch_ui() else 44)-bh)//2,bw,88 if r13_touch_ui() else 44)
+        padding (0,0)
+        background R13VillageBSurface(primary=primary,chosen=chosen)
+        hover_background R13VillageBSurface(primary=primary,chosen=chosen,hovered=True)
+        insensitive_background R13VillageBSurface(primary=primary,disabled=True)
+        activate_sound ("<volume 0.65>"+r13_asset_path("file:assets/diary-sounds/paper-selection.mp3"))
+        action action sensitive enabled selected chosen alt label
+        text label font R13_UI_BOLD_FONT size r13_village_b_control_text() color ("#8b8175" if not enabled else "#fff5e5" if primary else ("#4b3420" if getattr(store,"R13_SOFT_FLAT_BUTTONS",False) else "#263953")) align (.5,.5) text_align .5
+
+screen r13_village_b_plate(label, rect):
+    # 「선택: …」 표시판. 누르는 것이 아니지만 같은 줄의 버튼과 같은 높이·글자·테두리를 쓴다(2026-10-27 소유자 「통일」).
     $ bx,by,bw,bh=rect
     fixed:
         area (bx,by-((88 if r13_touch_ui() else 44)-bh)//2,bw,88 if r13_touch_ui() else 44)
-        # 2026-10-27 외부 평가: 휴대폰 가로(844x390)에서 19는 약 10px 로 줄어 읽기 어려웠다. 터치 화면에서만 키운다.
-        # 2026-10-27 타이포 시안: body 단계(휴대폰 28)는 위 26 보다 작아지지 않는다.
-        use r13_state_button(label,action,bw,88 if r13_touch_ui() else 44,family="map_flat_primary" if primary else "map_flat_standard",chosen=chosen,enabled=enabled,text_size=(r13_type("body") if R13_TYPE_V2 else (26 if r13_touch_ui() else 19)),control_id=control_id)
+        add R13VillageBSurface() xysize (bw,88 if r13_touch_ui() else 44)
+        text label font R13_UI_BOLD_FONT size r13_village_b_control_text() color (r13_type_color("ink") if R13_TYPE_V2 else "#493324") align (.5,.5) text_align .5
 
 screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_action,extra_places,village_zoom):
     add Solid("#d9d7c6")
@@ -62,12 +134,11 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
                         $ hx,hy,hw,hh=place["provisional_hit_rect"]
                         $ cx,cy=place["label_center"]
                         $ label=r13_map_label(key)
-                        # 터치 화면에서는 장소 이름표를 1.3배로(휴대폰에서 글씨가 8px 안팎까지 줄었다).
+                        # 터치 화면에서는 이름표 칸(클릭 영역)을 1.3배로 유지한다. 글자 크기는 r13_village_b_label_px —
+                        # 2026-10-27 소유자 「글씨가 너무 큼」으로 body→small, 휴대폰도 PC 값으로.
                         $ ls=1.3 if r13_touch_ui() else 1.0
-                        # 2026-10-27 타이포 시안: 장소 이름은 body 단계. 터치의 1.3배(26)보다 작아지지 않게 큰 쪽을 쓰고,
-                        # 이름표 폭도 그 글자 크기로 잰다(글자당 20→24 가 되면 21px 칸에서 넘친다).
-                        $ lpx=max(20*ls,(r13_type("body") if R13_TYPE_V2 else 0))
-                        $ lw=(max(144,len(label)*(lpx+1)+24) if R13_TYPE_V2 else max(144,len(label)*21+24)*ls)
+                        $ lpx=r13_village_b_label_px()
+                        $ lw=r13_village_b_label_width(label)
                         $ choose = [SetScreenVariable("selected",key),SetScreenVariable("map_notice",None)] if state!="locked" else SetScreenVariable("map_notice",label+" · 지금은 이곳으로 갈 수 없습니다.")
                         button:
                             id ("map_building_"+key)
@@ -88,8 +159,7 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
                     if key in R13_VILLAGE_B_PLACES:
                         $ place=R13_VILLAGE_B_PLACES[key]
                         $ cx,cy=place["label_center"]
-                        $ lpx=max(20*(1.3 if r13_touch_ui() else 1.0),(r13_type("body") if R13_TYPE_V2 else 0))
-                        $ lw=(max(144,len(r13_map_label(key))*(lpx+1)+24) if R13_TYPE_V2 else max(144,len(r13_map_label(key))*21+24))
+                        $ lw=r13_village_b_label_width(r13_map_label(key),scaled=False)
                         use r13_map_status_badges(key,state,selected,(int((cx-lw/2)*zoom),int((cy-19)*zoom),int(lw*zoom),int(38*zoom)))
     add r13_asset("file:assets/map-village-b/notebook_frame_1280x720.png")
     # 수첩 상단의 좁은 봉제선 대신 지도 창 안에 제목 전용 64px 공간을 확보한다.
@@ -158,16 +228,17 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
                                 text_font R13_UI_BOLD_FONT text_size (r13_type("body") if R13_TYPE_V2 else 24) text_color ((r13_type_color("ink") if R13_TYPE_V2 else "#493324") if state=="open" else (r13_type_color("disabled") if R13_TYPE_V2 else "#88796b"))
                                 action ([SetScreenVariable("selected",key),SetScreenVariable("map_notice",None),SetScreenVariable("extra_places",False)] if state!="locked" else SetScreenVariable("map_notice",r13_map_label(key)+" · 지금은 이곳으로 갈 수 없습니다."))
 
+# 하단 한 줄(y 643, 높이 PC 44 / 휴대폰 88). 폭은 Pretendard Bold 실측(진행폭)으로 가장 큰 글자(휴대폰 크게 30px)
+# 가 좌우 8px 여유를 두고 들어가게 잡았다 — 선택판 「장소를 선택하세요」 214 → 232, 「마을」 52 → 112,
+# 「여관 안」 85 → 124, 「숲·산길」 86 → 128, 「이곳으로 이동」 162 → 196, 「현장으로」 104 → 136. 간격 12.
+# 글자가 더 길어지면 칸을 넓힌다. 글자를 줄이거나 늘이지 않는다(2026-10-27 소유자).
 screen r13_map_diary_footer(region,selected,ready,local_guide,close_action):
-    fixed:
-        area (102,643,180,40)
-        add Frame(r13_asset_path("file:assets/map-village-b/b_panel_small_trimmed.png"),12,10) xysize (180,40)
-        text ("선택: "+r13_map_label(selected) if selected else "장소를 선택하세요") font R13_UI_BOLD_FONT size (22 if r13_touch_ui() else 19) color (r13_type_color("ink") if R13_TYPE_V2 else "#493324") xmaximum 168 align (.5,.5) text_align .5
+    use r13_village_b_plate(("선택: "+r13_map_label(selected) if selected else "장소를 선택하세요"),(102,643,232,40))
     if not local_guide:
-        for key,title,rect in (("village","마을",(300,643,106,40)),("inn","여관 안",(416,643,120,40)),("mountain","숲·산길",(546,643,132,40))):
+        for key,title,rect in (("village","마을",(346,643,112,40)),("inn","여관 안",(470,643,124,40)),("mountain","숲·산길",(606,643,128,40))):
             if r13_map_nodes(key):
                 use r13_village_b_control(title,rect,[SetScreenVariable("region",key),SetScreenVariable("selected",r13_map_selection(key,selected)),SetScreenVariable("map_hover",None),SetScreenVariable("map_notice",None)],"r13_map_region_"+key,enabled=ready,chosen=key==region)
     $ can_travel=selected and selected!=room13["location"] and (selected in dict(r13_local_connections()) if local_guide else selected in r13_places())
-    use r13_village_b_control("이곳으로 이동",(704,643,184,40),[Hide("r13_inn_guide"),Return(("travel",selected))] if local_guide else Return(selected),"r13_map_travel",primary=True,enabled=ready and can_travel)
-    use r13_village_b_control("현장으로",(902,643,142,40),close_action,"r13_map_close",enabled=ready)
+    use r13_village_b_control("이곳으로 이동",(746,643,196,40),[Hide("r13_inn_guide"),Return(("travel",selected))] if local_guide else Return(selected),"r13_map_travel",primary=True,enabled=ready and can_travel)
+    use r13_village_b_control("현장으로",(954,643,136,40),close_action,"r13_map_close",enabled=ready)
     add Transform(r13_asset_path("file:assets/map-village-b/sticker_daram_stubborn.png"),xysize=(67,67),fit="contain") xpos 1137 ypos 631

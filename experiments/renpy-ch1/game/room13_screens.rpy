@@ -16,10 +16,15 @@ screen r13_hud():
                 xysize (238,72)
                 # 2026-10-27 타이포 시안: 큰 숫자 title, 작은 글자 small. 「일째」는 small(22~28)이 48px 에 안 들어가
                 # 두 줄로 꺾이므로 켜진 동안만 칸을 60(시계 글자 시작 76 앞)까지 넓힌다.
-                text ("%02d"%room13.get("day",1)) xpos 14 ypos 8 xsize 48 text_align .5 size (r13_type("title") if R13_TYPE_V2 else 28) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30") font R13_UI_BOLD_FONT
-                text "일째" xpos 14 ypos 42 xsize (60 if R13_TYPE_V2 else 48) text_align .5 size (r13_type("small") if R13_TYPE_V2 else 14) color (r13_type_color("muted") if R13_TYPE_V2 else "#796044") font r13_ui_font()
-                text r13_clock().split(" · ")[1] xpos 76 ypos 12 xsize (104 if R13_TYPE_V2 else 92) size (r13_type("body") if R13_TYPE_V2 else 20) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30") font R13_UI_BOLD_FONT
-                text r13_clock().split(" · ")[-1] xpos 76 ypos 40 xsize (104 if R13_TYPE_V2 else 92) size (r13_type("small") if R13_TYPE_V2 else 18) color (r13_type_color("muted") if R13_TYPE_V2 else "#65503b") font r13_ui_font()
+                # 2026-10-27 소유자 「날짜 네모칸에 글씨 삐져나옴」: 72px 칸에 두 줄이 들어야 한다. 큰 글씨·휴대폰에서
+                # title 34~36(줄 42~44)+small 26~28(줄 32~34)=74~78 로 넘쳤고 「늦은 저녁」 28px 는 104px 칸과 같은 폭.
+                # Pretendard 실측(진행폭·ascent+descent)으로 상한을 둔다 — 숫자 32(줄 39, 「14」 36px)·일째 24(줄 29, 42px)
+                # ·요일 26(줄 33, 67px)·시간대 24(줄 29, 「늦은 저녁」 89px). 왼쪽 열 3+39, 41+29=70 / 오른쪽 열 10+33, 42+29=71.
+                # 칸을 키우지 않는 것은 이름표 충돌 판정(r13_field_ui_rects)이 이 칸을 기준으로 해서다.
+                text ("%02d"%room13.get("day",1)) xpos 14 ypos (3 if R13_TYPE_V2 else 8) xsize (60 if R13_TYPE_V2 else 48) text_align .5 size (min(r13_type("title") if R13_TYPE_V2 else 28,32)) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30") font R13_UI_BOLD_FONT
+                text "일째" xpos 14 ypos (41 if R13_TYPE_V2 else 42) xsize (60 if R13_TYPE_V2 else 48) text_align .5 size (min(r13_type("small") if R13_TYPE_V2 else 14,24)) color (r13_type_color("muted") if R13_TYPE_V2 else "#796044") font r13_ui_font()
+                text r13_clock().split(" · ")[1] xpos 76 ypos (10 if R13_TYPE_V2 else 12) xsize (104 if R13_TYPE_V2 else 92) size (min(r13_type("body") if R13_TYPE_V2 else 20,26)) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30") font R13_UI_BOLD_FONT
+                text r13_clock().split(" · ")[-1] xpos 76 ypos (42 if R13_TYPE_V2 else 40) xsize (104 if R13_TYPE_V2 else 92) size (min(r13_type("small") if R13_TYPE_V2 else 18,24)) color (r13_type_color("muted") if R13_TYPE_V2 else "#65503b") font r13_ui_font()
                 add R13TimeDial() xpos 182 ypos 16
         frame:
             xpos 24 ypos 20 padding (12,8) background r13_field_paper(tape=True)

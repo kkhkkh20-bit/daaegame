@@ -101,6 +101,15 @@ init 80 python:
         step=r13_proof_guide_step(chosen_count)
         return "  →  ".join("{color=%s}%d %s{/color}"%(current if i==step else rest,i+1,name) for i,name in enumerate(R13_PROOF_STEPS))
 
+    # 2026-10-27 패널 정리: 단계는 한 글줄이 아니라 칩 셋으로 보인다. 칩에는 짧은 이름을 쓴다 — 긴 이름을 넣으면
+    # 세 칩이 휴대폰 큰 글씨에서 한 줄을 넘는다. 긴 이름(R13_PROOF_STEPS)은 안내 문장이 그대로 쓴다.
+    R13_PROOF_STEP_CHIPS=("고르기","확인","제출")
+
+    def r13_proof_guide_chips(chosen_count):
+        """[(칩 글자, 지금 단계인가)] — 화면은 지금 단계만 빨강으로 채운다."""
+        step=r13_proof_guide_step(chosen_count)
+        return [("%d %s"%(i+1,name),i==step) for i,name in enumerate(R13_PROOF_STEP_CHIPS)]
+
     def r13_proof_guide_help(chosen_count,chances=None):
         # 기존 안내(room13_proof_usability.rpy)를 단계형으로 고친 것. 첫 제출 성공 뒤에는 기존 문장으로 줄인다.
         if not chosen_count:

@@ -1,8 +1,8 @@
 # A single world-space camera. Seats never animate from one UI card to another.
 # The near table, fixed cast and far architecture share the same continuous yaw.
 # 2026-10-27 소유자: "옆에 두 사람 있으니까 오히려 집중도만 흐려지는데 ... 그냥 한 면 띄워줄까?"
-# 시안 스위치(승인 전 꺼짐): 켜면 근접 화면에 말하는 사람 한 명만 두고, 배경만 돌아가며 누가 말하는지 바꾼다.
-define R13_MEETING_SOLO = False
+# 2026-10-27 소유자 "회의는 한 사람으로 통일한 시안으로 가자" 로 켬. 켜면 근접 화면에 말하는 사람 한 명만 두고, 배경만 돌아가며 누가 말하는지 바꾼다.
+define R13_MEETING_SOLO = True
 init 175 python:
     import math as r13_orbit_math
     import json as r13_meeting_art_json

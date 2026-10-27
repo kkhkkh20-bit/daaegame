@@ -103,8 +103,10 @@ class MapAffordance(unittest.TestCase):
     def test_tabs_and_actions_share_centered_row(self):
         source=(GAME/'room13_map_village_b.rpy').read_text()
         footer=source.split('screen r13_map_diary_footer(',1)[1]
-        self.assertIn('use r13_village_b_control("이곳으로 이동",(704,643,184,40)',footer)
-        self.assertIn('use r13_village_b_control("현장으로",(902,643,142,40)',footer)
+        # 2026-10-27 소유자 「버튼 크기·폰트 통일」: 칸 폭은 Pretendard 실측(휴대폰 크게 30px)으로 넓혔다. 줄 y 643 은 그대로.
+        self.assertIn('use r13_village_b_plate(("선택: "+r13_map_label(selected) if selected else "장소를 선택하세요"),(102,643,232,40))',footer)
+        self.assertIn('use r13_village_b_control("이곳으로 이동",(746,643,196,40)',footer)
+        self.assertIn('use r13_village_b_control("현장으로",(954,643,136,40)',footer)
         self.assertIn('chosen=key==region',footer)
         nav=(GAME/'room13_navigation.rpy').read_text()
         self.assertIn('use r13_map_diary_footer(region,selected,ready,local_guide,close_action)',nav)
