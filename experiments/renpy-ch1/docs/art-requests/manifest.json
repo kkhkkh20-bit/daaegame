@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "as_of": "2026-10-25",
+  "as_of": "2026-10-27",
   "scope": "요청서와 현재 파일·연결 코드의 대조 스냅샷. 외부 제작 요청/그림 생성은 실행하지 않는다.",
   "statuses": {
     "needs_delivery": "전용 그림 미납품",
@@ -38,9 +38,9 @@
       "id": "MEETING-STAND-BURI",
       "title": "부리 원탁 입석 1번 묶음 재전송 확인",
       "kind": "인물",
-      "status": "verify_delivery",
+      "status": "delivered_linked",
       "priority": "P1",
-      "description": "요청서에는 1번 묶음 미수신으로 기록되어 있다. 현재 런타임에는 seated 파일만 확인된다. 제작을 다시 시작하기 전에 소유자가 받은 ZIP에 해당 입석 원본이 있는지 확인한다.",
+      "description": "요청서에는 1번 묶음 미수신으로 기록되어 있다. 현재 런타임에는 seated 파일만 확인된다. 제작을 다시 시작하기 전에 소유자가 받은 ZIP에 해당 입석 원본이 있는지 확인한다. 2026-10-27 확인: 받아서 0.20.60에 연결했다.",
       "scenes": [
         "원탁·광장·학교·제단 회의"
       ],
@@ -91,9 +91,9 @@
       "id": "MEETING-STAND-DOTO",
       "title": "도토 원탁 입석 1번 묶음 재전송 확인",
       "kind": "인물",
-      "status": "verify_delivery",
+      "status": "delivered_linked",
       "priority": "P1",
-      "description": "요청서에는 1번 묶음 미수신으로 기록되어 있다. 현재 런타임에는 seated 파일만 확인된다. 제작을 다시 시작하기 전에 소유자가 받은 ZIP에 해당 입석 원본이 있는지 확인한다.",
+      "description": "요청서에는 1번 묶음 미수신으로 기록되어 있다. 현재 런타임에는 seated 파일만 확인된다. 제작을 다시 시작하기 전에 소유자가 받은 ZIP에 해당 입석 원본이 있는지 확인한다. 2026-10-27 확인: 받아서 0.20.60에 연결했다.",
       "scenes": [
         "원탁·광장·학교·제단 회의"
       ],
@@ -144,9 +144,9 @@
       "id": "MEETING-STAND-GRANNY",
       "title": "할머니 원탁 입석 1번 묶음 재전송 확인",
       "kind": "인물",
-      "status": "verify_delivery",
+      "status": "delivered_linked",
       "priority": "P1",
-      "description": "요청서에는 1번 묶음 미수신으로 기록되어 있다. 현재 런타임에는 seated 파일만 확인된다. 제작을 다시 시작하기 전에 소유자가 받은 ZIP에 해당 입석 원본이 있는지 확인한다.",
+      "description": "요청서에는 1번 묶음 미수신으로 기록되어 있다. 현재 런타임에는 seated 파일만 확인된다. 제작을 다시 시작하기 전에 소유자가 받은 ZIP에 해당 입석 원본이 있는지 확인한다. 2026-10-27 확인: 받아서 0.20.60에 연결했다.",
       "scenes": [
         "원탁·광장·학교·제단 회의"
       ],
@@ -197,9 +197,9 @@
       "id": "MEETING-STAND-NABI",
       "title": "나비 원탁 입석 1번 묶음 재전송 확인",
       "kind": "인물",
-      "status": "verify_delivery",
+      "status": "delivered_linked",
       "priority": "P1",
-      "description": "요청서에는 1번 묶음 미수신으로 기록되어 있다. 현재 런타임에는 seated 파일만 확인된다. 제작을 다시 시작하기 전에 소유자가 받은 ZIP에 해당 입석 원본이 있는지 확인한다.",
+      "description": "요청서에는 1번 묶음 미수신으로 기록되어 있다. 현재 런타임에는 seated 파일만 확인된다. 제작을 다시 시작하기 전에 소유자가 받은 ZIP에 해당 입석 원본이 있는지 확인한다. 2026-10-27 확인: 받아서 0.20.60에 연결했다.",
       "scenes": [
         "원탁·광장·학교·제단 회의"
       ],
@@ -250,9 +250,9 @@
       "id": "MEETING-STAND-RESIDENT_BORI",
       "title": "보리 원탁 입석 1번 묶음 재전송 확인",
       "kind": "인물",
-      "status": "verify_delivery",
+      "status": "delivered_linked",
       "priority": "P1",
-      "description": "요청서에는 1번 묶음 미수신으로 기록되어 있다. 현재 런타임에는 seated 파일만 확인된다. 제작을 다시 시작하기 전에 소유자가 받은 ZIP에 해당 입석 원본이 있는지 확인한다.",
+      "description": "요청서에는 1번 묶음 미수신으로 기록되어 있다. 현재 런타임에는 seated 파일만 확인된다. 제작을 다시 시작하기 전에 소유자가 받은 ZIP에 해당 입석 원본이 있는지 확인한다. 2026-10-27 확인: 받아서 0.20.60에 연결했다.",
       "scenes": [
         "원탁·광장·학교·제단 회의"
       ],
@@ -303,9 +303,9 @@
       "id": "HIDDEN-P1",
       "title": "판돌 집 문간 배경",
       "kind": "배경",
-      "status": "needs_delivery",
+      "status": "delivered_linked",
       "priority": "P1",
-      "description": "설계 승인·플레이 구현 완료. 전용 아트는 임시 재사용 배경/지문을 대신할 대상이다.",
+      "description": "설계 승인·플레이 구현 완료. 전용 아트는 임시 재사용 배경/지문을 대신할 대상이다. 2026-10-27 확인: 받아서 0.20.59에 연결했다.",
       "scenes": [
         "6일 식기",
         "7일 판돌 집",
@@ -356,9 +356,9 @@
       "id": "HIDDEN-P2",
       "title": "판돌 집 실내 난방 차분",
       "kind": "배경",
-      "status": "needs_delivery",
+      "status": "delivered_linked",
       "priority": "P1",
-      "description": "설계 승인·플레이 구현 완료. 전용 아트는 임시 재사용 배경/지문을 대신할 대상이다.",
+      "description": "설계 승인·플레이 구현 완료. 전용 아트는 임시 재사용 배경/지문을 대신할 대상이다. 2026-10-27 확인: 받아서 0.20.59에 연결했다.",
       "scenes": [
         "6일 식기",
         "7일 판돌 집",
@@ -410,9 +410,9 @@
       "id": "HIDDEN-P3",
       "title": "판돌 누나 전신·표정 시안",
       "kind": "인물",
-      "status": "needs_delivery",
+      "status": "delivered_linked",
       "priority": "P1",
-      "description": "설계 승인·플레이 구현 완료. 전용 아트는 임시 재사용 배경/지문을 대신할 대상이다.",
+      "description": "설계 승인·플레이 구현 완료. 전용 아트는 임시 재사용 배경/지문을 대신할 대상이다. 2026-10-27 확인: 받아서 0.20.60(판설)에 연결했다.",
       "scenes": [
         "6일 식기",
         "7일 판돌 집",
@@ -466,9 +466,9 @@
       "id": "HIDDEN-P4",
       "title": "숟가락 손잡이·핀 생활 물건",
       "kind": "물건",
-      "status": "needs_delivery",
+      "status": "delivered_linked",
       "priority": "P1",
-      "description": "설계 승인·플레이 구현 완료. 전용 아트는 임시 재사용 배경/지문을 대신할 대상이다.",
+      "description": "설계 승인·플레이 구현 완료. 전용 아트는 임시 재사용 배경/지문을 대신할 대상이다. 2026-10-27 확인: 받아서 0.20.59에 연결했다.",
       "scenes": [
         "6일 식기",
         "7일 판돌 집",
@@ -521,9 +521,9 @@
       "id": "HIDDEN-A1",
       "title": "고대 정비실 문",
       "kind": "배경",
-      "status": "needs_delivery",
+      "status": "delivered_linked",
       "priority": "P1",
-      "description": "진엔딩의 선택 정비실은 구현되어 있고 기존 옛 시설 배경을 재사용한다.",
+      "description": "진엔딩의 선택 정비실은 구현되어 있고 기존 옛 시설 배경을 재사용한다. 2026-10-27 확인: 받아서 0.20.59에 연결했다.",
       "scenes": [
         "1·7·11일 조각",
         "진엔딩 14일 정비실"
@@ -574,9 +574,9 @@
       "id": "HIDDEN-A2",
       "title": "고대 정비실 실내",
       "kind": "배경",
-      "status": "needs_delivery",
+      "status": "delivered_linked",
       "priority": "P1",
-      "description": "진엔딩의 선택 정비실은 구현되어 있고 기존 옛 시설 배경을 재사용한다.",
+      "description": "진엔딩의 선택 정비실은 구현되어 있고 기존 옛 시설 배경을 재사용한다. 2026-10-27 확인: 받아서 0.20.59에 연결했다.",
       "scenes": [
         "1·7·11일 조각",
         "진엔딩 14일 정비실"
@@ -625,9 +625,9 @@
       "id": "HIDDEN-A3",
       "title": "문틀 종이·금속판·방향 기록",
       "kind": "물건",
-      "status": "needs_delivery",
+      "status": "delivered_linked",
       "priority": "P1",
-      "description": "진엔딩의 선택 정비실은 구현되어 있고 기존 옛 시설 배경을 재사용한다.",
+      "description": "진엔딩의 선택 정비실은 구현되어 있고 기존 옛 시설 배경을 재사용한다. 2026-10-27 확인: 받아서 0.20.59에 연결했다.",
       "scenes": [
         "1·7·11일 조각",
         "진엔딩 14일 정비실"
@@ -679,9 +679,9 @@
       "id": "HIDDEN-A4",
       "title": "단면판·점검표 자료",
       "kind": "자료",
-      "status": "needs_delivery",
+      "status": "delivered_linked",
       "priority": "P1",
-      "description": "진엔딩의 선택 정비실은 구현되어 있고 기존 옛 시설 배경을 재사용한다.",
+      "description": "진엔딩의 선택 정비실은 구현되어 있고 기존 옛 시설 배경을 재사용한다. 2026-10-27 확인: 받아서 0.20.59에 연결했다.",
       "scenes": [
         "1·7·11일 조각",
         "진엔딩 14일 정비실"
@@ -731,9 +731,9 @@
       "id": "HIDDEN-A5",
       "title": "엄마 현장 수첩",
       "kind": "자료",
-      "status": "needs_delivery",
+      "status": "delivered_linked",
       "priority": "P1",
-      "description": "진엔딩의 선택 정비실은 구현되어 있고 기존 옛 시설 배경을 재사용한다.",
+      "description": "진엔딩의 선택 정비실은 구현되어 있고 기존 옛 시설 배경을 재사용한다. 2026-10-27 확인: 받아서 0.20.59에 연결했다.",
       "scenes": [
         "1·7·11일 조각",
         "진엔딩 14일 정비실"
@@ -782,9 +782,9 @@
       "id": "ROOM13-STOVE",
       "title": "13호 난로·재받이 상태 그림",
       "kind": "배경",
-      "status": "needs_delivery",
+      "status": "delivered_linked",
       "priority": "P0",
-      "description": "실행 코드가 전용 그림이 없어 난로·재받이 조사 자리만 둔다고 명시한다.",
+      "description": "실행 코드가 전용 그림이 없어 난로·재받이 조사 자리만 둔다고 명시한다. 2026-10-27 확인: 받아서 0.20.59에 연결했다.",
       "scenes": [
         "7일 낮 13호 조사",
         "7일 저녁"
@@ -935,9 +935,9 @@
       "id": "RECORD-VOID-MARK",
       "title": "돌목의 무효 표기 자료 그림",
       "kind": "자료",
-      "status": "verify_delivery",
+      "status": "delivered_unlinked",
       "priority": "P2",
-      "description": "기존 요청에 있으나 현재 명확한 전용 자료키/그림 연결을 확인하지 못했다. 무효 표기 자체는 게임 글·상태로 구현되어 있다. 제작 필요와 파일 연결 대상부터 확인한다.",
+      "description": "기존 요청에 있으나 현재 명확한 전용 자료키/그림 연결을 확인하지 못했다. 무효 표기 자체는 게임 글·상태로 구현되어 있다. 제작 필요와 파일 연결 대상부터 확인한다. 2026-10-27 확인: 받아서 보관 중. 소유자 결정으로 새 자료 ID 를 만들지 않는다.",
       "scenes": [
         "12일 대승리",
         "13일 무효 명단"
@@ -1468,6 +1468,59 @@
       ],
       "avoid": [
         "기존 효과와 같은 역할을 중복 제작"
+      ],
+      "acceptance": [
+        "인물·물건에 글자나 정답 표시를 구워 넣지 않는다.",
+        "기존 같은 인물의 방향·발 위치·크롭 기준을 유지한다.",
+        "원본 PNG와 런타임용 WebP, 상태·파일 대응표를 함께 납품한다.",
+        "이미 등록된 원본 파일은 덮어쓰지 않고 별도 경로에 납품한다.",
+        "상태별 그림과 해당 분기 대사를 대조한다.",
+        "PC·모바일에서 인물/버튼이 조사 대상을 가리지 않는지 실제 화면으로 확인한다."
+      ]
+    },
+    {
+      "id": "EXTRA-MINOR",
+      "title": "단역 공용 전신 3벌(순찰대원·주민·아이)",
+      "kind": "인물",
+      "status": "needs_delivery",
+      "priority": "P3",
+      "description": "대사는 있으나 대화 그림이 없는 단역 27줄(주민 12·순찰대원 4·아이 3·누비의 막내 3·아랫길 주민 2·실룩의 아이 1·진료 담당자 1·종업원 1). 지금은 그림 없이 대사만 나온다. 자세한 것은 docs/art-requests/미납품_그림_요청서_20261027.md.",
+      "scenes": [
+        "1~14일 단역 대사"
+      ],
+      "branches": [
+        "공통"
+      ],
+      "references": [
+        "game/assets/room13-dialogue-talk-art-extra.json"
+      ],
+      "sources": [
+        "docs/art-requests/미납품_그림_요청서_20261027.md"
+      ],
+      "approved_scope": "선택(P3). 2026-10-27 소유자 「미납 에셋 있으면 요청서 줘」.",
+      "contract": {
+        "states": [
+          "6감정 × 3벌 = 18장"
+        ],
+        "transparent": true,
+        "delivery": [
+          "원본 PNG",
+          "무손실 WebP(투명 인물·물건)",
+          "파일별 상태 대응표"
+        ],
+        "size_rule": "아래 현행 실측은 레퍼런스 크기다. 제작 대상의 최종 캔버스·구도·크롭은 연결 담당자와 확인 후 확정한다."
+      },
+      "required": [
+        "A 순찰대원(돌목 계열·낮은 계급)",
+        "B 주민 어른(평범한 겨울 차림)",
+        "C 아이(꼬미·솜이 키)",
+        "각 6감정 neutral/joy/flustered/angry/anxious/surprise",
+        "1024×1536 투명, 외곽 반투명 없이"
+      ],
+      "avoid": [
+        "이름 있는 인물과 닮은 얼굴·털색",
+        "정답 단서 소품",
+        "흰 테두리 스티커"
       ],
       "acceptance": [
         "인물·물건에 글자나 정답 표시를 구워 넣지 않는다.",
