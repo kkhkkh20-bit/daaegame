@@ -317,6 +317,7 @@ screen r13_opt_row(label,description=""):
             transclude
         add Solid("#c9a86a40") xpos 0 ypos (r13_opt_row_height()-1) xsize 844 ysize 1
 
+screen pause_menu():
     tag menu
     modal True
     zorder 50
