@@ -69,7 +69,7 @@ screen r13_meeting_more_tools():
     if line_active:
         $ entries.append(("대화창 숨기기","dialogue",[Hide("r13_more_tools"),HideInterface()],True,False))
     $ entries.extend([
-        ("저장 · 불러오기","record",[Hide("r13_more_tools"),ShowMenu("save")],True,False),
+        ("저장 · 불러오기","record",[Hide("r13_more_tools"),SetVariable("r13_save_from_settings",False),ShowMenu("save")],True,False),
         ("다시 시작할 아침","auto",[Hide("r13_more_tools"),Show("r13_morning_pick")],bool(r13_morning_days()),False),
         ("설정","settings",[Hide("r13_more_tools"),ShowMenu("pause_menu")],True,False),
         ("메인화면","place_inn",[Hide("r13_more_tools"),Confirm("메인화면으로 돌아가시겠습니까?\n저장하지 않은 게임 진행은 사라집니다.",MainMenu(confirm=False))],True,False)])
