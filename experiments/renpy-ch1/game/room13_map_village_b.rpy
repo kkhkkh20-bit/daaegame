@@ -9,12 +9,53 @@ init 65 python:
 
     R13_VILLAGE_B_VIEW = (88,122,1136,506)
 
+    def r13_village_b_label_boxes(zoom,touch=None):
+        """장소 이름표마다 (왼쪽, 위, 오른쪽, 아래) — 지도 그림 좌표(배율 전). 화면 쪽 이름표 칸과 같은 식이다."""
+        if touch is None:touch=r13_touch_ui()
+        ls=1.3 if touch else 1.0
+        out={}
+        for key,place in R13_VILLAGE_B_PLACES.items():
+            cx,cy=place["label_center"]
+            lw=r13_village_b_label_width(r13_map_label(key))
+            out[key]=(cx-lw/2.0,cy-19*ls,cx+lw/2.0,cy+19*ls)
+        return out
+
+    def r13_village_b_clean_scrolls(zoom,touch=None):
+        """이름표가 보기 창 가장자리에 걸리지 않는 스크롤 위치(그림 좌표, 정수)의 목록을 축마다 돌려준다.
+
+        2026-10-27 소유자: 처음 열린 지도에서 오른쪽 위 「수리점」이 수첩 판 가장자리에서 반쯤 잘려 보였다.
+        보기 창이 그림보다 좁아 끌어 보는 지도라 어느 위치든 걸치는 이름표가 생길 수 있지만, 적어도 처음 보이는
+        화면만은 모든 이름표가 통째로 보이거나 통째로 숨어야 한다. 1.15 배율에서는 가로로 그런 위치가 하나도 없어서
+        기본 배율을 1.0 으로 내렸다(이름표 글자도 25→22px 로 같이 작아진다 — 「글씨가 너무 큼」 지적과 같은 방향)."""
+        boxes=r13_village_b_label_boxes(zoom,touch)
+        vw,vh=R13_VILLAGE_B_VIEW[2]/float(zoom),R13_VILLAGE_B_VIEW[3]/float(zoom)
+        def clean(axis,view,total):
+            lo,hi=(0,2) if axis==0 else (1,3)
+            spans=[(b[lo],b[hi]) for b in boxes.values()]
+            limit=int(max(0,total-view))
+            return [s for s in range(0,limit+1)
+                    if all(not (a<s<b) and not (a<s+view<b) for a,b in spans)]
+        return clean(0,vw,1642),clean(1,vh,958)
+
     def r13_village_b_focus(selected, zoom):
         base = globals().get("R13_V111_MAP_ALIASES",{}).get(selected,selected)
         row = R13_VILLAGE_B_PLACES.get(base,R13_VILLAGE_B_PLACES["square"])
         cx,cy = row["label_center"]
-        return (max(0,min(1,(cx*zoom-568)/max(1,1642*zoom-1136))),
-                max(0,min(1,(cy*zoom-253)/max(1,958*zoom-506))))
+        # 바라는 위치: 고른 장소를 가운데에. 그 다음 이름표가 창 가장자리에 걸리지 않는 가장 가까운 위치로 당긴다.
+        # 그런 위치가 없는 축은 바라는 위치 그대로 둔다(잘리는 것보다 엉뚱한 곳이 보이는 쪽이 더 나쁘다).
+        vw,vh=R13_VILLAGE_B_VIEW[2]/float(zoom),R13_VILLAGE_B_VIEW[3]/float(zoom)
+        want_x=max(0,min(1642-vw,cx-vw/2.0));want_y=max(0,min(958-vh,cy-vh/2.0))
+        xs,ys=r13_village_b_clean_scrolls(zoom)
+        def near(options,want,lo,hi,view):
+            # 고른 장소의 이름표는 반드시 창 안에 들어오는 위치만 고른다.
+            fits=[s for s in options if s<=lo and hi<=s+view]
+            pool=fits or options
+            return min(pool,key=lambda s:abs(s-want)) if pool else want
+        box=r13_village_b_label_boxes(zoom).get(base)
+        if box:
+            want_x=near(xs,want_x,box[0],box[2],vw);want_y=near(ys,want_y,box[1],box[3],vh)
+        return (max(0,min(1,(want_x*zoom)/max(1,1642*zoom-1136))),
+                max(0,min(1,(want_y*zoom)/max(1,958*zoom-506))))
 
     def r13_village_b_rows():
         allowed = set(r13_places())

@@ -230,7 +230,10 @@ screen r13_material_corner(key):
     zorder 85
     # The card's reveal owns one paper whoosh; prediction/redraw/replace stay silent.
     on "show" action Function(source_fx,"page")
-    use r13_evidence_card(key,"보여 준 자료",conversation=True)
+    # 2026-10-27 검수(p08c 캡처): 질문 수첩(488~1180, 줄은 y 228 부터)이 오른쪽 위 카드(905~1115, 112~270) 아래로 들어가
+    # 첫 질문 「…경위를 묻는다」의 끝 글자가 카드에 덮여 잘린 것처럼 보였다. 질문 목록이 떠 있는 동안은 수첩 아래 띠
+    # (버튼 줄 638 아래)의 오른쪽 끝에 한 줄짜리(compact)로 둔다 — 자료 대조 패널 위에서 쓰는 것과 같은 모양.
+    use r13_evidence_card(key,"보여 준 자료",conversation=True,compact=renpy.get_screen("r13_topics") is not None)
 
 # The resident stays on the left; opaque questions never cover the face.
 screen r13_topics(person):

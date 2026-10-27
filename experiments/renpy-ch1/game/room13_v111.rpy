@@ -127,7 +127,11 @@ init 301 python:
     _r13_v111_visible_people=r13_visible_people
     def r13_visible_people():
         if not r13_v111_active():return _r13_v111_visible_people()
-        authored=r13_v111_binding().get("people",["daram"])
+        binding=r13_v111_binding()
+        authored=binding.get("people",["daram"])
+        # 2026-10-27 검수: 지도로 다른 곳에 가 있는 동안에도 장면의 등장인물(초소의 돌목·까로)이 그곳에 따라와 섰다.
+        # 장면 묶음의 장소가 지금 장소와 다르면 그 인물들은 그 장소에 있는 것이지 여기 있는 것이 아니다. 경비는 초소를 비우지 않는다.
+        if binding.get("location") and binding.get("location")!=store.room13.get("location"):authored=[]
         # Preserve the existing residents and their scheduled staging. Explicit
         # V1.1.1 survival, relocation and custody results still take precedence.
         people=[] if r13_v111_value("wild_night14") or store.room13["location"] in ("hidden_pandol","hidden_base14") else list(_r13_v111_visible_people())

@@ -3,11 +3,19 @@
 init 150 python:
     R13_NIGHT_UI="assets/ui-night/"
     R13_NIGHT_TEXT_COLOR="#4b3420"
-    R13_NIGHT_CONTROL_Y=694          # centre line of the small text controls
-    R13_NIGHT_TEXT_BOTTOM=670        # last dialogue line ends above the controls row
-
+    # 대사판 종이(b_panel_dialogue) 는 screens.rpy 에서 아래끝 714 에 맞춰 늘인다. 그 종이의 아래 테두리(남색 선)는
+    # 그림 아래끝에서 16px 안쪽까지 그려진다(crop 128 줄 중 112~125). 조작 리본은 그 선보다 위에서 끝나야 한다.
+    R13_NIGHT_PAPER_BOTTOM=714
+    R13_NIGHT_PAPER_EDGE=16
+    R13_NIGHT_CONTROL_GAP=10         # 리본 아래끝과 종이 테두리 선 사이
+    # 2026-10-27 소유자: 「건너뛰기」「더보기」가 대사판 아래 오른쪽 모서리에 반쯤 걸쳤다. 대사가 36px 로 커지면서 대사
+    # 밑선은 올렸지만 조작 줄(684/674)은 그대로라 리본(44/52)이 종이 테두리(698~)를 넘었다. 조작 줄 중심은 리본 높이에서
+    # 거꾸로 계산한다 — PC 666(리본 644~688), 휴대폰 662(리본 636~688, 누르는 칸 88 은 618~706 으로 종이 안).
     def r13_night_control_y():
-        return 674 if r13_touch_ui() else 684
+        ribbon=52 if r13_touch_ui() else 44
+        return R13_NIGHT_PAPER_BOTTOM-R13_NIGHT_PAPER_EDGE-R13_NIGHT_CONTROL_GAP-ribbon//2
+    R13_NIGHT_CONTROL_Y=R13_NIGHT_PAPER_BOTTOM-R13_NIGHT_PAPER_EDGE-R13_NIGHT_CONTROL_GAP-22   # PC 중심선(더보기 판이 참조)
+    R13_NIGHT_TEXT_BOTTOM=R13_NIGHT_CONTROL_Y-28-6     # 마지막 대사 줄은 조작 칸 위 6px 에서 끝난다
 
     def r13_night_say_size():
         # The mockup's line is a step larger than the boxed window's (same size setting).

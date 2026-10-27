@@ -1,13 +1,14 @@
 {
  "schema": "room13-field-life/1",
- "note": "생활 동작 배치표(docs/design/FIELD_LIFE_STAGING_20261027.md)를 코드로 옮긴 것. 좌표는 그 장소 배경(가로 1920/1800/2160, 세로 720) 기준의 발 위치. 입구는 옛 1920 그림 기준이고 넓은 그림은 wide_shift 로 옮긴다. world_width 가 그때의 r13_world_width 와 다르면 행을 쓰지 않는다 — 우체국 낮·저녁은 옛 1280 배경이라 world_width 1280 행을 따로 둔다. occlusion: \"layout\" 이면 매대 안(넓은 그림은 layout.occlusion, 옛 1280 배경은 R13_STAGE_COUNTERS 의 카운터 마스크로 다리를 가린다), 없으면 매대 앞 전신. 매대 안 행은 contacts 에 behind_counter 를 적어 조사 물건 회피가 밀지 않게 한다(소유자 2026-10-27 매대 안/앞 구분).",
+ "note": "생활 동작 배치표(docs/design/FIELD_LIFE_STAGING_20261027.md)를 코드로 옮긴 것. 좌표는 그 장소 배경(가로 1920/1800/2160, 세로 720) 기준의 발 위치. 입구는 옛 1920 그림 기준이고 넓은 그림은 wide_shift 로 옮긴다(넓은 입구 그림은 2026-10-27 부터 오른쪽 여백을 잘라 폭 2467, room13_wide_gate.rpy). world_width 가 그때의 r13_world_width 와 다르면 행을 쓰지 않는다 — 우체국 낮·저녁은 옛 1280 배경이라 world_width 1280 행을 따로 둔다. occlusion: \"layout\" 이면 매대 안(넓은 그림은 layout.occlusion, 옛 1280 배경은 R13_STAGE_COUNTERS 의 카운터 마스크로 다리를 가린다), 없으면 매대 앞 전신. 매대 안 행은 contacts 에 behind_counter 를 적어 조사 물건 회피가 밀지 않게 한다(소유자 2026-10-27 매대 안/앞 구분).",
  "contacts": {
   "resident_tori:life_sew_bench": "bench_sit",
   "resident_seori:life_write_desk_seated": "self_seated",
   "karo:life_wheel_check": "squatting",
   "resident_tok:life_fix_stove": "squatting",
   "seryeon:life_stamp_ledger": "behind_counter",
-  "resident_ppul:life_pin_notice": "behind_counter"
+  "resident_ppul:life_pin_notice": "behind_counter",
+  "resident_sling:life_write_letter_standing": "behind_counter"
  },
  "rows": [
   {
@@ -26,7 +27,7 @@
     592
    ],
    "activity": "초소 명부를 읽는다.",
-   "world_width": 2560
+   "world_width": 2467
   },
   {
    "id": "gate_guard_day",
@@ -44,7 +45,7 @@
     592
    ],
    "activity": "초소 장부에 도장을 찍는다.",
-   "world_width": 2560
+   "world_width": 2467
   },
   {
    "id": "gate_guard_evening",
@@ -62,7 +63,7 @@
     592
    ],
    "activity": "창구 등 심지를 손질한다.",
-   "world_width": 2560
+   "world_width": 2467
   },
   {
    "id": "gate_karo_day",
@@ -81,7 +82,7 @@
    ],
    "activity": "마차 바퀴 살을 쥐고 살핀다.",
    "note": "마차 왼쪽(배치표 A, 마차를 향해 우). 마차와 삽이 조사 물건이라 그 사이(660~950)에 두면 1일 이야기 상태에서 회피층이 어차피 이 자리로 민다. 1일 기본 카메라(옛 그림 x 320 부터) 밖이라 왼쪽으로 밀어야 보인다.",
-   "world_width": 2560
+   "world_width": 2467
   },
   {
    "id": "gate_bori_stack",
@@ -109,7 +110,8 @@
     9,
     10
    ],
-   "world_width": 2560
+   "world_width": 2467,
+   "at_object": "woodpile"
   },
   {
    "id": "gate_nero_wait",
@@ -131,7 +133,7 @@
    "days": [
     1
    ],
-   "world_width": 2560
+   "world_width": 2467
   },
   {
    "id": "gate_neoul_ledger",
@@ -159,7 +161,7 @@
     9,
     10
    ],
-   "world_width": 2560
+   "world_width": 2467
   },
   {
    "id": "gate_kalbaram_walk",
@@ -184,7 +186,7 @@
     10,
     12
    ],
-   "world_width": 2560
+   "world_width": 2467
   },
   {
    "id": "gate_kkwak_bucket",
@@ -205,7 +207,7 @@
    "days": [
     1
    ],
-   "world_width": 2560
+   "world_width": 2467
   },
   {
    "id": "square_tori_sew",
@@ -792,13 +794,14 @@
     "neutral"
    ],
    "target": [
-    1480,
+    1780,
     700
    ],
    "activity": "세탁 비누를 사러 왔다.",
    "min_day": 1,
    "max_day": 10,
-   "world_width": 1920
+   "world_width": 1920,
+   "note": "2026-10-27: 1480 은 파란 통(1385~1505) 위라 통 안에 선 것처럼 보였다 → 오른쪽 상자 앞 빈 바닥(저녁이라 여니 4일 낮 자리와 겹치지 않는다)."
   },
   {
    "id": "post_seryeon_stamp",
@@ -1183,6 +1186,33 @@
    "note": "옛 1280 배경(낮, 1일). 접수대 앞 바닥 왼쪽(전신). 카운터 칸에서는 머리 꼭대기만 보였다."
   },
   {
+   "id": "post_sling_write_old",
+   "person": "resident_sling",
+   "pose": "life_write_letter_standing",
+   "location": "post",
+   "periods": [
+    1,
+    2
+   ],
+   "replace_poses": [
+    "neutral",
+    "activity",
+    "thinking",
+    "map27_po_1",
+    "expressive",
+    "distressed",
+    "life_write_letter_standing"
+   ],
+   "target": [
+    470,
+    619
+   ],
+   "activity": "접수대 안에서 편지를 대필한다.",
+   "world_width": 1280,
+   "occlusion": "layout",
+   "note": "옛 1280 배경(낮·저녁). 2026-10-27 소유자 휴대폰 캡처: 일 자리(694,525)는 손 기준이라 발이 약 625 로 내려가 상판(마스크 윗선 x694 에서 y510)에 가슴 중간이 잘렸다. 접수대 왼쪽 끝 안(470): 마스크 윗선 538, 발 619, 도트 키 211 → 머리 꼭대기 408, 상판 위로 130px(62%) 가 보인다 = 가슴 위. 끈 묶음(576~808)·목도리(206~340) 와 겹치지 않는다."
+  },
+  {
    "id": "market_eunho_front",
    "person": "resident_eunho",
    "pose": "map27_mk_2",
@@ -1413,7 +1443,7 @@
     "activity"
    ],
    "target": [
-    1600,
+    1800,
     700
    ],
    "activity": "천 선반 앞에서 수선거리를 안고 있다.",
@@ -1421,7 +1451,7 @@
     4
    ],
    "world_width": 1920,
-   "note": "정면 자리 보강(4일 낮). 바닥 칸(216,666)은 네로(215,690)와 겹쳐 뒤에 숨었다."
+   "note": "정면 자리 보강(4일 낮). 바닥 칸(216,666)은 네로(215,690)와 겹쳐 뒤에 숨었다. 2026-10-27: 1600 은 소쿠리(1510~1645) 위라 소쿠리가 잘려 보였다 → 오른쪽 상자 앞 빈 바닥 1800."
   }
  ]
 }

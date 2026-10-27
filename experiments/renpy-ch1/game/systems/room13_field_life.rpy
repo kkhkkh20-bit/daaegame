@@ -91,5 +91,10 @@ init 183 python:
                     placed["map27_occlusion"]=[];placed["map27_keepouts"]=[]
                     placed["activity"]=row.get("activity",actor.get("activity",""))
                     placed["field_life"]=row.get("id")
+                    # 2026-10-27: 그 물건에서 일하는 행("at_object": 장작더미의 보리)은 그 물건만은 덮어도 된다 — 사슬 끝의
+                    # 물건 회피가 보리를 장작더미에서 1,700px 떨어진 화면 밖(327)으로 보냈다. 다른 물건은 그대로 피한다.
+                    work=row.get("at_object")
+                    work_rect=(layout.get("objects",{}).get(work) if layout else None) or (ROOM13["objects"].get(location,{}).get(work,{}).get("rect") if work else None)
+                    placed["work_rect"]=tuple(work_rect) if work_rect else None
             out.append(placed)
         return sorted(out,key=lambda a:a.get("depth",0))

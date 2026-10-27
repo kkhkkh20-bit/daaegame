@@ -103,7 +103,10 @@ init 340 python:
 
     def r13_clear_objects_last(actors,location):
         # 조사 물건 회피는 배치 사슬의 맨 끝, 도트 환산이 끝난 사각형으로 한 번만 한다.
-        if r13_v111_active():
-            rects=[tuple(r) for r in r13_stage_critical(location,r13_layout(location))]
-            if rects:actors=r13_clear_objects(actors,rects,r13_world_width(location))
+        # 바닥 소품(keepouts)은 이야기 모드와 무관하게 늘 비킨다(통 안에 선 사람은 어느 모드에서도 틀리다).
+        width=r13_world_width(location)
+        keepouts=r13_stage_keepouts(location,r13_layout(location) or None)
+        rects=[tuple(r) for r in r13_stage_critical(location,r13_layout(location))] if r13_v111_active() else []
+        if rects or keepouts:actors=r13_clear_objects(actors,rects,width,keepouts)
+        actors=r13_clamp_to_world(actors,width)
         return sorted(actors,key=lambda a:a.get("depth",0))

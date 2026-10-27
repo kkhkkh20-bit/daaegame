@@ -39,6 +39,13 @@ init 59 python:
         a,b=R13_WIDE_GATE_PERSPECTIVE
         spec["perspective"]=[a,b-a*dy]  # same standing height for the same spot of the old picture
         spec["wide_shift"]=[dx,dy]
+        # 2026-10-27 검수: 오른쪽 구역 카메라가 그림 끝(853)까지 가면 마차 곁의 까로(월드 908~1077)가 화면 왼쪽 41px 에
+        # 붙어 「반쯤 나간」 것으로 읽혔다(휴대폰 세로에서는 실제로 잘린다). 그림의 오른쪽 93px(나무·돌담 여백)을 잘라
+        # 월드를 2467 로 두면 오른쪽 구역은 760 에서 멈춘다 — 까로는 111px 안쪽, 초소·장부·장작더미·보리·실룩은 그대로.
+        # 카메라 범위는 뷰포트가 내용 폭에서 다시 정하므로 범위를 따로 깎는 것으로는 안 되고 그림 자체를 잘라야 한다.
+        spec["width"]=R13_WIDE_GATE_WIDTH
+        spec["crops"]={period:[0,0,R13_WIDE_GATE_WIDTH,960] for period in files}
     R13_WIDE_GATE_PERSPECTIVE=(0.217,94)
+    R13_WIDE_GATE_WIDTH=2467
     _r13_wide_gate()
     r13_field_zoom_init()

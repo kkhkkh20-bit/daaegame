@@ -316,7 +316,7 @@ label r13_v111_registered_reason:
     jump r13_v111_registered_menu
 
 label r13_v111_registered_depart:
-    $ r13_v111_scene('MS14_D01_S04')
+    $ r13_v111_scene('MS14_D01_S04'); r13_v111_depart_from_booth()   # 2026-10-27 지도로 여관에 먼저 가 있으면 초소로 되돌려 말한다(systems/room13_depart_booth.rpy). 줄 수를 늘리지 않는다 — 대사 검토표가 이 파일의 줄 번호를 든다.
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D01_S04_L0018', 'MS14_D01_S04_L0019', 'MS14_D01_S04_L0020']), 'v111:registered_depart:MS14_D01_S04_L0018')
     $ r13_v111_commit('MS14_D01_S04_L0020')
@@ -326,8 +326,8 @@ label r13_v111_registered_depart:
 
 label r13_v111_inn:
     $ r13_v111_scene('MS14_D01_S05')
-    call r13_v111_travel('inn','inn')
-    $ r13_v111_score()
+    call r13_v111_travel('inn','inn',direct=getattr(store,"v111_depart_direct",False))
+    $ r13_v111_score(); v111_depart_direct=False
     call r13_lines(r13_v111_lines(['MS14_D01_S05_L0001', 'MS14_D01_S05_L0003']), 'v111:inn:MS14_D01_S05_L0001')
     # 0.20.7 (owner suggestion 2): Dad's own small act of care.
     $ renpy.display_menu([("다람의 손을 천으로 감싸 준다",0)])

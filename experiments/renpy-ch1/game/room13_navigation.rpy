@@ -134,7 +134,8 @@ screen r13_map(initial_region=None, local_guide=False):
     default map_hover=None
     default map_notice=None
     default extra_places=False
-    default village_zoom=1.15
+    # 2026-10-27: 1.15 에서는 처음 열린 화면의 가장자리에 이름표가 걸리지 않는 가로 위치가 없다(r13_village_b_clean_scrolls). 1.0 으로.
+    default village_zoom=1.0
     default ready=False
     $ region = region if region in R13_MAP_NODES else "village"
     $ selected = r13_map_selection(region,selected)

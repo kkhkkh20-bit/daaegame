@@ -79,8 +79,10 @@ screen r13_evidence_found(keys,conversation=False):
     # Navigation and full record panes own their surface. Desk/item finds still show above the close-up.
     # 2026-10-27: 자료 대조 통합 화면 위에서도 띄우지 않는다(발언·상세 글과 겹쳤다).
     if not any(renpy.get_screen(name) for name in ("r13_map","r13_records","r13_learning_notes","r13_record_compare","r13_calendar","r13_work_board","r13_proof_workspace")):
-        if renpy.get_screen("r13_crisis_proof"):
+        if renpy.get_screen("r13_crisis_proof") or renpy.get_screen("r13_topics"):
             # 자료 대조 패널 위에서는 제목과 겹치지 않게 패널 아래로 보낸다(위 compact).
+            # 2026-10-27 검수(p08c 캡처): 질문 수첩(488~1180, 줄은 y 228 부터) 위에서도 오른쪽 위 카드(1012~1190, 190~)가
+            # 첫 질문의 끝 글자를 덮어 「묻는ㄷ」로 보였다. 질문 목록이 떠 있으면 같은 한 줄 카드로 수첩 아래 띠에 둔다.
             use r13_evidence_card(keys[item_index],conversation=conversation,notice=True,compact=True)
         else:
             if r13_fx_active():

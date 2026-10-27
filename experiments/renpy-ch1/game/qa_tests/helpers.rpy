@@ -23,7 +23,7 @@ init 999 python:
             raise ValueError("마을 지도 뷰포트가 아직 표시되지 않았습니다.")
         vw, vh = R13_VILLAGE_B_VIEW[2:]
         canvas = R13_VILLAGE_B_LAYOUT["canvas"]
-        zoom = max(screen.scope.get("village_zoom", 1.15),
+        zoom = max(screen.scope.get("village_zoom", 1.0),
                    vw / float(canvas["width"]), vh / float(canvas["height"]))
         cx, cy = R13_VILLAGE_B_PLACES[key]["label_center"]
         view.xadjustment.change(max(0, min(view.xadjustment.range, cx * zoom - vw / 2.0)))

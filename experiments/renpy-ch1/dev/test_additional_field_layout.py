@@ -23,7 +23,7 @@ class AdditionalFieldLayout(unittest.TestCase):
  def setUpClass(cls):
   cls.cases=json.loads((ROOT/'dev/fixtures/additional-field-layout014.json').read_text())['cases']
   cls.ns=dict(r13_actor_face_target=face,r13_world_height=lambda:720)
-  for path,names in [('game/systems/room13_investigation_balance.rpy',{'r13_balance_translate'}),('game/room13_v111_field_layout.rpy',{'r13_clear_objects'})]:
+  for path,names in [('game/systems/room13_investigation_balance.rpy',{'r13_balance_translate'}),('game/room13_v111_field_layout.rpy',{'r13_clear_objects','r13_foot_in_keepout','r13_keepout_cover_rects'})]:
    exec(compile(functions(path,names),path,'exec'),cls.ns)
  def test_measured_actors_do_not_stand_on_objects(self):
   layouts=json.loads((ROOT/'game/assets/room13-world-layout.json').read_text())

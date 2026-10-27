@@ -487,6 +487,11 @@ init 59 python:
                 for target in (r13_stage_critical(location,layout) if "r13_stage_critical" in globals() else layout.get("critical",R13_STAGE_CRITICAL.get(location,[]))):
                     # Bodies behind a counter do not cover objects in front.
                     score+=visible_body_over_face(body,c["occlusion"],target)*1200
+                # 2026-10-27: 바닥 소품(layout.keepouts — 통·소쿠리·상자)은 밟지도 덮지도 않는다(공동 창고 실룩·여니).
+                for target in layout.get("keepouts",[]):
+                    if len(target)<5 or target[4]!="feet":score+=visible_body_over_face(body,c["occlusion"],target[:4])*1200
+                    fx,fy=body[0]+body[2]/2.0,body[1]+body[3]
+                    if target[0]<=fx<=target[0]+target[2] and target[1]<=fy<=target[1]+target[3]:score+=50000
                 return score
             primary=dict(pose=pose,spec=spec,x=x,y=y,width=rendered_width,height=rendered_height,occlusion=occlusion,contact=contact)
             if not pinned:
