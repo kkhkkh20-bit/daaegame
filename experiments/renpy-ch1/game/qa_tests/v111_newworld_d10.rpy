@@ -170,5 +170,7 @@ testcase v111_nw_d10_owner_contact_pin:
     click "선택한 근거 제출"
     click pos (900,600) until screen "r13_crisis_proof" timeout 90
     assert eval (r13_v111_value("proof_given:구리선과 수선 출처를 대조한다")==["V111:E08_CONTACT_ASSEMBLY","V111:E09_PIN_OWNER"])
+    # 2026-10-27 A01: 보이는 제목에 「구리선」「수선」이 없어야 한다(키는 그대로).
+    assert eval (R13_CLAIMS["v111:구리선과 수선 출처를 대조한다"]["assertion"]=="이 핀을 구별할 수 있는가")
     assert eval (R13_CLAIMS["v111:첫 비명 뒤 핀을 다시 채운 때"]["assertion"]=="핀이 언제 떨어졌는가")
     screenshot "v111_nw_d10_time_title.png"
