@@ -39,7 +39,7 @@ class CompactDialogue(unittest.TestCase):
     def test_same_font_and_name_anchor(self):
         # Approved B dialogue: the real Bold font is shared by text and name;
         # the ribbon stays anchored to the text as long lines move upward.
-        speech=SOURCE.split('# Approved B notebook dialogue;',1)[1].split('\nstyle legacy_choice_frame',1)[0]
+        speech=SOURCE.split('# Approved B notebook dialogue;',1)[1].split('\nscreen choice(items):',1)[0]
         self.assertIn('size r13_night_say_size() line_spacing 4 xsize b_text_width font R13_UI_BOLD_FONT',speech)
         self.assertRegex(speech,r'text who id "who"[^\n]+font R13_UI_BOLD_FONT')
         self.assertIn('$ b_text_top = r13_night_say_top(what)',speech)

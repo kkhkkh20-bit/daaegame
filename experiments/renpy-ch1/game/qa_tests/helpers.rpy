@@ -38,9 +38,6 @@ init 999 python:
 
 label r13_qa_setup(day,ev,flags=()):
     $ room13_mode=True
-    $ winter_mode=True
-    $ winter=winter_new()
-    $ source_mode=False
     $ room13=r13_new()
     $ r13_world_cameras={}
     $ r13_inspection_location=None
@@ -48,8 +45,6 @@ label r13_qa_setup(day,ev,flags=()):
     $ r13_scene_key=None
     $ r13_upgrade()
     $ typing_allowed=True
-    hide screen winter_hud
-    hide screen hud
     $ room13.update(day=day,period=0,case_state="occurred",victim_state="dead",location="inn",life_poc=True)
     $ room13["evidence"]=list(ev)
     # Older trial tests assume the episode gates are open (systems/room13_episodes.rpy);
@@ -72,9 +67,6 @@ label r13_qa_finale(ev,flags=()):
 
 label r13_qa_view:
     $ room13_mode=True
-    $ winter_mode=True
-    $ winter=winter_new()
-    $ source_mode=False
     $ room13=r13_new()
     $ r13_world_cameras={}
     $ r13_inspection_location=None
@@ -82,8 +74,6 @@ label r13_qa_view:
     $ r13_scene_key=None
     $ r13_upgrade()
     $ typing_allowed=True
-    hide screen winter_hud
-    hide screen hud
     $ room13.update(r13_qa_state)
     $ room13["flags"]=list(set(room13.get("flags",[]))|{"livelihood_open","lodging"})
     $ room13["checks"]=dict(r13_qa_checks)
@@ -99,9 +89,6 @@ init 999 python:
 
 label r13_qa_shop:
     $ room13_mode=True
-    $ winter_mode=True
-    $ winter=winter_new()
-    $ source_mode=False
     $ room13=r13_new()
     $ r13_world_cameras={}
     $ r13_prepare_history()
@@ -189,9 +176,6 @@ label r13_qa_roam(state,flags=(),items=(),cash=0):
     $ persistent.room13_admin=False
     $ r13_admin_hitboxes=False
     $ room13_mode=True
-    $ winter_mode=True
-    $ winter=winter_new()
-    $ source_mode=False
     $ room13=r13_new()
     $ r13_world_cameras={}
     $ r13_inspection_location=None
@@ -199,8 +183,6 @@ label r13_qa_roam(state,flags=(),items=(),cash=0):
     $ r13_scene_key=None
     $ r13_upgrade()
     $ typing_allowed=True
-    hide screen winter_hud
-    hide screen hud
     show screen r13_hud
     $ room13.update(state)
     # Evening brief (systems/room13_evening.rpy) is skipped unless "+brief" is passed;
@@ -355,11 +337,6 @@ init 999 python:
         store.r13_defer_grants=True
         store.r13_qa_last_present=" ".join(line[1] for line in r13_present(person,key))
         store.r13_defer_grants=False
-
-label r13_qa_gate_shelf:
-    # Same path as clicking the shelf at the gate (0.18.22).
-    call r13_object("gate_documents")
-    jump r13_entry
 
 label r13_qa_life(name):
     # Runs one life close-up from the field and returns there (0.18.22).
