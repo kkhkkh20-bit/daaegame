@@ -702,9 +702,9 @@
 - `r13_v111_hyp0_call11` if `r13_nw_retry("hypothesis")` `→ r13_v111_hyp0_menu11`
 - `r13_v111_hyp0_old11` if `r13_nw_retry("hypothesis")` `→ r13_v111_hyp0_menu11`
 - 메뉴 `r13_v111_hyp1_q11` (632줄)
-  - 「만지는 것보다 곁에서 오래 지내는 게 문제다」 → `r13_v111_hyp1_reason11`
-  - 「초롱은 젊어서 버틴다」 → `r13_v111_hyp1_badreason11`
-  - 「초롱은 장갑을 끼고 만진다」 → `r13_v111_hyp1_badreason11`
+  - 「두 사람이 아르카 곁에 머문 시간을 비교한다」 → `r13_v111_hyp1_reason11`
+  - 「두 사람의 나이와 몸 상태를 비교한다」 → `r13_v111_hyp1_badreason11`
+  - 「두 사람이 아르카를 만진 방식을 비교한다」 → `r13_v111_hyp1_badreason11`
 - `r13_v111_hyp1_badreason11` if `r13_nw_retry("hypothesis")` `→ r13_v111_hyp1_q11`
 - `r13_v111_hyp1_wrong11` if `r13_nw_retry("hypothesis",['E11', 'E08', 'NW_PIKO_TREMOR'],'돌목이 팔짱을 낀다. 초롱의 하루와 피코의 밤을 함께 놓아야 한다.')` `→ r13_v111_hyp1_proof11`
 - 메뉴 `r13_v111_hyp2_q11` (673줄)
@@ -720,9 +720,9 @@
 - `r13_v111_hyp3_badreason11` if `r13_nw_retry("hypothesis")` `→ r13_v111_hyp3_q11`
 - `r13_v111_hyp3_wrong11` if `r13_nw_retry("hypothesis",['NW_INNER_PRICE', 'NW_MUSOE_DEEP'],'판돌이 고개를 젓는다. “무쇠는 원래 고집이 셌소.” 돌값과 갱도 이야기를 함께 놓아야 한다.')` `→ r13_v111_hyp3_proof11`
 - 메뉴 `r13_v111_hyp4_q11` (755줄)
-  - 「아이 방에도 아르카등이 밤새 켜져 있었다」 → `r13_v111_hyp4_reason11`
-  - 「아이들은 어른보다 약하다」 → `r13_v111_hyp4_badreason11`
-  - 「아이들이 아르카를 만지고 논다」 → `r13_v111_hyp4_badreason11`
+  - 「아이들이 밤을 어디서 보내는지 본다」 → `r13_v111_hyp4_reason11`
+  - 「아이와 어른의 몸을 비교한다」 → `r13_v111_hyp4_badreason11`
+  - 「아이들이 아르카를 어떻게 다루는지 본다」 → `r13_v111_hyp4_badreason11`
 - `r13_v111_hyp4_badreason11` if `r13_nw_retry("hypothesis")` `→ r13_v111_hyp4_q11`
 - `r13_v111_hyp4_wrong11` if `r13_nw_retry("hypothesis",['NW_KKOMI_NOSTONE', 'NW_SICK_BEDS'],'주민이 아이를 끌어안는다. 돌이 없는 아이들과 표시가 붙은 아이들을 함께 놓아야 한다.')` `→ r13_v111_hyp4_proof11`
 - 메뉴 `r13_v111_hyp5_q11` (796줄)
@@ -1572,9 +1572,9 @@
 |---|---|---|---|---|---|
 | 두 상처와 촛대 파손을 대조한다 | — | E08_CHILD_ACCOUNT+E08_TOOL | — | — | room13_v111_days610.rpy:1425 |
 | 두 번째 길을 실제 기록으로 보인다 | — | E09_PASSAGE+E08_ROOM | — | — | room13_v111_days610.rpy:1454 |
-| 구리선과 수선 출처를 대조한다 | — | E08_WOUND_WIRE+E09_PIN_OWNER | E08_CONTACT_ASSEMBLY+E09_PIN_OWNER | — | room13_v111_days610.rpy:1512 |
+| 구리선과 수선 출처를 대조한다 | 이 핀을 구별할 수 있는가 | E08_WOUND_WIRE+E09_PIN_OWNER | E08_CONTACT_ASSEMBLY+E09_PIN_OWNER | — | room13_v111_days610.rpy:1512 |
 | 첫 비명 뒤 핀을 다시 채운 때 | 핀이 언제 떨어졌는가 | E09_PIN_TIME+E09_PIN_HANDOVER_TIME | — | — | room13_v111_days610.rpy:1547 |
-| 접촉면과 아이의 위치를 대조한다 | — | E08_CONTACT_ASSEMBLY+E08_WOUND_WIRE+E08_CHILD_POSITION+E08_ROOM_REACH+E09_SCARF | — | — | room13_v111_days610.rpy:1571 |
+| 접촉면과 아이의 위치를 대조한다 | 방금 설명은 물증과 맞는가 | E08_CONTACT_ASSEMBLY+E08_WOUND_WIRE+E08_CHILD_POSITION+E08_ROOM_REACH+E09_SCARF | — | — | room13_v111_days610.rpy:1571 |
 
 결과마다 바뀌는 값
 
@@ -1612,9 +1612,9 @@
   - 「꺼낸 아르카 곁에 오래 있던 사람부터 무너진다」 — 통과
   - 「늙으면 누구나 그렇게 된다」 — 틀림(기회 사용)
 - `menu:hyp1` (room13_v111_days1114.rpy:632)
-  - 「만지는 것보다 곁에서 오래 지내는 게 문제다」 — 통과
-  - 「초롱은 젊어서 버틴다」 — 틀림(기회 사용)
-  - 「초롱은 장갑을 끼고 만진다」 — 틀림(기회 사용)
+  - 「두 사람이 아르카 곁에 머문 시간을 비교한다」 — 통과
+  - 「두 사람의 나이와 몸 상태를 비교한다」 — 틀림(기회 사용)
+  - 「두 사람이 아르카를 만진 방식을 비교한다」 — 틀림(기회 사용)
 - `menu:hyp2` (room13_v111_days1114.rpy:673)
   - 「켜지 않고 쌓아 둔 돌은 아무 해가 없다」 — 틀림(기회 사용)
   - 「백 부인은 그 돌 곁에서 잠을 자지 않는다」 — 통과
@@ -1624,9 +1624,9 @@
   - 「외지 사람이 병을 들여왔다」 — 틀림(기회 사용)
   - 「요즘 태우는 돌이 더 독하다」 — 통과
 - `menu:hyp4` (room13_v111_days1114.rpy:755)
-  - 「아이 방에도 아르카등이 밤새 켜져 있었다」 — 통과
-  - 「아이들은 어른보다 약하다」 — 틀림(기회 사용)
-  - 「아이들이 아르카를 만지고 논다」 — 틀림(기회 사용)
+  - 「아이들이 밤을 어디서 보내는지 본다」 — 통과
+  - 「아이와 어른의 몸을 비교한다」 — 틀림(기회 사용)
+  - 「아이들이 아르카를 어떻게 다루는지 본다」 — 틀림(기회 사용)
 - `menu:hyp5` (room13_v111_days1114.rpy:796)
   - 「한 방의 돌이 바뀌자 한 사람이 한 저녁 사이에 무너졌다」 — 통과 · 조건 `r13_v111_value('OWL_ALIVE') is False`
   - 「한 방의 돌을 치우자 무너지던 사람이 돌아왔다」 — 통과 · 조건 `r13_v111_value('OWL_ALIVE') is not False and r13_v111_value('prevention')!='stone'`
