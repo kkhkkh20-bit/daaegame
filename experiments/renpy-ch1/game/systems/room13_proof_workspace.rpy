@@ -490,7 +490,10 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
             if quote_text:
                 text ((ctx["speaker"]+"의 말") if ctx["speaker"] else "의문") size small color accent font R13_UI_BOLD_FONT
                 text quote_text size r13_nb_body_size() color ink font R13_UI_BOLD_FONT xsize L["quote_w"]
-            text r13_pw_help(mode,chances,len(chosen)) size small color muted font R13_UI_BOLD_FONT xsize L["quote_w"]
+            # 왼쪽 열이 길면(쟁점 제목 세 줄 + 발언) 도움말이 아래 칩 줄과 겹쳤다. 고른 자료가 없을 때의 도움말은
+            # 칩 줄(「고른 자료 없음 · 목록의 체크로 고릅니다」)이 이미 말하므로 여기서는 뺀다.
+            if r13_pw_help(mode,chances,len(chosen)) and (mode=="compare" or chosen):
+                text r13_pw_help(mode,chances,len(chosen)) size small color muted font R13_UI_BOLD_FONT xsize L["quote_w"]
             if pair_waiting:
                 text "목록에서 함께 볼 자료의 이름을 누르세요." size small color accent font R13_UI_BOLD_FONT xsize L["quote_w"]
         add Solid("#c9a86a66") xpos 412 ypos L["top"] xsize 1 ysize (L["body_bottom"]-L["top"])
