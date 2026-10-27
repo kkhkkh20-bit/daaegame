@@ -27,8 +27,9 @@ def load_scale(touch=False,large=False,small=False):
     return ns
 
 class TypeScale(unittest.TestCase):
-    def test_switch_is_off(self):
-        self.assertIn('define R13_TYPE_V2 = False',SCALE.read_text(encoding='utf-8'))
+    def test_switch_is_on(self):
+        # 2026-10-27 소유자 "적용". 끄면 이전 값으로 돌아가는 구조는 그대로다.
+        self.assertIn('define R13_TYPE_V2 = True',SCALE.read_text(encoding='utf-8'))
 
     def test_levels_rise_in_every_setting(self):
         for touch in (False,True):

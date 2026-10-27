@@ -1,10 +1,10 @@
 # 2026-10-27 타이포그래피 시안(TYPOGRAPHY_V2): 글자 크기 단계표와 색 토큰.
-#   설계 docs/design/TYPOGRAPHY_V2.md. 소유자 승인 전이라 R13_TYPE_V2 가 꺼져 있고,
+#   설계 docs/design/TYPOGRAPHY_V2.md. 2026-10-27 소유자 "적용" 으로 켰다. 끄면 이전 값으로 돌아가고,
 #   꺼진 동안 화면은 이전과 픽셀 단위로 같아야 한다. 켜는 자리는 세 곳뿐이다 —
 #   대사창(screens.rpy say, systems/room13_night_ui.rpy), 선택지(systems/room13_notebook_choices.rpy),
 #   기록 화면(room13_notebook.rpy r13_records, systems/room13_evidence_view.rpy).
 #   글꼴은 바꾸지 않는다(Pretendard, 2026-10-24 소유자 결정).
-define R13_TYPE_V2 = False
+define R13_TYPE_V2 = True
 
 init 59 python:
     # (PC 보통, PC 크게, 휴대폰 보통, 휴대폰 크게). 「작게」는 r13_read_size 가 지금처럼 깎는다.
