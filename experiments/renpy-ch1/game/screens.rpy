@@ -882,8 +882,14 @@ screen file_slots(title,saving):
                         action r13_slot_action(page,i+1,saving)
                         sensitive (saving or renpy.can_load(slot))
                         hbox:
-                            spacing 14
-                            add FileScreenshot(i+1,page=str(page)) xsize 174 ysize 98 yalign .5
+                            spacing 14 xalign 0.0 yalign .5
+                            # 빈 칸도 채워진 칸과 같은 틀(그림 자리 + 왼쪽 글 기둥). 가운데 정렬 큰 글씨 하나만 두면 모양이 달라진다(소유자 2026-10-27).
+                            if renpy.can_load(slot):
+                                add FileScreenshot(i+1,page=str(page)) xsize 174 ysize 98 yalign .5
+                            else:
+                                frame:
+                                    xysize (174,98) yalign .5 padding (0,0) background Solid("#4b342014")
+                                    text "빈 칸" size r13_nb_small_size() color r13_nb_muted() align (.5,.5)
                             # 0.18.46: read the story point first (day, time, place), then where in
                             # the story and the last line; slot number and real time come last.
                             vbox:
@@ -896,11 +902,12 @@ screen file_slots(title,saving):
                                         text ("“"+r13_slot_info(slot,"r13_last")+"”") size (r13_type("small") if R13_TYPE_V2 else r13_read_size(16,20)) color "#5d6a66" xsize 320
                                     text ("%d쪽 %d번 · "%(page,i+1)+FileTime(i+1,format="%m-%d %H:%M",page=str(page))+" · "+r13_save_caption(renpy.slot_json(slot))) size (r13_type("small") if R13_TYPE_V2 else r13_read_size(14,17)) color "#7d8c90" xsize 320
                                 else:
-                                    text ("%d쪽 %d번 · 비어 있음"%(page,i+1)) size (r13_type("body") if R13_TYPE_V2 else r13_read_size(20,24))
+                                    text ("%d쪽 %d번"%(page,i+1)) size r13_nb_small_size() color r13_nb_muted()
+                                    text ("여기에 저장" if saving else "비어 있음") size r13_nb_body_size() color r13_nb_muted()
             hbox:
                 spacing 18
                 # 설정에서 열었으면 설정으로, 더보기에서 열었으면 게임으로 돌아간다.
-                textbutton "돌아가기" action (If(r13_save_from_settings,[SetVariable("r13_save_from_settings",False),ShowMenu("pause_menu")],Return()))
+                textbutton "돌아가기" action (If(r13_save_from_settings,[SetVariable("r13_save_from_settings",False),ShowMenu("pause_menu")],Return())) text_size (r13_type("body") if R13_TYPE_V2 else 20)
                 if not saving:
                     textbutton "이전 저장 정리" action Show("r13_save_cleanup",scope="old") text_size (r13_type("body") if R13_TYPE_V2 else 20)
                     textbutton "모든 진행 저장 정리" action Show("r13_save_cleanup",scope="all") text_size (r13_type("body") if R13_TYPE_V2 else 20)
