@@ -203,7 +203,7 @@ init 336 python:
 
     def r13_drawer_chips(owner,mode,archive=None):
         chips=[(title,mode==key,[Function(r13_record_select,owner,"drawer",key,False)]+r13_drawer_reset(owner))
-            for key,title in (("now","이번 사건"),("past","지난 사건"),("person","사람별"))]
+            for key,title in (("now","이번"),("past","지난"),("person","사람별"))]   # 2026-10-27: 짧게 — 탭 줄에 목표 칸이 들어갈 자리
         if archive is not None:
             chips.append(("지난 플레이",bool(archive),[Function(r13_record_select,owner,"archive",not archive,False)]+r13_drawer_reset(owner)))
         return chips

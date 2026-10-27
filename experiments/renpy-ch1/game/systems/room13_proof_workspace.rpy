@@ -248,9 +248,9 @@ init 351 python:
 
     def r13_pw_help(mode,chances,count):
         if mode=="compare":
-            return "두 편지를 체크한 뒤 「나란히 보기」로 읽고 「비교 마치기」를 누릅니다. 읽기·선택은 기회를 쓰지 않습니다."
+            return "두 편지를 체크하고 「나란히 보기」로 읽은 뒤 「비교 마치기」."
         if not count:
-            return "목록의 체크로 근거를 고르고, 이름을 누르면 오른쪽에서 읽습니다. 고르기·읽기는 기회를 쓰지 않습니다."
+            return "체크로 근거를 고르고, 이름을 누르면 오른쪽에서 읽습니다."
         if chances:
             return "고른 근거가 맞으면 「근거 제시」. 잘못 내면 기회를 1회 씁니다."
         return "고른 근거가 맞으면 「근거 제시」를 누릅니다."
@@ -489,7 +489,7 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
             add Solid("#c9a86a99") xsize L["quote_w"] ysize 1
             if quote_text:
                 text ((ctx["speaker"]+"의 말") if ctx["speaker"] else "의문") size small color accent font R13_UI_BOLD_FONT
-                text quote_text size r13_nb_emphasis_size() color ink font R13_UI_BOLD_FONT xsize L["quote_w"]
+                text quote_text size r13_nb_body_size() color ink font R13_UI_BOLD_FONT xsize L["quote_w"]
             text r13_pw_help(mode,chances,len(chosen)) size small color muted font R13_UI_BOLD_FONT xsize L["quote_w"]
             if pair_waiting:
                 text "목록에서 함께 볼 자료의 이름을 누르세요." size small color accent font R13_UI_BOLD_FONT xsize L["quote_w"]

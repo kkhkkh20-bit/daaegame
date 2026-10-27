@@ -453,7 +453,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 301 | `room13_v111.rpy:12` | _r13_nw_rel_set |
 | 2 | 330 | `systems/room13_v111_relations.rpy:18` | _r13_fork_observed_set |
-| 3 | 331 | `room13_fork_screen.rpy:372` |  |
+| 3 | 331 | `room13_fork_screen.rpy:370` |  |
 
 ## `r13_acting_spec` (2층)
 

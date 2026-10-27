@@ -167,7 +167,8 @@ screen r13_goal_strip(tabs_right,chips_left):
             button:
                 id "r13_goal_pill"
                 style "r13ev_chip_button"
-                xanchor 1.0 xpos R13_NB_RIGHT ypos 102 ysize 24 padding (10,0) background None
+                # 2026-10-27 소유자 캡처: 오른쪽 맞춤이면 칩(이번·지난·사람별) 바로 아래에 겹쳐 보였다. 탭 오른쪽부터 칩 왼쪽까지에 둔다.
+                xpos (tabs_right+10) ypos 102 ysize 24 xmaximum max(120,chips_left-tabs_right-20) padding (10,0) background None
                 action ToggleLocalVariable("goal_open")
                 alt r13_goal_alt(steps,current,note,goal_open)
                 hbox:

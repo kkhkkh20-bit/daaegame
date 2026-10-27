@@ -195,7 +195,7 @@ screen r13_relations_content(owner,selected,filt,focused=True):
     # 「전체 관계도 / 인물 중심」 전환은 하단 버튼 줄(닫기 왼쪽)로 갔다.
     text "알게 된 관계" xpos (R13_NB_LEFT+4) ypos R13_NB_TOP xsize 190 size (r13_type("subtitle")) color (r13_type_color("ink")) font R13_UI_BOLD_FONT
     # 안내는 제목 오른쪽(종이 안). 아래 줄에 두면 종이 가장자리(646)에 걸린다.
-    text ("아래 얼굴을 누르면 그 인물의 관계를 봅니다." if focused else "인물을 고른 뒤 「인물 중심」으로 크게 봅니다.") xpos (R13_NB_LEFT+198) ypos (R13_NB_TOP-2) xsize 390 size (r13_type("small")) color (r13_type_color("muted"))
+    text ("얼굴을 누르면 그 관계를 봅니다." if focused else "인물을 고르면 크게 봅니다.") xpos (R13_NB_LEFT+198) ypos (R13_NB_TOP-2) xsize 390 size (r13_type("small")) color (r13_type_color("muted"))
     use r13_nb_footer_button(1,("전체 관계도" if focused else "인물 중심"),Function(r13_record_select,owner,"rel_focus",not focused),width=176,control_id="r13_rel_mode")  # 큰 글씨에서 「전체 관계도」가 136 에 안 들어간다
     add R13PaperFrame() xpos R13_NB_LEFT ypos (R13_NB_TOP+62) xsize 588 ysize 414
     if focused:
@@ -210,7 +210,7 @@ screen r13_relations_content(owner,selected,filt,focused=True):
             $ faded=not r13_rel_match(who,filt)
             $ name=r13_display_name(who)
             $ two_lines=" " in name and len(name)>5
-            $ face=44 if two_lines else 50
+            $ face=36 if two_lines else 40   # 2026-10-27: 이름(22px)이 칸 밖으로 나가 얼굴을 줄였다
             button:
                 xpos x ypos y xysize R13_REL_CELL padding (0,0) background None
                 action Function(r13_record_select,owner,"rel_sel",who)
@@ -219,9 +219,9 @@ screen r13_relations_content(owner,selected,filt,focused=True):
                 fixed:
                     xysize R13_REL_CELL
                     # A small paper mount keeps names legible over passing lines.
-                    add R13PaperPanel(who==selected) xpos 10 ypos 0 xysize (76,78)
+                    add R13PaperPanel(who==selected) xpos 10 ypos 0 xysize (76,82)
                     if who==selected:
-                        add Solid("#ad843f") xpos 10 ypos 0 xysize (3,78)
+                        add Solid("#ad843f") xpos 10 ypos 0 xysize (3,82)
                     if who in linked:
                         $ link_kind=next(k for other,k,lab in r13_rel_lines_of(selected) if other==who)
                         add Solid(R13_REL_KIND[link_kind][0]) xpos 10 ypos 0 xysize (76,3)
@@ -234,14 +234,14 @@ screen r13_relations_content(owner,selected,filt,focused=True):
                     if kind in ("dead","saved","gone","missing"):
                         frame:
                             # 0.19.96: two-line names (부엉이 할아버지) start at y48; keep the badge above them.
-                            xpos 62 ypos (24 if two_lines else 36) xysize (22,22) padding (0,0)
+                            xpos 62 ypos (20 if two_lines else 26) xysize (22,22) padding (0,0)
                             background Solid({"dead":"#874a3b","saved":"#4d765c"}.get(kind,"#726f78"))
                             if kind=="saved":
                                 add R13AntiqueIcon("check",size=18) align (.5,.5)
                             else:
                                 text ("×" if kind=="dead" else "?") size r13_type("small") color "#fff0d2" align (.5,.5)
                     $ node_name=name.replace(" ","\n",1) if two_lines else name
-                    text (("{s}"+node_name+"{/s}") if kind=="dead" else node_name) xpos 48 xanchor .5 ypos (48 if two_lines else 57) xsize 94 text_align .5 size r13_type("small") line_spacing -2 color ("#817366" if kind in ("dead","gone") else "#493b30")
+                    text (("{s}"+node_name+"{/s}") if kind=="dead" else node_name) xpos 48 xanchor .5 ypos (40 if two_lines else 48) xsize 94 text_align .5 size r13_type("small") line_spacing -4 color ("#817366" if kind in ("dead","gone") else "#493b30")
     use r13_relation_detail(owner,selected)
     hbox:
         xpos (R13_NB_LEFT+6) ypos (R13_NB_TOP+482) spacing 22
@@ -264,7 +264,7 @@ screen r13_relation_focus(owner,person,filt):
             $ nx,ny=positions[i]
             use r13_relation_focus_card(owner,other,nx,ny)
             frame:
-                xpos (0 if nx<200 else 382) ypos (ny+108) xsize 194 padding (6,4) background Solid("#f0dfbd")
+                xpos (0 if nx<200 else 382) ypos (ny+112) xsize 194 padding (6,4) background Solid("#f0dfbd")
                 text lab size r13_type("small") text_align .5 xalign .5 color R13_REL_KIND[k][0] xsize 180
         if not rows:
             text "아직 알게 된 관계가 없습니다." xpos 110 ypos 245 xsize 356 text_align .5 size r13_type("small") color "#79654e"
@@ -277,7 +277,7 @@ screen r13_relation_focus(owner,person,filt):
             for who in r13_rel_people():
                 $ status=r13_rel_status(who)[0]
                 button:
-                    xysize (76,80) padding (4,4)
+                    xysize (76,88) padding (4,4)
                     background R13PaperPanel(who==person) hover_background R13PaperPanel(True)
                     action Function(r13_record_select,owner,"rel_sel",who)
                     alt r13_display_name(who)
@@ -285,9 +285,9 @@ screen r13_relation_focus(owner,person,filt):
                     vbox:
                         spacing 4 xalign .5
                         if status=="dead":
-                            add Transform(r13_rel_face(who),xysize=(44,44),fit="contain",nearest=r13_profile_nearest(who)) at r13_rel_gray xalign .5
+                            add Transform(r13_rel_face(who),xysize=(40,40),fit="contain",nearest=r13_profile_nearest(who)) at r13_rel_gray xalign .5
                         else:
-                            add Transform(r13_rel_face(who),xysize=(44,44),fit="contain",nearest=r13_profile_nearest(who),alpha=.55 if status in ("gone","missing") else 1.0) xalign .5
+                            add Transform(r13_rel_face(who),xysize=(40,40),fit="contain",nearest=r13_profile_nearest(who),alpha=.55 if status in ("gone","missing") else 1.0) xalign .5
                         text (("{s}"+r13_display_name(who).split(" ")[0]+"{/s}") if status=="dead" else r13_display_name(who).split(" ")[0]) size r13_type("small") color "#493b30" xalign .5
 
 screen r13_relation_focus_card(owner,person,x,y,primary=False):

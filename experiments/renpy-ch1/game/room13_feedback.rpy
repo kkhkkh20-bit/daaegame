@@ -47,7 +47,8 @@ define R13_EVIDENCE_CARD_PAD = 10
 
 screen r13_evidence_card(key,caption="",conversation=False,notice=False,compact=False):
     # 2026-10-27: 왼쪽 위 획득 알림이 현장 상단 지도·기록 버튼(y 40~75)을 덮었다. 그 아래로 내린다.
-    $ card_center=(120,166) if notice else R13_EVIDENCE_CARD_CENTER
+    # 2026-10-27: 알림 카드는 오른쪽 위(날짜판 아래). 왼쪽 위에 두니 자료 대조 화면의 발언 글과 겹쳤다.
+    $ card_center=(1100,190) if notice else R13_EVIDENCE_CARD_CENTER
     style_prefix "r13"
     if compact:
         # 2026-10-27: 자료 대조 패널(50,100)-(1230,670)이 떠 있는 동안은 왼쪽 위 카드가 주장 제목을 덮는다.
@@ -76,7 +77,8 @@ screen r13_evidence_found(keys,conversation=False):
     zorder 98
     default item_index=0
     # Navigation and full record panes own their surface. Desk/item finds still show above the close-up.
-    if not any(renpy.get_screen(name) for name in ("r13_map","r13_records","r13_learning_notes","r13_record_compare","r13_calendar","r13_work_board")):
+    # 2026-10-27: 자료 대조 통합 화면 위에서도 띄우지 않는다(발언·상세 글과 겹쳤다).
+    if not any(renpy.get_screen(name) for name in ("r13_map","r13_records","r13_learning_notes","r13_record_compare","r13_calendar","r13_work_board","r13_proof_workspace")):
         if renpy.get_screen("r13_crisis_proof"):
             # 자료 대조 패널 위에서는 제목과 겹치지 않게 패널 아래로 보낸다(위 compact).
             use r13_evidence_card(keys[item_index],conversation=conversation,notice=True,compact=True)

@@ -22,7 +22,8 @@ init 60 python:
 screen r13_goal_fold(goal,ready=False):
     $ notes=[] if r13_v111_active() else r13_first_mystery_notes()
     $ thought = "편지는 이곳에서 왔다. 그런데 아내는 어디에 있을까." if goal.startswith(("편지를 보낸 여관","엄마가 기다린다던 여관")) else goal
-    $ panel_height=280
+    # 2026-10-27 소유자: 너무 눈에 띄고 길다 — 제목 한 줄과 생각 두 줄만. 스크롤·「모은 자료 보기」는 뺐다(기록에 있다).
+    $ panel_height=136
     $ signature=tuple([thought]+[n["title"] for n in notes])
     if not renpy.get_screen("r13_evidence_found"):
         fixed:
@@ -32,26 +33,18 @@ screen r13_goal_fold(goal,ready=False):
                 add Solid("#d7ad61") xpos 142 ypos 17 xsize 6 ysize 6
         if ready and not r13_goal_open and thought not in r13_thoughts_seen and thought not in r13_thought_toasted:
             timer 2.4 action SetVariable("r13_thought_toasted",tuple(r13_thought_toasted)+(thought,))
-        if r13_goal_open:
+        # 질문 화면이 열리면 생각 판은 겹치지 않게 숨긴다.
+        if r13_goal_open and not renpy.get_screen("r13_topics"):
             button:
                 area (0,0,1280,650) background None
                 action SetVariable("r13_goal_open",False)
                 alt "생각 접기"
             frame:
-                area (24,188,624,panel_height) padding (24,20) background r13_field_paper()
+                area (24,160,520,panel_height) padding (20,14) background r13_field_paper()
                 fixed:
-                    xsize 576 ysize (panel_height-40)
-                    text "아빠의 생각" size r13_type("emphasis") color "#493b30" font R13_UI_BOLD_FONT
+                    xsize 480 ysize (panel_height-28)
+                    text "아빠의 생각" size r13_type("small") color "#765426" font R13_UI_BOLD_FONT
                     textbutton "접기":
-                        xpos 480 ypos 0 text_size r13_type("small") text_color "#765426" text_font R13_UI_BOLD_FONT
+                        xpos 420 ypos -4 text_size r13_type("small") text_color "#765426" text_font R13_UI_BOLD_FONT
                         action SetVariable("r13_goal_open",False)
-                    viewport:
-                        xpos 0 ypos 64 xsize 566 ysize (panel_height-164)
-                        mousewheel True draggable True scrollbars "vertical"
-                        vbox:
-                            spacing 16
-                            text thought size r13_type("small") color "#496579" xsize 542
-                    textbutton ("모은 자료 보기" if r13_v111_active() else "조사 메모 열기 · 의문 %d개"%len(notes)):
-                        ypos (panel_height-86) xsize 390 ysize 56
-                        text_size r13_type("small") text_color "#765426" background None hover_background Solid("#b28d4925")
-                        action [SetVariable("r13_goal_open",False),(Show("r13_records",initial_tab="evidence") if r13_v111_active() else Show("r13_learning_notes"))] sensitive ready
+                    text thought ypos 34 size r13_type("body") color "#3f5467" xsize 480 font R13_UI_BOLD_FONT line_spacing 2

@@ -160,7 +160,7 @@ class EvidenceView(unittest.TestCase):
             env = self.build(touch=touch)
             chips = [("전체", True, None), ("증언", False, None), ("전달 가능", False, None), ("지난 사건", False, None), ("지난 플레이", False, None)]
             boxes = env["r13_ev_chip_boxes"](chips)
-            self.assertGreaterEqual(boxes[0][0], env["R13_EV_TAB_X"] + 5 * env["R13_EV_TAB_PITCH"])    # five top tabs
+            self.assertGreaterEqual(boxes[0][0], env["R13_EV_TAB_X"] + 4 * env["R13_EV_TAB_PITCH"])    # 탭 넷(자료·사람·메모·갈림길)
             self.assertLessEqual(boxes[-1][0] + boxes[-1][1], 1168)
             for (x, w), (nx, nw) in zip(boxes, boxes[1:]):
                 self.assertLessEqual(x + w, nx)
@@ -179,7 +179,7 @@ class EvidenceView(unittest.TestCase):
             env["r13_read_size"] = lambda base, large: large
             chips = [(label, False, None) for label in ("전체", "증언", "전달 가능", "지난 사건", "지난 플레이")]
             boxes = env["r13_ev_chip_boxes"](chips)
-            self.assertGreaterEqual(boxes[0][0], 158+4*90+86+12)
+            self.assertGreaterEqual(boxes[0][0], env["R13_EV_TAB_X"]+3*env["R13_EV_TAB_PITCH"]+86+12)
             self.assertLessEqual(boxes[-1][0]+boxes[-1][1], 1168)
             if touch:
                 self.assertTrue(all(width*390/720 >= 44 for x, width in boxes))
@@ -192,7 +192,8 @@ class EvidenceView(unittest.TestCase):
         env = self.build()
         self.assertEqual([k for k, t, a in env["r13_ev_record_tabs"]("r13_book")], ["all", "notes", "fork"])
         self.assertEqual([k for k, t, a in env["r13_ev_record_tabs"]("r13_book", True)], ["all"])
-        self.assertEqual([k for k, t, a in env["r13_ev_record_tabs"]({})], ["all", "relations", "dialogue", "notes", "fork"])
+        # 2026-10-27 소유자: 「대화」 탭은 뺐다(백로그가 있다).
+        self.assertEqual([k for k, t, a in env["r13_ev_record_tabs"]({})], ["all", "relations", "notes", "fork"])
         env = self.build(active=False)
         self.assertNotIn("fork", [k for k, t, a in env["r13_ev_record_tabs"]({})])
 

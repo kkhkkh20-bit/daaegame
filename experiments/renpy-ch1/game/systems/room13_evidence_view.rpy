@@ -28,7 +28,7 @@ init 330 python:
     #   제목이 갈림길과 같은 x114 로 가서 첫 탭은 220 부터, 90 간격. 아래는 갈림길 하단 버튼 줄과 같은 684.
     R13_EV_BOTTOM=globals().get("R13_NB_BOTTOM",636)
     R13_EV_TAB_X=220
-    R13_EV_TAB_PITCH=90
+    R13_EV_TAB_PITCH=100   # 2026-10-27 소유자: 탭 간격 통일
     R13_EV_TITLE_X=globals().get("R13_NB_TITLE_X",114)
     R13_EV_TOP=globals().get("R13_NB_TOP",140)      # 목록 머리글·가운데 제목·오른쪽 열의 위
     R13_EV_ROWS_Y=R13_EV_TOP+28                      # 목록 첫 줄
@@ -298,9 +298,9 @@ init 330 python:
 
     def r13_ev_chip_boxes(chips,right=1168,gap=6):
         size=r13_ev_small_size()
-        widths=[max(96,len(label)*size+18) for label,chosen,act in chips]
-        # Reserve all five tabs even when large text exposes every filter.
-        left=R13_EV_TAB_X+4*R13_EV_TAB_PITCH+86+12
+        widths=[max(88 if r13_touch_ui() else 72,len(label)*size+18) for label,chosen,act in chips]
+        # 탭 넷(자료·사람·메모·갈림길) 자리를 비워 둔다.
+        left=R13_EV_TAB_X+3*R13_EV_TAB_PITCH+88+12
         available=right-left-gap*max(0,len(widths)-1)
         if widths and sum(widths)>available:
             floor=88 if r13_touch_ui() else 72
@@ -318,8 +318,9 @@ init 330 python:
         if present:return [("all","자료",NullAction())]
         book=isinstance(owner,str)
         tabs=[]
-        for key,title in (("all","자료"),("relations","사람"),("dialogue","대화"),("notes","메모")):
-            if book and key in ("relations","dialogue"):continue   # the book always shows 자료
+        # 2026-10-27 소유자: 「대화」 탭은 뺐다 — 지나간 대화는 더보기의 대화 기록(백로그)이 있다.
+        for key,title in (("all","자료"),("relations","사람"),("notes","메모")):
+            if book and key=="relations":continue   # the book always shows 자료
             if book and key=="notes":action=Show("r13_learning_notes")
             else:
                 action=[Function(r13_record_select,owner,"category" if book else "tab",key),Function(r13_record_select,owner,"detail",None,False),

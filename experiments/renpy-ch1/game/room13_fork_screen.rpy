@@ -197,14 +197,14 @@ screen r13_fork_card(column,row,small=16):
             hbox:
                 align (.5,.5) spacing 10
                 add R13AntiqueIcon('lock',size=22) yalign .5
-                text ('다른 결과 %d'%row.get('count',1)) size (small+2) color '#354151' font R13_UI_BOLD_FONT yalign .5
+                text ('다른 결과 %d'%row.get('count',1)) size small color '#354151' font R13_UI_BOLD_FONT yalign .5
     elif column['here']:
         frame:
             xsize 175 ysize 116 padding (8,8) background R13ControlSurface(primary=True)
             vbox:
                 align (.5,.5) spacing 6
                 add r13_asset_path("file:"+(R13_NIGHT_UI+'diamond.png')) xalign .5
-                text '지금 여기' size (small+6) color '#fff6e2' font R13_UI_BOLD_FONT xalign .5
+                text '지금 여기' size r13_type("body") color '#fff6e2' font R13_UI_BOLD_FONT xalign .5
                 text '결과 미정' size small color '#f2d28d' font R13_UI_BOLD_FONT xalign .5
     else:
         $ result_label=r13_fork_result_name(column['key'],row['result'])
@@ -217,7 +217,7 @@ screen r13_fork_card(column,row,small=16):
                 viewport:
                     xysize (151,thumb_height)
                     add Transform(r13_fork_image(row['record'],column['place']),xysize=(151,thumb_height),fit='cover',matrixcolor=SepiaMatrix() if row['kind']=='old' else BrightnessMatrix(0))
-                text result_label xpos 0 ypos (thumb_height+2) xsize 151 size (small+2) line_spacing -2 color '#263b52' font R13_UI_BOLD_FONT
+                text result_label xpos 0 ypos (thumb_height+2) xsize 151 size small line_spacing -2 color '#263b52' font R13_UI_BOLD_FONT
                 text ('이번 회차' if row['kind']=='current' else '%d회차에서 봄'%(row['record'] or {}).get('run',1)) xpos 0 ypos 82 xsize 151 size r13_type("small") color '#756f66' font R13_UI_BOLD_FONT
 
 screen r13_fork_card_stack(column,small,height):
@@ -241,7 +241,7 @@ screen r13_fork_screen():
     default fate_open = None
     $ columns = r13_fork_columns()
     $ touch = r13_touch_ui()
-    $ small = 18 if touch else 16
+    $ small = r13_type("small")   # 2026-10-27 소유자: 글자 종류를 줄인다 — 범례·날짜·꼬리표 small, 제목 body
     $ ch = r13_control_height()
     $ by = R13_NB_BOTTOM-ch   # 2026-10-27: 하단 버튼 줄도 종이 안(636)으로
     # 2026-10-27 수첩 공통 틀(systems/room13_notebook_shell.rpy): 판·제목·부제·회차·닫기 X·금색 선은 기록 화면과 같은 자리.
@@ -257,25 +257,25 @@ screen r13_fork_screen():
         hbox:
             spacing 8
             add R13ForkDash(26,2,True) yalign .5
-            text '다른 회차에서 본 결과' size small color '#354151' font R13_UI_BOLD_FONT
+            text '다른 회차' size small color '#354151' font R13_UI_BOLD_FONT
         hbox:
             spacing 6
             add R13AntiqueIcon('lock',size=18) yalign .5
-            text '아직 보지 못한 결과 (개수만)' size small color '#354151' font R13_UI_BOLD_FONT
+            text '아직 못 본 결과' size small color '#354151' font R13_UI_BOLD_FONT
         hbox:
             spacing 6
             add R13ForkBadge(22) yalign .5
-            text '누군가의 운명이 갈린 곳' size small color '#354151' font R13_UI_BOLD_FONT
+            text '운명이 갈린 곳' size small color '#354151' font R13_UI_BOLD_FONT
     $ fate_box = None
     for offset,column in enumerate(columns[first:first+6]):
         $ cx = 110+offset*182
-        text r13_fork_day_label(column['day']) xpos (cx+87) xanchor .5 ypos 202 size small color '#756f66' font R13_UI_BOLD_FONT
+        text r13_fork_day_label(column['day']) xpos (cx+87) xanchor .5 ypos 194 size small color '#756f66' font R13_UI_BOLD_FONT
         if column['key'] is None:
             frame:
                 xpos cx ypos 264 xsize 175 ysize 116 padding (8,8) background R13ForkDash(175,116)
                 text '…\n아직 펼치지 않은\n이야기' align (.5,.5) text_align .5 size small color '#756f66' font R13_UI_BOLD_FONT
         else:
-            text column['title'] xpos (cx+87) xanchor .5 ypos 230 xmaximum 175 text_align .5 size (21 if touch else 22) color '#263b52' font R13_UI_BOLD_FONT
+            text column['title'] xpos (cx+87) xanchor .5 ypos 230 xmaximum 175 text_align .5 size r13_type("body") color '#263b52' font R13_UI_BOLD_FONT
             if first+offset<len(columns)-1 and offset<5:
                 add Solid('#c9a86a99' if column['here'] else '#d9b46c') xpos (cx+175) ypos 321 xysize (7,2)
             fixed:
@@ -303,19 +303,17 @@ screen r13_fork_screen():
     $ fy = by
     add r13_asset_path("file:"+(R13_NIGHT_UI+'diamond.png')) xpos 114 ypos (fy-18)
     add Solid('#c9a86a99') xpos 114 ypos (fy-14) xsize (R13_NB_RIGHT-114) ysize 1
-    text '지나온 길을 모아, 다음 이야기를 찾아요.' xpos 114 ypos (fy+ch//2) yanchor .5 size small color '#756f66' font R13_UI_BOLD_FONT
+    # 2026-10-27 소유자: 안내 글(「지나온 길을 모아…」)은 뺐다. 지난 결말 띠가 왼쪽부터 쓴다.
     viewport:
-        area (470,fy,R13_NB_RIGHT-R13_NB_BUTTON_W-2*R13_NB_GAP-160-12-470,ch) draggable True mousewheel 'horizontal'
+        area (114,fy,R13_NB_RIGHT-R13_NB_BUTTON_W-2*R13_NB_GAP-160-12-114,ch) draggable True mousewheel 'horizontal'
         hbox:
             spacing 16 yalign .5
             for ending,record in sorted((persistent.r13_fork_endings or {}).items()):
                 hbox:
                     spacing 8
                     add Transform(r13_fork_image(record),xysize=(72,41),fit='cover') yalign .5
-                    vbox:
-                        yalign .5
-                        text ('지난 결말 · %d회차'%record['run']) size small color '#756f66' font R13_UI_BOLD_FONT
-                        text R13_FORK_ENDINGS.get(ending,'') size small color '#354151' font R13_UI_BOLD_FONT xsize 220
+                    # 2026-10-27: 두 줄이면 띠(52px) 밖으로 넘쳐 다음 항목이 아래로 떨어졌다. 한 줄로.
+                    text ('%d회차 · %s'%(record['run'],R13_FORK_ENDINGS.get(ending,''))) size small color '#354151' font R13_UI_BOLD_FONT yalign .5
     fixed:
         xpos (R13_NB_RIGHT-R13_NB_BUTTON_W-2*R13_NB_GAP-160) ypos by xysize (80,ch)
         use r13_control('‹',None,SetScreenVariable('first',max(0,first-1)),width=80,enabled=first>0,control_id='r13_fork_prev')
