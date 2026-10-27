@@ -1689,6 +1689,58 @@
         "기존 등잔 그림을 대체하지 않고 읽기 전환으로 함께 보인다.",
         "새 도면을 봤다고 새 증거·플래그가 생기지 않는다."
       ]
+    },
+    {
+      "id": "CLOSEUP-DOT",
+      "title": "근접 대화 도트 1칸=1px 원본(840 한 벌, 38명 x 6감정)",
+      "kind": "인물",
+      "status": "needs_delivery",
+      "priority": "P2",
+      "description": "대화 근접 도트판이 배경보다 3배 거친 격자로 보여 임시로 붓 원본을 쓴다. 현장 도트와 재질을 맞추려면 1칸=1px 근접 도트가 필요하다. P1 은 다람·아빠·돌목·할머니·너울·까로·나비·초롱 48장. docs/art-requests/근접_대화_도트_1px_요청서_20261027.md",
+      "scenes": [
+        "대화 근접(전 장면)",
+        "회의 근접"
+      ],
+      "branches": [
+        "공통"
+      ],
+      "references": [
+        "game/assets/room13-dialogue-talk-art.json",
+        "game/assets/dialogue-source-master-v2"
+      ],
+      "sources": [
+        "docs/art-requests/근접_대화_도트_1px_요청서_20261027.md"
+      ],
+      "approved_scope": "2026-10-27 소유자 「추천안대로 가고」(나: 붓 원본 즉시, 가: 신규 작화 요청).",
+      "contract": {
+        "states": [
+          "6감정 x 38명 = 228장(840 높이 한 벌)"
+        ],
+        "transparent": true,
+        "delivery": [
+          "원본 PNG",
+          "무손실 WebP",
+          "대응표 CSV"
+        ],
+        "size_rule": "현행 붓 원본 840 판과 같은 캔버스·발끝·머리 상자. 1칸=1px."
+      },
+      "required": [
+        "1칸=1px, 어른 약 840칸 높이",
+        "붓 원본 840 판과 같은 캔버스·발끝·머리 상자",
+        "대화 평온 그림 48색, 두 단계 외곽",
+        "파일 room13-closeup-<인물id>-<감정>.png + CSV"
+      ],
+      "avoid": [
+        "흰 테두리 스티커",
+        "늘려 그린 도트",
+        "그림 안 글자",
+        "기존 파일 덮어쓰기"
+      ],
+      "acceptance": [
+        "발·머리 위치가 대응표 offset·anchor 와 맞는다(dev/test_meeting_source_profiles.py).",
+        "대화·회의 근접 캡처에서 배경과 칸 크기가 같다.",
+        "기존 파일을 덮어쓰지 않는다."
+      ]
     }
   ]
 }
