@@ -68,7 +68,7 @@ screen r13_night_link(caption,glyph,icon,command,enabled=True,link_id=None):
             text caption align (.5,.5) xoffset -6 font R13_UI_BOLD_FONT size (r13_type("body") if R13_TYPE_V2 else (28 if r13_touch_ui() else 24)) color ((r13_type_color("inverse") if R13_TYPE_V2 else "#fff6e7") if enabled else "#c0b6a5")
 
 screen r13_night_controls(ready=True):
-    $ line_active=renpy.get_screen("say") is not None and not any(renpy.get_screen(n) for n in ("choice","r13_topics","r13_resident_approach","r13_entry_topics","r13_entry_karo_topics"))
+    $ line_active=renpy.get_screen("say") is not None and not any(renpy.get_screen(n) for n in ("choice","r13_topics","r13_resident_approach","r13_entry_karo_topics"))
     $ skip_action=([SetVariable("r13_carriage_skip",True),Function(renpy.end_interaction,True)] if place=="마차 안" else [SetVariable("r13_conv_skip",True),Function(renpy.end_interaction,True)])
     hbox:
         xanchor 1.0 xpos (R13_CONCEPT_RIGHT-30) yanchor .5 ypos r13_night_control_y() spacing 12

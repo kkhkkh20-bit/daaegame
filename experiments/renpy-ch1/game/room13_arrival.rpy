@@ -30,14 +30,6 @@ init 59 python:
         store.room13=state
         return info
 
-transform r13_arrival_reveal:
-    alpha 0.0
-    linear .16 alpha 1.0
-
-# Compatibility for saves made while the former arrival card was open.
-screen r13_arrival_card(info):
-    timer .01 action Return()
-
 label r13_arrival(bg,title,mood="calm"):
     # Clock and location stay in the normal HUD; no blocking arrival card.
     return

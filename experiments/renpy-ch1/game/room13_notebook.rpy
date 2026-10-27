@@ -259,13 +259,6 @@ init 71:
 # 2026-10-27: 옛 종이 틀(r13_reference_record_shell)과 왼쪽 세로 메뉴(r13_reference_record_categories)는
 # 수첩 공통 틀(systems/room13_notebook_shell.rpy)과 상단 탭 줄로 바뀌어 지웠다.
 
-screen r13_record_filters(owner,order,archive=False):
-    hbox:
-        xpos 280 ypos 76 spacing 10
-        textbutton ("최근 획득순" if order=="recent" else "발견 순서"):
-            style "r13_compact_button" xsize 246 ysize 42 text_size 19
-            action [Function(r13_record_select,owner,"order","acquired" if order=="recent" else "recent"),Function(r13_record_select,owner,"page",0)]
-
 # 0.20.x: the 자료 tab's filters, picture grid and detail (r13_material_filters / r13_material_grid /
 # r13_material_detail) moved to systems/room13_evidence_view.rpy (증거 비교 창, plan5 m2a/m2b).
 # They were only ever `use`d inside r13_records / r13_book, never shown on their own.

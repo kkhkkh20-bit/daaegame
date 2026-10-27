@@ -120,10 +120,10 @@ class FullbodySelection(unittest.TestCase):
 
     def test_authored_line_overrides_only_on_matching_text(self):
         pick = self.env["r13_fullbody_line_emotion"]
-        cue = LINES["lines"]["trial:C2:wrong"]["0"]
-        self.assertEqual(pick("trial:C2:wrong", 0, cue["person"], cue["text"], "distressed", "distressed"), "angry")
-        self.assertIsNone(pick("trial:C2:wrong", 0, cue["person"], cue["text"] + " 바뀐 대사", "distressed", "distressed"))
-        self.assertIsNone(pick("trial:C2:wrong", 0, cue["person"], cue["text"], "distressed", "chair_read"))
+        cue = LINES["lines"]["buri:consent:refused"]["0"]
+        self.assertEqual(pick("buri:consent:refused", 0, cue["person"], cue["text"], "distressed", "distressed"), "angry")
+        self.assertIsNone(pick("buri:consent:refused", 0, cue["person"], cue["text"] + " 바뀐 대사", "distressed", "distressed"))
+        self.assertIsNone(pick("buri:consent:refused", 0, cue["person"], cue["text"], "distressed", "chair_read"))
         self.assertEqual(pick("x", 0, "karo", "t", "surprise", "neutral"), "surprise")
 
     def test_scale_is_fixed_per_character(self):

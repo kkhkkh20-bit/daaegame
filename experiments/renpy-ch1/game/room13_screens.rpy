@@ -222,26 +222,6 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
         use r13_notebook_choice_list(person,pose,title,entries,ready,return_action,caption)
 
 
-screen r13_entry_topics():
-    style_prefix "r13"
-    modal True
-    zorder 30
-    default ready=False
-    timer .15 action SetScreenVariable("ready",True)
-    $ questions=[("제가 낸 신청서와 초소 명단을 보겠습니다.",Return(("entry","explain")),r13_has("question_read:entry:explain")),("원본 담당자를 기다리겠습니다.",Return(("entry","wait")),r13_has("question_read:entry:wait"))]
-    use r13_question_list("guard","interview_neutral","돌목에게 묻기",questions,ready,return_action=Return(("entry","back")))
-    use r13_toolbar(investigate_action=Return(("entry","back")),present_action=Return(("entry","argue")),person="guard",mode="talk",ready=ready)
-
-screen r13_entry_karo_topics():
-    style_prefix "r13"
-    modal True
-    zorder 30
-    default ready=False
-    timer .15 action SetScreenVariable("ready",True)
-    $ questions=[("마차는 괜찮습니까?",Return("road"),r13_has("question_read:entry:karo:road")),("함께 왔다고 말해 주시겠어요?",Return("witness"),r13_has("question_read:entry:karo:witness")),("짐을 잠시 맡아 주시겠습니까?",Return("bags"),r13_has("question_read:entry:karo:bags"))]
-    use r13_question_list("karo","interview_neutral","까로에게 묻기",questions,ready,return_action=Return("back"))
-    use r13_toolbar(investigate_action=Return("back"),present_action=Return("present"),person="karo",mode="talk",ready=ready)
-
 # Kept as a save-compatible screen name; people open their topics directly.
 screen r13_interaction(person):
     use r13_topics(person)

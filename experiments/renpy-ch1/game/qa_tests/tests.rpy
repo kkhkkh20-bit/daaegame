@@ -1858,34 +1858,7 @@ testcase grant_after_reaction:
     run Function(r13_flush_grants)
     assert eval (room13["evidence"].count("J08")==1)
 
-testcase gate_documents:
-    pause 1.0
-    click "처음부터"
-    click pos (640,300) until "편지를 외투 안에" timeout 60
-    click pos (640,300) until screen "r13_hub" timeout 90
-    assert eval (r13_v111_active())
-    run Function(setattr,store,"room13",r13_new())
-    run Function(setattr,store,"ms14",None)
-    run Function(r13_grant,["E01"],"여행 중 가지고 온 편지")
-    run Function(r13_edit,day=1,period=1,location="gate")
-    run Function(r13_note_encounter,"karo")
-    run Function(r13_note_encounter,"guard")
-    run Function(r13_note_encounter,"daram")
-    run Jump("r13_entry")
-    pause until screen "r13_hub" timeout 30
-    assert eval (not r13_v111_active())
-    screenshot "gate_hub.png"
-    assert eval ("G1" not in room13["evidence"] and "G3" not in room13["evidence"])
-    run Jump("r13_qa_gate_shelf")
-    click pos (640,600) until screen "r13_hub" timeout 40
-    assert eval ("G1" in room13["evidence"] and "G3" not in room13["evidence"])
-    run Jump("r13_entry_guard_menu")
-    pause 1.0
-    assert screen "r13_entry_topics"
-    screenshot "gate_topics.png"
-    click "제가 낸 신청서와 초소 명단을 보겠습니다."
-    click pos (640,600) until screen "r13_entry_topics" timeout 40
-    assert eval ("G3" in room13["evidence"])
+# (retired 2026-10-27) gate_documents: 옛 이야기(초소 입구 라벨·오프닝 컷씬)를 지우면서 시험도 뺐다.
 
 testcase bed_hint_day1:
     # 0.18.22: on day 1 the bed says why sleep waits instead of saying nothing.
@@ -2426,27 +2399,7 @@ testcase karo_center:
     $ persistent.room13_large_text=False
     run Function(renpy.restart_interaction)
 
-testcase opening_cut:
-    # 0.18.41 opening cutscene (letter, map route, title, carriage): runs on a new game outside tests; forced here.
-    pause 2.0
-    $ r13_opening_force = True
-    click "처음부터"
-    pause 1.0
-    screenshot "op_0_letter.png"
-    pause 2.6
-    screenshot "op_1_lines.png"
-    pause 2.2
-    screenshot "op_2_route.png"
-    pause 2.6
-    screenshot "op_3_pin.png"
-    pause 3.0
-    screenshot "op_4_title.png"
-    pause 3.4
-    screenshot "op_5_carriage.png"
-    pause 3.0
-    screenshot "op_6_after.png"
-    assert eval (place == "마차 안" and persistent.room13_opening_cut_seen)
-    $ r13_opening_force = False
+# (retired 2026-10-27) opening_cut: 옛 이야기(초소 입구 라벨·오프닝 컷씬)를 지우면서 시험도 뺐다.
 
 testcase trial_counter:
     pause 1.0
@@ -10868,18 +10821,7 @@ testcase screen_choice_guard:
     pause 1.0
     assert screen "r13_hub"
     assert eval (dict(room13)==r13_qa_before and R13_BOOT_GUARD["bad_choice"]==2)
-    run Show("r13_qa_inject_return",value=("person","guard"))
-    pause 1.5
-    click pos (640,600) until screen "r13_entry_topics" timeout 20
-    assert eval (R13_BOOT_GUARD["bad_choice"]==0)
-    run Show("r13_qa_inject_return",value=False)
-    pause 1.0
-    assert screen "r13_entry_topics"
-    assert eval (room13["day"]==1 and room13["period"]==r13_qa_before["period"] and room13["evidence"]==r13_qa_before["evidence"] and "entry_corrected" not in room13["flags"])
-    screenshot "guard_topics_after_bad_result.png"
-    run Show("r13_qa_inject_return",value=("entry","back"))
-    pause 1.0
-    assert screen "r13_hub"
+    # 2026-10-27: 옛 초소 입구 화면(r13_entry_topics)으로 넘어가 확인하던 구간은 그 화면을 지우면서 뺐다.
     $ r13_qa_raised=[]
     python:
         R13_BOOT_GUARD["bad_choice"]=0

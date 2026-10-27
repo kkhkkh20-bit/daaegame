@@ -128,31 +128,3 @@ init 97 python:
             rows[0]=dict(title="초롱은 엄마를 언제 만났을까?",fact="메모를 보여 주자 등불을 돌보는 사람은 초롱이라고 알려 주었다.",question="엄마를 만났으며, 마지막으로 어디에서 봤을까?",hint="이름만으로는 엄마를 알아보지 못할 수 있다. 초롱은 오전에는 수리점, 오후에는 광장, 저녁에는 입구에서 등불을 돌본다.",keys=["M01"])
         return rows
 
-screen r13_entry_daram_topics():
-    style_prefix "r13"
-    modal True
-    default ready=False
-    timer .15 action SetScreenVariable("ready",True)
-    $ questions=[("우리 이름이 적힌 종이를 같이 볼까?",Return("look"),r13_has("question_read:entry:daram:look")),("아빠랑 같이 들어가고 싶은 거지?",Return("together"),r13_has("question_read:entry:daram:together"))]
-    use r13_question_list("daram","neutral","다람이와 이야기",questions,ready,return_action=Return("back"))
-    use r13_toolbar(investigate_action=Return("back"),person="daram",mode="talk",ready=ready)
-
-label r13_entry_daram_menu:
-    window hide
-    hide r13_visitor
-    call screen r13_entry_daram_topics
-    $ r13_entry_daram_choice=_return
-    if r13_entry_daram_choice=="back":
-        return
-    if r13_entry_daram_choice=="look":
-        if r13_has("G1"):
-            call r13_lines([("dad","예약 종이에 ‘다돌 외 한 사람’이라고 적혀 있네."),("daram","다돌은 아빠 이름이잖아. 그럼 나머지 한 사람은 나지?"),("dad","응. 초소에서 옮겨 적은 명단도 같이 확인해 보자.")],"entry:daram:original")
-        else:
-            call r13_lines([("daram","선반에 종이 묶음이 여러 개 있어. 날짜가 적혀 있네."),("daram","우리 오늘 왔잖아. 오늘이 무슨 요일이지?")],"entry:daram:look:v2")
-    elif r13_entry_daram_choice=="compare":
-        call r13_lines([("daram","아빠 이름은 예약 종이랑 명단에 다 있는데, 내 이름도 둘 다 있을까?"),("dad","예약 종이와 명단을 나란히 놓고 대조해 보자.")],"entry:daram:compare")
-        call screen r13_records(close_action=Return())
-    elif r13_entry_daram_choice=="together":
-        call r13_lines([("daram","엄마 만나러 같이 왔는데 아빠만 먼저 들어가면 안 돼."),("dad","걱정 마. 같이 들어갈 거야. 우리 둘이 함께 예약했다는 기록이 어디 있을까?")],"entry:daram:together")
-    $ r13_flag("question_read:entry:daram:"+r13_entry_daram_choice)
-    jump r13_entry_daram_menu

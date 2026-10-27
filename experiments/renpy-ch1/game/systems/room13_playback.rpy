@@ -36,10 +36,6 @@ screen r13_backlog():
     key "game_menu" action Hide("r13_backlog")
     key "K_h" action Hide("r13_backlog")
 
-# Shared five-column footer, including playback states.
-screen r13_strip_button(caption,icon,command,enabled=True,chosen=False,last=False,cell_width=None):
-    use r13_control(caption,icon,command,enabled=enabled,chosen=chosen,width=cell_width or 232)
-
 # Playback helpers live behind the rightmost More control.
 screen r13_playback_footer(show_record=False,ready=True):
     # 0.19.98 (owner mockup): plain lines use the small text controls; 기록 lives in 더보기.

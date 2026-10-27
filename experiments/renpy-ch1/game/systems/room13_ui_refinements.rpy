@@ -28,6 +28,6 @@ init 79 python:
         return size
 
     def r13_feedback_in_conversation():
-        return any(renpy.get_screen(name) for name in ("say","r13_topics","r13_entry_topics","r13_entry_karo_topics","choice"))
+        return any(renpy.get_screen(name) for name in ("say","r13_topics","choice"))
 
 # Footer geometry and text alignment are owned by room13_controls.rpy / room13_typography.rpy.

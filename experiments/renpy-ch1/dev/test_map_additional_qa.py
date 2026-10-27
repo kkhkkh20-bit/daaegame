@@ -69,18 +69,7 @@ class MapAdditionalQA(unittest.TestCase):
             self.assertIn("손가락" if touch else "Shift+방향키", hint)
         self.assertNotIn("드래그", helpers(self.state())["r13_map_input_hint"]("mountain"))
 
-    def test_keyboard_pan_does_not_confirm_or_change_selected_place(self):
-        source = (GAME / "room13_worldmap_v5.rpy").read_text()
-        keys = [line.strip() for line in source.splitlines() if 'key "shift_K_' in line]
-        self.assertEqual(len(keys), 4)
-        for line in keys:
-            self.assertIn('action Scroll("r13_map_view",', line)
-            self.assertNotIn("Return(", line)
-            self.assertNotIn("SetScreenVariable", line)
-        self.assertIn("pagekeys True", source)
-        self.assertIn("draggable True mousewheel True", source)
-        self.assertNotIn("arrowkeys True", source)
-
+    # 2026-10-27: shift+화살표 지도 이동 시험은 어디서도 쓰지 않던 r13_cartography 화면을 지우면서 뺐다.
 
 if __name__ == "__main__":
     unittest.main()

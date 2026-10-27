@@ -217,18 +217,6 @@ screen r13_rebuttal_cutin(struck):
             at r13_cutin_card(motion)
             text ("{s}"+struck+"{/s}") size r13_read_size(25,29) color "#7a2c1c" font r13_ui_font() xmaximum 900
 
-label r13_rebuttal_cutin_play(claim,sid):
-    if renpy.is_skipping() or r13_fast_all:
-        return
-    $ r13_cutin_text=r13_debate_statement(claim,sid)["text"].replace("【","").replace("】","")
-    show screen r13_rebuttal_cutin(r13_cutin_text)
-    $ source_fx("impact")
-    $ r13_cutin_music_pause(True)
-    $ renpy.pause(.9 if persistent.room13_motion else .6)
-    hide screen r13_rebuttal_cutin
-    $ r13_cutin_music_pause(False)
-    return
-
 # ④ ---------------------------------------------------------------
 screen r13_morning_watch():
     if room13_mode and r13_morning_due():

@@ -287,11 +287,6 @@ init 58 python:
         return Transform(art,subpixel=False,nearest=True,rotate_pad=False,
             function=R13CharacterMotion(person,pose,speaking,entrance))
 
-screen r13_motion_settings():
-    textbutton ("인물 전환 효과: 켜짐" if persistent.room13_motion else "인물 전환 효과: 정지"):
-        action ToggleField(persistent,"room13_motion")
-        xfill True
-
 # Only the art receives opacity. Coordinates, background and dialogue panels
 # remain fixed, and stable screen IDs retain this timeline on reevaluation.
 transform r13_actor_appear(duration=.22):

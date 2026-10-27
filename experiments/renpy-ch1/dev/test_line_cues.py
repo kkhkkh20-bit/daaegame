@@ -11,7 +11,7 @@ class LineCues(unittest.TestCase):
 
     def test_scenes_are_found(self):
         rows=line_cues.scene_rows()
-        self.assertIn("trial:C2:wrong",rows)
+        self.assertIn("day4:appointment:v3",rows)
         self.assertIn("topic:buri_records",rows)
 
 if __name__=="__main__":

@@ -63,21 +63,6 @@ init 94 python:
                 return [(person,"가족에게 전해 달라고 맡긴 봉투가 있어요. 여기서 길게 이야기하진 맙시다.")]
         return _r13_life_present(person,key,identity)
 
-label r13_first_day_arrival:
-    call r13_lines([("guard","신청서를 확인했습니다. 다돌 님과 다람이, 두 분이구려. 여관은 광장 안쪽에 있습니다."),("karo","짐은 제가 옮겨 드릴게요. 바퀴 축은 손을 봐야 하니 내일 다시 말씀드리죠.")],"life:arrival:entry")
-    $ r13_flag("entry_corrected")
-    $ r13_grant(["E02"],"입구에서 확인받은, 함께 들어왔다는 기록")
-    call r13_lines([("daram","아빠, 빨리 여관 가자. 엄마가 기다릴 거야."),("dad","그래. 13호실이라고 했지.")],"life:arrival:direction")
-    return
-
-label r13_first_day_checkin:
-    call r13_lines([('granny', '다돌 씨죠? 아이구, 손이 빨갛네. 난로부터 쬐어요.'), ('granny', '손 바로 대면 아파. 이걸로 감싸고 천천히.'), ('daram', '고맙습니다.'), ('dad', '아내는 어디 있습니까?'), ('granny', '며칠째 안 보여요. 조사하러 나가면 밤낮이 없던 사람이라.'), ('daram', '기다린댔는데.'), ('granny', '방은 그대로 뒀지. 올라가 봐요.'), ('dad', '마지막으로 어디 간다고 했습니까?'), ('granny', '내게 일일이 말하진 않았어요. 밥도 식혀 놓고 들어오던걸.'), ('dad', '마지막으로 돌아온 날은 기억하십니까?'), ('granny', '밥상은 매일 차렸죠. 어느 날부터 안 왔더라…… 방부터 보세요. 아이가 떨고 있잖아요.')],"life:arrival:inn")
-    # 0.18.75 (owner): 다람이's disappointment that mom is not here (systems/room13_daram_mood.rpy).
-    call r13_daram_arrival_miss
-    $ r13_flag("lodging")
-    $ r13_note_encounter("granny")
-    return
-
 label r13_mother_note:
     call r13_lines([(None, '메모: “내가 자리를 비웠으면 광장 등의 초롱에게 소식을 물어봐. 물건은 책상 아래에 두었어.” 끝에 작은 도토리.'), ('daram', '이건 엄마 거다. 도토리 삐뚤어.'), ('dad', '책상 아래라고 했지.')],"life:mother:note:v2")
     $ r13_grant(["M01"],"13호실 책상 위의 메모를 읽음"); r13_flag("mother_lamplighter_lead")

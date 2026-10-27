@@ -69,12 +69,6 @@ screen r13_field_button(caption,icon,command,enabled=True,width=232,height=None,
     else:
         use r13_state_button(caption,command,width,height or r13_control_height(),family="primary" if chosen or primary else "wide_choice",chosen=chosen,enabled=enabled,icon=state_icon,text_size=r13_read_size(22,25),control_id=control_id or ("r13_field_control_"+caption))
 
-screen r13_field_notebook_surface():
-    $ book_top=r13_field_notebook_top()
-    add Transform(Frame(Crop((16,16,1168,128),r13_asset_path("file:assets/ui-b-field/b_panel_dialogue.png")),64,30,64,30),xysize=(1232,712-book_top)) xpos 24 ypos book_top
-    # A permanent notebook mascot, never a substitute for the current speaker.
-    add Transform(r13_asset_path("file:assets/ui-b-field/sticker_daram_delighted.png"),xysize=(72,72)) xpos 76 ypos (book_top+10)
-
 screen r13_field_view_controls(ready):
     # Keep the legacy screen name for saved screens; no separate mode or toggle.
     $ wide=r13_world_width()>1280

@@ -142,7 +142,3 @@ init 58 python:
                 poly(leather,[(11,21),(21,21),(25,25),(25,28),(7,28),(7,25)])
                 box(gold,14,22,4,5)
             return r
-
-# Compatibility entry point; rendering is owned by r13_control.
-screen r13_antique_button(caption,icon,command,enabled=True,compact=False,chosen=False,width=None,height=None,label_size=None,icon_size=None):
-    use r13_control(caption,icon,command,enabled=enabled,chosen=chosen,width=width or R13_CONTROL["width"],height=height,label_size=label_size,icon_size=icon_size)

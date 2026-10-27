@@ -77,29 +77,6 @@ init 61 python:
         # The base image contains ordinary forest, not future-place silhouettes.
         return key in dict(r13_map_nodes("mountain"))
 
-screen r13_cartography(region,selected,ready,map_hover):
-    if "size" in R13_CARTOGRAPHY["regions"][region]:
-        $ vw,vh=r13_cart_canvas(region)
-        $ fx,fy=r13_cart_focus(region,selected)
-        # Keep ordinary arrow keys for button focus; modified arrows pan the
-        # drawing without selecting a place or confirming a trip.
-        key "shift_K_LEFT" action Scroll("r13_map_view","horizontal decrease",160)
-        key "shift_K_RIGHT" action Scroll("r13_map_view","horizontal increase",160)
-        key "shift_K_UP" action Scroll("r13_map_view","vertical decrease",160)
-        key "shift_K_DOWN" action Scroll("r13_map_view","vertical increase",160)
-        viewport id "r13_map_view":
-            # Clip drawing and input above the fixed status strip.
-            xpos 16 ypos 0 xysize (R13_MAP_VIEW[0],min(R13_MAP_VIEW[1],548))
-            draggable True mousewheel True
-            pagekeys True
-            xinitial fx yinitial fy
-            fixed:
-                xysize (vw,vh+R13_MAP_BOTTOM_PAD)
-                add Solid("#ead6b4") ypos vh xysize (vw,R13_MAP_BOTTOM_PAD)
-                use r13_cartography_layer(region,selected,ready,map_hover)
-    else:
-        use r13_cartography_layer(region,selected,ready,map_hover)
-
 screen r13_cartography_layer(region,selected,ready,map_hover):
     $ art=R13_CARTOGRAPHY["regions"][region]["art"]
     $ ox,oy=R13_CARTOGRAPHY["regions"][region].get("offset",(16,9))
