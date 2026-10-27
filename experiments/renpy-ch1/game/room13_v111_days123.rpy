@@ -224,7 +224,7 @@ label r13_v111_gate_lodging:
 
 label r13_v111_gate_proof:
     $ r13_meeting_checkpoint("gate")
-    call r13_v111_proof('함께 들어갈 근거를 고른다',['E02', 'E03', 'E04'],'r13_v111_gate_proven_dispatch','r13_v111_gate_wrong','r13_v111_gate_hint')
+    call r13_v111_proof('함께 들어갈 근거를 고른다',['E02', 'E03', 'E04'],'r13_v111_gate_proven_dispatch','r13_v111_gate_wrong','r13_v111_gate_hint',review_return='r13_v111_gate_investigate')
     jump expression _return
 
 label r13_v111_gate_proven_dispatch:

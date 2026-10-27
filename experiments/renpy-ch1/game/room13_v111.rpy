@@ -325,6 +325,7 @@ label r13_v111_wait_again:
     jump r13_v111_wait_again
 
 default r13_nw_wrong_pending = None
+default r13_nw_can_solve = None
 
 label r13_nw_wrong_thought:
     # 2026-10-24 지시서 01 4번: 틀린 뒤 아빠 속말(문구는 room13_v111_newworld_rules.rpy R13_NW_WRONG_THOUGHTS).
@@ -333,13 +334,16 @@ label r13_nw_wrong_thought:
         call r13_lines([r13_nw_added_line(dict(kind="thought",text=v111_wrong_text))],"v111:wrong_thought")
     return
 
-label r13_v111_proof(key,correct,success,wrong=None,hint=None):
+label r13_v111_proof(key,correct,success,wrong=None,hint=None,review_return=None):
+    # 2026-10-27 UX 인계서 D04: review_return 이 있으면 「조사 계속」으로 그 현장 라벨로 돌아간다(기회·선택·판정 불변).
     call r13_nw_wrong_thought
     $ v111_claim="v111:"+key
     $ R13_CLAIMS[v111_claim]=dict(assertion=R13_PROOF_TITLES.get(key,key))
     $ room13["arguments"].setdefault(v111_claim,[])
 label r13_v111_proof_again:
-    call screen r13_crisis_proof(v111_claim,heading="기록 · 자료 대조",can_press=bool(hint) or key in R13_PROOF_RANGE,need_evidence=True,leave_label="자료 다시 보기",chances=r13_v111_proof_chances(key))
+    call screen r13_crisis_proof(v111_claim,heading="기록 · 자료 대조",can_press=bool(hint) or key in R13_PROOF_RANGE,need_evidence=True,leave_label="자료 다시 보기",chances=r13_v111_proof_chances(key),investigate=bool(review_return))
+    if _return=="investigate" and review_return:
+        return review_return
     if _return=="present":
         jump r13_v111_proof_pick
     if isinstance(_return,tuple) and len(_return)==2 and _return[0]=="remove":
@@ -349,6 +353,8 @@ label r13_v111_proof_again:
     if _return=="argue" and not room13["arguments"][v111_claim]:
         jump r13_v111_proof_again  # 0.20.5 (Codex A01): an empty submission costs nothing
     if _return=="argue":
+        # D04: 오답 안내가 「다 있었다」를 거짓으로 말하지 않도록, 정답 세트 하나를 보유 자료만으로 꾸릴 수 있는지를 지금 적어 둔다.
+        $ r13_nw_can_solve=(key,any(need<=set(room13["evidence"]) for need in r13_v111_proof_sets(key,correct)))
         if r13_v111_proof_accepts(key,correct,room13["arguments"][v111_claim]):
             $ r13_v111_set("proof_given:"+key,sorted(room13["arguments"][v111_claim]))
             $ r13_proof_guide_finish()  # 2026-10-27: 첫 제출 성공 뒤에는 단계 안내를 줄인다.

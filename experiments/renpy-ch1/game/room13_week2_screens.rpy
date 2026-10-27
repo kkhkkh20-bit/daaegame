@@ -98,7 +98,7 @@ screen r13_proof_chip(label,filled=False):
             padding (12,3) background Solid((r13_type_color("accent") if R13_TYPE_V2 else "#bc4134") if filled else "#f5ecd9")
             text label font R13_UI_BOLD_FONT size (r13_type("small") if R13_TYPE_V2 else 22) color ((r13_type_color("inverse") if R13_TYPE_V2 else "#fff3df") if filled else (r13_type_color("accent") if R13_TYPE_V2 else "#bc4134"))
 
-screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장",can_press=True,need_evidence=False,leave_label="다른 주장부터",chances=None):
+screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장",can_press=True,need_evidence=False,leave_label="다른 주장부터",chances=None,investigate=False):
     style_prefix "r13"
     modal True
     default ready=False
@@ -163,7 +163,11 @@ screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장",can_p
                 use r13_control("자료 고르기",None,Return("present"),enabled=ready,width=264,control_id="r13_proof_pick")
                 use r13_control("되묻는다",None,Return("press"),enabled=(ready and can_press),width=264,control_id="r13_proof_hint")
                 use r13_control("선택한 근거 제출",None,Return("argue"),enabled=(ready and (bool(chosen) or not need_evidence)),primary=True,width=264,control_id="r13_proof_submit")
-                use r13_control(leave_label,None,Return("leave"),enabled=ready,width=264,control_id="r13_proof_back")
+                # 2026-10-27 UX 인계서 D04: 조사 복귀가 열린 쟁점은 넷째 칸이 「조사 계속」. 기회를 쓰지 않고 현장 라벨로 돌아간다.
+                if investigate:
+                    use r13_control("조사 계속",None,Return("investigate"),enabled=ready,width=264,control_id="r13_proof_back")
+                else:
+                    use r13_control(leave_label,None,Return("leave"),enabled=ready,width=264,control_id="r13_proof_back")
 
 screen r13_rescue_notes():
     style_prefix "r13"

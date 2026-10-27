@@ -524,7 +524,7 @@ label r13_v111_bori_witness_heard7:
 
 label r13_v111_nubi_proof7:
     $ r13_meeting_checkpoint("fire")
-    call r13_v111_proof('불이 시작된 곳과 진술을 대조한다',['E06_FIRE'],'r13_v111_nubi_admission7','r13_v111_nubi_wrong7',None)
+    call r13_v111_proof('불이 시작된 곳과 진술을 대조한다',['E06_FIRE'],'r13_v111_nubi_admission7','r13_v111_nubi_wrong7',None,review_return='r13_v111_bori_witness7')
     jump expression _return
 
 label r13_v111_nubi_wrong7:

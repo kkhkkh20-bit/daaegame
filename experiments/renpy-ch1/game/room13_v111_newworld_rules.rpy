@@ -345,9 +345,16 @@ init 318 python:
     R13_NW_WRONG_MISSING={
         '함께 들어갈 근거를 고른다':(("E03","E04"),"아직 이 창구에서 확인하지 않은 서류가 있다. 돌목 씨가 내놓은 것부터 직접 읽어 보자."),
     }
+    R13_NW_WRONG_EXPLORE="아직 이곳에서 직접 확인하지 않은 기록이 있다. 현장으로 돌아가 더 살펴보자."
+    R13_NW_WRONG_EXPLORE_FINAL="확인하지 않은 기록이 있었다. 현장을 더 살폈어야 했다."
+    def r13_nw_cannot_solve(issue):
+        """제출 직전에 적어 둔 수집 상태(r13_nw_can_solve). 같은 쟁점일 때만 믿는다."""
+        ctx=getattr(store,"r13_nw_can_solve",None)
+        return bool(ctx) and ctx[0]==issue and not ctx[1]
     def r13_nw_wrong_text(issue,count):
         missing=R13_NW_WRONG_MISSING.get(issue)
         if missing and not all(r13_v111_owned(k) for k in missing[0]):return missing[1]
+        if r13_nw_cannot_solve(issue):return R13_NW_WRONG_EXPLORE
         rows=R13_NW_WRONG_THOUGHTS.get(issue) or {}
         for n in range(min(max(1,count),3),0,-1):
             if rows.get(n):return rows[n]
@@ -361,7 +368,7 @@ init 318 python:
                 store.r13_nw_wrong_pending=None
                 return
             r13_v111_set("wrong_final:"+meeting,True)
-            store.r13_nw_wrong_pending=("final",R13_NW_WRONG_FINAL)
+            store.r13_nw_wrong_pending=("final",R13_NW_WRONG_EXPLORE_FINAL if r13_nw_cannot_solve(issue) else R13_NW_WRONG_FINAL)
         else:
             store.r13_nw_wrong_pending=("try",r13_nw_wrong_text(issue,count))
 
