@@ -856,21 +856,24 @@
         "speaker": "다람",
         "kind": "dialogue",
         "text": "엄마 쪽지엔 도토리가 있어. 엄마는 쪽지 끝에 맨날 도토리 그리잖아. 장 보러 갈 때도.",
-        "expression": "neutral"
+        "expression": "neutral",
+        "when": "letter_tail_unobserved"
       },
       {
         "id": "NW_D01_SR02",
         "speaker": "아빠",
         "kind": "dialogue",
         "text": "……편지엔?",
-        "expression": "neutral"
+        "expression": "neutral",
+        "when": "letter_tail_unobserved"
       },
       {
         "id": "NW_D01_SR03",
         "speaker": "다람",
         "kind": "dialogue",
         "text": "없어. 편지엔 하나도 없어. 도토리가.",
-        "expression": "anxious"
+        "expression": "anxious",
+        "when": "letter_tail_unobserved"
       }
     ],
     "MS14_D01_S04_L0020": [
@@ -1039,6 +1042,68 @@
         "speaker": "돌목",
         "kind": "dialogue",
         "text": "……여기 있소. 내가 읽는 명단이오. 적힌 대로만 보시오.",
+        "expression": "neutral"
+      }
+    ],
+    "letter_observe_tail": [
+      {
+        "id": "NW_D01_OB01",
+        "speaker": "아빠",
+        "kind": "thought",
+        "text": "쪽지 끝에…… 뭐가 그려져 있네."
+      },
+      {
+        "id": "NW_D01_OB02",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "엄마 쪽지엔 도토리가 있어. 엄마는 쪽지 끝에 맨날 도토리 그리잖아. 장 보러 갈 때도.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D01_OB03",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "……편지엔?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D01_OB04",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "없어. 편지엔 하나도 없어. 도토리가.",
+        "expression": "anxious"
+      }
+    ],
+    "letter_observe_head": [
+      {
+        "id": "NW_D01_OB05",
+        "speaker": null,
+        "kind": "narration",
+        "text": "머리글. 둘 다 겨울 날짜다. 받는 사람 이름은 편지에만 또박또박 적혀 있다."
+      }
+    ],
+    "letter_observe_body": [
+      {
+        "id": "NW_D01_OB06",
+        "speaker": null,
+        "kind": "narration",
+        "text": "본문. 편지는 여관 13호실에서 기다린다고 했고, 쪽지는 물건을 책상 아래 두었다고 했다."
+      }
+    ],
+    "letter_observe_margin": [
+      {
+        "id": "NW_D01_OB07",
+        "speaker": null,
+        "kind": "narration",
+        "text": "여백. 눈에 띄는 것은 없다."
+      }
+    ],
+    "letter_observe_nudge": [
+      {
+        "id": "NW_D01_OB08",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "아빠, 끝에. 끝에 봐 봐.",
         "expression": "neutral"
       }
     ]

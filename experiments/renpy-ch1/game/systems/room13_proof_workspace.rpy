@@ -162,9 +162,12 @@ init 351 python:
         r13_pw_set_arguments(claim,r13_pw_remove(chosen,key))
         renpy.restart_interaction()
 
+    def r13_pw_remember_pair(claim,pair):
+        # D08: 관찰 뒤 대사를 보이고 돌아오면 같은 쌍이 펼쳐져 있어야 한다. 「목록으로」가 지운다.
+        views=dict(store.r13_pw_views or {});row=dict(views.get(claim,{}));row["pair"]=tuple(pair) if pair else None;views[claim]=row;store.r13_pw_views=views
     def r13_pw_remember(claim,tab,detail,quote_open):
         views=dict(store.r13_pw_views or {})
-        views[claim]=dict(tab=tab,detail=detail,quote_open=quote_open)
+        row=dict(views.get(claim,{}));row.update(tab=tab,detail=detail,quote_open=quote_open);views[claim]=row  # D08 의 pair 기억은 남긴다
         store.r13_pw_views=views
 
     def r13_pw_open_detail(key):
@@ -346,7 +349,17 @@ screen r13_pw_detail(claim,key,mode,x,y,w,h,origin_open,can_pair,ready):
                     text ("얻은 곳: "+r13_record_source_label(key)) size small color r13_nb_muted() font R13_UI_BOLD_FONT xsize inner
 
 # 두 자료를 나란히: 같은 폭 두 열, 각 열만 스크롤. 맞는지 아닌지는 표시하지 않는다.
-screen r13_pw_pair(pair,x,y,w,h):
+# 2026-10-27 D08: 두 편지 나란히 보기에서 「눈에 띄는 부분을 짚어 본다」. 두 문서 위에 같은 모양의 구역 넷(머리글·본문·끝부분·여백)을
+# 열고 하나를 고르면 ("observe",구역) 을 돌려준다. 정답 구역을 미리 강조하지 않는다. 기회를 쓰지 않는다.
+init 350 python:
+    R13_PW_OBSERVE_KEY="두 편지를 나란히 본다"
+    def r13_pw_observe_spots(pic):
+        return [("head","머리글",(0,0,pic,int(pic*.25))),("body","본문",(0,int(pic*.25),int(pic*.7),int(pic*.5))),
+                ("tail","끝부분",(int(pic*.7),int(pic*.6),pic-int(pic*.7),pic-int(pic*.6))),("margin","여백",(0,int(pic*.75),int(pic*.7),pic-int(pic*.75)))]
+    def r13_pw_observe_available(key,pair):
+        return key==R13_PW_OBSERVE_KEY and bool(pair) and len(pair)==2 and all(k in ("V111:E01","V111:E06") for k in pair)
+
+screen r13_pw_pair(pair,x,y,w,h,observe=False,ready=True):
     $ small=r13_pw_small()
     $ col_w=(w-16)//2
     $ inner=col_w-24
@@ -370,6 +383,14 @@ screen r13_pw_pair(pair,x,y,w,h):
                         fixed:
                             xpos ((inner-pic)//2) xysize (pic,pic)
                             use r13_evidence_picture_box(key,pic)
+                            if observe:
+                                for spot_id,spot_name,(sx,sy,sw,sh) in r13_pw_observe_spots(pic):
+                                    button:
+                                        id r13_pw_id("r13_pw_spot_%d_"%column,spot_id)
+                                        area (sx,sy,sw,sh) padding (0,0)
+                                        background Solid("#a63a2e22") hover_background Solid("#a63a2e55")
+                                        action Return(("observe",spot_id)) sensitive ready alt (spot_name+" 짚기")
+                                        text spot_name size 14 color r13_nb_accent() font R13_UI_BOLD_FONT xpos 4 ypos 2
                     use r13_evidence_fact_list(key,inner)
                 else:
                     text ("%d번 자리"%(column+1)) size title_size color r13_nb_muted() font R13_UI_BOLD_FONT
@@ -421,7 +442,8 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
     default tab=remembered.get("tab","all")
     default detail=remembered.get("detail")
     default quote_open=remembered.get("quote_open",True)
-    default pair=None
+    default pair=remembered.get("pair")
+    default observe=False
     default origin_open=False
     default replace_pending=None
     on "hide" action Function(r13_pw_remember,claim,tab,detail,quote_open)
@@ -484,7 +506,7 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
                 action [SetScreenVariable("tab",tab_key)]+([SetScreenVariable("detail",None)] if touch else []) sensitive ready
     # 본문 ------------------------------------------------------------
     if pair_open:
-        use r13_pw_pair(live_pair,L["list_x"],L["body_top"],(L["right"]-L["list_x"]),L["body_h"])
+        use r13_pw_pair(live_pair,L["list_x"],L["body_top"],(L["right"]-L["list_x"]),L["body_h"],observe,ready)
     elif touch and detail:
         use r13_pw_detail(claim,detail,mode,L["detail_x"],L["body_top"],L["detail_w"],L["body_h"],origin_open,(mode=="proof" and len(owned)>1),ready)
     else:
@@ -516,11 +538,13 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
     # 버튼 줄: 주 행동은 하나(빨강). 나머지는 공통 부품. 빈 선택이면 주 행동은 비활성이고 키 입력도 받지 않는다.
     $ buttons=[]
     if pair_open or (touch and detail):
-        $ buttons.append(("목록으로",[SetScreenVariable("pair",None),SetScreenVariable("detail",(live_pair[0] if (pair_open and not touch) else None))],True,False,"r13_pw_back_list"))
+        $ buttons.append(("목록으로",[Function(r13_pw_remember_pair,claim,None),SetScreenVariable("observe",False),SetScreenVariable("pair",None),SetScreenVariable("detail",(live_pair[0] if (pair_open and not touch) else None))],True,False,"r13_pw_back_list"))
     if can_press:
         $ buttons.append(("되묻는다",Return("press"),True,False,"r13_pw_press"))
     if investigate:
         $ buttons.append(("조사 계속",Return("investigate"),True,False,"r13_pw_investigate"))
+    if pair_open and r13_pw_observe_available(key,live_pair if live_pair else pair):
+        $ buttons.append((("다시 본다" if r13_v111_value("letter_tail_observed") else "눈에 띄는 부분을 짚어 본다") if not observe else "짚기 그만",[Function(r13_pw_remember_pair,claim,pair),ToggleScreenVariable("observe")],True,False,"r13_pw_observe"))
     if mode=="compare" and not pair_open:
         $ buttons.append(("나란히 보기",SetScreenVariable("pair",r13_pw_pair_from_chosen(chosen,mode)),bool(r13_pw_pair_from_chosen(chosen,mode)),False,"r13_pw_side"))
     $ buttons.append((r13_pw_main_label(mode),Return("argue"),r13_pw_submit_ok(stored,mode) and r13_pw_submit_ok(chosen,mode),True,"r13_pw_submit"))

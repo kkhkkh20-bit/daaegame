@@ -398,6 +398,24 @@ label r13_v111_letter_retry:
     call r13_lines(r13_nw_block('compare_retry'),'nw:compare_retry:letter')
     jump r13_v111_letter_compare
 
+label r13_v111_letter_observe(spot):
+    # 2026-10-27 D08(소유자 "둘 다 적용해"): 두 편지를 나란히 펼친 화면에서 플레이어가 짚은 구역. 끝부분이면 도토리 주고받기(기존 세 줄),
+    # 다른 곳이면 관찰 사실 한 줄. 기회를 쓰지 않고, 세 번 빗나가면 다람이 자리만 말해 준다. 판정·결말은 그대로.
+    if spot=="tail":
+        $ r13_v111_set("letter_tail_observed",True)
+        call r13_lines(r13_nw_block('letter_observe_tail'),'nw:letter_observe_tail')
+    else:
+        $ r13_v111_set("letter_observe_miss",(r13_v111_value("letter_observe_miss") or 0)+1)
+        if spot=="head":
+            call r13_lines(r13_nw_block('letter_observe_head'),'nw:letter_observe_head')
+        elif spot=="body":
+            call r13_lines(r13_nw_block('letter_observe_body'),'nw:letter_observe_body')
+        else:
+            call r13_lines(r13_nw_block('letter_observe_margin'),'nw:letter_observe_margin')
+        if r13_v111_value("letter_observe_miss")==3 and not r13_v111_value("letter_tail_observed"):
+            call r13_lines(r13_nw_block('letter_observe_nudge'),'nw:letter_observe_nudge')
+    return
+
 label r13_v111_room_compare:
     $ r13_edit(period=2)
     $ r13_v111_scene('MS14_D01_S05')

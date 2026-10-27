@@ -350,6 +350,10 @@ label r13_v111_proof_again:
         call screen r13_crisis_proof(v111_claim,heading="기록 · 자료 대조",can_press=bool(hint) or key in R13_PROOF_RANGE,need_evidence=True,leave_label="자료 다시 보기",chances=r13_v111_proof_chances(key),investigate=bool(review_return))
     if _return=="investigate" and review_return:
         return review_return
+    if isinstance(_return,tuple) and len(_return)==2 and _return[0]=="observe":
+        # D08: 나란히 펼친 두 편지에서 짚은 구역. 기회를 쓰지 않는다.
+        call r13_v111_letter_observe(_return[1])
+        jump r13_v111_proof_again
     if _return=="present":
         jump r13_v111_proof_pick
     if isinstance(_return,tuple) and len(_return)==2 and _return[0]=="toggle" and _return[1] in room13["evidence"]:

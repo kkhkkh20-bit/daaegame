@@ -193,6 +193,8 @@ init 319 python:
         "route12_stayed":lambda:r13_v111_value("route12")!="late_exposure",
         # 2026-10-27 외부 검토 B03: 먹기 전에 막은 판의 수프 회의. 조기 예방 판(early_prevented)은 회의가 없다.
         "route12_premeal":lambda:r13_v111_value("route12")=="premeal_stopped",
+        # 2026-10-27 D08: 두 편지 관찰에서 플레이어가 끝부분을 직접 짚었으면 비교 뒤 같은 세 줄을 되풀이하지 않는다.
+        "letter_tail_unobserved":lambda:not r13_v111_value("letter_tail_observed"),
         "tosil_inside":lambda:r13_v111_value("tosil_listen")=="inside",  # 0.20.9 엔딩 검토 9
         "tosil_outside":lambda:r13_v111_value("tosil_listen")=="outside",
         "tok_round_asked":lambda:bool(r13_v111_value("followup_read:NW_RX_F007")),  # 0.20.9 D23-04 먼저 물어본 경우
