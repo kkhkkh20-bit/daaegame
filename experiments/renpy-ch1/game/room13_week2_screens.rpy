@@ -58,14 +58,15 @@ screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장",can_p
         fixed:
             hbox:
                 xsize 1090
-                text heading font R13_UI_TYPE["title"]["font"] size 22 color "#717367"
+                # 타이포 V2: 머리 꼬리표 small·주장 제목 title·개수와 단계 small·본문과 안내 body. 네 버튼은 공통 부품 규격이라 두었다.
+                text heading font R13_UI_TYPE["title"]["font"] size (r13_type("small") if R13_TYPE_V2 else 22) color (r13_type_color("muted") if R13_TYPE_V2 else "#717367")
                 if chances:
-                    text chances size 22 color "#795d40" xalign 1.0
-            text R13_CLAIMS[claim]["assertion"] font R13_UI_TYPE["title"]["font"] ypos 40 size r13_read_size(30,32) color "#765426" xsize 1090
-            text ("고른 자료 · %d개"%len(room13["arguments"].get(claim,[]))) ypos 116 size 22
+                    text chances size (r13_type("small") if R13_TYPE_V2 else 22) color (r13_type_color("muted") if R13_TYPE_V2 else "#795d40") xalign 1.0
+            text R13_CLAIMS[claim]["assertion"] font R13_UI_TYPE["title"]["font"] ypos 40 size (r13_type("title") if R13_TYPE_V2 else r13_read_size(30,32)) color (r13_type_color("ink") if R13_TYPE_V2 else "#765426") xsize 1090
+            text ("고른 자료 · %d개"%len(room13["arguments"].get(claim,[]))) ypos 116 size (r13_type("small") if R13_TYPE_V2 else 22)
             # 2026-10-27 외부 리뷰: 고르기·확인·제출이 다른 행동임을 첫 제출 성공 전까지만 단계로 보인다.
             if need_evidence and r13_proof_guide_active():
-                text r13_proof_guide_steps(len(room13["arguments"].get(claim,[]))) id "r13_proof_steps" xpos 1090 xanchor 1.0 ypos 116 size 22 font R13_UI_BOLD_FONT
+                text r13_proof_guide_steps(len(room13["arguments"].get(claim,[]))) id "r13_proof_steps" xpos 1090 xanchor 1.0 ypos 116 size (r13_type("small") if R13_TYPE_V2 else 22) font R13_UI_BOLD_FONT
             frame:
                 area (0,142,1090,190) padding (20,16) background r13_sticker_button()
             viewport:
@@ -76,15 +77,15 @@ screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장",can_p
                     for key in room13["arguments"].get(claim,[]):
                         hbox:
                             spacing 16
-                            text ("· "+ROOM13["evidence"][key]["name"]) size r13_read_size(23,26) xsize 850 yalign .5
+                            text ("· "+ROOM13["evidence"][key]["name"]) size (r13_type("body") if R13_TYPE_V2 else r13_read_size(23,26)) xsize 850 yalign .5
                             if need_evidence:
                                 use r13_control("빼기",None,Return(("remove",key)),enabled=ready,width=128,height=control_height,label_size=24)
                     if not room13["arguments"].get(claim):
                         vbox:
                             spacing 12
-                            text "아직 고른 자료가 없습니다." font R13_UI_BOLD_FONT size 24 color "#493b30"
-                            text "아래 ‘자료 고르기’에서 대조할 자료를 골라 주세요." size 22 color "#717367" xmaximum 1000
-            text (r13_proof_guide_help(len(room13["arguments"].get(claim,[])),chances) if need_evidence and r13_proof_guide_active() else r13_proof_edit_help(chances)) ypos 350 size (26 if r13_touch_ui() else 22) color "#795d40" xsize 1090
+                            text "아직 고른 자료가 없습니다." font R13_UI_BOLD_FONT size (r13_type("body") if R13_TYPE_V2 else 24) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30")
+                            text "아래 ‘자료 고르기’에서 대조할 자료를 골라 주세요." size (r13_type("body") if R13_TYPE_V2 else 22) color (r13_type_color("muted") if R13_TYPE_V2 else "#717367") xmaximum 1000
+            text (r13_proof_guide_help(len(room13["arguments"].get(claim,[])),chances) if need_evidence and r13_proof_guide_active() else r13_proof_edit_help(chances)) ypos 350 size (r13_type("body") if R13_TYPE_V2 else (26 if r13_touch_ui() else 22)) color (r13_type_color("muted") if R13_TYPE_V2 else "#795d40") xsize 1090
             hbox:
                 ypos 414 spacing 16
                 use r13_control("자료 고르기",None,Return("present"),enabled=ready,width=258,height=control_height,label_size=24,control_id="r13_proof_pick")

@@ -267,13 +267,16 @@ screen r13_meeting_camera_frame(claim,focus=None,close=False,ready=False,selecte
                     else:
                         add r13_pixel_scale(r13_meeting_actor(who,focus,cx),stand_width,height,R13_CLOSE_PIXEL_GRID) xcenter cx ypos top
                 $ own=[st for st in r13_debate_statements(claim) if st["who"]==who and r13_debate_visible(claim,st)]
+                # 2026-10-27 타이포 V2: 이름표는 small. 112px 고정판에 22px 이상이 들어가면 긴 이름(부엉이 할아버지)이
+                # 줄바꿈되므로 판 폭을 글자 수에 맞춰 넓힌다(끄면 112x24 그대로). 7인 실내 회의의 짧은 이름은 112 를 넘지 않는다.
+                $ tag_w=max(112,int(len(R13_NAMES[who])*.8*(r13_type("small") if R13_TYPE_V2 else 0))+8)
                 button:
-                    area (cx-56,top-28,112,84) padding (0,0) background None hover_background None
+                    area (cx-tag_w//2,top-28,tag_w,84) padding (0,0) background None hover_background None
                     action Return(("select",r13_meeting_next_statement(claim,selected,who)))
                     sensitive ready and bool(own) and not ballot
                     frame:
-                        xsize 112 ysize 24 padding (3,2) background R13InkPanel(focused=who==focus)
-                        text R13_NAMES[who] size r13_read_size(14,16) color ("#efd191" if who==focus else "#efe0c3") xalign .5 yalign .5
+                        xsize tag_w ysize ((r13_type("small") if R13_TYPE_V2 else 18)+6) padding (3,2) background R13InkPanel(focused=who==focus)
+                        text R13_NAMES[who] size (r13_type("small") if R13_TYPE_V2 else r13_read_size(14,16)) color ("#efd191" if who==focus else (r13_type_color("inverse") if R13_TYPE_V2 else "#efe0c3")) xalign .5 yalign .5
         # Outdoor/classroom plates contain no table. Masking them hides legs
         # behind an invisible tabletop and paints background over the cast.
         if venue_kind in ("round","stone"):
@@ -282,9 +285,11 @@ screen r13_meeting_camera_frame(claim,focus=None,close=False,ready=False,selecte
             for index,(who,stance) in enumerate(seats):
                 if stance is not None:
                     $ cx,edge=r13_meeting_seat_position(index,len(seats),session)
+                    # 타이포 V2: 입장 꼬리표도 small. 「희생을 이어 간다」가 112px 를 넘으므로 폭을 글자 수에 맞춘다(끄면 112).
+                    $ badge_w=max(112,int(len(R13_DEBATE_STANCE[session][stance])*.8*(r13_type("small") if R13_TYPE_V2 else 0))+8)
                     frame:
-                        xpos cx-56 ypos min(edge+8,442) xsize 112 ysize 40 padding (4,4) background R13PaperPanel()
-                        text R13_DEBATE_STANCE[session][stance] size 14 color "#493b30" text_align .5 xalign .5 yalign .5
+                        xpos cx-badge_w//2 ypos min(edge+8,442) xsize badge_w ysize 40 padding (4,4) background R13PaperPanel()
+                        text R13_DEBATE_STANCE[session][stance] size (r13_type("small") if R13_TYPE_V2 else 14) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30") text_align .5 xalign .5 yalign .5
 
 screen r13_meeting_chrome(claim):
     if r13_nw_meeting_claim(claim):
@@ -298,8 +303,10 @@ screen r13_meeting_chrome(claim):
             vbox:
                 xpos 42 xsize 812
                 spacing 3
-                text (r13_meeting_header(session)+("" if r13_meeting_intro else ("  ·  확인한 발언 %d"%proved+(" · "+r13_q1_thesis_title() if r13_q1_hard() else "")) if claim=="Q1" and r13_q1_v2() else "  ·  반박 %d / %d"%(proved,proof_total))) size r13_read_size(17,19) color "#795d40" font R13_UI_BOLD_FONT
-                text ("참석자들의 이야기" if r13_meeting_intro else "쟁점 · 3번 등의 조각을 누가 가져갔는가?" if claim=="Q1" and r13_q1_v2() else "쟁점 · "+R13_MEETING_ISSUES.get(claim,R13_DEBATE[claim]["title"])) size r13_read_size(21,25) color "#493b30" font R13_UI_BOLD_FONT
+                text (r13_meeting_header(session)+("" if r13_meeting_intro else ("  ·  확인한 발언 %d"%proved+(" · "+r13_q1_thesis_title() if r13_q1_hard() else "")) if claim=="Q1" and r13_q1_v2() else "  ·  반박 %d / %d"%(proved,proof_total))) size (r13_type("small") if R13_TYPE_V2 else r13_read_size(17,19)) color (r13_type_color("muted") if R13_TYPE_V2 else "#795d40") font R13_UI_BOLD_FONT
+                # 타이포 V2: 머리띠는 86px 고정이고 진행 막대가 그 아래 64px 에 있어 두 줄 합이 64 를 넘으면 막대를 덮는다.
+                # subtitle+title(74~89px)은 못 들어가 small+body(59~71px, 글자 몸통은 64 안)로 둔다. 큰 글씨·휴대폰까지 재서 정했다.
+                text ("참석자들의 이야기" if r13_meeting_intro else "쟁점 · 3번 등의 조각을 누가 가져갔는가?" if claim=="Q1" and r13_q1_v2() else "쟁점 · "+R13_MEETING_ISSUES.get(claim,R13_DEBATE[claim]["title"])) size (r13_type("body") if R13_TYPE_V2 else r13_read_size(21,25)) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30") font R13_UI_BOLD_FONT
             if not r13_meeting_intro:
                 add Solid("#d6bf98") xpos 0 ypos 64 xysize (860,3)
                 if proved and not (claim=="Q1" and r13_q1_v2()):
@@ -321,8 +328,8 @@ screen r13_meeting_tools(claim,sid=None,board=False,ready=True):
             area (942,18,314,86) padding (54,12) background r13_field_paper()
             vbox:
                 align (.5,.5) spacing 2
-                text "발언 듣는 중" size 20 color "#4b3420" font R13_UI_BOLD_FONT xalign .5
-                text ("%d / %d"%(visible_ids.index(r13_meeting_live_sid)+1,len(visible_ids))) size 17 color "#795d40" font R13_UI_BOLD_FONT xalign .5
+                text "발언 듣는 중" size (r13_type("body") if R13_TYPE_V2 else 20) color (r13_type_color("ink") if R13_TYPE_V2 else "#4b3420") font R13_UI_BOLD_FONT xalign .5
+                text ("%d / %d"%(visible_ids.index(r13_meeting_live_sid)+1,len(visible_ids))) size (r13_type("small") if R13_TYPE_V2 else 17) color (r13_type_color("muted") if R13_TYPE_V2 else "#795d40") font R13_UI_BOLD_FONT xalign .5
         textbutton "‹":
             area (948,36,48,48) style "r13_action_button" padding (4,0) background None hover_background None text_font R13_UI_BOLD_FONT text_color "#4b3420" text_size 30 alt "이전 발언"
             action Function(r13_meeting_request_live_action,"previous") sensitive ready and len(live_ids)>1
@@ -335,7 +342,7 @@ screen r13_meeting_tools(claim,sid=None,board=False,ready=True):
         if r13_meeting_live_lap>=1:
             frame:
                 area (280,r13_control_y()-204,720,40) padding (12,6) background R13InkPanel(alpha="d9",slim=True)
-                text "다시 확인할 말은 ‘발언 선택’에서 고를 수 있어요" size r13_read_size(19,22) color "#fff4df" xalign .5 font r13_ui_font()
+                text "다시 확인할 말은 ‘발언 선택’에서 고를 수 있어요" size (r13_type("body") if R13_TYPE_V2 else r13_read_size(19,22)) color (r13_type_color("inverse") if R13_TYPE_V2 else "#fff4df") xalign .5 font r13_ui_font()
 
 
 screen r13_meeting_rebuttal_hold(claim):
@@ -355,7 +362,7 @@ screen r13_meeting_cut_in(caption):
         area (432,430,416,48) padding (12,6) background R13PaperFrame()
         if persistent.room13_motion:
             at r13_meeting_cut_in_fade
-        text caption size 26 color "#8b4932" xalign .5 yalign .5
+        text caption size (r13_type("emphasis") if R13_TYPE_V2 else 26) color (r13_type_color("accent") if R13_TYPE_V2 else "#8b4932") xalign .5 yalign .5
     timer .38 action Hide("r13_meeting_cut_in")
 
 screen r13_meeting_choices(items,ready):
@@ -365,7 +372,7 @@ screen r13_meeting_choices(items,ready):
     if caption:
         frame:
             area (160,402,960,42) padding (14,7) background R13PaperPanel()
-            text caption size r13_read_size(20,24) color "#493b30"
+            text caption size (r13_type("small") if R13_TYPE_V2 else r13_read_size(20,24)) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30")
     $ choices=[item for item in items if item.action is not None]
     # Four suspects plus cancel must fit above the dialogue tools on mobile too.
     for index,item in enumerate(choices):

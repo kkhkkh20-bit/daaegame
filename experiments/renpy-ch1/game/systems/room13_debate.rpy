@@ -834,8 +834,8 @@ screen r13_meeting_agenda(claims):
         add R13AntiqueIcon("meeting_round",size=30) xpos 0 ypos 8
         vbox:
             xpos 42
-            text "식당 회의 · %d일째"%R13_TRIAL_DAY size 17 color "#795d40"
-            text "어느 주장을 다룰까?" size r13_read_size(23,27) color "#493b30"
+            text "식당 회의 · %d일째"%R13_TRIAL_DAY size (r13_type("small") if R13_TYPE_V2 else 17) color (r13_type_color("muted") if R13_TYPE_V2 else "#795d40")
+            text "어느 주장을 다룰까?" size (r13_type("body") if R13_TYPE_V2 else r13_read_size(23,27)) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30")
     $ captions={"C1":"정문이 잠겼으니 아이뿐이라는 주장","C2":"다람이의 방어가 죽음의 원인이라는 주장","C3":"할머니는 그때 식당에 있었다는 말","C4":"할머니가 도우러 들어갔을 뿐이라는 변명"}
     frame:
         area (80,490,1120,210) padding (18,14) background R13PaperFrame()
@@ -864,8 +864,8 @@ screen r13_debate_board(claim,selected):
         area (942,18,314,66) padding (12,8) background R13PaperFrame()
         vbox:
             spacing 2
-            text "발언 검토" size 21 color "#493b30" font r13_ui_font()
-            text "자료와 대조" size 14 color "#795d40" font r13_ui_font()
+            text "발언 검토" size (r13_type("body") if R13_TYPE_V2 else 21) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30") font r13_ui_font()
+            text "자료와 대조" size (r13_type("small") if R13_TYPE_V2 else 14) color (r13_type_color("muted") if R13_TYPE_V2 else "#795d40") font r13_ui_font()
     textbutton "발언 목록":
         style "r13_action_button" area (1100,28,144,44) padding (8,4) text_size 20
         action ToggleScreenVariable("statements_open") sensitive ready
@@ -879,28 +879,28 @@ screen r13_debate_board(claim,selected):
                 add R13AntiqueIcon("present",size=32) yalign .5
                 vbox:
                     spacing 4
-                    text "제시한 근거 · 1 / 2" size r13_read_size(17,20) color "#795d40"
-                    text r13_catalog_title(half_key) size r13_read_size(20,24) color "#493b30" xsize 570
+                    text "제시한 근거 · 1 / 2" size (r13_type("small") if R13_TYPE_V2 else r13_read_size(17,20)) color (r13_type_color("muted") if R13_TYPE_V2 else "#795d40")
+                    text r13_catalog_title(half_key) size (r13_type("body") if R13_TYPE_V2 else r13_read_size(20,24)) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30") xsize 570
                 text "+" size 28 color "#a88043" yalign .5
-                text "다른 자료로 이어 보기" size r13_read_size(20,23) color "#795d40" yalign .5
+                text "다른 자료로 이어 보기" size (r13_type("small") if R13_TYPE_V2 else r13_read_size(20,23)) color (r13_type_color("muted") if R13_TYPE_V2 else "#795d40") yalign .5
     elif r13_meeting_feedback and r13_meeting_feedback.get("claim")==claim:
         frame:
             area (80,r13_control_y()-232,1120,68) padding (14,8) background R13PaperPanel()
             vbox:
                 spacing 3
-                text "방금 확인한 말" size 15 color "#795d40"
+                text "방금 확인한 말" size (r13_type("small") if R13_TYPE_V2 else 15) color (r13_type_color("muted") if R13_TYPE_V2 else "#795d40")
                 viewport:
                     xsize 1092 ysize 38 mousewheel True draggable True scrollbars "vertical" vscrollbar_unscrollable "hide"
-                    text r13_meeting_feedback["text"] size r13_read_size(18,21) color "#493b30" xsize 1068
+                    text r13_meeting_feedback["text"] size (r13_type("small") if R13_TYPE_V2 else r13_read_size(18,21)) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30") xsize 1068
     frame:
         area (80,r13_control_y()-148,1120,132) padding (0,0) background R13PaperFrame()
         add Solid("#b58b47") xysize (1120,4)
         textbutton "‹":
             style "r13_compact_button" area (20,6,52,44) text_size 32 alt "이전 발언"
             action Return(("select",r13_meeting_next_statement(claim,selected,step=-1))) sensitive ready and len(visible)>1
-        text R13_NAMES[sel["who"]] xpos 88 ypos 12 size r13_read_size(20,23) color "#654b30"
-        text ("발언 %d / %d"%(visible.index(sel)+1,len(visible))) xcenter 560 ypos 12 size r13_read_size(18,22) color "#795d40"
-        text ("반박함" if r13_debate_is_broken(claim,selected) else "근거 1 / 2" if half_key and sel.get("pair") else "다시 확인" if r13_meeting_heard(claim,selected) else "새로 확인") xpos 818 ypos 12 xsize 210 text_align 1.0 size r13_read_size(18,22) color ("#4d765c" if r13_debate_is_broken(claim,selected) else "#795d40")
+        text R13_NAMES[sel["who"]] xpos 88 ypos 12 size (r13_type("small") if R13_TYPE_V2 else r13_read_size(20,23)) color (r13_type_color("muted") if R13_TYPE_V2 else "#654b30")
+        text ("발언 %d / %d"%(visible.index(sel)+1,len(visible))) xcenter 560 ypos 12 size (r13_type("small") if R13_TYPE_V2 else r13_read_size(18,22)) color (r13_type_color("muted") if R13_TYPE_V2 else "#795d40")
+        text ("반박함" if r13_debate_is_broken(claim,selected) else "근거 1 / 2" if half_key and sel.get("pair") else "다시 확인" if r13_meeting_heard(claim,selected) else "새로 확인") xpos 818 ypos 12 xsize 210 text_align 1.0 size (r13_type("small") if R13_TYPE_V2 else r13_read_size(18,22)) color ("#4d765c" if r13_debate_is_broken(claim,selected) else (r13_type_color("muted") if R13_TYPE_V2 else "#795d40"))
         textbutton "›":
             style "r13_compact_button" area (1048,6,52,44) text_size 32 alt "다음 발언"
             action Return(("select",r13_meeting_next_statement(claim,selected))) sensitive ready and len(visible)>1
@@ -908,7 +908,7 @@ screen r13_debate_board(claim,selected):
             add R13AntiqueIcon("check",size=24) xpos 24 ypos 54
         viewport:
             area (56 if r13_debate_is_broken(claim,selected) else 24,50,1040 if r13_debate_is_broken(claim,selected) else 1072,72) mousewheel True draggable True scrollbars "vertical" vscrollbar_unscrollable "hide"
-            text (r13_meeting_statement_text(claim,selected) if not r13_debate_is_broken(claim,selected) else "{s}"+sel["text"].replace("【","").replace("】","")+"{/s}") size r13_read_size(23,29) color ("#82725b" if r13_debate_is_broken(claim,selected) else "#79654e" if r13_meeting_heard(claim,selected) else "#493b30") xsize (1018 if r13_debate_is_broken(claim,selected) else 1050)
+            text (r13_meeting_statement_text(claim,selected) if not r13_debate_is_broken(claim,selected) else "{s}"+sel["text"].replace("【","").replace("】","")+"{/s}") size (r13_type("body") if R13_TYPE_V2 else r13_read_size(23,29)) color ((r13_type_color("disabled") if R13_TYPE_V2 else "#82725b") if r13_debate_is_broken(claim,selected) else (r13_type_color("muted") if R13_TYPE_V2 else "#79654e") if r13_meeting_heard(claim,selected) else (r13_type_color("ink") if R13_TYPE_V2 else "#493b30")) xsize (1018 if r13_debate_is_broken(claim,selected) else 1050)
     use r13_meeting_tools(claim,selected,True,ready)
     if ready and len(visible)>1:
         key "K_LEFT" action Return(("select",r13_meeting_next_statement(claim,selected,step=-1)))
@@ -920,7 +920,7 @@ screen r13_debate_board(claim,selected):
                 spacing 10
                 hbox:
                     spacing 24
-                    text ("확인한 발언 · %d"%done if claim=="Q1" and r13_q1_v2() else "발언 기록 · %d/%d 반박"%(done,total)) size 21 color "#493b30"
+                    text ("확인한 발언 · %d"%done if claim=="Q1" and r13_q1_v2() else "발언 기록 · %d/%d 반박"%(done,total)) size (r13_type("body") if R13_TYPE_V2 else 21) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30")
                     textbutton "닫기" style "r13_compact_button" xsize 112 ysize 44 action SetScreenVariable("statements_open",False)
                 viewport:
                     xsize 484 ysize 300 mousewheel True draggable True scrollbars "vertical" vscrollbar_unscrollable "hide"
@@ -933,8 +933,8 @@ screen r13_debate_board(claim,selected):
                                 action Return(("select",st["id"])) sensitive ready
                                 vbox:
                                     spacing 5
-                                    text (R13_NAMES[st["who"]]+(" · 반박함" if r13_debate_is_broken(claim,st["id"]) else " · 들음" if r13_meeting_heard(claim,st["id"]) else " · 새로 확인" if st.get("hidden") else "")) size 18 color ("#efd191" if st["id"]==selected else "#795d40")
-                                    text st["text"].replace("【","").replace("】","") size r13_read_size(20,24) color ("#fff0ce" if st["id"]==selected else "#493b30") xsize 430
+                                    text (R13_NAMES[st["who"]]+(" · 반박함" if r13_debate_is_broken(claim,st["id"]) else " · 들음" if r13_meeting_heard(claim,st["id"]) else " · 새로 확인" if st.get("hidden") else "")) size (r13_type("small") if R13_TYPE_V2 else 18) color ("#efd191" if st["id"]==selected else (r13_type_color("muted") if R13_TYPE_V2 else "#795d40"))
+                                    text st["text"].replace("【","").replace("】","") size (r13_type("body") if R13_TYPE_V2 else r13_read_size(20,24)) color ((r13_type_color("inverse") if R13_TYPE_V2 else "#fff0ce") if st["id"]==selected else (r13_type_color("ink") if R13_TYPE_V2 else "#493b30")) xsize 430
                                     if r13_meeting_finding(claim,st["id"]):
-                                        text ("확인한 말 · "+r13_meeting_finding(claim,st["id"])) size r13_read_size(17,20) color ("#e1c993" if st["id"]==selected else "#795d40") xsize 430
+                                        text ("확인한 말 · "+r13_meeting_finding(claim,st["id"])) size (r13_type("small") if R13_TYPE_V2 else r13_read_size(17,20)) color ("#e1c993" if st["id"]==selected else (r13_type_color("muted") if R13_TYPE_V2 else "#795d40")) xsize 430
     key "game_menu" action (SetScreenVariable("statements_open",False) if statements_open else Return(("leave",)))

@@ -94,7 +94,10 @@ init 80 python:
     def r13_proof_guide_step(chosen_count):
         return 0 if not chosen_count else 1
 
-    def r13_proof_guide_steps(chosen_count,current="#bc4134",rest="#9a8a74"):
+    def r13_proof_guide_steps(chosen_count,current=None,rest=None):
+        # 타이포 V2: 지금 단계는 accent(테이프 빨강보다 한 단 어두운 글자용 빨강), 나머지는 muted. 끄면 이전 색.
+        current=current or (r13_type_color("accent") if R13_TYPE_V2 else "#bc4134")
+        rest=rest or (r13_type_color("muted") if R13_TYPE_V2 else "#9a8a74")
         step=r13_proof_guide_step(chosen_count)
         return "  →  ".join("{color=%s}%d %s{/color}"%(current if i==step else rest,i+1,name) for i,name in enumerate(R13_PROOF_STEPS))
 
@@ -139,5 +142,5 @@ screen r13_recovery_note(message):
         hover_background r13_sticker_button(focused=True)
         action Hide("r13_recovery_note")
         alt message
-        text message size r13_read_size(21,24) color "#4b3022" font R13_UI_BOLD_FONT xmaximum 396 line_spacing 4
+        text message size (r13_type("small") if R13_TYPE_V2 else r13_read_size(21,24)) color (r13_type_color("ink") if R13_TYPE_V2 else "#4b3022") font R13_UI_BOLD_FONT xmaximum 396 line_spacing 4
     timer 7.0 action Hide("r13_recovery_note")

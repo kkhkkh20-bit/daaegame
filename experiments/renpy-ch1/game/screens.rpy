@@ -581,8 +581,8 @@ init python:
     def r13_opt_size():
         # 2026-10-27 타이포 시안: 켜지면 설정 본문은 body 단계(단계표가 휴대폰 값을 따로 가진다).
         # 화면 줄은 r13_opt_size() 토큰만 쓰므로(dev/test_settings_type_scale.py) 여기서만 바꾼다.
-        if R13_TYPE_V2:return r13_type("body")
         # 0.20.7 (UI review: phone text about 11px): +4 on a touch screen.
+        if R13_TYPE_V2:return r13_type("body")
         return r13_read_size(22,26)+(4 if globals().get("r13_touch_ui",lambda:False)() else 0)
 
     def r13_opt_title_size():

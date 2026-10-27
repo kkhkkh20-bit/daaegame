@@ -335,15 +335,15 @@ screen r13_meeting_ballot(claim,vote):
         area (48,488,1184,146) padding (20,14) background R13PaperFrame()
         vbox:
             spacing 10
-            text "공개 의견 확인" size r13_read_size(24,28) color "#493b30"
+            text "공개 의견 확인" size (r13_type("body") if R13_TYPE_V2 else r13_read_size(24,28)) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30")
             $ my_choice=("실룩이 허락 없이 조각을 가져갔다" if claim=="Q1" and r13_q1_v2() and vote["choice"]=="correct" else next((text for kind,text in R13_DEBATE[claim]["conclusion"]["options"] if kind==vote["choice"]),""))
-            text ("내가 밝힌 의견 · "+my_choice) size r13_read_size(19,23) color "#795d40"
+            text ("내가 밝힌 의견 · "+my_choice) size (r13_type("small") if R13_TYPE_V2 else r13_read_size(19,23)) color (r13_type_color("muted") if R13_TYPE_V2 else "#795d40")
             hbox:
                 spacing 24
                 for index,name in enumerate(R13_DEBATE_STANCE[vote["session"]]):
-                    text (name+"  "+str(vote["tally"][index])+"명") size r13_read_size(19,23) color "#493b30"
+                    text (name+"  "+str(vote["tally"][index])+"명") size (r13_type("small") if R13_TYPE_V2 else r13_read_size(19,23)) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30")
     textbutton "회의를 계속한다":
         style "r13_action_button" xpos 920 ypos 646 xsize 312 ysize 64 text_size 24
         action Return(True) sensitive ready
-    text "입증한 내용에 따른 주민들의 현재 입장" xpos 48 ypos 662 size r13_read_size(18,21) color "#f1dfba" outlines [(1,"#30251e",0,0)]
+    text "입증한 내용에 따른 주민들의 현재 입장" xpos 48 ypos 662 size (r13_type("small") if R13_TYPE_V2 else r13_read_size(18,21)) color (r13_type_color("inverse") if R13_TYPE_V2 else "#f1dfba") outlines [(1,"#30251e",0,0)]
     key "game_menu" action Return(True)
