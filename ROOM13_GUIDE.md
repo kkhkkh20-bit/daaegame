@@ -27,6 +27,9 @@ dev/check.sh
 dev/run_renpy_tests.sh carriage_skip trial_win
 # 4) 웹판 빌드 → preview/room13-dev 갱신
 python3 dev/build_web.py --sdk "$RENPY_SDK"
+# 4-1) 판 번호는 빌드 전에 올린다. 빌드 뒤 공개 묶음과 원본 판 번호·릴리스 노트를 대조한다
+#      (0.20.67 은 빌드 뒤에 번호를 올려 화면이 0.20.66 으로 보였다).
+python3 dev/check_release.py
 # 5) 실제 브라우저 확인 (저장소 루트에서 서버를 띄운다)
 (cd ../.. && python3 -m http.server 8765 >/dev/null 2>&1 &)
 python3 dev/qa_carriage.py && python3 dev/qa_navigation.py && python3 dev/qa_save_slots.py
