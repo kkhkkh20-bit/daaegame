@@ -290,25 +290,27 @@ screen r13_drawer_group_list(mode,entries,chosen,gpage,owner,header):
     $ size=r13_record_page_size()
     $ pages=max(1,(len(groups)+size-1)//size)
     $ gpage=max(0,min(gpage,pages-1))
-    text header xpos 64 ypos 112 size label_size color "#80654e" font R13_UI_BOLD_FONT
+    # 2026-10-27 수첩 공통 틀: 왼쪽 목록은 자료 목록(r13_evidence_grid)과 같은 자리·같은 줄 높이.
+    $ pitch=r13_ev_grid_pitch()
+    text header xpos (R13_EV_GRID_X+4) ypos R13_EV_TOP xsize (R13_EV_GRID_W-4) size label_size color "#80654e" font R13_UI_BOLD_FONT
     for index,(group_key,group_items) in enumerate(groups[gpage*size:][:size]):
         $ is_chosen=group_key==chosen
         button:
-            xpos 60 ypos (140+index*88) xysize (256,88) padding (0,0)
+            xpos R13_EV_GRID_X ypos (R13_EV_ROWS_Y+index*pitch) xysize (R13_EV_GRID_W,pitch) padding (0,0)
             background R13ControlSurface(chosen=is_chosen) hover_background R13ControlSurface(chosen=is_chosen,hovered=True)
             alt r13_drawer_group_title(mode,group_key)
             action [Function(r13_record_select,owner,"drawer_case",group_key,False),Function(r13_record_select,owner,"drawer_ipage",0,False)]
             fixed:
-                xysize (256,88)
+                xysize (R13_EV_GRID_W,pitch)
                 if mode=="past":
                     # 사건의 자료 그림 세 장을 겹쳐 놓는다(시안).
                     for j,icon_key in enumerate(group_items[:3]):
-                        add r13_evidence_picture(icon_key,40) xpos (6+j*20) ypos (44+(j%2)*6) yanchor .5
+                        add r13_evidence_picture(icon_key,40) xpos (6+j*20) ypos (pitch//2+(j%2)*6) yanchor .5
                 else:
-                    add Transform(r13_art(group_key,"avatar_neutral"),xysize=(56,56),fit="contain") xpos 10 ypos 44 yanchor .5
+                    add Transform(r13_art(group_key,"avatar_neutral"),xysize=(56,56),fit="contain") xpos 10 ypos (pitch//2) yanchor .5
                 # 시안은 셋째 그림과 이름 첫 글자가 겹친다. 번호가 그림에 묻히지 않게 이름을 몇 px 오른쪽에 둔다.
                 vbox:
-                    xpos 92 ypos 44 yanchor .5 spacing 2
+                    xpos 92 ypos (pitch//2) yanchor .5 spacing 2
                     text r13_ev_two_lines(r13_drawer_group_title(mode,group_key,False),156,label_size,2):
                         xsize 156 size label_size color ("#fff7e8" if is_chosen else "#493323") font R13_UI_BOLD_FONT line_spacing -1
                     text ((("%d일 · "%r13_drawer_case_day(group_key)) if mode=="past" and r13_drawer_case_day(group_key) else "")+"자료 %d"%len(group_items)):
@@ -317,16 +319,16 @@ screen r13_drawer_group_list(mode,entries,chosen,gpage,owner,header):
         $ ph=r13_ev_button_height()
         $ pw=88 if touch else 72
         fixed:
-            xpos 60 ypos (R13_EV_BOTTOM-ph) xysize (pw,ph)
+            xpos R13_EV_GRID_X ypos (R13_EV_BOTTOM-ph) xysize (pw,ph)
             use r13_control("‹",None,Function(r13_record_select,owner,"drawer_gpage",gpage-1,False),enabled=gpage>0,width=pw,height=ph,control_id="r13_dr_gprev")
-        text ("%d / %d"%(gpage+1,pages)) xpos 188 xanchor .5 ypos (R13_EV_BOTTOM-ph//2) yanchor .5 size label_size color "#80654e" font R13_UI_BOLD_FONT
+        text ("%d / %d"%(gpage+1,pages)) xpos (R13_EV_GRID_X+R13_EV_GRID_W//2) xanchor .5 ypos (R13_EV_BOTTOM-ph//2) yanchor .5 size label_size color "#80654e" font R13_UI_BOLD_FONT
         fixed:
-            xpos (316-pw) ypos (R13_EV_BOTTOM-ph) xysize (pw,ph)
+            xpos (R13_EV_GRID_X+R13_EV_GRID_W-pw) ypos (R13_EV_BOTTOM-ph) xysize (pw,ph)
             use r13_control("›",None,Function(r13_record_select,owner,"drawer_gpage",gpage+1,False),enabled=gpage+1<pages,width=pw,height=ph,control_id="r13_dr_gnext")
     if not groups:
         text ("끝난 사건이 아직 없습니다. 회의가 끝나면 그 사건 자료가 여기로 옵니다." if mode=="past" else "자료에 나오는 사람이 아직 없습니다."):
-            xpos 64 ypos 160 xsize 252 size label_size color "#8a7664" font R13_UI_BOLD_FONT
-    add Solid("#c9a86a66") xpos 330 ypos 116 xsize 1 ysize 564
+            xpos (R13_EV_GRID_X+4) ypos (R13_EV_ROWS_Y+20) xsize (R13_EV_GRID_W-4) size label_size color "#8a7664" font R13_UI_BOLD_FONT
+    add Solid("#c9a86a66") xpos R13_EV_DIVIDER_X ypos (R13_EV_TOP+4) xsize 1 ysize (R13_EV_BOTTOM-R13_EV_TOP-12)
 
 # 오른쪽: 고른 묶음의 자료 카드 격자. 누르면 기존 상세(왼쪽 목록 + 큰 그림)로 간다.
 screen r13_drawer_group_grid(mode,entries,chosen,ipage,owner):
@@ -337,13 +339,16 @@ screen r13_drawer_group_grid(mode,entries,chosen,ipage,owner):
     $ pages=max(1,(len(keys)+per-1)//per)
     $ ipage=max(0,min(ipage,pages-1))
     $ card_h=88 if touch else 82
+    # 2026-10-27 수첩 공통 틀: 격자는 가운데 열 왼쪽(420)에서 시작해 오른쪽 1206 안에 세 칸(250, 간격 262).
+    $ gx=R13_EV_CENTER_X
+    $ gpitch=(R13_EV_RIGHT-gx-250)//max(1,R13_DRAWER_GRID_COLS-1)
     if chosen:
-        text r13_drawer_group_title(mode,chosen) xpos 370 ypos 116 size (r13_read_size(30,32) if touch else r13_read_size(28,30)) color "#493323" font R13_UI_BOLD_FONT
+        text r13_drawer_group_title(mode,chosen) xpos gx ypos R13_EV_TOP xsize (R13_EV_RIGHT-gx) size (r13_read_size(30,32) if touch else r13_read_size(28,30)) color "#493323" font R13_UI_BOLD_FONT
         text ("회의가 끝난 사건의 자료입니다. 다른 회의에서도 낼 수 있습니다." if mode=="past" else "이 사람이 나오는 자료입니다."):
-            xpos 370 ypos (164 if touch else 160) xsize 840 size r13_ev_small_size() color "#80654e" font R13_UI_BOLD_FONT
+            xpos gx ypos (R13_EV_TOP+(48 if touch else 44)) xsize (R13_EV_RIGHT-gx) size r13_ev_small_size() color "#80654e" font R13_UI_BOLD_FONT
         for index,key in enumerate(keys[ipage*per:][:per]):
             button:
-                xpos (370+(index%R13_DRAWER_GRID_COLS)*280) ypos (206+(index//R13_DRAWER_GRID_COLS)*110) xysize (250,card_h) padding (0,0)
+                xpos (gx+(index%R13_DRAWER_GRID_COLS)*gpitch) ypos (R13_EV_TOP+(112 if touch else 90)+(index//R13_DRAWER_GRID_COLS)*110) xysize (250,card_h) padding (0,0)
                 background R13ControlSurface() hover_background R13ControlSurface(hovered=True)
                 alt r13_catalog_title(key) action r13_drawer_open(owner,key,keys)
                 fixed:
@@ -355,11 +360,11 @@ screen r13_drawer_group_grid(mode,entries,chosen,ipage,owner):
             $ ph=r13_ev_button_height()
             $ pw=88 if touch else 72
             fixed:
-                xpos 370 ypos (R13_EV_BOTTOM-ph) xysize (pw,ph)
+                xpos gx ypos (R13_EV_BOTTOM-ph) xysize (pw,ph)
                 use r13_control("‹",None,Function(r13_record_select,owner,"drawer_ipage",ipage-1,False),enabled=ipage>0,width=pw,height=ph,control_id="r13_dr_iprev")
-            text ("%d / %d"%(ipage+1,pages)) xpos (370+pw+64) xanchor .5 ypos (R13_EV_BOTTOM-ph//2) yanchor .5 size label_size color "#80654e" font R13_UI_BOLD_FONT
+            text ("%d / %d"%(ipage+1,pages)) xpos (gx+pw+64) xanchor .5 ypos (R13_EV_BOTTOM-ph//2) yanchor .5 size label_size color "#80654e" font R13_UI_BOLD_FONT
             fixed:
-                xpos (370+pw+128) ypos (R13_EV_BOTTOM-ph) xysize (pw,ph)
+                xpos (gx+pw+128) ypos (R13_EV_BOTTOM-ph) xysize (pw,ph)
                 use r13_control("›",None,Function(r13_record_select,owner,"drawer_ipage",ipage+1,False),enabled=ipage+1<pages,width=pw,height=ph,control_id="r13_dr_inext")
 
 # 묶음 고르기 한 화면(왼쪽 묶음 목록 + 오른쪽 격자).

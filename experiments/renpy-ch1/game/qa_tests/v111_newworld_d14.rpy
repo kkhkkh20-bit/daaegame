@@ -62,7 +62,7 @@ testcase v111_nw_d14_altar_lost:
     run SetVariable("v111_last_presented",["V111:E01"])
     run Function(r13_v111_set,"tries:altar",r13_nw_tries_max("altar")-1)
     run Jump("r13_v111_altar1_wrong14")
-    click pos (900,600) until "안에서 직접 듣는다" timeout 120
+    click pos (900,600) until "토실에게 함께 듣겠냐고 묻는다" timeout 120
     assert eval (r13_v111_value("meeting:altar")=="lose" and qa_nw_seen("다음 겨울에 다시 정하겠소") and qa_nw_seen("숫자를 보시오"))
 
 testcase v111_nw_d14_altar_half_then_partial:
@@ -97,8 +97,8 @@ testcase v111_nw_d14_bomi:
     run Function(r13_grant,["V111:NW_NEOUL_LEDGER","V111:NW_BURNT_PAGE","V111:NW_STONE"],"qa")
     run Function(r13_edit,location="gate")
     run Jump("r13_v111_granny_interview14")
-    click pos (900,600) until "보호자와 밖에서 기다린다" timeout 120
-    click "보호자와 밖에서 기다린다"
+    click pos (900,600) until "밖에서 기다리고, 확인한 일을 나중에 말해 주겠다고 한다" timeout 120
+    click "밖에서 기다리고, 확인한 일을 나중에 말해 주겠다고 한다"
     click pos (900,600) until screen "r13_hub" timeout 120
     assert eval (qa_nw_seen("마지막 날짜 옆에") and qa_nw_seen("여기, 그 애가 적은 날짜가 있네") and qa_nw_seen("우리 집 불이 되잖아") and qa_nw_seen("털어놓았다고 풀려나지는 않는다") and not qa_nw_seen("그 애는 날짜도 몰랐어"))
 

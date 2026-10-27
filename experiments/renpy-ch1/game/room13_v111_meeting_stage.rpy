@@ -41,6 +41,14 @@ init 321 python:
         return isinstance(claim,str) and claim.startswith("NW:") and claim[3:] in R13_NW_MEETINGS
     def r13_nw_meeting_key(claim):
         return claim[3:] if r13_nw_meeting_claim(claim) else None
+    def r13_nw_meeting_issue(key):
+        """머리띠의 쟁점 문장. 표의 issue 는 기본값이고, 경로에 따라 사실이 달라지는 회의만 여기서 고른다."""
+        # 2026-10-27 외부 검토 B03: 12일 수프 회의를 먹기 전에 막은 판(premeal_stopped)에선 아이들이
+        # 아직 안 먹었다(나비 "아직 어느 그릇에도 안 담았어요"). 먹은 뒤 판(late_exposure)만 「먹은 수프」다.
+        # 갈래는 대사 라벨(seal_answer12·handling_route12)과 같게 late_exposure 여부로 읽는다.
+        if key=="soup" and r13_v111_value("route12")!="late_exposure":
+            return "아이들에게 줄 수프에 무엇이 들어갔나"
+        return R13_NW_MEETINGS[key]["issue"]
 
     def r13_nw_stage_cast_ids(key):
         """The meeting's speakers who are alive and, when the scene lists them, actually there."""
@@ -187,7 +195,7 @@ screen r13_nw_meeting_chrome(claim):
             spacing 3
             # 타이포 V2 단계는 r13_meeting_chrome 과 같다(머리띠 86px 안에 subtitle+title 이 안 들어가 small+body).
             text (r13_meeting_header(r13_debate_session(claim))+"  ·  남은 기회 %d / %d"%(left,r13_nw_tries_max(key))) size (r13_type("small") if R13_TYPE_V2 else r13_read_size(17,19)) color (r13_type_color("muted") if R13_TYPE_V2 else "#795d40") font R13_UI_BOLD_FONT
-            text ("쟁점 · "+R13_NW_MEETINGS[key]["issue"]) size (r13_type("body") if R13_TYPE_V2 else r13_read_size(21,25)) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30") font R13_UI_BOLD_FONT
+            text ("쟁점 · "+r13_nw_meeting_issue(key)) size (r13_type("body") if R13_TYPE_V2 else r13_read_size(21,25)) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30") font R13_UI_BOLD_FONT
         add Solid("#d6bf98") xpos 0 ypos 64 xysize (860,3)
         if left<r13_nw_tries_max(key):
             add Solid("#a88043") xpos 0 ypos 64 xysize (int(860*left/float(r13_nw_tries_max(key))),3)

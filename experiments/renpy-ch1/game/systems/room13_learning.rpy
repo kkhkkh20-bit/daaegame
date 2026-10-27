@@ -130,27 +130,37 @@ screen r13_learning_notes_content(focus=None):
     default expanded=None
     # Cards are folded to one line; the one picked from the field opens first (0.18.22).
     default opened=set([focus if focus is not None else 0])
-    text "조사 메모" xpos 284 ypos 72 size 26 color "#765426"
+    # 2026-10-27 수첩 공통 틀: 제목·구분 버튼·목록이 틀 안쪽(132~1206, 140~하단 버튼 줄 위)에 들어온다.
+    $ nb_w=R13_NB_WIDTH
+    $ card_w=nb_w-34
+    $ text_w=card_w-40
+    $ body_size=(r13_type("body") if R13_TYPE_V2 else r13_read_size(21,25))
+    $ small_size=(r13_type("small") if R13_TYPE_V2 else r13_read_size(20,24))
+    $ head_size=(r13_type("emphasis") if R13_TYPE_V2 else r13_read_size(23,27))
+    $ ink=(r13_type_color("ink") if R13_TYPE_V2 else "#493b30")
+    $ muted=(r13_type_color("muted") if R13_TYPE_V2 else "#65503b")
+    $ accent=(r13_type_color("accent") if R13_TYPE_V2 else "#765426")
+    text "조사 메모" xpos (R13_NB_LEFT+4) ypos R13_NB_TOP xsize (nb_w-8) size (r13_type("subtitle") if R13_TYPE_V2 else 26) color ink font R13_UI_BOLD_FONT
     hbox:
-        xpos 284 ypos 120 spacing 14
+        xpos R13_NB_LEFT ypos (R13_NB_TOP+48) spacing 14
         for key,title in (("questions","지금 궁금한 것"),("observations","자세히 본 것"),("world","알게 된 세계")):
             if key!="world" or r13_learning_terms():
                 textbutton title:
-                    style "r13_action_button" xsize 284 ysize (56 if r13_touch_ui() else 44) text_size r13_read_size(20,24)
+                    style "r13_action_button" xsize 284 ysize (56 if r13_touch_ui() else 44) text_size (r13_type("body") if R13_TYPE_V2 else r13_read_size(20,24))
                     selected tab==key action [Function(r13_record_select,_scope,"tab",key),Function(r13_record_select,_scope,"expanded",None)]
     viewport:
-        area (284,180,924,394) mousewheel True draggable True scrollbars "vertical"
+        area (R13_NB_LEFT,R13_NB_TOP+108,nb_w,r13_nb_body_bottom()-(R13_NB_TOP+108)) mousewheel True draggable True scrollbars "vertical"
         vbox:
             spacing 10
             if tab=="questions":
                 for i,note in enumerate(r13_first_mystery_notes()):
                     $ is_open=i in opened
                     frame:
-                        xsize 890 padding R13_UI_PADDING["panel"] background R13PaperPanel()
+                        xsize card_w padding R13_UI_PADDING["panel"] background R13PaperPanel()
                         vbox:
                             spacing 12
                             button:
-                                xsize 850 padding (0,0) background None hover_background Solid("#ffffff10")
+                                xsize text_w padding (0,0) background None hover_background Solid("#ffffff10")
                                 action Function(r13_record_select,_scope,"opened",(opened-set([i])) if is_open else (opened|set([i])))
                                 alt (note["title"]+(" 접기" if is_open else " 펼치기"))
                                 hbox:
@@ -158,39 +168,40 @@ screen r13_learning_notes_content(focus=None):
                                     add R13FoldArrow(is_open,"#765426") yalign .5
                                     vbox:
                                         spacing 4
-                                        text note["title"] style "r13_key_text" size r13_read_size(23,27) color "#765426" xsize 802
+                                        text note["title"] style "r13_key_text" size head_size color accent xsize (text_w-48)
                                         if not is_open:
-                                            text ("모르는 것 · "+note["question"]) size r13_read_size(20,24) color "#76634f" xsize 802
+                                            text ("모르는 것 · "+note["question"]) size small_size color muted xsize (text_w-48)
                             if is_open:
-                                text ("확인한 것 · "+note["fact"]) size r13_read_size(21,25) color "#493b30" xsize 850
-                                text ("모르는 것 · "+note["question"]) size r13_read_size(21,25) color "#285779" xsize 850
+                                text ("확인한 것 · "+note["fact"]) size body_size color ink xsize text_w
+                                text ("모르는 것 · "+note["question"]) size body_size color "#285779" xsize text_w
                                 if note.get("result"):
-                                    text ("그 결과 · "+note["result"]) size r13_read_size(21,25) color "#765426" xsize 850
+                                    text ("그 결과 · "+note["result"]) size body_size color accent xsize text_w
                                 $ owned_keys=[k for k in note["keys"] if k in room13.get("evidence",[])]
                                 if owned_keys:
-                                    text ("함께 볼 기록 · "+" / ".join(R13_RECORD_SHORT.get(k,ROOM13["evidence"][k]["name"]) for k in owned_keys)) size r13_read_size(20,25) color "#65503b" xsize 850
+                                    text ("함께 볼 기록 · "+" / ".join(R13_RECORD_SHORT.get(k,ROOM13["evidence"][k]["name"]) for k in owned_keys)) size small_size color muted xsize text_w
                                 textbutton ("접기" if expanded==i else "막혔다면 생각 정리"):
-                                    style "r13_action_button" xsize 300 ysize (56 if r13_touch_ui() else 48) text_size r13_read_size(21,26)
+                                    style "r13_action_button" xsize 300 ysize (56 if r13_touch_ui() else 48) text_size body_size
                                     action Function(r13_record_select,_scope,"expanded",None if expanded==i else i)
                                 if expanded==i:
-                                    text note["hint"] size r13_read_size(20,24) color "#65503b" xsize 850
+                                    text note["hint"] size small_size color muted xsize text_w
             elif tab=="observations":
                 for note in r13_tool_notes():
                     frame:
-                        xsize 890 padding R13_UI_PADDING["panel"] background R13PaperPanel()
+                        xsize card_w padding R13_UI_PADDING["panel"] background R13PaperPanel()
                         vbox:
                             spacing 12
-                            text note["title"] style "r13_key_text" size r13_read_size(23,27) color "#765426"
-                            text note["summary"] size r13_read_size(21,25) color "#493b30" xsize 850
-                            text ("질문 완료 · "+R13_NAMES[note["person"]] if note["topic"] in room13.get("read_topics",[]) else note["followup"]) size r13_read_size(21,26) color "#65503b" xsize 850
+                            text note["title"] style "r13_key_text" size head_size color accent xsize text_w
+                            text note["summary"] size body_size color ink xsize text_w
+                            text ("질문 완료 · "+R13_NAMES[note["person"]] if note["topic"] in room13.get("read_topics",[]) else note["followup"]) size body_size color muted xsize text_w
                 if not r13_tool_notes():
-                    text "돋보기로 자세히 살핀 내용이 여기에 모입니다." size r13_read_size(21,25) color "#65503b"
+                    text "돋보기로 자세히 살핀 내용이 여기에 모입니다." size body_size color muted xsize text_w
             else:
                 for note in r13_learning_terms():
                     frame:
-                        xsize 890 padding R13_UI_PADDING["panel"] background R13PaperPanel()
+                        xsize card_w padding R13_UI_PADDING["panel"] background R13PaperPanel()
                         vbox:
                             spacing 12
-                            text note["title"] style "r13_key_text" size r13_read_size(23,27) color "#765426"
-                            text note["text"] size r13_read_size(21,25) color "#493b30" xsize 850
-    text "메모를 읽고 정리해도 시간은 흐르지 않습니다." xpos 284 ypos 608 size 17 color "#796044"
+                            text note["title"] style "r13_key_text" size head_size color accent xsize text_w
+                            text note["text"] size body_size color ink xsize text_w
+    # 안내는 하단 버튼 줄 왼쪽(버튼은 오른쪽)에 같은 높이로.
+    text "메모를 읽고 정리해도 시간은 흐르지 않습니다." xpos (R13_NB_LEFT+4) ypos (r13_nb_footer_y()+r13_control_height()//2) yanchor .5 xsize (r13_nb_footer_x(1)-R13_NB_LEFT-20) size (r13_type("small") if R13_TYPE_V2 else 17) color muted

@@ -1,9 +1,15 @@
 :root{--title-w:min(100vw,177.7778vh);--title-h:min(56.25vw,100vh);--title-left:calc((100vw - var(--title-w))/2 + var(--title-w)*.05)}
-html,body{background:#101b37}
+/* 로딩 그림(1280x720)은 엽서 뒤 남색 천이 가장자리라 letterbox 도 같은 남색으로 잇는다. */
+html,body{background:#0a2252}
 #presplash{object-fit:contain;filter:none;image-rendering:auto}
-#loading-brand{left:var(--title-left);top:calc((100vh - var(--title-h))/2 + var(--title-h)*.82);font-family:Galmuri,monospace;color:#edf0ff;text-shadow:0 1px 4px #101b37}
+/* 소유자 결정(2026-10-24) 고딕체. 글꼴 파일을 더 받지 않도록 시스템 고딕으로 떨어진다. */
+/* 안내 줄은 진행 막대(statusDiv) 바로 위에 아래쪽 기준으로 쌓는다. 위쪽 기준이면 음악 안내 줄이 붙을 때 막대와 겹친다. */
+#loading-brand{left:var(--title-left);top:auto;bottom:calc((100vh - var(--title-h))/2 + var(--title-h)*.07 + 2.8em);font-family:Pretendard,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;font-weight:700;color:#edf0ff;text-shadow:0 1px 4px #061535}
 #loading-brand .title-accessible{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 #loading-brand .loading-hint{margin:0;font-size:clamp(12px,calc(var(--title-w)*.015625),20px);color:#edf0ff}
+/* 자동재생이 막힌 동안만 보이는 줄. [hidden] 이 풀리면 안내 줄 바로 아래에 붙는다. */
+#loading-brand .loading-audio-hint{margin:.35em 0 0;font-size:clamp(11px,calc(var(--title-w)*.0125),16px);font-weight:400;color:#c9d0f2}
+#loading-brand .loading-audio-hint[hidden]{display:none}
 #statusDiv{left:var(--title-left);right:auto;bottom:calc((100vh - var(--title-h))/2 + var(--title-h)*.07);width:calc(var(--title-w)*.43);max-width:550px;min-width:0;padding:8px 0;background:transparent;border:0;border-radius:0}
 #statusTextDiv{max-height:10vh;font-size:clamp(11px,calc(var(--title-w)*.01328),17px);color:#d5d8ea}
 #statusProgress{accent-color:#b3b5ff;height:4px;border:0}
@@ -12,3 +18,8 @@ html,body{background:#101b37}
 #ContextContainer{pointer-events:none;right:3px;top:3px}
 #ContextButton{pointer-events:auto;display:block;width:16px;height:16px;padding:0;font-size:13px;line-height:16px}
 #ContextMenu,#ContextMenu a,#ContextMenu input{pointer-events:auto}
+/* 세로 휴대폰: 그림(16:9)이 가운데 띠로만 보이고 위아래가 남색 여백이다. 글을 그림 위에 얹지 않고 아래 여백에 둔다. */
+@media (max-aspect-ratio:1/1){
+#loading-brand{left:5vw;bottom:auto;top:calc(50vh + var(--title-h)/2 + 14px)}
+#statusDiv{left:5vw;bottom:auto;top:calc(50vh + var(--title-h)/2 + 14px + 3.2em);width:90vw;max-width:none}
+}

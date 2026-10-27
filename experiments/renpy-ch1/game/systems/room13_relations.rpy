@@ -191,16 +191,16 @@ screen r13_relations_content(owner,selected,filt,focused=True):
     $ people=r13_rel_people()
     $ selected=selected if selected in people else "daram"
     $ linked={other for other,k,lab in r13_rel_lines_of(selected)}
-    text "알게 된 관계" xpos 282 ypos 66 size r13_read_size(23,26) color "#654b30"
-    textbutton ("전체 관계도" if focused else "인물 중심"):
-        style "r13_paper_tab_button" xpos 704 ypos 62 xsize 160 ysize (56 if r13_touch_ui() else 40) padding (4,0) text_size (22 if r13_touch_ui() else 19) text_yalign .5
-        action Function(r13_record_select,owner,"rel_focus",not focused)
-    add R13PaperFrame() xpos 278 ypos 110 xsize 588 ysize 468
+    # 2026-10-27 수첩 공통 틀: 관계도 판은 틀 안쪽 왼쪽(132,184 588x436), 인물 상세는 오른쪽(736~1206),
+    # 「전체 관계도 / 인물 중심」 전환은 하단 버튼 줄(닫기 왼쪽)로 갔다.
+    text "알게 된 관계" xpos (R13_NB_LEFT+4) ypos R13_NB_TOP xsize 580 size (r13_type("subtitle") if R13_TYPE_V2 else r13_read_size(23,26)) color (r13_type_color("ink") if R13_TYPE_V2 else "#654b30") font R13_UI_BOLD_FONT
+    use r13_nb_footer_button(1,("전체 관계도" if focused else "인물 중심"),Function(r13_record_select,owner,"rel_focus",not focused),control_id="r13_rel_mode")
+    add R13PaperFrame() xpos R13_NB_LEFT ypos (R13_NB_TOP+44) xsize 588 ysize 436
     if focused:
         use r13_relation_focus(owner,selected,filt)
     else:
       fixed:
-        xpos 284 ypos 118 xsize R13_REL_COLS*R13_REL_CELL[0] ysize R13_REL_ROWS*R13_REL_CELL[1]
+        xpos (R13_NB_LEFT+6) ypos (R13_NB_TOP+52) xsize R13_REL_COLS*R13_REL_CELL[0] ysize R13_REL_ROWS*R13_REL_CELL[1]
         add R13RelLines(edges,layout,selected)
         for who in [p for p in people if p in layout]:
             $ x,y=layout[who]
@@ -242,13 +242,13 @@ screen r13_relations_content(owner,selected,filt,focused=True):
                     text (("{s}"+node_name+"{/s}") if kind=="dead" else node_name) xpos 48 xanchor .5 ypos (48 if two_lines else 57) xsize 94 text_align .5 size 16 line_spacing -2 color ("#817366" if kind in ("dead","gone") else "#493b30")
     use r13_relation_detail(owner,selected)
     hbox:
-        xpos 284 ypos 599 spacing 22
+        xpos (R13_NB_LEFT+6) ypos (R13_NB_TOP+488) spacing 22
         for kind,title in (("family","가족"),("work","함께 일함·도움"),("suspect","의심·갈등")):
             hbox:
                 spacing 7
                 add R13RelKey(kind) yalign .5
-                text title size r13_read_size(16,18) color "#65503b"
-    text ("아래 얼굴을 누르면 그 인물의 관계를 봅니다." if focused else "인물을 고른 뒤 「인물 중심」으로 크게 봅니다.") xpos 284 ypos 630 size r13_read_size(16,18) color "#79654e"
+                text title size (r13_type("small") if R13_TYPE_V2 else r13_read_size(16,18)) color (r13_type_color("muted") if R13_TYPE_V2 else "#65503b")
+    text ("아래 얼굴을 누르면 그 인물의 관계를 봅니다." if focused else "인물을 고른 뒤 「인물 중심」으로 크게 봅니다.") xpos (R13_NB_LEFT+6) ypos (R13_NB_TOP+516) xsize 580 size (r13_type("small") if R13_TYPE_V2 else r13_read_size(16,18)) color (r13_type_color("muted") if R13_TYPE_V2 else "#79654e")
 
 screen r13_relation_focus(owner,person,filt):
     $ rows=r13_rel_lines_of(person)
@@ -256,7 +256,7 @@ screen r13_relation_focus(owner,person,filt):
     $ layout={person:(222,92)}
     $ layout.update({other:positions[i] for i,(other,k,lab) in enumerate(rows[:4])})
     fixed:
-        xpos 284 ypos 118 xysize (576,326)
+        xpos (R13_NB_LEFT+6) ypos (R13_NB_TOP+52) xysize (576,326)
         add R13RelLines([(person,other,k,lab) for other,k,lab in rows[:4]],layout,person,{p:((66,56) if p==person else (56,40)) for p in layout})
         use r13_relation_focus_card(owner,person,222,92,True)
         for i,(other,k,lab) in enumerate(rows[:4]):
@@ -270,7 +270,7 @@ screen r13_relation_focus(owner,person,filt):
     # A stable index keeps unrelated residents reachable without tiny graph text.
     viewport:
         id "r13_relation_index"
-        area (288,488,572,88) mousewheel "horizontal" draggable True scrollbars "horizontal" scrollbar_ysize 6 scrollbar_thumb Solid("#a89571") scrollbar_base_bar Solid("#d6bd96")
+        area (R13_NB_LEFT+10,R13_NB_TOP+386,572,88) mousewheel "horizontal" draggable True scrollbars "horizontal" scrollbar_ysize 6 scrollbar_thumb Solid("#a89571") scrollbar_base_bar Solid("#d6bd96")
         hbox:
             spacing 6
             for who in r13_rel_people():
@@ -307,34 +307,39 @@ screen r13_relation_focus_card(owner,person,x,y,primary=False):
             text (("{s}"+r13_display_name(person)+"{/s}") if kind=="dead" else r13_display_name(person)) size (r13_read_size(20,22) if primary else r13_read_size(18,20)) xsize (122 if primary else 102) text_align .5 color "#493b30"
 
 screen r13_relation_detail(owner,person):
-    add R13PaperFrame() xpos 878 ypos 58 xsize 348 ysize 520
+    $ dx=R13_NB_LEFT+604
+    $ dy=R13_NB_TOP
+    $ dw=R13_NB_RIGHT-dx
+    $ dh=r13_nb_body_bottom()-dy
+    $ tw=dw-44
+    add R13PaperFrame() xpos dx ypos dy xsize dw ysize dh
     if person:
         $ kind,label=r13_rel_status(person)
         fixed:
-            xpos 900 ypos 80 xysize (84,84)
+            xpos (dx+22) ypos (dy+22) xysize (84,84)
             add R13PaperPanel() xysize (84,84)
             if kind=="dead":
                 add Transform(r13_rel_face(person),xysize=(76,76),fit="contain",nearest=r13_profile_nearest(person)) at r13_rel_gray xpos 4 ypos 4
             else:
                 add Transform(r13_rel_face(person),xysize=(76,76),fit="contain",nearest=r13_profile_nearest(person),alpha=.6 if kind in ("gone","missing") else 1.0) xpos 4 ypos 4
-        text r13_display_name(person) xpos 998 ypos 85 xsize 206 size r13_read_size(24,27) color "#654b30"
-        text r13_display_role(person) xpos 998 ypos 123 size r13_read_size(16,18) color "#7d6a52" xsize 206
-        add Solid("#c8ac7f") xpos 900 ypos 179 xysize (302,1)
+        text r13_display_name(person) xpos (dx+120) ypos (dy+27) xsize (dw-142) size (r13_type("title") if R13_TYPE_V2 else r13_read_size(24,27)) color (r13_type_color("ink") if R13_TYPE_V2 else "#654b30") font R13_UI_BOLD_FONT
+        text r13_display_role(person) xpos (dx+120) ypos (dy+65) size (r13_type("small") if R13_TYPE_V2 else r13_read_size(16,18)) color (r13_type_color("muted") if R13_TYPE_V2 else "#7d6a52") xsize (dw-142)
+        add Solid("#c8ac7f") xpos (dx+22) ypos (dy+121) xysize (tw,1)
         if label:
             frame:
-                xpos 900 ypos 192 xsize 302 padding (10,7)
+                xpos (dx+22) ypos (dy+134) xsize tw padding (10,7)
                 background Solid({"dead":"#874a3b","saved":"#4d765c","with":"#8a6c3d"}.get(kind,"#696a77"))
-                text label size r13_read_size(18,20) color "#fff3dc"
+                text label size (r13_type("small") if R13_TYPE_V2 else r13_read_size(18,20)) color (r13_type_color("inverse") if R13_TYPE_V2 else "#fff3dc")
         viewport:
-            area (900,246,306,308) mousewheel True draggable True scrollbars "vertical" vscrollbar_unscrollable "hide"
+            area (dx+22,dy+188,tw+4,max(60,dh-188-16)) mousewheel True draggable True scrollbars "vertical" vscrollbar_unscrollable "hide"
             vbox:
                 spacing 12
                 $ rows=r13_rel_lines_of(person)
-                text ("이어진 관계 · %d"%len(rows)) size r13_read_size(19,22) color "#765426"
+                text ("이어진 관계 · %d"%len(rows)) size (r13_type("body") if R13_TYPE_V2 else r13_read_size(19,22)) color (r13_type_color("accent") if R13_TYPE_V2 else "#765426")
                 if rows:
                     for other,k,lab in rows:
                         button:
-                            xsize 286 padding (10,9) background R13PaperPanel() hover_background R13PaperPanel(True)
+                            xsize (tw-16) padding (10,9) background R13PaperPanel() hover_background R13PaperPanel(True)
                             action Function(r13_record_select,owner,"rel_sel",other)
                             alt (r13_display_name(other)+" · "+lab)
                             vbox:
@@ -342,23 +347,23 @@ screen r13_relation_detail(owner,person):
                                 hbox:
                                     spacing 9
                                     add R13RelKey(k) yalign .5
-                                    text (r13_display_name(other)+"  ›") size r13_read_size(19,22) color "#493b30"
-                                text lab size r13_read_size(17,20) color "#766149" xsize 264
+                                    text (r13_display_name(other)+"  ›") size (r13_type("body") if R13_TYPE_V2 else r13_read_size(19,22)) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30") xsize (tw-70)
+                                text lab size (r13_type("small") if R13_TYPE_V2 else r13_read_size(17,20)) color (r13_type_color("muted") if R13_TYPE_V2 else "#766149") xsize (tw-40)
                 else:
-                    text "아직 알게 된 관계가 없다." size r13_read_size(18,21) color "#7d6a52" xsize 286
+                    text "아직 알게 된 관계가 없다." size (r13_type("body") if R13_TYPE_V2 else r13_read_size(18,21)) color (r13_type_color("muted") if R13_TYPE_V2 else "#7d6a52") xsize (tw-16)
                 $ materials=r13_person_materials(person)
                 if materials:
-                    text "남긴 증언" size r13_read_size(19,22) color "#765426"
+                    text "남긴 증언" size (r13_type("body") if R13_TYPE_V2 else r13_read_size(19,22)) color (r13_type_color("accent") if R13_TYPE_V2 else "#765426")
                     for record in materials:
                         textbutton (R13_RECORD_SHORT.get(record,r13_catalog_title(record))+"  ›"):
-                            style "r13_paper_tab_button" xsize 286 ysize 58 text_size r13_read_size(18,20)
+                            style "r13_paper_tab_button" xsize (tw-16) ysize 58 text_size (r13_type("small") if R13_TYPE_V2 else r13_read_size(18,20))
                             action Function(r13_open_person_material,owner,record)
                 $ first=next((m for m in room13.get("encounters",[]) if isinstance(m,dict) and m.get("person")==person),None)
                 if first:
                     null height 4
-                    text "처음 만남" size r13_read_size(19,22) color "#765426"
-                    text ("%d일 · %s\n%s"%(first["day"],("오전","오후","저녁","늦은 저녁")[first["period"]],R13_PLACES.get(first["place"],(first["place"],))[0])) size r13_read_size(18,21) color "#493b30" xsize 286
+                    text "처음 만남" size (r13_type("body") if R13_TYPE_V2 else r13_read_size(19,22)) color (r13_type_color("accent") if R13_TYPE_V2 else "#765426")
+                    text ("%d일 · %s\n%s"%(first["day"],("오전","오후","저녁","늦은 저녁")[first["period"]],R13_PLACES.get(first["place"],(first["place"],))[0])) size (r13_type("body") if R13_TYPE_V2 else r13_read_size(18,21)) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30") xsize (tw-16)
                 null height 4
-                use r13_person_brief(person)
+                use r13_person_brief(person,tw-16)
     else:
-        text "만난 사람이 생기면 관계도가 채워집니다." xpos 900 ypos 278 xsize 302 text_align .5 size 20 color "#625738"
+        text "만난 사람이 생기면 관계도가 채워집니다." xpos (dx+22) ypos (dy+dh//2-20) xsize tw text_align .5 size (r13_type("body") if R13_TYPE_V2 else 20) color (r13_type_color("muted") if R13_TYPE_V2 else "#625738")

@@ -71,9 +71,10 @@ init 112 python:
         #   PC 보통 64(안 56, body 24 두 줄 55) · PC 크게 72(안 64, 28 두 줄 64) · 휴대폰 80(안 72, 30 두 줄 69).
         return 80 if r13_touch_ui() else (72 if persistent.room13_large_text else 64)
 
-    def r13_proof_layout(claim,count,chances,steps_shown,help_text):
+    def r13_proof_layout(claim,count,chances,steps_shown,help_text,note=None):
         """(열 수, 카드 높이, 제목 폭). 다섯 장까지 휴대폰 큰 글씨에서도 스크롤 없이 들어가게 남은 높이로 열을 정한다.
-        휴대폰 크게: 514 − 머리 48 − 단계 42 − 안내 39 − 버튼 88 − 사이 40 = 257 ≥ 두 열 세 줄 3×80+2×8 = 256."""
+        휴대폰 크게: 514 − 머리 48 − 단계 42 − 안내 39 − 버튼 88 − 사이 40 = 257 ≥ 두 열 세 줄 3×80+2×8 = 256.
+        note(2026-10-27 B02: 시작 비용 안내)는 안내 아래 small 한 줄이라, 있을 때만 그 높이와 사이 하나를 더 뺀다."""
         title_size=(r13_type("title") if R13_TYPE_V2 else r13_read_size(30,32))
         small=(r13_type("small") if R13_TYPE_V2 else 22)
         chip_w=(r13_proof_text_size(chances,small)[0]+28) if chances else 0
@@ -81,8 +82,9 @@ init 112 python:
         header=max(r13_proof_text_size(R13_CLAIMS[claim]["assertion"],title_size,title_w)[1],small+12)
         steps=(small+14) if steps_shown else 0
         help_h=r13_proof_text_size(help_text,small,R13_PROOF_INNER_W,heavy=False)[1]
+        note_h=(r13_proof_text_size(note,small,R13_PROOF_INNER_W,heavy=False)[1]+R13_PROOF_GAP) if note else 0
         gaps=R13_PROOF_GAP*(4 if steps_shown else 3)
-        avail=R13_PROOF_INNER_H-header-steps-help_h-r13_control_height()-gaps
+        avail=R13_PROOF_INNER_H-header-steps-help_h-note_h-r13_control_height()-gaps
         card=r13_proof_card_height()
         n=max(1,count)
         cols=1 if n*card+R13_PROOF_CARD_GAP*(n-1)<=avail else 2
@@ -104,7 +106,8 @@ screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장",can_p
     $ chosen=list(room13["arguments"].get(claim,[]))
     $ steps_shown=bool(need_evidence and r13_proof_guide_active())
     $ help_text=(r13_proof_guide_help(len(chosen),chances) if steps_shown else r13_proof_edit_help(chances))
-    $ cols,card_h,title_w=r13_proof_layout(claim,len(chosen),chances,steps_shown,help_text)
+    $ start_note=(r13_v111_proof_start_note(claim) if chances else None)
+    $ cols,card_h,title_w=r13_proof_layout(claim,len(chosen),chances,steps_shown,help_text,start_note)
     $ card_w=(R13_PROOF_INNER_W-R13_PROOF_CARD_GAP*(cols-1))//cols
     $ thumb=card_h-8
     $ name_w=card_w-20-thumb-14-((R13_PROOF_REMOVE_W+12) if need_evidence else 0)
@@ -151,6 +154,9 @@ screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장",can_p
                         text "「자료 고르기」로 담습니다." align (.5,.5) size (r13_type("body") if R13_TYPE_V2 else r13_read_size(23,26)) color (r13_type_color("muted") if R13_TYPE_V2 else "#6b5641")
                 # 안내 한 줄.
                 text help_text size (r13_type("small") if R13_TYPE_V2 else 22) color (r13_type_color("muted") if R13_TYPE_V2 else "#6b5641") xsize R13_PROOF_INNER_W
+                # 2026-10-27 B02: 시작 비용이 적용된 회의(5일 밤이, bami_cold4)에서만 까닭 한 줄. 조건 없는 판은 아무것도 없다.
+                if start_note:
+                    text start_note size (r13_type("small") if R13_TYPE_V2 else 22) color (r13_type_color("muted") if R13_TYPE_V2 else "#6b5641") xsize R13_PROOF_INNER_W
             # 버튼 넷은 공통 부품 규격 한 줄. 주 버튼은 「선택한 근거 제출」 하나.
             hbox:
                 yalign 1.0 spacing R13_CONTROL["gap"]

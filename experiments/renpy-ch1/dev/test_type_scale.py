@@ -16,7 +16,10 @@ TOUCHED=['screens.rpy','systems/room13_night_ui.rpy','systems/room13_notebook_ch
          # 2026-10-27 회의 쪽: 머리띠·이름표·발언 듣는 중·발언 검토·공개 의견·결과 판·자료 대조 패널·쪽지.
          'room13_meeting_seating.rpy','room13_v111_meeting_stage.rpy','systems/room13_meeting_direction.rpy',
          'systems/room13_meeting_flow.rpy','systems/room13_debate.rpy','room13_meeting_retry_ui.rpy',
-         'room13_week2_screens.rpy','systems/room13_choice_issues.rpy']
+         'room13_week2_screens.rpy','systems/room13_choice_issues.rpy',
+         # 2026-10-27 수첩 공통 틀: 틀·사람·메모·달력·소지품 탭과 서랍(기록 화면 안의 조각들).
+         'systems/room13_notebook_shell.rpy','systems/room13_relations.rpy','systems/room13_learning.rpy',
+         'room13_inspection.rpy','systems/room13_evidence_drawer.rpy']
 GUARDED=re.compile(r'r13_type(?:_color)?\("[a-z]+"\)\s+if R13_TYPE_V2 else ')
 HEAD=re.compile(r'^\s+if R13_TYPE_V2:\s*return r13_type(?:_color)?\("[a-z]+"\)')
 

@@ -117,7 +117,21 @@ init 318 python:
         # 2026-10-27 외부 검토 A01·A02(10일 회의): 옛 제목이 「구리선」「수선 출처」「접촉면」으로 비교 방법을 먼저 말해
         # 플레이어가 발견할 몫을 가져갔다. 보이는 제목은 물음만 남기고, 방법은 틀린 뒤 셋째 단계 힌트로 옮겼다.
         "구리선과 수선 출처를 대조한다":"이 핀을 구별할 수 있는가",
-        "접촉면과 아이의 위치를 대조한다":"방금 설명은 물증과 맞는가"}
+        "접촉면과 아이의 위치를 대조한다":"방금 설명은 물증과 맞는가",
+        # 2026-10-27 외부 검토 B01(1일 입구): 「함께 들어갈 근거」만으로는 다람 이름 등록이 목표인 줄 모른다.
+        # 보이는 제목에 목표를 적는다. 키·정답·판정은 그대로다.
+        "함께 들어갈 근거를 고른다":"다람의 이름까지 등록하고 함께 들어갈 근거를 고른다"}
+    # 2026-10-27 외부 검토 B02(5일 회의): 밤이가 울타리 곁에 있었던 판은 회의가 2/3 으로 시작하는데(days45.rpy
+    # r13_v111_proof5 의 gate_post_cold_cost), 화면이 그 까닭을 말하지 않아 「기회를 잃었다」로 읽혔다.
+    # 자료 대조 패널이 그 비용이 적용된 회의에서만 한 줄을 보인다. 어느 자료를 내야 하는지는 적지 않는다.
+    #   {자료 입증 키: (적용 표시 값, 보이는 글)}
+    R13_PROOF_START_COST={"밤이 혐의의 근거를 확인한다":("gate_post_cold_cost","울타리 곁에 있었다는 주장으로 회의가 불리하게 시작됩니다.")}
+    def r13_v111_proof_start_note(claim):
+        """자료 대조 패널의 claim("v111:"+키)에 시작 비용이 적용됐으면 그 안내 한 줄, 아니면 None."""
+        key=claim[5:] if claim.startswith("v111:") else claim
+        flag,text=R13_PROOF_START_COST.get(key,(None,None))
+        if not flag or r13_v111_value(flag) is not True:return None
+        return text
     # 0.20.6: which meeting's chances a proof uses (dev/test_proof_meetings.py re-derives this from the
     # wrong-answer labels). The proof screen shows them; a proof without a meeting shows none.
     R13_PROOF_MEETING={

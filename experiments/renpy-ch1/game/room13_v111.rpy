@@ -250,6 +250,9 @@ label r13_v111_wait_again:
             call r13_v111_wild_family_wait14
             jump r13_v111_wait_again
         if key=="gate_request" and v111_person=="guard":
+            # 2026-10-27 소유자 플레이: 경비를 눌렀는데 그림도 말도 없이 명단 지문이 흐르고 자료가 생겼다.
+            # 명단은 경비에게 보여 달라고 해서 받는 것이므로, 그 주고받기를 먼저 보이고 읽는다.
+            call r13_v111_gate_ledger_hand
             $ r13_v111_time("inspect:gate_request:ledger",15)
             return 0
         if v111_person in r13_visible_people() and r13_v111_idle_ok(v111_person):

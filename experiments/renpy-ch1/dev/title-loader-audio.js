@@ -7,14 +7,25 @@
     audio.preload = 'auto';
     document.body.appendChild(audio);
     let finished = false;
+    // 소유자(2026-10-27): "배경음은 로딩 나올때부터 나와야한다고". 브라우저는 사용자가 한 번 누르기 전에는
+    // 소리를 거부하므로 코드로 더 당길 수 없다. 대신 거부된 동안만 "누르면 켜진다"는 줄을 편다.
+    function audioHint() {
+        return (typeof document.querySelector === 'function') ? document.querySelector('#loading-brand .loading-audio-hint') : null;
+    }
+    function showHint(show) {
+        const hint = audioHint();
+        if (hint) hint.hidden = !show;
+    }
     function start() {
         if (finished || !audio.paused) return;
         // Call synchronously inside the gesture, including on iOS Safari.
-        audio.play().then(() => { if (finished) audio.pause(); }).catch(() => {});
+        audio.play().then(() => { if (finished) audio.pause(); else showHint(false); })
+            .catch(() => { if (!finished) showHint(true); });
     }
     function stop() {
         if (finished) return 0;
         finished = true;
+        showHint(false);
         const position = audio.currentTime || 0;
         audio.pause();
         audio.removeAttribute('src');

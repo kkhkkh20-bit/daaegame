@@ -186,7 +186,9 @@ screen say(who,what):
     else:
         # Approved B notebook dialogue; retain existing controls and story state.
         key "K_h" action Show("r13_backlog")
-        if r13_meeting_active and r13_nw_meeting_claim(r13_meeting_claim):
+        # 2026-10-27 소유자: 회의(오답 뒤) 상태로 돌아온 현장에서 규칙판을 읽어도 돌목·다람 무대가 떴다.
+        # 현장 물건 설명(r13_field_reading)은 무대 없이 현장 그대로 읽는다.
+        if r13_meeting_active and r13_nw_meeting_claim(r13_meeting_claim) and not r13_field_reading:
             use r13_meeting_stage(r13_meeting_claim,r13_meeting_focus_person(r13_meeting_claim),True)
             use r13_meeting_chrome(r13_meeting_claim)
         $ b_face = r13_bdialogue_face(r13_packet[0],r13_fullbody_emotion(r13_directed_pose)) if who and r13_packet and not r13_thought_active and "r13_visitor" not in renpy.get_showing_tags() else None

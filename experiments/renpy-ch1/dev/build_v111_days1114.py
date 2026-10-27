@@ -544,7 +544,7 @@ label('buri_record_answer14');arrive(['mom','daram','buri','resident_ppul','resi
 label('buri_supply_answer14');late(s,45,50);lines.append('    return')
 label('buri_no_transport_answer14');late(s,84,85);lines.append('    return')
 s='MS14_D14_S03';start(s,'gate','granny_interview14',['mom','daram','granny','guard','resident_tosil'],1);late(s,1,11);goto('tosil_listen14')
-label('tosil_listen14');select([('안에서 직접 듣는다','tosil_inside14',None),('보호자와 밖에서 기다린다','tosil_outside14',None)])
+label('tosil_listen14');select([('토실에게 함께 듣겠냐고 묻는다','tosil_inside14',None),('밖에서 기다리고, 확인한 일을 나중에 말해 주겠다고 한다','tosil_outside14',None)])
 label('tosil_inside14');setv('tosil_listen','inside');late(s,12,35);setv('bomi_death_confirmed',True);setv('adult_interview_done',True);late(s,36,36);goto('name_board14')
 label('tosil_outside14');setv('tosil_listen','outside');setv('location:resident_tosil','outside_guard');late(s,18,24);late(s,30,32);setv('bomi_death_confirmed',True);setv('adult_interview_done',True);late(s,36,39);goto('name_board14')
 s='MS14_D14_S04';start(s,'square','name_board14',['mom','daram','resident_tosil','npc_pandol'],2);late(s,1,2)

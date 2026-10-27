@@ -52,7 +52,8 @@ class MeetingStage(unittest.TestCase):
         # 0.19.98: old debates keep their boxed screen; new-world meeting lines use the night
         # dialogue with the same meeting stage and header.
         self.assertIn('r13_meeting_claim in R13_DEBATE and not r13_nw_meeting_claim(r13_meeting_claim)',say)
-        self.assertIn('if r13_meeting_active and r13_nw_meeting_claim(r13_meeting_claim):\n            use r13_meeting_stage(',say)
+        # 2026-10-27: 회의 상태로 돌아온 현장에서 물건을 읽을 때(r13_field_reading)는 무대를 깔지 않는다.
+        self.assertIn('if r13_meeting_active and r13_nw_meeting_claim(r13_meeting_claim) and not r13_field_reading:\n            use r13_meeting_stage(',say)
         self.assertIn('use r13_meeting_tools(r13_meeting_claim,r13_meeting_live_target())',say)
         more=(GAME/'systems/room13_playback.rpy').read_text()
         self.assertIn('if r13_meeting_active and not r13_nw_meeting_claim(r13_meeting_claim):\n        use r13_meeting_more_tools',more)

@@ -27,7 +27,7 @@ class StoryMaster(unittest.TestCase):
             self.assertRegex(self.text, r'### %s `%s` · [^\n]* · 기회 %d\n' % (name, key, tries))
 
     def test_endings_and_judges_are_listed(self):
-        for title in ('남겨진 이름', '얼어붙은 마을', '함께 떠난 가족', '남은 사람들', '상처 입은 귀환', '마을의 아침', '새로운 아침'):
+        for title in ('남겨진 이름', '얼어붙은 마을', '가족을 택한 밤', '남은 사람들', '상처 입은 귀환', '마을의 아침', '새로운 아침'):
             self.assertIn(title, self.text)
         for fn in ('def r13_nw_ending14', 'def r13_nw_true_ending_ready', 'def r13_nw_dead'):
             self.assertIn(fn, self.text)

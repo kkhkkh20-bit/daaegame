@@ -374,8 +374,8 @@ screen r13_book(target=None,present=False,hearing=False,called=False,purpose=Non
         # 묶음을 고르는 동안에도 회의·대화를 그만둘 수 있게 「돌아가기」(또는 「선택 마치기」)는 늘 같은 자리에 둔다.
         $ stop_h=r13_ev_button_height()
         fixed:
-            xpos 920 ypos (R13_EV_BOTTOM-stop_h) xysize (296,stop_h)
-            use r13_control(book_copy["stop"],None,(Return(False) if present or called else Hide("r13_book")),enabled=ready,width=296,height=stop_h,label_size=r13_ev_label_size(book_copy["stop"],296),control_id="r13_ev_stop")
+            xpos R13_EV_RIGHT_X ypos (R13_EV_BOTTOM-stop_h) xysize (R13_EV_RIGHT_W,stop_h)
+            use r13_control(book_copy["stop"],None,(Return(False) if present or called else Hide("r13_book")),enabled=ready,width=R13_EV_RIGHT_W,height=stop_h,label_size=r13_ev_label_size(book_copy["stop"],R13_EV_RIGHT_W),control_id="r13_ev_stop")
     else:
         use r13_evidence_browser(entries,selected_record,page,"r13_book",pair,pair_slot,archive and not present,view_context,
             (r13_drawer_header(drawer,drawer_all,(drawer_view[0],entries),drawer_case) if drawer_on else ("자료 %d개"%len(entries))+((" · "+day_span) if day_span else "")),
@@ -385,34 +385,38 @@ screen r13_book(target=None,present=False,hearing=False,called=False,purpose=Non
 
 screen r13_calendar_content():
     default week=min(1,(room13["day"]-1)//7)
-    text "달력" xpos 284 ypos 72 size 26 color "#765426"
-    text ("%d주째"%(week+1)) xpos 1070 ypos 76 size 22 color "#796044"
+    # 2026-10-27 수첩 공통 틀: 달력 한 주(7칸 x 128)는 틀 안쪽 132 부터, 지난 주·다음 주는 하단 버튼 줄로.
+    $ body_size=(r13_type("body") if R13_TYPE_V2 else r13_read_size(21,25))
+    $ small_size=(r13_type("small") if R13_TYPE_V2 else 18)
+    $ ink=(r13_type_color("ink") if R13_TYPE_V2 else "#493b30")
+    $ muted=(r13_type_color("muted") if R13_TYPE_V2 else "#796044")
+    $ accent=(r13_type_color("accent") if R13_TYPE_V2 else "#765426")
+    text "달력" xpos (R13_NB_LEFT+4) ypos R13_NB_TOP size (r13_type("subtitle") if R13_TYPE_V2 else 26) color ink font R13_UI_BOLD_FONT
+    text ("%d주째"%(week+1)) xpos R13_NB_RIGHT xanchor 1.0 ypos (R13_NB_TOP+6) size (r13_type("body") if R13_TYPE_V2 else 22) color muted font R13_UI_BOLD_FONT
     for i in range(7):
-        text r13_weekday(week*7+1+i) xpos 302+i*128 ypos 128 size 22 color "#493b30"
+        text r13_weekday(week*7+1+i) xpos (R13_NB_LEFT+18+i*128) ypos (R13_NB_TOP+52) size (r13_type("body") if R13_TYPE_V2 else 22) color ink
     for day in range(week*7+1,week*7+8):
         frame:
-            area (284+((day-1)%7)*128,170,120,128)
+            area (R13_NB_LEFT+((day-1)%7)*128,R13_NB_TOP+86,120,116)
             background R13PaperPanel(day==room13["day"]) padding (10,12)
             vbox:
-                spacing 14
-                text (str(day)+"일") size r13_read_size(23,27) color "#493b30"
+                spacing 10
+                text (str(day)+"일") size (r13_type("emphasis") if R13_TYPE_V2 else r13_read_size(23,27)) color ink
                 if day==room13["day"]:
-                    text "오늘" size 18 color "#765426"
+                    text "오늘" size small_size color accent
                 elif day<room13["day"]:
-                    text "지난 날" size 16 color "#796044"
-    text "확인한 약속" xpos 284 ypos 334 size 23 color "#765426"
+                    text "지난 날" size small_size color muted
+    text "확인한 약속" xpos (R13_NB_LEFT+4) ypos (R13_NB_TOP+220) size (r13_type("body") if R13_TYPE_V2 else 23) color accent font R13_UI_BOLD_FONT
     viewport:
-        area (284,378,918,194) mousewheel True draggable True scrollbars "vertical"
+        area (R13_NB_LEFT,R13_NB_TOP+256,R13_NB_WIDTH,max(60,r13_nb_body_bottom()-(R13_NB_TOP+256))) mousewheel True draggable True scrollbars "vertical"
         vbox:
             spacing 14
             for promise in r13_calendar_promises():
-                text promise size r13_read_size(21,25) color "#493b30" xsize 886
+                text promise size body_size color ink xsize (R13_NB_WIDTH-40)
             if not r13_calendar_promises():
-                text "날짜가 정해진 새 약속은 아직 없다." size 21 color "#796044"
-    hbox:
-        xpos 864 ypos 596 spacing 12
-        textbutton "지난 주" style "r13_compact_button" xsize 158 ysize (56 if r13_touch_ui() else 44) text_size (22 if r13_touch_ui() else 19) sensitive week>0 action Function(r13_record_select,_scope,"week",week-1)
-        textbutton "다음 주" style "r13_compact_button" xsize 158 ysize (56 if r13_touch_ui() else 44) text_size (22 if r13_touch_ui() else 19) sensitive week<1 action Function(r13_record_select,_scope,"week",week+1)
+                text "날짜가 정해진 새 약속은 아직 없다." size body_size color muted xsize (R13_NB_WIDTH-40)
+    use r13_nb_footer_button(2,"지난 주",Function(r13_record_select,_scope,"week",week-1),enabled=week>0,control_id="r13_cal_prev")
+    use r13_nb_footer_button(1,"다음 주",Function(r13_record_select,_scope,"week",week+1),enabled=week<1,control_id="r13_cal_next")
 
 screen r13_debate(claim):
     style_prefix "r13"

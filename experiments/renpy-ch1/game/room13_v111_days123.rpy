@@ -112,6 +112,11 @@ label r13_v111_gate_request:
         jump r13_v111_gate_list
     jump r13_v111_gate_request
 
+label r13_v111_gate_ledger_hand:
+    # 2026-10-27 소유자 플레이: 경비를 누르면 말 없이 명단 지문이 흘렀다. 보여 달라고 해서 받는 주고받기.
+    call r13_lines(r13_nw_block('gate_ledger_hand'),'nw:gate_ledger_hand')
+    return
+
 label r13_v111_gate_list:
     $ r13_v111_scene('MS14_D01_S02')
     $ r13_v111_score()
@@ -180,7 +185,9 @@ label r13_v111_gate_investigate:
 label r13_v111_gate_read_original:
     $ r13_v111_scene('MS14_D01_S03')
     $ r13_v111_score()
+    $ r13_field_reading=True
     call r13_lines(r13_v111_lines(['MS14_D01_S03_L0002']), 'v111:gate_read_original:MS14_D01_S03_L0002')
+    $ r13_field_reading=False
     $ r13_v111_commit('MS14_D01_S03_L0002')
     call r13_lines(r13_v111_lines(['MS14_D01_S03_L0003', 'MS14_D01_S03_L0004', 'MS14_D01_S03_L0005', 'MS14_D01_S03_L0006']), 'v111:gate_read_original:MS14_D01_S03_L0003')
     jump r13_v111_gate_investigate
@@ -188,13 +195,17 @@ label r13_v111_gate_read_original:
 label r13_v111_gate_read_rules:
     $ r13_v111_scene('MS14_D01_S03')
     $ r13_v111_score()
+    $ r13_field_reading=True
     call r13_lines(r13_v111_lines(['MS14_D01_S03_L0007']), 'v111:gate_read_rules:MS14_D01_S03_L0007')
+    $ r13_field_reading=False
     $ r13_v111_commit('MS14_D01_S03_L0007')
     jump r13_v111_gate_investigate
 
 label r13_v111_gate_reread_list:
     show screen r13_material_corner('V111:E02')
+    $ r13_field_reading=True
     call r13_lines([(None,ROOM13["evidence"]['V111:E02']["establishes"])],'v111:read:gate_reread_list')
+    $ r13_field_reading=False
     hide screen r13_material_corner
     jump r13_v111_gate_investigate
 

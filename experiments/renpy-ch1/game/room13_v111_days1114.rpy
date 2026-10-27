@@ -2538,6 +2538,8 @@ label r13_v111_relay_present13:
 
 label r13_v111_relay_confirmed13:
     $ r13_v111_set('relay_stopped',True)
+    # 2026-10-27 외부 검토 B04: 올바른 사본을 받고도 너울이 아무 말 없이 목록으로 돌아가 「받아들여졌는지」가 보이지 않았다.
+    call r13_lines(r13_nw_block('relay_confirmed13'),'nw:relay_confirmed13')
     jump r13_v111_transport_cleanup13
 
 label r13_v111_buri_tools13:
@@ -3277,9 +3279,9 @@ label r13_v111_granny_interview14:
 
 label r13_v111_tosil_listen14:
     menu:
-        '안에서 직접 듣는다':
+        '토실에게 함께 듣겠냐고 묻는다':
             jump r13_v111_tosil_inside14
-        '보호자와 밖에서 기다린다':
+        '밖에서 기다리고, 확인한 일을 나중에 말해 주겠다고 한다':
             jump r13_v111_tosil_outside14
 
 label r13_v111_tosil_inside14:

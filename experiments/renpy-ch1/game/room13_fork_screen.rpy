@@ -63,7 +63,7 @@ init 322 python:
             r13_v111_set('fate:'+key,result)
             r13_fork_record(key,result)
 
-    R13_FORK_ENDINGS = dict(left_name='남겨진 이름',frozen='얼어붙은 마을',family='함께 떠난 가족',partial='남은 사람들',violence='상처 입은 귀환',morning='마을의 아침',true='새로운 아침',wild_night='불타는 밤')
+    R13_FORK_ENDINGS = dict(left_name='남겨진 이름',frozen='얼어붙은 마을',family='가족을 택한 밤',partial='남은 사람들',violence='상처 입은 귀환',morning='마을의 아침',true='새로운 아침',wild_night='불타는 밤')
 
     def r13_fork_start():
         persistent.r13_fork_runs = (persistent.r13_fork_runs or 0)+1
@@ -243,19 +243,9 @@ screen r13_fork_screen():
     $ small = 18 if touch else 16
     $ ch = r13_control_height()
     $ by = 684-ch
-    add Solid('#05070fa6')
-    add r13_asset_path("file:assets/ui-b-options/b_opt_panel.png") xpos -4 ypos -4
-    text '이야기의 갈림길' xpos 114 ypos 68 size 34 color '#263b52' font R13_UI_BOLD_FONT
-    text '기록 / 지나온 이야기' xpos 114 ypos 110 size small color '#756f66' font R13_UI_BOLD_FONT
-    text ('%d회차 · %d일째' % (room13['v111'].get('fork_run',1),room13['day'])) xpos 1150 xanchor 1.0 ypos 78 size (small+2) color '#263b52' font R13_UI_BOLD_FONT
-    button:
-        id 'r13_fork_close'
-        xpos (1170 if touch else 1176) ypos (52 if touch else 60) xysize ((64,64) if touch else (52,52))
-        background None hover_background Solid('#fff6e214')
-        action Hide('r13_fork_screen') alt '닫기'
-        add Transform(r13_asset_path("file:assets/ui-b-options/b_opt_close.png"),xysize=(40,40)) align (.5,.5)
-    add r13_asset_path("file:"+(R13_NIGHT_UI+'diamond.png')) xpos 94 ypos 145
-    add Solid('#c9a86a99') xpos 104 ypos 149 xsize 1096 ysize 1
+    # 2026-10-27 수첩 공통 틀(systems/room13_notebook_shell.rpy): 판·제목·부제·회차·닫기 X·금색 선은 기록 화면과 같은 자리.
+    use r13_notebook_shell('이야기의 갈림길',subtitle='기록 / 지나온 이야기',close_action=Hide('r13_fork_screen'),
+        stamp=('%d회차 · %d일째' % (room13['v111'].get('fork_run',1),room13['day'])),rule_y=149)
     # Legend (mockup row): this run, other runs, unseen (count only), a fate meeting.
     hbox:
         xpos 114 ypos 162 spacing 22
@@ -309,10 +299,10 @@ screen r13_fork_screen():
             action SetScreenVariable('fate_open',None) alt R13_FORK_FATE_LINE
             text R13_FORK_FATE_LINE size small color '#263b52' font R13_UI_BOLD_FONT xsize 208
     add r13_asset_path("file:"+(R13_NIGHT_UI+'diamond.png')) xpos 114 ypos (by-18)
-    add Solid('#c9a86a99') xpos 114 ypos (by-14) xsize 1082 ysize 1
+    add Solid('#c9a86a99') xpos 114 ypos (by-14) xsize (R13_NB_RIGHT-114) ysize 1
     text '지나온 길을 모아, 다음 이야기를 찾아요.' xpos 114 ypos (by+ch//2) yanchor .5 size small color '#756f66' font R13_UI_BOLD_FONT
     viewport:
-        area (470,by,390,ch) draggable True mousewheel 'horizontal'
+        area (470,by,R13_NB_RIGHT-R13_NB_BUTTON_W-2*R13_NB_GAP-160-12-470,ch) draggable True mousewheel 'horizontal'
         hbox:
             spacing 16 yalign .5
             for ending,record in sorted((persistent.r13_fork_endings or {}).items()):
@@ -324,14 +314,12 @@ screen r13_fork_screen():
                         text ('지난 결말 · %d회차'%record['run']) size small color '#756f66' font R13_UI_BOLD_FONT
                         text R13_FORK_ENDINGS.get(ending,'') size small color '#354151' font R13_UI_BOLD_FONT
     fixed:
-        xpos 880 ypos by xysize (80,ch)
+        xpos (R13_NB_RIGHT-R13_NB_BUTTON_W-2*R13_NB_GAP-160) ypos by xysize (80,ch)
         use r13_control('‹',None,SetScreenVariable('first',max(0,first-1)),width=80,enabled=first>0,control_id='r13_fork_prev')
     fixed:
-        xpos 972 ypos by xysize (80,ch)
+        xpos (R13_NB_RIGHT-R13_NB_BUTTON_W-R13_NB_GAP-80) ypos by xysize (80,ch)
         use r13_control('›',None,SetScreenVariable('first',min(max(0,len(columns)-6),first+1)),width=80,enabled=first+6<len(columns),control_id='r13_fork_next')
-    fixed:
-        xpos 1080 ypos by xysize (136,ch)
-        use r13_control('닫기',None,Hide('r13_fork_screen'),width=136,control_id='r13_fork_done')
+    use r13_nb_footer_button(0,'닫기',Hide('r13_fork_screen'),control_id='r13_fork_done')
     key 'K_LEFT' action SetScreenVariable('first',max(0,first-1))
     key 'K_RIGHT' action SetScreenVariable('first',min(max(0,len(columns)-6),first+1))
     key 'game_menu' action Hide('r13_fork_screen')

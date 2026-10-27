@@ -78,12 +78,12 @@ init 68 python:
         if kind=="unread":return [key for key in entries if r13_record_unread(key) or key in r13_unread_hold]
         return entries
 
-    # Keep every record footer inside the sheet (bottom 676), with a 16px inset.
+    # 2026-10-27 수첩 공통 틀: 하단 버튼 줄은 틀의 아래(R13_NB_BOTTOM=684)에 공통 부품 높이로 붙는다.
     def r13_record_footer_height():
         return r13_control_height()
 
     def r13_record_footer_y():
-        return 660-r13_record_footer_height()
+        return globals().get("R13_NB_BOTTOM",684)-r13_record_footer_height()
 
     def r13_material_filter_choices(current,allow_transfer=True):
         owned=r13_catalog_entries(False,False)
@@ -256,33 +256,8 @@ init 71:
         insensitive_color "#72786a"
 
 
-screen r13_reference_record_shell(title):
-    add Solid("#211b1899")
-    add R13TravelSheet() xpos 36 ypos 36 xsize 1208 ysize 640
-    add R13PaperFrame() xpos 54 ypos 54 xsize 200 ysize 596
-    text title xpos 76 ypos 72 size 28 color "#493323" font R13_UI_BOLD_FONT
-
-screen r13_reference_record_categories(owner,current,present=False,archive=False):
-    vbox:
-        xpos 66 ypos 128 spacing 10
-        # 0.19.2 빼기 정리: 탭 6 → 4. 인물은 「사람」(관계도)에, 달력은 「메모」 안으로 합쳤다.
-        for key,title,icon in (("all","자료","record"),("relations","사람","people"),("dialogue","대화","dialogue"),("notes","메모","investigate")):
-            if not present or key=="all":
-                button:
-                    style "r13_paper_tab_button" xsize 176 ysize (80 if r13_touch_ui() else 56)
-                    selected (current==key or (key=="notes" and current=="calendar") or (key=="relations" and current=="people")) alt title
-                    action ((Show("r13_learning_notes") if key=="notes" and isinstance(owner,str) else
-                        [Function(r13_record_select,owner,"category" if owner=="r13_book" else "tab",key),Function(r13_record_select,owner,"detail",None),Function(r13_record_select,owner,"page",0)]))
-                    hbox:
-                        xalign .5 yalign .5 spacing 10
-                        add R13AntiqueIcon(icon,size=24) yalign .5
-                        text title size r13_read_size(20,24) font R13_UI_BOLD_FONT color ("#fff0ce" if current==key else "#493b30") yalign .5
-
-    if r13_v111_active() and not present:
-        textbutton "갈림길":
-            style "r13_paper_tab_button" xpos 66 ypos (488 if r13_touch_ui() else 392)
-            xsize 176 ysize (80 if r13_touch_ui() else 56) text_size r13_read_size(20,24)
-            action Show("r13_fork_screen")
+# 2026-10-27: 옛 종이 틀(r13_reference_record_shell)과 왼쪽 세로 메뉴(r13_reference_record_categories)는
+# 수첩 공통 틀(systems/room13_notebook_shell.rpy)과 상단 탭 줄로 바뀌어 지웠다.
 
 screen r13_record_filters(owner,order,archive=False):
     hbox:
@@ -296,19 +271,19 @@ screen r13_record_filters(owner,order,archive=False):
 # They were only ever `use`d inside r13_records / r13_book, never shown on their own.
 
 # 0.19.2: 「인물」 탭을 「사람」(관계도)에 합치며, 인물 기록은 관계도 오른쪽 상세 아래에 붙는다.
-screen r13_person_brief(person):
+screen r13_person_brief(person,width=286):
     vbox:
         spacing 8
         $ topics=r13_note_topics(person)
         $ shown=[e.split(":")[0] for e in room13.get("resident_knowledge",{}).get(person,[]) if e.split(":")[0] in ROOM13["evidence"]]
         if topics:
-            text ("들은 이야기 · %d"%len(topics)) size r13_read_size(17,20) color "#765426"
+            text ("들은 이야기 · %d"%len(topics)) size (r13_type("body") if R13_TYPE_V2 else r13_read_size(17,20)) color (r13_type_color("accent") if R13_TYPE_V2 else "#765426")
             for title in topics:
-                text ("· "+title) size r13_read_size(16,19) color "#493b30" xsize 286
+                text ("· "+title) size (r13_type("small") if R13_TYPE_V2 else r13_read_size(16,19)) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30") xsize width
         if shown:
-            text ("보여 준 자료 · %d"%len(shown)) size r13_read_size(17,20) color "#765426"
+            text ("보여 준 자료 · %d"%len(shown)) size (r13_type("body") if R13_TYPE_V2 else r13_read_size(17,20)) color (r13_type_color("accent") if R13_TYPE_V2 else "#765426")
             for record_id in shown:
-                text ("· "+ROOM13["evidence"][record_id]["name"]) size r13_read_size(16,19) color "#625738" xsize 286
+                text ("· "+ROOM13["evidence"][record_id]["name"]) size (r13_type("small") if R13_TYPE_V2 else r13_read_size(16,19)) color (r13_type_color("muted") if R13_TYPE_V2 else "#625738") xsize width
 
 # 2026-10-27 타이포 시안(R13_TYPE_V2): 자료 탭의 크기·색은 systems/room13_evidence_view.rpy, 대화 기록·닫기는 여기서 바꾼다.
 screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=None,present_action=None):
@@ -379,32 +354,33 @@ screen r13_records(initial_tab="all",note_focus=None,close_action=None,target=No
             use r13_ink_chips(r13_ev_filter_chips(_scope,material_filter,not archive,(None if archive else shelf),len(r13_catalog_entries(shelf=True)),(archive if archive or r13_learning_archive_keys() else None)))
             use r13_evidence_browser(entries,selected_record,page,_scope,pair,pair_slot,archive,("records",),header)
     else:
-        use r13_reference_record_shell("기록")
-        use r13_reference_record_categories(_scope,tab,archive=archive)
+        # 2026-10-27 수첩 공통 틀: 사람·대화·메모·달력도 자료 탭과 같은 판·같은 상단 탭 줄을 쓴다. 왼쪽 세로 메뉴는 없앴다.
+        # 달력은 메모의 한 쪽이라 탭 줄에서는 「메모」가 켜진다. 하단 버튼 줄은 오른쪽 아래 한 줄(닫기가 맨 오른쪽).
+        use r13_ink_record_shell("기록",r13_ev_record_tabs(_scope),("notes" if tab=="calendar" else tab),(close_action or Hide("r13_records")))
         if tab=="relations":
             use r13_relations_content(_scope,rel_sel,rel_filter,rel_focus)
         elif tab=="notes":
             use r13_learning_notes_content(note_focus)
-            textbutton "달력 ›" style "r13_paper_tab_button" xpos 1090 ypos 70 xsize 120 ysize (56 if r13_touch_ui() else 40) text_size (22 if r13_touch_ui() else 18) action Function(r13_record_select,_scope,"tab","calendar")
+            use r13_nb_footer_button(1,"달력 ›",Function(r13_record_select,_scope,"tab","calendar"),control_id="r13_nb_calendar")
         elif tab=="calendar":
             use r13_calendar_content()
-            textbutton "‹ 메모" style "r13_paper_tab_button" xpos 400 ypos 70 xsize 120 ysize (56 if r13_touch_ui() else 40) text_size (22 if r13_touch_ui() else 18) action Function(r13_record_select,_scope,"tab","notes")
+            use r13_nb_footer_button(3,"‹ 메모",Function(r13_record_select,_scope,"tab","notes"),control_id="r13_nb_notes")
         elif tab=="items":
             use r13_item_bag_content()
         else:
-            text "실제로 지나간 대화" xpos 292 ypos 88 size (r13_type("subtitle") if R13_TYPE_V2 else 23) color (r13_type_color("muted") if R13_TYPE_V2 else "#65503b")
+            text "실제로 지나간 대화" xpos (R13_NB_LEFT+4) ypos R13_NB_TOP xsize (R13_NB_WIDTH-8) size (r13_type("subtitle") if R13_TYPE_V2 else 23) color (r13_type_color("ink") if R13_TYPE_V2 else "#65503b") font R13_UI_BOLD_FONT
             viewport:
-                area (280,134,930,472) mousewheel True draggable True scrollbars "vertical"
+                area (R13_NB_LEFT,R13_NB_TOP+48,R13_NB_WIDTH,r13_nb_body_bottom()-(R13_NB_TOP+48)) mousewheel True draggable True scrollbars "vertical"
                 vbox:
                     spacing 12
                     for row in r13_history_rows():
                         frame:
-                            xsize 900 padding (16,12) background R13PaperPanel()
+                            xsize (R13_NB_WIDTH-34) padding (16,12) background R13PaperPanel()
                             vbox:
                                 spacing 6
-                                text (row["who"]+" · "+row["stamp"]) size (r13_type("small") if R13_TYPE_V2 else 17) color (r13_type_color("muted") if R13_TYPE_V2 else "#625738") xsize 864
-                                text row["what"] size (r13_type("emphasis") if R13_TYPE_V2 else r13_read_size(21,26)) color (r13_role_color("thought","paper") if row["kind"]=="독백" else r13_role_color("narration","paper") if row["kind"]=="서술" else r13_role_color("speech","paper")) xsize 864
-        textbutton "닫기" style "r13_compact_button" xpos 66 ypos r13_record_footer_y() xsize 176 ysize r13_record_footer_height() text_size (r13_type("body") if R13_TYPE_V2 else r13_read_size(20,23)) action (close_action or Hide("r13_records"))
+                                text (row["who"]+" · "+row["stamp"]) size (r13_type("small") if R13_TYPE_V2 else 17) color (r13_type_color("muted") if R13_TYPE_V2 else "#625738") xsize (R13_NB_WIDTH-70)
+                                text row["what"] size (r13_type("emphasis") if R13_TYPE_V2 else r13_read_size(21,26)) color (r13_role_color("thought","paper") if row["kind"]=="독백" else r13_role_color("narration","paper") if row["kind"]=="서술" else r13_role_color("speech","paper")) xsize (R13_NB_WIDTH-70)
+        use r13_nb_footer_button(0,"닫기",(close_action or Hide("r13_records")),control_id="r13_nb_close")
     key "game_menu" action (close_action or Hide("r13_records"))
 
 screen r13_resident_notes():

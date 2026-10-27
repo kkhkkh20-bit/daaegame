@@ -374,25 +374,26 @@ screen r13_item_bag():
     use r13_records(initial_tab="all",close_action=Hide("r13_item_bag"))
 
 screen r13_item_bag_content():
-    text "아이템" xpos 284 ypos 72 size 26 color "#765426"
+    # 2026-10-27 수첩 공통 틀 좌표. (r13_item_bag 은 initial_tab="all" 로 열어 실제로는 자료 탭이 보인다.)
+    text "아이템" xpos (R13_NB_LEFT+4) ypos R13_NB_TOP size (r13_type("subtitle") if R13_TYPE_V2 else 26) color (r13_type_color("ink") if R13_TYPE_V2 else "#765426") font R13_UI_BOLD_FONT
     viewport:
-        area (284,132,918,434) mousewheel True draggable True scrollbars "vertical"
+        area (R13_NB_LEFT,R13_NB_TOP+48,R13_NB_WIDTH,r13_nb_body_bottom()-(R13_NB_TOP+48)) mousewheel True draggable True scrollbars "vertical"
         vbox:
             spacing 16
             for key in r13_inspection_state()["inventory"]:
                 frame:
-                    xsize 886 padding (18,16) background R13PaperPanel()
+                    xsize (R13_NB_WIDTH-34) padding (18,16) background R13PaperPanel()
                     hbox:
                         spacing 18
                         add r13_inspection_icon(key,62,56)
                         vbox:
                             spacing 8
-                            text R13_INSPECTION_ITEMS[key][0] size r13_read_size(23,27) color "#765426"
-                            text R13_INSPECTION_ITEMS[key][1] size r13_read_size(20,24) color "#493b30" xsize 750
+                            text R13_INSPECTION_ITEMS[key][0] size (r13_type("emphasis") if R13_TYPE_V2 else r13_read_size(23,27)) color (r13_type_color("accent") if R13_TYPE_V2 else "#765426") xsize (R13_NB_WIDTH-150)
+                            text R13_INSPECTION_ITEMS[key][1] size (r13_type("body") if R13_TYPE_V2 else r13_read_size(20,24)) color (r13_type_color("ink") if R13_TYPE_V2 else "#493b30") xsize (R13_NB_WIDTH-150)
             if not r13_inspection_state()["inventory"]:
-                text "아직 챙긴 도구가 없다." size 22 color "#796044"
+                text "아직 챙긴 도구가 없다." size (r13_type("body") if R13_TYPE_V2 else 22) color (r13_type_color("muted") if R13_TYPE_V2 else "#796044")
     if r13_tool_notes():
-        textbutton "돋보기 관찰 메모" style "r13_compact_button" area (284,596,330,44) text_size 20 action Show("r13_tool_notebook")
+        use r13_nb_footer_button(1,"돋보기 관찰 메모",Show("r13_tool_notebook"),width=R13_CONTROL["width"],control_id="r13_nb_tool_notes")
 
 label r13_inspect_desk:
     if not r13_inspection_available():

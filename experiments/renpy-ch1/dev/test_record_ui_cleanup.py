@@ -33,28 +33,28 @@ class RecordCleanup(unittest.TestCase):
   self.assertTrue(env['r13_material_filters_visible']('all',True,True,0))
   self.assertFalse(env['r13_material_filters_visible']('all',True,None,3))
  def test_all_footer_modes_have_sheet_inset_and_content_gap(self):
+  # 2026-10-27 수첩 공통 틀: 하단 버튼 줄은 갈림길과 같은 684 에서 끝나고, 모든 탭의 닫기는
+  # systems/room13_notebook_shell.rpy 의 r13_nb_footer_button(0,...) 으로 오른쪽 아래 한 줄에 선다.
   for height in (64,80):
    env=self.env(height=height);y=env['r13_record_footer_y']()
-   self.assertEqual(y+env['r13_record_footer_height'](),660)
-   self.assertEqual(676-(y+height),16)
-   self.assertGreaterEqual(y-572,8)
-  # 0.20.x 증거 비교 창: the 자료 view moved to the brown sheet (dev/test_evidence_view.py); the paper
-  # tabs (사람·대화·메모) keep this footer for their 닫기.
-  self.assertIn('xpos 66 ypos r13_record_footer_y() xsize 176 ysize r13_record_footer_height()',NOTE)
+   self.assertEqual(y+env['r13_record_footer_height'](),684)
+  self.assertIn('use r13_nb_footer_button(0,"닫기",(close_action or Hide("r13_records")),control_id="r13_nb_close")',NOTE)
+  self.assertNotIn('screen r13_reference_record_shell',NOTE)
+  self.assertNotIn('screen r13_reference_record_categories',NOTE)
  def test_source_expand_is_one_way_and_scroll_is_retained(self):
   # 0.20.x: the fold lives in systems/room13_evidence_view.rpy (right column of the 자료 view).
   # 0.20.7: one toggle button (출처 펼치기 / 출처 접기) in the same place.
   self.assertIn('("출처 접기" if origin_open else "출처 펼치기")',VIEW)
   self.assertIn('SetLocalVariable("origin_open",not origin_open)',VIEW)
   self.assertIn('yadjustment detail_scroll',VIEW)
-  self.assertIn('area (916,116,304,max(60,reading_bottom-116)) mousewheel True draggable True scrollbars ("vertical" if (detail or present) else None)',VIEW)  # 0.20.6: no empty scrollbar
+  self.assertIn('area (rx,R13_EV_TOP,R13_EV_RIGHT_W+8,max(60,reading_bottom-R13_EV_TOP)) mousewheel True draggable True scrollbars ("vertical" if (detail or present) else None)',VIEW)  # 0.20.6: no empty scrollbar
   self.assertIn('$ reading_bottom=R13_EV_BOTTOM-buttons*bh-max(0,buttons-1)*12-16',VIEW)
  def test_old_relationship_filters_are_neutralized(self):
   self.assertIn('$ rel_filter="all"',NOTE)
   self.assertIn('$ filt="all"',REL)
   self.assertNotIn('selected filt==key',REL)
   self.assertNotIn('살아 있음 %d',REL)
-  self.assertIn('xpos 278 ypos 110 xsize 588 ysize 468',REL)
+  self.assertIn('xpos R13_NB_LEFT ypos (R13_NB_TOP+44) xsize 588 ysize 436',REL)  # 2026-10-27 수첩 공통 틀 안쪽
  def test_admin_exit_does_not_cover_header_arrows(self):
   self.assertIn('xpos 942 ypos 92 xsize 314 ysize (80 if r13_touch_ui() else 56)',ADMIN)
   self.assertGreaterEqual(92-84,8)
