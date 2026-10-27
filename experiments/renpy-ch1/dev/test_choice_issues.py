@@ -146,7 +146,8 @@ class FirstTimeGuides(unittest.TestCase):
         ns['r13_recovery_retry_seen']()
         self.assertIsNone(ns['r13_recovery_retry_note']())
         # 이름이 실제 버튼과 같다.
-        tools=(GAME/'systems/room13_playback.rpy').read_text()+(GAME/'systems/room13_footer_concept.rpy').read_text()
+        # 더보기 버튼은 밤 조작 줄(room13_night_ui.rpy)에 있다. 옛 대사 하단 띠(footer_concept 의 r13_concept_dock)는 2026-10-27 에 지웠다.
+        tools=(GAME/'systems/room13_playback.rpy').read_text()+(GAME/'systems/room13_footer_concept.rpy').read_text()+(GAME/'systems/room13_night_ui.rpy').read_text()
         for name in ('"저장 · 불러오기"','"다시 시작할 아침"','"더보기"'):
             self.assertIn(name,tools)
         self.assertIn('"회의를 처음부터 다시"',(GAME/'room13_meeting_retry_ui.rpy').read_text())
