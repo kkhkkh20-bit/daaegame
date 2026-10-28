@@ -100,7 +100,7 @@ class NotebookHeaderWithIssue(unittest.TestCase):
         from test_notebook_choices import function
         for touch in (False,True):
             ns=dict(r13_question_caption=lambda title,*args,**kw:title,R13_UI_BOLD_FONT='bold',r13_type=r13_type_stub(touch=touch),
-                    r13_read_size=lambda a,b:b if touch else a,r13_touch_ui=lambda:touch,Text=lambda text,**kw:text,
+                    r13_read_size=lambda a,b:b if touch else a,r13_touch_ui=lambda:touch,R13_CHOICE_TEXT_PAD=116,R13_CHOICE_BODY="emphasis",Text=lambda text,**kw:text,
                     renpy=SimpleNamespace(render=lambda text,*args:SimpleNamespace(get_size=lambda:(600,72 if len(text)>20 else 30))))
             function('systems/room13_notebook_choices.rpy','r13_notebook_choice_pages',ns)
             function('systems/room13_notebook_choices.rpy','r13_notebook_choice_fits',ns)

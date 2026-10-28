@@ -4,37 +4,48 @@
 default r13_choice_hidden_actor = None
 
 init 81 python:
-    def r13_notebook_choice_pages(entries,width,height):
+    # 2026-10-28 소유자: "선택지 글자가 쓸모없이 크다. 질문보다 답변이 훨씬 커서 글씨 줄이고 비율 맞춰".
+    # 선택지 본문은 display(36) 에서 emphasis(26) 로 내린다. 머리 글(질문)은 display·작게면 subtitle 그대로라 늘 선택지보다 크다.
+    R13_CHOICE_BODY="emphasis"
+    R13_CHOICE_TEXT_PAD=116   # 번호 칸(36~90)·사이·오른쪽 여백. 예전 184(번호 60 + 「·」 130 + 글자 160)
+    def r13_notebook_choice_pages(entries,width,height,split=False):
+        # 2026-10-28 소유자(7일 빨래터 선택 캡처): "왜 이리 두껍고 튀어나와". 가장 긴 선택지(세 줄)에 칸 높이를 모두 맞추던
+        # 것을 그만두고, 칸마다 제 글자 높이만큼만 갖는다(최소 64, 터치 80). 글자 폭은 번호 자리를 줄인 width-R13_CHOICE_TEXT_PAD.
+        minimum=80 if r13_touch_ui() else 64
         rows=[]
         for entry in entries:
             label=r13_question_caption(entry[0],False,False)
-            text=Text(label,font=R13_UI_BOLD_FONT,size=(r13_type("display")),xsize=width-184,line_spacing=4)
-            measured=int(renpy.render(text,width-184,720,0,0).get_size()[1])
-            rows.append((entry,max(96,measured+28),measured+20))
-        # Equal paper cards: the longest option sets the shared row height.
-        row_height=max((h for entry,h,m in rows),default=88 if r13_touch_ui() else 80)
-        floor=max((m for entry,h,m in rows),default=64)
+            text=Text(label,font=R13_UI_BOLD_FONT,size=(r13_type(R13_CHOICE_BODY)),xsize=width-R13_CHOICE_TEXT_PAD,line_spacing=4)
+            measured=int(renpy.render(text,width-R13_CHOICE_TEXT_PAD,720,0,0).get_size()[1])
+            rows.append((entry,max(minimum,measured+28),measured+20))
+        def total(rs):
+            return sum(h for e,h,m in rs)+16*max(0,len(rs)-1)
+        def shrink(rs):
+            # 넘치면 칸 위아래 여백만 줄인다. 글자가 든 높이(m) 아래로는 줄이지 않는다.
+            over=total(rs)-height
+            if over<=0:return [(e,h) for e,h,m in rs]
+            out=[]
+            for e,h,m in rs:
+                cut=min(h-m,-(-over//max(1,len(rs))))
+                out.append((e,h-cut))
+            return out
         # 2026-10-27 소유자: "선택지 하나짜리 선택지창이 존재하면 안 되지". 쪽을 나눠도 한 쪽에 하나만 남기지 않는다.
-        # 넷 이하는 늘 한 쪽에 둔다. 칸은 글자가 든 높이(floor) 아래로는 줄이지 않는다 — 그보다 모자라면 호출한 쪽이 머리글을 줄인다.
         n=len(rows)
+        if not rows:return [[]]
         if n<=4:
-            shrunk=row_height
-            if n*shrunk+16*(n-1)>height:shrunk=max(floor,(height-16*(n-1))//max(1,n))
-            # 2026-10-28 다른 길 자동 주행 12일(학교, 인물 옆 좁은 판): 넷 중 하나가 두 줄이면 바닥 높이로도 네 칸이
-            # 안 들어가 넷째 칸이 화면 아래로 나갔다(y 716, 높이 4). 넷은 2+2 로 나눠도 한 쪽에 하나가 남지 않으므로
-            # 그때만 쪽을 나눈다. 셋 이하는 나누면 하나짜리 쪽이 생기므로 머리글을 줄이는 쪽(호출자)에 맡긴다.
-            if n<4 or n*shrunk+16*(n-1)<=height:
-                return [[(entry,shrunk) for entry,h,m in rows]] if rows else [[]]
-        per=max(2,min(9,(height+16)//(row_height+16)))
+            one=shrink(rows)
+            # 2026-10-28 다른 길 12일: 넷이 바닥 높이로도 안 들어가면 2+2 로 나눈다(셋 이하는 나누면 하나짜리 쪽이 생긴다).
+            # 나누기는 호출자가 머리글을 줄여 보고도 안 들어갈 때만 부탁한다(split). 넓은 판의 짧은 넷이 갈리지 않게.
+            if n<4 or not split or sum(h for e,h in one)+16*(n-1)<=height:return [one]
+            return [shrink(rows[:2]),shrink(rows[2:])]
+        tallest=max(h for e,h,m in rows)
+        per=max(2,min(9,(height+16)//(tallest+16)))
         count=max(1,-(-n//per))
         base,extra=divmod(n,count)
         if base<2 and count>1:count-=1;base,extra=divmod(n,count)
-        # 쪽을 나눠도 한 쪽이 넘치면(좁은 판·휴대폰) 글자 높이까지만 칸을 줄인다.
-        most=base+(1 if extra else 0)
-        if most*row_height+16*(most-1)>height:row_height=max(floor,(height-16*(most-1))//max(1,most))
         pages=[];i=0
         for k in range(count):
-            size=base+(1 if k<extra else 0);pages.append([(entry,row_height) for entry,h,m in rows[i:i+size]]);i+=size
+            size=base+(1 if k<extra else 0);pages.append(shrink(rows[i:i+size]));i+=size
         return pages or [[]]
 
     def r13_notebook_choice_fits(pages,height):
@@ -49,14 +60,14 @@ init 81 python:
         return r13_sticker_button(focused=hovered)
 
     def r13_notebook_choice_geometry(entries,width,heading,subline=None,_retry=True):
-        size=(r13_type("display"))
+        size=(r13_type("title"))   # 2026-10-28: 머리 글 title(30) · 선택지 emphasis(26)
         text=Text(heading,font=R13_UI_BOLD_FONT,size=size,xsize=width-102,line_spacing=4)
         measured=int(renpy.render(text,width-102,720,0,0).get_size()[1])
         if subline:
             # 2026-10-27 쟁점 제목: 직전 대사는 쟁점 아래 작은 줄로 남고, 머리 칸이 그만큼 자란다.
             small=Text(subline,font=R13_UI_BOLD_FONT,size=(r13_type("emphasis")),xsize=width-102,line_spacing=2)
             measured+=8+int(renpy.render(small,width-102,720,0,0).get_size()[1])
-        header=max(112,measured+44)
+        header=max(72,measured+32)   # 2026-10-28 소유자 「질문이 너무 크게 박혀 있다」: 판을 글자 높이에 맞춘다(예전 최소 112)
         cap=max(120,460-header-28)
         pages=r13_notebook_choice_pages(entries,width,cap)
         if (len(pages)>1 or not r13_notebook_choice_fits(pages,cap)) and subline and _retry:
@@ -66,9 +77,12 @@ init 81 python:
         if len(pages)==1 and not r13_notebook_choice_fits(pages,cap):
             # 넷 이하인데 머리글이 커서 칸이 안 들어가면 머리글을 한 단 작게 재고, 그래도 모자라면 칸을 아래로 더 내린다(최대 60).
             small=Text(heading,font=R13_UI_BOLD_FONT,size=r13_read_size(28,30),xsize=width-102,line_spacing=4)
-            header=max(112,int(renpy.render(small,width-102,720,0,0).get_size()[1])+44)
+            header=max(72,int(renpy.render(small,width-102,720,0,0).get_size()[1])+32)
             cap=max(120,460-header-28+60)
             pages=r13_notebook_choice_pages(entries,width,cap)
+            if not r13_notebook_choice_fits(pages,cap) and len(entries)==4:
+                # 작은 머리글로도 넷이 안 들어가면 2+2 로 나눈다(쪽 넘김 버튼 자리만큼 칸이 줄어든다).
+                pages=r13_notebook_choice_pages(entries,width,max(120,cap-(100 if r13_touch_ui() else 66)),split=True)
             return header,pages,"__small__"
         if len(pages)>1:
             pages=r13_notebook_choice_pages(entries,width,max(120,cap-(100 if r13_touch_ui() else 66)))
@@ -77,8 +91,9 @@ init 81 python:
 screen r13_notebook_choice_list(person,pose,title,entries,ready,return_action=None,caption="",carriage=False):
     default page=0
     default focused_choice=None
-    $ left=220 if person or carriage else 190
-    $ width=560 if person or carriage else 900
+    # 2026-10-28 소유자: 인물 옆 판이 좁아(560) 선택지가 세 줄로 접혔다. 인물은 오른쪽(약 860~)에 서므로 왼쪽으로 넓힌다.
+    $ left=(220 if carriage else 110 if person else 190)
+    $ width=(560 if carriage else 680 if person else 900)
     $ context=r13_choice_context() if title=="선택" else None
     # 2026-10-27: 표(room13_choice_issues.rpy)에 있는 무거운 선택만 쟁점을 제목으로 쓴다. 나머지는 예전 그대로.
     $ issue=r13_choice_issue(entries) if title=="선택" else None
@@ -91,21 +106,25 @@ screen r13_notebook_choice_list(person,pose,title,entries,ready,return_action=No
     $ visible=pages[page]
     $ rows_height=sum(row[1] for row in visible)+max(0,len(visible)-1)*16
     # 2026-10-28: 머리글 180 고정은 칸이 640 안에 들어올 때만. 넘치면 위로 올려 자리를 번다.
-    $ header_top=180 if header_height<=112 and len(pages)==1 and 180+header_height+28+rows_height<=640 else max(40,640-header_height-28-rows_height-((100 if r13_touch_ui() else 66) if len(pages)>1 else 0))
-    $ rows_top=header_top+header_height+28
+    # 2026-10-28 소유자: "선택지 질문이 너무 정중앙에 크게 박혀 있어. 좀 더 위로 올리고 배치 맞춰". 질문 판은 위 줄(장소·날짜판) 바로
+    # 아래(112)에 두고 선택지는 그 밑으로 이어 붙인다. 아래가 모자랄 때만 위로 당긴다(최소 40).
+    $ pager_h=((100 if r13_touch_ui() else 66) if len(pages)>1 else 0)
+    $ header_top=max(40,min(112,640-header_height-20-rows_height-pager_h))
+    $ rows_top=header_top+header_height+20
     if person and not carriage:
         # 2026-10-26 소유자: 인물 그림은 스티커 없이 간다.
+        # 2026-10-28 소유자 「캐릭터도 너무 위로 올라가 있다」: 머리 위 여백을 70 → 150 으로 내린다(위 줄 날짜판과 겹치지 않게).
         add r13_close_art(person,pose,760):
-            xpos r13_close_x(person,pose,760)+390 xanchor .5 ypos r13_close_y(person,760,70,pose)
+            xpos r13_close_x(person,pose,760)+390 xanchor .5 ypos r13_close_y(person,760,150,pose)
     frame:
-        xpos left+20 ypos header_top xsize width-40 ysize header_height padding (42,22,24,22) background r13_notebook_note()
+        xpos left+20 ypos header_top xsize width-40 ysize header_height padding (32,12,24,12) background r13_notebook_note()
         if subline:
             vbox:
                 align (.5,.5) spacing 8
-                text heading id "r13_choice_issue" xsize width-106 text_align .5 size (r13_type("subtitle") if heading_small else r13_type("display")) color (r13_type_color("ink")) font R13_UI_BOLD_FONT line_spacing 4
+                text heading id "r13_choice_issue" xsize width-106 text_align .5 size (r13_type("subtitle") if heading_small else r13_type("title")) color (r13_type_color("ink")) font R13_UI_BOLD_FONT line_spacing 4
                 text subline xsize width-106 text_align .5 size (r13_type("emphasis")) color (r13_type_color("muted")) font R13_UI_BOLD_FONT line_spacing 2
         else:
-            text heading xsize width-106 align (.5,.5) text_align .5 size (r13_type("subtitle") if heading_small else r13_type("display")) color (r13_type_color("ink")) font R13_UI_BOLD_FONT line_spacing 4
+            text heading xsize width-106 align (.5,.5) text_align .5 size (r13_type("subtitle") if heading_small else r13_type("title")) color (r13_type_color("ink")) font R13_UI_BOLD_FONT line_spacing 4
     add Transform(r13_asset_path("file:assets/ui-b-question/b_tape_red.png"),xysize=(64,22),rotate=-16) xpos left+8 ypos header_top-24
     vbox:
         pos (left,rows_top) spacing 16
@@ -121,14 +140,13 @@ screen r13_notebook_choice_list(person,pose,title,entries,ready,return_action=No
                 fixed:
                     # Selection uses ink/acorn emphasis; no repeated tape.
                     frame:
-                        xpos 60 yalign .5 xysize (54,54) padding (3,3) background Solid("#fff6e6")
+                        xpos 26 yalign .5 xysize (40,40) padding (3,3) background Solid("#fff6e6")
                         fixed:
                             add Solid("#bc4134" if focused_choice==i else "#654129")
-                            text str(i+1) align (.5,.5) size (r13_type("title")) color (r13_type_color("inverse")) font R13_UI_BOLD_FONT
-                    text "·" xpos 130 yalign .5 size r13_type("subtitle") color "#654129" font R13_UI_BOLD_FONT
-                    text r13_question_caption(label,False,False) xpos 160 yalign .5 xsize width-184 size (r13_type("display")) font R13_UI_BOLD_FONT color (r13_type_color("ink")) line_spacing 4
+                            text str(i+1) align (.5,.5) size (r13_type("emphasis")) color (r13_type_color("inverse")) font R13_UI_BOLD_FONT
+                    text r13_question_caption(label,False,False) xpos 88 yalign .5 xsize width-R13_CHOICE_TEXT_PAD size (r13_type(R13_CHOICE_BODY)) font R13_UI_BOLD_FONT color (r13_type_color("ink")) line_spacing 4
                     if focused_choice==i:
-                        add Transform(Crop((20,16,23,32),r13_asset_path("file:assets/ui-b-question/b_icon_acorn.png")),zoom=2.0) xpos -26 yalign .5
+                        add Transform(Crop((20,16,23,32),r13_asset_path("file:assets/ui-b-question/b_icon_acorn.png")),zoom=2.0) xpos -40 yalign .5
         if not entries:
             frame:
                 xsize width padding (26,22) background r13_notebook_note()

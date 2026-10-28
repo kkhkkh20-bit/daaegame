@@ -215,6 +215,23 @@ init 351 python:
     def r13_pw_tab_height():
         return 88 if r13_touch_ui() else 40
 
+    def r13_pw_chip_fit(widths,label_w,more_w,width,gap=8):
+        """(보일 칩 수). 순수 계산 — 칩 너비 목록과 앞 글자·「+N」 칩 너비로 한 줄에 들어갈 수를 센다.
+        2026-10-28 꼼수 길 자동 주행: 자료를 일곱 개 넘게 고르면 칩이 오른쪽 틀 밖으로 잘렸다(숨은 가로 끌기).
+        다 들어가면 전부, 아니면 「+N개」 칩 자리를 남기고 들어가는 만큼."""
+        used=label_w
+        if used+sum(w+gap for w in widths)<=width:return len(widths)
+        n=0
+        for w in widths:
+            if used+gap+w+gap+more_w>width:break
+            used+=gap+w;n+=1
+        return n
+
+    def r13_pw_chip_widths(chosen,short,small):
+        def tw(t,size):
+            return int(renpy.render(Text(t,font=R13_UI_BOLD_FONT,size=size),1280,100,0,0).get_size()[0])
+        return [24+tw(r13_evidence_short(k,short),small)+10+tw("×",small+4) for k in chosen]
+
     def r13_pw_small():
         return r13_nb_small_size()
 
@@ -422,8 +439,10 @@ screen r13_pw_chips(claim,chosen,mode,L,replace_pending,ready):
     $ small=r13_pw_small()
     $ ch=L["chip_h"]
     $ short=10 if L["touch"] else 12
-    viewport:
-        area (L["left"],L["chips_y"],L["width"],ch) mousewheel False draggable True xinitial 0
+    $ label=(("고른 자료 %d"%len(chosen)) if chosen else ("고른 자료 없음 · 목록의 체크로 고릅니다" if not L["touch"] else "고른 자료 없음"))
+    $ fit=(len(chosen) if replace_pending else r13_pw_chip_fit(r13_pw_chip_widths(chosen,short,small),r13_proof_text_size(label,small)[0],24+r13_proof_text_size("+%d개"%len(chosen),small)[0],L["width"]))
+    fixed:
+        area (L["left"],L["chips_y"],L["width"],ch)
         hbox:
             spacing 8 ysize ch
             if replace_pending:
@@ -440,8 +459,8 @@ screen r13_pw_chips(claim,chosen,mode,L,replace_pending,ready):
                     action SetScreenVariable("replace_pending",None) sensitive ready alt "취소"
                     text "취소" size small color r13_nb_muted() font R13_UI_BOLD_FONT yalign .5
             else:
-                text (("고른 자료 %d"%len(chosen)) if chosen else ("고른 자료 없음 · 목록의 체크로 고릅니다" if not L["touch"] else "고른 자료 없음")) size small color r13_nb_muted() font R13_UI_BOLD_FONT yalign .5
-                for key in chosen:
+                text label size small color r13_nb_muted() font R13_UI_BOLD_FONT yalign .5
+                for key in chosen[:fit]:
                     button:
                         id r13_pw_id("r13_pw_chip_",key)
                         ysize ch padding (12,0) background r13_field_paper() hover_background r13_field_paper(hover=True)
@@ -450,6 +469,11 @@ screen r13_pw_chips(claim,chosen,mode,L,replace_pending,ready):
                             spacing 10 yalign .5
                             text r13_evidence_short(key,short) size small color r13_nb_ink() font R13_UI_BOLD_FONT yalign .5
                             text "×" size (small+4) color r13_nb_accent() font R13_UI_BOLD_FONT yalign .5
+                if fit<len(chosen):
+                    # 넘친 칩은 「+N개」 하나로. 빼려면 목록의 체크를 다시 누른다.
+                    frame:
+                        id "r13_pw_chip_more" ysize ch padding (12,0) background r13_field_paper()
+                        text ("+%d개"%(len(chosen)-fit)) size small color r13_nb_muted() font R13_UI_BOLD_FONT yalign .5
 
 screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=None):
     style_prefix "r13"

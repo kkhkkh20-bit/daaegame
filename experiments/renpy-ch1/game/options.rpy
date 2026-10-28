@@ -35,6 +35,9 @@ init python:
     config.default_sfx_volume = 0.7
     config.default_text_cps = 55  # 0.20.4 소유자: "대사 타이핑속도 디폴트를 빠르게"
     config.window = "auto"
+    # 2026-10-28 소유자: "대화창과 선택지가 겹치는 상황이 안 나오게 해". 기본(narrator_menu)은 메뉴 머리 글을 내레이터
+    # 대사로 찍어 대사창이 선택지 아래에 깔렸다. 머리 글은 선택지 판에 넘긴다(choice 화면이 action 없는 항목을 제목으로 쓴다).
+    config.narrator_menu = False
     config.window_show_transition = Dissolve(0.12)
     config.window_hide_transition = Dissolve(0.12)
     config.game_menu_action = ShowMenu("pause_menu")

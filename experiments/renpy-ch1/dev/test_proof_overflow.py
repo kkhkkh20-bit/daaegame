@@ -28,3 +28,15 @@ class ProofOverflow(unittest.TestCase):
         self.assertLessEqual(rows*64+(rows-1)*8,300)
 
 if __name__=='__main__':unittest.main()
+
+class ChipFit(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.ns={}
+        function('game/systems/room13_proof_workspace.rpy','r13_pw_chip_fit',cls.ns)
+    def test_all_fit(self):
+        self.assertEqual(self.ns['r13_pw_chip_fit']([100,100,100],80,60,500),3)
+    def test_overflow_leaves_room_for_more_chip(self):
+        n=self.ns['r13_pw_chip_fit']([150]*7,90,60,800)
+        self.assertEqual(n,4)   # 90+4x158+8+60=790
+        self.assertLessEqual(90+n*(150+8)+8+60,800)

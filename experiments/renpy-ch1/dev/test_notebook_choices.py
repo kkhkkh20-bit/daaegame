@@ -24,7 +24,7 @@ class NotebookChoices(unittest.TestCase):
         for touch in (False,True):
             ns=dict(r13_question_caption=lambda title,*args,**kw:title,
                     r13_ui_font=lambda:'font',R13_UI_BOLD_FONT='bold-font',r13_read_size=lambda a,b:b if touch else a,
-                    r13_touch_ui=lambda:touch,r13_type=r13_type_stub(touch=touch),
+                    r13_touch_ui=lambda:touch,R13_CHOICE_TEXT_PAD=116,R13_CHOICE_BODY="emphasis",r13_type=r13_type_stub(touch=touch),
                     Text=lambda text,**kw:text,
                     renpy=SimpleNamespace(render=lambda text,*args:SimpleNamespace(get_size=lambda:(600,72 if len(text)>20 else 30))))
             function('systems/room13_notebook_choices.rpy','r13_notebook_choice_pages',ns)
@@ -34,7 +34,9 @@ class NotebookChoices(unittest.TestCase):
             header,pages,_=geometry(entries,650,'방금 들은 이야기에 대해 어떻게 대답할까?')
             self.assertGreater(len(pages),1)
             self.assertEqual([entry for page in pages for entry,height in page],entries)
-            self.assertEqual(len({height for page in pages for entry,height in page}),1)
+            # 2026-10-28 소유자 「두껍다」: 칸은 제 글자만큼만 갖는다(같은 높이로 맞추지 않는다). 글자가 든 높이 아래로는 줄이지 않는다.
+            for page in pages:
+                for entry,height in page:self.assertGreaterEqual(height,(72 if len(entry[0])>20 else 30)+20)
             for page in pages:
                 content=sum(height for entry,height in page)+16*(len(page)-1)
                 self.assertLessEqual(header+24+content+((100 if touch else 66) if len(pages)>1 else 0),600)
@@ -44,7 +46,7 @@ class NotebookChoices(unittest.TestCase):
         # 2026-10-28 다른 길 12일(학교, 나비 옆 560 판): 셋째가 두 줄이라 넷째 칸이 화면 아래(y 716)로 나갔다.
         ns=dict(r13_question_caption=lambda title,*args,**kw:title,
                 r13_ui_font=lambda:'font',R13_UI_BOLD_FONT='bold-font',r13_read_size=lambda a,b:a,
-                r13_touch_ui=lambda:False,r13_type=r13_type_stub(touch=False),
+                r13_touch_ui=lambda:False,R13_CHOICE_TEXT_PAD=116,R13_CHOICE_BODY="emphasis",r13_type=r13_type_stub(touch=False),
                 Text=lambda text,**kw:text,
                 renpy=SimpleNamespace(render=lambda text,*args:SimpleNamespace(get_size=lambda:(500,88 if len(text)>14 else 44))))
         function('systems/room13_notebook_choices.rpy','r13_notebook_choice_pages',ns)
@@ -58,7 +60,7 @@ class NotebookChoices(unittest.TestCase):
         for page in pages:
             content=sum(height for entry,height in page)+16*(len(page)-1)
             self.assertLessEqual(header+28+content+66,600)
-            self.assertTrue(all(height>=88+20 for entry,height in page))
+            self.assertTrue(all(height>=(88 if len(entry[0])>14 else 44)+20 for entry,height in page))
         # 셋이면 나누지 않는다(하나짜리 쪽 금지).
         header,pages,_=geometry(entries[:3],560,'배식 전에 더 살필까, 장작을 받으러 갈까')
         self.assertEqual(len(pages),1)
