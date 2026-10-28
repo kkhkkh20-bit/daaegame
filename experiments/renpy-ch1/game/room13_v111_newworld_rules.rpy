@@ -159,7 +159,8 @@ init 318 python:
         most=r13_nw_tries_max(meeting)
         left=max(0,most-(r13_v111_value("tries:"+meeting) or 0))
         # 0.20.7 (play review days 2-3): a wrong answer now settles the meeting; say so.
-        return "남은 기회 %d / %d"%(left,most)+(" · 이번이 마지막" if left==1 else "")
+        # 2026-10-28 소유자 「이게 회의 때야? 기회 4번이 들어간다는 게?」: 한 회의의 쟁점들이 함께 쓰는 기회라는 것을 칩에 적는다.
+        return "회의 기회 %d / %d"%(left,most)+(" · 이번이 마지막" if left==1 else "")
     def r13_v111_proof_sets(key,correct):
         return [set("V111:"+k for k in need) for need in [tuple(correct)]+list(R13_PROOF_ALTERNATES.get(key,()))]
     def r13_v111_proof_accepts(key,correct,given):

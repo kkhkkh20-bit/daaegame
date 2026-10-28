@@ -224,7 +224,7 @@ CHEESE={}   # 쟁점별 꼼수 단계: 0 전부 내기 → 1 엉뚱한 하나 �
 async def chances_left(q,key):
     r=await q.py('import renpy;result=renpy.store.r13_v111_proof_chances(%r)'%key)
     if r is None:return None
-    m=re.search(r"남은 기회 (\d+)",r);return int(m.group(1)) if m else None
+    m=re.search(r"(?:남은|회의) 기회 (\d+)",r);return int(m.group(1)) if m else None
 async def cheese_submit(q,st,mode):
     """꼼수 제출. all: 가진 자료를 쪽마다 전부 체크. wrong: 정답·덧붙임에 없는 자료 하나. 결과를 판정해 로그로 남긴다."""
     claim=st['claim'];key=claim[5:];node=PROOFS.get(key) or next((v for k,v in PROOFS.items() if k in key or key in k),None)

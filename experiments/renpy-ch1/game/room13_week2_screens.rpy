@@ -60,8 +60,9 @@ init 112 python:
     R13_PROOF_GAP=10          # 머리·단계·목록·안내 사이
     R13_PROOF_CARD_GAP=8      # 카드 사이(세로·가로 같다)
     R13_PROOF_REMOVE_W=104    # 카드 안 「빼기」 폭
-    R13_PROOF_EMPTY_SLOTS=0   # 시안 비교 중(0=지금)
-    R13_PROOF_COMPACT=False
+    # 2026-10-28 소유자 시안 B 승인: 빈 칸 셋을 미리 보이고, 판은 내용만큼만 높여 아래에 붙인다(위로 회의 장면이 보이게).
+    R13_PROOF_EMPTY_SLOTS=3
+    R13_PROOF_COMPACT=True
 
     def r13_proof_text_size(text,size,width=None,heavy=True):
         t=Text(text,font=(R13_UI_BOLD_FONT if heavy else R13_UI_FONT),size=size,xsize=width)
@@ -189,9 +190,14 @@ screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장",can_p
                     hbox:
                         spacing R13_PROOF_CARD_GAP
                         for i in range(R13_PROOF_EMPTY_SLOTS):
-                            frame:
-                                xysize ((R13_PROOF_INNER_W-R13_PROOF_CARD_GAP*(R13_PROOF_EMPTY_SLOTS-1))//R13_PROOF_EMPTY_SLOTS,card_h) padding (0,0) background Frame(r13_asset_path("file:assets/ui-night/panel_small.png"),10,10) at Transform(alpha=.55)
-                                text ("자료를 여기에 담는다" if i==0 else "빈 칸") align (.5,.5) size (r13_type("small")) color (r13_type_color("muted")) font R13_UI_BOLD_FONT
+                            # 빈 칸은 가벼운 선과 옅은 바탕만(시안의 회색 판은 탁해 보였다).
+                            $ slot_w=(R13_PROOF_INNER_W-R13_PROOF_CARD_GAP*(R13_PROOF_EMPTY_SLOTS-1))//R13_PROOF_EMPTY_SLOTS
+                            fixed:
+                                xysize (slot_w,card_h)
+                                add Solid("#f3e6c9") xysize (slot_w,card_h)
+                                for bx,by,bw,bh in ((0,0,slot_w,2),(0,card_h-2,slot_w,2),(0,0,2,card_h),(slot_w-2,0,2,card_h)):
+                                    add Solid("#c9ae7e") xpos bx ypos by xysize (bw,bh)
+                                text ("자료를 여기에 담는다" if i==0 else "빈 칸") align (.5,.5) size (r13_type("small")) color (r13_type_color("disabled") if i else r13_type_color("muted")) font R13_UI_BOLD_FONT
                 else:
                     fixed:
                         xysize (R13_PROOF_INNER_W,card_h)

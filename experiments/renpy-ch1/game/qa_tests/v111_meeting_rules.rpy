@@ -14,10 +14,10 @@ testcase v111_rules_tries_table:
     click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     assert eval ([r13_nw_tries_max(m) for m in ("gate","gate_post","fire","records","blanket","piko","soup","altar","lamp","room13","hypothesis")]==[3,3,4,4,4,4,5,6,7,7,13])
-    assert eval (r13_v111_proof_chances("구리선과 수선 출처를 대조한다")=="남은 기회 7 / 7")
-    assert eval (r13_v111_proof_chances("함께 들어갈 근거를 고른다")=="남은 기회 3 / 3")
+    assert eval (r13_v111_proof_chances("구리선과 수선 출처를 대조한다")=="회의 기회 7 / 7")
+    assert eval (r13_v111_proof_chances("함께 들어갈 근거를 고른다")=="회의 기회 3 / 3")
     run Function(r13_v111_set,"tries:gate",2)
-    assert eval (r13_v111_proof_chances("함께 들어갈 근거를 고른다")=="남은 기회 1 / 3 · 이번이 마지막")
+    assert eval (r13_v111_proof_chances("함께 들어갈 근거를 고른다")=="회의 기회 1 / 3 · 이번이 마지막")
     # 13호 3번: 두 정답 세트를 함께 내도 받는다. 남은 근거만 다시 내도 받는다.
     assert eval qa_rules_ok("구리선과 수선 출처를 대조한다",["E08_WOUND_WIRE","E09_PIN_OWNER"],["E08_WOUND_WIRE","E09_PIN_OWNER","E08_CONTACT_ASSEMBLY"])
     assert eval not qa_rules_ok("구리선과 수선 출처를 대조한다",["E08_WOUND_WIRE","E09_PIN_OWNER"],["E08_WOUND_WIRE","E08_CONTACT_ASSEMBLY"])
