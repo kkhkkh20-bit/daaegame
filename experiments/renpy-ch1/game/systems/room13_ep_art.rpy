@@ -103,7 +103,22 @@ init 160 python:
             Transform("assets/room13-ep-%s.webp"%name,size=(w,h),xpos=x,ypos=y,nearest=True),xysize=(1280,720))
 
     R13_EV_CUT_BOX=(1032,104,220)
-    R13_EV_CUT_BG="#8C9097"
+    # 2026-10-28 소유자 「어두운 바탕에 다른 테두리, 도트 느낌이 없어져서 어색」: 매끈한 사각 테두리 대신 도트 한 칸(4px) 단위의
+    # 띠를 겹치고 모서리를 계단으로 깎는다. 띠는 바깥부터 차례로 그린다.
+    R13_EV_CUT_PX=4
+    R13_EV_CUT_FRAMES=dict(
+        cream=("#14171d","#EFE3C6","#14171d","#2E3138"),
+        brass=("#14171d","#E3C072","#9A7432","#2E3138"),
+    )
+    R13_EV_CUT_FRAME="cream"
+    def r13_ev_pixel_frame(x,y,side,frame):
+        u=R13_EV_CUT_PX;parts=[]
+        for n,color in enumerate(R13_EV_CUT_FRAMES[frame]):
+            o=n*u;w=side-2*o
+            # 가로 띠는 양 끝 한 칸, 세로 띠는 위아래 한 칸을 비워 모서리가 계단처럼 깎인다
+            parts.append(Solid(color,xysize=(w-2*u,w),xpos=x+o+u,ypos=y+o))
+            parts.append(Solid(color,xysize=(w,w-2*u),xpos=x+o,ypos=y+o+u))
+        return Fixed(*parts,xysize=(1280,720))
     def r13_ep_cut_art(name):
         if name=="bell":return r13_ep_bell_art()
         if name in ("v111_reunion_far","v111_reunion_close"):
@@ -120,12 +135,11 @@ init 160 python:
             # To the right of the speaker's face, above the dialogue.
             # 2026-10-28 소유자 「증거 네모칸이 좌우 길이가 달라서 사이즈를 고정, 정사각형으로, 이미지만 떠도 된다, 겹치면 안 된다」
             # (역전재판 증거 칸) → 시안 B(오른쪽 위), 「테두리가 확실히 있어야 해」. 판은 늘 같은 정사각형이고 그림은 그 안에
-            # 비율대로 들어간다. 날짜판 아래 오른쪽 구석이라 1.55배 인물과 겹치지 않는다. 테두리는 대사판과 같은 남색 잉크.
+            # 비율대로 들어간다. 날짜판 아래 오른쪽 구석이라 1.55배 인물과 겹치지 않는다. 바탕은 어둡게, 테두리는 도트 띠(r13_ev_pixel_frame).
             x,y,side=R13_EV_CUT_BOX
-            edge=5;mat=8;inner=side-2*(edge+mat)
-            return Fixed(Solid("#29364b",xysize=(side,side),xpos=x,ypos=y),
-                Solid(R13_EV_CUT_BG,xysize=(side-2*edge,side-2*edge),xpos=x+edge,ypos=y+edge),
-                Transform("assets/evidence/%s.webp"%name[3:],xysize=(inner,inner),fit="contain",xpos=x+side//2,xanchor=.5,ypos=y+side//2,yanchor=.5),xysize=(1280,720))
+            u=R13_EV_CUT_PX;inner=side-2*5*u
+            return Fixed(r13_ev_pixel_frame(x,y,side,R13_EV_CUT_FRAME),
+                Transform("assets/evidence/%s.webp"%name[3:],xysize=(inner,inner),fit="contain",nearest=True,xpos=x+side//2,xanchor=.5,ypos=y+side//2,yanchor=.5),xysize=(1280,720))
         if name in ("v111_blanket_before","v111_blanket_after"):
             # Existing cut layer/clear lifecycle, preserving the actual school
             # background and the same prop position across the repair beat.
