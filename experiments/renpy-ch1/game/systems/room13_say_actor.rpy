@@ -25,7 +25,12 @@ init 40 python:
     def _r13_say_headtop(who,pose,h):
         profile=r13_dialogue_source_profile(who,pose,h)
         if not profile:return None
-        frame=profile["frames"].get(r13_fullbody_emotion(pose)) or profile["frames"].get("neutral")
+        # 그리는 쪽(room13_dialogue_beats.rpy)과 같은 그림을 재야 한다. 놀람은 surprise_talk, 당황 그림이 없으면 불안을 그린다.
+        # 2026-10-28 캡처 검수(11일 엄마 「이거…… 아직 갖고 다녔어?」): 이 대응이 없어 보통 표정 그림의 머리를 재고 놀람 그림을 그려
+        # 머리가 화면 위로 잘리고 다리만 보였다.
+        emotion={"surprise":"surprise_talk"}.get(r13_fullbody_emotion(pose),r13_fullbody_emotion(pose))
+        if emotion=="flustered" and "flustered" not in profile["frames"]:emotion="anxious"
+        frame=profile["frames"].get(emotion) or profile["frames"].get("neutral")
         if not frame:return None
         key=(frame["file"],h)
         if key not in _R13_SAY_HEADTOP:
@@ -36,6 +41,18 @@ init 40 python:
             except Exception:
                 _R13_SAY_HEADTOP[key]=None
         return _R13_SAY_HEADTOP[key]
+    # 2026-10-28 캡처 검수(11일 엄마 놀람): 그림 묶음 표로 잰 머리 높이가 실제 그림과 66px 달랐다(표에 없는 표정은 다른 그림이
+    # 그려진다). 실제로 그릴 그림(말하는 그림)을 한 번 그려 맨 위 불투명 줄을 잰다. 인물·자세·키마다 한 번만 잰다.
+    _R13_SAY_DRAWN_TOP={}
+    def _r13_say_drawn_headtop(who,pose,h):
+        key=(who,pose,h)
+        if key not in _R13_SAY_DRAWN_TOP:
+            try:
+                rect=renpy.render_to_surface(r13_close_art(who,pose,h,True)).get_bounding_rect(min_alpha=40)
+                _R13_SAY_DRAWN_TOP[key]=rect.top if rect.height else None
+            except Exception:
+                _R13_SAY_DRAWN_TOP[key]=None
+        return _R13_SAY_DRAWN_TOP[key]
     def r13_say_head_target(who):
         st=r13_say_stature(who)
         if st>1.0:return R13_SAY_HEAD_TOP-min(R13_SAY_TALL_CUT,int(round((st-1.0)*R13_SAY_STATURE_REF*1.55*0.4)))
@@ -49,6 +66,7 @@ init 40 python:
     def r13_say_actor_y(who,pose,carriage=False):
         h=r13_say_actor_h(carriage)
         if carriage:return r13_close_y(who,h,110,pose)
-        head=_r13_say_headtop(who,pose,h)
+        head=_r13_say_drawn_headtop(who,pose,h)
+        if head is None:head=_r13_say_headtop(who,pose,h)
         if head is not None:return int(round(r13_say_head_target(who)-head))
         return r13_close_y(who,h,110,pose)+R13_SAY_ACTOR_DY+r13_say_child_drop(who)

@@ -450,7 +450,7 @@ init 57 python:
         spec = r13_fullbody_spec(who, actor_pose)
         before = R13_REACT_LAST.get(who)
         # 앞 그림은 페이드 없이 기억한다(다시 보일 때 투명에서 시작하지 않게).
-        R13_REACT_LAST[who] = ((spec or {}).get("emotion"), r13_close_art(who, actor_pose, 840, True, False) if spec else what)
+        R13_REACT_LAST[who] = ((spec or {}).get("emotion"), r13_close_art(who, actor_pose, r13_say_actor_h(), True, False) if spec else what)
         if not r13_fx_active():
             return what, at_list
         lead = R13_REACT_LEAD.get(kind, 0.0) if kind else 0.0
@@ -479,7 +479,9 @@ init 57 python:
         spec = r13_fullbody_spec(who, pose)
         if not spec:
             return None
-        scale = r13_fullbody_scale(who, 840)
+        # 2026-10-28 캡처 검수(11일 엄마 놀람): 대사 인물이 1.55배(r13_say_actor_h)로 커졌는데 움찔 효과의 틀은 예전 키(840)로
+        # 잡혀, 틀 62% 높이에 큰 그림의 62% 지점을 맞추느라 그림이 약 265px 위로 밀려 머리가 잘렸다. 지금 대사 키로 잡는다.
+        scale = r13_fullbody_scale(who, r13_say_actor_h())
         return (int(round(spec["crop"][2] * scale)), int(round(spec["crop"][3] * scale)))
 
 # 3px 배수. 앞 표정(lead) 동안 움찔/웅크림 → 새 표정과 함께 움직임 → 제자리.
