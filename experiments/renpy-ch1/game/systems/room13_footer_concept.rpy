@@ -25,7 +25,7 @@ screen r13_concept_more():
     # Same paper and navy notebook material as the approved settings screen.
     frame:
         # 2026-10-27 소유자: 제목이 왼쪽에 쏠리고 고리가 버튼 왼쪽을 덮었다. 왼쪽 여백을 고리 폭만큼(56) 둔다.
-        xpos 584 ypos (min(r13_control_y(),R13_NIGHT_CONTROL_Y-28)-panel_height-16) xysize (676,panel_height) padding (56,22,28,22) background Frame(Crop((35,25,550,245),r13_asset_path("file:assets/ui-b-main/b_main_panel.png")),48,40)
+        xpos 584 ypos (min(r13_control_y(),r13_night_control_y()-28)-panel_height-16) xysize (676,panel_height) padding (56,22,28,22) background Frame(Crop((35,25,550,245),r13_asset_path("file:assets/ui-b-main/b_main_panel.png")),48,40)
         vbox:
             spacing 16
             # 2026-10-27 타이포 시안: 더보기 판 제목 subtitle, 항목 body(종이 위 ink, 비활성 disabled).

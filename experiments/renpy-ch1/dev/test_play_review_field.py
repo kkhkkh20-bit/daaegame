@@ -49,33 +49,31 @@ class PlayReviewField(unittest.TestCase):
         link=night.split('screen r13_night_link(',1)[1].split('\nscreen ',1)[0]
         target_height=re.search(r'xsize label_width ysize (\([^\n]+?\)) yalign',link).group(1)
         ribbon_height=re.search(r'xysize=\(label_width,(\d+ if r13_touch_ui\(\) else \d+)\)',link).group(1)
-        # 2026-10-27: 대사판 종이는 screens.rpy 가 아래끝 714 로 늘인다. 조작 리본은 그 종이의 아래 테두리 선 위에서 끝나야 한다.
+        # 2026-10-28 소유자 「건너뛰기·더보기는 대화창 안에 들어갈 필요 없다」: 조작 스티커는 이름 리본처럼 종이 윗변에 걸친다.
+        # 누르는 칸 아래끝은 대사 첫 줄보다 위, 대사 끝줄은 종이 아래 테두리 선 위, 두 줄까지 종이 윗변은 화면 안 넉넉히.
         paper_bottom=int(re.search(r'R13_NIGHT_PAPER_BOTTOM=(\d+)',night).group(1))
         paper_edge=int(re.search(r'R13_NIGHT_PAPER_EDGE=(\d+)',night).group(1))
-        self.assertIn('xysize=(1220,%d-(b_text_top-R13_SAY_PANEL_PAD))'%paper_bottom,screens)
+        self.assertIn('xysize=(1220,%d-r13_night_panel_top(what))'%paper_bottom,screens)
         for touch in (False,True):
             for large in (False,True):
                 for lines in (1,2,3,4):
                     with self.subTest(touch=touch,large=large,lines=lines):
+                        store=SimpleNamespace()
                         ns=dict(r13_touch_ui=lambda:touch,r13_read_size=lambda normal,big:big if large else normal,
-                                r13_night_say_lines=lambda what:lines,r13_type=r13_type_stub(touch=touch,large=large),
+                                r13_night_say_lines=lambda what:lines,r13_type=r13_type_stub(touch=touch,large=large),store=store,
                                 R13_NIGHT_PAPER_BOTTOM=paper_bottom,R13_NIGHT_PAPER_EDGE=paper_edge,
-                                R13_NIGHT_CONTROL_GAP=int(re.search(r'R13_NIGHT_CONTROL_GAP=(\d+)',night).group(1)))
-                        load_function('game/screens.rpy','_r13_say_size',ns)
+                                R13_SAY_RIBBON_IN=int(re.search(r'R13_SAY_RIBBON_IN=(\d+)',night).group(1)),
+                                R13_SAY_MARGIN=int(re.search(r'R13_SAY_MARGIN=(\d+)',night).group(1)))
                         size=load_function('game/systems/room13_night_ui.rpy','r13_night_say_size',ns)()
-                        center=load_function('game/systems/room13_night_ui.rpy','r13_night_control_y',ns)()
+                        panel=load_function('game/systems/room13_night_ui.rpy','r13_night_panel_top',ns)
                         top=load_function('game/systems/room13_night_ui.rpy','r13_night_say_top',ns)('긴 대사')
+                        center=load_function('game/systems/room13_night_ui.rpy','r13_night_control_y',ns)()
                         height=eval(target_height,ns)
-                        ribbon=eval(ribbon_height,ns)
-                        # Use the current text size/line spacing and full hit area,
-                        # not just the smaller visible ribbon inside that button.
+                        self.assertEqual(center,panel('긴 대사'))              # 스티커 가운데 = 종이 윗변
+                        self.assertGreaterEqual(top-(center+height/2),2 if touch else 8)   # 누르는 칸은 첫 줄보다 위
                         text_bottom=top+lines*size+(lines-1)*spacing
-                        self.assertGreaterEqual(center-height/2-text_bottom,2 if touch else 4)
-                        # 보이는 리본은 종이 테두리 선 위에서 끝나고, 누르는 칸은 종이 밖으로 나가지 않는다.
-                        self.assertLessEqual(center+ribbon/2,paper_bottom-paper_edge-4)
-                        self.assertLessEqual(center+height/2,paper_bottom)
-                        # 대사 두 줄까지는 종이 위끝이 화면 안에 넉넉히 들어온다(종이 위 = 대사 위 - 38).
-                        if lines<=2:self.assertGreaterEqual(top-38,440)
+                        self.assertLessEqual(text_bottom,paper_bottom-paper_edge)      # 끝줄은 테두리 선 위
+                        if lines<=2:self.assertGreaterEqual(center,440)
                         if touch:self.assertGreaterEqual(height*360/720,44)
 
     def test_shared_touch_footer_keeps_bottom_and_desktop_sizes(self):

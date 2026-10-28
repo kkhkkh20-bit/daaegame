@@ -8,18 +8,27 @@ init 150 python:
     R13_NIGHT_PAPER_BOTTOM=714
     R13_NIGHT_PAPER_EDGE=16
     R13_NIGHT_CONTROL_GAP=10         # 리본 아래끝과 종이 테두리 선 사이
-    # 2026-10-28 소유자 「선택지 대화창이랑 일반 대화창 높이가 너무 다르다, 둘의 중간으로 둘 다 통일」: 일반 196·선택 160 의
-    # 가운데 178. 종이 윗변 = 글자 윗선 - 32(예전 38), 이름 리본 = 글자 윗선 - 58(예전 60, 큰 글씨에서도 첫 줄과 8px 띄움). 선택 화면도 같은 값을 쓴다.
-    R13_SAY_PANEL_PAD=32
-    R13_SAY_RIBBON_UP=58
-    # 2026-10-27 소유자: 「건너뛰기」「더보기」가 대사판 아래 오른쪽 모서리에 반쯤 걸쳤다. 대사가 36px 로 커지면서 대사
-    # 밑선은 올렸지만 조작 줄(684/674)은 그대로라 리본(44/52)이 종이 테두리(698~)를 넘었다. 조작 줄 중심은 리본 높이에서
-    # 거꾸로 계산한다 — PC 666(리본 644~688), 휴대폰 662(리본 636~688, 누르는 칸 88 은 618~706 으로 종이 안).
+    # 2026-10-28 소유자 「선택지 대화창이랑 일반 대화창 높이가 너무 다르다, 둘의 중간으로 통일」(178) 뒤에
+    # 「아빠라는 이름과 대사가 너무 붙어 있다, 위로 붙어 있다」「높이 그대로에 아래를 줄여서 올려」
+    # 「건너뛰기·더보기는 스티커 에셋이라 대화창 안에 들어갈 필요는 없다」:
+    #   - 종이 높이는 그대로(PC 178). 대사는 이름 리본 아래부터 종이 아래 테두리까지의 가운데에 둔다.
+    #   - 이름 리본은 종이 윗변에 걸치고(왼쪽), 건너뛰기·더보기 스티커도 종이 윗변에 걸친다(오른쪽). 종이 안 아래쪽 빈칸이 없어진다.
+    #   - 세 줄 이상이면 종이가 위로 자란다(리본·스티커가 같이 올라간다).
+    R13_SAY_RIBBON_IN=24      # 윗변에 걸친 리본·스티커가 종이 안으로 들어오는 깊이
+    R13_SAY_MARGIN=37         # 리본 아래·종이 아래 테두리 위 여백(같다). PC 178 = 16+24+64+2x37
+    def r13_night_panel_top(what=None,size=None):
+        size=size or r13_night_say_size()
+        lines=r13_night_say_lines(what) if what is not None else 2
+        block=2*size+4
+        top=R13_NIGHT_PAPER_BOTTOM-(R13_NIGHT_PAPER_EDGE+R13_SAY_RIBBON_IN+block+2*R13_SAY_MARGIN)
+        top-=max(0,lines-2)*(size+4)
+        store.r13_say_panel_top_now=top   # 조작 스티커가 같은 윗변에 걸치도록 마지막 값을 남긴다
+        return top
     def r13_night_control_y():
-        ribbon=52 if r13_touch_ui() else 44
-        return R13_NIGHT_PAPER_BOTTOM-R13_NIGHT_PAPER_EDGE-R13_NIGHT_CONTROL_GAP-ribbon//2
-    R13_NIGHT_CONTROL_Y=R13_NIGHT_PAPER_BOTTOM-R13_NIGHT_PAPER_EDGE-R13_NIGHT_CONTROL_GAP-22   # PC 중심선(더보기 판이 참조)
-    R13_NIGHT_TEXT_BOTTOM=R13_NIGHT_CONTROL_Y-28-6     # 마지막 대사 줄은 조작 칸 위 6px 에서 끝난다
+        # 스티커 가운데 = 종이 윗변. 지금 떠 있는 대사판(대사·선택)의 윗변을 쓴다.
+        return getattr(store,"r13_say_panel_top_now",None) or r13_night_panel_top(None)
+    R13_NIGHT_CONTROL_Y=R13_NIGHT_PAPER_BOTTOM-(R13_NIGHT_PAPER_EDGE+R13_SAY_RIBBON_IN+64+2*R13_SAY_MARGIN)   # PC 2줄 기준 윗변(더보기 판이 참조)
+    R13_NIGHT_TEXT_BOTTOM=R13_NIGHT_PAPER_BOTTOM-R13_NIGHT_PAPER_EDGE-R13_SAY_MARGIN
 
     def r13_night_say_size():
         # The mockup's line is a step larger than the boxed window's (same size setting).
@@ -34,13 +43,8 @@ init 150 python:
         return max(1,_r13_say_lines(what,size,988 if face else 1090))
 
     def r13_night_say_top(what=None):
-        """Top of the dialogue text: lines stack upward from a fixed bottom, so one line sits
-        low like the mockup and two lines never reach the controls row."""
-        size=r13_night_say_size()
-        # 2026-10-27 6단계 통일에서 드러난 것: 밑선을 560/578 로 박아 두면 대사가 36px 이 된 뒤 두 줄째가
-        # 하단 조작 줄(더보기)에 닿는다. 밑선은 조작 줄 위 6px 에서 두 줄 높이만큼 올려 잡는다.
-        base=r13_night_control_y()-(88 if r13_touch_ui() else 56)//2-6-(2*size+4)
-        return base-max(0,r13_night_say_lines(what)-2)*(size+4)
+        """대사 첫 줄 윗선 = 종이 윗변 + 리본이 들어온 깊이 + 여백. 세 줄 이상은 종이와 함께 위로 자란다."""
+        return r13_night_panel_top(what)+R13_SAY_RIBBON_IN+R13_SAY_MARGIN
 
     def r13_night_text_color():
         # B dialogue uses paper-role colours on the cream notebook.

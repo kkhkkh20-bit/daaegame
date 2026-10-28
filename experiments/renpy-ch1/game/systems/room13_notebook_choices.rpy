@@ -206,17 +206,17 @@ screen r13_choice_c(person,pose,entries,ready,caption=""):
     $ visible=pages[page]
     $ pager_h=((100 if r13_touch_ui() else 66) if len(pages)>1 else 0)
     $ rows_height=sum(row[1] for row in visible)+max(0,len(visible)-1)*10
-    $ list_bottom=min(R13_CHOICE_C_LIST_BOTTOM,r13_night_say_top(heading+("\n"+subline if subline else ""))-R13_SAY_RIBBON_UP-12)
+    $ list_bottom=min(R13_CHOICE_C_LIST_BOTTOM,r13_night_panel_top(heading+("\n"+subline if subline else ""))-36)   # 윗변에 걸친 리본·스티커 위
     $ rows_top=list_bottom-pager_h-rows_height
     if person:
         add r13_close_art(person,pose,760):
             xpos 330 xanchor .5 ypos r13_close_y(person,760,150,pose)
-    # 대사판: 일반 대사창과 같은 계산(r13_night_say_top·R13_SAY_PANEL_PAD·R13_SAY_RIBBON_UP)이라 높이·리본·글자 자리가 같다.
+    # 대사판: 일반 대사창과 같은 계산(r13_night_panel_top·r13_night_say_top)이라 높이·리본·글자 자리가 같다.
     $ say_text=heading+("\n"+subline if subline else "")
     $ say_top=r13_night_say_top(say_text)
-    add Transform(Frame(Crop((16,16,1168,128),r13_asset_path("file:assets/ui-b-dialogue/b_panel_dialogue.png")),48,24,64,24),xysize=(1220,714-(say_top-R13_SAY_PANEL_PAD)),alpha=r13_night_shade_alpha()) xpos 30 ypos (say_top-R13_SAY_PANEL_PAD)
+    add Transform(Frame(Crop((16,16,1168,128),r13_asset_path("file:assets/ui-b-dialogue/b_panel_dialogue.png")),48,24,64,24),xysize=(1220,714-r13_night_panel_top(say_text)),alpha=r13_night_shade_alpha()) xpos 30 ypos r13_night_panel_top(say_text)
     frame:
-        xpos 120 ypos (say_top-R13_SAY_RIBBON_UP) background Frame(Crop((16,12,168,32),r13_asset_path("file:assets/ui-b-dialogue/b_ribbon_name.png")),16,6,32,6) padding (22,8,36,10)
+        xpos 120 ypos r13_night_panel_top(say_text) yanchor .5 background Frame(Crop((16,12,168,32),r13_asset_path("file:assets/ui-b-dialogue/b_ribbon_name.png")),16,6,32,6) padding (22,8,36,10)
         text "아빠" color (r13_type_color("inverse")) font R13_UI_BOLD_FONT size (r13_type("title")) outlines []
     vbox:
         xpos 120 ypos say_top spacing 4
