@@ -136,11 +136,16 @@ BRANCHES={
     'nero_lost':dict(day=11,gates={'rescue_cart11':['먼저 학교 물자를 인계한다'],'night_rescue_prepare11':['오늘은 출발을 미룬다']},drop=['아랫길 대피 준비를 확인한다']),
     # 12일: 배식 전에 냄비를 열지 않는다(도담 사건).
     'soup_lost':dict(day=12,gates={'meal_inspect12':['장작을 받을 일을 다시 살핀다']},drop=['배식 전에 더 살핀다','흰 그릇을 옆으로 옮기고 작은 냄비를 연다']),
+    # 13일 군중: 「검증한 기록을 공개한다」를 골라야 광장 장면이 열린다. 불 대승리(배급표)가 없는 owl_lost 13일 저장에서
+    # 준비 없이 읽으면 폭동, 돌목에게 너울을 맡기고 읽으면 감독자. 진엔딩 저장(배급표 있음)에서는 기록 읽기 길.
+    'crowd_riot':dict(day=13,save='br-owl_lost-day13',prefer=['검증한 기록을 공개한다'],gates={'crowd_prepare13':['검증한 기록을 소리 내어 읽는다']}),
+    'crowd_guard':dict(day=13,save='br-owl_lost-day13',prefer=['검증한 기록을 공개한다'],gates={'crowd_prepare13':['기록 읽을 자리를 수레에서 떼어 놓는다','수레 옆 짐을 옮겨 통로를 나눈다','돌목에게 기록 읽는 동안 너울을 맡아 달라고 한다','검증한 기록을 소리 내어 읽는다']}),
+    'crowd_record':dict(day=13,prefer=['검증한 기록을 공개한다'],gates={'crowd_prepare13':['검증한 기록을 소리 내어 읽는다']}),
 }
 if BRANCH:
     _b=BRANCHES[BRANCH]
     TRUE_GATES.update(_b.get('gates',{}))
-    TRUE_CHOICES=[c for c in TRUE_CHOICES if (c if isinstance(c,str) else c[0]) not in _b.get('drop',())]
+    TRUE_CHOICES=list(_b.get('prefer',()))+[c for c in TRUE_CHOICES if (c if isinstance(c,str) else c[0]) not in _b.get('drop',())]
 SAVE_PREFIX=('br-%s-day'%BRANCH) if BRANCH else 'auto-day'
 TRUE_PREFER_PROOF=('NW_NUBI_TICKET','NW_RETURNED_BOWL')   # 대승리 보너스 증거가 든 정답 묶음을 먼저 낸다
 TRUE_TRACK=('piko_alive','KKOMI_ALIVE','OWL_ALIVE','nero_alive','prevention','route7','route12','carried_dry_blankets','daram_fever12',
@@ -349,7 +354,7 @@ async def main():
         await q.py('import renpy;renpy.store.preferences.text_cps=0;result=True')
         log('BUILD',await q.py('import renpy;result=renpy.store.config.version'))
         if os.environ.get('RESUME_DAY'):
-            code='import renpy;renpy.exports.load("auto-day%s")'%os.environ['RESUME_DAY']
+            code='import renpy;renpy.exports.load("%s")'%((BRANCH and BRANCHES[BRANCH].get('save')) or 'auto-day'+os.environ['RESUME_DAY'])
             await pg.evaluate('code=>{renpy_exec("exec("+JSON.stringify(code)+")").catch(()=>{});return true;}',code)
             await asyncio.sleep(3)
             try:await pg.evaluate("window._renpy_cmd_callback({data:true})")
