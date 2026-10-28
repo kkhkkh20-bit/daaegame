@@ -204,9 +204,6 @@ screen choice(items):
     elif room13_mode:
         on "show" action Function(r13_choice_layout,choice_actor,choice_pose,True)
         on "hide" action Function(r13_choice_layout,choice_actor,choice_pose,False)
-        # 2026-10-28 분기 주행(12일 배식 선택): 이 선택창에서도 오른쪽 위 증거 칸이 목록과 겹쳤다. 수첩 선택창과 같이 감춘다.
-        on "show" action Function(r13_ep_cut_suspend)
-        on "hide" action Function(r13_ep_cut_resume)
         # A menu caption (no action) is the question being asked: shown as a heading, never as
         # a numbered choice (0.18.41).
         $ choice_entries=[(item.caption,item.action,False) for item in items if item.action is not None]

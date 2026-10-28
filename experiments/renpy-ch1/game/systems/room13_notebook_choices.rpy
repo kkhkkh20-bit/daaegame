@@ -200,8 +200,12 @@ screen r13_choice_c(person,pose,entries,ready,caption=""):
     $ left=(600 if person else 320)
     $ context=r13_choice_context()
     $ issue=r13_choice_issue(entries)
-    $ heading=issue or caption or (context[1] if context else "어떻게 할까?")
-    $ subline=r13_choice_issue_subline(caption,context,34) if issue else None
+    # 2026-10-28 분기 주행(6일 꼬미): 물음이 없는 선택은 직전 대사를 제목으로 썼는데 이름표는 늘 「아빠」라서
+    # 꼬미의 「아저씨도…… 뺏을 거야?」가 아빠 말처럼 보였다. 직전 대사가 다른 사람 말이면 아빠의 생각을 제목으로,
+    # 그 말은 아래 줄에 「꼬미 · …」로 둔다(쟁점이 있을 때와 같은 꼴).
+    $ other=bool(context and context[0] and context[0] not in ("아빠",r13_display_name(r13_viewpoint())))
+    $ heading=issue or caption or ("(어떻게 답할까?)" if other else (context[1] if context else "어떻게 할까?"))
+    $ subline=r13_choice_issue_subline(caption,context,34) if (issue or (other and not caption)) else None
     $ thought=heading.strip().startswith("(")
     $ pages=r13_choice_c_geometry(entries,width)
     $ page=min(page,len(pages)-1)
