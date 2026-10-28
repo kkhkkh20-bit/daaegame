@@ -218,6 +218,9 @@ screen r13_question_list(person,pose,title,entries,ready,actor_x=220,list_left=4
         use r13_carriage_choice_list(entries,ready,caption)
     elif person and title!="선택":
         use r13_side_question_list(person,pose,entries,ready,return_action,caption)
+    elif title=="선택" and return_action is None:
+        # 2026-10-28 소유자 시안 C: 선택은 대사판(아빠의 물음) + 위 오른쪽 목록.
+        use r13_choice_c(person,pose,entries,ready,caption)
     else:
         use r13_notebook_choice_list(person,pose,title,entries,ready,return_action,caption)
 

@@ -172,3 +172,84 @@ screen r13_notebook_choice_list(person,pose,title,entries,ready,return_action=No
             key ("K_KP%d"%(i+1)) action r13_safe_question_action(command)
     if return_action is not None:
         use r13_notebook_topic_action(1044,152,"돌아가기",return_action,ready,icon=None)
+
+# 2026-10-28 소유자 시안 C 선택: 아빠의 물음(메뉴 머리 글·쟁점)은 아래 대사판에 「아빠」 리본과 함께, 선택지는 그 위 오른쪽 세로 목록.
+# 질문 판이 화면 가운데를 차지하지 않고, 대사와 같은 자리에서 읽힌다. 대사창과 선택지는 겹치지 않는다(목록 바닥 = 리본 위).
+init 82 python:
+    R13_CHOICE_C_LIST_BOTTOM=520    # 목록 바닥. 리본(530) 바로 위
+    R13_CHOICE_C_LIST_TOP=104       # 위 줄(장소·날짜판) 아래
+    R13_CHOICE_C_WIDTH=600
+    def r13_choice_c_geometry(entries,width):
+        avail=R13_CHOICE_C_LIST_BOTTOM-R13_CHOICE_C_LIST_TOP
+        pages=r13_notebook_choice_pages(entries,width,avail)
+        if len(pages)>1 or not r13_notebook_choice_fits(pages,avail):
+            pager=(100 if r13_touch_ui() else 66)
+            pages=r13_notebook_choice_pages(entries,width,avail-pager,split=True)
+        return pages
+
+screen r13_choice_c(person,pose,entries,ready,caption=""):
+    default page=0
+    default focused_choice=None
+    $ width=R13_CHOICE_C_WIDTH
+    $ left=(640 if person else 340)
+    $ context=r13_choice_context()
+    $ issue=r13_choice_issue(entries)
+    $ heading=issue or caption or (context[1] if context else "어떻게 할까?")
+    $ subline=r13_choice_issue_subline(caption,context,34) if issue else None
+    $ thought=heading.strip().startswith("(")
+    $ pages=r13_choice_c_geometry(entries,width)
+    $ page=min(page,len(pages)-1)
+    $ visible=pages[page]
+    $ pager_h=((100 if r13_touch_ui() else 66) if len(pages)>1 else 0)
+    $ rows_height=sum(row[1] for row in visible)+max(0,len(visible)-1)*10
+    $ rows_top=R13_CHOICE_C_LIST_BOTTOM-pager_h-rows_height
+    if person:
+        add r13_close_art(person,pose,760):
+            xpos 330 xanchor .5 ypos r13_close_y(person,760,150,pose)
+    # 대사판: 대사창과 같은 판·리본. 아빠의 물음이나 쟁점을 대사 자리에 둔다.
+    add Frame(r13_asset_path("file:assets/ui-b-dialogue/b_panel_dialogue.png"),60,40) xpos 24 ypos 548 xysize (1232,160)
+    frame:
+        xpos 60 ypos 530 padding (22,8,36,10) background Frame(Crop((16,12,168,32),r13_asset_path("file:assets/ui-b-dialogue/b_ribbon_name.png")),16,6,32,6)
+        text "아빠" color (r13_type_color("inverse")) font R13_UI_BOLD_FONT size (r13_type("title")) outlines []
+    vbox:
+        xpos 84 ypos 590 spacing 6
+        text heading id "r13_choice_issue" xsize 1080 size (r13_type("emphasis")) color ("#2A5FA8" if thought else r13_type_color("ink")) font R13_UI_BOLD_FONT line_spacing 4
+        if subline:
+            text subline xsize 1080 size (r13_type("small")) color (r13_type_color("muted")) font R13_UI_BOLD_FONT
+    vbox:
+        pos (left,rows_top) spacing 10
+        for i,((label,command,read),height) in enumerate(visible):
+            button:
+                id ("r13_notebook_choice_"+str(i+1))
+                xsize width ysize height padding (0,0)
+                background r13_notebook_choice_surface(width)
+                hover_background r13_notebook_choice_surface(width,True)
+                action r13_safe_question_action(command) sensitive ready
+                hovered SetLocalVariable("focused_choice",i)
+                unhovered SetLocalVariable("focused_choice",None)
+                fixed:
+                    frame:
+                        xpos 22 yalign .5 xysize (40,40) padding (3,3) background Solid("#fff6e6")
+                        fixed:
+                            add Solid("#bc4134" if focused_choice==i else "#654129")
+                            text str(i+1) align (.5,.5) size (r13_type("emphasis")) color (r13_type_color("inverse")) font R13_UI_BOLD_FONT
+                    text r13_question_caption(label,False,False) xpos 84 yalign .5 xsize width-R13_CHOICE_TEXT_PAD size (r13_type(R13_CHOICE_BODY)) font R13_UI_BOLD_FONT color (r13_type_color("ink")) line_spacing 4
+    if len(pages)>1:
+        hbox:
+            pos (left,R13_CHOICE_C_LIST_BOTTOM-pager_h+12) spacing 16
+            textbutton "← 이전":
+                xsize (width-16)//2 ysize (88 if r13_touch_ui() else 54) padding (12,4)
+                background r13_notebook_button_surface()
+                hover_background r13_notebook_button_surface(False,True)
+                text_font R13_UI_BOLD_FONT text_color (r13_type_color("muted")) text_hover_color (r13_type_color("muted")) text_insensitive_color (r13_type_color("disabled")) text_size (r13_type("body"))
+                action SetLocalVariable("page",page-1) sensitive ready and page>0
+            textbutton "다음 →":
+                xsize (width-16)//2 ysize (88 if r13_touch_ui() else 54) padding (12,4)
+                background r13_notebook_button_surface()
+                hover_background r13_notebook_button_surface(False,True)
+                text_font R13_UI_BOLD_FONT text_color (r13_type_color("muted")) text_hover_color (r13_type_color("muted")) text_insensitive_color (r13_type_color("disabled")) text_size (r13_type("body"))
+                action SetLocalVariable("page",page+1) sensitive ready and page<len(pages)-1
+    if ready:
+        for i,((label,command,read),height) in enumerate(visible):
+            key ("K_%d"%(i+1)) action r13_safe_question_action(command)
+            key ("K_KP%d"%(i+1)) action r13_safe_question_action(command)
