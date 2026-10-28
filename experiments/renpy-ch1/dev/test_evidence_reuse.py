@@ -8,6 +8,8 @@ RULES=(GAME/'room13_v111_newworld_rules.rpy').read_text()
 TEXT=(GAME/'room13_v111_newworld_text.rpy').read_text()
 EV=set(json.loads((GAME/'v111/records.json').read_text())['evidence'])
 for f in (GAME/'v111/newworld').glob('d*.json'):EV|=set(json.loads(f.read_text()).get('new_evidence',{}))
+# 예방 판(등 시도)의 자료도 대체 세트가 될 수 있다(2026-10-28, 11일 가설 회의의 NW_LA_CHECK).
+EV|=set(json.loads((GAME/'v111/newworld/lamp_attempt.json').read_text()).get('new_evidence',{}))
 def table(name):
     return RULES.split(name+'={',1)[1].split('\n    }',1)[0]
 PROOF_KEYS=set(re.findall(r"call r13_v111_proof\(\s*['\"]([^'\"]+)['\"]",''.join(f.read_text() for f in GAME.glob('room13_v111_days*.rpy'))))
