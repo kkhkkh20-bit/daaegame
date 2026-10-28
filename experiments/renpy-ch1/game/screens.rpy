@@ -153,7 +153,7 @@ screen say(who,what):
         $ b_text_x = 222 if b_face else 120
         $ b_text_width = 988 if b_face else 1090
         $ b_text_top = r13_night_say_top(what)
-        add Transform(Frame(Crop((16,16,1168,128),r13_asset_path("file:assets/ui-b-dialogue/b_panel_dialogue.png")),48,24,64,24),xysize=(1220,714-r13_night_panel_top(what)),alpha=r13_night_shade_alpha()) xpos 30 ypos r13_night_panel_top(what)
+        add Transform(Frame(Crop((16,16,1168,128),r13_asset_path("file:assets/ui-b-dialogue/b_panel_dialogue.png")),48,24,64,24),xysize=(1220,R13_NIGHT_PAPER_BOTTOM-r13_night_panel_top(what)),alpha=r13_night_shade_alpha()) xpos 30 ypos r13_night_panel_top(what)
         if b_face:
             add Transform(b_face,xysize=(112,112)) xpos 70 ypos (b_text_top-10)
         window:
@@ -164,7 +164,7 @@ screen say(who,what):
         if who:
             $ r13_name_track(who)
             hbox:
-                xpos b_text_x ypos r13_night_panel_top(what) yanchor .5 spacing 12
+                xpos b_text_x ypos (r13_night_panel_top(what)-R13_SAY_RIBBON_LIFT) yanchor .5 spacing 12
                 # 2026-10-26 소유자: 이름표가 스르륵 생기면 이상하다. 화자가 바뀌면 바로 보인다(r13_name_fade 는 쓰지 않음).
                 frame:
                     background Frame(Crop((16,12,168,32),r13_asset_path("file:assets/ui-b-dialogue/b_ribbon_name.png")),16,6,32,6) padding (22,8,36,10) yalign .5

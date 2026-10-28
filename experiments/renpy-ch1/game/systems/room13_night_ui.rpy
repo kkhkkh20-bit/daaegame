@@ -5,29 +5,39 @@ init 150 python:
     R13_NIGHT_TEXT_COLOR="#4b3420"
     # 대사판 종이(b_panel_dialogue) 는 screens.rpy 에서 아래끝 714 에 맞춰 늘인다. 그 종이의 아래 테두리(남색 선)는
     # 그림 아래끝에서 16px 안쪽까지 그려진다(crop 128 줄 중 112~125). 조작 리본은 그 선보다 위에서 끝나야 한다.
-    R13_NIGHT_PAPER_BOTTOM=714
+    # 2026-10-28 소유자 「건너뛰기·더보기를 우측 하단에 놓고, 대사창 박스 하단을 더 줄여 두 줄 들어가게」:
+    # 스티커가 종이 아래 테두리에 걸쳐도 화면(720) 안에 들어오도록 종이 아래끝을 694 로 올린다.
+    R13_NIGHT_PAPER_BOTTOM=690
     R13_NIGHT_PAPER_EDGE=16
     R13_NIGHT_CONTROL_GAP=10         # 리본 아래끝과 종이 테두리 선 사이
     # 2026-10-28 소유자 「선택지 대화창이랑 일반 대화창 높이가 너무 다르다, 둘의 중간으로 통일」(178) 뒤에
     # 「아빠라는 이름과 대사가 너무 붙어 있다, 위로 붙어 있다」「높이 그대로에 아래를 줄여서 올려」
     # 「건너뛰기·더보기는 스티커 에셋이라 대화창 안에 들어갈 필요는 없다」:
     #   - 종이 높이는 그대로(PC 178). 대사는 이름 리본 아래부터 종이 아래 테두리까지의 가운데에 둔다.
-    #   - 이름 리본은 종이 윗변에 걸치고(왼쪽), 건너뛰기·더보기 스티커도 종이 윗변에 걸친다(오른쪽). 종이 안 아래쪽 빈칸이 없어진다.
+    #   - 이름 리본은 종이 윗변 왼쪽에, 건너뛰기·더보기 스티커는 종이 아래 테두리 오른쪽에 걸친다(종이 안 빈칸 없음).
     #   - 세 줄 이상이면 종이가 위로 자란다(리본·스티커가 같이 올라간다).
-    R13_SAY_RIBBON_IN=24      # 윗변에 걸친 리본·스티커가 종이 안으로 들어오는 깊이
-    R13_SAY_MARGIN=37         # 리본 아래·종이 아래 테두리 위 여백(같다). PC 178 = 16+24+64+2x37
+    R13_SAY_RIBBON_IN=14      # 윗변에 걸친 이름 리본이 종이 안으로 들어오는 깊이(리본 가운데 = 윗변 - 12)
+    R13_SAY_RIBBON_LIFT=12
+    R13_SAY_MARGIN=10         # 리본 아래 여백 = 종이 아래 테두리 위 여백
+    _R13_SAY_BLOCK={}
+    def r13_night_say_block(lines=2,size=None):
+        # 2026-10-28 실측: 한 줄 높이를 글자 크기(30)로 잡아 두 줄 칸이 64 로 계산됐는데, 실제로 그린 두 줄은 88 이었다
+        # (Pretendard 줄 높이 + 줄 간격 4). 그래서 대사가 종이 아래로 치우쳤다. 실제로 그려서 잰다.
+        size=size or r13_night_say_size()
+        key=(size,lines)
+        if key not in _R13_SAY_BLOCK:
+            t=Text("\n".join(["가나다"]*lines),font=R13_UI_BOLD_FONT,size=size,line_spacing=4)
+            _R13_SAY_BLOCK[key]=int(renpy.render(t,1280,720,0,0).get_size()[1])
+        return _R13_SAY_BLOCK[key]
     def r13_night_panel_top(what=None,size=None):
         size=size or r13_night_say_size()
         lines=r13_night_say_lines(what) if what is not None else 2
-        block=2*size+4
-        top=R13_NIGHT_PAPER_BOTTOM-(R13_NIGHT_PAPER_EDGE+R13_SAY_RIBBON_IN+block+2*R13_SAY_MARGIN)
-        top-=max(0,lines-2)*(size+4)
-        store.r13_say_panel_top_now=top   # 조작 스티커가 같은 윗변에 걸치도록 마지막 값을 남긴다
-        return top
+        block=r13_night_say_block(max(2,lines),size)
+        return R13_NIGHT_PAPER_BOTTOM-(R13_NIGHT_PAPER_EDGE+R13_SAY_RIBBON_IN+block+2*R13_SAY_MARGIN)
     def r13_night_control_y():
-        # 스티커 가운데 = 종이 윗변. 지금 떠 있는 대사판(대사·선택)의 윗변을 쓴다.
-        return getattr(store,"r13_say_panel_top_now",None) or r13_night_panel_top(None)
-    R13_NIGHT_CONTROL_Y=R13_NIGHT_PAPER_BOTTOM-(R13_NIGHT_PAPER_EDGE+R13_SAY_RIBBON_IN+64+2*R13_SAY_MARGIN)   # PC 2줄 기준 윗변(더보기 판이 참조)
+        # 스티커 가운데 = 종이 아래 테두리 선(아래끝 - 테두리 두께의 절반). 오른쪽 아래에 걸친다.
+        return R13_NIGHT_PAPER_BOTTOM-R13_NIGHT_PAPER_EDGE//2
+    R13_NIGHT_CONTROL_Y=R13_NIGHT_PAPER_BOTTOM-R13_NIGHT_PAPER_EDGE//2   # 더보기 판이 참조
     R13_NIGHT_TEXT_BOTTOM=R13_NIGHT_PAPER_BOTTOM-R13_NIGHT_PAPER_EDGE-R13_SAY_MARGIN
 
     def r13_night_say_size():
@@ -43,8 +53,12 @@ init 150 python:
         return max(1,_r13_say_lines(what,size,988 if face else 1090))
 
     def r13_night_say_top(what=None):
-        """대사 첫 줄 윗선 = 종이 윗변 + 리본이 들어온 깊이 + 여백. 세 줄 이상은 종이와 함께 위로 자란다."""
-        return r13_night_panel_top(what)+R13_SAY_RIBBON_IN+R13_SAY_MARGIN
+        """대사 첫 줄 윗선. 두 줄 칸 가운데에 놓는다 — 한 줄이면 반 줄 내려 위아래 가운데로."""
+        size=r13_night_say_size()
+        lines=r13_night_say_lines(what) if what is not None else 2
+        top=r13_night_panel_top(what)+R13_SAY_RIBBON_IN+R13_SAY_MARGIN
+        if lines<2:top+=(r13_night_say_block(2,size)-r13_night_say_block(1,size))//2
+        return top
 
     def r13_night_text_color():
         # B dialogue uses paper-role colours on the cream notebook.
