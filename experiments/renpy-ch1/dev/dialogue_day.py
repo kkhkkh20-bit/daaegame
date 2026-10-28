@@ -142,6 +142,10 @@ def apply(day, edits_path, dry=False):
             continue
         m = re.fullmatch(r'(MS14_\w+?)(?:\{(\w[\w:]*)\})?', ref)
         if ref in rows_by_id:
+            # 엔진이 생각 줄에 괄호를 붙인다. 괄호째 넣으면 게임 시작 때 새 세계 글 검사가 멈춘다(2026-10-28)
+            if rows_by_id[ref].get('kind') == 'thought' and text.startswith('('):
+                problems.append(f'{ref}: 생각 줄은 괄호 없이 쓴다')
+                continue
             rows_by_id[ref]['text'] = text
             if e.get('speaker'):
                 rows_by_id[ref]['speaker'] = e['speaker']

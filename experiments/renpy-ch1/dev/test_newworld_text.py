@@ -223,11 +223,11 @@ class Event01Gate(Layer):
  def test_approved_lines_are_in_place(self):
   env=self.load()
   carriage=[r[1] for r in env['r13_v111_lines'](['MS14_D01_S01_L0019','MS14_D01_S01_L0020','MS14_D01_S01_L0021','MS14_D01_S01_L0022'])]
-  self.assertEqual(carriage[-4:],['창밖으로 길을 따라 등이 줄지어 서 있다. 바람이 부는데도 불빛이 하나도 흔들리지 않는다.','예쁘다. 꼭 별 같아. 불이 하나도 안 떨려.','저 등에는 기름 대신 돌이 들어 있대. 엄마도 그 돌 때문에 여기 온 거야.','우리 동네는 기계 난로로 불 때잖아.'])
+  self.assertEqual(carriage[-4:],['창밖으로 길을 따라 등이 줄지어 서 있다. 바람이 부는데도 불빛이 하나도 흔들리지 않는다.','우와…{w=.4} 예쁘다. 꼭 별 같아.\n불이 하나도 안 떨려.','저 등에는 기름 대신 돌이 들어 있대. 엄마도 그 돌 때문에 여기 온 거야.','우리 동네는 기계 난로로 불 때잖아.'])
   greet=[(r[0],r[1]) for r in env['r13_v111_lines'](['MS14_D01_S04_L0011'])]
-  self.assertEqual(greet[2],('guard','아르카 곁에.'))
+  self.assertEqual(greet[2],('guard','……아르카 곁에.'))
   room=env['r13_v111_lines'](['MS14_D01_S05_L0016','MS14_D01_S05_L0017'])
-  self.assertIn('돌난로',room[0][1]);self.assertEqual(room[1][1],'엄마?')
+  self.assertIn('돌난로',room[0][1]);self.assertTrue(room[1][1].startswith('엄마?'))
   self.assertIn('여관에 먼저 연락',env['ROOM13']['evidence']['V111:E02']['establishes'])
  def test_won_gate_keeps_the_authored_registration(self):
   env=self.load()
@@ -235,7 +235,7 @@ class Event01Gate(Layer):
   # Day-1 rewrite (owner 2026-10-22): wording changed, the record still names both of them.
   self.assertEqual(len(texts),len(self.RIDS))
   self.assertIn('방문객 다돌, 동행 아동',texts[3]);self.assertNotIn('일꾼',texts[3])
-  self.assertIn('다람',texts[4]);self.assertEqual(texts[5],source_tests.DATA['records']['MS14_D01_S04_L0008']['text'])
+  self.assertIn('다람',texts[4]);self.assertIn('다람.',texts[5]);self.assertIn('됐소.',texts[5])   # 2026-10-28 템포 손질: 「……다람.{w} 됐소.」
   self.assertIn('방문객 다돌, 동행인 다람',env['r13_v111_lines'](['MS14_D01_S04_L9101'])[0][1])
   after=[r[1] for r in env['r13_v111_lines'](['MS14_D01_S04_L0021'])]
   self.assertIn('정정한 표',after[1]);self.assertEqual(len(after),3)

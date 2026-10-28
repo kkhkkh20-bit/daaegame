@@ -46,6 +46,9 @@ def day_lines(day):
         m = re.match(r'\s*\+?(\S+?)(?: \((앞|뒤|블록)\))?(?:\{([^}]*)\})? ([^:]{1,14}): (.*)', line)
         if m:
             out.append(dict(id=m.group(1), when=m.group(3), who=m.group(4), text=m.group(5)))
+        elif out and line.strip() and not line.startswith('#'):
+            # 대사 안 줄바꿈(\n, 2026-10-28 템포 손질)은 다음 줄로 찍힌다. 앞 줄에 이어 붙여야 둘째 줄의 이름도 센다
+            out[-1]['text'] += ' ' + line.strip()
     return out
 
 
