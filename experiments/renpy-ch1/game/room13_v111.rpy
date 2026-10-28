@@ -158,7 +158,10 @@ init 301 python:
             and not (r13_v111_value("busy:mom")=="daram_guard")
             and not (r13_v111_value("DARAM_location")=="school" and r13_v111_value("busy:nabi")=="daram_guard")
             and not (r13_v111_value("DARAM_location")=="room13" and store.room13["v111"].get("scene")=="MS14_D07_S04"))
-        if daram_with_dad or r13_v111_value("location:daram") not in (None,here):people=[p for p in people if p!="daram"]
+        # 2026-10-28 다른 길 7일 자유 시간: 13호·판돌 집을 먼저 돌면 그곳의 arrive 가 다람의 물리 위치를 적어, 학교로 돌아왔을 때
+        # 장면 묶음은 다람이 학교에 있다는데 물리 위치는 13호라 세우지 않았다. 그러면 저녁으로 넘어가는 유일한 선택
+        # 「다람아, 이제 13호에 가 보자」를 누를 수 없어 하루가 안 끝난다. 이 장소의 선택지가 다람을 가리키면 물리 위치와 무관하게 세운다.
+        if daram_with_dad or (r13_v111_value("location:daram") not in (None,here) and "daram" not in needed):people=[p for p in people if p!="daram"]
         if r13_v111_value("DARAM_DETAINED") and "daram" not in authored:people=[p for p in people if p!="daram"]
         for family_person in ("daram","mom"):
             physical=r13_v111_value("location:"+family_person)
