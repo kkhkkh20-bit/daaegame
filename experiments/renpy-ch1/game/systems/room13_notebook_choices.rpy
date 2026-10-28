@@ -179,6 +179,7 @@ init 82 python:
     R13_CHOICE_C_LIST_BOTTOM=520    # 목록 바닥. 리본(530) 바로 위
     R13_CHOICE_C_LIST_TOP=104       # 위 줄(장소·날짜판) 아래
     R13_CHOICE_C_WIDTH=640
+    R13_CHOICE_TEXT_NUDGE=2
     def r13_choice_c_geometry(entries,width):
         avail=R13_CHOICE_C_LIST_BOTTOM-R13_CHOICE_C_LIST_TOP
         pages=r13_notebook_choice_pages(entries,width,avail)
@@ -236,7 +237,9 @@ screen r13_choice_c(person,pose,entries,ready,caption=""):
                         fixed:
                             add Solid("#bc4134" if focused_choice==i else "#654129")
                             text str(i+1) align (.5,.5) size (r13_type("emphasis")) color (r13_type_color("inverse")) font R13_UI_BOLD_FONT
-                    text r13_question_caption(label,False,False) xpos 84 yalign .5 xsize width-R13_CHOICE_TEXT_PAD size (r13_type(R13_CHOICE_BODY)) font R13_UI_BOLD_FONT color (r13_type_color("ink")) line_spacing 4
+                    # 2026-10-28 소유자 「두 줄 선택지가 위로 치우쳐 보인다」: 실측(캡처) 위 여백이 아래보다 3~4px 작았다.
+                    # 마지막 줄 뒤에도 붙는 줄 간격(4)과 글꼴의 아래 여백 때문이다. 그만큼 내려 가운데에 맞춘다.
+                    text r13_question_caption(label,False,False) xpos 84 yalign .5 yoffset R13_CHOICE_TEXT_NUDGE xsize width-R13_CHOICE_TEXT_PAD size (r13_type(R13_CHOICE_BODY)) font R13_UI_BOLD_FONT color (r13_type_color("ink")) line_spacing 4
     if len(pages)>1:
         hbox:
             pos (left,R13_CHOICE_C_LIST_BOTTOM-pager_h+12) spacing 16
