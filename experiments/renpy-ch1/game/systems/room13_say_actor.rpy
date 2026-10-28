@@ -83,6 +83,10 @@ init 40 python:
         for p in entries[index+1:]:
             opts=p[2] if len(p)>2 and isinstance(p[2],dict) else {}
             if ok(p[0]) and not opts.get("thought"):return p[0]
+        # 2026-10-28 분기 주행(9일 식당): 「할머니가 식당 입구에서 목도리를 여민다」 바로 뒤 아빠의 「끝이 찢어졌네요」에
+        # 나비가 섰다. 바로 앞 줄이 지문이면 그 지문의 주어가 듣는 사람이다.
+        narrated=r13_narrated_person()
+        if ok(narrated):return narrated
         state=getattr(store,"room13",None) or {}
         present=list((state.get("v111") or {}).get("people") or [])
         alive=globals().get("r13_v111_person_alive",lambda w:True)
@@ -103,5 +107,23 @@ init 40 python:
             name=str(r13_display_name(who) or "").split(" ")[0]
             if len(name)<2 or name in R13_CALL_GENERIC:continue
             m=re.search(re.escape(name)+"(?: ?씨| ?님|아|야)?(?:[,!?…]| ?씨도 )",text)
+            if m and alive(who) and (best is None or m.start()<best[0]):best=(m.start(),who)
+        return best[1] if best else None
+
+    R13_NARRATE_SKIP=("아빠","엄마","아이","주민","사람")
+    def r13_narrated_person():
+        """바로 앞에 보인 줄이 지문이면, 그 지문에서 주어로 나온 사람(「할머니가」「나비는」). 없으면 None."""
+        import re
+        hist=getattr(store,"_history_list",None) or []
+        if not hist:return None
+        last=hist[-1]
+        if getattr(last,"who",None):return None
+        text=renpy.filter_text_tags(str(getattr(last,"what","") or ""),allow=[])
+        alive=globals().get("r13_v111_person_alive",lambda w:True)
+        best=None
+        for who in CAST:
+            name=str(r13_display_name(who) or "").split(" ")[0]
+            if len(name)<2 or name in R13_NARRATE_SKIP:continue
+            m=re.search(re.escape(name)+"(?:가|는|이|은|의) ",text)
             if m and alive(who) and (best is None or m.start()<best[0]):best=(m.start(),who)
         return best[1] if best else None
