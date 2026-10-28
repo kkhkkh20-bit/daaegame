@@ -66,9 +66,19 @@ def startup_media(rel, startup_files):
 
 def startup_files(game):
     result = set(START_FILES)
+    # 2026-10-28 소유자 「양 줄이기」: UI 폴더의 PNG 를 통째로 미리 받았다(쓰지 않는 스티커·시안 65장, 약 4MB).
+    # 대본·화면에서 이름(또는 「b_panel_card_」 같은 이름 앞부분)이 나오는 것만 미리 받는다. 나머지는 지우지 않고
+    # 필요할 때 받는 쪽(remote)으로 간다 — 혹시 쓰여도 깨지지 않고 잠깐 늦게 뜰 뿐이다.
+    texts = "".join(p.read_text(errors="ignore") for p in game.rglob("*.rpy") if "qa_tests" not in p.parts)
+    def referenced(path):
+        stem = Path(path).stem
+        full = game / path if not Path(path).is_absolute() and (game / path).exists() else Path(path)
+        # 작은 파일(64KB 미만)은 그대로 미리 받는다 — 아낄 것이 거의 없고, 역할 이름으로만 불리는 아이콘이 늦게 뜰 수 있다.
+        if full.exists() and full.stat().st_size < SMALL:return True
+        return stem in texts or (("_" in stem) and stem.rsplit("_", 1)[0] + "_" in texts)
     # Approved title/settings must be ready before the first interaction.
     for folder in ("ui-b-main", "ui-b-options", "ui-b-dialogue", "ui-b-question", "ui-b-choice", "ui-b-field", "ui-b-sticker", "ui-button-states", "ui-button-fit", "map-status"):
-        result.update(p.relative_to(game).as_posix() for p in (game / "assets" / folder).glob("*.png"))
+        result.update(p.relative_to(game).as_posix() for p in (game / "assets" / folder).glob("*.png") if referenced(p))
     result.update(p.relative_to(game).as_posix() for p in (game / "assets/diary-sounds").glob("*.*") if p.suffix in (".mp3", ".ogg"))
     # 도구함에서 다른 폴더의 에셋을 고르더라도 첫 UI에 필요한 실제 파일을 미리 받는다.
     toolbox = game / "asset-toolbox"
@@ -79,6 +89,7 @@ def startup_files(game):
         registry = module.Registry(json.loads((toolbox / "catalog.json").read_text()), json.loads((toolbox / "bindings.json").read_text()))
         for role, rule in registry.bindings["bindings"].items():
             if role.startswith(("button.", "surface.", "font.", "main.", "file:assets/ui-b-", "file:assets/map-status/", "file:assets/diary-sounds/")):
+                if role.startswith("file:") and not referenced(role[5:]):continue
                 for state in rule.get("states", ["basic"]):
                     result.add(registry.resolve(role, state)["path"])
     # Small face stickers must be present when the first dialogue is drawn.
@@ -106,6 +117,35 @@ def startup_files(game):
     return result
 
 
+
+def font_charset(game):
+    chars = set()
+    for p in game.rglob("*"):
+        if p.suffix in (".rpy", ".json", ".txt") and "qa_tests" not in p.parts:
+            chars.update(p.read_text(errors="ignore"))
+    for hi in range(0xB0, 0xC9):           # KS X 1001 한글 2,350자(게임 밖 글자가 들어와도 흔한 글자는 보인다)
+        for lo in range(0xA1, 0xFF):
+            try:chars.add(bytes((hi, lo)).decode("euc-kr"))
+            except UnicodeDecodeError:pass
+    ranges = [(0x20, 0x7E), (0xA0, 0xFF), (0x2000, 0x206F), (0x2190, 0x21FF), (0x2460, 0x24FF), (0x25A0, 0x25FF),
+              (0x2600, 0x26FF), (0x3000, 0x303F), (0x3131, 0x318E), (0xFF01, 0xFF5E)]
+    for a, b in ranges:chars.update(chr(c) for c in range(a, b + 1))
+    return "".join(sorted(c for c in chars if ord(c) >= 0x20))
+
+def subset_fonts(game):
+    from fontTools import subset
+    text = font_charset(game)
+    jobs = [(f, text) for f in ("Pretendard-Regular.otf", "Pretendard-Bold.otf", "Pretendard-ExtraBold.otf")]
+    jobs.append(("Galmuri11.ttf", "".join(chr(c) for c in range(0x20, 0x7F)) + "\u21c6\u25b8"))
+    for name, chars in jobs:
+        path = game / "assets" / name
+        if not path.exists():continue
+        before = path.stat().st_size
+        opts = subset.Options(); opts.layout_features = ["*"]; opts.name_IDs = ["*"]; opts.notdef_outline = True
+        font = subset.load_font(str(path), opts)
+        sub = subset.Subsetter(opts); sub.populate(text=chars); sub.subset(font)
+        subset.save_font(font, str(path), opts)
+        print("font subset %s %.2fMB -> %.2fMB" % (name, before / 1e6, path.stat().st_size / 1e6))
 
 def asset_files(value, profile=None):
     """Paths from character manifests; optionally select the runtime size only."""
@@ -586,6 +626,11 @@ def main():
     shutil.rmtree(game / "saves", ignore_errors=True)  # compile may create persistent; never publish it
     for junk in ("log.txt", "errors.txt", "traceback.txt", "lint.txt"):
         (stage / junk).unlink(missing_ok=True)
+
+    # 3b. 2026-10-28 소유자 「양 줄이기」: 글꼴은 처음에 다 받아야 해서(첫 화면 글자) 크기가 그대로 첫 로딩이 된다.
+    # Pretendard 세 벌(각 1.6MB)은 한글 11,172자를 다 담는다. 게임 글에 실제로 나오는 글자 + KS X 1001 한글 2,350자 +
+    # 기본 문장부호만 남긴다. Galmuri 는 기호 둘(⇆ ▸)만 쓴다(room13_font.rpy). 원본은 그대로, 공개본(stage)만 줄인다.
+    subset_fonts(game)
 
     # 4. classify media
     menu_music = MAIN_MENU_MUSIC.search((game / "options.rpy").read_text())
