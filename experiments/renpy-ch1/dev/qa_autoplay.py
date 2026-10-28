@@ -173,7 +173,7 @@ async def press_map(q):
         log('  지도가 이미 열려 있음')
 
 async def snap(q):
-    return await q.py('import renpy;s=renpy.store;result=dict(screens=[n for n in %r if renpy.display.screen.get_screen(n)],gate=(s.room13 or {}).get("v111",{}).get("gate"),day=(s.room13 or {}).get("day"),period=(s.room13 or {}).get("period"),choice=getattr(s,"v111_menu_owner",None),claim=getattr(s,"v111_claim",None),binding=s.r13_v111_binding() if s.r13_v111_active() else {},values=(s.room13 or {}).get("v111",{}).get("values",{}),evidence=(s.room13 or {}).get("evidence",[]),location=(s.room13 or {}).get("location"),say=(lambda x:str(x.scope.get("what","")) if x else "")(renpy.display.screen.get_screen("say")),who=(lambda x:str(x.scope.get("who","")) if x else "")(renpy.display.screen.get_screen("say")),people=s.r13_visible_people() if s.r13_v111_active() else [])'%(SCREENS,))
+    return await q.py('import renpy;s=renpy.store;result=dict(screens=[n for n in %r if renpy.display.screen.get_screen(n)],gate=(s.room13 or {}).get("v111",{}).get("gate"),day=(s.room13 or {}).get("day"),period=(s.room13 or {}).get("period"),choice=getattr(s,"v111_menu_owner",None),claim=getattr(s,"v111_claim",None),binding=s.r13_v111_binding() if s.r13_v111_active() else {},values=(s.room13 or {}).get("v111",{}).get("values",{}),evidence=(s.room13 or {}).get("evidence",[]),location=(s.room13 or {}).get("location"),scene=(s.room13 or {}).get("v111",{}).get("scene"),say=(lambda x:str(x.scope.get("what","")) if x else "")(renpy.display.screen.get_screen("say")),who=(lambda x:str(x.scope.get("who","")) if x else "")(renpy.display.screen.get_screen("say")),people=s.r13_visible_people() if s.r13_v111_active() else [])'%(SCREENS,))
 
 async def proof(q,st):
     """통합 대조 화면: 아는 정답 자료에 표시하고 제출한다."""
@@ -357,7 +357,10 @@ async def main():
                 if stale_n>=60:
                     dump=await q.state();log('STALE',st['gate'],st['location'],[b['text'] for b in dump['buttons']][:30]);await shot(q,'stale-'+str(st['gate']));break
                 if 'say' in sc:
-                    g=str(st['gate']);say_shots[g]=say_shots.get(g,0)+1
+                    g=str(st['gate'])
+                    # 진엔딩 길: 같은 관문 안에서 장면이 바뀌어도(14일 결말·진엔딩 후일담) 장면마다 두 장씩 남긴다.
+                    if TRUE_ROUTE:g=g+'-'+str(st.get('scene'))+('-'+str(st['values'].get('ending14')) if st['values'].get('ending14') else '')
+                    say_shots[g]=say_shots.get(g,0)+1
                     if say_shots[g]<=2:await shot(q,'say-%s-%s'%(g,st['who'] or '지문'))
                     await q.advance_dialogue();continue
                 if 'r13_confirm' in sc:
