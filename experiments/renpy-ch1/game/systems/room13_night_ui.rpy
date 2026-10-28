@@ -53,12 +53,10 @@ init 150 python:
         return max(1,_r13_say_lines(what,size,988 if face else 1090))
 
     def r13_night_say_top(what=None):
-        """대사 첫 줄 윗선. 두 줄 칸 가운데에 놓는다 — 한 줄이면 반 줄 내려 위아래 가운데로."""
-        size=r13_night_say_size()
-        lines=r13_night_say_lines(what) if what is not None else 2
-        top=r13_night_panel_top(what)+R13_SAY_RIBBON_IN+R13_SAY_MARGIN
-        if lines<2:top+=(r13_night_say_block(2,size)-r13_night_say_block(1,size))//2
-        return top
+        """대사 첫 줄 윗선. 두 줄 칸의 첫 줄 자리에서 시작한다.
+        2026-10-28 소유자 「한 줄일 때 가운데 정렬이 아니라 위 칸에 써야 할 듯」: 한 줄도 첫 줄 자리에 둔다. 대사가 바뀔 때
+        첫 글자 자리가 줄 수에 따라 오르내리면 눈이 따라가야 한다(역전재판·페르소나·Ren'Py 기본 대사창 모두 첫 줄 고정)."""
+        return r13_night_panel_top(what)+R13_SAY_RIBBON_IN+R13_SAY_MARGIN
 
     def r13_night_text_color():
         # B dialogue uses paper-role colours on the cream notebook.
