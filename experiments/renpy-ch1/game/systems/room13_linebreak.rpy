@@ -19,7 +19,9 @@ init 112 python:
             elif ch==' ' and depth==0 and i>0:cands.append(i)
         if not cands:return [s]
         half=_r13_lb_len(s)/2.0
-        i=min(cands,key=lambda i:abs(_r13_lb_len(s[:i])-half)+(-4 if s[i-1] in u',，' else 0))
+        # 2026-10-28 소유자 캡처(1일 방문 신청서): 문서 인용의 「항목 / 항목」에서 빗금 앞을 끊어 줄이 「/ 방문 목적」으로
+        # 시작하고, 「신청자 / 다돌 외 1명」처럼 항목 이름과 값이 갈렸다. 빗금 뒤에서 끊는 것을 쉼표처럼 우선하고 빗금 앞은 피한다.
+        i=min(cands,key=lambda i:abs(_r13_lb_len(s[:i])-half)+(-4 if s[i-1] in u',，/' else 0)+(12 if s[i+1:i+2]=='/' else 0))
         return _r13_lb_split(s[:i],limit)+_r13_lb_split(s[i+1:],limit)
 
     R13_DIALOGUE_LINES=2
