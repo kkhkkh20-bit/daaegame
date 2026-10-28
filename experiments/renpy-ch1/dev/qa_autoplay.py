@@ -132,7 +132,9 @@ def true_caption(gate,captions,values):
     for e in list(TRUE_GATES.get(gate,()))+TRUE_CHOICES:
         title,cond=_entry(e)
         if cond and not cond(values):continue
-        if title in captions:return captions.index(title)
+        # 긴 글귀는 선택창에서 줄이 바뀌어 온다(11일 가설 5번 쟁점). 빈칸·줄바꿈을 빼고 맞춘다.
+        flat=[''.join(c.split()) for c in captions]
+        if ''.join(title.split()) in flat:return flat.index(''.join(title.split()))
     return None
 def true_set(sets,owned):
     """가진 정답 묶음 가운데 대승리 보너스 증거가 든 것을 먼저."""
@@ -194,7 +196,7 @@ async def proof(q,st):
     if tab_all:await q.input(tab_all[0]+tab_all[2]/2,tab_all[1]+tab_all[3]/2);await asyncio.sleep(.3)
     owned=await q.py('import renpy;result=list(renpy.store.room13["evidence"])')
     sets=proof_sets(title);chosen_set=next((s for s in sets if all('V111:'+k in owned for k in s)),node['correct'])
-    if TRUE_ROUTE:chosen_set=true_set(sets,owned) or chosen_set
+    if TRUE_ROUTE:chosen_set=true_set(sets,owned) or chosen_set;log('  제출 묶음',title,chosen_set)
     if chosen_set!=node['correct']:log('  대체 정답 사용',chosen_set)
     for k in chosen_set:
         if 'V111:'+k in selected:continue
@@ -338,7 +340,10 @@ async def main():
                     tv=true_tracked(st.get('values'))
                     for k in sorted(set(tv)|set(x for x in true_prev if not x.startswith('_'))):
                         if tv.get(k)!=true_prev.get(k):log('  값',k,true_prev.get(k),'→',tv.get(k))
-                    if tv.get('ending14') and tv.get('ending14')!=true_prev.get('ending14'):await true_check(q,'결말 판정 직후')
+                    if tv.get('ending14') and tv.get('ending14')!=true_prev.get('ending14'):
+                        # 진엔딩 후일담은 ending14 를 'true' 로 바꾼다. 판정 함수는 morning 일 때만 참이므로 그 뒤의 ready 는 늘 False 다.
+                        await true_check(q,'진엔딩 후일담 진입(ready 는 morning 일 때만 참)' if tv['ending14']=='true' else '결말 판정 직후')
+                    if tv.get('meeting:altar') and tv.get('meeting:altar')!=true_prev.get('meeting:altar'):await true_check(q,'제단 회의 뒤(후일담 직전 판정)')
                     fin=true_prev.get('_final');true_prev.clear();true_prev.update(tv);true_prev['_final']=fin
                     if 'r13_meeting_retry_choice' in sc:
                         # 진엔딩 길에서 회의를 지면 그 판은 진엔딩이 안 된다. 기록을 남기고 결과를 받아들여 끝까지 가 본다.
@@ -410,10 +415,18 @@ async def main():
                     selected=await q.py('import renpy;result=list(renpy.store.room13["arguments"].get(renpy.store.v111_claim,[]))')
                     owned=await q.py('import renpy;result=list(renpy.store.room13["evidence"])')
                     chosen_set=next((s2 for s2 in proof_sets(title) if all('V111:'+k in owned for k in s2)),node['correct'])
-                    if TRUE_ROUTE:chosen_set=true_set(proof_sets(title),owned) or chosen_set
+                    if TRUE_ROUTE:
+                        chosen_set=true_set(proof_sets(title),owned) or chosen_set
+                        if not selected:log('  제출 묶음',title,chosen_set)
                     missing=[x for x in chosen_set if 'V111:'+x not in selected]
-                    if missing:book_target='V111:'+missing[0];await q.press('근거를 내놓는다')
-                    else:await q.press('논리를 연결한다')
+                    try:
+                        if missing:book_target='V111:'+missing[0];await q.press('근거를 내놓는다')
+                        else:await q.press('논리를 연결한다')
+                    except AssertionError as e:
+                        # 진엔딩 길: 앞 바퀴의 누름으로 책이 이미 열린 사이에 같은 단추를 다시 찾다 멈췄다(12일 수프 회의).
+                        # 책이 열려 있으면 다음 바퀴의 책 처리로 넘긴다.
+                        if not TRUE_ROUTE or 'r13_book' not in str(e)[:200]:raise
+                        log('  책이 이미 열려 있음')
                     continue
                 if 'r13_book' in sc:
                     if TRUE_ROUTE and not book_target:
