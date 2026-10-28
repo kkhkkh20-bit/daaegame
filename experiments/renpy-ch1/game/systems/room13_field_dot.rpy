@@ -112,5 +112,7 @@ init 340 python:
         keepouts=r13_stage_keepouts(location,r13_layout(location) or None)
         rects=[tuple(r) for r in r13_stage_critical(location,r13_layout(location))] if r13_v111_active() else []
         if rects or keepouts:actors=r13_clear_objects(actors,rects,width,keepouts)
+        # 2026-10-28: 물건 회피가 옮긴 사람이 남과 다시 겹치면 맨 끝 사각형으로 한 번 더 푼다.
+        actors=r13_separate_overlaps_final(actors,rects,width,keepouts)
         actors=r13_clamp_to_world(actors,width)
         return sorted(actors,key=lambda a:a.get("depth",0))

@@ -191,8 +191,12 @@ init 337 python:
                     def offscreen(f):
                         hidden=max(0,view_left-(f-fw/2.0))+max(0,(f+fw/2.0)-view_right)
                         return 1 if hidden>fw/3.0 else 0
-                    best=min(feet,key=lambda f:(offscreen(f),crowd(f),abs(f-cx)))
-                    if crowd(best)>0:continue
+                    # 2026-10-28 기본 길 2일 숲: 화면 밖 벌점이 붐빔보다 앞서 「화면 안이지만 붐빈 자리」가 뽑히고 그래서 버려졌다.
+                    # 붐빈 후보를 먼저 거르고, 지금 화면 안에 있는 사람만 화면 밖으로 나가는 것을 피한다.
+                    free=[f for f in feet if crowd(f)==0]
+                    if not free:continue
+                    visible_now=not offscreen(cx)
+                    best=min(free,key=lambda f:((offscreen(f) if visible_now else 0),abs(f-cx)))
                     rows[k]=r13_ma_place(back,back["pose"],int(best),back["y"]+back["height"],back["height"])
                     moved=True
             if not moved:break
@@ -267,6 +271,53 @@ init 337 python:
                     people+=overlap(candidate["rect"],other["rect"])//2   # 몸끼리도 피한다(보리가 돌목 앞을 막았다)
                 candidates.append(((object_cover,offscreen(candidate["rect"]) if not offscreen(actor["rect"]) else 0,people,abs(dx)),candidate))
             if candidates:out[index]=min(candidates,key=lambda item:item[0])[1]
+        return out
+
+    def r13_separate_overlaps_final(rows,critical,width,keepouts=()):
+        # 2026-10-28 기본 길 4일 입구·13일 광장: 바로 앞의 물건 회피가 사람을 옮기면서 층 16 이 풀어 둔 겹침을 다시
+        # 만들었다(바둑이가 초롱 옆으로, 엄마가 까로 옆으로). 사슬 맨 끝 사각형으로 한 번 더 푼다. 평행이동만 쓰므로
+        # 도트 환산이 끝난 뒤에도 그림이 어긋나지 않는다. 기준은 층 16 과 같다(가로 55%·세로 절반 넘게 겹치면 뒤·빈 자리
+        # 사람이 비킨다). 비킨 자리는 물건을 1/5 넘게 덮지 않고, 다른 사람과 다시 그만큼 겹치지 않아야 한다.
+        def overlap(a,b):
+            return max(0,min(a[0]+a[2],b[0]+b[2])-max(a[0],b[0]))*max(0,min(a[1]+a[3],b[1]+b[3])-max(a[1],b[1]))
+        def covers(body,rect):
+            area=max(1,rect[2]*rect[3]);cx,cy=rect[0]+rect[2]/2.0,rect[1]+rect[3]/2.0
+            inside=body[0]<=cx<=body[0]+body[2] and body[1]<=cy<=body[1]+body[3]
+            return inside or overlap(body,rect)>area*0.2
+        def heavy(a,b):
+            ax,ay,aw,ah=a;bx,by,bw,bh=b
+            return min(ax+aw,bx+bw)-max(ax,bx)>0.55*min(aw,bw) and min(ay+ah,by+bh)-max(ay,by)>0.5*min(ah,bh)
+        fixed=("hanging","background_bench","bench_sit","behind_counter","background_chair")
+        keepouts=[tuple(r) for r in keepouts]
+        critical=list(critical)+r13_keepout_cover_rects(keepouts)
+        try:view_left=r13_world_offset();view_right=view_left+r13_view_width()
+        except Exception:view_left,view_right=0,width
+        def hidden(rect):
+            return max(0,view_left-rect[0])+max(0,rect[0]+rect[2]-view_right)
+        out=list(rows)
+        for _ in range(3):
+            moved=False
+            for i,a in enumerate(out):
+                for j,b in enumerate(out):
+                    if j<=i or not a.get("rect") or not b.get("rect") or not heavy(a["rect"],b["rect"]):continue
+                    k=i if a.get("depth",0)<=b.get("depth",0) else j
+                    if bool(a.get("slot"))!=bool(b.get("slot")):k=i if a.get("slot") else j
+                    if out[k].get("contact") in fixed:k=j if k==i else i
+                    back=out[k]
+                    if back.get("contact") in fixed:continue
+                    visible_now=hidden(back["rect"])<=back["rect"][2]/3.0
+                    best=None
+                    for n in range(1,10):
+                        for sgn in (-1,1):
+                            cand=r13_balance_translate(back,sgn*90*n,0);cx,cy,cw,ch=cand["rect"]
+                            if cx<8 or cx+cw>width-8:continue
+                            if any(covers(cand["rect"],r) for r in critical) or r13_foot_in_keepout(cand["rect"],keepouts):continue
+                            if any(heavy(cand["rect"],o["rect"]) for m,o in enumerate(out) if m!=k and o.get("rect")):continue
+                            key=((1 if visible_now and hidden(cand["rect"])>cw/3.0 else 0),90*n)
+                            if best is None or key<best[0]:best=(key,cand)
+                    if best is None:continue
+                    out[k]=best[1];moved=True
+            if not moved:break
         return out
 
     def r13_clamp_to_world(rows,width):
