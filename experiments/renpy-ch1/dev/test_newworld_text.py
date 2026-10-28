@@ -223,7 +223,7 @@ class Event01Gate(Layer):
  def test_approved_lines_are_in_place(self):
   env=self.load()
   carriage=[r[1] for r in env['r13_v111_lines'](['MS14_D01_S01_L0019','MS14_D01_S01_L0020','MS14_D01_S01_L0021','MS14_D01_S01_L0022'])]
-  self.assertEqual(carriage[-4:],['창밖으로 길을 따라 등이 줄지어 서 있다. 바람이 부는데도 불빛이 하나도 흔들리지 않는다.','우와…{w=.4} 예쁘다. 꼭 별 같아.\n불이 하나도 안 떨려.','저 등에는 기름 대신 돌이 들어 있대. 엄마도 그 돌 때문에 여기 온 거야.','우리 동네는 기계 난로로 불 때잖아.'])
+  self.assertEqual(carriage[-4:],['창밖으로 길을 따라 등이 줄지어 서 있다. 바람이 부는데도 불빛이 하나도 흔들리지 않는다.','우와……{w=.4} 예쁘다. 꼭 별 같아.\n불이 하나도 안 떨려.','저 등에는 기름 대신 돌이 들어 있대. 엄마도 그 돌 때문에 여기 온 거야.','우리 동네는 기계 난로로 불 때잖아.'])
   greet=[(r[0],r[1]) for r in env['r13_v111_lines'](['MS14_D01_S04_L0011'])]
   self.assertEqual(greet[2],('guard','……아르카 곁에.'))
   room=env['r13_v111_lines'](['MS14_D01_S05_L0016','MS14_D01_S05_L0017'])

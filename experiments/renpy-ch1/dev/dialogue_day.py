@@ -140,6 +140,9 @@ def apply(day, edits_path, dry=False):
         if not text:
             problems.append(f'{ref}: 빈 문장')
             continue
+        if re.search(r'(?<!…)…(?!…)', text) or '...' in text:
+            problems.append(f'{ref}: 말줄임표는 …… 하나로 쓴다(VOICE_GUIDE 1)')
+            continue
         m = re.fullmatch(r'(MS14_\w+?)(?:\{(\w[\w:]*)\})?', ref)
         if ref in rows_by_id:
             # 엔진이 생각 줄에 괄호를 붙인다. 괄호째 넣으면 게임 시작 때 새 세계 글 검사가 멈춘다(2026-10-28)
