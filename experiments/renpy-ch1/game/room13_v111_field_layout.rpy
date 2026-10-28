@@ -125,7 +125,14 @@ init 337 python:
                 return sum(1 for b in others if b is not actor and abs((b["rect"][0]+b["rect"][2]/2.0)-f)<(aw+b["rect"][2])/2.0)
             if not sides:continue
             cx=ax+aw/2.0
-            best=min(sides,key=lambda f:(crowd(f),abs(f-cx)))
+            # 2026-10-28 다른 길 자동 플레이 3일 광장: 3번 등 옆의 피코가 등(조사 물건)을 피해 오른쪽으로 비키며 첫 화면 밖으로
+            # 나갔다(952→1210, 카메라 0). 비킨 자리가 지금 화면 밖으로 1/3 넘게 나가면 붐비는 쪽이라도 안쪽을 고른다.
+            try:view_left=r13_world_offset();view_right=view_left+r13_view_width()
+            except Exception:view_left,view_right=0,width
+            def offscreen(f):
+                hidden=max(0,view_left-(f-aw/2.0))+max(0,(f+aw/2.0)-view_right)
+                return 1 if hidden>aw/3.0 else 0
+            best=min(sides,key=lambda f:(offscreen(f),crowd(f),abs(f-cx)))
             # 2026-10-27 검수(입구 까로): 마차 자리(630)의 까로가 수레 칸을 조금 덮는다고 오른쪽이 다람으로 붐빈다는 이유로
             # 왼쪽 끝(128)까지 밀려 화면 가장자리에 붙어 보였다. 이 층은 자리 옆으로 한 걸음 비키는 것이다 — 화면 반
             # (R13_CLEAR_STEP_MAX) 을 넘는 이동은 하지 않고 사슬 끝의 물건 회피(1/5 넘게 덮을 때만 비킴)에 맡긴다.
@@ -163,6 +170,9 @@ init 337 python:
                     cover=min(ax+aw,bx+bw)-max(ax,bx)
                     if cover<=0.55*min(aw,bw) or min(ay+ah,by+bh)-max(ay,by)<=0.5*min(ah,bh):continue
                     k=i if a.get("depth",0)<=b.get("depth",0) else j
+                    # 2026-10-28 다른 길 3일 광장: 등 옆의 피코(이야기 자리)와 빈 자리의 바둑이가 겹치자 뒤에 선 피코가 더 오른쪽으로
+                    # 밀려 화면 밖으로 나갔다. 둘 중 하나만 빈 자리(slot) 사람이면 그쪽이 비킨다 — 이야기 자리는 그 물건 옆이 뜻이다.
+                    if bool(a.get("slot"))!=bool(b.get("slot")):k=i if a.get("slot") else j
                     back=rows[k];fx,fy,fw,fh=back["rect"];cx=fx+fw/2.0
                     others=[r for n,r in enumerate(rows) if n!=k and r.get("rect")]
                     def crowd(f):
@@ -171,7 +181,12 @@ init 337 python:
                         return hit
                     feet=[cx+d*s for d in range(90,900,90) for s in (-1,1) if fw/2.0<=cx+d*s<=width-fw/2.0]
                     if not feet:continue
-                    best=min(feet,key=lambda f:(crowd(f),abs(f-cx)))
+                    try:view_left=r13_world_offset();view_right=view_left+r13_view_width()
+                    except Exception:view_left,view_right=0,width
+                    def offscreen(f):
+                        hidden=max(0,view_left-(f-fw/2.0))+max(0,(f+fw/2.0)-view_right)
+                        return 1 if hidden>fw/3.0 else 0
+                    best=min(feet,key=lambda f:(offscreen(f),crowd(f),abs(f-cx)))
                     if crowd(best)>0:continue
                     rows[k]=r13_ma_place(back,back["pose"],int(best),back["y"]+back["height"],back["height"])
                     moved=True
@@ -209,6 +224,13 @@ init 337 python:
         keepouts=[tuple(r) for r in keepouts]
         critical=list(critical)+r13_keepout_cover_rects(keepouts)
         height=r13_world_height()
+        # 2026-10-28 다른 길 자동 플레이 3일 광장: 등(3번 등)을 피하느라 피코가 오른쪽으로 264px 밀려 첫 화면 밖(1314)으로 나갔다.
+        # 비킨 자리가 지금 화면(카메라 폭) 밖으로 1/3 넘게 나가면 벌점을 둔다 — 보이지 않는 것이 겹침보다 나쁘다.
+        try:view_left=r13_world_offset();view_right=view_left+r13_view_width()
+        except Exception:view_left,view_right=0,width
+        def offscreen(rect):
+            hidden=max(0,view_left-rect[0])+max(0,rect[0]+rect[2]-view_right)
+            return 1 if hidden>rect[2]/3.0 else 0
         out=list(rows)
         all_critical=critical
         for index,actor in enumerate(out):
@@ -238,7 +260,7 @@ init 337 python:
                     if candidate.get("depth",0)>other.get("depth",0):people+=overlap(candidate["rect"],of)
                     else:people+=overlap(cf,other["rect"])
                     people+=overlap(candidate["rect"],other["rect"])//2   # 몸끼리도 피한다(보리가 돌목 앞을 막았다)
-                candidates.append(((object_cover,people,abs(dx)),candidate))
+                candidates.append(((object_cover,offscreen(candidate["rect"]) if not offscreen(actor["rect"]) else 0,people,abs(dx)),candidate))
             if candidates:out[index]=min(candidates,key=lambda item:item[0])[1]
         return out
 
