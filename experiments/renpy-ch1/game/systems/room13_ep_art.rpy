@@ -149,6 +149,8 @@ init 160 python:
 
     def r13_ep_line_art(packet):
         options=packet[2] if len(packet)>2 and isinstance(packet[2],dict) else {}
+        # 선택창 동안 감춘 증거 칸은 다음 대사에서 되살린다(선택창이 닫힐 때 hide 알림이 늘 오지는 않는다).
+        if globals().get("r13_ep_cut_suspended") and "cut" not in options:r13_ep_cut_resume()
         # The illustrated opening ends when Tosil speaks holding the physical book.
         # A later explicit book cue still opens its own illustration normally.
         if packet[0]=="resident_tosil" and options.get("pose")=="hold_storybook" and "book" not in options:
@@ -157,10 +159,12 @@ init 160 python:
             if options["book"]:renpy.show("r13_ep_book",what=At(r13_ep_book_art(options["book"]),r13_ep_art_fade),zorder=0)
             else:renpy.hide("r13_ep_book")
         if "cut" in options:
-            if options["cut"]:renpy.show("r13_ep_cut",what=At(r13_ep_cut_art(options["cut"]),r13_ep_art_fade),zorder=5)
-            # 2026-10-28 소유자 「증거 나올 때 효과음, 휘익이든 따단이든」: 증거 칸이 뜰 때 자료를 얻을 때와 같은 「따단」.
-            # 그 줄에 따로 효과음이 적혀 있으면(아래 sfx) 그쪽이 이긴다.
-            if str(options["cut"]).startswith("ev:") and not options.get("sfx"):source_fx("found")
+            globals()["r13_ep_cut_current"]=options["cut"] or None
+            if options["cut"]:
+                renpy.show("r13_ep_cut",what=At(r13_ep_cut_art(options["cut"]),r13_ep_art_fade),zorder=5)
+                # 2026-10-28 소유자 「증거 나올 때 효과음, 휘익이든 따단이든」: 증거 칸이 뜰 때 자료를 얻을 때와 같은 「따단」.
+                # 그 줄에 따로 효과음이 적혀 있으면(아래 sfx) 그쪽이 이긴다.
+                if str(options["cut"]).startswith("ev:") and not options.get("sfx"):source_fx("found")
             else:renpy.hide("r13_ep_cut")
         # 0.18.91 연출: 줄마다 음악 끄기/바꾸기, 효과음, 화면 어둡게(그 대화가 끝날 때까지).
         if "music" in options:
@@ -180,6 +184,7 @@ init 160 python:
     def r13_ep_line_art_clear():
         renpy.hide("r13_ep_book")
         renpy.hide("r13_ep_cut")
+        store.r13_ep_cut_current=None;store.r13_ep_cut_suspended=None
         renpy.hide("r13_ep_dim")
 
 transform r13_ep_art_fade:
@@ -232,3 +237,19 @@ init 162 python:
         if (location or state.get("location"))=="v111_ruin" and state.get("v111") and state.get("period",0)>=2:
             return Transform(image,matrixcolor=TintMatrix("#9a8cb0")*BrightnessMatrix(-0.12))
         return image
+
+    # 2026-10-28 캡처 검수(12일 배식 선택): 오른쪽 위 증거 칸이 선택지 목록과 겹쳤다(소유자 「이미지가 겹치면 안 된다」).
+    # 증거 칸은 선택창이 열려 있는 동안만 감추고, 닫히면 같은 그림을 다시 띄운다(효과음 없이).
+    def r13_ep_cut_suspend():
+        cut=getattr(store,"r13_ep_cut_current",None)
+        if cut and str(cut).startswith("ev:") and renpy.showing("r13_ep_cut"):
+            store.r13_ep_cut_suspended=cut
+            renpy.hide("r13_ep_cut")
+    def r13_ep_cut_resume():
+        cut=getattr(store,"r13_ep_cut_suspended",None)
+        store.r13_ep_cut_suspended=None
+        if cut and getattr(store,"r13_ep_cut_current",None)==cut:
+            renpy.show("r13_ep_cut",what=r13_ep_cut_art(cut),zorder=5)
+
+default r13_ep_cut_current = None
+default r13_ep_cut_suspended = None

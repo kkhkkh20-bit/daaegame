@@ -192,6 +192,8 @@ init 82 python:
         return [[(e,tallest) for e,h in page] for page in pages]
 
 screen r13_choice_c(person,pose,entries,ready,caption=""):
+    on "show" action Function(r13_ep_cut_suspend)
+    on "hide" action Function(r13_ep_cut_resume)
     default page=0
     default focused_choice=None
     $ width=R13_CHOICE_C_WIDTH
