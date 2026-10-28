@@ -18,12 +18,20 @@ init 81 python:
         # 넷 이하는 늘 한 쪽에 둔다. 칸은 글자가 든 높이(floor) 아래로는 줄이지 않는다 — 그보다 모자라면 호출한 쪽이 머리글을 줄인다.
         n=len(rows)
         if n<=4:
-            if n*row_height+16*(n-1)>height:row_height=max(floor,(height-16*(n-1))//max(1,n))
-            return [[(entry,row_height) for entry,h,m in rows]] if rows else [[]]
+            shrunk=row_height
+            if n*shrunk+16*(n-1)>height:shrunk=max(floor,(height-16*(n-1))//max(1,n))
+            # 2026-10-28 다른 길 자동 주행 12일(학교, 인물 옆 좁은 판): 넷 중 하나가 두 줄이면 바닥 높이로도 네 칸이
+            # 안 들어가 넷째 칸이 화면 아래로 나갔다(y 716, 높이 4). 넷은 2+2 로 나눠도 한 쪽에 하나가 남지 않으므로
+            # 그때만 쪽을 나눈다. 셋 이하는 나누면 하나짜리 쪽이 생기므로 머리글을 줄이는 쪽(호출자)에 맡긴다.
+            if n<4 or n*shrunk+16*(n-1)<=height:
+                return [[(entry,shrunk) for entry,h,m in rows]] if rows else [[]]
         per=max(2,min(9,(height+16)//(row_height+16)))
         count=max(1,-(-n//per))
         base,extra=divmod(n,count)
         if base<2 and count>1:count-=1;base,extra=divmod(n,count)
+        # 쪽을 나눠도 한 쪽이 넘치면(좁은 판·휴대폰) 글자 높이까지만 칸을 줄인다.
+        most=base+(1 if extra else 0)
+        if most*row_height+16*(most-1)>height:row_height=max(floor,(height-16*(most-1))//max(1,most))
         pages=[];i=0
         for k in range(count):
             size=base+(1 if k<extra else 0);pages.append([(entry,row_height) for entry,h,m in rows[i:i+size]]);i+=size
@@ -82,7 +90,8 @@ screen r13_notebook_choice_list(person,pose,title,entries,ready,return_action=No
     $ page=min(page,len(pages)-1)
     $ visible=pages[page]
     $ rows_height=sum(row[1] for row in visible)+max(0,len(visible)-1)*16
-    $ header_top=180 if header_height<=112 and len(pages)==1 else max(40,640-header_height-28-rows_height-((100 if r13_touch_ui() else 66) if len(pages)>1 else 0))
+    # 2026-10-28: 머리글 180 고정은 칸이 640 안에 들어올 때만. 넘치면 위로 올려 자리를 번다.
+    $ header_top=180 if header_height<=112 and len(pages)==1 and 180+header_height+28+rows_height<=640 else max(40,640-header_height-28-rows_height-((100 if r13_touch_ui() else 66) if len(pages)>1 else 0))
     $ rows_top=header_top+header_height+28
     if person and not carriage:
         # 2026-10-26 소유자: 인물 그림은 스티커 없이 간다.
