@@ -461,7 +461,9 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
     $ mode=ctx["mode"]
     $ remembered=(r13_pw_views or {}).get(claim,{})
     # 2026-10-27 14일 자동 플레이 7일: 「전체」로 열면 자료 39개가 13쪽이 된다. 처음 열 때는 「이번 사건」(있을 때)으로 연다. 기억된 탭은 그대로.
-    default tab=remembered.get("tab",("now" if (r13_drawer_active() and r13_drawer_now(r13_pw_entries())) else "all"))
+    # 2026-10-28 다른 길 플레이 1일: 13호 「두 편지」는 초대 편지가 「지난 사건」(입구 회의가 끝남)에 있어 「이번 사건」 탭에는
+    # 방의 메모 하나만 보였다. 자료가 세 쪽을 넘을 만큼(13개 이상) 쌓였을 때만 「이번 사건」으로 연다. 그 전에는 「전체」가 한눈에 들어온다.
+    default tab=remembered.get("tab",("now" if (r13_drawer_active() and len(r13_pw_entries())>=13 and r13_drawer_now(r13_pw_entries())) else "all"))
     default detail=remembered.get("detail")
     default page=0
     # 2026-10-27 외부 리뷰 R03(확인): 휴대폰 844x390 「나란히 보기」에서 본문 읽기 영역이 약 95px 뿐이었다. 휴대폰은 발언 틀을 접은 채 열어
