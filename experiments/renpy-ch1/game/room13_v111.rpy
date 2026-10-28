@@ -332,7 +332,7 @@ label r13_v111_wait_again:
             $ r13_v111_time("inspect:"+key+":"+v111_pick[1],0 if key=="gate_investigate" and v111_pick[1]=="ledger" else 15)
             return v111_binding["options"][v111_matches[0]].get("index",v111_matches[0])
         if len(v111_matches)>1:
-            $ v111_object_options=[(v111_binding["options"][i]["title"],i) for i in v111_matches]
+            $ v111_object_options=[("(%s, 어디부터 볼까?)"%r13_object_name(v111_pick[1]),None)]+[(v111_binding["options"][i]["title"],i) for i in v111_matches]   # 2026-10-28 캡처 검수: 제목 없이 열리면 직전 대사(「설마 여기서 주무십니까?」)가 물음처럼 떠서 고를 것과 어긋났다
             $ v111_result=renpy.display_menu(v111_object_options)
             return v111_binding["options"][v111_result].get("index",v111_result)
         $ v111_object_spec=ROOM13["objects"].get(room13["location"],{}).get(v111_pick[1],{})
