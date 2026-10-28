@@ -77,7 +77,8 @@ screen r13_side_question_list(person,pose,entries,ready,return_action=None,capti
     # Name stays next to the speaker, clear of the notebook and their face.
     add Transform(r13_asset_path("file:assets/ui-b-question/nameplate_paper.png"),xysize=(246,94)) xpos 78 ypos 566
     add Transform(Crop((20,16,23,32),r13_asset_path("file:assets/ui-b-question/b_icon_acorn.png")),xysize=(25,34)) xpos 112 ypos 595
-    text R13_NAMES[person] xpos 150 ypos 594 size (r13_type("subtitle")) color (r13_type_color("ink")) font R13_UI_BOLD_FONT xmaximum 160
+    # 2026-10-28 캡처 검수: 「부엉이 할아버지」(부제목 크기 163px)가 글자 칸 160px 를 넘어 둘째 줄이 판 밖으로 잘렸다. 여덟 자 이상은 한 단 내린다.
+    text R13_NAMES[person] xpos 150 ypos 594 size (r13_type("subtitle") if len(R13_NAMES[person])<8 else r13_type("body")) color (r13_type_color("ink")) font R13_UI_BOLD_FONT xmaximum 160
     vbox:
         pos (572,R13_SIDE_QUESTION_TOP+78) spacing 8
         for i,((label,command,read),height) in enumerate(visible):
