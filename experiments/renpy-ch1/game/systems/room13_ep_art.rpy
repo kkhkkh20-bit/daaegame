@@ -222,3 +222,13 @@ init 162 python:
         if key=="ep_woodshed_ruin" and state.get("v111") and state.get("period",0)>=2:
             return Transform(image,matrixcolor=TintMatrix("#9a8cb0")*BrightnessMatrix(-0.12))
         return image
+    # 2026-10-28 캡처 검수(진엔딩 길 6일 저녁): 위 물들임은 장면 그림(r13_scene) 경로에만 걸려, 현장 화면(지도에서 들어가는
+    # 「식은 장작 창고 터」)은 날짜판이 저녁인데 한낮 그림으로 나왔다. 바로 앞 「장작 창고 바깥」이 저녁 그림이라 시간이
+    # 거꾸로 간 것처럼 보였다. 현장 배경에도 같은 저녁빛을 입힌다.
+    _r13_v111_ruin_world=r13_world_background
+    def r13_world_background(location=None,daylight=None):
+        image=_r13_v111_ruin_world(location,daylight)
+        state=getattr(store,"room13",None) or {}
+        if (location or state.get("location"))=="v111_ruin" and state.get("v111") and state.get("period",0)>=2:
+            return Transform(image,matrixcolor=TintMatrix("#9a8cb0")*BrightnessMatrix(-0.12))
+        return image

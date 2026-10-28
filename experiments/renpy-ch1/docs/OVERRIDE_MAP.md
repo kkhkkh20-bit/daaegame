@@ -456,6 +456,14 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 2 | 330 | `systems/room13_v111_relations.rpy:18` | _r13_fork_observed_set |
 | 3 | 331 | `room13_fork_screen.rpy:370` |  |
 
+## `r13_world_background` (3층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 58 | `room13_world_camera.rpy:68` | _r13_ep_art_world_background |
+| 2 | 160 | `systems/room13_ep_art.rpy:86` | _r13_v111_ruin_world |
+| 3 | 162 | `systems/room13_ep_art.rpy:229` |  |
+
 ## `r13_acting_spec` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
@@ -882,13 +890,6 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 56 | `room13_week2_rules.rpy:194` | _r13_pf_w2_present |
 | 2 | 113 | `systems/room13_present_flow.rpy:69` |  |
-
-## `r13_world_background` (2층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 58 | `room13_world_camera.rpy:68` | _r13_ep_art_world_background |
-| 2 | 160 | `systems/room13_ep_art.rpy:86` |  |
 
 ## `r13_world_edge_label` (2층)
 
