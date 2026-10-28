@@ -178,7 +178,11 @@ init 337 python:
                     others=[r for n,r in enumerate(rows) if n!=k and r.get("rect")]
                     def crowd(f):
                         hit=sum(1 for r in others if abs((r["rect"][0]+r["rect"][2]/2.0)-f)<(fw+r["rect"][2])/2.0*0.5)
-                        hit+=sum(1 for ox,oy,ow,oh in rects if ox-fw/2.0<f<ox+ow+fw/2.0)
+                        # 2026-10-28 다른 길 13일 광장: 물건을 가로로 스치기만 해도 막힌 자리로 세어 ±810 안이 전부 붐볐고,
+                        # 혀이 뒤의 돌목이 그대로 묻혔다. 물건 회피 규칙과 같게 몸이 물건을 1/5 넘게 덮을 때만 붐빔이다.
+                        for ox,oy,ow,oh in rects:
+                            bx=f-fw/2.0;cover=max(0,min(bx+fw,ox+ow)-max(bx,ox))*max(0,min(fy+fh,oy+oh)-max(fy,oy))
+                            if cover>0.2*max(1,ow*oh):hit+=1
                         return hit
                     feet=[cx+d*s for d in range(90,900,90) for s in (-1,1) if fw/2.0<=cx+d*s<=width-fw/2.0]
                     if not feet:continue
