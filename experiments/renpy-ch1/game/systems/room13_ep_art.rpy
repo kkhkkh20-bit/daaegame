@@ -144,7 +144,12 @@ init 160 python:
             # Existing cut layer/clear lifecycle, preserving the actual school
             # background and the same prop position across the repair beat.
             state="before" if name.endswith("before") else "after"
-            return Fixed(Transform("assets/room13-v111-blanket-%s.webp"%state,xysize=(370,310),fit="contain",nearest=True,xpos=770,ypos=150),xysize=(1280,720))
+            # 2026-10-28 캡처 검수(13일 담요 수선): 370x310 그림이 (770,150)에 떠서 1.55배 인물 머리 옆 공중에 걸렸다.
+            # 증거 칸과 같은 자리·같은 놋쇠 도트 틀에 넣는다(소유자 「이미지가 겹치면 안 된다」).
+            x,y,side=R13_EV_CUT_BOX
+            u=R13_EV_CUT_PX;inner=side-2*5*u
+            return Fixed(r13_ev_pixel_frame(x,y,side,R13_EV_CUT_FRAME),
+                Transform("assets/room13-v111-blanket-%s.webp"%state,xysize=(inner,inner),fit="contain",nearest=True,xpos=x+side//2,xanchor=.5,ypos=y+side//2,yanchor=.5),xysize=(1280,720))
         return Transform("assets/room13-ep-%s.webp"%name,size=(1280,720),nearest=True)
 
     def r13_ep_line_art(packet):
