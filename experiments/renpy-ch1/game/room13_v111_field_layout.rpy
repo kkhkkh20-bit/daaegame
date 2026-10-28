@@ -147,11 +147,12 @@ init 337 python:
         if not r13_v111_active():return rows
         location=(store.room13 or {}).get("location")
         rects=[tuple(r) for r in r13_stage_critical(location,R13_WORLD_LAYOUTS.get(location))]
-        if not rects:return rows
         width=r13_world_width()
         out=[]
         for actor in rows:
-            out.append(r13_clear_critical_x(actor,rects,rows,width) if actor.get("rect") else actor)
+            out.append(r13_clear_critical_x(actor,rects,rows,width) if (rects and actor.get("rect")) else actor)
+        # 2026-10-28 다른 길 13일 입구·광장: 조사 물건이 없는 장면에서는 여기서 바로 돌아가 겹침 풀기까지 건너뛰었다.
+        # 혀이 뒤에 돌목이 72px 묻혀도 그대로였다. 물건 회피는 물건이 있을 때만, 겹침 풀기는 늘 돈다.
         out=r13_separate_overlaps(out,rects,width)
         # 조사 물건 위에 선 사람을 마지막으로 치우는 r13_clear_objects 는 여기서 부르지 않는다.
         # 뒤 층(도트 환산)이 사각형을 바꾸므로 배치 사슬의 맨 끝(room13_field_dot.rpy)에서 한 번만 돈다.
