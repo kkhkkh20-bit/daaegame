@@ -96,6 +96,10 @@ init 340 python:
             dw,dh=dot["size"]
             w=int(round(dw*scale));h=int(round(dh*scale))
             x=ax-dp[0]*scale;y=ay-dp[1]*scale
+            # 2026-10-28 캡처 검수(9일 주방): 카운터 뒤 자세는 예전 큰 그림(키 364)의 발에 맞추면 도트 그림(키 210)의 머리가
+            # 카운터 아래로 내려가 정수리만 보였다. 카운터 뒤에서는 발이 안 보이므로 머리 꼭대기를 예전 자리에 둔다.
+            if (actor.get("contact") or spec.get("contact"))=="behind_counter" and spec.get("head") and dot.get("head"):
+                y=actor["y"]+spec["head"][1]*old_scale-dot["head"][1]*scale
             x=int(round(x/unit))*unit;y=int(round(y/unit))*unit
             x=max(0,min(world_w-w,x)) if w<=world_w else 0
             left=max(0,x);top=max(0,y);right=min(world_w,x+w);bottom=min(world_h,y+h)
