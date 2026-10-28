@@ -201,11 +201,12 @@ screen r13_choice_c(person,pose,entries,ready,caption=""):
     $ context=r13_choice_context()
     $ issue=r13_choice_issue(entries)
     # 2026-10-28 분기 주행(6일 꼬미): 물음이 없는 선택은 직전 대사를 제목으로 썼는데 이름표는 늘 「아빠」라서
-    # 꼬미의 「아저씨도…… 뺏을 거야?」가 아빠 말처럼 보였다. 직전 대사가 다른 사람 말이면 아빠의 생각을 제목으로,
-    # 그 말은 아래 줄에 「꼬미 · …」로 둔다(쟁점이 있을 때와 같은 꼴).
+    # 꼬미의 「아저씨도…… 뺏을 거야?」가 아빠 말처럼 보였다. 직전 대사가 다른 사람 말이면 이름표를 그 사람으로 한다.
+    # (아래 줄을 더하는 안은 판이 높아져 목록이 두 쪽으로 갈렸다 — 전체 화면 시험 town_b_ambush_musoe.)
     $ other=bool(context and context[0] and context[0] not in ("아빠",r13_display_name(r13_viewpoint())))
-    $ heading=issue or caption or ("(어떻게 답할까?)" if other else (context[1] if context else "어떻게 할까?"))
-    $ subline=r13_choice_issue_subline(caption,context,34) if (issue or (other and not caption)) else None
+    $ heading=issue or caption or (context[1] if context else "어떻게 할까?")
+    $ ribbon=(context[0] if other and not issue and not caption else "아빠")
+    $ subline=r13_choice_issue_subline(caption,context,34) if issue else None
     $ thought=heading.strip().startswith("(")
     $ pages=r13_choice_c_geometry(entries,width)
     $ page=min(page,len(pages)-1)
@@ -223,7 +224,7 @@ screen r13_choice_c(person,pose,entries,ready,caption=""):
     add Transform(Frame(Crop((16,16,1168,128),r13_asset_path("file:assets/ui-b-dialogue/b_panel_dialogue.png")),48,24,64,24),xysize=(1220,R13_NIGHT_PAPER_BOTTOM-r13_night_panel_top(say_text)),alpha=r13_night_shade_alpha()) xpos 30 ypos r13_night_panel_top(say_text)
     frame:
         xpos R13_SAY_TEXT_X ypos (r13_night_panel_top(say_text)-R13_SAY_RIBBON_LIFT) yanchor .5 background Frame(Crop((16,12,168,32),r13_asset_path("file:assets/ui-b-dialogue/b_ribbon_name.png")),16,6,32,6) padding (22,8,36,10)
-        text "아빠" color (r13_type_color("inverse")) font R13_UI_BOLD_FONT size (r13_type("title")) outlines []
+        text ribbon color (r13_type_color("inverse")) font R13_UI_BOLD_FONT size (r13_type("title")) outlines []
     vbox:
         xpos R13_SAY_TEXT_X ypos say_top spacing 4
         text heading id "r13_choice_issue" xsize R13_SAY_TEXT_W size r13_night_say_size() color ("#2A5FA8" if thought else r13_type_color("ink")) font R13_UI_BOLD_FONT line_spacing 4
