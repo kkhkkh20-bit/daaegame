@@ -140,6 +140,9 @@ BRANCHES={
     # 준비 없이 읽으면 폭동, 돌목에게 너울을 맡기고 읽으면 감독자. 진엔딩 저장(배급표 있음)에서는 기록 읽기 길.
     'crowd_riot':dict(day=13,save='br-owl_lost-day13',prefer=['검증한 기록을 공개한다'],gates={'crowd_prepare13':['검증한 기록을 소리 내어 읽는다']}),
     'crowd_guard':dict(day=13,save='br-owl_lost-day13',prefer=['검증한 기록을 공개한다'],gates={'crowd_prepare13':['기록 읽을 자리를 수레에서 떼어 놓는다','수레 옆 짐을 옮겨 통로를 나눈다','돌목에게 기록 읽는 동안 너울을 맡아 달라고 한다','검증한 기록을 소리 내어 읽는다']}),
+    # 12일 수프 아침 예방: 다람에게 열이 없는 판(piko_lost 12일 저장, 침구 두 장)에서 아침 부탁 넷을 다 하고 확인한다.
+    'soup_early':dict(day=12,save='br-piko_lost-day12',prefer=['아침에 부탁한 일들을 확인한다'],drop=['배식 전에 더 살핀다'],
+        gates={'morning_prep12':['약장 관리를 확인합니다.','불 땔 자리를 부탁드립니다.','학교 운반을 부탁한다.','학교 물자를 함께 확인하시겠습니까?','배식 준비를 살핀다']}),
     'crowd_record':dict(day=13,prefer=['검증한 기록을 공개한다'],gates={'crowd_prepare13':['검증한 기록을 소리 내어 읽는다']}),
 }
 if BRANCH:
