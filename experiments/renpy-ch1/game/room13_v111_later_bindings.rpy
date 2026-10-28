@@ -45,9 +45,16 @@ init 310 python:
         R13_MAP_NODES["village"][_key]=(102,190)
         R13_MAP_LABELS[_key]=_title
         ROOM13["objects"][_key]={}
+    # 2026-10-28 꼼수 길 캡처 검수: 물건을 누르면 생각 줄이 「(등잔과 별도 보관할 천)」처럼 이름만 나왔다. 장소(불 전·불 난 때·불 뒤)마다
+    # 아빠가 보는 것을 한 문장으로 둔다. 사건 사실은 새로 만들지 않는다 — 보이는 것과 지금 할 일만.
+    _R13_SHED_TEXT={
+        "v111_woodshed":{"v111_wood":"옆문 앞에 장작이 쌓여 있다.","v111_water":"물통 옆에 천이 접혀 있다.","v111_lamp":"등잔 옆에 천이 따로 놓여 있다."},
+        "v111_fire":{"v111_wood":"옆문 앞 장작부터 치워야 한다.","v111_water":"물통이 있다. 천을 적실 수 있다.","v111_lamp":"등잔은 나중에 본다. 지금은 불부터다."},
+        "v111_ruin":{"v111_wood":"옆문 앞, 장작이 있던 자리다.","v111_water":"물통과 천이 그대로 있다.","v111_lamp":"등잔과 천이 따로 놓여 있다."},
+    }
     for _loc in ("v111_woodshed","v111_fire","v111_ruin"):
-        for _object,_rect,_text in (("v111_wood",[680,410,260,240],"옆문 앞 장작"),("v111_water",[340,420,200,220],"물통과 천"),("v111_lamp",[720,400,240,200],"등잔과 별도 보관할 천")):
-            ROOM13["objects"][_loc][_object]=dict(rect=_rect,need=[],give=[],flags=[],text=_text)
+        for _object,_rect in (("v111_wood",[680,410,260,240]),("v111_water",[340,420,200,220]),("v111_lamp",[720,400,240,200])):
+            ROOM13["objects"][_loc][_object]=dict(rect=_rect,need=[],give=[],flags=[],text=_R13_SHED_TEXT[_loc][_object])
     R13_OBJECT_NAMES.update(v111_wood="장작",v111_water="물통과 천",v111_lamp="등잔과 천")
 
 init 311 python:
