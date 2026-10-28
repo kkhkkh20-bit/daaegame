@@ -103,6 +103,7 @@ init 160 python:
             Transform("assets/room13-ep-%s.webp"%name,size=(w,h),xpos=x,ypos=y,nearest=True),xysize=(1280,720))
 
     R13_EV_CUT_BOX=(1032,104,220)
+    R13_EV_CUT_BG="#8C9097"
     def r13_ep_cut_art(name):
         if name=="bell":return r13_ep_bell_art()
         if name in ("v111_reunion_far","v111_reunion_close"):
@@ -123,7 +124,7 @@ init 160 python:
             x,y,side=R13_EV_CUT_BOX
             edge=5;mat=8;inner=side-2*(edge+mat)
             return Fixed(Solid("#29364b",xysize=(side,side),xpos=x,ypos=y),
-                Solid(r13_type_color("inverse"),xysize=(side-2*edge,side-2*edge),xpos=x+edge,ypos=y+edge),
+                Solid(R13_EV_CUT_BG,xysize=(side-2*edge,side-2*edge),xpos=x+edge,ypos=y+edge),
                 Transform("assets/evidence/%s.webp"%name[3:],xysize=(inner,inner),fit="contain",xpos=x+side//2,xanchor=.5,ypos=y+side//2,yanchor=.5),xysize=(1280,720))
         if name in ("v111_blanket_before","v111_blanket_after"):
             # Existing cut layer/clear lifecycle, preserving the actual school
