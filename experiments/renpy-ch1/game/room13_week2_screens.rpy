@@ -60,6 +60,8 @@ init 112 python:
     R13_PROOF_GAP=10          # 머리·단계·목록·안내 사이
     R13_PROOF_CARD_GAP=8      # 카드 사이(세로·가로 같다)
     R13_PROOF_REMOVE_W=104    # 카드 안 「빼기」 폭
+    R13_PROOF_EMPTY_SLOTS=0   # 시안 비교 중(0=지금)
+    R13_PROOF_COMPACT=False
 
     def r13_proof_text_size(text,size,width=None,heavy=True):
         t=Text(text,font=(R13_UI_BOLD_FONT if heavy else R13_UI_FONT),size=size,xsize=width)
@@ -135,8 +137,12 @@ screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장",can_p
     $ thumb=card_h-8
     $ name_w=card_w-20-thumb-14-((R13_PROOF_REMOVE_W+12) if need_evidence else 0)
     $ body_size=(r13_type("body") if R13_TYPE_V2 else r13_type("body"))
+    # 2026-10-28 시안: 판을 내용만큼만 높여 아래에 붙인다(위로 회의 무대가 보이게). 남는 높이 = 쓸 수 있는 높이 − 카드 줄.
+    $ used_rows=((len(shown)+(1 if hidden_n else 0)+cols-1)//cols) if chosen else 1
+    $ spare=max(0,r13_proof_avail(claim,chances,steps_shown,help_text,start_note)-(used_rows*card_h+max(0,used_rows-1)*R13_PROOF_CARD_GAP)) if R13_PROOF_COMPACT else 0
+    $ panel=(R13_PROOF_PANEL[0],R13_PROOF_PANEL[1]+spare,R13_PROOF_PANEL[2],R13_PROOF_PANEL[3]-spare)
     frame:
-        area R13_PROOF_PANEL padding R13_PROOF_PAD background R13DiaryPanel()
+        area panel padding R13_PROOF_PAD background R13DiaryPanel()
         fixed:
             vbox:
                 spacing R13_PROOF_GAP
@@ -177,6 +183,15 @@ screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장",can_p
                                             fixed:
                                                 xalign 1.0 yalign .5 xysize (R13_PROOF_REMOVE_W,card_h-12)
                                                 use r13_control("빼기",None,Return(("remove",key)),enabled=ready,width=R13_PROOF_REMOVE_W,height=card_h-12,label_size=(r13_type("small") if R13_TYPE_V2 else 22))
+                elif R13_PROOF_EMPTY_SLOTS:
+                    # 2026-10-28 소유자 「폰트나 공간이 안 예쁘다, 자료 고르기 쪽 디자인 예쁘게」: 빈 판 가운데 한 줄이 떠 있었다.
+                    # 자료가 놓일 자리를 빈 칸(점선 테두리)으로 미리 보여 준다. 칸 크기는 담긴 카드와 같다.
+                    hbox:
+                        spacing R13_PROOF_CARD_GAP
+                        for i in range(R13_PROOF_EMPTY_SLOTS):
+                            frame:
+                                xysize ((R13_PROOF_INNER_W-R13_PROOF_CARD_GAP*(R13_PROOF_EMPTY_SLOTS-1))//R13_PROOF_EMPTY_SLOTS,card_h) padding (0,0) background Frame(r13_asset_path("file:assets/ui-night/panel_small.png"),10,10) at Transform(alpha=.55)
+                                text ("자료를 여기에 담는다" if i==0 else "빈 칸") align (.5,.5) size (r13_type("small")) color (r13_type_color("muted")) font R13_UI_BOLD_FONT
                 else:
                     fixed:
                         xysize (R13_PROOF_INNER_W,card_h)
