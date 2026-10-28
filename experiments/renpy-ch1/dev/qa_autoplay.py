@@ -161,6 +161,15 @@ n_shot=[0]
 async def shot(q,name):
     n_shot[0]+=1;await q.shot('%03d-%s'%(n_shot[0],name))
 
+async def press_map(q):
+    # 진엔딩 길: 지도 단추를 누른 바로 뒤의 바퀴가 아직 현장 화면을 읽으면 두 번 눌러 「지도」를 못 찾고 멈췄다(6일 저녁).
+    # 이미 지도가 열려 있으면 다음 바퀴에서 지도 처리로 넘긴다. 다른 길은 예전 그대로 바로 누른다.
+    if not TRUE_ROUTE:return await q.press('지도')
+    try:await q.press('지도')
+    except AssertionError as e:
+        if 'r13_map' not in str(e)[:200]:raise
+        log('  지도가 이미 열려 있음')
+
 async def snap(q):
     return await q.py('import renpy;s=renpy.store;result=dict(screens=[n for n in %r if renpy.display.screen.get_screen(n)],gate=(s.room13 or {}).get("v111",{}).get("gate"),day=(s.room13 or {}).get("day"),period=(s.room13 or {}).get("period"),choice=getattr(s,"v111_menu_owner",None),claim=getattr(s,"v111_claim",None),binding=s.r13_v111_binding() if s.r13_v111_active() else {},values=(s.room13 or {}).get("v111",{}).get("values",{}),evidence=(s.room13 or {}).get("evidence",[]),location=(s.room13 or {}).get("location"),say=(lambda x:str(x.scope.get("what","")) if x else "")(renpy.display.screen.get_screen("say")),who=(lambda x:str(x.scope.get("who","")) if x else "")(renpy.display.screen.get_screen("say")),people=s.r13_visible_people() if s.r13_v111_active() else [])'%(SCREENS,))
 
@@ -491,10 +500,10 @@ async def main():
                         if os.environ.get('ROUTE')=='alt':option=pool[(len(pool)-1-visits[hk]//6)%len(pool)]
                     visits[hk]+=1
                     if option.get('location') and option['location']!=st['location']:
-                        map_target=option.get('move') or option['location'];await q.press('지도');continue
+                        map_target=option.get('move') or option['location'];await press_map(q);continue
                     if option.get('move'):
                         if TRUE_ROUTE:map_target=option['move']   # 들르는 길(빨래터)도 지도에서 그 자리를 고른다
-                        await q.press('지도');continue
+                        await press_map(q);continue
                     if option.get('person'):
                         person=option['person'];state=await q.state()
                         if not any(b.get('value')==repr(('person',person)) for b in state['buttons']):
