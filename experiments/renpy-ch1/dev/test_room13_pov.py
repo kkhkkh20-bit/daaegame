@@ -30,7 +30,7 @@ class ViewpointSpeaker(unittest.TestCase):
             'r13_close_y':lambda *args,**kwargs:126,
             'r13_portrait_close':lambda y,x=640:y,
             'r13_close_x':lambda *args,**kwargs:640,
-            'r13_say_actor_h':lambda c=False:840,'r13_say_actor_y':lambda *args:126,
+            'r13_say_actor_h':lambda c=False:840,'r13_say_actor_y':lambda *args:126,'r13_say_actor_x':lambda *args:640,
             'r13_carriage_pop':'pop',
             # 0.18.33 expression reactions (systems/room13_dot_fx.rpy): none in this contract.
             'r13_fullbody_key':lambda pose:pose,

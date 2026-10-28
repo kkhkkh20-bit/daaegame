@@ -67,7 +67,7 @@ class PortraitRefresh(unittest.TestCase):
                    r13_dialogue_source_profile=lambda *a:{},
                    r13_dialogue_beat_ready=lambda who:bool(self.store.r13_dialogue_beat),
                    r13_react_kind=lambda *a:self.reactions.append(a), r13_close_art=close_art,
-                   r13_portrait_close=lambda *a:None,r13_close_y=lambda *a,**kw:0,r13_close_x=lambda *a:0,r13_say_actor_h=lambda c=False:840,r13_say_actor_y=lambda *a:0,
+                   r13_portrait_close=lambda *a:None,r13_close_y=lambda *a,**kw:0,r13_close_x=lambda *a:0,r13_say_actor_h=lambda c=False:840,r13_say_actor_y=lambda *a:0,r13_say_actor_x=lambda *a:0,
                    r13_react=lambda react,who,pose,what,at:(what,at))
         exec(compile(node, 'speaker', 'exec'), env)
         self.speaker = env['r13_speaker']

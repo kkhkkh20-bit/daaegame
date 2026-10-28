@@ -6,10 +6,11 @@ init 40 python:
     # 2026-10-28 소유자 「다람이는 좀 내려야겠다. 아이니까」「캐릭터마다 키를 생각해서 배치하는 듯」(역전재판 캡처):
     # 머리 높이를 인물 키로 정한다. 키는 현장 도트 서 있는 높이(room13-field-dot-v2.json, 어른 210)를 쓴다 —
     # 아이 165, 할머니·부엉이 195, 선생님·까로·보리 230. 210 보다 작으면 그만큼 내리고, 크면 올려 머리끝이 화면 위에서 살짝 잘린다.
-    # 다람은 프로젝트 규칙(어른의 약 2/3)대로 2/3. 거리 520 은 어른 머리끝(약 20)~대사판 위(약 540).
+    # 다람은 0.82(아래 주석). 거리 520 은 어른 머리끝(약 20)~대사판 위(약 540).
     R13_SAY_STATURE_REF=210.0
     def r13_say_stature(who):
-        if who=="daram":return 2/3.0
+        # 2026-10-28 소유자 「다람이 몸이 좀 더 가운데로 오고 높아야 하지 않을까」: 2/3 → 다른 아이들(165/210)보다 조금 큰 0.82.
+        if who=="daram":return 0.82
         dot=(globals().get("R13_FIELD_DOT",{}).get(who) or {}).get("poses",{})
         entry=dot.get("neutral") or next(iter(dot.values()),None)
         return (entry["size"][1]/R13_SAY_STATURE_REF) if entry else 1.0
@@ -39,6 +40,10 @@ init 40 python:
         st=r13_say_stature(who)
         if st>1.0:return R13_SAY_HEAD_TOP-min(R13_SAY_TALL_CUT,int(round((st-1.0)*R13_SAY_STATURE_REF*1.55*0.4)))
         return R13_SAY_HEAD_TOP+r13_say_child_drop(who)
+    # 그림 캔버스 가운데가 몸 가운데가 아닌 인물(다람은 왼쪽 꼬리 때문에 얼굴이 오른쪽에 섰다)은 그만큼 옮긴다.
+    R13_SAY_X_NUDGE={"daram":-64}
+    def r13_say_actor_x(who,pose,carriage=False):
+        return r13_close_x(who,pose,r13_say_actor_h(carriage))+(0 if carriage else R13_SAY_X_NUDGE.get(who,0))
     def r13_say_actor_h(carriage=False):
         return 840 if carriage else R13_SAY_ACTOR_H
     def r13_say_actor_y(who,pose,carriage=False):
