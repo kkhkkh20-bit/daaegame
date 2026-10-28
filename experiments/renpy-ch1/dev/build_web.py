@@ -153,20 +153,55 @@ def character_files(game):
     return result
 
 
-def character_prefetch(game):
-    # r13_speaker / r13_question_list call r13_close_art(..., 840).
-    # Never warm the alternate 560/760 profiles or the old fullbody atlases.
-    people = ["daram", "dad", "karo"]
+def day_people(game, day):
+    """그날 대본에 말하는 인물(원본 기록 + 새 세계 덧붙임 줄)."""
     speakers = ast.literal_eval(re.search(r"MS14_SPEAKERS\s*=\s*({.*?})", (game / "room13_v111_source_cast.rpy").read_text(), re.S).group(1))
+    names = set()
     records = json.loads((game / "v111/records.json").read_text())["records"]
     for key, record in records.items():
-        if key.startswith("MS14_D01_"):
-            actor = speakers.get(record.get("direction", {}).get("actor"))
-            if actor and actor not in people:
-                people.append(actor)
-    # Nabi is available in the first-day free exploration, outside the directed records.
-    if "nabi" not in people:
-        people.append("nabi")
+        if key.startswith("MS14_D%02d_" % day):
+            names.add(record.get("direction", {}).get("actor") or record.get("speaker"))
+    patch = game / ("v111/newworld/d%02d.json" % day)
+    if patch.exists():
+        def walk(x):
+            if isinstance(x, dict):
+                if x.get("speaker"): names.add(x["speaker"])
+                for v in x.values(): walk(v)
+            elif isinstance(x, list):
+                for v in x: walk(v)
+        walk(json.loads(patch.read_text()))
+    return [speakers[n] for n in sorted(n for n in names if n) if n in speakers]
+
+def day_places(game, day):
+    """그날 장면이 들르는 장소(이야기 파일의 r13_v111_scene 다음 travel/edit 의 장소)."""
+    places, current = [], None
+    for f in sorted(game.glob("room13_v111_days*.rpy")):
+        for line in f.read_text().splitlines():
+            m = re.search(r"r13_v111_scene\('MS14_D(\d\d)_", line)
+            if m: current = int(m.group(1))
+            if current != day: continue
+            for loc in re.findall(r"r13_v111_travel\('([a-z0-9_]+)'", line) + re.findall(r"location='([a-z0-9_]+)'", line):
+                if loc not in places: places.append(loc)
+    return places
+
+def day_prefetch(game, day):
+    """2026-10-28 소유자 「처음에 통째로 받지 말고 분기마다 필요한 것을」: 그날 인물 그림과 장소 배경."""
+    files = character_prefetch(game, day_people(game, day))
+    layouts = json.loads((game / "assets/room13-world-layout.json").read_text())
+    for loc in day_places(game, day):
+        spec = layouts.get(loc) or {}
+        for group in [spec.get("files") or {}] + list((spec.get("state_files") or {}).values()):
+            files.extend(v for v in group.values() if isinstance(v, str))
+    return list(dict.fromkeys(files))
+
+def character_prefetch(game, people=None):
+    # r13_speaker / r13_question_list call r13_close_art(..., 840).
+    # Never warm the alternate 560/760 profiles or the old fullbody atlases.
+    if people is None:
+        people = ["daram", "dad", "karo"] + [p for p in day_people(game, 1) if p not in ("daram", "dad", "karo")]
+        # Nabi is available in the first-day free exploration, outside the directed records.
+        if "nabi" not in people:
+            people.append("nabi")
     manifests = character_manifests(game)
     result = []
     for person in people:
@@ -214,6 +249,7 @@ LOADER_END = "    // r13-loader-end\n"
 LOADER = LOADER_BEGIN + r"""    // Core zip (runtime + scripts) is unpacked by Ren'Py; preloaded art is
     // written straight into /game so nothing large is unpacked or duplicated.
     let r13Prefetch = [];
+    let r13Transport = null;
     let r13AssetVersions = {};
     // Preserve engine paths while giving changed progressive assets fresh HTTP cache keys.
     if (typeof XMLHttpRequest !== "undefined" && !XMLHttpRequest.prototype.r13Versioned) {
@@ -281,6 +317,7 @@ LOADER = LOADER_BEGIN + r"""    // Core zip (runtime + scripts) is unpacked by R
             const response = await fetch(r13Url("game-transport.json"), { cache: "no-cache" });
             if (!response.ok) throw new Error("game-transport.json: HTTP " + response.status);
             const transport = await response.json();
+            r13Transport = transport;
             r13AssetVersions = transport.asset_versions || {};
             for (const file of Object.keys(r13AssetVersions)) r13MakeDirs("/" + file);
             const preload = transport.preload || [];
@@ -317,6 +354,23 @@ LOADER = LOADER_BEGIN + r"""    // Core zip (runtime + scripts) is unpacked by R
 
     // Warm first-day character art and nearby music once the game runs,
     // so Ren'Py's own download finds them immediately.
+    // 2026-10-28: 날짜가 바뀌면 게임이 window.r13PrefetchDay(N) 을 부른다. 그날(과 다음 날) 인물·배경을 뒤에서 미리 받는다.
+    const r13DayDone = {};
+    globalThis.r13PrefetchDay = function (day) {
+        const files = ((r13Transport && r13Transport.by_day) || {})[String(day)] || [];
+        if (r13DayDone[day] || !files.length) return;
+        r13DayDone[day] = true;
+        let next = 0;
+        async function worker() {
+            while (next < files.length) {
+                const file = files[next++];
+                try { await (await fetch(r13Url(file, r13AssetVersions[file]), { priority: "low" })).blob(); } catch (e) { /* Ren'Py 가 쓸 때 다시 받는다 */ }
+                await new Promise(resolve => setTimeout(resolve, 50));
+            }
+        }
+        worker(); worker();
+    };
+
     async function r13PrefetchLater() {
         let next = 0;
         async function worker() {
@@ -610,7 +664,8 @@ def main():
     warm = character_prefetch(game) + ["assets/bgm-snow.mp3", "assets/amb-wind.mp3", "assets/bgm-inn.mp3", "assets/amb-fire.mp3"]
     transport = {"multipart": True, "archive_bytes": size, "archive_sha256": digest, "parts": parts,
                  "preload": preload_entries, "asset_versions": {"game/"+r: sha((game/r).read_bytes())[:12] for r in remote},
-                 "prefetch": ["game/"+r for r in dict.fromkeys(warm) if r in remote]}
+                 "prefetch": ["game/"+r for r in dict.fromkeys(warm) if r in remote],
+                 "by_day": {str(d): ["game/"+r for r in day_prefetch(game, d) if r in remote and r not in warm] for d in range(2, 15)}}
     (release / "game-transport.json").write_text(json.dumps(transport, indent=1))
 
     install_loader(release / "renpy-pre.js")

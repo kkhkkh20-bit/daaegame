@@ -363,6 +363,7 @@ Module.preRun = Module.preRun || [ ];
     // Core zip (runtime + scripts) is unpacked by Ren'Py; preloaded art is
     // written straight into /game so nothing large is unpacked or duplicated.
     let r13Prefetch = [];
+    let r13Transport = null;
     let r13AssetVersions = {};
     // Preserve engine paths while giving changed progressive assets fresh HTTP cache keys.
     if (typeof XMLHttpRequest !== "undefined" && !XMLHttpRequest.prototype.r13Versioned) {
@@ -430,6 +431,7 @@ Module.preRun = Module.preRun || [ ];
             const response = await fetch(r13Url("game-transport.json"), { cache: "no-cache" });
             if (!response.ok) throw new Error("game-transport.json: HTTP " + response.status);
             const transport = await response.json();
+            r13Transport = transport;
             r13AssetVersions = transport.asset_versions || {};
             for (const file of Object.keys(r13AssetVersions)) r13MakeDirs("/" + file);
             const preload = transport.preload || [];
@@ -466,6 +468,23 @@ Module.preRun = Module.preRun || [ ];
 
     // Warm first-day character art and nearby music once the game runs,
     // so Ren'Py's own download finds them immediately.
+    // 2026-10-28: 날짜가 바뀌면 게임이 window.r13PrefetchDay(N) 을 부른다. 그날(과 다음 날) 인물·배경을 뒤에서 미리 받는다.
+    const r13DayDone = {};
+    globalThis.r13PrefetchDay = function (day) {
+        const files = ((r13Transport && r13Transport.by_day) || {})[String(day)] || [];
+        if (r13DayDone[day] || !files.length) return;
+        r13DayDone[day] = true;
+        let next = 0;
+        async function worker() {
+            while (next < files.length) {
+                const file = files[next++];
+                try { await (await fetch(r13Url(file, r13AssetVersions[file]), { priority: "low" })).blob(); } catch (e) { /* Ren'Py 가 쓸 때 다시 받는다 */ }
+                await new Promise(resolve => setTimeout(resolve, 50));
+            }
+        }
+        worker(); worker();
+    };
+
     async function r13PrefetchLater() {
         let next = 0;
         async function worker() {
