@@ -187,6 +187,9 @@ default r13_nw_meeting_cast = []
 screen r13_nw_meeting_chrome(claim):
     $ key=r13_nw_meeting_key(claim)
     $ left=r13_nw_tries_left(key)
+    # 2026-10-28 캡처 검수(3일 돌 반환·신병): 판정이 난 뒤의 선택에도 「쟁점 · 누가 꺼냈나 · 남은 기회 7/7」이 그대로 떠
+    # 이미 끝난 물음을 아직 묻는 것처럼 보였다. 판정이 적힌 뒤에는 기회 수를 떼고 쟁점 대신 「판정 뒤」로 둔다.
+    $ decided=r13_v111_value("meeting:"+key) in ("win","partial","lose")
     frame:
         area (24,18,900,86) padding (20,12) background r13_field_paper()
         add R13AntiqueIcon("meeting_"+r13_meeting_kind(r13_debate_session(claim)),size=30) xpos 0 ypos 14
@@ -194,8 +197,8 @@ screen r13_nw_meeting_chrome(claim):
             xpos 42 xsize 812
             spacing 3
             # 타이포 V2 단계는 r13_meeting_chrome 과 같다(머리띠 86px 안에 subtitle+title 이 안 들어가 small+body).
-            text (r13_meeting_header(r13_debate_session(claim))+("" if r13_nw_unlimited(key) else "  ·  남은 기회 %d / %d"%(left,r13_nw_tries_max(key)))) size (r13_type("small")) color (r13_type_color("muted")) font R13_UI_BOLD_FONT
-            text ("쟁점 · "+r13_nw_meeting_issue(key)) size (r13_type("body")) color (r13_type_color("ink")) font R13_UI_BOLD_FONT
+            text (r13_meeting_header(r13_debate_session(claim))+("" if r13_nw_unlimited(key) or decided else "  ·  남은 기회 %d / %d"%(left,r13_nw_tries_max(key)))) size (r13_type("small")) color (r13_type_color("muted")) font R13_UI_BOLD_FONT
+            text ("판정 뒤 · 이어서 정할 일" if decided else "쟁점 · "+r13_nw_meeting_issue(key)) size (r13_type("body")) color (r13_type_color("ink")) font R13_UI_BOLD_FONT
         add Solid("#d6bf98") xpos 0 ypos 64 xysize (860,3)
-        if left<r13_nw_tries_max(key):
+        if left<r13_nw_tries_max(key) and not decided:
             add Solid("#a88043") xpos 0 ypos 64 xysize (int(860*left/float(r13_nw_tries_max(key))),3)

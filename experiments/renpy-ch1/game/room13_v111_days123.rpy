@@ -948,7 +948,7 @@ label r13_v111_clinic3:
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D03_S03_L0013', 'MS14_D03_S03_L0014', 'MS14_D03_S03_L0015', 'MS14_D03_S03_L0016', 'MS14_D03_S03_L0017', 'MS14_D03_S03_L0018', 'MS14_D03_S03_L0019', 'MS14_D03_S03_L0020', 'MS14_D03_S03_L0021', 'MS14_D03_S03_L0022', 'MS14_D03_S03_L0023', 'MS14_D03_S03_L0024']), 'v111:clinic3:MS14_D03_S03_L0013')
     # 0.20.7 (owner days 2-14 #2): how Dad asks after his apology; both reach the same time and record.
-    $ v111_answer=renpy.display_menu([("꺼낸 시각부터 묻는다",0),("다시 넣은 게 확실한지 묻는다",1)])
+    $ v111_answer=renpy.display_menu([("(무엇부터 물을까?)",None),("꺼낸 시각부터 묻는다",0),("다시 넣은 게 확실한지 묻는다",1)])
     if v111_answer==0:
         call r13_lines(r13_v111_lines(['MS14_D03_S03_L0025', 'MS14_D03_S03_L0026']), 'v111:clinic3:MS14_D03_S03_L0025')
     else:
