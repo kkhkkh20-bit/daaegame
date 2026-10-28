@@ -153,12 +153,7 @@ screen r13_map(initial_region=None, local_guide=False):
             ypos 70
             use r13_map_b(region,selected,ready,map_hover,map_notice)
         text ("다람탐정 · "+("여관 지도" if region=="inn" else "숲·산길 지도")) xpos 640 ypos 78 xanchor .5 size r13_type("subtitle") font R13_UI_BOLD_FONT color "#29364b"
-        textbutton "×":
-            area ((1180,48,88,88) if r13_touch_ui() else (1176,56,62,62)) padding (0,0)
-            # 2026-10-26 소유자: 「X 버튼이 너무 작고 눈에 안 띈다」. 다른 버튼과 같은 판 위에 크게 둔다.
-            background R13ControlSurface() hover_background R13ControlSurface(hovered=True) insensitive_background R13ControlSurface(disabled=True)
-            text_font R13_UI_BOLD_FONT text_size r13_type("display") text_color "#493324" text_hover_color "#963b2f" text_xalign .5 text_yalign .5
-            action close_action sensitive ready alt "닫기"
+        use r13_map_close_x(close_action,ready)
         use r13_map_diary_footer(region,selected,ready,local_guide,close_action)
         if map_notice:
             frame:

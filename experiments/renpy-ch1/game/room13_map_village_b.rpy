@@ -214,14 +214,7 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
             align (.5,.5) spacing 12
             add Transform(Crop((16,16,32,32),r13_asset_path("file:assets/ui-b-field/b_icon_acorn.png")),zoom=1.0) yalign .5
             text "다람탐정 · 마을 지도" font R13_UI_BOLD_FONT size (r13_type("subtitle") if R13_TYPE_V2 else 28) color (r13_type_color("ink") if R13_TYPE_V2 else "#493324") yalign .5
-    textbutton "×":
-        id "r13_village_close_x"
-        area ((1180,48,88,88) if r13_touch_ui() else (1176,56,62,62)) padding (0,0)
-        # 2026-10-26 소유자: 「X 버튼이 너무 작고 눈에 안 띈다」. 다른 버튼과 같은 판 위에 크게 둔다.
-        background R13ControlSurface() hover_background R13ControlSurface(hovered=True) insensitive_background R13ControlSurface(disabled=True)
-        text_xalign .5 text_yalign .5
-        text_font R13_UI_BOLD_FONT text_size r13_type("display") text_color "#493324" text_hover_color "#963b2f" text_align .5
-        action close_action sensitive ready
+    use r13_map_close_x(close_action,ready,"r13_village_close_x")
     fixed:
         area (920,72,248,38)
         hbox:
@@ -282,3 +275,15 @@ screen r13_map_diary_footer(region,selected,ready,local_guide,close_action):
     use r13_village_b_control("이곳으로 이동",(746,643,196,40),[Hide("r13_inn_guide"),Return(("travel",selected))] if local_guide else Return(selected),"r13_map_travel",primary=True,enabled=ready and can_travel)
     use r13_village_b_control("현장으로",(954,643,136,40),close_action,"r13_map_close",enabled=ready)
     # 2026-10-27 소유자 "애매하게 뒷배경을 초과하면 안 돼": 오른쪽 아래 다람 스티커가 수첩 모서리 밖으로 걸쳐 있어 뺐다.
+
+
+# 2026-10-28 소유자: 「지도의 X 표시가 삐져나왔으니 자연스럽게, 네모 아이콘을 빼도 되고」 → 시안 A(판 없이 X만).
+# 판(62px)이 종이 오른쪽 끝(1224)을 넘어 1238 까지 나갔다. X 는 제목 띠(58~122) 오른쪽 안에 두고, 손가락이 닿는 칸은
+# 넓게 잡되 종이 밖으로는 내지 않는다. 마을·여관·숲 지도가 같은 자리를 쓰므로 한 곳에서 그린다.
+screen r13_map_close_x(close_action,ready,xid=None):
+    textbutton "×":
+        id xid
+        area ((1140,58,84,64) if r13_touch_ui() else (1162,62,58,56)) padding (0,0) background None
+        text_xalign .5 text_yalign .5
+        text_font R13_UI_BOLD_FONT text_size r13_type("display") text_color r13_type_color("ink") text_hover_color r13_type_color("accent") text_align .5
+        action close_action sensitive ready alt "닫기"

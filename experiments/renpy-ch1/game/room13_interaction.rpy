@@ -153,12 +153,12 @@ init 61 python:
             def score(rect):
                 blocked=sum(overlap(rect,f) for f in faces.values())
                 blocked+=sum(overlap(rect,p["rect"]) for p in placed)
-                blocked+=sum(overlap(rect,r) for r in reserved)+sum(overlap(rect,o) for o in obstacles)*0.25   # 물건은 얼굴보다 가벼운 벌점: 둘 다 걸리면 얼굴을 먼저 비운다
+                blocked+=sum(overlap(rect,r) for r in reserved);soft=sum(overlap(rect,o) for o in obstacles)*0.1   # 2026-10-28 소유자 「머리 위 이름이 너무 먼 애들」(설이·피코·뿔이 촌장): 물건 벌점이 얼굴과 같은 자릿수라 이름표를 머리 두 칸 위·가슴까지 밀었다. 물건은 덮어도 되는 가벼운 벌점으로
                 # HUD rectangles are in screen coordinates; compare in this zoomed world.
                 z=r13_field_zoom()
                 for ux,uy,uw,uh in r13_field_ui_rects(0):
                     blocked+=overlap(rect,(offset+ux/z,uy/z,uw/z,uh/z))
-                return blocked*10000+abs(rect[0]-preferred[0])+abs(rect[1]-preferred[1])*1.1
+                return blocked*10000+soft+abs(rect[0]-preferred[0])+abs(rect[1]-preferred[1])*8+(40000 if rect[1]>face[1] else 0)   # 위아래로 멀어지는 것은 옆으로 비키는 것보다 훨씬 비싸고, 머리 아래(가슴)는 마지막 수단
             rect=min(candidates,key=score)
             leader=None
             if False and rect[:2]!=preferred[:2]:  # 0.20.2 (owner plan item 1): no leader lines
