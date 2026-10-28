@@ -111,6 +111,37 @@ TRUE_CHOICES=[
     '학교 침상과 인수를 먼저 확인한다',
     '7일 회의 기록을 함께 읽는다',                     # 13일 군중(옛 메뉴): 불 대승리 기록
 ]
+# ---------------------------------------------------------------- BRANCH=이름 (분기 주행, 2026-10-28)
+# 소유자 「저장했다가 분기별로 쪼개서 스샷 찍어 가며 끝까지」. 진엔딩 길 저장(auto-dayN)에서 시작해 갈림 한 곳만
+# 다르게 고르고 나머지는 진엔딩 길 그대로 끝까지 간다. ROUTE=true 와 같이 쓴다. 저장은 br-이름-dayN 으로 남겨
+# 진엔딩 저장을 덮지 않는다(같은 프로필로 다른 분기를 이어 돌릴 수 있게).
+BRANCH=os.environ.get('BRANCH')
+BRANCHES={
+    # 2일: 피코 대신 네로에게 간다(침구 두 장) → 피코 사망, 12일 다람 열 없음 → 수프 아침 예방이 열릴 수 있다.
+    'piko_lost':dict(day=2,gates={'afternoon2':['네로를 만나러 간다'],'lamp_prep2':['방으로 들어간다']}),
+    # 2일: 네로에게 가고, 밤에 3번 등 걸쇠를 끈으로 묶는다 → 등 미수판으로 피코 생존.
+    'piko_lamp':dict(day=2,gates={'afternoon2':['네로를 만나러 간다'],'lamp_prep2':['남은 끈을 빌린다','덮개의 걸쇠를 살핀다','걸쇠에 끈을 감아 고정한다','방으로 들어간다']}),
+    # 6일: 꼬미를 학교로 데려가지 않는다 → 장작 창고 불.
+    'kkomi_lost':dict(day=6,gates={'afternoon6':['내일 아침에 데리러 올게']},drop=['그릇을 돌려주러 같이 가자.']),
+    # 7일: 돌을 바꾸지 않고 도토의 다짐만 받는다.
+    'owl_promise':dict(day=7,gates={'free_day7':['아래서 누가 부르면 어떻게 하십니까?','다람아, 이제 13호에 가 보자.']},drop=['집게로 돌을 꺼내고, 주머니의 배급 돌을 넣는다']),
+    # 7일: 톡에게 13호 빗장 받이를 고쳐 달라고 한다.
+    'owl_repair':dict(day=7,gates={'free_day7':['13호 빗장 받이를 살핀다','빗장 받이를 봐 주실 수 있습니까?','빗장 받이 작업을 함께 확인한다','다람아, 이제 13호에 가 보자.']},drop=['집게로 돌을 꺼내고, 주머니의 배급 돌을 넣는다']),
+    # 7일: 예방 없음(부엉이 사망 → 8~10일 13호 회의). 기름통 홈도 들추지 않아 불 대승리가 없다 → 13일 군중이 기록 읽기 길로 가지 않는다.
+    'owl_lost':dict(day=7,gates={'free_day7':['다람아, 이제 13호에 가 보자.'],'bori_witness7':['창고 문 앞에서 무엇을 보셨습니까?']},
+        drop=['집게로 돌을 꺼내고, 주머니의 배급 돌을 넣는다','통 밑 홈을 들춘다']),
+    # 11일: 낮에 수레를 준비만 하고 밤에 출발한다(구조).
+    'nero_rescue':dict(day=11,gates={'rescue_cart11':['수레 짐칸을 살핀다','그릇 하나를 집는다','수레 짐을 내려 자리를 비운다','덮개를 접어 빈 짐칸에 싣는다','까로에게 운반을 부탁한다','아랫길을 비추는 등을 점검한다','아랫길 세 사람의 받을 자리를 비운다','먼저 학교 물자를 인계한다']}),
+    # 11일: 낮 준비 없이 출발을 미룬다(네로·아랫길 노인 사망).
+    'nero_lost':dict(day=11,gates={'rescue_cart11':['먼저 학교 물자를 인계한다'],'night_rescue_prepare11':['오늘은 출발을 미룬다']},drop=['아랫길 대피 준비를 확인한다']),
+    # 12일: 배식 전에 냄비를 열지 않는다(도담 사건).
+    'soup_lost':dict(day=12,gates={'meal_inspect12':['장작을 받을 일을 다시 살핀다']},drop=['배식 전에 더 살핀다','흰 그릇을 옆으로 옮기고 작은 냄비를 연다']),
+}
+if BRANCH:
+    _b=BRANCHES[BRANCH]
+    TRUE_GATES.update(_b.get('gates',{}))
+    TRUE_CHOICES=[c for c in TRUE_CHOICES if (c if isinstance(c,str) else c[0]) not in _b.get('drop',())]
+SAVE_PREFIX=('br-%s-day'%BRANCH) if BRANCH else 'auto-day'
 TRUE_PREFER_PROOF=('NW_NUBI_TICKET','NW_RETURNED_BOWL')   # 대승리 보너스 증거가 든 정답 묶음을 먼저 낸다
 TRUE_TRACK=('piko_alive','KKOMI_ALIVE','OWL_ALIVE','nero_alive','prevention','route7','route12','carried_dry_blankets','daram_fever12',
     'neoul_promise_proven','transfer_list_voided','grand_bowl_pocket','grand_ticket_spot_known','grand_laundry_seen5','departed_names',
@@ -298,7 +329,7 @@ async def cheese_crisis(q,st,mode):
 
 async def main():
     async with async_playwright() as p:
-        b=await p.chromium.launch_persistent_context(str(OUT.parent/('profile-autoplay-'+(os.environ.get('ROUTE') or 'base'))),executable_path='/opt/pw-browsers/chromium',viewport={'width':1280,'height':720},args=['--no-sandbox','--enable-unsafe-swiftshader','--autoplay-policy=no-user-gesture-required'])
+        b=await p.chromium.launch_persistent_context(str(OUT.parent/('profile-autoplay-'+(os.environ.get('PROFILE') or os.environ.get('ROUTE') or 'base'))),executable_path='/opt/pw-browsers/chromium',viewport={'width':1280,'height':720},args=['--no-sandbox','--enable-unsafe-swiftshader','--autoplay-policy=no-user-gesture-required'])
         for prev in b.pages:await prev.close()
         pg=await b.new_page();q=Driver(pg,OUT);errors=[];pg.on('pageerror',lambda e:errors.append(str(e)))
         await pg.goto(URL,wait_until='domcontentloaded',timeout=180000)
@@ -334,7 +365,7 @@ async def main():
                 if 'main_menu' in sc and step>50:log('메인 화면(결말)');await shot(q,'ending');break
                 if st['day'] and st['day']!=last_day:
                     log('==== %d일'%st['day']);last_day=st['day']
-                    try:await q.py('import renpy;renpy.exports.save("auto-day%d");result=True'%st['day']);log('SAVED auto-day%d'%st['day'])
+                    try:await q.py('import renpy;renpy.exports.save("%s%d");result=True'%(SAVE_PREFIX,st['day']));log('SAVED %s%d'%(SAVE_PREFIX,st['day']))
                     except Exception as e:log('save failed',repr(e))
                 if TRUE_ROUTE:
                     tv=true_tracked(st.get('values'))

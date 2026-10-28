@@ -76,6 +76,10 @@ init 40 python:
     def r13_dad_listener(entries,index):
         vp=r13_viewpoint()
         def ok(who):return bool(who) and who!=vp and who in CAST
+        # 2026-10-28 분기 주행: 「판돌 씨, 여기요」에 돌목이, 「모모 씨, 내려요」에 까로가 섰다. 아빠가 부른 이름이 먼저다.
+        text=str(entries[index][1]) if index<len(entries) and len(entries[index])>1 else ""
+        called=r13_called_person(text)
+        if ok(called):return called
         for p in entries[index+1:]:
             opts=p[2] if len(p)>2 and isinstance(p[2],dict) else {}
             if ok(p[0]) and not opts.get("thought"):return p[0]
@@ -88,3 +92,16 @@ init 40 python:
         others=[w for w in present if w!="daram"]
         if others:return others[0]
         return "daram" if "daram" in present else None
+
+    R13_CALL_GENERIC=("아빠","엄마","할머니","할아버지","선생님","아이","주민","사람","부인","영감","관장","대장")
+    def r13_called_person(text):
+        """아빠가 이름을 불러 말을 거는 사람(「모모 씨,」「다람아,」「굴돌 씨도」). 남 얘기로 이름만 나온 것은 아니다."""
+        import re
+        alive=globals().get("r13_v111_person_alive",lambda w:True)
+        best=None
+        for who in CAST:
+            name=str(r13_display_name(who) or "").split(" ")[0]
+            if len(name)<2 or name in R13_CALL_GENERIC:continue
+            m=re.search(re.escape(name)+"(?: ?씨| ?님|아|야)?(?:[,!?…]| ?씨도 )",text)
+            if m and alive(who) and (best is None or m.start()<best[0]):best=(m.start(),who)
+        return best[1] if best else None
