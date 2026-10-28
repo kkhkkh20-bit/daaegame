@@ -87,6 +87,12 @@ label r13_lamp_attempt_win3:
     jump r13_v111_custody_choice
 
 label r13_lamp_attempt_after3:
+    # 2026-10-28 다른 길 자동 플레이: 예방 판(끈으로 묶어 돌이 안 없어진 판)은 돌 반환 선택도, 도난 입증도 없이 저녁으로 간다.
+    # 저녁 장면(MS14_D03_S06)의 진입 검사는 그 둘을 요구해 「Unmet authored scene state」로 멈췄다. 이 판에서는 돌이 제자리에 있어
+    # 되돌릴 것이 없고(선택 완료로 본다), 회의에서 안쪽 파손·칼 사용을 입증했으므로 같은 자리의 값을 채운다. 진상·생사·정답은 그대로.
+    if r13_v111_value('meeting:lamp')=='win':
+        $ r13_v111_set('lamp_theft_supported',True)
+    $ r13_v111_set('stone_choice_completed',True)
     call r13_lines(r13_nw_block('tok_axle3'),'nw:tok_axle3')
     # 이 판은 진료소·집게 반납(owl_tongs3)을 지나지 않는다. 5일 장갑·7일 13호가 「공방에서 본 노인」과
     # 「본 건 왼쪽, 들은 건 오른쪽」을 전제하므로, 회의가 끝난 공방에서 같은 노인과 같은 말을 만나게 한다.

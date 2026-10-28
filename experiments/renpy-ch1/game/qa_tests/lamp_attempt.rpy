@@ -70,6 +70,16 @@ testcase lamp_attempt_field_and_win:
     click 'QA 행동'
     click pos (900,600) until eval (r13_v111_value('meeting:lamp')=='win') timeout 30
     assert eval (not r13_v111_owned('E15') and not r13_v111_owned('E16') and r13_v111_owned('NW_LA_OFFER'))
+    # 2026-10-28 다른 길 자동 플레이: 이긴 뒤 보호 선택을 지나 저녁(MS14_D03_S06)으로 들어가야 한다. 예방 판은 돌 반환 선택이
+    # 없어 저녁 진입 검사가 막혔었다. 실룩 인계 쪽을 고르고, 저녁 장면에 들어가 4일 아침까지 간다.
+    click pos (900,600) until screen 'choice' timeout 60
+    click '증거를 넘기고 너울이 실룩을 데려가게 한다'
+    click pos (900,600) until eval (room13["v111"].get("scene")=="MS14_D03_S06") timeout 90
+    assert eval (r13_v111_value('stone_choice_completed') is True and r13_v111_value('lamp_theft_supported') is True)
+    screenshot 'la_evening3.png'
+    click pos (900,600) until screen 'r13_hub' timeout 180
+    assert eval (room13["day"]==3 and room13["period"]==2)
+    screenshot 'la_evening3_hub.png'
 
 testcase lamp_attempt_lose:
     pause 1.0

@@ -232,6 +232,7 @@
 - `r13_v111_restore_input` if 「톡·초롱과 3번 돌을 복구한다」 `→ r13_v111_restore3`
 - `r13_lamp_attempt_wrong3` if `r13_nw_retry('lamp')` `→ r13_lamp_attempt_repair3`
 - `r13_lamp_attempt_partial3` if `r13_nw_retry('lamp')` `→ r13_lamp_attempt_final3`
+- `r13_lamp_attempt_after3` if `r13_v111_value('meeting:lamp')=='win'` `$ r13_v111_set('lamp_theft_supported',True)`
 - 값
   - 회의 끝 `lamp` → `"partial"` (`r13_v111_knife_wrong`)
   - 회의 끝 `lamp` → `"win"` (`r13_v111_badugi_arrives`)
@@ -249,6 +250,8 @@
   - 회의 끝 `lamp` → `"partial"` (`r13_lamp_attempt_partial3`)
   - `outer_latch_claim_refuted` = `true` (`r13_lamp_attempt_win3`)
   - 회의 끝 `lamp` → `"win"` (`r13_lamp_attempt_win3`)
+  - `lamp_theft_supported` = `true` (`r13_lamp_attempt_after3`)
+  - `stone_choice_completed` = `true` (`r13_lamp_attempt_after3`)
   - `stone_warm_felt3` = `true` (`r13_lamp_attempt_after3`)
   - `piko.location` = `"clinic"` (`r13_lamp_attempt_after3`)
 
@@ -265,10 +268,10 @@
 
 | 장면 | 제목 · 원본 장소 | 이동(travel) | 인물 | 라벨 |
 |---|---|---|---|---|
-| `MS14_D04_S01` | 1. 솜이네 골목 / 닫힌 뒷문 · 4일 아침 / 조건부노동현장→솜이네문 | v111_labor, 솜이네 골목(ms14_somi) | 다람, 실룩, 너울, 네로, 솜이, 아랫길 노인 | `r13_v111_labor4`, `r13_v111_labor_sheet4`, `r13_v111_labor_confirm4`, `r13_v111_somi4`, `r13_v111_nero_route4`, `r13_v111_nero_known4` 외 6 |
-| `MS14_D04_S02` | 2. 처마 / 도토리 세 개 · 4일 낮 / 광장처마→오후방문후퇴 | 돌이 있는 광장(square), 솜이네 골목(ms14_somi) | 다람, 콩이, 토실, 밤이, 초롱 | `r13_v111_eaves4`, `r13_v111_portrait_place4`, `r13_v111_bami_mother4` |
+| `MS14_D04_S01` | 1. 솜이네 골목 / 닫힌 뒷문 · 4일 아침 / 조건부노동현장→솜이네문 | v111_labor, ms14_somi | 다람, 실룩, 너울, 네로, 솜이, 아랫길 노인 | `r13_v111_labor4`, `r13_v111_labor_sheet4`, `r13_v111_labor_confirm4`, `r13_v111_somi4`, `r13_v111_nero_route4`, `r13_v111_nero_known4` 외 6 |
+| `MS14_D04_S02` | 2. 처마 / 도토리 세 개 · 4일 낮 / 광장처마→오후방문후퇴 | 돌이 있는 광장(square), ms14_somi | 다람, 콩이, 토실, 밤이, 초롱 | `r13_v111_eaves4`, `r13_v111_portrait_place4`, `r13_v111_bami_mother4` |
 | `MS14_D04_S03` | 3. 저녁 초소 뒤 / 비명 · 4일 저녁 / 초소뒷길 | 눈에 막힌 입구(gate) | 다람, 돌목, 너울, 바둑이 | `r13_v111_cry4`, `r13_v111_look_gate4`, `r13_v111_bite4` |
-| `MS14_D04_S04` | 4. 같은 밤 / 잘못 적은 키 · 4일 밤 / 밝은초소→문앞울타리→식당 | 밝은 초소 안(ms14_guardroom), 눈에 막힌 입구(gate), 여관 식당(dining), 돌이 있는 광장(square), 여관 2층 · 13호실(room13) | 다람, 바둑이, 밤이, 피코, 꼬미 | `r13_v111_testimony4`, `r13_v111_bami_ask4`, `r13_v111_bami_night4`, `r13_v111_inspect_gate4`, `r13_v111_fence_seen4`, `r13_v111_tracks_seen4` 외 9 |
+| `MS14_D04_S04` | 4. 같은 밤 / 잘못 적은 키 · 4일 밤 / 밝은초소→문앞울타리→식당 | ms14_guardroom, 눈에 막힌 입구(gate), 여관 식당(dining), 돌이 있는 광장(square), 여관 2층 · 13호실(room13) | 다람, 바둑이, 밤이, 피코, 꼬미 | `r13_v111_testimony4`, `r13_v111_bami_ask4`, `r13_v111_bami_night4`, `r13_v111_inspect_gate4`, `r13_v111_fence_seen4`, `r13_v111_tracks_seen4` 외 9 |
 
 #### `MS14_D04_S01` 갈림 · 값 (room13_v111_days45.rpy:10)
 
@@ -310,11 +313,11 @@
 
 | 장면 | 제목 · 원본 장소 | 이동(travel) | 인물 | 라벨 |
 |---|---|---|---|---|
-| `MS14_D05_S01` | 1. 솜이네 / 손바닥 · 5일 아침 / 솜이네안 | 솜이네 골목(ms14_somi), 솜이네 방(ms14_somi_inside) | 다람, 네로, 솜이, 무쇠 | `r13_v111_somi5` |
-| `MS14_D05_S02` | 2. 문턱 / 숨긴 것과 일어난 것 · 5일 오전 / 솜이네→진료소문→초소 | 솜이네 방(ms14_somi_inside), 임시 진료실(clinic) | 다람, 네로, 솜이, 무쇠 | `r13_v111_wait_cloth5`, `r13_v111_compare_cloth5`, `r13_v111_cloth_match5` |
+| `MS14_D05_S01` | 1. 솜이네 / 손바닥 · 5일 아침 / 솜이네안 | ms14_somi, ms14_somi_inside | 다람, 네로, 솜이, 무쇠 | `r13_v111_somi5` |
+| `MS14_D05_S02` | 2. 문턱 / 숨긴 것과 일어난 것 · 5일 오전 / 솜이네→진료소문→초소 | ms14_somi_inside, 임시 진료실(clinic) | 다람, 네로, 솜이, 무쇠 | `r13_v111_wait_cloth5`, `r13_v111_compare_cloth5`, `r13_v111_cloth_match5` |
 | `MS14_D05_S03` | 3. 초소 / 사라지지 않는 상처 · 5일 낮 / 초소밤이혐의검증 | 눈에 막힌 입구(gate) | 다람, 돌목, 너울, 네로, 바둑이, 콩이 | `r13_v111_hearing5`, `r13_v111_proof5`, `r13_v111_wrong5`, `r13_v111_hint5`, `r13_v111_bami_clear5` |
 | `MS14_D05_S04` | 4. 점심 무렵 / 이제 도착한 경고 · 5일 점심무렵 / 초소앞바람막힌곳 | 눈에 막힌 입구(gate) | 다람, 초롱 | `r13_v111_warning5`, `r13_v111_envelope5`, `r13_v111_warning_read5`, `r13_v111_warning_compare5`, `r13_v111_warning_retry5`, `r13_v111_warning_compared5` 외 2 |
-| `MS14_D05_S05` | 5. 저녁 / 맡긴다는 말의 무게 · 5일 저녁 / 솜이네→식당→같은복도→13호 | 솜이네 방(ms14_somi_inside), 여관 식당(dining), 여관 접수대(inn), 여관 2층 복도(hall), 여관 2층 · 13호실(room13) | 다람, 솜이, 무쇠, 네로, 바둑이, 까로, 부엉이 할아버지 | `r13_v111_night5`, `r13_v111_owl_glove5`, `r13_v111_lock_check5`, `r13_v111_blankets5`, `r13_v111_packed5`, `r13_v111_empty_bag5` 외 3 |
+| `MS14_D05_S05` | 5. 저녁 / 맡긴다는 말의 무게 · 5일 저녁 / 솜이네→식당→같은복도→13호 | ms14_somi_inside, 여관 식당(dining), 여관 접수대(inn), 여관 2층 복도(hall), 여관 2층 · 13호실(room13) | 다람, 솜이, 무쇠, 네로, 바둑이, 까로, 부엉이 할아버지 | `r13_v111_night5`, `r13_v111_owl_glove5`, `r13_v111_lock_check5`, `r13_v111_blankets5`, `r13_v111_packed5`, `r13_v111_empty_bag5` 외 3 |
 
 #### `MS14_D05_S01` 갈림 · 값 (room13_v111_days45.rpy:389)
 
