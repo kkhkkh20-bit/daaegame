@@ -241,12 +241,14 @@ init 351 python:
     def r13_pw_quote_height(text,width):
         return r13_proof_text_size(text,r13_nb_emphasis_size(),width)[1]
 
-    def r13_pw_layout(quote_open,quote_text):
+    R13_PW_DOCK_PANEL=(50,214,1180,476)
+    def r13_pw_layout(quote_open,quote_text,dock=False):
         """자리 계산. PC: 왼쪽 발언 열 · 가운데 목록 · 오른쪽 상세, 위에 탭 줄, 아래에 칩 줄과 버튼 줄.
         휴대폰: 위 한 줄(발언 접기 버튼 + 탭), 본문 한 영역(목록 또는 상세), 아래 칩 줄과 버튼 줄.
         전체 화면은 스크롤하지 않는다 — 목록·상세만 뷰포트다."""
         touch=r13_touch_ui()
-        L=dict(touch=touch,left=R13_NB_LEFT,right=R13_NB_RIGHT,width=R13_NB_WIDTH,top=R13_NB_TOP)
+        dock=dock and not touch
+        L=dict(touch=touch,dock=dock,left=R13_NB_LEFT,right=R13_NB_RIGHT,width=R13_NB_WIDTH,top=R13_NB_TOP)
         L["footer_y"]=r13_nb_footer_y()
         L["chip_h"]=r13_pw_chip_height()
         L["chips_y"]=L["footer_y"]-(8 if touch else 12)-L["chip_h"]
@@ -264,6 +266,20 @@ init 351 python:
             L["list_x"]=L["left"];L["list_w"]=L["width"]
             L["detail_x"]=L["left"];L["detail_w"]=L["width"]
             L["cols"]=1 if persistent.room13_large_text else 2
+        elif dock:
+            # 2026-10-28 소유자 2안 승인: B안 판(아래 붙임)과 같은 자리·같은 모양. 머리(쟁점·발언 한 줄) 아래에 탭·목록·읽는 칸.
+            P=R13_PW_DOCK_PANEL
+            L["panel"]=P
+            L["left"]=P[0]+48;L["right"]=P[0]+P[2]-28;L["width"]=L["right"]-L["left"];L["top"]=P[1]+22
+            L["footer_y"]=P[1]+P[3]-20-r13_control_height()
+            L["chips_y"]=L["footer_y"];L["body_bottom"]=L["footer_y"]-10
+            L["quote_y"]=L["top"]+46;L["rule_y"]=L["top"]+84
+            L["tab_y"]=L["top"]+96
+            L["list_x"]=L["left"];L["list_w"]=600
+            L["detail_x"]=L["left"]+624;L["detail_w"]=L["right"]-L["detail_x"]
+            L["tab_x"]=L["list_x"];L["tab_w"]=0;L["tab_gap"]=6
+            L["body_top"]=L["tab_y"]+L["tab_h"]+8
+            L["cols"]=1
         else:
             L["quote_x"]=L["left"];L["quote_w"]=268
             L["list_x"]=424;L["list_w"]=340
@@ -508,7 +524,9 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
     $ replace_pending=replace_pending if (replace_pending in owned and mode=="compare") else None
     $ quote_text=ctx["quote"] if (ctx["quote"] and r13_pw_quote_visible_now(key)) else None
     $ title=R13_PROOF_TITLES.get(key,key)
-    $ L=r13_pw_layout(quote_open,quote_text)
+    default big=False
+    $ dock=not big and not pair_open
+    $ L=r13_pw_layout(quote_open,quote_text,dock)
     $ touch=L["touch"]
     $ small=r13_pw_small()
     $ ink=r13_nb_ink()
@@ -516,9 +534,31 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
     $ accent=r13_nb_accent()
     $ sections=r13_pw_sections(tab,owned)
     $ show_list=not pair_open and not (touch and detail)
-    use r13_notebook_shell("자료 대조",close_action=(Return("investigate") if investigate else None),stamp=chances)
+    if L["dock"]:
+        frame:
+            area L["panel"] padding (0,0) background R13DiaryPanel()
+        hbox:
+            xpos L["left"] ypos L["top"] xsize L["width"] spacing 16
+            text title font R13_UI_BOLD_FONT size r13_type("title") color ink xsize (L["width"]-220) yalign .5
+            if chances:
+                frame:
+                    padding (0,0) background None yalign .5 xalign 1.0
+                    use r13_proof_chip(chances)
+        if quote_text:
+            hbox:
+                xpos L["left"] ypos L["quote_y"] spacing 12
+                text ((ctx["speaker"]+"의 말") if ctx["speaker"] else "의문") font R13_UI_BOLD_FONT size small color accent yalign .5
+                text (("“"+quote_text+"”") if ctx["speaker"] else quote_text) font R13_UI_BOLD_FONT size r13_type("body") color ink yalign .5 xsize (L["width"]-120)
+        elif pair_waiting:
+            text "목록에서 함께 볼 자료의 이름을 누르세요." xpos L["left"] ypos L["quote_y"] size small color accent font R13_UI_BOLD_FONT
+        add Solid("#c9a86a99") xpos L["left"] ypos L["rule_y"] xsize L["width"] ysize 1
+        add Solid("#c9a86a66") xpos (L["detail_x"]-12) ypos L["tab_y"] xsize 1 ysize (L["body_bottom"]-L["tab_y"])
+    else:
+        use r13_notebook_shell("자료 대조",close_action=(Return("investigate") if investigate else None),stamp=chances)
     # 발언 ------------------------------------------------------------
-    if touch:
+    if L["dock"]:
+        pass
+    elif touch:
         # 휴대폰: 위 한 줄에 발언 접기 버튼과 탭. 발언은 펼치면 아래 틀에 보이고 본문이 그만큼 내려간다.
         button:
             id "r13_pw_fold"
@@ -555,7 +595,7 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
             textbutton tab_title:
                 id ("r13_pw_tab_"+tab_key)
                 style "r13ev_chip_button" text_style "r13ev_chip_button_text"
-                xpos tx ypos L["top"] xsize tw ysize L["tab_h"]
+                xpos tx ypos L.get("tab_y",L["top"]) xsize tw ysize L["tab_h"]
                 text_size min(small,(tw-12)//max(1,len(tab_title))) selected (tab_key==tab)
                 action [SetScreenVariable("tab",tab_key),SetScreenVariable("page",0)]+([SetScreenVariable("detail",None)] if touch else []) sensitive ready
     # 본문 ------------------------------------------------------------
@@ -605,7 +645,9 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
             else:
                 text ("목록에서 자료 이름을 누르면 여기서 읽습니다." if not pair_waiting else "함께 볼 자료의 이름을 목록에서 누르세요.") xpos L["detail_x"] ypos (L["body_top"]+40) xsize L["detail_w"] text_align .5 size r13_ev_fact_size() color muted font R13_UI_BOLD_FONT
     # 고른 자료 칩 ----------------------------------------------------
-    use r13_pw_chips(claim,chosen,mode,L,replace_pending,ready)
+    # 붙임 판은 목록의 체크가 고른 것을 보여 준다(칩 줄을 두면 목록이 한 줄 줄어든다). 바꿀 자료 고르기만 칩 줄을 쓴다.
+    if not L["dock"] or replace_pending:
+        use r13_pw_chips(claim,chosen,mode,dict(L,chips_y=(L["footer_y"]-L["chip_h"]-8) if L["dock"] else L["chips_y"]),replace_pending,ready)
     # 버튼 줄: 주 행동은 하나(빨강). 나머지는 공통 부품. 빈 선택이면 주 행동은 비활성이고 키 입력도 받지 않는다.
     $ buttons=[]
     if pair_open or (touch and detail):
@@ -619,11 +661,20 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
     if mode=="compare" and not pair_open:
         $ buttons.append(("나란히 보기",SetScreenVariable("pair",r13_pw_pair_from_chosen(chosen,mode)),bool(r13_pw_pair_from_chosen(chosen,mode)),False,"r13_pw_side"))
     $ buttons.append((r13_pw_main_label(mode),Return("argue"),r13_pw_submit_ok(stored,mode) and r13_pw_submit_ok(chosen,mode),True,"r13_pw_submit"))
+    if L["dock"]:
+        # B안과 같은 줄: 첫 칸 「목록 크게 보기」(예전 큰 화면), 끝 칸 「자료 다시 보기」. 칸 폭·간격은 B안과 같다.
+        $ buttons=[("목록 크게 보기",SetScreenVariable("big",True),True,False,"r13_pw_big")]+buttons
+        if len(buttons)<4:
+            $ buttons.append(("자료 다시 보기",Return("leave"),True,False,"r13_pw_leave"))
+    elif big and not touch:
+        $ buttons=[("판으로 줄이기",SetScreenVariable("big",False),True,False,"r13_pw_small")]+buttons
     $ bw=((L["width"]-16*(len(buttons)-1))//len(buttons)) if touch else (200 if len(buttons)>3 else 232)
+    $ bw=((L["width"]-R13_CONTROL["gap"]*(len(buttons)-1))//len(buttons)) if L["dock"] else bw
     $ bw=min(bw,264) if touch else bw
-    $ bx=L["right"]-(bw*len(buttons)+16*(len(buttons)-1))
+    $ gap=R13_CONTROL["gap"] if L["dock"] else 16
+    $ bx=L["right"]-(bw*len(buttons)+gap*(len(buttons)-1))
     # 버튼 줄 왼쪽에는 글을 두지 않는다 — 안내는 왼쪽 발언 열(PC)·발언 틀(휴대폰)에 있고, 짧은 폭에 넣으면 종이 밖으로 넘친다.
     for index,(caption,action,enabled,primary,control_id) in enumerate(buttons):
         fixed:
-            xpos (bx+index*(bw+16)) ypos L["footer_y"] xysize (bw,r13_control_height())
+            xpos (bx+index*(bw+gap)) ypos L["footer_y"] xysize (bw,r13_control_height())
             use r13_control(caption,None,action,enabled=(ready and enabled),primary=primary,width=bw,control_id=control_id)
