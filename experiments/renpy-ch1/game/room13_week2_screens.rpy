@@ -90,6 +90,28 @@ init 112 python:
         cols=1 if n*card+R13_PROOF_CARD_GAP*(n-1)<=avail else 2
         return cols,card,title_w
 
+    def r13_proof_shown(chosen,cols,card,avail):
+        """(보일 카드, 숨긴 개수). 2026-10-28 꼼수 길 자동 주행: 가진 자료를 전부 고르면(20~70개) 카드가 패널 아래로
+        넘쳐 버튼과 겹치고 틀 밖에 찍혔다. 들어가는 줄 수만 그리고, 넘치면 마지막 칸을 「그 밖에 N개」로 바꾼다."""
+        chosen=list(chosen or ())
+        rows=max(1,(avail+R13_PROOF_CARD_GAP)//(card+R13_PROOF_CARD_GAP))
+        cap=rows*cols
+        if len(chosen)<=cap:return chosen,0
+        shown=chosen[:max(0,cap-1)]
+        return shown,len(chosen)-len(shown)
+
+    def r13_proof_avail(claim,chances,steps_shown,help_text,note=None):
+        title_size=(r13_type("title") if R13_TYPE_V2 else r13_read_size(30,32))
+        small=(r13_type("small") if R13_TYPE_V2 else 22)
+        chip_w=(r13_proof_text_size(chances,small)[0]+28) if chances else 0
+        title_w=R13_PROOF_INNER_W-(chip_w+16 if chances else 0)
+        header=max(r13_proof_text_size(R13_CLAIMS[claim]["assertion"],title_size,title_w)[1],small+12)
+        steps=(small+14) if steps_shown else 0
+        help_h=r13_proof_text_size(help_text,small,R13_PROOF_INNER_W,heavy=False)[1]
+        note_h=(r13_proof_text_size(note,small,R13_PROOF_INNER_W,heavy=False)[1]+R13_PROOF_GAP) if note else 0
+        gaps=R13_PROOF_GAP*(4 if steps_shown else 3)
+        return R13_PROOF_INNER_H-header-steps-help_h-note_h-r13_control_height()-gaps
+
 # 작은 꼬리표. 테두리만 있는 칩은 빨강 판 안에 크림 판을 넣어 그린다 — 새 재질을 만들지 않는다.
 screen r13_proof_chip(label,filled=False):
     frame:
@@ -108,6 +130,7 @@ screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장",can_p
     $ help_text=(r13_proof_guide_help(len(chosen),chances) if steps_shown else r13_proof_edit_help(chances))
     $ start_note=(r13_v111_proof_start_note(claim) if chances else None)
     $ cols,card_h,title_w=r13_proof_layout(claim,len(chosen),chances,steps_shown,help_text,start_note)
+    $ shown,hidden_n=r13_proof_shown(chosen,cols,card_h,r13_proof_avail(claim,chances,steps_shown,help_text,start_note))
     $ card_w=(R13_PROOF_INNER_W-R13_PROOF_CARD_GAP*(cols-1))//cols
     $ thumb=card_h-8
     $ name_w=card_w-20-thumb-14-((R13_PROOF_REMOVE_W+12) if need_evidence else 0)
@@ -136,10 +159,16 @@ screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장",can_p
                 if chosen:
                     vbox:
                         spacing R13_PROOF_CARD_GAP
-                        for row in range(0,len(chosen),cols):
+                        for row in range(0,len(shown)+(1 if hidden_n else 0),cols):
                             hbox:
                                 spacing R13_PROOF_CARD_GAP
-                                for key in chosen[row:row+cols]:
+                                for key in (shown+(["__more__"] if hidden_n else []))[row:row+cols]:
+                                  if key=="__more__":
+                                    # 넘친 자료는 한 칸으로 묶는다. 하나씩 빼는 것은 「자료 고르기」에서 같은 자료를 다시 누르면 된다.
+                                    frame:
+                                        id "r13_proof_more" xysize (card_w,card_h) padding (16,4) background r13_sticker_button()
+                                        text ("그 밖에 %d개 · 「자료 고르기」에서 빼거나 더합니다"%hidden_n) yalign .5 xsize card_w-32 font R13_UI_BOLD_FONT size (r13_type("small") if R13_TYPE_V2 else 22) color (r13_type_color("muted") if R13_TYPE_V2 else "#6b5641")
+                                  else:
                                     frame:
                                         xysize (card_w,card_h) padding (10,4) background r13_sticker_button()
                                         add r13_evidence_picture(key,thumb) xpos 0 yalign .5
