@@ -26,27 +26,26 @@ init 142 python:
     def _r13_accent_span(word,color):
         return "{font="+R13_ACCENT_FONT+"}{color="+color+"}"+word+"{/color}{/font}"
 
+    # 2026-10-28 소유자(역전재판 캡처 다섯 장): 「한 가지 색을 정하자. 볼드 처리하지 말고. 어두운 빨간색 같은 걸로.
+    # 이름마다 체크하는 게 아니라, 쌍따옴표에 들어갈 단어를 강조할 때 쓰는 것으로 규칙을 바꾸고」.
+    # 규칙: “인용” · "인용" · 【핵심어】 만 어두운 빨강으로(따옴표·괄호 포함, 굵기 그대로). 이름·장소 자동 색칠은 하지 않는다.
+    # 아빠 생각(괄호, 파랑) 안에서도 인용은 빨강이다(레퍼런스: 생각 속 “눈이 자국을 지웠다”).
+    R13_QUOTE_COLOR="#8E2A22"
+    _R13_QUOTE_RE=_r13_na_re.compile(r'(“[^”{}]+”|"[^"{}]+"|【[^】{}]+】)')
     def r13_name_accent(text):
-        if not R13_NAME_ACCENT_ON or not isinstance(text,str) or getattr(store,"r13_thought_active",False):return text
-        people,places=_r13_accent_words()
-        words=sorted([(w,R13_ACCENT_COLORS["person"]) for w in people]+[(w,R13_ACCENT_COLORS["place"]) for w in places],key=lambda x:-len(x[0]))
-        if not words:return text
-        color_of=dict(words)
-        # 앞에 한글 글자가 붙으면 낱말의 일부다("도토리" 의 "토리").
-        pattern=_r13_na_re.compile("(?<![가-힣])("+"|".join(_r13_na_re.escape(w) for w,_ in words)+")"+_R13_ACCENT_TAIL)
-        parts=_r13_na_re.split(r"(\{[^{}]*\}|\[[^\[\]]*\]|「[^「」]*」|【[^【】]*】)",text)
+        if not R13_NAME_ACCENT_ON or not isinstance(text,str):return text
+        parts=_r13_na_re.split(r"(\{[^{}]*\}|\[[^\[\]]*\])",text)
         out=[]
         for p in parts:
             if not p:continue
-            if p.startswith(("{","[")):out.append(p)
-            elif p.startswith(("「","【")):out.append(_r13_accent_span(p,R13_ACCENT_COLORS["key"]))
-            else:out.append(pattern.sub(lambda m:_r13_accent_span(m.group(1),color_of[m.group(1)]),p))
+            if p.startswith(("{","[")):out.append(p);continue
+            out.append(_R13_QUOTE_RE.sub(lambda m:"{color="+R13_QUOTE_COLOR+"}"+m.group(1)+"{/color}",p))
         return "".join(out)
 
     _r13_accent_semantic=r13_semantic_text
     def r13_semantic_text(text):
         if R13_NAME_ACCENT_ON and getattr(store,"r13_thought_active",False) and isinstance(text,str):
-            return "{color="+R13_ACCENT_COLORS["thought"]+"}"+_r13_accent_semantic(text)+"{/color}"
+            return "{color="+R13_ACCENT_COLORS["thought"]+"}"+r13_name_accent(_r13_accent_semantic(text))+"{/color}"
         if R13_NAME_ACCENT_ON and isinstance(text,str) and getattr(store,"room13_mode",False):
             return r13_name_accent(text)
         return _r13_accent_semantic(text)

@@ -811,7 +811,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 140 | `systems/room13_typography_roles.rpy:38` | _r13_accent_semantic |
-| 2 | 142 | `systems/room13_name_accent.rpy:47` |  |
+| 2 | 142 | `systems/room13_name_accent.rpy:46` |  |
 
 ## `r13_shop_price` (2층)
 
