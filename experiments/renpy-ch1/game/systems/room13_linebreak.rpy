@@ -27,7 +27,8 @@ init 112 python:
     def _r13_lb_blocks(text,large):
         """Sentences, each as its wrapped lines; the line limit widens until it fits one page."""
         best=None
-        for limit in ((26,28,29) if large else (30,32,33)):
+        # 2026-10-28 글자 칸 940px(보통 30px → 한 줄 약 31자, 크게·휴대폰 34~36px → 약 26자)에 맞춘 한 줄 글자 수.
+        for limit in ((24,25,26) if large else (29,30,31)):
             blocks=[_r13_lb_split(part,limit) for written in text.split("\n")
                     for part in _R13_LB_END.split(written.strip()) if part]
             if best is None or sum(map(len,blocks))<sum(map(len,best)):best=blocks
@@ -59,6 +60,6 @@ init 112 python:
     def _r13_lb_filter(text):
         if _r13_lb_prev_filter:text=_r13_lb_prev_filter(text)
         if getattr(store,"room13_mode",False):
-            text=r13_dialogue_lines(text,bool(persistent.room13_large_text))
+            text=r13_dialogue_lines(text,bool(persistent.room13_large_text) or r13_touch_ui())
         return text
     config.say_menu_text_filter=_r13_lb_filter

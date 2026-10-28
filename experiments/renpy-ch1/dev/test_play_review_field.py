@@ -72,7 +72,8 @@ class PlayReviewField(unittest.TestCase):
                         height=eval(target_height,ns);ribbon=eval(ribbon_height,ns)
                         self.assertEqual(center,paper_bottom-paper_edge//2)
                         self.assertLessEqual(center+ribbon/2,720)
-                        text_bottom=top+ns['r13_night_say_block'](max(1,lines),size)
+                        # 2026-10-28 두 줄 고정: 세 줄 이상은 r13_dialogue_pages 가 두 줄씩 나누므로 한 화면은 많아야 두 줄이다.
+                        text_bottom=top+ns['r13_night_say_block'](min(2,max(1,lines)),size)
                         self.assertLessEqual(text_bottom,paper_bottom-paper_edge)
                         if lines<=2:self.assertGreaterEqual(panel('긴 대사'),440)
                         if touch:self.assertGreaterEqual(height*360/720,44)

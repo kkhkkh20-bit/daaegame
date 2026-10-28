@@ -18,6 +18,9 @@ init 150 python:
     #   - 세 줄 이상이면 종이가 위로 자란다(리본·스티커가 같이 올라간다).
     R13_SAY_RIBBON_IN=14      # 윗변에 걸친 이름 리본이 종이 안으로 들어오는 깊이(리본 가운데 = 윗변 - 12)
     R13_SAY_RIBBON_LIFT=12
+    R13_SAY_TEXT_X=170        # 글자 칸 왼쪽(예전 120). 이름 리본도 여기서 시작한다
+    R13_SAY_TEXT_W=940        # 글자 칸 폭(예전 1090). 오른쪽 끝 1110 — 종이 오른쪽 안쪽 여백이 왼쪽과 비슷하다
+    R13_SAY_FACE_W=102        # 얼굴 그림이 붙는 줄은 그만큼 글자 칸이 좁다
     R13_SAY_MARGIN=10         # 리본 아래 여백 = 종이 아래 테두리 위 여백
     _R13_SAY_BLOCK={}
     def r13_night_say_block(lines=2,size=None):
@@ -31,8 +34,8 @@ init 150 python:
         return _R13_SAY_BLOCK[key]
     def r13_night_panel_top(what=None,size=None):
         size=size or r13_night_say_size()
-        lines=r13_night_say_lines(what) if what is not None else 2
-        block=r13_night_say_block(max(2,lines),size)
+        # 2026-10-28 소유자 「글자는 두 줄로 가자」: 종이는 늘 두 줄 높이. 대사는 r13_dialogue_pages 가 두 줄씩 나눠 넘긴다.
+        block=r13_night_say_block(2,size)
         return R13_NIGHT_PAPER_BOTTOM-(R13_NIGHT_PAPER_EDGE+R13_SAY_RIBBON_IN+block+2*R13_SAY_MARGIN)
     def r13_night_control_y():
         # 스티커 가운데 = 종이 아래 테두리 선(아래끝 - 테두리 두께의 절반). 오른쪽 아래에 걸친다.
@@ -50,7 +53,7 @@ init 150 python:
         size=r13_night_say_size()
         packet=getattr(store,"r13_packet",None)
         face=None if getattr(store,"r13_thought_active",False) or "r13_visitor" in renpy.get_showing_tags() else r13_bdialogue_face(packet[0] if packet else None,r13_fullbody_emotion(getattr(store,"r13_directed_pose","neutral")))
-        return max(1,_r13_say_lines(what,size,988 if face else 1090))
+        return max(1,_r13_say_lines(what,size,R13_SAY_TEXT_W-(R13_SAY_FACE_W if face else 0)))
 
     def r13_night_say_top(what=None):
         """대사 첫 줄 윗선. 두 줄 칸의 첫 줄 자리에서 시작한다.

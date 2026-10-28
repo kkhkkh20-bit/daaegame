@@ -216,13 +216,13 @@ screen r13_choice_c(person,pose,entries,ready,caption=""):
     $ say_top=r13_night_say_top(say_text)
     add Transform(Frame(Crop((16,16,1168,128),r13_asset_path("file:assets/ui-b-dialogue/b_panel_dialogue.png")),48,24,64,24),xysize=(1220,R13_NIGHT_PAPER_BOTTOM-r13_night_panel_top(say_text)),alpha=r13_night_shade_alpha()) xpos 30 ypos r13_night_panel_top(say_text)
     frame:
-        xpos 120 ypos (r13_night_panel_top(say_text)-R13_SAY_RIBBON_LIFT) yanchor .5 background Frame(Crop((16,12,168,32),r13_asset_path("file:assets/ui-b-dialogue/b_ribbon_name.png")),16,6,32,6) padding (22,8,36,10)
+        xpos R13_SAY_TEXT_X ypos (r13_night_panel_top(say_text)-R13_SAY_RIBBON_LIFT) yanchor .5 background Frame(Crop((16,12,168,32),r13_asset_path("file:assets/ui-b-dialogue/b_ribbon_name.png")),16,6,32,6) padding (22,8,36,10)
         text "아빠" color (r13_type_color("inverse")) font R13_UI_BOLD_FONT size (r13_type("title")) outlines []
     vbox:
-        xpos 120 ypos say_top spacing 4
-        text heading id "r13_choice_issue" xsize 1090 size r13_night_say_size() color ("#2A5FA8" if thought else r13_type_color("ink")) font R13_UI_BOLD_FONT line_spacing 4
+        xpos R13_SAY_TEXT_X ypos say_top spacing 4
+        text heading id "r13_choice_issue" xsize R13_SAY_TEXT_W size r13_night_say_size() color ("#2A5FA8" if thought else r13_type_color("ink")) font R13_UI_BOLD_FONT line_spacing 4
         if subline:
-            text subline xsize 1090 size (r13_type("small")) color (r13_type_color("muted")) font R13_UI_BOLD_FONT
+            text subline xsize R13_SAY_TEXT_W size (r13_type("small")) color (r13_type_color("muted")) font R13_UI_BOLD_FONT
     vbox:
         pos (left,rows_top) spacing 10
         for i,((label,command,read),height) in enumerate(visible):

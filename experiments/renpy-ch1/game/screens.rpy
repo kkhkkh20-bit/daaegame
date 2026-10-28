@@ -150,12 +150,13 @@ screen say(who,what):
             use r13_meeting_stage(r13_meeting_claim,r13_meeting_focus_person(r13_meeting_claim),True)
             use r13_meeting_chrome(r13_meeting_claim)
         $ b_face = r13_bdialogue_face(r13_packet[0],r13_fullbody_emotion(r13_directed_pose)) if who and r13_packet and not r13_thought_active and "r13_visitor" not in renpy.get_showing_tags() else None
-        $ b_text_x = 222 if b_face else 120
-        $ b_text_width = 988 if b_face else 1090
+        # 2026-10-28 소유자 「대사창 좌우가 너무 기니까 역전재판처럼 살짝 중앙으로」: 글자 칸을 좌우 안쪽으로 들였다(R13_SAY_TEXT_*).
+        $ b_text_x = R13_SAY_TEXT_X+(R13_SAY_FACE_W if b_face else 0)
+        $ b_text_width = R13_SAY_TEXT_W-(R13_SAY_FACE_W if b_face else 0)
         $ b_text_top = r13_night_say_top(what)
         add Transform(Frame(Crop((16,16,1168,128),r13_asset_path("file:assets/ui-b-dialogue/b_panel_dialogue.png")),48,24,64,24),xysize=(1220,R13_NIGHT_PAPER_BOTTOM-r13_night_panel_top(what)),alpha=r13_night_shade_alpha()) xpos 30 ypos r13_night_panel_top(what)
         if b_face:
-            add Transform(b_face,xysize=(112,112)) xpos 70 ypos (b_text_top-10)
+            add Transform(b_face,xysize=(112,112)) xpos (R13_SAY_TEXT_X-12) ypos (b_text_top-10)
         window:
             id "window"
             xpos b_text_x ypos b_text_top xsize b_text_width yminimum 40

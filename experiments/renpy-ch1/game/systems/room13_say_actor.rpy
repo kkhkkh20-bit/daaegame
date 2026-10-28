@@ -1,0 +1,49 @@
+# 대사 장면 인물 크기·위치(2026-10-28 소유자 「역전재판처럼 상당히 가까이, 머리끝이 화면 끝처럼」 → 1.55배).
+# room13_rules.rpy 의 r13_speaker 가 부른다. 마차(앉은 다람)는 예전 크기(840) 그대로.
+init 40 python:
+    R13_SAY_ACTOR_H=int(840*1.55)   # 대사 장면 인물 높이(예전 840)
+    R13_SAY_ACTOR_DY=-552           # 키운 만큼 올려 어른 머리끝이 화면 위(약 20)에 오게
+    # 2026-10-28 소유자 「다람이는 좀 내려야겠다. 아이니까」「캐릭터마다 키를 생각해서 배치하는 듯」(역전재판 캡처):
+    # 머리 높이를 인물 키로 정한다. 키는 현장 도트 서 있는 높이(room13-field-dot-v2.json, 어른 210)를 쓴다 —
+    # 아이 165, 할머니·부엉이 195, 선생님·까로·보리 230. 210 보다 작으면 그만큼 내리고, 크면 올려 머리끝이 화면 위에서 살짝 잘린다.
+    # 다람은 프로젝트 규칙(어른의 약 2/3)대로 2/3. 거리 520 은 어른 머리끝(약 20)~대사판 위(약 540).
+    R13_SAY_STATURE_REF=210.0
+    def r13_say_stature(who):
+        if who=="daram":return 2/3.0
+        dot=(globals().get("R13_FIELD_DOT",{}).get(who) or {}).get("poses",{})
+        entry=dot.get("neutral") or next(iter(dot.values()),None)
+        return (entry["size"][1]/R13_SAY_STATURE_REF) if entry else 1.0
+    def r13_say_child_drop(who):
+        return int(round(520*(1-min(1.0,r13_say_stature(who)))))
+
+    # 그림마다 캔버스 안 머리 위치가 달라(같은 발 선이어도 선생님·까로는 얼굴이 잘리고 할머니는 낮았다) 실제 그림의
+    # 불투명 영역 윗변을 재서 머리끝을 목표 높이에 맞춘다. 재지 못하면 예전 계산(발 선 + 키 보정)으로 둔다.
+    R13_SAY_HEAD_TOP=20          # 어른(키 210) 머리끝 화면 높이
+    R13_SAY_TALL_CUT=36          # 210 보다 큰 인물은 키 차이만큼(최대 이만큼) 화면 위로 잘린다
+    _R13_SAY_HEADTOP={}
+    def _r13_say_headtop(who,pose,h):
+        profile=r13_dialogue_source_profile(who,pose,h)
+        if not profile:return None
+        frame=profile["frames"].get(r13_fullbody_emotion(pose)) or profile["frames"].get("neutral")
+        if not frame:return None
+        key=(frame["file"],h)
+        if key not in _R13_SAY_HEADTOP:
+            try:
+                surf=renpy.display.im.Image(frame["file"]).load()
+                top=surf.get_bounding_rect(min_alpha=40).top
+                _R13_SAY_HEADTOP[key]=frame["offset"][1]+top*frame.get("scale",1.0)
+            except Exception:
+                _R13_SAY_HEADTOP[key]=None
+        return _R13_SAY_HEADTOP[key]
+    def r13_say_head_target(who):
+        st=r13_say_stature(who)
+        if st>1.0:return R13_SAY_HEAD_TOP-min(R13_SAY_TALL_CUT,int(round((st-1.0)*R13_SAY_STATURE_REF*1.55*0.4)))
+        return R13_SAY_HEAD_TOP+r13_say_child_drop(who)
+    def r13_say_actor_h(carriage=False):
+        return 840 if carriage else R13_SAY_ACTOR_H
+    def r13_say_actor_y(who,pose,carriage=False):
+        h=r13_say_actor_h(carriage)
+        if carriage:return r13_close_y(who,h,110,pose)
+        head=_r13_say_headtop(who,pose,h)
+        if head is not None:return int(round(r13_say_head_target(who)-head))
+        return r13_close_y(who,h,110,pose)+R13_SAY_ACTOR_DY+r13_say_child_drop(who)
