@@ -47,5 +47,10 @@ init 59 python:
             return r13_read_size(touch_base, touch_large)
         return r13_read_size(pc_base, pc_large)
 
+    def r13_type_pc(level):
+        """휴대폰 열을 쓰지 않는 단계 값. 좁은 틀에 고정 폭으로 놓인 글자(지도 이름표)가 휴대폰에서 커져 잘리지 않게 한다."""
+        pc_base, pc_large, touch_base, touch_large = R13_TYPE_SCALE[level]
+        return r13_read_size(pc_base, pc_large)
+
     def r13_type_color(token):
         return R13_TYPE_COLORS[token]

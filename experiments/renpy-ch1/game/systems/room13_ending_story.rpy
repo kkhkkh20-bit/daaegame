@@ -58,7 +58,7 @@ screen r13_ending_story_view(key,index):
         add r13_ending_story_art(key,index)
     add Solid("#111b2240") ysize 52
     add r13_dialogue_frame() xpos 80 ypos 510 xsize 1120 ysize 112
-    text R13_ENDINGS[key]["title"] xpos 48 ypos 16 size 21 color "#f1dfb8"
+    text R13_ENDINGS[key]["title"] xpos 48 ypos 16 size r13_type("small") color "#f1dfb8"
     button:
         area (0,52,1280,450) background None
         action Return("next") sensitive ready
@@ -68,14 +68,14 @@ screen r13_ending_story_view(key,index):
             at r13_ending_caption_reveal
         frame:
             xpos 94 ypos 484 padding (14,5) background R13InkPanel()
-            text frame["heading"] font r13_ui_font() size r13_read_size(18,22) color R13_SPEAKER_COLOR
-        text frame["caption"] xpos 104 ypos 530 xsize 1072 size r13_read_size(23,29) font r13_ui_font() color r13_role_color("narration") line_spacing 5
+            text frame["heading"] font r13_ui_font() size r13_type("small") color R13_SPEAKER_COLOR
+        text frame["caption"] xpos 104 ypos 530 xsize 1072 size r13_type("body") font r13_ui_font() color r13_role_color("narration") line_spacing 5
     textbutton "‹ 이전":
-        style "r13_action_button" area (76,630,144,82) text_size 21 text_yalign .5
+        style "r13_action_button" area (76,630,144,82) text_size r13_type("small") text_yalign .5
         action Return("previous") sensitive ready and index>0
-    text ("%02d / 04"%(index+1)) xcenter 640 ypos 670 size 18 color "#f1dfb8" outlines [(1,"#211a16",0,1)]
+    text ("%02d / 04"%(index+1)) xcenter 640 ypos 670 size r13_type("small") color "#f1dfb8" outlines [(1,"#211a16",0,1)]
     textbutton ("여정의 기록 ›" if index==3 else "다음 장면 ›"):
-        style "r13_action_button" area (984,630,220,82) text_size 22 text_yalign .5
+        style "r13_action_button" area (984,630,220,82) text_size r13_type("body") text_yalign .5
         action Return("next") sensitive ready
     if ready:
         key "K_RETURN" action Return("next")

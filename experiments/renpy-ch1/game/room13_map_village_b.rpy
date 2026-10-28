@@ -75,7 +75,7 @@ init 65 python:
         ls=1.3 if r13_touch_ui() else 1.0
         px=(r13_type("small") if R13_TYPE_V2 else 20*ls)
         if R13_TYPE_V2 and r13_touch_ui():
-            px=r13_read_size(22,26)
+            px=r13_type_pc("body")   # 2026-10-28 휴대폰도 PC 단계(예전 22/26). 휴대폰 열(28)이면 이름표가 잘린다
         return max(20,px) if R13_TYPE_V2 else px
 
     def r13_village_b_label_width(label,scaled=True):
@@ -220,7 +220,7 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
         # 2026-10-26 소유자: 「X 버튼이 너무 작고 눈에 안 띈다」. 다른 버튼과 같은 판 위에 크게 둔다.
         background R13ControlSurface() hover_background R13ControlSurface(hovered=True) insensitive_background R13ControlSurface(disabled=True)
         text_xalign .5 text_yalign .5
-        text_font R13_UI_BOLD_FONT text_size 40 text_color "#493324" text_hover_color "#963b2f" text_align .5
+        text_font R13_UI_BOLD_FONT text_size r13_type("display") text_color "#493324" text_hover_color "#963b2f" text_align .5
         action close_action sensitive ready
     fixed:
         area (920,72,248,38)

@@ -76,10 +76,13 @@ class TypeScale(unittest.TestCase):
         literal=[];switch=[]
         for f in sorted(GAME.rglob('*.rpy')):
             rel=f.relative_to(GAME).as_posix()
-            if 'qa_tests' in f.parts or f==SCALE or any(k in rel for k in LEGACY):continue
+            # 결말·후일담 화면(ending_story, episode_aftermath)은 지금도 쓰이므로 옛 모드 목록과 무관하게 본다.
+            if 'qa_tests' in f.parts or f==SCALE or (any(k in rel for k in LEGACY) and not any(k in rel for k in ('ending_story','episode_aftermath'))):continue
             for n,line in enumerate(f.read_text(encoding='utf-8').splitlines(),1):
                 if line.lstrip().startswith('#'):continue
                 if re.search(r'(?<![xy_])(?:text_)?size (?:\d{2}\b|\(?r13_read_size\()',line):literal.append('%s:%d'%(rel,n))
+                # 2026-10-28: 식 안의 r13_read_size(숫자,숫자) 도 단계 밖이다(목표 띠·자료 서랍·결말 화면에 남아 있었다).
+                elif re.search(r'r13_read_size\(\d',line) and 'room13_admin' not in rel:literal.append('%s:%d'%(rel,n))
                 if 'if R13_TYPE_V2' in line:switch.append('%s:%d'%(rel,n))
         self.assertEqual(literal,[],'글자 크기는 r13_type("단계") 로만 적는다')
         self.assertEqual(switch,[],'R13_TYPE_V2 이중 경로는 2026-10-27 에 걷어냈다')

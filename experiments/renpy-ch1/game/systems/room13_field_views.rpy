@@ -67,7 +67,7 @@ screen r13_field_button(caption,icon,command,enabled=True,width=232,height=None,
             add Transform(r13_field_paper(label=True),xysize=(width,height or r13_control_height()))
             add state_icon xalign .5 yalign .5
     else:
-        use r13_state_button(caption,command,width,height or r13_control_height(),family="primary" if chosen or primary else "wide_choice",chosen=chosen,enabled=enabled,icon=state_icon,text_size=r13_read_size(22,25),control_id=control_id or ("r13_field_control_"+caption))
+        use r13_state_button(caption,command,width,height or r13_control_height(),family="primary" if chosen or primary else "wide_choice",chosen=chosen,enabled=enabled,icon=state_icon,text_size=r13_type("body"),control_id=control_id or ("r13_field_control_"+caption))
 
 screen r13_field_view_controls(ready):
     # Keep the legacy screen name for saved screens; no separate mode or toggle.

@@ -76,7 +76,7 @@ init 81 python:
             return r13_notebook_choice_geometry(entries,width,heading,None,False)
         if len(pages)==1 and not r13_notebook_choice_fits(pages,cap):
             # 넷 이하인데 머리글이 커서 칸이 안 들어가면 머리글을 한 단 작게 재고, 그래도 모자라면 칸을 아래로 더 내린다(최대 60).
-            small=Text(heading,font=R13_UI_BOLD_FONT,size=r13_read_size(28,30),xsize=width-102,line_spacing=4)
+            small=Text(heading,font=R13_UI_BOLD_FONT,size=r13_type("title"),xsize=width-102,line_spacing=4)
             header=max(72,int(renpy.render(small,width-102,720,0,0).get_size()[1])+32)
             cap=max(120,460-header-28+60)
             pages=r13_notebook_choice_pages(entries,width,cap)

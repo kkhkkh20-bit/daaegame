@@ -12,11 +12,11 @@ screen r13_crisis():
         add R13AntiqueIcon("meeting_stone",size=30) xpos 0 ypos 8
         vbox:
             xpos 42
-            text "제단 앞 회의 · 14일째" size 17 color "#795d40"
-            text "연결을 멈춰야 한다" size r13_read_size(23,27) color "#493b30"
+            text "제단 앞 회의 · 14일째" size r13_type("small") color "#795d40"
+            text "연결을 멈춰야 한다" size r13_type("body") color "#493b30"
     $ preparations=r13_crisis_preparations()
     textbutton ("대피 준비 · %d / %d"%(sum(ok for name,ok in preparations),len(preparations))):
-        style "r13_action_button" xpos 942 ypos 18 xsize 314 ysize 64 text_size 21
+        style "r13_action_button" xpos 942 ypos 18 xsize 314 ysize 64 text_size r13_type("small")
         action ToggleScreenVariable("preparations_open") sensitive ready
     for index,key in enumerate(("F1","F2","F3","F4")):
         $ proved=key in room13["propositions"]
@@ -27,25 +27,25 @@ screen r13_crisis():
             action Return(key) sensitive ready and open_claim
             fixed:
                 xsize 554 ysize 54
-                text ("{s}"+R13_CLAIMS[key]["assertion"]+"{/s}" if proved else R13_CLAIMS[key]["assertion"]) size r13_read_size(21,25) color ("#82745d" if not open_claim else "#493b30") xsize (432 if not open_claim else 554) yalign .5
+                text ("{s}"+R13_CLAIMS[key]["assertion"]+"{/s}" if proved else R13_CLAIMS[key]["assertion"]) size r13_type("small") color ("#82745d" if not open_claim else "#493b30") xsize (432 if not open_claim else 554) yalign .5
                 if not open_claim:
-                    text ("입증함" if proved else "이번 회의 정리됨" if r13_debate_closed(key) else "반론 자료 부족") xpos 446 xsize 108 size r13_read_size(16,18) color "#795d40" yalign .5
+                    text ("입증함" if proved else "이번 회의 정리됨" if r13_debate_closed(key) else "반론 자료 부족") xpos 446 xsize 108 size r13_type("small") color "#795d40" yalign .5
     hbox:
         xpos 48 ypos 650 spacing 16
-        textbutton "수첩을 다시 본다" style "r13_action_button" xsize 312 ysize 60 text_size 23 action Show("r13_book") sensitive ready
-        textbutton "모은 근거와 해 둔 준비로 움직인다" style "r13_action_button" xsize 620 ysize 60 text_size 23 action Return("finish") sensitive ready
+        textbutton "수첩을 다시 본다" style "r13_action_button" xsize 312 ysize 60 text_size r13_type("body") action Show("r13_book") sensitive ready
+        textbutton "모은 근거와 해 둔 준비로 움직인다" style "r13_action_button" xsize 620 ysize 60 text_size r13_type("body") action Return("finish") sensitive ready
     if preparations_open:
         frame:
             area (838,94,418,370) padding (20,16) background R13PaperFrame()
             vbox:
                 spacing 12
-                text "함께 움직일 준비" size 24 color "#493b30"
+                text "함께 움직일 준비" size r13_type("emphasis") color "#493b30"
                 for name,prepared in preparations:
-                    text (name+" · "+("모아 둠" if prepared else "마련하지 못함")) size 20 color ("#3d7058" if prepared else "#795d40")
+                    text (name+" · "+("모아 둠" if prepared else "마련하지 못함")) size r13_type("small") color ("#3d7058" if prepared else "#795d40")
                 if room13["case_state"]=="occurred" and any(r13_debate_open(c) for c in r13_case_available()):
-                    textbutton "13호 사건에서 남은 문제" style "r13_action_button" xsize 370 ysize 54 text_size 19 action Return("case") sensitive ready
+                    textbutton "13호 사건에서 남은 문제" style "r13_action_button" xsize 370 ysize 54 text_size r13_type("small") action Return("case") sensitive ready
                 if r13_has("E29"):
-                    textbutton "가족과 빠져나갈 길" style "r13_action_button" xsize 370 ysize 54 text_size 19 action Return("escape") sensitive ready
+                    textbutton "가족과 빠져나갈 길" style "r13_action_button" xsize 370 ysize 54 text_size r13_type("small") action Return("escape") sensitive ready
 
 # 2026-10-27 자료 대조 패널 정리(소유자 "총체적 난국, 너무 안 이뻐"). 같은 기능, 배치만 다시 했다.
 #   위계는 셋뿐이다 — 제목(주장) title · 본문(고른 자료) body · 보조(남은 기회·단계·안내) small.
@@ -75,7 +75,7 @@ init 112 python:
         """(열 수, 카드 높이, 제목 폭). 다섯 장까지 휴대폰 큰 글씨에서도 스크롤 없이 들어가게 남은 높이로 열을 정한다.
         휴대폰 크게: 514 − 머리 48 − 단계 42 − 안내 39 − 버튼 88 − 사이 40 = 257 ≥ 두 열 세 줄 3×80+2×8 = 256.
         note(2026-10-27 B02: 시작 비용 안내)는 안내 아래 small 한 줄이라, 있을 때만 그 높이와 사이 하나를 더 뺀다."""
-        title_size=(r13_type("title") if R13_TYPE_V2 else r13_read_size(30,32))
+        title_size=(r13_type("title") if R13_TYPE_V2 else r13_type("display"))
         small=(r13_type("small") if R13_TYPE_V2 else 22)
         chip_w=(r13_proof_text_size(chances,small)[0]+28) if chances else 0
         title_w=R13_PROOF_INNER_W-(chip_w+16 if chances else 0)
@@ -101,7 +101,7 @@ init 112 python:
         return shown,len(chosen)-len(shown)
 
     def r13_proof_avail(claim,chances,steps_shown,help_text,note=None):
-        title_size=(r13_type("title") if R13_TYPE_V2 else r13_read_size(30,32))
+        title_size=(r13_type("title") if R13_TYPE_V2 else r13_type("display"))
         small=(r13_type("small") if R13_TYPE_V2 else 22)
         chip_w=(r13_proof_text_size(chances,small)[0]+28) if chances else 0
         title_w=R13_PROOF_INNER_W-(chip_w+16 if chances else 0)
@@ -134,7 +134,7 @@ screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장",can_p
     $ card_w=(R13_PROOF_INNER_W-R13_PROOF_CARD_GAP*(cols-1))//cols
     $ thumb=card_h-8
     $ name_w=card_w-20-thumb-14-((R13_PROOF_REMOVE_W+12) if need_evidence else 0)
-    $ body_size=(r13_type("body") if R13_TYPE_V2 else r13_read_size(23,26))
+    $ body_size=(r13_type("body") if R13_TYPE_V2 else r13_type("body"))
     frame:
         area R13_PROOF_PANEL padding R13_PROOF_PAD background R13DiaryPanel()
         fixed:
@@ -144,7 +144,7 @@ screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장",can_p
                 # fixed+yalign 으로 짜면 높이가 정해지지 않아 패널 전체로 늘어난다(첫 캡처에서 가운데가 비었다). hbox 로 둔다.
                 hbox:
                     xsize R13_PROOF_INNER_W spacing 16
-                    text R13_CLAIMS[claim]["assertion"] font R13_UI_BOLD_FONT size (r13_type("title") if R13_TYPE_V2 else r13_read_size(30,32)) color (r13_type_color("ink") if R13_TYPE_V2 else "#4b3420") xsize title_w yalign .5
+                    text R13_CLAIMS[claim]["assertion"] font R13_UI_BOLD_FONT size (r13_type("title") if R13_TYPE_V2 else r13_type("display")) color (r13_type_color("ink") if R13_TYPE_V2 else "#4b3420") xsize title_w yalign .5
                     if chances:
                         frame:
                             padding (0,0) background None yalign .5 xalign 1.0
@@ -172,7 +172,7 @@ screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장",can_p
                                     frame:
                                         xysize (card_w,card_h) padding (10,4) background r13_sticker_button()
                                         add r13_evidence_picture(key,thumb) xpos 0 yalign .5
-                                        text r13_ev_two_lines(ROOM13["evidence"][key]["name"],name_w,body_size,2) xpos (thumb+14) yalign .5 xsize name_w font R13_UI_BOLD_FONT size (r13_type("body") if R13_TYPE_V2 else r13_read_size(23,26)) color (r13_type_color("ink") if R13_TYPE_V2 else "#4b3420") line_spacing -1
+                                        text r13_ev_two_lines(ROOM13["evidence"][key]["name"],name_w,body_size,2) xpos (thumb+14) yalign .5 xsize name_w font R13_UI_BOLD_FONT size (r13_type("body") if R13_TYPE_V2 else r13_type("body")) color (r13_type_color("ink") if R13_TYPE_V2 else "#4b3420") line_spacing -1
                                         if need_evidence:
                                             fixed:
                                                 xalign 1.0 yalign .5 xysize (R13_PROOF_REMOVE_W,card_h-12)
@@ -180,7 +180,7 @@ screen r13_crisis_proof(claim,heading="제단 앞 · 맞서야 할 주장",can_p
                 else:
                     fixed:
                         xysize (R13_PROOF_INNER_W,card_h)
-                        text "「자료 고르기」로 담습니다." align (.5,.5) size (r13_type("body") if R13_TYPE_V2 else r13_read_size(23,26)) color (r13_type_color("muted") if R13_TYPE_V2 else "#6b5641")
+                        text "「자료 고르기」로 담습니다." align (.5,.5) size (r13_type("body") if R13_TYPE_V2 else r13_type("body")) color (r13_type_color("muted") if R13_TYPE_V2 else "#6b5641")
                 # 안내 한 줄.
                 text help_text size (r13_type("small") if R13_TYPE_V2 else 22) color (r13_type_color("muted") if R13_TYPE_V2 else "#6b5641") xsize R13_PROOF_INNER_W
                 # 2026-10-27 B02: 시작 비용이 적용된 회의(5일 밤이, bami_cold4)에서만 까닭 한 줄. 조건 없는 판은 아무것도 없다.
@@ -209,16 +209,16 @@ screen r13_rescue_notes():
         area (165,145,950,475) padding (30,26)
         vbox:
             spacing 20
-            text "아이에게 닿을 방법" size 33 color "#765426"
+            text "아이에게 닿을 방법" size r13_type("display") color "#765426"
             if room13["scout_revision"]!=room13["convoy_revision"]:
-                text "지금 따르고 있는, 끌고 가라는 명령과 지킴 순서를 확인하지 못했다." size 24 xsize 875
+                text "지금 따르고 있는, 끌고 가라는 명령과 지킴 순서를 확인하지 못했다." size r13_type("emphasis") xsize 875
             for route in r13_rescue_routes():
-                text {"order":"너울과 맞춰 본 명령으로 옮기는 것을 멈출 수 있다.","laundry":"누비와, 물건이 들어오며 지키는 사람이 바뀌는 때에 맞춰 아이를 넘겨받기로 했다.","maintenance":"부리와 점검문을 확인해 두었다."}[route] size 24 xsize 875
+                text {"order":"너울과 맞춰 본 명령으로 옮기는 것을 멈출 수 있다.","laundry":"누비와, 물건이 들어오며 지키는 사람이 바뀌는 때에 맞춰 아이를 넘겨받기로 했다.","maintenance":"부리와 점검문을 확인해 두었다."}[route] size r13_type("emphasis") xsize 875
             if r13_has("operators_ready") and r13_has("patient_transport"):
-                text "장치를 다룰 사람들과 나를 사람들이 있다. 엄마와 함께 사람 쪽 연결을 막을 수 있다." size 24 xsize 875
+                text "장치를 다룰 사람들과 나를 사람들이 있다. 엄마와 함께 사람 쪽 연결을 막을 수 있다." size r13_type("emphasis") xsize 875
             elif not r13_rescue_routes():
-                text "함께 연결을 막고 아이를 옮길 준비도 갖추지 못했다. 혼자 끌고 가는 걸 막으면 경비를 넘어서기 어렵다." size 24 xsize 875
-            textbutton "돌아간다" action Return(False) sensitive ready text_size 25
+                text "함께 연결을 막고 아이를 옮길 준비도 갖추지 못했다. 혼자 끌고 가는 걸 막으면 경비를 넘어서기 어렵다." size r13_type("emphasis") xsize 875
+            textbutton "돌아간다" action Return(False) sensitive ready text_size r13_type("emphasis")
 
 screen r13_ending_screen(key):
     style_prefix "r13"
@@ -227,30 +227,30 @@ screen r13_ending_screen(key):
     default ready=False
     timer .5 action SetScreenVariable("ready",True)
     add Solid("#111b2266")
-    text "이번 여정의 끝" xpos 76 ypos 84 size 23 color "#dfbd7e"
-    text R13_ENDINGS[key]["title"] xpos 72 ypos 126 xsize 568 size r13_read_size(47,51) color "#fff0d0" outlines [(2,"#1d262b",0,1)]
-    text r13_ending_story_frame(key,3)["caption"] xpos 76 ypos 218 xsize 540 size r13_read_size(24,28) color "#fff0d0" line_spacing 7 outlines [(1,"#1d262b",0,1)]
+    text "이번 여정의 끝" xpos 76 ypos 84 size r13_type("body") color "#dfbd7e"
+    text R13_ENDINGS[key]["title"] xpos 72 ypos 126 xsize 568 size r13_type("display") color "#fff0d0" outlines [(2,"#1d262b",0,1)]
+    text r13_ending_story_frame(key,3)["caption"] xpos 76 ypos 218 xsize 540 size r13_type("emphasis") color "#fff0d0" line_spacing 7 outlines [(1,"#1d262b",0,1)]
     textbutton "후일담 다시 보기":
-        style "r13_action_button" area (76,584,340,62) text_size 24 action Return("replay") sensitive ready
+        style "r13_action_button" area (76,584,340,62) text_size r13_type("emphasis") action Return("replay") sensitive ready
     textbutton "이름 판":
-        style "r13_action_button" area (430,584,200,62) text_size 24 action Return("board") sensitive ready
+        style "r13_action_button" area (430,584,200,62) text_size r13_type("emphasis") action Return("board") sensitive ready
     frame:
         area (680,54,548,612) padding (26,24) background R13PaperFrame()
         vbox:
             spacing 12
-            text "남은 기록" size 28 color "#765426"
+            text "남은 기록" size r13_type("title") color "#765426"
             viewport:
                 xsize 496 ysize 230 draggable True mousewheel True scrollbars "vertical" vscrollbar_unscrollable "hide"
                 vbox:
                     spacing 12
                     for line in r13_ending_notes():
-                        text line size r13_read_size(22,26) xsize 464 color "#493b30"
-            text "새 여정은 첫날부터 시작해요. 이번 기록과 물건은 이어지지 않아요." size 20 xsize 490 color "#795d40"
-            textbutton "새 여정 시작" style "r13_action_button" xsize 490 ysize 54 text_size 24 action Return("restart") sensitive ready
+                        text line size r13_type("body") xsize 464 color "#493b30"
+            text "새 여정은 첫날부터 시작해요. 이번 기록과 물건은 이어지지 않아요." size r13_type("small") xsize 490 color "#795d40"
+            textbutton "새 여정 시작" style "r13_action_button" xsize 490 ysize 54 text_size r13_type("emphasis") action Return("restart") sensitive ready
             hbox:
                 spacing 12
-                textbutton "진행 불러오기" style "r13_action_button" xsize 239 ysize 52 text_size 22 action ShowMenu("load") sensitive ready
-                textbutton "메인화면으로" style "r13_action_button" xsize 239 ysize 52 text_size 22 action Confirm("메인화면으로 돌아가시겠습니까?",MainMenu(confirm=False)) sensitive ready
+                textbutton "진행 불러오기" style "r13_action_button" xsize 239 ysize 52 text_size r13_type("body") action ShowMenu("load") sensitive ready
+                textbutton "메인화면으로" style "r13_action_button" xsize 239 ysize 52 text_size r13_type("body") action Confirm("메인화면으로 돌아가시겠습니까?",MainMenu(confirm=False)) sensitive ready
 
 screen r13_nearby():
     style_prefix "r13"
@@ -263,7 +263,7 @@ screen r13_nearby():
         area (220,150,840,515) padding (24,20)
         vbox:
             spacing 15
-            text "주변 사람들" size 32 color "#765426"
+            text "주변 사람들" size r13_type("display") color "#765426"
             viewport:
                 xsize 780 ysize 350 draggable True mousewheel True scrollbars "vertical"
                 vbox:
@@ -276,5 +276,5 @@ screen r13_nearby():
                             hbox:
                                 spacing 20
                                 add Transform(r13_art(person,"avatar_neutral"),size=(66,66),fit="contain")
-                                text R13_NAMES[person] size 25 yalign .5
+                                text R13_NAMES[person] size r13_type("emphasis") yalign .5
             textbutton "돌아가기" action Return(False) sensitive ready

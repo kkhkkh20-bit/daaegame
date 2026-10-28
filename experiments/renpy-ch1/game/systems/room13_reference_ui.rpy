@@ -13,7 +13,7 @@ init 79 python:
             c=r.canvas()
             c.rect("#626b60" if self.hover else "#2b3230",(10,10,44,h-20))
             if self.number is not None:
-                t=renpy.render(Text(str(self.number),size=r13_read_size(24,28),font=r13_ui_font(),color="#eee7ce",bold=False),60,h,st,at)
+                t=renpy.render(Text(str(self.number),size=r13_type("emphasis"),font=r13_ui_font(),color="#eee7ce",bold=False),60,h,st,at)
                 tw,th=t.get_size()
                 r.blit(t,(int(32-tw/2),int((h-th)/2)))
             return r
@@ -33,13 +33,13 @@ init 79 python:
 
     def r13_reference_list_height(entries,width,spacing=24,cap=540,row=42,size=None,vertical_padding=16):
         if not entries:
-            notice=Text("지금 더 물을 이야기는 없다.\n가지고 온 자료를 보여줄 수도 있다.",size=r13_read_size(22,28),xsize=width-55)
+            notice=Text("지금 더 물을 이야기는 없다.\n가지고 온 자료를 보여줄 수도 있다.",size=r13_type("body"),xsize=width-55)
             return int(renpy.render(notice,width-55,720,0,0).get_size()[1])+20
         total=spacing*max(0,len(entries)-1)
         for label,action,was_read in entries:
             caption=r13_question_caption(label,was_read,False)
             inner=width-99 if row<=42 else width-115
-            text=Text(caption,size=size or (r13_read_size(22,28) if row<=42 else r13_read_size(23,28)),font=r13_ui_font(),xsize=inner)
+            text=Text(caption,size=size or (r13_type("body") if row<=42 else r13_type("body")),font=r13_ui_font(),xsize=inner)
             height=renpy.render(text,inner,720,0,0).get_size()[1]
             total+=max(row,height+vertical_padding)
         # Render sizes can be floats; a float ypos would be read as a screen fraction.
@@ -49,7 +49,7 @@ init 79 python:
     def r13_question_bounds(entries,width=760):
         row=80 if persistent.room13_large_text else 72
         # 0.18.50 (owner): a long list rises over the face rather than showing a scroll bar.
-        height=r13_reference_list_height(entries,width-23,16,500,row,r13_read_size(24,30),vertical_padding=34)+4
+        height=r13_reference_list_height(entries,width-23,16,500,row,r13_type("emphasis"),vertical_padding=34)+4
         top=max(96,350-height//2)
         return top,min(610,top+height)
 

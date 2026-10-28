@@ -16,14 +16,14 @@ init 71 python:
             # The custom displayable survives screen rebuilds. Invalidate its
             # cached render when preferences change, even after typing ends.
             # Hover alone keeps the same child and local typing clock.
-            current = (preferences.text_cps, _r13_say_size(), r13_ui_font())
+            current = (preferences.text_cps, r13_night_say_size(), r13_ui_font())
             if current != self.signature:
                 renpy.redraw(self, 0)
 
         def render(self, width, height, st, at):
             # Picking a speed, changing font size, or resetting settings restarts
             # the sample. Ordinary hover/interaction rebuilds do not restart it.
-            signature = (preferences.text_cps, _r13_say_size(), r13_ui_font())
+            signature = (preferences.text_cps, r13_night_say_size(), r13_ui_font())
             if signature != self.signature:
                 self.signature = signature
                 self.started = st

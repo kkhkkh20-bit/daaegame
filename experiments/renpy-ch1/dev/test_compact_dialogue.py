@@ -20,6 +20,7 @@ class CompactDialogue(unittest.TestCase):
                    r13_read_size=lambda base,big:big if large else int(max(base-3,round(base*.9))) if small else base)
         for name in ('R13_SAY_TOP_NORMAL', 'R13_SAY_TOP_LARGE'):
             env[name] = int(re.search(r'define '+name+r' = (\d+)',SOURCE)[1])
+        env['R13_LEGACY_SAY_SIZE'] = tuple(map(int,re.search(r'define R13_LEGACY_SAY_SIZE = \((\d+),(\d+),(\d+)\)',SOURCE).groups()))
         exec(textwrap.dedent(block),env)
         return env
 

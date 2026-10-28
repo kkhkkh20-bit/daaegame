@@ -19,8 +19,8 @@ init 79 python:
         return ("{font=assets/Room13Sans.ttf}✓{/font}  {s}"+label+"{/s}") if was_read else (("{font=assets/Room13Sans.ttf}{color=#d9b269}{size=10}●{/size}{/color}{/font}  " if mark_unread else "")+label)
 
     def r13_record_heading_size(name):
-        size=r13_read_size(24,29)
-        minimum=r13_read_size(20,23)
+        size=r13_type("emphasis")
+        minimum=r13_type("small")
         while size>minimum:
             width=renpy.render(Text(name,font=r13_ui_font(),size=size),2400,120,0,0).get_size()[0]
             if width<=692:break

@@ -84,9 +84,11 @@ screen main_menu():
 # Tops are expressed against the historical bottom=632 coordinate.
 define R13_SAY_TOP_NORMAL = 528
 define R13_SAY_TOP_LARGE = 520
+define R13_LEGACY_SAY_SIZE = (28,31,31)
 init python:
     def _r13_say_size():
-        return 31 if r13_touch_ui() else r13_read_size(28,31)
+        # 옛 상자형 대사(이야기 판 밖에서만 쓰는 경로). 위치(R13_SAY_TOP_*)와 한 묶음이라 값은 그대로 두고 이름만 붙였다.
+        return R13_LEGACY_SAY_SIZE[2] if r13_touch_ui() else r13_read_size(R13_LEGACY_SAY_SIZE[0],R13_LEGACY_SAY_SIZE[1])
 
     def _r13_say_top(what=None):
         large=bool(persistent.room13_large_text) or r13_touch_ui()
@@ -400,7 +402,7 @@ screen pause_menu():
                 # 2026-10-27 검수: 미리보기는 실제 대사창과 같은 재질(r13_dialogue_frame)로, 고른 진하기가 바로 보이게.
                 frame:
                     xsize 824 ysize 64 padding (26,12) background r13_dialogue_frame()
-                    text "창밖에 눈이 내린다. 대사창은 이렇게 보입니다." font r13_ui_font() size _r13_say_size() color (r13_type_color("inverse")) xsize 772 yalign .5
+                    text "창밖에 눈이 내린다. 대사창은 이렇게 보입니다." font r13_ui_font() size r13_night_say_size() color (r13_type_color("inverse")) xsize 772 yalign .5
                 use r13_opt_row("대사창 진하기"):
                     for value,name in (("99","연하게"),("d4","보통"),("f5","진하게")):
                         textbutton name xsize 185 selected persistent.room13_window_alpha==value action [SetField(persistent,"room13_window_alpha",value),Function(renpy.save_persistent)] text_size r13_opt_size() ysize r13_opt_button_height()

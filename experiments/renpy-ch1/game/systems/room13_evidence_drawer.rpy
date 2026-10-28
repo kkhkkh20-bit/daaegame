@@ -285,7 +285,7 @@ screen r13_drawer_card_body(key,w,h,label_size,chosen=False,thumb=60,name_width=
 # 왼쪽: 사건 묶음(지난 사건) 또는 사람(사람별) 카드, 다섯 줄씩.
 screen r13_drawer_group_list(mode,entries,chosen,gpage,owner,header):
     $ touch=r13_touch_ui()
-    $ label_size=(r13_read_size(22,24) if touch else r13_read_size(18,22))
+    $ label_size=r13_type("small")
     $ groups=r13_drawer_groups(mode,entries)
     $ size=r13_record_page_size()
     $ pages=max(1,(len(groups)+size-1)//size)
@@ -334,7 +334,7 @@ screen r13_drawer_group_list(mode,entries,chosen,gpage,owner,header):
 screen r13_drawer_group_grid(mode,entries,chosen,ipage,owner):
     $ touch=r13_touch_ui()
     $ keys=r13_drawer_group_keys(mode,entries,chosen)
-    $ label_size=(r13_read_size(22,24) if touch else r13_read_size(18,22))
+    $ label_size=r13_type("small")
     $ per=R13_DRAWER_GRID_ROWS*R13_DRAWER_GRID_COLS
     $ pages=max(1,(len(keys)+per-1)//per)
     $ ipage=max(0,min(ipage,pages-1))

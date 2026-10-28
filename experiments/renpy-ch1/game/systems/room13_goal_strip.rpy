@@ -92,12 +92,12 @@ init 337 python:
         label=steps[current]
         avail=right-left
         pad=8 if touch else 12
-        word_size=r13_read_size(18,20) if touch else r13_read_size(17,20)
+        word_size=r13_type("small")
         word_w=r13_goal_text_width("목표",word_size)
         pitch=18 if touch else 15
         dots_w=2*pitch+(14 if touch else 12)
-        floor=r13_ev_small_size() if touch else r13_read_size(15,18)
-        base=r13_read_size(20,22) if touch else r13_read_size(19,22)
+        floor=r13_type("small")
+        base=r13_type("small")
         if touch:
             row1=pad+word_w+8+dots_w+pad
             label_size=min(base,(avail-2*pad)//max(1,r13_ev_text_units(label)))
@@ -232,8 +232,8 @@ screen r13_goal_strip(tabs_right,chips_left):
                             if layout["label"]:
                                 text layout["label"] size layout["label_size"] color R13_GOAL_INK font r13_ui_font() yalign .5
             if goal_open:
-                $ step_size=r13_read_size(24,26) if touch else r13_read_size(21,24)
-                $ note_size=r13_read_size(20,22) if touch else r13_read_size(16,19)
+                $ step_size=r13_type("body")
+                $ note_size=r13_type("small")
                 $ card_w=(560 if touch else 434)
                 $ card_x=min(layout["x"],1240-card_w)
                 button:

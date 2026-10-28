@@ -272,7 +272,7 @@ init 330 python:
 
     def r13_ev_label_size(label,width):
         # A long name in a fixed-width control shrinks instead of spilling out (never under the small size).
-        normal=r13_read_size(28,30) if r13_touch_ui() else r13_read_size(R13_CONTROL["text"],R13_CONTROL["large_text"])
+        normal=r13_type("body") if r13_touch_ui() else r13_read_size(R13_CONTROL["text"],R13_CONTROL["large_text"])   # 휴대폰 body 열 = 예전 28/30
         fit=(width-2*R13_CONTROL["padding"])//max(1,len(label))
         return max(r13_ev_small_size(),min(normal,fit))
 

@@ -41,7 +41,7 @@ class MapLabelEdges(unittest.TestCase):
 
     def env(self, touch):
         ns = dict(R13_VILLAGE_B_PLACES=self.places, R13_VILLAGE_B_VIEW=self.view, R13_TYPE_V2=True,
-                  r13_touch_ui=lambda: touch, r13_type=r13_type_stub(touch=touch),
+                  r13_touch_ui=lambda: touch, r13_type=r13_type_stub(touch=touch), r13_type_pc=r13_type_stub(touch=False),
                   r13_read_size=lambda a, b: a, r13_map_label=lambda key: self.labels[key],
                   R13_V111_MAP_ALIASES={})
         exec(self.code, ns)

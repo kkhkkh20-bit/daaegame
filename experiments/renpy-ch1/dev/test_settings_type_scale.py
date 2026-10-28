@@ -7,7 +7,7 @@ class SettingsTypeScale(unittest.TestCase):
  def test_all_settings_text_uses_two_tokens_or_real_dialogue(self):
   values=re.findall(r'(?<!\w)(?:text_)?size ([^\n]+)',A)
   # 0.19.98 night settings (owner mockup): every size is a token or a token with a fixed step.
-  for value in values:self.assertRegex(value,r'^\(?(r13_opt_size\(\)|r13_opt_title_size\(\)|_r13_say_size\(\))([+-]\d\))?',value)
+  for value in values:self.assertRegex(value,r'^\(?(r13_opt_size\(\)|r13_opt_title_size\(\)|_r13_say_size\(\)|r13_night_say_size\(\))([+-]\d\))?',value)
   self.assertEqual(A.count('size (r13_opt_title_size()+8)'),1)
  def test_scale_small_normal_large(self):
   block=A.split('init python:\n',1)[1].split('\nstyle ',1)[0]
@@ -72,7 +72,7 @@ class SettingsTypeScale(unittest.TestCase):
   self.assertIn('ypos ((r13_opt_row_height()-r13_opt_button_height())//2)',A)
  def test_preview_uses_actual_say_size_without_transform(self):
   preview=(ROOT/'game/room13_typing_preview.rpy').read_text()
-  self.assertIn('(preferences.text_cps, _r13_say_size(), r13_ui_font())',preview)
+  self.assertIn('(preferences.text_cps, r13_night_say_size(), r13_ui_font())',preview)   # 2026-10-28 실제 대사 크기
   self.assertNotIn('r13_read_size(24,30)',preview)
   self.assertIn('add typing_preview',A);self.assertNotIn('add typing_preview xsize',A)
  def test_replay_and_footer_share_padding_height(self):

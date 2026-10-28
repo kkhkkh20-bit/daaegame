@@ -18,7 +18,7 @@ class PreviewTest(unittest.TestCase):
    child=SimpleNamespace(args=a,kw=kw);self.children.append(child);return child
   def render(child,w,h,st,at):self.times.append(st);return Render()
   renpy=SimpleNamespace(Displayable=Displayable,Render=Render,render=render,redraw=lambda *a:self.redraws.append(a))
-  ns=dict(renpy=renpy,preferences=self.pref,r13_read_size=lambda *a:self.size,_r13_say_size=lambda:self.size,r13_ui_font=lambda:'test.ttf',R13DialogueText=text)
+  ns=dict(renpy=renpy,preferences=self.pref,r13_read_size=lambda *a:self.size,_r13_say_size=lambda:self.size,r13_night_say_size=lambda:self.size,r13_ui_font=lambda:'test.ttf',R13DialogueText=text)
   source=(ROOT/'game/room13_typing_preview.rpy').read_text().split('init 71 python:\n',1)[1]
   exec(textwrap.dedent(source),ns);self.p=ns['R13TypingPreview']()
  def draw(self,t):self.p.render(860,88,t,t)

@@ -5,7 +5,7 @@ root=Path(__file__).resolve().parents[1]
 class Render:
  def __init__(self,height):self.height=height
  def get_size(self):return (423.0,self.height)
-ns=dict(renpy=types.SimpleNamespace(Displayable=object,render=lambda text,*args:Render(52.0 if text=='wrapped' else 26.0)),Text=lambda caption,**kw:caption,r13_read_size=lambda a,b:a,r13_ui_font=lambda:'font',
+ns=dict(renpy=types.SimpleNamespace(Displayable=object,render=lambda text,*args:Render(52.0 if text=='wrapped' else 26.0)),Text=lambda caption,**kw:caption,r13_read_size=lambda a,b:a,r13_ui_font=lambda:'font',r13_type=lambda level:{'small':20,'body':22,'emphasis':24,'subtitle':26,'title':28,'display':30}[level],
     # Defined in systems/room13_ui_refinements.rpy since 0.18.1.
     r13_question_caption=lambda title,was_read,summarize=True:title)
 source=(root/'game/systems/room13_reference_ui.rpy').read_text().split('init 79 python:\n')[1].split('\ninit 80:')[0]
