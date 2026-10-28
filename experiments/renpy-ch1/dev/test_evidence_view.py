@@ -152,8 +152,8 @@ class EvidenceView(unittest.TestCase):
         self.assertGreaterEqual(env["r13_ev_label_size"]("올빼미 할아버지에게 보여주기", 296), 18)
         env = self.build()
         self.assertEqual(env["r13_ev_label_size"]("다람이에게 보여주기", 296), 22)
-        # 2026-10-27 6단계 통일: 가장 작은 단계(small=22) 아래로는 줄이지 않는다. 긴 이름은 22 에서 멈춘다.
-        self.assertEqual(env["r13_ev_label_size"]("아주 긴 이름의 주민 할아버지에게 보여주기", 296), 22)
+        # 2026-10-27 6단계 통일: 가장 작은 단계(small) 아래로는 줄이지 않는다. 2026-10-28 시안 2 로 small=20.
+        self.assertEqual(env["r13_ev_label_size"]("아주 긴 이름의 주민 할아버지에게 보여주기", 296), 20)
 
     def test_chips_end_left_of_close_and_right_of_tabs(self):
         for touch in (False, True):

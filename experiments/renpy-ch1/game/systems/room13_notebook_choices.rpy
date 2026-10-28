@@ -176,7 +176,7 @@ screen r13_notebook_choice_list(person,pose,title,entries,ready,return_action=No
 # 2026-10-28 소유자 시안 C 선택: 아빠의 물음(메뉴 머리 글·쟁점)은 아래 대사판에 「아빠」 리본과 함께, 선택지는 그 위 오른쪽 세로 목록.
 # 질문 판이 화면 가운데를 차지하지 않고, 대사와 같은 자리에서 읽힌다. 대사창과 선택지는 겹치지 않는다(목록 바닥 = 리본 위).
 init 82 python:
-    R13_CHOICE_C_LIST_BOTTOM=520    # 목록 바닥. 리본(530) 바로 위
+    R13_CHOICE_C_LIST_BOTTOM=520    # 목록 바닥 상한. 실제로는 대사판 리본 위 12px 와 더 낮은 쪽
     R13_CHOICE_C_LIST_TOP=104       # 위 줄(장소·날짜판) 아래
     R13_CHOICE_C_WIDTH=640
     R13_CHOICE_TEXT_NUDGE=2
@@ -206,20 +206,23 @@ screen r13_choice_c(person,pose,entries,ready,caption=""):
     $ visible=pages[page]
     $ pager_h=((100 if r13_touch_ui() else 66) if len(pages)>1 else 0)
     $ rows_height=sum(row[1] for row in visible)+max(0,len(visible)-1)*10
-    $ rows_top=R13_CHOICE_C_LIST_BOTTOM-pager_h-rows_height
+    $ list_bottom=min(R13_CHOICE_C_LIST_BOTTOM,r13_night_say_top(heading+("\n"+subline if subline else ""))-R13_SAY_RIBBON_UP-12)
+    $ rows_top=list_bottom-pager_h-rows_height
     if person:
         add r13_close_art(person,pose,760):
             xpos 330 xanchor .5 ypos r13_close_y(person,760,150,pose)
-    # 대사판: 대사창과 같은 판·리본. 아빠의 물음이나 쟁점을 대사 자리에 둔다.
-    add Frame(r13_asset_path("file:assets/ui-b-dialogue/b_panel_dialogue.png"),60,40) xpos 24 ypos 548 xysize (1232,160)
+    # 대사판: 일반 대사창과 같은 계산(r13_night_say_top·R13_SAY_PANEL_PAD·R13_SAY_RIBBON_UP)이라 높이·리본·글자 자리가 같다.
+    $ say_text=heading+("\n"+subline if subline else "")
+    $ say_top=r13_night_say_top(say_text)
+    add Transform(Frame(Crop((16,16,1168,128),r13_asset_path("file:assets/ui-b-dialogue/b_panel_dialogue.png")),48,24,64,24),xysize=(1220,714-(say_top-R13_SAY_PANEL_PAD)),alpha=r13_night_shade_alpha()) xpos 30 ypos (say_top-R13_SAY_PANEL_PAD)
     frame:
-        xpos 60 ypos 530 padding (22,8,36,10) background Frame(Crop((16,12,168,32),r13_asset_path("file:assets/ui-b-dialogue/b_ribbon_name.png")),16,6,32,6)
+        xpos 120 ypos (say_top-R13_SAY_RIBBON_UP) background Frame(Crop((16,12,168,32),r13_asset_path("file:assets/ui-b-dialogue/b_ribbon_name.png")),16,6,32,6) padding (22,8,36,10)
         text "아빠" color (r13_type_color("inverse")) font R13_UI_BOLD_FONT size (r13_type("title")) outlines []
     vbox:
-        xpos 84 ypos 590 spacing 6
-        text heading id "r13_choice_issue" xsize 1080 size (r13_type("emphasis")) color ("#2A5FA8" if thought else r13_type_color("ink")) font R13_UI_BOLD_FONT line_spacing 4
+        xpos 120 ypos say_top spacing 4
+        text heading id "r13_choice_issue" xsize 1090 size r13_night_say_size() color ("#2A5FA8" if thought else r13_type_color("ink")) font R13_UI_BOLD_FONT line_spacing 4
         if subline:
-            text subline xsize 1080 size (r13_type("small")) color (r13_type_color("muted")) font R13_UI_BOLD_FONT
+            text subline xsize 1090 size (r13_type("small")) color (r13_type_color("muted")) font R13_UI_BOLD_FONT
     vbox:
         pos (left,rows_top) spacing 10
         for i,((label,command,read),height) in enumerate(visible):
@@ -242,7 +245,7 @@ screen r13_choice_c(person,pose,entries,ready,caption=""):
                     text r13_question_caption(label,False,False) xpos 84 yalign .5 yoffset R13_CHOICE_TEXT_NUDGE xsize width-R13_CHOICE_TEXT_PAD size (r13_type(R13_CHOICE_BODY)) font R13_UI_BOLD_FONT color (r13_type_color("ink")) line_spacing 4
     if len(pages)>1:
         hbox:
-            pos (left,R13_CHOICE_C_LIST_BOTTOM-pager_h+12) spacing 16
+            pos (left,list_bottom-pager_h+12) spacing 16
             textbutton "← 이전":
                 xsize (width-16)//2 ysize (88 if r13_touch_ui() else 54) padding (12,4)
                 background r13_notebook_button_surface()

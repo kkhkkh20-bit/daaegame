@@ -52,7 +52,7 @@ class PlayReviewField(unittest.TestCase):
         # 2026-10-27: 대사판 종이는 screens.rpy 가 아래끝 714 로 늘인다. 조작 리본은 그 종이의 아래 테두리 선 위에서 끝나야 한다.
         paper_bottom=int(re.search(r'R13_NIGHT_PAPER_BOTTOM=(\d+)',night).group(1))
         paper_edge=int(re.search(r'R13_NIGHT_PAPER_EDGE=(\d+)',night).group(1))
-        self.assertIn('xysize=(1220,%d-(b_text_top-38))'%paper_bottom,screens)
+        self.assertIn('xysize=(1220,%d-(b_text_top-R13_SAY_PANEL_PAD))'%paper_bottom,screens)
         for touch in (False,True):
             for large in (False,True):
                 for lines in (1,2,3,4):

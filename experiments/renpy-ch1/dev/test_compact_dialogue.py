@@ -45,12 +45,15 @@ class CompactDialogue(unittest.TestCase):
         self.assertRegex(speech,r'text who id "who"[^\n]+font R13_UI_BOLD_FONT')
         self.assertIn('$ b_text_top = r13_night_say_top(what)',speech)
         self.assertIn('xpos b_text_x ypos b_text_top',speech)
-        offset=int(re.search(r'xpos b_text_x ypos \(r13_night_say_top\(what\)-(\d+)\)',speech).group(1))
+        # 2026-10-28: 리본 높이는 선택 화면과 같은 상수(R13_SAY_RIBBON_UP)로 읽는다.
+        self.assertIn('xpos b_text_x ypos (r13_night_say_top(what)-R13_SAY_RIBBON_UP)',speech)
+        night=(ROOT/'game/systems/room13_night_ui.rpy').read_text(encoding='utf-8')
+        offset=int(re.search(r'R13_SAY_RIBBON_UP=(\d+)',night).group(1))
         name=speech.split('if who:',1)[1]  # 2026-10-26 이름표 페이드를 뺐다. 이름표 덩어리는 if who: 뒤에 있다
         padding=tuple(map(int,re.search(r'padding \((\d+),(\d+),(\d+),(\d+)\)',name).groups()))
         # 2026-10-27 6단계 통일: 이름표 크기는 단계 이름 하나다. 보통·크게 두 값으로 잰다.
         level=re.search(r'text who[^\n]+size \(?r13_type\("([a-z]+)"\)',name).group(1)
-        sizes=({'small':22,'body':24,'emphasis':26,'subtitle':28,'title':30,'display':36}[level],{'small':26,'body':28,'emphasis':30,'subtitle':32,'title':34,'display':38}[level])
+        sizes=({'small':20,'body':22,'emphasis':24,'subtitle':26,'title':28,'display':30}[level],{'small':24,'body':26,'emphasis':28,'subtitle':30,'title':32,'display':34}[level])
         for size in sizes:self.assertGreaterEqual(offset-size-padding[1]-padding[3],8)
         self.assertIn('background None padding (0,0)',speech)
 

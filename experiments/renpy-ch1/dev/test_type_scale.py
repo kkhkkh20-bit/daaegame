@@ -56,13 +56,13 @@ class TypeScale(unittest.TestCase):
 
     def test_scale_values(self):
         ns=load_scale()
-        self.assertEqual([ns['r13_type'](l) for l in ns['R13_TYPE_LEVELS']],[22,24,26,28,30,36])
+        self.assertEqual([ns['r13_type'](l) for l in ns['R13_TYPE_LEVELS']],[20,22,24,26,28,30])
         ns=load_scale(large=True)
-        self.assertEqual([ns['r13_type'](l) for l in ns['R13_TYPE_LEVELS']],[26,28,30,32,34,38])
+        self.assertEqual([ns['r13_type'](l) for l in ns['R13_TYPE_LEVELS']],[24,26,28,30,32,34])
         ns=load_scale(touch=True)
         self.assertEqual([ns['r13_type'](l) for l in ns['R13_TYPE_LEVELS']],[26,28,30,32,34,36])
         ns=load_scale(small=True)
-        self.assertEqual(ns['r13_type']('body'),22)
+        self.assertEqual(ns['r13_type']('body'),20)   # 2026-10-28 시안 2: 작게 설정은 보통보다 한 칸(2) 작다
 
     def test_colors_are_hex(self):
         ns=load_scale()
