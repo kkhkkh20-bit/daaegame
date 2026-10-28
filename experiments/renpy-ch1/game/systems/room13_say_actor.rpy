@@ -84,7 +84,7 @@ init 40 python:
             opts=p[2] if len(p)>2 and isinstance(p[2],dict) else {}
             if ok(p[0]) and not opts.get("thought"):return p[0]
         # 2026-10-28 분기 주행(9일 식당): 「할머니가 식당 입구에서 목도리를 여민다」 바로 뒤 아빠의 「끝이 찢어졌네요」에
-        # 나비가 섰다. 바로 앞 줄이 지문이면 그 지문의 주어가 듣는 사람이다.
+        # 나비가 섰다. 바로 앞 줄의 화자(지문이면 그 주어)가 듣는 사람이다.
         narrated=r13_narrated_person()
         if ok(narrated):return narrated
         state=getattr(store,"room13",None) or {}
@@ -103,27 +103,40 @@ init 40 python:
         import re
         alive=globals().get("r13_v111_person_alive",lambda w:True)
         best=None
-        for who in CAST:
-            name=str(r13_display_name(who) or "").split(" ")[0]
-            if len(name)<2 or name in R13_CALL_GENERIC:continue
+        for name,who in r13_person_names(R13_CALL_GENERIC):
             m=re.search(re.escape(name)+"(?: ?씨| ?님|아|야)?(?:[,!?…]| ?씨도 )",text)
             if m and alive(who) and (best is None or m.start()<best[0]):best=(m.start(),who)
         return best[1] if best else None
 
     R13_NARRATE_SKIP=("아빠","엄마","아이","주민","사람")
     def r13_narrated_person():
-        """바로 앞에 보인 줄이 지문이면, 그 지문에서 주어로 나온 사람(「할머니가」「나비는」). 없으면 None."""
+        """바로 앞에 보인 줄의 사람: 다른 사람의 대사면 그 화자, 지문이면 그 지문의 주어(「할머니가」「나비는」). 없으면 None."""
         import re
         hist=getattr(store,"_history_list",None) or []
         if not hist:return None
         last=hist[-1]
-        if getattr(last,"who",None):return None
+        who_label=getattr(last,"who",None)
+        if who_label:
+            # 바로 앞 줄을 다른 사람이 말했으면 아빠는 그 사람에게 답한다(10일 회의 「……더 들을 말이 있소?」→「있습니다」).
+            label=renpy.filter_text_tags(str(who_label),allow=[])
+            for name,who in r13_person_names(()):
+                if label==name or label.split(" ")[0]==name:return who
+            return None
         text=renpy.filter_text_tags(str(getattr(last,"what","") or ""),allow=[])
         alive=globals().get("r13_v111_person_alive",lambda w:True)
         best=None
-        for who in CAST:
-            name=str(r13_display_name(who) or "").split(" ")[0]
-            if len(name)<2 or name in R13_NARRATE_SKIP:continue
+        for name,who in r13_person_names(R13_NARRATE_SKIP):
             m=re.search(re.escape(name)+"(?:가|는|이|은|의) ",text)
             if m and alive(who) and (best is None or m.start()<best[0]):best=(m.start(),who)
         return best[1] if best else None
+
+    def r13_person_names(skip):
+        """(이름 첫 낱말, 인물) 목록. 보이는 이름(뿔이)·원래 이름·대본 화자 이름(촌장)을 다 넣는다. 그림이 있는 인물만."""
+        rows=set()
+        for who in CAST:
+            for full in (r13_display_name(who),R13_NAMES.get(who)):
+                if full:rows.add((str(full).split(" ")[0],who))
+        for label,who in (globals().get("MS14_SPEAKERS") or {}).items():
+            # 「창고 아이 1」「누비의 큰아이」 같은 여러 낱말 이름표는 첫 낱말이 사물(창고)이라 넣지 않는다.
+            if who in CAST and label and " " not in str(label):rows.add((str(label),who))
+        return [(n,w) for n,w in rows if len(n)>=2 and n not in skip]
