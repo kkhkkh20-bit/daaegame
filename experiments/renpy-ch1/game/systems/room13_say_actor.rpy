@@ -70,3 +70,21 @@ init 40 python:
         if head is None:head=_r13_say_headtop(who,pose,h)
         if head is not None:return int(round(r13_say_head_target(who)-head))
         return r13_close_y(who,h,110,pose)+R13_SAY_ACTOR_DY+r13_say_child_drop(who)
+
+    # 2026-10-28 소유자 「대화 상대가 항상 표기되면 돼」: 아빠가 말할 때 듣는 사람.
+    # 순서: 이 대사 묶음에서 다음에 말하는 사람 → 바로 앞에 말한 사람(그 장면에 있으면) → 그 장면에 있는 사람 중 다람 아닌 첫 사람 → 다람.
+    def r13_dad_listener(entries,index):
+        vp=r13_viewpoint()
+        def ok(who):return bool(who) and who!=vp and who in CAST
+        for p in entries[index+1:]:
+            opts=p[2] if len(p)>2 and isinstance(p[2],dict) else {}
+            if ok(p[0]) and not opts.get("thought"):return p[0]
+        state=getattr(store,"room13",None) or {}
+        present=list((state.get("v111") or {}).get("people") or [])
+        alive=globals().get("r13_v111_person_alive",lambda w:True)
+        present=[w for w in present if ok(w) and alive(w)]
+        last=getattr(store,"r13_last_partner",None)
+        if ok(last) and (last in present or not present):return last
+        others=[w for w in present if w!="daram"]
+        if others:return others[0]
+        return "daram" if "daram" in present else None
