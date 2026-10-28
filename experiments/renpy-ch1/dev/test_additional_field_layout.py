@@ -30,7 +30,7 @@ class AdditionalFieldLayout(unittest.TestCase):
   for case in self.cases:
    with self.subTest(location=case['location'],large=case['large']):
     original=copy.deepcopy(case['actors'])
-    critical=layouts[case['location']].get('critical',[])+([[880,500,220,152]] if case['location']=='forest' else [])
+    critical=layouts[case['location']].get('critical',[])+([[940,600,196,90]] if case['location']=='forest' else [])
     result=self.ns['r13_clear_objects'](original,critical,case['width'])
     self.assertEqual(original,case['actors'])
     for old,new in zip(original,result):
@@ -43,15 +43,14 @@ class AdditionalFieldLayout(unittest.TestCase):
       self.assertFalse(inside or overlap(new['rect'],r)>area*0.2,(case['location'],new['person'],r))
  def test_exchange_box_identity_and_picture_share_geometry(self):
   source=(ROOT/'game/room13_v111.rpy').read_text()
-  self.assertIn('dict(rect=[880,500,220,152]',source)
+  self.assertIn('dict(rect=[940,600,196,90]',source)   # 2026-10-28 묻힌 교환함(그림 156x66, 칸은 넓게)
   self.assertIn('x,y,w,h=ROOM13["objects"]["forest"]["v111_box"]["rect"]',source)
-  self.assertIn('xysize=(w,h),fit="contain",nearest=True),x,y)',source)
-  # Upper-left opening remains a continuous 140x116 patch on the left;
-  # the right view shows the whole prop. This is not a new marker or hint.
-  identifier=(880,500,140,116)
+  self.assertIn('box_forest_buried.png",nearest=True),x+(w-156)//2,y+h-66)',source)
+  # 누르는 칸 전체가 왼쪽 화면 안에 있고 휴대폰에서도 44px 넘는다.
+  identifier=(940,600,196,90)
   for width,height in ((1280,720),(844,390),(740,360)):
    self.assertGreaterEqual(min(identifier[2:])*min(width/1280,height/720),44)
-   for offset in (0,880):
+   for offset in (0,):
     projected=(identifier[0]-offset,identifier[1],identifier[2],identifier[3])
     self.assertTrue(0<=projected[0] and projected[0]+projected[2]<=1280)
  def test_scope_and_contact_masks(self):

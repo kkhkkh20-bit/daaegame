@@ -11,7 +11,7 @@ init 81 python:
     def r13_notebook_choice_pages(entries,width,height,split=False):
         # 2026-10-28 소유자(7일 빨래터 선택 캡처): "왜 이리 두껍고 튀어나와". 가장 긴 선택지(세 줄)에 칸 높이를 모두 맞추던
         # 것을 그만두고, 칸마다 제 글자 높이만큼만 갖는다(최소 64, 터치 80). 글자 폭은 번호 자리를 줄인 width-R13_CHOICE_TEXT_PAD.
-        minimum=80 if r13_touch_ui() else 64
+        minimum=80 if r13_touch_ui() else 60
         rows=[]
         for entry in entries:
             label=r13_question_caption(entry[0],False,False)
@@ -178,20 +178,23 @@ screen r13_notebook_choice_list(person,pose,title,entries,ready,return_action=No
 init 82 python:
     R13_CHOICE_C_LIST_BOTTOM=520    # 목록 바닥. 리본(530) 바로 위
     R13_CHOICE_C_LIST_TOP=104       # 위 줄(장소·날짜판) 아래
-    R13_CHOICE_C_WIDTH=600
+    R13_CHOICE_C_WIDTH=640
     def r13_choice_c_geometry(entries,width):
         avail=R13_CHOICE_C_LIST_BOTTOM-R13_CHOICE_C_LIST_TOP
         pages=r13_notebook_choice_pages(entries,width,avail)
         if len(pages)>1 or not r13_notebook_choice_fits(pages,avail):
             pager=(100 if r13_touch_ui() else 66)
             pages=r13_notebook_choice_pages(entries,width,avail-pager,split=True)
-        return pages
+        # 2026-10-28 소유자: "균일한 폰트에 균일한 상하 폭 맞아? 다 각기 달라 보인다". 한 화면의 칸은 모두 같은 높이(가장 긴 칸)로,
+        # 글자는 칸 가운데. 판 폭(R13_CHOICE_C_WIDTH)을 넓혀 대부분 한 줄에 들어가게 해 두꺼워지지 않게 한다.
+        tallest=max([h for page in pages for e,h in page] or [0])
+        return [[(e,tallest) for e,h in page] for page in pages]
 
 screen r13_choice_c(person,pose,entries,ready,caption=""):
     default page=0
     default focused_choice=None
     $ width=R13_CHOICE_C_WIDTH
-    $ left=(640 if person else 340)
+    $ left=(600 if person else 320)
     $ context=r13_choice_context()
     $ issue=r13_choice_issue(entries)
     $ heading=issue or caption or (context[1] if context else "어떻게 할까?")
