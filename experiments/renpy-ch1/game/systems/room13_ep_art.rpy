@@ -110,7 +110,7 @@ init 160 python:
         cream=("#14171d","#EFE3C6","#14171d","#2E3138"),
         brass=("#14171d","#E3C072","#9A7432","#2E3138"),
     )
-    R13_EV_CUT_FRAME="cream"
+    R13_EV_CUT_FRAME="brass"   # 소유자 10-28 「놋쇠선 좋다」
     def r13_ev_pixel_frame(x,y,side,frame):
         u=R13_EV_CUT_PX;parts=[]
         for n,color in enumerate(R13_EV_CUT_FRAMES[frame]):
@@ -158,6 +158,9 @@ init 160 python:
             else:renpy.hide("r13_ep_book")
         if "cut" in options:
             if options["cut"]:renpy.show("r13_ep_cut",what=At(r13_ep_cut_art(options["cut"]),r13_ep_art_fade),zorder=5)
+            # 2026-10-28 소유자 「증거 나올 때 효과음, 휘익이든 따단이든」: 증거 칸이 뜰 때 자료를 얻을 때와 같은 「따단」.
+            # 그 줄에 따로 효과음이 적혀 있으면(아래 sfx) 그쪽이 이긴다.
+            if str(options["cut"]).startswith("ev:") and not options.get("sfx"):source_fx("found")
             else:renpy.hide("r13_ep_cut")
         # 0.18.91 연출: 줄마다 음악 끄기/바꾸기, 효과음, 화면 어둡게(그 대화가 끝날 때까지).
         if "music" in options:
