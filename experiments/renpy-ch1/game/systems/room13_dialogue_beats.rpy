@@ -83,6 +83,14 @@ init 170 python:
             self.finished=False
             self.started_st=None
             self.frames={}
+            # 2026-10-28 전체 화면 시험(ep6_altar): 아빠의 말 줄에 듣는 사람을 세우면서, 앞 화자의 표정 계획
+            # (empathetic_confusion)이 그 표정이 없는 사람 그림에 걸려 KeyError 로 멈췄다. 없는 표정은 neutral 로 그린다.
+            # 계획은 store 와 같은 dict 라 그려진 뒤 settled 가 거기 남아야 한다. 바꿀 때만 사본을 쓴다.
+            if any(plan.get(slot) and plan[slot] not in profile["frames"] for slot in ("talk","react")):
+                plan=dict(plan)
+                for slot in ("talk","react"):
+                    if plan.get(slot) and plan[slot] not in profile["frames"]:plan[slot]="neutral"
+                self.plan=plan
             for key in (plan["talk"],plan["react"]):
                 if key and key not in self.frames:
                     frame=profile["frames"][key]
