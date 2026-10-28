@@ -4,10 +4,14 @@ label r13_v111_day6:
     $ r13_v111_scene('MS14_D06_S01')
     $ r13_edit(period=0)
     $ room13["v111"]["people"]=[]
+    # 2026-10-28 캡처 검수: 첫 줄들(「여관 문을 열자……」 할머니의 고백, 문 앞의 초롱)이 학교 교실 배경 위에 나왔다.
+    # 그 주고받기는 여관 문 앞에서 하고, 초롱이 일러 준 학교 뒷문으로 간다.
+    $ r13_edit(location='inn')
+    $ r13_v111_arrive(['daram', 'granny', 'resident_lamplighter'])
+    call r13_lines(r13_v111_lines(['MS14_D06_S01_L0002']),'v111:MS14_D06_S01_L0002')
     call r13_v111_travel('school','day6',['daram'])
     $ r13_v111_arrive(['daram', 'resident_teacher', 'resident_lamplighter', 'kid_kkomi'])
     $ r13_v111_score()
-    call r13_lines(r13_v111_lines(['MS14_D06_S01_L0002']),'v111:MS14_D06_S01_L0002')
     call r13_lines(r13_v111_lines(['MS14_D06_S01_L0003']),'v111:MS14_D06_S01_L0003')
     call r13_lines(r13_v111_lines(['MS14_D06_S01_L0004']),'v111:MS14_D06_S01_L0004')
     call r13_lines(r13_v111_lines(['MS14_D06_S01_L0005']),'v111:MS14_D06_S01_L0005')
