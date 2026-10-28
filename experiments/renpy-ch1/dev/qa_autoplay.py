@@ -42,7 +42,121 @@ class Driver(Fast):
 LOG=[]
 def log(*a):
     s=' '.join(str(x) for x in a);print(s,flush=True);LOG.append(s)
+
+# ---------------------------------------------------------------- ROUTE=true (진엔딩 「새로운 아침」 예방 길)
+# 미래를 아는 플레이어가 사건마다 미리 손을 써서 사망 0·대승리 둘·필수 회의 넷 이김으로 14일 결말에 닿는 길.
+# 조건은 game/room13_v111_newworld_rules.rpy 의 r13_nw_true_ending_ready(). 계획에 없는 관문·선택창은 기본 길과 같다.
+# 항목은 「제목」 또는 (제목, 조건) — 조건은 지금 판정 값(values)을 받아 참일 때만 그 제목을 고른다.
+TRUE_ROUTE=os.environ.get('ROUTE')=='true'
+TRUE_GATES={
+    # 2일 피코(3번 등 밑에서 얼어 죽음): 나비 포대 → 할머니 마른 천 → 벤치 살피기·닦기 → 피코에게 자리 → 함께 입실.
+    # 네로 쪽(침구 두 장)은 고르지 않는다. 그래서 12일 다람에게 열이 나고 수프는 배식 직전 중단으로 막는다.
+    'afternoon2':['포대를 옮긴다','마른 천을 빌린다','벤치 표면을 살핀다','천으로 벤치의 물감을 닦는다','식당에 앉을 자리를 전한다'],
+    # 2일 밤: 등 끈 묶기(3번 등 미수판)는 하지 않는다. 식당 생존판 하나로 간다(3일 회의 증거가 달라지지 않게).
+    'lamp_prep2':['방으로 들어간다'],
+    # 4일 밤 문 앞: 세 곳을 하나씩 본다(같은 것을 다시 누르지 않게).
+    'inspect_gate4':[('울타리 천',lambda v:not v.get('d4_fence_seen')),('겹친 발자국',lambda v:not v.get('d4_tracks_seen')),('엎어진 양동이',lambda v:not v.get('d4_bucket_seen'))],
+    # 5일 저녁(불 대승리 길1): 여관 가는 길에 빨래터로 돌아 젖은 장갑을 건다 → 누비네 이야기를 엿듣는다(NW_LAUNDRY_TALK).
+    'travel':[('마을 빨래터',lambda v:not v.get('grand_laundry_seen5'))],
+    'laundry5':['빨래 줄에 젖은 장갑을 건다','여관 접수대'],
+    # 6일 꼬미(장작 창고 불): 깡통 줄 살피기 → 줄 풀고 도토리 → 선생님께 자리 → 같이 가자 → 학교 인계.
+    'afternoon6':['장작더미 옆 깡통 줄을 살핀다','줄을 풀고 도토리를 챙긴다','아이들 자리를 여쭌다','학교에 자리가 났어. 같이 갈래?'],
+    'hp_meal6':['다람아, 애들한테 가자.'],
+    # 7일 불 회의 대승리: 보리 목격 전에 기름통 밑 홈에서 누비네 배급표(NW_NUBI_TICKET)를 꺼낸다.
+    'bori_witness7':['통 밑 홈을 들춘다','창고 문 앞에서 무엇을 보셨습니까?'],
+    # 7일 부엉이(13호 살인): 부리에게 집게 → 재받이의 배급 돌 → 13호 난로의 검푸른 돌과 바꾼다(prevention=stone).
+    'free_day7':['집게 하나만 빌릴 수 있을까?','재받이를 들여다본다','집게로 돌을 꺼내고, 주머니의 배급 돌을 넣는다','다람아, 이제 13호에 가 보자.'],
+    # 10일 기록 회의 뒤: 부엉이에게 편지 전달을 묻고, 공개 수치로 인계한다.
+    'private_handoff10':[('아내가 직접 편지를 건넸습니까?',lambda v:not v.get('owl_invitation_testimony')),'공개 수치만 대조하고 인계해 주십시오.'],
+    # 11일 엄마: 세 질문을 하나씩.
+    'mother_questions11':[('어떻게 지냈어?',lambda v:not v.get('mother_q_life')),('왜 우리를 부르지 않았어?',lambda v:not v.get('mother_q_invitation')),('왜 돌아오지 못했어?',lambda v:not v.get('mother_q_return'))],
+    # 11일 네로·아랫길 노인(등이 끊긴 밤 늦은 출발로 사망): 낮에 수레를 준비해 세 사람을 학교로 옮긴다.
+    # 짐칸을 살피며 흰 그릇 하나를 주머니에 넣는다(12일 수프 대승리 NW_RETURNED_BOWL 의 앞 단계).
+    'rescue_cart11':['수레 짐칸을 살핀다','그릇 하나를 집는다','수레 짐을 내려 자리를 비운다','덮개를 접어 빈 짐칸에 싣는다','까로에게 운반을 부탁한다','아랫길을 비추는 등을 점검한다','아랫길 세 사람의 받을 자리를 비운다','수레를 끌고 아랫길로 간다'],
+    'rescue_handoff11':['세 사람을 맞은 자리와 명단을 확인한다'],
+    'night_rescue_prepare11':['낮에 챙긴 운반 준비를 확인한다'],
+    'sleep11_input':['잠자리를 정리한다'],
+    # 12일 도담(학교 국): 다람의 열로 아침 예방은 막혀 있다. 배식 직전 작은 냄비·흰 그릇·봉인을 보고 냄비를 열어 멈춘다.
+    'morning_prep12':['배식 준비를 살핀다'],
+    'meal_inspect12':['작은 냄비와 국자 자리를 살핀다','흰 그릇이 놓인 자리를 살핀다','선반에 놓인 병의 봉인을 살핀다','흰 그릇을 옆으로 옮기고 작은 냄비를 연다'],
+    # 12일 수프 회의 대승리: 주머니의 그릇을 배식대 옆에 놓아 「돌아온 흰 그릇」을 얻는다.
+    'bottle_match12':['주머니의 그릇을 배식대 옆에 놓아 본다','병과 파편의 경계를 대조한다'],
+    # 수프를 미리 막은 판(회의 없음)일 때의 대체: 그릇을 보이고 돌목에게 바닥 표시를 묻는다(결정 7).
+    'early_bowl12':['주머니의 그릇을 배식대 옆에 놓아 본다','이 그릇 바닥의 표시는 무엇입니까?','저녁 배식을 돕는다'],
+    # 13일 담요 회의: 판돌의 담요를 실제로 수선해 둔다(E13_MENDING).
+    'blanket_mend13':['회색 담요를 실제로 수선한다'],
+    # 13일 수레 뒤: 호송 고리를 바둑이·돌목·까로 순으로 끊고 학교로 돌아간다.
+    'transport_cleanup13':['앞으로의 호송을 확인한다','명령 전체를 중지하고, 사본을 직접 전하겠습니다.','강제 운반은 맡지 말고, 빈 수레를 돌려주자.','빈 수레 반환을 요청한다.','중지 명령 사본을 너울에게 다시 보인다.','학교로 돌아간다'],
+}
+# 선택창(메뉴) 글귀. 보이는 것 중 앞에 있는 것을 고른다. 없으면 기본 길과 같다.
+TRUE_CHOICES=[
+    '그릇을 돌려주러 같이 가자.',                       # 6일 꼬미를 만나러 학교 뒤로
+    '아이들은 학교에서 기다리게 하자.',                 # 7일 누비네 아이들을 학교로
+    '집게로 돌을 꺼내고, 주머니의 배급 돌을 넣는다',     # 7일 13호 난로(물건 행동 고르기 창)
+    '통 밑 홈을 들춘다',                               # 7일 기름통(물건 행동 고르기 창)
+    '아랫길 대피 준비를 확인한다',                       # 11일 네로·노인 낮 구조
+    # 11일 가설 회의(정답 쪽만 고른다)
+    '꺼낸 아르카 곁에 오래 있던 사람부터 무너진다','두 사람이 아르카 곁에 머문 시간을 비교한다','백 부인은 그 돌 곁에서 잠을 자지 않는다',
+    '요즘 태우는 돌이 더 독하다','아이들이 밤을 어디서 보내는지 본다','한 방의 돌을 꺼내자 그 앞에서 흐려지던 머리가 맑아졌다',
+    '한 방의 돌을 치우자 무너지던 사람이 돌아왔다',
+    '배식 전에 더 살핀다',                             # 12일 배식 직전 중단
+    '흰 그릇을 옆으로 옮기고 작은 냄비를 연다',
+    '주머니의 그릇을 배식대 옆에 놓아 본다',
+    '약장 밖에 맡긴 약도 있는지 묻는다',
+    '돌목에게 감독을 맡긴다',                           # 12일 선생님을 너울에게 넘기지 않는다
+    ('거절하고 현장에 남는다',lambda v:v.get('family_offer_terms_seen')),   # 13일 가족만 빠지는 거래를 거절
+    '조건을 더 묻는다',
+    '엄마와 다람이 곁에 남게 한다',
+    ('하차한 사람부터 부축한다',lambda v:v.get('handover_prepared13')),     # 13일 수레의 사람을 모두 학교로
+    '학교 침상과 인수를 먼저 확인한다',
+    '7일 회의 기록을 함께 읽는다',                     # 13일 군중(옛 메뉴): 불 대승리 기록
+]
+TRUE_PREFER_PROOF=('NW_NUBI_TICKET','NW_RETURNED_BOWL')   # 대승리 보너스 증거가 든 정답 묶음을 먼저 낸다
+TRUE_TRACK=('piko_alive','KKOMI_ALIVE','OWL_ALIVE','nero_alive','prevention','route7','route12','carried_dry_blankets','daram_fever12',
+    'neoul_promise_proven','transfer_list_voided','grand_bowl_pocket','grand_ticket_spot_known','grand_laundry_seen5','departed_names',
+    'outcome13','crowd_injury','ending14','lower_road_handover','family_location','DARAM_DETAINED','bami_status','silluk_status','stove13_7')
+def true_tracked(values):
+    return {k:v for k,v in (values or {}).items() if k in TRUE_TRACK or k.startswith(('meeting:','grand:','alive:','listed:','departed:','fate'))}
+def _entry(e):
+    return (e,None) if isinstance(e,str) else e
+def true_option(gate,options,values,person=None):
+    """계획에서 지금 열려 있는 첫 선택(현장·질문)."""
+    for e in TRUE_GATES.get(gate,()):
+        title,cond=_entry(e)
+        if cond and not cond(values):continue
+        o=next((o for o in options if o.get('title')==title and (person is None or o.get('person')==person)),None)
+        if o:return o
+    return None
+def true_caption(gate,captions,values):
+    """선택창 글귀: 이 관문의 계획 제목 → 전역 계획 글귀 순."""
+    for e in list(TRUE_GATES.get(gate,()))+TRUE_CHOICES:
+        title,cond=_entry(e)
+        if cond and not cond(values):continue
+        if title in captions:return captions.index(title)
+    return None
+def true_set(sets,owned):
+    """가진 정답 묶음 가운데 대승리 보너스 증거가 든 것을 먼저."""
+    have=[s for s in sets if all('V111:'+k in owned for k in s)]
+    return next((s for s in have if any(k in TRUE_PREFER_PROOF for k in s)),have[0] if have else None)
+TRUE_CHECK=('import renpy;s=renpy.store;v=s.r13_v111_value;result=dict(ready=s.r13_nw_true_ending_ready(),ending14=v("ending14"),'
+    'ending_calc=s.r13_nw_ending14(),dead=s.r13_nw_dead(),ledger=s.r13_v111_owned("NW_NEOUL_LEDGER"),grand_fire=v("grand:fire"),'
+    'grand_soup=v("grand:soup"),meetings={m:v("meeting:"+m) for m in ("gate","lamp","gate_post","fire","room13","records","hypothesis","soup","blanket","piko","altar")},'
+    'departed=v("departed_names"),outcome13=v("outcome13"),crowd_injury=v("crowd_injury"))')
+async def true_check(q,where):
+    try:r=await q.py(TRUE_CHECK)
+    except Exception as e:log('TRUE-CHECK 실패',where,str(e)[:120]);return None
+    fails=[]
+    if r['ending_calc']!='morning':fails.append('ending14 판정=%s'%r['ending_calc'])
+    if r['dead']:fails.append('사망·떠남 %s'%r['dead'])
+    if not r['ledger']:fails.append('NW_NEOUL_LEDGER 없음')
+    if r['grand_fire'] is not True:fails.append('grand:fire=%s'%r['grand_fire'])
+    if r['grand_soup'] is not True:fails.append('grand:soup=%s'%r['grand_soup'])
+    for m in ('records','hypothesis','blanket','altar'):
+        if r['meetings'].get(m)!='win':fails.append('meeting:%s=%s'%(m,r['meetings'].get(m)))
+    log('TRUE-CHECK',where,'ready=',r['ready'],'ending14=',r['ending14'],'회의=',r['meetings'],'떠남=',r['departed'],'outcome13=',r['outcome13'],'못 맞춘 조건=',fails or '없음')
+    return r
 SCREENS=("main_menu","say","choice","r13_confirm","r13_hub","r13_topics","r13_map","r13_book","r13_records","r13_crisis_proof","r13_proof_workspace","r13_more_tools","r13_side_questions","r13_fork_screen","_exception")
+if TRUE_ROUTE:SCREENS=SCREENS+("r13_meeting_retry_choice",)   # 진엔딩 길: 회의를 지면 뜨는 다시 하기 창을 알아본다
 n_shot=[0]
 async def shot(q,name):
     n_shot[0]+=1;await q.shot('%03d-%s'%(n_shot[0],name))
@@ -71,6 +185,7 @@ async def proof(q,st):
     if tab_all:await q.input(tab_all[0]+tab_all[2]/2,tab_all[1]+tab_all[3]/2);await asyncio.sleep(.3)
     owned=await q.py('import renpy;result=list(renpy.store.room13["evidence"])')
     sets=proof_sets(title);chosen_set=next((s for s in sets if all('V111:'+k in owned for k in s)),node['correct'])
+    if TRUE_ROUTE:chosen_set=true_set(sets,owned) or chosen_set
     if chosen_set!=node['correct']:log('  대체 정답 사용',chosen_set)
     for k in chosen_set:
         if 'V111:'+k in selected:continue
@@ -199,7 +314,7 @@ async def main():
             except Exception:pass
             log('RESUME auto-day'+os.environ['RESUME_DAY'])
         else:await q.press('처음부터')
-        last=None;seen_shots=set();visits={};book_target=None;map_target=None;stale_n=0;stale_last=None;object_attempts={};say_shots={};last_day=1;t0=time.time()
+        last=None;true_prev={};seen_shots=set();visits={};book_target=None;map_target=None;stale_n=0;stale_last=None;object_attempts={};say_shots={};last_day=1;t0=time.time()
         try:
             for step in range(30000):
                 st=await snap(q);sc=st['screens']
@@ -210,6 +325,16 @@ async def main():
                     log('==== %d일'%st['day']);last_day=st['day']
                     try:await q.py('import renpy;renpy.exports.save("auto-day%d");result=True'%st['day']);log('SAVED auto-day%d'%st['day'])
                     except Exception as e:log('save failed',repr(e))
+                if TRUE_ROUTE:
+                    tv=true_tracked(st.get('values'))
+                    for k in sorted(set(tv)|set(x for x in true_prev if not x.startswith('_'))):
+                        if tv.get(k)!=true_prev.get(k):log('  값',k,true_prev.get(k),'→',tv.get(k))
+                    if tv.get('ending14') and tv.get('ending14')!=true_prev.get('ending14'):await true_check(q,'결말 판정 직후')
+                    fin=true_prev.get('_final');true_prev.clear();true_prev.update(tv);true_prev['_final']=fin
+                    if 'r13_meeting_retry_choice' in sc:
+                        # 진엔딩 길에서 회의를 지면 그 판은 진엔딩이 안 된다. 기록을 남기고 결과를 받아들여 끝까지 가 본다.
+                        log('MEETING-LOST',st['claim'],{k:v for k,v in st['values'].items() if k.startswith('meeting:')});await shot(q,'meeting-lost')
+                        await q.press('결과를 받아들인다');continue
                 key=(st['gate'],tuple(sc),st['choice'],st['claim'],st['location'])
                 if key!=last:
                     log('STATE',step,st['day'],st['period'],st['gate'],sc,st['choice'],st['location'],'사람=',st['people']);last=key
@@ -223,6 +348,9 @@ async def main():
                     await q.advance_dialogue();continue
                 if 'r13_confirm' in sc:
                     yes=await q.py('import renpy;result=renpy.display.screen.get_screen("r13_confirm").scope["yes"]')
+                    if TRUE_ROUTE and st['values'].get('story14_completed') and not true_prev.get('_final'):
+                        true_prev['_final']=True;await true_check(q,'이야기를 마친 뒤')
+                        log('결말 이름',await q.py('import renpy;s=renpy.store;result=s.R13_FORK_ENDINGS.get(s.r13_v111_value("ending14"))'))
                     await shot(q,'confirm-'+str(st['gate']));await q.press(yes);continue
                 if 'choice' in sc:
                     ck=('choice',st['gate'],st['choice']);visits[ck]=visits.get(ck,0)
@@ -236,6 +364,9 @@ async def main():
                     if st['gate']=='lamp_observe':
                         pick=next((i for i in range(4) if not st['values'].get('lamp_part_'+str(i))),4)
                     if st['choice']=='afternoon' and os.environ.get('ROUTE')!='alt':pick=visits[ck]%len(captions)   # 포대·천·벤치·닦기 순으로 하고 식당 자리를 전한다
+                    if TRUE_ROUTE:
+                        tp=true_caption(st['gate'],captions,st['values'])
+                        if tp is not None:pick=tp
                     if ck not in seen_shots:await shot(q,'choice-%s'%(st['choice'] or st['gate']));seen_shots.add(ck)
                     visits[ck]+=1;log('  선택',pick,captions[pick]);await asyncio.sleep(.3);await q.press(captions[pick]);continue
                 if 'r13_proof_workspace' in sc or 'r13_crisis_proof' in sc:
@@ -270,11 +401,17 @@ async def main():
                     selected=await q.py('import renpy;result=list(renpy.store.room13["arguments"].get(renpy.store.v111_claim,[]))')
                     owned=await q.py('import renpy;result=list(renpy.store.room13["evidence"])')
                     chosen_set=next((s2 for s2 in proof_sets(title) if all('V111:'+k in owned for k in s2)),node['correct'])
+                    if TRUE_ROUTE:chosen_set=true_set(proof_sets(title),owned) or chosen_set
                     missing=[x for x in chosen_set if 'V111:'+x not in selected]
                     if missing:book_target='V111:'+missing[0];await q.press('근거를 내놓는다')
                     else:await q.press('논리를 연결한다')
                     continue
                 if 'r13_book' in sc:
+                    if TRUE_ROUTE and not book_target:
+                        # 이야기가 직접 여는 「보여 주기」 책: 13일 너울에게 중지 명령 사본, 14일 장치 앞에서 인계 기록.
+                        want={13:'V111:E13_ORDER',14:'V111:E13_HANDOVER'}.get(st['day'])
+                        if want and want in st['evidence'] and await q.py('import renpy;c=renpy.display.screen.get_screen("r13_book");result=bool(c and c.scope.get("present_label"))'):
+                            book_target=want;log('  보여 줄 자료',want)
                     if book_target:await q.select_material(book_target);book_target=None
                     else:
                         # 「자료 다시 보기」로 연 책에는 「선택 마치기」가 없다. 없으면 X 로 닫는다.
@@ -302,6 +439,11 @@ async def main():
                     fresh=[o for o in eligible if visits.get(('asked',gate,person,o['title']),0)<2]
                     if not fresh:await q.press('돌아가기');await asyncio.sleep(.3);continue
                     option=next((o for o in fresh if o.get('index')==preferred),fresh[visits[tk]%len(fresh)]);visits[tk]+=1
+                    if TRUE_ROUTE:
+                        planned=true_option(gate,eligible,st['values'],person)
+                        if planned:option=planned
+                        elif gate in TRUE_GATES and true_option(gate,options,st['values']):
+                            await q.press('돌아가기');await asyncio.sleep(.3);continue   # 계획의 다음 일은 다른 사람·물건이다
                     visits[('asked',gate,person,option['title'])]=visits.get(('asked',gate,person,option['title']),0)+1
                     if option.get('present'):book_target=option['present']
                     log('  질문',option['title']);await q.press(option['title']);continue
@@ -341,6 +483,7 @@ async def main():
                     elif gate=='lamp_observe':
                         idx=next((i for i in range(4) if not st['values'].get('lamp_part_'+str(i))),4);option=next((o for o in options if o['index']==idx),options[0])
                     elif gate=='registered_menu':option=next((o for o in options if o.get('move')),options[0])
+                    elif TRUE_ROUTE and true_option(gate,options,st['values']):option=true_option(gate,options,st['values'])
                     else:
                         fresh=[o for o in options if not (o.get('person') and visits.get(('asked',gate,o['person'],o['title']),0)>=2) and not (o.get('object') and object_attempts.get((gate,o['object']),0)>=8) and visits.get(('asked',gate,'__obj__',o['title']),0)<9]
                         pool=fresh or options
@@ -349,7 +492,9 @@ async def main():
                     visits[hk]+=1
                     if option.get('location') and option['location']!=st['location']:
                         map_target=option.get('move') or option['location'];await q.press('지도');continue
-                    if option.get('move'):await q.press('지도');continue
+                    if option.get('move'):
+                        if TRUE_ROUTE:map_target=option['move']   # 들르는 길(빨래터)도 지도에서 그 자리를 고른다
+                        await q.press('지도');continue
                     if option.get('person'):
                         person=option['person'];state=await q.state()
                         if not any(b.get('value')==repr(('person',person)) for b in state['buttons']):

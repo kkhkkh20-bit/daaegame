@@ -13,6 +13,7 @@ python3 dev/build_web.py --sdk $HOME/.cache/renpy/renpy-8.5.3-sdk     # 공개�
 mkdir -p dev/qa-out && python3 dev/qa_autoplay.py > dev/qa-out/base.txt 2>&1   # 기본 길(약 30분)
 ROUTE=alt    ROOM13_QA_OUT=$PWD/dev/qa-out/alt    python3 dev/qa_autoplay.py > dev/qa-out/alt.txt 2>&1
 ROUTE=cheese ROOM13_QA_OUT=$PWD/dev/qa-out/cheese python3 dev/qa_autoplay.py > dev/qa-out/cheese.txt 2>&1
+ROUTE=true   ROOM13_QA_OUT=$PWD/dev/qa-out/true   python3 dev/qa_autoplay.py > dev/qa-out/true.txt 2>&1
 python3 dev/qa_layout_check.py dev/qa-out/base.txt                    # 겹침·가장자리 잘림
 ```
 
@@ -25,6 +26,7 @@ python3 dev/qa_layout_check.py dev/qa-out/base.txt                    # 겹침·
 |---|---|
 | (비움) | 선택창마다 첫 선택지. 대부분 살리는 쪽 |
 | alt | 선택창·현장 선택을 뒤에서부터. 예방 판·다른 인물 배치를 지난다 |
+| true | 진엔딩 「새로운 아침」 예방 길. 관문·선택창마다 `TRUE_GATES`·`TRUE_CHOICES`(구동기 맨 위의 계획표, 사건마다 무엇을 막는지 주석)를 먼저 따르고, 계획에 없으면 기본 길과 같다. 회의 제출은 대승리 보너스 증거(`NW_NUBI_TICKET`·`NW_RETURNED_BOWL`)가 든 정답 묶음을 먼저 낸다 |
 | cheese | 회의마다 기회가 셋 이상 남았거나 무제한이면 「전부 내기」, 「엉뚱한 하나」를 먼저 내고 판정을 적는다. 그다음 정답 |
 
 ## 로그 읽기
@@ -35,6 +37,8 @@ python3 dev/qa_layout_check.py dev/qa-out/base.txt                    # 겹침·
 - 꼼수 길: `꼼수 all|wrong 쟁점 낸 수 → 막힘|통과 남김 [...] 기회 a → b`.
   `CHEESE-PASS` 는 꼼수 제출이 통과한 것이다. 가진 자료가 정답·덧붙임뿐이면 정상(1일 첫 회의)이고, 아니면 결함이다.
   `CHEESE-KEPT` 는 전부 내기 뒤 자료가 남은 것이다. 비교 모드(둘까지만 고름)면 정상이다.
+
+- 진엔딩 길 로그: `  값 키 이전 → 이후`(생사·회의·대승리·명단·결말 값이 바뀔 때마다), `MEETING-LOST`(회의를 짐), `TRUE-CHECK`(결말 판정 직후와 이야기를 마친 뒤 `r13_nw_true_ending_ready()` 결과와 못 맞춘 조건), `결말 이름`.
 
 ## 2026-10-28 결과
 
