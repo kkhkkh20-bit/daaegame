@@ -1381,14 +1381,14 @@
    "id": "WILD-ENDING-PROPS",
    "title": "불타는 밤 결말 물건 그림",
    "kind": "물건",
-   "status": "optional_review",
-   "priority": "P3",
-   "description": "과거 요청서의 있으면 좋은 항목. 현재 전용 그림 납품과 실제 결말 조작 연결을 확인하지 못했다. 해당 결말에 정말 사용할지 먼저 확인한다.",
+   "status": "needs_delivery",
+   "priority": "P2",
+   "description": "엔딩 컷씬 제안서의 MEM-09·10. 불타는 밤 결말 지문에 붙인다: 엄마를 잃은 갈래는 「이름판 아래 재 속에 엄마의 장갑 한 짝이 있었다.」, 혼자 남은 갈래는 「재 속에서 도토리 두 알을 주웠다.」(아빠 손바닥 위, 재 묻은 도토리 두 알).",
    "scenes": [
     "14일 불타는 밤"
    ],
    "branches": [
-    "불타는 밤"
+    "불타는 밤(wild_no_mom / wild_alone)"
    ],
    "references": [
     "game/assets/wild-night/wild-village-dawn-ash.webp"
@@ -1398,19 +1398,19 @@
     "game/systems/room13_wild_night_art.rpy",
     "game/room13_v111_days1114.rpy"
    ],
-   "approved_scope": "기존 소유자 요청 범위",
+   "approved_scope": "2026-10-29 소유자: 엔딩 컷씬 제안서(https://claude.ai/artifact/RFSMYRZ1WPxsGubyCoZYzt) 「다 하면 좋고」「붓 원화풍으로」.",
    "contract": {
     "states": [
      "엄마 장갑 한 짝",
      "도토리 두 알"
     ],
-    "transparent": true,
+    "transparent": false,
     "delivery": [
      "원본 PNG",
-     "무손실 WebP(투명 인물·물건)",
-     "파일별 상태 대응표"
+     "무손실 WebP 720x720",
+     "대응표 CSV"
     ],
-    "size_rule": "아래 현행 실측은 레퍼런스 크기다. 제작 대상의 최종 캔버스·구도·크롭은 연결 담당자와 확인 후 확정한다."
+    "size_rule": "720x720 정사각. 인물 없이 물건과 놓인 자리만. 붓 원화풍(2026-10-29 소유자 결정). 기존 배경 BG-STORE-2·BG-SOMI-ALLEY·BG-GUARDROOM 과 같은 계열. 인물 얼굴·옷은 대화 전신 그림(room13-fullbody-*)과 같게."
    },
    "required": [
     "재 속 이름판 아래 놓인 물건",
@@ -1990,6 +1990,847 @@
      "화면 시험 캡처로 인물 세 명이 바닥선에 서고 소품에 발이 가리지 않는 것을 확인(2026-10-29)"
     ]
    }
+  },
+  {
+   "id": "END-01",
+   "title": "진엔딩: 마차 안 지도",
+   "kind": "컷",
+   "status": "needs_delivery",
+   "priority": "P1",
+   "description": "새로운 아침. 달리는 마차 안, 엄마가 무릎에 지도를 펼치고 다람이 아빠 어깨를 밀며 몸을 내밀어 들여다본다. 아빠는 구석에 끼어 웃는다. 지도의 산골 마을 몇 곳에 작은 재 무더기 기호.",
+   "scenes": [
+    "14일 진엔딩(end_true14)"
+   ],
+   "branches": [
+    "새로운 아침"
+   ],
+   "references": [],
+   "sources": [
+    "game/v111/newworld/d14.json",
+    "game/room13_v111_days1114.rpy"
+   ],
+   "approved_scope": "2026-10-29 소유자: 엔딩 컷씬 제안서(https://claude.ai/artifact/RFSMYRZ1WPxsGubyCoZYzt) 「다 하면 좋고」「붓 원화풍으로」.",
+   "contract": {
+    "states": [
+     "한 장"
+    ],
+    "transparent": false,
+    "delivery": [
+     "원본 PNG",
+     "무손실 WebP 1280x720",
+     "대응표 CSV"
+    ],
+    "size_rule": "1280x720 한 화면. 붓 원화풍(2026-10-29 소유자 결정). 기존 배경 BG-STORE-2·BG-SOMI-ALLEY·BG-GUARDROOM 과 같은 계열. 인물 얼굴·옷은 대화 전신 그림(room13-fullbody-*)과 같게."
+   },
+   "required": [
+    "붙는 지문: 마차 안에서 아내가 지도를 펼쳤다."
+   ],
+   "avoid": [
+    "그림 안 글자(이름판·표·지도의 글자는 읽히지 않는 붓 자국으로)",
+    "흰 스티커 테두리",
+    "범인·원인을 단정하는 표시"
+   ],
+   "acceptance": [
+    "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다",
+    "아래 200px(대사창 자리)에 얼굴·손·핵심 물건이 없다"
+   ]
+  },
+  {
+   "id": "END-02",
+   "title": "진엔딩: 마차 짐 위 초상",
+   "kind": "컷",
+   "status": "needs_delivery",
+   "priority": "P1",
+   "description": "첫 길이 열린 날 까로의 마차 짐 위 초상 한 점. 마차·짐 배경 판과 초상 판 둘(피코 완성본 / 엄마 초상, 코만 아이 솜씨로 살짝 삐뚤어짐).",
+   "scenes": [
+    "14일 진엔딩(end_true14)"
+   ],
+   "branches": [
+    "새로운 아침(piko_alive / piko_dead)"
+   ],
+   "references": [],
+   "sources": [
+    "game/v111/newworld/d14.json",
+    "game/room13_v111_days1114.rpy"
+   ],
+   "approved_scope": "2026-10-29 소유자: 엔딩 컷씬 제안서(https://claude.ai/artifact/RFSMYRZ1WPxsGubyCoZYzt) 「다 하면 좋고」「붓 원화풍으로」.",
+   "contract": {
+    "states": [
+     "배경 판",
+     "초상 판: 피코 완성본",
+     "초상 판: 엄마 초상(삐뚤어진 코)"
+    ],
+    "transparent": true,
+    "delivery": [
+     "원본 PNG",
+     "무손실 WebP 1280x720",
+     "갈래 판은 투명 PNG/WebP 로 따로",
+     "대응표 CSV"
+    ],
+    "size_rule": "1280x720 한 화면. 붓 원화풍(2026-10-29 소유자 결정). 기존 배경 BG-STORE-2·BG-SOMI-ALLEY·BG-GUARDROOM 과 같은 계열. 인물 얼굴·옷은 대화 전신 그림(room13-fullbody-*)과 같게."
+   },
+   "required": [
+    "붙는 지문: 첫 길이 열린 날, 까로의 마차. 짐 위에 …초상이 실려 있었다.",
+    "초상 판 두 장은 투명으로 따로, 배경 판 같은 자리에 얹는다"
+   ],
+   "avoid": [
+    "그림 안 글자(이름판·표·지도의 글자는 읽히지 않는 붓 자국으로)",
+    "흰 스티커 테두리",
+    "범인·원인을 단정하는 표시"
+   ],
+   "acceptance": [
+    "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다",
+    "아래 200px(대사창 자리)에 얼굴·손·핵심 물건이 없다"
+   ]
+  },
+  {
+   "id": "END-03",
+   "title": "마을의 아침: 광장 장작 줄",
+   "kind": "컷",
+   "status": "needs_delivery",
+   "priority": "P1",
+   "description": "이튿날 아침 광장. 주민들이 줄을 지어 장작을 손에서 손으로 나른다. 광장 등에는 덮개.",
+   "scenes": [
+    "14일 저녁 마지막 지문(ending_last14)"
+   ],
+   "branches": [
+    "마을의 아침(end_morning_won)"
+   ],
+   "references": [],
+   "sources": [
+    "game/v111/newworld/d14.json",
+    "game/room13_v111_days1114.rpy"
+   ],
+   "approved_scope": "2026-10-29 소유자: 엔딩 컷씬 제안서(https://claude.ai/artifact/RFSMYRZ1WPxsGubyCoZYzt) 「다 하면 좋고」「붓 원화풍으로」.",
+   "contract": {
+    "states": [
+     "한 장"
+    ],
+    "transparent": false,
+    "delivery": [
+     "원본 PNG",
+     "무손실 WebP 1280x720",
+     "대응표 CSV"
+    ],
+    "size_rule": "1280x720 한 화면. 붓 원화풍(2026-10-29 소유자 결정). 기존 배경 BG-STORE-2·BG-SOMI-ALLEY·BG-GUARDROOM 과 같은 계열. 인물 얼굴·옷은 대화 전신 그림(room13-fullbody-*)과 같게."
+   },
+   "required": [
+    "붙는 지문: 이튿날 아침, 광장에서는 사람들이 줄을 지어 장작을 날랐다."
+   ],
+   "avoid": [
+    "그림 안 글자(이름판·표·지도의 글자는 읽히지 않는 붓 자국으로)",
+    "흰 스티커 테두리",
+    "범인·원인을 단정하는 표시"
+   ],
+   "acceptance": [
+    "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다",
+    "아래 200px(대사창 자리)에 얼굴·손·핵심 물건이 없다"
+   ]
+  },
+  {
+   "id": "END-04",
+   "title": "난로 곁 셋",
+   "kind": "컷",
+   "status": "needs_delivery",
+   "priority": "P1",
+   "description": "밤 학교 난로 곁에 아빠·엄마·다람이 나란히 앉은 뒷모습. 다람 옆 빈자리에 담요. 담요 판을 따로 받아 결말에 따라 켜고 끈다.",
+   "scenes": [
+    "14일 저녁 마지막 지문(ending_last14)"
+   ],
+   "branches": [
+    "마을의 아침(진 판)·남은 사람들(기다림)"
+   ],
+   "references": [],
+   "sources": [
+    "game/v111/newworld/d14.json",
+    "game/room13_v111_days1114.rpy"
+   ],
+   "approved_scope": "2026-10-29 소유자: 엔딩 컷씬 제안서(https://claude.ai/artifact/RFSMYRZ1WPxsGubyCoZYzt) 「다 하면 좋고」「붓 원화풍으로」.",
+   "contract": {
+    "states": [
+     "배경+셋",
+     "빈자리 담요 판"
+    ],
+    "transparent": true,
+    "delivery": [
+     "원본 PNG",
+     "무손실 WebP 1280x720",
+     "갈래 판은 투명 PNG/WebP 로 따로",
+     "대응표 CSV"
+    ],
+    "size_rule": "1280x720 한 화면. 붓 원화풍(2026-10-29 소유자 결정). 기존 배경 BG-STORE-2·BG-SOMI-ALLEY·BG-GUARDROOM 과 같은 계열. 인물 얼굴·옷은 대화 전신 그림(room13-fullbody-*)과 같게."
+   },
+   "required": [
+    "붙는 지문: 그래도 그날 밤, 학교 난로 곁에는 셋이 함께 앉았다. / 다람이 옆자리 하나를 비워 두었다.",
+    "빈자리 담요는 투명 판으로 따로"
+   ],
+   "avoid": [
+    "그림 안 글자(이름판·표·지도의 글자는 읽히지 않는 붓 자국으로)",
+    "흰 스티커 테두리",
+    "범인·원인을 단정하는 표시"
+   ],
+   "acceptance": [
+    "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다",
+    "아래 200px(대사창 자리)에 얼굴·손·핵심 물건이 없다"
+   ]
+  },
+  {
+   "id": "END-05",
+   "title": "가족을 택한 밤: 다람의 두 손",
+   "kind": "컷",
+   "status": "needs_delivery",
+   "priority": "P2",
+   "description": "다람의 두 손 가까이. 오른손은 과자 봉지를 쥐고, 펼친 왼손 바닥에는 잉크로 쓴 줄 몇 개(읽히지 않는 획).",
+   "scenes": [
+    "14일 저녁 마지막 지문(ending_last14)"
+   ],
+   "branches": [
+    "가족을 택한 밤"
+   ],
+   "references": [],
+   "sources": [
+    "game/v111/newworld/d14.json",
+    "game/room13_v111_days1114.rpy"
+   ],
+   "approved_scope": "2026-10-29 소유자: 엔딩 컷씬 제안서(https://claude.ai/artifact/RFSMYRZ1WPxsGubyCoZYzt) 「다 하면 좋고」「붓 원화풍으로」.",
+   "contract": {
+    "states": [
+     "한 장"
+    ],
+    "transparent": false,
+    "delivery": [
+     "원본 PNG",
+     "무손실 WebP 1280x720",
+     "대응표 CSV"
+    ],
+    "size_rule": "1280x720 한 화면. 붓 원화풍(2026-10-29 소유자 결정). 기존 배경 BG-STORE-2·BG-SOMI-ALLEY·BG-GUARDROOM 과 같은 계열. 인물 얼굴·옷은 대화 전신 그림(room13-fullbody-*)과 같게."
+   },
+   "required": [
+    "붙는 지문: 다람이 봉지를 오른손으로만 쥐었다. 왼손 바닥의 이름들이 지워질까 봐서였다."
+   ],
+   "avoid": [
+    "그림 안 글자(이름판·표·지도의 글자는 읽히지 않는 붓 자국으로)",
+    "흰 스티커 테두리",
+    "범인·원인을 단정하는 표시"
+   ],
+   "acceptance": [
+    "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다",
+    "아래 200px(대사창 자리)에 얼굴·손·핵심 물건이 없다"
+   ]
+  },
+  {
+   "id": "END-06",
+   "title": "남은 사람들: 수레바퀴 자국",
+   "kind": "컷",
+   "status": "needs_delivery",
+   "priority": "P2",
+   "description": "아침 광장 눈바닥에 산길 쪽으로 이어지는 수레바퀴 자국 두 줄. 눈 위에 밟힌 빈 인계표 한 장.",
+   "scenes": [
+    "14일 결말(partial_departed14·ending_last14)"
+   ],
+   "branches": [
+    "남은 사람들(수레가 떠난 판)"
+   ],
+   "references": [],
+   "sources": [
+    "game/v111/newworld/d14.json",
+    "game/room13_v111_days1114.rpy"
+   ],
+   "approved_scope": "2026-10-29 소유자: 엔딩 컷씬 제안서(https://claude.ai/artifact/RFSMYRZ1WPxsGubyCoZYzt) 「다 하면 좋고」「붓 원화풍으로」.",
+   "contract": {
+    "states": [
+     "한 장"
+    ],
+    "transparent": false,
+    "delivery": [
+     "원본 PNG",
+     "무손실 WebP 1280x720",
+     "대응표 CSV"
+    ],
+    "size_rule": "1280x720 한 화면. 붓 원화풍(2026-10-29 소유자 결정). 기존 배경 BG-STORE-2·BG-SOMI-ALLEY·BG-GUARDROOM 과 같은 계열. 인물 얼굴·옷은 대화 전신 그림(room13-fullbody-*)과 같게."
+   },
+   "required": [
+    "붙는 지문: 광장 바닥에는 수레바퀴 자국이 아직 남아 있었다."
+   ],
+   "avoid": [
+    "그림 안 글자(이름판·표·지도의 글자는 읽히지 않는 붓 자국으로)",
+    "흰 스티커 테두리",
+    "범인·원인을 단정하는 표시"
+   ],
+   "acceptance": [
+    "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다",
+    "아래 200px(대사창 자리)에 얼굴·손·핵심 물건이 없다"
+   ]
+  },
+  {
+   "id": "END-07",
+   "title": "상처 입은 귀환: 아무도 집지 않은 과자",
+   "kind": "컷",
+   "status": "needs_delivery",
+   "priority": "P2",
+   "description": "정물. 난로 불빛이 비치는 상 위 접시의 과자. 상 가장자리에 손 셋(어른 둘·아이 하나), 아무도 접시에 닿지 않는다. 한 손에 붕대(누구의 손인지 드러내지 않는다).",
+   "scenes": [
+    "14일 저녁 마지막 지문(ending_last14)"
+   ],
+   "branches": [
+    "상처 입은 귀환"
+   ],
+   "references": [],
+   "sources": [
+    "game/v111/newworld/d14.json",
+    "game/room13_v111_days1114.rpy"
+   ],
+   "approved_scope": "2026-10-29 소유자: 엔딩 컷씬 제안서(https://claude.ai/artifact/RFSMYRZ1WPxsGubyCoZYzt) 「다 하면 좋고」「붓 원화풍으로」.",
+   "contract": {
+    "states": [
+     "한 장"
+    ],
+    "transparent": false,
+    "delivery": [
+     "원본 PNG",
+     "무손실 WebP 1280x720",
+     "대응표 CSV"
+    ],
+    "size_rule": "1280x720 한 화면. 붓 원화풍(2026-10-29 소유자 결정). 기존 배경 BG-STORE-2·BG-SOMI-ALLEY·BG-GUARDROOM 과 같은 계열. 인물 얼굴·옷은 대화 전신 그림(room13-fullbody-*)과 같게."
+   },
+   "required": [
+    "붙는 지문: 과자는 상 위에 놓인 채였다. 아무도 먼저 집지 않았다."
+   ],
+   "avoid": [
+    "그림 안 글자(이름판·표·지도의 글자는 읽히지 않는 붓 자국으로)",
+    "흰 스티커 테두리",
+    "범인·원인을 단정하는 표시"
+   ],
+   "acceptance": [
+    "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다",
+    "아래 200px(대사창 자리)에 얼굴·손·핵심 물건이 없다"
+   ]
+  },
+  {
+   "id": "END-08",
+   "title": "남겨진 이름: 이름판 빈칸",
+   "kind": "컷",
+   "status": "needs_delivery",
+   "priority": "P1",
+   "description": "광장 이름판 앞, 붓을 든 아빠의 손이 빈칸 앞에서 멈춰 있다. 다른 칸은 읽히지 않는 붓 자국.",
+   "scenes": [
+    "14일 결말(end_left_name14)"
+   ],
+   "branches": [
+    "남겨진 이름"
+   ],
+   "references": [],
+   "sources": [
+    "game/v111/newworld/d14.json",
+    "game/room13_v111_days1114.rpy"
+   ],
+   "approved_scope": "2026-10-29 소유자: 엔딩 컷씬 제안서(https://claude.ai/artifact/RFSMYRZ1WPxsGubyCoZYzt) 「다 하면 좋고」「붓 원화풍으로」.",
+   "contract": {
+    "states": [
+     "한 장"
+    ],
+    "transparent": false,
+    "delivery": [
+     "원본 PNG",
+     "무손실 WebP 1280x720",
+     "대응표 CSV"
+    ],
+    "size_rule": "1280x720 한 화면. 붓 원화풍(2026-10-29 소유자 결정). 기존 배경 BG-STORE-2·BG-SOMI-ALLEY·BG-GUARDROOM 과 같은 계열. 인물 얼굴·옷은 대화 전신 그림(room13-fullbody-*)과 같게."
+   },
+   "required": [
+    "붙는 지문: 다람의 이름은 확인되지 않았다. 손이 빈칸 앞에서 멈췄다."
+   ],
+   "avoid": [
+    "그림 안 글자(이름판·표·지도의 글자는 읽히지 않는 붓 자국으로)",
+    "흰 스티커 테두리",
+    "범인·원인을 단정하는 표시"
+   ],
+   "acceptance": [
+    "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다",
+    "아래 200px(대사창 자리)에 얼굴·손·핵심 물건이 없다"
+   ]
+  },
+  {
+   "id": "END-09",
+   "title": "남겨진 이름: 다람 몫 과자",
+   "kind": "컷",
+   "status": "needs_delivery",
+   "priority": "P1",
+   "description": "밤 학교 상 위 접시에 과자 하나. 맞은편에서 엄마의 손이 치우려는 손을 막는다.",
+   "scenes": [
+    "14일 결말(end_left_name14)"
+   ],
+   "branches": [
+    "남겨진 이름"
+   ],
+   "references": [],
+   "sources": [
+    "game/v111/newworld/d14.json",
+    "game/room13_v111_days1114.rpy"
+   ],
+   "approved_scope": "2026-10-29 소유자: 엔딩 컷씬 제안서(https://claude.ai/artifact/RFSMYRZ1WPxsGubyCoZYzt) 「다 하면 좋고」「붓 원화풍으로」.",
+   "contract": {
+    "states": [
+     "한 장"
+    ],
+    "transparent": false,
+    "delivery": [
+     "원본 PNG",
+     "무손실 WebP 1280x720",
+     "대응표 CSV"
+    ],
+    "size_rule": "1280x720 한 화면. 붓 원화풍(2026-10-29 소유자 결정). 기존 배경 BG-STORE-2·BG-SOMI-ALLEY·BG-GUARDROOM 과 같은 계열. 인물 얼굴·옷은 대화 전신 그림(room13-fullbody-*)과 같게."
+   },
+   "required": [
+    "붙는 지문: 밤. 접시에 과자가 하나 남았다. 다람 몫이었다."
+   ],
+   "avoid": [
+    "그림 안 글자(이름판·표·지도의 글자는 읽히지 않는 붓 자국으로)",
+    "흰 스티커 테두리",
+    "범인·원인을 단정하는 표시"
+   ],
+   "acceptance": [
+    "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다",
+    "아래 200px(대사창 자리)에 얼굴·손·핵심 물건이 없다"
+   ]
+  },
+  {
+   "id": "END-10",
+   "title": "얼어붙은 마을: 알아보지 못하는 돌목",
+   "kind": "컷",
+   "status": "needs_delivery",
+   "priority": "P1",
+   "description": "첫 길이 열린 날 마을 입구. 붓을 쥐고 선 돌목이 앞에 선 셋을 낯선 사람처럼 본다. 다람이 발끝을 들고 돌목을 올려다본다. 뒷배경 광장의 등은 하나씩 꺼져 있다.",
+   "scenes": [
+    "14일 결말(end_frozen14)"
+   ],
+   "branches": [
+    "얼어붙은 마을"
+   ],
+   "references": [],
+   "sources": [
+    "game/v111/newworld/d14.json",
+    "game/room13_v111_days1114.rpy"
+   ],
+   "approved_scope": "2026-10-29 소유자: 엔딩 컷씬 제안서(https://claude.ai/artifact/RFSMYRZ1WPxsGubyCoZYzt) 「다 하면 좋고」「붓 원화풍으로」.",
+   "contract": {
+    "states": [
+     "한 장"
+    ],
+    "transparent": false,
+    "delivery": [
+     "원본 PNG",
+     "무손실 WebP 1280x720",
+     "대응표 CSV"
+    ],
+    "size_rule": "1280x720 한 화면. 붓 원화풍(2026-10-29 소유자 결정). 기존 배경 BG-STORE-2·BG-SOMI-ALLEY·BG-GUARDROOM 과 같은 계열. 인물 얼굴·옷은 대화 전신 그림(room13-fullbody-*)과 같게."
+   },
+   "required": [
+    "붙는 지문: 돌목은 붓을 쥔 채 오래 서 있었다. 끝내 받아 적지 못했다."
+   ],
+   "avoid": [
+    "그림 안 글자(이름판·표·지도의 글자는 읽히지 않는 붓 자국으로)",
+    "흰 스티커 테두리",
+    "범인·원인을 단정하는 표시"
+   ],
+   "acceptance": [
+    "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다",
+    "아래 200px(대사창 자리)에 얼굴·손·핵심 물건이 없다"
+   ]
+  },
+  {
+   "id": "END-11",
+   "title": "불타는 밤: 산길 굽이의 뒷모습(인물 판)",
+   "kind": "컷",
+   "status": "needs_delivery",
+   "priority": "P1",
+   "description": "배경은 이미 납품된 WILD-DAWN(game/assets/wild-night/wild-village-dawn-ash.webp)을 쓴다. 새로 그릴 것은 그 앞 산길 굽이에 서서 마을을 내려다보는 뒷모습 인물 판 셋: 셋 / 아빠와 다람 / 아빠 혼자.",
+   "scenes": [
+    "14일 불타는 밤 결말(end_wild_night14)"
+   ],
+   "branches": [
+    "불타는 밤(wild_three / wild_no_mom / wild_alone)"
+   ],
+   "references": [
+    "game/assets/wild-night/wild-village-dawn-ash.webp"
+   ],
+   "sources": [
+    "game/v111/newworld/d14.json",
+    "game/room13_v111_days1114.rpy"
+   ],
+   "approved_scope": "2026-10-29 소유자: 엔딩 컷씬 제안서(https://claude.ai/artifact/RFSMYRZ1WPxsGubyCoZYzt) 「다 하면 좋고」「붓 원화풍으로」.",
+   "contract": {
+    "states": [
+     "인물 판: 셋",
+     "인물 판: 아빠와 다람",
+     "인물 판: 아빠 혼자"
+    ],
+    "transparent": true,
+    "delivery": [
+     "원본 PNG",
+     "무손실 WebP 1280x720",
+     "갈래 판은 투명 PNG/WebP 로 따로",
+     "대응표 CSV"
+    ],
+    "size_rule": "1280x720 한 화면. 붓 원화풍(2026-10-29 소유자 결정). 기존 배경 BG-STORE-2·BG-SOMI-ALLEY·BG-GUARDROOM 과 같은 계열. 인물 얼굴·옷은 대화 전신 그림(room13-fullbody-*)과 같게."
+   },
+   "required": [
+    "붙는 지문: 아침, 산길에서 내려다본 마을에는 연기만 남았다. (셋) · 첫 길이 열린 날, 나는 혼자 고개를 넘었다. (혼자)",
+    "인물 판 셋은 투명으로, WILD-DAWN 배경 같은 자리(전경 산길)에 얹는다"
+   ],
+   "avoid": [
+    "그림 안 글자(이름판·표·지도의 글자는 읽히지 않는 붓 자국으로)",
+    "흰 스티커 테두리",
+    "범인·원인을 단정하는 표시"
+   ],
+   "acceptance": [
+    "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다",
+    "아래 200px(대사창 자리)에 얼굴·손·핵심 물건이 없다"
+   ]
+  },
+  {
+   "id": "MEM-01",
+   "title": "피코 추모: 빈 이젤",
+   "kind": "물건",
+   "status": "needs_delivery",
+   "priority": "P2",
+   "description": "광장 3번 등 아래 눈 속에 선 빈 이젤.",
+   "scenes": [
+    "14일 결말 앞 추모 지문(end_memorial14)"
+   ],
+   "branches": [
+    "피코를 잃은 판"
+   ],
+   "references": [],
+   "sources": [
+    "game/v111/newworld/d14.json",
+    "game/room13_v111_days1114.rpy"
+   ],
+   "approved_scope": "2026-10-29 소유자: 엔딩 컷씬 제안서(https://claude.ai/artifact/RFSMYRZ1WPxsGubyCoZYzt) 「다 하면 좋고」「붓 원화풍으로」.",
+   "contract": {
+    "states": [
+     "한 장"
+    ],
+    "transparent": false,
+    "delivery": [
+     "원본 PNG",
+     "무손실 WebP 720x720",
+     "대응표 CSV"
+    ],
+    "size_rule": "720x720 정사각(자료 카드와 같은 비율). 인물 없이 물건과 놓인 자리만. 붓 원화풍(2026-10-29 소유자 결정). 기존 배경 BG-STORE-2·BG-SOMI-ALLEY·BG-GUARDROOM 과 같은 계열. 인물 얼굴·옷은 대화 전신 그림(room13-fullbody-*)과 같게."
+   },
+   "required": [
+    "붙는 지문: 광장 3번 등 아래, 피코의 이젤은 그대로 서 있었다."
+   ],
+   "avoid": [
+    "그림 안 글자(이름판·표·지도의 글자는 읽히지 않는 붓 자국으로)",
+    "흰 스티커 테두리",
+    "범인·원인을 단정하는 표시"
+   ],
+   "acceptance": [
+    "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다"
+   ]
+  },
+  {
+   "id": "MEM-02",
+   "title": "피코 추모: 씻긴 붓",
+   "kind": "물건",
+   "status": "needs_delivery",
+   "priority": "P2",
+   "description": "화실 창가 통에 씻긴 채 꽂힌 붓들.",
+   "scenes": [
+    "14일 결말 앞 추모 지문(end_memorial14)"
+   ],
+   "branches": [
+    "피코를 잃은 판"
+   ],
+   "references": [],
+   "sources": [
+    "game/v111/newworld/d14.json",
+    "game/room13_v111_days1114.rpy"
+   ],
+   "approved_scope": "2026-10-29 소유자: 엔딩 컷씬 제안서(https://claude.ai/artifact/RFSMYRZ1WPxsGubyCoZYzt) 「다 하면 좋고」「붓 원화풍으로」.",
+   "contract": {
+    "states": [
+     "한 장"
+    ],
+    "transparent": false,
+    "delivery": [
+     "원본 PNG",
+     "무손실 WebP 720x720",
+     "대응표 CSV"
+    ],
+    "size_rule": "720x720 정사각(자료 카드와 같은 비율). 인물 없이 물건과 놓인 자리만. 붓 원화풍(2026-10-29 소유자 결정). 기존 배경 BG-STORE-2·BG-SOMI-ALLEY·BG-GUARDROOM 과 같은 계열. 인물 얼굴·옷은 대화 전신 그림(room13-fullbody-*)과 같게."
+   },
+   "required": [
+    "붙는 지문: 피코의 붓은 씻긴 채 화실 창가에 꽂혀 있었다."
+   ],
+   "avoid": [
+    "그림 안 글자(이름판·표·지도의 글자는 읽히지 않는 붓 자국으로)",
+    "흰 스티커 테두리",
+    "범인·원인을 단정하는 표시"
+   ],
+   "acceptance": [
+    "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다"
+   ]
+  },
+  {
+   "id": "MEM-03",
+   "title": "꼬미 추모: 창가 도토리",
+   "kind": "물건",
+   "status": "needs_delivery",
+   "priority": "P2",
+   "description": "학교 창틀에 놓인 도토리 한 알.",
+   "scenes": [
+    "14일 결말 앞 추모 지문(end_memorial14)"
+   ],
+   "branches": [
+    "꼬미를 잃은 판"
+   ],
+   "references": [],
+   "sources": [
+    "game/v111/newworld/d14.json",
+    "game/room13_v111_days1114.rpy"
+   ],
+   "approved_scope": "2026-10-29 소유자: 엔딩 컷씬 제안서(https://claude.ai/artifact/RFSMYRZ1WPxsGubyCoZYzt) 「다 하면 좋고」「붓 원화풍으로」.",
+   "contract": {
+    "states": [
+     "한 장"
+    ],
+    "transparent": false,
+    "delivery": [
+     "원본 PNG",
+     "무손실 WebP 720x720",
+     "대응표 CSV"
+    ],
+    "size_rule": "720x720 정사각(자료 카드와 같은 비율). 인물 없이 물건과 놓인 자리만. 붓 원화풍(2026-10-29 소유자 결정). 기존 배경 BG-STORE-2·BG-SOMI-ALLEY·BG-GUARDROOM 과 같은 계열. 인물 얼굴·옷은 대화 전신 그림(room13-fullbody-*)과 같게."
+   },
+   "required": [
+    "붙는 지문: 학교 창가 자리에는 도토리 한 알이 놓여 있었다."
+   ],
+   "avoid": [
+    "그림 안 글자(이름판·표·지도의 글자는 읽히지 않는 붓 자국으로)",
+    "흰 스티커 테두리",
+    "범인·원인을 단정하는 표시"
+   ],
+   "acceptance": [
+    "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다"
+   ]
+  },
+  {
+   "id": "MEM-04",
+   "title": "부엉이 할아버지 추모: 창틀의 안경",
+   "kind": "물건",
+   "status": "needs_delivery",
+   "priority": "P2",
+   "description": "13호 닫힌 문 옆 창틀의 안경.",
+   "scenes": [
+    "14일 결말 앞 추모 지문(end_memorial14)"
+   ],
+   "branches": [
+    "부엉이 할아버지를 잃은 판"
+   ],
+   "references": [],
+   "sources": [
+    "game/v111/newworld/d14.json",
+    "game/room13_v111_days1114.rpy"
+   ],
+   "approved_scope": "2026-10-29 소유자: 엔딩 컷씬 제안서(https://claude.ai/artifact/RFSMYRZ1WPxsGubyCoZYzt) 「다 하면 좋고」「붓 원화풍으로」.",
+   "contract": {
+    "states": [
+     "한 장"
+    ],
+    "transparent": false,
+    "delivery": [
+     "원본 PNG",
+     "무손실 WebP 720x720",
+     "대응표 CSV"
+    ],
+    "size_rule": "720x720 정사각(자료 카드와 같은 비율). 인물 없이 물건과 놓인 자리만. 붓 원화풍(2026-10-29 소유자 결정). 기존 배경 BG-STORE-2·BG-SOMI-ALLEY·BG-GUARDROOM 과 같은 계열. 인물 얼굴·옷은 대화 전신 그림(room13-fullbody-*)과 같게."
+   },
+   "required": [
+    "붙는 지문: 13호 문은 다시 열리지 않았다. 창틀에 안경 하나가 남아 있었다."
+   ],
+   "avoid": [
+    "그림 안 글자(이름판·표·지도의 글자는 읽히지 않는 붓 자국으로)",
+    "흰 스티커 테두리",
+    "범인·원인을 단정하는 표시"
+   ],
+   "acceptance": [
+    "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다"
+   ]
+  },
+  {
+   "id": "MEM-05",
+   "title": "네로 추모: 장갑 한 짝",
+   "kind": "물건",
+   "status": "needs_delivery",
+   "priority": "P2",
+   "description": "아랫길 끝 눈 위 막대기에 걸린 장갑 한 짝.",
+   "scenes": [
+    "14일 결말 앞 추모 지문(end_memorial14)"
+   ],
+   "branches": [
+    "네로를 잃은 판"
+   ],
+   "references": [],
+   "sources": [
+    "game/v111/newworld/d14.json",
+    "game/room13_v111_days1114.rpy"
+   ],
+   "approved_scope": "2026-10-29 소유자: 엔딩 컷씬 제안서(https://claude.ai/artifact/RFSMYRZ1WPxsGubyCoZYzt) 「다 하면 좋고」「붓 원화풍으로」.",
+   "contract": {
+    "states": [
+     "한 장"
+    ],
+    "transparent": false,
+    "delivery": [
+     "원본 PNG",
+     "무손실 WebP 720x720",
+     "대응표 CSV"
+    ],
+    "size_rule": "720x720 정사각(자료 카드와 같은 비율). 인물 없이 물건과 놓인 자리만. 붓 원화풍(2026-10-29 소유자 결정). 기존 배경 BG-STORE-2·BG-SOMI-ALLEY·BG-GUARDROOM 과 같은 계열. 인물 얼굴·옷은 대화 전신 그림(room13-fullbody-*)과 같게."
+   },
+   "required": [
+    "붙는 지문: 아랫길 끝, 네로의 장갑 한 짝이 눈 위에 걸려 있었다."
+   ],
+   "avoid": [
+    "그림 안 글자(이름판·표·지도의 글자는 읽히지 않는 붓 자국으로)",
+    "흰 스티커 테두리",
+    "범인·원인을 단정하는 표시"
+   ],
+   "acceptance": [
+    "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다"
+   ]
+  },
+  {
+   "id": "MEM-06",
+   "title": "도담 추모: 작은 그릇",
+   "kind": "물건",
+   "status": "needs_delivery",
+   "priority": "P2",
+   "description": "보리의 큰 손(손만)에 든 작은 그릇과 행주.",
+   "scenes": [
+    "14일 결말 앞 추모 지문(end_memorial14)"
+   ],
+   "branches": [
+    "도담을 잃은 판"
+   ],
+   "references": [],
+   "sources": [
+    "game/v111/newworld/d14.json",
+    "game/room13_v111_days1114.rpy"
+   ],
+   "approved_scope": "2026-10-29 소유자: 엔딩 컷씬 제안서(https://claude.ai/artifact/RFSMYRZ1WPxsGubyCoZYzt) 「다 하면 좋고」「붓 원화풍으로」.",
+   "contract": {
+    "states": [
+     "한 장"
+    ],
+    "transparent": false,
+    "delivery": [
+     "원본 PNG",
+     "무손실 WebP 720x720",
+     "대응표 CSV"
+    ],
+    "size_rule": "720x720 정사각(자료 카드와 같은 비율). 인물 없이 물건과 놓인 자리만. 붓 원화풍(2026-10-29 소유자 결정). 기존 배경 BG-STORE-2·BG-SOMI-ALLEY·BG-GUARDROOM 과 같은 계열. 인물 얼굴·옷은 대화 전신 그림(room13-fullbody-*)과 같게."
+   },
+   "required": [
+    "붙는 지문: 보리는 작은 그릇 하나를 날마다 닦았다."
+   ],
+   "avoid": [
+    "그림 안 글자(이름판·표·지도의 글자는 읽히지 않는 붓 자국으로)",
+    "흰 스티커 테두리",
+    "범인·원인을 단정하는 표시"
+   ],
+   "acceptance": [
+    "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다"
+   ]
+  },
+  {
+   "id": "MEM-07",
+   "title": "너울 추모: 주판",
+   "kind": "물건",
+   "status": "needs_delivery",
+   "priority": "P2",
+   "description": "수레 바퀴 옆 눈 위의 주판, 알 하나가 빠짐.",
+   "scenes": [
+    "14일 결말 앞 추모 지문(end_memorial14)"
+   ],
+   "branches": [
+    "너울을 잃은 판"
+   ],
+   "references": [],
+   "sources": [
+    "game/v111/newworld/d14.json",
+    "game/room13_v111_days1114.rpy"
+   ],
+   "approved_scope": "2026-10-29 소유자: 엔딩 컷씬 제안서(https://claude.ai/artifact/RFSMYRZ1WPxsGubyCoZYzt) 「다 하면 좋고」「붓 원화풍으로」.",
+   "contract": {
+    "states": [
+     "한 장"
+    ],
+    "transparent": false,
+    "delivery": [
+     "원본 PNG",
+     "무손실 WebP 720x720",
+     "대응표 CSV"
+    ],
+    "size_rule": "720x720 정사각(자료 카드와 같은 비율). 인물 없이 물건과 놓인 자리만. 붓 원화풍(2026-10-29 소유자 결정). 기존 배경 BG-STORE-2·BG-SOMI-ALLEY·BG-GUARDROOM 과 같은 계열. 인물 얼굴·옷은 대화 전신 그림(room13-fullbody-*)과 같게."
+   },
+   "required": [
+    "붙는 지문: 너울의 주판은 수레 바퀴 옆에서 주워졌다. 알 하나가 빠져 있었다."
+   ],
+   "avoid": [
+    "그림 안 글자(이름판·표·지도의 글자는 읽히지 않는 붓 자국으로)",
+    "흰 스티커 테두리",
+    "범인·원인을 단정하는 표시"
+   ],
+   "acceptance": [
+    "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다"
+   ]
+  },
+  {
+   "id": "MEM-08",
+   "title": "아랫길 노인 추모: 이름 없는 표",
+   "kind": "물건",
+   "status": "needs_delivery",
+   "priority": "P2",
+   "description": "이름 칸이 빈 표 한 장(글자 없이 빈 줄만).",
+   "scenes": [
+    "14일 결말 앞 추모 지문(end_memorial14)"
+   ],
+   "branches": [
+    "아랫길 노인을 잃은 판"
+   ],
+   "references": [],
+   "sources": [
+    "game/v111/newworld/d14.json",
+    "game/room13_v111_days1114.rpy"
+   ],
+   "approved_scope": "2026-10-29 소유자: 엔딩 컷씬 제안서(https://claude.ai/artifact/RFSMYRZ1WPxsGubyCoZYzt) 「다 하면 좋고」「붓 원화풍으로」.",
+   "contract": {
+    "states": [
+     "한 장"
+    ],
+    "transparent": false,
+    "delivery": [
+     "원본 PNG",
+     "무손실 WebP 720x720",
+     "대응표 CSV"
+    ],
+    "size_rule": "720x720 정사각(자료 카드와 같은 비율). 인물 없이 물건과 놓인 자리만. 붓 원화풍(2026-10-29 소유자 결정). 기존 배경 BG-STORE-2·BG-SOMI-ALLEY·BG-GUARDROOM 과 같은 계열. 인물 얼굴·옷은 대화 전신 그림(room13-fullbody-*)과 같게."
+   },
+   "required": [
+    "붙는 지문: 이름 없는 표 하나는 끝내 이름을 얻지 못했다."
+   ],
+   "avoid": [
+    "그림 안 글자(이름판·표·지도의 글자는 읽히지 않는 붓 자국으로)",
+    "흰 스티커 테두리",
+    "범인·원인을 단정하는 표시"
+   ],
+   "acceptance": [
+    "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다"
+   ]
   }
  ]
 }
