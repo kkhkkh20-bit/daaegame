@@ -233,8 +233,12 @@ async def main():
     if 'r13_topics' in sc:
      options=st['binding']['options'];person=await q.py('import renpy;c=renpy.display.screen.get_screen("r13_topics");result=c.scope["person"] if c else None')
      if person is None:continue
-     eligible=[o for o in options if o.get('person')==person]
+     # 2026-10-29 질문 목록 정리: 자료를 내미는 일뿐인 선택지(present_only)는 목록에 없고 「자료 제시」로만 낸다.
+     eligible=[o for o in options if o.get('person')==person and not o.get('present_only')]
+     shown=[o for o in options if o.get('person')==person and o.get('present_only')]
      gate=st['gate']
+     if not eligible and shown and gate!='gate_choice':
+      book_target=shown[0]['present'];await q.press('자료 제시');continue
      if gate=='gate_investigate' and any(k not in st['evidence'] for k in ('V111:E03','V111:E04')):
       await q.press('돌아가기');continue
      if gate=='afternoon2':
