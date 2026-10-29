@@ -63,9 +63,11 @@ label r13_lamp_attempt_repair_ok3:
     call r13_lines(r13_nw_block('la_repair_ok3'),'nw:la_repair_ok3')
     jump r13_lamp_attempt_final3
 label r13_lamp_attempt_wrong3:
-    call r13_lines(r13_nw_block('la_wrong3'),'nw:la_wrong3')
-    if r13_nw_retry('lamp'):
+    # 2026-10-29 논쟁 점검 P11: 일부만 맞게 낸 오답이면 너울이 빈 고리를 묻는다(half_la_repair3). 그때는 일반 반박 줄을 뺀다.
+    if r13_nw_retry('lamp',['NW_LA_CHECK','NW_LA_FIELD'],'half_la_repair3'):
+        call r13_lines(r13_nw_block('la_wrong3'),'nw:la_wrong3')
         jump r13_lamp_attempt_repair3
+    call r13_lines(r13_nw_block('la_wrong3'),'nw:la_wrong3')
     $ r13_nw_meeting_end('lamp','lose')
     $ r13_nw_list('resident_tok','lamp_lose')
     call r13_lines(r13_nw_block('la_lose3'),'nw:la_lose3')
@@ -74,9 +76,10 @@ label r13_lamp_attempt_final3:
     call r13_v111_proof('남아 있는 돌과 칼의 사용을 연결한다',['NW_LA_CHECK','NW_LA_FIELD','NW_LA_KNIFE'],'r13_lamp_attempt_win3','r13_lamp_attempt_partial3',None)
     jump expression _return
 label r13_lamp_attempt_partial3:
-    call r13_lines(r13_nw_block('la_wrong3'),'nw:la_wrong3')
-    if r13_nw_retry('lamp'):
+    if r13_nw_retry('lamp',['NW_LA_CHECK','NW_LA_FIELD','NW_LA_KNIFE'],'half_la_final3'):
+        call r13_lines(r13_nw_block('la_wrong3'),'nw:la_wrong3')
         jump r13_lamp_attempt_final3
+    call r13_lines(r13_nw_block('la_wrong3'),'nw:la_wrong3')
     $ r13_nw_meeting_end('lamp','partial')
     call r13_lines(r13_nw_block('la_partial3'),'nw:la_partial3')
     jump r13_v111_custody_choice

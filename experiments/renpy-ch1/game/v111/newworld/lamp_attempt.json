@@ -230,7 +230,14 @@
         "id": "NW_LA_LA_OPEN3_1",
         "speaker": "아빠",
         "kind": "dialogue",
-        "text": "수리한 뒤 마지막 점검이 있었습니다. 그 뒤 생긴 일부터 나누죠."
+        "text": "등 안에서 나왔다고, 고친 사람이 넣었다는 뜻은 아니죠.{w=.3} 그건 따져 보겠습니다."
+      },
+      {
+        "id": "NW_LA_LA_OPEN3_2",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "어제 그 등 안을 마지막으로 만진 건 톡이오.{w=.3}\n고친 사람 말고 누가 안쪽까지 손을 넣었겠소?",
+        "expression": "neutral"
       }
     ],
     "la_repair_ok3": [
@@ -245,6 +252,20 @@
         "speaker": "톡",
         "kind": "dialogue",
         "text": "그 말부터 좀 들어 달라니까요."
+      },
+      {
+        "id": "NW_LA_LA_REPAIR_OK3_2",
+        "speaker": "실룩",
+        "kind": "dialogue",
+        "text": "칼이야 아까 맞춰 봤죠. 제 거 맞아요.{w=.3}\n걸쇠가 벌어졌길래 바깥 걸쇠만 밀어 닫다가 부러진 거예요. 돌은 손도 안 댔고요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_LA_LA_REPAIR_OK3_3",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "걸쇠를 닫아 준 걸 죄라고 할 순 없소.{w=.3} 그 말이 틀렸다는 게 아니면 여기서 끝내겠소.",
+        "expression": "neutral"
       }
     ],
     "la_final3": [
@@ -272,7 +293,8 @@
         "id": "NW_LA_LA_WRONG3_0",
         "speaker": "너울",
         "kind": "dialogue",
-        "text": "그 자료만으로는 지금 한 말을 가를 수 없소."
+        "text": "그 자료만으로는 지금 한 말을 가를 수 없소.",
+        "when": "nw_no_rebut"
       }
     ],
     "la_partial3": [
@@ -373,6 +395,50 @@
         "kind": "narration",
         "text": "다람이 제 수첩을 펴서 한가운데에 세로줄을 하나 긋는다.",
         "when": "daram_ready"
+      }
+    ],
+    "half_la_repair3": [
+      {
+        "id": "NW_HALF_LA_R01",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "새벽 점검 때 그 안이 비어 있었다는 건 알겠소.{w=.3}\n그럼 지금 그 안에 무엇이 어디 남았다는 거요? 그게 없으면 새로 생겼다고 못 하오.",
+        "expression": "neutral",
+        "when": "half_la_check3"
+      },
+      {
+        "id": "NW_HALF_LA_R02",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "돌 밑에 조각이 박힌 건 알겠소.{w=.3}\n그게 어제 고칠 때 들어간 게 아니라는 건 어디 있소?",
+        "expression": "neutral",
+        "when": "half_la_field3"
+      }
+    ],
+    "half_la_final3": [
+      {
+        "id": "NW_HALF_LA_F01",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "안쪽에 무언가 박힌 건 알겠소.{w=.3}\n그게 실룩의 칼에서 나왔다는 건 어디 있소? 짐꾼 칼은 다 비슷하오.",
+        "expression": "neutral",
+        "when": "half_la_noknife3"
+      },
+      {
+        "id": "NW_HALF_LA_F02",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "칼끝이 맞는 건 봤소.{w=.3}\n그 칼이 어디에 닿아서 부러졌다는 거요? 바깥 걸쇠에서 부러졌을 수도 있소.",
+        "expression": "neutral",
+        "when": "half_la_nofield3"
+      },
+      {
+        "id": "NW_HALF_LA_F03",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "칼이 돌 밑까지 들어간 건 알겠소.{w=.3}\n그게 어제 고친 뒤의 일이라는 건 어디 있소?",
+        "expression": "neutral",
+        "when": "half_la_nocheck3"
       }
     ]
   },

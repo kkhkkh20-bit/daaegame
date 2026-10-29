@@ -17,7 +17,7 @@ testcase v111_nw_d05_half_then_lost:
     pause 1.0
     click pos (900,600) until screen "r13_crisis_proof" timeout 60
     assert eval (r13_v111_value("tries:gate_post")==r13_nw_tries_max("gate_post")-1 and r13_v111_value("meeting:gate_post") is None)
-    assert eval (qa_nw_seen("키로는 못 가리오") and not qa_nw_seen("명단에 올리시오"))
+    assert eval (qa_nw_seen("무언가 말하려다 입을 다문다") and not qa_nw_seen("명단에 올리시오"))
     run Function(qa_nw_day5,["V111:E20"])
     run Jump("r13_v111_wrong5")
     pause 1.0

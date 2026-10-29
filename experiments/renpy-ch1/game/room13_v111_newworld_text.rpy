@@ -410,6 +410,22 @@ init 319 python:
         "half_altar2_back14":lambda:r13_nw_gave("NW_TABLET_B") and not r13_nw_gave("NW_TABLET_A"),
         "half_altar4_names14":lambda:r13_nw_gave("NW_NAMES") and not r13_nw_gave("NW_NEOUL_LEDGER","NW_OLD_RATIONS"),
         "half_altar4_year14":lambda:not r13_nw_gave("NW_NAMES"),
+        # 2026-10-29 논쟁 점검 P04·P05: 3일 등 회의 2번(돌의 행방)과 4번(그 돌이 새벽까지 등 안에 있던 돌인가)은 같은 자료를 쓰지만
+        # 묻는 것이 다르다. 맞는 자료만 일부 낸 오답이면 너울이 그 쟁점의 빈 고리만 묻는다(MS14_D03_S05_L0071 변형). 3일 회의는
+        # r13_nw_retry 에 반박 묶음을 넘기지 않고 되묻기 줄 변형으로 한다(lamp_repair_half_* 와 같은 방식). 자료 이름은 말하지 않는다.
+        "lamp_sale_half_stone":lambda:r13_v111_value("meeting:lamp") is None and r13_nw_wrong_issue()=="돌과 매입 기록을 낸다" and r13_gp_given()=={"V111:E15"},
+        "lamp_sale_half_ledger":lambda:r13_v111_value("meeting:lamp") is None and r13_nw_wrong_issue()=="돌과 매입 기록을 낸다" and r13_gp_given()=={"V111:E16"},
+        "lamp_stone_half_check":lambda:r13_v111_value("meeting:lamp") is None and r13_nw_wrong_issue()=="마지막 점검과 인수한 돌을 연결한다" and bool(r13_gp_given()) and r13_gp_given()<={"V111:E15","V111:E16"},
+        "lamp_stone_half_mark":lambda:r13_v111_value("meeting:lamp") is None and r13_nw_wrong_issue()=="마지막 점검과 인수한 돌을 연결한다" and r13_gp_given() in ({"V111:E11"},{"V111:E11","V111:E16"}),
+        "lamp_stone_half_sale":lambda:r13_v111_value("meeting:lamp") is None and r13_nw_wrong_issue()=="마지막 점검과 인수한 돌을 연결한다" and r13_gp_given()=={"V111:E11","V111:E15"},
+        # 2026-10-29 논쟁 점검 P11: 3일 등 예방판(lamp_bound2) A·B 의 일부 정답 반박(half_la_repair3·half_la_final3).
+        "half_la_check3":lambda:r13_nw_gave("NW_LA_CHECK") and not r13_nw_gave("NW_LA_FIELD"),
+        "half_la_field3":lambda:r13_nw_gave("NW_LA_FIELD") and not r13_nw_gave("NW_LA_CHECK"),
+        "half_la_noknife3":lambda:not r13_nw_gave("NW_LA_KNIFE"),
+        "half_la_nofield3":lambda:r13_nw_gave("NW_LA_KNIFE") and not r13_nw_gave("NW_LA_FIELD"),
+        "half_la_nocheck3":lambda:r13_nw_gave("NW_LA_KNIFE") and r13_nw_gave("NW_LA_FIELD") and not r13_nw_gave("NW_LA_CHECK"),
+        # 2026-10-29 논쟁 점검 P07: 10일 13호 되묻기 줄(MS14_D10_S02_L0051)은 1번·2번이 함께 쓴다. 1번(두 상처)일 때만 그 쟁점을 짚는다.
+        "room13_stage_wound10":lambda:r13_nw_wrong_issue()=="두 상처와 촛대 파손을 대조한다",
     }
     for _nw_who in ("resident_piko","kid_kkomi","resident_owlgp","resident_nero","kid_dodam","neoul","resident_momo","v111_lowerroad_elder"):
         R13_NW_WHEN["dead:"+_nw_who]=(lambda w=_nw_who:w in r13_nw_dead())
