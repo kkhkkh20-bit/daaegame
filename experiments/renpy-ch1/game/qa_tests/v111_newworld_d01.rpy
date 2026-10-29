@@ -87,3 +87,27 @@ testcase v111_nw_d01_gate_extra_letter:
     pause 1.0
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
     assert eval (qa_nw_seen("두 종이를 다시 골라 보자"))
+
+testcase v111_nw_d01_gate_choice_no_actions:
+    # 2026-10-29 외부 검토 「행동이 질문 목록 안에 있다」: 입구에서 돌목의 질문 목록에는 「초대 편지를 보여 준다」도
+    # 「신청서를 찾으러 선반으로 간다」도 없다. 편지는 「자료 제시」로 보이고, 신청서는 선반(초소)을 눌러 찾는다.
+    pause 1.0
+    click "처음부터"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
+    click pos (900,600) until screen "r13_hub" timeout 90
+    run Show("r13_qa_inject_return",value=("person","guard"))
+    pause until screen "say" timeout 30
+    click pos (640,300) until eval (room13["v111"]["gate"]=="gate_choice" and renpy.get_screen("r13_hub") is not None) timeout 60
+    assert eval (not [q for q in r13_v111_questions("guard") if q[0] in ("초대 편지를 보여 준다","신청서를 찾으러 선반으로 간다")])
+    assert eval (r13_v111_has_business("guard"))
+    run Show("r13_qa_inject_return",value=("person","guard"))
+    pause until screen "r13_topics" timeout 30
+    pause 0.8
+    screenshot "v111_nw_d01_gate_choice_topics.png"
+    # 「자료 제시」로 초대 편지를 내면 편지 쪽 장면(MS14_D01_S02_L0023)으로 간다.
+    run Show("r13_qa_inject_return",value="present")
+    pause until screen "r13_book" timeout 30
+    run Show("r13_qa_inject_return",value="V111:E01")
+    # 같은 사람과의 대화가 이어지므로 끝나면 돌목의 질문 목록이 다시 열린다(0.20.6).
+    click pos (900,600) until eval (room13["v111"]["gate"]=="gate_investigate" and (renpy.get_screen("r13_hub") or renpy.get_screen("r13_topics")) is not None) timeout 60
+    assert eval (r13_has("v111:applied:MS14_D01_S02_L0022_O1") and qa_nw_seen("편지로는 무엇을 신청했는지 모르오"))

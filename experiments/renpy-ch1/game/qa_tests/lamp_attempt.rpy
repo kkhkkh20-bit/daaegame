@@ -40,7 +40,7 @@ testcase lamp_attempt_field_and_win:
     pause 0.3
     click 'QA 행동'
     pause 0.5
-    click '칼과 조각의 대조를 부탁한다'
+    click '칼과 조각을 나란히 놓고 봐도 되겠습니까?'
     click pos (900,600) until eval r13_v111_value('lamp_knife_done3') timeout 30
     pause 0.8
     run Function(r13_edit,location='store')
@@ -48,7 +48,7 @@ testcase lamp_attempt_field_and_win:
     pause 0.3
     click 'QA 행동'
     pause 0.5
-    click '매입 장부와 약속한 값을 확인한다'
+    click '매입 장부와 약속하신 값을 보여 주시겠습니까?'
     click pos (900,600) until eval r13_v111_value('lamp_store_done3') timeout 30
     pause 0.8
     run Function(r13_edit,location='square')
@@ -56,7 +56,7 @@ testcase lamp_attempt_field_and_win:
     pause 0.3
     click 'QA 행동'
     pause 0.5
-    click '공방에서 함께 확인한다'
+    click '톡 씨, 공방에서 같이 확인해 주시겠습니까?'
     click pos (900,600) until screen 'r13_crisis_proof' timeout 60
     run Function(qa_la_submit,['NW_LA_CHECK','NW_LA_FIELD'])
     run Show('qa_hidden_base_return',value='argue')

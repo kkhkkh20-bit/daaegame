@@ -2471,7 +2471,7 @@ label r13_v111_transport_cleanup13:
     if _return==3:
         jump r13_v111_cart_return13
     if _return==4:
-        jump r13_v111_relay_stop13
+        jump r13_v111_relay_confirmed13   # 2026-10-29 외부 검토 「행동이 질문 목록 안에 있다」: 4번은 너울에게 「자료 제시」로 중지 명령 사본을 보였을 때만 온다(r13_v111_present_index 가 확인). 책을 다시 열지 않는다. 줄 수는 바꾸지 않는다(대사 검토표가 줄 번호를 든다)
     if _return==5:
         jump r13_v111_night_finish13
     if _return==6:

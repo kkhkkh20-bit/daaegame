@@ -1,5 +1,6 @@
 default r13_field_reading = False
 default r13_v111_talk_person = None
+default r13_v111_bed_pending = None
 # V1.1.1 story data in the existing Room13 state and native Ren'Py labels.
 # No alternate controller, natural-language evaluator, or separate save state.
 init 301 python:
@@ -91,6 +92,13 @@ init 301 python:
                    4:r13_v111_value("relay_stopped") or not r13_v111_value("current_order_execution_stopped")}
             b["options"]=[o for o in b["options"] if not _done.get(o["index"])]
             b["people_by_location"]={"square":square_people,"school":["nabi","mom","daram"],"v111_labor":["guard","resident_siluk"],"v111_supervised":["neoul","resident_teacher"],"workshop":["buri"]}
+            # 2026-10-29 외부 검토 「행동이 질문 목록 안에 있다」: 사본을 너울에게 다시 보이는 일은 돌목에게 하는 말이 아니다.
+            # 너울에게 「자료 제시」로 보이게 하려면, 너울이 서 있는 곳(감독 자리 아니면 돌목 곁)에 너울이 보여야 한다.
+            neoul_place="v111_supervised" if r13_v111_value("busy:neoul")=="teacher_supervision" else guard_place
+            for option in b["options"]:
+                if option.get("person")=="neoul":
+                    option["location"]=neoul_place
+                    if "neoul" not in b["people_by_location"].setdefault(neoul_place,[]):b["people_by_location"][neoul_place]=b["people_by_location"][neoul_place]+["neoul"]
         if v.get("gate")=="device_detach14" and r13_v111_value("buri_device_present"):b["people"]=["mom","daram","buri","resident_ppul","resident_badook","karo"]
         if v.get("gate")=="guard_relief_check14":b["people"]=["guard","resident_siluk",r13_v111_value("guard_relief_person") or "v111_patrol"]
         b.setdefault("people",v.get("people",["daram"]))
@@ -118,7 +126,24 @@ init 301 python:
     def r13_v111_questions(person):
         b=r13_v111_binding()
         # 0.20.10 (4~14일 리뷰): 제목이 보일 자료를 이미 말하므로, 가진 자료면 목록에서 다시 찾지 않는다.
-        return [(o["title"],Return("present") if o.get("present") and o["present"] not in store.room13["evidence"] else Return(o.get("index",i)),bool(o.get("remember_read") and r13_v111_value("ui_topic_read:%s:%s"%(store.room13["v111"].get("gate"),o.get("index",i))))) for i,o in enumerate(b.get("options",[])) if o.get("person")==person and o.get("location")==store.room13["location"]]
+        # 2026-10-29 외부 검토 「행동이 질문 목록 안에 있다」(소유자 2026-10-27: 질문 목록은 그 사람에게 하는 말만):
+        # 「초대 편지를 보여 준다」처럼 말이 아니라 자료를 내미는 일뿐인 선택지(present_only)는 「자료 제시」 버튼으로만 한다.
+        # 목록에 두면 제목을 누르는 것만으로 자료를 대신 내밀어 준다. 제시는 r13_v111_present_index 가 그대로 받는다.
+        # 「이분을 보셨습니까?」처럼 그 사람에게 하는 말이면서 자료를 함께 보이는 선택지는 목록에 남긴다.
+        return [(o["title"],Return("present") if o.get("present") and o["present"] not in store.room13["evidence"] else Return(o.get("index",i)),bool(o.get("remember_read") and r13_v111_value("ui_topic_read:%s:%s"%(store.room13["v111"].get("gate"),o.get("index",i))))) for i,o in enumerate(b.get("options",[])) if o.get("person")==person and o.get("location")==store.room13["location"] and not o.get("present_only")]
+    def r13_v111_auto_index(key):
+        # 2026-10-29 같은 검토: 질문 목록에 남기지 않은 동작 두 가지를 대기 화면 없이 잇는다.
+        # 1) 2일 밤 13호 침대(lamp_prep2)를 누르면 이어지는 잠자리(sleep2)에서 침대를 한 번 더 누르게 하지 않는다.
+        # 2) 숲에서 네로의 부탁에 「하겠습니다」라고 답한 뒤의 일(nero_work)은 숲 그림에 침구 물건이 없어 누를 곳이 없다.
+        #    고를 것이 하나뿐이므로(선택지가 하나면 창을 띄우지 않는다) 지문으로 넘어간다.
+        b=r13_v111_binding()
+        options=b.get("options",[])
+        if store.r13_v111_bed_pending==key:
+            store.r13_v111_bed_pending=None
+            bed=[o["index"] for o in options if o.get("object")=="bed"]
+            if bed:return bed[0]
+        if b.get("auto") and len(options)==1:return options[0]["index"]
+        return None
     for title in R13_V111["proof_claims"]:R13_CLAIMS["v111:"+title]=dict(assertion=title)
     for key,spec in R13_V111["evidence"].items():
         rid="V111:"+key
@@ -243,6 +268,9 @@ init 301 python:
 
 label r13_v111_wait(key):
     $ r13_v111_context(key)
+    $ v111_auto=r13_v111_auto_index(key)
+    if v111_auto is not None:
+        return v111_auto
 label r13_v111_wait_again:
     window hide
     hide r13_visitor
@@ -262,6 +290,13 @@ label r13_v111_wait_again:
     if v111_pick[0]=="menu" and v111_pick[1]=="map":
         call screen r13_map
         if _return and _return in r13_places():
+            # 2026-10-29 외부 검토 「행동이 질문 목록 안에 있다」: 2일 오후 「네로를 만나러 간다」는 나비에게 하는 말이 아니라
+            # 가는 일이다. 지도에서 숲을 고르는 것으로 오후를 정한다(확인 창 없음 — 뜻은 그 대기의 「생각」이 미리 말한다).
+            # 가는 길에 나비·피코에게 알리는 장면이 이야기에 있으므로, 여기서 숲으로 옮겨 놓지 않고 이야기가 데려가게 한다.
+            $ v111_story_move=next((o for o in v111_binding.get("options",[]) if o.get("move")==_return and o.get("move_by_story")),None)
+            if v111_story_move:
+                $ r13_v111_time("move:"+key+":"+_return,5)
+                return v111_story_move["index"]
             $ r13_edit(location=_return)
             call r13_scene(R13_PLACES[room13["location"]][1],R13_PLACES[room13["location"]][0],"calm")
             $ v111_move=next((i for i,o in enumerate(v111_binding.get("options",[])) if o.get("move")==room13["location"]),None)
@@ -329,6 +364,7 @@ label r13_v111_wait_again:
         $ v111_pick=("object",r13_v111_object_key(v111_pick[1]))
         $ v111_matches=[i for i,o in enumerate(v111_binding.get("options",[])) if o.get("object")==v111_pick[1] and o.get("location")==room13["location"]]
         if len(v111_matches)==1:
+            $ r13_v111_bed_pending=v111_binding["options"][v111_matches[0]].get("bed_to")   # 2026-10-29: 침대 한 번으로 잠자리까지(r13_v111_auto_index)
             $ r13_v111_time("inspect:"+key+":"+v111_pick[1],0 if key=="gate_investigate" and v111_pick[1]=="ledger" else 15)
             return v111_binding["options"][v111_matches[0]].get("index",v111_matches[0])
         if len(v111_matches)>1:

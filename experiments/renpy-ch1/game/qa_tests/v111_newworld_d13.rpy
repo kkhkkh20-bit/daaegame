@@ -142,8 +142,17 @@ testcase v111_nw_d13_cleanup_bundled:
     run Jump("r13_v111_order_stop13")
     click pos (900,600) until screen "r13_book" timeout 120
     assert eval (r13_v111_value("current_order_execution_stopped") is True and qa_nw_seen("막을 사람이 있어야 해"))
-    # 제시 화면 자체는 예전과 같다. 맞는 자료를 낸 뒤의 경로로 잇는다.
-    run Jump("r13_v111_relay_confirmed13")
-    click pos (900,600) until screen "r13_hub" timeout 120
+    # 2026-10-29 외부 검토 「행동이 질문 목록 안에 있다」: 처음 책을 그냥 닫으면, 다시 보이는 일은 돌목의 질문이 아니라
+    # 너울에게 하는 「자료 제시」다. 너울을 눌러 사본을 내면 받아들인 장면으로 간다.
+    run Show("r13_qa_inject_return",value=None)
+    click pos (900,600) until screen "r13_hub" timeout 60
+    assert eval ("neoul" in r13_visible_people() and r13_v111_questions("neoul")==[] and not [q for q in r13_v111_questions("guard") if "너울" in q[0]])
+    assert eval (r13_v111_present_index(r13_v111_binding(),"neoul","V111:E13_ORDER")==4)
+    run Show("r13_qa_inject_return",value=("person","neoul"))
+    pause until screen "r13_topics" timeout 30
+    run Show("r13_qa_inject_return",value="present")
+    pause until screen "r13_book" timeout 30
+    run Show("r13_qa_inject_return",value="V111:E13_ORDER")
+    click pos (900,600) until eval (r13_v111_value("relay_stopped") is True and renpy.get_screen("r13_hub") is not None) timeout 120
     assert eval (r13_v111_value("relay_stopped") is True)
     assert eval ([o["index"] for o in r13_v111_binding()["options"] if o.get("person") in ("karo","guard","resident_badook")]==[0])

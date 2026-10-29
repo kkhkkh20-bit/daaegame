@@ -137,13 +137,13 @@ testcase v111_wild_route_help:
     assert eval (room13["v111"].get("gate")=="wild_hall14")
     click "도토"
     pause 0.7
-    click "도토의 손에서 바구니를 떼어 낸다"
+    click "도토 씨, 바구니 내려놓으세요."
     pause 0.7
     click pos (900,600) until eval (room13["v111"].get("gate")=="wild_square14") timeout 90
     pause 1.0
     click "바둑이"
     pause 0.7
-    click "바둑이와 잠긴 문을 연다"
+    click "바둑이 씨, 같이 문을 밉시다."
     pause 0.7
     click pos (900,600) until eval (room13["v111"].get("gate")=="wild_road14") timeout 90
     pause 1.0
@@ -151,7 +151,7 @@ testcase v111_wild_route_help:
     screenshot "wild-guard.png"
     click "돌목"
     pause 0.7
-    click "돌목을 초소에서 끌어낸다"
+    click "돌목 씨, 같이 가요. 여기 있으면 안 돼요."
     pause 0.7
     click pos (900,600) until screen "r13_confirm" timeout 90
     assert eval (r13_v111_value("wild_late")==3 and r13_v111_value("wild_family")=="alone")
