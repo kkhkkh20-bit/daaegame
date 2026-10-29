@@ -262,9 +262,11 @@ init 336 python:
             now=r13_drawer_now(entries)
             owner.update(drawer="now",detail=key,page=(now.index(key)//r13_record_page_size()) if key in now else 0)
 
-# 한 장 카드: 그림 · 이름 · 꼬리표 「N일 · 장소」 · 귀퉁이 쪽지. 왼쪽 목록과 묶음 격자가 같이 쓴다.
+# 한 장 카드: 그림 · 이름 · 귀퉁이 쪽지. 왼쪽 목록과 묶음 격자가 같이 쓴다.
+# 2026-10-29 소유자 「날짜 장소가 전혀 필요가 없을 듯. 해당 정보 자체가 있을 필요가 없음」: 꼬리표 「N일 · 장소」는 보이지 않는다.
+# (r13_drawer_tag 는 묶음 판정·시험이 쓰므로 함수는 남긴다.)
 screen r13_drawer_card_body(key,w,h,label_size,chosen=False,thumb=60,name_width=174):
-    $ tag=r13_drawer_tag(key)
+    $ tag=None
     $ notes=len(r13_drawer_notes(key)) if r13_drawer_active() else 0
     $ small=r13_ev_small_size()
     fixed:
@@ -380,6 +382,6 @@ screen r13_drawer_note_blocks(key,width):
             xsize width padding (14,10) background R13PaperFrame()
             vbox:
                 spacing 6
-                text ("쪽지 · "+r13_catalog_title(note)+((" · "+r13_drawer_tag(note)) if r13_drawer_tag(note) else "")):
+                text ("쪽지 · "+r13_catalog_title(note)):
                     size r13_ev_small_size() color "#8d4b2d" font R13_UI_BOLD_FONT xsize (width-28)
                 use r13_evidence_fact_list(note,width-28)

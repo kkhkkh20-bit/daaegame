@@ -206,7 +206,8 @@ init 351 python:
         return prefix+str(key).replace("V111:","").replace(":","_")
 
     def r13_pw_card_height():
-        # 이름 두 줄 + 「N일 · 장소」 꼬리표가 들어가야 해서 PC 보통도 72 다(64 에서는 셋째 줄이 칸 밖으로 나갔다).
+        # 72 는 「N일 · 장소」 꼬리표가 있던 때의 높이다. 꼬리표는 2026-10-29 소유자 「날짜 장소가 전혀 필요가 없을 듯」으로 뺐고,
+        # 아래 붙임 판(dock)은 64 로 줄여 쓴다(r13_pw_layout).
         return 88 if r13_touch_ui() else (80 if persistent.room13_large_text else 72)
 
     def r13_pw_chip_height():
@@ -241,7 +242,8 @@ init 351 python:
     def r13_pw_quote_height(text,width):
         return r13_proof_text_size(text,r13_nb_emphasis_size(),width)[1]
 
-    R13_PW_DOCK_PANEL=(50,214,1180,476)
+    # 2026-10-29 소유자 「자료 제시할 때 최대 상하 2줄이라 불편」 → B안 승인: 판을 위로 넓히고 세 줄 · 한 쪽에 12장.
+    R13_PW_DOCK_PANEL=(50,96,1180,600)
     def r13_pw_layout(quote_open,quote_text,dock=False):
         """자리 계산. PC: 왼쪽 발언 열 · 가운데 목록 · 오른쪽 상세, 위에 탭 줄, 아래에 칩 줄과 버튼 줄.
         휴대폰: 위 한 줄(발언 접기 버튼 + 탭), 본문 한 영역(목록 또는 상세), 아래 칩 줄과 버튼 줄.
@@ -275,11 +277,11 @@ init 351 python:
             L["chips_y"]=L["footer_y"];L["body_bottom"]=L["footer_y"]-10
             L["quote_y"]=L["top"]+46;L["rule_y"]=L["top"]+84
             L["tab_y"]=L["top"]+96
-            L["list_x"]=L["left"];L["list_w"]=600
-            L["detail_x"]=L["left"]+624;L["detail_w"]=L["right"]-L["detail_x"]
+            L["list_x"]=L["left"];L["list_w"]=800
+            L["detail_x"]=L["left"]+824;L["detail_w"]=L["right"]-L["detail_x"]
             L["tab_x"]=L["list_x"];L["tab_w"]=0;L["tab_gap"]=6
             L["body_top"]=L["tab_y"]+L["tab_h"]+8
-            L["cols"]=1
+            L["cols"]=3
         else:
             L["quote_x"]=L["left"];L["quote_w"]=268
             L["list_x"]=424;L["list_w"]=340
@@ -289,6 +291,8 @@ init 351 python:
             L["cols"]=1
         L["body_h"]=max(60,L["body_bottom"]-L["body_top"])
         L["card_h"]=r13_pw_card_height()
+        if dock:
+            L["card_h"]=64   # 꼬리표를 뺐으니 이름 두 줄만 들어가면 된다. 64 면 한 쪽에 네 줄.
         return L
 
     def r13_pw_tab_boxes(L):
@@ -323,7 +327,8 @@ screen r13_pw_card(claim,key,mode,w,h,chosen,is_detail,ready):
     $ check_w=56
     $ thumb=h-28
     $ name_w=w-check_w-thumb-30
-    $ label_size=min(22,r13_pw_small())
+    # 64 칸(세 줄 목록)에서는 이름 두 줄이 테두리에 붙지 않게 한 단계 작게.
+    $ label_size=min(20 if h<=64 else 22,r13_pw_small())
     frame:
         xysize (w,h) padding (0,0) background (Solid(r13_nb_accent()) if chosen else (Solid("#c9a86a99") if is_detail else None))
         frame:
@@ -347,9 +352,6 @@ screen r13_pw_card(claim,key,mode,w,h,chosen,is_detail,ready):
                     vbox:
                         xpos (thumb+18) yalign .5 spacing 1
                         text name xsize name_w size label_size color r13_nb_ink() font R13_UI_BOLD_FONT line_spacing -1
-                        # 꼬리표는 이름이 한 줄일 때(또는 휴대폰 88 칸)만 — 두 줄 이름 아래 붙이면 칸 밖으로 나간다.
-                        if r13_drawer_tag(key) and ("\n" not in name or h>=88):
-                            text r13_drawer_tag(key) size max(14,label_size-6) color r13_nb_muted() font R13_UI_BOLD_FONT xsize name_w
 
 # 열어 본 자료 상세: 기존 부품(제목 꼬리표·그림 상자·관찰 사실·쪽지)을 다시 쓴다. 긴 원문은 「출처 펼치기」 안.
 screen r13_pw_detail(claim,key,mode,x,y,w,h,origin_open,can_pair,ready):
