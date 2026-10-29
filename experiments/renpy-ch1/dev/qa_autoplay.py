@@ -146,7 +146,20 @@ BRANCHES={
         gates={'morning_prep12':[('약장 관리를 확인합니다.',lambda v:not v.get('medicine_locked')),('불 땔 자리를 부탁드립니다.',lambda v:not v.get('warm_seat_ready')),
             ('학교 운반을 부탁한다.',lambda v:not v.get('carrier_arrived')),'배식 준비를 살핀다']}),
     'crowd_record':dict(day=13,prefer=['검증한 기록을 공개한다'],gates={'crowd_prepare13':['검증한 기록을 소리 내어 읽는다']}),
+    # 2026-10-29 조합 판(소유자 「조합 판도 돌려봐」): 갈림 여러 곳을 한 판 안에서 같이 바꾼다. 가장 이른 날 저장에서
+    # 시작해 끝까지 이어 간다(각 분기의 save 는 쓰지 않는다). 관문 계획은 겹치지 않게 골랐다.
+    'combo_worst':dict(day=2,combo=['piko_lost','kkomi_lost','owl_lost','nero_lost','soup_lost','crowd_riot']),
+    'combo_prevent':dict(day=2,combo=['piko_lamp','owl_promise','nero_rescue','soup_early']),
+    'combo_mixA':dict(day=6,combo=['kkomi_lost','owl_repair','nero_lost','crowd_record']),
+    'combo_mixB':dict(day=2,combo=['piko_lost','owl_lost','soup_early','crowd_guard']),
 }
+if BRANCH and BRANCHES[BRANCH].get('combo'):
+    _m=dict(gates={},drop=[],prefer=[])
+    for _n in BRANCHES[BRANCH]['combo']:
+        _m['gates'].update(BRANCHES[_n].get('gates',{}))
+        _m['drop']+=list(BRANCHES[_n].get('drop',()))
+        _m['prefer']+=[c for c in BRANCHES[_n].get('prefer',()) if c not in _m['prefer']]
+    BRANCHES[BRANCH].update(_m)
 if BRANCH:
     _b=BRANCHES[BRANCH]
     TRUE_GATES.update(_b.get('gates',{}))
