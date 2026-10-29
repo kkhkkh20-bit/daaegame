@@ -234,10 +234,12 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
     $ meeting_venue=r13_meeting_map_venue(selected) if selected else None
     $ visible_notice=map_notice or ((meeting_venue[2]+(" · 모임 중" if r13_meeting_map_pending(selected) else "")) if meeting_venue else None)
     if visible_notice:
+        # 2026-10-29 눈가림 플레이: 잠긴 장소 안내에 「지금 생각: …」이 붙으면서 두 줄이 되어 44px 칸 밖으로 넘쳐 겹쳤다.
+        # 아래끝(628, 하단 버튼 줄 위)은 그대로 두고 칸이 위로 자란다. 줄 사이를 두어 두 줄이 붙지 않게 한다.
         frame:
-            area (330,584,620,44) padding (12,6)
+            xpos 330 xsize 620 ypos 628 yanchor 1.0 yminimum 44 padding (16,8)
             background Frame(r13_asset_path("file:assets/map-village-b/b_panel_small_trimmed.png"),12,10)
-            text visible_notice font R13_UI_BOLD_FONT size (r13_type("body") if R13_TYPE_V2 else 19) color (r13_type_color("accent") if R13_TYPE_V2 else "#963b2f") align (.5,.5)
+            text visible_notice font R13_UI_BOLD_FONT size (r13_type("body") if R13_TYPE_V2 else 19) color (r13_type_color("accent") if R13_TYPE_V2 else "#963b2f") xsize 588 text_align .5 xalign .5 yalign .5 line_spacing 4
     if extra_places:
         # 뒤 버튼의 우발 선택을 막되 클릭 한 번으로 닫을 수 있는 공개 목적지 목록.
         button:

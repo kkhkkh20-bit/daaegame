@@ -87,7 +87,13 @@ init 346 python:
         # second tap keeps the moment instead of a stock greeting or "don't keep busy people".
         scene=(store.room13.get("v111") or {}).get("scene")
         if scene and r13_v111_value("talked:%s:%s"%(scene,person)):
-            return [("dad","(방금 하던 이야기가 있다. 그 일부터 하자.)",dict(no_lead=True,thought=True,expression="thinking",pose="thinking"))]
+            # 2026-10-29 눈가림 플레이: 2일 식당에서 나비를 다시 누르면 「그 일부터 하자」만 나와, 「그 일」이 무엇인지
+            # (벤치·마른 천) 몰라 물건을 이것저것 눌렀다. 지금의 「생각」(할 행동 한 문장)이 있으면 이어 붙인다.
+            goal=globals().get("r13_v111_goal",lambda:"")() or ""
+            rows=[("dad","(방금 하던 이야기가 있다. 그 일부터 하자.)",dict(no_lead=True,thought=True,expression="thinking",pose="thinking"))]
+            if goal:
+                rows.append(("dad","("+goal+")",dict(no_lead=True,thought=True,expression="thinking",pose="thinking")))
+            return rows
         day=(store.room13 or {}).get("day",1)
         if person not in r13_met_people() and person in R13_GREETINGS and not r13_v111_value("greeted:%s:%s"%(day,person)):
             name=next((n for n,p in MS14_SPEAKERS.items() if p==person),None)

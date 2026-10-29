@@ -22,6 +22,19 @@ init 80 python:
         pages=pack(cap)
         return pack(cap-(96 if r13_touch_ui() else 60)) if len(pages)>1 else pages
 
+    # 2026-10-29 눈가림 플레이: 3일 톡의 첫 질문(이야기를 잇는 질문)에는 「새」가 없고 뒤에 열린 후속 질문에만 있었다.
+    # 「새」는 후속 질문(room13_v111_reactions.rpy)만 붙였기 때문이다. 플레이어에게 「새」는 아직 안 물은 말이므로,
+    # 목록에 그리는 자리에서만 안 읽은 줄 모두에 같은 표시를 붙인다. 제목 자체(r13_v111_questions)는 바꾸지 않는다 —
+    # 다른 코드와 화면 시험이 제목을 그대로 비교한다.
+    R13_NEW_MARK="{color=#e0707a}새{/color}  "
+    def r13_mark_new_questions(rows):
+        out=[]
+        for row in rows:
+            title,action,read=row
+            if not read and not title.startswith(R13_NEW_MARK):title=R13_NEW_MARK+title
+            out.append((title,action,read))
+        return out
+
     def r13_notebook_topic_y():
         return 550 if r13_touch_ui() else 574
 

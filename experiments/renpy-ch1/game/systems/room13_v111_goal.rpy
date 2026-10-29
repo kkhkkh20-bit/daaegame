@@ -53,6 +53,7 @@ init 341 python:
         for scene,(answered,resolved) in globals().get("R13_V111_RESOLVED_WHEN",{}).items():
             if text and text==R13_V111_QUESTIONS.get(scene) and answered():
                 travel=r13_v111_travel_goal(v.get("travel_to")) if gate=="travel" else ""
+                resolved=resolved() if callable(resolved) else resolved
                 return (resolved+" "+travel).strip()
         return text
 
@@ -128,7 +129,10 @@ init 343 python:
     # 2일: 초상화를 맡긴 뒤에도 「그려 줄 사람을 찾을 수 있을까?」, 오후 일을 정한 뒤 저녁 13호에서도 「남은 낮 시간으로…」가 남았다.
     R13_V111_RESOLVED_WHEN={
         "MS14_D02_S03":(lambda:r13_v111_value("portrait_commissioned") is True,"초상화는 피코 씨에게 맡겼다."),
-        "MS14_D02_S04":(lambda:r13_v111_value("D02_afternoon") in ("shelter","nero"),"오늘 오후에 할 일은 정했다."),
+        # 2026-10-29 눈가림 플레이: 오후 일을 마치고 저녁 13호에서 여관 접수대로 가는 대기에서도 「오늘 오후에 할 일은 정했다.」가
+        # 떠 시간과 어긋났다. 저녁(period 2)이면 하루가 기울었다는 말만 한다. 결과(피코가 어디서 자는지)는 말하지 않는다.
+        "MS14_D02_S04":(lambda:r13_v111_value("D02_afternoon") in ("shelter","nero"),
+            lambda:"날이 저물었다." if (store.room13 or {}).get("period",0)>=2 else "오늘 오후에 할 일은 정했다."),
     }
     # 2026-10-29 피드백 E: 받침이 있으면 「으로」, 없거나 ㄹ 받침이면 「로」.
     def r13_ro(word):
@@ -160,4 +164,39 @@ init 344 python:
             if r13_v111_value("kkomi_can_wait6") and not r13_v111_value("acorn_recovered"):
                 return "꼬미는 문에 단 깡통을 두고는 못 간다고 한다. 문 옆 천장에 매단 그 줄부터 살피자."
             return "선생님 자리는 받아 두었다. 창고로 돌아가 꼬미에게 알리자."
+        # 2026-10-29 눈가림 플레이: 2일 식당에서 나비를 돕기로 한 뒤 무엇을 눌러야 할지 몰라 물건을 이것저것 누르다
+        # 지도에서 숲을 골라 오후가 네로 쪽으로 넘어갔다. 「생각」은 처음 문장(잠자리를 마련할 수 있다)에 멈춰 있었다.
+        # 한 일에 따라 다음 행동 한 문장만 바꾼다. 숲으로 가면 오후가 정해진다는 경고는 늘 붙인다. 결과는 말하지 않는다.
+        if v.get("gate")=="afternoon2":
+            tail=" 숲으로 가면 오늘 오후는 네로 씨를 돕는다."
+            if r13_v111_value("piko_bench_clean2"):
+                return "벤치는 깨끗해졌다. 광장의 피코 씨에게 자리가 있다고 알리자."+tail
+            if r13_v111_value("piko_bench_seen2") and r13_v111_value("piko_cloth2"):
+                return "빌린 천으로 벤치의 물감 자국을 닦자."+tail
+            if r13_v111_value("piko_bench_seen2"):
+                return "벤치의 물감 가루를 닦을 마른 천이 있어야 한다. 여관 접수대 할머니께 여쭤 보자."+tail
+            if r13_v111_value("piko_sacks2"):
+                return "포대는 옮겼다. 비워 둔 벤치 자리를 살펴보자."+tail
         return _r13_goal_before_can6()
+
+# 2026-10-29 눈가림 플레이: 3일 기록의 메모 탭에 1일에 이미 풀린 옛 이야기 의문(「둘이 예약했는데 왜 한 명으로 적혔을까?」)과
+# 그 「막혔다면 생각 정리」(선반의 서류…)가 그대로 남았다. 옛 층(room13_learning.rpy)은 옛 깃발 entry_corrected 가 없으면 이 카드를
+# 만드는데, 새 이야기는 그 깃발을 세우지 않는다. 새 이야기에서는 지금 장면의 의문 하나만 두고, 「막혔다면」 칸은 지금의 「생각」과
+# 같은 문장(지금 할 행동)을 보인다. 의문에 이미 답이 났으면(R04·피드백 E 규칙) 의문 대신 「지금 할 일」로 둔다.
+init 345 python:
+    _r13_v111_notes_before=r13_first_mystery_notes
+    def r13_first_mystery_notes():
+        if not globals().get("r13_v111_active",lambda:False)():return _r13_v111_notes_before()
+        v=store.room13.get("v111") or {}
+        scene=v.get("thought_scene") if v.get("gate")=="travel" and v.get("thought_pending") else v.get("scene")
+        question=R13_V111_QUESTIONS.get(scene,"")
+        goal=r13_v111_goal() or ""
+        if not question and not goal:return []
+        answered=False
+        fixed=R13_V111_RESOLVED_QUESTIONS.get(scene)
+        if fixed and r13_v111_value(fixed[0])==fixed[1]:answered=True
+        when=R13_V111_RESOLVED_WHEN.get(scene)
+        if when and when[0]():answered=True
+        title=question if question and not answered else "지금 할 일"
+        return [dict(title=title,fact="",question="",hint=(goal if goal!=title else ""),keys=[])]
+

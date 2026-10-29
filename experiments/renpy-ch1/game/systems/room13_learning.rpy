@@ -171,21 +171,25 @@ screen r13_learning_notes_content(focus=None):
                                     vbox:
                                         spacing 4
                                         text note["title"] style "r13_key_text" size head_size color accent xsize (text_w-48)
-                                        if not is_open:
+                                        if not is_open and note.get("question"):
                                             text ("모르는 것 · "+note["question"]) size small_size color muted xsize (text_w-48)
                             if is_open:
-                                text ("확인한 것 · "+note["fact"]) size body_size color ink xsize text_w
-                                text ("모르는 것 · "+note["question"]) size body_size color "#285779" xsize text_w
+                                # 2026-10-29: 새 이야기의 메모(room13_v111_goal.rpy init 345)는 의문과 지금 할 일만 있다. 빈 칸은 그리지 않는다.
+                                if note.get("fact"):
+                                    text ("확인한 것 · "+note["fact"]) size body_size color ink xsize text_w
+                                if note.get("question"):
+                                    text ("모르는 것 · "+note["question"]) size body_size color "#285779" xsize text_w
                                 if note.get("result"):
                                     text ("그 결과 · "+note["result"]) size body_size color accent xsize text_w
                                 $ owned_keys=[k for k in note["keys"] if k in room13.get("evidence",[])]
                                 if owned_keys:
                                     text ("함께 볼 기록 · "+" / ".join(R13_RECORD_SHORT.get(k,ROOM13["evidence"][k]["name"]) for k in owned_keys)) size small_size color muted xsize text_w
-                                textbutton ("접기" if expanded==i else "막혔다면 생각 정리"):
-                                    style "r13_action_button" xsize 300 ysize (56 if r13_touch_ui() else 48) text_size body_size
-                                    action Function(r13_record_select,_scope,"expanded",None if expanded==i else i)
-                                if expanded==i:
-                                    text note["hint"] size small_size color muted xsize text_w
+                                if note.get("hint"):
+                                    textbutton ("접기" if expanded==i else "막혔다면 생각 정리"):
+                                        style "r13_action_button" xsize 300 ysize (56 if r13_touch_ui() else 48) text_size body_size
+                                        action Function(r13_record_select,_scope,"expanded",None if expanded==i else i)
+                                    if expanded==i:
+                                        text note["hint"] size small_size color muted xsize text_w
             elif tab=="observations":
                 for note in r13_tool_notes():
                     frame:

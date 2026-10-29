@@ -309,11 +309,13 @@ init 351 python:
     def r13_pw_help(mode,chances,count):
         if mode=="compare":
             return "두 편지를 체크하고 「나란히 보기」로 읽은 뒤 「비교 마치기」."
+        # 2026-10-29 눈가림 플레이: 1일 돌목 회의에서 한 장씩만 내다 다 틀렸고, 여러 장을 함께 낼 수 있다는 것은
+        # 기록의 「나란히 놓기」를 보고서야 짐작했다. 몇 장인지는 말하지 않고, 함께 고를 수 있다는 것만 알린다.
         if not count:
-            return "체크로 근거를 고르고, 이름을 누르면 오른쪽에서 읽습니다."
+            return "체크로 근거를 고르세요. 여러 장을 함께 고를 수 있습니다. 이름을 누르면 오른쪽에서 읽습니다."
         if chances:
-            return "고른 근거가 맞으면 「근거 제시」. 잘못 내면 기회를 1회 씁니다."
-        return "고른 근거가 맞으면 「근거 제시」를 누릅니다."
+            return "더 고를 수도 있습니다. 다 골랐으면 「근거 제시」(틀리면 기회 1회)."
+        return "더 고를 수도 있습니다. 다 골랐으면 「근거 제시」를 누릅니다."
 
 # 체크 상자: 선택은 체크 + 테두리로 보인다(색만으로 구별하지 않는다). 새 재질 없이 잉크 선과 크림 면.
 screen r13_pw_checkbox(on,size=30):
@@ -466,7 +468,7 @@ screen r13_pw_chips(claim,chosen,mode,L,replace_pending,ready):
     $ small=r13_pw_small()
     $ ch=L["chip_h"]
     $ short=10 if L["touch"] else 12
-    $ label=(("고른 자료 %d"%len(chosen)) if chosen else ("고른 자료 없음 · 목록의 체크로 고릅니다" if not L["touch"] else "고른 자료 없음"))
+    $ label=(("고른 자료 %d"%len(chosen)) if chosen else ("고른 자료 없음 · 체크로 여러 장 고릅니다" if not L["touch"] else "고른 자료 없음"))
     $ fit=(len(chosen) if replace_pending else r13_pw_chip_fit(r13_pw_chip_widths(chosen,short,small),r13_proof_text_size(label,small)[0],24+r13_proof_text_size("+%d개"%len(chosen),small)[0],L["width"]))
     fixed:
         area (L["left"],L["chips_y"],L["width"],ch)
@@ -593,7 +595,7 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
                 text ((ctx["speaker"]+"의 말") if ctx["speaker"] else "의문") size small color accent font R13_UI_BOLD_FONT
                 text quote_text size r13_nb_body_size() color ink font R13_UI_BOLD_FONT xsize L["quote_w"]
             # 왼쪽 열이 길면(쟁점 제목 세 줄 + 발언) 도움말이 아래 칩 줄과 겹쳤다. 고른 자료가 없을 때의 도움말은
-            # 칩 줄(「고른 자료 없음 · 목록의 체크로 고릅니다」)이 이미 말하므로 여기서는 뺀다.
+            # 칩 줄(「고른 자료 없음 · 체크로 여러 장 고릅니다」)이 이미 말하므로 여기서는 뺀다.
             if r13_pw_help(mode,chances,len(chosen)) and (mode=="compare" or chosen):
                 text r13_pw_help(mode,chances,len(chosen)) size small color muted font R13_UI_BOLD_FONT xsize L["quote_w"]
             if pair_waiting:

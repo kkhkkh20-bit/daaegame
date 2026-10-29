@@ -73,6 +73,11 @@ screen r13_hub(entry=False):
     modal True
     default ready=False
     timer .15 action SetScreenVariable("ready",True)
+    # 2026-10-29 눈가림 플레이: 대사를 넘기던 누름이 현장 인물에 들어가지 않게, 현장(인물·물건)만 조금 더 늦게 받는다.
+    # 위 단추(지도·기록·생각)는 그대로 .15 — 잠깐이라도 흐려 보이지 않게 한다.
+    default world_ready=False
+    default world_delay=r13_field_ready_delay()
+    timer world_delay action SetScreenVariable("world_ready",True)
     default world_moving=False
     $ input_ready=ready and not world_moving
     default world_adjustment=r13_world_adjustment(room13["location"])
@@ -93,11 +98,11 @@ screen r13_hub(entry=False):
                 fixed:
                     xsize r13_world_width() ysize r13_world_height()
                     add r13_world_background()
-                    use r13_world_contents(entry,input_ready)
+                    use r13_world_contents(entry,input_ready and world_ready)
         if not world_moving:
             use r13_world_camera_controls(world_adjustment)
     else:
-        use r13_world_contents(entry,input_ready)
+        use r13_world_contents(entry,input_ready and world_ready)
     if entry:
         use r13_waiting_window(input_ready)
     else:
@@ -244,9 +249,11 @@ screen r13_topics(person):
     modal True
     zorder 30
     default ready=False
-    timer .15 action SetScreenVariable("ready",True)
+    # 2026-10-29 눈가림 플레이: 답이 끝나자마자 다시 뜬 질문 목록의 아래 단추(돌아가기)를 대사 넘기던 손이 눌렀다.
+    default ready_delay=r13_field_ready_delay()
+    timer ready_delay action SetScreenVariable("ready",True)
     $ actor_pose=r13_conversation_pose(person)
-    $ questions=r13_v111_questions(person) if r13_v111_active() else [(r13_calendar_topic_title(key,spec),Return(key),r13_calendar_topic_seen(key,spec)) for key,spec in r13_topics_in_order(person)]
+    $ questions=r13_mark_new_questions(r13_v111_questions(person)) if r13_v111_active() else [(r13_calendar_topic_title(key,spec),Return(key),r13_calendar_topic_seen(key,spec)) for key,spec in r13_topics_in_order(person)]
     use r13_question_list(person,actor_pose,R13_NAMES[person]+"에게 묻기",questions,ready,return_action=Return("back"))
     use r13_toolbar(investigate_action=Return("back"),present_action=Return("present"),person=person,mode="talk",ready=ready)
 
