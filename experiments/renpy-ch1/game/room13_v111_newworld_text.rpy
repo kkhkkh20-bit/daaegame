@@ -108,6 +108,11 @@ init 319 python:
         "lamp_partial_sale":lambda:r13_v111_value("meeting:lamp")=="partial" and not r13_v111_owned("E33"),
         "lamp_partial_latch":lambda:r13_v111_value("meeting:lamp")=="partial" and r13_v111_owned("E33") and r13_v111_value("outer_latch_claim_refuted") is not True,
         "lamp_partial_stone":lambda:r13_v111_value("meeting:lamp")=="partial" and r13_v111_value("outer_latch_claim_refuted") is True,
+        # 2026-10-29 외부 검토 0.20.86 B: 첫 쟁점(톡 다음에 등이 열린 때)에서 맞는 자료만 일부 낸 오답이면, 너울의 되묻기가
+        # 맞게 짚은 쪽은 인정하고 빈 칸만 묻는다. 틀린 자료가 섞였거나 회의가 이미 끝났으면(lose) 기본 되묻기를 쓴다 —
+        # 끝난 판에서 「알겠소」라고 해 놓고 「톡이오, 그것으로 됐소」로 가면 말이 뒤집힌다.
+        "lamp_repair_half_owl":lambda:r13_v111_value("meeting:lamp") is None and r13_v111_value("repair_opening_separated") is not True and "V111:E13" in set(getattr(store,"v111_last_presented",None) or []) and "V111:E11" not in set(getattr(store,"v111_last_presented",None) or []) and set(getattr(store,"v111_last_presented",None) or [])<={"V111:E10","V111:E12","V111:E13"},
+        "lamp_repair_half_check":lambda:r13_v111_value("meeting:lamp") is None and r13_v111_value("repair_opening_separated") is not True and "V111:E11" in set(getattr(store,"v111_last_presented",None) or []) and set(getattr(store,"v111_last_presented",None) or [])<={"V111:E10","V111:E11","V111:E12","V111:E13"},
         # Event 04: the day-5 gate-post meeting.
         "gate_post_lose":lambda:r13_v111_value("meeting:gate_post")=="lose",
         "gate_post_half":lambda:(r13_v111_value("tries:gate_post") or 0)>0 and r13_v111_value("meeting:gate_post") is None,

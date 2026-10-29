@@ -236,11 +236,7 @@ result=dict(page=sc.scope['page'],pages=len(s.r13_side_question_pages(sc.scope['
             await q.shot('room-arrival-fixture')
             await q.advance_until('r13_hub')
             assert await q.py("import renpy;result=renpy.store.r13_v111_value('ui_room_arrival_seen')")
-            # The existing bed click advances the authored room inspection.
-            rows=[r for r in await q.py(FOCUS) if "('object', 'bed')" in r['values']]
-            assert rows,await q.py(FOCUS)
-            x,y,w,h=rows[0]['rect'];await q.input(x+w/2,y+h/2)
-            await q.advance_until('r13_hub')
+            # 2026-10-29 외부 검토 C: 도착하면 첫 입실 장면이 바로 이어져 책상 메모 차례(note_pick)에서 멈춘다. 침대를 누를 필요가 없다.
             assert (await q.state())['room']['v111']['gate']=='note_pick'
             # Room13 opens on the bed side; pan left through its real camera control.
             await q.input(48,276);await asyncio.sleep(1)

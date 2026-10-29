@@ -20,17 +20,17 @@ testcase v111_wrong_thoughts_knife:
     run Function(qa_nw_day3_meeting_ready)
     run Jump("r13_v111_trial_knife")
     pause 1.5
-    click "칼 모양만으로 지목한다"
+    click "칼끝 모양을 안벽의 긁힌 자국에 견준다"
     pause 1.0
-    click pos (640,300) until "칼 모양만으로 지목한다" timeout 90
+    click pos (640,300) until "칼끝 모양을 안벽의 긁힌 자국에 견준다" timeout 90
     assert eval (r13_v111_value("tries:lamp")==1 and qa_wt_upto("menu:trial_knife",1))
-    click "칼 모양만으로 지목한다"
+    click "칼끝 모양을 안벽의 긁힌 자국에 견준다"
     pause 1.0
-    click pos (640,300) until "칼 모양만으로 지목한다" timeout 90
+    click pos (640,300) until "칼끝 모양을 안벽의 긁힌 자국에 견준다" timeout 90
     assert eval (r13_v111_value("tries:lamp")==2 and qa_wt_upto("menu:trial_knife",2))
-    click "칼 모양만으로 지목한다"
+    click "칼끝 모양을 안벽의 긁힌 자국에 견준다"
     pause 1.0
-    click pos (640,300) until "칼 모양만으로 지목한다" timeout 90
+    click pos (640,300) until "칼끝 모양을 안벽의 긁힌 자국에 견준다" timeout 90
     assert eval (r13_v111_value("tries:lamp")==3 and qa_wt_upto("menu:trial_knife",3) and r13_v111_value("meeting:lamp") is None)
 
 testcase v111_wrong_thoughts_room13:

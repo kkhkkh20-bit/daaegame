@@ -93,7 +93,7 @@ screen r13_cartography_layer(region,selected,ready,map_hover):
             area (ox+lx,oy+ly,lw,lh) padding (0,0)
             background None hover_background None insensitive_background None
             focus_mask r13_cart_layer(region,key)
-            action SetScreenVariable("map_notice",R13_MAP_LABELS[key]+" · 지금은 이곳으로 갈 수 없습니다.")
+            action SetScreenVariable("map_notice",r13_map_locked_notice(R13_MAP_LABELS[key]))
             sensitive ready
             alt (R13_MAP_LABELS[key]+" · 지금은 이동할 수 없음")
         if region=="village":
@@ -102,7 +102,7 @@ screen r13_cartography_layer(region,selected,ready,map_hover):
                 id ("map_locked_name_"+key)
                 area (nx,ny,nw,nh) padding (0,0)
                 background None hover_background None insensitive_background None
-                action SetScreenVariable("map_notice",R13_MAP_LABELS[key]+" · 지금은 이곳으로 갈 수 없습니다.")
+                action SetScreenVariable("map_notice",r13_map_locked_notice(R13_MAP_LABELS[key]))
                 sensitive ready
                 alt (R13_MAP_LABELS[key]+" · 지금은 이동할 수 없음")
     for key,point in r13_map_nodes(region):

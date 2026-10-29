@@ -92,7 +92,7 @@ testcase b_map_inn_forest:
     screenshot "bmap-pc-mountain-hover-forest.png"
     click id "map_locked_facility"
     pause 0.4
-    assert eval (r13_qa_bmap_scope()["map_notice"]=="보호시설 · 지금은 이곳으로 갈 수 없습니다." and r13_qa_bmap_scope()["selected"]!="facility")
+    assert eval (r13_qa_bmap_scope()["map_notice"]==r13_map_locked_notice("보호시설") and r13_qa_bmap_scope()["selected"]!="facility")
     screenshot "bmap-pc-mountain-locked-notice.png"
     # 탭 전환·닫기 동작은 그대로.
     click "마을"

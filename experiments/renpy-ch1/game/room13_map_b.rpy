@@ -202,7 +202,7 @@ screen r13_map_b(region, selected, ready, map_hover, map_notice=None):
                 area t["area"] padding (0, 0)
                 background None hover_background None insensitive_background None
                 focus_mask r13_bmap_mask(region, key)
-                action SetScreenVariable("map_notice", R13_MAP_LABELS[key]+" · 지금은 이곳으로 갈 수 없습니다.")
+                action SetScreenVariable("map_notice", r13_map_locked_notice(R13_MAP_LABELS[key]))
                 sensitive ready
                 alt (R13_MAP_LABELS[key]+" · 지금은 이동할 수 없음")
         else:

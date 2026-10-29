@@ -71,7 +71,7 @@ init 335 python:
         return None
 
     def r13_followup_read(fid):
-        return bool(r13_v111_value("followup_read:"+fid))
+        return bool(r13_v111_value("followup_read:"+fid) or r13_v111_value("followup_heard:"+fid))  # 2026-10-29 피드백 G: 자동 대화에서 들은 답
 
     def r13_v111_followups(person):
         return [spec for spec in R13_REACTIONS.get("followups",[])
@@ -91,3 +91,23 @@ init 335 python:
         if spec is None:return []
         r13_v111_set("followup_read:"+fid,True)
         return r13_reaction_packets(spec["lines"])
+
+# 2026-10-29 피드백 G: 후속 질문의 「새」는 그 질문을 고른 적이 있는지만 봤다. 그런데 자동 대화가 같은 것을 이미 묻고 답한
+# 경우가 있다(4일 밤이: 「아이였니, 어른이었니?」「몰라요. 구부리고 있었어요.」 뒤에 「본 사람의 키도 기억하니?」가 「새」).
+# 플레이어는 들은 답을 새 질문으로 다시 듣는다. reactions.json 의 followups 에 "heard_in"(같은 답을 담은 원문 줄 ID)을 적으면,
+# 그 줄이 재생 목록에 오르는 순간 「들었다」로 표시해 「새」와 대화 표시점을 뗀다. 고른 기록(followup_read)과는 따로 둔다 —
+# followup_read:NW_RX_F007 은 3일 톡 대사 분기(tok_round_asked)가 쓰므로 섞으면 그 줄이 바뀐다.
+init 336 python:
+    R13_FOLLOWUP_HEARD_BY={}
+    for _fu in R13_REACTIONS.get("followups",[]):
+        for _rid in _fu.get("heard_in",()):
+            if _rid not in R13_V111["records"]:raise Exception("reactions.json heard_in: unknown line "+_rid)
+            R13_FOLLOWUP_HEARD_BY.setdefault(_rid,[]).append(_fu["id"])
+    _r13_followup_heard_lines=r13_v111_lines
+    def r13_v111_lines(rids):
+        out=_r13_followup_heard_lines(rids)
+        for rid in rids:
+            if r13_nw_dropped(rid):continue
+            for fid in R13_FOLLOWUP_HEARD_BY.get(rid,()):
+                if not r13_v111_value("followup_heard:"+fid):r13_v111_set("followup_heard:"+fid,True)
+        return out

@@ -180,7 +180,7 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
                         $ ls=1.3 if r13_touch_ui() else 1.0
                         $ lpx=r13_village_b_label_px()
                         $ lw=r13_village_b_label_width(label)
-                        $ choose = [SetScreenVariable("selected",key),SetScreenVariable("map_notice",None)] if state!="locked" else SetScreenVariable("map_notice",label+" · 지금은 이곳으로 갈 수 없습니다.")
+                        $ choose = [SetScreenVariable("selected",key),SetScreenVariable("map_notice",None)] if state!="locked" else SetScreenVariable("map_notice",r13_map_locked_notice(label))
                         button:
                             id ("map_building_"+key)
                             area (int(hx*zoom),int(hy*zoom),int(hw*zoom),int(hh*zoom)) padding (0,0)
@@ -259,7 +259,7 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
                                 xsize 472 ysize (88 if r13_touch_ui() else 60) padding (12,6)
                                 background Solid("#ead8b866") hover_background Solid("#e0c19b99")
                                 text_font R13_UI_BOLD_FONT text_size (r13_type("body") if R13_TYPE_V2 else 24) text_color ((r13_type_color("ink") if R13_TYPE_V2 else "#493324") if state=="open" else (r13_type_color("disabled") if R13_TYPE_V2 else "#88796b"))
-                                action ([SetScreenVariable("selected",key),SetScreenVariable("map_notice",None),SetScreenVariable("extra_places",False)] if state!="locked" else SetScreenVariable("map_notice",r13_map_label(key)+" · 지금은 이곳으로 갈 수 없습니다."))
+                                action ([SetScreenVariable("selected",key),SetScreenVariable("map_notice",None),SetScreenVariable("extra_places",False)] if state!="locked" else SetScreenVariable("map_notice",r13_map_locked_notice(r13_map_label(key))))
 
 # 하단 한 줄(y 643, 높이 PC 44 / 휴대폰 88). 폭은 Pretendard Bold 실측(진행폭)으로 가장 큰 글자(휴대폰 크게 30px)
 # 가 좌우 8px 여유를 두고 들어가게 잡았다 — 선택판 「장소를 선택하세요」 214 → 232, 「마을」 52 → 112,

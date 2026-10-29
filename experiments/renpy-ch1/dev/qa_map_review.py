@@ -110,7 +110,7 @@ async def main():
                 await asyncio.sleep(.5)
                 await q.focus_place("workshop")
                 await q.click_id("map_locked_name_workshop")
-                assert await q.py('import renpy;result=renpy.display.screen.get_screen("r13_map").scope["map_notice"]')=="수리점 · 지금은 이곳으로 갈 수 없습니다."
+                assert await q.py('import renpy;result=renpy.display.screen.get_screen("r13_map").scope["map_notice"]')==await q.py('result=r13_map_locked_notice("수리점")')
                 assert await q.py('import renpy;result=renpy.display.screen.get_screen("r13_map").scope["selected"]')==selected
                 assert (await q.state())["room"]==before
                 await q.shot(name+"-locked")

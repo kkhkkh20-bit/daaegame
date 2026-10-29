@@ -173,7 +173,7 @@ proof('trial_repair',sid(3,5),'수리와 반출을 가릴 자료를 낸다',['E1
 block('trial_repair_ok',3,5,3,'trial_sale')
 proof('trial_sale',sid(3,5),'돌과 매입 기록을 낸다',['E15','E16'],'trial_sale_ok','trial_wrong_sale','trial_hint_sale')
 block('trial_sale_ok',3,5,5,'trial_knife')
-choice('trial_knife',sid(3,5),'파편과 칼을 살핀다', [('안쪽 파편과 칼끝을 대조한다','knife_fit',[['state','silluk_knife_comparison_consent',True],['evidence','E32',True]]),('칼 모양만으로 지목한다','knife_wrong'),('자료를 다시 본다','trial_knife_records')])
+choice('trial_knife',sid(3,5),'파편과 칼을 살핀다', [('깨진 칼끝을 안쪽 조각에 맞대 본다','knife_fit',[['state','silluk_knife_comparison_consent',True],['evidence','E32',True]]),('칼끝 모양을 안벽의 긁힌 자국에 견준다','knife_wrong'),('자료를 다시 본다','trial_knife_records')])
 nodes['trial_knife_records']=dict(kind='notebook',next='trial_knife',scene=sid(3,5))
 block('knife_fit',3,5,7,'trial_latch')
 block('knife_wrong',3,5,21,'trial_knife')

@@ -26,6 +26,12 @@ class Reactions(unittest.TestCase):
   for spec in DATA['present']+DATA['followups']:
    for row in spec['lines']+[dict(text=spec.get('title',''))]:self.assertNotIn('도토리',row['text'],spec)
    self.assertFalse(spec.get('after')=='E06' and '그림' in spec.get('title',''),spec)
+ def test_heard_in_lines_are_played(self):
+  # 2026-10-29 피드백 G: 자동 대화가 같은 답을 이미 들려주는 후속 질문은 그 원문 줄을 heard_in 에 적는다. 줄이 실제로 재생 목록에 있어야 한다.
+  src="".join(p.read_text() for p in (ROOT/'game').glob('room13_v111_days*.rpy'))
+  for s in DATA['followups']:
+   for rid in s.get('heard_in',()):
+    self.assertIn(rid,REC['records'],s['id']);self.assertIn("'%s'"%rid,src,s['id'])
  def test_engine_hooks_in_place(self):
   src=(ROOT/'game/room13_v111.rpy').read_text()
   self.assertIn('r13_v111_present_reaction(v111_person,v111_shown)',src)

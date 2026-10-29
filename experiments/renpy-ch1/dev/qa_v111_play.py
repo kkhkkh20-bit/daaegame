@@ -172,7 +172,7 @@ async def main():
     state=(st['gate'],tuple(sc),st['choice'],st['claim'])
     if os.environ.get('V111_STOP_GATE')==st['gate'] and 'r13_hub' in sc:
      await q.shot('natural-stop-'+st['gate']);break
-    if os.environ.get('V111_SMOKE') and st['gate']=='room_observe' and 'r13_hub' in sc:
+    if os.environ.get('V111_SMOKE') and st['gate']=='note_pick' and 'r13_hub' in sc:  # 2026-10-29 13호 도착 뒤 첫 대기가 note_pick 으로 바뀜
      await q.shot('smoke-room-observe');break
     if state!=last:events.append(dict(step=step,**st));last=state;print('STATE',step,st['gate'],sc,st['choice'],st['location'],flush=True)
     # 같은 화면·값에서 입력이 아무것도 바꾸지 못하면 조용히 돌지 말고 화면을 남기고 멈춘다.

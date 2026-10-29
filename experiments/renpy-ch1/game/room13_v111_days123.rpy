@@ -338,9 +338,9 @@ label r13_v111_inn:
 label r13_v111_room_observe:
     call r13_v111_travel('room13','room_observe')
     if not r13_v111_value('ui_room_arrival_seen'):
-        call r13_lines([r13_nw_added_line(dict(kind="thought",text="아내가 머물던 방이다. 다람이와 함께, 남겨 둔 흔적을 천천히 살펴보자."))],'nw:room_arrival_context')
+        call r13_lines([r13_nw_added_line(dict(kind="thought",text="아내가 머물던 방이다. 문 너머에 아내가 있을까."))],'nw:room_arrival_context')
         $ r13_v111_set('ui_room_arrival_seen',True)
-    call r13_v111_wait('room_observe')
+    jump r13_v111_room_empty   # 2026-10-29 외부 검토 C: 도착했는데 침대를 눌러야 문 여는 장면이 나오고 책상은 「짐부터」로 막혔다. 도착하면 첫 입실 장면이 바로 이어진다. 아래 네 줄은 줄 번호 유지용(대사 검토표가 이 파일 줄 번호를 든다).
     $ v111_answer=_return
     if v111_answer==0:
         jump r13_v111_room_empty
@@ -1142,7 +1142,7 @@ label r13_v111_trial_knife:
     # 2026-10-24 지시서 01 1번 (MEETING_RULES_V2.md 1장 2번 「회의는 언제나 깰 수 있다」): 정답 보기는 칼 대조
     # 동의·파편 소지와 상관없이 늘 보인다. 예전에는 동의가 없으면 오답과 「자료를 다시 본다」만 남아 이길 수 없었다.
     # 실룩은 이 회의 자리에서 아빠가 다시 청하자 칼을 내보인다(MS14_D03_S05_L0012~L0014).
-    $ v111_menu=[('안쪽 파편과 칼끝을 대조한다',0)] + [('칼 모양만으로 지목한다',1) for _ in [0] if True] + [('자료를 다시 본다',2) for _ in [0] if True]
+    $ v111_menu=[('칼끝 모양을 안벽의 긁힌 자국에 견준다',1)] + [('깨진 칼끝을 안쪽 조각에 맞대 본다',0) for _ in [0] if True] + [('자료를 다시 본다',2) for _ in [0] if True]
     $ v111_answer=renpy.display_menu(v111_menu)
     if v111_answer==0:
         jump r13_v111_knife_fit

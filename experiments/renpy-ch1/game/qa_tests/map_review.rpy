@@ -15,7 +15,7 @@ testcase map_review_locked:
     pause .3
     click id "map_locked_name_workshop"
     pause .3
-    assert eval (renpy.get_screen("r13_map").scope["map_notice"]=="수리점 · 지금은 이곳으로 갈 수 없습니다.")
+    assert eval (renpy.get_screen("r13_map").scope["map_notice"]==r13_map_locked_notice("수리점"))
     assert eval (renpy.get_screen("r13_map").scope["selected"]==r13_qa_map_selected and room13==r13_qa_map_before)
     screenshot "map-review-locked.png"
     run Hide("r13_map")

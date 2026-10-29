@@ -19,7 +19,7 @@ testcase v111_nw_d03_lamp_lost:
     pause 1.0
     click pos (900,600) until "확인된 3번 돌을 돌려 달라고 한다" timeout 90
     assert eval (r13_v111_value("meeting:lamp")=="lose" and r13_v111_value("listed:resident_tok") is True)
-    assert eval (qa_nw_seen("그것으로 됐소") and qa_nw_seen("보호시설 명단에도") and qa_nw_seen("톡에게서 받아 내시오") and not qa_nw_seen("어느 때 생긴 흔적인지부터"))
+    assert eval (qa_nw_seen("그것으로 됐소") and qa_nw_seen("보호시설 명단에도") and qa_nw_seen("톡에게서 받아 내시오") and not qa_nw_seen("제가 이은 순서를"))
     click "확인된 3번 돌을 돌려 달라고 한다"
     click pos (900,600) until screen "r13_hub" timeout 90
     assert eval (r13_v111_value("silluk_status")=="released" and r13_v111_value("stone_choice_completed") is True)

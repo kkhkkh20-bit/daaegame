@@ -39,7 +39,7 @@ testcase v111_rules_knife_no_consent:
     run Function(r13_v111_set,"silluk_knife_comparison_consent",False)
     run Jump("r13_v111_trial_knife")
     pause 1.5
-    click "안쪽 파편과 칼끝을 대조한다"
+    click "깨진 칼끝을 안쪽 조각에 맞대 본다"
     click pos (900,600) until screen "r13_crisis_proof" timeout 90
     assert eval (v111_claim=="v111:바깥 걸쇠 주장과 발견 위치를 대조한다" and not r13_v111_value("tries:lamp") and r13_v111_value("meeting:lamp") is None)
     assert eval qa_nw_seen("이 칼끝입니다")

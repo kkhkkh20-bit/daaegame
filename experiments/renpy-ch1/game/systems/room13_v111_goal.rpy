@@ -41,10 +41,16 @@ init 341 python:
     }
     _r13_step_goal=r13_v111_goal
     def r13_v111_goal():
-        gate=(store.room13.get("v111") or {}).get("gate")
+        v=store.room13.get("v111") or {}
+        gate=v.get("gate")
         text=r13_day2_guidance() or R13_V111_STEP_GOALS.get(gate) or _r13_step_goal()
         for scene,(key,expected,resolved) in R13_V111_RESOLVED_QUESTIONS.items():
             if text and text==R13_V111_QUESTIONS.get(scene) and r13_v111_value(key)==expected:return resolved
+        # 2026-10-29 피드백 E: R04 와 같은 규칙을 값 하나로 못 가리는 장면까지 넓힌다. 이동 중이면 갈 곳을 붙인다.
+        for scene,(answered,resolved) in globals().get("R13_V111_RESOLVED_WHEN",{}).items():
+            if text and text==R13_V111_QUESTIONS.get(scene) and answered():
+                travel=r13_v111_travel_goal(v.get("travel_to")) if gate=="travel" else ""
+                return (resolved+" "+travel).strip()
         return text
 
 # 0.20.10 (4~14일 리뷰): 힌트 라벨이 없는 대조의 되묻기. 비교할 범위만 말하고 정답 자료는 말하지 않는다.
@@ -84,4 +90,35 @@ init 342 python:
         "altar_guide14":"제단까지 갈 길을 바둑이에게 확인해 달라고 하자.",
         "heat_check11":"벽 그림과 떨어진 돌판에 무엇이 적혀 있는지 보자.",
         "root_note11":"눌러 둔 돌 아래 쪽지를 찾자.",
+        # 2026-10-29 피드백 E: 초상화 부탁을 마친 뒤의 등 조사와 네로 일손. 장면 의문(그려 줄 사람·남은 낮 시간)은 이미 답이 났다.
+        "lamp_observe":"피코 씨가 자는 등 아래를 직접 살펴보자.",
+        "nero_work":"네로 씨가 맡긴 침구 일을 거들자.",
     })
+
+init 343 python:
+    # 2026-10-29 피드백 E: 이동 대기 동안 앞 장면 의문을 붙들어 두는 규칙(2026-10-24 행동 검수 4, 소유자 승인)은 그대로 둔다 —
+    # 4일 처마→초소처럼 의문이 아직 열려 있는 경우가 있다. 다만 그 의문에 이미 답이 난 장면은 R04 처럼 바꾼다.
+    # 2일: 초상화를 맡긴 뒤에도 「그려 줄 사람을 찾을 수 있을까?」, 오후 일을 정한 뒤 저녁 13호에서도 「남은 낮 시간으로…」가 남았다.
+    R13_V111_RESOLVED_WHEN={
+        "MS14_D02_S03":(lambda:r13_v111_value("portrait_commissioned") is True,"초상화는 피코 씨에게 맡겼다."),
+        "MS14_D02_S04":(lambda:r13_v111_value("D02_afternoon") in ("shelter","nero"),"오늘 오후에 할 일은 정했다."),
+    }
+    # 2026-10-29 피드백 E: 받침이 있으면 「으로」, 없거나 ㄹ 받침이면 「로」.
+    def r13_ro(word):
+        ch=word[-1] if word else ""
+        if u"\uac00"<=ch<=u"\ud7a3":
+            return word+("로" if (ord(ch)-0xAC00)%28 in (0,8) else "으로")
+        return word+"(으)로"
+    def r13_v111_travel_goal(target):
+        name=R13_PLACES.get(target,(None,))[0] if target else None
+        return (r13_ro(name)+" 가자.") if name else ""
+    # 2026-10-29 피드백 E: 흐린 장소를 누르면 「지금은 갈 수 없습니다」만 나와 왜 막혔는지 몰랐다. 이동 중이면 가는 곳을,
+    # 아니면 지금 화면의 「생각」을 붙인다. 정답·결과는 말하지 않는다(생각 줄과 같은 문장).
+    def r13_map_locked_notice(label):
+        base=label+" · 지금은 이곳으로 갈 수 없습니다."
+        if not globals().get("r13_v111_active",lambda:False)():return base
+        v=store.room13.get("v111") or {}
+        if v.get("gate")=="travel" and v.get("travel_to") in R13_PLACES:
+            return label+" · 지금은 "+r13_ro(R13_PLACES[v["travel_to"]][0])+" 가는 길입니다."
+        goal=r13_v111_goal()
+        return (label+" · 아직 갈 일이 없습니다. 지금 생각: "+goal) if goal else base
