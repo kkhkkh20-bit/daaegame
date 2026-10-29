@@ -52,7 +52,7 @@ testcase v111_nw_d11_hyp_partial:
     run Jump("r13_v111_hyp5_won11")
     click pos (900,600) until screen "r13_hub" timeout 120
     assert eval (r13_v111_value("meeting:hypothesis")=="partial")
-    assert eval (qa_nw_seen("창고 문은 잠긴 채다") and qa_nw_seen("일부 집의 돌 회수") and qa_nw_seen("아르카등을 끈다") and not qa_nw_seen("내 측정도 같아"))
+    assert eval (qa_nw_seen("창고 문은 잠긴 채다") and qa_nw_seen("일부 집의 돌 회수") and qa_nw_seen("아르카등을 끈다") and not qa_nw_seen("내가 재 본 값도 같아"))
 
 testcase v111_nw_d11_hyp_won:
     # Every question answered: most of the village puts out its fires; Mother's note.
@@ -68,7 +68,7 @@ testcase v111_nw_d11_hyp_won:
     run Jump("r13_v111_hyp5_won11")
     click pos (900,600) until screen "r13_hub" timeout 120
     assert eval (r13_v111_value("meeting:hypothesis")=="win" and r13_v111_value("lower_lights_cut") is True)
-    assert eval (qa_nw_seen("집집의 돌 회수") and qa_nw_seen("내 측정도 같아") and qa_nw_seen("사람들이 하나둘 일어선다"))
+    assert eval (qa_nw_seen("집집의 돌 회수") and qa_nw_seen("내가 재 본 값도 같아") and qa_nw_seen("사람들이 하나둘 일어선다"))
 
 testcase v111_nw_d11_hyp_stone_proof:
     # Gate 5 played through the real proof screen with the unmarked stone.
