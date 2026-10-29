@@ -324,7 +324,7 @@ async def main():
      elif gate=='afternoon2':
       wanted=shelter_step2(route,st['values'])
       option=next(o for o in options if o['index']==wanted)
-     else:option=options[0]
+     else:option=next((o for o in options if not o.get('present_only')),options[0])   # 2026-10-29: 자료 제시 전용은 뒤로
      if option.get('location') and option['location']!=st['location']:
       map_target=option.get('move') or option['location'];await q.press('지도');continue
      if option.get('move'):await q.press('지도');continue
