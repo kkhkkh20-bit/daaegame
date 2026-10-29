@@ -140,3 +140,14 @@ init 40 python:
             # 「창고 아이 1」「누비의 큰아이」 같은 여러 낱말 이름표는 첫 낱말이 사물(창고)이라 넣지 않는다.
             if who in CAST and label and " " not in str(label):rows.add((str(label),who))
         return [(n,w) for n,w in rows if len(n)>=2 and n not in skip]
+
+    # 2026-10-29 조합 판 주행(2일 숲): 아빠가 빈 숲에 「여보!」 하고 부르는 줄에 초롱이 서서, 초롱을 여보라 부르는
+    # 것처럼 보였다. 그 자리에 없는 엄마를 부르는 줄에는 듣는 사람을 세우지 않는다.
+    R13_ABSENT_CALLS=(("여보","mom"),)
+    def r13_dad_calls_absent(text):
+        import re
+        t=renpy.filter_text_tags(str(text or ""),allow=[])
+        present=list(((getattr(store,"room13",None) or {}).get("v111") or {}).get("people") or [])
+        for word,who in R13_ABSENT_CALLS:
+            if re.search(word+"(?:[!?,.…~]|$)",t) and who not in present:return True
+        return False

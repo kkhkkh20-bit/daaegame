@@ -51,7 +51,7 @@ label r13_lines(entries,identity,binding_route=None):
         # from that line, not only from their first spoken line.
         # 2026-10-27 소유자: 아빠 생각(괄호) 줄인데 뒤에 말할 다람이 미리 서 있었다. 생각 줄에서는 아무도 세우지 않는다.
         if r13_packet[0] in (None,r13_viewpoint()) and not r13_thought_active and "r13_visitor" not in renpy.get_showing_tags() and (r13_packet[0]==r13_viewpoint() or not (len(r13_packet)>2 and isinstance(r13_packet[2],dict) and r13_packet[2].get("no_lead"))):
-            $ r13_lead=(r13_dad_listener(entries,r13_index) if r13_packet[0]==r13_viewpoint() and place!="마차 안" else None) or next((p[0] for p in entries[r13_index:] if p[0] not in (None,r13_viewpoint()) and p[0] in CAST and not (len(p)>2 and isinstance(p[2],dict) and p[2].get("thought"))),None)   # 2026-10-28 소유자 「대화 상대가 항상 표기되면 돼」: 아빠의 말 줄은 듣는 사람(systems/room13_say_actor.rpy)
+            $ r13_lead=None if (r13_packet[0]==r13_viewpoint() and r13_dad_calls_absent(r13_packet[1])) else (r13_dad_listener(entries,r13_index) if r13_packet[0]==r13_viewpoint() and place!="마차 안" else None) or next((p[0] for p in entries[r13_index:] if p[0] not in (None,r13_viewpoint()) and p[0] in CAST and not (len(p)>2 and isinstance(p[2],dict) and p[2].get("thought"))),None)   # 2026-10-28 소유자 「대화 상대가 항상 표기되면 돼」: 아빠의 말 줄은 듣는 사람(systems/room13_say_actor.rpy)
             if r13_lead:
                 $ r13_speaker(r13_lead,"neutral")
         # 0.18.89: a narration line can bring someone on screen who has no line of their
