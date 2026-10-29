@@ -449,7 +449,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 317 | `room13_v111_later_bindings.rpy:239` | _r13_step_goal |
 | 2 | 341 | `systems/room13_v111_goal.rpy:46` | _r13_goal_before_can6 |
-| 3 | 344 | `systems/room13_v111_goal.rpy:144` |  |
+| 3 | 344 | `systems/room13_v111_goal.rpy:157` |  |
 
 ## `r13_v111_present_reaction` (3층)
 
