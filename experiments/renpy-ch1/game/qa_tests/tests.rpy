@@ -864,6 +864,8 @@ testcase town_b_ambush_musoe:
     click "골목 입구에서 기다린다"
     click pos (640,600) until screen "choice" timeout 40
     screenshot "tb2_caught.png"
+    # 2026-10-28: 선택이 넷이라 목록이 두 쪽으로 나뉜다(선택창 쪽 넘김). 넷째는 다음 쪽에 있다.
+    click "다음 →"
     click "무쇠 할아버지에게 직접 가져다준다"
     click pos (640,600) until screen "r13_hub" timeout 40
     $ r13_qa_town_dump()
@@ -2563,7 +2565,8 @@ testcase conversation_skip:
     screenshot "skip_bar.png"
     # 0.19.97 (owner): skip acts at once, no confirmation.
     click "건너뛰기"
-    assert not screen "r13_concept_skip_confirm"
+    # 2026-10-28: 확인창 화면 자체를 없앴다(0.19.97). 없는 화면 이름을 test 의 screen 조건에 쓰면 ValueError 라 eval 로 본다.
+    assert eval (not renpy.get_screen("r13_concept_skip_confirm"))
     click pos (640,300) until eval (room13["v111"]["gate"]=="gate_choice" and renpy.get_screen("r13_hub") is not None) timeout 60
     assert eval (r13_v111_owned("E02"))
     assert eval (room13["v111"]["gate"]=="gate_choice")

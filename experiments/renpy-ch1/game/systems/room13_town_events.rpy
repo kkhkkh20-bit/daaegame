@@ -343,7 +343,7 @@ label r13_ev_c_door(room_safe):
                 call r13_lines([(None,"빗장은 바깥쪽에 있다."),(None,"안쪽 문짝에는 손잡이가 없다.")],"ev:c:door:look")
                 $ r13_flag("observed:store_door")
             "가진 물건을 문에 써 본다" if r13_wallet(room13)["items"] and not _c_wedged:
-                $ _c_item=renpy.display_menu([(R13_SHOP.get(i,{}).get("title",i),i) for i in r13_wallet(room13)["items"]]+[("그만둔다",None)])
+                $ _c_item=renpy.display_menu([(R13_SHOP.get(i,{}).get("title",i),i) for i in r13_wallet(room13)["items"]]+[("그만둔다","")])   # 2026-10-28: None 이면 제목 줄로 읽혀 물건이 하나일 때 창 없이 그것이 골라지고 그만둘 수 없었다
                 if _c_item=="wedge":
                     call r13_lines([(None,"문 아래에 나무 조각을 끼웠다.")],"ev:c:door:wedge")
                     $ _c_wedged=True
@@ -481,7 +481,7 @@ label r13_ev_yeoni_goods:
 
 label r13_ev_kongi_errand:
     call r13_lines([("resident_kongi","망을 봐 달라고요? 하루에 두 냥이에요. 어디를 지켜볼까요?")],"ev:m:ask")
-    $ r13_kongi_pick=renpy.display_menu([(label,place) for place,label in R13_KONGI_PLACES]+[("그만둔다",None)])
+    $ r13_kongi_pick=renpy.display_menu([(label,place) for place,label in R13_KONGI_PLACES]+[("그만둔다","")])   # 2026-10-28: None 은 고를 수 없는 제목 줄이 된다
     if not r13_kongi_pick:
         $ r13_forget_topic("kongi_errand")
         return None

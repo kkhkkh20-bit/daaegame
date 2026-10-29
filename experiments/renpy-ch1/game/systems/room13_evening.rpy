@@ -67,7 +67,7 @@ label r13_evening_board:
         call r13_lines([(None,"오늘 저녁에는 따로 남은 일이 없다. 사람들을 만나거나 13호에서 쉬자.")],"evening:none")
         return None
     call r13_lines([(None,"  ".join("· "+hint for key,place,title,hint in r13_evening_missions()))],"evening:hints:%d"%room13["day"], binding_route="dynamic:530")
-    $ _ev_pick=renpy.display_menu(_ev_items+[("혼자 마을을 둘러본다",None)])
+    $ _ev_pick=renpy.display_menu(_ev_items+[("혼자 마을을 둘러본다","")])   # 2026-10-28: None 값은 Ren'Py 가 고를 수 없는 제목 줄로 읽어, 할 일이 하나면 창 없이 그것이 골라졌다
     return _ev_pick
 
 # Arrival scenes for the three new missions (called from r13_town_events).
