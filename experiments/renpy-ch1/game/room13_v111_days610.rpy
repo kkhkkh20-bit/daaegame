@@ -8,6 +8,8 @@ label r13_v111_day6:
     # 그 주고받기는 여관 문 앞에서 하고, 초롱이 일러 준 학교 뒷문으로 간다.
     $ r13_edit(location='inn')
     $ r13_v111_arrive(['daram', 'granny', 'resident_lamplighter'])
+    # 외부 검토 2 N10: 5일 밤 접시 봉지를 가방에 안 넣은 판은 13호를 나서며 다람이 외투 안에 넣는다(d06.json NW_D06_SNK01).
+    $ (r13_v111_set('cookie.location','daram_coat') if r13_v111_value('snack_bagged5') is not True else None)
     call r13_lines(r13_v111_lines(['MS14_D06_S01_L0002']),'v111:MS14_D06_S01_L0002')
     call r13_v111_travel('school','day6',['daram'])
     $ r13_v111_arrive(['daram', 'resident_teacher', 'resident_lamplighter', 'kid_kkomi'])
@@ -154,6 +156,8 @@ label r13_v111_afternoon6:
     if v111_answer==1:
         if not r13_v111_value('acorn_recovered'):
             call r13_lines(r13_nw_block('can_wait6'),'nw:can_wait6')
+            # 2026-10-29 외부 검토 2 N4: 「생각」이 깡통 줄 쪽을 가리키게 한다(room13_v111_goal.rpy init 344).
+            $ r13_v111_set('kkomi_can_wait6',True)
             $ r13_v111_talk_person=None
             jump r13_v111_afternoon6
         $ r13_v111_set('choice:MS14_D06_S02','today')
@@ -635,7 +639,7 @@ label r13_v111_responsibility_answers7:
     call r13_lines(r13_v111_lines(['MS14_D07_S02_L0011']),'v111:MS14_D07_S02_L0011')
     call r13_lines(r13_v111_lines(['MS14_D07_S02_L0012']),'v111:MS14_D07_S02_L0012')
     $ r13_v111_commit('MS14_D07_S02_L0014')
-    # 2026-10-23 연결오류: 회의는 회관에서 끝나고 누비·너울은 남는다. 학교에는 나비·보리와 함께 건너간다.
+    # 2026-10-23 연결오류: 회의는 학교 안 회의하던 교실에서 끝나고 누비·너울은 남는다(2026-10-29 장소를 학교로 통일). 아이들 교실에는 나비·보리와 함께 건너간다.
     $ r13_v111_arrive(['nabi', 'resident_bori', 'resident_teacher'])
     jump r13_v111_school_names7
 

@@ -717,7 +717,7 @@ label r13_v111_last5:
     call r13_lines(r13_v111_lines(['MS14_D05_S05_L0056']),'v111:MS14_D05_S05_L0056')
     call r13_lines(r13_v111_lines(['MS14_D05_S05_L0057']),'v111:MS14_D05_S05_L0057')
     call r13_lines(r13_v111_lines(['MS14_D05_S05_L0058']),'v111:MS14_D05_S05_L0058')
-    $ r13_v111_commit('MS14_D05_S05_L0059')
+    # 결정 11: 과자 봉지를 가방으로 옮기는 원문 동작(L0059)은 접시를 본 판에서만 r13_v111_snack_plate5 가 적용한다.
     call r13_lines(r13_v111_lines(['MS14_D05_S05_L0060']),'v111:MS14_D05_S05_L0060')
     call r13_lines(r13_v111_lines(['MS14_D05_S05_L0061']),'v111:MS14_D05_S05_L0061')
     call r13_lines(r13_v111_lines(['MS14_D05_S05_L0062']),'v111:MS14_D05_S05_L0062')

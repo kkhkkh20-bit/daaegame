@@ -126,3 +126,15 @@ init 343 python:
             return label+" · 지금은 "+r13_ro(R13_PLACES[v["travel_to"]][0])+" 가는 길입니다."
         goal=r13_v111_goal()
         return (label+" · 아직 갈 일이 없습니다. 지금 생각: "+goal) if goal else base
+
+# 2026-10-29 외부 검토 2 N4: 6일 창고. 선생님 자리를 받은 뒤에도 「생각」이 P01 의문(이미 답이 난 것)에 머물렀고,
+# 꼬미가 「깡통은 아직 여기 있어」로 멈춰도 어디를 눌러야 하는지 말이 없었다. 지금 할 일 한 문장만. 결과는 말하지 않는다.
+init 344 python:
+    _r13_goal_before_can6=r13_v111_goal
+    def r13_v111_goal():
+        v=store.room13.get("v111") or {}
+        if v.get("gate")=="afternoon6" and r13_v111_value("kkomi_seat6") is True:
+            if r13_v111_value("kkomi_can_wait6") and not r13_v111_value("acorn_recovered"):
+                return "꼬미는 문에 단 깡통을 두고는 못 간다고 한다. 장작더미 위로 지나가는 그 줄부터 살피자."
+            return "선생님 자리는 받아 두었다. 창고로 돌아가 꼬미에게 알리자."
+        return _r13_goal_before_can6()

@@ -26,6 +26,8 @@ init 322 python:
 label r13_v111_snack_plate5:
     call r13_lines(r13_nw_block('snack_plate5'),'nw:snack_plate5')
     $ r13_v111_set('snack_bagged5',True)
+    # 외부 검토 2 N10: 봉지 위치(cookie.location=daram_bag)도 넣는 순간에 바꾼다. 안 넣은 판은 6일 아침 외투로 간다.
+    $ r13_v111_commit('MS14_D05_S05_L0059')
     return
 
 # ---------------------------------------------------------------- 7일 낮 자유 시간
