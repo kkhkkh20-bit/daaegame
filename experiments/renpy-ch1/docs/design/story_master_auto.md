@@ -382,7 +382,7 @@
 #### `MS14_D06_S02` 갈림 · 값 (room13_v111_days610.rpy:104)
 
 - `r13_v111_woodshed_check6` if 「문 앞과 뒤창을 살핀다」 `→ r13_v111_woodshed_seen6`
-- `r13_v111_afternoon6` if 「장작더미 옆 깡통 줄을 살핀다」 `→ r13_v111_afternoon6`
+- `r13_v111_afternoon6` if 「깡통 줄을 살핀다」 `→ r13_v111_afternoon6`
 - `r13_v111_afternoon6` if 「줄을 풀고 도토리를 챙긴다」 `→ r13_v111_afternoon6`
 - `r13_v111_afternoon6` if 「선생님, 학교에 아이 자리가 있겠습니까?」 `→ r13_v111_seat6`
 - `r13_v111_afternoon6` if 「학교에 자리가 났어. 같이 갈래?」 `→ r13_v111_afternoon6`

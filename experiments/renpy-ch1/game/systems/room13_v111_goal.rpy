@@ -145,6 +145,6 @@ init 344 python:
         v=store.room13.get("v111") or {}
         if v.get("gate")=="afternoon6" and r13_v111_value("kkomi_seat6") is True:
             if r13_v111_value("kkomi_can_wait6") and not r13_v111_value("acorn_recovered"):
-                return "꼬미는 문에 단 깡통을 두고는 못 간다고 한다. 장작더미 위로 지나가는 그 줄부터 살피자."
+                return "꼬미는 문에 단 깡통을 두고는 못 간다고 한다. 문 옆 천장에 매단 그 줄부터 살피자."
             return "선생님 자리는 받아 두었다. 창고로 돌아가 꼬미에게 알리자."
         return _r13_goal_before_can6()

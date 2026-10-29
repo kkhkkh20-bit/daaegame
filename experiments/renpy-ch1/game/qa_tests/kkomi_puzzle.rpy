@@ -30,12 +30,12 @@ testcase kkomi_independent_preparation:
     click pos (900,600) until '먼저 가 버리지는 않을게' timeout 30
     click pos (900,600) until screen 'r13_hub' timeout 30
     assert eval (not r13_v111_value('acorn_recovered') and room13['location']=='v111_woodshed')
-    run Show('qa_hidden_base_return',value=('object','v111_wood'))
+    run Show('qa_hidden_base_return',value=('object','v111_can'))
     pause 0.3
     click 'QA 행동'
     click pos (900,600) until eval r13_v111_value('kkomi_can_seen6') timeout 30
     pause 0.8
-    run Show('qa_hidden_base_return',value=('object','v111_wood'))
+    run Show('qa_hidden_base_return',value=('object','v111_can'))
     pause 0.3
     click 'QA 행동'
     click pos (900,600) until eval r13_v111_value('acorn_recovered') timeout 30
