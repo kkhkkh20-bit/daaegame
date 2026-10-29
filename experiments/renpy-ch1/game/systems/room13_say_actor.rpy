@@ -75,7 +75,10 @@ init 40 python:
     # 순서: 이 대사 묶음에서 다음에 말하는 사람 → 바로 앞에 말한 사람(그 장면에 있으면) → 그 장면에 있는 사람 중 다람 아닌 첫 사람 → 다람.
     def r13_dad_listener(entries,index):
         vp=r13_viewpoint()
-        def ok(who):return bool(who) and who!=vp and who in CAST
+        # 2026-10-29 조합 판 주행(6일 장작 창고): 「이 장작, 문 앞에서는 좀 치워 주시겠습니까?」에 바로 앞에 말한
+        # 꼬미가 섰다. 아빠는 아이에게 반말을 쓴다. 높임말 줄이면 아이(다람·꼬미 등)는 듣는 사람 후보에서 뺀다.
+        polite=r13_dad_line_polite(entries[index][1] if index<len(entries) and len(entries[index])>1 else "")
+        def ok(who):return bool(who) and who!=vp and who in CAST and not (polite and r13_is_child(who))
         # 2026-10-28 분기 주행: 「판돌 씨, 여기요」에 돌목이, 「모모 씨, 내려요」에 까로가 섰다. 아빠가 부른 이름이 먼저다.
         text=str(entries[index][1]) if index<len(entries) and len(entries[index])>1 else ""
         called=r13_called_person(text)
@@ -151,3 +154,11 @@ init 40 python:
         for word,who in R13_ABSENT_CALLS:
             if re.search(word+"(?:[!?,.…~]|$)",t) and who not in present:return True
         return False
+
+    def r13_is_child(who):
+        return who=="daram" or str(who).startswith("kid_") or who in globals().get("R13_CHILD_STATURE",{})
+    def r13_dad_line_polite(text):
+        """아빠의 줄이 어른에게 하는 높임말인가(습니다·습니까·세요·십시오·요로 끝나는 문장이 있다)."""
+        import re
+        t=renpy.filter_text_tags(str(text or ""),allow=[])
+        return bool(re.search(r"(습니다|습니까|ㅂ니다|ㅂ니까|니다|니까|세요|십시오|시오|해요|에요|예요|군요|네요|지요|죠|어요|아요|여요)[.?!…]*(\s|$)",t))
