@@ -595,6 +595,9 @@ async def main():
                             await asyncio.sleep(.6)
                         else:await q.value(('person',person))
                         continue
+                    # 2026-10-29: 입구 명단 단계는 돌목과 이야기해야 넘어간다(장부를 누르면 관찰만 나온다).
+                    if gate=='gate_request' and option.get('object')=='ledger':
+                        await q.value(('person','guard'));continue
                     if option.get('object'):
                         obj=option['object'];attempt=object_attempts.get((gate,obj),0);object_attempts[(gate,obj)]=attempt+1
                         try:await q.click_object(obj,attempt%28)
