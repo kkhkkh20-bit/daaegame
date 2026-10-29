@@ -10,8 +10,7 @@
         "title": "초소 처리 명단을 읽는다",
         "location": "gate",
         "guard": [],
-        "object": "ledger",
-        "person": "guard"
+        "object": "ledger"
       }
     ]
   },
@@ -41,7 +40,7 @@
         "object": "ledger"
       },
       {
-        "title": "두 종이의 항목을 비교한다",
+        "title": "명단과 신청서, 적힌 게 다릅니다.",
         "remember_read": true,
         "location": "gate",
         "guard": [
@@ -54,7 +53,7 @@
         "person": "guard"
       },
       {
-        "title": "숙소 확인 칸을 본다",
+        "title": "13호에 두 사람, 여관 확인도 여기 있습니다.",
         "remember_read": true,
         "location": "gate",
         "guard": [
@@ -79,7 +78,7 @@
         "index": 5
       },
       {
-        "title": "명단을 옮겨 적은 경위를 묻는다",
+        "title": "명단은 어떻게 옮겨 적으신 겁니까?",
         "location": "gate",
         "guard": [
           [
@@ -110,13 +109,14 @@
         "location": "gate",
         "guard": [],
         "person": "guard",
-        "present": "V111:E01"
+        "present": "V111:E01",
+        "present_only": true
       },
       {
         "title": "신청서를 찾으러 선반으로 간다",
         "location": "gate",
         "guard": [],
-        "person": "guard"
+        "object": "booth"
       }
     ]
   },
@@ -129,7 +129,7 @@
     ],
     "options": [
       {
-        "title": "명단을 옮겨 적은 경위를 묻는다",
+        "title": "명단은 어떻게 옮겨 적으신 겁니까?",
         "location": "gate",
         "guard": [
           [
@@ -317,7 +317,8 @@
         "location": "post",
         "guard": [],
         "person": "seryeon",
-        "present": "V111:E01"
+        "present": "V111:E01",
+        "present_only": true
       }
     ]
   },
@@ -336,7 +337,7 @@
         "person": "seryeon"
       },
       {
-        "title": "내 편지를 돌려받는다",
+        "title": "제 편지, 돌려주시겠습니까?",
         "location": "post",
         "guard": [],
         "person": "seryeon"
@@ -351,7 +352,7 @@
     ],
     "options": [
       {
-        "title": "스케치를 보여 주고 부탁한다",
+        "title": "제가 그려 본 건데, 아내를 그려 주실 수 있습니까?",
         "location": "square",
         "guard": [],
         "person": "resident_piko"
@@ -458,10 +459,10 @@
       {
         "title": "침구를 옮겨 묶고 이름을 적는다",
         "location": "forest",
-        "guard": [],
-        "person": "resident_nero"
+        "guard": []
       }
-    ]
+    ],
+    "auto": true
   },
   "piko_clean": {
     "location": "dining",
@@ -505,7 +506,7 @@
     ],
     "options": [
       {
-        "title": "톡에게 안쪽 파편을 확인받는다",
+        "title": "톡 씨, 안쪽 조각 좀 봐 주시겠습니까?",
         "location": "square",
         "guard": [],
         "person": "resident_tok"
@@ -520,7 +521,7 @@
     ],
     "options": [
       {
-        "title": "초롱의 점검장을 확인한다",
+        "title": "점검장을 보여 주시겠어요?",
         "location": "square",
         "guard": [],
         "person": "resident_lamplighter"
@@ -565,7 +566,7 @@
     ],
     "options": [
       {
-        "title": "운반표를 본다",
+        "title": "운반표를 보여 주시겠습니까?",
         "location": "square",
         "guard": [],
         "person": "resident_siluk"
@@ -580,7 +581,7 @@
     ],
     "options": [
       {
-        "title": "칼을 보여 달라고 요청한다",
+        "title": "그 칼, 잠깐 보여 주시겠습니까?",
         "location": "square",
         "guard": [],
         "person": "resident_siluk"
@@ -611,7 +612,7 @@
     ],
     "options": [
       {
-        "title": "톡에게 각인 확인을 부탁한다",
+        "title": "톡 씨, 이 돌 번호 좀 봐 주십시오.",
         "location": "store",
         "guard": [],
         "person": "resident_tok"
@@ -657,7 +658,7 @@
     ],
     "options": [
       {
-        "title": "예약한 침구를 확인해 받는다",
+        "title": "어제 이름 적어 둔 침구, 받으러 왔습니다.",
         "location": "square",
         "guard": [],
         "person": "resident_nero"
@@ -672,7 +673,7 @@
     ],
     "options": [
       {
-        "title": "마른 천을 빌린다",
+        "title": "마른 천을 좀 빌릴 수 있을까요?",
         "location": "inn",
         "person": "granny"
       }
@@ -686,7 +687,7 @@
     ],
     "options": [
       {
-        "title": "비운 벤치와 조건을 전한다",
+        "title": "식당 벤치를 비워 뒀습니다. 들어오시겠어요?",
         "location": "square",
         "person": "resident_piko"
       }
@@ -1399,7 +1400,7 @@
       },
       {
         "index": 82,
-        "title": "까로에게 운반을 부탁한다",
+        "title": "까로 씨, 수레를 끌어 주시겠습니까?",
         "location": "square",
         "guard": [
           [
@@ -1533,7 +1534,7 @@
         ]
       },
       {
-        "title": "학교 운반을 부탁한다.",
+        "title": "까로 씨, 학교까지 운반 좀 부탁합니다.",
         "location": "square",
         "person": "karo"
       },
@@ -1747,7 +1748,7 @@
     ],
     "options": [
       {
-        "title": "앞으로의 호송을 확인한다",
+        "title": "내일 새 명단이 오면, 또 태울 겁니까?",
         "location": "square",
         "person": "resident_badook"
       },
@@ -1767,9 +1768,11 @@
         "person": "karo"
       },
       {
-        "title": "중지 명령 사본을 너울에게 다시 보인다.",
+        "title": "중지 명령 사본을 너울에게 보인다",
         "location": "square",
-        "person": "guard"
+        "person": "neoul",
+        "present": "V111:E13_ORDER",
+        "present_only": true
       },
       {
         "title": "학교로 돌아간다",
@@ -1994,7 +1997,7 @@
     ],
     "options": [
       {
-        "title": "새로 난 침상의 인수를 확인한다",
+        "title": "새로 난 침상에 이분을 받아 주시겠습니까?",
         "location": "school",
         "person": "nabi"
       }
@@ -2269,7 +2272,7 @@
     ],
     "options": [
       {
-        "title": "분리된 감독 자리의 인수를 확인한다",
+        "title": "선생님을 여기서 따로 맡으셨습니까?",
         "location": "v111_supervised",
         "person": "neoul"
       }
@@ -2300,7 +2303,7 @@
     ],
     "options": [
       {
-        "title": "원래 감독 장소의 인수를 확인한다",
+        "title": "실룩 씨를 여기서 맡으셨습니까?",
         "location": "v111_labor",
         "person": "guard"
       }
@@ -2315,7 +2318,7 @@
     ],
     "options": [
       {
-        "title": "가족 세 사람의 오늘 밤 자리를 확인한다",
+        "title": "오늘 밤 우리 가족 세 사람, 어디서 자면 됩니까?",
         "location": "gate",
         "person": "guard"
       }
@@ -2383,7 +2386,7 @@
     ],
     "options": [
       {
-        "title": "초소로 가기 전 교사 감독 교대를 확인한다",
+        "title": "초소로 가시기 전에, 선생님 곁은 누가 맡습니까?",
         "location": "school",
         "person": "guard"
       }
@@ -2436,7 +2439,7 @@
     ],
     "options": [
       {
-        "title": "누비 씨의 아이 셋 인수를 확인한다",
+        "title": "선생님, 누비 씨 아이 셋을 맡아 주셨습니까?",
         "location": "school",
         "person": "resident_teacher"
       },
@@ -2465,7 +2468,7 @@
     ],
     "options": [
       {
-        "title": "도착한 장작의 인수를 확인한다",
+        "title": "선생님, 장작은 다 받으셨습니까?",
         "location": "school",
         "person": "resident_teacher"
       }
@@ -2521,7 +2524,7 @@
     },
     "options": [
       {
-        "title": "포대를 옮긴다",
+        "title": "포대 옮기는 거, 제가 돕겠습니다.",
         "location": "dining",
         "person": "nabi",
         "guard": [
@@ -2533,7 +2536,7 @@
         ]
       },
       {
-        "title": "마른 천을 빌린다",
+        "title": "마른 천을 좀 빌릴 수 있을까요?",
         "location": "inn",
         "person": "granny",
         "guard": [
@@ -2545,7 +2548,7 @@
         ]
       },
       {
-        "title": "식당에 앉을 자리를 전한다",
+        "title": "오늘 밤은 식당에 앉을 자리가 있습니다.",
         "location": "square",
         "person": "resident_piko",
         "guard": [
@@ -2567,9 +2570,11 @@
         ]
       },
       {
-        "title": "네로를 만나러 간다",
-        "location": "dining",
-        "person": "nabi",
+        "index": 3,
+        "title": "숲으로 가서 네로를 돕는다",
+        "location": "forest",
+        "move": "forest",
+        "move_by_story": true,
         "guard": []
       },
       {
@@ -2635,7 +2640,7 @@
     },
     "options": [
       {
-        "title": "아이들 자리를 여쭌다",
+        "title": "선생님, 학교에 아이 자리가 있겠습니까?",
         "location": "school",
         "person": "resident_teacher",
         "guard": [
@@ -3109,7 +3114,7 @@
     ],
     "options": [
       {
-        "title": "도토의 손에서 바구니를 떼어 낸다",
+        "title": "도토 씨, 바구니 내려놓으세요.",
         "location": "school",
         "guard": [],
         "person": "doto"
@@ -3131,7 +3136,7 @@
     ],
     "options": [
       {
-        "title": "바둑이와 잠긴 문을 연다",
+        "title": "바둑이 씨, 같이 문을 밉시다.",
         "location": "square",
         "guard": [],
         "person": "resident_badook"
@@ -3153,7 +3158,7 @@
     ],
     "options": [
       {
-        "title": "돌목을 초소에서 끌어낸다",
+        "title": "돌목 씨, 같이 가요. 여기 있으면 안 돼요.",
         "location": "forest",
         "guard": [],
         "person": "guard"
@@ -3463,12 +3468,13 @@
     },
     "options": [
       {
-        "title": "방으로 들어간다",
+        "title": "아침 약속을 적고 잠든다",
         "location": "room13",
-        "person": "daram"
+        "object": "bed",
+        "bed_to": "sleep2"
       },
       {
-        "title": "남은 끈을 빌린다",
+        "title": "남은 끈 좀 써도 될까요?",
         "location": "square",
         "person": "resident_lamplighter",
         "guard": [
@@ -3525,7 +3531,7 @@
     ],
     "options": [
       {
-        "title": "공방에서 함께 확인한다",
+        "title": "톡 씨, 공방에서 같이 확인해 주시겠습니까?",
         "location": "square",
         "person": "resident_tok",
         "guard": [
@@ -3559,7 +3565,7 @@
         ]
       },
       {
-        "title": "칼과 조각의 대조를 부탁한다",
+        "title": "칼과 조각을 나란히 놓고 봐도 되겠습니까?",
         "location": "square",
         "person": "resident_siluk",
         "guard": [
@@ -3576,7 +3582,7 @@
         ]
       },
       {
-        "title": "매입 장부와 약속한 값을 확인한다",
+        "title": "매입 장부와 약속하신 값을 보여 주시겠습니까?",
         "location": "store",
         "person": "resident_madam",
         "guard": [
@@ -3735,7 +3741,7 @@
         ]
       },
       {
-        "title": "돌목에게 기록 읽는 동안 너울을 맡아 달라고 한다",
+        "title": "기록을 읽는 동안 너울 씨 곁을 맡아 주시겠습니까?",
         "location": "square",
         "person": "guard",
         "guard": [

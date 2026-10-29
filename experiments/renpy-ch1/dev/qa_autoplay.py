@@ -51,16 +51,16 @@ TRUE_ROUTE=os.environ.get('ROUTE')=='true'
 TRUE_GATES={
     # 2일 피코(3번 등 밑에서 얼어 죽음): 나비 포대 → 할머니 마른 천 → 벤치 살피기·닦기 → 피코에게 자리 → 함께 입실.
     # 네로 쪽(침구 두 장)은 고르지 않는다. 그래서 12일 다람에게 열이 나고 수프는 배식 직전 중단으로 막는다.
-    'afternoon2':['포대를 옮긴다','마른 천을 빌린다','벤치 표면을 살핀다','천으로 벤치의 물감을 닦는다','식당에 앉을 자리를 전한다'],
+    'afternoon2':['포대 옮기는 거, 제가 돕겠습니다.','마른 천을 좀 빌릴 수 있을까요?','벤치 표면을 살핀다','천으로 벤치의 물감을 닦는다','오늘 밤은 식당에 앉을 자리가 있습니다.'],
     # 2일 밤: 등 끈 묶기(3번 등 미수판)는 하지 않는다. 식당 생존판 하나로 간다(3일 회의 증거가 달라지지 않게).
-    'lamp_prep2':['방으로 들어간다'],
+    'lamp_prep2':['아침 약속을 적고 잠든다'],
     # 4일 밤 문 앞: 세 곳을 하나씩 본다(같은 것을 다시 누르지 않게).
     'inspect_gate4':[('울타리 천',lambda v:not v.get('d4_fence_seen')),('겹친 발자국',lambda v:not v.get('d4_tracks_seen')),('엎어진 양동이',lambda v:not v.get('d4_bucket_seen'))],
     # 5일 저녁(불 대승리 길1): 여관 가는 길에 빨래터로 돌아 젖은 장갑을 건다 → 누비네 이야기를 엿듣는다(NW_LAUNDRY_TALK).
     'travel':[('마을 빨래터',lambda v:not v.get('grand_laundry_seen5'))],
     'laundry5':['빨래 줄에 젖은 장갑을 건다','여관 접수대'],
     # 6일 꼬미(장작 창고 불): 깡통 줄 살피기 → 줄 풀고 도토리 → 선생님께 자리 → 같이 가자 → 학교 인계.
-    'afternoon6':['장작더미 옆 깡통 줄을 살핀다','줄을 풀고 도토리를 챙긴다','아이들 자리를 여쭌다','학교에 자리가 났어. 같이 갈래?'],
+    'afternoon6':['장작더미 옆 깡통 줄을 살핀다','줄을 풀고 도토리를 챙긴다','선생님, 학교에 아이 자리가 있겠습니까?','학교에 자리가 났어. 같이 갈래?'],
     'hp_meal6':['다람아, 애들한테 가자.'],
     # 7일 불 회의 대승리: 보리 목격 전에 기름통 밑 홈에서 누비네 배급표(NW_NUBI_TICKET)를 꺼낸다.
     'bori_witness7':['통 밑 홈을 들춘다','창고 문 앞에서 무엇을 보셨습니까?'],
@@ -72,7 +72,7 @@ TRUE_GATES={
     'mother_questions11':[('어떻게 지냈어?',lambda v:not v.get('mother_q_life')),('왜 우리를 부르지 않았어?',lambda v:not v.get('mother_q_invitation')),('왜 돌아오지 못했어?',lambda v:not v.get('mother_q_return'))],
     # 11일 네로·아랫길 노인(등이 끊긴 밤 늦은 출발로 사망): 낮에 수레를 준비해 세 사람을 학교로 옮긴다.
     # 짐칸을 살피며 흰 그릇 하나를 주머니에 넣는다(12일 수프 대승리 NW_RETURNED_BOWL 의 앞 단계).
-    'rescue_cart11':['수레 짐칸을 살핀다','그릇 하나를 집는다','수레 짐을 내려 자리를 비운다','덮개를 접어 빈 짐칸에 싣는다','까로에게 운반을 부탁한다','아랫길을 비추는 등을 점검한다','아랫길 세 사람의 받을 자리를 비운다','수레를 끌고 아랫길로 간다'],
+    'rescue_cart11':['수레 짐칸을 살핀다','그릇 하나를 집는다','수레 짐을 내려 자리를 비운다','덮개를 접어 빈 짐칸에 싣는다','까로 씨, 수레를 끌어 주시겠습니까?','아랫길을 비추는 등을 점검한다','아랫길 세 사람의 받을 자리를 비운다','수레를 끌고 아랫길로 간다'],
     'rescue_handoff11':['세 사람을 맞은 자리와 명단을 확인한다'],
     'night_rescue_prepare11':['낮에 챙긴 운반 준비를 확인한다'],
     'sleep11_input':['잠자리를 정리한다'],
@@ -86,7 +86,7 @@ TRUE_GATES={
     # 13일 담요 회의: 판돌의 담요를 실제로 수선해 둔다(E13_MENDING).
     'blanket_mend13':['회색 담요를 실제로 수선한다'],
     # 13일 수레 뒤: 호송 고리를 바둑이·돌목·까로 순으로 끊고 학교로 돌아간다.
-    'transport_cleanup13':['앞으로의 호송을 확인한다','명령 전체를 중지하고, 사본을 직접 전하겠습니다.','강제 운반은 맡지 말고, 빈 수레를 돌려주자.','빈 수레 반환을 요청한다.','중지 명령 사본을 너울에게 다시 보인다.','학교로 돌아간다'],
+    'transport_cleanup13':['내일 새 명단이 오면, 또 태울 겁니까?','명령 전체를 중지하고, 사본을 직접 전하겠습니다.','강제 운반은 맡지 말고, 빈 수레를 돌려주자.','빈 수레 반환을 요청한다.','중지 명령 사본을 너울에게 보인다','학교로 돌아간다'],
 }
 # 선택창(메뉴) 글귀. 보이는 것 중 앞에 있는 것을 고른다. 없으면 기본 길과 같다.
 TRUE_CHOICES=[
@@ -118,9 +118,9 @@ TRUE_CHOICES=[
 BRANCH=os.environ.get('BRANCH')
 BRANCHES={
     # 2일: 피코 대신 네로에게 간다(침구 두 장) → 피코 사망, 12일 다람 열 없음 → 수프 아침 예방이 열릴 수 있다.
-    'piko_lost':dict(day=2,gates={'afternoon2':['네로를 만나러 간다'],'lamp_prep2':['방으로 들어간다']}),
+    'piko_lost':dict(day=2,gates={'afternoon2':['숲으로 가서 네로를 돕는다'],'lamp_prep2':['아침 약속을 적고 잠든다']}),
     # 2일: 네로에게 가고, 밤에 3번 등 걸쇠를 끈으로 묶는다 → 등 미수판으로 피코 생존.
-    'piko_lamp':dict(day=2,gates={'afternoon2':['네로를 만나러 간다'],'lamp_prep2':['남은 끈을 빌린다','덮개의 걸쇠를 살핀다','걸쇠에 끈을 감아 고정한다','방으로 들어간다']}),
+    'piko_lamp':dict(day=2,gates={'afternoon2':['숲으로 가서 네로를 돕는다'],'lamp_prep2':['남은 끈 좀 써도 될까요?','덮개의 걸쇠를 살핀다','걸쇠에 끈을 감아 고정한다','아침 약속을 적고 잠든다']}),
     # 6일: 꼬미를 학교로 데려가지 않는다 → 장작 창고 불.
     'kkomi_lost':dict(day=6,gates={'afternoon6':['내일 아침에 데리러 올게']},drop=['그릇을 돌려주러 같이 가자.']),
     # 7일: 돌을 바꾸지 않고 도토의 다짐만 받는다.
@@ -131,7 +131,7 @@ BRANCHES={
     'owl_lost':dict(day=7,gates={'free_day7':['다람아, 이제 13호에 가 보자.'],'bori_witness7':['창고 문 앞에서 무엇을 보셨습니까?']},
         drop=['집게로 돌을 꺼내고, 주머니의 배급 돌을 넣는다','통 밑 홈을 들춘다']),
     # 11일: 낮에 수레를 준비만 하고 밤에 출발한다(구조).
-    'nero_rescue':dict(day=11,gates={'rescue_cart11':['수레 짐칸을 살핀다','그릇 하나를 집는다','수레 짐을 내려 자리를 비운다','덮개를 접어 빈 짐칸에 싣는다','까로에게 운반을 부탁한다','아랫길을 비추는 등을 점검한다','아랫길 세 사람의 받을 자리를 비운다','먼저 학교 물자를 인계한다']}),
+    'nero_rescue':dict(day=11,gates={'rescue_cart11':['수레 짐칸을 살핀다','그릇 하나를 집는다','수레 짐을 내려 자리를 비운다','덮개를 접어 빈 짐칸에 싣는다','까로 씨, 수레를 끌어 주시겠습니까?','아랫길을 비추는 등을 점검한다','아랫길 세 사람의 받을 자리를 비운다','먼저 학교 물자를 인계한다']}),
     # 11일: 낮 준비 없이 출발을 미룬다(네로·아랫길 노인 사망).
     'nero_lost':dict(day=11,gates={'rescue_cart11':['먼저 학교 물자를 인계한다'],'night_rescue_prepare11':['오늘은 출발을 미룬다']},drop=['아랫길 대피 준비를 확인한다']),
     # 12일: 배식 전에 냄비를 열지 않는다(도담 사건).
@@ -139,12 +139,12 @@ BRANCHES={
     # 13일 군중: 「검증한 기록을 공개한다」를 골라야 광장 장면이 열린다. 불 대승리(배급표)가 없는 owl_lost 13일 저장에서
     # 준비 없이 읽으면 폭동, 돌목에게 너울을 맡기고 읽으면 감독자. 진엔딩 저장(배급표 있음)에서는 기록 읽기 길.
     'crowd_riot':dict(day=13,save='br-owl_lost-day13',prefer=['검증한 기록을 공개한다'],gates={'crowd_prepare13':['검증한 기록을 소리 내어 읽는다']}),
-    'crowd_guard':dict(day=13,save='br-owl_lost-day13',prefer=['검증한 기록을 공개한다'],gates={'crowd_prepare13':['기록 읽을 자리를 수레에서 떼어 놓는다','수레 옆 짐을 옮겨 통로를 나눈다','돌목에게 기록 읽는 동안 너울을 맡아 달라고 한다','검증한 기록을 소리 내어 읽는다']}),
+    'crowd_guard':dict(day=13,save='br-owl_lost-day13',prefer=['검증한 기록을 공개한다'],gates={'crowd_prepare13':['기록 읽을 자리를 수레에서 떼어 놓는다','수레 옆 짐을 옮겨 통로를 나눈다','기록을 읽는 동안 너울 씨 곁을 맡아 주시겠습니까?','검증한 기록을 소리 내어 읽는다']}),
     # 12일 수프 아침 예방: 다람에게 열이 없는 판(piko_lost 12일 저장, 침구 두 장)에서 아침 부탁 넷을 다 하고 확인한다.
     'soup_early':dict(day=12,save='br-piko_lost-day12',prefer=['아침에 부탁한 일들을 확인한다'],drop=['배식 전에 더 살핀다'],
         # 부탁은 한 번 하면 질문 목록에서 사라져도 현장 선택에는 남는다. 해 둔 값으로 건너뛴다(안 그러면 같은 질문을 계속 연다).
         gates={'morning_prep12':[('약장 관리를 확인합니다.',lambda v:not v.get('medicine_locked')),('불 땔 자리를 부탁드립니다.',lambda v:not v.get('warm_seat_ready')),
-            ('학교 운반을 부탁한다.',lambda v:not v.get('carrier_arrived')),'배식 준비를 살핀다']}),
+            ('까로 씨, 학교까지 운반 좀 부탁합니다.',lambda v:not v.get('carrier_arrived')),'배식 준비를 살핀다']}),
     'crowd_record':dict(day=13,prefer=['검증한 기록을 공개한다'],gates={'crowd_prepare13':['검증한 기록을 소리 내어 읽는다']}),
     # 2026-10-29 조합 판(소유자 「조합 판도 돌려봐」): 갈림 여러 곳을 한 판 안에서 같이 바꾼다. 가장 이른 날 저장에서
     # 시작해 끝까지 이어 간다(각 분기의 save 는 쓰지 않는다). 관문 계획은 겹치지 않게 골랐다.
@@ -530,7 +530,9 @@ async def main():
                         elif gate in TRUE_GATES and true_option(gate,options,st['values']):
                             await q.press('돌아가기');await asyncio.sleep(.3);continue   # 계획의 다음 일은 다른 사람·물건이다
                     visits[('asked',gate,person,option['title'])]=visits.get(('asked',gate,person,option['title']),0)+1
-                    if option.get('present'):book_target=option['present']
+                    if option.get('present'):
+                        # 2026-10-29: 자료를 보이는 선택지는 질문 목록에 없다(그 사람에게 하는 말이 아니다). 「자료 제시」로 낸다.
+                        book_target=option['present'];log('  자료 제시',option['title']);await q.press('자료 제시');continue
                     log('  질문',option['title']);await q.press(option['title']);continue
                 if 'r13_map' in sc:
                     moves=[o.get('move') for o in st['binding'].get('options',[]) if o.get('move')]
@@ -568,6 +570,7 @@ async def main():
                     elif gate=='lamp_observe':
                         idx=next((i for i in range(4) if not st['values'].get('lamp_part_'+str(i))),4);option=next((o for o in options if o['index']==idx),options[0])
                     elif gate=='registered_menu':option=next((o for o in options if o.get('move')),options[0])
+                    elif gate=='gate_choice':option=next((o for o in options if o.get('object')),options[0])   # 기본 길은 선반에서 신청서를 찾는다(2026-10-29 질문 목록에서 뺌)
                     elif TRUE_ROUTE and true_option(gate,options,st['values']):option=true_option(gate,options,st['values'])
                     else:
                         fresh=[o for o in options if not (o.get('person') and visits.get(('asked',gate,o['person'],o['title']),0)>=2) and not (o.get('object') and object_attempts.get((gate,o['object']),0)>=8) and visits.get(('asked',gate,'__obj__',o['title']),0)<9]

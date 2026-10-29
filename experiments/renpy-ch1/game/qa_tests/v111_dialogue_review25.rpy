@@ -27,7 +27,7 @@ testcase dr25_lamp_attempt_store:
     pause 0.3
     click 'QA 행동'
     pause 0.5
-    click '매입 장부와 약속한 값을 확인한다'
+    click '매입 장부와 약속하신 값을 보여 주시겠습니까?'
     click pos (900,600) until eval r13_v111_value('lamp_store_done3') timeout 30
     assert eval (qa_nw_seen('안쪽 돌은 세 배예요') and qa_nw_seen('같은 것을 또 묻는다') and qa_nw_seen('식당 위층에서 살아요') and r13_v111_owned('NW_KEEPER_DATE'))
 

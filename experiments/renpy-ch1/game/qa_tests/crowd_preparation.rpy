@@ -52,7 +52,7 @@ testcase crowd_before_publication_guard:
     pause 0.3
     click 'QA 행동'
     pause 0.5
-    click '돌목에게 기록 읽는 동안 너울을 맡아 달라고 한다'
+    click '기록을 읽는 동안 너울 씨 곁을 맡아 주시겠습니까?'
     click pos (900,600) until eval r13_v111_value('crowd_supervisor_placed13') timeout 30
     pause 0.8
     assert eval (r13_crowd_prepared13() and not r13_v111_value('crowd_resolution_done'))

@@ -18,14 +18,14 @@ testcase v111_nw_d06_afternoon_today:
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day6_afternoon)
     assert eval (qa_nw_afternoon6_titles("v111_woodshed")==["내일 아침에 데리러 올게","장작더미 옆 깡통 줄을 살핀다"])  # 0.20.44 깡통 회수 사전 준비가 더해졌다
-    assert eval (qa_nw_afternoon6_titles("school")==["아이들 자리를 여쭌다"])
+    assert eval (qa_nw_afternoon6_titles("school")==["선생님, 학교에 아이 자리가 있겠습니까?"])
     run Function(r13_edit,location="school")
     run Jump("r13_v111_afternoon6")
     pause 1.0
     assert screen "r13_hub"
     click "선생님"
     pause 1.0
-    click "아이들 자리를 여쭌다"
+    click "선생님, 학교에 아이 자리가 있겠습니까?"
     click pos (900,600) until eval (r13_v111_value("kkomi_seat6") is True and r13_v111_value("school_permission") is True) timeout 30
     assert eval (qa_nw_seen("창가 쪽 네 자리") and qa_nw_afternoon6_titles("school")==[])
     assert eval (qa_nw_afternoon6_titles("v111_woodshed")==["학교에 자리가 났어. 같이 갈래?","내일 아침에 데리러 올게","장작더미 옆 깡통 줄을 살핀다"])

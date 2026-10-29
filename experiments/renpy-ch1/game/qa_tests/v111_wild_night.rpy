@@ -19,7 +19,7 @@ testcase v111_wild_three:
     run Function(r13_v111_set,"daram_fever12",False)
     run Function(r13_v111_set,"wild_late",1)
     run Jump("r13_v111_wild_climb14")
-    click pos (900,600) until screen "r13_confirm" timeout 120
+    click pos (900,600) until screen "r13_end_card" timeout 120
     assert eval (r13_v111_value("wild_family")=="three" and qa_nw_seen("우리 셋은"))
     assert eval ("wild_night" in persistent.r13_fork_endings)
 
@@ -36,7 +36,7 @@ testcase v111_wild_no_mom_late:
     run Function(r13_v111_set,"daram_fever12",False)
     run Function(r13_v111_set,"wild_late",2)
     run Jump("r13_v111_wild_climb14")
-    click pos (900,600) until screen "r13_confirm" timeout 120
+    click pos (900,600) until screen "r13_end_card" timeout 120
     assert eval (r13_v111_value("wild_family")=="no_mom" and qa_nw_seen("장갑 한 짝"))
     assert eval ("wild_night" in persistent.r13_fork_endings)
 
@@ -53,7 +53,7 @@ testcase v111_wild_no_mom_fever:
     run Function(r13_v111_set,"daram_fever12",True)
     run Function(r13_v111_set,"wild_late",0)
     run Jump("r13_v111_wild_climb14")
-    click pos (900,600) until screen "r13_confirm" timeout 120
+    click pos (900,600) until screen "r13_end_card" timeout 120
     assert eval (r13_v111_value("wild_family")=="no_mom" and qa_nw_seen("장갑 한 짝"))
     assert eval ("wild_night" in persistent.r13_fork_endings)
 
@@ -70,7 +70,7 @@ testcase v111_wild_alone:
     run Function(r13_v111_set,"daram_fever12",True)
     run Function(r13_v111_set,"wild_late",2)
     run Jump("r13_v111_wild_climb14")
-    click pos (900,600) until screen "r13_confirm" timeout 120
+    click pos (900,600) until screen "r13_end_card" timeout 120
     assert eval (r13_v111_value("wild_family")=="alone" and qa_nw_seen("도토리 두 알"))
     assert eval ("wild_night" in persistent.r13_fork_endings)
 
@@ -98,7 +98,7 @@ testcase v111_wild_partial_hypothesis:
     run Function(r13_v111_set,"meeting:altar","lose")
     run Function(r13_v111_set,"meeting:hypothesis","partial")
     run Jump("r13_v111_cookie14")
-    click pos (900,600) until screen "r13_confirm" timeout 120
+    click pos (900,600) until screen "r13_end_card" timeout 120
     assert eval (r13_v111_value("ending14")=="morning" and not qa_nw_seen("밖이 왜 아침 같아"))
 
 testcase v111_wild_partial_altar:
@@ -112,7 +112,7 @@ testcase v111_wild_partial_altar:
     run Function(r13_v111_set,"meeting:altar","lose")
     run Function(r13_v111_set,"meeting:altar","partial")
     run Jump("r13_v111_cookie14")
-    click pos (900,600) until screen "r13_confirm" timeout 120
+    click pos (900,600) until screen "r13_end_card" timeout 120
     assert eval (r13_v111_value("ending14")=="morning" and not qa_nw_seen("밖이 왜 아침 같아"))
 
 testcase v111_wild_route_help:
@@ -137,13 +137,13 @@ testcase v111_wild_route_help:
     assert eval (room13["v111"].get("gate")=="wild_hall14")
     click "도토"
     pause 0.7
-    click "도토의 손에서 바구니를 떼어 낸다"
+    click "도토 씨, 바구니 내려놓으세요."
     pause 0.7
     click pos (900,600) until eval (room13["v111"].get("gate")=="wild_square14") timeout 90
     pause 1.0
     click "바둑이"
     pause 0.7
-    click "바둑이와 잠긴 문을 연다"
+    click "바둑이 씨, 같이 문을 밉시다."
     pause 0.7
     click pos (900,600) until eval (room13["v111"].get("gate")=="wild_road14") timeout 90
     pause 1.0
@@ -151,9 +151,9 @@ testcase v111_wild_route_help:
     screenshot "wild-guard.png"
     click "돌목"
     pause 0.7
-    click "돌목을 초소에서 끌어낸다"
+    click "돌목 씨, 같이 가요. 여기 있으면 안 돼요."
     pause 0.7
-    click pos (900,600) until screen "r13_confirm" timeout 90
+    click pos (900,600) until screen "r13_end_card" timeout 90
     assert eval (r13_v111_value("wild_late")==3 and r13_v111_value("wild_family")=="alone")
 
 
@@ -207,5 +207,5 @@ testcase v111_wild_route_pass:
     pause 0.3
     click "QA 이동"
     pause 0.7
-    click pos (900,600) until screen "r13_confirm" timeout 90
+    click pos (900,600) until screen "r13_end_card" timeout 90
     assert eval (r13_v111_value("wild_late")==0 and r13_v111_value("wild_family")=="three")

@@ -412,6 +412,10 @@ init 350 python:
     def r13_pw_observe_spots(pic):
         return [("head","머리글",(0,0,pic,int(pic*.25))),("body","본문",(0,int(pic*.25),int(pic*.7),int(pic*.5))),
                 ("tail","끝부분",(int(pic*.7),int(pic*.6),pic-int(pic*.7),pic-int(pic*.6))),("margin","여백",(0,int(pic*.75),int(pic*.7),pic-int(pic*.75)))]
+    # 2026-10-29 피드백 M: 나란히 보기에서 편지 두 장이 종이 그림과 요약(「…라고 적혔다」)으로만 보여, 「직접 읽고 견준다」는
+    # 안내와 달리 원문이 앞에 없었다. 편지·메모처럼 글 자체가 자료인 것은 원문을 제목 바로 아래 먼저 보이고 그림은 그 아래에 둔다.
+    # 맞는지 아닌지는 여전히 표시하지 않는다.
+    R13_PW_ORIGINAL_FIRST=("V111:E01","V111:E06")
     def r13_pw_observe_available(key,pair):
         return key==R13_PW_OBSERVE_KEY and bool(pair) and len(pair)==2 and all(k in ("V111:E01","V111:E06") for k in pair)
 
@@ -434,6 +438,9 @@ screen r13_pw_pair(pair,x,y,w,h,observe=False,ready=True):
                 xsize inner spacing 8
                 if key is not None:
                     use r13_evidence_heading(key,inner,title_size)
+                    if key in R13_PW_ORIGINAL_FIRST:
+                        text "원문" size small color r13_nb_accent() font R13_UI_BOLD_FONT
+                        text r13_material_body(r13_catalog_record(key)) size r13_ev_fact_size() color r13_nb_ink() font R13_UI_BOLD_FONT xsize inner
                     fixed:
                         xsize inner ysize pic
                         fixed:

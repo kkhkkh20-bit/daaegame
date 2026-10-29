@@ -19,23 +19,28 @@ testcase v111_nw_d02_afternoon_shelter:
     click pos (900,600) until "편지를 외투 안에" timeout 60
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day2_afternoon)
-    assert eval (qa_nw_afternoon_titles("dining")==["포대를 옮긴다","네로를 만나러 간다"])
+    # 2026-10-29 외부 검토 「행동이 질문 목록 안에 있다」: 네로에게 가는 일은 나비의 질문이 아니라 지도의 숲이다.
+    assert eval (qa_nw_afternoon_titles("dining")==["포대 옮기는 거, 제가 돕겠습니다."] and qa_nw_afternoon_titles("forest")==["숲으로 가서 네로를 돕는다"])
     assert eval (qa_nw_afternoon_titles("square")==[])
     run Jump("r13_v111_afternoon")
     pause 1.0
     assert screen "r13_hub"
+    assert eval ("숲으로 가면 오늘 오후는 네로 씨를 돕는다" in r13_v111_goal())
     click "나비"
-    pause 1.0
-    click "포대를 옮긴다"
+    pause until screen "r13_topics" timeout 30
+    pause 0.8
+    assert eval ([q[0] for q in r13_v111_questions("nabi")]==["포대 옮기는 거, 제가 돕겠습니다."])
+    screenshot "v111_nw_d02_nabi_topics.png"
+    click "포대 옮기는 거, 제가 돕겠습니다."
     click pos (900,600) until eval (r13_v111_value("piko_sacks2") is True and qa_nw_seen("벤치 하나가 빈다")) timeout 30
-    assert eval (qa_nw_afternoon_titles("dining")==["네로를 만나러 간다","벤치 표면을 살핀다"] and qa_nw_afternoon_titles("inn")==["마른 천을 빌린다"])
+    assert eval (qa_nw_afternoon_titles("dining")==["벤치 표면을 살핀다"] and qa_nw_afternoon_titles("inn")==["마른 천을 좀 빌릴 수 있을까요?"])
     assert eval (qa_nw_afternoon_titles("square")==[])
     run Function(r13_v111_set,"piko_cloth2",True)
     assert eval (qa_nw_afternoon_titles("square")==[])
     # 벤치 관찰·청소의 실제 조작은 piko_bench_preparation에서 확인한다.
     run Function(r13_v111_set,"piko_bench_seen2",True)
     run Function(r13_v111_set,"piko_bench_clean2",True)
-    assert eval (qa_nw_afternoon_titles("square")==["식당에 앉을 자리를 전한다"])
+    assert eval (qa_nw_afternoon_titles("square")==["오늘 밤은 식당에 앉을 자리가 있습니다."])
     run Function(r13_v111_apply,"option:afternoon:0",[{'op':'set','field':'D02_afternoon','value':'shelter'}])
     run Jump("r13_v111_shelter_done")
     pause 1.0
@@ -61,12 +66,26 @@ testcase v111_nw_d02_afternoon_half_then_nero:
     run Jump("r13_v111_afternoon")
     pause 1.0
     assert screen "r13_hub"
-    click "나비"
+    # 2026-10-29: 지도에서 숲을 고르면 확인 창 없이 네로 쪽 오후로 정해지고, 이야기가 식당(나비)·광장(피코)을 거쳐 숲으로 데려간다.
+    run [Hide("r13_evidence_found"),SetVariable("r13_goal_open",True)]   # 시험 준비로 받은 자료 카드가 생각 판을 가리지 않게
     pause 1.0
-    click "네로를 만나러 간다"
+    screenshot "v111_nw_d02_afternoon_thought.png"
+    run SetVariable("r13_goal_open",False)
+    pause 0.5
+    click "지도" until screen "r13_map" timeout 30
+    pause until eval renpy.get_screen("r13_map").scope["ready"] timeout 30
+    click "숲·산길"
+    pause 0.7
+    click id "map_building_forest"
+    pause 0.4
+    click "이곳으로 이동"
     click pos (900,600) until eval (qa_nw_seen("포대까지 옮겨 놓고요")) timeout 30
     assert eval (r13_v111_value("D02_afternoon")=="nero")
     screenshot "v111_nw_d02_half_nero.png"
+    # 네로의 부탁에 「하겠습니다」 뒤, 침구 일은 질문 없이 지문으로 이어진다(숲 그림에 침구 물건이 없다).
+    click pos (900,600) until eval (qa_nw_seen("마른 받침 위로 이불 묶음을 옮긴다")) timeout 90
+    assert eval (room13["location"]=="forest" and room13["v111"].get("gate")=="nero_work" and not renpy.get_screen("r13_topics"))
+    screenshot "v111_nw_d02_forest_nero.png"
     run Function(r13_v111_set,"piko_sheltered",False)
     run Function(r13_v111_set,"selected_afternoon_work_completed",True)
     run Function(r13_edit,location="room13",period=2)
@@ -74,6 +93,17 @@ testcase v111_nw_d02_afternoon_half_then_nero:
     pause 1.0
     click pos (900,600) until screen "r13_hub" timeout 90
     assert eval (qa_nw_seen("피코가 깨겠지") and not qa_nw_seen("내일 일찍 가야 돼"))
+    # 2026-10-29 외부 검토: 2일 저녁 13호. 다람에게 「방으로 들어간다」를 묻지 않는다(다람은 아빠 곁의 동행이라 이제 현장에
+    # 세우지 않는다). 침대를 한 번 누르면 아침 약속을 적고 잠드는 데까지 이어진다.
+    assert eval (room13["v111"].get("gate")=="lamp_prep2" and room13["location"]=="room13")
+    assert eval ([q[0] for q in r13_v111_questions("daram")]==[] and "daram" not in r13_visible_people() and r13_object_visible(ROOM13["objects"]["room13"]["bed"]))
+    pause 1.0
+    screenshot "v111_nw_d02_room13_bed.png"
+    run Show('qa_hidden_base_return',value=('object','bed'))
+    pause 0.3
+    click 'QA 행동'
+    click pos (900,600) until eval (r13_v111_value("day")==3) timeout 90
+    assert eval (r13_v111_value("lamp_prep_done2") is True and r13_has("v111:applied:option:sleep2:0") and r13_v111_bed_pending is None)
 
 testcase v111_nw_d05_piko_sketch:
     # 0.20.18 연쇄 P1: 2일에 살린 피코가 4일 밤 식당에서 그림을 건네고, 5일 회의에서

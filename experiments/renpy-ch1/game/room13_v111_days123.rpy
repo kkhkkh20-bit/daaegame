@@ -743,12 +743,12 @@ label r13_v111_shelter_done:
 
 label r13_v111_nero_choice:
     $ r13_v111_scene('MS14_D02_S04')
-    call r13_v111_travel('dining','nero_choice')
+    call r13_v111_travel('dining','nero_choice',direct=True)   # 2026-10-29 외부 검토: 오후는 지도에서 숲을 골라 정한다. 가는 길(나비·피코에게 알리기)은 이야기가 데려간다
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D02_S04_L0039', 'MS14_D02_S04_L0040', 'MS14_D02_S04_L0041']), 'v111:nero_choice:MS14_D02_S04_L0039')
-    call r13_v111_travel('square','MS14_D02_S04_L0042')
+    call r13_v111_travel('square','MS14_D02_S04_L0042',direct=True)
     call r13_lines(r13_v111_lines(['MS14_D02_S04_L0043', 'MS14_D02_S04_L0044', 'MS14_D02_S04_L0045', 'MS14_D02_S04_L0046', 'MS14_D02_S04_L0047', 'MS14_D02_S04_L0048']), 'v111:nero_choice:MS14_D02_S04_L0043')
-    call r13_v111_travel('forest','MS14_D02_S04_L0049')
+    call r13_v111_travel('forest','MS14_D02_S04_L0049',direct=True)
     call r13_lines(r13_v111_lines(['MS14_D02_S04_L0050', 'MS14_D02_S04_L0051', 'MS14_D02_S04_L0052', 'MS14_D02_S04_L0053', 'MS14_D02_S04_L0054', 'MS14_D02_S04_L0055', 'MS14_D02_S04_L0057', 'MS14_D02_S04_L0058', 'MS14_D02_S04_L0059', 'MS14_D02_S04_L0060', 'MS14_D02_S04_L0061']), 'v111:nero_choice:MS14_D02_S04_L0050')
     jump r13_v111_nero_work
 

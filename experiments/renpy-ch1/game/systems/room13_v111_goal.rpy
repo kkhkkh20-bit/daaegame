@@ -32,6 +32,9 @@ init 341 python:
         "wild_square14":"잠긴 집에 아이가 있다. 우리 가족도 광장에 오래 머물 수 없다.",
         "wild_road14":"초소에도 푸른 불이 켜졌다. 폐온실은 산길 첫 굽이에 있다.",
         "supply_inventory14":"오늘 밤 학교에서 쓸 몫과 남은 양을 확인하자.",
+        # 2026-10-29 외부 검토 「행동이 질문 목록 안에 있다」: 네로에게 가는 일을 나비의 질문에서 빼고 지도의 숲으로 옮겼다.
+        # 숲을 누르면 확인 창 없이 오후가 정해지므로, 누르기 전에 그 뜻을 여기서 알린다(결과·정답은 말하지 않는다).
+        "afternoon2":"해 지기 전, 피코 씨의 잠자리를 마련할 수 있다. 숲으로 가면 오늘 오후는 네로 씨를 돕는다.",
     }
     # 2026-10-27 외부 리뷰 R04: 장면 의문은 이동 대기 동안 앞 장면 것이 남는다(r13_v111_thought_hold). 그래서 등록을
     # 마치고 여관으로 가는 길에도 「우리 두 사람 모두 제대로 등록됐을까?」가 보였다. 그 의문에 답이 난 값이 있으면
@@ -81,7 +84,8 @@ init 342 python:
         "두 편지의 초대를 대조한다":"두 편지가 누구를 부르는지, 부르지 않는지.",
     }
     # 그날 할 일을 마친 잠자리 단계와 확인 요청 단계의 '생각'.
-    for _gate in ("sleep1","sleep2","sleep3","sleep4","sleep5","sleep6_input","free_sleep7_input","detained_bed7",
+    # 2026-10-29: 2일 저녁 lamp_prep2 도 잠자리 단계다. 다람의 「방으로 들어간다」를 빼고 13호 침대로 옮겼으므로 같은 말로 침대를 가리킨다.
+    for _gate in ("lamp_prep2","sleep1","sleep2","sleep3","sleep4","sleep5","sleep6_input","free_sleep7_input","detained_bed7",
                   "sleep8_input","sleep9_input","sleep10_input","sleep11_input","sleep12_bed_input","sleep13_input",
                   "sleep13_gate_input","departed_bed13"):
         R13_V111_STEP_GOALS[_gate]="오늘 할 일은 마쳤다. 잠자리를 정리하자."

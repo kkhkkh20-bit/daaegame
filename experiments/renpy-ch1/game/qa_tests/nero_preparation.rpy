@@ -45,7 +45,7 @@ testcase nero_independent_preparation:
     pause 0.3
     click 'QA 행동'
     pause 0.5
-    click '까로에게 운반을 부탁한다'
+    click '까로 씨, 수레를 끌어 주시겠습니까?'
     click pos (900,600) until eval r13_v111_value('rescue_driver_ready') timeout 30
     pause 0.8
     run Show('qa_hidden_base_return',value=('object','lamp'))
