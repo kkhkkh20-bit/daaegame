@@ -82,6 +82,8 @@ init 40 python:
         # 2026-10-28 분기 주행: 「판돌 씨, 여기요」에 돌목이, 「모모 씨, 내려요」에 까로가 섰다. 아빠가 부른 이름이 먼저다.
         text=str(entries[index][1]) if index<len(entries) and len(entries[index])>1 else ""
         called=r13_called_person(text)
+        # 2026-10-29 조합 판 주행(11일 보호시설): 엄마에게 되묻는 줄에 앞서 조사 화면에서 말한 다람이 섰다. 「여보」는 엄마다.
+        if not called and "여보" in renpy.filter_text_tags(text,allow=[]):called="mom"
         if ok(called):return called
         for p in entries[index+1:]:
             opts=p[2] if len(p)>2 and isinstance(p[2],dict) else {}
