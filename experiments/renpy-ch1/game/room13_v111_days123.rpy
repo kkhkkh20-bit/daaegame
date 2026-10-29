@@ -146,7 +146,7 @@ label r13_v111_gate_letter:
 label r13_v111_gate_original:
     $ r13_v111_scene('MS14_D01_S02')
     $ r13_v111_score()
-    call r13_lines(r13_v111_lines(['MS14_D01_S02_L0026', 'MS14_D01_S02_L0027']), 'v111:gate_original:MS14_D01_S02_L0026')
+    call r13_v111_gate_shelf_pick   # 2026-10-29 설계안 ②: 돌목이 칸을 알려 주던 L0026·L0027 대신 아빠가 요일 칸을 고른다(room13_v111_gate_shelf.rpy). 줄 수 고정.
     jump r13_v111_gate_original_out
 
 label r13_v111_gate_original_out:
