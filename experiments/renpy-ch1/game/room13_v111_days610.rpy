@@ -7,6 +7,8 @@ label r13_v111_day6:
     # 2026-10-28 캡처 검수: 첫 줄들(「여관 문을 열자……」 할머니의 고백, 문 앞의 초롱)이 학교 교실 배경 위에 나왔다.
     # 그 주고받기는 여관 문 앞에서 하고, 초롱이 일러 준 학교 뒷문으로 간다.
     $ r13_edit(location='inn')
+    # 2026-10-29 자동 완주 장소 점검: 위치만 바꾸고 장면은 그대로라, 접수대 화면에 이름표가 「여관 2층 · 13호실」로 남았다.
+    call r13_scene(R13_PLACES['inn'][1],R13_PLACES['inn'][0],"calm")
     $ r13_v111_arrive(['daram', 'granny', 'resident_lamplighter'])
     # 외부 검토 2 N10: 5일 밤 접시 봉지를 가방에 안 넣은 판은 13호를 나서며 다람이 외투 안에 넣는다(d06.json NW_D06_SNK01).
     $ (r13_v111_set('cookie.location','daram_coat') if r13_v111_value('snack_bagged5') is not True else None)
