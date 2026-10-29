@@ -35,14 +35,15 @@ init 140 python:
 
     _R13_ITEM_SPAN=_r13_tre.compile(r"「[^「」{}\[\]]{1,16}」")  # names only; long quoted letters stay body text
 
-    def r13_semantic_text(text):
+    def r13_semantic_text(text,opening=True,closing=True):
         """Display-only. Thought: parentheses exactly once, one colour. Otherwise: only authored
-        「item」 spans take the entity colour. No automatic names, no bold."""
+        「item」 spans take the entity colour. No automatic names, no bold.
+        opening/closing: a line cut by {w} arrives in pieces; only the first piece opens and the last closes."""
         if not isinstance(text,str) or not getattr(store,"room13_mode",False):return text
         if getattr(store,"r13_thought_active",False):
             s=text.strip()
-            if s and not s.startswith("("):text="("+text
-            if s and not s.endswith(")"):text=text+")"
+            if opening and s and not s.startswith("("):text="("+text
+            if closing and s and not s.endswith(")"):text=text+")"
             return text
         if "「" not in text:return text
         color=r13_role_color("entity","dark" if getattr(store,"r13_black_card",False) else "paper")

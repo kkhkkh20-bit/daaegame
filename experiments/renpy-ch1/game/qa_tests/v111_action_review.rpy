@@ -134,5 +134,5 @@ testcase v111_ar_d14_frozen_after_hyp:
     run Function(r13_v111_set,"nero_alive",False)
     run Function(r13_v111_set,"meeting:hypothesis","win")
     run Jump("r13_v111_ending_dispatch14")
-    click pos (900,600) until screen "r13_confirm" timeout 120
+    click pos (900,600) until screen "r13_end_card" timeout 120
     assert eval (r13_v111_value("ending14")=="frozen" and qa_nw_seen("왜 다시 돌을 켭니까") and qa_nw_seen("장작 때문에 죽은 게 아닙니다") and qa_nw_seen("이름을 읽던 나비가"))

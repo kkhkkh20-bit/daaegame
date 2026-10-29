@@ -22,7 +22,7 @@ testcase v111_nw_d14_left_name:
     run Function(r13_v111_set,"departed:daram",True)
     run Function(r13_v111_set,"outcome13","partial_rescue")
     run Jump("r13_v111_ending_dispatch14")
-    click pos (900,600) until screen "r13_confirm" timeout 120
+    click pos (900,600) until screen "r13_end_card" timeout 120
     assert eval (r13_v111_value("ending14")=="left_name" and qa_nw_seen("다람 몫이었다") and qa_nw_seen("치우지 마"))
 
 testcase v111_nw_d14_frozen:
@@ -35,7 +35,7 @@ testcase v111_nw_d14_frozen:
     run Function(r13_v111_set,"KKOMI_ALIVE",False)
     run Function(r13_v111_set,"nero_alive",False)
     run Jump("r13_v111_ending_dispatch14")
-    click pos (900,600) until screen "r13_confirm" timeout 120
+    click pos (900,600) until screen "r13_end_card" timeout 120
     assert eval (r13_v111_value("ending14")=="frozen" and r13_nw_loss_count()==4 and qa_nw_seen("받아 적지 못했다") and qa_nw_seen("이름을 읽던 나비가"))
 
 testcase v111_nw_d14_partial_departed:
@@ -118,7 +118,7 @@ testcase v111_nw_d14_true_ending:
     run Function(r13_v111_set,"grand:fire",True)
     run Function(r13_v111_set,"grand:soup",True)
     run Jump("r13_v111_cookie14")
-    click pos (900,600) until screen "r13_confirm" timeout 150
+    click pos (900,600) until screen "r13_end_card" timeout 150
     assert eval (r13_v111_value("ending14")=="true" and qa_nw_seen("여기만이 아닐지도 몰라") and qa_nw_seen("닫음"))
 
 testcase v111_nw_d14_altar_without_records:

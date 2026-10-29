@@ -35,7 +35,7 @@ testcase v111_nw_aftermath_memorial:
     run Function(r13_v111_set,"crowd_intervention","failed")
     run Function(r13_v111_set,"crowd_blocked_by_dad",True)
     run Jump("r13_v111_ending_dispatch14")
-    click pos (900,600) until screen "r13_confirm" timeout 120
+    click pos (900,600) until screen "r13_end_card" timeout 120
     assert eval (r13_v111_value("ending14")=="frozen")
     assert eval (qa_nw_seen("피코의 이젤은 그대로") and qa_nw_seen("도토리 한 알이 놓여") and qa_nw_seen("네로의 장갑 한 짝"))
     assert eval (qa_nw_seen("알 하나가 빠져 있었다") and qa_nw_seen("누가 먼저 쳤는지는 아무도 몰라요"))

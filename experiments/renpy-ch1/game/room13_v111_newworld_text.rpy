@@ -16,7 +16,8 @@
 #              (thought: the father's unspoken line; text without brackets, the engine adds them)
 #              "fx"?: jolt|shake|slam|flash, a one-off hit, shake or flash as the line appears
 #              "beat"?: a meeting-stage beat (interrupt, shaken, cornered, ...) for lines inside a meeting
-#              "when"?: condition name in R13_NW_WHEN, "cut"?: existing ep art name}
+#              "when"?: condition name in R13_NW_WHEN, "cut"?: existing ep art name,
+#              "endcut"?: ending cut ID (END-xx[:layer], MEM-xx) — systems/room13_end_cut.rpy}
 # Conditions are named Python predicates, never evaluated strings.
 # With every file empty the game shows the same lines in the same order as before.
 init 319 python:
@@ -417,6 +418,8 @@ init 319 python:
         slot=row.get("expression") or "neutral"
         options=dict(no_lead=True,expression=slot,pose=slot)
         if row.get("cut"):options["cut"]=row["cut"]
+        # 2026-10-29 엔딩 컷(systems/room13_end_cut.rpy): 그림이 납품돼 있을 때만 뜬다.
+        if row.get("endcut"):options["endcut"]=row["endcut"]
         # Meeting stage beat (systems/room13_meeting_direction.rpy), used only inside a meeting.
         if row.get("beat"):options["beat"]=row["beat"]
         if row.get("fx"):options["fx"]=row["fx"]

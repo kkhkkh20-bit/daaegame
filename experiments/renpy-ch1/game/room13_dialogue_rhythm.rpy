@@ -55,7 +55,10 @@ init 62 python:
         # comparing it with the original say string. Only the layout token
         # stream receives punctuation timing, after that contract is preserved.
         def tokenize(self,text):
-            display_text=[r13_rhythmic_text(r13_semantic_text(part)) if isinstance(part,str) else part for part in text]
+            # 2026-10-29 소유자 캡처 「(말이 명부를 닮았다.)( 짧고, 고쳐 쓸 칸이 없다.)」: {w} 가 든 줄은 여기에 조각으로 온다.
+            # 생각 줄 괄호를 조각마다 씌우면 중간에서 「)(」가 생긴다. 괄호는 첫 조각 앞과 끝 조각 뒤에만 둔다.
+            strs=[i for i,part in enumerate(text) if isinstance(part,str)]
+            display_text=[r13_rhythmic_text(r13_semantic_text(part,i==strs[0],i==strs[-1])) if isinstance(part,str) else part for i,part in enumerate(text)]
             return super(R13DialogueText,self).tokenize(display_text)
 
         def __init__(self,*args,**kwargs):

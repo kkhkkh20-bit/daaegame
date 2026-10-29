@@ -482,7 +482,7 @@ def nw_ending(key,place,title,block):
  lines.append('    call r13_scene(R13_PLACES[%r][1],%r,"quiet")'%(place,title));nwblock(block);goto('story_end14')
 nw_ending('left_name_ending14','school','남겨진 이름','end_left_name14')
 nw_ending('frozen_ending14','gate','얼어붙은 마을','end_frozen14')
-label('story_end14');setv('story14_completed',True);lines.append('    call screen r13_confirm("이야기를 마쳤습니다. 현재 진행을 저장할 수 있습니다.",yes="메인 화면으로",no="저장하기")');lines.append('    if not _return:');lines.append('        call screen save');lines.append('    return')
+label('story_end14');setv('story14_completed',True);lines.append('    call r13_v111_end_card14');lines.append('    return')
 s='MS14_D14_S01';start(s,'school','morning_safe14',['mom','daram','npc_pandol','nabi']);late(s,1,18)
 lines.extend(['    if r13_v111_value("OWL_ALIVE") is False:','        $ r13_nw_acquire("NW_BURNT_PAGE")']);code('r13_nw_acquire("NW_MADAM_DAY7")');goto('altar_guide14')
 talk('altar_guide14','school',['mom','daram','resident_badook'],'resident_badook','제단 접근로를 확인해 주십시오.','altar_ready14')
@@ -582,7 +582,7 @@ label('cookie_gate14');arrive(['mom','daram']);setv('night14_lodging','gate');go
 label('cookie_scene14');code('r13_edit(period=2)');code('r13_v111_scene('+q(s)+')');lines.append('    call r13_scene(R13_PLACES[room13["location"]][1],R13_PLACES[room13["location"]][0],"calm")');code('r13_v111_score()');late(s,1,14)
 lines.append('    if '+V('crowd_injury')+':');lines.append('        call r13_v111_cookie_distance14')
 late(s,15,23)
-lines.extend(['    if r13_nw_true_ending_ready():','        call r13_v111_true_epilogue14']);setv('story14_completed',True);lines.append('    call screen r13_confirm("이야기를 마쳤습니다. 현재 진행을 저장할 수 있습니다.",yes="메인 화면으로",no="저장하기")');lines.append('    if not _return:');lines.append('        call screen save');lines.append('    return')
+lines.extend(['    if r13_nw_true_ending_ready():','        call r13_v111_true_epilogue14']);setv('story14_completed',True);lines.append('    call r13_v111_end_card14');lines.append('    return')
 label('cookie_distance14');late(s,30,32);lines.append('    return')
 label('true_epilogue14');setv('ending14','true');code('r13_edit(location="gate")');code('room13["v111"]["people"]=[]');lines.append('    call r13_scene(R13_PLACES["gate"][1],"말을 위한 돌","quiet")');nwblock('end_true14');lines.append('    return')
 bindings['morning_prep12']['people_by_location']={

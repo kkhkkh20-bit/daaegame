@@ -1381,7 +1381,7 @@
    "id": "WILD-ENDING-PROPS",
    "title": "불타는 밤 결말 물건 그림",
    "kind": "물건",
-   "status": "needs_delivery",
+   "status": "delivered_linked",
    "priority": "P2",
    "description": "엔딩 컷씬 제안서의 MEM-09·10. 불타는 밤 결말 지문에 붙인다: 엄마를 잃은 갈래는 「이름판 아래 재 속에 엄마의 장갑 한 짝이 있었다.」, 혼자 남은 갈래는 「재 속에서 도토리 두 알을 주웠다.」(아빠 손바닥 위, 재 묻은 도토리 두 알).",
    "scenes": [
@@ -1427,7 +1427,16 @@
     "이미 등록된 원본 파일은 덮어쓰지 않고 별도 경로에 납품한다.",
     "상태별 그림과 해당 분기 대사를 대조한다.",
     "PC·모바일에서 인물/버튼이 조사 대상을 가리지 않는지 실제 화면으로 확인한다."
-   ]
+   ],
+   "delivery": {
+    "date": "2026-10-29",
+    "received": "런타임 PNG+무손실 WebP(장면 1280x720·소품 720x720·END-11 1672x941), 대응표 CSV, checksums. 원본 source ZIP 은 받지 않음.",
+    "registered": "game/assets/ending/WILD-ENDING-PROPS-a.webp(가 장갑) · WILD-ENDING-PROPS-b.webp(나 도토리 두 알)",
+    "notes": [
+     "연결: v111/newworld/d14.json 의 해당 지문 줄 \"endcut\" → systems/room13_end_cut.rpy",
+     "원본 PNG·대응표: art/ending-20261029/"
+    ]
+   }
   },
   {
    "id": "WILD-FIRE-OVERLAY",
@@ -1995,7 +2004,7 @@
    "id": "END-01",
    "title": "진엔딩: 마차 안 지도",
    "kind": "컷",
-   "status": "needs_delivery",
+   "status": "delivered_linked",
    "priority": "P1",
    "description": "새로운 아침. 달리는 마차 안, 엄마가 무릎에 지도를 펼치고 다람이 아빠 어깨를 밀며 몸을 내밀어 들여다본다. 아빠는 구석에 끼어 웃는다. 지도의 산골 마을 몇 곳에 작은 재 무더기 기호.",
    "scenes": [
@@ -2033,13 +2042,22 @@
    "acceptance": [
     "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다",
     "아래 200px(대사창 자리)에 얼굴·손·핵심 물건이 없다"
-   ]
+   ],
+   "delivery": {
+    "date": "2026-10-29",
+    "received": "런타임 PNG+무손실 WebP(장면 1280x720·소품 720x720·END-11 1672x941), 대응표 CSV, checksums. 원본 source ZIP 은 받지 않음.",
+    "registered": "game/assets/ending/END-01*.webp",
+    "notes": [
+     "연결: v111/newworld/d14.json 의 해당 지문 줄 \"endcut\" → systems/room13_end_cut.rpy",
+     "원본 PNG·대응표: art/ending-20261029/"
+    ]
+   }
   },
   {
    "id": "END-02",
    "title": "진엔딩: 마차 짐 위 초상",
    "kind": "컷",
-   "status": "needs_delivery",
+   "status": "delivered_linked",
    "priority": "P1",
    "description": "첫 길이 열린 날 까로의 마차 짐 위 초상 한 점. 마차·짐 배경 판과 초상 판 둘(피코 완성본 / 엄마 초상, 코만 아이 솜씨로 살짝 삐뚤어짐).",
    "scenes": [
@@ -2081,13 +2099,22 @@
    "acceptance": [
     "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다",
     "아래 200px(대사창 자리)에 얼굴·손·핵심 물건이 없다"
-   ]
+   ],
+   "delivery": {
+    "date": "2026-10-29",
+    "received": "런타임 PNG+무손실 WebP(장면 1280x720·소품 720x720·END-11 1672x941), 대응표 CSV, checksums. 원본 source ZIP 은 받지 않음.",
+    "registered": "game/assets/ending/END-02*.webp",
+    "notes": [
+     "연결: v111/newworld/d14.json 의 해당 지문 줄 \"endcut\" → systems/room13_end_cut.rpy",
+     "원본 PNG·대응표: art/ending-20261029/"
+    ]
+   }
   },
   {
    "id": "END-03",
    "title": "마을의 아침: 광장 장작 줄",
    "kind": "컷",
-   "status": "needs_delivery",
+   "status": "delivered_linked",
    "priority": "P1",
    "description": "이튿날 아침 광장. 주민들이 줄을 지어 장작을 손에서 손으로 나른다. 광장 등에는 덮개.",
    "scenes": [
@@ -2125,13 +2152,22 @@
    "acceptance": [
     "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다",
     "아래 200px(대사창 자리)에 얼굴·손·핵심 물건이 없다"
-   ]
+   ],
+   "delivery": {
+    "date": "2026-10-29",
+    "received": "런타임 PNG+무손실 WebP(장면 1280x720·소품 720x720·END-11 1672x941), 대응표 CSV, checksums. 원본 source ZIP 은 받지 않음.",
+    "registered": "game/assets/ending/END-03*.webp",
+    "notes": [
+     "연결: v111/newworld/d14.json 의 해당 지문 줄 \"endcut\" → systems/room13_end_cut.rpy",
+     "원본 PNG·대응표: art/ending-20261029/"
+    ]
+   }
   },
   {
    "id": "END-04",
    "title": "난로 곁 셋",
    "kind": "컷",
-   "status": "needs_delivery",
+   "status": "delivered_linked",
    "priority": "P1",
    "description": "밤 학교 난로 곁에 아빠·엄마·다람이 나란히 앉은 뒷모습. 다람 옆 빈자리에 담요. 담요 판을 따로 받아 결말에 따라 켜고 끈다.",
    "scenes": [
@@ -2172,13 +2208,22 @@
    "acceptance": [
     "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다",
     "아래 200px(대사창 자리)에 얼굴·손·핵심 물건이 없다"
-   ]
+   ],
+   "delivery": {
+    "date": "2026-10-29",
+    "received": "런타임 PNG+무손실 WebP(장면 1280x720·소품 720x720·END-11 1672x941), 대응표 CSV, checksums. 원본 source ZIP 은 받지 않음.",
+    "registered": "game/assets/ending/END-04*.webp",
+    "notes": [
+     "연결: v111/newworld/d14.json 의 해당 지문 줄 \"endcut\" → systems/room13_end_cut.rpy",
+     "원본 PNG·대응표: art/ending-20261029/"
+    ]
+   }
   },
   {
    "id": "END-05",
    "title": "가족을 택한 밤: 다람의 두 손",
    "kind": "컷",
-   "status": "needs_delivery",
+   "status": "delivered_linked",
    "priority": "P2",
    "description": "다람의 두 손 가까이. 오른손은 과자 봉지를 쥐고, 펼친 왼손 바닥에는 잉크로 쓴 줄 몇 개(읽히지 않는 획).",
    "scenes": [
@@ -2216,13 +2261,22 @@
    "acceptance": [
     "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다",
     "아래 200px(대사창 자리)에 얼굴·손·핵심 물건이 없다"
-   ]
+   ],
+   "delivery": {
+    "date": "2026-10-29",
+    "received": "런타임 PNG+무손실 WebP(장면 1280x720·소품 720x720·END-11 1672x941), 대응표 CSV, checksums. 원본 source ZIP 은 받지 않음.",
+    "registered": "game/assets/ending/END-05*.webp",
+    "notes": [
+     "연결: v111/newworld/d14.json 의 해당 지문 줄 \"endcut\" → systems/room13_end_cut.rpy",
+     "원본 PNG·대응표: art/ending-20261029/"
+    ]
+   }
   },
   {
    "id": "END-06",
    "title": "남은 사람들: 수레바퀴 자국",
    "kind": "컷",
-   "status": "needs_delivery",
+   "status": "delivered_linked",
    "priority": "P2",
    "description": "아침 광장 눈바닥에 산길 쪽으로 이어지는 수레바퀴 자국 두 줄. 눈 위에 밟힌 빈 인계표 한 장.",
    "scenes": [
@@ -2260,13 +2314,22 @@
    "acceptance": [
     "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다",
     "아래 200px(대사창 자리)에 얼굴·손·핵심 물건이 없다"
-   ]
+   ],
+   "delivery": {
+    "date": "2026-10-29",
+    "received": "런타임 PNG+무손실 WebP(장면 1280x720·소품 720x720·END-11 1672x941), 대응표 CSV, checksums. 원본 source ZIP 은 받지 않음.",
+    "registered": "game/assets/ending/END-06*.webp",
+    "notes": [
+     "연결: v111/newworld/d14.json 의 해당 지문 줄 \"endcut\" → systems/room13_end_cut.rpy",
+     "원본 PNG·대응표: art/ending-20261029/"
+    ]
+   }
   },
   {
    "id": "END-07",
    "title": "상처 입은 귀환: 아무도 집지 않은 과자",
    "kind": "컷",
-   "status": "needs_delivery",
+   "status": "delivered_linked",
    "priority": "P2",
    "description": "정물. 난로 불빛이 비치는 상 위 접시의 과자. 상 가장자리에 손 셋(어른 둘·아이 하나), 아무도 접시에 닿지 않는다. 한 손에 붕대(누구의 손인지 드러내지 않는다).",
    "scenes": [
@@ -2304,13 +2367,22 @@
    "acceptance": [
     "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다",
     "아래 200px(대사창 자리)에 얼굴·손·핵심 물건이 없다"
-   ]
+   ],
+   "delivery": {
+    "date": "2026-10-29",
+    "received": "런타임 PNG+무손실 WebP(장면 1280x720·소품 720x720·END-11 1672x941), 대응표 CSV, checksums. 원본 source ZIP 은 받지 않음.",
+    "registered": "game/assets/ending/END-07*.webp",
+    "notes": [
+     "연결: v111/newworld/d14.json 의 해당 지문 줄 \"endcut\" → systems/room13_end_cut.rpy",
+     "원본 PNG·대응표: art/ending-20261029/"
+    ]
+   }
   },
   {
    "id": "END-08",
    "title": "남겨진 이름: 이름판 빈칸",
    "kind": "컷",
-   "status": "needs_delivery",
+   "status": "delivered_linked",
    "priority": "P1",
    "description": "광장 이름판 앞, 붓을 든 아빠의 손이 빈칸 앞에서 멈춰 있다. 다른 칸은 읽히지 않는 붓 자국.",
    "scenes": [
@@ -2348,13 +2420,22 @@
    "acceptance": [
     "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다",
     "아래 200px(대사창 자리)에 얼굴·손·핵심 물건이 없다"
-   ]
+   ],
+   "delivery": {
+    "date": "2026-10-29",
+    "received": "런타임 PNG+무손실 WebP(장면 1280x720·소품 720x720·END-11 1672x941), 대응표 CSV, checksums. 원본 source ZIP 은 받지 않음.",
+    "registered": "game/assets/ending/END-08*.webp",
+    "notes": [
+     "연결: v111/newworld/d14.json 의 해당 지문 줄 \"endcut\" → systems/room13_end_cut.rpy",
+     "원본 PNG·대응표: art/ending-20261029/"
+    ]
+   }
   },
   {
    "id": "END-09",
    "title": "남겨진 이름: 다람 몫 과자",
    "kind": "컷",
-   "status": "needs_delivery",
+   "status": "delivered_linked",
    "priority": "P1",
    "description": "밤 학교 상 위 접시에 과자 하나. 맞은편에서 엄마의 손이 치우려는 손을 막는다.",
    "scenes": [
@@ -2392,13 +2473,22 @@
    "acceptance": [
     "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다",
     "아래 200px(대사창 자리)에 얼굴·손·핵심 물건이 없다"
-   ]
+   ],
+   "delivery": {
+    "date": "2026-10-29",
+    "received": "런타임 PNG+무손실 WebP(장면 1280x720·소품 720x720·END-11 1672x941), 대응표 CSV, checksums. 원본 source ZIP 은 받지 않음.",
+    "registered": "game/assets/ending/END-09*.webp",
+    "notes": [
+     "연결: v111/newworld/d14.json 의 해당 지문 줄 \"endcut\" → systems/room13_end_cut.rpy",
+     "원본 PNG·대응표: art/ending-20261029/"
+    ]
+   }
   },
   {
    "id": "END-10",
    "title": "얼어붙은 마을: 알아보지 못하는 돌목",
    "kind": "컷",
-   "status": "needs_delivery",
+   "status": "delivered_linked",
    "priority": "P1",
    "description": "첫 길이 열린 날 마을 입구. 붓을 쥐고 선 돌목이 앞에 선 셋을 낯선 사람처럼 본다. 다람이 발끝을 들고 돌목을 올려다본다. 뒷배경 광장의 등은 하나씩 꺼져 있다.",
    "scenes": [
@@ -2436,13 +2526,22 @@
    "acceptance": [
     "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다",
     "아래 200px(대사창 자리)에 얼굴·손·핵심 물건이 없다"
-   ]
+   ],
+   "delivery": {
+    "date": "2026-10-29",
+    "received": "런타임 PNG+무손실 WebP(장면 1280x720·소품 720x720·END-11 1672x941), 대응표 CSV, checksums. 원본 source ZIP 은 받지 않음.",
+    "registered": "game/assets/ending/END-10*.webp",
+    "notes": [
+     "연결: v111/newworld/d14.json 의 해당 지문 줄 \"endcut\" → systems/room13_end_cut.rpy",
+     "원본 PNG·대응표: art/ending-20261029/"
+    ]
+   }
   },
   {
    "id": "END-11",
    "title": "불타는 밤: 산길 굽이의 뒷모습(인물 판)",
    "kind": "컷",
-   "status": "needs_delivery",
+   "status": "delivered_linked",
    "priority": "P1",
    "description": "배경은 이미 납품된 WILD-DAWN(game/assets/wild-night/wild-village-dawn-ash.webp)을 쓴다. 새로 그릴 것은 그 앞 산길 굽이에 서서 마을을 내려다보는 뒷모습 인물 판 셋: 셋 / 아빠와 다람 / 아빠 혼자.",
    "scenes": [
@@ -2486,13 +2585,22 @@
    "acceptance": [
     "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다",
     "아래 200px(대사창 자리)에 얼굴·손·핵심 물건이 없다"
-   ]
+   ],
+   "delivery": {
+    "date": "2026-10-29",
+    "received": "런타임 PNG+무손실 WebP(장면 1280x720·소품 720x720·END-11 1672x941), 대응표 CSV, checksums. 원본 source ZIP 은 받지 않음.",
+    "registered": "game/assets/ending/END-11-three.webp · END-11-father-child.webp · END-11-father-alone.webp(1672x941, WILD-DAWN 배경과 같은 캔버스). 배경은 기존 wild-night/wild-village-dawn-ash.webp 를 그대로 쓴다. father-child 는 붙일 줄이 없어 아직 쓰지 않는다(엄마를 잃는 갈래에 산길에서 내려다보는 줄이 없다).",
+    "notes": [
+     "연결: v111/newworld/d14.json 의 해당 지문 줄 \"endcut\" → systems/room13_end_cut.rpy",
+     "원본 PNG·대응표: art/ending-20261029/"
+    ]
+   }
   },
   {
    "id": "MEM-01",
    "title": "피코 추모: 빈 이젤",
    "kind": "물건",
-   "status": "needs_delivery",
+   "status": "delivered_linked",
    "priority": "P2",
    "description": "광장 3번 등 아래 눈 속에 선 빈 이젤.",
    "scenes": [
@@ -2529,13 +2637,22 @@
    ],
    "acceptance": [
     "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다"
-   ]
+   ],
+   "delivery": {
+    "date": "2026-10-29",
+    "received": "런타임 PNG+무손실 WebP(장면 1280x720·소품 720x720·END-11 1672x941), 대응표 CSV, checksums. 원본 source ZIP 은 받지 않음.",
+    "registered": "game/assets/ending/MEM-01*.webp",
+    "notes": [
+     "연결: v111/newworld/d14.json 의 해당 지문 줄 \"endcut\" → systems/room13_end_cut.rpy",
+     "원본 PNG·대응표: art/ending-20261029/"
+    ]
+   }
   },
   {
    "id": "MEM-02",
    "title": "피코 추모: 씻긴 붓",
    "kind": "물건",
-   "status": "needs_delivery",
+   "status": "delivered_linked",
    "priority": "P2",
    "description": "화실 창가 통에 씻긴 채 꽂힌 붓들.",
    "scenes": [
@@ -2572,13 +2689,22 @@
    ],
    "acceptance": [
     "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다"
-   ]
+   ],
+   "delivery": {
+    "date": "2026-10-29",
+    "received": "런타임 PNG+무손실 WebP(장면 1280x720·소품 720x720·END-11 1672x941), 대응표 CSV, checksums. 원본 source ZIP 은 받지 않음.",
+    "registered": "game/assets/ending/MEM-02*.webp",
+    "notes": [
+     "연결: v111/newworld/d14.json 의 해당 지문 줄 \"endcut\" → systems/room13_end_cut.rpy",
+     "원본 PNG·대응표: art/ending-20261029/"
+    ]
+   }
   },
   {
    "id": "MEM-03",
    "title": "꼬미 추모: 창가 도토리",
    "kind": "물건",
-   "status": "needs_delivery",
+   "status": "delivered_linked",
    "priority": "P2",
    "description": "학교 창틀에 놓인 도토리 한 알.",
    "scenes": [
@@ -2615,13 +2741,22 @@
    ],
    "acceptance": [
     "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다"
-   ]
+   ],
+   "delivery": {
+    "date": "2026-10-29",
+    "received": "런타임 PNG+무손실 WebP(장면 1280x720·소품 720x720·END-11 1672x941), 대응표 CSV, checksums. 원본 source ZIP 은 받지 않음.",
+    "registered": "game/assets/ending/MEM-03*.webp",
+    "notes": [
+     "연결: v111/newworld/d14.json 의 해당 지문 줄 \"endcut\" → systems/room13_end_cut.rpy",
+     "원본 PNG·대응표: art/ending-20261029/"
+    ]
+   }
   },
   {
    "id": "MEM-04",
    "title": "부엉이 할아버지 추모: 창틀의 안경",
    "kind": "물건",
-   "status": "needs_delivery",
+   "status": "delivered_linked",
    "priority": "P2",
    "description": "13호 닫힌 문 옆 창틀의 안경.",
    "scenes": [
@@ -2658,13 +2793,22 @@
    ],
    "acceptance": [
     "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다"
-   ]
+   ],
+   "delivery": {
+    "date": "2026-10-29",
+    "received": "런타임 PNG+무손실 WebP(장면 1280x720·소품 720x720·END-11 1672x941), 대응표 CSV, checksums. 원본 source ZIP 은 받지 않음.",
+    "registered": "game/assets/ending/MEM-04*.webp",
+    "notes": [
+     "연결: v111/newworld/d14.json 의 해당 지문 줄 \"endcut\" → systems/room13_end_cut.rpy",
+     "원본 PNG·대응표: art/ending-20261029/"
+    ]
+   }
   },
   {
    "id": "MEM-05",
    "title": "네로 추모: 장갑 한 짝",
    "kind": "물건",
-   "status": "needs_delivery",
+   "status": "delivered_linked",
    "priority": "P2",
    "description": "아랫길 끝 눈 위 막대기에 걸린 장갑 한 짝.",
    "scenes": [
@@ -2701,13 +2845,22 @@
    ],
    "acceptance": [
     "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다"
-   ]
+   ],
+   "delivery": {
+    "date": "2026-10-29",
+    "received": "런타임 PNG+무손실 WebP(장면 1280x720·소품 720x720·END-11 1672x941), 대응표 CSV, checksums. 원본 source ZIP 은 받지 않음.",
+    "registered": "game/assets/ending/MEM-05*.webp",
+    "notes": [
+     "연결: v111/newworld/d14.json 의 해당 지문 줄 \"endcut\" → systems/room13_end_cut.rpy",
+     "원본 PNG·대응표: art/ending-20261029/"
+    ]
+   }
   },
   {
    "id": "MEM-06",
    "title": "도담 추모: 작은 그릇",
    "kind": "물건",
-   "status": "needs_delivery",
+   "status": "delivered_linked",
    "priority": "P2",
    "description": "보리의 큰 손(손만)에 든 작은 그릇과 행주.",
    "scenes": [
@@ -2744,13 +2897,22 @@
    ],
    "acceptance": [
     "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다"
-   ]
+   ],
+   "delivery": {
+    "date": "2026-10-29",
+    "received": "런타임 PNG+무손실 WebP(장면 1280x720·소품 720x720·END-11 1672x941), 대응표 CSV, checksums. 원본 source ZIP 은 받지 않음.",
+    "registered": "game/assets/ending/MEM-06*.webp",
+    "notes": [
+     "연결: v111/newworld/d14.json 의 해당 지문 줄 \"endcut\" → systems/room13_end_cut.rpy",
+     "원본 PNG·대응표: art/ending-20261029/"
+    ]
+   }
   },
   {
    "id": "MEM-07",
    "title": "너울 추모: 주판",
    "kind": "물건",
-   "status": "needs_delivery",
+   "status": "delivered_linked",
    "priority": "P2",
    "description": "수레 바퀴 옆 눈 위의 주판, 알 하나가 빠짐.",
    "scenes": [
@@ -2787,13 +2949,22 @@
    ],
    "acceptance": [
     "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다"
-   ]
+   ],
+   "delivery": {
+    "date": "2026-10-29",
+    "received": "런타임 PNG+무손실 WebP(장면 1280x720·소품 720x720·END-11 1672x941), 대응표 CSV, checksums. 원본 source ZIP 은 받지 않음.",
+    "registered": "game/assets/ending/MEM-07*.webp",
+    "notes": [
+     "연결: v111/newworld/d14.json 의 해당 지문 줄 \"endcut\" → systems/room13_end_cut.rpy",
+     "원본 PNG·대응표: art/ending-20261029/"
+    ]
+   }
   },
   {
    "id": "MEM-08",
    "title": "아랫길 노인 추모: 이름 없는 표",
    "kind": "물건",
-   "status": "needs_delivery",
+   "status": "delivered_linked",
    "priority": "P2",
    "description": "이름 칸이 빈 표 한 장(글자 없이 빈 줄만).",
    "scenes": [
@@ -2830,7 +3001,16 @@
    ],
    "acceptance": [
     "게임 안 해당 지문 줄과 대조해 내용이 어긋나지 않는다"
-   ]
+   ],
+   "delivery": {
+    "date": "2026-10-29",
+    "received": "런타임 PNG+무손실 WebP(장면 1280x720·소품 720x720·END-11 1672x941), 대응표 CSV, checksums. 원본 source ZIP 은 받지 않음.",
+    "registered": "game/assets/ending/MEM-08*.webp",
+    "notes": [
+     "연결: v111/newworld/d14.json 의 해당 지문 줄 \"endcut\" → systems/room13_end_cut.rpy",
+     "원본 PNG·대응표: art/ending-20261029/"
+    ]
+   }
   }
  ]
 }

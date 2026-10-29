@@ -211,7 +211,7 @@ async def true_check(q,where):
         if r['meetings'].get(m)!='win':fails.append('meeting:%s=%s'%(m,r['meetings'].get(m)))
     log('TRUE-CHECK',where,'ready=',r['ready'],'ending14=',r['ending14'],'회의=',r['meetings'],'떠남=',r['departed'],'outcome13=',r['outcome13'],'못 맞춘 조건=',fails or '없음')
     return r
-SCREENS=("main_menu","say","choice","r13_confirm","r13_hub","r13_topics","r13_map","r13_book","r13_records","r13_crisis_proof","r13_proof_workspace","r13_more_tools","r13_side_questions","r13_fork_screen","_exception")
+SCREENS=("main_menu","say","choice","r13_confirm","r13_end_card","r13_hub","r13_topics","r13_map","r13_book","r13_records","r13_crisis_proof","r13_proof_workspace","r13_more_tools","r13_side_questions","r13_fork_screen","_exception")
 if TRUE_ROUTE:SCREENS=SCREENS+("r13_meeting_retry_choice",)   # 진엔딩 길: 회의를 지면 뜨는 다시 하기 창을 알아본다
 n_shot=[0]
 async def shot(q,name):
@@ -417,6 +417,12 @@ async def main():
                     say_shots[g]=say_shots.get(g,0)+1
                     if say_shots[g]<=2:await shot(q,'say-%s-%s'%(g,st['who'] or '지문'))
                     await q.advance_dialogue();continue
+                if 'r13_end_card' in sc:
+                    # 2026-10-29 엔딩 연출: 「이야기를 마쳤습니다」 확인창 대신 결말 이름 카드(systems/room13_end_cut.rpy).
+                    if TRUE_ROUTE and not true_prev.get('_final'):
+                        true_prev['_final']=True;await true_check(q,'이야기를 마친 뒤')
+                    log('결말 이름',await q.py('import renpy;s=renpy.store;result=s.R13_FORK_ENDINGS.get(s.r13_v111_value("ending14"))'))
+                    await shot(q,'endcard-'+str(st['gate']));await q.press('메인 화면으로');continue
                 if 'r13_confirm' in sc:
                     yes=await q.py('import renpy;result=renpy.display.screen.get_screen("r13_confirm").scope["yes"]')
                     if TRUE_ROUTE and st['values'].get('story14_completed') and not true_prev.get('_final'):

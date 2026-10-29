@@ -2825,9 +2825,7 @@ label r13_v111_frozen_ending14:
 
 label r13_v111_story_end14:
     $ r13_v111_set('story14_completed',True)
-    call screen r13_confirm("이야기를 마쳤습니다. 현재 진행을 저장할 수 있습니다.",yes="메인 화면으로",no="저장하기")
-    if not _return:
-        call screen save
+    call r13_v111_end_card14
     return
 
 label r13_v111_morning_safe14:
@@ -3620,9 +3618,7 @@ label r13_v111_cookie_scene14:
     if r13_nw_true_ending_ready():
         call r13_v111_true_epilogue14
     $ r13_v111_set('story14_completed',True)
-    call screen r13_confirm("이야기를 마쳤습니다. 현재 진행을 저장할 수 있습니다.",yes="메인 화면으로",no="저장하기")
-    if not _return:
-        call screen save
+    call r13_v111_end_card14
     return
 
 label r13_v111_cookie_distance14:
@@ -3631,6 +3627,8 @@ label r13_v111_cookie_distance14:
     return
 
 label r13_v111_true_epilogue14:
+    # 2026-10-29 엔딩 연출: 앞 결말의 컷을 내리고 진엔딩 후일담은 자기 컷(END-01·02)으로 연다.
+    $ r13_end_cut_hide()
     # 0.20.5 (Codex T02): the ending just read is recorded before the true epilogue replaces it.
     $ r13_fork_ending(r13_v111_value('ending14'))
     $ r13_v111_set('ending14','true')

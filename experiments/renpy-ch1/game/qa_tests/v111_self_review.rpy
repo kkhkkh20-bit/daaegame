@@ -51,5 +51,5 @@ testcase v111_sr_d14_memorial:
     run Function(r13_v111_set,"crowd_intervention","failed")
     run Function(r13_v111_set,"crowd_blocked_by_dad",True)
     run Jump("r13_v111_ending_dispatch14")
-    click pos (900,600) until screen "r13_confirm" timeout 120
+    click pos (900,600) until screen "r13_end_card" timeout 120
     assert eval (qa_nw_seen("학교 창가 자리에는 도토리 한 알이 놓여 있었다") and not qa_nw_seen("도토리 깡통"))

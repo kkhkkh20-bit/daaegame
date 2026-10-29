@@ -1,7 +1,9 @@
 init python:
     def qa_nw_seen(text):
         # The say screen breaks long lines at sentence ends; compare as one line.
-        return any(text in (getattr(e,"what","") or "").replace("\n"," ") for e in (getattr(store,"_history_list",None) or []))
+        # {w=.4} 같은 글자 태그는 화면에 안 보이므로 빼고 비교한다.
+        import re
+        return any(text in re.sub(r"\{[^{}]*\}","",(getattr(e,"what","") or "")).replace("\n"," ") for e in (getattr(store,"_history_list",None) or []))
 
 testcase v111_nw_d01_gate_lost:
     # Event 01 plan A: a wrong gate proof is final; Daram enters as '외 한 명'.

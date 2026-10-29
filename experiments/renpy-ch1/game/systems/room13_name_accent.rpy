@@ -43,9 +43,9 @@ init 142 python:
         return "".join(out)
 
     _r13_accent_semantic=r13_semantic_text
-    def r13_semantic_text(text):
+    def r13_semantic_text(text,opening=True,closing=True):
         if R13_NAME_ACCENT_ON and getattr(store,"r13_thought_active",False) and isinstance(text,str):
-            return "{color="+R13_ACCENT_COLORS["thought"]+"}"+r13_name_accent(_r13_accent_semantic(text))+"{/color}"
+            return "{color="+R13_ACCENT_COLORS["thought"]+"}"+r13_name_accent(_r13_accent_semantic(text,opening,closing))+"{/color}"
         if R13_NAME_ACCENT_ON and isinstance(text,str) and getattr(store,"room13_mode",False):
             return r13_name_accent(text)
-        return _r13_accent_semantic(text)
+        return _r13_accent_semantic(text,opening,closing)
