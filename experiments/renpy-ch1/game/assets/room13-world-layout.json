@@ -1290,14 +1290,19 @@
     },
     "floors": [
       [
-        1106,
-        652,
-        328
+        909,
+        665,
+        271
       ],
       [
-        1290,
-        700,
-        354
+        1087,
+        665,
+        271
+      ],
+      [
+        1265,
+        665,
+        271
       ],
       [
         216,
@@ -1307,65 +1312,47 @@
     ],
     "slots": [
       [
-        1116,
-        647,
-        324,
+        909,
+        665,
+        271,
         "floor"
       ],
       [
-        1290,
+        1087,
+        665,
+        271,
+        "floor"
+      ],
+      [
+        1265,
+        665,
+        271,
+        "floor"
+      ],
+      [
         700,
-        354,
+        690,
+        280,
         "floor"
       ],
       [
-        216,
-        666,
-        338,
+        1700,
+        690,
+        280,
         "floor"
       ],
       [
-        1725,
-        684,
-        351,
-        "floor"
-      ],
-      [
-        975,
-        544,
-        250,
-        "floor"
-      ],
-      [
-        984,
-        703,
-        364,
-        "floor"
-      ],
-      [
-        1240,
-        712,
-        362,
-        "floor"
-      ],
-      [
-        609,
-        708,
-        368,
-        "floor"
-      ],
-      [
-        881,
-        708,
-        368,
+        300,
+        690,
+        280,
         "floor"
       ]
     ],
     "positions": {
       "resident_eunho": [
-        1116,
-        647,
-        324
+        1087,
+        665,
+        271
       ]
     },
     "critical": [
@@ -1395,11 +1382,11 @@
       ]
     ],
     "files": {
-      "morning": "assets/room13-pixel-ready-store0177-morning.webp",
-      "afternoon": "assets/room13-pixel-ready-store0177-afternoon.webp",
-      "evening": "assets/room13-pixel-ready-store0177-evening.webp"
+      "morning": "assets/room13-bg-store-2-morning.webp",
+      "afternoon": "assets/room13-bg-store-2-afternoon.webp",
+      "evening": "assets/room13-bg-store-2-evening.webp"
     },
-    "provenance": "Reviewed native 2048x768 coordinates; uniform 15/16 fit; selected source ac8760b3",
+    "provenance": "2026-10-29 BG-STORE-2 2048x768, 15/16 맞춤. 조사 물건(저울·장부·자루·마대) 자리는 납품서대로 옛 좌표 유지. 서는 자리는 납품 standing-slots(월드 y 665.6).",
     "standing_height_reference": 271,
     "standing_heights": {
       "resident_mungchi": 245,
@@ -1409,45 +1396,26 @@
     },
     "keepouts": [
       [
-        1385,
-        515,
-        120,
-        205
-      ],
-      [
-        1510,
-        490,
-        135,
-        230
-      ],
-      [
-        995,
-        395,
-        65,
-        75
-      ],
-      [
-        1085,
-        420,
-        75,
-        90
-      ],
-      [
-        0,
-        410,
-        240,
-        190,
+        1420,
+        523,
+        101,
+        122,
         "feet"
       ],
       [
-        1655,
-        430,
-        265,
-        200,
+        1537,
+        517,
+        68,
+        118,
         "feet"
       ]
     ],
-    "keepouts_note": "2026-10-27 바닥 소품. 네 칸짜리는 발을 둘 수 없고 몸으로 1/5 넘게 덮지도 않는다(앞 파란 통·소쿠리·뒤 상자·뒤 파란 통). 다섯째가 \"feet\" 면 발만 못 둔다(왼쪽·오른쪽 앞 상자 — 그 앞 바닥에 서는 것은 된다). r13_clear_objects 와 자리 점수(room13_acting.rpy)가 읽는다."
+    "keepouts_note": "2026-10-29 BG-STORE-2 납품(바닥선·소품 크기 재제작): 앞 파란 통·지팡이 바구니만 발 금지. 옛 그림의 네 칸 금지 구역은 새 그림에 소품이 없어 뺐다.",
+    "previous_files": {
+      "morning": "assets/room13-pixel-ready-store0177-morning.webp",
+      "afternoon": "assets/room13-pixel-ready-store0177-afternoon.webp",
+      "evening": "assets/room13-pixel-ready-store0177-evening.webp"
+    }
   },
   "greenhouse": {
     "revision": 1,
@@ -3295,5 +3263,131 @@
       0.55,
       -130
     ]
+  },
+  "ms14_somi": {
+    "revision": 1,
+    "width": 1920,
+    "height": 720,
+    "initial_x": 320,
+    "files": {
+      "morning": "assets/room13-bg-somi-alley-morning.webp",
+      "afternoon": "assets/room13-bg-somi-alley-afternoon.webp",
+      "evening": "assets/room13-bg-somi-alley-evening.webp"
+    },
+    "objects": {},
+    "floors": [
+      [
+        750,
+        665,
+        271
+      ],
+      [
+        994,
+        665,
+        271
+      ],
+      [
+        1238,
+        665,
+        271
+      ]
+    ],
+    "slots": [
+      [
+        750,
+        665,
+        271,
+        "floor"
+      ],
+      [
+        994,
+        665,
+        271,
+        "floor"
+      ],
+      [
+        1238,
+        665,
+        271,
+        "floor"
+      ],
+      [
+        500,
+        690,
+        280,
+        "floor"
+      ],
+      [
+        1500,
+        690,
+        280,
+        "floor"
+      ]
+    ],
+    "critical": [],
+    "provenance": "2026-10-29 BG-SOMI-ALLEY 납품. 이전에는 마을 입구 그림을 빌려 썼다. 서는 자리는 납품 standing-slots."
+  },
+  "ms14_guardroom": {
+    "revision": 1,
+    "width": 1920,
+    "height": 720,
+    "initial_x": 320,
+    "files": {
+      "morning": "assets/room13-bg-guardroom-morning.webp",
+      "afternoon": "assets/room13-bg-guardroom-afternoon.webp",
+      "evening": "assets/room13-bg-guardroom-evening.webp"
+    },
+    "objects": {},
+    "floors": [
+      [
+        750,
+        665,
+        271
+      ],
+      [
+        994,
+        665,
+        271
+      ],
+      [
+        1238,
+        665,
+        271
+      ]
+    ],
+    "slots": [
+      [
+        750,
+        665,
+        271,
+        "floor"
+      ],
+      [
+        994,
+        665,
+        271,
+        "floor"
+      ],
+      [
+        1238,
+        665,
+        271,
+        "floor"
+      ],
+      [
+        500,
+        690,
+        280,
+        "floor"
+      ],
+      [
+        1500,
+        690,
+        280,
+        "floor"
+      ]
+    ],
+    "critical": [],
+    "provenance": "2026-10-29 BG-GUARDROOM 납품. 이전에는 밤의 마을 입구 바깥 그림을 빌려 썼다. 서는 자리는 납품 standing-slots."
   }
 }

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "as_of": "2026-10-27",
+ "as_of": "2026-10-29",
  "scope": "요청서와 현재 파일·연결 코드의 대조 스냅샷. 외부 제작 요청/그림 생성은 실행하지 않는다.",
  "statuses": {
   "needs_delivery": "전용 그림 미납품",
@@ -1817,7 +1817,7 @@
    "id": "BG-STORE-2",
    "title": "공동 창고 배경 재제작(바닥선·소품 크기)",
    "kind": "배경",
-   "status": "needs_delivery",
+   "status": "delivered_linked",
    "priority": "P1",
    "description": "2026-10-27 소유자 지적: 파란 통·소쿠리가 바닥 없이 선반 앞 공중에 그려져 그림 아래 끝에서 잘리고, 소품이 인물 키(210도트)에 견줘 너무 커서 인물이 작아 보인다. 뭉치가 선반 높이에 떠 있던 것은 자리(ST-1)를 바닥으로 옮겨 코드로 고쳤다. 배경 자체는 다시 그려야 한다.",
    "scenes": [
@@ -1864,11 +1864,20 @@
     "바닥선 위에 선 인물의 발이 소품에 가려지지 않는다",
     "조사 물건(저울·장부·자루·마대) 자리를 다시 적는다",
     "아침·낮·저녁 세 장 색만 다르고 구도는 같다"
-   ]
+   ],
+   "delivery": {
+    "date": "2026-10-29",
+    "received": "아침·낮·저녁 PNG 원본 + 무손실 WebP 2048x768 3장, 대응표·물체 위치·발 자리 후보 CSV. 붓 원화풍(1칸=1px 도트 인증본 아님, 기존 배경과 같은 계열).",
+    "registered": "game/assets/room13-bg-store-2-{morning,afternoon,evening}.webp. room13-world-layout.json 의 store files 를 바꾸고 옛 파일은 previous_files 로 남김. 옛 그림의 소품을 피하던 바닥 내림·keepout 을 새 그림 기준으로 다시 잡음(앞 통·소쿠리 발 자리 두 칸, 바닥 y 665, 자리 x 909·1087·1265). 저울·장부·자루·마대 조사 범위는 그대로.",
+    "notes": [
+     "원본 PNG 와 대응표는 art/backgrounds-20261029/",
+     "화면 시험 캡처로 인물 세 명이 바닥선에 서고 소품에 발이 가리지 않는 것을 확인(2026-10-29)"
+    ]
+   }
   },
   {
    "kind": "배경",
-   "status": "needs_delivery",
+   "status": "delivered_linked",
    "priority": "P2",
    "references": [
     "game/assets/room13-pixel-ready-gate0173-afternoon.webp",
@@ -1913,11 +1922,20 @@
     "솜이네 집 문(안쪽 방 ms14_somi_inside 로 들어가는 문)이 보인다",
     "인물 3명이 전신으로 설 바닥(월드 y 650~700)",
     "마을 입구 초소·울타리가 보이지 않는다"
-   ]
+   ],
+   "delivery": {
+    "date": "2026-10-29",
+    "received": "아침·낮·저녁 PNG 원본 + 무손실 WebP 2048x768 3장, 대응표·물체 위치·발 자리 후보 CSV. 붓 원화풍(1칸=1px 도트 인증본 아님, 기존 배경과 같은 계열).",
+    "registered": "game/assets/room13-bg-somi-alley-{morning,afternoon,evening}.webp. room13-world-layout.json 에 ms14_somi 를 새로 둠(폭 1920, 바닥 y 665, 자리 x 750·994·1238, 조사 물건 없음). 대화 장면도 R13_PLACES 장면 키가 같아 새 그림을 씀.",
+    "notes": [
+     "원본 PNG 와 대응표는 art/backgrounds-20261029/",
+     "화면 시험 캡처로 인물 세 명이 바닥선에 서고 소품에 발이 가리지 않는 것을 확인(2026-10-29)"
+    ]
+   }
   },
   {
    "kind": "배경",
-   "status": "needs_delivery",
+   "status": "delivered_linked",
    "priority": "P2",
    "references": [
     "game/assets/room13-pixel-ready-gate0173-afternoon.webp",
@@ -1962,7 +1980,16 @@
     "초소 안쪽: 등불·명부 선반·창 밖 어둠",
     "인물 3명이 전신으로 설 바닥",
     "4일 밤 등불이 밝다는 것이 보인다(장소 이름의 근거)"
-   ]
+   ],
+   "delivery": {
+    "date": "2026-10-29",
+    "received": "아침·낮·저녁 PNG 원본 + 무손실 WebP 2048x768 3장, 대응표·물체 위치·발 자리 후보 CSV. 붓 원화풍(1칸=1px 도트 인증본 아님, 기존 배경과 같은 계열).",
+    "registered": "game/assets/room13-bg-guardroom-{morning,afternoon,evening}.webp. room13-world-layout.json 에 ms14_guardroom 을 새로 둠(ms14_somi 와 같은 바닥·자리, 조사 물건 없음). 4일 밤은 evening 파일.",
+    "notes": [
+     "원본 PNG 와 대응표는 art/backgrounds-20261029/",
+     "화면 시험 캡처로 인물 세 명이 바닥선에 서고 소품에 발이 가리지 않는 것을 확인(2026-10-29)"
+    ]
+   }
   }
  ]
 }

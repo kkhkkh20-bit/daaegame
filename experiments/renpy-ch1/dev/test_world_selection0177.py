@@ -16,7 +16,8 @@ class SelectedWorlds(unittest.TestCase):
   layouts=json.loads((ROOT/'game/assets/room13-world-layout.json').read_text())
   rels=[layouts[place]['files'][t] for place in PLACES for t in ('morning','afternoon','evening')];self.assertEqual(len(rels),15)
   for rel in rels:
-   self.assertIn('0177',rel)
+   # 2026-10-29: 창고는 다시 그린 BG-STORE-2(바닥선·소품 크기)로 바꿨다. 같은 2048x768·같은 조사 물건 자리.
+   self.assertTrue('0177' in rel or rel.startswith('assets/room13-bg-store-2-'),rel)
    with Image.open(ROOT/'game'/rel) as im:self.assertEqual(im.size,(2048,768))
  def test_held_room_assets_not_selected(self):
   rows=json.loads((ROOT/'dev/selected_asset_overlay.json').read_text())['files'];self.assertFalse(any('room-after' in r['source'] or 'room-before' in r['source'] for r in rows))
