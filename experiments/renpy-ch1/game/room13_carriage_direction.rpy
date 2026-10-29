@@ -54,8 +54,12 @@ transform r13_carriage_bump:
 label r13_carriage_departure:
     call r13_coach_travel_cut
     $ source_pulse(False); renpy.music.stop(channel="sound"); renpy.music.stop(channel="typing"); renpy.music.stop(channel="scene_fx")
-    $ r13_carriage_narrow = False
+    # 2026-10-29 소유자 「배경이 이동되던데 … 같은 배경에 다람이만 뜨게」: r13_scene 이 번져 들어오는 그림이
+    # 앉은 장면과 다른 그림(색보정·눈·빛 없는 원본)이라, 다람이 앉는 순간 배경이 통째로 바뀌어 보였다.
+    # 번져 들어올 때부터 앉은 장면과 같은 그림(r13_carriage_seat_art)을 쓰고, 그 위에 다람만 앉힌다.
+    $ r13_carriage_narrow = True
     call r13_scene("winter_carriage","마차 안","travel")
+    $ r13_carriage_narrow = False
     scene expression r13_carriage_seat_art() as r13_carriage_background zorder -10
     $ renpy.show_layer_at([], reset=True)
     # 0.19.97 (owner): the carriage dialogue has the same typing sound as every other line.

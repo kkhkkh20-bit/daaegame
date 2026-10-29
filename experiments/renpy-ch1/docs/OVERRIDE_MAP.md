@@ -367,7 +367,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 59 | `room13_acting.rpy:95` | _r13_mood_line_performance |
 | 2 | 141 | `systems/room13_daram_mood.rpy:28` | _r13_carriage_line_performance |
-| 3 | 306 | `room13_carriage_direction.rpy:89` |  |
+| 3 | 306 | `room13_carriage_direction.rpy:93` |  |
 
 ## `r13_meeting_cast` (3층)
 
@@ -431,7 +431,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 55 | `room13_rules.rpy:303` | _r13_v111_speaker_base |
 | 2 | 304 | `room13_v111.rpy:592` | _r13_carriage_speaker |
-| 3 | 306 | `room13_carriage_direction.rpy:95` |  |
+| 3 | 306 | `room13_carriage_direction.rpy:99` |  |
 
 ## `r13_v111_binding` (3층)
 
