@@ -59,7 +59,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 21 | 191 | `systems/room13_q1_arguments.rpy:61` | _r13_sling_confidence_present |
 | 22 | 206 | `systems/room13_sling_confidence.rpy:74` |  |
 
-## `r13_stage_people` (17층)
+## `r13_stage_people` (18층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
@@ -79,7 +79,8 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 14 | 301 | `room13_v111.rpy:173` | _r13_order_stage_people |
 | 15 | 336 | `room13_v111_field_layout.rpy:46` | _r13_clear_stage_people |
 | 16 | 337 | `room13_v111_field_layout.rpy:145` | _r13_field_dot_stage |
-| 17 | 340 | `systems/room13_field_dot.rpy:61` |  |
+| 17 | 340 | `systems/room13_field_dot.rpy:61` | _r13_stage_cache_inner |
+| 18 | 341 | `systems/room13_stage_cache.rpy:17` |  |
 
 ## `r13_object_visible` (11층)
 
@@ -471,6 +472,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 59 | `room13_acting.rpy:52` | _r13_assets_acting_spec |
 | 2 | 995 | `systems/room13_asset_domains.rpy:18` |  |
+
+## `r13_actor_nameplates` (2층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 61 | `room13_interaction.rpy:126` | _r13_nameplates_inner |
+| 2 | 341 | `systems/room13_stage_cache.rpy:35` |  |
 
 ## `r13_bdialogue_face` (2층)
 
