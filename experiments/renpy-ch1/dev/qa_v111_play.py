@@ -333,6 +333,10 @@ async def main():
        await asyncio.sleep(.6)
       else:await q.value(('person',person))
       continue
+     # 2026-10-29: 입구 명단 단계는 돌목과 이야기해야 넘어간다(장부를 누르면 관찰만 나온다). 질문 목록 정리로 선택지에서
+     # 돌목이 빠져 물건만 남았으므로, 이 단계에서는 돌목을 누른다.
+     if gate=='gate_request' and option.get('object')=='ledger':
+      await q.value(('person','guard'));continue
      if option.get('object'):
       obj=option['object'];attempt=object_attempts.get((gate,obj),0);object_attempts[(gate,obj)]=attempt+1
       await q.click_object(obj,attempt);continue
