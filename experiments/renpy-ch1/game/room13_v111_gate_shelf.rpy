@@ -11,7 +11,7 @@ init 360 python:
 
 label r13_v111_gate_shelf_pick:
     $ r13_gate_shelf_names=r13_gate_shelf_days()
-    call r13_lines([r13_nw_added_line(dict(kind="thought",text="선반 칸마다 요일 쪽지가 붙어 있다. 명단엔 「같은 도착일」이라고만 적혀 있다.\n……우리가 마차에서 내린 날 칸이겠지."))],'nw:gate_shelf_intro')
+    call r13_lines([r13_nw_added_line(dict(kind="thought",text="선반 칸마다 요일 쪽지가 붙어 있다. 명단엔 「같은 도착일」이라고만 적혀 있다."))],'nw:gate_shelf_intro')
 label r13_v111_gate_shelf_menu:
     $ r13_gate_shelf_pick=renpy.display_menu([(r13_gate_shelf_names[0]+" 칸을 꺼낸다","before"),(r13_gate_shelf_names[1]+" 칸을 꺼낸다","today"),(r13_gate_shelf_names[2]+" 칸을 꺼낸다","after")])
     if r13_gate_shelf_pick=="today":
