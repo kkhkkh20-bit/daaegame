@@ -488,7 +488,7 @@ label r13_v111_proof5:
     jump expression _return
 
 label r13_v111_wrong5:
-    if r13_nw_retry("gate_post",["E20","E22","E23","E24"],"돌목이 고개를 젓는다. 천과 겉옷, 진술을 함께 놓아야 한다."):
+    if r13_nw_retry("gate_post",["E20","E22","E23","E24"],None):
         call r13_lines(r13_v111_lines(["MS14_D05_S03_L0038","MS14_D05_S03_L0039"]),"v111:MS14_D05_S03_L0038")
         jump r13_v111_proof5
     $ r13_nw_meeting_end("gate_post","lose")

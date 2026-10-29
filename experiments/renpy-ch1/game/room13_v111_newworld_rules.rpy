@@ -132,7 +132,10 @@ init 318 python:
         # 2026-10-29 외부 검토 2 N3: 「밤이 혐의의 근거를 확인한다」 한 줄로는 무엇을 이어야 하는지 안 보였다. 3일처럼 축만 적는다 —
         # 돌목이 붙잡은 사람(목격)을 울타리 천(출처)에서 거슬러 잇는다(누구 옷, 누가 입었나). 몇 장인지·어느 자료인지는 적지 않는다.
         # 피코 그림 대체 세트도 같은 축(그 사람의 차림)이라 그대로 맞는다. 키·정답·판정 불변.
-        "밤이 혐의의 근거를 확인한다":"돌목이 붙잡은 사람을, 울타리 천에서부터 거슬러 잇는다"}
+        "밤이 혐의의 근거를 확인한다":"돌목이 붙잡은 사람을, 울타리 천에서부터 거슬러 잇는다",
+        # 2026-10-29 논쟁 점검 P03: 장부가 없는 판(대체 정답: 장작·창고 아이들·침상 목록)에서도 제목이 없는 장부를 가리켰다.
+        # 깨야 할 촌장의 숫자만 적는다. 키·정답·판정 불변.
+        "희생의 숫자와 장부를 대조한다":"한 사람이 열흘을 산다는 숫자를 실제 기록과 견준다"}
     # 2026-10-27 외부 검토 B02(5일 회의): 밤이가 울타리 곁에 있었던 판은 회의가 2/3 으로 시작하는데(days45.rpy
     # r13_v111_proof5 의 gate_post_cold_cost), 화면이 그 까닭을 말하지 않아 「기회를 잃었다」로 읽혔다.
     # 자료 대조 패널이 그 비용이 적용된 회의에서만 한 줄을 보인다. 어느 자료를 내야 하는지는 적지 않는다.
@@ -282,7 +285,10 @@ init 318 python:
     def r13_nw_tries_left(meeting):
         return max(0,r13_nw_tries_max(meeting)-(r13_v111_value("tries:"+meeting) or 0))
     def r13_nw_retry(meeting,correct=None,note=None):
-        """True (and one chance used) when this wrong answer may be tried again."""
+        """True (and one chance used) when this wrong answer may be tried again.
+        note: 일부 정답 반박 묶음 이름(blocks 의 half_*, room13_v111_newworld_text.rpy r13_nw_half_rebut). 글을 직접 받지 않는다."""
+        # 2026-10-29 논쟁 점검 P02: 지난 제출의 반박이 남아 다음 제출에 붙지 않게 먼저 지운다.
+        store.r13_nw_rebut_pending=None
         if r13_v111_value("meeting:"+meeting) is not None:return False
         used=(r13_v111_value("tries:"+meeting) or 0)+1
         r13_v111_set("tries:"+meeting,used)
@@ -296,6 +302,20 @@ init 318 python:
         hint="맞는 근거는 남겨 두었다." if kept else "맞지 않는다."
         renpy.notify(hint if globals().get("r13_nw_unlimited",lambda m:False)(meeting) else "기회 1회 사용 · 남은 기회 %d번. %s"%(left,hint))
         r13_nw_wrong_queue(meeting,False)
+        # 기회가 남은 일부 정답에만 상대의 반박 한 줄을 남긴다. 기회를 다 쓴 오답은 위에서 이미 결과로 갔다.
+        store.r13_nw_rebut_pending=globals().get("r13_nw_half_rebut",lambda *a:[])(meeting,correct,note) or None
+        return True
+
+    # 2026-10-29 논쟁 점검 P03: 14일 제단 1번, 장부가 없는 판에서 장작 기록만 낸 첫 제출은 곧바로 반쪽으로 끝내지 않고
+    # 기회를 쓰지 않은 채 촌장이 한 번 되묻는다(빈 고리: 사람을 보내지 않아도 무너지지 않는다는 것). 같은 제출을 다시
+    # 내면 예전처럼 반쪽이다. 정답 묶음·기회 수는 그대로다.
+    # 틀린 자료가 섞인 제출은 되묻지 않는다(되묻기가 공짜 제출이 되지 않게).
+    def r13_nw_altar_half_ask():
+        if r13_v111_value("altar1_half_asked"):return False
+        rebut=r13_nw_half_rebut("altar",["NW_NEOUL_LEDGER"],"half_altar1_14")
+        if not rebut:return False
+        r13_v111_set("altar1_half_asked",True)
+        store.r13_nw_rebut_pending=rebut
         return True
 
     # 2026-10-24 지시서 01 4번 (MEETING_RULES_V2.md 6장 1·2번, 소유자 「증거는 모였다는 걸 알려 주면 좋고」):

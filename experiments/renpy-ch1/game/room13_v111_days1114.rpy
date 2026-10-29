@@ -652,7 +652,7 @@ label r13_v111_hyp1_proof11:
     jump expression _return
 
 label r13_v111_hyp1_wrong11:
-    if r13_nw_retry("hypothesis",['E11', 'E08', 'NW_PIKO_TREMOR'],'돌목이 팔짱을 낀다. 초롱의 하루와 피코의 밤을 함께 놓아야 한다.'):
+    if r13_nw_retry("hypothesis",['E11', 'E08', 'NW_PIKO_TREMOR'],'half_hyp1_11'):
         jump r13_v111_hyp1_proof11
     jump r13_v111_hyp1_lost11
 
@@ -693,7 +693,7 @@ label r13_v111_hyp2_proof11:
     jump expression _return
 
 label r13_v111_hyp2_wrong11:
-    if r13_nw_retry("hypothesis",['NW_KEEPER_DATE'],'백 부인이 고개를 돌린다. 창고에서 자는 사람을 짚어야 한다.'):
+    if r13_nw_retry("hypothesis",['NW_KEEPER_DATE'],None):
         jump r13_v111_hyp2_proof11
     jump r13_v111_hyp2_lost11
 
@@ -734,7 +734,7 @@ label r13_v111_hyp3_proof11:
     jump expression _return
 
 label r13_v111_hyp3_wrong11:
-    if r13_nw_retry("hypothesis",['NW_INNER_PRICE', 'NW_MUSOE_DEEP'],'판돌이 고개를 젓는다. “무쇠는 원래 고집이 셌소.” 돌값과 갱도 이야기를 함께 놓아야 한다.'):
+    if r13_nw_retry("hypothesis",['NW_INNER_PRICE', 'NW_MUSOE_DEEP'],'half_hyp3_11'):
         jump r13_v111_hyp3_proof11
     jump r13_v111_hyp3_lost11
 
@@ -775,7 +775,7 @@ label r13_v111_hyp4_proof11:
     jump expression _return
 
 label r13_v111_hyp4_wrong11:
-    if r13_nw_retry("hypothesis",['NW_KKOMI_NOSTONE', 'NW_SICK_BEDS'],'주민이 아이를 끌어안는다. 돌이 없는 아이들과 표시가 붙은 아이들을 함께 놓아야 한다.'):
+    if r13_nw_retry("hypothesis",['NW_KKOMI_NOSTONE', 'NW_SICK_BEDS'],'half_hyp4_11'):
         jump r13_v111_hyp4_proof11
     jump r13_v111_hyp4_lost11
 
@@ -1547,7 +1547,7 @@ label r13_v111_list_proof12:
     jump expression _return
 
 label r13_v111_list_wrong12:
-    if r13_nw_retry("soup",["NW_TRANSFER_LIST","NW_WHITE_BOWLS"],"선생님이 출석부를 끌어안는다. 명단의 칸과 흰 그릇을 함께 놓아야 한다."):
+    if r13_nw_retry("soup",["NW_TRANSFER_LIST","NW_WHITE_BOWLS"],"half_soup_list12"):
         jump r13_v111_list_proof12
     $ r13_nw_meeting_end("soup","partial")
     call r13_lines(r13_nw_block('soup_list_lost12'),'nw:soup_list_lost12')
@@ -1569,7 +1569,7 @@ label r13_v111_soup_after_route12:
     jump r13_v111_aftermath_pre12
 
 label r13_v111_medicine_wrong12:
-    if r13_nw_retry("soup",['E12_FRAGMENT', 'E12_SEAL'],'선생님이 병을 감싼다. 파편과 봉인을 함께 놓아야 한다.'):
+    if r13_nw_retry("soup",['E12_FRAGMENT', 'E12_SEAL'],'half_soup_seal12'):
         call r13_lines(r13_v111_lines(['MS14_D12_S04_L0089', 'MS14_D12_S04_L0090']),'v111:medicine_wrong12:half')
         jump r13_v111_seal_proof12
     $ r13_nw_meeting_end("soup","lose")
@@ -1580,7 +1580,7 @@ label r13_v111_medicine_wrong12:
     jump r13_v111_soup_lost12
 
 label r13_v111_fragment_wrong12:
-    if r13_nw_retry("soup",['E12_FRAGMENT', 'E12_SEAL', 'E12_HANDLING'],'나비가 고개를 젓는다. 파편과 봉인, 냄비를 건넨 구간을 함께 놓아야 한다.'):
+    if r13_nw_retry("soup",['E12_FRAGMENT', 'E12_SEAL', 'E12_HANDLING'],'half_soup_final12'):
         call r13_lines(r13_v111_lines(['MS14_D12_S04_L0091', 'MS14_D12_S04_L0092']),'v111:fragment_wrong12:half')
         jump r13_v111_soup_final12
     $ r13_nw_meeting_end("soup","lose")
@@ -2921,10 +2921,10 @@ label r13_v111_altar1_proof14:
     jump expression _return
 
 label r13_v111_altar1_wrong14:
-    # 2026-10-25 결정 10: 장작 기록만 낸 판은 지금처럼 반쪽 답이다. 대체 정답(창고 아이들·침상 목록)을 함께 노리다 빠뜨린
-    # 제출은 반쪽으로 끝내지 않고 기회를 쓴다.
+    # 2026-10-25 결정 10: 장작 기록만 낸 판은 반쪽 답이다. 2026-10-29 P03: 다만 처음 한 번은 기회를 쓰지 않고 촌장이 되묻는다
+    # (r13_nw_altar_half_ask). 대체 정답을 함께 노리다 빠뜨린 제출은 반쪽으로 끝내지 않고 기회를 쓰며 빈 고리를 묻는다.
     $ v111_altar_half=("V111:E14_SUPPLY" in (v111_last_presented or []) and not r13_v111_owned("NW_NEOUL_LEDGER") and not any(k in (v111_last_presented or []) for k in ("V111:NW_KKOMI_NOSTONE","V111:NW_SICK_BEDS")))
-    if not v111_altar_half and r13_nw_retry("altar"):
+    if (v111_altar_half and r13_nw_altar_half_ask()) or (not v111_altar_half and r13_nw_retry("altar",['NW_NEOUL_LEDGER'],'half_altar1_14')):
         call r13_lines(r13_nw_block("altar1_lost14"),"nw:altar1_lost14:retry")
         jump r13_v111_altar1_proof14
     if v111_altar_half:
@@ -2960,7 +2960,7 @@ label r13_v111_altar2_proof14:
     jump expression _return
 
 label r13_v111_altar2_wrong14:
-    if r13_nw_retry("altar",['NW_TABLET_A', 'NW_TABLET_B'],'촌장이 고개를 젓는다. 돌판의 앞 반쪽과 밑돌의 글자를 함께 놓아야 한다.'):
+    if r13_nw_retry("altar",['NW_TABLET_A', 'NW_TABLET_B'],'half_altar2_14'):
         call r13_lines(r13_nw_block("altar2_lost14"),"nw:altar2_lost14:retry")
         jump r13_v111_altar2_proof14
     call r13_lines(r13_nw_block('altar2_lost14'),'nw:altar2_lost14')
@@ -3016,7 +3016,7 @@ label r13_v111_altar4_proof14:
     jump expression _return
 
 label r13_v111_altar4_wrong14:
-    if r13_nw_retry("altar",['NW_NAMES', 'NW_NEOUL_LEDGER'],'촌장의 손이 떨린다. 벽의 이름과 그해 집별 배급 기록을 함께 놓아야 한다.'):
+    if r13_nw_retry("altar",['NW_NAMES', 'NW_NEOUL_LEDGER'],'half_altar4_14'):
         call r13_lines(r13_nw_block("altar4_lost14"),"nw:altar4_lost14:retry")
         jump r13_v111_altar4_proof14
     call r13_lines(r13_nw_block('altar4_lost14'),'nw:altar4_lost14')

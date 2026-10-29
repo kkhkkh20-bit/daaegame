@@ -28,6 +28,13 @@ init -1 python:
     def r13_gp_half():
         given=r13_gp_given()
         return r13_v111_value("meeting:gate_post") is None and bool(given) and given<=R13_GP_FAIR
+    # 2026-10-29 논쟁 점검 P02: 일부 정답 반박 줄의 조건(아래 R13_NW_WHEN 의 half_*)이 읽는 「이번에 낸 자료 중 하나라도」.
+    def r13_nw_gave(*keys):
+        given=r13_gp_given()
+        return any("V111:"+k in given for k in keys)
+
+# 2026-10-29 논쟁 점검 P02: r13_nw_retry 가 만들어 둔 일부 정답 반박. 다음 증명 화면 앞(r13_nw_wrong_thought)에서 보이고 지운다.
+default r13_nw_rebut_pending = None
 
 init 319 python:
     R13_NW_TEXT_DAYS=["d%02d"%n for n in range(1,15)]+["hidden_pandol","hidden_base","lamp_attempt"]
@@ -338,6 +345,71 @@ init 319 python:
         "mom03_piko_alive":lambda:r13_v111_actor_ready("daram") and r13_v111_value("piko_alive") is True,
         "mom03_piko_dead":lambda:r13_v111_actor_ready("daram") and r13_v111_value("piko_alive") is not True,
         "mom07_kkomi_alive":lambda:r13_v111_actor_ready("daram") and bool(r13_v111_value("KKOMI_ALIVE")),
+        # 2026-10-29 논쟁 점검 P02 (소유자 승인 방향): 맞는 자료를 일부만 낸 오답이면 상대가 짚은 고리는 인정하고 빈 고리를
+        # 자료 이름 없이 묻는다. 3일 lamp_repair_half_*·5일 gate_post_half_* 와 같은 방식을 나머지 회의에 넓힌 것이다.
+        # 0.19.91 은 r13_nw_retry 의 note(「아이의 말과 촛대 조각을 함께 놓아야 한다」 등)를 알림으로 보였는데, 그 글이
+        # 정답 자료를 말해 「틀리면 자료 이름·정답은 말하지 않는다」(CLAUDE.md)와 부딪혀 빠졌고 그 뒤로 18곳이 죽어 있었다.
+        # 이제 note 는 반박 묶음(blocks 의 half_*) 이름이다. 판정·기회·정답 묶음은 그대로이고 보이는 대사만 바뀐다.
+        #   일부 정답 = 이번 제출이 정답·대체·덧붙임 안에만 있고, 정답 쪽 자료가 하나 이상이며, 아직 받지 않은 제출.
+        #   회의가 끝났으면(meeting:X 값이 있으면) 만들지 않는다. 마지막 기회의 오답은 지금처럼 결과 대사로 간다.
+        #   묶음에서 조건이 맞는 첫 줄 하나만 보인다(그래서 아래 조건은 위에서부터 좁혀 읽는다). 화자가 죽은 판은 건너뛴다.
+        # 반박이 기다리는 동안에는 그 자리의 일반 되묻기 줄(「아이 말 하나로?」 등)을 빼고 반박 한 줄로 바꾼다.
+        "nw_rebut_pending":lambda:bool(getattr(store,"r13_nw_rebut_pending",None)),
+        "nw_no_rebut":lambda:not getattr(store,"r13_nw_rebut_pending",None),
+        # 7일 불 1번(P01): 누비의 「천」 반박은 불탄 자리 기록(천이 들어 있다)을 냈을 때만 맞는다.
+        "fire1_no_fire_record":lambda:r13_nw_wrong_issue()=="불이 시작된 곳과 진술을 대조한다" and not r13_nw_gave("E06_FIRE"),
+        # 7일 불 2번: 불이 붙은 자리 · 보리가 그 밤에 한 일 · 불을 낸 손.
+        "half_fire_who7":lambda:r13_nw_gave("E06_FIRE") and r13_nw_gave("E06_EMPTY","E06_RESCUE") and not r13_nw_gave("E07_NUBI","NW_NUBI_TICKET"),
+        "half_fire_bori7":lambda:r13_nw_gave("E06_FIRE") and r13_nw_gave("E07_NUBI","NW_NUBI_TICKET") and not r13_nw_gave("E06_EMPTY","E06_RESCUE"),
+        "half_fire_start7":lambda:not r13_nw_gave("E06_FIRE") and r13_nw_gave("E06_EMPTY","E06_RESCUE") and r13_nw_gave("E07_NUBI","NW_NUBI_TICKET"),
+        "half_fire_only_start7":lambda:r13_nw_gave("E06_FIRE"),
+        "half_fire_only_bori7":lambda:r13_nw_gave("E06_EMPTY","E06_RESCUE"),
+        "half_fire_only_who7":lambda:r13_nw_gave("E07_NUBI","NW_NUBI_TICKET"),
+        # 10일 13호 1~5번.
+        "half_r13_account10":lambda:r13_nw_gave("E08_CHILD_ACCOUNT") and not r13_nw_gave("E08_TOOL"),
+        "half_r13_tool10":lambda:r13_nw_gave("E08_TOOL") and not r13_nw_gave("E08_CHILD_ACCOUNT"),
+        "half_r13_walked10":lambda:r13_nw_gave("E09_PASSAGE") and not r13_nw_gave("E08_ROOM"),
+        "half_r13_room10":lambda:r13_nw_gave("E08_ROOM") and not r13_nw_gave("E09_PASSAGE"),
+        "half_r13_record10":lambda:r13_nw_gave("E09_PIN_OWNER") and not r13_nw_gave("E08_WOUND_WIRE","E08_CONTACT_ASSEMBLY"),
+        "half_r13_wire10":lambda:r13_nw_gave("E08_WOUND_WIRE") and not r13_nw_gave("E09_PIN_OWNER"),
+        "half_r13_hook10":lambda:r13_nw_gave("E08_CONTACT_ASSEMBLY") and not r13_nw_gave("E09_PIN_OWNER"),
+        "half_r13_first10":lambda:r13_nw_gave("E09_PIN_TIME") and not r13_nw_gave("E09_PIN_HANDOVER_TIME"),
+        "half_r13_stair10":lambda:r13_nw_gave("E09_PIN_HANDOVER_TIME") and not r13_nw_gave("E09_PIN_TIME"),
+        "half_r13_c_object10":lambda:not r13_nw_gave("E08_CONTACT_ASSEMBLY","E08_WOUND_WIRE"),
+        "half_r13_c_child10":lambda:not (r13_nw_gave("E08_CHILD_POSITION") and r13_nw_gave("E08_ROOM_REACH")),
+        "half_r13_c_hook10":lambda:not r13_nw_gave("E08_CONTACT_ASSEMBLY"),
+        "half_r13_c_wound10":lambda:not r13_nw_gave("E08_WOUND_WIRE"),
+        "half_r13_c_scarf10":lambda:not r13_nw_gave("E09_SCARF"),
+        # 10일 기록 1·2번.
+        "half_rec_contact10":lambda:r13_nw_gave("E06_CONTACT") and not r13_nw_gave("E09_MAIL"),
+        "half_rec_mail10":lambda:r13_nw_gave("E09_MAIL") and not r13_nw_gave("E06_CONTACT"),
+        "half_rec_invite10":lambda:not r13_nw_gave("E01"),
+        "half_rec_origin10":lambda:not r13_nw_gave("E07","E27"),
+        "half_rec_order10":lambda:not r13_nw_gave("E09_MAIL"),
+        # 11일 가설 1·3·4번(2·5번은 자료 한 장이라 일부 정답이 없다).
+        "half_hyp1_night11":lambda:r13_nw_gave("E11","NW_LA_CHECK") and not r13_nw_gave("NW_PIKO_TREMOR"),
+        "half_hyp1_day11":lambda:r13_nw_gave("NW_PIKO_TREMOR") and not r13_nw_gave("E11","NW_LA_CHECK"),
+        "half_hyp1_lamp11":lambda:r13_nw_gave("E08") and not r13_nw_gave("E11","NW_LA_CHECK","NW_PIKO_TREMOR"),
+        "half_hyp3_price11":lambda:r13_nw_gave("NW_INNER_PRICE") and not r13_nw_gave("NW_MUSOE_DEEP"),
+        "half_hyp3_deep11":lambda:r13_nw_gave("NW_MUSOE_DEEP") and not r13_nw_gave("NW_INNER_PRICE"),
+        "half_hyp4_nostone11":lambda:r13_nw_gave("NW_KKOMI_NOSTONE") and not r13_nw_gave("NW_SICK_BEDS"),
+        "half_hyp4_beds11":lambda:r13_nw_gave("NW_SICK_BEDS") and not r13_nw_gave("NW_KKOMI_NOSTONE"),
+        # 12일 수프 1~3번.
+        "half_soup_fragment12":lambda:r13_nw_gave("E12_FRAGMENT") and not r13_nw_gave("E12_SEAL"),
+        "half_soup_seal12":lambda:r13_nw_gave("E12_SEAL") and not r13_nw_gave("E12_FRAGMENT"),
+        "half_soup_hand12":lambda:not r13_nw_gave("E12_HANDLING"),
+        "half_soup_bottle12":lambda:not (r13_nw_gave("E12_FRAGMENT") and r13_nw_gave("E12_SEAL")),
+        "half_list_returned12":lambda:r13_nw_gave("NW_RETURNED_BOWL") and not r13_nw_gave("NW_WHITE_BOWLS","NW_TRANSFER_LIST"),
+        "half_list_nobowls12":lambda:not r13_nw_gave("NW_WHITE_BOWLS"),
+        "half_list_bowls12":lambda:r13_nw_gave("NW_WHITE_BOWLS"),
+        # 14일 제단 1·2·4번(3번은 자료 한 장).
+        "half_altar1_wood14":lambda:r13_nw_gave("E14_SUPPLY") and not r13_nw_gave("NW_KKOMI_NOSTONE","NW_SICK_BEDS"),
+        "half_altar1_kids14":lambda:not r13_nw_gave("E14_SUPPLY") and r13_nw_gave("NW_KKOMI_NOSTONE","NW_SICK_BEDS"),
+        "half_altar1_mixed14":lambda:r13_nw_gave("E14_SUPPLY") and r13_nw_gave("NW_KKOMI_NOSTONE","NW_SICK_BEDS"),
+        "half_altar2_front14":lambda:r13_nw_gave("NW_TABLET_A") and not r13_nw_gave("NW_TABLET_B"),
+        "half_altar2_back14":lambda:r13_nw_gave("NW_TABLET_B") and not r13_nw_gave("NW_TABLET_A"),
+        "half_altar4_names14":lambda:r13_nw_gave("NW_NAMES") and not r13_nw_gave("NW_NEOUL_LEDGER","NW_OLD_RATIONS"),
+        "half_altar4_year14":lambda:not r13_nw_gave("NW_NAMES"),
     }
     for _nw_who in ("resident_piko","kid_kkomi","resident_owlgp","resident_nero","kid_dodam","neoul","resident_momo","v111_lowerroad_elder"):
         R13_NW_WHEN["dead:"+_nw_who]=(lambda w=_nw_who:w in r13_nw_dead())
@@ -360,6 +432,29 @@ init 319 python:
         # 이송 칸이 무효가 된 판(수프 대승리)에는 숨길 까닭이 없다.
         "teacher_hides13":lambda:r13_v111_value("fate:fate_soup") in ("early","premeal") and r13_v111_value("transfer_list_voided") is not True and r13_v111_actor_ready("resident_teacher"),
     })
+    def r13_nw_partial(key,correct):
+        """이번 제출이 그 쟁점의 일부 정답인가(틀린 자료 없음, 정답 쪽 하나 이상, 아직 안 받음). 판정은 바꾸지 않는다."""
+        given=r13_gp_given()
+        sets=r13_v111_proof_sets(key,correct)
+        core=set().union(*sets)
+        allowed=core|set("V111:"+k for k in R13_PROOF_EXTRAS.get(key,()))
+        return bool(given&core) and given<=allowed and not r13_v111_proof_accepts(key,correct,given)
+    def r13_nw_half_rebut(meeting,correct,block):
+        """일부 정답이면 반박 묶음에서 조건이 맞는 첫 줄 하나(대사 꾸러미 목록), 아니면 []."""
+        if not block or not correct or block not in R13_NW_TEXT["blocks"]:return []
+        if r13_v111_value("meeting:"+meeting) is not None:return []
+        if not r13_nw_partial(r13_nw_wrong_issue(),correct):return []
+        for row in R13_NW_TEXT["blocks"][block]:
+            if not R13_NW_WHEN[row.get("when","always")]():continue
+            who=MS14_SPEAKERS.get(row.get("speaker")) if row.get("speaker") is not None else None
+            if who and not r13_v111_person_alive(who):continue
+            return [r13_nw_added_line(row)]
+        return []
+    def r13_nw_rebut_take():
+        """기다리는 반박 줄을 꺼내고 지운다(r13_nw_wrong_thought 가 아빠 속말 앞에 붙인다)."""
+        lines=list(getattr(store,"r13_nw_rebut_pending",None) or [])
+        store.r13_nw_rebut_pending=None
+        return lines
     # Impact direction names (systems/room13_impact_fx.rpy; that file loads later, so the names live here).
     R13_NW_FX=("jolt","shake","slam","flash")
     R13_NW_CUT_SPECIAL=("bell","v111_blanket_before","v111_blanket_after","v111_reunion_far","v111_reunion_close")

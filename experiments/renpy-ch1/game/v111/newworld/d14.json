@@ -1479,7 +1479,8 @@
         "speaker": "촌장",
         "kind": "dialogue",
         "text": "숫자를 보시오. 열흘이오. 사람 하나에 마을 하나가 열흘을 사오.",
-        "expression": "neutral"
+        "expression": "neutral",
+        "when": "nw_no_rebut"
       }
     ],
     "altar2_q14": [
@@ -1527,7 +1528,8 @@
         "speaker": "촌장",
         "kind": "dialogue",
         "text": "깨진 돌 쪼가리로 아르카를 말하지 마시오.",
-        "expression": "neutral"
+        "expression": "neutral",
+        "when": "nw_no_rebut"
       }
     ],
     "altar3_q14": [
@@ -1664,7 +1666,8 @@
         "speaker": "촌장",
         "kind": "dialogue",
         "text": "내 손녀 이름을 입에 올리지 마시오.",
-        "expression": "neutral"
+        "expression": "neutral",
+        "when": "nw_no_rebut"
       }
     ],
     "altar_result14": [
@@ -2862,6 +2865,68 @@
         "speaker": "아빠",
         "kind": "dialogue",
         "text": "바로 곁에 있어. 서로 보이는 데서 움직이자."
+      }
+    ],
+    "half_altar1_14": [
+      {
+        "id": "NW_HALF_D14A_01",
+        "speaker": "촌장",
+        "kind": "dialogue",
+        "text": "장작이 학교로 간 건 알겠소.{w=.3}\n장작 몇 묶음으로 열흘 셈이 틀렸다는 거요? 사람을 보내지 않아도 아무도 안 무너진다는 건 어디 있소?",
+        "expression": "neutral",
+        "when": "half_altar1_wood14"
+      },
+      {
+        "id": "NW_HALF_D14A_02",
+        "speaker": "촌장",
+        "kind": "dialogue",
+        "text": "아이들 얘기는 알겠소.{w=.3}\n그래도 숫자는 숫자요. 이 겨울을 무엇으로 버틸지, 그 셈은 어디 있소?",
+        "expression": "neutral",
+        "when": "half_altar1_kids14"
+      },
+      {
+        "id": "NW_HALF_D14A_03",
+        "speaker": "촌장",
+        "kind": "dialogue",
+        "text": "장작도 알겠고, 아이들 얘기도 들었소.{w=.3}\n그런데 무너지는 아이와 안 무너지는 아이가 어디서 갈리는지, 그게 다 나오지 않았소.",
+        "expression": "neutral",
+        "when": "half_altar1_mixed14"
+      }
+    ],
+    "half_altar2_14": [
+      {
+        "id": "NW_HALF_D14B_01",
+        "speaker": "촌장",
+        "kind": "dialogue",
+        "text": "깨진 돌 쪼가리로 아르카를 말하지 마시오.{w=.3}\n‘꺼내어……’ 그 뒤가 없잖소. 끝이 없는 말로 무얼 하겠다는 거요?",
+        "expression": "neutral",
+        "when": "half_altar2_front14"
+      },
+      {
+        "id": "NW_HALF_D14B_02",
+        "speaker": "촌장",
+        "kind": "dialogue",
+        "text": "밑돌 글씨 몇 자로 무얼 하겠다는 거요.{w=.3}\n‘……불을 켜지 말라’. 앞이 없는 말이오. 무엇을 두고 하는 말인지 어디 있소?",
+        "expression": "neutral",
+        "when": "half_altar2_back14"
+      }
+    ],
+    "half_altar4_14": [
+      {
+        "id": "NW_HALF_D14D_01",
+        "speaker": "촌장",
+        "kind": "dialogue",
+        "text": "벽 맨 위에 그 이름이 있다는 건 다들 아오.{w=.3}\n그게 내 집 탓이라는 거요? 그해 일을 무엇으로 대겠소. 처음부터 그렇게 해 왔소.",
+        "expression": "neutral",
+        "when": "half_altar4_names14"
+      },
+      {
+        "id": "NW_HALF_D14D_02",
+        "speaker": "촌장",
+        "kind": "dialogue",
+        "text": "그해 배급이 어땠든 그게 무슨 상관이오.{w=.3}\n맨 처음 보낸 사람이 누구였는지, 이름 하나 대지 못하면서. 처음부터 그렇게 해 왔소.",
+        "expression": "neutral",
+        "when": "half_altar4_year14"
       }
     ]
   }

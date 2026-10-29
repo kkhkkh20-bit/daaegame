@@ -188,6 +188,9 @@ class NewWorldText(Layer):
   env=self.load()
   used=set()
   for name in DAYS:used|=set(re.findall(r"r13_nw_block\(['\"](\w+)['\"]\)",(ROOT/'game'/name).read_text()))
+  # 2026-10-29 P02: 일부 정답 반박 묶음은 r13_nw_retry 의 셋째 인자(또는 r13_nw_half_rebut)로 이름이 넘어간다.
+  for name in DAYS+['room13_v111_newworld_rules.rpy']:
+   used|=set(re.findall(r"r13_nw_(?:retry|half_rebut)\([^\n]*,\s*['\"](half_\w+)['\"]\)",(ROOT/'game'/name).read_text()))
   self.assertEqual(used,set(env['R13_NW_TEXT']['blocks']))
   env['R13_NW_TEXT']['blocks']['qa_block']=[{'id':'NW_QA_1','speaker':None,'text':'보이는 줄'},{'id':'NW_QA_2','speaker':None,'text':'숨는 줄','when':'owl_dead'}]
   env['R13_NW_WHEN']['owl_dead']=lambda:False

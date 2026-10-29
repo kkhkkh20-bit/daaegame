@@ -2061,6 +2061,46 @@
     {
       "id": "MS14_D10_S04_L0008",
       "when": "room13_not_win"
+    },
+    {
+      "id": "MS14_D10_S02_L0047",
+      "when": "nw_rebut_pending"
+    },
+    {
+      "id": "MS14_D10_S02_L0048",
+      "when": "nw_rebut_pending"
+    },
+    {
+      "id": "MS14_D10_S02_L0050",
+      "when": "nw_rebut_pending"
+    },
+    {
+      "id": "MS14_D10_S03_L0089",
+      "when": "nw_rebut_pending"
+    },
+    {
+      "id": "MS14_D10_S03_L0090",
+      "when": "nw_rebut_pending"
+    },
+    {
+      "id": "MS14_D10_S03_L0091",
+      "when": "nw_rebut_pending"
+    },
+    {
+      "id": "MS14_D10_S03_L0092",
+      "when": "nw_rebut_pending"
+    },
+    {
+      "id": "MS14_D10_P01_L0084",
+      "when": "nw_rebut_pending"
+    },
+    {
+      "id": "MS14_D10_P01_L0085",
+      "when": "nw_rebut_pending"
+    },
+    {
+      "id": "MS14_D10_P01_L0086",
+      "when": "nw_rebut_pending"
     }
   ],
   "evidence": {},
@@ -2148,6 +2188,172 @@
         "kind": "dialogue",
         "text": "하나.",
         "expression": "joy"
+      }
+    ],
+    "half_room13_wound10": [
+      {
+        "id": "NW_HALF_D10W_01",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "아이 말은 들었소.{w=.3}\n손목만 쳤다는 그 말이, 그날 그 방에 남은 것과 맞는다는 건 어디 있소?",
+        "expression": "neutral",
+        "when": "half_r13_account10"
+      },
+      {
+        "id": "NW_HALF_D10W_02",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "상처가 둘이고 모양이 다르다는 건 알겠소.{w=.3}\n그럼 그때 아이 손이 어디를 쳤다는 거요? 그게 없으면 두 군데 다 아이 솜씨일 수 있소.",
+        "expression": "neutral",
+        "when": "half_r13_tool10"
+      }
+    ],
+    "half_room13_passage10": [
+      {
+        "id": "NW_HALF_D10P_01",
+        "speaker": "따닥",
+        "kind": "dialogue",
+        "text": "그 길은 제가 쐐기까지 박고 잰 거예요.{w=.3}\n근데 그 길로 들어오면 방 안 어디까지 닿는지는요? 그게 빠지면 너울 씨는 ‘길만 있다’고 할 거예요.",
+        "expression": "neutral",
+        "when": "half_r13_walked10"
+      },
+      {
+        "id": "NW_HALF_D10P_02",
+        "speaker": "따닥",
+        "kind": "dialogue",
+        "text": "방 안이 어땠는지는 알겠어요.{w=.3}\n근데 그 문 말고 길이 진짜 있다는 건요? 짐작 말고, 누가 직접 다녀와 봤어야죠.",
+        "expression": "neutral",
+        "when": "half_r13_room10"
+      }
+    ],
+    "half_room13_owner10": [
+      {
+        "id": "NW_HALF_D10O_01",
+        "speaker": "할머니",
+        "kind": "dialogue",
+        "text": "고쳐 쓴 핀이야 수선장에 남았겠죠.{w=.3}\n그 핀이 그 방 그 일과 이어진다는 건 어디 있어요? 시장 핀은 다들 고쳐 써요.",
+        "expression": "anxious",
+        "when": "half_r13_record10"
+      },
+      {
+        "id": "NW_HALF_D10O_02",
+        "speaker": "할머니",
+        "kind": "dialogue",
+        "text": "상처에 구리가 묻었다고요?{w=.3}\n그 구리가 내 핀이라는 건 어디 있어요? 같은 핀 고쳐 쓰는 사람이 한둘인 줄 알아요?",
+        "expression": "anxious",
+        "when": "half_r13_wire10"
+      },
+      {
+        "id": "NW_HALF_D10O_03",
+        "speaker": "할머니",
+        "kind": "dialogue",
+        "text": "핀이 천하고 고리에 같이 꿰여 있었다고요?{w=.3}\n그 핀이 내 거라는 건 어디 있어요? 같은 핀 쓰는 사람이 얼마나 많은데요.",
+        "expression": "anxious",
+        "when": "half_r13_hook10"
+      }
+    ],
+    "half_room13_time10": [
+      {
+        "id": "NW_HALF_D10T_01",
+        "speaker": "나비",
+        "kind": "dialogue",
+        "text": "첫 비명 뒤에 제가 핀을 다시 채워 드린 건 맞아요.{w=.3}\n근데 그 뒤로는요? 그 핀이 언제까지 할머니께 있었는지가 빠졌잖아요.",
+        "expression": "anxious",
+        "when": "half_r13_first10"
+      },
+      {
+        "id": "NW_HALF_D10T_02",
+        "speaker": "나비",
+        "kind": "dialogue",
+        "text": "아이 손을 잡고 있을 때 핀이 목도리에 있었던 건 맞아요.{w=.3}\n근데 낮에 떨어진 핀이면 그 밤엔 어디서 났겠어요? 그 밤에 핀을 처음 본 때가 빠졌어요.",
+        "expression": "anxious",
+        "when": "half_r13_stair10"
+      }
+    ],
+    "half_room13_contact10": [
+      {
+        "id": "NW_HALF_D10C_01",
+        "speaker": "할머니",
+        "kind": "dialogue",
+        "text": "아이가 거기 못 닿았다는 건 알겠어요.{w=.3}\n그래도 나는 집기만 했어요. 핀이 집을 때 걸린 게 아니라는 건 어디 있어요?",
+        "expression": "flustered",
+        "when": "half_r13_c_object10"
+      },
+      {
+        "id": "NW_HALF_D10C_02",
+        "speaker": "할머니",
+        "kind": "dialogue",
+        "text": "핀이 어떻게 걸려 있었는지는 봤다 쳐요.{w=.3}\n그럼 아이는요? 그때 아이가 거기 손을 못 댔다는 건 어디 있어요?",
+        "expression": "flustered",
+        "when": "half_r13_c_child10"
+      },
+      {
+        "id": "NW_HALF_D10C_03",
+        "speaker": "할머니",
+        "kind": "dialogue",
+        "text": "상처에 구리가 묻은 건 알겠어요.{w=.3}\n그래도 집다가 걸린 핀이에요. 그 핀이 처음부터 거기 꿰여 있었다는 건 어디 있어요?",
+        "expression": "flustered",
+        "when": "half_r13_c_hook10"
+      },
+      {
+        "id": "NW_HALF_D10C_04",
+        "speaker": "할머니",
+        "kind": "dialogue",
+        "text": "핀이 천하고 고리를 같이 물고 있었다고요?{w=.3}\n그 촛대가 사람 머리에 닿았다는 건 어디 있어요? 집기만 했다니까요.",
+        "expression": "flustered",
+        "when": "half_r13_c_wound10"
+      },
+      {
+        "id": "NW_HALF_D10C_05",
+        "speaker": "할머니",
+        "kind": "dialogue",
+        "text": "핀이고 상처고 아이 자리고, 다 알겠어요.{w=.3}\n그래도 고리에 남은 천이 어디서 왔는지는 어디 있어요? 천 쪼가리야 어디에나 있어요.",
+        "expression": "flustered",
+        "when": "half_r13_c_scarf10"
+      }
+    ],
+    "half_records_authority10": [
+      {
+        "id": "NW_HALF_D10A_01",
+        "speaker": "부엉이",
+        "kind": "dialogue",
+        "text": "학교 뒤 판에 받은 사람이 안 적혔다는 건 알겠네.{w=.3}\n그럼 편지 쪽은? 부인이 실제로 누구 앞으로 무얼 부쳤는지도 봐야지.",
+        "expression": "neutral",
+        "when": "half_rec_contact10"
+      },
+      {
+        "id": "NW_HALF_D10A_02",
+        "speaker": "부엉이",
+        "kind": "dialogue",
+        "text": "부인이 부친 편지 쪽은 알겠네.{w=.3}\n그런데 부인이 편지 말고 건넨 것도 있었지. 그건 누구 손으로 갔나?",
+        "expression": "neutral",
+        "when": "half_rec_mail10"
+      }
+    ],
+    "half_records_writing10": [
+      {
+        "id": "NW_HALF_D10R_01",
+        "speaker": "슬링",
+        "kind": "dialogue",
+        "text": "말씀하시는 건 알겠어요.{w=.3}\n그런데 정작 따지시는 그 초대장은요? 무엇을 두고 하는 말인지가 빠졌어요.",
+        "expression": "anxious",
+        "when": "half_rec_invite10"
+      },
+      {
+        "id": "NW_HALF_D10R_02",
+        "speaker": "슬링",
+        "kind": "dialogue",
+        "text": "초대장은 알겠어요.{w=.3}\n그런데 그 초대장을 부인이 정말 보냈는지는요? 닮은 글씨만으로는 못 가려요.",
+        "expression": "anxious",
+        "when": "half_rec_origin10"
+      },
+      {
+        "id": "NW_HALF_D10R_03",
+        "speaker": "슬링",
+        "kind": "dialogue",
+        "text": "초대장이 어디서 왔는지는 알겠어요.{w=.3}\n그런데 제가 본보기를 언제 만들었는지는요? 순서를 봐야 왜 닮았는지가 나와요.",
+        "expression": "anxious",
+        "when": "half_rec_order10"
       }
     ]
   }

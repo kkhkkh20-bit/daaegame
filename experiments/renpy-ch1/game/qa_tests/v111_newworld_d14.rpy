@@ -74,6 +74,13 @@ testcase v111_nw_d14_altar_half_then_partial:
     run Function(qa_nw_day14)
     run Function(r13_edit,location="gate")
     run Function(r13_grant,["V111:NW_TABLET_A","V111:NW_TABLET_B"],"qa")  # 0.20.5: the next question needs them in hand
+    # 2026-10-29 P03: 처음 한 번은 기회를 쓰지 않고 촌장이 되묻는다. 같은 제출을 다시 내면 반쪽이다.
+    run SetVariable("v111_claim","v111:희생의 숫자와 장부를 대조한다")
+    run SetVariable("v111_last_presented",["V111:E14_SUPPLY"])
+    run Jump("r13_v111_altar1_wrong14")
+    click pos (900,600) until screen "r13_crisis_proof" timeout 60
+    assert eval (r13_v111_value("altar_half1") is None and not r13_v111_value("tries:altar") and qa_nw_seen("아무도 안 무너진다는 건 어디 있소") and not qa_nw_seen("사람 하나에 마을 하나가"))
+    run SetVariable("v111_claim","v111:희생의 숫자와 장부를 대조한다")
     run SetVariable("v111_last_presented",["V111:E14_SUPPLY"])
     run Jump("r13_v111_altar1_wrong14")
     click pos (900,600) until screen "r13_crisis_proof" timeout 60
@@ -130,6 +137,7 @@ testcase v111_nw_d14_altar_without_records:
     click pos (900,600) until screen "r13_hub" timeout 90
     run Function(qa_nw_day14)
     run Function(r13_edit,location="gate")
+    run Function(r13_v111_set,"altar1_half_asked",True)  # 2026-10-29 P03: 첫 되묻기는 이미 들은 판
     run SetVariable("v111_last_presented",["V111:E14_SUPPLY"])
     run Jump("r13_v111_altar1_wrong14")
     click pos (900,600) until eval (r13_v111_value("meeting:altar") is not None) timeout 120

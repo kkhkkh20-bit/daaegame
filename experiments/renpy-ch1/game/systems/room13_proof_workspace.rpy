@@ -24,8 +24,10 @@ init 350 python:
         "두 편지를 나란히 본다":dict(mode="compare",speaker=None,
             quote="두 편지를 직접 읽고 견준다. 무엇이 같고, 무엇이 다른가.",
             quote_when=None),
-        "불이 시작된 곳과 진술을 대조한다":dict(mode="proof",speaker="보리",
-            quote="불이 번지기 전에 누비 씨가 창고 문 앞에 서 있는 건 봤소.",
+        # 2026-10-29 논쟁 점검 P01: 깨야 할 말은 보리의 목격(확인된 사실 쪽)이 아니라 누비의 「그 통으로 물을 데웠다」
+        # (MS14_D07_S01_L0007·L0009, 이 쟁점 직전 장면에서 늘 듣는다). 보이는 조건은 그대로 둔다.
+        "불이 시작된 곳과 진술을 대조한다":dict(mode="proof",speaker="누비",
+            quote="등유 통은 내가 써요. 애들도 물 데울 때 쓰고요. …… 어제 저녁에도 데웠죠.",
             quote_when=("value","bori_nubi_door_witness_heard")),
     }
     R13_PW_TABS=(("all","전체"),("now","이번 사건"),("past","지난 사건"),("person","사람별"))

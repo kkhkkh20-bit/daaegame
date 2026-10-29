@@ -392,10 +392,10 @@ default r13_nw_wrong_pending = None
 default r13_nw_can_solve = None
 
 label r13_nw_wrong_thought:
-    # 2026-10-24 지시서 01 4번: 틀린 뒤 아빠 속말(문구는 room13_v111_newworld_rules.rpy R13_NW_WRONG_THOUGHTS).
-    if r13_nw_wrong_pending:
-        $ v111_wrong_text=r13_nw_wrong_pending[1]; r13_nw_wrong_pending=None
-        call r13_lines([r13_nw_added_line(dict(kind="thought",text=v111_wrong_text))],"v111:wrong_thought")
+    # 2026-10-24 지시서 01 4번: 틀린 뒤 아빠 속말(문구는 room13_v111_newworld_rules.rpy R13_NW_WRONG_THOUGHTS). 일부 정답 반박이 앞에 선다.
+    if r13_nw_wrong_pending or r13_nw_rebut_pending:
+        $ v111_wrong_text=r13_nw_wrong_pending[1] if r13_nw_wrong_pending else None; r13_nw_wrong_pending=None
+        call r13_lines(r13_nw_rebut_take()+([r13_nw_added_line(dict(kind="thought",text=v111_wrong_text))] if v111_wrong_text else []),"v111:wrong_thought")
     return
 
 label r13_v111_proof(key,correct,success,wrong=None,hint=None,review_return=None):

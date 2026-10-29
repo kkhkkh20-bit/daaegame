@@ -6,6 +6,10 @@
         "when": "fire_lose"
       },
       {
+        "text": "……어제 그 통의 등유가 어디로 갔는지, 거기부터 다시 보겠습니다.",
+        "when": "fire1_no_fire_record"
+      },
+      {
         "text": "천만으로는 누구라고 못 하겠군요. 어제 그 통에 마지막으로 손댄 사람이 누굽니까?"
       }
     ],
@@ -173,10 +177,17 @@
       "text": "애들 쪽 보지 마시오.{w=.3} 당신한테 묻고 있소.",
       "expression": "angry"
     },
-    "MS14_D07_S01_L0046": {
-      "text": "빨래터 천이 여기만 있는 줄 알아요?",
-      "expression": "angry"
-    },
+    "MS14_D07_S01_L0046": [
+      {
+        "text": "그게 어제 내가 물 데운 거랑 무슨 상관이에요?",
+        "expression": "angry",
+        "when": "fire1_no_fire_record"
+      },
+      {
+        "text": "빨래터 천이 여기만 있는 줄 알아요?",
+        "expression": "angry"
+      }
+    ],
     "MS14_D07_S01_L0030": {
       "text": "보리 씨는 불이 번지기 전에 누비 씨를 봤답니다.{w=.3}\n그때 뭘 하고 계셨습니까? 등유 통도 여기 있고요."
     },
@@ -1996,6 +2007,56 @@
         "kind": "dialogue",
         "text": "봤겠죠. 저 거기 있었으니까.",
         "expression": "anxious"
+      }
+    ],
+    "half_fire_split7": [
+      {
+        "id": "NW_HALF_D07_01",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "불이 문 쪽에서 붙었고, 그 밤에 보리가 한 일도 알겠소.{w=.3}\n그런데 그 불을 낸 게 누구라는 건 어디 있소? 그게 빠지면 셋 다 같은 줄이오.",
+        "expression": "neutral",
+        "when": "half_fire_who7"
+      },
+      {
+        "id": "NW_HALF_D07_02",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "불이 문 쪽에서 붙었다는 것도, 누비 쪽 사정도 알겠소.{w=.3}\n그럼 보리는? 그 밤 불 앞에서 보리가 무얼 했는지는 어디 있소? 그게 없으면 보리도 같은 줄이오.",
+        "expression": "neutral",
+        "when": "half_fire_bori7"
+      },
+      {
+        "id": "NW_HALF_D07_03",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "누비 쪽 사정도, 그 밤에 보리가 한 일도 알겠소.{w=.3}\n그런데 불이 처음 어디서 붙었소? 그걸 모르면 누구 몫의 불인지 못 가리오.",
+        "expression": "neutral",
+        "when": "half_fire_start7"
+      },
+      {
+        "id": "NW_HALF_D07_04",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "불이 문 쪽에서 붙었다는 건 알겠소.{w=.3}\n그 문 앞에 누가 있었고, 보리는 그때 무얼 했소? 그걸 못 대면 다들 책임이 있는 거요.",
+        "expression": "neutral",
+        "when": "half_fire_only_start7"
+      },
+      {
+        "id": "NW_HALF_D07_05",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "그 밤에 보리가 한 일은 알겠소.{w=.3}\n그럼 불은 어디서, 누구 손에서 났소? 그걸 못 대면 다들 책임이 있는 거요.",
+        "expression": "neutral",
+        "when": "half_fire_only_bori7"
+      },
+      {
+        "id": "NW_HALF_D07_06",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "누비 쪽 사정은 알겠소.{w=.3}\n그럼 불은 어디서 붙었고, 그 밤 보리는 무얼 했소? 그걸 못 대면 다들 책임이 있는 거요.",
+        "expression": "neutral",
+        "when": "half_fire_only_who7"
       }
     ]
   },

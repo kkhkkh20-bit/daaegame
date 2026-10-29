@@ -1435,6 +1435,22 @@
     {
       "id": "MS14_D12_S01_L0027",
       "when": "warm_support_ready"
+    },
+    {
+      "id": "MS14_D12_S04_L0089",
+      "when": "nw_rebut_pending"
+    },
+    {
+      "id": "MS14_D12_S04_L0090",
+      "when": "nw_rebut_pending"
+    },
+    {
+      "id": "MS14_D12_S04_L0091",
+      "when": "nw_rebut_pending"
+    },
+    {
+      "id": "MS14_D12_S04_L0092",
+      "when": "nw_rebut_pending"
     }
   ],
   "evidence": {},
@@ -2079,6 +2095,68 @@
         "speaker": "아빠",
         "kind": "dialogue",
         "text": "국자도 그대로 두세요."
+      }
+    ],
+    "half_soup_seal12": [
+      {
+        "id": "NW_HALF_D12A_01",
+        "speaker": "선생님",
+        "kind": "dialogue",
+        "text": "그 조각이 약병 입구인 건 맞아요.{w=.3}\n그래도 다 쓴 병이었어요. 다 쓴 병이 아니었다는 건 어디 있어요?",
+        "expression": "flustered",
+        "when": "half_soup_fragment12"
+      },
+      {
+        "id": "NW_HALF_D12A_02",
+        "speaker": "선생님",
+        "kind": "dialogue",
+        "text": "봉인이 붙어 있던 병이 있었던 건 맞아요.{w=.3}\n그게 냄비에서 나온 것과 같은 병이라는 건 어디 있어요?",
+        "expression": "flustered",
+        "when": "half_soup_seal12"
+      }
+    ],
+    "half_soup_final12": [
+      {
+        "id": "NW_HALF_D12B_01",
+        "speaker": "나비",
+        "kind": "dialogue",
+        "text": "병 조각이고 봉인이고, 거기까진 아까 따진 거예요.{w=.3}\n근데 선생님이 씻는 데 다녀오셨는지는요? 그 짧은 동안 냄비 앞에 누가 있었는지가 빠졌잖아요.",
+        "expression": "anxious",
+        "when": "half_soup_hand12"
+      },
+      {
+        "id": "NW_HALF_D12B_02",
+        "speaker": "나비",
+        "kind": "dialogue",
+        "text": "제가 냄비를 건넨 건 맞아요.{w=.3}\n근데 그 안에 뭐가 들어갔는지는 아까 따진 거잖아요. 그걸 빼면 안 되죠.",
+        "expression": "anxious",
+        "when": "half_soup_bottle12"
+      }
+    ],
+    "half_soup_list12": [
+      {
+        "id": "NW_HALF_D12C_01",
+        "speaker": "선생님",
+        "kind": "dialogue",
+        "text": "그 그릇이 어디서 돌아왔든요.{w=.3}\n오늘 그 그릇이 누구 앞에 놓였는지는 어디 있어요?",
+        "expression": "flustered",
+        "when": "half_list_returned12"
+      },
+      {
+        "id": "NW_HALF_D12C_02",
+        "speaker": "선생님",
+        "kind": "dialogue",
+        "text": "이송 칸에 이름이 있는 건 맞아요.{w=.3}\n그게 작은 냄비랑 무슨 상관이에요? 그 냄비 몫이 누구 앞에 놓였는지는 어디 있어요?",
+        "expression": "flustered",
+        "when": "half_list_nobowls12"
+      },
+      {
+        "id": "NW_HALF_D12C_03",
+        "speaker": "선생님",
+        "kind": "dialogue",
+        "text": "흰 그릇이 그 아이들 앞에 놓인 건 맞아요.{w=.3}\n자리가 모자라서 그랬다니까요. 그 아이들이 따로 묶인 아이들이라는 건 어디 있어요?",
+        "expression": "flustered",
+        "when": "half_list_bowls12"
       }
     ]
   }
