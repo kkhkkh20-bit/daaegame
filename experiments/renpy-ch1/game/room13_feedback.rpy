@@ -43,14 +43,13 @@ screen r13_click_glint(point):
 define R13_EVIDENCE_CARD_CENTER = (1010, 112)
 define R13_EVIDENCE_ICON_SIZE = 104
 define R13_EVIDENCE_NAME_WIDTH = 190
+define R13_EVIDENCE_NOTICE_SIZE = (300, 100)
+define R13_EVIDENCE_NOTICE_TOP = 104
 define R13_EVIDENCE_CARD_PAD = 10
 
 screen r13_evidence_card(key,caption="",conversation=False,notice=False,compact=False):
     # 2026-10-27: 왼쪽 위 획득 알림이 현장 상단 지도·기록 버튼(y 40~75)을 덮었다. 그 아래로 내린다.
     # 2026-10-27: 알림 카드는 오른쪽 위(날짜판 아래). 왼쪽 위에 두니 자료 대조 화면의 발언 글과 겹쳤다.
-    # 2026-10-27 14일 자동 플레이 2일(등 살펴보기 선택창): 선택창 틀(195~1085)의 오른쪽 가장자리를 카드(1030~1170)가 덮었다.
-    # 선택창이 떠 있으면 틀 바깥(1110~1250)으로 비켜 둔다.
-    $ card_center=((1180,190) if renpy.get_screen("choice") else (1100,190)) if notice else R13_EVIDENCE_CARD_CENTER
     style_prefix "r13"
     if compact:
         # 2026-10-27: 자료 대조 패널(50,100)-(1230,670)이 떠 있는 동안은 왼쪽 위 카드가 주장 제목을 덮는다.
@@ -64,14 +63,20 @@ screen r13_evidence_card(key,caption="",conversation=False,notice=False,compact=
                 add Transform(r13_record_icon(key),size=(36,36),fit="contain",nearest=True) yalign .5
                 text r13_catalog_title(key) size r13_type("small") color "#fff4df" yalign .5 xmaximum 360
     else:
-        frame:
-            xanchor .5 xpos card_center[0] ypos card_center[1] padding (R13_EVIDENCE_CARD_PAD,8,R13_EVIDENCE_CARD_PAD,8)
-            background R13ActionPanel()
+        # 2026-10-28 분기 주행 캡처: 알림 카드가 이름 길이마다 폭이 달랐고(이름에 맞춰 틀이 줄었다), 자리도 화면마다
+        # 셋으로 갈렸다(대화 1010·조사 1100·선택 1180). 선택창 목록(오른쪽 600~1236, y 240~)과 조사 화면 오른쪽 화살표를 덮었다.
+        # 증거 칸(R13_EV_CUT_BOX)과 같은 놋쇠 도트 틀의 고정 크기 가로 카드로, 날짜판 바로 아래 한 자리에 둔다.
+        # 증거 칸이 떠 있으면 그 아래로 내린다(둘이 겹치지 않게).
+        $ card_w,card_h=R13_EVIDENCE_NOTICE_SIZE
+        $ card_y=(R13_EV_CUT_BOX[1]+R13_EV_CUT_BOX[2]+8) if renpy.showing("r13_ep_cut") else R13_EVIDENCE_NOTICE_TOP
+        fixed:
+            xanchor 1.0 xpos 1252 ypos card_y xysize (card_w,card_h)
             at r13_evidence_reveal
-            vbox:
-                spacing 3
-                add Transform(r13_record_icon(key),size=(R13_EVIDENCE_ICON_SIZE,R13_EVIDENCE_ICON_SIZE),fit="contain",nearest=True) xalign .5
-                text r13_catalog_title(key) size r13_type("small") color "#fff4df" xalign .5 text_align .5 xmaximum R13_EVIDENCE_NAME_WIDTH
+            add r13_ev_pixel_panel(card_w,card_h)
+            hbox:
+                xpos 20 ypos 20 spacing 14 ysize card_h-40
+                add Transform(r13_record_icon(key),xysize=(card_h-40,card_h-40),fit="contain",nearest=True) yalign .5
+                text r13_catalog_title(key) size r13_type("small") color "#fff4df" yalign .5 xmaximum card_w-card_h-20 layout "subtitle"
 
 screen r13_evidence_found(keys,conversation=False):
     # 0.18.48: above the desk close-up (90) and the item bag (95), which reopen right after a
@@ -88,7 +93,7 @@ screen r13_evidence_found(keys,conversation=False):
             use r13_evidence_card(keys[item_index],conversation=conversation,notice=True,compact=True)
         else:
             if r13_fx_active():
-                add R13_STORYBOOK.get("card_glow", Null()) xpos 120 ypos (92+8+R13_EVIDENCE_ICON_SIZE//2+20) anchor (.5,.5) at r13_card_glow
+                add R13_STORYBOOK.get("card_glow", Null()) xpos (1252-R13_EVIDENCE_NOTICE_SIZE[0]//2) ypos (R13_EVIDENCE_NOTICE_TOP+R13_EVIDENCE_NOTICE_SIZE[1]//2) anchor (.5,.5) at r13_card_glow
             use r13_evidence_card(keys[item_index],conversation=conversation,notice=True)
     if item_index+1<len(keys):
         timer 2.4 action SetScreenVariable("item_index",item_index+1)

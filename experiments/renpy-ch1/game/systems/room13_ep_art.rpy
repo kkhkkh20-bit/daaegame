@@ -119,6 +119,14 @@ init 160 python:
             parts.append(Solid(color,xysize=(w-2*u,w),xpos=x+o+u,ypos=y+o))
             parts.append(Solid(color,xysize=(w,w-2*u),xpos=x+o,ypos=y+o+u))
         return Fixed(*parts,xysize=(1280,720))
+    def r13_ev_pixel_panel(w,h,frame=None):
+        """증거 칸과 같은 놋쇠 도트 틀을 (0,0)부터 w x h 로. 자료 알림 카드가 쓴다."""
+        u=R13_EV_CUT_PX;parts=[]
+        for n,color in enumerate(R13_EV_CUT_FRAMES[frame or R13_EV_CUT_FRAME]):
+            o=n*u;ww=w-2*o;hh=h-2*o
+            parts.append(Solid(color,xysize=(ww-2*u,hh),xpos=o+u,ypos=o))
+            parts.append(Solid(color,xysize=(ww,hh-2*u),xpos=o,ypos=o+u))
+        return Fixed(*parts,xysize=(w,h))
     def r13_ep_cut_art(name):
         if name=="bell":return r13_ep_bell_art()
         if name in ("v111_reunion_far","v111_reunion_close"):
