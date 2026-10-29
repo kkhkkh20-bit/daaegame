@@ -656,7 +656,7 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
             if detail:
                 use r13_pw_detail(claim,detail,mode,L["detail_x"],L["body_top"],L["detail_w"],L["body_h"],origin_open,(mode=="proof" and len(owned)>1 and not pair_waiting),ready)
             else:
-                text ("목록에서 자료 이름을 누르면 여기서 읽습니다." if not pair_waiting else "함께 볼 자료의 이름을 목록에서 누르세요.") xpos L["detail_x"] ypos (L["body_top"]+40) xsize L["detail_w"] text_align .5 size r13_ev_fact_size() color muted font R13_UI_BOLD_FONT
+                text ("목록에서 자료 이름을 누르면 여기서 읽습니다.\n\n체크로 여러 장을 함께 고를 수 있습니다." if not pair_waiting else "함께 볼 자료의 이름을 목록에서 누르세요.") xpos L["detail_x"] ypos (L["body_top"]+40) xsize L["detail_w"] text_align .5 size r13_ev_fact_size() color muted font R13_UI_BOLD_FONT
     # 고른 자료 칩 ----------------------------------------------------
     # 붙임 판은 목록의 체크가 고른 것을 보여 준다(칩 줄을 두면 목록이 한 줄 줄어든다). 바꿀 자료 고르기만 칩 줄을 쓴다.
     if not L["dock"] or replace_pending:

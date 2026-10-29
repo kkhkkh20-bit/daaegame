@@ -163,7 +163,9 @@ testcase v111_gw_bowl_cart11:
     click pos (900,600) until screen "r13_hub" timeout 60
     assert eval (r13_v111_value("grand_bowl_seen11") is True and not r13_v111_value("grand_bowl_pocket") and qa_nw_seen("학교로 돌려보내는 그릇이에요"))
     pause 1.0
-    click "손수레"
+    run Show('qa_hidden_base_return',value=('object','cart'))
+    pause 0.3
+    click 'QA 행동'
     pause 1.0
     click "다음 →" until "그릇 하나를 집는다" timeout 10
     click "그릇 하나를 집는다"

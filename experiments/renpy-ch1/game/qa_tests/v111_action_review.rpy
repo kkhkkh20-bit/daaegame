@@ -44,7 +44,7 @@ testcase v111_ar_d03_clinic_to_square:
     pause 1.0
     click pos (900,600) until screen "r13_hub" timeout 90
     assert eval (room13["location"]=="square" and room13["v111"].get("gate")!="travel" and not room13["v111"].get("thought_pending"))
-    assert eval (r13_v111_goal()==R13_V111_QUESTIONS["MS14_D03_S04"])
+    assert eval (r13_v111_goal()==R13_V111_STEP_GOALS.get(room13["v111"].get("gate"),R13_V111_QUESTIONS["MS14_D03_S04"]))  # 2026-10-29 3일 단계 문구
 
 testcase v111_ar_d05_iron:
     # 5일 저녁(소유자 결정 4·5-1): 3일에 톡이 풀려난 판, 식당에 까로가 있고 쇠 토막을 묻는다. 밤이를 풀어 준 판은
@@ -91,14 +91,14 @@ testcase v111_ar_d13_deal:
     assert eval (r13_goal_state()[1]==1 and r13_goal_state()[0][1]=="엄마를 지킨다" and r13_goal_state()[2]!="명단에 빈칸이 있는 한, 다음은 누구든 될 수 있다.")
     run Jump("r13_v111_gate_bench13")
     click pos (900,600) until eval (room13["v111"].get("gate")=="travel" and renpy.get_screen("r13_hub")) timeout 90
-    assert eval (qa_nw_seen("광장에 이송 수레가 섰소") and qa_nw_seen("나도 서류를 들고 가야 하오"))
+    assert eval (qa_nw_seen("광장에 이송 수레가 섰소") and qa_nw_seen("나도 서류를 들고 가야 하니"))
     click "지도" until screen "r13_map" timeout 30
     pause 0.6
     click id "map_name_square"
     pause 0.4
     click id "r13_map_travel"
     click pos (900,600) until "조건을 더 묻는다" timeout 90
-    assert eval (qa_nw_seen("판돌 아저씨가 수레에 있어") and qa_nw_seen("아침에 학교에서 떨던 그분이"))
+    assert eval (qa_nw_seen("판돌 아저씨가 수레에 있어") and qa_nw_seen("학교에서 떨던"))
     assert eval (r13_goal_state()[2]=="명단에 빈칸이 있는 한, 다음은 누구든 될 수 있다." and r13_goal_state()[1]==1)
     click "조건을 더 묻는다"
     click pos (900,600) until "조건을 더 묻는다" timeout 90

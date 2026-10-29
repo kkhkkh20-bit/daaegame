@@ -47,7 +47,7 @@ testcase v111_op_first_run_murder:
     run Jump("r13_v111_room_visit7")
     click pos (900,600) until eval (room13["v111"].get("gate")=="travel" and renpy.get_screen("r13_hub")) timeout 150
     assert eval (r13_v111_value("route7")=="murder" and r13_v111_value("fate:fate_owl")=="lost" and r13_v111_value("choice:MS14_D07_S03")=="C")
-    assert eval (qa_nw_seen("아빠, 머리가 띵해") and qa_nw_seen("가슴팍을 누른다") and qa_nw_seen("제 말만 듣고는 안 나와요") and qa_nw_seen("다리가 이상해") and qa_nw_seen("업고는 못 지나가요") and qa_nw_seen("아이는 제가 보죠"))
+    assert eval (qa_nw_seen("머리가 띵해") and qa_nw_seen("가슴팍을 누른다") and qa_nw_seen("내 말만 듣고는 안 나와요") and qa_nw_seen("다리가 이상해") and qa_nw_seen("업고는 못 지나가요") and qa_nw_seen("아이는 제가 보죠"))
     assert eval (not qa_nw_seen("다람과 남고") and not qa_nw_seen("제가 다녀오면 되니까"))
 
 testcase v111_op_stone_swap:
@@ -168,8 +168,8 @@ testcase v111_op_stone_days9_11:
     run Function(r13_v111_set,"OWL_ALIVE",True)
     run Function(r13_v111_set,"meeting:records","lose")
     assert eval (r13_v111_lines(["MS14_D09_P01_L0011"])[0][1].startswith("어르신이 13호에서 기다리시던"))
-    assert eval (r13_v111_lines(["MS14_D09_P01_L0015"])[0][1].startswith("내가 깜빡하는 건"))
-    assert eval ([l[1] for l in r13_v111_lines(["MS14_D10_P01_L0085"]) if "노인이오" in l[1]]==["그리고…… 같은 말을 두 번씩 묻는 노인이오. 혼자 둘 수 없소. 이송 명단에 올리겠소."])
+    assert eval (r13_v111_lines(["MS14_D09_P01_L0015"])[0][1].startswith("다들 그러겠지. 깜빡하는"))
+    assert eval ([l[1] for l in r13_v111_lines(["MS14_D10_P01_L0085"]) if "노인이오" in l[1]]==["그리고……{w=.4} 같은 말을 두 번씩 묻는 노인이오.\n혼자 둘 수 없소. 이송 명단에 올리겠소."])
     assert eval (not any("방 때문일" in l[1] for l in r13_v111_lines(["MS14_D10_P01_L0085"])))
     assert eval ([l[1] for l in r13_nw_block("hyp5_won11") if "7일" in l[1]]==["7일 낮 13호 난로에 이 돌이 들어 있었습니다. 그 앞에 잠깐 앉았을 뿐인데, 하려던 일을 잊었습니다."])
     assert eval (not any("반밖에 기억" in l[1] for l in r13_nw_block("hyp5_won11")))

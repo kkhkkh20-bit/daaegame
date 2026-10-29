@@ -250,11 +250,14 @@ screen r13_topics(person):
     zorder 30
     default ready=False
     # 2026-10-29 눈가림 플레이: 답이 끝나자마자 다시 뜬 질문 목록의 아래 단추(돌아가기)를 대사 넘기던 손이 눌렀다.
+    # 아래 단추(조사·자료 제시)는 .15 그대로 두어 흐려 보이지 않게 하고, 질문 줄만 늦게 받는다.
     default ready_delay=r13_field_ready_delay()
-    timer ready_delay action SetScreenVariable("ready",True)
+    default list_ready=False
+    timer .15 action SetScreenVariable("ready",True)
+    timer ready_delay action SetScreenVariable("list_ready",True)
     $ actor_pose=r13_conversation_pose(person)
     $ questions=r13_mark_new_questions(r13_v111_questions(person)) if r13_v111_active() else [(r13_calendar_topic_title(key,spec),Return(key),r13_calendar_topic_seen(key,spec)) for key,spec in r13_topics_in_order(person)]
-    use r13_question_list(person,actor_pose,R13_NAMES[person]+"에게 묻기",questions,ready,return_action=Return("back"))
+    use r13_question_list(person,actor_pose,R13_NAMES[person]+"에게 묻기",questions,ready and list_ready,return_action=Return("back"))
     use r13_toolbar(investigate_action=Return("back"),present_action=Return("present"),person=person,mode="talk",ready=ready)
 
 screen r13_confirm(message,yes="진행한다",no="돌아간다"):
