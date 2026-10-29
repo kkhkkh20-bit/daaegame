@@ -133,7 +133,7 @@ class NewWorldText(Layer):
   self.assertIn('방문객',rule);self.assertNotIn('가족',rule)
   shown=[env['r13_v111_line'](rid)[1] for rid in ('MS14_D01_S03_L0007','MS14_D01_S03_L0021','MS14_D01_S03_L0029','MS14_D01_S04_L0014')]
   self.assertFalse([t for t in shown if '가족' in t],shown)
-  self.assertEqual(env['R13_V111_BINDINGS']['gate_choice']['options'][1]['title'],'방문 신청서를 찾아 달라고 한다')
+  self.assertEqual(env['R13_V111_BINDINGS']['gate_choice']['options'][1]['title'],'신청서를 찾으러 선반으로 간다')   # 2026-10-29: 돌목이 「직접 찾아서 보여 주시오」라고 한다
  def test_cut_uses_existing_art_only(self):
   row=dict(id='NW_T_C1',speaker=None,text='벽을 본다',cut='O47-handprints')
   env=self.fixture('d09',dict(after={'MS14_D09_S01_L0001':[row]}),art={'assets/room13-ep-O47-handprints.webp'})
@@ -234,7 +234,8 @@ class Event01Gate(Layer):
   texts=[r[1] for r in env['r13_v111_lines'](self.RIDS)]
   # Day-1 rewrite (owner 2026-10-22): wording changed, the record still names both of them.
   self.assertEqual(len(texts),len(self.RIDS))
-  self.assertIn('방문객 다돌, 동행 아동',texts[3]);self.assertNotIn('일꾼',texts[3])
+  # 2026-10-29 소유자 「이게 맞지」: 이긴 뒤 돌목은 아이를 「동행 아동」으로 적지 않고 이름을 묻는다.
+  self.assertIn('방문객 다돌',texts[3]);self.assertIn('이름',texts[3]);self.assertNotIn('일꾼',texts[3])
   self.assertIn('다람',texts[4]);self.assertIn('다람.',texts[5]);self.assertIn('됐소.',texts[5])   # 2026-10-28 템포 손질: 「……다람.{w} 됐소.」
   self.assertIn('방문객 다돌, 동행인 다람',env['r13_v111_lines'](['MS14_D01_S04_L9101'])[0][1])
   after=[r[1] for r in env['r13_v111_lines'](['MS14_D01_S04_L0021'])]

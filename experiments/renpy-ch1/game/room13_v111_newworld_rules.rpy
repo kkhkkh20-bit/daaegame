@@ -63,7 +63,7 @@ init 318 python:
     # do not change; what was presented is kept as proof_given:<key> so the other side
     # can name the extra record in one line (conditions in room13_v111_newworld_text.rpy).
     R13_PROOF_EXTRAS={
-        "함께 들어갈 근거를 고른다":("E01",),
+        "함께 들어갈 근거를 고른다":("E01","E04"),
         "수리와 반출을 가릴 자료를 낸다":("E10",),
         "밤이 혐의의 근거를 확인한다":("E21","NW_PIKO_SKETCH4"),
         # 2026-10-24 자료 재사용(EVIDENCE_CLUTTER_PLAN.md 2부, 소유자 "추천안대로"): 받을 때 쓸모없어 보이던

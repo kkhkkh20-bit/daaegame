@@ -16,7 +16,7 @@
 
 ## 2. 지금 회의 로직과 맞춰 보기 (코드 확인)
 
-- 쟁점마다 정답 증거 조합이 있고, 틀리면 기회 1번을 쓴다. `R13_NW_TRIES_BY_MEETING`은 gate/gate_post 3, fire/records/blanket/piko 4, soup 5, altar 6, lamp/room13 7, hypothesis 13회다. 표에 없는 회의만 기본값 5를 쓴다. 맞는 근거는 `r13_v111_proof_kept`에 남긴다.
+- 쟁점마다 정답 증거 조합이 있고, 틀리면 기회 1번을 쓴다. `R13_NW_TRIES_BY_MEETING`은 gate_post 3, fire/records/blanket/piko 4, soup 5, altar 6, lamp/room13 7, hypothesis 13회다. 표에 없는 회의만 기본값 5를 쓴다. 맞는 근거는 `r13_v111_proof_kept`에 남긴다. 1일 입구(gate)는 입문 회의라 기회가 무제한이다(`R13_NW_UNLIMITED`). 2026-10-29 정답은 초소 명단+방문 신청 원본 두 장이고 겨울 규칙판·초대 편지는 덧붙여도 받는다.
 - 정답 판정 `r13_v111_proof_accepts`(`:119`)는 기본 정답과 `R13_PROOF_ALTERNATES`의 대체 조합 가운데 하나를 받는다. 덧붙임 `R13_PROOF_EXTRAS`는 정답에 더 얹어도 되는 자료.
 - 결과는 회의 11개 가운데 8개가 이김·부분·짐, 3개(1일 입구·5일 초소·13일 피코)가 이김·짐(`docs/reviews/branch-review-20261024/사실조사.md`).
 - 대승리는 7일 불·12일 수프에 구현됐다. 배급표/돌아온 흰 그릇을 정답으로 써서 이기면 `grand:fire`/`grand:soup`를 기록한다. 수프 예방판은 돌목에게 그릇을 제시하는 대화로 대신한다.

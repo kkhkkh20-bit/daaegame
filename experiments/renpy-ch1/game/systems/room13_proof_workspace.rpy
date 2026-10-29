@@ -18,7 +18,7 @@ init 350 python:
     # 발언을 보인다. None 은 늘 보인다. 정답 ID·미획득 자료·미래 대사는 여기 넣지 않는다.
     R13_PW_CONTEXT={
         "함께 들어갈 근거를 고른다":dict(mode="proof",speaker="돌목",
-            quote="종이엔 그렇게 적혀 있소. 일꾼은 본인만. 아이는 안 되오.",
+            quote="지금 이 명단에는 다돌 한 명만 적혀 있소. 일꾼으로. 그래서 다돌만 들어갈 수 있소.",
             quote_when=("flag","v111:entered:MS14_D01_S02")),
         # 두 편지: 인물의 해설 없이 문서 둘을 직접 읽는다. 의문 한 줄만.
         "두 편지를 나란히 본다":dict(mode="compare",speaker=None,

@@ -86,7 +86,10 @@ init 319 python:
         "gate_retry":lambda:(r13_v111_value("tries:gate") or 0)+1<r13_nw_tries_max("gate"),
         # 0.20.5 (Codex C03): a wrong answer that held only some of the gate records says so,
         # without naming the missing ones; a set with none of them gets the plain refusal.
-        "gate_partial_retry":lambda:(r13_v111_value("tries:gate") or 0)+1<r13_nw_tries_max("gate") and bool(set(getattr(store,"v111_last_presented",None) or [])&{"V111:E02","V111:E03","V111:E04"}),
+        # 2026-10-29 소유자 「돌목이 왜 아직 거부하는지」: 정답은 명단+신청서. 빠진 쪽만 짚는다(자료 이름은 말하지 않는다).
+        "gate_partial_retry":lambda:(r13_v111_value("tries:gate") or 0)+1<r13_nw_tries_max("gate") and "V111:E03" in (getattr(store,"v111_last_presented",None) or []) and "V111:E02" not in (getattr(store,"v111_last_presented",None) or []),
+        "gate_both_given":lambda:{"V111:E02","V111:E03"}<=set(getattr(store,"v111_last_presented",None) or []),
+        "gate_has_original":lambda:r13_v111_owned("E03"),
         # Review 0.20.1 4-5: the day-12 prep line names only what is really ready.
         "prep12_others_missing":lambda:not all(r13_v111_value(k) for k in ("warm_seat_ready","carrier_arrived","warm_support_arrived")),
         # 0.20.6 (owner review): one of the two ready -> name only what is still missing.

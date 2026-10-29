@@ -185,9 +185,9 @@ init 301 python:
         ("room13","mother_note"):"책상 위에 접힌 종이가 있다. 우선 다람이 짐부터 침대에 내려놓고 방을 둘러보자.",
         ("room13","family_bundle"):"책상 아래에 보따리가 보인다. 책상 위 종이부터 보고 열어 보자.",
         # 2026-10-27 플레이 리뷰 P4: 「지금은 먼저 할 일이 있다」는 무엇을 하라는 건지 없다. 조작 순서만 알려 준다(정답은 아님).
-        ("gate","booth"):"초소 선반의 서류. 돌목 씨에게 신청서를 찾아 달라고 먼저 부탁하자.",
-        ("gate","gate_documents"):"초소 서류. 돌목 씨에게 신청서를 찾아 달라고 먼저 부탁하자.",
-        ("gate","rules"):"겨울철 입장 규칙. 돌목 씨가 명단을 어떻게 적었는지부터 확인하자.",
+        # 2026-10-29: 돌목이 「신청서는 선반에, 직접 찾아 보이라」고 말한다. 명단을 보기 전에는 그 순서만 알린다.
+        ("gate","booth"):"서류 선반. 신청서를 찾기 전에, 돌목 씨 명단에 우리가 어떻게 적혔는지부터 보자.",
+        ("gate","gate_documents"):"서류 선반. 신청서를 찾기 전에, 돌목 씨 명단에 우리가 어떻게 적혔는지부터 보자.",
     }
     def r13_v111_object_key(key):
         if store.room13["location"]=="kitchen" and key in ("rear_after","rear_after_known"):return "rear"
@@ -335,6 +335,13 @@ label r13_v111_wait_again:
             $ v111_object_options=[("(%s, 어떻게 할까?)"%r13_object_name(v111_pick[1]),None)]+[(v111_binding["options"][i]["title"],i) for i in v111_matches]   # 2026-10-28 캡처 검수: 제목 없이 열리면 직전 대사(「설마 여기서 주무십니까?」)가 물음처럼 떠서 고를 것과 어긋났다. 보기만이 아니라 하는 일(사람 받기)도 있어 「어떻게 할까」로 묻는다
             $ v111_result=renpy.display_menu(v111_object_options)
             return v111_binding["options"][v111_result].get("index",v111_result)
+        # 2026-10-29 소유자 「규칙판을 두 번 읽어야 자료가 나온다」: 입구 규칙판은 처음 누를 때 바로 읽고 갖는다.
+        # 신청서를 찾으러 가라는 말을 들은 뒤(gate_choice)에는 선반을 누르면 그대로 신청서를 찾는다.
+        if room13["location"]=="gate" and v111_pick[1]=="rules" and not r13_v111_owned("E04"):
+            call r13_v111_gate_rules_now
+            jump r13_v111_wait_again
+        if key=="gate_choice" and v111_pick[1] in ("booth","gate_documents"):
+            return 1
         $ v111_object_spec=ROOM13["objects"].get(room13["location"],{}).get(v111_pick[1],{})
         $ v111_ambient=r13_v111_ambient_text(v111_pick[1],v111_object_spec)
         if v111_ambient:

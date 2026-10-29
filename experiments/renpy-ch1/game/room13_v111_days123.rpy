@@ -224,7 +224,7 @@ label r13_v111_gate_lodging:
 
 label r13_v111_gate_proof:
     $ r13_meeting_checkpoint("gate")
-    call r13_v111_proof('함께 들어갈 근거를 고른다',['E02', 'E03', 'E04'],'r13_v111_gate_proven_dispatch','r13_v111_gate_wrong','r13_v111_gate_hint',review_return='r13_v111_gate_investigate')
+    call r13_v111_proof('함께 들어갈 근거를 고른다',['E02', 'E03'],'r13_v111_gate_proven_dispatch','r13_v111_gate_wrong','r13_v111_gate_hint',review_return='r13_v111_gate_investigate')
     jump expression _return
 
 label r13_v111_gate_proven_dispatch:
@@ -235,7 +235,7 @@ label r13_v111_gate_proven_dispatch:
 label r13_v111_gate_proven:
     $ r13_v111_scene('MS14_D01_S03')
     $ r13_v111_score()
-    call r13_lines(r13_v111_lines(['MS14_D01_S03_L0014', 'MS14_D01_S03_L0015', 'MS14_D01_S03_L0016', 'MS14_D01_S03_L0017', 'MS14_D01_S03_L0018', 'MS14_D01_S03_L0019']), 'v111:gate_proven:MS14_D01_S03_L0014')
+    call r13_lines(r13_v111_lines(['MS14_D01_S03_L0014', 'MS14_D01_S03_L0015', 'MS14_D01_S03_L0016', 'MS14_D01_S03_L0017', 'MS14_D01_S03_L0019']), 'v111:gate_proven:MS14_D01_S03_L0014')
     $ r13_v111_commit('MS14_D01_S03_L0019')
     $ r13_nw_meeting_end('gate','win')
     jump r13_v111_registered
