@@ -827,7 +827,7 @@ label r13_v111_hyp5_wrong11:
 
 label r13_v111_hyp5_lost11:
     call r13_lines(r13_nw_block('hyp5_lost11'),'nw:hyp5_lost11')
-    jump r13_v111_hyp_lost_gate11
+    jump r13_v111_hyp5_after_lost11  # 2026-10-30 소유자 B안: room13_v111_hyp5_partial.rpy
 
 label r13_v111_hyp5_won11:
     call r13_lines(r13_nw_block('hyp5_won11'),'nw:hyp5_won11')
