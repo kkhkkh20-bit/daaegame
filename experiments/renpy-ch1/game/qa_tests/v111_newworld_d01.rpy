@@ -86,7 +86,7 @@ testcase v111_nw_d01_gate_extra_letter:
     run Jump("r13_v111_letter_retry")
     pause 1.0
     click pos (900,600) until screen "r13_proof_workspace" timeout 60
-    assert eval (qa_nw_seen("두 종이를 다시 골라 보자"))
+    assert eval (qa_nw_seen("편지끼리 나란히 놓아야 한다"))  # 2026-10-30 P23 문구
 
 testcase v111_nw_d01_gate_choice_no_actions:
     # 2026-10-29 외부 검토 「행동이 질문 목록 안에 있다」: 입구에서 돌목의 질문 목록에는 「초대 편지를 보여 준다」도
