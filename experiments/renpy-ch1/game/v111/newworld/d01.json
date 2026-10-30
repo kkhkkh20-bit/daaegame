@@ -1027,7 +1027,15 @@
         "id": "NW_CMP_RETRY_01",
         "speaker": "아빠",
         "kind": "thought",
-        "text": "두 종이를 다시 골라 보자."
+        "text": "편지끼리 나란히 놓아야 한다. 내가 가진 종이 가운데 누가 누구에게 쓴 글이 어느 것인지부터 보자.",
+        "when": "compare_letter1"
+      },
+      {
+        "id": "NW_CMP_RETRY_05",
+        "speaker": "아빠",
+        "kind": "thought",
+        "when": "compare_warning5",
+        "text": "두 편지가 누구를 부르고, 누구를 부르지 않는지. 그걸 견줄 종이를 다시 골라 보자."
       }
     ],
     "hands_wrapped1": [

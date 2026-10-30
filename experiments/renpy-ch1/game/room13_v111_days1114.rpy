@@ -1973,7 +1973,7 @@ label r13_v111_badook_proof13:
 
 label r13_v111_badook_wrong13:
     if r13_nw_retry("blanket"):
-        call r13_lines(r13_nw_block("badook_q13"),"nw:badook_q13:retry")
+        call r13_lines(r13_nw_block("badook_retry13"),"nw:badook_retry13")
         jump r13_v111_badook_proof13
     $ r13_nw_meeting_end("blanket","partial")
     call r13_lines(r13_nw_block('badook_lost13'),'nw:badook_lost13')

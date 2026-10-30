@@ -1571,8 +1571,8 @@
 | 증명 키(쟁점) | 화면 제목 | 정답 | 대체 정답 | 덧붙여도 받음 | 자리 |
 |---|---|---|---|---|---|
 | 불이 시작된 곳과 진술을 대조한다 | — | E06_FIRE | — | — | room13_v111_days610.rpy:537 |
-| 불의 원인과 빈 창고 진압을 구분한다 | — | E06_FIRE+E06_EMPTY+E07_NUBI | E06_FIRE+E06_EMPTY+NW_NUBI_TICKET | NW_LAUNDRY_TALK, E02 | room13_v111_days610.rpy:609 |
-| 불의 원인과 아이 구조를 구분한다 | — | E06_FIRE+E06_RESCUE+E07_NUBI | E06_FIRE+E06_RESCUE+NW_NUBI_TICKET | NW_LAUNDRY_TALK, E02 | room13_v111_days610.rpy:613 |
+| 불의 원인과 빈 창고 진압을 구분한다 | ‘다들 책임이 있소’. 셋이 정말 같은 책임인가 | E06_FIRE+E06_EMPTY+E07_NUBI | E06_FIRE+E06_EMPTY+NW_NUBI_TICKET | NW_LAUNDRY_TALK, E02 | room13_v111_days610.rpy:609 |
+| 불의 원인과 아이 구조를 구분한다 | ‘다들 책임이 있소’. 셋이 정말 같은 책임인가 | E06_FIRE+E06_RESCUE+E07_NUBI | E06_FIRE+E06_RESCUE+NW_NUBI_TICKET | NW_LAUNDRY_TALK, E02 | room13_v111_days610.rpy:613 |
 
 결과마다 바뀌는 값
 
@@ -1580,14 +1580,14 @@
 - `"partial"` · `r13_v111_responsibility_wrong7` (room13_v111_days610.rpy:622): 명단 올림 보리 (까닭 `fire_partial`)
 - `"win"` · `r13_v111_responsibility_answers7` (room13_v111_days610.rpy:627): `fire_neoul_promise_recorded` = `true`; `grand:fire` = `true`; `neoul_promise_proven` = `true`
 
-이 회의를 읽는 조건: `fire_lose`, `fire_partial`, `fire_win`, `fire_win_plain`
+이 회의를 읽는 조건: `fire_lose`, `fire_partial`, `fire_win`, `fire_win_empty`, `fire_win_plain`, `fire_win_rescue`
 
 ### 13호실 회의 `room13` · 10일 오후 · 기회 7
 
 | 증명 키(쟁점) | 화면 제목 | 정답 | 대체 정답 | 덧붙여도 받음 | 자리 |
 |---|---|---|---|---|---|
 | 두 상처와 촛대 파손을 대조한다 | — | E08_CHILD_ACCOUNT+E08_TOOL | — | — | room13_v111_days610.rpy:1452 |
-| 두 번째 길을 실제 기록으로 보인다 | — | E09_PASSAGE+E08_ROOM | — | — | room13_v111_days610.rpy:1481 |
+| 두 번째 길을 실제 기록으로 보인다 | 정말 그 문 말고는 책상까지 갈 길이 없었는가 | E09_PASSAGE+E08_ROOM | — | — | room13_v111_days610.rpy:1481 |
 | 구리선과 수선 출처를 대조한다 | 이 핀을 구별할 수 있는가 | E08_WOUND_WIRE+E09_PIN_OWNER | E08_CONTACT_ASSEMBLY+E09_PIN_OWNER | — | room13_v111_days610.rpy:1539 |
 | 첫 비명 뒤 핀을 다시 채운 때 | 핀이 언제 떨어졌는가 | E09_PIN_TIME+E09_PIN_HANDOVER_TIME | — | — | room13_v111_days610.rpy:1574 |
 | 접촉면과 아이의 위치를 대조한다 | 방금 설명은 물증과 맞는가 | E08_CONTACT_ASSEMBLY+E08_WOUND_WIRE+E08_CHILD_POSITION+E08_ROOM_REACH+E09_SCARF | — | — | room13_v111_days610.rpy:1598 |
@@ -1653,10 +1653,10 @@
 | 증명 키(쟁점) | 화면 제목 | 정답 | 대체 정답 | 덧붙여도 받음 | 자리 |
 |---|---|---|---|---|---|
 | 초롱과 피코의 하루를 대조한다 | — | E11+E08+NW_PIKO_TREMOR | E11+NW_PIKO_TREMOR / NW_LA_CHECK+E08+NW_PIKO_TREMOR / NW_LA_CHECK+NW_PIKO_TREMOR | E08, E28 | room13_v111_days1114.rpy:651 |
-| 창고에서 잠자는 사람을 짚는다 | — | NW_KEEPER_DATE | — | — | room13_v111_days1114.rpy:692 |
+| 창고에서 잠자는 사람을 짚는다 | 돌이 산더미인 그 창고 곁에서는 정말 아무도 무너지지 않았는가 | NW_KEEPER_DATE | — | — | room13_v111_days1114.rpy:692 |
 | 요즘 돌이 어디서 오는지 대조한다 | — | NW_INNER_PRICE+NW_MUSOE_DEEP | — | E14 | room13_v111_days1114.rpy:733 |
 | 아르카가 없는 아이들과 대조한다 | — | NW_KKOMI_NOSTONE+NW_SICK_BEDS | — | — | room13_v111_days1114.rpy:774 |
-| 13호 난로의 돌을 내놓는다 | — | NW_STONE | — | — | room13_v111_days1114.rpy:820 |
+| 13호 난로의 돌을 내놓는다 | 아르카가 사람을 무너뜨리는 것을 직접 본 일이 있는가 | NW_STONE | — | — | room13_v111_days1114.rpy:820 |
 
 결과마다 바뀌는 값
 
@@ -1669,9 +1669,9 @@
 
 | 증명 키(쟁점) | 화면 제목 | 정답 | 대체 정답 | 덧붙여도 받음 | 자리 |
 |---|---|---|---|---|---|
-| 재사용 설명과 개봉 봉인을 대조한다 | — | E12_FRAGMENT+E12_SEAL | — | — | room13_v111_days1114.rpy:1416 |
+| 재사용 설명과 개봉 봉인을 대조한다 | 그 병은 정말 약을 다 쓴 빈 병이었는가 | E12_FRAGMENT+E12_SEAL | — | — | room13_v111_days1114.rpy:1416 |
 | 파편·봉인·취급 구간을 함께 제시한다 | 선생님은 정말 씻는 데서 물을 받았는가 | E12_FRAGMENT+E12_SEAL+E12_HANDLING | — | — | room13_v111_days1114.rpy:1501 |
-| 명단과 흰 그릇을 대조한다 | — | NW_TRANSFER_LIST+NW_WHITE_BOWLS | NW_WHITE_BOWLS+NW_RETURNED_BOWL | NW_RETURNED_BOWL, NW_SICK_BEDS | room13_v111_days1114.rpy:1546 |
+| 명단과 흰 그릇을 대조한다 | 작은 냄비는 정말 아이들 모두를 위한 것이었는가 | NW_TRANSFER_LIST+NW_WHITE_BOWLS | NW_WHITE_BOWLS+NW_RETURNED_BOWL | NW_RETURNED_BOWL, NW_SICK_BEDS | room13_v111_days1114.rpy:1546 |
 
 결과마다 바뀌는 값
 
@@ -1715,7 +1715,7 @@
 | 증명 키(쟁점) | 화면 제목 | 정답 | 대체 정답 | 덧붙여도 받음 | 자리 |
 |---|---|---|---|---|---|
 | 희생의 숫자와 장부를 대조한다 | 한 사람이 열흘을 산다는 숫자를 실제 기록과 견준다 | NW_NEOUL_LEDGER | E14_SUPPLY+NW_KKOMI_NOSTONE+NW_SICK_BEDS | — | room13_v111_days1114.rpy:2920 |
-| 아르카가 부른다는 말과 옛 기록을 대조한다 | — | NW_TABLET_A+NW_TABLET_B | — | — | room13_v111_days1114.rpy:2959 |
+| 아르카가 부른다는 말과 옛 기록을 대조한다 | 옛 사람들은 정말 아르카가 사람을 부른다고 적었는가 | NW_TABLET_A+NW_TABLET_B | — | — | room13_v111_days1114.rpy:2959 |
 | 쇠가 언제 붙었는지 보인다 | 그 쇠는 정말 할아버지 때부터 제단에 있었는가 | NW_IRON_MARK | — | — | room13_v111_days1114.rpy:2987 |
 | 맨 처음 이름을 짚는다 | — | NW_NAMES+NW_NEOUL_LEDGER | NW_NAMES+NW_OLD_RATIONS | NW_BURNT_PAGE | room13_v111_days1114.rpy:3015 |
 
@@ -1859,6 +1859,8 @@ def r13_nw_true_ending_ready():
 | `blanket_undecided` | `r13_v111_value("meeting:blanket") is None` | d13 |
 | `blanket_won_with_e35` | `"V111:E35" in (r13_v111_value("proof_given:아내가 봤다는 담요의 시점을 확인한다") or [])` | d13 |
 | `buri_site_ask14` | `bool(r13_v111_value("buri_device_consent")) and not r13_v111_value("mayor_site_decided") and r13_v111_person_alive("buri")` | d14 |
+| `compare_letter1` | `r13_nw_wrong_issue()!="두 편지의 초대를 대조한다"` | d01 |
+| `compare_warning5` | `r13_nw_wrong_issue()=="두 편지의 초대를 대조한다"` | d01 |
 | `crowd_block_failed13` | `r13_v111_value("crowd_intervention")=="failed" and r13_v111_value("crowd_blocked_by_dad") is True` | d14 |
 | `d06_bowl_together` | `r13_v111_value("choice:MS14_D06_S01")=="together"` | d06 |
 | `daram_deal_freed` | `r13_v111_value("daram_deal_freed") is True` | d13, d14 |
@@ -1899,7 +1901,9 @@ def r13_nw_true_ending_ready():
 | `fire_not_evacuated` | `r13_v111_value("FIRE_EVACUATED") is not True` | d07 |
 | `fire_partial` | `r13_v111_value("meeting:fire")=="partial"` | d07 |
 | `fire_win` | `r13_v111_value("meeting:fire")=="win"` | d07 |
+| `fire_win_empty` | `r13_v111_value("meeting:fire")=="win" and r13_v111_value("FIRE_EVACUATED") is True` | d07 |
 | `fire_win_plain` | `r13_v111_value("meeting:fire")=="win" and r13_v111_value("grand:fire") is not True` | d07 |
+| `fire_win_rescue` | `r13_v111_value("meeting:fire")=="win" and r13_v111_value("FIRE_EVACUATED") is not True` | d07 |
 | `gate_both_given` | `{"V111:E02","V111:E03"}<=set(getattr(store,"v111_last_presented",None) or [])` | d01 |
 | `gate_daram_listed` | `r13_v111_value("gate_daram_unlisted") is not True` | d01 |
 | `gate_daram_unlisted` | `r13_v111_value("gate_daram_unlisted") is True` | d01, d14 |
@@ -1916,8 +1920,10 @@ def r13_nw_true_ending_ready():
 | `gate_post_lose` | `r13_v111_value("meeting:gate_post")=="lose"` | d05 |
 | `gate_post_win` | `r13_v111_value("meeting:gate_post")=="win"` | d05 |
 | `gate_post_won_with_e21` | `"V111:E21" in (r13_v111_value("proof_given:밤이 혐의의 근거를 확인한다") or [])` | d05 |
+| `gate_post_won_with_e24` | `"V111:E24" in (r13_v111_value("proof_given:밤이 혐의의 근거를 확인한다") or [])` | d05 |
 | `gate_post_won_with_sketch` | `"V111:NW_PIKO_SKETCH4" in (r13_v111_value("proof_given:밤이 혐의의 근거를 확인한다") or [])` | d05 |
 | `gate_post_won_with_sketch_only` | `"V111:NW_PIKO_SKETCH4" in (r13_v111_value("proof_given:밤이 혐의의 근거를 확인한다") or []) and not {"V111:E23","V111:E24"}&set(r13_v111_value("proof_given:밤이 혐의의 근거를 확인한다") or [])` | d05 |
+| `gate_post_won_without_e24` | `"V111:E24" not in (r13_v111_value("proof_given:밤이 혐의의 근거를 확인한다") or [])` | d05 |
 | `gate_retry` | `(r13_v111_value("tries:gate") or 0)+1<r13_nw_tries_max("gate")` | d01 |
 | `gate_won_with_e01` | `"V111:E01" in (r13_v111_value("proof_given:함께 들어갈 근거를 고른다") or [])` | d01 |
 | `grand_soup` | `r13_v111_value("grand:soup") is True` | d12 |
@@ -2033,7 +2039,7 @@ def r13_nw_true_ending_ready():
 | `lamp_stage_latch` | `r13_v111_owned("E33")` | d03 |
 | `lamp_stage_sale` | `r13_v111_value("repair_opening_separated") is True` | d03 |
 | `lamp_stage_stone` | `r13_v111_value("outer_latch_claim_refuted") is True` | d03 |
-| `lamp_stolen` | `not r13_v111_value("lamp_bound2")` | d04, d13 |
+| `lamp_stolen` | `not r13_v111_value("lamp_bound2")` | d03, d04, d13 |
 | `lamp_stolen_silluk_listed` | `not r13_v111_value("lamp_bound2") and bool(r13_v111_value("listed:resident_siluk"))` | d13 |
 | `lamp_stone_half_check` | `r13_v111_value("meeting:lamp") is None and r13_nw_wrong_issue()=="마지막 점검과 인수한 돌을 연결한다" and bool(r13_gp_given()) and r13_gp_given()<={"V111:E15","V111:E16"}` | d03 |
 | `lamp_stone_half_mark` | `r13_v111_value("meeting:lamp") is None and r13_nw_wrong_issue()=="마지막 점검과 인수한 돌을 연결한다" and r13_gp_given() in ({"V111:E11"},{"V111:E11","V111:E16"})` | d03 |
@@ -2111,6 +2117,7 @@ def r13_nw_true_ending_ready():
 | `soup_lose_nabi_murder` | `r13_v111_value("meeting:soup")=="lose" and r13_v111_value("soup_lose_kind")=="nabi" and r13_v111_value("route7")=="murder"` | d12 |
 | `soup_lose_nabi_prevented` | `r13_v111_value("meeting:soup")=="lose" and r13_v111_value("soup_lose_kind")=="nabi" and r13_v111_value("route7")!="murder"` | d12 |
 | `soup_lose_stolen` | `r13_v111_value("meeting:soup")=="lose" and r13_v111_value("soup_lose_kind")=="stolen"` | d12 |
+| `soup_stage_seal12` | `r13_nw_wrong_issue()=="재사용 설명과 개봉 봉인을 대조한다"` | d12 |
 | `stove_blue7` | `r13_v111_value("stove13_7") not in ("ration","empty")` | d07 |
 | `stove_emptied7` | `r13_v111_value("stove13_7")=="empty"` | d07 |
 | `stove_fixed7` | `r13_v111_value("stove13_7") in ("ration","empty")` | d07 |

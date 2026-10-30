@@ -1394,7 +1394,7 @@
         "id": "NW_H_OPEN_05",
         "speaker": null,
         "kind": "narration",
-        "text": "표시가 붙은 이름은 모두 큰 집 아이들이다. 창고에서 온 아이들 이름에는 표시가 없다."
+        "text": "선생님이 목록을 넘겨 보인다. 꽃 표시가 붙은 줄이 여럿이다. 나는 그 목록을 수첩에 옮겨 적는다."
       },
       {
         "id": "NW_H_OPEN_06",
@@ -1774,7 +1774,16 @@
         "speaker": "판돌",
         "kind": "dialogue",
         "text": "젊은 것들이 약해진 거요. 돌 탓을 하지 마시오.",
-        "expression": "neutral"
+        "expression": "neutral",
+        "when": "hyp_final"
+      },
+      {
+        "id": "NW_LOW_D11_01",
+        "speaker": "판돌",
+        "kind": "dialogue",
+        "text": "……그 말로는 왜 하필 요 몇 해 사이인지가 안 풀리오.{w=.3} 옛날과 지금, 무엇이 달라졌는지를 대 보시오.",
+        "expression": "neutral",
+        "when": "hyp_retry"
       }
     ],
     "hyp4_q11": [
@@ -1831,7 +1840,16 @@
         "speaker": "주민",
         "kind": "dialogue",
         "text": "애들은 원래 약해요. 불까지 끄면 얼어 죽어요.",
-        "expression": "angry"
+        "expression": "angry",
+        "when": "hyp_final"
+      },
+      {
+        "id": "NW_LOW_D11_02",
+        "speaker": "주민",
+        "kind": "dialogue",
+        "text": "그 말로는 우리 애 얘기가 안 돼요.{w=.3} 똑같은 아이들인데, 꽃이 온 애도 있고 안 온 애도 있잖아요.",
+        "expression": "angry",
+        "when": "hyp_retry"
       }
     ],
     "hyp5_q11": [
@@ -1936,7 +1954,16 @@
         "speaker": "선생님",
         "kind": "dialogue",
         "text": "한 사람 일로 마을을 판단할 순 없어요.",
-        "expression": "neutral"
+        "expression": "neutral",
+        "when": "hyp_final"
+      },
+      {
+        "id": "NW_LOW_D11_03",
+        "speaker": "선생님",
+        "kind": "dialogue",
+        "text": "그건 짐작이잖아요.{w=.3} 제가 묻는 건, 누가 직접 본 일이에요.",
+        "expression": "neutral",
+        "when": "hyp_retry"
       }
     ],
     "hyp_chief11": [

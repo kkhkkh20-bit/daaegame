@@ -505,6 +505,30 @@
   "before": {
     "MS14_D07_S02_L0004": [
       {
+        "id": "NW_D07_S02_C01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "불은 누비 씨가 창고 문 앞에 놓았습니다. 보리 씨는 아이들이 빠져나간 창고에서 그 불이 번지는 걸 막았고요.{w=.3} 장작을 가져간 일은 따로 적으십시오. 한 줄에 묶지 말고요.",
+        "expression": "neutral",
+        "when": "fire_win_empty"
+      },
+      {
+        "id": "NW_D07_S02_C02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "불은 누비 씨가 창고 문 앞에 놓았습니다. 보리 씨는 그 불 속에서 아이 셋을 데리고 나왔고요.{w=.3} 장작을 가져간 일은 따로 적으십시오. 한 줄에 묶지 말고요.",
+        "expression": "neutral",
+        "when": "fire_win_rescue"
+      },
+      {
+        "id": "NW_D07_S02_C03",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "……불은 누비 줄에, 장작은 보리 줄에.{w=.3} 따로 적겠소.",
+        "expression": "neutral",
+        "when": "fire_win"
+      },
+      {
         "id": "NW_D07_S02_W01",
         "speaker": "아빠",
         "kind": "dialogue",

@@ -426,6 +426,17 @@ init 319 python:
         "half_la_nocheck3":lambda:r13_nw_gave("NW_LA_KNIFE") and r13_nw_gave("NW_LA_FIELD") and not r13_nw_gave("NW_LA_CHECK"),
         # 2026-10-29 논쟁 점검 P07: 10일 13호 되묻기 줄(MS14_D10_S02_L0051)은 1번·2번이 함께 쓴다. 1번(두 상처)일 때만 그 쟁점을 짚는다.
         "room13_stage_wound10":lambda:r13_nw_wrong_issue()=="두 상처와 촛대 파손을 대조한다",
+        # 2026-10-30 논쟁 점검 낮음 P15: 7일 불 2번을 이긴 뒤 아빠가 「불은 누비, 보리는 진압/구조」로 갈라 정리한다(대피 여부로 갈림).
+        "fire_win_empty":lambda:r13_v111_value("meeting:fire")=="win" and r13_v111_value("FIRE_EVACUATED") is True,
+        "fire_win_rescue":lambda:r13_v111_value("meeting:fire")=="win" and r13_v111_value("FIRE_EVACUATED") is not True,
+        # P22: 12일 되묻기 줄(MS14_D12_S04_L0093)은 1번·2번이 함께 쓴다. 1번(병이 정말 빈 병이었나)일 때는 1번 고리만 짚는다.
+        "soup_stage_seal12":lambda:r13_nw_wrong_issue()=="재사용 설명과 개봉 봉인을 대조한다",
+        # P23: 두 편지 자기 대조의 오답 한 줄을 1일·5일로 가른다(같은 compare_retry 묶음).
+        "compare_letter1":lambda:r13_nw_wrong_issue()!="두 편지의 초대를 대조한다",
+        "compare_warning5":lambda:r13_nw_wrong_issue()=="두 편지의 초대를 대조한다",
+        # P26: 5일 초소를 이긴 뒤 「그럼 네로요」에 답할 때, 네로의 귀가 관찰을 냈으면 그 자료에서 출발한다.
+        "gate_post_won_with_e24":lambda:"V111:E24" in (r13_v111_value("proof_given:밤이 혐의의 근거를 확인한다") or []),
+        "gate_post_won_without_e24":lambda:"V111:E24" not in (r13_v111_value("proof_given:밤이 혐의의 근거를 확인한다") or []),
     }
     for _nw_who in ("resident_piko","kid_kkomi","resident_owlgp","resident_nero","kid_dodam","neoul","resident_momo","v111_lowerroad_elder"):
         R13_NW_WHEN["dead:"+_nw_who]=(lambda w=_nw_who:w in r13_nw_dead())

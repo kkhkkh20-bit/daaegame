@@ -839,7 +839,16 @@
         "speaker": "아빠",
         "kind": "dialogue",
         "text": "그 시각 네로 씨는 식당 물통을 날랐습니다.{w=.3}\n어젯밤 나비 씨에게 그렇게 들었습니다.",
-        "expression": "neutral"
+        "expression": "neutral",
+        "when": "gate_post_won_without_e24"
+      },
+      {
+        "id": "NW_D05_S03_A01C",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "그 겉옷을 입고 소매가 찢긴 채 돌아온 건 어르신입니다. 네로 씨가 그 모습을 봤다고 했고요.{w=.3} 그 시각 네로 씨는 식당 물통을 날랐습니다. 어젯밤 나비 씨에게 그렇게 들었습니다.",
+        "expression": "neutral",
+        "when": "gate_post_won_with_e24"
       },
       {
         "id": "NW_AUD_D05_03",

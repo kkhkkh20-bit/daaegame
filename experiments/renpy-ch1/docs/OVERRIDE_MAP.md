@@ -126,7 +126,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 7 | 147 | `systems/room13_alibi.rpy:157` | _r13_review_notes |
 | 8 | 173 | `systems/room13_review_knowledge.rpy:90` | _r13_q1_notes |
 | 9 | 181 | `systems/room13_q1_review.rpy:49` | _r13_v111_notes_before |
-| 10 | 345 | `systems/room13_v111_goal.rpy:188` |  |
+| 10 | 345 | `systems/room13_v111_goal.rpy:189` |  |
 
 ## `r13_where` (10층)
 
@@ -441,7 +441,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 301 | `room13_v111.rpy:72` | _r13_nw_binding |
-| 2 | 318 | `room13_v111_newworld_rules.rpy:440` | _r13_gw_binding |
+| 2 | 318 | `room13_v111_newworld_rules.rpy:453` | _r13_gw_binding |
 | 3 | 321 | `room13_v111_grand_win.rpy:17` |  |
 
 ## `r13_v111_goal` (3층)
@@ -450,7 +450,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 |---|---|---|---|
 | 1 | 317 | `room13_v111_later_bindings.rpy:239` | _r13_step_goal |
 | 2 | 341 | `systems/room13_v111_goal.rpy:46` | _r13_goal_before_can6 |
-| 3 | 344 | `systems/room13_v111_goal.rpy:161` |  |
+| 3 | 344 | `systems/room13_v111_goal.rpy:162` |  |
 
 ## `r13_v111_present_reaction` (3층)
 
@@ -586,7 +586,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 172 | `systems/room13_dialogue_context_art.rpy:5` | _r13_nw_context_match |
-| 2 | 319 | `room13_v111_newworld_text.rpy:588` |  |
+| 2 | 319 | `room13_v111_newworld_text.rpy:599` |  |
 
 ## `r13_ending_notes` (2층)
 
@@ -880,7 +880,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 311 | `room13_v111_later_bindings.rpy:76` | _r13_nw_arrive |
-| 2 | 318 | `room13_v111_newworld_rules.rpy:434` |  |
+| 2 | 318 | `room13_v111_newworld_rules.rpy:447` |  |
 
 ## `r13_v111_context` (2층)
 
@@ -894,13 +894,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 301 | `room13_v111.rpy:58` | _r13_nw_authored_line |
-| 2 | 319 | `room13_v111_newworld_text.rpy:531` |  |
+| 2 | 319 | `room13_v111_newworld_text.rpy:542` |  |
 
 ## `r13_v111_lines` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 319 | `room13_v111_newworld_text.rpy:569` | _r13_followup_heard_lines |
+| 1 | 319 | `room13_v111_newworld_text.rpy:580` | _r13_followup_heard_lines |
 | 2 | 336 | `room13_v111_reactions.rpy:107` |  |
 
 ## `r13_v111_questions` (2층)
