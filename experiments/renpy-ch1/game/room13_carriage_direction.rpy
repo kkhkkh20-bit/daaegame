@@ -87,8 +87,18 @@ init 306 python:
         if key.startswith("seat_") and key[5:] in R13_CARRIAGE_SEATS:return key[5:]
         if key=="intake21_01_bravado" or key.endswith("bravado"):return "bravado"
         return R13_CARRIAGE_SEAT_OF.get(key,"neutral")
+    # 2026-10-30 소유자 「이게 말이 되는 도트 화소니?」(2026-10-27 근접 대화는 붓 원본, R13_CLOSEUP_SMOOTH): 앉은 다람만
+    # 그 바꿔치기 밖이었다(대화 그림 표가 아니라 이 함수가 파일을 직접 고른다). 도트로 다시 찍기 전의 붓 원본
+    # (art/carriage-seat-dot-20261026/originals, 720x1100)을 예전 배율 .62 그대로 446x682 로 줄여 둔 것을 1배로 그린다.
+    # 도트판(149x227 x3 = 447x681)과 윗변·가운데가 같아 자리와 크기는 그대로다. 끄면 도트판으로 돌아간다.
+    def r13_carriage_daram_seat_file(seat):
+        smooth="assets/room13-carriage-daram-seat-smooth-%s.webp"%seat
+        if globals().get("R13_CLOSEUP_SMOOTH") and renpy.loadable(smooth):return smooth
+        return "assets/room13-carriage-daram-seat-%s.webp"%seat
     def r13_carriage_daram_seat_art(seat):
-        return Transform("assets/room13-carriage-daram-seat-%s.webp"%seat,zoom=R13_CARRIAGE_SEAT_ZOOM,nearest=True)
+        f=r13_carriage_daram_seat_file(seat)
+        if "-smooth-" in f:return Transform(f,nearest=False)
+        return Transform(f,zoom=R13_CARRIAGE_SEAT_ZOOM,nearest=True)
     _r13_carriage_line_performance=r13_line_performance
     def r13_line_performance(identity,index,packet):
         # Keep an authored seated picture; the general path would fold it into "neutral".
@@ -103,7 +113,10 @@ init 306 python:
             store.dialogue_expression=expression if "avatar_"+str(expression) in CAST.get("daram",{}) else "neutral"
             store.r13_current_pose=pose or expression or "neutral"
             if store.r13_motion_person!="daram" or getattr(store,"r13_carriage_seat_shown",None)!=seat or "r13_visitor" not in renpy.get_showing_tags():
-                renpy.show("r13_actor",what=r13_carriage_daram_seat_art(seat),tag="r13_visitor",at_list=[Transform(xanchor=.5,xpos=850,yanchor=0,ypos=96)])
+                what=r13_carriage_daram_seat_art(seat)
+                # 웹: 앉은 그림을 아직 못 받았으면 앞 그림을 둔 채 받고 나서 바꾼다(systems/room13_web_art_ready.rpy).
+                r13_web_art_wait(what)
+                renpy.show("r13_actor",what=what,tag="r13_visitor",at_list=[Transform(xanchor=.5,xpos=850,yanchor=0,ypos=96)])
                 store.r13_carriage_seat_shown=seat
             store.r13_motion_person="daram"
             return

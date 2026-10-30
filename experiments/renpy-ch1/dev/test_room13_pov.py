@@ -10,6 +10,10 @@ SOURCE = (ROOT / 'game/room13_rules.rpy').read_text()
 START = SOURCE.index('    def r13_speaker(')
 END = SOURCE.index('\n    def ', START + 1)
 CODE = compile(ast.parse(textwrap.dedent(SOURCE[START:END])), str(ROOT / 'game/room13_rules.rpy'), 'exec')
+# 2026-10-30: r13_speaker 의 표정·자세 계산은 웹 미리 받기와 같이 쓰는 r13_say_actor_pose 에 있다. 그 함수도 실제 원본에서 뗀다.
+WEB = (ROOT / 'game/systems/room13_web_art_ready.rpy').read_text()
+WSTART = WEB.index('    def r13_say_actor_pose(')
+POSE_CODE = compile(ast.parse(textwrap.dedent(WEB[WSTART:WEB.index('\n    def ', WSTART + 1)])), 'room13_web_art_ready.rpy', 'exec')
 
 class ViewpointSpeaker(unittest.TestCase):
     def setUp(self):
@@ -38,8 +42,11 @@ class ViewpointSpeaker(unittest.TestCase):
             'r13_dialogue_source_profile':lambda *args:None,
             'r13_dialogue_beat_ready':lambda person:False,
             'r13_react_kind':lambda *args:None,
-            'r13_react':lambda kind,who,pose,what,at_list:(what,at_list)}
-        exec(CODE, env)
+            'r13_react':lambda kind,who,pose,what,at_list:(what,at_list),
+            # 웹 그림 받기 기다림(systems/room13_web_art_ready.rpy): 데스크톱 계약에서는 할 일이 없다.
+            'r13_web_art_wait':lambda what:True,
+            'r13_fullbody_authored_pose':lambda person,pose:False,'R13_FULLBODY_NEW':set()}
+        exec(POSE_CODE, env); exec(CODE, env)
         self.speak = env['r13_speaker']
     def test_father_reply_retains_target_pose_without_reentry(self):
         self.speak('dad','thinking','thinking')

@@ -33,6 +33,9 @@ init 40 python:
         frame=profile["frames"].get(emotion) or profile["frames"].get("neutral")
         if not frame:return None
         key=(frame["file"],h)
+        # 2026-10-30 웹: 아직 못 받은 그림은 투명한 대체 그림이라 머리끝을 0 으로 잰다. 그 값을 남기면 그 사람은
+        # 그 판 내내 엉뚱한 높이에 선다. 받기 전에는 재지 않는다(r13_speaker 가 보이기 전에 받는다).
+        if key not in _R13_SAY_HEADTOP and not r13_web_art_ready([frame["file"]]):return None
         if key not in _R13_SAY_HEADTOP:
             try:
                 surf=renpy.display.im.Image(frame["file"]).load()
@@ -47,8 +50,11 @@ init 40 python:
     def _r13_say_drawn_headtop(who,pose,h):
         key=(who,pose,h)
         if key not in _R13_SAY_DRAWN_TOP:
+            art=r13_close_art(who,pose,h,True)
+            # 웹에서 아직 못 받은 그림이면 재지 않고 남기지도 않는다(위 _r13_say_headtop 과 같은 까닭).
+            if not r13_web_art_ready(r13_art_files(art)):return None
             try:
-                rect=renpy.render_to_surface(r13_close_art(who,pose,h,True)).get_bounding_rect(min_alpha=40)
+                rect=renpy.render_to_surface(art).get_bounding_rect(min_alpha=40)
                 _R13_SAY_DRAWN_TOP[key]=rect.top if rect.height else None
             except Exception:
                 _R13_SAY_DRAWN_TOP[key]=None

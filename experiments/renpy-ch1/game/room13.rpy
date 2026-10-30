@@ -60,7 +60,7 @@ label r13_lines(entries,identity,binding_route=None):
             $ r13_speaker(r13_packet[2]["show"],r13_packet[2].get("expression","neutral"),r13_packet[2].get("pose") or r13_packet[2].get("expression","neutral"))
         # 0.18.89: picture book / scene cut for this line (systems/room13_ep_art.rpy).
         $ r13_ep_line_art(r13_packet)
-        $ r13_speaker(r13_packet[0],r13_expression,r13_directed_pose)
+        $ r13_speaker(r13_packet[0],r13_expression,r13_directed_pose); r13_say_prefetch(entries,r13_index,identity)
         if r13_packet[0] not in (None,r13_viewpoint()) and not r13_thought_active:
             $ r13_last_partner=r13_packet[0]
         $ r13_meeting_prepare_live_line(identity)

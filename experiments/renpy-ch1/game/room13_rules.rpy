@@ -315,7 +315,7 @@ init 55 python:
             return
         previous_pose=store.r13_current_pose
         store.dialogue_speaker=None
-        store.dialogue_expression=expression if who in CAST and "avatar_"+expression in CAST[who] else "neutral"
+        expression,current_pose,actor_pose=r13_say_actor_pose(who,expression,pose);store.dialogue_expression=expression # 계산은 systems/room13_web_art_ready.rpy(미리 받기와 같이 쓴다)
         # Dad is the viewpoint: his reply does not remove the person he is
         # looking at, or substitute Dad's thinking pose for their expression.
         # In the carriage only Daram is drawn: Dad's and the driver's lines
@@ -325,17 +325,17 @@ init 55 python:
         # 0.18.56 (owner): narration between a visitor's lines keeps them on screen too.
         if (who in (vp,None) or carriage) and who!=kept and store.r13_camera=="stage" and store.r13_motion_person==kept and kept not in (None,vp) and "r13_visitor" in renpy.get_showing_tags():
             return
-        store.r13_current_pose=r13_conversation_pose(who,pose or store.dialogue_expression)
+        store.r13_current_pose=current_pose
         visible=who in CAST and who!=vp and (not carriage or who=="daram") and store.r13_camera=="stage"
         if visible:
             arriving=store.r13_motion_person!=who or "r13_visitor" not in renpy.get_showing_tags()
-            actor_pose=store.r13_current_pose if r13_acting_spec(who,store.r13_current_pose) or r13_fullbody_authored_pose(who,store.r13_current_pose) or store.r13_current_pose in R13_FULLBODY_NEW else "interview_"+store.dialogue_expression
             # Refresh plain fallback on every NPC line, without restarting entrance.
             if arriving or previous_pose!=store.r13_current_pose or r13_dialogue_beat_ready(who) or (r13_fullbody_key(actor_pose) in R13_FULLBODY_PLAIN and r13_dialogue_source_profile(who,actor_pose,840) is not None):
                 pop=False # The carriage is a seated conversation, never a surprise entrance.
                 # An expression change can come with a short body reaction (systems/room13_dot_fx.rpy).
                 react=None if carriage or r13_dialogue_beat_ready(who) or (not arriving and previous_pose==store.r13_current_pose) else r13_react_kind(who,arriving,actor_pose)
-                what=r13_close_art(who,actor_pose,r13_say_actor_h(carriage),True,(arriving or previous_pose!=store.r13_current_pose) and not carriage and not react)
+                what=r13_close_art(who,actor_pose,r13_say_actor_h(carriage),True,arriving and not carriage and not react) # 2026-10-30: 나타나기 효과는 처음 들어설 때만(표정·자세 바뀜은 등장이 아니다)
+                r13_web_art_wait(what) # 웹: 못 받은 그림이면 받을 때까지 앞 화면을 둔다(systems/room13_web_art_ready.rpy). 자리 재기보다 먼저.
                 at_list=[r13_portrait_close(r13_say_actor_y(who,actor_pose,carriage),r13_say_actor_x(who,actor_pose,carriage))]+([r13_carriage_pop] if pop else [])
                 if not r13_dialogue_beat_ready(who):what,at_list=r13_react(react,who,actor_pose,what,at_list)
                 renpy.show("r13_actor",what=what,tag="r13_visitor",at_list=at_list)

@@ -50,7 +50,11 @@ class PortraitRefresh(unittest.TestCase):
     def setUp(self):
         source = (ROOT / 'game/room13_rules.rpy').read_text()
         body = source.split('    def r13_speaker(',1)[1].split('\n    def ',1)[0]
-        node = ast.parse('def r13_speaker(' + textwrap.dedent(body))
+        # 2026-10-30: 표정·자세 계산(r13_say_actor_pose)은 웹 미리 받기와 같이 쓰려고 systems/room13_web_art_ready.rpy 에 있다.
+        web = (ROOT / 'game/systems/room13_web_art_ready.rpy').read_text()
+        pose = web[web.index('    def r13_say_actor_pose('):]
+        pose = pose[:pose.index('\n    def ', 1)]
+        node = ast.parse(textwrap.dedent(pose) + '\ndef r13_speaker(' + textwrap.dedent(body))
         self.store = SimpleNamespace(room13={}, r13_current_pose='neutral', place='학교',
                                      r13_motion_person='daram', r13_camera='stage', r13_dialogue_beat=None)
         self.shown = []
@@ -68,7 +72,7 @@ class PortraitRefresh(unittest.TestCase):
                    r13_dialogue_beat_ready=lambda who:bool(self.store.r13_dialogue_beat),
                    r13_react_kind=lambda *a:self.reactions.append(a), r13_close_art=close_art,
                    r13_portrait_close=lambda *a:None,r13_close_y=lambda *a,**kw:0,r13_close_x=lambda *a:0,r13_say_actor_h=lambda c=False:840,r13_say_actor_y=lambda *a:0,r13_say_actor_x=lambda *a:0,
-                   r13_react=lambda react,who,pose,what,at:(what,at))
+                   r13_react=lambda react,who,pose,what,at:(what,at), r13_web_art_wait=lambda what:True)
         exec(compile(node, 'speaker', 'exec'), env)
         self.speaker = env['r13_speaker']
 
