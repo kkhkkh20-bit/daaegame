@@ -3114,6 +3114,59 @@
     "dev/build_closeup_smooth.py 를 돌리면 다섯 벌이 크기표에 들어간다",
     "근접 대화에서 도트판 대신 붓 원본으로 나오고 발·머리 자리가 같다"
    ]
+  },
+  {
+   "id": "DLG-HIRES-155",
+   "title": "대사 장면 인물 고해상 원본(1.55배 크기 그대로)",
+   "kind": "인물",
+   "status": "needs_delivery",
+   "priority": "P1",
+   "description": "대사 장면 인물은 2026-10-28 결정으로 1.55배(높이 약 1302px)로 그린다. 지금 원본(dialogue-source-master-v2, 760 판 예: 돌목 452x678)이 도트풍이라 1.55배로 늘리면 칸이 굵게 깨져 보인다(2026-10-30 소유자 「화질 깨지던데」). 크기는 유지하고, 그 크기에서 깨지지 않는 고해상 원본을 새로 받는다.",
+   "scenes": [
+    "모든 대사 장면(대사창 위 큰 인물)"
+   ],
+   "branches": [
+    "모든 판"
+   ],
+   "references": [
+    "game/assets/dialogue-source-master-v2/guard/760/neutral.webp",
+    "game/assets/dialogue-source-master-v2/daram/760/neutral.webp"
+   ],
+   "sources": [
+    "game/systems/room13_say_actor.rpy",
+    "game/systems/room13_dialogue_beats.rpy"
+   ],
+   "approved_scope": "2026-10-30 소유자: 「크기는 유지해야 하고, 새로 요청하면 되고」.",
+   "contract": {
+    "states": [
+     "angry",
+     "anxious",
+     "flustered",
+     "joy",
+     "neutral",
+     "surprise_talk"
+    ],
+    "transparent": true,
+    "delivery": [
+     "원본 PNG",
+     "무손실 WebP",
+     "대응표 CSV(인물·표정·발/머리 기준점)"
+    ],
+    "size_rule": "인물마다 표정 6장. 화면 표시 높이 1302px 이상에서 1:1 이하로 그려지도록 원본 높이 1400px 이상. 지금 원본과 같은 자세·구도·발과 머리 기준점(위치가 바뀌지 않게). 대상 38명: bami, buri, daram, doto, granny, guard, karo, kid_dodam, kid_kkomi, kid_saemi, mom, nabi, neoul, npc_pandol, resident_badook, resident_bori, resident_eunho, resident_guldol, resident_kongi, resident_lamplighter, resident_madam, resident_momo, resident_musoe, resident_nero, resident_nubi, resident_owlgp, resident_piko, resident_ppul, resident_seori, resident_siluk, resident_sling, resident_somi, resident_teacher, resident_tok, resident_tosil, resident_ttadak, resident_ubak, seryeon."
+   },
+   "required": [
+    "지금 원본과 같은 얼굴·옷·소품·자세",
+    "표정 6가지가 지금 판과 같은 뜻으로 읽힌다"
+   ],
+   "avoid": [
+    "흰 스티커 테두리(2026-10-26 소유자 결정)",
+    "그림 안 글자",
+    "지금 원본과 다른 체형·비율"
+   ],
+   "acceptance": [
+    "1.55배 대사 장면에서 칸이 깨져 보이지 않는다",
+    "지금 원본 자리에 겹쳤을 때 발·머리 위치가 같다"
+   ]
   }
  ]
 }
