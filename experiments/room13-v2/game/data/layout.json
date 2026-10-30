@@ -1,0 +1,333 @@
+{
+ "note": "장소 그림·물건 자리·인물 자리(좌표만, 글자 없음). 값은 지금 판 assets/room13-world-layout.json 의 gate·inn·room13 을 옮겼다. 인물 [발 x, 발 y].",
+ "places": {
+  "carriage": {
+   "width": 1280,
+   "art": {
+    "0": "room13-pixel-carriage-empty-winter.webp"
+   }
+  },
+  "gate": {
+   "width": 1920,
+   "initial_x": 320,
+   "art": {
+    "0": "room13-pixel-ready-gate0173-morning.webp"
+   },
+   "objects": {
+    "booth": [
+     1420,
+     398,
+     110,
+     52
+    ],
+    "ledger": [
+     1380,
+     440,
+     126,
+     30
+    ],
+    "rules": [
+     666,
+     313,
+     75,
+     114
+    ],
+    "road": [
+     216,
+     469,
+     413,
+     127
+    ],
+    "bundles": [
+     370,
+     396,
+     178,
+     75
+    ],
+    "shovel": [
+     760,
+     414,
+     82,
+     177
+    ],
+    "crates": [
+     1288,
+     534,
+     206,
+     100
+    ],
+    "woodpile": [
+     1560,
+     437,
+     125,
+     111
+    ],
+    "gate_documents": [
+     1341,
+     383,
+     201,
+     98
+    ]
+   },
+   "people": {
+    "karo": [
+     640,
+     655
+    ],
+    "guard": [
+     1270,
+     602
+    ],
+    "neoul": [
+     1070,
+     610
+    ]
+   }
+  },
+  "inn": {
+   "width": 1920,
+   "initial_x": 640,
+   "exit_x": 1045,
+   "art": {
+    "0": "room13-pixel-panorama-inn-morning.webp",
+    "2": "room13-pixel-panorama-inn-evening.webp"
+   },
+   "objects": {
+    "desk": [
+     1600,
+     440,
+     240,
+     230
+    ],
+    "door": [
+     980,
+     165,
+     131,
+     273
+    ],
+    "keys": [
+     1670,
+     136,
+     150,
+     170
+    ],
+    "register": [
+     1556,
+     355,
+     127,
+     46
+    ],
+    "knitting": [
+     1713,
+     353,
+     134,
+     82
+    ],
+    "coats": [
+     1158,
+     155,
+     121,
+     201
+    ],
+    "cups": [
+     1422,
+     101,
+     180,
+     63
+    ]
+   },
+   "people": {
+    "granny": [
+     1420,
+     624
+    ]
+   }
+  },
+  "room13": {
+   "width": 2160,
+   "initial_x": 440,
+   "exit_x": 2160,
+   "art": {
+    "0": "room13-pixel-wide-room13-before-morning.webp",
+    "2": "room13-pixel-wide-room13-before-evening.webp"
+   },
+   "objects": {
+    "bed": [
+     809,
+     337,
+     675,
+     180
+    ],
+    "window": [
+     272,
+     12,
+     293,
+     303
+    ],
+    "boxes": [
+     19,
+     563,
+     490,
+     157
+    ],
+    "under": [
+     842,
+     498,
+     438,
+     57
+    ],
+    "floor": [
+     863,
+     552,
+     215,
+     64
+    ],
+    "books": [
+     1700,
+     375,
+     35,
+     67
+    ],
+    "cup": [
+     321,
+     364,
+     80,
+     66
+    ],
+    "letters": [
+     174,
+     395,
+     124,
+     25
+    ],
+    "notebook": [
+     147,
+     426,
+     210,
+     40
+    ],
+    "coat": [
+     593,
+     351,
+     150,
+     255
+    ],
+    "sewing": [
+     1541,
+     419,
+     150,
+     126
+    ],
+    "socks": [
+     461,
+     285,
+     122,
+     105
+    ],
+    "bedside_books": [
+     883,
+     294,
+     86,
+     33
+    ],
+    "bread": [
+     401,
+     393,
+     95,
+     40
+    ],
+    "family_bundle": [
+     485,
+     585,
+     126,
+     88
+    ],
+    "mother_note": [
+     160,
+     383,
+     152,
+     49
+    ]
+   },
+   "people": {}
+  }
+ },
+ "map": {
+  "note": "마을 지도 이름표 자리(지금 판 map-village-b/layout.json label_center 를 화면 좌표로 바꾼 값: x=88+cx*0.692, y=11+cy*0.692)",
+  "village": {
+   "forest": [
+    252,
+    100
+   ],
+   "school": [
+    561,
+    155
+   ],
+   "clinic": [
+    378,
+    263
+   ],
+   "inn": [
+    340,
+    430
+   ],
+   "market": [
+    634,
+    247
+   ],
+   "square": [
+    609,
+    348
+   ],
+   "post": [
+    711,
+    436
+   ],
+   "workshop": [
+    841,
+    352
+   ],
+   "store": [
+    1051,
+    380
+   ],
+   "gate": [
+    485,
+    486
+   ],
+   "river": [
+    1078,
+    477
+   ],
+   "laundry": [
+    762,
+    603
+   ],
+   "somi": [
+    1025,
+    628
+   ]
+  },
+  "inside": [
+   "inn",
+   "room13"
+  ]
+ },
+ "figure": {
+  "note": "대화 그림: 760 그림을 1.2배, 머리끝을 화면 위 20 에. 키(stature)가 1보다 작으면 520×(1-키)만큼 내린다(지금 판 room13_say_actor.rpy 와 같은 뜻). top 은 그림 안 머리끝 높이.",
+  "zoom": 1.2,
+  "head_top": 20,
+  "x": 250,
+  "stature": {
+   "daram": 0.82,
+   "granny": 0.93
+  },
+  "top": {
+   "guard": 18,
+   "daram": 6,
+   "karo": 27,
+   "granny": 9,
+   "neoul": 9
+  }
+ }
+}

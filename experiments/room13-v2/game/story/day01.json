@@ -1,0 +1,1057 @@
+{
+  "day": 1,
+  "weekday": "금요일",
+  "start": "start",
+  "note": "1일 시범. 새 게임 → 마차 → 입구(돌목) → 여관 → 13호 → 첫날 밤. 대사·흐름은 이 파일 한 곳에만 있다.",
+  "scenes": {
+    "S01": {"title": "1. 마차 / 엄마 몫", "time_place": "1일 낮 / 움직이는 마차", "goal": "편지에 적힌 여관까지 무사히 갈 수 있을까?", "music": "bgm-travel", "ambience": "wind"},
+    "S02": {"title": "2. 초소 / 한 사람의 허가", "time_place": "1일 도착 / 초소 입구→내부", "goal": "마을에 들어가려면 무엇을 확인받아야 할까?", "music": "bgm-snow", "ambience": "wind"},
+    "S03": {"title": "3. 초소 / 둘이 들어갈 근거", "time_place": "1일 / 초소 첫 추리", "goal": "우리가 낸 신청서와 문지기의 원본은 같은 내용일까?", "music": "bgm-snow", "ambience": "wind", "stage": "다람이 함께 들어갈 수 있는가"},
+    "S04": {"title": "4. 문이 열릴 때 / 이름", "time_place": "1일 / 초소 등록 후 입장", "goal": "우리 두 사람 모두 제대로 등록됐을까?", "music": "bgm-snow", "ambience": "wind"},
+    "S05": {"title": "5. 여관 13호 / 기다리지 않는 방", "time_place": "1일 저녁 / 로비→빈13호→밤", "goal": "편지를 보낸 여관에서 아내를 만날 수 있을까?", "music": "bgm-inn", "ambience": "fire"}
+  },
+  "nodes": {
+    "start": [
+      {"place": "black"},
+      {"music": "bgm-travel"},
+      {"loop": "carriage"},
+      {"who": "card", "t": "아내에게서 편지가 왔다."},
+      {"who": "card", "t": "두 줄짜리 편지였다."},
+      {"who": "card", "t": "짧았지만, 그걸로 충분했다."},
+      {"place": "carriage"},
+      {"scene": "S01"},
+      {"who": "daram", "e": "joy", "pose": "seat_quiz", "t": "아빠! 일곱 개에서 여섯 개 먹으면?"},
+      {"who": "dad", "t": "음…… 배부르지?"},
+      {"who": "daram", "e": "angry", "pose": "seat_pout", "t": "아니이! 하나잖아. 똑바로 대답해!"},
+      {"who": "dad", "t": "탐정님이 다 아시면서 왜 물어보실까."},
+      {"who": "daram", "e": "joy", "pose": "seat_quiz", "t": "아빠도 아나 보는 거야. 시험이야, 시험!"},
+      {"who": "dad", "t": "알지, 알지. 하나 남았다는 거. ……반만 먹을까?"},
+      {"who": "daram", "e": "angry", "pose": "seat_angry", "t": "안 돼! 엄마 거야!"},
+      {"who": "dad", "t": "알았어, 알았어. 엄마 거."},
+      {"who": "daram", "e": "flustered", "pose": "seat_secret", "t": "그리고 엄마한테 여섯 개 얘긴 하지 마. 비밀이야."},
+      {"who": "dad", "t": "아빠 입을 막으려면 반은 줘야겠는데?"},
+      {"who": "daram", "e": "angry", "pose": "seat_pout", "t": "엄마 거라니까아!"},
+      {"who": "narr", "t": "일곱 개 중 하나. 다람이는 오는 내내 그 하나를 지켰다."},
+      {"get": "E01"},
+      {"id": "NW_D01_S01_P01", "who": "narr", "t": "편지를 편다. 접힌 자리가 닳아서 종이가 천처럼 부드럽다. 두 줄은 이미 외웠다."},
+      {"id": "MS14_D01_S01_L9101", "who": "doc", "t": "다람이를 데리고 와 줘. 여관 13호실에서 기다릴게."},
+      {"id": "MS14_D01_S01_L0011", "who": "daram", "pose": "seat_pout", "t": "또 읽어?{w=.4} 아빠, 그거 백 번째야."},
+      {"id": "MS14_D01_S01_L0012", "who": "dad", "t": "아흔일곱 번째거든?{w=.3}\n방 번호만 확인하는 거야. 아빠도 아는 게 있어."},
+      {"id": "MS14_D01_S01_L0013", "who": "daram", "pose": "seat_bravado", "t": "십삼 호! 하나, 둘……{w=.4} 열셋.\n외웠어. 아빠는 짐 들어. 방은 내가 찾을게."},
+      {"id": "NW_D01_S01_P02", "who": "dad", "t": "네, 네.{w=.3} 쉬운 거 시켜 주셔서 고맙습니다, 탐정님."},
+      {"id": "MS14_D01_S01_L0015", "who": "narr", "t": "‘……기다릴게.’ 편지는 거기서 끝난다."},
+      {"id": "NW_D01_S01_A90", "who": "daram", "e": "joy", "t": "아빠.{w=.3} 또 ‘기다릴게’에서 멈췄지?"},
+      {"set": {"K01a": true}},
+      {"id": "MS14_D01_S01_L0016", "who": "narr", "t": "한 글자씩 다시 읽는다. 아내 목소리로 들릴 때까지."},
+      {"set": {"K01b": true}},
+      {"id": "MS14_D01_S01_L0018", "who": "narr", "t": "편지를 외투 안에 다시 넣는다. 안주머니 단추까지 채운다."},
+      {"id": "MS14_D01_S01_L0019", "who": "daram", "pose": "seat_joy", "t": "……오늘 엄마랑 잘 거지?"},
+      {"id": "MS14_D01_S01_L0020", "who": "dad", "t": "그건……{w=.3} 엄마 만나서 물어보자."},
+      {"id": "MS14_D01_S01_L0021", "who": "daram", "pose": "seat_pout", "t": "그것도 물어봐?{w=.3}\n아빠는 아는 게 뭐야!"},
+      {"id": "NW_D01_S01_P03", "who": "dad", "t": "과자 하나 남은 건 알지."},
+      {"id": "NW_D01_S01_P04", "who": "daram", "pose": "seat_joy", "t": "그건 엄마 거고!{w=.3}\n잘 때는 내가 가운데야."},
+      {"id": "NW_D01_S01_P05", "who": "dad", "t": "……아빠 자리는?"},
+      {"id": "NW_D01_S01_P06", "who": "daram", "pose": "seat_secret", "t": "옆에.{w=.4} 코 골면 좀 더 옆에."},
+      {"id": "NW_D01_S01_P07", "who": "dad", "t": "그, 그러다 아빠 떨어지겠다."},
+      {"id": "NW_D01_S01_P08", "who": "daram", "pose": "seat_pout", "t": "그러니까 골지 마!"},
+      {"id": "NW_D01_S01_P09", "who": "narr", "t": "가운데에 다람이, 양옆에 우리. 편지 어디에도 없는 잠자리를, 나는 벌써 그려 놓았다."},
+      {"id": "MS14_D01_S01_L0022", "who": "karo", "t": "다 왔어요!{w=.3} 아, 아직 일어나지 마요. 안 섰어요.\n……에휴, 마차 축이."},
+      {"id": "NW_D01_S01_A01", "who": "narr", "t": "창밖으로 길을 따라 등이 줄지어 서 있다. 바람이 부는데도 불빛이 하나도 흔들리지 않는다."},
+      {"id": "NW_D01_S01_A02", "who": "daram", "e": "joy", "t": "우와……{w=.4} 예쁘다. 꼭 별 같아.\n불이 하나도 안 떨려."},
+      {"id": "NW_D01_S01_A03", "who": "dad", "t": "저 등에는 기름 대신 돌이 들어 있대. 엄마도 그 돌 때문에 여기 온 거야."},
+      {"id": "NW_D01_S01_A04", "who": "daram", "t": "우리 동네는 기계 난로로 불 때잖아."},
+      {"set": {"carriage_stopped": true}},
+      {"goto": "gate_arrival"}
+    ],
+    "gate_arrival": [
+      {"scene": "S02"},
+      {"loop_stop": "carriage"},
+      {"place": "gate"},
+      {"id": "MS14_D01_S02_L0002", "who": "daram", "e": "joy", "fx": "jolt", "t": "안아 주지 마!{w=.3}\n나 혼자 내려갈 거야."},
+      {"id": "MS14_D01_S02_L0003", "who": "dad", "t": "알았어, 알았어.{w=.3} 손만. 손만 잡을게."},
+      {"id": "MS14_D01_S02_L0005", "who": "karo", "e": "flustered", "t": "큰 짐은 두고 가세요.{w=.4} ……어이쿠, 축에 금이 갔네.\n돌아가려면 이것부터 고쳐야겠어요."},
+      {"id": "MS14_D01_S02_L0006", "who": "dad", "t": "그럼 저흰……{w=.3} 어디로 가면 됩니까?"},
+      {"id": "MS14_D01_S02_L0007", "who": "karo", "t": "저 초소요. 방문 확인부터 받으세요.\n짐은 나, 까로가 지킬게요. 바퀴가 이래서 달아나지도 못해요."},
+      {"id": "NW_D01_S02_A01", "who": "narr", "t": "초소 처마에 달린 등 하나가 다른 등보다 어둡다. 초소 경비가 등갓에 손을 대 보더니 고개를 젓는다."},
+      {"id": "NW_D01_S02_V01", "who": "narr", "t": "경비가 창구 안으로 돌아가 차렷 자세로 선다. 몸은 앞을 보는데, 눈만 우리 쪽으로 굴러온다."},
+      {"id": "MS14_D01_S02_L0009", "who": "guard", "t": "흠흠.{w=.5} ……성함."},
+      {"id": "MS14_D01_S02_L0010", "who": "dad", "t": "다, 다돌입니다.{w=.3} 딸하고 같이 왔습니다."},
+      {"id": "NW_D01_S02_N01", "who": "guard", "t": "……나는 입구 경비 돌목이오."},
+      {"id": "NW_D01_GATE_LOOKUP01", "who": "guard", "t": "다돌.{w=.4} 잠깐만 기다리시오."},
+      {"id": "NW_D01_GATE_LOOKUP02", "who": "narr", "t": "돌목이 명부를 넘긴다. 손가락이 이름을 짚어 내려가다 한 줄에서 멈춘다. 오래 멈춘다."},
+      {"id": "MS14_D01_S02_L0011", "who": "guard", "t": "다돌……{w=.3} 여기 있군.{w=.3} 일꾼으로 적혀 있소."},
+      {"id": "MS14_D01_S02_L0012", "who": "dad", "t": "……네?{w=.3} 일꾼이요?{w=.4}\n저는 아내를 만나러 왔습니다. 딸도 같이요."},
+      {"id": "MS14_D01_S02_L0013", "who": "guard", "t": "지금 이 명단에는 다돌 한 명만 적혀 있소.{w=.3} 일꾼으로.{w=.4}\n그래서 다돌만 들어갈 수 있소."},
+      {"mark_read": "F002"},
+      {"id": "MS14_D01_S02_L0014", "who": "dad", "t": "그럴 리가 없습니다.{w=.3}\n신청서에 딸 이름까지 분명히 썼어요."},
+      {"id": "MS14_D01_S02_L0015", "who": "guard", "t": "신청서에 정말 그렇게 적혀 있으면 고쳐 주겠소.{w=.4}\n신청서는 저 선반에 날짜별로 꽂혀 있소. 나는 뒤에 기다리는 사람들을 받아야 하니, 직접 찾아서 보여 주시오."},
+      {"id": "MS14_D01_S02_L0017", "who": "daram", "e": "anxious", "t": "아빠……{w=.5} 나 때문에 못 들어가는 거야?"},
+      {"id": "MS14_D01_S02_L0018", "who": "dad", "t": "아니야.{w=.3} 아니야, 너 때문 아니야."},
+      {"id": "NW_D01_S02_R01", "who": "dad", "t": "종이에 뭐가 잘못 적혔나 봐.{w=.3} 아빠가 볼게. 응?"},
+      {"goto": "gate_request"}
+    ],
+    "gate_request": [
+      {"wait": "gate_request"}
+    ],
+    "gate_list": [
+      {"scene": "S02"},
+      {"id": "MS14_D01_S02_L0019", "who": "doc", "t": "초소 입장 명단: 같은 도착일 / 다돌 / 신청 2명 / 신규 일꾼 본인 1명 / 동행 아동 모집 제외 / 내일부터 장작 운반 / 처리 너울."},
+      {"id": "NW_D01_S02_A02", "who": "narr", "t": "명단 뒤에 작은 종이가 따로 붙어 있다. “여관에 먼저 연락.” 명단과 글씨체가 다르다."},
+      {"get": "E02"},
+      {"id": "NW_D01_S02_V02", "who": "dad", "t": "(다람이 이름은 어디 있지?)"},
+      {"id": "MS14_D01_S02_L0020", "who": "dad", "fx": "jolt", "t": "장작?{w=.3} 장작 운반이요?{w=.4}\n그런 거 신청한 적 없습니다."},
+      {"id": "MS14_D01_S02_L0021", "who": "guard", "t": "그러니 신청서를 찾아 보시오.{w=.3} 신청서대로라면 고쳐 주겠소."},
+      {"id": "MS14_D01_S02_L0022", "who": "narr", "t": "어떤 자료부터 보여 줄까?"},
+      {"goto": "gate_choice"}
+    ],
+    "gate_choice": [
+      {"wait": "gate_choice"}
+    ],
+    "gate_shelf": [
+      {
+        "menu": [
+          {
+            "t": "목요일 칸을 꺼낸다",
+            "do": [
+              {"who": "dad", "t": "(목요일 칸. 어제 들어온 사람들 이름뿐이다.\n우리는 오늘 내렸다.)"},
+              {"goto": "gate_shelf"}
+            ]
+          },
+          {
+            "t": "금요일 칸을 꺼낸다",
+            "do": [
+              {"who": "dad", "t": "(금요일 칸. 오늘 내린 사람들 신청서다.\n맨 앞에…… 내 이름이 있다.)"},
+              {"goto": "gate_investigate"}
+            ]
+          },
+          {
+            "t": "토요일 칸을 꺼낸다",
+            "do": [
+              {"who": "dad", "t": "(토요일 칸은 비어 있다. 아직 오지 않은 날이다.)"},
+              {"goto": "gate_shelf"}
+            ]
+          }
+        ]
+      }
+    ],
+    "gate_investigate": [
+      {
+        "if": "v('gate_wrong_pending')",
+        "then": [
+          {"set": {"gate_wrong_pending": false}},
+          {
+            "if": "not has('E03') or not has('E04')",
+            "then": [
+              {"who": "dad", "t": "(아직 이 창구에서 확인하지 않은 서류가 있다. 돌목 씨가 내놓은 것부터 직접 읽어 보자.)"}
+            ],
+            "else": [
+              {
+                "if": "v('tries:gate') == 1",
+                "then": [
+                  {"who": "dad", "t": "(들어갈 근거는 오늘 받은 종이에 다 있다. 내민 것만으로는 돌목 씨 말을 꺾지 못했다.)"}
+                ],
+                "else": [
+                  {
+                    "if": "v('tries:gate') == 2",
+                    "then": [
+                      {"who": "dad", "t": "(돌목 씨는 명부에 내 이름만 일꾼으로 올랐다고 한다. ……우리가 일하러 왔다는 말부터 맞지 않잖아.)"}
+                    ],
+                    "else": [
+                      {"who": "dad", "t": "(오늘 이 창구에서 본 적힌 것들이다. 우리가 무엇으로 왔는지, 규칙은 무엇이라 하는지.)"}
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {"wait": "gate_investigate"}
+    ],
+    "registered": [
+      {"scene": "S04"},
+      {"id": "MS14_D01_S04_L0002", "who": "daram", "e": "anxious", "t": "아빠……{w=.3} 아직도 기다려?"},
+      {"id": "MS14_D01_S04_L0003", "who": "guard", "t": "이름 적는 동안만.{w=.3} 조금만."},
+      {"id": "MS14_D01_S04_L0004", "who": "dad", "t": "둘 다……{w=.3} 들어가는 거죠?"},
+      {"id": "MS14_D01_S04_L0005", "who": "guard", "t": "그렇소. 방문객 다돌.{w=.3} 같이 온 아이는……{w=.4} 이름이?"},
+      {"id": "MS14_D01_S04_L0006", "who": "daram", "e": "angry", "fx": "jolt", "t": "다람!{w=.3} 내 이름은 다람이야."},
+      {"id": "MS14_D01_S04_L0008", "who": "guard", "t": "……다람.{w=.4} 됐소."},
+      {"get": "E05"},
+      {"set": {"gate_registered": true}},
+      {"id": "MS14_D01_S04_L9101", "who": "doc", "cut": "E05", "t": "방문 신청 원본과 숙박 확인에 따라 그 자리에서 고침. 방문객 다돌, 동행인 다람. 확인자 돌목."},
+      {"id": "MS14_D01_S04_L0009", "who": "dad", "t": "자,{w=.3} 이제 들어가자."},
+      {"id": "MS14_D01_S04_L0010", "who": "daram", "e": "joy", "t": "잠깐!{w=.5} ……고맙습니다."},
+      {"id": "MS14_D01_S04_L0011", "who": "guard", "t": "발판 얼었소. 붙잡고 내리시오.{w=.4}\n거기서 넘어지면 그것도 내가 적어야 하오."},
+      {"id": "NW_D01_S04_A01", "who": "narr", "t": "돌목이 손바닥을 펴 보인다. 무슨 뜻인지 몰라서, 나도 따라 편다."},
+      {"id": "NW_D01_S04_A02", "who": "guard", "t": "……아르카 곁에."},
+      {"id": "NW_D01_S04_A03", "who": "narr", "t": "다람이 작은 손바닥을 편다. 우리 셋이 손바닥을 마주 펴고 서 있다. 누가 보면 눈싸움하는 줄 알겠다."},
+      {"id": "NW_D01_S04_A04", "who": "daram", "e": "surprise", "t": "아르카가……{w=.3} 뭐예요?"},
+      {"id": "NW_D01_S04_A05", "who": "guard", "t": "불을 주는 돌이오.{w=.3} 다들 이렇게 하오.\n왜냐고는 묻지 마시오.{w=.4} ……나도 모르오."},
+      {"id": "MS14_D01_S04_L0012", "who": "narr", "t": "짐을 찾으러 가기 전에"},
+      {"goto": "registered_menu"}
+    ],
+    "registered_menu": [
+      {"wait": "registered_menu"}
+    ],
+    "inn": [
+      {"scene": "S05"},
+      {"move": "inn"},
+      {"id": "MS14_D01_S05_L0001", "who": "granny", "e": "anxious", "fx": "jolt", "t": "다돌 씨죠?{w=.3} 아이고, 손 빨간 것 좀 봐!\n우리 강아지도.{w=.3} 난로부터 쬐어요, 난로부터."},
+      {"id": "MS14_D01_S05_L0003", "who": "granny", "e": "anxious", "t": "앗, 앗!{w=.3} 손 바로 대면 아파!\n이걸로 감싸고. 천천히 녹이자, 천천히."},
+      {
+        "menu": [
+          {"t": "다람의 손을 천으로 감싸 준다", "do": []}
+        ]
+      },
+      {"id": "NW_D01_HW01", "who": "narr", "t": "마른 천으로 아이 손을 감싼다. 다람은 손을 맡긴 채 가만히 있다. 이렇게 얌전한 건 오늘 처음이다."},
+      {"id": "MS14_D01_S05_L0004", "who": "daram", "e": "joy", "t": "고, 고맙습니다!"},
+      {"id": "NW_D01_S05_V01", "who": "narr", "t": "할머니가 목도리 끝을 만지작거리다 다람의 등을 토닥인다."},
+      {"id": "NW_D01_S05_V02", "who": "granny", "e": "joy", "t": "녹이고 해, 녹이고.{w=.3}\n꽁꽁 얼면 말도 안 나와."},
+      {"id": "MS14_D01_S05_L0005", "who": "narr", "t": "다람이 손가락을 쥐었다 폈다 하는 걸 보고서야, 나는 편지를 꺼낸다."},
+      {"id": "MS14_D01_S05_L0006", "who": "dad", "t": "……제 아내는 어디 있습니까?"},
+      {"id": "MS14_D01_S05_L0007", "who": "granny", "e": "anxious", "t": "그게……{w=.4} 며칠째 안 보여요.\n조사 나가면 밤낮이 없던 사람이라……."},
+      {"id": "MS14_D01_S05_L0008", "who": "daram", "e": "anxious", "t": "……기다린댔는데."},
+      {"id": "MS14_D01_S05_L0009", "who": "granny", "t": "방은 그대로 뒀어요.{w=.3}\n손부터 녹이고, 올라가 봐요."},
+      {"id": "MS14_D01_S05_L0010", "who": "dad", "t": "마지막으로 나갈 때……{w=.3}\n어디 간다는 말은 없었습니까?"},
+      {"id": "MS14_D01_S05_L0011", "who": "granny", "t": "나한테 하나하나 말하진 않았어요.{w=.3}\n차려 둔 밥이 다 식어야 들어오던걸요."},
+      {"id": "MS14_D01_S05_L0012", "who": "dad", "t": "그럼……{w=.3} 마지막으로 돌아온 날은요?"},
+      {"id": "MS14_D01_S05_L0013", "who": "granny", "e": "anxious", "t": "밥상은 매일 차렸죠, 매일. 어느 날부터 안 왔더라……{w=.4}\n아이고, 우선 방부터 봐요. 애가 떨잖아요."},
+      {"goto": "room_arrive"}
+    ],
+    "room_arrive": [
+      {"wait": "to_room13"}
+    ],
+    "room_empty": [
+      {"scene": "S05"},
+      {"id": "NW_D01_S05_A01", "who": "narr", "t": "13호 문을 연다. 방이 복도보다 차갑다. 벽의 돌난로는 뚜껑이 닫힌 채 식어 있고, 침대 옆 탁자에는 기름이 반쯤 남은 등이 있다."},
+      {"id": "MS14_D01_S05_L0016", "who": "daram", "e": "anxious", "t": "엄마?{w=.6} ……엄마?"},
+      {"id": "MS14_D01_S05_L0017", "who": "narr", "t": "나는 옷장 문을 연다. 다람은 벌써 침대 밑에 머리를 넣고 있다. 엄마는 숨바꼭질을 할 사람이 아닌데, 나도 다음엔 침대 밑을 보려던 참이었다."},
+      {"goto": "note_pick"}
+    ],
+    "note_pick": [
+      {"wait": "note_pick"}
+    ],
+    "bundle_open": [
+      {"wait": "bundle_open"}
+    ],
+    "letter_compare": [
+      {"proof": "letters"}
+    ],
+    "room_compare": [
+      {"period": 2},
+      {"scene": "S05"},
+      {"set": {"K01a": true, "K01b": true}},
+      {"id": "NW_D01_S05_B90", "who": "narr", "t": "종이를 몇 번이나 뒤집어 보는 사이, 창밖이 파랗게 어두워진다."},
+      {"id": "NW_D01_S05_V03", "who": "dad", "t": "(편지와 메모. 다시 접어 넣으려다 손이 멈춘다.)"},
+      {"id": "MS14_D01_S05_L0032", "who": "dad", "t": "……다 봤어.{w=.3} 이제 접어 둘까?"},
+      {"id": "NW_D01_S05_V04", "who": "narr", "t": "다람이 내 팔 밑으로 머리를 들이민다."},
+      {"id": "MS14_D01_S05_L0033", "who": "daram", "e": "anxious", "t": "엄마…….{w=.5}"},
+      {
+        "if": "not v('letter_tail_observed')",
+        "then": [
+          {"id": "NW_D01_SR01", "who": "daram", "t": "엄마 쪽지엔 도토리가 있어.{w=.3}\n엄마는 쪽지 끝에 맨날 도토리 그리잖아. 장 보러 갈 때도."},
+          {"id": "NW_D01_SR02", "who": "dad", "t": "……{w=.4}편지엔?"},
+          {"id": "NW_D01_SR03", "who": "daram", "e": "anxious", "t": "없어.{w=.5} 편지엔 하나도 없어.{w=.4} 도토리가."}
+        ]
+      },
+      {"id": "MS14_D01_S05_L0034", "who": "dad", "t": "이 편지를……{w=.4} 엄마가 직접 썼는지는\n아직 모르겠어."},
+      {"id": "MS14_D01_S05_L0035", "who": "daram", "e": "joy", "t": "초롱이 누군지 할머니한테 물어보자.{w=.3}\n가자, 아빠. 빨리!"},
+      {
+        "menu": [
+          {
+            "t": "할머니에게 초롱의 행방을 묻는다",
+            "do": [
+              {"move": "inn"},
+              {"id": "NW_DLG_D01_02", "who": "dad", "t": "초롱 씨는 어디 가면 만날 수 있습니까?"},
+              {"id": "MS14_D01_S05_L0037", "who": "granny", "e": "anxious", "t": "초롱은 오늘 바깥쪽 등을 보고 돌아와요.\n내일 아침이면 광장에 있지.{w=.3} 소식 들으면 나한테도 알려 줘요, 응?"},
+              {"id": "NW_D01_S05_A02", "who": "dad", "t": "방 난로가……{w=.3} 꺼져 있던데요."},
+              {"id": "NW_D01_S05_A03", "who": "granny", "t": "부인이 첫날부터 돌난로는 끄고 기름등을 켜더라니까.\n추운 데서 자는 게 낫대요.{w=.3} 참, 별난 분이야."},
+              {"id": "MS14_D01_S05_L0038", "who": "dad", "t": "네. 내일 초롱 씨부터 만나 보겠습니다."},
+              {"move": "room13"},
+              {"goto": "bedtime"}
+            ]
+          },
+          {
+            "t": "방을 더 둘러본다",
+            "do": [
+              {"goto": "room_more"}
+            ]
+          }
+        ]
+      }
+    ],
+    "room_more": [
+      {"wait": "to_inn"}
+    ],
+    "room_back": [
+      {"wait": "to_room13_night"}
+    ],
+    "bedtime": [
+      {"id": "MS14_D01_S05_L0040", "who": "daram", "e": "anxious", "t": "아빠……{w=.5} 엄마가 내일도 안 오면?"},
+      {"id": "MS14_D01_S05_L0041", "who": "narr", "t": "나는 침대 가운데를 손바닥으로 누른다."},
+      {"id": "MS14_D01_S05_L0042", "who": "dad", "t": "아침에 초롱 씨부터 만나고, 돌아갈 마차도 알아볼게.\n여기서 기다리기만 하진 않을 거야."},
+      {"id": "MS14_D01_S05_L0043", "who": "daram", "e": "anxious", "t": "……마차도 없으면?"},
+      {"id": "MS14_D01_S05_L0044", "who": "dad", "t": "그럼 다른 길을 찾지.{w=.4} 널 혼자 두진 않아."},
+      {"id": "MS14_D01_S05_L0045", "who": "narr", "cut": "D01_SNACK_BAG", "t": "다람이 과자 봉지 끝을 두 번 접는다. 꼭꼭 누른다."},
+      {"id": "MS14_D01_S05_L0046", "who": "daram", "e": "anxious", "t": "……과자 눅눅해지겠다."},
+      {"id": "MS14_D01_S05_L0047", "who": "dad", "t": "응.{w=.3} 잘 싸 두자."},
+      {"id": "MS14_D01_S05_L0048", "who": "daram", "e": "angry", "t": "여기 놓을래.{w=.3}\n엄마가 먼저 오면 바로 보게."},
+      {"set": {"cookie.location": "room13_plate"}},
+      {"id": "MS14_D01_S05_L0049", "who": "dad", "t": "그래. 여기 두자."},
+      {
+        "menu": [
+          {"t": "다람의 이불을 여민다", "do": []}
+        ]
+      },
+      {"id": "MS14_D01_S05_L0050", "who": "daram", "e": "anxious", "t": "엄마 오면 꼭 깨워 줘.{w=.4} 자고 있어도."},
+      {"id": "MS14_D01_S05_L0051", "who": "dad", "t": "응.{w=.4} 깨워 줄게."},
+      {"id": "MS14_D01_S05_L0052", "who": "narr", "t": "문밖에서 발소리가 멈춘다."},
+      {"id": "NW_D01_S05_K01", "who": "narr", "t": "문을 두드리고 들어온 사람은 침구를 든 종업원이다. 엄마가 아니다."},
+      {"id": "NW_D01_S05_K02", "who": "narr", "t": "종업원이 나간 뒤에도, 나는 한참 동안 문손잡이를 놓지 못한다."},
+      {"goto": "sleep1"}
+    ],
+    "sleep1": [
+      {"wait": "sleep1"}
+    ]
+  },
+  "gates": {
+    "gate_request": {
+      "place": "gate",
+      "people": ["guard"],
+      "goal": "돌목 씨에게 우리 방문 신청 기록을 확인받자.",
+      "options": [
+        {
+          "title": "초소 처리 명단을 읽는다",
+          "obj": ["ledger"],
+          "do": [
+            {"time": 15},
+            {"goto": "gate_list"}
+          ]
+        },
+        {
+          "title": "명단을 보여 주십시오.",
+          "person": "guard",
+          "direct": true,
+          "do": [
+            {"id": "NW_D01_S02_GH01", "who": "dad", "t": "명단을 보여 주십시오. 저희 이름이 어떻게 적혔는지 봐야겠습니다."},
+            {"id": "NW_D01_S02_GH02", "who": "guard", "t": "……여기 있소.{w=.3} 보시오."},
+            {"time": 15},
+            {"goto": "gate_list"}
+          ]
+        }
+      ]
+    },
+    "gate_choice": {
+      "place": "gate",
+      "people": ["guard"],
+      "goal": "돌목 씨에게 우리 방문 신청 기록을 확인받자.",
+      "options": [
+        {
+          "title": "초대 편지를 보여 준다",
+          "person": "guard",
+          "present": "E01",
+          "present_only": true,
+          "do": [
+            {"scene": "S02"},
+            {"id": "MS14_D01_S02_L0023", "who": "dad", "t": "아, 이것도요!{w=.3} 이 편지도 좀 봐 주십시오."},
+            {"id": "MS14_D01_S02_L0024", "who": "guard", "t": "편지로는 무엇을 신청했는지 모르오.{w=.3}\n신청서를 찾아 오시오."},
+            {"id": "MS14_D01_S02_L0025", "who": "dad", "t": "……네.{w=.3} 선반부터 보겠습니다."},
+            {"goto": "gate_investigate"}
+          ]
+        },
+        {
+          "title": "신청서를 찾으러 선반으로 간다",
+          "obj": ["booth", "gate_documents"],
+          "do": [
+            {"scene": "S02"},
+            {"who": "dad", "t": "(선반 칸마다 요일 쪽지가 붙어 있다. 명단엔 「같은 도착일」이라고만 적혀 있다.)"},
+            {"goto": "gate_shelf"}
+          ]
+        }
+      ]
+    },
+    "gate_investigate": {
+      "place": "gate",
+      "people": ["guard"],
+      "goal": "서류의 날짜·이름·방문 목적과 초소 규칙을 직접 확인하자.",
+      "options": [
+        {
+          "title": "신청 원본을 읽는다",
+          "obj": ["gate_documents"],
+          "do": [
+            {"time": 15},
+            {"scene": "S03"},
+            {"id": "MS14_D01_S03_L0002", "who": "doc", "t": "다돌이 낸 방문 신청서: 같은 도착일 / 신청자 다돌 외 1명 / 동행 아동 있음 / 총 2명 / 방문 목적: 아내를 만나러 / 동행인 성명 다람 / 여관 13호, 2명 숙박 확인."},
+            {"get": "E03"},
+            {
+              "if": "not v('seen:gate_original')",
+              "then": [
+                {"id": "NW_D01_S03_V01", "who": "narr", "t": "다람이 발끝으로 서서 창구 너머 종이를 들여다본다. 코끝이 창구 턱에 걸린다."},
+                {"id": "MS14_D01_S03_L0003", "who": "daram", "e": "surprise", "t": "여기!{w=.3} 아빠 이름 있어."},
+                {"id": "MS14_D01_S03_L0004", "who": "dad", "t": "응.{w=.3} 날짜도 한번 보자."},
+                {"id": "MS14_D01_S03_L0005", "who": "daram", "e": "angry", "t": "‘외 한 명’?{w=.4} 이게 나야?{w=.4}\n……나 ‘외’야?"},
+                {"id": "NW_D01_S03_B01", "who": "dad", "t": "둘이라고만 쓰는 게 아니라,{w=.3}\n네 이름까지 쓰게 해야지."},
+                {"id": "MS14_D01_S03_L0006", "who": "dad", "t": "아래도 보자. 이름 적는 데가 있네."},
+                {"set": {"seen:gate_original": true}}
+              ]
+            },
+            {"goto": "gate_investigate"}
+          ]
+        },
+        {
+          "title": "겨울철 입장 규칙을 읽는다",
+          "obj": ["rules"],
+          "do": [
+            {"time": 15},
+            {"scene": "S03"},
+            {"id": "MS14_D01_S03_L0007", "who": "doc", "t": "겨울철 입장 규칙: 방문객은 묵을 곳이 확인되면 함께 온 사람까지 등록한다. 초소는 실제 인원과 묵을 곳을 확인해 그 자리에서 등록하거나 잘못 적힌 내용을 고칠 수 있다. 새 일꾼은 작업 명단에 있는 본인만 등록한다."},
+            {"get": "E04"},
+            {"goto": "gate_investigate"}
+          ]
+        },
+        {
+          "title": "초소 처리 명단을 다시 본다",
+          "obj": ["ledger"],
+          "do": [
+            {"who": "doc", "t": "초소 입장 명단: 같은 도착일 / 다돌 / 신청 2명 / 신규 일꾼 본인 1명 / 동행 아동 모집 제외 / 내일부터 장작 운반 / 처리 너울. 표 뒤에 ‘여관에 먼저 연락’이라는 쪽지가 따로 붙어 있다. 표와 글씨가 다르다.", "cut": "E02"},
+            {"goto": "gate_investigate"}
+          ]
+        },
+        {
+          "title": "명단과 신청서, 적힌 게 다릅니다.",
+          "person": "guard",
+          "when": "has('E03')",
+          "remember_read": true,
+          "do": [
+            {"time": 10},
+            {"scene": "S03"},
+            {"id": "MS14_D01_S03_L0009", "who": "dad", "t": "명단에는 일꾼 한 명, 신청서에는 방문 두 명.{w=.3}\n같은 날, 같은 이름인데 적힌 게 다릅니다."},
+            {"id": "MS14_D01_S03_L0010", "who": "guard", "e": "surprise", "t": "……다르긴 하군.{w=.4} 다만 어느 쪽이 맞는지는 아직 모르오."},
+            {"id": "MS14_D01_S03_L0011", "who": "daram", "e": "joy", "t": "그럼……{w=.3} 나도 들어가?"},
+            {"id": "MS14_D01_S03_L0012", "who": "guard", "t": "어디가 틀렸는지 정리해서 보여 주시오.{w=.3} 확인되면 바로 고치겠소."},
+            {"set": {"purpose_difference_known": true}},
+            {"goto": "gate_investigate"}
+          ]
+        },
+        {
+          "title": "근거를 대겠습니다. 둘 다 들여보내 주십시오.",
+          "person": "guard",
+          "do": [
+            {"proof": "gate"}
+          ]
+        },
+        {
+          "title": "명단은 어떻게 옮겨 적으신 겁니까?",
+          "person": "guard",
+          "when": "v('purpose_difference_known') and not v('reason_heard')",
+          "do": [
+            {"time": 10},
+            {"scene": "S03"},
+            {"id": "MS14_D01_S03_L0028", "who": "dad", "t": "그런데……{w=.3} 대체 왜 저를 일꾼으로 적은 겁니까?"},
+            {"id": "MS14_D01_S03_L0029", "who": "guard", "t": "너울이 그리 하라더군.{w=.4} 새로 오는 어른은\n방문객이라도 먼저 작업 명단에. 장작 손이 모자라오."},
+            {"id": "NW_D01_S03_T21", "who": "dad", "t": "너울……{w=.3} 이요?"},
+            {"id": "NW_D01_S03_T22", "who": "guard", "t": "장부 맡은 사람이오. 이 마을 이름은 다 그 사람 손을 거치오."},
+            {"id": "MS14_D01_S03_L0030", "who": "dad", "t": "저는 하겠다고 한 적 없습니다."},
+            {"id": "MS14_D01_S03_L0031", "who": "guard", "t": "그건 너울에게 말하시오.{w=.3}\n잘못 적힌 게 맞으면, 고쳤다는 기록까지 남기겠소."},
+            {"set": {"reason_heard": true, "K05": true}},
+            {"goto": "gate_investigate"}
+          ]
+        }
+      ]
+    },
+    "registered_menu": {
+      "place": "gate",
+      "people": ["guard", "karo"],
+      "goal": null,
+      "options": [
+        {
+          "title": "명단은 어떻게 옮겨 적으신 겁니까?",
+          "person": "guard",
+          "when": "not v('reason_heard')",
+          "do": [
+            {"time": 10},
+            {"scene": "S04"},
+            {"id": "MS14_D01_S04_L0013", "who": "dad", "t": "그런데……{w=.3} 대체 왜 저를 일꾼으로 적은 겁니까?"},
+            {"id": "MS14_D01_S04_L0014", "who": "guard", "t": "너울이 그리 하라더군. 새로 오는 어른은 방문객이라도 먼저 작업 명단에 넣으라고. 장작 나를 손이 모자라오."},
+            {"id": "NW_D01_S04_T21", "who": "dad", "t": "너울……{w=.3} 이요?"},
+            {"id": "NW_D01_S04_T22", "who": "guard", "t": "장부 맡은 사람이오. 이 마을 이름은 다 그 사람 손을 거치오."},
+            {"id": "MS14_D01_S04_L0015", "who": "dad", "t": "저는 하겠다고 한 적 없습니다."},
+            {"id": "MS14_D01_S04_L0016", "who": "guard", "t": "그건 너울에게 말하시오. 잘못 적힌 걸 고쳤다는 기록은 남겼소."},
+            {"set": {"reason_heard": true, "K05": true}},
+            {"goto": "registered_menu"}
+          ]
+        },
+        {
+          "title": "짐을 찾아 여관으로 간다",
+          "move": "inn",
+          "do": [
+            {"time": 5},
+            {"scene": "S04"},
+            {"id": "NW_D01_S04_V01", "who": "narr", "t": "장부를 옆구리에 낀 사람이 초소로 들어온다. 돌목이 “너울 씨” 하고 고개를 숙인다. 너울은 붓끝을 혀로 축이더니, 인사 대신 장부의 한 줄을 짚는다."},
+            {"id": "MS14_D01_S04_L0018", "who": "neoul", "t": "여관에 짐을 풀면 그 방이 당신 주소요.\n옮기면 알리시오.{w=.3} 안 알리면 장부가 당신을 못 찾소.{w=.4} 규칙이오."},
+            {"id": "NW_D01_S04_V02", "who": "narr", "t": "나는 수첩을 꺼내 ‘옮기면 알릴 것’이라고 적는다. 받아 적는 건 오래된 버릇이다. 받아 적어 두면 덜 무섭다."},
+            {"id": "MS14_D01_S04_L0019", "who": "dad", "t": "……아내부터 만나 보고 정하겠습니다."},
+            {"id": "MS14_D01_S04_L0020", "who": "neoul", "t": "부인이 나타나면 여관에 먼저 알려 달라는 부탁이 있었소.\n돌목 씨,{w=.3} 잊지 마시오."},
+            {"id": "NW_D01_SR04", "who": "dad", "t": "누가 그런 부탁을……?{w=.4}\n제 아내를 왜 찾는 겁니까?"},
+            {"id": "NW_D01_SR05", "who": "neoul", "t": "묵는 사람 소식은 여관에 알리게 돼 있소.{w=.4} 규칙이오."},
+            {"set": {"gate_mother_report_instruction_heard": true, "heard_inn_order1": true}},
+            {"id": "MS14_D01_S04_L0021", "who": "guard", "e": "angry", "t": "등록 끝.{w=.3} 들어가시오."},
+            {"id": "NW_D01_S04_A06", "who": "narr", "t": "너울이 돌아간 뒤, 돌목이 정정한 표를 접으며 중얼거린다."},
+            {"id": "NW_D01_S04_A07", "who": "guard", "t": "여관에 먼저 연락하라…….{w=.5}\n……부탁이라더니."},
+            {"goto": "inn"}
+          ]
+        }
+      ]
+    },
+    "to_room13": {
+      "place": "inn",
+      "people": ["granny"],
+      "goal": null,
+      "travel": "room13",
+      "options": [
+        {
+          "title": "여관 2층 · 13호실",
+          "move": "room13",
+          "do": [
+            {"time": 5},
+            {"move": "room13"},
+            {
+              "if": "not v('ui_room_arrival_seen')",
+              "then": [
+                {"who": "dad", "t": "(아내가 머물던 방이다. 문 너머에 아내가 있을까.)"},
+                {"set": {"ui_room_arrival_seen": true}}
+              ]
+            },
+            {"goto": "room_empty"}
+          ]
+        }
+      ]
+    },
+    "note_pick": {
+      "place": "room13",
+      "people": [],
+      "goal": null,
+      "options": [
+        {
+          "title": "책상 메모를 집는다",
+          "obj": ["mother_note"],
+          "do": [
+            {"time": 15},
+            {"scene": "S05"},
+            {"id": "MS14_D01_S05_L0018", "who": "doc", "t": "책상 위에 접힌 종이 한 장이 있다. 펼쳐 본다."},
+            {"get": "E06"},
+            {"id": "MS14_D01_S05_L9101", "who": "doc", "t": "내가 자리를 비웠으면 광장에서 등을 돌보는 초롱에게 소식을 물어봐. 물건은 책상 아래에 두었어. {image=assets/room13-acorn-ink-crooked.png}"},
+            {"id": "MS14_D01_S05_L0020", "who": "daram", "e": "anxious", "t": "……도토리가{w=.3} 삐뚤어졌어."},
+            {"id": "MS14_D01_S05_L0021", "who": "dad", "t": "책상 아래……{w=.3} 한번 보자."},
+            {"goto": "bundle_open"}
+          ]
+        }
+      ]
+    },
+    "bundle_open": {
+      "place": "room13",
+      "people": [],
+      "goal": null,
+      "options": [
+        {
+          "title": "책상 아래 보따리를 연다",
+          "obj": ["family_bundle"],
+          "do": [
+            {"time": 15},
+            {"scene": "S05"},
+            {"get": "E30"},
+            {"set": {"under_desk_checked": true}},
+            {"id": "MS14_D01_S05_L9102", "who": "doc", "t": "책상 아래: 여벌 목도리, 연필 두 자루, 다람의 가족 그림. 밑바닥까지 보았으나 주소나 다른 봉투는 없다."},
+            {"id": "MS14_D01_S05_L0023", "who": "daram", "e": "joy", "cut": "D01_FAMILY_DRAWING", "t": "엄마가 내 그림 가져왔네!{w=.3}\n아빠 팔 세 개 그린 거!"},
+            {"id": "MS14_D01_S05_L0024", "who": "dad", "t": "응.{w=.3} 엄마가 제일 좋아했잖아.\n팔 하나로 설거지도 하라고."},
+            {"id": "MS14_D01_S05_L0025", "who": "daram", "e": "anxious", "t": "근데……{w=.4} 왜 두고 갔지?"},
+            {"id": "MS14_D01_S05_L0026", "who": "narr", "t": "나는 목도리를 끝까지 풀어 본다. 털실 부스러기 말고는 아무것도 떨어지지 않는다."},
+            {"id": "MS14_D01_S05_L0027", "who": "dad", "t": "……{w=.6}모르겠다."},
+            {"id": "MS14_D01_S05_L0028", "who": "daram", "e": "anxious", "t": "다시 와서 가져가려고 둔 거면?"},
+            {"id": "MS14_D01_S05_L0029", "who": "dad", "t": "그랬으면 좋겠다.{w=.4}\n이건 그대로 두자. 엄마가 와서 찾게. 메모만 가져갈게."},
+            {"id": "MS14_D01_S05_L0030", "who": "daram", "t": "아빠,{w=.3} 편지도 꺼내 봐."},
+            {"goto": "letter_compare"}
+          ]
+        },
+        {
+          "title": "서랍 밑 종이를 빼낸다",
+          "obj": ["family_bundle"],
+          "when": "not v('hidden_base:paper')",
+          "do": [
+            {"id": "NW_HB_PAPER1_01", "who": "narr", "cut": "HIDDEN_A3_paper", "t": "서랍 밑에서 접힌 종이 끝이 긁힌다. 조심해서 빼내니 길고 짧은 홈을 본뜬 자국이 나온다."},
+            {"id": "NW_HB_PAPER1_02", "who": "daram", "t": "아빠, 이것도 편지야?"},
+            {"id": "NW_HB_PAPER1_03", "who": "dad", "t": "글씨는 없네. 엄마가 대고 그린 건가? 일단 구겨지지 않게 넣어 두자."},
+            {"id": "NW_HB_PAPER1_04", "who": "daram", "e": "joy", "t": "아빠 주머니는 벌써 구겨졌는데."},
+            {"id": "NW_HB_PAPER1_05", "who": "dad", "t": "그래서 종이부터 구하는 거야."},
+            {"set": {"hidden_base:paper": true}},
+            {"goto": "bundle_open"}
+          ]
+        }
+      ]
+    },
+    "to_inn": {
+      "place": "room13",
+      "people": [],
+      "goal": null,
+      "travel": "inn",
+      "options": [
+        {
+          "title": "여관 접수대",
+          "move": "inn",
+          "do": [
+            {"time": 5},
+            {"move": "inn"},
+            {"id": "NW_DLG_D01_02", "who": "dad", "t": "초롱 씨는 어디 가면 만날 수 있습니까?"},
+            {"id": "MS14_D01_S05_L0037", "who": "granny", "e": "anxious", "t": "초롱은 오늘 바깥쪽 등을 보고 돌아와요.\n내일 아침이면 광장에 있지.{w=.3} 소식 들으면 나한테도 알려 줘요, 응?"},
+            {"id": "NW_D01_S05_A02", "who": "dad", "t": "방 난로가……{w=.3} 꺼져 있던데요."},
+            {"id": "NW_D01_S05_A03", "who": "granny", "t": "부인이 첫날부터 돌난로는 끄고 기름등을 켜더라니까.\n추운 데서 자는 게 낫대요.{w=.3} 참, 별난 분이야."},
+            {"id": "MS14_D01_S05_L0038", "who": "dad", "t": "네. 내일 초롱 씨부터 만나 보겠습니다."},
+            {"goto": "room_back"}
+          ]
+        }
+      ]
+    },
+    "to_room13_night": {
+      "place": "inn",
+      "people": ["granny"],
+      "goal": null,
+      "travel": "room13",
+      "options": [
+        {
+          "title": "여관 2층 · 13호실",
+          "move": "room13",
+          "do": [
+            {"time": 5},
+            {"move": "room13"},
+            {"goto": "bedtime"}
+          ]
+        }
+      ]
+    },
+    "sleep1": {
+      "place": "room13",
+      "people": [],
+      "goal": "오늘 할 일은 마쳤다. 잠자리를 정리하자.",
+      "options": [
+        {
+          "title": "과자를 두고 잠든다",
+          "obj": ["bed"],
+          "do": [
+            {"time": 15},
+            {"set": {"day": 2}},
+            {"who": "narr", "t": "(시범 안내) 1일은 여기까지다. 2일 아침은 다음 단계에서 이어진다."},
+            {"end_day": 1}
+          ]
+        }
+      ]
+    }
+  },
+  "proofs": {
+    "gate": {
+      "mode": "proof",
+      "title": "다람의 이름까지 등록하고 함께 들어갈 근거를 고른다",
+      "quote": {"who": "guard", "t": "지금 이 명단에는 다돌 한 명만 적혀 있소. 일꾼으로. 그래서 다돌만 들어갈 수 있소."},
+      "meeting": "gate",
+      "tries": null,
+      "correct": [
+        ["E02", "E03"]
+      ],
+      "extras": ["E01", "E04"],
+      "notify_kept": "맞는 근거는 남겨 두었다.",
+      "notify_wrong": "맞지 않는다.",
+      "outcomes": [
+        {
+          "when": "won",
+          "do": [
+            {
+              "if": "v('purpose_difference_known')",
+              "then": [
+                {"scene": "S03"},
+                {"id": "MS14_D01_S03_L0014", "who": "dad", "fx": "flash", "t": "명단에는 저 하나, 일꾼으로 적혀 있죠.{w=.3} 그런데 제가 낸 신청서는 방문이고, 딸 다람까지 두 명입니다.\n13호에 둘이 묵는다는 것도 적혀 있고요."},
+                {
+                  "if": "chose('E01')",
+                  "then": [
+                    {"id": "NW_D01_S03_X01", "who": "guard", "t": "그 편지는 이 확인에 필요 없소."}
+                  ]
+                },
+                {"id": "MS14_D01_S03_L0015", "who": "guard", "t": "……방문, 동행 다람, 13호에 두 사람.{w=.4} 신청서엔 이렇게 돼 있군."},
+                {"id": "MS14_D01_S03_L0016", "who": "dad", "t": "그러니 고쳐 주세요.{w=.3} 애 손이 얼었어요."},
+                {"id": "MS14_D01_S03_L0017", "who": "guard", "e": "anxious", "t": "명단으로 옮기다가 잘못 적혔소.{w=.3} 고치겠소."},
+                {"id": "MS14_D01_S03_L0019", "who": "guard", "t": "안 고친다는 말이 아니오!{w=.3}\n……종이에서 손 좀 떼시오. 그래야 적을 거 아니오."},
+                {"id": "NW_D01_S03_V02", "who": "narr", "fx": "slam", "t": "돌목이 붓을 고쳐 잡는다. 정정란에 도장을 쾅, 쾅. 두 번이다. 한 번이면 될 것 같은데."},
+                {"set": {"gate_basis_proven": true, "gate_daram_listed": true}},
+                {"meeting": ["gate", "win"]},
+                {"goto": "registered"}
+              ],
+              "else": [
+                {"scene": "S03"},
+                {"id": "MS14_D01_S03_L0020", "who": "dad", "t": "명단에는 저 하나, 일꾼으로 적혀 있죠.{w=.3} 그런데 제가 낸 신청서는 방문이고, 딸 다람까지 두 명입니다.\n13호에 둘이 묵는다는 것도 적혀 있고요."},
+                {
+                  "if": "chose('E01')",
+                  "then": [
+                    {"id": "NW_D01_S03_X02", "who": "guard", "t": "그 편지는 이 확인에 필요 없소."}
+                  ]
+                },
+                {"id": "MS14_D01_S03_L0021", "who": "guard", "t": "……방문, 동행 다람, 13호에 두 사람.{w=.4} 신청서엔 이렇게 돼 있군."},
+                {"id": "MS14_D01_S03_L0022", "who": "dad", "t": "그러니 고쳐 주세요.{w=.3} 애 손이 얼었어요."},
+                {"id": "MS14_D01_S03_L0023", "who": "guard", "t": "명단으로 옮기다가 잘못 적혔소.{w=.3} 고치겠소."},
+                {"id": "NW_D01_S03_V03", "who": "narr", "fx": "slam", "t": "돌목이 붓을 고쳐 잡는다. 정정란에 도장을 쾅, 쾅. 두 번이다. 한 번이면 될 것 같은데."},
+                {"set": {"purpose_difference_known": true, "gate_basis_proven": true, "gate_daram_listed": true}},
+                {"meeting": ["gate", "win"]},
+                {"goto": "registered"}
+              ]
+            }
+          ]
+        },
+        {
+          "when": "chose_only('E03') and not v('gate_hardened')",
+          "do": [
+            {"scene": "S03"},
+            {"id": "MS14_D01_S03_L0024", "who": "guard", "t": "신청서는 알겠소.{w=.3} 그런데 그게 지금 적힌 거랑 어디가 다르다는 거요?"},
+            {"set": {"gate_hardened": true}},
+            {"retry": "gate"},
+            {"goto": "gate_investigate"}
+          ]
+        },
+        {
+          "when": "chose('E03') and not chose('E02')",
+          "do": [
+            {"scene": "S03"},
+            {"id": "MS14_D01_S03_L0025", "who": "guard", "t": "신청서는 알겠소.{w=.3} 그런데 그게 지금 적힌 거랑 어디가 다르다는 거요?"},
+            {"id": "NW_D01_S03_R02", "who": "dad", "t": "애 이름이 신청서에 있다니까요!"},
+            {"id": "NW_D01_S03_R04", "who": "guard", "t": "다시 보이시오.{w=.3} 기다리겠소."},
+            {"retry": "gate"},
+            {"goto": "gate_investigate"}
+          ]
+        },
+        {
+          "when": "True",
+          "do": [
+            {"scene": "S03"},
+            {"id": "MS14_D01_S03_L0025", "who": "guard", "t": "명단이 틀렸다는 건 아직 당신 말뿐이오.{w=.3} 처음에 그렇게 냈다는 걸 보여 주시오."},
+            {
+              "if": "has('E03')",
+              "then": [
+                {"id": "NW_D01_S03_R02", "who": "dad", "t": "애 이름이 신청서에 있다니까요!"}
+              ]
+            },
+            {"id": "NW_D01_S03_R04", "who": "guard", "t": "다시 보이시오.{w=.3} 기다리겠소."},
+            {"retry": "gate"},
+            {"goto": "gate_investigate"}
+          ]
+        }
+      ],
+      "press": [
+        {"scene": "S03"},
+        {"id": "MS14_D01_S03_L0027", "who": "narr", "t": "돌목은 붓을 내려놓고 기다린다. 고칠 기준은 하나다. 지금 적힌 것과 처음에 낸 것이 어디서 다른가."},
+        {"goto": "gate_investigate"}
+      ],
+      "investigate": [
+        {"goto": "gate_investigate"}
+      ]
+    },
+    "letters": {
+      "mode": "compare",
+      "title": "두 편지를 나란히 본다",
+      "quote": {"who": "narr", "t": "두 편지를 직접 읽고 견준다. 무엇이 같고, 무엇이 다른가."},
+      "meeting": null,
+      "tries": null,
+      "correct": [
+        ["E01", "E06"]
+      ],
+      "extras": [],
+      "outcomes": [
+        {
+          "when": "won",
+          "do": [
+            {"goto": "room_compare"}
+          ]
+        },
+        {
+          "when": "True",
+          "do": [
+            {"id": "NW_CMP_RETRY_01", "who": "dad", "t": "(편지끼리 나란히 놓아야 한다. 내가 가진 종이 가운데 누가 누구에게 쓴 글이 어느 것인지부터 보자.)"},
+            {"goto": "letter_compare"}
+          ]
+        }
+      ],
+      "press": [
+        {"who": "dad", "t": "(두 편지에서 같은 말과 다른 말을 찾자.)"},
+        {"goto": "letter_compare"}
+      ],
+      "observe": {
+        "pair": ["E01", "E06"],
+        "spots": [
+          {
+            "id": "head",
+            "label": "머리글",
+            "do": [
+              {"add": {"letter_observe_miss": 1}},
+              {"id": "NW_D01_OB05", "who": "narr", "t": "머리글. 둘 다 겨울 날짜다. 받는 사람 이름은 편지에만 또박또박 적혀 있다."},
+              {
+                "if": "v('letter_observe_miss') == 3 and not v('letter_tail_observed')",
+                "then": [
+                  {"id": "NW_D01_OB08", "who": "daram", "t": "아빠,{w=.3} 끝에.{w=.3} 끝에 봐 봐."}
+                ]
+              }
+            ]
+          },
+          {
+            "id": "body",
+            "label": "본문",
+            "do": [
+              {"add": {"letter_observe_miss": 1}},
+              {"id": "NW_D01_OB06", "who": "narr", "t": "본문. 편지는 여관 13호실에서 기다린다고 했고, 쪽지는 물건을 책상 아래 두었다고 했다."},
+              {
+                "if": "v('letter_observe_miss') == 3 and not v('letter_tail_observed')",
+                "then": [
+                  {"id": "NW_D01_OB08", "who": "daram", "t": "아빠,{w=.3} 끝에.{w=.3} 끝에 봐 봐."}
+                ]
+              }
+            ]
+          },
+          {
+            "id": "tail",
+            "label": "끝부분",
+            "do": [
+              {"set": {"letter_tail_observed": true}},
+              {"id": "NW_D01_OB01", "who": "dad", "t": "(쪽지 끝에…… 뭐가 그려져 있네.)"},
+              {"id": "NW_D01_OB02", "who": "daram", "t": "엄마 쪽지엔 도토리가 있어. 엄마는 쪽지 끝에 맨날 도토리 그리잖아. 장 보러 갈 때도."},
+              {"id": "NW_D01_OB03", "who": "dad", "t": "……{w=.4}편지엔?"},
+              {"id": "NW_D01_OB04", "who": "daram", "e": "anxious", "t": "없어.{w=.5} 편지엔 하나도 없어.{w=.4} 도토리가."}
+            ]
+          },
+          {
+            "id": "margin",
+            "label": "여백",
+            "do": [
+              {"add": {"letter_observe_miss": 1}},
+              {"id": "NW_D01_OB07", "who": "narr", "t": "여백. 눈에 띄는 것은 없다."},
+              {
+                "if": "v('letter_observe_miss') == 3 and not v('letter_tail_observed')",
+                "then": [
+                  {"id": "NW_D01_OB08", "who": "daram", "t": "아빠,{w=.3} 끝에.{w=.3} 끝에 봐 봐."}
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "objects": {
+    "gate": {
+      "booth": {"ev": "E03", "name": "초소 선반", "before": "서류 선반. 신청서를 찾기 전에, 돌목 씨 명단에 우리가 어떻게 적혔는지부터 보자."},
+      "ledger": {"ev": "E02", "name": "장부", "before": "초소 처리 명단. 지금은 먼저 할 일이 있다."},
+      "rules": {
+        "ev": "E04",
+        "name": "겨울철 입장 규칙",
+        "before": "겨울철 입장 규칙. 지금은 먼저 할 일이 있다.",
+        "read": {
+          "when": "not has('E04')",
+          "do": [
+            {"id": "MS14_D01_S03_L0007", "who": "doc", "t": "겨울철 입장 규칙: 방문객은 묵을 곳이 확인되면 함께 온 사람까지 등록한다. 초소는 실제 인원과 묵을 곳을 확인해 그 자리에서 등록하거나 잘못 적힌 내용을 고칠 수 있다. 새 일꾼은 작업 명단에 있는 본인만 등록한다."},
+            {"get": "E04"}
+          ]
+        }
+      },
+      "road": {
+        "name": "마차와 고갯길",
+        "look": "마차 축이 갈라졌다. 고갯길의 바퀴 자국은 눈보라 속으로 끊긴다.",
+        "chat": [
+          {"who": "daram", "t": "마차 다리가 부러졌어? 그럼 우리 이제 걸어서 집에 가?"},
+          {"who": "dad", "t": "다리가 아니라 축. 그리고 집은 엄마 만나고 나서 가는 거야."}
+        ]
+      },
+      "bundles": {
+        "name": "마차의 담요",
+        "look": "수레의 담요를 끈으로 동여맸다. 여관에 짐을 풀기 전까지 젖지 않게 덮어 둔 것이다.",
+        "chat": [
+          {"who": "daram", "t": "담요를 끈으로 꽁꽁 묶었네. 담요도 도망가?"},
+          {"who": "dad", "t": "눈 맞으면 젖으니까. 젖은 담요는 밤에 아무도 안 덮어."}
+        ]
+      },
+      "shovel": {
+        "name": "삽",
+        "look": "삽 끝에 얼어붙은 눈이 달라붙었다. 길을 치운 사람도 고갯길 전체를 뚫지는 못한 모양이다.",
+        "chat": [
+          {"who": "dad", "t": "발밑이 미끄럽네. 천천히 걸어가자."},
+          {"who": "daram", "t": "응. 아빠도 내 손 꼭 잡고 놓지 마."}
+        ]
+      },
+      "crates": {
+        "name": "채소 상자",
+        "look": "상자에 담긴 뿌리채소 위로 천을 덮었다. 얼어 버린 것은 따로 골라 옆에 두었다.",
+        "chat": [
+          {"who": "daram", "t": "아빠, 저 당근은 얼었대. 얼음 당근은 아삭할까?"},
+          {"who": "dad", "t": "이가 먼저 아삭하겠지. 그래서 언 건 따로 빼 뒀잖아."}
+        ]
+      },
+      "woodpile": {
+        "name": "장작 더미",
+        "look": "장작은 눈밭에 바로 놓지 않고 받침 위에 올렸다. 젖지 않은 안쪽부터 꺼내 쓰는 듯하다.",
+        "chat": [
+          {"who": "daram", "t": "장작도 받침 위에 앉아 있어."},
+          {"who": "dad", "t": "눈에 바로 두면 젖어서 그래. 너도 눈밭에 털썩 앉지 말고."}
+        ]
+      },
+      "gate_documents": {"ev": "E03", "name": "초소 서류", "before": "서류 선반. 신청서를 찾기 전에, 돌목 씨 명단에 우리가 어떻게 적혔는지부터 보자."}
+    },
+    "inn": {
+      "desk": {"name": "접수대", "look": "접수대의 장부와 열쇠패. 13호는 우리 가족에게 내준 방이다."},
+      "door": {
+        "name": "출입문",
+        "look": "여관 현관이다. 눈 묻은 신발을 털도록 작은 깔개와 우산꽂이를 두었다.",
+        "chat": [
+          {"who": "dad", "t": "들어가기 전에 신발에 묻은 눈부터 털자."},
+          {"who": "daram", "t": "잠깐. 밑창에도 눈이 잔뜩 붙었어."}
+        ]
+      },
+      "keys": {"name": "객실 열쇠", "look": "열쇠마다 닳은 나무패를 달았다. 열쇠를 받았다고 방 안의 빗장까지 열 수 있는 것은 아니다."},
+      "register": {"name": "접수 장부", "look": "펼친 장부의 아래쪽을 찻잔 받침으로 눌러 놓았다. 손님 기록은 주인에게 확인하며 봐야 한다."},
+      "knitting": {
+        "name": "털실 바구니",
+        "look": "뜨다 만 털실이 바구니에 걸렸다. 한쪽만 완성된 장갑이 실 끝에 매달려 있다.",
+        "chat": [
+          {"who": "dad", "t": "장갑 한 짝은 아직 덜 떴네."},
+          {"who": "daram", "t": "장갑 다 뜨면 손이 엄청 따뜻하겠다."}
+        ]
+      },
+      "coats": {
+        "name": "걸린 외투",
+        "look": "두꺼운 외투 아래로 물이 똑똑 떨어진다. 바닥에는 닦은 자국이 여러 겹 남았다.",
+        "chat": [
+          {"who": "daram", "t": "외투가 울어. 똑, 똑, 똑."},
+          {"who": "dad", "t": "눈이 녹는 거야. 우리 외투도 걸면 같이 울겠다."}
+        ]
+      },
+      "cups": {
+        "name": "찻잔들",
+        "look": "크기와 무늬가 다른 그릇들이 놓였다. 깨진 것을 버리기보다 남은 것끼리 오래 써 온 모양이다.",
+        "chat": [
+          {"who": "daram", "t": "컵이 다 짝짝이야. 아빠 양말처럼."},
+          {"who": "dad", "t": "……양말은 일부러 그렇게 신은 거야."}
+        ]
+      }
+    },
+    "room13": {
+      "window": {"name": "창문", "look": "창밖으로 다른 집의 지붕이 내려다보인다. 여기는 2층이다. 안쪽 걸쇠와 고정 철망 사이로는 몸이 빠져나갈 수 없다."},
+      "under": {"name": "침대 밑", "look": "침대 밑은 어둡고 먼지가 얇게 앉아 있다. 벽 아래 고정 철망까지 낮게 이어진다."},
+      "floor": {"name": "바닥 흔적", "look": "침대 앞의 나무 바닥이다. 책상에서 떨어진 물건이라면 이쪽으로 굴러올 수도 있겠다."},
+      "cup": {
+        "name": "찻잔",
+        "look": "찻잔 손잡이 안쪽에 작은 금이 있다. 받침은 다른 무늬다. 오래 쓰던 그릇을 모아 놓았나 보다.",
+        "chat": [
+          {"who": "daram", "t": "이 컵 금 갔어. 아빠가 써."},
+          {"who": "dad", "t": "왜 아빠야?"},
+          {"who": "daram", "t": "아빠는 천천히 마시잖아. 금 간 컵은 천천히 마셔야 돼."}
+        ]
+      },
+      "letters": {"name": "편지", "look": "책상 위에는 우리가 챙겨 온 편지와 접어 둔 종이가 있다. 새로 누가 보낸 편지는 없다."},
+      "notebook": {
+        "name": "공책",
+        "look": "빈 칸을 넓게 남겼다. 들은 말과 직접 본 것을 같은 줄에 적지 않으려 한다.",
+        "chat": [
+          {"who": "daram", "t": "아빠 공책은 왜 이렇게 비었어? 숙제 안 했어?"},
+          {"who": "dad", "t": "들은 말이랑 본 걸 따로 적으려고 비워 둔 거야."},
+          {"who": "daram", "t": "그럼 빈 데는 내가 그림 그려 줄게."}
+        ]
+      },
+      "coat": {
+        "name": "코트",
+        "look": "의자 등받이에 코트를 걸어 두었다. 안주머니를 만져 장갑을 확인했다.",
+        "chat": [
+          {"who": "dad", "t": "장갑은 여기 넣어 뒀었지."},
+          {"who": "daram", "t": "아빠, 그거 내 장갑인데."}
+        ]
+      },
+      "sewing": {"name": "반짇고리", "look": "작은 바구니에 실과 천 조각이 들어 있다. 붉은 실이라는 이유만으로 전부 엄마 것이라 할 수는 없다."},
+      "socks": {
+        "name": "양말",
+        "look": "축축한 양말을 난방관 가까이에 걸었다. 불에 직접 닿지 않도록 틈을 띄웠다.",
+        "chat": [
+          {"who": "daram", "t": "양말에서 김 나. 아빠 발 냄새도 같이 말라?"},
+          {"who": "dad", "t": "냄새는 안 마른다. 그래서 일부러 불에서 멀리 걸었지."}
+        ]
+      },
+      "bedside_books": {
+        "name": "머리맡 책",
+        "look": "높이가 다른 책을 받침처럼 쌓아 놓았다. 표지를 살펴봤지만 이름이 적힌 책은 없다.",
+        "chat": [
+          {"who": "daram", "t": "책으로 탑 쌓았네. 맨 위에 내 모자 올려도 돼?"},
+          {"who": "dad", "t": "무너지면 네가 다시 쌓는 거다."}
+        ]
+      },
+      "bread": {
+        "name": "빵 그릇",
+        "look": "딱딱해진 빵 끝을 그릇에 남겨 두었다. 수프가 있으면 조금 불려 먹을 수 있겠다.",
+        "chat": [
+          {"who": "dad", "t": "딱딱한 빵도 수프에 적시면 먹을 만하겠는데."},
+          {"who": "daram", "t": "나도 그렇게 생각해! 빵만 그냥 먹기엔 너무 딱딱해."}
+        ]
+      },
+      "family_bundle": {"ev": "E30", "name": "책상 아래 보따리", "before": "책상 아래에 보따리가 보인다. 책상 위 종이부터 보고 열어 보자."},
+      "mother_note": {"ev": "E06", "name": "책상 위 접힌 종이", "before": "책상 위에 접힌 종이가 있다. 우선 다람이 짐부터 침대에 내려놓고 방을 둘러보자."}
+    }
+  },
+  "reactions": [
+    {
+      "person": "guard",
+      "ev": "E01",
+      "lines": [
+        {"who": "dad", "t": "이 편지에는 딸도 데려오라고 적혀 있습니다."},
+        {"who": "narr", "t": "돌목의 눈이 편지에서 신청서 쪽으로 옮겨 갔다."},
+        {"who": "guard", "t": "초대받은 건 알겠소. ……묵을 곳도 봐야 하오."}
+      ]
+    },
+    {
+      "person": "granny",
+      "ev": "E01",
+      "lines": [
+        {"who": "dad", "t": "13호에서 기다린다고 했습니다만."},
+        {"who": "narr", "t": "할머니가 목도리 끝을 만지작거렸다."},
+        {"who": "granny", "t": "방은 그대로 뒀죠. ……우선 올라가 봐요.", "e": "anxious"}
+      ]
+    },
+    {
+      "person": "neoul",
+      "ev": "E02",
+      "lines": [
+        {"who": "dad", "t": "신청은 두 명인데, 일꾼은 저 하나군요."},
+        {"who": "narr", "t": "너울은 두 사람을 보다가 장부로 눈을 내렸다."},
+        {"who": "neoul", "t": "새 일꾼은 본인만 등록하오. 규칙이오."}
+      ]
+    },
+    {
+      "person": "guard",
+      "ev": "E02",
+      "lines": [
+        {"who": "dad", "t": "이 표의 신청 인원부터 봐 주십시오."},
+        {"who": "narr", "t": "돌목이 종이를 잡은 손에 힘을 주었다."},
+        {"who": "guard", "t": "……두 사람이오. 원본도 마저 보시오.", "e": "anxious"}
+      ]
+    },
+    {
+      "person": "granny",
+      "ev": "E06",
+      "lines": [
+        {"who": "dad", "t": "이 메모에 초롱 씨 이름이 있습니다."},
+        {"who": "narr", "t": "할머니는 메모에서 눈을 떼고 다람을 보았다."},
+        {"who": "granny", "t": "초롱은 오늘 바깥쪽 등을 봐요. 내일 아침 광장에 있지. 소식 들으면 나한테도 알려 줘요.", "e": "anxious"}
+      ]
+    }
+  ],
+  "followups": [
+    {
+      "id": "F002",
+      "person": "guard",
+      "after": "E02",
+      "title": "왜 제 신청이 일꾼으로 됐습니까?",
+      "do": [
+        {"who": "dad", "t": "왜 제 신청이 일꾼으로 됐습니까?"},
+        {"who": "guard", "t": "내게 온 표에는 그렇게 적혀 있소."},
+        {"who": "guard", "t": "신청 원본도 보시오. 나는 서류부터 보오."}
+      ]
+    }
+  ]
+}
