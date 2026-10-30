@@ -184,12 +184,10 @@ screen r13_learning_notes_content(focus=None):
                                 $ owned_keys=[k for k in note["keys"] if k in room13.get("evidence",[])]
                                 if owned_keys:
                                     text ("함께 볼 기록 · "+" / ".join(R13_RECORD_SHORT.get(k,ROOM13["evidence"][k]["name"]) for k in owned_keys)) size small_size color muted xsize text_w
+                                # 2026-10-30 소유자 「추천안대로」(눈가림 플레이 9번): 「막혔다면 생각 정리」 단추는 카드를 펼친 안에 숨어
+                                # 처음 하는 사람이 찾지 못했고, 새 이야기에서는 위 「생각」 단추와 같은 문장이었다. 단추를 빼고 한 줄로 바로 보인다.
                                 if note.get("hint"):
-                                    textbutton ("접기" if expanded==i else "막혔다면 생각 정리"):
-                                        style "r13_action_button" xsize 300 ysize (56 if r13_touch_ui() else 48) text_size body_size
-                                        action Function(r13_record_select,_scope,"expanded",None if expanded==i else i)
-                                    if expanded==i:
-                                        text note["hint"] size small_size color muted xsize text_w
+                                    text ("지금 할 일 · "+note["hint"]) size body_size color muted xsize text_w
             elif tab=="observations":
                 for note in r13_tool_notes():
                     frame:

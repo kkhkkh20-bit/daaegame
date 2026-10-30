@@ -67,7 +67,7 @@ async def main():
    await py('result=s.r13_q1_can_restore("investigation")')
    assert await py('result=s.r13_q1_can_restore("investigation")')
    await q.press('기록');await until('r13_records');await q.press('메모');await q.shot('01-investigation-questions')
-   await q.press('막혔다면 생각 정리');await q.shot('01b-notebook-expanded')
+   await q.shot('01b-notebook-expanded')  # 2026-10-30 생각 정리 단추를 빼고 「지금 할 일」 한 줄로 바꿨다
    await py('s.r13_set_text_size("large");result=True')
    await page.set_viewport_size({'width':844,'height':390});await q.shot('01c-notebook-mobile-large')
    await q.input(670,500);await page.mouse.wheel(0,600);await asyncio.sleep(.4);await q.shot('01d-notebook-mobile-scroll')
