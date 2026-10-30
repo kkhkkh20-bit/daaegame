@@ -24,6 +24,7 @@
 
 ## 구조
 
+- **진행 중인 정리(B안) 인계: `experiments/renpy-ch1/docs/cleanup/HANDOFF_CLEANUP_B.md` 를 먼저 읽는다(2026-10-30).**
 - 원본 `experiments/renpy-ch1/`, 공개본 `preview/room13-dev/`(빌드로만 만든다, 손으로 안 고친다). **먼저 `ROOM13_GUIDE.md` 를 읽는다.**
 - 함수 덮어쓰기 순서 `docs/OVERRIDE_MAP.md`(`dev/override_map.py --write`). 에셋 등록·역할 연결은 `docs/ASSET_TOOLBOX.md`.
 - 글자 크기는 `game/systems/room13_type_scale.rpy` 의 단계(`r13_type`)만 쓴다. 하드코딩 금지(`dev/test_type_scale.py`).

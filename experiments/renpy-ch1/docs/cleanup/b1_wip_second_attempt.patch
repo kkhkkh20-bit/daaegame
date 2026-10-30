@@ -1,0 +1,191 @@
+diff --git a/experiments/renpy-ch1/game/room13_cinematics.rpy b/experiments/renpy-ch1/game/room13_cinematics.rpy
+index 7eb0f8dd..fa62a78e 100644
+--- a/experiments/renpy-ch1/game/room13_cinematics.rpy
++++ b/experiments/renpy-ch1/game/room13_cinematics.rpy
+@@ -15,14 +15,6 @@ init 55 python:
+         art = r13_cinematic_fx(key, art, tuple(item["rect"][2:]))
+         return Transform(art, xysize=(1280,720), nearest=True)
+ 
+-# Keep the named transform resolvable for existing saves. New scenes show
+-# their native pixel composition without a fractional camera zoom.
+-transform r13_cinematic_drift:
+-    subpixel False
+-    nearest True
+-    align (.5,.5)
+-    zoom 1.0
+-
+ screen r13_cinematic_view(key):
+     style_prefix "r13"
+     modal True
+diff --git a/experiments/renpy-ch1/game/room13_inn_navigation_v4.rpy b/experiments/renpy-ch1/game/room13_inn_navigation_v4.rpy
+index 981693fe..e38889af 100644
+--- a/experiments/renpy-ch1/game/room13_inn_navigation_v4.rpy
++++ b/experiments/renpy-ch1/game/room13_inn_navigation_v4.rpy
+@@ -75,9 +75,6 @@ init 63 python:
+             Transform(Solid(fill), xpos=1, ypos=1, xysize=(w-2, h-2)),
+             xysize=(w, h+3))
+ 
+-    def r13_inn_guide_available():
+-        return store.room13.get("location") in R13_INN_LOCATIONS
+-
+     def r13_inn_guide_labels():
+         links=dict(r13_local_connections())
+         return [dict(key=key,text=R13_MAP_LABELS[key],target=key if key in links else None)
+diff --git a/experiments/renpy-ch1/game/room13_inspection.rpy b/experiments/renpy-ch1/game/room13_inspection.rpy
+index 96d9f677..70b077fd 100644
+--- a/experiments/renpy-ch1/game/room13_inspection.rpy
++++ b/experiments/renpy-ch1/game/room13_inspection.rpy
+@@ -40,9 +40,6 @@ init 66 python:
+         if store.room13: result.update(winter_copy.deepcopy(store.room13.get("inspection_items",{})))
+         return result
+ 
+-    def r13_inspection_has_items():
+-        return bool(r13_inspection_state()["inventory"])
+-
+     def r13_inspection_transition(state,view,target,selected=None):
+         """Pure reducer: all durable writes return through r13_edit, supporting rollback."""
+         s=winter_copy.deepcopy(state)
+@@ -196,17 +193,6 @@ init 66 python:
+         art=Transform(spec["file"],xysize=(int(w),int(h)),nearest=(key=="open"))
+         return (int(round(x)),int(round(y))),art
+ 
+-    def r13_drawer_layers(state=None):
+-        """QA: which drawn drawer states the drawer view uses for a puzzle state."""
+-        state=state or r13_inspection_state()
+-        out=[]
+-        if state["compartment_open"] and r13_drawer_state_art("open"):out.append("open")
+-        elif state.get("groove_held") and r13_drawer_state_art("held"):out.append("held")
+-        if state["paper_placed"]:
+-            key="rubbing" if state["rubbing"] else "paper"
+-            if r13_drawer_state_art(key):out.append(key)
+-        return out
+-
+     class R13RubbingSheet(renpy.Displayable):
+         """Thin paper over the tag. Rubbed: graphite hatch with the pressed picture left pale —
+         the right panel with its bottom notch, ① press down at the notch, ② push right."""
+diff --git a/experiments/renpy-ch1/game/room13_new_places.rpy b/experiments/renpy-ch1/game/room13_new_places.rpy
+index 5fb379a1..582b99fd 100644
+--- a/experiments/renpy-ch1/game/room13_new_places.rpy
++++ b/experiments/renpy-ch1/game/room13_new_places.rpy
+@@ -10,7 +10,6 @@
+ # hunting are not jobs, and the ancient stone facility is not connected (no entry or unlock
+ # decided). The places open with the inn's other rooms (after lodging).
+ init 57 python:
+-    R13_NEW_PLACES=("river","forest","market")
+     R13_PLACES.update({
+         "river":("마을 아래 · 큰 강가","r13_river"),
+         "forest":("마을 서쪽 · 길 없는 숲","r13_forest"),
+diff --git a/experiments/renpy-ch1/game/room13_record_compare.rpy b/experiments/renpy-ch1/game/room13_record_compare.rpy
+index 76c5bbc2..0f5c7bf2 100644
+--- a/experiments/renpy-ch1/game/room13_record_compare.rpy
++++ b/experiments/renpy-ch1/game/room13_record_compare.rpy
+@@ -1,9 +1,5 @@
+ # Comparisons use only materials acquired in this run; never grant source items.
+ init 78 python:
+-    def r13_compare_pair(selected,key):
+-        if key not in (store.room13 or {}).get("evidence",[]):return tuple(selected)
+-        if key in selected:return tuple(k for k in selected if k!=key)
+-        return tuple((list(selected)+[key])[-2:])
+ 
+     def r13_compare_result(selected):
+         owned=set((store.room13 or {}).get("evidence",[]))
+@@ -19,12 +15,6 @@ init 78 python:
+             return "(도면의 연결선과 실제로 움직인 장치가 맞는다. 종이에만 남은 길이 아니었다.)"
+         return "(지금 적힌 내용만으로 두 기록이 어떻게 이어지는지는 아직 모르겠다.)"
+ 
+-    def r13_compare_selected(selected,scope=None):
+-        result=r13_compare_result(selected)
+-        if scope is not None:scope["feedback"]=result
+-        else:renpy.set_screen_variable("feedback",result,screen="r13_record_compare")
+-        renpy.restart_interaction()
+-
+ # 0.20.x: the old 「기록 비교」 tab (r13_compare_content, a text verdict for two records) was
+ # unreachable: r13_records maps a "compare" tab to 자료. It is removed; looking at two records
+ # together is now 「나란히 놓기」 in the 자료 view (systems/room13_evidence_view.rpy), which shows
+diff --git a/experiments/renpy-ch1/game/systems/room13_alibi.rpy b/experiments/renpy-ch1/game/systems/room13_alibi.rpy
+index 987192e2..b1e28d56 100644
+--- a/experiments/renpy-ch1/game/systems/room13_alibi.rpy
++++ b/experiments/renpy-ch1/game/systems/room13_alibi.rpy
+@@ -143,16 +143,6 @@ init 147 python:
+             rows.append((key,spec))
+         return rows
+ 
+-    def r13_alibi_lines(key):
+-        _,m,p=key.split(":",2)
+-        spec=R13_ALIBI[(m,p)]
+-        truth=spec.get("truth")
+-        if truth and r13_has(truth[0]):return truth[1]
+-        return spec["claim"]
+-
+-    def r13_alibi_new_crosses():
+-        return [c for c in R13_ALIBI_CROSS if not r13_has(c[2]) and all(r13_alibi_heard(m,p) for m,p in c[0])]
+-
+     _r13_alibi_notes=r13_first_mystery_notes
+     def r13_first_mystery_notes():
+         rows=list(_r13_alibi_notes())
+@@ -166,14 +156,3 @@ init 147 python:
+                 question="맞지 않는 말이 있다. 누가 왜 거짓말을 할까?" if facts else "서로의 말이 맞는지, 그 자리에 있던 다른 사람에게도 물어보자.",
+                 hint="그 시각 같은 장소에 있던 사람은 서로의 증인이 된다.",keys=[]))
+         return rows
+-
+-label r13_alibi_topic:
+-    $ _ab_key=r13_topic
+-    call r13_lines(r13_alibi_lines(_ab_key),"alibi:"+_ab_key[6:]+(":truth" if R13_ALIBI[tuple(_ab_key.split(":",2)[1:])].get("truth") and r13_has(R13_ALIBI[tuple(_ab_key.split(":",2)[1:])]["truth"][0]) else ""), binding_route="dynamic:169")
+-    $ r13_flag(_ab_key)
+-    $ _ab_new=r13_alibi_new_crosses()
+-    while _ab_new:
+-        $ _ab_cross=_ab_new.pop(0)
+-        call r13_lines(_ab_cross[1],"alibi:cross:"+_ab_cross[2], binding_route="dynamic:170")
+-        $ r13_flag(_ab_cross[2])
+-    return
+diff --git a/experiments/renpy-ch1/game/systems/room13_convenience.rpy b/experiments/renpy-ch1/game/systems/room13_convenience.rpy
+index 0e7282f5..aa26127f 100644
+--- a/experiments/renpy-ch1/game/systems/room13_convenience.rpy
++++ b/experiments/renpy-ch1/game/systems/room13_convenience.rpy
+@@ -28,12 +28,6 @@ init 165 python:
+         if waiting:text+="\n지금 지나치면 결과만 전해 듣게 될 일이 %d개 있다."%waiting
+         return text
+ 
+-    def r13_map_pick(key,selected):
+-        """First press selects a place; pressing the selected place again travels there."""
+-        if key==selected and key!=store.room13.get("location") and key in r13_places():
+-            return Return(key)
+-        return SetScreenVariable("selected",key)
+-
+ # 0.18.91 연출: 이야기 장면(지도 위치와 다른 배경) 중에는 왼쪽 위에 장면 제목을 보인다.
+ default r13_scene_bg = None
+ 
+diff --git a/experiments/renpy-ch1/game/systems/room13_direct_work.rpy b/experiments/renpy-ch1/game/systems/room13_direct_work.rpy
+index 4fc09b55..bff6e364 100644
+--- a/experiments/renpy-ch1/game/systems/room13_direct_work.rpy
++++ b/experiments/renpy-ch1/game/systems/room13_direct_work.rpy
+@@ -19,7 +19,3 @@ init 133 python:
+                 if not r13_work_available(job) or store.room13.get("location")!=R13_JOBS[job]["place"]:continue
+             rows.append((key,spec))
+         return rows
+-
+-label r13_job_from_talk:
+-    call r13_livelihood_run(r13_topic[4:])
+-    return "roam"
+diff --git a/experiments/renpy-ch1/game/systems/room13_topic_record.rpy b/experiments/renpy-ch1/game/systems/room13_topic_record.rpy
+index 1394ba7a..8492147f 100644
+--- a/experiments/renpy-ch1/game/systems/room13_topic_record.rpy
++++ b/experiments/renpy-ch1/game/systems/room13_topic_record.rpy
+@@ -47,17 +47,6 @@ init 130 python:
+     def r13_topic_record(key):
+         return (store.room13 or {}).get("topic_transcripts",{}).get(key)
+ 
+-    def r13_topic_when(key):
+-        stamp=(store.room13 or {}).get("dialogue_dates",{}).get(key)
+-        if not stamp:return "이전에"
+-        return "%d일째 %s"%(stamp["day"],("오전","오후","저녁","늦은 저녁")[min(3,stamp["period"])])
+-
+-    def r13_topic_key_lines(key,limit=3):
+-        npc=ROOM13["topics"][key]["npc"]
+-        rows=[(i,who,text) for i,(who,text,thought) in enumerate(r13_topic_record(key) or []) if who==npc and not thought]
+-        keep=sorted(sorted(rows,key=lambda r:-len(r[2]))[:limit])
+-        return [(who,text) for i,who,text in keep]
+-
+     def r13_topic_full_record(key):
+         return [(who,text,{"thought":True}) if thought else (who,text) for who,text,thought in r13_topic_record(key)]
+ 
