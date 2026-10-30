@@ -107,6 +107,13 @@ init 60 python:
         if key=="altar":return bool(store.room13.get("finale_started"))
         return True
 
+    def r13_map_initial_pick():
+        v=store.room13.get("v111",{}) if globals().get("r13_v111_active",lambda:False)() else {}
+        target=v.get("travel_to") if v.get("gate")=="travel" else None
+        if target and any(key==target for key,point in r13_map_nodes(r13_map_region(target))):
+            return target
+        return store.room13["location"]
+
     def r13_map_selection(region,selected):
         keys=[key for key,point in r13_map_nodes(region)]
         if selected in keys:return selected
@@ -130,7 +137,9 @@ screen r13_map(initial_region=None, local_guide=False):
     modal True
     zorder 45
     default region=initial_region or r13_map_region(room13["location"])
-    default selected=r13_map_selection(initial_region or r13_map_region(room13["location"]),room13["location"])
+    # 2026-10-30 눈가림 플레이: 이동할 차례에 지도가 지금 자리(솜이네)를 비추며 열려, 열려 있는 목적지(입구)가
+    # 화면 밖에 있었고 끌어 옮길 수 있다는 표시도 없어 4일 저녁에 진행이 막혔다. 이동 차례면 목적지를 골라 둔 채 연다.
+    default selected=r13_map_selection(initial_region or r13_map_region(room13["location"]),r13_map_initial_pick())
     default map_hover=None
     default map_notice=None
     default extra_places=False

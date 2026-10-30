@@ -126,7 +126,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 7 | 147 | `systems/room13_alibi.rpy:157` | _r13_review_notes |
 | 8 | 173 | `systems/room13_review_knowledge.rpy:90` | _r13_q1_notes |
 | 9 | 181 | `systems/room13_q1_review.rpy:49` | _r13_v111_notes_before |
-| 10 | 345 | `systems/room13_v111_goal.rpy:189` |  |
+| 10 | 345 | `systems/room13_v111_goal.rpy:192` |  |
 
 ## `r13_where` (10층)
 
@@ -267,6 +267,15 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 2 | 181 | `systems/room13_life_groups.rpy:103` | _r13_question_person_action |
 | 3 | 190 | `systems/room13_question_discovery.rpy:288` | _r13_v111_person_action |
 | 4 | 301 | `room13_v111.rpy:202` |  |
+
+## `r13_v111_goal` (4층)
+
+| 순서 | init | 위치 | 이전 층 이름 |
+|---|---|---|---|
+| 1 | 317 | `room13_v111_later_bindings.rpy:239` | _r13_step_goal |
+| 2 | 341 | `systems/room13_v111_goal.rpy:46` | _r13_goal_before_can6 |
+| 3 | 344 | `systems/room13_v111_goal.rpy:165` | _r13_goal_before_travel |
+| 4 | 349 | `systems/room13_v111_goal.rpy:213` |  |
 
 ## `r13_activity_text` (3층)
 
@@ -443,14 +452,6 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 301 | `room13_v111.rpy:72` | _r13_nw_binding |
 | 2 | 318 | `room13_v111_newworld_rules.rpy:453` | _r13_gw_binding |
 | 3 | 321 | `room13_v111_grand_win.rpy:17` |  |
-
-## `r13_v111_goal` (3층)
-
-| 순서 | init | 위치 | 이전 층 이름 |
-|---|---|---|---|
-| 1 | 317 | `room13_v111_later_bindings.rpy:239` | _r13_step_goal |
-| 2 | 341 | `systems/room13_v111_goal.rpy:46` | _r13_goal_before_can6 |
-| 3 | 344 | `systems/room13_v111_goal.rpy:162` |  |
 
 ## `r13_v111_present_reaction` (3층)
 

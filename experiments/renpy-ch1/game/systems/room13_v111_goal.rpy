@@ -151,7 +151,10 @@ init 343 python:
         if not globals().get("r13_v111_active",lambda:False)():return base
         v=store.room13.get("v111") or {}
         if v.get("gate")=="travel" and v.get("travel_to") in R13_PLACES:
-            return label+" · 지금은 "+r13_ro(R13_PLACES[v["travel_to"]][0])+" 가는 길입니다."
+            # 2026-10-30 눈가림 플레이: 「수리점 · 지금은 광장으로 가는 길입니다」가 수리점이 광장으로 가는 길이라는 말로 읽혔다.
+            ch=label[-1] if label else ""
+            topic=label+("은" if u"\uac00"<=ch<=u"\ud7a3" and (ord(ch)-0xAC00)%28 else "는")
+            return topic+" 지금 갈 수 없습니다. 지금 갈 곳: "+R13_PLACES[v["travel_to"]][0]+"."
         goal=r13_v111_goal()
         return (label+" · 아직 갈 일이 없습니다. 지금 생각: "+goal) if goal else base
 
@@ -201,3 +204,16 @@ init 345 python:
         title=question if question and not answered else "지금 할 일"
         return [dict(title=title,fact="",question="",hint=(goal if goal!=title else ""),keys=[])]
 
+
+# 2026-10-30 눈가림 플레이(3~5일): 이동 대기 동안 「생각」이 앞 장면 의문에 머물러(4일 저녁 「밤이가 직접 본 것은 어디까지일까?」)
+# 어디로 가야 하는지 화면 어디에도 없었다. 지도 띠는 갈 곳을 말하는데 생각은 다른 말을 해 같은 곳을 오갔다(2일).
+# 이동 차례면 생각 끝에 늘 갈 곳을 붙인다. 이미 붙어 있으면 다시 붙이지 않는다. 결과는 말하지 않는다.
+init 349 python:
+    _r13_goal_before_travel=r13_v111_goal
+    def r13_v111_goal():
+        text=_r13_goal_before_travel()
+        v=store.room13.get("v111") or {}
+        if v.get("gate")!="travel":return text
+        travel=r13_v111_travel_goal(v.get("travel_to"))
+        if not travel or (text and travel in text):return text
+        return ((text or "")+" "+travel).strip()
