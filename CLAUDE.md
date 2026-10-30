@@ -16,7 +16,7 @@
 
 ## 검사와 공개
 
-- 변경마다: 단위 시험(`python3 -m unittest discover -s dev -p 'test_*.py'`), lint(`renpy.sh . lint`), 바뀐 곳의 화면 시험 몇 개와 캡처, 대사를 바꿨으면 `dev/dialogue_logic_check.py`(A/B/C 0). 전체 화면 회귀(167개, 약 1시간)는 공개 전 하루 한 번만.
+- 변경마다: 단위 시험(`python3 -m unittest discover -s dev -p 'test_*.py'`), lint(`renpy.sh . lint`), 바뀐 곳의 화면 시험 몇 개와 캡처, 대사를 바꿨으면 `dev/dialogue_logic_check.py`(A/B/C 0). 전체 화면 회귀(v111 약 158개, 약 1시간)는 날마다 돌리는 규칙이 아니다 — 고칠 것을 다 고친 뒤 공개 직전에 한 번 돌린다(2026-10-30 소유자).
 - 화면 시험과 웹 빌드는 같은 `game/saves` 를 쓰므로 동시에 돌리지 않는다.
 - **디자인 변경은 시안(캡처)을 먼저 보여 주고 승인 뒤 적용한다.** 소유자가 「적용」「맞춰줘」라고 하면 적용이다.
 - 공개 순서: 판 번호 올림 → 웹 빌드(`dev/build_web.py`) → `dev/check_release.py` → 커밋 → 작업 브랜치 push → `main` 병합·push → Pages 확인(해시 대조). 강제 push 금지, `main` 이 앞서 있으면 병합.
