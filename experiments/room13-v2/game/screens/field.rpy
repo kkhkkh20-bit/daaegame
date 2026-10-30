@@ -1,5 +1,5 @@
 # 조사 화면: 지도·기록·생각은 위에, 장면 아래는 비운다. 인물이 기본이고 배경 물건은 직접 누른다(돋보기 표식 없음).
-# 넓은 장소는 좌우 화살표로 본다. 인물 도트는 1칸=1px(그림 그대로 크기).
+# 넓은 장소는 좌우 화살표로 본다. 인물 도트는 1칸=1px(그림 그대로 크기, 장소를 줄여 그려도 인물은 줄이지 않는다).
 
 screen v2_field():
     default goal_open = False
@@ -15,36 +15,40 @@ screen v2_field():
             action Return(("object", key))
             alt name
 
-    for who, x, y in data["people"]:
+    # 현장 인물: 도트 한 칸 = 화면 1px. 이름표는 지금 판처럼 머리 위 종이 꼬리표(누르면 그 사람과 이야기).
+    for pp in data["people"]:
         imagebutton:
-            idle "assets/field-dot-v2/%s/neutral.webp" % who
-            hover Transform("assets/field-dot-v2/%s/neutral.webp" % who, matrixcolor=BrightnessMatrix(0.08))
-            xanchor 0.5 yanchor 1.0 xpos x ypos y
-            action Return(("person", who))
-            alt V2_PEOPLE[who]["name"]
-        frame:
-            xanchor 0.5 xpos x yanchor 1.0 ypos y - 222
-            background v2_frame("ui-b-field/b_panel_small.png", 10)
-            padding (10, 2)
-            text V2_PEOPLE[who]["name"] size v2_type("small")
+            idle pp["img"]
+            hover Transform(pp["img"], matrixcolor=BrightnessMatrix(0.08))
+            focus_mask True
+            xpos pp["x"] ypos pp["y"]
+            action Return(("person", pp["who"]))
+            alt V2_PEOPLE[pp["who"]]["name"]
+    for pp in data["people"]:
+        textbutton V2_PEOPLE[pp["who"]]["name"]:
+            area pp["tag"]
+            padding (7, 2)
+            background Frame("assets/ui-field-stickers/label_basic.png", 12, 12)
+            hover_background Frame("assets/ui-field-stickers/label_hover.png", 12, 12)
+            text_size v2_type("tag") text_color "#4b3021" text_hover_color "#9c3c2b"
+            text_xalign 0.5 text_yalign 0.5
+            action Return(("person", pp["who"]))
 
-    # 좌우 카메라
+    # 좌우 카메라: 지금 판과 같은 종이 화살표(한 번에 그 쪽 끝까지).
     if data["cam"] > 0:
-        button:
-            xpos 18 yalign 0.42 xysize (54, 50)
-            background Solid(V2_COLOR["red"])
-            hover_background Solid(V2_COLOR["accent"])
-            action Function(v2_pan, -640)
+        imagebutton:
+            xpos 12 ypos 240
+            idle "assets/ui-field-stickers/arrow_left_basic.png"
+            hover "assets/ui-field-stickers/arrow_left_hover.png"
+            action Function(v2_pan, -1)
             alt "왼쪽 보기"
-            text "←" xalign 0.5 yalign 0.5 color V2_COLOR["inverse"] size v2_type("display")
-    if data["cam"] < data["width"] - 1280:
-        button:
-            xpos 1208 yalign 0.42 xysize (54, 50)
-            background Solid(V2_COLOR["red"])
-            hover_background Solid(V2_COLOR["accent"])
-            action Function(v2_pan, 640)
+    if data["cam"] < data["cam_range"]:
+        imagebutton:
+            xpos 1196 ypos 240
+            idle "assets/ui-field-stickers/arrow_right_basic.png"
+            hover "assets/ui-field-stickers/arrow_right_hover.png"
+            action Function(v2_pan, 1)
             alt "오른쪽 보기"
-            text "→" xalign 0.5 yalign 0.5 color V2_COLOR["inverse"] size v2_type("display")
 
     # 위 단추 셋: 지도·기록·생각
     hbox:

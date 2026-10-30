@@ -4,6 +4,7 @@
 
 init python:
     V2_TYPE_SCALE = {
+        "tag": (16, 18),        # 현장 인물 이름표(지금 판 r13_actor_nameplates 16, 휴대폰 18)
         "small": (20, 24),      # 꼬리표·출처·칩·날짜
         "body": (22, 26),       # 보조 본문·하단 버튼
         "emphasis": (24, 28),   # 자료 본문·선택지 본문
@@ -93,3 +94,15 @@ style v2_primary_text is v2_button_text:
     color "#fff3df"
     hover_color "#ffffff"
     insensitive_color "#a99b86"
+
+# 고른 자료 칩: 작은 종이 칸. 칸 높이를 글자에 맞춰 두어 글자가 테두리 밖으로 나가지 않는다.
+style v2_chip is button:
+    background v2_frame("ui-b-field/b_panel_small.png", 10)
+    hover_background v2_frame("ui-b-question/b_panel_card_hover.png", 12)
+    padding (14, 6)
+    ysize 40
+
+style v2_chip_text is text:
+    color "#4b3420"
+    hover_color "#a63a2e"
+    yalign 0.5

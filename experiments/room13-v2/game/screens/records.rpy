@@ -28,10 +28,8 @@ screen v2_ev_list(items, sel, pick, checked=(), page_var="page", page=0, xpos=14
                             if e in checked:
                                 text "✓" xalign 0.5 yalign 0.5 size v2_type("body") color V2_COLOR["accent"]
                     add Transform("assets/" + V2_EVIDENCE[e]["art"], fit="contain", xysize=(52, 52)) yalign 0.5
-                    vbox:
-                        yalign 0.5
-                        text V2_EVIDENCE[e]["name"] size v2_type("body")
-                        text v2_ev_from.get(e, "") size v2_type("small") color V2_COLOR["muted"]
+                    # 날짜·장소 꼬리표는 두지 않는다(소유자 2026-10-29 「날짜 장소가 전혀 필요가 없을듯」).
+                    text V2_EVIDENCE[e]["name"] size v2_type("body") yalign 0.5
         if pages > 1:
             hbox:
                 spacing 14
@@ -39,8 +37,9 @@ screen v2_ev_list(items, sel, pick, checked=(), page_var="page", page=0, xpos=14
                 text "%d / %d" % (page + 1, pages) size v2_type("body") yalign 0.5
                 textbutton "›" style "v2_button" xysize (60, 52) action SetScreenVariable(page_var, page + 1) sensitive page + 1 < pages text_size v2_type("title")
 
-screen v2_ev_detail(e, xpos=490, ypos=140, width=400):
+screen v2_ev_detail(e, xpos=490, ypos=140, width=400, origin=False):
     # 자료 하나의 이름·종류·그림·사실(부품). 추론은 넣지 않는다(본 것·들은 말만).
+    # origin: 「출처 펼치기」를 누른 상태. 그림 자리에 원문을 보인다(스크롤 없이 칸 안에 들어오게).
     if e:
         vbox:
             xpos xpos ypos ypos xsize width spacing 10
@@ -48,12 +47,33 @@ screen v2_ev_detail(e, xpos=490, ypos=140, width=400):
                 spacing 12
                 text V2_EVIDENCE[e]["name"] size v2_type("title")
                 text V2_EVIDENCE[e]["kind"] size v2_type("small") color V2_COLOR["accent"] yalign 0.5
-            frame:
-                xalign 0.5 xysize (220, 170)
-                background v2_frame("ui-b-options/b_opt_choice.png", 18)
-                add Transform("assets/" + V2_EVIDENCE[e]["art"], fit="contain", xysize=(190, 140)) xalign 0.5 yalign 0.5
-            for f in V2_EVIDENCE[e]["facts"]:
-                text "· " + f size v2_type("body")
+            if origin:
+                text ("들은 말" if V2_EVIDENCE[e]["kind"] == "증언" else "확인한 내용") size v2_type("small") color V2_COLOR["accent"]
+                text V2_EVIDENCE[e]["text"] size v2_type("small")
+            else:
+                frame:
+                    xalign 0.5 xysize (220, 170)
+                    background v2_frame("ui-b-options/b_opt_choice.png", 18)
+                    add Transform("assets/" + V2_EVIDENCE[e]["art"], fit="contain", xysize=(190, 140)) xalign 0.5 yalign 0.5
+                for f in V2_EVIDENCE[e]["facts"]:
+                    text "· " + f size v2_type("body")
+
+screen v2_ev_pair_read(pair, xpos=750, ypos=112, width=380):
+    # 나란히 놓기(읽기용, 지금 판 r13_pw_pair): 두 자료를 같은 폭 두 열로. 맞는지 아닌지는 표시하지 않는다.
+    $ col = (width - 16) // 2
+    vbox:
+        xpos xpos ypos ypos xsize width spacing 8
+        text "왼쪽 목록에서 함께 볼 자료를 누른다." size v2_type("small") color V2_COLOR["muted"]
+        hbox:
+            spacing 16
+            for e in pair:
+                vbox:
+                    xsize col spacing 6
+                    if e:
+                        text V2_EVIDENCE[e]["name"] size v2_type("body")
+                        add Transform("assets/" + V2_EVIDENCE[e]["art"], fit="contain", xysize=(col, 100))
+                        for f in V2_EVIDENCE[e]["facts"]:
+                            text "· " + f size v2_type("small")
 
 screen v2_records():
     modal True
@@ -80,8 +100,6 @@ screen v2_records():
             if sel:
                 vbox:
                     xpos 910 ypos 150 xsize 240 spacing 8
-                    text "얻은 곳" size v2_type("small") color V2_COLOR["accent"]
-                    text v2_ev_from.get(sel, "") size v2_type("body")
                     text "적힌 글" size v2_type("small") color V2_COLOR["accent"]
                     text V2_EVIDENCE[sel]["text"] size v2_type("small")
     elif tab == "people":

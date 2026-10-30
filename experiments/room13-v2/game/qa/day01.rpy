@@ -69,6 +69,20 @@ testcase v2_day01_right:
     click "방문 신청 원본"
     screenshot "a06_proof.png"
     pause 0.7
+    # 읽기 조작(출처 펼치기·나란히 놓기)은 고른 자료를 바꾸지 않는다.
+    click "출처 펼치기"
+    pause 0.5
+    screenshot "a06b_proof_origin.png"
+    click "출처 접기"
+    pause 0.5
+    click "나란히 놓기"
+    pause 0.5
+    click "초대 편지"
+    pause 0.5
+    screenshot "a06c_proof_pair.png"
+    assert eval (sorted(v2_pick) == ["E02", "E03"])
+    click "나란히 접기"
+    pause 0.7
     click "근거 제시"
     click pos (600, 600) until screen "v2_field" timeout 120
     assert eval (v2_gate == "registered_menu" and v2_vals.get("gate_basis_proven") is True and v2_vals.get("meeting:gate") == "win")

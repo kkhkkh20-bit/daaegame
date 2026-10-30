@@ -1,12 +1,15 @@
 # 증명 화면(1일 입구 통합 화면): 상대 주장을 보이고, 가진 자료를 체크로 여러 장 고른다.
 # 일부만 맞으면 맞는 자료를 남겨 두고 상대가 반박한다(엔진). 되묻기·조사 계속은 기회를 쓰지 않는다.
 # 대조(compare) 모드는 정확히 두 장을 고르고, 두 편지를 나란히 놓아 눈에 띄는 곳을 짚어 볼 수 있다.
+# 「⇆」 기호는 Pretendard 에 없어(지금 판은 기호 글꼴을 따로 묶는다) 다른 그림으로 찍히므로 글자만 쓴다.
 
 screen v2_proof(pid):
     modal True
     zorder 20
     default focus = (v2_pick[-1] if v2_pick else (v2_owned_newest() or [None])[0])
     default page = 0
+    default origin_open = False
+    default reading = None
     $ proof = V2_PROOFS[pid]
     $ compare = proof["mode"] == "compare"
     $ items = v2_owned_newest()
@@ -43,18 +46,32 @@ screen v2_proof(pid):
                 text "%s의 말" % V2_PEOPLE[proof["quote"]["who"]]["name"] size v2_type("small") color V2_COLOR["accent"]
             text proof["quote"]["t"] size v2_type("body")
             text ("두 장을 골라 견준다." if compare else "고른 근거가 맞으면 「근거 제시」.") size v2_type("small") color V2_COLOR["muted"]
-        # 가운데: 가진 자료(얻은 순서 최신부터), 체크로 고른다
-        use v2_ev_list(items, None, lambda e: [SetScreenVariable("focus", e), Function(v2_toggle_pick, e)], checked=v2_pick, page=page, xpos=390, ypos=120, width=330, box=True)
-        # 오른쪽: 자료 상세
-        use v2_ev_detail(focus, xpos=750, ypos=112, width=380)
-        if compare and v2_pair_ready(pid):
-            textbutton "⇆ 나란히 놓기" style "v2_primary" xpos 820 ypos 500 xysize (240, 56) action SetVariable("v2_pair", True) text_size v2_type("body")
-        # 아래: 고른 자료 칩과 단추
+        # 가운데: 가진 자료(얻은 순서 최신부터), 체크로 고른다. 나란히 읽는 중에는 누른 자료를 옆에 놓기만 한다(고르기는 그대로).
+        if reading:
+            use v2_ev_list(items, None, (lambda e, first=reading[0]: SetScreenVariable("reading", [first, e])), checked=v2_pick, page=page, xpos=390, ypos=120, width=330, box=True)
+        else:
+            use v2_ev_list(items, None, lambda e: [SetScreenVariable("focus", e), Function(v2_toggle_pick, e)], checked=v2_pick, page=page, xpos=390, ypos=120, width=330, box=True)
+        # 오른쪽: 자료 상세. 아래 한 줄에 읽기 조작(출처 펼치기·나란히 놓기)을 고정한다(지금 판 r13_pw_detail).
+        if reading:
+            use v2_ev_pair_read(reading, xpos=750, ypos=112, width=380)
+        else:
+            use v2_ev_detail(focus, xpos=750, ypos=112, width=380, origin=origin_open)
         hbox:
-            xpos 140 ypos 556 spacing 10
+            xpos 750 ypos 482 spacing 8
+            if reading:
+                textbutton "나란히 접기" style "v2_button" xysize (380, 56) action SetScreenVariable("reading", None) text_size v2_type("body")
+            else:
+                textbutton ("출처 접기" if origin_open else "출처 펼치기") style "v2_button" xysize (186, 56) action SetScreenVariable("origin_open", not origin_open) sensitive bool(focus) text_size v2_type("body")
+                if compare:
+                    textbutton "나란히 놓기" style "v2_primary" xysize (186, 56) action SetVariable("v2_pair", True) sensitive v2_pair_ready(pid) text_size v2_type("body")
+                else:
+                    textbutton "나란히 놓기" style "v2_button" xysize (186, 56) action [SetScreenVariable("reading", [focus, None]), SetScreenVariable("origin_open", False)] selected False sensitive bool(focus) text_size v2_type("body")
+        # 아래: 고른 자료 칩(글자가 칸 안에 들어오게 칸 높이를 글자에 맞춘다)과 단추
+        hbox:
+            xpos 140 ypos 554 spacing 10
             text "고른 자료 %d" % len(v2_pick) size v2_type("small") color V2_COLOR["muted"] yalign 0.5
             for e in v2_pick:
-                textbutton V2_EVIDENCE[e]["name"] + " ×" style "v2_button" action Function(v2_toggle_pick, e) text_size v2_type("small") padding (10, 2)
+                textbutton V2_EVIDENCE[e]["name"] + " ×" style "v2_chip" text_size v2_type("small") action Function(v2_toggle_pick, e) alt ("빼기 · " + V2_EVIDENCE[e]["name"])
         hbox:
             xpos 520 ypos 610 spacing 14
             if compare:

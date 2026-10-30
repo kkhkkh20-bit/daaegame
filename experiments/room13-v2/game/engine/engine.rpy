@@ -107,7 +107,6 @@ init python:
     def v2_new_game():
         store.v2_vals = {}
         store.v2_ev = []
-        store.v2_ev_from = {}
         store.v2_met = []
         store.v2_loc = "black"
         store.v2_day = V2_DAY["day"]
@@ -233,11 +232,23 @@ init python:
         key = str(store.v2_period)
         return "assets/" + art.get(key, art["0"])
 
+    # 장소 좌표는 월드 좌표다. 넓은 그림을 줄여 그리는 장소(입구 0.75, 지금 판 room13_wide_gate.rpy)는
+    # 화면 = (월드 - 카메라) x 배율. 카메라 값도 월드 좌표로 저장한다.
+    def v2_place_spec(place=None):
+        return V2_LAYOUT["places"].get(place or store.v2_loc) or {}
+
+    def v2_zoom(place=None):
+        return float(v2_place_spec(place).get("zoom", 1.0))
+
+    def v2_cam_range(place=None):
+        spec = v2_place_spec(place)
+        return max(0, int(spec.get("width", 1280) - 1280.0 / v2_zoom(place)))
+
     def v2_cam_x(place=None):
         place = place or store.v2_loc
-        spec = V2_LAYOUT["places"].get(place) or {}
+        spec = v2_place_spec(place)
         x = store.v2_cam.get(place, spec.get("initial_x", 0))
-        return max(0, min(x, spec.get("width", 1280) - 1280))
+        return max(0, min(x, v2_cam_range(place)))
 
     def v2_show_bg():
         place = store.v2_loc
@@ -248,16 +259,21 @@ init python:
         if place == "carriage":
             renpy.show("v2bg", what=Fixed(art, v2_carriage_snow(), xysize=(1280, 720)))
             return
-        renpy.show("v2bg", what=Transform(art, xpos=-v2_cam_x(place)))
+        # 그림은 장소 폭(월드)에 맞춰 늘이고 배율을 곱해 그린다(지금 판 r13_world_background 와 같이 최근접).
+        spec = v2_place_spec(place)
+        w, h = spec.get("art_size", (spec.get("width", 1280), 720))
+        z = v2_zoom(place)
+        renpy.show("v2bg", what=Transform(art, size=(int(w * z), int(h * z)), nearest=True,
+                                         xpos=-int(round(v2_cam_x(place) * z))))
 
     def v2_carriage_snow():
         # 마차 창에만 눈이 내린다(창 가림 그림을 쓴다, 지금 판 R13_COACH_SNOW 와 같은 뜻).
         snow = SnowBlossom(Solid("#ffffffd0", xysize=(3, 3)), count=60, border=40, xspeed=(-20, -60), yspeed=(60, 120), start=0)
         return AlphaMask(snow, "assets/room13-fx-carriage-window-mask.webp")
 
-    def v2_pan(dx):
-        spec = V2_LAYOUT["places"][store.v2_loc]
-        store.v2_cam[store.v2_loc] = max(0, min(v2_cam_x() + dx, spec["width"] - 1280))
+    def v2_pan(direction):
+        # 지금 판 r13_pan_camera 처럼 화살표 한 번에 그 쪽 끝까지 간다(장소는 두 구역).
+        store.v2_cam[store.v2_loc] = v2_cam_range() if direction > 0 else 0
         v2_show_bg()
         renpy.restart_interaction()
 
@@ -265,7 +281,7 @@ init python:
         """대기에 닿으면 할 일(첫 선택지의 대상, 이동 차례면 출구) 쪽으로 카메라를 돌린다."""
         gate = V2_GATES[gate_id]
         place = gate["place"]
-        spec = V2_LAYOUT["places"].get(place) or {}
+        spec = v2_place_spec(place)
         target = None
         if gate.get("travel"):
             target = spec.get("exit_x")
@@ -279,7 +295,7 @@ init python:
             elif o.get("person") in spec.get("people", {}):
                 target = spec["people"][o["person"]][0]
         if target is not None:
-            store.v2_cam[place] = max(0, min(target - 640, spec.get("width", 1280) - 1280))
+            store.v2_cam[place] = max(0, min(int(target - 640 / v2_zoom(place)), v2_cam_range(place)))
             v2_show_bg()
 
     def v2_set_scene(scene):
@@ -295,7 +311,6 @@ init python:
     def v2_get(e):
         if e not in store.v2_ev:
             store.v2_ev.append(e)
-            store.v2_ev_from[e] = "%d일 · %s" % (store.v2_day, v2_place_name())
             renpy.notify(V2_EVIDENCE[e]["name"])
 
     def v2_owned_newest():
@@ -360,7 +375,8 @@ init python:
     def v2_pages(text):
         width = {"small": 35, "normal": 31, "large": 27}.get(persistent.v2_text_size or "normal", 31)
         rows = v2_wrap(text, width)
-        if len(rows) <= 3:
+        # 대사판 안에는 두 줄까지 들어간다. 세 줄째는 판 아래 테두리·단추 줄에 걸려(웹 캡처 2026-10-30) 다음 쪽으로 넘긴다.
+        if len(rows) <= 2:
             return ["\n".join(rows)]
         return ["\n".join(rows[i:i + 2]) for i in range(0, len(rows), 2)]
 
@@ -474,13 +490,30 @@ init python:
         renpy.choice_for_skipping()
 
     def v2_field_people():
+        """현장 인물: 도트 한 칸 = 화면 1px(장소 배율과 무관, 지금 판 room13_field_dot.rpy).
+        발(월드 좌표)을 화면으로 옮기고 그림은 그 발에 세운다. 이름표는 머리 상자 위(지금 판 r13_actor_nameplates:
+        높이 30, 머리와 8px 띄움, 폭은 글자 수대로, 화면 위 101 아래로는 내려가지 않음)."""
         gate = V2_GATES[store.v2_gate]
-        spec = V2_LAYOUT["places"].get(store.v2_loc, {})
+        spec = v2_place_spec()
+        z = v2_zoom()
+        cam = v2_cam_x()
         out = []
         for p in gate.get("people", []):
             pos = spec.get("people", {}).get(p)
-            if pos:
-                out.append((p, pos[0] - v2_cam_x(), pos[1]))
+            if not pos:
+                continue
+            pose = pos[2] if len(pos) > 2 else "neutral"
+            dot = V2_LAYOUT["dots"]["%s/%s" % (p, pose)]
+            left = int(round((pos[0] - cam) * z - dot["foot"][0]))
+            top = int(round(pos[1] * z - dot["foot"][1]))
+            hx, hy, hw, hh = dot["head"]
+            name = V2_PEOPLE[p]["name"]
+            tw = max(64, sum(7 if ch == " " else 16 for ch in name) + 18)
+            th = 30
+            tx = int(max(8, min(1280 - 8 - tw, left + hx + hw / 2.0 - tw / 2.0)))
+            ty = max(101, int(top + hy) - th - 8)
+            out.append(dict(who=p, img="assets/field-dot-v2/%s/%s.webp" % (p, pose), x=left, y=top,
+                            w=dot["size"][0], h=dot["size"][1], tag=(tx, ty, tw, th)))
         return out
 
     def v2_field_objects():
@@ -493,11 +526,12 @@ init python:
             for key in o.get("obj") or []:
                 targets.setdefault(key, o["title"])
         cam = v2_cam_x()
+        z = v2_zoom()
         out = []
         for key, r in rects.items():
             if key in targets or key in texts:
                 name = texts.get(key, {}).get("name") or targets.get(key, key)
-                out.append((key, r[0] - cam, r[1], r[2], r[3], name))
+                out.append((key, int((r[0] - cam) * z), int(r[1] * z), int(r[2] * z), int(r[3] * z), name))
         # 겹친 물건은 작은 것을 위에 둔다(큰 칸이 작은 물건을 덮어 누를 수 없게 되지 않게).
         out.sort(key=lambda o: -o[3] * o[4])
         return out
@@ -505,7 +539,7 @@ init python:
     def v2_field_data():
         """조사 화면 한 번 그릴 때 필요한 값(이 시간을 잰다: dev/measure)."""
         return dict(people=v2_field_people(), objects=v2_field_objects(), goal=v2_goal(),
-                    width=V2_LAYOUT["places"].get(store.v2_loc, {}).get("width", 1280), cam=v2_cam_x())
+                    cam=v2_cam_x(), cam_range=v2_cam_range())
 
     def v2_run_option(gate_id, index):
         o = V2_GATES[gate_id]["options"][index]
@@ -806,7 +840,6 @@ transform v2_jolt:
 
 default v2_vals = {}
 default v2_ev = []
-default v2_ev_from = {}
 default v2_met = []
 default v2_loc = "black"
 default v2_day = 1
