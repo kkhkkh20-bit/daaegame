@@ -287,11 +287,11 @@
 - 값
   - `bami_cold4` = `true` (`r13_v111_eaves4`)
 
-#### `MS14_D04_S03` 갈림 · 값 (room13_v111_days45.rpy:178)
+#### `MS14_D04_S03` 갈림 · 값 (room13_v111_days45.rpy:181)
 
 - `r13_v111_look_gate4` if 「밝은 쪽에서 살핀다」 `→ r13_v111_bite4`
 
-#### `MS14_D04_S04` 갈림 · 값 (room13_v111_days45.rpy:220)
+#### `MS14_D04_S04` 갈림 · 값 (room13_v111_days45.rpy:223)
 
 - `r13_v111_bami_ask4` if 「어디서 봤니?」 `→ r13_v111_bami_night4`
 - `r13_v111_inspect_gate4` if 「울타리 천」 `→ r13_v111_fence_seen4`
@@ -319,16 +319,16 @@
 | `MS14_D05_S04` | 4. 점심 무렵 / 이제 도착한 경고 · 5일 점심무렵 / 초소앞바람막힌곳 | 눈에 막힌 입구(gate) | 다람, 초롱 | `r13_v111_warning5`, `r13_v111_envelope5`, `r13_v111_warning_read5`, `r13_v111_warning_compare5`, `r13_v111_warning_retry5`, `r13_v111_warning_compared5` 외 2 |
 | `MS14_D05_S05` | 5. 저녁 / 맡긴다는 말의 무게 · 5일 저녁 / 솜이네→식당→같은복도→13호 | ms14_somi_inside, 여관 식당(dining), 여관 접수대(inn), 여관 2층 복도(hall), 여관 2층 · 13호실(room13) | 다람, 솜이, 무쇠, 네로, 바둑이, 까로, 부엉이 할아버지 | `r13_v111_night5`, `r13_v111_owl_glove5`, `r13_v111_lock_check5`, `r13_v111_blankets5`, `r13_v111_packed5`, `r13_v111_empty_bag5` 외 3 |
 
-#### `MS14_D05_S01` 갈림 · 값 (room13_v111_days45.rpy:389)
+#### `MS14_D05_S01` 갈림 · 값 (room13_v111_days45.rpy:392)
 
 - 값
   - 자료 얻음 `NW_MUSOE_DEEP` (`r13_v111_somi5`)
 
-#### `MS14_D05_S02` 갈림 · 값 (room13_v111_days45.rpy:422)
+#### `MS14_D05_S02` 갈림 · 값 (room13_v111_days45.rpy:425)
 
 - `r13_v111_compare_cloth5` if 「허락받은 옷과 천을 대조한다」 `→ r13_v111_cloth_match5`
 
-#### `MS14_D05_S03` 갈림 · 값 (room13_v111_days45.rpy:469)
+#### `MS14_D05_S03` 갈림 · 값 (room13_v111_days45.rpy:472)
 
 - `r13_v111_proof5` if `r13_v111_value('bami_cold4') and not r13_v111_value('gate_post_cold_cost')` `$ r13_v111_set('gate_post_cold_cost',True)`
 - `r13_v111_wrong5` if `r13_nw_retry("gate_post",["E20","E22","E23","E24"],None)` `→ r13_v111_proof5`
@@ -340,15 +340,15 @@
   - `bami_status` = `"listed"` (`r13_v111_wrong5`)
   - 회의 끝 `gate_post` → `"win"` (`r13_v111_bami_clear5`)
 
-#### `MS14_D05_S04` 갈림 · 값 (room13_v111_days45.rpy:533)
+#### `MS14_D05_S04` 갈림 · 값 (room13_v111_days45.rpy:536)
 
 - `r13_v111_envelope5` if 「봉투를 받겠습니다.」 `→ r13_v111_warning_read5`
-- 메뉴 `r13_v111_warning_compared5` (576줄)
+- 메뉴 `r13_v111_warning_compared5` (581줄)
   - 「첫날 기록을 다시 본다」
   - 「답장을 쓴다」
 - `r13_v111_reply_handoff5` if 「답장을 맡기겠습니다.」 `→ r13_v111_reply_done5`
 
-#### `MS14_D05_S05` 갈림 · 값 (room13_v111_days45.rpy:612)
+#### `MS14_D05_S05` 갈림 · 값 (room13_v111_days45.rpy:617)
 
 - `r13_v111_night5` if `R13_NW_WHEN["tok_freed3"]() and r13_v111_person_alive("karo")` `$ r13_v111_join(['karo'])`
 - `r13_v111_lock_check5` if 「문과 창문 잠금을 확인한다」 `→ r13_v111_safety5`
@@ -1504,7 +1504,7 @@
 
 - 두 편지를 나란히 본다 — 정답 E01+E06 (room13_v111_days123.rpy:393)
 - 측정 종료와 점검 기록을 대조한다 — 정답 E13+E11 (room13_v111_days123.rpy:975)
-- 두 편지의 초대를 대조한다 — 정답 E01+E27 (room13_v111_days45.rpy:565)
+- 두 편지의 초대를 대조한다 — 정답 E01+E27 (room13_v111_days45.rpy:570)
 
 ### 입구 회의 `gate` · 1일 · 기회 3
 
@@ -1557,12 +1557,12 @@
 
 | 증명 키(쟁점) | 화면 제목 | 정답 | 대체 정답 | 덧붙여도 받음 | 자리 |
 |---|---|---|---|---|---|
-| 밤이 혐의의 근거를 확인한다 | 돌목이 붙잡은 사람을, 울타리 천에서부터 거슬러 잇는다 | E20+E22+E23+E24 | E20+E22+NW_PIKO_SKETCH4 / E20+E22+E23+NW_PIKO_SKETCH4 / E20+E22+E24+NW_PIKO_SKETCH4 | E21, NW_PIKO_SKETCH4 | room13_v111_days45.rpy:487 |
+| 밤이 혐의의 근거를 확인한다 | 돌목이 붙잡은 사람을, 울타리 천에서부터 거슬러 잇는다 | E20+E22+E23+E24 | E20+E22+NW_PIKO_SKETCH4 / E20+E22+E23+NW_PIKO_SKETCH4 / E20+E22+E24+NW_PIKO_SKETCH4 | E21, NW_PIKO_SKETCH4 | room13_v111_days45.rpy:490 |
 
 결과마다 바뀌는 값
 
-- `"lose"` · `r13_v111_wrong5` (room13_v111_days45.rpy:494): 명단 올림 밤이 (까닭 `gate_post_lose`); `bami_status` = `"listed"`
-- `"win"` · `r13_v111_bami_clear5` (room13_v111_days45.rpy:506)
+- `"lose"` · `r13_v111_wrong5` (room13_v111_days45.rpy:497): 명단 올림 밤이 (까닭 `gate_post_lose`); `bami_status` = `"listed"`
+- `"win"` · `r13_v111_bami_clear5` (room13_v111_days45.rpy:509)
 
 이 회의를 읽는 조건: `gate_post_half`, `gate_post_last_try`, `gate_post_lose`, `gate_post_win`
 
@@ -1822,7 +1822,7 @@ def r13_nw_true_ending_ready():
 |---|---|---|
 | 실룩 | `lamp_transfer` | `r13_v111_silluk_transfer` (room13_v111_days123.rpy:1285) |
 | 톡 | `lamp_lose` | `r13_v111_trial_wrong` (room13_v111_days123.rpy:1296) |
-| 밤이 | `gate_post_lose` | `r13_v111_wrong5` (room13_v111_days45.rpy:495) |
+| 밤이 | `gate_post_lose` | `r13_v111_wrong5` (room13_v111_days45.rpy:498) |
 | 보리 | `fire_lose` | `r13_v111_nubi_wrong7` (room13_v111_days610.rpy:545) |
 | 보리 | `fire_partial` | `r13_v111_responsibility_wrong7` (room13_v111_days610.rpy:623) |
 | 다람 | `room13_lose` | `r13_v111_hearing_wrong10` (room13_v111_days610.rpy:1503) |
@@ -2148,7 +2148,7 @@ def r13_nw_true_ending_ready():
 
 ## 5. 자동 추출 실패
 
-- 자동 추출 실패: room13_v111_days45.rpy:364 — 세우는 인물을 읽지 못함(변수)
+- 자동 추출 실패: room13_v111_days45.rpy:367 — 세우는 인물을 읽지 못함(변수)
 - 자동 추출 실패: room13_v111_newworld_text.rpy:0 — 정의를 찾지 못한 조건 이름: bami_listed_daram
 - 자동 추출 실패: room13_v111_newworld_text.rpy:0 — 정의를 찾지 못한 조건 이름: bori_listed_daram
 - 자동 추출 실패: room13_v111_newworld_text.rpy:0 — 정의를 찾지 못한 조건 이름: guldol_daram

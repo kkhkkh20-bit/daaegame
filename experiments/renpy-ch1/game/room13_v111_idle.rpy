@@ -12,6 +12,10 @@ init 336 python:
         "새로 알게 된 게 생기면 그때 다시 말을 걸어 보자.",
     )
     R13_IDLE_FAMILY=("daram","mom","dad")
+    # 아빠가 반말로 인사하는 아이들(첫 인사 줄에만 쓴다).
+    R13_IDLE_KIDS=("bami","resident_kongi","resident_tosil","resident_somi","v111_siluk_child","v111_child")
+    def r13_v111_is_kid(person):
+        return person in R13_IDLE_KIDS or str(person).startswith("kid_")
 
     def r13_v111_has_business(person):
         here=store.room13["location"]
@@ -57,7 +61,13 @@ init 336 python:
             seen=r13_v111_value("greeted_count:"+person) or 0
             r13_v111_set("greeted_count:"+person,seen+1)
             row=rows[-1]  # the working line; greetings (row 0) read as if meeting anew
-            return [r13_nw_added_line(dict(speaker=name,text=row["text"],expression=row.get("expression","neutral"),kind="dialogue"))]
+            # 2026-10-30 눈가림 플레이(3~4일): 누르면 상대가 한 줄로 끊어 「이유 없는 거절」로 읽혔다(초롱·우박·백 부인·바둑이·토실).
+            # 소유자 2026-10-27 「사람을 누르면 주고받기가 먼저」. 아빠가 먼저 한마디 건네고(dad), 상대는 하던 일과 그 까닭으로 받는다.
+            out=[]
+            if row.get("dad"):
+                out.append(("dad",row["dad"],dict(expression="neutral",pose="neutral")))
+            out.append(r13_nw_added_line(dict(speaker=name,text=row["text"],expression=row.get("expression","neutral"),kind="dialogue")))
+            return out
         count=(r13_v111_value("idle_count") or 0)
         r13_v111_set("idle_count",count+1)
         return [r13_nw_added_line(dict(speaker="아빠",text=R13_IDLE_THOUGHTS[count%len(R13_IDLE_THOUGHTS)],kind="thought"))]
@@ -102,9 +112,13 @@ init 346 python:
                 # glance over and keep working. Their own lines start once they have spoken with Dad.
                 day=(store.room13 or {}).get("day",1)
                 r13_v111_set("greeted:%s:%s"%(day,person),True)
-                josa="은" if (ord(name[-1])-0xAC00)%28 else "는"
-                if not (0xAC00<=ord(name[-1])<=0xD7A3):josa="은"
-                return [r13_nw_added_line(dict(speaker=None,text="%s%s 이쪽을 힐끗 보고는 하던 일을 계속한다."%(name,josa),kind="narration"))]
+                # 2026-10-30 눈가림 플레이(4일 광장 도토): 처음 보는 사람을 누르면 「힐끗 보고는 하던 일을 계속한다」 지문 뒤
+                # 아빠 속말만 나와, 소유자 2026-10-27 「사람을 누르면 주고받기가 먼저, 말 없이 지문만 흐르면 안 된다」에 어긋났다.
+                # 아빠가 먼저 인사하고 상대가 첫 인사(row 0, 아는 사이처럼 들리는 사람은 first)로 받는다.
+                first=R13_GREETINGS[person][0]
+                hello="안녕. 아저씨는 여관에 묵어." if r13_v111_is_kid(person) else "안녕하세요. 여관 13호에 묵는 사람입니다."
+                return [("dad",hello,dict(expression="neutral",pose="neutral")),
+                        r13_nw_added_line(dict(speaker=name,text=first.get("first") or first["text"],expression=first.get("expression","neutral"),kind="dialogue"))]
         return _r13_met_idle_lines(person)
 
 # Evidence with no fitting reaction (owner 2026-10-22: "다람이에게 편지 보내주기했는데 아무반응 없이

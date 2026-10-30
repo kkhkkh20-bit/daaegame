@@ -102,7 +102,7 @@ screen r13_night_link(caption,glyph,icon,command,enabled=True,link_id=None):
 
 screen r13_night_controls(ready=True):
     $ line_active=renpy.get_screen("say") is not None and not any(renpy.get_screen(n) for n in ("choice","r13_topics","r13_resident_approach","r13_entry_karo_topics"))
-    $ skip_action=([SetVariable("r13_carriage_skip",True),Function(renpy.end_interaction,True)] if place=="마차 안" else [SetVariable("r13_conv_skip",True),Function(renpy.end_interaction,True)])
+    $ skip_action=([SetVariable("r13_carriage_skip",True),Function(renpy.end_interaction,True)] if place=="마차 안" else [SetVariable("r13_conv_skip",True),SetVariable("r13_conv_skip_run",True),Function(renpy.end_interaction,True)])
     hbox:
         xanchor 1.0 xpos (R13_CONCEPT_RIGHT-30) yanchor .5 ypos r13_night_control_y() spacing 12
         if _preferences.afm_enable and line_active:

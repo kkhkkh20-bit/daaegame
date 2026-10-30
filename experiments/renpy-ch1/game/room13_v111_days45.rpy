@@ -168,6 +168,9 @@ label r13_v111_bami_mother4:
     call r13_lines(r13_v111_lines(['MS14_D04_S02_L0026']),'v111:MS14_D04_S02_L0026')
     call r13_lines(r13_v111_lines(['MS14_D04_S02_L0027']),'v111:MS14_D04_S02_L0027')
     call r13_lines(r13_v111_lines(['MS14_D04_S02_L0028']),'v111:MS14_D04_S02_L0028')
+    # 2026-10-30 눈가림 플레이: 아침에 「오후에 다시 여쭤봐도 되겠습니까?」로 약속하고 다시 찾아가는데 시계가 오전에 머물렀다.
+    # 4일에는 오후로 넘기는 곳이 없었다(저녁 비명 장면에서 바로 저녁). 처마를 떠나 솜이네로 다시 가는 길부터 오후다.
+    $ r13_edit(period=1)
     call r13_v111_travel('ms14_somi','visit_return4')
     call r13_lines(r13_v111_lines(['MS14_D04_S02_L0030']),'v111:MS14_D04_S02_L0030')
     call r13_lines(r13_v111_lines(['MS14_D04_S02_L0031']),'v111:MS14_D04_S02_L0031')
@@ -531,6 +534,8 @@ label r13_v111_bami_clear5:
 
 label r13_v111_warning5:
     $ r13_v111_scene('MS14_D05_S04')
+    # 2026-10-30 눈가림 플레이(4일 시계)와 같은 까닭: 「점심 무렵」 장면인데 5일에도 오후로 넘기는 곳이 없어 저녁까지 오전이었다.
+    $ r13_edit(period=1)
     $ room13["v111"]["people"]=[]
     call r13_v111_travel('gate','warning5',['daram'])
     $ r13_v111_arrive(['daram', 'resident_lamplighter'])

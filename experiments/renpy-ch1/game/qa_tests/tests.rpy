@@ -2571,6 +2571,8 @@ testcase conversation_skip:
     assert eval (r13_v111_owned("E02"))
     assert eval (room13["v111"]["gate"]=="gate_choice")
     assert eval (not r13_conv_skip)
+    # 2026-10-30: 건너뛰기는 고르는 화면(현장)이 뜨면 멈춘다. 다음 대화는 다시 한 줄씩 보인다.
+    assert eval (not r13_conv_skip_run)
 
 testcase memo_from_desk:
     # 0.18.48: reading Mom's memo from the desk close-up shows its card over the close-up, and the

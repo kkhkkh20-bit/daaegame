@@ -54,8 +54,25 @@ init 65 python:
         box=r13_village_b_label_boxes(zoom).get(base)
         if box:
             want_x=near(xs,want_x,box[0],box[2],vw);want_y=near(ys,want_y,box[1],box[3],vh)
-        return (max(0,min(1,(want_x*zoom)/max(1,1642*zoom-1136))),
-                max(0,min(1,(want_y*zoom)/max(1,958*zoom-506))))
+        # 2026-10-30 눈가림 플레이(4일 지도 솜이네 이름표가 안 보임): min(1,1.0) 은 정수 1 을 돌려주는데, 뷰포트의
+        # xinitial/yinitial 은 정수를 「1픽셀」로 읽는다. 맨 아래·맨 오른쪽(솜이네·빨래터·큰 강)을 고르면 맨 위·맨 왼쪽이
+        # 열렸다. 늘 소수(비율)로 돌려준다.
+        return (float(max(0.0,min(1.0,(want_x*zoom)/max(1.0,1642*zoom-1136)))),
+                float(max(0.0,min(1.0,(want_y*zoom)/max(1.0,958*zoom-506)))))
+
+    # 2026-10-30 눈가림 플레이(4일 지도에 솜이네 이름표가 없음): 새 이야기의 별칭 장소(ms14_somi 등)는 기존 지도 점을
+    # 그대로 쓰도록 등록했지만(R13_V111_MAP_ALIASES), 이 지도는 그림 장소 id 만 그려 별칭은 「다른 장소」 목록에만 있었다.
+    # 같은 자리의 원래 장소가 목록에 없으면 별칭을 그 자리에 그린다. 둘 다 있으면 원래대로 원래 장소만 그린다.
+    def r13_village_b_base(key):
+        return globals().get("R13_V111_MAP_ALIASES",{}).get(key,key)
+    def r13_village_b_drawn(key,rows):
+        if key in R13_VILLAGE_B_PLACES:return True
+        base=r13_village_b_base(key)
+        if base==key or base not in R13_VILLAGE_B_PLACES:return False
+        keys=[k for k,state in rows]
+        if base in keys:return False
+        # 같은 원래 장소를 가리키는 별칭이 여럿이면 목록에서 앞의 것 하나만 그린다.
+        return next(k for k in keys if r13_village_b_base(k)==base)==key
 
     def r13_village_b_rows():
         allowed = set(r13_places())
@@ -170,8 +187,8 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
                 xalign .5 yalign .5
                 add Transform(r13_asset_path("file:assets/map-village-b/village_clean.png"),zoom=zoom)
                 for key,state in rows:
-                    if key in R13_VILLAGE_B_PLACES:
-                        $ place=R13_VILLAGE_B_PLACES[key]
+                    if r13_village_b_drawn(key,rows):
+                        $ place=R13_VILLAGE_B_PLACES[r13_village_b_base(key)]
                         $ hx,hy,hw,hh=place["provisional_hit_rect"]
                         $ cx,cy=place["label_center"]
                         $ label=r13_map_label(key)
@@ -197,8 +214,8 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
                                 text label font R13_UI_BOLD_FONT size max(12,int(lpx*zoom)) color ((r13_type_color("accent") if R13_TYPE_V2 else "#963b2f") if key==selected else (r13_type_color("ink") if R13_TYPE_V2 else "#493324") if state=="open" else (r13_type_color("disabled") if R13_TYPE_V2 else "#88796b")) align (.5,.5)
                 # 공개된 행만 상태를 그린다. 미발견 장소에는 잠금 아이콘도 만들지 않는다.
                 for key,state in rows:
-                    if key in R13_VILLAGE_B_PLACES:
-                        $ place=R13_VILLAGE_B_PLACES[key]
+                    if r13_village_b_drawn(key,rows):
+                        $ place=R13_VILLAGE_B_PLACES[r13_village_b_base(key)]
                         $ cx,cy=place["label_center"]
                         $ lw=r13_village_b_label_width(r13_map_label(key),scaled=False)
                         use r13_map_status_badges(key,state,selected,(int((cx-lw/2)*zoom),int((cy-19)*zoom),int(lw*zoom),int(38*zoom)))
@@ -221,7 +238,7 @@ screen r13_map_village_b(selected,ready,map_hover,map_notice,local_guide,close_a
             align (.5,.5) spacing 8
             add Transform(r13_asset_path("file:assets/map-status/current_location.png"),zoom=1.0/3) yalign .5
             text ("현재 · "+(r13_map_label(room13["location"]) if r13_map_discovered(room13["location"]) else "마을")) font R13_UI_BOLD_FONT size (r13_type("small") if R13_TYPE_V2 else 18) color (r13_type_color("muted") if R13_TYPE_V2 else "#765b3e") yalign .5 xmaximum 212
-    $ extras=[(key,state) for key,state in rows if key not in R13_VILLAGE_B_PLACES]
+    $ extras=[(key,state) for key,state in rows if not r13_village_b_drawn(key,rows)]
     if extras:
         add Solid("#f7e8cd") xpos 100 ypos 62 xysize (218,54)
         textbutton "다른 장소 ▾":

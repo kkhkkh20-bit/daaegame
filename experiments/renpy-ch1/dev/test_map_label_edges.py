@@ -56,6 +56,9 @@ class MapLabelEdges(unittest.TestCase):
             for key in self.places:
                 with self.subTest(touch=touch, selected=key):
                     fx, fy = ns['r13_village_b_focus'](key, zoom)
+                    # 2026-10-30: 뷰포트 xinitial/yinitial 은 정수를 픽셀로 읽는다. 끝(1.0)이 정수 1 로 오면 맨 위가 열린다.
+                    self.assertIsInstance(fx, float, key)
+                    self.assertIsInstance(fy, float, key)
                     sx = fx * max(0, 1642 - vw); sy = fy * max(0, 958 - vh)
                     # 고른 장소의 이름표는 창 안에 있다.
                     l, t, r, b = boxes[key]

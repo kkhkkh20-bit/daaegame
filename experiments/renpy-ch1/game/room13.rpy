@@ -38,7 +38,7 @@ label r13_scene(bg,title,mood="calm"):
 
 label r13_lines(entries,identity,binding_route=None):
     $ r13_index=0; r13_dialogue_binding=r13_bind_dialogue_rows(entries,identity,binding_route,R13_DIALOGUE_BINDINGS)
-    $ r13_conv_skip=False
+    $ r13_conv_skip=bool(r13_conv_skip_run)
     while r13_index<len(entries) and not r13_conv_skip and not r13_meeting_live_should_stop(identity) and not ((identity==R13_CARRIAGE_IDENTITY or (r13_v111_active() and place=="마차 안")) and r13_carriage_skip):
         $ r13_packet=r13_dead_stand_in_packet(r13_pov_packet(entries[r13_index]),identity)
         $ r13_thought_active=bool(len(r13_packet)>2 and isinstance(r13_packet[2],dict) and r13_packet[2].get("thought"))

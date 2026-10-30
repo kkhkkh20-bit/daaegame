@@ -217,3 +217,9 @@ init 349 python:
         travel=r13_v111_travel_goal(v.get("travel_to"))
         if not travel or (text and travel in text):return text
         return ((text or "")+" "+travel).strip()
+
+# 2026-10-30 눈가림 플레이(3일): 부리에게 「우박이 빌려 갔다」를 듣고 진료소에서 집게를 돌려받아 공방에 갖다 놓은 뒤에도
+# 「생각」이 「톡의 집게는 지금 어디에 있을까?」였다(이동 대기 동안 앞 장면 의문을 붙드는 규칙). 빌린 쪽지(E12)를 받았으면
+# 답이 난 것으로 보고, 아빠가 들은 데까지만 적는다. 이동 차례면 갈 곳은 init 349 가 붙인다.
+init 353 python:
+    R13_V111_RESOLVED_WHEN["MS14_D03_S03"]=(lambda:r13_v111_owned("E12"),"집게는 우박 씨가 빌려 갔던 것이다.")

@@ -21,7 +21,7 @@ testcase v111_ar_thought_travel:
     run Jump("r13_v111_cry4")
     pause until screen "r13_hub" timeout 30
     assert eval (room13["v111"]["gate"]=="travel" and room13["v111"]["scene"]=="MS14_D04_S03")
-    assert eval (r13_v111_goal()==R13_V111_QUESTIONS["MS14_D04_S02"] and "초소 뒤" not in r13_v111_goal())
+    assert eval (r13_v111_goal().startswith(R13_V111_QUESTIONS["MS14_D04_S02"]) and r13_v111_goal().endswith("가자.") and "초소 뒤" not in r13_v111_goal())  # 2026-10-30 이동 차례엔 갈 곳을 붙인다
     screenshot "v111_ar_thought_travel.png"
 
 testcase v111_ar_d03_clinic_to_square:
@@ -35,6 +35,9 @@ testcase v111_ar_d03_clinic_to_square:
     click pos (900,600) until eval (room13["v111"].get("gate")=="travel" and renpy.get_screen("r13_hub")) timeout 90
     assert eval (qa_nw_seen("집게는 공방에 갖다줘요") and qa_nw_seen("가는 길에 톡 씨한테도 알리고요"))
     assert eval (r13_v111_goal().startswith(R13_V111_QUESTIONS["MS14_D03_S03"]) and r13_v111_goal().endswith("가자.") and "돌려주기 전에" not in r13_v111_goal())  # 2026-10-30 이동 차례엔 갈 곳을 붙인다
+    # 2026-10-30 눈가림 플레이: 빌린 쪽지(E12)를 받은 판에서는 집게 의문에 답이 났으므로 들은 것만 말한다.
+    run Function(room13["evidence"].append,"V111:E12")
+    assert eval (r13_v111_goal().startswith("집게는 우박 씨가 빌려 갔던 것이다.") and r13_v111_goal().endswith("가자.") and R13_V111_QUESTIONS["MS14_D03_S03"] not in r13_v111_goal())
     # 광장에 도착해 첫 대기에 닿으면 「생각」이 광장 장면 문구로 바뀐다.
     click "지도" until screen "r13_map" timeout 30
     pause 0.6

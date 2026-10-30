@@ -61,7 +61,7 @@ screen r13_meeting_more_tools():
     $ entries=[]
     if meeting_line:
         $ entries.append(("자동","auto",[Hide("r13_more_tools"),Preference("auto-forward","toggle")],True,_preferences.afm_enable))
-        $ entries.append(("토론 멈추기" if live_listening else "건너뛰기","skip",[Hide("r13_more_tools"),Function(r13_meeting_request_live_action,"review")] if live_listening else [Hide("r13_more_tools"),SetVariable("r13_conv_skip",True),Function(renpy.end_interaction,True)],True,False))
+        $ entries.append(("토론 멈추기" if live_listening else "건너뛰기","skip",[Hide("r13_more_tools"),Function(r13_meeting_request_live_action,"review")] if live_listening else [Hide("r13_more_tools"),SetVariable("r13_conv_skip",True),SetVariable("r13_conv_skip_run",True),Function(renpy.end_interaction,True)],True,False))
     if line_active:
         $ entries.append(("대화창 숨기기","dialogue",[Hide("r13_more_tools"),HideInterface()],True,False))
     # 2026-10-27 소유자: 저장·불러오기·메인화면은 설정 안에 있고, 다시 시작할 아침은 뺐다.

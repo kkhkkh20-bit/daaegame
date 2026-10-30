@@ -255,3 +255,22 @@ screen r13_goal_strip(tabs_right,chips_left):
                         if layout["note"]:
                             add Solid(R13_GOAL_RULE) xsize (card_w-38) ysize 1 yoffset 2
                             text layout["note"] size note_size color "#80654e" font r13_ui_font() xsize (card_w-40) yoffset 2
+
+# 2026-10-30 눈가림 플레이(4일): 네로가 「내일 아침에 와요」라고 하고 아빠가 「그럼 내일 아침에 오겠습니다」로 받았는데,
+# 기록 달력의 「확인한 약속」은 「날짜가 정해진 새 약속은 아직 없다」였다. 달력은 옛 판 깃발만 보고 새 이야기의 약속을 몰랐다.
+# 아빠가 실제로 날짜를 받은 약속만 적는다. 지났는지는 위 R13_GOAL_LINES 와 같은 줄 표식(v111:line:)으로 본다.
+init 352 python:
+    R13_GOAL_LINES["somi_tomorrow4"]=("MS14_D04_S02_L0031","MS14_D04_S03")   # 4일 아빠 「그럼 내일 아침에 오겠습니다.」
+    # (지난 줄, 보이는 첫날, 보이는 끝날, 이 장면에 들어서면 지난 약속, 날짜, 문장)
+    R13_V111_PROMISES=(
+        ("somi_tomorrow4",4,5,"MS14_D05_S01",5,"아침 — 솜이네에 다시 가기로 했다. 네로 씨가 「내일 아침에 와요」라고 했다."),
+    )
+    _r13_v111_promises_before=r13_calendar_promises
+    def r13_calendar_promises():
+        rows=_r13_v111_promises_before()
+        if not globals().get("r13_v111_active",lambda:False)():return rows
+        day=(store.room13 or {}).get("day") or 1
+        for mark,first,last,done,when,text in R13_V111_PROMISES:
+            if first<=day<=last and r13_goal_passed(mark) and not r13_goal_scene_reached(done):
+                rows=list(rows)+["%d일째 · %s요일 %s"%(when,r13_weekday(when),text)]
+        return rows
