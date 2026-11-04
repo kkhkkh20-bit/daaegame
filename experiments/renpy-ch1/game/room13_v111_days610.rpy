@@ -74,6 +74,10 @@ label r13_v111_bowl_eat6:
 
 label r13_v111_nabi_supply6:
     call r13_lines(r13_v111_lines(['MS14_D06_S01_L0034']),'v111:MS14_D06_S01_L0034')
+    # 그릇을 받는 대화부터 식당에서 한다. 꼬미도 반납하러 함께 간다.
+    $ r13_v111_time("move:travel:dining",5)
+    call r13_v111_travel('dining','supply6',['daram','kid_kkomi'],direct=True)
+    $ r13_v111_arrive(['daram','kid_kkomi','nabi'])
     call r13_lines(r13_v111_lines(['MS14_D06_S01_L0036']),'v111:MS14_D06_S01_L0036')
     call r13_lines(r13_v111_lines(['MS14_D06_S01_L0037']),'v111:MS14_D06_S01_L0037')
     call r13_lines(r13_v111_lines(['MS14_D06_S01_L0038']),'v111:MS14_D06_S01_L0038')
@@ -81,9 +85,6 @@ label r13_v111_nabi_supply6:
     call r13_lines(r13_v111_lines(['MS14_D06_S01_L0040']),'v111:MS14_D06_S01_L0040')
     call r13_lines(r13_v111_lines(['MS14_D06_S01_L0041']),'v111:MS14_D06_S01_L0041')
     call r13_lines(r13_v111_lines(['MS14_D06_S01_L0042']),'v111:MS14_D06_S01_L0042')
-    # 0.20.10 (4~14일 리뷰 D6-01): "꼬미를 따라 식당 뒷문으로 간다"는 서술대로 바로 식당으로 간다.
-    $ r13_v111_time("move:travel:dining",5)
-    call r13_v111_travel('dining','supply6',direct=True)
     jump r13_v111_board6
 
 label r13_v111_board6:
@@ -293,9 +294,10 @@ label r13_v111_fire6:
     call r13_lines(r13_v111_lines(['MS14_D06_S03_L0006']),'v111:MS14_D06_S03_L0006')
     call r13_lines(r13_v111_lines(['MS14_D06_S03_L0007']),'v111:MS14_D06_S03_L0007')
     call r13_lines(r13_v111_lines(['MS14_D06_S03_L0008']),'v111:MS14_D06_S03_L0008')
-    call r13_v111_travel('school','children_safe6')
     call r13_lines(r13_v111_lines(['MS14_D06_S03_L0010']),'v111:MS14_D06_S03_L0010')
-    call r13_v111_travel('v111_fire','rescue6')
+    call r13_v111_travel('school','children_safe6')
+    # 학교에 보낸 다람은 남겨 두고 아빠만 구조 현장으로 돌아간다.
+    call r13_v111_travel('v111_fire','rescue6',[])
     jump r13_v111_wet_cloth6
 
 label r13_v111_wet_cloth6:

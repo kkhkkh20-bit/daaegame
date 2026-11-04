@@ -15,3 +15,5 @@ init 220 python:
         "진료 담당자":"ms14_clinician","종업원":"ms14_attendant"}
     R13_CHARS["ms14_clinician"] = Character("진료 담당자")
     R13_CHARS["ms14_attendant"] = Character("종업원")
+    # 현장 이름표도 화자와 같은 역할명을 쓴다. 등록이 없으면 회관 진입 시 중단된다.
+    R13_NAMES.update({"ms14_clinician":"진료 담당자","ms14_attendant":"종업원"})
