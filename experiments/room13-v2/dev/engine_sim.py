@@ -32,6 +32,7 @@ class RenpyStub:
     notify = staticmethod(무동작)
     say = staticmethod(무동작)
     choice_for_skipping = staticmethod(무동작)
+    stop_skipping = staticmethod(무동작)
     retain_after_load = staticmethod(무동작)
     restart_interaction = staticmethod(무동작)
 

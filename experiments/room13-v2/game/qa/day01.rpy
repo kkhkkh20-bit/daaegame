@@ -7,14 +7,37 @@ testcase v2_boot:
     screenshot "boot_main.png"
 
 testcase v2_skip:
-    # 건너뛰기: 확인창 없이 읽지 않은 줄까지 넘기고, 다음 고르는 화면(입구 조사)에서 멈춘다.
+    # 오프닝 카드에서 넘겨도 초소 조사 대신 첫 하차 대사부터 읽는다.
     pause until screen "main_menu" timeout 60
     click "처음부터"
     pause 1.5
     click "건너뛰기"
-    pause until screen "v2_field" timeout 60
+    pause until eval ("MS14_D01_S02_L0002" in v2_trace) timeout 60
     pause 1.0
+    assert eval (not renpy.config.skipping and v2_loc == "gate" and v2_current()[1].get("id") == "MS14_D01_S02_L0002")
+    assert eval (v2_vals.get("carriage_stopped") is True and v2_has("E01") and "MS14_D01_S02_L0009" not in v2_trace)
+    screenshot "skip_stops_at_unloading.png"
+    click "건너뛰기"
+    pause until screen "v2_field" timeout 60
     assert eval (v2_gate == "gate_request" and not renpy.config.skipping and v2_has("E01"))
+
+testcase v2_skip_carriage:
+    # 마차 안 대사의 건너뛰기도 같은 첫 하차 문장에서 멈춘다.
+    pause until screen "main_menu" timeout 60
+    click "처음부터"
+    click pos (600, 600) until eval ("MS14_D01_S01_L0011" in v2_trace) timeout 60
+    pause 0.7
+    click "건너뛰기"
+    pause until eval ("MS14_D01_S02_L0002" in v2_trace) timeout 60
+    pause 1.5
+    assert eval (not renpy.config.skipping and v2_current()[1].get("id") == "MS14_D01_S02_L0002" and not v2_has("E02"))
+    screenshot "carriage_skip_unloading_two_lines.png"
+    click pos (600, 600) until eval ("NW_D01_S02_N01" in v2_trace) timeout 60
+    pause 1.5
+    assert eval ("\n" not in v2_line_pages["pages"][0])
+    screenshot "guard_one_line_centered.png"
+    click pos (600, 600) until screen "v2_field" timeout 60
+    assert eval (v2_gate == "gate_request")
 
 testcase v2_continue:
     # 다른 쪽의 마지막 칸에 저장한 뒤 메인화면 이어하기로 정확한 저장을 찾는다.
@@ -22,7 +45,7 @@ testcase v2_continue:
     click "처음부터"
     pause 1.5
     click "건너뛰기"
-    pause until screen "v2_field" timeout 60
+    click pos (600, 600) until screen "v2_field" timeout 60
     pause 1.0
     click "설정"
     pause until screen "v2_settings" timeout 10
