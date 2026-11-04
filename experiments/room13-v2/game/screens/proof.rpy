@@ -1,6 +1,6 @@
 # 증명 화면(1일 입구 통합 화면): 상대 주장을 보이고, 가진 자료를 체크로 여러 장 고른다.
 # 일부만 맞으면 맞는 자료를 남겨 두고 상대가 반박한다(엔진). 되묻기·조사 계속은 기회를 쓰지 않는다.
-# 대조(compare) 모드는 정확히 두 장을 고르고, 두 편지를 나란히 놓아 눈에 띄는 곳을 짚어 볼 수 있다.
+# 대조(compare) 모드는 정확히 두 장을 고르고, 편지와 메모를 나란히 놓아 눈에 띄는 곳을 짚어 볼 수 있다.
 # 「⇆」 기호는 Pretendard 에 없어(지금 판은 기호 글꼴을 따로 묶는다) 다른 그림으로 찍히므로 글자만 쓴다.
 
 screen v2_proof(pid):
@@ -14,7 +14,7 @@ screen v2_proof(pid):
     $ compare = proof["mode"] == "compare"
     $ items = v2_owned_newest()
     add Solid("#00000066")
-    use v2_notebook("자료 대조" if not compare else "두 편지를 나란히 본다")
+    use v2_notebook("자료 대조" if not compare else proof["title"])
 
     if v2_pair and compare:
         # 나란히 보기: 두 원문을 먼저 보이고, 짚어 볼 곳을 고른다.
@@ -45,7 +45,7 @@ screen v2_proof(pid):
             if proof["quote"]["who"] in V2_PEOPLE:
                 text "%s의 말" % V2_PEOPLE[proof["quote"]["who"]]["name"] size v2_type("small") color V2_COLOR["accent"]
             text proof["quote"]["t"] size v2_type("body")
-            text ("두 장을 골라 견준다." if compare else "고른 근거가 맞으면 「근거 제시」.") size v2_type("small") color V2_COLOR["muted"]
+            text ("두 장을 골라 견준다." if compare else "자료는 여러 장 고를 수 있다. 고른 뒤 「근거 제시」.") size v2_type("small") color V2_COLOR["muted"]
         # 가운데: 가진 자료(얻은 순서 최신부터), 체크로 고른다. 나란히 읽는 중에는 누른 자료를 옆에 놓기만 한다(고르기는 그대로).
         if reading:
             use v2_ev_list(items, None, (lambda e, first=reading[0]: SetScreenVariable("reading", [first, e])), checked=v2_pick, page=page, xpos=390, ypos=120, width=330, box=True)

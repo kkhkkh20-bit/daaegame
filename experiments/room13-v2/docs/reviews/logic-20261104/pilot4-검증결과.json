@@ -1,0 +1,74 @@
+{
+  "버전": "v2-pilot-4",
+  "단위시험_개수": 38,
+  "단위시험_통과": true,
+  "화면시험": [
+    {
+      "test": "v2_day01_right",
+      "passed": true,
+      "seconds": 54.06
+    },
+    {
+      "test": "v2_day01_partial",
+      "passed": true,
+      "seconds": 30.04
+    },
+    {
+      "test": "v2_day01_detours",
+      "passed": true,
+      "seconds": 21.02
+    },
+    {
+      "test": "v2_proof_save",
+      "passed": true,
+      "seconds": 12.02
+    },
+    {
+      "test": "v2_continue",
+      "passed": true,
+      "seconds": 11.02
+    },
+    {
+      "test": "v2_topic_portrait",
+      "passed": true,
+      "seconds": 12.02
+    },
+    {
+      "test": "v2_present_portrait",
+      "passed": true,
+      "seconds": 11.02
+    },
+    {
+      "test": "v2_logic_gate",
+      "passed": true,
+      "seconds": 16.03
+    },
+    {
+      "test": "v2_logic_letters",
+      "passed": true,
+      "seconds": 19.03
+    }
+  ],
+  "브라우저": {
+    "checks": [
+      "현장 저장→브라우저 새로고침→이어하기: 자료와 진행 일치",
+      "규칙 없이 세 자료: 기인정 오답 반응→남긴 원본에 명단 추가→재제출",
+      "회의 도중 저장→새로고침→이어하기: 고른 자료 보존",
+      "입구 회의: 읽기 조작·정답 제출·등록 완료",
+      "정정 후 F002 숨김과 E05 발급자 완료 인정",
+      "여관→13호→편지 대조→밤→1일 끝까지 완주; 844×390 터치 포함"
+    ],
+    "page_errors": [],
+    "http_errors": [],
+    "url": "http://127.0.0.1:8765/preview/room13-v2/",
+    "boot_seconds": 8.879073808000612,
+    "status": "passed"
+  },
+  "원본불변조건": {
+    "판정과_결과조건_동일": true,
+    "자료ID_동일": true,
+    "기존_묶음_수": 89,
+    "모든_묶음명_단계수_ID_동일": true
+  },
+  "공개묶음_SHA256": "813f9664e37735935b1e45d7f444420b487047f4b9de7ab0037e72610f01e70b"
+}

@@ -88,6 +88,8 @@ def conditions():
     for st, where in all_steps():
         if "if" in st:
             yield st["if"], where
+        for i, variant in enumerate(st.get("variants", [])):
+            yield variant["when"], "%s/variants/%d" % (where, i)
     for g, gate in DAY["gates"].items():
         for i, o in enumerate(gate["options"]):
             if "when" in o:
@@ -99,3 +101,6 @@ def conditions():
         for o, spec in objs.items():
             if "read" in spec:
                 yield spec["read"]["when"], "o:%s/%s" % (place, o)
+    for f in DAY["followups"]:
+        if "when" in f:
+            yield f["when"], "f:" + f["id"]
