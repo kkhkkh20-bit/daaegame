@@ -8,7 +8,7 @@ screen main_menu():
     add Transform("assets/ui-b-main/b_main_cast_poster_plain.png", zoom=610.0 / 1402) xpos 754 ypos 80
     hbox:
         xpos 44 ypos 616 spacing 14
-        textbutton "이어하기" style "v2_button" xysize (184, 64) action FileLoad(newest, confirm=False, page=None) sensitive newest is not None text_size v2_type("subtitle")
+        textbutton "이어하기" style "v2_button" xysize (184, 64) action FileLoad(newest, confirm=False, slot=True) sensitive newest is not None text_size v2_type("subtitle")
         textbutton "처음부터" style "v2_primary" xysize (184, 64) action Start() text_size v2_type("subtitle")
         textbutton "불러오기" style "v2_button" xysize (184, 64) action Show("v2_files", mode="load") text_size v2_type("subtitle")
         textbutton "설정" style "v2_button" xysize (184, 64) action Show("v2_settings") text_size v2_type("subtitle")

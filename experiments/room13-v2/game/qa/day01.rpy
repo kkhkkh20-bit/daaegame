@@ -16,6 +16,61 @@ testcase v2_skip:
     pause 1.0
     assert eval (v2_gate == "gate_request" and not renpy.config.skipping and v2_has("E01"))
 
+testcase v2_continue:
+    # 다른 쪽의 마지막 칸에 저장한 뒤 메인화면 이어하기로 정확한 저장을 찾는다.
+    pause until screen "main_menu" timeout 60
+    click "처음부터"
+    pause 1.5
+    click "건너뛰기"
+    pause until screen "v2_field" timeout 60
+    pause 1.0
+    click "설정"
+    pause until screen "v2_settings" timeout 10
+    click "저장 · 불러오기"
+    pause until screen "v2_files" timeout 10
+    click "3쪽"
+    click "3쪽 6번"
+    pause 1.0
+    run Function(qa_poke, "qa_after_save", True)
+    click "돌아가기"
+    click "메인화면"
+    pause until screen "main_menu" timeout 30
+    click "이어하기"
+    pause until screen "v2_field" timeout 30
+    assert eval (v2_gate == "gate_request" and v2_has("E01") and v2_vals.get("qa_after_save") is None)
+    screenshot "continue_restored.png"
+
+testcase v2_proof_save:
+    # 회의에서 고른 자료는 저장한 뒤 불러와도 그대로 남아 제출할 수 있어야 한다.
+    pause until screen "main_menu" timeout 60
+    click "처음부터"
+    pause 1.0
+    run Function(qa_jump, "gate_investigate", ev=["E01", "E02", "E03"], vals={"purpose_difference_known": True}, place="gate")
+    pause until screen "v2_field" timeout 30
+    pause 0.7
+    click "돌목"
+    pause until screen "v2_topics" timeout 10
+    click "근거를 대겠습니다"
+    pause until screen "v2_proof" timeout 10
+    click "초소 처리 명단"
+    click "방문 신청 원본"
+    assert eval (set(v2_pick) == {"E02", "E03"})
+    keysym "K_ESCAPE"
+    pause until screen "v2_settings" timeout 10
+    click "저장 · 불러오기"
+    pause until screen "v2_files" timeout 10
+    click "1쪽 2번"
+    pause 1.0
+    run Function(qa_write, "proof-save-data.txt", (list(v2_pick), renpy.get_save_data(renpy.newest_slot()).get("v2_pick")))
+    click "불러오기로"
+    click "1쪽 2번"
+    pause until screen "v2_proof" timeout 30
+    assert eval (set(v2_pick) == {"E02", "E03"})
+    screenshot "proof_selection_restored.png"
+    click "근거 제시"
+    click pos (600, 600) until screen "v2_field" timeout 120
+    assert eval (v2_gate == "registered_menu" and v2_vals.get("gate_basis_proven") is True)
+
 testcase v2_day01_right:
     # 정답 길: 마차 → 명단 → 선반(금요일) → 신청 원본 → 다르다고 말하기 → 근거 제시(명단+원본) → 여관 → 13호 → 대조 → 잠.
     pause until screen "main_menu" timeout 60

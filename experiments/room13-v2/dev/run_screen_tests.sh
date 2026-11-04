@@ -1,10 +1,10 @@
 #!/bin/bash
 # 새 판 화면 시험. 지금 판 시험기와 달리 다른 renpy 를 죽이지 않는다 — 자기가 띄운 프로세스 묶음만 끝낸다.
-#   dev/run_screen_tests.sh [시험 이름 ...]   (기본: 1일 셋)
+#   dev/run_screen_tests.sh [시험 이름 ...]   (기본: 1일 세 경로와 저장 복원 둘)
 cd "$(dirname "$0")/.." || exit 1
 SDK=${RENPY_SDK:-$HOME/.cache/renpy/renpy-8.5.3-sdk}
 OUT=${V2_QA_OUT:-/tmp/room13-v2-qa}; mkdir -p "$OUT"
-TESTS=("$@"); [ ${#TESTS[@]} -eq 0 ] && TESTS=(v2_day01_right v2_day01_partial v2_day01_detours)
+TESTS=("$@"); [ ${#TESTS[@]} -eq 0 ] && TESTS=(v2_day01_right v2_day01_partial v2_day01_detours v2_continue v2_proof_save)
 fail=0
 for tc in "${TESTS[@]}"; do
   rm -rf game/saves tests "$HOME/.renpy/room13-v2"

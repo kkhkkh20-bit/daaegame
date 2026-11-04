@@ -24,9 +24,10 @@ init python:
         "red": "#c9434a",
     }
 
-    def v2_type(level):
+    def v2_type(level, size=None):
         base, large = V2_TYPE_SCALE[level]
-        size = persistent.v2_text_size
+        if size is None:
+            size = persistent.v2_text_size
         if size == "large":
             return large
         if size == "small":
