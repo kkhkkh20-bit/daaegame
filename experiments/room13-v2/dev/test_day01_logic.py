@@ -12,6 +12,31 @@ def submissions(evidence):
 
 
 class Day01Logic(unittest.TestCase):
+    def test_gate_resolves_only_the_missing_companion_name(self):
+        sim = EngineSim()
+        sim.investigate()
+        evidence = sim.ns["V2_EVIDENCE"]
+        self.assertNotIn("다람", evidence["E02"]["text"])
+        self.assertIn("다람", evidence["E03"]["text"])
+        claim = sim.ns["V2_PROOFS"]["gate"]["quote"]["t"]
+        self.assertIn("다람", claim)
+        self.assertRegex(claim, r"이름.*없")
+        # 다른 직업 문제를 함께 내지 않고, 빠진 이름을 확인해 추가하는 결과로 닫는다.
+        for line in sim.lines:
+            self.assertNotRegex(line["t"], r"일꾼|장작 운반")
+        sim.lines.clear()
+        sim.call("v2_present_to", "guard", "E01")
+        self.assertEqual(sim.drain(), "ui")
+        replies = " ".join(line["t"] for line in sim.lines if line["who"] == "guard")
+        self.assertIn("다람", replies)
+        self.assertNotRegex(replies, r"묵을 곳|숙소|일꾼")
+        sim.dismiss_topics()
+        self.assertFalse(sim.store.v2_vals.get("gate_daram_listed"))
+        self.assertEqual(sim.submit_gate(("E02", "E03")), "wait")
+        self.assertTrue(sim.store.v2_vals.get("gate_daram_listed"))
+        self.assertIn("E05", sim.store.v2_ev)
+        self.assertRegex(evidence["E05"]["text"], r"다람.*추가")
+
     def test_pilot3_saved_frames_still_point_to_the_same_dialogue(self):
         # 이전 공개판 저장에 들어가는 실제 묶음·순번이다. 조건 문구를 넣어도 순번을 밀지 않는다.
         positions = (
@@ -108,7 +133,7 @@ class Day01Logic(unittest.TestCase):
                 sim.drain()
                 reply = " ".join(line["t"] for line in sim.lines if line["who"] == "guard")
                 self.assertTrue(reply)
-                self.assertRegex(reply, r"등록|정정|고쳤|고친|마쳤|들어가")
+                self.assertRegex(reply, r"등록|정정|고쳤|고친|마쳤|들어가|올렸|추가")
                 self.assertNotRegex(reply, r"확인이 안|원본도 마저|묵을 곳도 봐야")
                 self.assertTrue(sim.store.v2_vals.get("gate_registered"))
 

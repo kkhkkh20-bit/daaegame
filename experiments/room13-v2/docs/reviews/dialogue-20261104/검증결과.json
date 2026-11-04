@@ -1,0 +1,47 @@
+{
+  "버전": "v2-pilot-5",
+  "단위시험_개수": 39,
+  "단위시험_통과": true,
+  "화면시험": [
+    {
+      "test": "v2_skip",
+      "passed": true,
+      "seconds": 10.02
+    },
+    {
+      "test": "v2_continue",
+      "passed": true,
+      "seconds": 12.02
+    },
+    {
+      "test": "v2_day01_right",
+      "passed": true,
+      "seconds": 53.06
+    },
+    {
+      "test": "v2_logic_gate",
+      "passed": true,
+      "seconds": 16.02
+    },
+    {
+      "test": "v2_skip_carriage",
+      "passed": true,
+      "seconds": 15.03
+    }
+  ],
+  "브라우저": {
+    "checks": [
+      "오프닝 건너뛰기→첫 하차 대사에서 정지→저장·새로고침·이어하기도 같은 문장",
+      "아빠만 있는 명단↔다람이 있는 신청 원본 대조→이름 추가→함께 입장; 직업 문제 없음",
+      "한 줄·두 줄 대사 세로 중앙과 창에 붙은 이름표: PC·844×390·큰 글씨 캡처",
+      "초소 정정 뒤 여관·13호·편지 비교·첫날 종료까지 실제 웹 완주"
+    ],
+    "page_errors": [],
+    "http_errors": [],
+    "url": "http://127.0.0.1:8765/preview/room13-v2/",
+    "status": "passed"
+  },
+  "기존_묶음명_단계수_ID_유지": 89,
+  "정답과_결과조건_동일": true,
+  "공개묶음_SHA256": "10dabc8c1e3a8bcdec0abc27fcd79ce4e38c7205bfab916f49fd15a66661cfb5"
+}

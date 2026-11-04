@@ -1,10 +1,10 @@
 # 다람탐정 v2(1일 시범) 설정.
 # 지금 판(renpy-ch1)과 저장이 섞이지 않게 저장 폴더 이름을 따로 둔다.
 define config.name = "다람탐정 v2 · 1일 시범"
-define config.version = "v2-pilot-4"
+define config.version = "v2-pilot-5"
 define config.save_directory = "room13-v2"
 define build.name = "room13_v2"
-# 건너뛰기는 읽지 않은 줄도 넘기고 다음 고르는 화면에서 멈춘다(엔진이 고르는 화면 앞에서 choice_for_skipping 을 부른다).
+# 건너뛰기는 첫 마차의 하차 장면, 그 뒤에는 다음 고르는 화면에서 멈춘다.
 default preferences.skip_unseen = True
 default preferences.skip_after_choices = False
 

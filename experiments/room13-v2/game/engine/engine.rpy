@@ -225,6 +225,9 @@ init python:
 
     # ---- 장소·장면·자료 ----
     def v2_set_place(place, move):
+        # 첫 마차를 넘겨도 내리는 장면과 초소 첫 대화는 읽을 수 있게 한다.
+        if store.v2_loc == "carriage" and place == "gate":
+            renpy.stop_skipping()
         store.v2_loc = place
         store.v2_fig = None
         renpy.scene()

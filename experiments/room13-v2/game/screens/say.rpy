@@ -1,5 +1,5 @@
 # 대화창: B 대사판·이름 리본·표정 얼굴(얼굴은 대화 그림이 표정을 바꾼다). 건너뛰기 확인창 없음.
-# 건너뛰기는 다음 고르는 화면까지 간다(엔진이 고르는 화면 앞에서 멈춘다).
+# 마차의 건너뛰기는 내리는 장면에서 멈춘다. 그 뒤에는 다음 고르는 화면까지 간다.
 # 검은 카드(오프닝 세 줄)와 회의 무대(머리띠)도 이 화면 하나가 그린다.
 
 screen say(who, what):
@@ -24,15 +24,17 @@ screen say(who, what):
                     text v2_stage[0] size v2_type("small") color V2_COLOR["muted"]
                     text v2_stage[1] size v2_type("emphasis")
         window id "window":
-            xpos 40 ypos 548 xsize 1200 ysize 166
+            xpos 40 ypos 548 xsize 1200 ysize 160
+            padding (0, 0)
             background "assets/ui-b-dialogue/b_panel_dialogue.png"
             text what id "what":
-                xpos 82 ypos 30 xsize 1010
+                xpos 82 yalign 0.5 xsize 1010
                 size v2_type("display", line_size) line_spacing 6
                 color (V2_COLOR["ink"] if v2_line != "doc" else V2_COLOR["navy"])
         if who:
             frame:
-                xpos 130 ypos 512 xysize (150, 46)
+                # 대사판 그림의 윗 투명 여백 19px를 고려해 리본 아래를 테두리에 겹친다.
+                xpos 130 ypos 526 xysize (150, 46)
                 background v2_ribbon()
                 text who xalign 0.4 yalign 0.5 color V2_COLOR["inverse"] size v2_type("title")
         hbox:
