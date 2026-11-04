@@ -17,13 +17,13 @@
         {
           "id": "NW_RX_P001_02",
           "speaker": null,
-          "text": "돌목의 눈이 편지에서 신청서 쪽으로 옮겨 갔다.",
+          "text": "돌목이 편지를 다시 살펴본다.",
           "expression": "neutral"
         },
         {
           "id": "NW_RX_P001_03",
           "speaker": "돌목",
-          "text": "초대받은 건 알겠소. ……묵을 곳도 봐야 하오.",
+          "text": "초대받은 건 알겠소. 명단은 신청서에 적힌 이름을 확인해 고치는 거요.",
           "expression": "neutral"
         }
       ]
@@ -51,7 +51,7 @@
         {
           "id": "NW_RX_P002_03",
           "speaker": "할머니",
-          "text": "방은 그대로 뒀죠. ……우선 올라가 봐요.",
+          "text": "13호는 부인이 쓰시던 그대로예요. 돌아오면 알려 드릴게요.",
           "expression": "anxious"
         }
       ]
@@ -67,7 +67,7 @@
         {
           "id": "NW_RX_P003_01",
           "speaker": "아빠",
-          "text": "신청은 두 명인데, 일꾼은 저 하나군요.",
+          "text": "처음 처리된 명단에는 다람 이름이 빠져 있었군요.",
           "expression": "neutral"
         },
         {
@@ -79,7 +79,7 @@
         {
           "id": "NW_RX_P003_03",
           "speaker": "너울",
-          "text": "새 일꾼은 본인만 등록하오. 규칙이오.",
+          "text": "빠진 이름은 신청 원본을 확인해 초소에서 고칠 수 있소.",
           "expression": "neutral"
         }
       ]
@@ -95,19 +95,19 @@
         {
           "id": "NW_RX_P004_01",
           "speaker": "아빠",
-          "text": "이 표의 신청 인원부터 봐 주십시오.",
+          "text": "처음 받은 명단에는 다람 이름이 없었군요.",
           "expression": "neutral"
         },
         {
           "id": "NW_RX_P004_02",
           "speaker": null,
-          "text": "돌목이 종이를 잡은 손에 힘을 주었다.",
+          "text": "돌목이 처음 넘겨받은 명단을 짚는다.",
           "expression": "neutral"
         },
         {
           "id": "NW_RX_P004_03",
           "speaker": "돌목",
-          "text": "……두 사람이오. 원본도 마저 보시오.",
+          "text": "내게 온 명단에는 다돌 씨뿐이었소. 이름은 신청 원본에 따라 적어야 하오.",
           "expression": "anxious"
         }
       ]
@@ -123,7 +123,7 @@
         {
           "id": "NW_RX_P005_01",
           "speaker": "아빠",
-          "text": "이 메모에 초롱 씨 이름이 있습니다.",
+          "text": "메모에 적힌 초롱 씨는 내일 아침 광장에서 만날 수 있습니까?",
           "expression": "neutral"
         },
         {
@@ -135,7 +135,7 @@
         {
           "id": "NW_RX_P005_03",
           "speaker": "할머니",
-          "text": "초롱은 오늘 바깥쪽 등을 봐요. 내일 아침 광장에 있지. 소식 들으면 나한테도 알려 줘요.",
+          "text": "그래요. 내일 아침 광장에 있을 거예요. 만나서 소식 들으면 나한테도 알려 줘요.",
           "expression": "anxious"
         }
       ]
@@ -1834,24 +1834,55 @@
           "expression": "neutral"
         }
       ]
+    },
+    {
+      "person": "guard",
+      "evidence": "E03",
+      "days": [
+        1,
+        1
+      ],
+      "lines": [
+        {
+          "id": "NW_RX_GATE_ORIGINAL01",
+          "speaker": "돌목",
+          "text": "이 신청 원본에는 동행인 다람이라고 적혀 있소.",
+          "expression": "neutral"
+        }
+      ]
+    },
+    {
+      "person": "guard",
+      "evidence": "E05",
+      "days": [
+        1,
+        1
+      ],
+      "lines": [
+        {
+          "id": "NW_RX_GATE_RECORD01",
+          "speaker": "돌목",
+          "text": "내가 확인한 입장 기록이오.",
+          "expression": "neutral"
+        }
+      ]
     }
   ],
   "followups": [
     {
       "id": "NW_RX_F002",
-      "heard_in": ["MS14_D01_S02_L0013"],
       "person": "guard",
       "after": "E02",
       "days": [
         1,
         1
       ],
-      "title": "왜 제 신청이 일꾼으로 됐습니까?",
+      "title": "아이 이름은 왜 빠졌습니까?",
       "lines": [
         {
           "id": "NW_RX_F002_01",
           "speaker": "아빠",
-          "text": "왜 제 신청이 일꾼으로 됐습니까?",
+          "text": "아이 이름은 왜 빠졌습니까?",
           "expression": "neutral"
         },
         {
@@ -1863,7 +1894,7 @@
         {
           "id": "NW_RX_F002_03",
           "speaker": "돌목",
-          "text": "신청 원본도 보시오. 나는 서류부터 보오.",
+          "text": "왜 빠졌는지까지는 그 명단만으로 알 수 없소.",
           "expression": "neutral"
         }
       ]

@@ -238,7 +238,7 @@ class Event01Gate(Layer):
   # Day-1 rewrite (owner 2026-10-22): wording changed, the record still names both of them.
   self.assertEqual(len(texts),len(self.RIDS))
   # 2026-10-29 소유자 「이게 맞지」: 이긴 뒤 돌목은 아이를 「동행 아동」으로 적지 않고 이름을 묻는다.
-  self.assertIn('방문객 다돌',texts[3]);self.assertIn('이름',texts[3]);self.assertNotIn('일꾼',texts[3])
+  self.assertIn('다람',texts[3]);self.assertIn('이름',texts[3]);self.assertNotIn('일꾼',texts[3])
   self.assertIn('다람',texts[4]);self.assertIn('다람.',texts[5]);self.assertIn('됐소.',texts[5])   # 2026-10-28 템포 손질: 「……다람.{w} 됐소.」
   self.assertIn('방문객 다돌, 동행인 다람',env['r13_v111_lines'](['MS14_D01_S04_L9101'])[0][1])
   after=[r[1] for r in env['r13_v111_lines'](['MS14_D01_S04_L0021'])]
@@ -246,7 +246,7 @@ class Event01Gate(Layer):
  def test_lost_gate_leaves_daram_off_the_record(self):
   env=self.load();self.env['r13_v111_set']('gate_daram_unlisted',True)
   texts=[r[1] for r in env['r13_v111_lines'](self.RIDS)]
-  self.assertIn('일꾼 다돌, 외 한 명',texts[3])
+  self.assertIn('다돌, 외 한 명',texts[3]);self.assertNotIn('일꾼',texts[3])
   self.assertIn('내 이름은 다람',texts[4],'Daram still asks for her name')
   self.assertTrue(texts[5].startswith('이름 칸이 없소.'))
   self.assertIn('정정 없음',env['r13_v111_lines'](['MS14_D01_S04_L9101'])[0][1])
