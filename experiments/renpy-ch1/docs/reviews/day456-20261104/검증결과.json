@@ -1,0 +1,197 @@
+{
+  "버전": "0.20.91",
+  "범위": "기존 본편 4~6일차",
+  "수정전": {
+    "버전": "0.20.90",
+    "중단": "5일 회관에서 종업원 이름표 등록 누락 KeyError: ms14_attendant",
+    "시작": "실제 3일차 저장"
+  },
+  "단위검사": {
+    "전체": 1169,
+    "통과": true
+  },
+  "문법검사": "통과",
+  "대사검사": {
+    "A": 0,
+    "B": 0,
+    "C": 0
+  },
+  "화면검사": [
+    {
+      "test": "v111_d456_nabi_supply_location",
+      "passed": true,
+      "seconds": 29.04
+    },
+    {
+      "test": "v111_d456_school_permission_reaction",
+      "passed": true,
+      "seconds": 21.04
+    },
+    {
+      "test": "v111_d456_fire_escort_daram_stays",
+      "passed": true,
+      "seconds": 24.04
+    },
+    {
+      "test": "v111_nw_d06_afternoon_today",
+      "passed": true,
+      "seconds": 28.06
+    },
+    {
+      "test": "v111_nw_d06_afternoon_tomorrow",
+      "passed": true,
+      "seconds": 23.04
+    },
+    {
+      "test": "v111_nw_d05_extra_e21_wins",
+      "passed": true,
+      "seconds": 31.05
+    },
+    {
+      "test": "v111_nw_d05_half_then_lost",
+      "passed": true,
+      "seconds": 24.05
+    }
+  ],
+  "브라우저": [
+    {
+      "경로": "실제 3일차 저장에서 4~6일 진행·오늘 아이 인계",
+      "결과": "6일차 취침 전 도착",
+      "일차": 6,
+      "단계": "sleep6_input",
+      "상태": {
+        "meeting:gate_post": "win",
+        "FIRE_EVACUATED": true,
+        "KKOMI_ALIVE": true,
+        "warehouse_children_school_handover": 4,
+        "warehouse_children_rescued": null,
+        "BORI_hands": "not_rescue_burned",
+        "location:daram": "school",
+        "DARAM_location": null
+      },
+      "제출": {
+        "proof_given:함께 들어갈 근거를 고른다": [
+          "V111:E02",
+          "V111:E03"
+        ],
+        "proof_given:두 편지를 나란히 본다": [
+          "V111:E01",
+          "V111:E06"
+        ],
+        "proof_given:측정 종료와 점검 기록을 대조한다": [
+          "V111:E11",
+          "V111:E13"
+        ],
+        "proof_given:수리와 반출을 가릴 자료를 낸다": [
+          "V111:E11",
+          "V111:E13"
+        ],
+        "proof_given:돌과 매입 기록을 낸다": [
+          "V111:E14",
+          "V111:E15",
+          "V111:E16"
+        ],
+        "proof_given:바깥 걸쇠 주장과 발견 위치를 대조한다": [
+          "V111:E17",
+          "V111:E32",
+          "V111:E33"
+        ],
+        "proof_given:마지막 점검과 인수한 돌을 연결한다": [
+          "V111:E11",
+          "V111:E14",
+          "V111:E15"
+        ],
+        "proof_given:밤이 혐의의 근거를 확인한다": [
+          "V111:E20",
+          "V111:E23",
+          "V111:E24"
+        ],
+        "proof_given:두 편지의 초대를 대조한다": [
+          "V111:E01",
+          "V111:E27"
+        ]
+      },
+      "페이지_오류": []
+    },
+    {
+      "경로": "같은 실제 6일차 오후 저장에서 내일 약속·현장 구조 경로",
+      "결과": "6일차 취침 전 도착",
+      "일차": 6,
+      "단계": "sleep6_input",
+      "상태": {
+        "meeting:gate_post": "win",
+        "FIRE_EVACUATED": false,
+        "KKOMI_ALIVE": false,
+        "warehouse_children_school_handover": null,
+        "warehouse_children_rescued": 3,
+        "BORI_hands": "burned",
+        "location:daram": "school",
+        "DARAM_location": "school"
+      },
+      "제출": {
+        "proof_given:함께 들어갈 근거를 고른다": [
+          "V111:E02",
+          "V111:E03"
+        ],
+        "proof_given:두 편지를 나란히 본다": [
+          "V111:E01",
+          "V111:E06"
+        ],
+        "proof_given:측정 종료와 점검 기록을 대조한다": [
+          "V111:E11",
+          "V111:E13"
+        ],
+        "proof_given:수리와 반출을 가릴 자료를 낸다": [
+          "V111:E11",
+          "V111:E13"
+        ],
+        "proof_given:돌과 매입 기록을 낸다": [
+          "V111:E14",
+          "V111:E15",
+          "V111:E16"
+        ],
+        "proof_given:바깥 걸쇠 주장과 발견 위치를 대조한다": [
+          "V111:E17",
+          "V111:E32",
+          "V111:E33"
+        ],
+        "proof_given:마지막 점검과 인수한 돌을 연결한다": [
+          "V111:E11",
+          "V111:E14",
+          "V111:E15"
+        ],
+        "proof_given:밤이 혐의의 근거를 확인한다": [
+          "V111:E20",
+          "V111:E23",
+          "V111:E24"
+        ],
+        "proof_given:두 편지의 초대를 대조한다": [
+          "V111:E01",
+          "V111:E27"
+        ]
+      },
+      "페이지_오류": []
+    }
+  ],
+  "저장복원": [
+    {
+      "device": "desktop",
+      "version": "0.20.91",
+      "same": true,
+      "page_errors": []
+    },
+    {
+      "device": "mobile",
+      "version": "0.20.91",
+      "same": true,
+      "page_errors": []
+    }
+  ],
+  "공개묶음": {
+    "경로": "preview/room13-dev/game.part01",
+    "sha256": "412c7128c93d7b38821b86f5967ddb8188f39b3e518b93f149af257469a6a50f",
+    "원본대조": 10,
+    "일치": true
+  },
+  "미실행": "7~14일 전체 주행·모든 조작 순열·4~5일의 모든 생존 및 예방 조합 자연 주행"
+}

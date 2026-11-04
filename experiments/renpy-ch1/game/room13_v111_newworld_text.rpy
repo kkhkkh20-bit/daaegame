@@ -302,11 +302,11 @@ init 319 python:
         "gate_post_win":lambda:r13_v111_value("meeting:gate_post")=="win",
         # 2026-10-29 외부 검토 2 N3: 5일 회의에서 맞는 자료만 일부 낸 오답(틀린 자료 없음, 회의 진행 중)이면 너울의 되묻기가
         # 짚은 고리는 인정하고 빈 고리만 묻는다. 3일 lamp_repair_half_* 와 같은 방식. 정답 묶음은 그대로다.
-        "gate_post_half_height":lambda:r13_gp_half() and "V111:E22" in r13_gp_given() and "V111:E20" not in r13_gp_given() and ({"V111:E23","V111:E24"}<=r13_gp_given() or "V111:NW_PIKO_SKETCH4" in r13_gp_given()),
-        "gate_post_half_wearer":lambda:r13_gp_half() and {"V111:E22","V111:E23"}<=r13_gp_given() and not {"V111:E24","V111:NW_PIKO_SKETCH4"}&r13_gp_given(),
-        "gate_post_half_match":lambda:r13_gp_half() and {"V111:E22","V111:E24"}<=r13_gp_given() and not {"V111:E23","V111:NW_PIKO_SKETCH4"}&r13_gp_given(),
+        "gate_post_half_height":lambda:r13_gp_half() and bool({"V111:E22","V111:E23"}&r13_gp_given()) and "V111:E20" not in r13_gp_given() and ({"V111:E23","V111:E24"}<=r13_gp_given() or "V111:NW_PIKO_SKETCH4" in r13_gp_given()),
+        "gate_post_half_wearer":lambda:r13_gp_half() and "V111:E23" in r13_gp_given() and not {"V111:E24","V111:NW_PIKO_SKETCH4"}&r13_gp_given(),
+        "gate_post_half_match":lambda:r13_gp_half() and "V111:E24" in r13_gp_given() and not {"V111:E23","V111:NW_PIKO_SKETCH4"}&r13_gp_given(),
         "gate_post_half_cloth":lambda:r13_gp_half() and "V111:E22" in r13_gp_given() and not {"V111:E23","V111:E24","V111:NW_PIKO_SKETCH4"}&r13_gp_given(),
-        "gate_post_half_fence":lambda:r13_gp_half() and "V111:E22" not in r13_gp_given() and bool({"V111:E23","V111:E24","V111:NW_PIKO_SKETCH4"}&r13_gp_given()),
+        "gate_post_half_fence":lambda:r13_gp_half() and not {"V111:E22","V111:E23"}&r13_gp_given() and "V111:NW_PIKO_SKETCH4" in r13_gp_given(),
         # 소유자 결정 4(탈출 축): 3일에 톡에게 「쇠 토막을 구해 와야 해요」를 들은 판에서, 5일 식당에 까로가 있을 때.
         "karo_heard_iron5":lambda:r13_v111_value("meeting:lamp") in ("win","partial") and r13_v111_value("listed:resident_tok") is not True and r13_v111_actor_ready("karo"),
         # 11-11: 학교 물자를 아직 넘기지 않아 「학교 물자 인계를 먼저」가 메뉴에 남는 판.
