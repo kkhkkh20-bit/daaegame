@@ -10,7 +10,7 @@ screen v2_topics(p):
     $ shown = rows[page * V2_TOPICS_PER_PAGE:(page + 1) * V2_TOPICS_PER_PAGE]
     $ wait = v2_input_wait()
 
-    add Transform("assets/dialogue-dot-v2/%s/760/neutral.webp" % p, zoom=1.0) xanchor 0.5 xpos 250 ypos 50
+    add Transform(v2_portrait(p), zoom=1.0) xanchor 0.5 xpos 250 ypos 50
     frame:
         xpos 92 ypos 588 xysize (196, 60)
         background v2_frame("ui-b-question/nameplate_paper.png", 20)

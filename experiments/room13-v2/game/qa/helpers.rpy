@@ -4,6 +4,8 @@ init python:
     def qa_jump(node, ev=(), vals=None, place=None):
         """시험을 짧게: 앞 단계를 이미 지난 상태로 만들고 그 노드로 간다."""
         if place:
+            # 실제 장소 전환처럼 앞 장면의 변환을 비워 배경 크기·위치를 물려받지 않는다.
+            renpy.scene()
             store.v2_loc = place
             v2_show_bg()
         for e in ev:
@@ -17,6 +19,11 @@ init python:
 
     def qa_poke(key, value):
         store.v2_vals[key] = value
+
+    def qa_old_ui_portrait(person):
+        # 지난 판의 질문 저장에 남던 큰 인물 그림을 재현한다.
+        v2_show_figure(person)
+        renpy.retain_after_load()
 
     def qa_write(name, value):
         with open(renpy.config.basedir + "/tests/" + name, "w") as f:

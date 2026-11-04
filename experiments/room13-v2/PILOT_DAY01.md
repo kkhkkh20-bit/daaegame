@@ -44,7 +44,7 @@ extract/                지금 판에서 뽑은 추출 결과(내용의 정답)
 ```
 python3 -m unittest discover -s dev -p 'test_*.py'
 $HOME/.cache/renpy/renpy-8.5.3-sdk/renpy.sh . lint
-dev/run_screen_tests.sh                       # 1일 세 경로와 저장·이어하기 복원 둘
+dev/run_screen_tests.sh                       # 1일 세 경로·저장 복원·캐릭터 표시
 dev/run_screen_tests.sh v2_boot v2_skip       # 시작 시간·건너뛰기
 ```
 
@@ -109,3 +109,7 @@ python3 dev/build_web.py        # 결과: preview/room13-v2/ (빌드로만 만�
 ## 2026-11-04 · v2-pilot-2 안정화
 
 이어하기의 저장 이름 조회, 대사 도중 글자 크기를 바꿀 때의 문장 누락, 회의 도중 저장한 자료 선택의 복원을 고쳤다. 원문·판정·디자인은 그대로다. 단위 26개와 화면시험 7개를 통과했고, 웹에서도 1일 끝까지 완주와 새로고침 뒤 이어하기를 확인했다. 자세한 범위·검사·남은 확인은 [공개 기록](docs/releases/RELEASE_v2-pilot-2.md)에 있다. 다음 이전 대상은 2일이다.
+
+## 2026-11-04 · v2-pilot-3 캐릭터 표시 수정
+
+대화·제시 반응 후 질문 화면으로 돌아오면 캐릭터가 겹치던 것을 고쳤다. 다람 근접 표정은 본편에서 이미 승인한 원본 연결을 복구했다. 단위 27개, 화면 11개와 웹의 실제 복귀·저장·후속 대화 확인을 마쳤다. [수정 전후 화면](docs/reviews/visual-20261104/검수.md). 기능 검사만으로 화면 완성도까지 확인했다고 보지 않으며, 다음 날짜 확장은 보류한다.
