@@ -61,6 +61,16 @@ def proof_entry(pid):
 
 
 class StoryData(unittest.TestCase):
+    def test_line_variants_only_change_text(self):
+        # 문구 분기로 화자·대사 ID·진행 위치가 바뀌면 예전 저장을 안전하게 이어갈 수 없다.
+        for st, where in all_steps():
+            for variant in st.get("variants", []):
+                self.assertIn("t", st, where)
+                self.assertEqual(set(variant), {"when", "t"}, where)
+                self.assertIsInstance(variant["when"], str, where)
+                self.assertIsInstance(variant["t"], str, where)
+                self.assertTrue(variant["t"].strip(), where)
+
     def test_every_step_has_one_known_op(self):
         for st, where in all_steps():
             if "t" in st:

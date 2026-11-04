@@ -102,7 +102,13 @@ init python:
 
     def v2_current():
         frame = store.v2_stack[-1]
-        return frame, v2_steps(frame)[frame[1]]
+        st = v2_steps(frame)[frame[1]]
+        # 같은 대사 자리에 상태별 문구만 바꾼다. 저장한 묶음·순번과 원본 데이터는 유지한다.
+        for variant in st.get("variants", []):
+            if v2_cond(variant["when"]):
+                st = dict(st, t=variant["t"])
+                break
+        return frame, st
 
     def v2_new_game():
         store.v2_vals = {}
@@ -600,7 +606,8 @@ init python:
         return False
 
     def v2_followups(p):
-        return [f for f in V2_DAY["followups"] if f["person"] == p and v2_has(f["after"])]
+        return [f for f in V2_DAY["followups"]
+                if f["person"] == p and v2_has(f["after"]) and v2_cond(f.get("when"))]
 
     def v2_topics(p):
         """질문 목록: 그 사람에게 하는 말만(제시로만 내는 선택지는 넣지 않는다)."""
