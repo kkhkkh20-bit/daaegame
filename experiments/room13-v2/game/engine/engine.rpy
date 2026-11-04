@@ -124,6 +124,7 @@ init python:
         store.v2_ended = False
         store.v2_stack = [["n:" + V2_DAY["start"], 0, 0]]
         store.v2_trace = []
+        store.v2_line_pages = None
 
     def v2_advance():
         """다음에 사람이 볼(고를) 단계까지 비대화 단계를 실행하고 그 종류를 돌려준다."""
@@ -380,6 +381,17 @@ init python:
             return ["\n".join(rows)]
         return ["\n".join(rows[i:i + 2]) for i in range(0, len(rows), 2)]
 
+    def v2_dialogue_pages(frame, st):
+        # 한 줄을 읽는 동안에는 설정을 바꿔도 같은 글자 크기와 쪽 경계를 쓴다.
+        # 쪽 번호만 남은 예전 저장은 원래 글자 크기를 알 수 없으므로 그 줄부터 다시 읽는다.
+        key = (frame[0], frame[1], st["t"])
+        cached = getattr(store, "v2_line_pages", None)
+        if cached is None or cached["key"] != key:
+            frame[2] = 0
+            cached = dict(key=key, pages=v2_pages(st["t"]), size=persistent.v2_text_size or "normal")
+            store.v2_line_pages = cached
+        return cached["pages"]
+
     def v2_figure(who, e=None, pose=None):
         """대화 그림: 지금 판 대사 장면처럼 가까이(머리끝이 화면 위), 아이는 키만큼 낮게."""
         if store.v2_loc == "carriage":
@@ -419,6 +431,7 @@ init python:
 
     def v2_do_line():
         frame, st = v2_current()
+        pages = v2_dialogue_pages(frame, st)
         who = st["who"]
         kind = v2_line_kind(st)
         if frame[2] == 0:
@@ -449,7 +462,6 @@ init python:
                 renpy.with_statement(vpunch)
         store.v2_line = kind
         store.v2_stage = v2_stage_band() if kind != "doc" else None
-        pages = v2_pages(st["t"])
         page = min(frame[2], len(pages) - 1)
         speaker = who if kind in ("talk", "thought") else None
         if kind == "card":
@@ -461,6 +473,7 @@ init python:
         else:
             frame[1] += 1
             frame[2] = 0
+            store.v2_line_pages = None
             renpy.hide("v2cut")
 
     def v2_cut(key):
@@ -777,6 +790,8 @@ init python:
             store.v2_pick.remove(e)
         else:
             store.v2_pick.append(e)
+        # call screen이 끝나기 전에 저장해도 골라 둔 자료를 불러올 때 되감지 않는다.
+        renpy.retain_after_load()
         renpy.restart_interaction()
 
     def v2_pair_ready(pid):
@@ -857,6 +872,7 @@ default v2_goal_seen = ""
 default v2_ended = False
 default v2_stack = []
 default v2_trace = []
+default v2_line_pages = None
 default persistent.v2_last_end = None
 default v2_line = "talk"
 default v2_next = None

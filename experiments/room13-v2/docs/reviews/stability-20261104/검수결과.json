@@ -1,0 +1,180 @@
+{
+  "화면시험": [
+    {
+      "test": "v2_boot",
+      "passed": true,
+      "seconds": 7.02
+    },
+    {
+      "test": "v2_skip",
+      "passed": true,
+      "seconds": 10.03
+    },
+    {
+      "test": "v2_continue",
+      "passed": true,
+      "seconds": 12.02
+    },
+    {
+      "test": "v2_proof_save",
+      "passed": true,
+      "seconds": 12.02
+    },
+    {
+      "test": "v2_day01_right",
+      "passed": true,
+      "seconds": 56.06
+    },
+    {
+      "test": "v2_day01_partial",
+      "passed": true,
+      "seconds": 30.04
+    },
+    {
+      "test": "v2_day01_detours",
+      "passed": true,
+      "seconds": 21.03
+    }
+  ],
+  "웹완주": {
+    "checks": [
+      "현장 저장→브라우저 새로고침→이어하기: 자료와 진행 일치",
+      "회의 도중 저장→새로고침→이어하기: 고른 자료 보존",
+      "입구 회의: 읽기 조작·정답 제출·등록 완료",
+      "여관→13호→편지 대조→밤→1일 끝까지 완주; 844×390 터치 포함"
+    ],
+    "page_errors": [],
+    "http_errors": [],
+    "url": "http://127.0.0.1:8765/preview/room13-v2/",
+    "boot_seconds": 7.984824423999726,
+    "continue_before": {
+      "newest": "1-1-1",
+      "saved": true,
+      "legacy_sensitive": false,
+      "exact_sensitive": true
+    },
+    "end": {
+      "day": 1,
+      "ev": [
+        "E01",
+        "E02",
+        "E03",
+        "E05",
+        "E06",
+        "E30"
+      ],
+      "vals": {
+        "K01a": true,
+        "K01b": true,
+        "carriage_stopped": true,
+        "read:F002": true,
+        "read:opt:gate_request:1": true,
+        "talked:S02:guard": true,
+        "read:opt:gate_choice:1": true,
+        "read:opt:gate_investigate:0": true,
+        "seen:gate_original": true,
+        "read:opt:gate_investigate:3": true,
+        "talked:S03:guard": true,
+        "purpose_difference_known": true,
+        "read:opt:gate_investigate:4": true,
+        "proof_given:gate": "E02,E03",
+        "gate_basis_proven": true,
+        "gate_daram_listed": true,
+        "meeting:gate": "win",
+        "gate_registered": true,
+        "read:opt:registered_menu:1": true,
+        "gate_mother_report_instruction_heard": true,
+        "heard_inn_order1": true,
+        "read:opt:to_room13:0": true,
+        "ui_room_arrival_seen": true,
+        "read:opt:note_pick:0": true,
+        "read:opt:bundle_open:0": true,
+        "under_desk_checked": true,
+        "letter_tail_observed": true,
+        "proof_given:letters": "E06,E01",
+        "cookie.location": "room13_plate",
+        "read:opt:sleep1:0": true,
+        "day": 2
+      }
+    },
+    "status": "passed"
+  },
+  "대사크기와저장": {
+    "checks": [
+      "대사 도중 크게→작게: 원문 줄의 쪽·본문 크기 유지, 다음 원문 줄부터 작게 적용",
+      "둘째 쪽 저장→새로고침→이어하기: 같은 문장·쪽·크기로 복원"
+    ],
+    "page_errors": [],
+    "before": {
+      "id": "MS14_D01_S02_L0015",
+      "page": 0,
+      "cache": {
+        "key": [
+          "n:gate_arrival",
+          20,
+          "신청서에 정말 그렇게 적혀 있으면 고쳐 주겠소.{w=.4}\n신청서는 저 선반에 날짜별로 꽂혀 있소. 나는 뒤에 기다리는 사람들을 받아야 하니, 직접 찾아서 보여 주시오."
+        ],
+        "pages": [
+          "신청서에 정말 그렇게 적혀 있으면 고쳐 주겠소.{w=.4}\n신청서는 저 선반에 날짜별로 꽂혀 있소. 나는",
+          "뒤에 기다리는 사람들을 받아야 하니, 직접 찾아서\n보여 주시오."
+        ],
+        "size": "large"
+      },
+      "size": 34,
+      "text": "신청서에 정말 그렇게 적혀 있으면 고쳐 주겠소.{w=.4}\n신청서는 저 선반에 날짜별로 꽂혀 있소. 나는",
+      "height": 166,
+      "setting": "large"
+    },
+    "second": {
+      "id": "MS14_D01_S02_L0015",
+      "page": 1,
+      "cache": {
+        "key": [
+          "n:gate_arrival",
+          20,
+          "신청서에 정말 그렇게 적혀 있으면 고쳐 주겠소.{w=.4}\n신청서는 저 선반에 날짜별로 꽂혀 있소. 나는 뒤에 기다리는 사람들을 받아야 하니, 직접 찾아서 보여 주시오."
+        ],
+        "pages": [
+          "신청서에 정말 그렇게 적혀 있으면 고쳐 주겠소.{w=.4}\n신청서는 저 선반에 날짜별로 꽂혀 있소. 나는",
+          "뒤에 기다리는 사람들을 받아야 하니, 직접 찾아서\n보여 주시오."
+        ],
+        "size": "large"
+      },
+      "size": 34,
+      "text": "뒤에 기다리는 사람들을 받아야 하니, 직접 찾아서\n보여 주시오.",
+      "height": 166,
+      "setting": "small"
+    },
+    "restored": {
+      "id": "MS14_D01_S02_L0015",
+      "page": 1,
+      "cache": {
+        "key": [
+          "n:gate_arrival",
+          20,
+          "신청서에 정말 그렇게 적혀 있으면 고쳐 주겠소.{w=.4}\n신청서는 저 선반에 날짜별로 꽂혀 있소. 나는 뒤에 기다리는 사람들을 받아야 하니, 직접 찾아서 보여 주시오."
+        ],
+        "pages": [
+          "신청서에 정말 그렇게 적혀 있으면 고쳐 주겠소.{w=.4}\n신청서는 저 선반에 날짜별로 꽂혀 있소. 나는",
+          "뒤에 기다리는 사람들을 받아야 하니, 직접 찾아서\n보여 주시오."
+        ],
+        "size": "large"
+      },
+      "size": 34,
+      "text": "뒤에 기다리는 사람들을 받아야 하니, 직접 찾아서\n보여 주시오.",
+      "height": 166,
+      "setting": "small"
+    },
+    "status": "passed"
+  },
+  "빌드": {
+    "core_zip_bytes": 6564106,
+    "preload_files": 9,
+    "preload_bytes": 10551233,
+    "first_load_game_bytes": 17115339,
+    "first_load_with_engine_bytes": 54522714,
+    "remote_files": 14,
+    "remote_bytes": 17145229,
+    "release_total_bytes": 72780921
+  }
+}

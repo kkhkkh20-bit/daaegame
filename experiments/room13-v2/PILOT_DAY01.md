@@ -44,7 +44,7 @@ extract/                지금 판에서 뽑은 추출 결과(내용의 정답)
 ```
 python3 -m unittest discover -s dev -p 'test_*.py'
 $HOME/.cache/renpy/renpy-8.5.3-sdk/renpy.sh . lint
-dev/run_screen_tests.sh                       # 1일 셋(정답 길·일부 정답·딴길)
+dev/run_screen_tests.sh                       # 1일 세 경로와 저장·이어하기 복원 둘
 dev/run_screen_tests.sh v2_boot v2_skip       # 시작 시간·건너뛰기
 ```
 
@@ -105,3 +105,7 @@ python3 dev/build_web.py        # 결과: preview/room13-v2/ (빌드로만 만�
 - 1일이 끝나면 2일로 가지 않고 시범 안내 한 줄 뒤 메인 메뉴로 돌아간다(2~14일은 다음 단계).
 - 「방금 하던 이야기」 판정은 「이 장면에서 그 사람에게 질문을 했다」로 정했다(지금 판 `talked:장면:사람` 과 같은 뜻).
 - 겹친 물건 칸은 작은 것이 위(입구 선반은 서류 칸에 완전히 덮여 있었다).
+
+## 2026-11-04 · v2-pilot-2 안정화
+
+이어하기의 저장 이름 조회, 대사 도중 글자 크기를 바꿀 때의 문장 누락, 회의 도중 저장한 자료 선택의 복원을 고쳤다. 원문·판정·디자인은 그대로다. 단위 26개와 화면시험 7개를 통과했고, 웹에서도 1일 끝까지 완주와 새로고침 뒤 이어하기를 확인했다. 자세한 범위·검사·남은 확인은 [공개 기록](docs/releases/RELEASE_v2-pilot-2.md)에 있다. 다음 이전 대상은 2일이다.

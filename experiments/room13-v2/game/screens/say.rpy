@@ -3,10 +3,12 @@
 # 검은 카드(오프닝 세 줄)와 회의 무대(머리띠)도 이 화면 하나가 그린다.
 
 screen say(who, what):
+    # 현재 원문 줄은 시작할 때의 크기로 읽고 다음 원문 줄부터 새 설정을 적용한다.
+    $ line_size = (v2_line_pages or {}).get("size")
     if v2_line == "card":
         text what id "what":
             xalign 0.5 yalign 0.45 text_align 0.5
-            color "#f3eadb" size v2_type("subtitle")
+            color "#f3eadb" size v2_type("subtitle", line_size)
         hbox:
             xpos 860 ypos 668 spacing 110
             textbutton "건너뛰기" action Skip(fast=True, confirm=False) text_color "#f3eadb" text_size v2_type("body") text_hover_color "#ffffff"
@@ -26,7 +28,7 @@ screen say(who, what):
             background "assets/ui-b-dialogue/b_panel_dialogue.png"
             text what id "what":
                 xpos 82 ypos 30 xsize 1010
-                size v2_type("display") line_spacing 6
+                size v2_type("display", line_size) line_spacing 6
                 color (V2_COLOR["ink"] if v2_line != "doc" else V2_COLOR["navy"])
         if who:
             frame:
