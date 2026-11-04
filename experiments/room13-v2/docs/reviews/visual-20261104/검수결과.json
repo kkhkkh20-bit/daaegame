@@ -1,0 +1,70 @@
+{
+  "화면시험": [
+    {
+      "test": "v2_boot",
+      "passed": true,
+      "seconds": 7.02
+    },
+    {
+      "test": "v2_skip",
+      "passed": true,
+      "seconds": 10.02
+    },
+    {
+      "test": "v2_continue",
+      "passed": true,
+      "seconds": 11.03
+    },
+    {
+      "test": "v2_proof_save",
+      "passed": true,
+      "seconds": 13.02
+    },
+    {
+      "test": "v2_day01_right",
+      "passed": true,
+      "seconds": 56.08
+    },
+    {
+      "test": "v2_day01_partial",
+      "passed": true,
+      "seconds": 29.04
+    },
+    {
+      "test": "v2_day01_detours",
+      "passed": true,
+      "seconds": 21.04
+    },
+    {
+      "test": "v2_topic_portrait",
+      "passed": true,
+      "seconds": 11.02
+    },
+    {
+      "test": "v2_present_portrait",
+      "passed": true,
+      "seconds": 11.02
+    },
+    {
+      "test": "v2_old_topic_portrait",
+      "passed": true,
+      "seconds": 10.03
+    },
+    {
+      "test": "v2_daram_detail",
+      "passed": true,
+      "seconds": 10.02
+    }
+  ],
+  "웹": {
+    "checks": [
+      "대화→질문 자동 복귀: 큰 그림 없음, 질문 화면 인물 한 명",
+      "자료 제시 반응→질문 복귀: 중복 없음",
+      "질문 화면 저장→새로고침→이어하기: 중복 없음, 다음 대사 인물 다시 표시",
+      "다람 승인 원본 근접 표정: PC 1280×720·모바일 844×390 캡처 확인"
+    ],
+    "page_errors": [],
+    "http_errors": [],
+    "status": "passed"
+  }
+}

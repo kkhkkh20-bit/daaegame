@@ -392,6 +392,13 @@ init python:
             store.v2_line_pages = cached
         return cached["pages"]
 
+    def v2_portrait(who, face="neutral"):
+        # 본편에서 이미 승인한 근접 원본을 같은 표시 크기로 복구한다. 현장 도트와 마차 그림은 별도다.
+        spec = V2_LAYOUT["figure"].get("portraits", {}).get(who)
+        if spec:
+            return Transform("assets/" + spec["file"].format(face=face), size=tuple(spec["size"]), nearest=False)
+        return "assets/dialogue-dot-v2/%s/760/%s.webp" % (who, face)
+
     def v2_figure(who, e=None, pose=None):
         """대화 그림: 지금 판 대사 장면처럼 가까이(머리끝이 화면 위), 아이는 키만큼 낮게."""
         if store.v2_loc == "carriage":
@@ -402,7 +409,7 @@ init python:
         stature = fig["stature"].get(who, 1.0)
         drop = int(round(520 * (1 - min(1.0, stature))))
         top = int(fig["top"].get(who, 0) * fig["zoom"])
-        return Transform("assets/dialogue-dot-v2/%s/760/%s.webp" % (who, face), zoom=fig["zoom"],
+        return Transform(v2_portrait(who, face), zoom=fig["zoom"], nearest=(who not in fig.get("portraits", {})),
                          xanchor=0.5, xpos=fig["x"], ypos=fig["head_top"] - top + drop)
 
     def v2_show_figure(who, e=None, pose=None, fx=None):

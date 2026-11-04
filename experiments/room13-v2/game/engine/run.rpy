@@ -20,6 +20,11 @@ label v2_run:
             call screen v2_field
             $ v2_field_result(_return)
         elif v2_next == "ui":
+            # 질문·자료 화면은 인물을 직접 그린다. 앞 대화의 큰 그림을 함께 남기지 않는다.
+            $ renpy.hide("v2fig")
+            $ renpy.hide("v2cut")
+            $ v2_fig = None
+            $ v2_stage = None
             if v2_ui[0] == "topics":
                 call screen v2_topics(v2_ui[1])
             else:
@@ -39,5 +44,11 @@ label v2_run:
             $ v2_proof_result(_return)
 
 label after_load:
+    # 지난 판에서 겹친 채 저장한 질문·자료 화면도 복원 직후 정리한다.
+    if v2_ui and v2_ui[0] in ("topics", "present"):
+        $ renpy.hide("v2fig")
+        $ renpy.hide("v2cut")
+        $ v2_fig = None
+        $ v2_stage = None
     show screen v2_hud
     return
