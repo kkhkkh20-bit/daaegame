@@ -1,0 +1,230 @@
+{
+  "대상": "기존 본편 1~3일차",
+  "버전": "0.20.90",
+  "단위검사": {
+    "전체": 1163,
+    "통과": true,
+    "문서명칭_최종수정후_관련_재검사": 46
+  },
+  "문법검사": "통과",
+  "대사검사": {
+    "A": 0,
+    "B": 0,
+    "C": 0
+  },
+  "화면검사": [
+    {
+      "test": "v111_nw_d02_afternoon_shelter",
+      "passed": true,
+      "seconds": 34.07
+    },
+    {
+      "test": "v111_nw_d02_afternoon_half_then_nero",
+      "passed": true,
+      "seconds": 35.09
+    },
+    {
+      "test": "v111_nw_d03_lamp_lost",
+      "passed": true,
+      "seconds": 32.14
+    },
+    {
+      "test": "v111_nw_d03_lamp_partial",
+      "passed": true,
+      "seconds": 24.05
+    },
+    {
+      "test": "v111_nw_d03_lamp_won",
+      "passed": true,
+      "seconds": 29.06
+    },
+    {
+      "test": "v111_wrong_thoughts_knife",
+      "passed": true,
+      "seconds": 27.05
+    },
+    {
+      "test": "day123_document_names",
+      "passed": true,
+      "seconds": 20.03
+    }
+  ],
+  "브라우저": [
+    {
+      "경로": "수정 전 식당 경로",
+      "버전": "0.20.89",
+      "결과": "passed",
+      "재개_저장": "v111-harness-recovery",
+      "마지막_단계": "sleep3",
+      "상태": {
+        "piko_alive": true,
+        "carried_dry_blankets": 0,
+        "public_stones": "restored",
+        "silluk_status": "reporting_obligation",
+        "meeting:gate": "win",
+        "meeting:lamp": "win",
+        "wrong:함께 들어갈 근거를 고른다": null
+      },
+      "제출": {
+        "proof_given:함께 들어갈 근거를 고른다": [
+          "V111:E02",
+          "V111:E03",
+          "V111:E04"
+        ],
+        "proof_given:두 편지를 나란히 본다": [
+          "V111:E01",
+          "V111:E06"
+        ],
+        "proof_given:측정 종료와 점검 기록을 대조한다": [
+          "V111:E11",
+          "V111:E13"
+        ],
+        "proof_given:수리와 반출을 가릴 자료를 낸다": [
+          "V111:E11",
+          "V111:E12",
+          "V111:E13"
+        ],
+        "proof_given:돌과 매입 기록을 낸다": [
+          "V111:E15",
+          "V111:E16"
+        ],
+        "proof_given:바깥 걸쇠 주장과 발견 위치를 대조한다": [
+          "V111:E17",
+          "V111:E32",
+          "V111:E33"
+        ],
+        "proof_given:마지막 점검과 인수한 돌을 연결한다": [
+          "V111:E11",
+          "V111:E15",
+          "V111:E16"
+        ]
+      },
+      "페이지_오류": [],
+      "오답_재시도_확인": false
+    },
+    {
+      "경로": "새 게임 식당 경로·대체 근거와 보강 자료",
+      "버전": "0.20.90",
+      "결과": "passed",
+      "재개_저장": null,
+      "마지막_단계": "sleep3",
+      "상태": {
+        "piko_alive": true,
+        "carried_dry_blankets": 0,
+        "public_stones": "restored",
+        "silluk_status": "reporting_obligation",
+        "meeting:gate": "win",
+        "meeting:lamp": "win",
+        "wrong:함께 들어갈 근거를 고른다": 1
+      },
+      "제출": {
+        "proof_given:함께 들어갈 근거를 고른다": [
+          "V111:E02",
+          "V111:E03"
+        ],
+        "proof_given:두 편지를 나란히 본다": [
+          "V111:E01",
+          "V111:E06"
+        ],
+        "proof_given:측정 종료와 점검 기록을 대조한다": [
+          "V111:E11",
+          "V111:E13"
+        ],
+        "proof_given:수리와 반출을 가릴 자료를 낸다": [
+          "V111:E11",
+          "V111:E13"
+        ],
+        "proof_given:돌과 매입 기록을 낸다": [
+          "V111:E14",
+          "V111:E15",
+          "V111:E16"
+        ],
+        "proof_given:바깥 걸쇠 주장과 발견 위치를 대조한다": [
+          "V111:E17",
+          "V111:E32",
+          "V111:E33"
+        ],
+        "proof_given:마지막 점검과 인수한 돌을 연결한다": [
+          "V111:E11",
+          "V111:E14",
+          "V111:E15"
+        ]
+      },
+      "페이지_오류": [],
+      "오답_재시도_확인": true
+    },
+    {
+      "경로": "실제 0.20.89 1일차 저장에서 이어 네로 경로",
+      "버전": "0.20.90",
+      "결과": "passed",
+      "재개_저장": "v111-sleep1",
+      "마지막_단계": "sleep3",
+      "상태": {
+        "piko_alive": false,
+        "carried_dry_blankets": 2,
+        "public_stones": "with_baek",
+        "silluk_status": "detained_work_waiting_station",
+        "meeting:gate": "win",
+        "meeting:lamp": "win",
+        "wrong:함께 들어갈 근거를 고른다": null
+      },
+      "제출": {
+        "proof_given:함께 들어갈 근거를 고른다": [
+          "V111:E02",
+          "V111:E03",
+          "V111:E04"
+        ],
+        "proof_given:두 편지를 나란히 본다": [
+          "V111:E01",
+          "V111:E06"
+        ],
+        "proof_given:측정 종료와 점검 기록을 대조한다": [
+          "V111:E11",
+          "V111:E13"
+        ],
+        "proof_given:수리와 반출을 가릴 자료를 낸다": [
+          "V111:E11",
+          "V111:E12",
+          "V111:E13"
+        ],
+        "proof_given:돌과 매입 기록을 낸다": [
+          "V111:E15",
+          "V111:E16"
+        ],
+        "proof_given:바깥 걸쇠 주장과 발견 위치를 대조한다": [
+          "V111:E17",
+          "V111:E32",
+          "V111:E33"
+        ],
+        "proof_given:마지막 점검과 인수한 돌을 연결한다": [
+          "V111:E11",
+          "V111:E15",
+          "V111:E16"
+        ]
+      },
+      "페이지_오류": [],
+      "오답_재시도_확인": false
+    }
+  ],
+  "저장복원": [
+    {
+      "device": "desktop",
+      "version": "0.20.90",
+      "same": true,
+      "page_errors": []
+    },
+    {
+      "device": "mobile",
+      "version": "0.20.90",
+      "same": true,
+      "page_errors": []
+    }
+  ],
+  "공개묶음": {
+    "경로": "preview/room13-dev/game.part01",
+    "sha256": "2df266c8ac6c6eb480cdbce42ea8196a3add878edd0a34ab18c576b27612a42a",
+    "원본_대조_파일수": 9,
+    "원본_일치": true
+  },
+  "범위_구분": "본문 검수.md 참조. 4~14일, 모든 조작 순열, 등 예방판 전체 자연 주행은 제외. 문서 명칭 세 곳은 자연 주행 뒤 별도 화면 확인."
+}
