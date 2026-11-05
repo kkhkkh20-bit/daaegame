@@ -1,0 +1,150 @@
+{
+  "버전": "0.20.93",
+  "검수일": "2026-11-05",
+  "대상": "기존 본편 10~12일차",
+  "수정항목": 15,
+  "단위": {
+    "개수": 1169,
+    "결과": "통과"
+  },
+  "문법": "통과",
+  "대사자동검사": {
+    "A": 0,
+    "B": 0,
+    "C": 0
+  },
+  "화면시험": [
+    {
+      "test": "v111_d101112_reunion_companions",
+      "passed": true,
+      "seconds": 26.03
+    },
+    {
+      "test": "v111_nw_d11_hyp_stone_proof",
+      "passed": true,
+      "seconds": 21.04
+    },
+    {
+      "test": "v111_d101112_family_school_move",
+      "passed": true,
+      "seconds": 21.03
+    },
+    {
+      "test": "v111_d101112_medical_late",
+      "passed": true,
+      "seconds": 18.03
+    },
+    {
+      "test": "v111_d101112_medical_premeal",
+      "passed": true,
+      "seconds": 18.03
+    }
+  ],
+  "실제웹진행": {
+    "수정전": {
+      "버전": "0.20.92",
+      "시작": "실제 9일차 저장",
+      "끝": "12일차 취침 전",
+      "페이지오류": []
+    },
+    "배식전발견": {
+      "시작": "살인 경로의 실제 0.20.92 9일차 저장",
+      "11일선택": "가족 자리부터 본다",
+      "끝": "12일차 취침 전",
+      "상태": {
+        "route7": "murder",
+        "prevention": null,
+        "route12": "premeal_stopped",
+        "OWL_ALIVE": false,
+        "DARAM_DETAINED": false,
+        "family_reunited": true,
+        "KKOMI_ALIVE": true,
+        "alive:kid_dodam": null,
+        "alive:kid_saemi": null,
+        "meeting:room13": "win",
+        "meeting:records": null,
+        "meeting:hypothesis": "win",
+        "meeting:soup": "win",
+        "teacher_custody": "guard",
+        "location:resident_seori": "school",
+        "location:resident_bori": "school",
+        "busy:resident_bori": false,
+        "location:daram": "school",
+        "location:nabi": "school",
+        "busy:nabi": null
+      },
+      "페이지오류": []
+    },
+    "뒤늦은발견": {
+      "시작": "도토의 다짐을 받은 예방 경로의 실제 0.20.92 9일차 저장",
+      "10일대체제출": [
+        "V111:E01",
+        "V111:E09_MAIL",
+        "V111:E27"
+      ],
+      "12일선택": [
+        "약장 관리를 확인한다",
+        "다람을 나비 곁에 두고 장작을 받으러 간다"
+      ],
+      "끝": "12일차 취침 전",
+      "상태": {
+        "route7": "prevented",
+        "prevention": "promise",
+        "route12": "late_exposure",
+        "OWL_ALIVE": true,
+        "DARAM_DETAINED": false,
+        "family_reunited": true,
+        "KKOMI_ALIVE": false,
+        "alive:kid_dodam": false,
+        "alive:kid_saemi": true,
+        "meeting:room13": null,
+        "meeting:records": "win",
+        "meeting:hypothesis": "win",
+        "meeting:soup": "win",
+        "teacher_custody": "guard",
+        "location:resident_seori": "school",
+        "location:resident_bori": "school",
+        "busy:resident_bori": false,
+        "location:daram": "school",
+        "location:nabi": "school",
+        "busy:nabi": false
+      },
+      "페이지오류": []
+    }
+  },
+  "저장복원": [
+    {
+      "device": "desktop",
+      "version": "0.20.93",
+      "same": true,
+      "page_errors": []
+    },
+    {
+      "device": "mobile",
+      "version": "0.20.93",
+      "same": true,
+      "page_errors": []
+    }
+  ],
+  "장작원문보기": "최종 웹에서 실제 소지 자료의 런타임 설명도 고정 운반자·인수자 없이 표시됨을 확인",
+  "공개묶음": {
+    "SHA256": "e8300b88c7372b0175c939648950c7234d9dc24909e27d282b20f07fbb1ec72b",
+    "원본일치": [
+      "options.rpy",
+      "room13_v111.rpy",
+      "room13_v111_days1114.rpy",
+      "v111/newworld/d10.json",
+      "v111/newworld/d11.json",
+      "v111/newworld/d12.json",
+      "v111/evidence-facts.json",
+      "v111/evidence-drawer.json"
+    ],
+    "QA파일제외": true
+  },
+  "제한": [
+    "기존 실행 코드의 정답 목록을 참고한 자동화이며, 처음 보는 사람의 눈가림 시험은 아니다.",
+    "두 브라우저 경로는 실제 9일차 저장부터 12일차 취침 전까지 연속 진행했다. 모든 선택 순열과 13~14일 전체 진행은 미실행이다.",
+    "화면시험은 장면 직전 상태를 기존 함수로 준비한다. 초기 의료진 시험의 파편 관찰 준비값 누락은 도우미 문제로 보완한 뒤 통과했다.",
+    "공개 도메인은 환경 네트워크 정책으로 직접 접속하지 못하며 원격 해시·Pages 작업으로 배포를 확인한다."
+  ]
+}
