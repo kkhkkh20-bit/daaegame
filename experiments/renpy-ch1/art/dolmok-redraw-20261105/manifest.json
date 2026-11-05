@@ -1,0 +1,392 @@
+{
+  "approval": "소유자: 돌목 대화 모습을 예쁘게 다시 제작",
+  "sources": {
+    "neutral": {
+      "file": "assets/dialogue-player-facing/guard-redesign/neutral.webp",
+      "source_master": "art/dolmok-redraw-20261105/sources/neutral.png",
+      "source_sha256": "82c95c8d4a8d726298f82d1a15e1805f8e43de88db55f43ce3f536670ae556e0",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "bounds": [
+        112,
+        24,
+        914,
+        1520
+      ]
+    },
+    "joy": {
+      "file": "assets/dialogue-player-facing/guard-redesign/joy.webp",
+      "source_master": "art/dolmok-redraw-20261105/sources/joy.png",
+      "source_sha256": "26643eb4ea19d1b6c788afed713825d8b53894398a8faa2c4e25f87f56bc0353",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "bounds": [
+        112,
+        23,
+        915,
+        1520
+      ]
+    },
+    "angry": {
+      "file": "assets/dialogue-player-facing/guard-redesign/angry.webp",
+      "source_master": "art/dolmok-redraw-20261105/sources/angry.png",
+      "source_sha256": "7fe5c16e5069e0cfb367093b8fbb312e62de39fd3df55a31e37f73d475658a9d",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "bounds": [
+        112,
+        24,
+        916,
+        1519
+      ]
+    },
+    "anxious": {
+      "file": "assets/dialogue-player-facing/guard-redesign/anxious.webp",
+      "source_master": "art/dolmok-redraw-20261105/sources/anxious.png",
+      "source_sha256": "dd8a300f10bf70be76f3daca40c809d5fe082cdc7149ef6fee326fda45cacc47",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "bounds": [
+        111,
+        19,
+        915,
+        1520
+      ]
+    },
+    "flustered": {
+      "file": "assets/dialogue-player-facing/guard-flustered.webp",
+      "source_master": "art/dolmok-redraw-20261105/sources/flustered.png",
+      "source_sha256": "677a001de4d69b53d7e7f24032d52f178de3438e8f4a75d6291d1cc6bfb60f81",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "bounds": [
+        111,
+        21,
+        914,
+        1520
+      ]
+    },
+    "surprise_talk": {
+      "file": "assets/dialogue-player-facing/guard-redesign/surprise_talk.webp",
+      "source_master": "art/dolmok-redraw-20261105/sources/surprise_talk.png",
+      "source_sha256": "16d6b23a7d7720a16e8f7f313c1fbbfeff78005fce7b711d31e6d61936484eb9",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "bounds": [
+        111,
+        18,
+        914,
+        1519
+      ]
+    }
+  },
+  "profiles": {
+    "560": {
+      "canvas": [
+        373,
+        612
+      ],
+      "frames": {
+        "neutral": {
+          "file": "assets/dialogue-player-facing/guard-redesign/neutral.webp",
+          "offset": [
+            -9,
+            9
+          ],
+          "scale": 0.38101604,
+          "nearest": false,
+          "anchor": [
+            513.0,
+            1520
+          ],
+          "source_master": "art/dolmok-redraw-20261105/sources/neutral.png",
+          "source_sha256": "82c95c8d4a8d726298f82d1a15e1805f8e43de88db55f43ce3f536670ae556e0"
+        },
+        "joy": {
+          "file": "assets/dialogue-player-facing/guard-redesign/joy.webp",
+          "offset": [
+            -9,
+            9
+          ],
+          "scale": 0.38076152,
+          "nearest": false,
+          "anchor": [
+            513.5,
+            1520
+          ],
+          "source_master": "art/dolmok-redraw-20261105/sources/joy.png",
+          "source_sha256": "26643eb4ea19d1b6c788afed713825d8b53894398a8faa2c4e25f87f56bc0353"
+        },
+        "angry": {
+          "file": "assets/dialogue-player-facing/guard-redesign/angry.webp",
+          "offset": [
+            -9,
+            9
+          ],
+          "scale": 0.3812709,
+          "nearest": false,
+          "anchor": [
+            514.0,
+            1519
+          ],
+          "source_master": "art/dolmok-redraw-20261105/sources/angry.png",
+          "source_sha256": "7fe5c16e5069e0cfb367093b8fbb312e62de39fd3df55a31e37f73d475658a9d"
+        },
+        "anxious": {
+          "file": "assets/dialogue-player-facing/guard-redesign/anxious.webp",
+          "offset": [
+            -8,
+            11
+          ],
+          "scale": 0.37974684,
+          "nearest": false,
+          "anchor": [
+            513.0,
+            1520
+          ],
+          "source_master": "art/dolmok-redraw-20261105/sources/anxious.png",
+          "source_sha256": "dd8a300f10bf70be76f3daca40c809d5fe082cdc7149ef6fee326fda45cacc47"
+        },
+        "flustered": {
+          "file": "assets/dialogue-player-facing/guard-flustered.webp",
+          "offset": [
+            -8,
+            10
+          ],
+          "scale": 0.3802535,
+          "nearest": false,
+          "anchor": [
+            512.5,
+            1520
+          ],
+          "source_master": "art/dolmok-redraw-20261105/sources/flustered.png",
+          "source_sha256": "677a001de4d69b53d7e7f24032d52f178de3438e8f4a75d6291d1cc6bfb60f81"
+        },
+        "surprise_talk": {
+          "file": "assets/dialogue-player-facing/guard-redesign/surprise_talk.webp",
+          "offset": [
+            -8,
+            11
+          ],
+          "scale": 0.37974684,
+          "nearest": false,
+          "anchor": [
+            512.5,
+            1519
+          ],
+          "source_master": "art/dolmok-redraw-20261105/sources/surprise_talk.png",
+          "source_sha256": "16d6b23a7d7720a16e8f7f313c1fbbfeff78005fce7b711d31e6d61936484eb9"
+        }
+      }
+    },
+    "760": {
+      "canvas": [
+        416,
+        682
+      ],
+      "frames": {
+        "neutral": {
+          "file": "assets/dialogue-player-facing/guard-redesign/neutral.webp",
+          "offset": [
+            -11,
+            8
+          ],
+          "scale": 0.42780749,
+          "nearest": false,
+          "anchor": [
+            513.0,
+            1520
+          ],
+          "source_master": "art/dolmok-redraw-20261105/sources/neutral.png",
+          "source_sha256": "82c95c8d4a8d726298f82d1a15e1805f8e43de88db55f43ce3f536670ae556e0"
+        },
+        "joy": {
+          "file": "assets/dialogue-player-facing/guard-redesign/joy.webp",
+          "offset": [
+            -12,
+            8
+          ],
+          "scale": 0.42752171,
+          "nearest": false,
+          "anchor": [
+            513.5,
+            1520
+          ],
+          "source_master": "art/dolmok-redraw-20261105/sources/joy.png",
+          "source_sha256": "26643eb4ea19d1b6c788afed713825d8b53894398a8faa2c4e25f87f56bc0353"
+        },
+        "angry": {
+          "file": "assets/dialogue-player-facing/guard-redesign/angry.webp",
+          "offset": [
+            -12,
+            8
+          ],
+          "scale": 0.42809365,
+          "nearest": false,
+          "anchor": [
+            514.0,
+            1519
+          ],
+          "source_master": "art/dolmok-redraw-20261105/sources/angry.png",
+          "source_sha256": "7fe5c16e5069e0cfb367093b8fbb312e62de39fd3df55a31e37f73d475658a9d"
+        },
+        "anxious": {
+          "file": "assets/dialogue-player-facing/guard-redesign/anxious.webp",
+          "offset": [
+            -11,
+            10
+          ],
+          "scale": 0.42638241,
+          "nearest": false,
+          "anchor": [
+            513.0,
+            1520
+          ],
+          "source_master": "art/dolmok-redraw-20261105/sources/anxious.png",
+          "source_sha256": "dd8a300f10bf70be76f3daca40c809d5fe082cdc7149ef6fee326fda45cacc47"
+        },
+        "flustered": {
+          "file": "assets/dialogue-player-facing/guard-flustered.webp",
+          "offset": [
+            -11,
+            9
+          ],
+          "scale": 0.4269513,
+          "nearest": false,
+          "anchor": [
+            512.5,
+            1520
+          ],
+          "source_master": "art/dolmok-redraw-20261105/sources/flustered.png",
+          "source_sha256": "677a001de4d69b53d7e7f24032d52f178de3438e8f4a75d6291d1cc6bfb60f81"
+        },
+        "surprise_talk": {
+          "file": "assets/dialogue-player-facing/guard-redesign/surprise_talk.webp",
+          "offset": [
+            -11,
+            10
+          ],
+          "scale": 0.42638241,
+          "nearest": false,
+          "anchor": [
+            512.5,
+            1519
+          ],
+          "source_master": "art/dolmok-redraw-20261105/sources/surprise_talk.png",
+          "source_sha256": "16d6b23a7d7720a16e8f7f313c1fbbfeff78005fce7b711d31e6d61936484eb9"
+        }
+      }
+    },
+    "840": {
+      "canvas": [
+        552,
+        906
+      ],
+      "frames": {
+        "neutral": {
+          "file": "assets/dialogue-player-facing/guard-redesign/neutral.webp",
+          "offset": [
+            -22,
+            -2
+          ],
+          "scale": 0.5815508,
+          "nearest": false,
+          "anchor": [
+            513.0,
+            1520
+          ],
+          "source_master": "art/dolmok-redraw-20261105/sources/neutral.png",
+          "source_sha256": "82c95c8d4a8d726298f82d1a15e1805f8e43de88db55f43ce3f536670ae556e0"
+        },
+        "joy": {
+          "file": "assets/dialogue-player-facing/guard-redesign/joy.webp",
+          "offset": [
+            -22,
+            -1
+          ],
+          "scale": 0.58116232,
+          "nearest": false,
+          "anchor": [
+            513.5,
+            1520
+          ],
+          "source_master": "art/dolmok-redraw-20261105/sources/joy.png",
+          "source_sha256": "26643eb4ea19d1b6c788afed713825d8b53894398a8faa2c4e25f87f56bc0353"
+        },
+        "angry": {
+          "file": "assets/dialogue-player-facing/guard-redesign/angry.webp",
+          "offset": [
+            -23,
+            -2
+          ],
+          "scale": 0.5819398,
+          "nearest": false,
+          "anchor": [
+            514.0,
+            1519
+          ],
+          "source_master": "art/dolmok-redraw-20261105/sources/angry.png",
+          "source_sha256": "7fe5c16e5069e0cfb367093b8fbb312e62de39fd3df55a31e37f73d475658a9d"
+        },
+        "anxious": {
+          "file": "assets/dialogue-player-facing/guard-redesign/anxious.webp",
+          "offset": [
+            -21,
+            1
+          ],
+          "scale": 0.57961359,
+          "nearest": false,
+          "anchor": [
+            513.0,
+            1520
+          ],
+          "source_master": "art/dolmok-redraw-20261105/sources/anxious.png",
+          "source_sha256": "dd8a300f10bf70be76f3daca40c809d5fe082cdc7149ef6fee326fda45cacc47"
+        },
+        "flustered": {
+          "file": "assets/dialogue-player-facing/guard-flustered.webp",
+          "offset": [
+            -21,
+            0
+          ],
+          "scale": 0.58038692,
+          "nearest": false,
+          "anchor": [
+            512.5,
+            1520
+          ],
+          "source_master": "art/dolmok-redraw-20261105/sources/flustered.png",
+          "source_sha256": "677a001de4d69b53d7e7f24032d52f178de3438e8f4a75d6291d1cc6bfb60f81"
+        },
+        "surprise_talk": {
+          "file": "assets/dialogue-player-facing/guard-redesign/surprise_talk.webp",
+          "offset": [
+            -21,
+            2
+          ],
+          "scale": 0.57961359,
+          "nearest": false,
+          "anchor": [
+            512.5,
+            1519
+          ],
+          "source_master": "art/dolmok-redraw-20261105/sources/surprise_talk.png",
+          "source_sha256": "16d6b23a7d7720a16e8f7f313c1fbbfeff78005fce7b711d31e6d61936484eb9"
+        }
+      }
+    }
+  },
+  "kept": "오소리 성인 경비·청록 외투·빨간 목도리·장부·붓; 현장 도트와 작은 기존 프로필은 별도 역할로 유지"
+}

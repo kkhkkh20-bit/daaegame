@@ -124,7 +124,8 @@ class R07QuestionScreenFeet(unittest.TestCase):
             self.assertGreater(feet, 660, person)
             # 대사창 기준 발 선(640+110=750)은 화면 밖이었다.
             self.assertGreater(110 + 640, 720)
-        self.assertIn('ypos r13_question_close_y(person,840,110,pose)', (ROOT / 'game/systems/room13_side_questions.rpy').read_text())
+        self.assertIn('ypos r13_question_close_y(person,question_portrait_height,110,pose)', (ROOT / 'game/systems/room13_side_questions.rpy').read_text())
+        self.assertIn('question_portrait_height=560 if person=="guard" else 840', (ROOT / 'game/systems/room13_side_questions.rpy').read_text())
 
     def test_other_art_keeps_the_dialogue_rule(self):
         ns = dict(r13_dialogue_source_profile=lambda p, pose, h: None, r13_close_y=lambda p, h, t, pose: 777, R13_QUESTION_FEET_LINE=712)

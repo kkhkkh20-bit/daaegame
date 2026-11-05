@@ -8,7 +8,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 SLOTS = {'neutral', 'joy', 'angry', 'anxious', 'flustered', 'surprise_talk'}
-PEOPLE = {'resident_piko', 'resident_bori', 'karo', 'doto', 'neoul', 'resident_siluk', 'resident_seori', 'seryeon'}
+PEOPLE = {'guard', 'resident_piko', 'resident_bori', 'karo', 'doto', 'neoul', 'resident_siluk', 'resident_seori', 'seryeon'}
 
 
 def profiles(prefix):
@@ -58,6 +58,66 @@ class PlayerFacingProfiles(unittest.TestCase):
         entry = self.env['R13_DIALOGUE_TALK_ART']['people']['actor']
         self.assertIs(render('actor', entry), old_b)
         self.assertIs(self.render(), self.front)
+
+    def guard(self):
+        self.env['R13_DIALOGUE_PLAYER_FACING']['people']['guard'] = self.front_entry
+        entry = dict(status='approved_runtime', profiles=self.original)
+        self.env['R13_DIALOGUE_TALK_ART']['people']['guard'] = entry
+        return entry
+
+    def test_guard_direct_and_reviewed_beat_share_approved_expressions(self):
+        entry = self.guard()
+        render = self.env['r13_dialogue_render_profiles']
+        old_b = profiles('old-b')
+        self.env.update(R13_DIALOGUE_B_ART_ON=True, R13_DIALOGUE_B_ART={'guard': old_b})
+        for direct in (False, True):
+            with self.subTest(direct=direct):
+                chosen = render('guard', entry, direct)
+                self.assertIs(chosen, self.front)
+                self.assertEqual(set(chosen['840']['frames']), SLOTS)
+                self.assertNotIn('surprise_react', chosen['840']['frames'])
+                self.assertIsNot(chosen['840']['frames']['flustered'], chosen['840']['frames']['anxious'])
+        get = self.env['r13_dialogue_source_profile']
+        for slot in SLOTS:
+            self.assertIs(get('guard', slot, 840), self.front['840'])
+        # 돌목의 예외가 다른 인물의 비직접 표정 선택으로 퍼지지 않는다.
+        self.assertIs(self.render(False), self.original)
+
+    def test_guard_meeting_retains_direct_solo_focus_boundary(self):
+        entry = self.guard()
+        render = self.env['r13_dialogue_render_profiles']
+        state = self.env['store']
+        state.r13_meeting_active = True
+        for solo, focus, direct in ((False, 'guard', False), (False, 'guard', True),
+                                    (True, 'other', False), (True, 'other', True),
+                                    (True, 'guard', False), (True, 'guard', True)):
+            with self.subTest(solo=solo, focus=focus, direct=direct):
+                self.env['R13_MEETING_SOLO'] = solo
+                state.r13_meeting_focus = focus
+                expected = self.front if solo and focus == 'guard' and direct else self.original
+                self.assertIs(render('guard', entry, direct), expected)
+
+    def test_guard_incomplete_or_unapproved_set_keeps_original_matching_slots(self):
+        entry = self.guard()
+        render = self.env['r13_dialogue_render_profiles']
+        del self.front['760']['frames']['flustered']
+        for direct in (False, True):
+            chosen = render('guard', entry, direct)
+            self.assertIs(chosen, self.original)
+            self.assertNotEqual(chosen['840']['frames']['flustered']['file'],
+                                chosen['840']['frames']['anxious']['file'])
+        self.front['760']['frames']['flustered'] = profiles('front')['760']['frames']['flustered']
+        self.env['_r13_player_facing_ready'].clear()
+        self.front_entry['status'] = 'HOLD_MISSING_FLUSTERED'
+        for direct in (False, True):
+            self.assertIs(render('guard', entry, direct), self.original)
+
+    def test_guard_missing_master_does_not_partially_replace_beat(self):
+        entry = self.guard()
+        self.env['renpy'].loadable = lambda path: not path.endswith('/760/joy.webp')
+        render = self.env['r13_dialogue_render_profiles']
+        for direct in (False, True):
+            self.assertIs(render('guard', entry, direct), self.original)
 
     def test_missing_flustered_keeps_original_flustered_without_emotion_substitution(self):
         del self.front['760']['frames']['flustered']
@@ -133,6 +193,25 @@ class PlayerFacingProfiles(unittest.TestCase):
                     self.assertTrue(path.is_file(), (who, height, slot))
                     if slot == 'flustered':self.assertEqual(path.name, who + '-flustered.webp')
                     else:self.assertEqual(path.name, slot + '.webp')
+
+
+    def test_guard_pixel_offsets_fit_all_exact_profiles(self):
+        # Ren'Py는 float 위치를 상대 비율로 해석하므로 픽셀 좌표는 정수여야 한다.
+        from PIL import Image
+        guard=json.loads((ROOT/'game/assets/room13-dialogue-player-facing.json').read_text())['people']['guard']
+        for height,profile in guard['profiles'].items():
+            for slot,frame in profile['frames'].items():
+                with self.subTest(height=height,slot=slot):
+                    self.assertTrue(all(type(n) is int for n in frame['offset']))
+                    with Image.open(ROOT/'game'/frame['file']) as im:
+                        box=im.getchannel('A').point(lambda a:255 if a>=16 else 0).getbbox()
+                    self.assertIsNotNone(box)
+                    x0,y0,x1,y1=box;scale=frame['scale'];ox,oy=frame['offset']
+                    self.assertAlmostEqual(ox+(x0+x1)*scale/2,profile['canvas'][0]/2,delta=1)
+                    self.assertAlmostEqual(oy+y1*scale,profile['canvas'][1]-24,delta=1)
+                    self.assertGreaterEqual(ox+x0*scale,0)
+                    self.assertGreaterEqual(oy+y0*scale,0)
+                    self.assertLessEqual(ox+x1*scale,profile['canvas'][0])
 
 
 if __name__ == '__main__':

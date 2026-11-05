@@ -205,7 +205,9 @@ init 170 python:
     def r13_dialogue_render_profiles(person,entry,player_facing=False):
         meeting=bool(getattr(store,"r13_meeting_active",False))
         solo_focus=bool(globals().get("R13_MEETING_SOLO") and getattr(store,"r13_meeting_focus",None)==person)
-        if player_facing and (not meeting or solo_focus):
+        # 돌목 새 작화는 일반 대사와 reviewed beat가 같은 승인 6표정을 쓴다.
+        # 회의는 기존처럼 직접 정면 요청을 받은 단독 초점만 바꾸며, 다른 인물의 beat는 유지한다.
+        if (player_facing and (not meeting or solo_focus)) or (person=="guard" and not meeting):
             profiles=r13_dialogue_player_profiles(person)
             if profiles:return profiles
 
