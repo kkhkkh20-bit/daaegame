@@ -1,3 +1,6 @@
+# 예전 질문 화면 저장에도 새 임시 UI 값이 있도록 기본값을 둔다.
+default v111_topic_direct = None
+
 default r13_field_reading = False
 default r13_v111_talk_person = None
 default r13_v111_bed_pending = None
