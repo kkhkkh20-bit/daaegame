@@ -1,0 +1,51 @@
+{
+  "version": "0.20.98",
+  "unit_tests": 1229,
+  "unit_status": "passed",
+  "lint": "passed",
+  "dialogue_logic": {
+    "A": 0,
+    "B": 0,
+    "C": 0
+  },
+  "screen_tests": [
+    {
+      "test": "opening_center_and_quiet_arrival",
+      "status": "PASSED"
+    },
+    {
+      "test": "opening_center_motion_off",
+      "status": "PASSED"
+    },
+    {
+      "test": "opening_center_skip",
+      "status": "PASSED"
+    },
+    {
+      "test": "opening_neoul_map_departure",
+      "status": "PASSED"
+    },
+    {
+      "test": "v111_nw_d01_gate_lost",
+      "status": "PASSED"
+    },
+    {
+      "test": "v111_nw_d01_gate_won",
+      "status": "PASSED"
+    }
+  ],
+  "archive_sha256": "1448d6850089da769655c20556bbfa9327d76aa283e471392be17fad747eb922",
+  "approved_character_masters_unchanged": true,
+  "source_records_sha256": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57",
+  "scope": "하차음·너울등장·새마차중앙구도. 전체 자연 완주 미실행.",
+  "web": {
+    "scope": "첫 마차 실제 새 게임, PC·휴대폰 표시와 저장 복원",
+    "checks": [
+      "첫 마차 얼굴 중앙 위치·PC/휴대폰 표시·저장/불러오기 일치",
+      "표정 변경 위치 유지·건너뛰기 후 하차 효과 채널 무음"
+    ],
+    "version": "0.20.98",
+    "status": "passed",
+    "page_errors": []
+  }
+}
