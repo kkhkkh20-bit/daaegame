@@ -39,6 +39,11 @@ init 100 python:
         return "%s · %s"%(data.get("_version") or "버전 미상",
             {"compatible":"현재 버전에서 이어갈 수 있음","unknown":"호환 확인 전 · 새 게임 권장","incompatible":"현재 버전과 호환되지 않음"}[status])
 
+    def r13_save_short_where(where):
+        # 저장 원문은 보존하고, 칸의 제목에서는 요일·시간대를 덜어 날짜와 장소를 읽게 한다.
+        parts=(where or "").split(" · ")
+        return (parts[0].replace("일째","일")+" · "+parts[-1]) if len(parts)>1 else parts[0]
+
     def r13_slot_name(slot,page=None):
         return (page or persistent._file_page or "1")+"-"+str(slot)
 

@@ -144,6 +144,21 @@ init 301 python:
             if bed:return bed[0]
         if b.get("auto") and len(options)==1:return options[0]["index"]
         return None
+
+    def r13_v111_direct_topic(key,person,location,options,questions):
+        # 1~3일 첫 플레이 검수: 이미 말을 건 상대에게 질문이 없거나 하나뿐인 두 관문만 잇는다.
+        # 후속 질문·새 선택이 생긴 저장에서는 기존 질문지를 보이며, 자료 선택과 수신자 판정은 건너뛰지 않는다.
+        route={"envelope_show":("seryeon","post"),"portrait_ask":("resident_piko","square")}
+        if route.get(key)!=(person,location) or len(options)!=1:return None
+        option=options[0]
+        if option.get("person")!=person or option.get("location")!=location:return None
+        if key=="envelope_show":
+            if not questions and option.get("present_only") and option.get("present"):return "present"
+        elif (len(questions)==1 and not option.get("present") and not option.get("present_only")
+                and option.get("index")==0):
+            value=getattr(questions[0][1],"value",None)
+            if type(value) is int and value==0:return value
+        return None
     for title in R13_V111["proof_claims"]:R13_CLAIMS["v111:"+title]=dict(assertion=title)
     for key,spec in R13_V111["evidence"].items():
         rid="V111:"+key
@@ -327,7 +342,11 @@ label r13_v111_wait_again:
             # 0.20.10 (4~14일 리뷰 P07): 물을 것이 없는 다람은 장면마다 처음 한 번 먼저 대답한다.
             if v111_person=="daram" and r13_v111_daram_hello_due():
                 call r13_lines(r13_v111_daram_hello(),"v111:daram_hello")
-            call screen r13_topics(v111_person)
+            $ v111_topic_direct=r13_v111_direct_topic(key,v111_person,room13["location"],v111_binding.get("options",[]),r13_v111_questions(v111_person))
+            if v111_topic_direct is None:
+                call screen r13_topics(v111_person)
+            else:
+                $ _return=v111_topic_direct
             if _return!="back":
                 $ r13_v111_talk_person=v111_person
                 $ r13_v111_set("talked:%s:%s"%(room13["v111"].get("scene"),v111_person),True)
@@ -346,6 +365,9 @@ label r13_v111_wait_again:
             if _return=="present":
                 call screen r13_book(v111_person,present=True)
                 $ v111_shown=_return if isinstance(_return,str) else None  # 0.20.4: cancel (False/None/True) is not a record
+                if v111_topic_direct=="present" and not v111_shown:
+                    # 빈 질문지 없이 연 자료함을 취소하면 같은 자료함을 다시 열지 않고 현장으로 돌아간다.
+                    $ r13_v111_talk_person=None
                 $ v111_match=r13_v111_present_index(v111_binding,v111_person,v111_shown)
                 if v111_match is not None:
                     return v111_match

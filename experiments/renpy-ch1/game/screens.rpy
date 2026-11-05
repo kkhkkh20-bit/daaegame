@@ -527,14 +527,28 @@ screen r13_settings_save_tab(saving):
                     hbox:
                         spacing 14 xalign 0.0 yalign .5
                         add FileScreenshot(i+1,page="1") xsize 160 ysize 90 yalign .5
-                        vbox:
-                            spacing 3 yalign .5
-                            text (r13_slot_where(slot) or "저장 %d"%(i+1)) size r13_nb_body_size() color r13_nb_ink() xsize 210 font R13_UI_BOLD_FONT
-                            if r13_slot_info(slot,"r13_stage"):
-                                text r13_slot_info(slot,"r13_stage") size r13_nb_small_size() xsize 210 font R13_UI_BOLD_FONT
-                            text FileTime(i+1,format="%m-%d %H:%M",page="1") size r13_nb_small_size() color r13_nb_muted() xsize 210 font R13_UI_BOLD_FONT
+                        use r13_save_slot_copy(slot,i+1,210,settings=True)
                 else:
                     text "빈 칸" size r13_nb_body_size() color r13_nb_muted() align (.5,.5) font R13_UI_BOLD_FONT
+
+# 2026-11-05 승인 시안: 기존 여섯 칸과 그림 크기는 유지하며 글만 칸 안에 맞춘다.
+screen r13_save_slot_copy(slot,number,width,settings=False):
+    vbox:
+        spacing 3 yalign .5
+        $ where=r13_save_short_where(r13_slot_where(slot)) or "저장 %d"%number
+        $ parts=where.split(" · ")
+        $ title=parts[-1] if settings else where
+        text r13_ev_two_lines(title,width,r13_nb_body_size(),1) size r13_nb_body_size() color r13_nb_ink() xsize width font R13_UI_BOLD_FONT
+        $ summary=r13_slot_info(slot,"r13_last") or r13_slot_info(slot,"r13_stage")
+        if summary and not settings:
+            text r13_ev_two_lines(summary,width,r13_nb_small_size(),1) size r13_nb_small_size() color "#5d6a66" xsize width font R13_UI_BOLD_FONT
+        $ state=r13_save_status(renpy.slot_json(slot))
+        $ status={"compatible":"계속 가능","unknown":"확인 필요","incompatible":"호환 안 됨"}.get(state,"")
+        if settings:
+            $ metadata=((parts[0]+" · ") if len(parts)>1 else "")+FileTime(number,format="%H:%M",page="1") if state=="compatible" else status
+        else:
+            $ metadata=FileTime(number,format="%m/%d %H:%M",page="1")+" · "+status
+        text r13_ev_two_lines(metadata,width,r13_nb_small_size(),1) size r13_nb_small_size() color r13_nb_muted() xsize width font R13_UI_BOLD_FONT
 
 screen file_slots(title,saving):
     modal True
@@ -564,14 +578,7 @@ screen file_slots(title,saving):
                     hbox:
                         spacing 14 xalign 0.0 yalign .5
                         add FileScreenshot(i+1,page="1") xsize 174 ysize 98 yalign .5
-                        vbox:
-                            spacing 3 yalign .5
-                            text (r13_slot_where(slot) or "저장 %d"%(i+1)) size r13_nb_body_size() color r13_nb_ink() xsize 320 font R13_UI_BOLD_FONT
-                            if r13_slot_info(slot,"r13_stage"):
-                                text r13_slot_info(slot,"r13_stage") size r13_nb_small_size() xsize 320 font R13_UI_BOLD_FONT
-                            if r13_slot_info(slot,"r13_last"):
-                                text ("“"+r13_slot_info(slot,"r13_last")+"”") size r13_nb_small_size() color "#5d6a66" xsize 320 font R13_UI_BOLD_FONT
-                            text (FileTime(i+1,format="%m-%d %H:%M",page="1")+" · "+r13_save_caption(renpy.slot_json(slot))) size r13_nb_small_size() color r13_nb_muted() xsize 320 font R13_UI_BOLD_FONT
+                        use r13_save_slot_copy(slot,i+1,320,settings=False)
                 else:
                     text "빈 칸" size r13_nb_body_size() color r13_nb_muted() align (.5,.5) font R13_UI_BOLD_FONT
     use r13_nb_footer_button(0,"돌아가기",Return(),primary=True,control_id="r13_save_back")

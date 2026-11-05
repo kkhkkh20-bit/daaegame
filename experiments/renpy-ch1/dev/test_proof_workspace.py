@@ -20,9 +20,9 @@ class ProofWorkspacePure(unittest.TestCase):
     def setUp(self):
         self.ns=load_pure()
 
-    def test_context_table_covers_pilot_issues_only(self):
+    def test_context_table_covers_approved_issues_only(self):
         ctx=self.ns['R13_PW_CONTEXT']
-        self.assertEqual(set(ctx),{'함께 들어갈 근거를 고른다','두 편지를 나란히 본다','불이 시작된 곳과 진술을 대조한다'})
+        self.assertEqual(set(ctx),{'함께 들어갈 근거를 고른다','두 편지를 나란히 본다','불이 시작된 곳과 진술을 대조한다','측정 종료와 점검 기록을 대조한다','수리와 반출을 가릴 자료를 낸다','돌과 매입 기록을 낸다','바깥 걸쇠 주장과 발견 위치를 대조한다','마지막 점검과 인수한 돌을 연결한다'})
         self.assertEqual(ctx['두 편지를 나란히 본다']['mode'],'compare')
         self.assertEqual(ctx['함께 들어갈 근거를 고른다']['speaker'],'돌목')
         self.assertEqual(ctx['불이 시작된 곳과 진술을 대조한다']['quote_when'],('value','bori_nubi_door_witness_heard'))
@@ -32,6 +32,18 @@ class ProofWorkspacePure(unittest.TestCase):
             for field in ('speaker','quote'):
                 self.assertNotRegex(str(spec.get(field) or ''),r'V111:|E0\d|E06_FIRE')
             self.assertNotIn('correct',spec)
+
+    def test_day3_quotes_only_repeat_already_spoken_lines(self):
+        import json
+        overlay=json.loads((ROOT/'game/v111/newworld/d03.json').read_text())['replace']
+        pairs={'수리와 반출을 가릴 자료를 낸다':'MS14_D03_S05_L0002','돌과 매입 기록을 낸다':'MS14_D03_S05_L0005','바깥 걸쇠 주장과 발견 위치를 대조한다':'MS14_D03_S05_L0017','마지막 점검과 인수한 돌을 연결한다':'MS14_D03_S05_L0025'}
+        clean=lambda text:' '.join(re.sub(r'\{[^}]*\}','',text).split())
+        for key,line in pairs.items():
+            spec=self.ns['R13_PW_CONTEXT'][key]
+            rows=overlay[line] if isinstance(overlay[line],list) else [overlay[line]]
+            for row in rows:self.assertIn(clean(spec['quote']),clean(row['text']))
+            self.assertEqual(spec['quote_when'],('flag','v111:entered:MS14_D03_S05'))
+        self.assertIsNone(self.ns['R13_PW_CONTEXT']['측정 종료와 점검 기록을 대조한다']['quote'])
 
     def test_quote_visible_follows_flag_or_value(self):
         vis=self.ns['r13_pw_quote_visible'];ctx=self.ns['R13_PW_CONTEXT']
