@@ -145,6 +145,7 @@ init 350 python:
 
 # store 에 기대는 도우미와 화면.
 default r13_pw_views = {}   # 쟁점(claim)별 UI 기억: 탭·열어 본 자료·발언 접힘. 구 저장에는 없어도 기본값으로 연다.
+default persistent.room13_pw_controls_seen = False
 
 init 351 python:
     def r13_pw_active(key):
@@ -179,6 +180,7 @@ init 351 python:
         store.room13=copy
 
     def r13_pw_toggle_action(claim,key,mode):
+        persistent.room13_pw_controls_seen=True
         owned=r13_pw_entries()
         chosen=list((store.room13.get("arguments") or {}).get(claim,[]))
         new,pending=r13_pw_toggle(chosen,key,owned,mode)
@@ -210,6 +212,7 @@ init 351 python:
 
     def r13_pw_open_detail(key):
         """이름을 누르면 읽는다. 읽어도 선택되지 않는다. 읽기용 쌍의 빈 자리가 있으면 그 자리에 채운다."""
+        persistent.room13_pw_controls_seen=True
         pair=renpy.get_screen("r13_proof_workspace").scope.get("pair")
         if pair and None in (tuple(pair)+(None,None))[:2]:
             renpy.set_screen_variable("pair",r13_pw_pair_fill(pair,key),screen="r13_proof_workspace")
@@ -294,11 +297,11 @@ init 351 python:
             L["chips_y"]=L["footer_y"];L["body_bottom"]=L["footer_y"]-10
             L["quote_y"]=L["top"]+46;L["rule_y"]=L["top"]+84
             L["tab_y"]=L["top"]+96
-            L["list_x"]=L["left"];L["list_w"]=800
-            L["detail_x"]=L["left"]+824;L["detail_w"]=L["right"]-L["detail_x"]
+            L["list_x"]=L["left"];L["list_w"]=640
+            L["detail_x"]=L["left"]+664;L["detail_w"]=L["right"]-L["detail_x"]
             L["tab_x"]=L["list_x"];L["tab_w"]=0;L["tab_gap"]=6
             L["body_top"]=L["tab_y"]+L["tab_h"]+8
-            L["cols"]=3
+            L["cols"]=2
         else:
             L["quote_x"]=L["left"];L["quote_w"]=268
             L["list_x"]=424;L["list_w"]=340
@@ -377,12 +380,14 @@ screen r13_pw_detail(claim,key,mode,x,y,w,h,origin_open,can_pair,ready):
     $ small=r13_pw_small()
     $ bh=r13_ev_button_height()
     $ inner=w-24
-    $ pic=min(inner,180 if not r13_touch_ui() else 120)   # PC 180: 관찰 사실 세 줄이 스크롤 없이 보인다
+    $ pic=min(inner,64 if not r13_touch_ui() else 32)
     # 읽기 조작(출처 펼치기·나란히 놓기)은 뷰포트 밖 아래 한 줄에 고정한다 — 긴 상세에서 스크롤 끝까지 내려가야 보이면 안 된다.
     $ buttons=[("출처 접기" if origin_open else "출처 펼치기",SetScreenVariable("origin_open",not origin_open),"r13_pw_origin")]
     if can_pair:
         # 일반 proof 의 읽기용 나란히 놓기. 제출 묶음은 그대로다(D03·T09).
         $ buttons.append(("⇆ 나란히 놓기",[SetScreenVariable("pair",(key,None)),SetScreenVariable("detail",None)],"r13_pw_pair"))
+    if r13_touch_ui():
+        $ buttons.append(("그림 확대",Show("r13_pw_picture",key=key),"r13_pw_enlarge"))
     $ bw=(w-8*(len(buttons)-1))//len(buttons)
     for index,(caption,action,control_id) in enumerate(buttons):
         fixed:
@@ -394,25 +399,20 @@ screen r13_pw_detail(claim,key,mode,x,y,w,h,origin_open,can_pair,ready):
         vscrollbar_unscrollable "hide"
         vbox:
             xsize inner spacing 10
-            if r13_touch_ui():
-                # 휴대폰(D06): 본문이 낮아 그림 아래 관찰 사실이 스크롤 뒤로 숨었다. 그림은 왼쪽, 제목·사실은 오른쪽에 나란히.
-                hbox:
-                    spacing 14
+            # 그림과 제목은 작은 머리글, 관찰 사실은 그 아래 전체 폭으로 읽는다.
+            hbox:
+                spacing 14
+                if r13_touch_ui():
                     fixed:
                         xysize (pic,pic)
                         use r13_evidence_picture_box(key,pic)
-                    vbox:
-                        xsize (inner-pic-14) spacing 8
-                        use r13_evidence_heading(key,inner-pic-14,(r13_nb_heading_size()))
-                        use r13_evidence_fact_list(key,inner-pic-14)
-            else:
-                use r13_evidence_heading(key,inner,(r13_nb_heading_size()))
-                fixed:
-                    xsize inner ysize pic
-                    fixed:
-                        xpos ((inner-pic)//2) xysize (pic,pic)
+                else:
+                    button:
+                        xysize (pic,pic) padding (0,0) background None
+                        action Show("r13_pw_picture",key=key) alt "자료 그림 확대"
                         use r13_evidence_picture_box(key,pic)
-                use r13_evidence_fact_list(key,inner)
+                use r13_evidence_heading(key,inner-pic-14,(r13_nb_heading_size()))
+            use r13_evidence_fact_list(key,inner)
             if r13_drawer_active():
                 use r13_drawer_note_blocks(key,inner)
             if origin_open:
@@ -553,6 +553,12 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
     $ quote_text=ctx["quote"] if (ctx["quote"] and r13_pw_quote_visible_now(key)) else None
     $ title=R13_PROOF_TITLES.get(key,key)
     default big=False
+    default last_touch=r13_touch_ui()
+    # PC에서 읽던 화면을 좁히면 펼친 발언이 자료 본문을 밀어낸다. 휴대폰으로 바뀔 때 한 번만 접는다.
+    if last_touch != r13_touch_ui():
+        $ last_touch=r13_touch_ui()
+        if last_touch:
+            $ quote_open=False
     $ dock=not big and not pair_open
     # 발언 앞 화자 이름도 실제 줄바꿈 폭에 포함한다. 휴대폰에서 한 줄이 더 생겨 틀 밖으로 나가던 문제를 막는다.
     $ layout_quote=(((ctx["speaker"]+"  ") if ctx["speaker"] else "")+quote_text) if quote_text else None
@@ -634,14 +640,22 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
     elif touch and detail:
         use r13_pw_detail(claim,detail,mode,L["detail_x"],L["body_top"],L["detail_w"],L["body_h"],origin_open,(mode=="proof" and len(owned)>1),ready)
     else:
+        $ tip_open=not persistent.room13_pw_controls_seen
+        $ tip_h=40 if tip_open else 0
+        $ list_y=L["body_top"]+(tip_h+8 if tip_open else 0)
+        $ list_h=L["body_h"]-(tip_h+8 if tip_open else 0)
+        if tip_open:
+            frame:
+                area (L["list_x"],L["body_top"],L["list_w"],tip_h) padding (10,4) background r13_field_paper()
+                text "체크는 선택 · 이름은 내용 읽기" size small color ink font R13_UI_FONT yalign .5
         $ cols=L["cols"]
         $ card_w=(L["list_w"]-8*(cols-1))//cols
         $ pager_h=(48 if touch else 36)
-        $ pages=r13_pw_pages(sections,cols,L["body_h"],L["card_h"],small+6,8,pager_h)
+        $ pages=r13_pw_pages(sections,cols,list_h,L["card_h"],small+6,8,pager_h)
         $ page=min(page,len(pages)-1)
         fixed:
             id "r13_pw_list"
-            area (L["list_x"],L["body_top"],L["list_w"],L["body_h"])
+            area (L["list_x"],list_y,L["list_w"],list_h)
             vbox:
                 xsize L["list_w"] spacing 8
                 for kind,value in pages[page]:
@@ -657,7 +671,7 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
             if len(pages)>1:
                 # 쪽 넘김 줄: 질문 화면과 같은 꼴(← 이전 · N / M쪽 · 다음 →). 목록 칸 맨 아래에 둔다.
                 hbox:
-                    ypos (L["body_h"]-pager_h) xsize L["list_w"] ysize pager_h
+                    ypos (list_h-pager_h) xsize L["list_w"] ysize pager_h
                     textbutton "← 이전":
                         id "r13_pw_prev"
                         xsize (L["list_w"]//3) ysize pager_h background None hover_background None
@@ -708,3 +722,14 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
         fixed:
             xpos (bx+index*(bw+gap)) ypos L["footer_y"] xysize (bw,r13_control_height())
             use r13_control(caption,None,action,enabled=(ready and enabled),primary=primary,width=bw,control_id=control_id)
+
+# 작은 머리글 그림은 필요할 때 기존 수첩 판에서 확대해 본다.
+screen r13_pw_picture(key):
+    modal True
+    zorder 90
+    use r13_notebook_shell(r13_catalog_title(key),close_action=Hide("r13_pw_picture"))
+    $ box=min(420,r13_nb_footer_y()-R13_NB_TOP-28)
+    fixed:
+        xcenter 640 ypos (R13_NB_TOP+12) xysize (box,box)
+        use r13_evidence_picture_box(key,box)
+    use r13_nb_footer_button(0,"닫기",Hide("r13_pw_picture"),primary=True)

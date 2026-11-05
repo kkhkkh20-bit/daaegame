@@ -27,7 +27,7 @@ class UnifiedInvestigation(unittest.TestCase):
   self.assertLess(world.index('for key,rect,mask'),world.index('for nameplate in r13_actor_nameplates'))
   acting=(ROOT/'game/room13_acting.rpy').read_text()
   # 0.19.97 (owner): a resident's whole box talks to them; objects keep only the area outside it.
-  self.assertIn('r13_object_mask(spec["rect"],[tuple(a["rect"]) for a in actors]+later)',acting)
+  self.assertIn('r13_object_mask(rect,[tuple(a["rect"]) for a in actors]+later)',acting)
   self.assertIn('focus_mask r13_actor_hit_mask(actor)',SCREEN)
   self.assertIn('and not r13_point_on_face(point,entry)',world)
  def test_toggle_removed_but_hint_and_callback_retained(self):

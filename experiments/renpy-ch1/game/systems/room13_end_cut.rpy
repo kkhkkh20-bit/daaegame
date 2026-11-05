@@ -121,19 +121,37 @@ screen r13_end_card(name, stat, lost):
     modal True
     zorder 100
     default ready = False
+    default details_open = False
     timer .45 action SetScreenVariable("ready", True)
-    add Solid("#05070fa6")
-    add r13_asset(R13_NB_PANEL) pos R13_NB_PANEL_POS
-    text "열나흘째 · 이야기의 끝" xpos R13_NB_TITLE_X ypos R13_NB_TITLE_Y font R13_UI_BOLD_FONT size r13_type("subtitle") color r13_type_color("muted")
-    add Solid("#c9a86a99") xpos R13_NB_LEFT ypos R13_NB_RULE_Y xsize R13_NB_WIDTH ysize 2
-    vbox:
-        xpos (R13_NB_LEFT+R13_NB_WIDTH//2) xanchor .5 ypos 220 spacing 22
-        text "결말" xalign .5 font R13_UI_BOLD_FONT size r13_type("body") color r13_type_color("accent")
-        text name id "r13_end_name" xalign .5 font R13_UI_BOLD_FONT size r13_type("display") color r13_type_color("ink")
-        add Solid("#bc4134") xalign .5 xsize 220 ysize 4
-        text stat xalign .5 font R13_UI_BOLD_FONT size r13_type("subtitle") color r13_type_color("ink")
+    $ control_h=r13_control_height()
+    $ record_y=r13_nb_footer_y()-control_h-24
+    if details_open:
+        add Solid("#05070fa6")
+        add r13_asset(R13_NB_PANEL) pos R13_NB_PANEL_POS
+        text "열나흘째 · 여정의 기록" xpos R13_NB_TITLE_X ypos R13_NB_TITLE_Y font R13_UI_BOLD_FONT size r13_type("subtitle") color r13_type_color("muted")
+        add Solid("#c9a86a99") xpos R13_NB_LEFT ypos R13_NB_RULE_Y xsize R13_NB_WIDTH ysize 2
+        vbox:
+            xcenter 640 ypos (170 if r13_touch_ui() else 196) spacing 16
+            text name id "r13_end_name" xalign .5 font R13_UI_BOLD_FONT size r13_type("display") color r13_type_color("ink")
+            add Solid("#bc4134") xalign .5 xsize 220 ysize 4
+            text stat id "r13_end_stats" xalign .5 font R13_UI_BOLD_FONT size r13_type("subtitle") color r13_type_color("ink")
         if lost:
-            text lost xalign .5 xmaximum (R13_NB_WIDTH-80) text_align .5 size r13_type("emphasis") color r13_type_color("muted")
+            viewport:
+                area (R13_NB_LEFT+40,320,R13_NB_WIDTH-80,max(40,record_y-334)) mousewheel True draggable True
+                vbox:
+                    xsize (R13_NB_WIDTH-80)
+                    text lost xalign .5 xmaximum (R13_NB_WIDTH-80) text_align .5 size r13_type("emphasis") color r13_type_color("muted")
+    else:
+        # 마지막 결말 그림과 여운은 남기고 숫자 집계는 요청할 때만 연다.
+        add Solid("#07102355")
+        frame:
+            area (316,record_y-152,648,control_h+172) padding (20,16) background R13InkPanel()
+        text "열나흘째 · 이야기의 끝" xcenter 640 ypos (record_y-126) font R13_UI_FONT size r13_type("small") color "#ead6ad"
+        text name id "r13_end_name" xcenter 640 ypos (record_y-88) font R13_UI_FONT size r13_type("display") color "#fff2d8"
+        add Solid("#bc4134") xcenter 640 ypos (record_y-28) xsize 220 ysize 3
+    fixed:
+        xcenter 640 ypos record_y xysize (320,control_h)
+        use r13_control("기록 접기" if details_open else "여정의 기록 보기",None,SetScreenVariable("details_open",not details_open),width=320,control_id="r13_end_details")
     hbox:
         xpos R13_NB_RIGHT xanchor 1.0 ypos r13_nb_footer_y() spacing R13_NB_GAP
         use r13_control("저장하기", None, Return(False), enabled=ready, width=220, control_id="r13_end_save")

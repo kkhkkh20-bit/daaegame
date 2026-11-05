@@ -9,11 +9,14 @@ init 129 python:
 
     def r13_object_target_rect(key,spec):
         x,y,w,h=spec["rect"]
+        # 메모·보따리 바로 곁을 눌러도 반응하게 하되, 그림 중심과 기존 진행 조건은 유지한다.
+        if key in ("mother_note","family_bundle"):
+            x-=10;y-=10;w+=20;h+=20
         if key=="mother_note" and r13_touch_ui():
             minimum=int(88/r13_field_zoom()+.999999)  # round up after the field zoom
             width=max(w,minimum);height=max(h,minimum)
             return (int(x+(w-width)/2),int(y+(h-height)/2),width,height)
-        return tuple(spec["rect"])
+        return (x,y,w,h)
 
     _r13_note_spot_visible=r13_object_visible
     def r13_object_visible(spec):

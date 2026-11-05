@@ -94,7 +94,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 6 | 96 | `systems/room13_items.rpy:105` | _r13_ledger_visible |
 | 7 | 115 | `systems/room13_ledger.rpy:26` | _r13_inn_visible |
 | 8 | 120 | `systems/room13_inn_change.rpy:28` | _r13_note_spot_visible |
-| 9 | 129 | `systems/room13_mother_note_spot.rpy:19` | _r13_new_places_visible |
+| 9 | 129 | `systems/room13_mother_note_spot.rpy:22` | _r13_new_places_visible |
 | 10 | 130 | `systems/room13_new_places.rpy:51` | _r13_v111_object_visible |
 | 11 | 301 | `room13_v111.rpy:255` |  |
 
@@ -182,7 +182,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 1 | 97 | `systems/room13_intro_clues.rpy:95` | _r13_poc_intro_goal |
 | 2 | 100 | `systems/room13_poc_route.rpy:126` | _r13_daram_room_intro_goal |
 | 3 | 101 | `systems/room13_daram_home.rpy:135` | _r13_note_spot_goal |
-| 4 | 129 | `systems/room13_mother_note_spot.rpy:29` | _r13_review_intro_goal |
+| 4 | 129 | `systems/room13_mother_note_spot.rpy:32` | _r13_review_intro_goal |
 | 5 | 173 | `systems/room13_review_knowledge.rpy:119` |  |
 
 ## `r13_v111_idle_lines` (5층)

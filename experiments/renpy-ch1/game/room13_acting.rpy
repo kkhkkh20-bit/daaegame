@@ -604,15 +604,17 @@ init 59 python:
         # Bodies are drawn over furniture. Where a resident stands in front of
         # a clickable object, the object stays clickable outside their face;
         # the person is still reached by the face or the name tag.
+        target=globals().get("r13_object_target_rect",lambda key,spec:tuple(spec["rect"]))
         actors=r13_stage_people(entry)
         result=[]
         visible=[(key,spec) for key,spec in ROOM13["objects"].get(store.room13["location"],{}).items() if r13_object_visible(spec)]
         for index,(key,spec) in enumerate(visible):
-            ox,oy,ow,oh=spec["rect"]
+            rect=tuple(target(key,spec))
+            ox,oy,ow,oh=rect
             covered=[a for a in actors if a["rect"][0]<ox+ow and ox<a["rect"][0]+a["rect"][2] and a["rect"][1]<oy+oh and oy<a["rect"][1]+a["rect"][3]]
             # 0.18.59: a large object raised above a resident must not cover a smaller
             # object drawn after it (hall rail over the towels); keep their own holes too.
-            later=[tuple(other["rect"]) for _,other in visible[index+1:]]
+            later=[tuple(target(other_key,other)) for other_key,other in visible[index+1:]]
             # 0.19.97 (owner 2026-10-22: "캐릭터 클릭해도 대사가 안뜨고"): pressing a resident's
             # body talks to them. The object keeps only the area outside every resident's box;
             # transparent padding inside the box still reaches the object drawn underneath.
@@ -620,8 +622,8 @@ init 59 python:
             # 2026-10-27 소유자 플레이: 오답 뒤 입구에서 까로가 규칙판 앞에 서서 규칙판을 누를 수 없었다. 지금 이야기 단계가
             # 조사 대상으로 지정한 물건(바인딩 options 의 object)은 인물 상자에 구멍을 내지 않고 통째로 인물 위에 둔다.
             # 인물은 이름표나 물건 밖 몸으로 여전히 닿는다.
-            if key in r13_story_needed_objects():result.append((key,tuple(spec["rect"]),r13_object_mask(spec["rect"],later)));continue
-            result.append((key,tuple(spec["rect"]),r13_object_mask(spec["rect"],[tuple(a["rect"]) for a in actors]+later)))
+            if key in r13_story_needed_objects():result.append((key,rect,r13_object_mask(rect,later)));continue
+            result.append((key,rect,r13_object_mask(rect,[tuple(a["rect"]) for a in actors]+later)))
         return result
 
     def r13_story_needed_objects():
