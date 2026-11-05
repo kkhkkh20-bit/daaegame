@@ -158,7 +158,7 @@ label r13_v111_reunion11:
     $ r13_v111_scene('MS14_D11_S02')
     $ r13_edit(period=0)
     $ room13["v111"]["people"]=[]
-    call r13_v111_travel('greenhouse','reunion11',['daram', 'mom'])
+    call r13_v111_travel('greenhouse','reunion11',['daram'])
     $ r13_v111_arrive(['daram', 'mom'])
     $ r13_v111_score()
     $ r13_v111_arrive(['daram', 'mom'])
@@ -1479,6 +1479,10 @@ label r13_v111_handling_pre12:
     jump r13_v111_medical_arrival12
 
 label r13_v111_medical_arrival12:
+    # 0.20.93: 서리의 첫 질문·병 확인 전에 실제 도착을 반영한다.
+    $ r13_v111_join(['resident_seori','resident_bori'])
+    $ r13_v111_set('busy:resident_bori',False)
+    call r13_lines(r13_nw_block('medical_arrival12'),'nw:medical_arrival12')
     call r13_lines(r13_v111_lines(['MS14_D12_S04_L0042']),'v111:MS14_D12_S04_L0042')
     call r13_lines(r13_v111_lines(['MS14_D12_S04_L0044']),'v111:MS14_D12_S04_L0044')
     call r13_lines(r13_v111_lines(['MS14_D12_S04_L0045']),'v111:MS14_D12_S04_L0045')

@@ -599,7 +599,7 @@ init 306 python:
                 record["establishes"]="피코가 완성해 건네준 엄마의 초상. 등 절도 순간은 피코가 식당 안에 있었으므로 보지 못했다."
         elif key=="V111:E14_SUPPLY":
             record=dict(record)
-            record["establishes"]=("아빠와 까로가 운반한 장작 묶음을 선생님이 인수했고, 학교에서 실제로 때고 있다. 쓴 양과 남은 양을 확인했다." if r13_v111_value("school_heat_connected") else "아빠와 까로가 운반한 장작 묶음을 선생님이 인수했다. 오늘 밤 쓸 양은 따로 확인한다.")  # 0.20.5 Codex B01
+            record["establishes"]=("학교로 실제 운반한 장작 묶음을 인계했고, 학교에서 실제로 때고 있다. 쓴 양과 남은 양을 확인했다." if r13_v111_value("school_heat_connected") else "학교로 실제 운반한 장작 묶음을 인계했다. 오늘 밤 쓸 양은 따로 확인한다.")  # 0.20.5 Codex B01
         elif key=="V111:E35":
             record=dict(record)
             received=r13_v111_value("E35.status")=="received"
