@@ -1,4 +1,4 @@
-"""하차 대사의 일회성 소리만 없애고 일반 충격·주행·타이핑 소리를 보존한다."""
+"""하차 때 쓰던 효과음을 전체 제거하고 다른 소리·시각 연출은 보존한다."""
 import ast
 import re
 import textwrap
@@ -35,14 +35,22 @@ class CarriageArrivalAudio(Layer):
                 music.play.assert_not_called()
                 self.assertEqual(env['store'].r13_impact_log,[])
 
-    def test_other_impacts_keep_their_sound_even_when_motion_is_off(self):
-        # 전역 음소거나 공통 임팩트 제거로 하차 소리를 감추지 않는다.
+    def test_jolt_is_silent_everywhere_and_keeps_its_visual_direction(self):
         for motion in (True,False):
             with self.subTest(motion=motion):
                 env,music=self.impact_runtime(motion=motion)
                 env['r13_ep_line_art'](('daram','다른 장면의 반응',{'fx':'jolt'}))
-                music.play.assert_called_once_with('assets/sfx-present.wav',channel='scene_fx',loop=False)
+                music.play.assert_not_called()
                 self.assertEqual(env['store'].r13_impact_log,['jolt'])
+                self.assertEqual(env['renpy'].show_layer_at.call_count,2 if motion else 0)
+
+    def test_other_impacts_keep_their_sound_even_when_motion_is_off(self):
+        for kind,path in (('shake','assets/sfx-slam.wav'),('slam','assets/sfx-slam.wav'),('flash','assets/source-shock9.wav')):
+            for motion in (True,False):
+                with self.subTest(kind=kind,motion=motion):
+                    env,music=self.impact_runtime(motion=motion)
+                    env['r13_impact'](kind)
+                    music.play.assert_called_once_with(path,channel='scene_fx',loop=False)
 
     def test_carriage_exit_adds_no_movement_sound(self):
         # 하차 대사를 무음으로 바꾼 뒤 장면 이동 효과음으로 우회하지 않는다.

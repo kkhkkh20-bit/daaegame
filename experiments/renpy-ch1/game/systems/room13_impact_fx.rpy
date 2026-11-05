@@ -1,7 +1,7 @@
 # Impact direction for single lines (owner 2026-10-22: "여기요 여기! 이런 거 할 때 퍽 하는 효과음,
 # 화면 흔들리는 연출 ... 역전재판에서 많이 쓰거든").
 # A line opts in with "fx" (new-world rows and replace variants, game/v111/newworld/dNN.json):
-#   jolt   small start: a quick 4px shake and a light hit (surprise, a sharp word)
+#   jolt   소리 없이 4px 흔들림 (2026-11-05 소유자: 하차 때 쓰던 효과음 전체 제거)
 #   shake  "퍽": a heavier hit and an 9px shake that dies out (shouting, grabbing, banging)
 #   slam   strongest: desk/door slam, a confession pushed out (rare)
 #   flash  realisation: a white flash and a sting, no shake (the moment a clue clicks)
@@ -13,7 +13,7 @@ default r13_impact_log = []
 init 345 python:
     R13_IMPACT_FX = {
         # kind: (sound file, shake amplitude px, duration s, flash alpha)
-        "jolt": ("assets/sfx-present.wav", 4, .22, 0.0),
+        "jolt": (None, 4, .22, 0.0),
         "shake": ("assets/sfx-slam.wav", 9, .36, 0.0),
         "slam": ("assets/sfx-slam.wav", 14, .46, .22),
         "flash": ("assets/source-shock9.wav", 0, 0.0, .85),
@@ -46,7 +46,7 @@ init 345 python:
             return
         sound, amp, duration, flash = spec
         store.r13_impact_log.append(kind)
-        if renpy.loadable(sound):
+        if sound and renpy.loadable(sound):
             renpy.music.play(sound, channel="scene_fx", loop=False)
         if not persistent.room13_motion:
             return

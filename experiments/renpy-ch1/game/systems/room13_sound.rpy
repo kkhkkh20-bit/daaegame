@@ -137,13 +137,13 @@ init 150 python:
                     source_fx(fx)
         return R13_BGM.get(bgm) if bgm else None
 
-    # 기존 효과음 키 → 새 파일. 없는 키는 예전 파일(assets/source-*.wav)을 그대로 쓴다.
+    # 효과음 키 → 새 파일. None은 재생 금지, 없는 키만 예전 assets/source-*.wav를 쓴다.
     R13_FX = {
         "tap": "sfx-click", "select": "sfx-click", "page": "sfx-page", "found": "sfx-evidence-get",
-        "pop9": "sfx-clue", "impact": "sfx-present", "cut9": "sfx-present", "knock": "sfx-knock",
+        "pop9": "sfx-clue", "impact": None, "cut9": None, "knock": "sfx-knock",
         "door": "sfx-door-close", "doorOpen": "sfx-door-open", "unlock": "sfx-unlock", "slam": "sfx-slam",
         "steps": "sfx-walk-wood", "steps_snow": "sfx-walk-snow", "bell10": "sfx-bell",
-        "present": "sfx-present", "right": "sfx-right", "wrong": "sfx-wrong",
+        "present": None, "right": "sfx-right", "wrong": "sfx-wrong",
         "note_open": "sfx-note-open", "note_close": "sfx-note-close", "pencil": "sfx-pencil",
         "save": "sfx-save", "error": "sfx-error", "mystery": "sfx-mystery", "comic": "sfx-comic", "surprise": "sfx-surprise",
         "creak": "sfx-creak", "latch": "sfx-latch", "lock": "sfx-latch", "heartbeat": "sfx-heartbeat",
@@ -155,6 +155,9 @@ init 150 python:
 
     _r13_sound_source_fx = source_fx
     def source_fx(key):
+        # 소유자 요청: 하차 때 쓰던 히트음은 게임 전체에서 제거한다. 옛 파일로도 우회하지 않는다.
+        if key in R13_FX and R13_FX[key] is None:
+            return
         path = r13_fx_path(key)
         if path and renpy.loadable(path):
             if not renpy.is_skipping():
@@ -163,7 +166,7 @@ init 150 python:
             return
         return _r13_sound_source_fx(key)
 
-    # 증거를 내밀 때(확인 뒤에만 불린다): 오케스트라 히트
+    # 증거를 내밀 때: 새 이야기의 종이 소리와 기존 시각 연출을 유지한다.
     _r13_sound_present = r13_present
     def r13_present(person, key, identity=False):
         # 0.20.9 (30선 01): 새 이야기에서 한 사람에게 자료를 보이는 것은 사적인 확인이다.
@@ -175,16 +178,17 @@ init 150 python:
         r13_fx_cue("present")      # 집중선·2px 흔들림 (systems/room13_dot_fx.rpy)
         return _r13_sound_present(person, key, identity)
 
-    # 회의에서 증거를 내밀 때: 히트 뒤에 판정 소리(반박 성공=맞음, 틀림=틀림, 그 밖=히트만)
+    # 회의에서 증거를 내밀 때: 판정 소리만 유지한다(반박 성공=맞음, 틀림=틀림).
     _r13_sound_debate_judge = r13_debate_judge
     def r13_debate_judge(claim, sid, key):
         result = _r13_sound_debate_judge(claim, sid, key)
         # The council director owns impact/result timing, including counter failures.
         if not renpy.is_skipping() and not getattr(store,"r13_meeting_active",False):
             follow = {"break": "right", "wrong": "wrong"}.get(result[0])
-            queue = [r13_fx_path("present")] + ([r13_fx_path(follow)] if follow else [])
-            store.source_effect_log.append("present:" + result[0])
-            renpy.music.play(queue, channel="scene_fx", loop=False)
+            queue = [path for path in [r13_fx_path("present"), r13_fx_path(follow)] if path]
+            if queue:
+                store.source_effect_log.append("present:" + result[0])
+                renpy.music.play(queue, channel="scene_fx", loop=False)
             if result[0] == "break":
                 r13_fx_cue("break")    # 반박 성공: 집중선·2px 흔들림
         return result

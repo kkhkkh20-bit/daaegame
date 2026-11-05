@@ -79,8 +79,10 @@ class CarriageDisembarkAudio(Layer):
             env['r13_ep_line_art'](packet)
         self.assertFalse(self.played)
         self.assertEqual(before, self.state.room13)
-        # 하차 밖의 놀람·반박 연출은 기존 효과음을 계속 쓴다.
+        # 같은 효과음을 쓰던 다른 장면도 무음, 별개로 쓰는 강한 충격음은 보존한다.
         env['r13_impact']('jolt')
+        self.assertFalse(self.played)
+        env['r13_impact']('shake')
         self.assertEqual(self.played[-1][1]['channel'], 'scene_fx')
 
     def test_no_carriage_transition_steps_but_other_place_steps_remain(self):

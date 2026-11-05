@@ -288,7 +288,8 @@ label r13_qa_sound:
     $ _qa_sound["smoke_door"]=(renpy.music.get_playing(),renpy.music.get_playing(channel="ambience"))
     python:
         for k in R13_FX:
-            _qa_sound["fx"][k]=renpy.loadable(r13_fx_path(k))
+            path=r13_fx_path(k)
+            _qa_sound["fx"][k]=renpy.loadable(path) if path else None
         _qa_sound["bgm_loadable"]=all(renpy.loadable(p) for p in R13_BGM.values())
         _qa_sound["amb_loadable"]=all(renpy.loadable(p) for p in R13_AMBIENCE.values())
         _qa_sound["click"]=style.button.activate_sound
