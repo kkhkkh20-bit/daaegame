@@ -25,6 +25,9 @@ class PresentationLoading(unittest.TestCase):
    self.assertFalse(startup_media(path,early),path)
   for path in ('assets/bgm-title.mp3','assets/bgm-travel.mp3','assets/Pretendard-Regular.otf'):
    self.assertTrue(startup_media(path,early),path)
+  carriage=list((ROOT/'game/assets/carriage-source-master').glob('*.webp'))
+  self.assertEqual(len(carriage),8)
+  for p in carriage:self.assertTrue(startup_media(p.relative_to(ROOT/'game').as_posix(),early),p.name)
  def test_dialogue_background_uses_the_live_clock_without_state_writes(self):
   state=SimpleNamespace(room13=dict(location='square',period=0))
   env=dict(store=state,r13_daylight=lambda:('morning','afternoon','evening')[state.room13['period']],r13_world_offset=lambda p:320,r13_field_zoom=lambda p:1.0,r13_world_background=lambda p,t:(p,t),Crop=lambda rect,bg:(rect,bg))

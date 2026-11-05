@@ -1,0 +1,278 @@
+{
+  "version": "0.20.96",
+  "native": [
+    {
+      "test": "qa96_front_neutral_and_flustered",
+      "passed": true,
+      "seconds": 32.05
+    },
+    {
+      "test": "qa96_carriage_high_detail",
+      "passed": true,
+      "seconds": 15.03
+    },
+    {
+      "test": "v111_piko_scene_saved_has_no_death_cut",
+      "passed": true,
+      "seconds": 17.03
+    },
+    {
+      "test": "v111_piko_mourning_idle_and_child",
+      "passed": true,
+      "seconds": 18.03
+    },
+    {
+      "test": "v111_piko_mourning_followup_keeps_record_and_read",
+      "passed": true,
+      "seconds": 18.03
+    },
+    {
+      "test": "qa96_carriage_transform_properties",
+      "passed": true,
+      "seconds": 10.02
+    },
+    {
+      "test": "v111_piko_scene_holds_until_body_talk_and_clears",
+      "passed": true,
+      "seconds": 24.04
+    }
+  ],
+  "unit_count": 1199,
+  "lint": "통과",
+  "dialogue_logic": {
+    "A": 0,
+    "B": 0,
+    "C": 0
+  },
+  "web_death": {
+    "status": "passed",
+    "version": "0.20.96",
+    "route": "nero",
+    "scope": "이전 실제1일차취침전 저장을 로드해2일차네로선택→3일차사망현장→첫등조사 대기까지 실제UI로 진행",
+    "final_gate": "lamp_inspect3",
+    "piko_alive": false,
+    "page_errors": [],
+    "captures": [
+      {
+        "id": "MS14_D03_S01_L0002",
+        "packet": [
+          "dad",
+          "……초롱 씨?"
+        ],
+        "cut": "piko-death3",
+        "pose": "neutral",
+        "speaker": "dad",
+        "tags": [
+          "r13_ep_cut",
+          "r13_visitor",
+          "_show_expression_0"
+        ]
+      },
+      {
+        "id": "MS14_D03_S01_L0008",
+        "packet": [
+          "resident_lamplighter",
+          "진료소 사람이 벌써 다녀갔어요.{w=.5}\n……숨을 안 쉰대요."
+        ],
+        "cut": "piko-death3",
+        "pose": "anxious",
+        "speaker": "resident_lamplighter",
+        "tags": [
+          "r13_ep_cut",
+          "r13_visitor",
+          "_show_expression_0"
+        ]
+      },
+      {
+        "id": "MS14_D03_S01_L0012",
+        "packet": [
+          "daram",
+          "아빠.{w=.4} ……죽은 거야?"
+        ],
+        "cut": "piko-death3",
+        "pose": "anxious",
+        "speaker": "daram",
+        "tags": [
+          "r13_ep_cut",
+          "r13_visitor",
+          "_show_expression_0"
+        ]
+      },
+      {
+        "id": "MS14_D03_S01_L0020",
+        "packet": [
+          "resident_lamplighter",
+          "피코가 드리려고 그리던 거예요.{w=.4}\n피코한테는 손대지 마세요. 판자는 제가 빼 드릴게요."
+        ],
+        "cut": "piko-death3",
+        "pose": "anxious",
+        "speaker": "resident_lamplighter",
+        "tags": [
+          "r13_ep_cut",
+          "r13_visitor",
+          "_show_expression_0"
+        ]
+      },
+      {
+        "id": "MS14_D03_S02_L0003",
+        "packet": [
+          "resident_tok",
+          "제, 제 공구로 제가 고치는 거죠!{w=.3}\n돌도 없는데 덮개만 닫는다고 따뜻해져요?"
+        ],
+        "cut": null,
+        "pose": "angry",
+        "speaker": "resident_tok",
+        "tags": [
+          "r13_visitor",
+          "_show_expression_0"
+        ]
+      }
+    ]
+  },
+  "carriage": {
+    "status": "passed",
+    "poses": {
+      "neutral": {
+        "version": "0.20.96",
+        "place": "마차 안",
+        "packet": [
+          null,
+          "짧았지만, 그걸로 충분했다."
+        ],
+        "seat": "neutral",
+        "tags": [
+          "r13_carriage_background",
+          "r13_visitor"
+        ],
+        "source": "<renpy.display.im.Image object ('assets/carriage-source-master/room13-carriage-daram-seat-neutral.webp') at 0x7129ea0>",
+        "zoom": 0.6190909090909091,
+        "nearest": false
+      },
+      "quiz": {
+        "version": "0.20.96",
+        "place": "마차 안",
+        "packet": [
+          "dad",
+          "음…… 배부르지?"
+        ],
+        "seat": "quiz",
+        "tags": [
+          "r13_carriage_background",
+          "r13_visitor"
+        ],
+        "source": "<renpy.display.im.Image object ('assets/carriage-source-master/room13-carriage-daram-seat-quiz.webp') at 0x6ba8528>",
+        "zoom": 0.6190909090909091,
+        "nearest": false
+      },
+      "pout": {
+        "version": "0.20.96",
+        "place": "마차 안",
+        "packet": [
+          "daram",
+          "아니이! 하나잖아. 똑바로 대답해!"
+        ],
+        "seat": "pout",
+        "tags": [
+          "r13_carriage_background",
+          "r13_visitor"
+        ],
+        "source": "<renpy.display.im.Image object ('assets/carriage-source-master/room13-carriage-daram-seat-pout.webp') at 0x6caa130>",
+        "zoom": 0.6190909090909091,
+        "nearest": false
+      },
+      "angry": {
+        "version": "0.20.96",
+        "place": "마차 안",
+        "packet": [
+          "daram",
+          "안 돼! 엄마 거야!"
+        ],
+        "seat": "angry",
+        "tags": [
+          "r13_carriage_background",
+          "r13_visitor"
+        ],
+        "source": "<renpy.display.im.Image object ('assets/carriage-source-master/room13-carriage-daram-seat-angry.webp') at 0x38d4b08>",
+        "zoom": 0.6190909090909091,
+        "nearest": false
+      },
+      "secret": {
+        "version": "0.20.96",
+        "place": "마차 안",
+        "packet": [
+          "daram",
+          "그리고 엄마한테 여섯 개 얘긴 하지 마. 비밀이야."
+        ],
+        "seat": "secret",
+        "tags": [
+          "r13_carriage_background",
+          "r13_visitor"
+        ],
+        "source": "<renpy.display.im.Image object ('assets/carriage-source-master/room13-carriage-daram-seat-secret.webp') at 0x805c560>",
+        "zoom": 0.6190909090909091,
+        "nearest": false
+      },
+      "bravado": {
+        "version": "0.20.96",
+        "place": "마차 안",
+        "packet": [
+          "daram",
+          "십삼 호! 하나, 둘……{w=.4} 열셋.\n외웠어. 아빠는 짐 들어. 방은 내가 찾을게."
+        ],
+        "seat": "bravado",
+        "tags": [
+          "r13_carriage_background",
+          "r13_visitor"
+        ],
+        "source": "<renpy.display.im.Image object ('assets/carriage-source-master/room13-carriage-daram-seat-bravado.webp') at 0x805edd0>",
+        "zoom": 0.6190909090909091,
+        "nearest": false
+      },
+      "joy": {
+        "version": "0.20.96",
+        "place": "마차 안",
+        "packet": [
+          "daram",
+          "아빠.{w=.3} 또 ‘기다릴게’에서 멈췄지?"
+        ],
+        "seat": "joy",
+        "tags": [
+          "r13_carriage_background",
+          "r13_visitor"
+        ],
+        "source": "<renpy.display.im.Image object ('assets/carriage-source-master/room13-carriage-daram-seat-joy.webp') at 0x80661e0>",
+        "zoom": 0.6190909090909091,
+        "nearest": false
+      }
+    },
+    "page_errors": [],
+    "final": {
+      "version": "0.20.96",
+      "place": "눈에 막힌 입구",
+      "packet": [
+        "daram",
+        "우리 동네는 기계 난로로 불 때잖아."
+      ],
+      "seat": "neutral",
+      "tags": [
+        "black"
+      ],
+      "source": "<renpy.display.im.Image object ('assets/carriage-source-master/room13-carriage-daram-seat-neutral.webp') at 0x8058af0>",
+      "zoom": 0.6190909090909091,
+      "nearest": false
+    }
+  },
+  "limits": [
+    "전체14일 자연플레이 미실행",
+    "인간 초면 재미/독서 평가 미실행",
+    "공개 Pages 주소는 환경 네트워크 정책으로 직접 브라우저 접근 불가; 로컬 실제 브라우저와 배포 해시로 확인"
+  ],
+  "death_cut_save_restore": {
+    "status": "통과",
+    "assertions": 9,
+    "scope": "격리된 SDK 검사에서 L0012 저장→L0020→불러오기 후 컷·태그·대사ID·생사상태 복원과 다음허브 컷종료를 확인"
+  },
+  "final_quote_speaker_unit_tests": 14,
+  "final_archive_sha256": "6450014ed633cc6799b16b7dfaa8ee74768faa46adb72083a94f6170fdcedc07",
+  "final_bundle_source_match": "변경된 실행 소스6개·마차8장 시작 미디어·QA제외 확인"
+}

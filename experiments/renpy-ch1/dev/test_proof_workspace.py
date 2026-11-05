@@ -36,12 +36,15 @@ class ProofWorkspacePure(unittest.TestCase):
     def test_day3_quotes_only_repeat_already_spoken_lines(self):
         import json
         overlay=json.loads((ROOT/'game/v111/newworld/d03.json').read_text())['replace']
+        records=json.loads((ROOT/'game/v111/records.json').read_text())['records']
         pairs={'수리와 반출을 가릴 자료를 낸다':'MS14_D03_S05_L0002','돌과 매입 기록을 낸다':'MS14_D03_S05_L0005','바깥 걸쇠 주장과 발견 위치를 대조한다':'MS14_D03_S05_L0017','마지막 점검과 인수한 돌을 연결한다':'MS14_D03_S05_L0025'}
         clean=lambda text:' '.join(re.sub(r'\{[^}]*\}','',text).split())
         for key,line in pairs.items():
             spec=self.ns['R13_PW_CONTEXT'][key]
             rows=overlay[line] if isinstance(overlay[line],list) else [overlay[line]]
-            for row in rows:self.assertIn(clean(spec['quote']),clean(row['text']))
+            for row in rows:
+                self.assertIn(clean(spec['quote']),clean(row['text']))
+                self.assertEqual(spec['speaker'],row.get('speaker',records[line]['speaker']))
             self.assertEqual(spec['quote_when'],('flag','v111:entered:MS14_D03_S05'))
         self.assertIsNone(self.ns['R13_PW_CONTEXT']['측정 종료와 점검 기록을 대조한다']['quote'])
 

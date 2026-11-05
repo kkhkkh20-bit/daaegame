@@ -80,15 +80,16 @@ init 306 python:
     R13_CARRIAGE_SEATS=("neutral","quiz","pout","angry","secret","bravado","joy","wistful")
     R13_CARRIAGE_SEAT_OF={"neutral":"neutral","thinking":"neutral","joy":"joy","expressive":"joy","angry":"pout",
         "anxious":"wistful","distressed":"wistful","flustered":"secret","surprise":"quiz","panic":"quiz"}
-    # 2026-10-26 도트 통일: 앉은 그림을 149x227 도트로 다시 찍어 대화와 같은 3배(한 칸 3px)로 그린다.
-    R13_CARRIAGE_SEAT_ZOOM=3
+    # 승인된 720x1100 원본을 한 번만 축소한다. 기존 149x227 파생본은 예전 저장용으로 남긴다.
+    # 화면 높이 681과 맞은편 착석 위치는 유지하고, 3배 도트 확대에서 잃던 얼굴 세부를 보존한다.
+    R13_CARRIAGE_SEAT_ZOOM=681.0/1100.0
     def r13_carriage_seat(pose):
         key=(pose or "neutral").replace("interview_","")
         if key.startswith("seat_") and key[5:] in R13_CARRIAGE_SEATS:return key[5:]
         if key=="intake21_01_bravado" or key.endswith("bravado"):return "bravado"
         return R13_CARRIAGE_SEAT_OF.get(key,"neutral")
     def r13_carriage_daram_seat_art(seat):
-        return Transform("assets/room13-carriage-daram-seat-%s.webp"%seat,zoom=R13_CARRIAGE_SEAT_ZOOM,nearest=True)
+        return Transform("assets/carriage-source-master/room13-carriage-daram-seat-%s.webp"%seat,zoom=R13_CARRIAGE_SEAT_ZOOM,nearest=False)
     _r13_carriage_line_performance=r13_line_performance
     def r13_line_performance(identity,index,packet):
         # Keep an authored seated picture; the general path would fold it into "neutral".

@@ -34,6 +34,10 @@ init 335 python:
             if spec.get("after") not in R13_V111["evidence"]:out.append(where+": unknown evidence")
             if not spec.get("title"):out.append(where+": no title")
             rows(where,spec.get("lines",[]))
+            if spec.get("piko_mourning"):
+                variant=spec["piko_mourning"]
+                if not variant.get("title"):out.append(where+": empty mourning title")
+                rows(where+" mourning",variant.get("lines",[]))
         for person,lines in R13_REACTIONS.get("generic",{}).items():
             if person not in people:out.append("generic: unknown person "+person)
         return out
@@ -53,7 +57,12 @@ init 335 python:
         for row in lines:
             who=MS14_SPEAKERS.get(row["speaker"]) if row.get("speaker") is not None else None
             if who and who not in ("dad",) and not r13_v111_person_alive(who):return []
-            out.append(r13_nw_added_line(dict(row,kind="dialogue")))
+            packet=dict(row,kind="dialogue")
+            context=globals().get("r13_v111_tense_context",lambda:None)()
+            if (context=="piko" and who in ("dad","daram","resident_lamplighter")
+                    and packet.get("expression","neutral") in ("neutral","joy")):
+                packet["expression"]="anxious"
+            out.append(r13_nw_added_line(packet))
         return out
 
     def r13_v111_present_reaction(person,shown):
@@ -67,7 +76,7 @@ init 335 python:
         if generic:
             # Same evidence, same person -> same answer (stable, no random reroll on reload).
             row=generic[sum(ord(ch) for ch in str(key)) % len(generic)]
-            return [r13_nw_added_line(dict(speaker=next(n for n,p in MS14_SPEAKERS.items() if p==person),text=row["text"],expression=row.get("expression","neutral"),kind="dialogue"))]
+            return r13_reaction_packets([dict(speaker=next(n for n,p in MS14_SPEAKERS.items() if p==person),text=row["text"],expression=row.get("expression","neutral"))])
         return None
 
     def r13_followup_read(fid):
@@ -77,12 +86,18 @@ init 335 python:
         return [spec for spec in R13_REACTIONS.get("followups",[])
                 if spec["person"]==person and r13_v111_owned(spec["after"]) and r13_reaction_day_ok(spec)]
 
+    def r13_v111_followup_display(spec):
+        # 피코 사망 확인 직후의 광장만 조심스러운 질문·표정으로 읽는다. 같은 질문 ID·읽음·사실은 유지한다.
+        context=globals().get("r13_v111_tense_context",lambda:None)()
+        return spec["piko_mourning"] if context=="piko" and spec.get("piko_mourning") else spec
+
     _r13_reaction_questions=r13_v111_questions
     def r13_v111_questions(person):
         rows=list(_r13_reaction_questions(person))
         for spec in r13_v111_followups(person):
             read=r13_followup_read(spec["id"])
-            title=spec["title"] if read else "{color=#e0707a}새{/color}  "+spec["title"]
+            shown=r13_v111_followup_display(spec)
+            title=shown["title"] if read else "{color=#e0707a}새{/color}  "+shown["title"]
             rows.append((title,Return(("followup",spec["id"])),read))
         return rows
 
@@ -90,7 +105,7 @@ init 335 python:
         spec=next((s for s in R13_REACTIONS.get("followups",[]) if s["id"]==fid),None)
         if spec is None:return []
         r13_v111_set("followup_read:"+fid,True)
-        return r13_reaction_packets(spec["lines"])
+        return r13_reaction_packets(r13_v111_followup_display(spec)["lines"])
 
 # 2026-10-29 피드백 G: 후속 질문의 「새」는 그 질문을 고른 적이 있는지만 봤다. 그런데 자동 대화가 같은 것을 이미 묻고 답한
 # 경우가 있다(4일 밤이: 「아이였니, 어른이었니?」「몰라요. 구부리고 있었어요.」 뒤에 「본 사람의 키도 기억하니?」가 「새」).

@@ -93,7 +93,8 @@
       "text": "내일 다시 나오는지는 내가 확인하겠소. 오늘은 주소와 서명을 남기시오."
     },
     "MS14_D03_S01_L0002": {
-      "text": "……초롱 씨?"
+      "text": "……초롱 씨?",
+      "cut": "piko-death3"
     },
     "MS14_D03_S01_L0003": {
       "text": "아이는……{w=.4} 잠깐 저쪽으로요.",
@@ -812,6 +813,29 @@
   },
   "before": {
     "MS14_D03_S02_L0002": [
+      {
+        "id": "NW_D03_PIKO_TO_LAMP01",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "아빠…… 피코 두고 가?",
+        "expression": "anxious",
+        "when": "piko_dead"
+      },
+      {
+        "id": "NW_D03_PIKO_TO_LAMP02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "멀리 안 가. 손 놓지 말고 같이 있자.",
+        "expression": "anxious",
+        "when": "piko_dead"
+      },
+      {
+        "id": "NW_D03_PIKO_TO_LAMP03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "등 쪽에서 언성이 높아진다. 나는 다람의 손을 잡은 채 고개를 든다.",
+        "when": "piko_dead"
+      },
       {
         "id": "NW_MV_D03_01",
         "speaker": null,

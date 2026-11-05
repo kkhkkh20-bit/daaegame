@@ -203,6 +203,9 @@ init 350 python:
         r13_v111_set("daram_hello:%s"%scene,True)
         n=r13_v111_value("daram_hello_count") or 0
         r13_v111_set("daram_hello_count",n+1)
+        context=r13_v111_tense_context()
+        if context:
+            return [r13_nw_added_line(dict(speaker="다람",text="아빠…… 손 놓지 마." if context=="piko" else "……아빠, 나 여기 있어.",expression="anxious",kind="dialogue"))]
         return [r13_nw_added_line(dict(speaker="다람",text=R13_DARAM_HELLO[n%len(R13_DARAM_HELLO)],expression="neutral",kind="dialogue"))]
 
 # 0.20.10 (4~14일 리뷰: 4일 초소 비명 뒤 일반 인사, 7일 빨래터 추궁 직후 "또 오셨어요?"):
@@ -210,12 +213,38 @@ init 350 python:
 init 351 python:
     # 사건이 막 일어났거나 추궁·청문이 이어지는 장면만(그 밖에는 소유자 결정대로 그날 첫 인사).
     R13_TENSE_SCENES={"MS14_D04_S03","MS14_D07_S01","MS14_D07_S02","MS14_D07_S04","MS14_D11_S04","MS14_D12_S04","MS14_D13_C"}
+    def r13_v111_tense_context():
+        v=store.room13.get("v111") or {}
+        scene=v.get("scene")
+        # 사망 확인 전과 피코가 살아 있는 아침은 구별한다. 당일 광장 두 장면에만 적용한다.
+        if ((store.room13 or {}).get("day")==3 and store.room13.get("location")=="square"
+                and scene in ("MS14_D03_S01","MS14_D03_S02") and r13_v111_value("piko_alive") is False):
+            return "piko"
+        return "event" if scene in R13_TENSE_SCENES else None
+
+    R13_PIKO_MOURNING_REPLIES={
+        "resident_lamplighter":("……잠깐만 더 여쭤봐도 될까요?","네. ……말씀하세요."),
+        "resident_tok":("피코 씨 일 때문에 묻는 겁니다.","……제가 아는 건 말씀드릴게요."),
+        "guard":("지금은 피코 씨 곁을 떠나기 어렵습니다.","……알겠소. 필요한 말만 하시오."),
+        "neoul":("여기서 무슨 일이 있었는지 확인하겠습니다.","……확인할 말이 있으면 하시오."),
+    }
     _r13_scene_idle_lines=r13_v111_idle_lines
     def r13_v111_idle_lines(person):
         guidance=r13_day2_idle_guidance(person)
         if guidance:return guidance
         v=store.room13.get("v111") or {}
-        scene_people=v.get("people") or []
-        if v.get("scene") in R13_TENSE_SCENES and person in scene_people and person in r13_met_people():
+        context=r13_v111_tense_context()
+        if context=="piko":
+            # 빈 질문·한가한 인사를 새로 시작하지 않는다. 주변 인물은 아빠에게 지금의 말로 짧게 응답한다.
+            name=next((n for n,p in MS14_SPEAKERS.items() if p==person),None)
+            key="mourning_idle:%s:%s"%(v.get("scene"),person)
+            if name and not r13_v111_value(key):
+                r13_v111_set(key,True)
+                dad,reply=R13_PIKO_MOURNING_REPLIES.get(person,("……잠깐만 여쭙겠습니다.","……말씀하세요."))
+                return [r13_nw_added_line(dict(speaker="아빠",text=dad,expression="anxious",kind="dialogue",cut="piko-death3")),
+                        r13_nw_added_line(dict(speaker=name,text=reply,expression="anxious",kind="dialogue"))]
+            return [r13_nw_added_line(dict(speaker="아빠",kind="thought",text="피코 씨가 바로 저기에 있다. 지금은 무슨 말을 건네야 할지도 모르겠다.",cut="piko-death3"))]
+        if context and person in (v.get("people") or []):
+            # 처음 만난 인물도 사건 앞에서 평소 자기소개·생활 인사를 새로 시작하지 않는다.
             return [r13_nw_added_line(dict(speaker="아빠",kind="thought",text="지금은 인사를 나눌 때가 아니다. 이 일부터 하자."))]
         return _r13_scene_idle_lines(person)

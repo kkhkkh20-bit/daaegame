@@ -633,9 +633,15 @@ init 59 python:
                 needed.add(option["object"]);needed.add(globals().get("r13_v111_object_key",lambda k:k)(option["object"]))
         return needed
 
-    def r13_conversation_pose(person,pose="neutral"):
+    def r13_conversation_pose(person,pose=None):
+        # 질문 화면은 자세를 생략해 부른다. 실제 발화의 명시된 중립·동작 표정은 바꾸지 않는다.
+        question=pose is None
+        pose="neutral" if question else pose
+        tense=globals().get("r13_v111_tense_context",lambda:None)() if (question and globals().get("r13_v111_active",lambda:False)()) else None
+        if question and tense and person in CAST:pose="anxious"
         if person=="seryeon" and store.room13["location"]=="post" and min(store.room13["period"],2)==1:
-            key="chair_listen" if pose=="neutral" else "chair_read" if pose=="thinking" else pose
+            # 일반 대화의 생각 표정도 상대를 보고 듣는다. 서류 읽기는 명시한 chair_read에서만 유지한다.
+            key="chair_listen" if pose in ("neutral","thinking") else pose
             if key in R13_ACTING.get(person,{}):return key
         return pose
 
