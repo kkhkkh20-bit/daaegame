@@ -3,7 +3,7 @@ from pathlib import Path
 import re,shutil,json,hashlib
 ROOT=Path(__file__).resolve().parents[1]
 # 2026-10-27 소유자: "로딩창 이미지 바꿔줘야지 예전 다람탐정 나오잖아."
-# 앞 것은 dev/make_loading_scene.py 가 메인화면(엽서+로고+포스터)과 같은 구성으로 합친 그림이고,
+# 앞 것은 dev/make_loading_scene.py 가 메인화면(남색 바탕+로고+포스터)과 같은 구성으로 합친 그림이고,
 # 뒤 것은 그 파일이 없을 때 떨어지는 예전 타이틀이다. 둘 다 없으면 로딩창을 건드리지 않는다.
 LOADING_ART=('assets/room13-loading-scene.webp','assets/room13-title-winter020.webp')
 def loading_art(game):
@@ -17,6 +17,9 @@ def update_title_loader(release,game):
  # The approved logo is part of the cover plate, so do not double it on load.
  (release/'loading-logo.webp').unlink(missing_ok=True)
  p=release/'index.html';s=p.read_text().replace('src="loading-scene.png"','src="loading-scene.webp"')
+ # 같은 주소의 예전 지도 표지가 브라우저 캐시에서 남지 않도록 내용 해시를 붙인다.
+ art_hash=hashlib.sha256(art.read_bytes()).hexdigest()[:12]
+ s=re.sub(r'src="loading-scene\.webp(?:\?v=[^"]*)?"',lambda m:'src="loading-scene.webp?v='+art_hash+'"',s)
  style='<style id="r13-title-loader">'+(ROOT/'dev/title-loader.css').read_text()+'</style>'
  if 'id="r13-title-loader"' in s:s=re.sub(r'<style id="r13-title-loader">.*?</style>',lambda m:style,s,flags=re.S)
  else:s=s.replace('</head>',style+'\n</head>',1)

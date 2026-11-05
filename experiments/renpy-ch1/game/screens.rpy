@@ -61,8 +61,8 @@ screen main_menu():
     $ title_continue = r13_continue_slot()
     $ title_has_save = bool(r13_save_slots())
     default title_focus = ("continue" if r13_continue_slot() else "new")
-    # 승인된 B 메인 납품 좌표. 배경에 합쳐진 조명에는 구판 title light rig를 얹지 않는다.
-    add Transform(r13_asset_path("file:assets/ui-b-main/b_main_background_postcard.png"), zoom=1280.0/1672)
+    # 소유자 요청: 왼쪽 마을 엽서를 빼고 남색 바탕에 오른쪽 인물 스티커만 둔다.
+    add Solid("#0a2252")
     add Transform(r13_asset_path("file:assets/ui-b-main/b_logo.png"), zoom=.85) xpos -18 ypos 10
     # Approved single transparent ensemble sticker; preserve its original ratio.
     add Transform(r13_asset_path("file:assets/ui-b-main/b_main_cast_poster_plain.png"),zoom=610.0/1402) xpos 754 ypos 80

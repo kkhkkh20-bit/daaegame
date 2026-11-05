@@ -1,5 +1,5 @@
 :root{--title-w:min(100vw,177.7778vh);--title-h:min(56.25vw,100vh);--title-left:calc((100vw - var(--title-w))/2 + var(--title-w)*.05)}
-/* 로딩 그림(1280x720)은 엽서 뒤 남색 천이 가장자리라 letterbox 도 같은 남색으로 잇는다. */
+/* 로딩 그림(1280x720)과 letterbox 를 같은 남색 바탕으로 잇는다. */
 html,body{background:#0a2252}
 #presplash{object-fit:contain;filter:none;image-rendering:auto}
 /* 소유자 결정(2026-10-24) 고딕체. 글꼴 파일을 더 받지 않도록 시스템 고딕으로 떨어진다. */

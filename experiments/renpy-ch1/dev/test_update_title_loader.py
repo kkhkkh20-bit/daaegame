@@ -1,5 +1,5 @@
 """로딩창은 메인화면과 같은 그림을 쓰고, 음악 안내 줄은 자동재생이 막혔을 때만 보인다."""
-import json
+import hashlib,json
 import subprocess
 import tempfile
 import unittest
@@ -13,11 +13,13 @@ class LoadingScene(unittest.TestCase):
     def test_composed_scene_is_1280x720_and_matches_main_menu_layers(self):
         scene = make_loading_scene.compose()
         self.assertEqual(scene.size, make_loading_scene.CANVAS)
-        # screens.rpy main_menu 의 세 층과 같은 파일·배율·좌표여야 로딩이 끝날 때 그림이 튀지 않는다.
+        # 메인과 같은 바탕·파일·배율·좌표여야 로딩이 끝날 때 그림이 튀지 않는다.
         menu = (ROOT / 'game/screens.rpy').read_text(encoding='utf-8')
         for rel, zoom, x, y in make_loading_scene.LAYERS:
             self.assertIn(Path(rel).name, menu)
-        self.assertEqual([l[1:] for l in make_loading_scene.LAYERS], [(1280.0 / 1672, 0, 0), (.85, -18, 10), (610.0 / 1402, 754, 80)])
+        self.assertEqual([l[1:] for l in make_loading_scene.LAYERS], [(.85, -18, 10), (610.0 / 1402, 754, 80)])
+        self.assertIn('add Solid("'+make_loading_scene.BACKGROUND+'")',menu)
+        self.assertEqual(scene.getpixel((300,400)),(10,34,82))
         shipped = ROOT / 'game' / LOADING_ART[0]
         self.assertTrue(shipped.exists())
         self.assertEqual(Image.open(shipped).size, make_loading_scene.CANVAS)
@@ -34,7 +36,8 @@ class LoadingScene(unittest.TestCase):
             update_title_loader(release, ROOT / 'game')
             self.assertEqual((release / 'loading-scene.webp').read_bytes(), (ROOT / 'game' / LOADING_ART[0]).read_bytes())
             s = (release / 'index.html').read_text()
-            self.assertIn('src="loading-scene.webp"', s)
+            art_hash=hashlib.sha256((ROOT / 'game' / LOADING_ART[0]).read_bytes()).hexdigest()[:12]
+            self.assertIn('src="loading-scene.webp?v='+art_hash+'"', s)
             self.assertIn('<p class="loading-audio-hint" hidden>화면을 한 번 누르면 음악이 켜집니다</p>', s)
             self.assertIn('loading-audio-hint[hidden]{display:none}', s)
             self.assertIn('id="r13-loading-audio"', s)
