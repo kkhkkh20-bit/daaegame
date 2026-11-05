@@ -28,6 +28,14 @@ class PresentationLoading(unittest.TestCase):
   carriage=list((ROOT/'game/assets/carriage-source-master').glob('*.webp'))
   self.assertEqual(len(carriage),8)
   for p in carriage:self.assertTrue(startup_media(p.relative_to(ROOT/'game').as_posix(),early),p.name)
+ def test_compatibility_art_does_not_block_current_title(self):
+  from build_web import COMPAT_ON_DEMAND
+  early=startup_files(ROOT/'game')
+  for path in COMPAT_ON_DEMAND:
+   self.assertTrue((ROOT/'game'/path).exists())
+   self.assertFalse(startup_media(path,early),path)
+  title=json.loads((ROOT/'game/assets/room13-title-layout.json').read_text())
+  for layer in title['layers']:self.assertTrue(startup_media(layer[0],early),layer[0])
  def test_dialogue_background_uses_the_live_clock_without_state_writes(self):
   state=SimpleNamespace(room13=dict(location='square',period=0))
   env=dict(store=state,r13_daylight=lambda:('morning','afternoon','evening')[state.room13['period']],r13_world_offset=lambda p:320,r13_field_zoom=lambda p:1.0,r13_world_background=lambda p,t:(p,t),Crop=lambda rect,bg:(rect,bg))
@@ -38,6 +46,18 @@ class PresentationLoading(unittest.TestCase):
    self.assertEqual(f(0,0,'square','morning')[0][1],('square',expected))
    self.assertEqual(before,state.room13)
   self.assertEqual(f(0,0,'inn','morning')[0][1],('inn','morning'))
+ def test_loading_a_save_warms_its_day_again_without_changing_progress(self):
+  state=SimpleNamespace(room13={'day':8,'location':'room13'},r13_day_prefetched=8)
+  requests=[];env=dict(store=state,r13_day_prefetch=requests.append)
+  for name in ('_r13_day_prefetch_check','_r13_day_prefetch_after_load'):
+   exec(function('game/systems/room13_day_prefetch.rpy',name),env)
+  before=copy.deepcopy(state.room13)
+  env['_r13_day_prefetch_check']();self.assertEqual(requests,[])
+  env['_r13_day_prefetch_after_load']();env['_r13_day_prefetch_check']()
+  env['_r13_day_prefetch_check']();self.assertEqual(requests,[8])
+  self.assertEqual(state.room13,before)
+  state.room13['day']=9;env['_r13_day_prefetch_check']()
+  self.assertEqual(requests,[8,9])
  def test_field_nameplates_keep_clear_of_fixed_ui(self):
   # 이름표는 상단 고정 조작(지도·기록·생각 줄)을 덮지 않는다. 옛 하단 조작 띠는 없어졌다(2026-10-25).
   h=80;face=[300,180,70,70]

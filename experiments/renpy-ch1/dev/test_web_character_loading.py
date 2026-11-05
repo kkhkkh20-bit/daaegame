@@ -38,14 +38,36 @@ class CharacterLoading(unittest.TestCase):
         self.assertLess(files.index(neutral('karo')), files.index(neutral('granny')))
         self.assertIn(neutral('neoul'), files)
 
-    def test_background_fetch_concurrency_is_bounded(self):
+    def test_background_fetch_waits_for_input_and_shares_one_deduplicated_queue(self):
         script = """const assert=require('assert');const Module={preRun:[]};
-const document={baseURI:'https://example.test/'};let active=0,max=0,seen=[];
+let handlers={},active=0,max=0,seen=[];
+const document={baseURI:'https://example.test/',hidden:false,addEventListener(e,f){handlers[e]=f}};
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+async function until(check){for(let i=0;i<500;i++){if(check())return;await sleep(5)}throw Error('예열 완료 대기 초과')}
 global.fetch=async(url,options)=>{active++;max=Math.max(max,active);seen.push([String(url),options.priority]);
-return {async blob(){await new Promise(r=>setTimeout(r,5));active--;}}};
+return {ok:true,async blob(){await sleep(20);active--;}}};
 """ + LOADER + """
-r13Prefetch=['a','b','c','d'];
-r13PrefetchLater().then(()=>{assert.equal(max,2);assert.equal(seen.length,4);assert(seen.every(x=>x[1]==='low'));}).catch(e=>{console.error(e);process.exit(1)});
+(async()=>{
+ r13Prefetch=['a','b','c'];await r13PrefetchLater();await sleep(30);assert.equal(seen.length,0);
+ handlers.pointerdown();await until(()=>seen.length===1);
+ r13Transport={by_day:{'2':['a','d','d','e'],'3':['d','e','f'],'4':['f','g']}};
+ r13PrefetchDay(2);r13PrefetchDay(3);
+ await until(()=>seen.length===4&&active===0);
+ assert.equal(max,1);assert(seen.every(x=>x[1]==='low'));
+ assert.deepEqual(seen.map(x=>new URL(x[0]).pathname),['/a','/d','/e','/f']);
+ document.hidden=true;r13PrefetchDay(4);await sleep(80);assert.equal(seen.length,4);
+ document.hidden=false;handlers.visibilitychange();await until(()=>seen.length===5&&active===0);
+ assert.equal(new URL(seen[4][0]).pathname,'/g');
+ r13Transport.by_day['7']=['h','old-seven'];r13Prefetch=['a','first'];
+ r13PrefetchDay(7);await until(()=>seen.some(x=>new URL(x[0]).pathname==='/h'));
+ r13PrefetchDay(1);await until(()=>seen.some(x=>new URL(x[0]).pathname==='/first')&&active===0);
+ assert(!seen.some(x=>new URL(x[0]).pathname==='/old-seven'));
+ r13Transport.by_day['8']=['i','old-eight'];r13PrefetchDay(8);
+ await until(()=>seen.some(x=>new URL(x[0]).pathname==='/i'));
+ r13PrefetchDay(99);await sleep(120);
+ assert(!seen.some(x=>new URL(x[0]).pathname==='/old-eight'));
+ assert.equal(max,1);
+})().catch(e=>{console.error(e);process.exit(1)});
 """
         subprocess.run(['node', '-e', script], check=True, capture_output=True, text=True)
 

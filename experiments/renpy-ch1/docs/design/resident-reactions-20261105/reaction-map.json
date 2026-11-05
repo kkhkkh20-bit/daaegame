@@ -1,0 +1,519 @@
+{
+  "schema": "room13.resident-reaction-plan.v1",
+  "status": "proposal_not_runtime",
+  "date": "2026-11-05",
+  "game_baseline": "0.20.104",
+  "language": "ko",
+  "scope": "공통 14일 시간표와 피코 사건 4시점·7장면 문학 초고",
+  "runtime_changes": false,
+  "declarative_conditions_only": true,
+  "read_completion_gates_are_implementation_proposals": true,
+  "read_completion_note": "after_line 또는 after_block은 설계상의 공개 하한이다. 같은 이름의 읽음 플래그가 이미 구현되어 있다는 뜻이 아니다. 해당 묶음의 실제 재생 완료와 현재 단계·경로를 함께 검사해야 한다.",
+  "documents": {
+    "timeline": "공통시간표와_반응규칙.md",
+    "manuscript": "주민_반응별편.md",
+    "field_investigation": "피코_현장조사_기획.md"
+  },
+  "branch_priority": [
+    {
+      "id": "attempt",
+      "when": "lamp_bound2 is truthy",
+      "piko": "alive",
+      "lamp": "present",
+      "portrait": "complete",
+      "notes": "piko_sheltered 여부보다 우선. 식당에서 나온 경우와 광장에 남은 경우의 첫 지문은 구별한다."
+    },
+    {
+      "id": "sheltered_stolen",
+      "when": "lamp_bound2 is falsy and piko_sheltered is True",
+      "piko": "alive",
+      "lamp": "stolen",
+      "portrait": "complete"
+    },
+    {
+      "id": "dead_stolen",
+      "when": "lamp_bound2 is falsy and piko_sheltered is not True",
+      "piko": "dead",
+      "lamp": "stolen",
+      "portrait": "unfinished",
+      "notes": "새 플레이의 추모 뒤에도 엄마와 함께 볼 때까지 미완성. 기존 child_completed 저장을 일괄 변경하지 않는다."
+    }
+  ],
+  "preserved_contracts": [
+    "원본 records와 증거 ID/획득 순서",
+    "회의 정답/기회/승패",
+    "생사/인수/이송/결말 판정",
+    "5일 편지·7일 인계·10일 전언의 실제 청취 완료 조건",
+    "본편의 단서 발견과 자료 제시가 별편 읽기로 대체되지 않음"
+  ],
+  "global_rules": {
+    "new_evidence": false,
+    "new_alibi": false,
+    "new_offscreen_messenger": false,
+    "new_cause_of_death": false,
+    "culprit_inner_monologue": false,
+    "automatic_village_wide_knowledge": false,
+    "mandatory_new_dialogue": false,
+    "proposed_delivery": "선택 열람; 같은 장면 반복 대신 분기별 짧은 잔향",
+    "expired_delivery": "현재 반응으로 재생하지 않고 날짜·장소가 붙은 그때의 회상으로 열람",
+    "unknown_stays_unknown": true
+  },
+  "timeline": [
+    {
+      "day": 1,
+      "order": "도착→초소→여관→13호",
+      "event": "다람 이름 누락과 엄마 부재",
+      "branch": "정정/외 한 명 등록",
+      "knowledge": "돌목은 서류, 너울은 현장 방문 목적, 가족은 부재 설명과 빈방을 차례로 확인",
+      "withhold": "초대장 범인·엄마 은신처",
+      "source": [
+        "days123: registered_depart",
+        "MS14_D01_S04_L0018~21",
+        "MS14_D01_S05_L0007·L0017~21"
+      ]
+    },
+    {
+      "day": 2,
+      "order": "조사→초상 의뢰→오후 일→밤",
+      "event": "회신 쪽지·피코 의뢰·잠자리와 등 준비",
+      "branch": "실제 식당 입실/네로 일; 별도 걸쇠 결박",
+      "knowledge": "피코는 의뢰·잠자리, 나비는 공간·정리 약속, 초롱은 등·끈",
+      "withhold": "다음 날 죽음과 예방 결과",
+      "source": [
+        "days123: box_written·portrait_commission·shelter_done·nero_choice",
+        "room13_lamp_attempt.rpy: r13_lamp_prep2"
+      ]
+    },
+    {
+      "day": 3,
+      "order": "아침 발견·조사→오후 회의→저녁",
+      "event": "피코와 3번 등",
+      "branch": "사망/보호생존/절도미수; 회의 승·부분·패; 반환·처분",
+      "knowledge": "초롱 발견/점검; 보호생존판은 식당에서 피코를 직접 확인하고 도난 발표, 나비도 같은 자리에서 청취; 톡 수리·부리 대여는 직접 아는 범위; 입증 뒤 결론",
+      "withhold": "13일 이전 너울 지시·판자 목적·웃돈 출처",
+      "source": [
+        "days123: r13_v111_day3·trial_*·piko_memorial·piko_evening",
+        "room13_lamp_attempt.rpy",
+        "d13.json: NW_RL_02*"
+      ]
+    },
+    {
+      "day": 4,
+      "order": "낮→밤",
+      "event": "돌목 물림과 밤이 목격",
+      "branch": "피코 생존판만 그림 증언",
+      "knowledge": "돌목의 경험·밤이가 본 동작·울타리 물건",
+      "withhold": "보지 못한 얼굴·범인 단정",
+      "source": [
+        "days45: bite4·testimony4·bami_night4·piko_sketch4"
+      ]
+    },
+    {
+      "day": 5,
+      "order": "조사→초소 회의→편지",
+      "event": "겉옷 대조·밤이 혐의·엄마 첫 답장",
+      "branch": "회의 결과 및 전문 실제 청취 여부",
+      "knowledge": "나비는 식당 확인 뒤 합류, 가족은 읽은 편지 범위",
+      "withhold": "편지 미청취 저장에 새 경위 소급",
+      "source": [
+        "days45: nabi_confirm5·hearing5·warning_read5",
+        "mother_first_contact_read5"
+      ]
+    },
+    {
+      "day": 6,
+      "order": "낮 준비·인수→저녁 불",
+      "event": "아이 넷 이동과 창고 화재",
+      "branch": "빈 창고/아이 잔류·구조·꼬미 생사",
+      "knowledge": "학교 허락·담요 차용·실제 운반·인수·현장 목격을 역할별 분리",
+      "withhold": "허락만 받고 인수 완료로 말함",
+      "source": [
+        "days610: 6일 학교·이송·화재 라벨",
+        "d06.json: school_blanket_borrow6"
+      ]
+    },
+    {
+      "day": 7,
+      "order": "화재 회의·낮 자유→밤",
+      "event": "화재 입증·13호 위기",
+      "branch": "돌/도토 다짐/톡 수리 예방과 살인판",
+      "knowledge": "실제 복도 인계와 도움 요청 뒤 완료; 각자가 본 동작만",
+      "withhold": "예방판에 부엉이 시신·겪지 않은 질병 회고",
+      "source": [
+        "days610: handover7",
+        "room13_v111_owl_prevent.rpy",
+        "corridor_handover7",
+        "OWL_ALIVE"
+      ]
+    },
+    {
+      "day": 8,
+      "order": "조사·면회·경고 편지 수신",
+      "event": "아이 진술/생존 기록과 엄마 경고",
+      "branch": "살인/예방",
+      "knowledge": "아이의 직접 동작과 들은 소리 구별; 6일 작성 편지를 8일 읽음",
+      "withhold": "못 본 침입자를 봤다고 함",
+      "source": [
+        "days610: mother_letter8·letter_murder8·letter_prevent8",
+        "E08_CHILD_ACCOUNT",
+        "E08_RECENT_LETTER"
+      ]
+    },
+    {
+      "day": 9,
+      "order": "조사·확인 왕복",
+      "event": "핀·목도리·통로",
+      "branch": "현재 배우와 조사 상태",
+      "knowledge": "나비 핀 목격, 따닥 구조, 아빠 실제 통로 왕복",
+      "withhold": "구조 존재만으로 특정인 범행 확정",
+      "source": [
+        "days610: day9 이후 핀·통로 라벨",
+        "E09_PIN_TIME",
+        "E09_PASSAGE"
+      ]
+    },
+    {
+      "day": 10,
+      "order": "회의→구두 전언",
+      "event": "13호/기록 회의와 연락",
+      "branch": "살인/예방; 초롱 전언 실제 청취",
+      "knowledge": "가족은 mother_contact_relay10 뒤 전언 경위 인지",
+      "withhold": "초롱이 엄마의 모든 이동을 안다고 씀",
+      "source": [
+        "days610: contact_answer10",
+        "mother_contact_relay10"
+      ]
+    },
+    {
+      "day": 11,
+      "order": "재회→가설 회의→밤 아랫길",
+      "event": "엄마 재회·돌 가설·네로 구조",
+      "branch": "이전 연락 청취 조합; 낮 인계/준비 구조/늦은 출발",
+      "knowledge": "가족 재회 대화, 까로 운반/현장, 학교 실제 인수",
+      "withhold": "전 주민이 가족 재회·가설 정답 자동 인지",
+      "source": [
+        "days1114: mother_life11·mother_invitation11·hypothesis11·night11",
+        "nero_alive",
+        "alive:v111_lowerroad_elder"
+      ]
+    },
+    {
+      "day": 12,
+      "order": "배식 전→중단 또는 먹은 뒤",
+      "event": "학교 국",
+      "branch": "조기 예방/식전 중단/늦은 폭로와 도담·꼬미 생사",
+      "knowledge": "그릇·배식·봉인·맡김의 당사자를 분리",
+      "withhold": "식전 중단판에 시신; 약 담당자를 곧 실행자로 단정",
+      "source": [
+        "days1114: soup_*",
+        "route12",
+        "alive:kid_dodam",
+        "KKOMI_ALIVE"
+      ]
+    },
+    {
+      "day": 13,
+      "order": "담요→수레→기록 공개·저녁",
+      "event": "거짓 전언·하차/인수·피코 배후 진술·군중",
+      "branch": "전원/부분/가족 우선/떠남; 너울·모모 생사",
+      "knowledge": "3일 실행 증명과 NW_RL_02*의 새 지시 진술을 분리",
+      "withhold": "듣기 전 배후·웃돈 출처·판자 목적; 미인수자를 학교에 있다고 함",
+      "source": [
+        "days1114: stop_cart13·school_handover_prep13·transport_cleanup13",
+        "d13.json: NW_RL_02*",
+        "outcome13",
+        "departed_names"
+      ]
+    },
+    {
+      "day": 14,
+      "order": "결말 판정→해당 줄기",
+      "event": "제단 또는 갈린 결말",
+      "branch": "아침/진엔딩/가족/부분/폭력/남겨진 이름/얼어붙음/조건부 불타는 밤",
+      "knowledge": "그 줄기에서 직접 검증하고 실제 함께 있는 인물만",
+      "withhold": "다른 결말에 제단·초상 완성·가족 동석을 강제",
+      "source": [
+        "days1114: ending_dispatch14·morning_safe14·family_ending14·wild_night14",
+        "newworld_rules: r13_nw_ending14·r13_nw_true_ending_ready",
+        "portrait_waiting_for_mom"
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "RR_PIKO_01",
+      "title": "아이가 서 있는 쪽",
+      "pov": "resident_lamplighter",
+      "pov_name": "초롱",
+      "day": 3,
+      "period": "아침",
+      "location": "square",
+      "branches": [
+        "dead_stolen"
+      ],
+      "source": [
+        "days123: r13_v111_piko_dead3",
+        "MS14_D03_S01_L0002~20",
+        "MS14_D03_S01_L9101",
+        "d03.json: 사망 반응 개정"
+      ],
+      "proposed_trigger": {
+        "after_sequence": "piko_dead3의 발견·판자 인수 묶음 완료",
+        "before_phase": "lamp3 첫 조사"
+      },
+      "knowledge": {
+        "seen": [
+          "피코의 발견 자세",
+          "다람과 아빠의 반응",
+          "판자 인수"
+        ],
+        "heard": [
+          "진료소가 이미 살펴봄·숨을 쉬지 않음"
+        ],
+        "unknown": [
+          "정확한 사망 시각·의학적 직접 사인",
+          "범인·도구",
+          "13일 배후 지시"
+        ]
+      },
+      "valid_until": "3일 발견 직후; 이후에는 날짜가 붙은 회상",
+      "revisit_echo": "초롱은 다람이 아빠 곁에 있는지 먼저 살핀다.",
+      "new_evidence": false
+    },
+    {
+      "id": "RR_PIKO_02",
+      "title": "없는 자리와 남은 사람",
+      "pov": "resident_lamplighter",
+      "pov_name": "초롱",
+      "day": 3,
+      "period": "아침",
+      "location": "square",
+      "branches": [
+        "sheltered_stolen"
+      ],
+      "source": [
+        "days123: r13_v111_piko_alive3·r13_v111_piko_receive·r13_v111_lamp3",
+        "MS14_D03_S01_L0028·L0030",
+        "MS14_D03_S02_L0002~11"
+      ],
+      "proposed_trigger": {
+        "after_sequence": "식당 생존·초상 인수 이후 lamp3의 첫 묶음 완료"
+      },
+      "knowledge": {
+        "seen": [
+          "식당의 살아 있는 피코·그림 앞에서 말을 주고받는 부녀",
+          "광장의 빈 벤치·꺼진 등",
+          "부녀와 톡의 현재 모습"
+        ],
+        "heard": [
+          "톡의 수리 주장·너울의 물음·아빠의 조사 요청"
+        ],
+        "unknown": [
+          "누가 돌을 가져갔는가",
+          "13일 배후 지시"
+        ],
+        "known_from_own_action": [
+          "식당에서 피코를 발견하고 안도함",
+          "L0028에서 도난 발표·L0030에서 자기 순회 경위를 말함"
+        ]
+      },
+      "valid_until": "3일 첫 조사 구간; 이후 회상",
+      "revisit_echo": "초롱은 식당에서 본 피코의 얼굴을 떠올리고 점검장을 편다.",
+      "new_evidence": false
+    },
+    {
+      "id": "RR_PIKO_03",
+      "title": "켜진 등 앞에서도",
+      "pov": "resident_lamplighter",
+      "pov_name": "초롱",
+      "day": 3,
+      "period": "아침",
+      "location": "square",
+      "branches": [
+        "attempt"
+      ],
+      "source": [
+        "room13_lamp_attempt.rpy: r13_lamp_attempt3",
+        "lamp_attempt.json: la_morning3"
+      ],
+      "proposed_trigger": {
+        "after_block": "la_morning3 전체 완료"
+      },
+      "knowledge": {
+        "seen": [
+          "켜진 등·새 긁힘",
+          "살아 있는 피코·완성 초상"
+        ],
+        "heard": [
+          "톡은 안쪽을 긁지 않았다는 주장"
+        ],
+        "unknown": [
+          "새 흠집을 낸 사람",
+          "13일 배후 지시"
+        ]
+      },
+      "valid_until": "3일 미수 첫 현장; 이후 미수판 회상",
+      "revisit_echo": "초롱은 켜진 등을 보고도 덮개를 한 번 더 살핀다.",
+      "new_evidence": false
+    },
+    {
+      "id": "RR_PIKO_04",
+      "title": "아침 손님이 오기 전에",
+      "pov": "nabi",
+      "pov_name": "나비",
+      "day": 3,
+      "period": "아침",
+      "location": "dining",
+      "branches": [
+        "sheltered_stolen"
+      ],
+      "source": [
+        "days123: r13_v111_shelter_done·r13_v111_piko_alive3",
+        "MS14_D02_S04_L0030~36",
+        "MS14_D03_S01_L0023~34(특히 L0028·L0030·L0033)"
+      ],
+      "proposed_trigger": {
+        "after_sequence": "piko_alive3 식당 재회·초롱 도난 발표·나비 반응을 포함한 전체 묶음 완료"
+      },
+      "knowledge": {
+        "seen": [
+          "피코의 실제 입실·아침 생존",
+          "정리하러 온 부녀"
+        ],
+        "heard": [
+          "전날 정리 약속",
+          "L0028 초롱의 3번 등 돌 도난 발표",
+          "L0030 초롱의 새벽 마지막 순회 뒤라는 경위",
+          "L0032 피코 농담에 L0033 나비 본인이 반응"
+        ],
+        "unknown": [
+          "도난 실행자·범행 방법",
+          "다른 흐름의 피코 사망"
+        ]
+      },
+      "valid_until": "식당 발표를 들은 같은 아침; 식당을 떠난 뒤에는 그 아침의 회상",
+      "revisit_echo": "나비는 자리를 정리하려다 피코가 챙길 때까지 손을 멈춘다.",
+      "new_evidence": false
+    },
+    {
+      "id": "RR_PIKO_05",
+      "title": "고친 손",
+      "pov": "resident_tok",
+      "pov_name": "톡",
+      "day": 3,
+      "period": "아침",
+      "location": "square",
+      "branches": [
+        "dead_stolen",
+        "sheltered_stolen"
+      ],
+      "source": [
+        "days123: r13_v111_lamp3",
+        "MS14_D03_S02_L0002~11"
+      ],
+      "proposed_trigger": {
+        "after_sequence": "lamp3 첫 묶음 완료"
+      },
+      "knowledge": {
+        "seen": [
+          "등의 현재 상태·공구·부녀"
+        ],
+        "known_from_own_action": [
+          "자신이 한 걸쇠 수리"
+        ],
+        "unknown": [
+          "남의 반출 행위",
+          "구체적 시각 대조 정답",
+          "다른 사람이 알려 주지 않은 사망 경위"
+        ]
+      },
+      "valid_until": "3일 의심받는 첫 현장; 입증 뒤에는 회상",
+      "revisit_echo": "톡은 공구를 아이 얼굴 높이로 들지 않는다.",
+      "new_evidence": false
+    },
+    {
+      "id": "RR_PIKO_06",
+      "title": "손대지 않은 흠집",
+      "pov": "resident_tok",
+      "pov_name": "톡",
+      "day": 3,
+      "period": "아침",
+      "location": "square",
+      "branches": [
+        "attempt"
+      ],
+      "source": [
+        "room13_lamp_attempt.rpy: r13_lamp_attempt3",
+        "lamp_attempt.json: la_morning3"
+      ],
+      "proposed_trigger": {
+        "after_block": "la_morning3 전체 완료"
+      },
+      "knowledge": {
+        "seen": [
+          "등이 켜져 있음·새 흠집·피코와 초상"
+        ],
+        "known_from_own_action": [
+          "안쪽을 긁지 않았음"
+        ],
+        "unknown": [
+          "누가 새 흠집을 냈는가",
+          "13일 배후 지시"
+        ]
+      },
+      "valid_until": "3일 미수 첫 현장; 이후 미수판 회상",
+      "revisit_echo": "톡은 고친 자리와 새 흠집을 나누어 가리킨다.",
+      "new_evidence": false
+    },
+    {
+      "id": "RR_PIKO_07",
+      "title": "집게가 놓이던 자리",
+      "pov": "buri",
+      "pov_name": "부리",
+      "day": 3,
+      "period": "아침",
+      "location": "workshop",
+      "branches": [
+        "dead_stolen",
+        "sheltered_stolen"
+      ],
+      "source": [
+        "days123: r13_v111_workshop3",
+        "MS14_D03_S03_L0002~06"
+      ],
+      "proposed_trigger": {
+        "after_sequence": "workshop3 집게 대여 문답 완료"
+      },
+      "knowledge": {
+        "seen": [
+          "부녀의 방문"
+        ],
+        "known_from_own_action": [
+          "우박에게 집게를 빌려줌"
+        ],
+        "heard": [
+          "온도를 재려고 가져간다는 말",
+          "톡이 확인해 달라고 했다는 아빠 말"
+        ],
+        "unknown": [
+          "피코 사망 소식의 청취 여부",
+          "빌린 뒤 실제로 한 일",
+          "범인·사망 경위"
+        ]
+      },
+      "valid_until": "3일 공방 문답 뒤; 이후에는 당시 모른 채였던 회상",
+      "revisit_echo": "부리는 집게가 돌아오면 둘 칸을 비워 둔다.",
+      "new_evidence": false
+    }
+  ],
+  "open_questions": [
+    "선택 열람을 현재 장소의 대화로 둘지, 별도 주민 별편 모음으로 둘지",
+    "읽음 저장을 판별로 할지 장치별로 할지; 기존 본편 자료 읽음과 분리 필요",
+    "각 after_sequence 실제 재생 완료를 어떤 기존 상태 또는 신규 표시용 상태로 확인할지",
+    "3일 돌목이 피코 소식을 청취하는 경로는 미확정",
+    "절도미수 공방 아이들 위치: 상태는 workshop_with_buri, 지문은 공방 바깥 보리 곁; 이번 원고에서 재설정하지 않음",
+    "진료소 최초 방문자의 이름·정확한 사망 시각·의학적 직접 사인은 미확정",
+    "4~14일 주민별 원고는 별도 후속 범위; 현재 표는 전체 주민 대사 완성본이 아님"
+  ],
+  "validation_scope": "문서·조건·출처 대조와 JSON 형식 검사. 게임 적용·빌드·자연 완주·초견 독자 재미 검증 미실행."
+}

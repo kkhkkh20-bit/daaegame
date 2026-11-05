@@ -56,6 +56,13 @@ START_FILES = {"assets/room13-title-book-cover.webp","assets/room13-opening-coac
                "assets/type.wav", "assets/ms14-audio/cart-roll-light.mp3",
                "assets/room13-fx-shade-carriage.webp", "assets/room13-fx-glow-carriage-0.webp", "assets/room13-fx-carriage-window-mask.webp"}
 
+# 이전 표지·버튼 판은 호환 파일로 남기고, 현행 첫 화면이 쓰는 경우에만 선로딩한다.
+COMPAT_ON_DEMAND = {
+    "assets/room13-title-winter020.webp", "assets/ui-b-main/b_main_background.png",
+    "assets/ui-b-main/b_main_background_postcard.png", "assets/ui-b-main/b_main_daram.png",
+    "assets/ui-b-sticker/button_sheet.png",
+}
+
 def startup_media(rel, startup_files):
     name = Path(rel).name
     # Intake poses are optional scene art. Only bravado occurs in the opening;
@@ -66,6 +73,11 @@ def startup_media(rel, startup_files):
 
 def startup_files(game):
     result = set(START_FILES)
+    protected = set()
+    title = game / "assets/room13-title-layout.json"
+    if title.exists():
+        protected.update(layer[0] for layer in json.loads(title.read_text())["layers"])
+        result.update(protected)
     # 2026-10-28 소유자 「양 줄이기」: UI 폴더의 PNG 를 통째로 미리 받았다(쓰지 않는 스티커·시안 65장, 약 4MB).
     # 대본·화면에서 이름(또는 「b_panel_card_」 같은 이름 앞부분)이 나오는 것만 미리 받는다. 나머지는 지우지 않고
     # 필요할 때 받는 쪽(remote)으로 간다 — 혹시 쓰여도 깨지지 않고 잠깐 늦게 뜰 뿐이다.
@@ -91,7 +103,10 @@ def startup_files(game):
             if role.startswith(("button.", "surface.", "font.", "main.", "file:assets/ui-b-", "file:assets/map-status/", "file:assets/diary-sounds/")):
                 if role.startswith("file:") and not referenced(role[5:]):continue
                 for state in rule.get("states", ["basic"]):
-                    result.add(registry.resolve(role, state)["path"])
+                    resolved=registry.resolve(role, state)["path"]
+                    result.add(resolved)
+                    if role.startswith(("button.", "surface.", "font.")):
+                        protected.add(resolved)
     # Small face stickers must be present when the first dialogue is drawn.
     result.update(p.relative_to(game).as_posix() for p in (game / "assets/dialogue-b-faces").glob("*.webp"))
     # 마차 전용 고해상도 표정은 첫 대화가 시작되기 전에 준비한다.
@@ -115,8 +130,10 @@ def startup_files(game):
         for original in tuple(result):
             role="file:"+original
             if role in registry.bindings["bindings"]:
-                result.add(registry.resolve(role)["path"])
-    return result
+                resolved=registry.resolve(role)["path"]
+                result.add(resolved)
+                if original in protected:protected.add(resolved)
+    return result - (COMPAT_ON_DEMAND - protected)
 
 
 
@@ -346,11 +363,14 @@ LOADER = LOADER_BEGIN + r"""    // Core zip (runtime + scripts) is unpacked by R
         }
     }
 
+    const r13MadeDirs = new Set();
     function r13MakeDirs(path) {
         let dir = "";
         for (const name of path.split("/").slice(1, -1)) {
             dir += "/" + name;
+            if (r13MadeDirs.has(dir)) continue;
             try { FS.mkdir(dir); } catch (e) { /* exists */ }
+            r13MadeDirs.add(dir);
         }
     }
 
@@ -394,35 +414,62 @@ LOADER = LOADER_BEGIN + r"""    // Core zip (runtime + scripts) is unpacked by R
         }
     }
 
-    // Warm first-day character art and nearby music once the game runs,
-    // so Ren'Py's own download finds them immediately.
-    // 2026-10-28: 날짜가 바뀌면 게임이 window.r13PrefetchDay(N) 을 부른다. 그날(과 다음 날) 인물·배경을 뒤에서 미리 받는다.
-    const r13DayDone = {};
-    globalThis.r13PrefetchDay = function (day) {
-        const files = ((r13Transport && r13Transport.by_day) || {})[String(day)] || [];
-        if (r13DayDone[day] || !files.length) return;
-        r13DayDone[day] = true;
-        let next = 0;
-        async function worker() {
-            while (next < files.length) {
-                const file = files[next++];
-                try { await (await fetch(r13Url(file, r13AssetVersions[file]), { priority: "low" })).blob(); } catch (e) { /* Ren'Py 가 쓸 때 다시 받는다 */ }
+    // 예열은 전역 한 작업으로만 처리한다. 첫 입력 뒤 유휴 시간에 시작하며, 전경·숨긴 탭을 방해하지 않는다.
+    const r13Warm = { queue: [], pending: new Set(), done: new Set(), running: false, timer: null, ready: false, inputAt: 0 };
+    function r13WarmAllowed() {
+        return r13Warm.ready && !document.hidden && !(typeof navigator !== "undefined" && navigator.connection && navigator.connection.saveData);
+    }
+    function r13WarmSchedule() {
+        if (r13Warm.running || r13Warm.timer || !r13WarmAllowed() || !r13Warm.queue.length) return;
+        const delay = Math.max(0, 800 - (Date.now() - r13Warm.inputAt));
+        r13Warm.timer = setTimeout(() => { r13Warm.timer = null; r13WarmPump(); }, delay);
+    }
+    async function r13WarmPump() {
+        if (r13Warm.running || !r13WarmAllowed()) return;
+        if (Date.now() - r13Warm.inputAt < 800) { r13WarmSchedule(); return; }
+        r13Warm.running = true;
+        try {
+            while (r13Warm.queue.length && r13WarmAllowed() && Date.now() - r13Warm.inputAt >= 800) {
+                const item = r13Warm.queue.shift();
+                try {
+                    const response = await fetch(item.url, { priority: "low" });
+                    if (!response.ok) throw new Error("예열 응답 실패");
+                    await response.blob();
+                    r13Warm.done.add(item.url);
+                } catch (e) { /* 실제 사용 때 엔진이 다시 받는다. */ }
+                finally { r13Warm.pending.delete(item.url); }
                 await new Promise(resolve => setTimeout(resolve, 50));
             }
+        } finally { r13Warm.running = false; r13WarmSchedule(); }
+    }
+    function r13QueueWarm(files, replace) {
+        if (replace) {
+            for (const item of r13Warm.queue) r13Warm.pending.delete(item.url);
+            r13Warm.queue.length = 0;
         }
-        worker(); worker();
+        for (const file of files) {
+            const url = r13Url(file, r13AssetVersions[file]).href;
+            if (r13Warm.pending.has(url) || r13Warm.done.has(url)) continue;
+            r13Warm.pending.add(url); r13Warm.queue.push({ url });
+        }
+        r13WarmSchedule();
+    }
+    if (document.addEventListener) {
+        const input = () => { r13Warm.ready = true; r13Warm.inputAt = Date.now(); r13WarmSchedule(); };
+        for (const event of ["pointerdown", "keydown", "touchstart"]) document.addEventListener(event, input, { passive: true });
+        document.addEventListener("visibilitychange", r13WarmSchedule);
+    }
+    let r13WarmDay = null;
+    globalThis.r13PrefetchDay = function (day) {
+        const files = ((r13Transport && r13Transport.by_day) || {})[String(day)] || (Number(day) === 1 ? r13Prefetch : []);
+        if (r13WarmDay === day) return;
+        r13WarmDay = day;
+        r13QueueWarm(files, true);
     };
 
     async function r13PrefetchLater() {
-        let next = 0;
-        async function worker() {
-            while (next < r13Prefetch.length) {
-                const file = r13Prefetch[next++];
-                try { await (await fetch(r13Url(file, r13AssetVersions[file]), { priority: "low" })).blob(); } catch (e) { /* retried by Ren'Py */ }
-                await new Promise(resolve => setTimeout(resolve, 50));
-            }
-        }
-        await Promise.all([worker(), worker()]);
+        // 복원한 날짜의 대기열을 첫날 목록으로 덮지 않는다.
+        if (r13WarmDay === null) r13QueueWarm(r13Prefetch, false);
     }
 
     // On failure the stock status line grows upward over the loading hint and
@@ -712,7 +759,8 @@ def main():
     transport = {"multipart": True, "archive_bytes": size, "archive_sha256": digest, "parts": parts,
                  "preload": preload_entries, "asset_versions": {"game/"+r: sha((game/r).read_bytes())[:12] for r in remote},
                  "prefetch": ["game/"+r for r in dict.fromkeys(warm) if r in remote],
-                 "by_day": {str(d): ["game/"+r for r in day_prefetch(game, d) if r in remote and r not in warm] for d in range(2, 15)}}
+                 # 뒤 날짜 저장을 바로 열어도 그날 공통 인물이 빠지지 않는다. 받은 URL 중복은 전역 대기열이 거른다.
+                 "by_day": {str(d): ["game/"+r for r in day_prefetch(game, d) if r in remote] for d in range(2, 15)}}
     (release / "game-transport.json").write_text(json.dumps(transport, indent=1))
 
     install_loader(release / "renpy-pre.js")

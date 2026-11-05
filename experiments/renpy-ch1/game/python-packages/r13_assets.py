@@ -58,6 +58,11 @@ class Registry:
         finally:
             self._resolving.remove(key)
 
+    def resolve_path(self, role, state='basic'):
+        """경로 문자열만 필요할 때 가변 명세 전체를 다시 복사하지 않는다."""
+        cached = self.cache.get((role, state))
+        return cached['path'] if cached is not None else self.resolve(role, state)['path']
+
     def _resolve(self, role, state='basic'):
         cached = self.cache.get((role, state))
         if cached is not None:

@@ -28,7 +28,7 @@ init -200 python:
         mapping={}
         for role in registry.bindings["bindings"]:
             if not role.startswith("file:assets/") or not role.lower().endswith(extensions):continue
-            path=registry.resolve(role)["path"]
+            path=registry.resolve_path(role)
             if path!=role[5:]:mapping[role[5:]]=path
         return mapping
 
@@ -62,7 +62,10 @@ init -200 python:
         return _r13_asset_runtime.registry.resolve(role,state)
 
     def r13_asset_path(role,state="basic"):
-        return r13_asset_spec(role,state)["path"]
+        if role.startswith("file:") and role not in _r13_asset_runtime.registry.bindings["bindings"]:
+            from r13_assets import safe_asset_path
+            return safe_asset_path(role[5:])
+        return _r13_asset_runtime.registry.resolve_path(role,state)
 
     class R13AssetSlot(renpy.Displayable):
         def __init__(self,role,state="basic",**kwargs):

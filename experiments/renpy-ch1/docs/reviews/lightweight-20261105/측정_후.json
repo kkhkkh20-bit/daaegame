@@ -1,0 +1,429 @@
+{
+  "scope": "빈 캐시의 새 브라우저(실행 중 HTTP 캐시는 허용), 로컬 서버, 3MiB/s·20ms, 한 번 측정. 실제 기기·인터넷 속도 보장 아님. CDP 일부 응답 바이트가 0이어서 해당 합은 실제 전송량 비교에 사용하지 않는다.",
+  "ready_s": 24.717460048996145,
+  "main": {
+    "version": "0.20.105",
+    "image_cache_bytes": 19405248,
+    "image_cache_limit_bytes": 419430400,
+    "requests": 44,
+    "cdp_reported_transfer_bytes": 1138995,
+    "js_heap_bytes": 10390672
+  },
+  "main_idle_10s": {
+    "version": "0.20.105",
+    "image_cache_bytes": 26521156,
+    "image_cache_limit_bytes": 419430400,
+    "requests": 45,
+    "cdp_reported_transfer_bytes": 1138995,
+    "js_heap_bytes": 8918488
+  },
+  "hub": {
+    "version": "0.20.105",
+    "image_cache_bytes": 121031980,
+    "image_cache_limit_bytes": 419430400,
+    "requests": 93,
+    "cdp_reported_transfer_bytes": 1138995,
+    "js_heap_bytes": 11027784
+  },
+  "profile_ms": [
+    [
+      "r13_stage_people",
+      0.010000100000695511
+    ],
+    [
+      "r13_objects_over_actors",
+      3.0699998999992317
+    ],
+    [
+      "r13_asset_path",
+      0.0015000049999969178
+    ]
+  ],
+  "pageerrors": [],
+  "resources": [
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/",
+      "bytes": 13986
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/renpy-pre.js?v=051734dad735",
+      "bytes": 40977
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/loading-scene.webp?v=4c50da636339",
+      "bytes": 182757
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/renpy.js",
+      "bytes": 396348
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/renpy.wasm",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game-transport.json",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/Galmuri11.woff2",
+      "bytes": 504927
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/Pretendard-Bold.otf?v=d02d52d8d4b3",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/Pretendard-ExtraBold.otf?v=e47b858398c4",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/Pretendard-Regular.otf?v=513fd3682a4d",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/Room13Sans.ttf?v=3d78103f8840",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/carriage-source-master/room13-carriage-daram-seat-angry.webp?v=6eb27408e397",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/icons/icon-72x72.png",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/bgm-travel.mp3?v=3718affb14e4",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/carriage-source-master/room13-carriage-daram-seat-bravado.webp?v=012a5b09c36f",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/carriage-source-master/room13-carriage-daram-seat-joy.webp?v=ea2c34c8737e",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/carriage-source-master/room13-carriage-daram-seat-neutral.webp?v=9a5aca0070a0",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game.part01?v=63de3770c77d",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/carriage-source-master/room13-carriage-daram-seat-pout.webp?v=1ecb5808b356",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/carriage-source-master/room13-carriage-daram-seat-quiz.webp?v=8e989692a82b",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/carriage-source-master/room13-carriage-daram-seat-secret.webp?v=3816d4d179d4",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/carriage-source-master/room13-carriage-daram-seat-wistful.webp?v=fbbabd7aba8e",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/dialogue-context-master/daram/560/intake21_01_bravado.webp?v=6ea91855f603",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/dialogue-context-master/daram/760/intake21_01_bravado.webp?v=6994cec66c8b",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/dialogue-context-master/daram/840/intake21_01_bravado.webp?v=fb8b41e9b3e4",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/room13-opening-coach-landscape.webp?v=3a0c98473c3f",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/room13-pixel-carriage-empty-winter.webp?v=d925496921a7",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/room13-pixel-ready-gate0173-morning.webp?v=c482a5ea43c5",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/room13-title-book-cover.webp?v=10953df15a71",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/ui-b-field/b_panel_dialogue.png?v=c6111c66fc51",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/ui-b-dialogue/b_panel_dialogue.png?v=c6111c66fc51",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/ui-b-main/b_logo.png?v=4b3d8c6e3896",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/ui-b-main/b_main_panel.png?v=3db5e5edeca0",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/ui-b-main/b_main_cast_poster_plain.png?v=065b79a2a79d",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/ui-b-options/daram_diary_sticker_acorn.png?v=04a38934c80b",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/ui-b-options/daram_diary_sticker_emphasis.png?v=adceab002daf",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/ui-b-options/b_opt_panel.png?v=284f1c2ca908",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/ui-b-options/daram_diary_sticker_letter.png?v=c089d60a0465",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/ui-b-options/daram_diary_sticker_magnifier.png?v=431059cdedc0",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/ui-b-options/daram_diary_sticker_star.png?v=71e004d33a04",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/ui-b-question/b_panel_book.png?v=72df207aa3b1",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/renpy.data",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/bgm-title.mp3?v=1f0e9975bd24",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/icons/icon-512x512.png",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/ui-field-stickers/place_basic.png?v=a0a82fd78427",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/room13-fx-snow-small.webp?v=4582a5f6e60c",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/room13-fx-snow-big.webp?v=892570dc84bf",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/room13-fx-bleed.png?v=3a1d23c437bf",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/amb-wind.mp3?v=509bda7c964d",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/room13-fx-card-glow.webp?v=a6dd72dcbdf6",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/evidence/E01.webp?v=303b57e56d3d",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/bgm-snow.mp3?v=a94f5aecd61f",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/gate-wide/gate-wide-morning.webp?v=8e658e30a696",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/dialogue-source-master-v2/daram/760/joy.webp?v=98fafee9a527",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/dialogue-player-facing/karo-flustered.webp?v=7ea60ed65a6d",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/dialogue-source-master/karo/840/neutral.webp?v=7a7a922c2bf3",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/dialogue-player-facing/guard-redesign/neutral.webp?v=aeb2b06be002",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/dialogue-source-master-v2/daram/760/anxious.webp?v=f82547c74796",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/field-dot-v2/resident_siluk/event_whisper.webp?v=005fcd934819",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/field-dot-v2/guard/neutral.webp?v=6d1b51cba472",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/field-dot-v2/karo/living_axlewrap.webp?v=c099ac72889d",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/field-dot-v2/resident_bori/life_stack_wood.webp?v=af80ac40031c",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/ui-field-stickers/label_basic.png?v=134eb07296b0",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/ui-field-stickers/arrow_left_basic.png?v=28d43dbc4af6",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/ui-field-stickers/label_hover.png?v=a07c54c2651f",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/ui-field-stickers/arrow_left_hover.png?v=d053270f28df",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/room13-pixel-world-daram-gray-gutter.webp?v=7ed92445ebe1",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/room13-pixel-family-profile-icons.webp?v=30bdc58fbe07",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/ui-field-stickers/arrow_right_hover.png?v=00cc10c767d5",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/ui-field-stickers/arrow_right_basic.png?v=8e7f16bb9a21",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/room13-pixel-dialogue-daram.webp?v=4129f95c4683",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/map-village-b/b_panel_small_trimmed.png?v=84db262c7a68",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/map-village-b/notebook_frame_1280x720.png?v=e9472803750a",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/profile-source-master/daram.webp?v=f9003a1d0703",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/ui-night/diamond.png?v=8d44e7fc8244",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/room13-pixel-world-family-extra-gray.webp?v=f4ac1fc77aed",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/map-village-b/village_clean.png?v=9ba92807dfb4",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/room13-pixel-dialogue-daram.webp?v=4129f95c4683",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/room13-pixel-dialogue-daram-joy.webp?v=c58867f46148",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/dialogue-context-master/daram/840/intake21_02_reproach_lean.webp?v=760fd577eea6",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/dialogue-context-master/daram/840/intake21_03_stubborn.webp?v=9707c3951c68",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/dialogue-context-master/daram/840/intake21_04_flustered.webp?v=bf5ee8331018",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/dialogue-context-master/daram/840/intake21_05_playful_evasion.webp?v=a2359b3c3e06",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/dialogue-context-master/daram/840/intake21_06_eureka.webp?v=483568f768ec",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/dialogue-context-master/daram/840/intake21_07_delighted.webp?v=dbfcbefb029b",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/dialogue-context-master/daram/840/intake21_08_scared_brave.webp?v=48a85804b829",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/dialogue-context-master/daram/840/intake21_09_wipe_tears.webp?v=1ede1eda02ce",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/dialogue-context-master/daram/840/intake21_10_resolve.webp?v=1a0f3f662340",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/profile-source-master/daram.webp?v=f9003a1d0703",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/room13-pixel-acting-daram.webp?v=70939cc65638",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/room13-pixel-acting-family-extra.webp?v=56fb6da0e410",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/room13-pixel-world-dad-gray.webp?v=0bf7a82ac910",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/room13-pixel-dialogue-dad.webp?v=b32b1392f61e",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/room13-pixel-acting-dad.webp?v=87bef2227f03",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/room13-pixel-acting-karo.webp?v=3183786f4151",
+      "bytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:8765/preview/room13-dev/game/assets/room13-pixel-main-profile-c.webp?v=787377fc6b25",
+      "bytes": 0
+    }
+  ]
+}

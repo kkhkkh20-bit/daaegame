@@ -22,6 +22,16 @@ def fixture():
 
 
 class AssetToolbox(unittest.TestCase):
+    def test_path_lookup_follows_assignment_and_keeps_specs_isolated(self):
+        registry=fixture()
+        before=registry.resolve_path('main.primary')
+        spec=registry.resolve('main.primary');spec['path']='assets/edited.png'
+        self.assertEqual(registry.resolve_path('main.primary'),before)
+        registry.assign('main.primary','cream.basic')
+        self.assertEqual(registry.resolve_path('main.primary'),registry.resolve('main.primary')['path'])
+        self.assertNotEqual(registry.resolve_path('main.primary'),before)
+        with self.assertRaises(AssetError):registry.resolve_path('missing.role')
+
     def test_one_family_assignment_updates_every_screen_and_all_states(self):
         registry=fixture()
         changed=registry.assign('main.primary','cream.basic')

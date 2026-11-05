@@ -61,7 +61,7 @@ let gameZipSize=0,gameZipDownloaded=0;const updateDownloadProgress=()=>{};const 
 const transport={archive_bytes:3,preload:[],asset_versions:{'game/assets/late/nested/portrait.webp':'hash'},parts:[{file:'game.part01',bytes:3,sha256:'x'}]};
 global.fetch=async(url)=>{requests.push(String(url));return String(url).includes('game-transport.json')?new Response(JSON.stringify(transport)):new Response(new Uint8Array(3))};
 '''+LOADER+'''
-(async()=>{await loadGameZip();assert(dirs.includes('/game/assets/late/nested'));assert.equal(requests.length,2);assert(!requests.some(x=>x.includes('portrait.webp')));})().catch(e=>{console.error(e);process.exit(1)});
+(async()=>{await loadGameZip();assert(dirs.includes('/game/assets/late/nested'));r13MakeDirs('/game/assets/late/nested/second.webp');assert.equal(dirs.length,new Set(dirs).size);assert.equal(requests.length,2);assert(!requests.some(x=>x.includes('portrait.webp')));})().catch(e=>{console.error(e);process.exit(1)});
 '''
   subprocess.run(['node','-e',script],check=True,capture_output=True,text=True)
 
