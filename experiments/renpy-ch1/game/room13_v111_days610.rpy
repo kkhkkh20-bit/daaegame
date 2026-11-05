@@ -1037,9 +1037,14 @@ label r13_v111_mother_letter8:
     $ r13_v111_scene('MS14_D08_S04')
     $ r13_edit(period=1)
     $ room13["v111"]["people"]=[]
-    # 0.20.10 (4~14일 리뷰 8일): 다람을 어디에 두고 나왔는지 보인다.
-    if not r13_v111_value('DARAM_DETAINED') and r13_v111_actor_ready('nabi'):
-        call r13_lines(r13_nw_block('daram_school8'),'nw:daram_school8')
+    # 0.20.92: 학교 인계를 실제 이동·인물 위치에도 반영한 뒤 광장으로 혼자 간다.
+    if not r13_v111_value('DARAM_DETAINED'):
+        call r13_v111_travel('school','daram_school8',['daram'])
+        $ r13_v111_arrive(['daram','nabi'])
+        $ r13_v111_set('DARAM_location','school')
+        if r13_v111_actor_ready('nabi'):
+            $ r13_v111_set('busy:nabi','daram_guard')
+            call r13_lines(r13_nw_block('daram_school8'),'nw:daram_school8')
     call r13_v111_travel('square','mother_letter8',[])
     $ r13_v111_arrive(['resident_lamplighter', 'doto', 'resident_badook'])
     $ r13_v111_score()
@@ -1289,6 +1294,12 @@ label r13_v111_scarf_done9:
 label r13_v111_prevent_passage9:
     $ r13_v111_scene('MS14_D09_P01')
     $ r13_edit(period=0)
+    # 0.20.92: 나비가 주방 증언에 나서기 전에 학교의 선생님에게 다람을 인계한다.
+    if r13_v111_value('busy:nabi')=='daram_guard' and r13_v111_value('location:daram')=='school':
+        call r13_v111_travel('school','daram_teacher9',[])
+        $ r13_v111_arrive(['daram','nabi','resident_teacher'])
+        call r13_lines(r13_nw_block('daram_teacher9'),'nw:daram_teacher9')
+        $ r13_v111_set('busy:nabi',None)
     $ room13["v111"]["people"]=[]
     call r13_v111_travel('kitchen','prevent_passage9',[])
     $ r13_v111_arrive(['doto', 'resident_ttadak', 'granny', 'nabi'])
@@ -1312,7 +1323,8 @@ label r13_v111_prevent_walk9:
     call r13_lines(r13_v111_lines(['MS14_D09_P01_L0010']),'v111:MS14_D09_P01_L0010')
     call r13_lines(r13_v111_lines(['MS14_D09_P01_L0011']),'v111:MS14_D09_P01_L0011')
     $ r13_v111_commit('MS14_D09_P01_L0012')
-    call r13_v111_travel('room13','returned_papers9')
+    call r13_v111_travel('room13','returned_papers9',[])
+    $ r13_v111_arrive(['resident_owlgp','granny'])
     jump r13_v111_papers_check9
 
 label r13_v111_papers_check9:
