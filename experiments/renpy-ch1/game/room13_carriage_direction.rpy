@@ -31,9 +31,10 @@ init python:
         store.typing_allowed = True
         renpy.hide_screen("r13_evidence_card")
         renpy.show_layer_at([], reset=True)
-        renpy.music.stop(channel="carriage_ride", fadeout=.35)
-        renpy.music.stop(channel="carriage_hooves", fadeout=.35)
-        # 0.20.4 (owner 2026-10-22: "마차 내릴때 나는 효과음 이상하니 나중에 교체하던가 빼자 지금은"): no stop sound for now.
+        # 소유자 요청: 하차할 때 바퀴·말발굽·직전 연출음의 잔향도 남기지 않는다.
+        # 일반 대사 타이핑과 배경음은 다음 장면의 기존 설정을 유지한다.
+        for channel in ("carriage_ride", "carriage_hooves", "scene_fx", "sound"):
+            renpy.music.stop(channel=channel, fadeout=0)
 
 # Retain the old transform name for saves; new scenes never apply it.
 transform r13_carriage_ride:
@@ -83,6 +84,8 @@ init 306 python:
     # 승인된 720x1100 원본을 한 번만 축소한다. 기존 149x227 파생본은 예전 저장용으로 남긴다.
     # 화면 높이 681과 맞은편 착석 위치는 유지하고, 3배 도트 확대에서 잃던 얼굴 세부를 보존한다.
     R13_CARRIAGE_SEAT_ZOOM=681.0/1100.0
+    # 꼬리까지 포함한 그림 폭이 아닌 얼굴 위치를 화면 중앙에 맞춘다.
+    R13_CARRIAGE_DARAM_X=540
     def r13_carriage_seat(pose):
         key=(pose or "neutral").replace("interview_","")
         if key.startswith("seat_") and key[5:] in R13_CARRIAGE_SEATS:return key[5:]
@@ -104,7 +107,7 @@ init 306 python:
             store.dialogue_expression=expression if "avatar_"+str(expression) in CAST.get("daram",{}) else "neutral"
             store.r13_current_pose=pose or expression or "neutral"
             if store.r13_motion_person!="daram" or getattr(store,"r13_carriage_seat_shown",None)!=seat or "r13_visitor" not in renpy.get_showing_tags():
-                renpy.show("r13_actor",what=r13_carriage_daram_seat_art(seat),tag="r13_visitor",at_list=[Transform(xanchor=.5,xpos=850,yanchor=0,ypos=96)])
+                renpy.show("r13_actor",what=r13_carriage_daram_seat_art(seat),tag="r13_visitor",at_list=[Transform(xanchor=.5,xpos=R13_CARRIAGE_DARAM_X,yanchor=0,ypos=96)])
                 store.r13_carriage_seat_shown=seat
             store.r13_motion_person="daram"
             return
@@ -113,7 +116,7 @@ init 306 python:
         if (store.place=="마차 안" and who in (None,"dad",r13_viewpoint()) and not getattr(store,"r13_meeting_active",False)
                 and "r13_carriage_background" in renpy.get_showing_tags() and "r13_visitor" not in renpy.get_showing_tags()):
             seat=getattr(store,"r13_carriage_seat_shown",None) or "neutral"
-            renpy.show("r13_actor",what=r13_carriage_daram_seat_art(seat),tag="r13_visitor",at_list=[Transform(xanchor=.5,xpos=850,yanchor=0,ypos=96)])
+            renpy.show("r13_actor",what=r13_carriage_daram_seat_art(seat),tag="r13_visitor",at_list=[Transform(xanchor=.5,xpos=R13_CARRIAGE_DARAM_X,yanchor=0,ypos=96)])
             store.r13_carriage_seat_shown=seat
             store.r13_motion_person="daram"
         return _r13_carriage_speaker(who,expression,pose)

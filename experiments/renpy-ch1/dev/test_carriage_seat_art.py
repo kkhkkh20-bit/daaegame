@@ -66,7 +66,7 @@ class CarriageSeatArt(unittest.TestCase):
         _, shown = self.shown[0]
         self.assertTrue(shown['what']['art'].endswith('seat-pout.webp'))
         self.assertEqual(shown['tag'], 'r13_visitor')
-        self.assertEqual(shown['at_list'][0], dict(art=None, xanchor=.5, xpos=850, yanchor=0, ypos=96))
+        self.assertEqual(shown['at_list'][0], dict(art=None, xanchor=.5, xpos=540, yanchor=0, ypos=96))
 
     def test_dad_reply_preserves_darams_last_seat_without_drawing_dad(self):
         self.env['r13_speaker']('dad', 'neutral')

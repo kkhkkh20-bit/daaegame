@@ -451,7 +451,7 @@ def cine_plates():
 
 # ------------------------------------------------------------------ 0.18.39 오프닝 컷씬
 def carriage_window_mask():
-    """빈 마차 안 그림(1386x780)을 1280x720으로 줄인 화면 기준, 창밖(밝은 하늘·눈·마을) 영역."""
+    """빈 마차 배경을 게임 화면 크기로 맞춰 창밖 하늘·눈·마을 영역을 구한다."""
     im = Image.open(os.path.join(ASSETS, "room13-pixel-carriage-empty-winter.webp")).convert("RGB").resize((1280, 720), Image.NEAREST)
     a = np.array(im).astype(int)
     sky = (a[..., 2] > 150) & (a[..., 2] > a[..., 0] + 20)
@@ -706,6 +706,8 @@ def carriage_only():
     with open(META_FILE, encoding="utf-8") as f:
         meta = json.load(f)
     meta["lights"]["carriage"] = carriage_light_rig()
+    mask, box = carriage_window_mask()
+    meta["opening"]["carriage_window"] = {"mask": mask, "box": box}
     with open(META_FILE,"w",encoding="utf-8") as f:
         json.dump(meta,f,ensure_ascii=False,indent=1)
 

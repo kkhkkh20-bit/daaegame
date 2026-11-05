@@ -133,8 +133,7 @@
     },
     "MS14_D01_S02_L0002": {
       "text": "안아 주지 마!{w=.3}\n나 혼자 내려갈 거야.",
-      "expression": "joy",
-      "fx": "jolt"
+      "expression": "joy"
     },
     "MS14_D01_S02_L0003": {
       "text": "알았어, 알았어.{w=.3} 손만. 손만 잡을게."
@@ -534,7 +533,34 @@
         "id": "NW_D01_S04_V01",
         "speaker": null,
         "kind": "narration",
-        "text": "장부를 옆구리에 낀 사람이 초소로 들어온다. 돌목이 “너울 씨” 하고 고개를 숙인다. 너울은 붓끝을 혀로 축이더니, 인사 대신 장부의 한 줄을 짚는다."
+        "text": "까로에게 큰 짐을 받으려는데, 장부를 옆구리에 낀 사람이 초소 안쪽에서 다가온다. 돌목이 그를 불러 세운다."
+      },
+      {
+        "id": "NW_D01_DEPART_HELLO01",
+        "speaker": "돌목",
+        "kind": "dialogue",
+        "text": "너울 씨, 이 두 분도 방금 등록했소.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D01_DEPART_HELLO02",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "안녕하시오. 마을 장부를 맡은 너울이오. 여관으로 가는 길이오?",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D01_DEPART_HELLO03",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "네. 아내가 13호실에서 기다린다고 해서 왔습니다."
+      },
+      {
+        "id": "NW_D01_DEPART_HELLO04",
+        "speaker": "너울",
+        "kind": "dialogue",
+        "text": "그럼 묵을 곳부터 적겠소.",
+        "expression": "neutral"
       }
     ],
     "MS14_D01_S04_L0019": [
@@ -615,6 +641,14 @@
         "speaker": null,
         "kind": "narration",
         "text": "돌목이 명부를 넘긴다. 손가락이 이름을 짚어 내려가다 한 줄에서 멈춘다. 오래 멈춘다."
+      }
+    ],
+    "MS14_D01_S04_L0020": [
+      {
+        "id": "NW_D01_DEPART_TURN01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "너울은 내 대답을 장부에 적더니 돌목 쪽으로 돌아선다."
       }
     ]
   },

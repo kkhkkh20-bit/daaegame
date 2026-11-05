@@ -9,4 +9,7 @@ init 319 python:
         store.v111_depart_direct=direct
         if direct:
             r13_edit(location="gate")
+        # 등장 문답은 실제 초소에서 한다. 지도 이동이 남긴 가족 위치도 함께 되돌리고, 다가온 너울을 현재 배우에 합친다.
+        r13_v111_arrive(["guard","daram","karo","neoul"])
+        if direct:
             renpy.call("r13_scene",R13_PLACES["gate"][1],R13_PLACES["gate"][0],"calm")

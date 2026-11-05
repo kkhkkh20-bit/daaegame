@@ -18,7 +18,7 @@ testcase v111_nw_d01_gate_lost:
     pause 1.0
     click pos (900,600) until screen "r13_hub" timeout 90
     assert eval (r13_v111_value("gate_daram_unlisted") is True and r13_v111_value("gate_registered") is True)
-    assert eval (qa_nw_seen("그걸로는 확인이 안 되오") and qa_nw_seen("외 한 명’으로 붙여") and qa_nw_seen("일꾼 다돌, 외 한 명") and qa_nw_seen("이름 칸이 없소") and qa_nw_seen("정정 없음"))
+    assert eval (qa_nw_seen("그 자료만으로는 빠진 이름을 확인할 수 없소") and qa_nw_seen("외 한 명’으로 붙여") and qa_nw_seen("다돌, 외 한 명") and qa_nw_seen("이름 칸이 없소") and qa_nw_seen("정정 없음"))
     assert eval (qa_nw_seen("아르카 곁에.") and qa_nw_seen("불을 주는 돌이오"))
     assert eval (r13_catalog_record("V111:E05")["establishes"].startswith("정정 없음."))
     screenshot "v111_nw_d01_lost_registered.png"
@@ -26,6 +26,7 @@ testcase v111_nw_d01_gate_lost:
     pause 1.0
     click pos (900,600) until screen "r13_hub" timeout 90
     assert eval (qa_nw_seen("돌목이 표를 접으며") and not qa_nw_seen("정정한 표를 접으며") and qa_nw_seen("여관에 먼저 연락하라"))
+    assert eval (qa_nw_seen("초소 안쪽에서 다가온다") and qa_nw_seen("마을 장부를 맡은 너울이오") and qa_nw_seen("아내가 13호실에서 기다린다고"))
 
 testcase v111_nw_d01_gate_won:
     # Winning keeps the authored registration and adds the greeting and the aside.
@@ -48,6 +49,7 @@ testcase v111_nw_d01_gate_won:
     pause 1.0
     click pos (900,600) until screen "r13_hub" timeout 90
     assert eval (qa_nw_seen("정정한 표를 접으며") and qa_nw_seen("여관에 먼저 연락하라"))
+    assert eval (qa_nw_seen("초소 안쪽에서 다가온다") and qa_nw_seen("마을 장부를 맡은 너울이오") and qa_nw_seen("아내가 13호실에서 기다린다고"))
     run Function(r13_edit,location="room13")
     run Jump("r13_v111_room_empty")
     pause 1.0
