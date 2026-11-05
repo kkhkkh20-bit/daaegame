@@ -10,6 +10,10 @@ init 170 python:
     R13_DIALOGUE_TALK_ART = json.load(renpy.file("assets/room13-dialogue-talk-art.json"))
     # 2026-10-26 도트 통일 때 새로 든 인물(판설·아랫길 노인). 승인 59명 표와 나눠 두고 여기서 합친다.
     R13_DIALOGUE_TALK_ART["people"].update(json.load(renpy.file("assets/room13-dialogue-talk-art-extra.json"))["people"])
+    # 원래 도트 등록·reviewed beat는 유지하고, 직접 상대를 보는 대화 원본만 별도로 선택한다.
+    R13_DIALOGUE_PLAYER_FACING=json.load(renpy.file("assets/room13-dialogue-player-facing.json"))
+    _r13_player_facing_ready={}
+
 
     def r13_dialogue_plan(identity, index, packet, pose, cues, people, binding=None):
         """Exact text/speaker/scene binding; never infer emotion from keywords."""
@@ -166,7 +170,45 @@ init 170 python:
         if key in entry.get("pose_profiles",{}):return entry["pose_profiles"][key]
         return entry if key in entry.get("poses",[]) else {}
 
-    def r13_dialogue_render_profiles(person,entry):
+    def r13_dialogue_player_profiles(person):
+        entry=(globals().get("R13_DIALOGUE_PLAYER_FACING",{}).get("people",{}) or {}).get(person,{})
+        if (entry.get("status")!="approved_runtime" or entry.get("gaze")!="player"
+                or entry.get("stance")!="standing" or entry.get("source_kind")!="source_master"
+                or entry.get("art_style")!="storybook_source"):return None
+        profiles=entry.get("profiles",{})
+        cache=globals().get("_r13_player_facing_ready",{})
+        key=(person,id(profiles))
+        ready=cache.get(key)
+        if ready is None:
+            required={"neutral","joy","angry","anxious","flustered","surprise_talk"}
+            ready=True
+            for height in ("560","760","840"):
+                profile=profiles.get(height,{})
+                canvas=profile.get("canvas",[])
+                frames=profile.get("frames",{})
+                if (len(canvas)!=2 or any(not isinstance(n,(int,float)) or n<=0 for n in canvas)
+                        or set(frames)!=required or profile.get("pixel_grid") or profile.get("dot_scale")):
+                    ready=False;break
+                for frame in frames.values():
+                    path=frame.get("file","")
+                    offset=frame.get("offset",[])
+                    if (not isinstance(path,str) or not path.startswith(("assets/dialogue-source-master/","assets/dialogue-player-facing/"))
+                            or len(offset)!=2 or any(not isinstance(n,(int,float)) for n in offset)
+                            or frame.get("scale",1.0)<=0 or frame.get("nearest",False) is not False
+                            or not renpy.loadable(path)):
+                        ready=False;break
+                if not ready:break
+            if len(cache)>64:cache.clear()
+            cache[key]=ready
+        return profiles if ready else None
+
+    def r13_dialogue_render_profiles(person,entry,player_facing=False):
+        meeting=bool(getattr(store,"r13_meeting_active",False))
+        solo_focus=bool(globals().get("R13_MEETING_SOLO") and getattr(store,"r13_meeting_focus",None)==person)
+        if player_facing and (not meeting or solo_focus):
+            profiles=r13_dialogue_player_profiles(person)
+            if profiles:return profiles
+
         # Approved B expressions are dialogue-only; meeting art keeps its original profiles.
         if not getattr(store,"r13_meeting_active",False) and globals().get("R13_DIALOGUE_B_ART_ON",True) and R13_DIALOGUE_B_ART.get(person):
             profiles=R13_DIALOGUE_B_ART[person]
@@ -182,7 +224,7 @@ init 170 python:
         if r13_fullbody_key(pose) not in R13_FULLBODY_PLAIN:return None
         entry=R13_DIALOGUE_TALK_ART["people"].get(person,{})
         if entry.get("status")!="approved_runtime":return None
-        return r13_dialogue_fit_profile(r13_dialogue_render_profiles(person,entry),height)
+        return r13_dialogue_fit_profile(r13_dialogue_render_profiles(person,entry,player_facing=True),height)
 
     def r13_dialogue_source_neutral(person,pose,height):
         profile=r13_dialogue_source_profile(person,pose,height)

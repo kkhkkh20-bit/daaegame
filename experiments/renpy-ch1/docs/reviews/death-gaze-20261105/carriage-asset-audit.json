@@ -1,0 +1,437 @@
+{
+  "scope": "본편 첫 마차 장면의 다람 착석 8표정",
+  "finding": "10/26 제작 단계에서 승인 720x1100 원본을 149x227로 축소한 뒤 런타임 nearest 3배 확대. seat 표정 선택은 맞으며, 두 번의 런타임 확대가 아니라 제작 축소와 런타임 확대가 원인.",
+  "fix": "원본 8장을 동일 바이트로 새 경로에 보존하고 기존 마차 전용 함수에서 681/1100 균일 축소·nearest=False로 한 번 표시. 높이 681, 기존 좌표(850,96) 유지.",
+  "providers": [
+    {
+      "path": "game/room13_v111_days123.rpy",
+      "role": "시작 대사의 seat_quiz/seat_pout/seat_angry/seat_secret 명시"
+    },
+    {
+      "path": "game/room13_carriage_direction.rpy",
+      "role": "init306: 표정 선택, r13_carriage_daram_seat_art, r13_speaker; 아빠는 기존 목소리·다람 착석 유지"
+    },
+    {
+      "path": "game/systems/room13_asset_domains.rpy",
+      "role": "일반 대화·전신 어댑터; 마차는 기존 전용 Transform 경로를 유지"
+    },
+    {
+      "path": "dev/make_bstyle_mockups.py",
+      "role": "구버전149px 파일을 쓰는 제작 시안; 현재 런타임 아님"
+    },
+    {
+      "path": "dev/make_bstyle_exact.py",
+      "role": "구버전149px 파일을 쓰는 제작 시안; 현재 런타임 아님"
+    }
+  ],
+  "slots": [
+    {
+      "seat": "neutral",
+      "current_runtime": {
+        "path": "game/assets/carriage-source-master/room13-carriage-daram-seat-neutral.webp",
+        "size": [
+          720,
+          1100
+        ],
+        "alpha_bbox": [
+          9,
+          9,
+          712,
+          1091
+        ],
+        "sha256": "9a5aca0070a0cae0d6c5d5bd5eb70a30efa1539d9543717bfcbb71496e8fb354"
+      },
+      "approved_master": {
+        "path": "art/carriage-seat-dot-20261026/originals/room13-carriage-daram-seat-neutral.webp",
+        "size": [
+          720,
+          1100
+        ],
+        "alpha_bbox": [
+          9,
+          9,
+          712,
+          1091
+        ],
+        "sha256": "9a5aca0070a0cae0d6c5d5bd5eb70a30efa1539d9543717bfcbb71496e8fb354"
+      },
+      "legacy_save_compatibility": {
+        "path": "game/assets/room13-carriage-daram-seat-neutral.webp",
+        "size": [
+          149,
+          227
+        ],
+        "alpha_bbox": [
+          2,
+          2,
+          147,
+          225
+        ],
+        "sha256": "67df6e0dc5505b95239f73845f26d87e91ba8baf55ad857efd509e764fc965f7"
+      }
+    },
+    {
+      "seat": "quiz",
+      "current_runtime": {
+        "path": "game/assets/carriage-source-master/room13-carriage-daram-seat-quiz.webp",
+        "size": [
+          720,
+          1100
+        ],
+        "alpha_bbox": [
+          8,
+          8,
+          712,
+          1092
+        ],
+        "sha256": "8e989692a82b7f671e2d734426e63713ae2ca3db8570c022c8d22e825fafc2e1"
+      },
+      "approved_master": {
+        "path": "art/carriage-seat-dot-20261026/originals/room13-carriage-daram-seat-quiz.webp",
+        "size": [
+          720,
+          1100
+        ],
+        "alpha_bbox": [
+          8,
+          8,
+          712,
+          1092
+        ],
+        "sha256": "8e989692a82b7f671e2d734426e63713ae2ca3db8570c022c8d22e825fafc2e1"
+      },
+      "legacy_save_compatibility": {
+        "path": "game/assets/room13-carriage-daram-seat-quiz.webp",
+        "size": [
+          149,
+          227
+        ],
+        "alpha_bbox": [
+          2,
+          2,
+          147,
+          225
+        ],
+        "sha256": "11de5590063207f40aea2c0c2ea8e5fc2fbf581d6b27f1edd8c65792b3aa99f2"
+      }
+    },
+    {
+      "seat": "pout",
+      "current_runtime": {
+        "path": "game/assets/carriage-source-master/room13-carriage-daram-seat-pout.webp",
+        "size": [
+          720,
+          1100
+        ],
+        "alpha_bbox": [
+          8,
+          8,
+          713,
+          1093
+        ],
+        "sha256": "1ecb5808b356379344e25977b38a1bc6dc5f8feb725aa1604d711c8a553c0aaf"
+      },
+      "approved_master": {
+        "path": "art/carriage-seat-dot-20261026/originals/room13-carriage-daram-seat-pout.webp",
+        "size": [
+          720,
+          1100
+        ],
+        "alpha_bbox": [
+          8,
+          8,
+          713,
+          1093
+        ],
+        "sha256": "1ecb5808b356379344e25977b38a1bc6dc5f8feb725aa1604d711c8a553c0aaf"
+      },
+      "legacy_save_compatibility": {
+        "path": "game/assets/room13-carriage-daram-seat-pout.webp",
+        "size": [
+          149,
+          227
+        ],
+        "alpha_bbox": [
+          2,
+          2,
+          147,
+          225
+        ],
+        "sha256": "801bd444a2dea17a6d9d2b0709c350d9e9c7d4a5c7f90b6bfcc20bb8f3465167"
+      }
+    },
+    {
+      "seat": "angry",
+      "current_runtime": {
+        "path": "game/assets/carriage-source-master/room13-carriage-daram-seat-angry.webp",
+        "size": [
+          720,
+          1100
+        ],
+        "alpha_bbox": [
+          8,
+          8,
+          713,
+          1092
+        ],
+        "sha256": "6eb27408e3971c83c2b3adefa5ad737f3245a10c50aa20d516a2648740883145"
+      },
+      "approved_master": {
+        "path": "art/carriage-seat-dot-20261026/originals/room13-carriage-daram-seat-angry.webp",
+        "size": [
+          720,
+          1100
+        ],
+        "alpha_bbox": [
+          8,
+          8,
+          713,
+          1092
+        ],
+        "sha256": "6eb27408e3971c83c2b3adefa5ad737f3245a10c50aa20d516a2648740883145"
+      },
+      "legacy_save_compatibility": {
+        "path": "game/assets/room13-carriage-daram-seat-angry.webp",
+        "size": [
+          149,
+          227
+        ],
+        "alpha_bbox": [
+          2,
+          2,
+          147,
+          225
+        ],
+        "sha256": "2cd04a3e574c9991c2714aad44d5995d5bafbcf391bb6b5e355beee70d735b60"
+      }
+    },
+    {
+      "seat": "secret",
+      "current_runtime": {
+        "path": "game/assets/carriage-source-master/room13-carriage-daram-seat-secret.webp",
+        "size": [
+          720,
+          1100
+        ],
+        "alpha_bbox": [
+          8,
+          7,
+          712,
+          1092
+        ],
+        "sha256": "3816d4d179d41d12f2360e48f9ffa67f2cdee41acbb273a1e18ac1d62656f0aa"
+      },
+      "approved_master": {
+        "path": "art/carriage-seat-dot-20261026/originals/room13-carriage-daram-seat-secret.webp",
+        "size": [
+          720,
+          1100
+        ],
+        "alpha_bbox": [
+          8,
+          7,
+          712,
+          1092
+        ],
+        "sha256": "3816d4d179d41d12f2360e48f9ffa67f2cdee41acbb273a1e18ac1d62656f0aa"
+      },
+      "legacy_save_compatibility": {
+        "path": "game/assets/room13-carriage-daram-seat-secret.webp",
+        "size": [
+          149,
+          227
+        ],
+        "alpha_bbox": [
+          2,
+          2,
+          147,
+          225
+        ],
+        "sha256": "b802292fb529dbccdbc2e1ebce700dd1b4c4a137d62dad06d747369a92cf01e2"
+      }
+    },
+    {
+      "seat": "bravado",
+      "current_runtime": {
+        "path": "game/assets/carriage-source-master/room13-carriage-daram-seat-bravado.webp",
+        "size": [
+          720,
+          1100
+        ],
+        "alpha_bbox": [
+          8,
+          8,
+          713,
+          1092
+        ],
+        "sha256": "012a5b09c36f078235e21971fe5062043787070f313f5c5fc128261224b298cf"
+      },
+      "approved_master": {
+        "path": "art/carriage-seat-dot-20261026/originals/room13-carriage-daram-seat-bravado.webp",
+        "size": [
+          720,
+          1100
+        ],
+        "alpha_bbox": [
+          8,
+          8,
+          713,
+          1092
+        ],
+        "sha256": "012a5b09c36f078235e21971fe5062043787070f313f5c5fc128261224b298cf"
+      },
+      "legacy_save_compatibility": {
+        "path": "game/assets/room13-carriage-daram-seat-bravado.webp",
+        "size": [
+          149,
+          227
+        ],
+        "alpha_bbox": [
+          2,
+          2,
+          148,
+          225
+        ],
+        "sha256": "997b31538faa757d21aa4fce146f80e5240348b7c16ead7d1d4f920fc26cf9b9"
+      }
+    },
+    {
+      "seat": "joy",
+      "current_runtime": {
+        "path": "game/assets/carriage-source-master/room13-carriage-daram-seat-joy.webp",
+        "size": [
+          720,
+          1100
+        ],
+        "alpha_bbox": [
+          8,
+          8,
+          713,
+          1092
+        ],
+        "sha256": "ea2c34c8737e8ed1649cac481f91cbd88c7fe59659a145fc809e3cd4731ab886"
+      },
+      "approved_master": {
+        "path": "art/carriage-seat-dot-20261026/originals/room13-carriage-daram-seat-joy.webp",
+        "size": [
+          720,
+          1100
+        ],
+        "alpha_bbox": [
+          8,
+          8,
+          713,
+          1092
+        ],
+        "sha256": "ea2c34c8737e8ed1649cac481f91cbd88c7fe59659a145fc809e3cd4731ab886"
+      },
+      "legacy_save_compatibility": {
+        "path": "game/assets/room13-carriage-daram-seat-joy.webp",
+        "size": [
+          149,
+          227
+        ],
+        "alpha_bbox": [
+          2,
+          2,
+          147,
+          225
+        ],
+        "sha256": "97ab1e26f7007f8e828c555de44bcdd83159ce7dadd329bcdb09bda8bbb09108"
+      }
+    },
+    {
+      "seat": "wistful",
+      "current_runtime": {
+        "path": "game/assets/carriage-source-master/room13-carriage-daram-seat-wistful.webp",
+        "size": [
+          720,
+          1100
+        ],
+        "alpha_bbox": [
+          8,
+          8,
+          696,
+          1092
+        ],
+        "sha256": "fbbabd7aba8e3af384d2cbb602fe4318477ad96a5e3457dda0116410cf03f526"
+      },
+      "approved_master": {
+        "path": "art/carriage-seat-dot-20261026/originals/room13-carriage-daram-seat-wistful.webp",
+        "size": [
+          720,
+          1100
+        ],
+        "alpha_bbox": [
+          8,
+          8,
+          696,
+          1092
+        ],
+        "sha256": "fbbabd7aba8e3af384d2cbb602fe4318477ad96a5e3457dda0116410cf03f526"
+      },
+      "legacy_save_compatibility": {
+        "path": "game/assets/room13-carriage-daram-seat-wistful.webp",
+        "size": [
+          149,
+          227
+        ],
+        "alpha_bbox": [
+          2,
+          2,
+          144,
+          225
+        ],
+        "sha256": "ad0006e2dc3d4a5651cc6cf7413f5de5a6f4c3d621adff9043ea1a20c4d8d976"
+      }
+    }
+  ],
+  "preserved_archives": [
+    {
+      "path": "art/daram-carriage-seat-20261022/originals/seat_*.png",
+      "role": "이전 제작 원본, 현재 런타임 미연결, 삭제 금지",
+      "count": 8
+    },
+    {
+      "path": "art/carriage-seat-dot-20261026/originals/*.webp",
+      "role": "도트화 이전 승인8표정 원본, 현재 source-master와 동일 바이트",
+      "approval_commit": "8bff1b58ab190b7fa19e9de2b2e1c5dc794eaf85"
+    }
+  ],
+  "unconnected_candidates": [
+    {
+      "path": "art/resident-poses-a-20261024/intake/A5/daram_carriage_seated_A.webp",
+      "size": [
+        1079,
+        1614
+      ],
+      "alpha_bbox": [
+        32,
+        32,
+        1047,
+        1582
+      ],
+      "sha256": "b7b25299ea2836759fba512c708707cb5cfa888d44e52744de9f32c08989d47f",
+      "status": "보류된 neutral 단일 후보",
+      "reason": "흰 테두리·다른 그림체이며 8표정 중 neutral 한 장만 납품. 이전 적용보고 ※4에서 묶음 미완성으로 명시 보류.",
+      "missing_slots": [
+        "quiz",
+        "pout",
+        "angry",
+        "secret",
+        "bravado",
+        "joy",
+        "wistful"
+      ],
+      "evidence": "docs/reviews/resident-poses-20261024/적용보고.md",
+      "duplicate_path": "art/resident-props-delivery-20261024/residents/batch05/daram_carriage_seated_A.webp"
+    }
+  ],
+  "limitation": "이번 연결은 승인된 기존8표정의 해상도를 복구한다. 얼굴 디자인 자체를 최신 A안으로 재제작한 것은 아니다.",
+  "asset_toolbox_scan_required": true,
+  "checks": {
+    "unit": "PYTHONPATH=dev python3 -m unittest dev.test_carriage_seat_art dev.test_resident_poses_a dev.test_fullbody_dialogue",
+    "passed": 20,
+    "sdk_native_web": "root에서 직렬 실행; 이 작업자는 미실행"
+  }
+}

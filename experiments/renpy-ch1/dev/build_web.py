@@ -94,6 +94,8 @@ def startup_files(game):
                     result.add(registry.resolve(role, state)["path"])
     # Small face stickers must be present when the first dialogue is drawn.
     result.update(p.relative_to(game).as_posix() for p in (game / "assets/dialogue-b-faces").glob("*.webp"))
+    # 마차 전용 고해상도 표정은 첫 대화가 시작되기 전에 준비한다.
+    result.update(p.relative_to(game).as_posix() for p in (game / "assets/carriage-source-master").glob("*.webp"))
     layout = json.loads((game / "assets/room13-world-layout.json").read_text())
     def files(value):
         if isinstance(value, str) and value.startswith("assets/"):result.add(value)

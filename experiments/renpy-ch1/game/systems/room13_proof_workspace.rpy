@@ -23,10 +23,10 @@ init 350 python:
         # 2026-11-05 소유자 시안 승인: 3일도 이미 익힌 같은 화면에서 직접 읽고 고른다.
         # 인용은 각 쟁점 직전에 실제로 들은 발언뿐이며, 진료소에는 질문 제목만 둔다.
         "측정 종료와 점검 기록을 대조한다":dict(mode="proof",speaker=None,quote=None,quote_when=None),
-        "수리와 반출을 가릴 자료를 낸다":dict(mode="proof",speaker="돌목",
+        "수리와 반출을 가릴 자료를 낸다":dict(mode="proof",speaker="너울",
             quote="어제 3번 등을 연 사람은 톡 하나요. 장부에 그렇게 적혀 있소. 그리고 아침엔 돌이 없소.",
             quote_when=("flag","v111:entered:MS14_D03_S05")),
-        "돌과 매입 기록을 낸다":dict(mode="proof",speaker="돌목",
+        "돌과 매입 기록을 낸다":dict(mode="proof",speaker="너울",
             quote="아침에 없던 그 돌은 지금 어디 있소? 누구 손을 거쳐 갔소?",
             quote_when=("flag","v111:entered:MS14_D03_S05")),
         "바깥 걸쇠 주장과 발견 위치를 대조한다":dict(mode="proof",speaker="실룩",
