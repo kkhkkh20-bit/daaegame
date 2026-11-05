@@ -3329,6 +3329,8 @@ label r13_v111_tosil_outside14:
     call r13_lines(r13_v111_lines(['MS14_D14_S03_L0032']),'v111:MS14_D14_S03_L0032')
     $ r13_v111_set('bomi_death_confirmed',True)
     $ r13_v111_set('adult_interview_done',True)
+    $ r13_v111_join(['resident_tosil'])
+    call r13_lines(r13_nw_block('tosil_rejoin14'),'nw:tosil_rejoin14')
     call r13_lines(r13_v111_lines(['MS14_D14_S03_L0037']),'v111:MS14_D14_S03_L0037')
     if r13_v111_value('tosil_listen')=='outside' and r13_v111_value('adult_interview_done'):
         call r13_lines(r13_v111_lines(['MS14_D14_S03_L0038']),'v111:MS14_D14_S03_L0038')
@@ -3480,6 +3482,9 @@ label r13_v111_partial_ending14:
 
 label r13_v111_partial_departed14:
     call r13_lines(r13_nw_block('partial_departed14'),'nw:partial_departed14')
+    call r13_v111_travel('school','partial_departed_school14',[])
+    $ r13_v111_arrive(['mom','daram','nabi'])
+    call r13_lines(r13_nw_block('partial_departed_school14'),'nw:partial_departed_school14')
     jump r13_v111_cookie14
 
 label r13_v111_partial_handoff14:
