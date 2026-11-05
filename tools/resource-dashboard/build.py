@@ -161,7 +161,7 @@ def build(repo=REPO, output=None):
             placement['captures']=[capture for capture in c['captures'] if capture.get('pose')==placement['pose'] and capture['location']==placement['location']]
             if placement['captures']:placement['capture_status']='해당 포즈의 실제 엔진 fixture 캡처 있음; 전체 날짜/조건 검증 아님'
     sound_source=Path('systems/room13_sound.rpy');sound=sources[str(sound_source)];sound_tables=literal_tables(sound);audio=[]
-    for group,table in [('BGM',sound_tables.get('R13_BGM',{})),('환경음',sound_tables.get('R13_AMBIENCE',{})),('효과음',{k:'assets/'+v+'.wav' for k,v in sound_tables.get('R13_FX',{}).items()})]:
+    for group,table in [('BGM',sound_tables.get('R13_BGM',{})),('환경음',sound_tables.get('R13_AMBIENCE',{})),('효과음',{k:'assets/'+v+'.wav' for k,v in sound_tables.get('R13_FX',{}).items() if v is not None})]:
         for key,path in table.items():
             usages=[]
             for bg,(tracks,amb) in sound_tables.get('R13_PLACE_SOUND',{}).items():
