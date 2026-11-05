@@ -36,7 +36,7 @@ testcase v111_nw_d14_frozen:
     run Function(r13_v111_set,"nero_alive",False)
     run Jump("r13_v111_ending_dispatch14")
     click pos (900,600) until screen "r13_end_card" timeout 120
-    assert eval (r13_v111_value("ending14")=="frozen" and r13_nw_loss_count()==4 and qa_nw_seen("받아 적지 못했다") and qa_nw_seen("이름을 읽던 나비가"))
+    assert eval (r13_v111_value("ending14")=="frozen" and r13_nw_loss_count()==4 and qa_nw_seen("받아 적지 못했다") and qa_nw_seen("나비가 이름을 읽다 말고 멈췄다"))
 
 testcase v111_nw_d14_partial_departed:
     pause 1.0
@@ -49,7 +49,18 @@ testcase v111_nw_d14_partial_departed:
     run Function(r13_edit,location="square")
     run Jump("r13_v111_ending_dispatch14")
     click pos (900,600) until screen "r13_hub" timeout 150
-    assert eval (r13_v111_value("ending14")=="partial" and qa_nw_seen("한 줄도 채우지 못했다") and qa_nw_seen("접지 마. 아직 안 왔잖아") and not qa_nw_seen("한 자리 났어"))
+    assert eval (room13["v111"].get("travel_to")=="school" and qa_nw_seen("한 줄도 채우지 못했다"))
+    assert eval (not qa_nw_seen("접지 마. 아직 안 왔잖아"))
+    click "지도" until screen "r13_map" timeout 30
+    pause until eval renpy.get_screen("r13_map").scope["ready"] timeout 30
+    keysym "shift_K_UP"
+    keysym "shift_K_UP"
+    keysym "shift_K_UP"
+    pause .5
+    click id "map_name_school"
+    click id "r13_map_travel"
+    click pos (900,600) until screen "r13_end_card" timeout 120
+    assert eval (r13_v111_value("ending14")=="partial" and r13_v111_value("story14_completed") is True and qa_nw_seen("접지 마. 아직 안 왔잖아") and not qa_nw_seen("한 자리 났어"))
 
 testcase v111_nw_d14_altar_lost:
     # Point 1 lost: the irons stay; the day goes on to Granny.

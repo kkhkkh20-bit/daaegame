@@ -1062,7 +1062,7 @@
         "id": "NW_D14_EV_A01",
         "speaker": null,
         "kind": "narration",
-        "text": "짓밟힌 장부의 낱장이 눈 위에 흩어져 있다. 숫자를 읽을 수 있는 사람은 엄마뿐이다."
+        "text": "짓밟힌 장부의 낱장이 눈 위에 흩어져 있다. 엄마가 낱장을 주워 남은 숫자를 살핀다."
       }
     ],
     "MS14_D14_S05_L0022": [
@@ -1078,7 +1078,7 @@
         "id": "NW_AR_D14_14",
         "speaker": "엄마",
         "kind": "dialogue",
-        "text": "오늘 일은.{w=.4} ……그래도 이 아침을 같이 못 맞은 사람이 있어.",
+        "text": "오늘 일은.{w=.4} ……그래도 여기까지 함께 오지 못한 사람이 있어.",
         "expression": "anxious",
         "when": "morning_with_loss14"
       },
@@ -1385,7 +1385,7 @@
         "id": "NW_A1_W02",
         "speaker": "아빠",
         "kind": "dialogue",
-        "text": "그 사흘 동안 배급 창고의 돌은 하나도 줄지 않았습니다. 새로 야생화가 온 사람도 없습니다. 너울 씨가 직접 적은 숫자입니다.",
+        "text": "집집이 받은 돌의 양과 창고의 돌·장작 잔량입니다. 너울 씨가 장부에 직접 적은 수량입니다.",
         "expression": "neutral",
         "when": "hyp_win"
       },
@@ -1402,7 +1402,7 @@
         "id": "NW_A1_W02P",
         "speaker": "아빠",
         "kind": "dialogue",
-        "text": "그 집들에서는 사흘 동안 새로 야생화가 온 사람이 없습니다. 끈 집만 따져도 그렇습니다. 너울 씨가 직접 적은 숫자입니다.",
+        "text": "집집이 받은 돌의 양과 창고의 돌·장작 잔량입니다. 너울 씨가 장부에 직접 적은 수량입니다.",
         "expression": "neutral",
         "when": "hyp_partial"
       },
@@ -1419,7 +1419,7 @@
         "id": "NW_A1_W02L",
         "speaker": "아빠",
         "kind": "dialogue",
-        "text": "그 길에서는 새로 야생화가 온 사람이 없습니다. 마을 전체를 본 건 아닙니다. 그래도 너울 씨가 직접 적은 숫자입니다.",
+        "text": "집집이 받은 돌의 양과 창고의 돌·장작 잔량입니다. 너울 씨가 장부에 직접 적은 수량입니다.",
         "expression": "neutral",
         "when": "hyp_lose"
       },
@@ -1456,7 +1456,7 @@
         "id": "NW_A1_H01",
         "speaker": "아빠",
         "kind": "dialogue",
-        "text": "학교 장작 묶음은 선생님이 받아 갔습니다. 그 인수 기록입니다.",
+        "text": "학교에 장작 묶음을 인계했습니다. 그 인수 기록입니다.",
         "expression": "neutral"
       },
       {
@@ -1749,7 +1749,7 @@
         "id": "NW_EL_03",
         "speaker": null,
         "kind": "narration",
-        "text": "광장 이름판 앞에서 붓을 들었다. 확인된 이름만 적었다. 다람의 이름은 확인되지 않았다. 손이 빈칸 앞에서 멈췄다.",
+        "text": "광장 이름판 앞에서 붓을 들었다. 확인된 이름만 적었다. 다람이 어떻게 되었는지는 확인하지 못했다. 손이 빈칸 앞에서 멈췄다.",
         "endcut": "END-08"
       },
       {
@@ -1828,14 +1828,14 @@
         "id": "NW_EF_04",
         "speaker": null,
         "kind": "narration",
-        "text": "열나흘째 아침, 이름판 앞. 이름을 읽던 나비가 읽다 말고 멈췄다. 자기가 무엇을 읽고 있었는지 잊은 얼굴이었다.",
+        "text": "이름판 앞에서 나비가 이름을 읽다 말고 멈췄다. 자기가 무엇을 읽고 있었는지 잊은 얼굴이었다.",
         "when": "reader_nabi"
       },
       {
         "id": "NW_EF_05",
         "speaker": null,
         "kind": "narration",
-        "text": "열나흘째 아침, 이름판 앞. 이름을 읽던 토실이 읽다 말고 멈췄다. 자기가 무엇을 읽고 있었는지 잊은 얼굴이었다.",
+        "text": "이름판 앞에서 토실이 이름을 읽다 말고 멈췄다. 자기가 무엇을 읽고 있었는지 잊은 얼굴이었다.",
         "when": "reader_tosil"
       },
       {
@@ -1961,7 +1961,9 @@
         "speaker": null,
         "kind": "narration",
         "text": "인계표에는 이름만 있고 받은 사람 칸이 비어 있다. 한 줄도 채우지 못했다."
-      },
+      }
+    ],
+    "partial_departed_school14": [
       {
         "id": "NW_PD_03",
         "speaker": null,
@@ -1982,6 +1984,14 @@
         "kind": "dialogue",
         "text": "접지 마.{w=.4} 아직 안 왔잖아.",
         "expression": "neutral"
+      }
+    ],
+    "tosil_rejoin14": [
+      {
+        "id": "NW_D14_TOSIL_REJOIN01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "면담이 끝난 뒤 문밖으로 나와 기다리던 토실 곁에 선다."
       }
     ],
     "name_board_intro14": [
@@ -2214,7 +2224,7 @@
         "id": "NW_D14_MM03",
         "speaker": null,
         "kind": "narration",
-        "text": "13호 문은 다시 열리지 않았다. 창틀에 안경 하나가 남아 있었다.",
+        "text": "13호 창틀에 안경 하나가 남아 있었다.",
         "when": "dead:resident_owlgp",
         "endcut": "MEM-04"
       },
@@ -2286,7 +2296,7 @@
         "id": "NW_OP_D14_01",
         "speaker": "아빠",
         "kind": "dialogue",
-        "text": "학교 장작 묶음은 선생님이 받아 갔습니다. 그 인수 기록입니다. 학교는 이걸로 버텼습니다."
+        "text": "학교에 장작 묶음을 인계했습니다. 그 인수 기록입니다. 학교는 이걸로 버텼습니다."
       },
       {
         "id": "NW_OP_D14_02",
