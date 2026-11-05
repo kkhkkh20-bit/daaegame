@@ -27,21 +27,31 @@ async def run(mobile):
     st=await q.state()
     if 'r13_hub' in st['screens']:break
     if 'choice' in st['screens'] and any('편지를 접는다' in x['text'] for x in st['buttons']):await q.press('편지를 접는다');continue
-    await q.input(640,300);await asyncio.sleep(.2)
+    if 'r13_cinematic_view' in st['screens']:await q.press('계속');continue
+    await q.input(900,600);await asyncio.sleep(.2)
    await q.wait('r13_hub');await check();print(tag,'입구 도착',flush=True)
    before=await q.py('import renpy;s=renpy.store;result=dict(day=s.room13["day"],location=s.room13["location"],period=s.room13["period"])')
    st=await q.state();result['저장전버튼']=[x['text'] for x in st['buttons']]
    await q.input(1222,52);await q.press('설정');await q.wait('pause_menu');await shot('settings-'+tag);print(tag,'설정 진입',flush=True)
-   await q.press('저장');await q.wait('save');await q.press('1쪽 1번');await asyncio.sleep(1)
+   await q.press('저장');await asyncio.sleep(.6)
+   # 현재 설정 저장 탭은 쪽 번호 없이 여섯 칸이다. 실제 첫 슬롯의 포커스 영역을 누른다.
+   slots=await q.py('import renpy;result=sorted([[f.x,f.y,f.w,f.h] for f in renpy.display.focus.focus_list if f.x is not None and 400<=f.w<=440 and 80<=f.h<=160],key=lambda r:(r[1],r[0]))')
+   assert len(slots)==6,slots
+   x,y,w,h=slots[0];await q.input(x+w/2,y+h/2);await asyncio.sleep(1)
    if 'confirm' in (await q.state())['screens']:await q.press('예')
    await shot('saved-'+tag);print(tag,'저장 완료',flush=True)
    result['저장가능']=await q.py('import renpy;result=renpy.exports.can_load("1-1")')
    await asyncio.sleep(3);await pg.reload();await pg.wait_for_function("typeof renpy_exec==='function'",timeout=300000);await q.wait('main_menu')
-   print(tag,'새로고침 완료',flush=True);await q.press('불러오기');await q.wait('load');await q.press('1쪽 1번');await asyncio.sleep(1)
+   print(tag,'새로고침 완료',flush=True);await q.press('불러오기');await q.wait('load')
+   slots=await q.py('import renpy;result=sorted([[f.x,f.y,f.w,f.h] for f in renpy.display.focus.focus_list if f.x is not None and 520<=f.w<=540 and 70<=f.h<=180],key=lambda r:(r[1],r[0]))')
+   assert slots,slots
+   x,y,w,h=slots[0];await q.input(x+w/2,y+h/2);await asyncio.sleep(1)
    if 'confirm' in (await q.state())['screens']:await q.press('예')
    await asyncio.sleep(3);await check()
    after=await q.py('import renpy;s=renpy.store;result=dict(day=s.room13["day"],location=s.room13["location"],period=s.room13["period"])')
+   result['복원후버전']=await q.py('import renpy;result=renpy.config.version')
    result['저장복원']={'저장전':before,'복원후':after,'일치':before==after};assert before==after
+   assert result['버전']==result['복원후버전']
    await shot('loaded-'+tag);result['결과']='통과'
   except Exception:
    result['결과']='실패';result['오류']=traceback.format_exc();await pg.screenshot(path=str(OUT/('error-'+tag+'.png')))

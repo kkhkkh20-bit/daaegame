@@ -1,4 +1,4 @@
-"""읽기 개선 시안. 자연 시작 뒤 proof·ending 상태 fixture를 준비해 실제 입력한다."""
+"""승인한 읽기 개선 화면. 자연 시작 뒤 proof·ending 상태 fixture를 준비해 실제 입력한다."""
 import asyncio,copy,json,os
 from pathlib import Path
 from playwright.async_api import async_playwright
@@ -64,7 +64,7 @@ async def main():
    assert any('여정의 기록 보기' in b['text'] for b in (await q.state())['buttons'])
    assert (await q.state())['room']==before
    assert not errors,errors
-   report=dict(status='통과',publication='미공개 시안',checks=['첫 안내·이름 읽기·체크 선택 역할','읽기·선택 기회 미소모','PC·휴대폰 큰글씨 자료 상세','휴대폰 그림 확대·닫기','결말 집계 기본 숨김·열기·접기','결말 기록 UI world state 불변'],pageerrors=errors)
+   report=dict(status='통과',version=await run(q,'import renpy;result=renpy.config.version'),publication='로컬 공개 묶음 검증',checks=['첫 안내·이름 읽기·체크 선택 역할','읽기·선택 기회 미소모','PC·휴대폰 큰글씨 자료 상세','휴대폰 그림 확대·닫기','결말 집계 기본 숨김·열기·접기','결말 기록 UI world state 불변'],pageerrors=errors)
    (OUT/'결과.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));print(json.dumps(report,ensure_ascii=False),flush=True)
   finally:await browser.close()
 if __name__=='__main__':asyncio.run(main())
