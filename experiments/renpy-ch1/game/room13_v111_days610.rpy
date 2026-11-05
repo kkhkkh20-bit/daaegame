@@ -138,6 +138,8 @@ label r13_v111_woodshed_seen6:
     call r13_lines(r13_v111_lines(['MS14_D06_S02_L0022']),'v111:MS14_D06_S02_L0022')
     call r13_lines(r13_v111_lines(['MS14_D06_S02_L0023']),'v111:MS14_D06_S02_L0023')
     $ r13_v111_commit('MS14_D06_S02_L0024')
+    if r13_v111_value('piko_alive') is False and r13_v111_actor_ready('daram'):
+        call r13_lines(r13_nw_block('piko_memory6'),'nw:piko_memory6')
     jump r13_v111_afternoon6
 
 label r13_v111_afternoon6:
@@ -178,18 +180,31 @@ label r13_v111_seat6:
     # 선생님께 자리를 받는 대화만 여기서 한다. 꼬미가 학교에 들어선 뒤의 말(P01 L0004~L0007)은 인계 때 나온다.
     $ r13_v111_set('evacuation_requested',True)
     $ r13_v111_scene('MS14_D06_P01')
+    call r13_v111_travel('school','seat_permission6',['daram'],True)
     $ r13_v111_arrive(['daram', 'resident_teacher'])
     call r13_lines(r13_v111_lines(['MS14_D06_P01_L0001', 'MS14_D06_P01_L0002', 'MS14_D06_P01_L0003']),'v111:seat6:MS14_D06_P01_L0001')
     call r13_lines(r13_nw_block('seat_done6'),'nw:seat_done6')
     $ r13_v111_commit('MS14_D06_P01_L0008')
     $ r13_v111_set('kkomi_seat6',True)
+    call r13_v111_travel('v111_woodshed','seat_return6',['daram'],True)
+    $ r13_v111_arrive(['daram','kid_kkomi','resident_bori'])
     jump r13_v111_afternoon6
 
 label r13_v111_fetch6:
+    if not r13_v111_value('school_blankets_prepared6'):
+        call r13_v111_school_blanket_loan6
     call r13_v111_travel('v111_woodshed','children_fetch6')
     $ r13_v111_arrive(['daram', 'kid_kkomi', 'resident_bori'])
     call r13_lines(r13_nw_block('fetch_now6'),'nw:fetch_now6')
     jump r13_v111_children_ready6
+
+label r13_v111_school_blanket_loan6:
+    # 오늘 동행을 고른 뒤에만 학교 물자를 실제로 차용한다. 허락만으로 운명을 확정하지 않는다.
+    call r13_v111_travel('school','blanket_loan6',['daram'],True)
+    $ r13_v111_arrive(['daram','resident_teacher','nabi','doto'])
+    call r13_lines(r13_nw_block('school_blanket_loan6'),'nw:school_blanket_loan6')
+    $ r13_v111_set('school_blankets_prepared6',True)
+    return
 
 # 0.20.18 부터 새 판은 아래 today6·permission_today6 를 지나지 않는다(위 afternoon6 이 seat6·fetch6 으로 간다).
 # 그 전 저장을 이어 하는 사람을 위해 남긴다.
@@ -236,6 +251,7 @@ label r13_v111_acorn_recovered6:
 label r13_v111_children_ready6:
     call r13_lines(r13_v111_lines(['MS14_D06_P01_L0009']),'v111:MS14_D06_P01_L0009')
     call r13_lines(r13_v111_lines(['MS14_D06_P01_L0010']),'v111:MS14_D06_P01_L0010')
+    $ r13_v111_join(['doto'])
     call r13_lines(r13_v111_lines(['MS14_D06_P01_L0011']),'v111:MS14_D06_P01_L0011')
     call r13_lines(r13_v111_lines(['MS14_D06_P01_L0012']),'v111:MS14_D06_P01_L0012')
     call r13_lines(r13_v111_lines(['MS14_D06_P01_L0013']),'v111:MS14_D06_P01_L0013')
@@ -259,6 +275,9 @@ label r13_v111_handoff_done6:
     call r13_lines(r13_v111_lines(['MS14_D06_P01_L0020']),'v111:MS14_D06_P01_L0020')
     call r13_lines(r13_v111_lines(['MS14_D06_P01_L0021']),'v111:MS14_D06_P01_L0021')
     call r13_lines(r13_v111_lines(['MS14_D06_P01_L0022']),'v111:MS14_D06_P01_L0022')
+    if r13_v111_value('school_blankets_prepared6'):
+        $ r13_v111_join(['nabi','doto'])
+        call r13_lines(r13_nw_block('school_blanket_receipt6'),'nw:school_blanket_receipt6')
     $ r13_v111_commit('MS14_D06_P01_L0024')
     $ r13_fork_set_fate('fate_kkomi','saved')
     jump r13_v111_empty_fire6
@@ -335,9 +354,12 @@ label r13_v111_after_fire6:
     call r13_v111_travel('school','after_fire6',['daram'])
     $ r13_v111_arrive(['daram', 'nabi', 'resident_bori', 'neoul', 'doto'])
     $ r13_v111_score()
-    call r13_lines(r13_v111_lines(['MS14_D06_S04_L0001']),'v111:MS14_D06_S04_L0001')
-    call r13_lines(r13_v111_lines(['MS14_D06_S04_L0002']),'v111:MS14_D06_S04_L0002')
-    call r13_lines(r13_v111_lines(['MS14_D06_S04_L0003']),'v111:MS14_D06_S04_L0003')
+    if r13_v111_value('school_blankets_prepared6'):
+        call r13_lines(r13_nw_block('school_blanket_recheck6'),'nw:school_blanket_recheck6')
+    else:
+        call r13_lines(r13_v111_lines(['MS14_D06_S04_L0001']),'v111:MS14_D06_S04_L0001')
+        call r13_lines(r13_v111_lines(['MS14_D06_S04_L0002']),'v111:MS14_D06_S04_L0002')
+        call r13_lines(r13_v111_lines(['MS14_D06_S04_L0003']),'v111:MS14_D06_S04_L0003')
     $ r13_v111_commit('MS14_D06_S04_L0005')
     call r13_lines(r13_v111_lines(['MS14_D06_S04_L0006']),'v111:MS14_D06_S04_L0006')
     call r13_lines(r13_v111_lines(['MS14_D06_S04_L0007']),'v111:MS14_D06_S04_L0007')
@@ -739,21 +761,27 @@ label r13_v111_room_visit7:
     call r13_lines(r13_v111_lines(['MS14_D07_S03_L0012']),'v111:MS14_D07_S03_L0012')
     call r13_lines(r13_v111_lines(['MS14_D07_S03_L0013']),'v111:MS14_D07_S03_L0013')
     $ r13_v111_commit('MS14_D07_S03_L0014')
-    # 첫 판의 길: 서리는 외지인이 직접 불러야 오고(까로 L0009), 다람은 난로 곁에서 다리가 풀려 걷지 못한다.
-    # 뒷길은 얼음이 무너져 업고 갈 수 없다. 그래서 다람을 도토에게 맡긴다(설계 3장).
+    # 아빠가 상태를 직접 설명하러 가기로 한다. 아이는 실제로 방에서 나와 도토 곁에 앉힌다.
     $ r13_v111_commit('MS14_D07_S03_L0016')
+    call r13_lines(r13_v111_lines(['MS14_D07_S03_L0028']),'v111:MS14_D07_S03_L0028')
     jump r13_v111_handover7
 
 label r13_v111_handover7:
+    call r13_v111_travel('hall','corridor_handover7',['daram','doto','karo'],True)
+    $ r13_v111_arrive(['daram','doto','karo'])
+    call r13_lines(r13_nw_block('corridor_move7'),'nw:corridor_move7')
+    $ r13_v111_set('corridor_handover7',True)
+    $ r13_v111_set('DARAM_location','hall')
     call r13_lines(r13_v111_lines(['MS14_D07_S03_L0023']),'v111:MS14_D07_S03_L0023')
     call r13_lines(r13_v111_lines(['MS14_D07_S03_L0024']),'v111:MS14_D07_S03_L0024')
     call r13_lines(r13_v111_lines(['MS14_D07_S03_L0025']),'v111:MS14_D07_S03_L0025')
     call r13_lines(r13_v111_lines(['MS14_D07_S03_L0026']),'v111:MS14_D07_S03_L0026')
     call r13_lines(r13_v111_lines(['MS14_D07_S03_L0027']),'v111:MS14_D07_S03_L0027')
-    call r13_lines(r13_v111_lines(['MS14_D07_S03_L0028']),'v111:MS14_D07_S03_L0028')
     call r13_lines(r13_v111_lines(['MS14_D07_S03_L0029']),'v111:MS14_D07_S03_L0029')
     call r13_lines(r13_v111_lines(['MS14_D07_S03_L0030']),'v111:MS14_D07_S03_L0030')
-    $ r13_v111_commit('MS14_D07_S03_L0031')
+    $ r13_v111_apply('MS14_D07_S03_L0031',[dict(o,value='hall') if o['op']=='set' and o['field']=='DOTO_location' else o for o in R13_V111['records']['MS14_D07_S03_L0031']['operations']])
+    $ r13_v111_set('location:doto','hall')
+    call r13_lines(r13_nw_block('corridor_leave7'),'nw:corridor_leave7')
     # 2026-10-25: 낮에 도토의 다짐을 받은 판은 거짓 부름에 도토가 내려가지 않는다(room13_v111_owl_prevent.rpy).
     if r13_v111_value('doto_promise7'):
         jump r13_v111_promise_night7
@@ -767,6 +795,10 @@ label r13_v111_handover7:
 
 label r13_v111_incident7:
     $ r13_v111_scene('MS14_D07_S04')
+    if r13_v111_value('corridor_handover7'):
+        # 아빠가 보지 못한 재입실의 이유는 8일 당사자에게 듣는다. 실제 위치만 사건과 일치시킨다.
+        $ r13_v111_set('DARAM_location','room13')
+        $ r13_v111_set('location:daram','room13')
     $ r13_edit(period=2)
     $ room13["v111"]["people"]=[]
     # 2026-10-23 대사 검수: 서리는 진료소에서 데려오고(S04_L0003), 여관 현관과 위층 복도에서
@@ -871,6 +903,8 @@ label r13_v111_custody8:
     call r13_lines(r13_v111_lines(['MS14_D08_S01_L0008']),'v111:MS14_D08_S01_L0008')
     call r13_lines(r13_v111_lines(['MS14_D08_S01_L0009']),'v111:MS14_D08_S01_L0009')
     call r13_lines(r13_v111_lines(['MS14_D08_S01_L0010']),'v111:MS14_D08_S01_L0010')
+    if r13_v111_value('corridor_handover7'):
+        call r13_lines(r13_nw_block('corridor_reentry8'),'nw:corridor_reentry8')
     call r13_lines(r13_v111_lines(['MS14_D08_S01_L0011']),'v111:MS14_D08_S01_L0011')
     call r13_lines(r13_v111_lines(['MS14_D08_S01_L0012']),'v111:MS14_D08_S01_L0012')
     call r13_lines(r13_v111_lines(['MS14_D08_S01_L0013']),'v111:MS14_D08_S01_L0013')
@@ -924,6 +958,8 @@ label r13_v111_room_checked8:
     call r13_lines(r13_v111_lines(['MS14_D08_S02_L0021']),'v111:MS14_D08_S02_L0021')
     call r13_lines(r13_v111_lines(['MS14_D08_S02_L0022']),'v111:MS14_D08_S02_L0022')
     call r13_lines(r13_v111_lines(['MS14_D08_S02_L0023']),'v111:MS14_D08_S02_L0023')
+    if r13_v111_value('corridor_handover7'):
+        call r13_lines(r13_nw_block('doto_reentry8'),'nw:doto_reentry8')
     call r13_lines(r13_v111_lines(['MS14_D08_S02_L0024']),'v111:MS14_D08_S02_L0024')
     call r13_lines(r13_v111_lines(['MS14_D08_S02_L0025']),'v111:MS14_D08_S02_L0025')
     call r13_lines(r13_v111_lines(['MS14_D08_S02_L0026']),'v111:MS14_D08_S02_L0026')
@@ -1099,6 +1135,7 @@ label r13_v111_escort_done8:
     call r13_lines(r13_v111_lines(['MS14_D08_S04_L0031']),'v111:MS14_D08_S04_L0031')
     call r13_lines(r13_v111_lines(['MS14_D08_S04_L0032']),'v111:MS14_D08_S04_L0032')
     $ r13_v111_commit('MS14_D08_S04_L0033')
+    $ r13_v111_set('mother_warning_read8',True)
     jump r13_v111_sleep8
 
 label r13_v111_sleep8:
@@ -1385,6 +1422,10 @@ label r13_v111_night_route9:
 
 label r13_v111_custody_night9:
     call r13_v111_travel('v111_custody','custody_night9')
+    $ r13_v111_arrive(['daram'])
+    if r13_v111_owned('E08_RECENT_LETTER') and not r13_v111_value('mother_warning_shared9'):
+        call r13_lines(r13_nw_block('mother_warning_read9'),'nw:mother_warning_read9')
+        $ r13_v111_set('mother_warning_shared9',True)
     call r13_lines(r13_v111_lines(['MS14_D09_S04_L0026']),'v111:MS14_D09_S04_L0026')
     call r13_lines(r13_v111_lines(['MS14_D09_S04_L0027']),'v111:MS14_D09_S04_L0027')
     call r13_lines(r13_v111_lines(['MS14_D09_S04_L0028']),'v111:MS14_D09_S04_L0028')
@@ -1708,6 +1749,11 @@ label r13_v111_bench10:
     call r13_lines(r13_v111_lines(['MS14_D10_S04_L0013']),'v111:MS14_D10_S04_L0013')
     call r13_lines(r13_v111_lines(['MS14_D10_S04_L0014']),'v111:MS14_D10_S04_L0014')
     call r13_lines(r13_v111_lines(['MS14_D10_S04_L0015']),'v111:MS14_D10_S04_L0015')
+    call r13_lines(r13_nw_block('pump_copy10'),'nw:pump_copy10')
+    if r13_v111_value('route7')=='murder' and r13_v111_value('meeting:room13')=='win' and not r13_v111_value('DARAM_DETAINED') and r13_v111_value('CHORONG_ALIVE') is not False and r13_v111_person_alive('resident_lamplighter') and not r13_v111_value('listed:resident_lamplighter') and not r13_v111_value('departed:resident_lamplighter') and not r13_v111_value('busy:resident_lamplighter'):
+        $ r13_v111_join(['resident_lamplighter'])
+        call r13_lines(r13_nw_block('chorong_relay10'),'nw:chorong_relay10')
+        $ r13_v111_set('mother_contact_relay10',True)
     call r13_lines(r13_v111_lines(['MS14_D10_S04_L0017']),'v111:MS14_D10_S04_L0017')
     call r13_lines(r13_v111_lines(['MS14_D10_S04_L0018']),'v111:MS14_D10_S04_L0018')
     call r13_lines(r13_v111_lines(['MS14_D10_S04_L0019']),'v111:MS14_D10_S04_L0019')

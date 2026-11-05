@@ -1,0 +1,132 @@
+{
+  "version": "0.20.97",
+  "unit_tests": 1220,
+  "unit_status": "passed",
+  "lint": "passed",
+  "dialogue_logic": {
+    "A": 0,
+    "B": 0,
+    "C": 0
+  },
+  "scope": "1~14일 소설 개정안의 게임 대사·행동 연결 적용. 생존·예방·실패 경로 유지.",
+  "original_records_unchanged": true,
+  "native_screen_tests": [
+    {
+      "test": "novel_d05_letter_read_commit",
+      "status": "PASSED"
+    },
+    {
+      "test": "novel_d07_corridor_promise",
+      "status": "PASSED"
+    },
+    {
+      "test": "novel_d07_corridor_repair",
+      "status": "PASSED"
+    },
+    {
+      "test": "novel_d11_known_contact",
+      "status": "PASSED"
+    },
+    {
+      "test": "novel_d11_legacy_contact",
+      "status": "PASSED"
+    },
+    {
+      "test": "novel_d14_family_route_keeps_portrait",
+      "status": "PASSED"
+    },
+    {
+      "test": "novel_d14_finish_waiting_portrait",
+      "status": "PASSED"
+    },
+    {
+      "test": "novel_d14_legacy_completed_portrait",
+      "status": "PASSED"
+    },
+    {
+      "test": "v111_d101112_family_school_move",
+      "status": "PASSED"
+    },
+    {
+      "test": "v111_d101112_medical_premeal",
+      "status": "PASSED"
+    },
+    {
+      "test": "v111_d456_school_permission_reaction",
+      "status": "PASSED"
+    },
+    {
+      "test": "v111_d789_day8_custody_stays",
+      "status": "PASSED"
+    },
+    {
+      "test": "v111_d789_day8_school_handoff",
+      "status": "PASSED"
+    },
+    {
+      "test": "v111_d789_day9_returned_papers_people",
+      "status": "PASSED"
+    },
+    {
+      "test": "v111_nw_d05_piko_sketch",
+      "status": "PASSED"
+    },
+    {
+      "test": "v111_nw_d06_afternoon_today",
+      "status": "PASSED"
+    },
+    {
+      "test": "v111_nw_d06_afternoon_tomorrow",
+      "status": "PASSED"
+    },
+    {
+      "test": "v111_nw_d10_room13_won",
+      "status": "PASSED"
+    },
+    {
+      "test": "v111_nw_d13_cleanup_bundled",
+      "status": "PASSED"
+    },
+    {
+      "test": "v111_nw_d14_true_ending",
+      "status": "PASSED"
+    },
+    {
+      "test": "v111_sr_d02_note",
+      "status": "PASSED"
+    },
+    {
+      "test": "v111_sr_d10_hands",
+      "status": "PASSED"
+    },
+    {
+      "test": "v111_sr_d14_memorial",
+      "status": "PASSED"
+    }
+  ],
+  "native_screen_test_count": 23,
+  "scope_limit": "변경 구간의 장면 시작 상태를 준비한 부분 화면 시험. 14일 전체 자연 주행과 전체 화면 회귀는 미실행.",
+  "web": {
+    "scope": "장면 시작 상태를 준비한 웹 부분 시험. 전체 자연 플레이 아님.",
+    "checks": [
+      "첫 편지 PC·휴대폰 표시, 전문 청취 전후 상태, 실제 저장·불러오기 복원",
+      "이미 들은 연락 경위를 반복하지 않는 재회 장면 PC·휴대폰 표시",
+      "초상화 완성 PC·휴대폰 표시와 행동 뒤 상태 저장"
+    ],
+    "version": "0.20.97",
+    "status": "passed",
+    "page_errors": []
+  },
+  "build": {
+    "core_zip_bytes": 17216286,
+    "archive_sha256": "31d9d071c2cdb854bcb9e21596344363b78d565d35b1ee42e6ea37554ffd3872",
+    "parts": 1,
+    "preload_files": 38,
+    "first_load_bytes": 47759686,
+    "prefetch_files": 107,
+    "transparent_placeholders": 3148,
+    "remote_files": 4614,
+    "removed_from_release": []
+  },
+  "source_records_sha256": "b839447422794228811dd74e0905c3da9a9930a58453a889be27c9acfcba5d57"
+}

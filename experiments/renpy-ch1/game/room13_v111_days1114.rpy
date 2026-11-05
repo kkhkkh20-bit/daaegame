@@ -279,25 +279,39 @@ label r13_v111_mother_questions11:
     jump r13_v111_mother_questions11
 
 label r13_v111_mother_life11:
-    call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0022']),'v111:MS14_D11_S02B_L0022')
-    call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0023']),'v111:MS14_D11_S02B_L0023')
-    call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0024']),'v111:MS14_D11_S02B_L0024')
-    call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0025']),'v111:MS14_D11_S02B_L0025')
-    call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0026']),'v111:MS14_D11_S02B_L0026')
-    call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0027']),'v111:MS14_D11_S02B_L0027')
-    call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0028']),'v111:MS14_D11_S02B_L0028')
-    call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0029']),'v111:MS14_D11_S02B_L0029')
-    call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0030']),'v111:MS14_D11_S02B_L0030')
-    call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0031']),'v111:MS14_D11_S02B_L0031')
-    call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0032']),'v111:MS14_D11_S02B_L0032')
-    call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0033']),'v111:MS14_D11_S02B_L0033')
-    call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0034']),'v111:MS14_D11_S02B_L0034')
-    call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0035']),'v111:MS14_D11_S02B_L0035')
+    if r13_v111_value('mother_first_contact_read5'):
+        call r13_lines(r13_nw_block('mother_known_contact11'),'nw:mother_known_contact11')
+        if r13_v111_value('OWL_ALIVE') is False:
+            if r13_v111_value('mother_contact_relay10'):
+                call r13_lines(r13_nw_block('mother_relay_hurt11'),'nw:mother_relay_hurt11')
+            else:
+                call r13_lines(r13_nw_block('mother_custody_hurt11'),'nw:mother_custody_hurt11')
+    else:
+        call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0022']),'v111:MS14_D11_S02B_L0022')
+        call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0023']),'v111:MS14_D11_S02B_L0023')
+        call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0024']),'v111:MS14_D11_S02B_L0024')
+        call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0025']),'v111:MS14_D11_S02B_L0025')
+        call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0026']),'v111:MS14_D11_S02B_L0026')
+        call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0027']),'v111:MS14_D11_S02B_L0027')
+        call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0028']),'v111:MS14_D11_S02B_L0028')
+        call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0029']),'v111:MS14_D11_S02B_L0029')
+        call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0030']),'v111:MS14_D11_S02B_L0030')
+        call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0031']),'v111:MS14_D11_S02B_L0031')
+        call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0032']),'v111:MS14_D11_S02B_L0032')
+        call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0033']),'v111:MS14_D11_S02B_L0033')
+        call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0034']),'v111:MS14_D11_S02B_L0034')
+        if r13_v111_value('mother_contact_relay10') and r13_v111_value('OWL_ALIVE') is False:
+            call r13_lines(r13_nw_block('mother_relay_hurt11'),'nw:mother_relay_hurt11')
+        else:
+            call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0035']),'v111:MS14_D11_S02B_L0035')
     $ r13_v111_set('mother_q_life',True)
     jump r13_v111_mother_ready11
 
 label r13_v111_mother_invitation11:
-    call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0037']),'v111:MS14_D11_S02B_L0037')
+    if r13_v111_value('mother_first_contact_read5'):
+        call r13_lines(r13_nw_block('mother_known_invitation11'),'nw:mother_known_invitation11')
+    else:
+        call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0037']),'v111:MS14_D11_S02B_L0037')
     call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0038']),'v111:MS14_D11_S02B_L0038')
     call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0039']),'v111:MS14_D11_S02B_L0039')
     call r13_lines(r13_v111_lines(['MS14_D11_S02B_L0040']),'v111:MS14_D11_S02B_L0040')
@@ -357,7 +371,10 @@ label r13_v111_facility11:
         call r13_v111_mother_heat11
     # 검토 0.20.4 추가 4: 3일 광장에서 따뜻한 받침을 직접 만져 본 경로만 회상한다.
     if r13_v111_value('stone_warm_felt3') and r13_v111_actor_ready('daram') and r13_v111_actor_ready('mom'):
-        call r13_lines(r13_nw_block('warm_recall11'),'nw:warm_recall11')
+        if r13_v111_value('D07_S03_medical_request_completed'):
+            call r13_lines(r13_nw_block('warm_recall11'),'nw:warm_recall11')
+        else:
+            call r13_lines(r13_nw_block('warm_observe11'),'nw:warm_observe11')
     jump r13_v111_heat_check11
 
 label r13_v111_guldol_heat11:
@@ -2897,6 +2914,8 @@ label r13_v111_altar14:
     $ r13_nw_acquire("NW_TABLET_B")
     $ r13_nw_acquire("NW_IRON_MARK")
     $ r13_v111_set('altar_heat_structure_observed',True)
+    if r13_v111_owned('NW_TABLET_A'):
+        call r13_lines(r13_nw_block('altar_observation14'),'nw:altar_observation14')
     jump r13_v111_mayor_interview14
 
 label r13_v111_mayor_interview14:
@@ -3588,6 +3607,15 @@ label r13_v111_cookie14:
     call r13_v111_travel('school','cookie14')
     $ r13_v111_arrive(['mom', 'daram'])
     $ r13_v111_set('night14_lodging','school')
+    if r13_v111_value('ending14')=='morning' and r13_v111_actor_ready('mom') and r13_v111_actor_ready('daram'):
+        call r13_lines(r13_nw_block('family_research_limit14'),'nw:family_research_limit14')
+        if r13_v111_value('piko_alive') is False:
+            if r13_v111_value('portrait_waiting_for_mom') and r13_v111_value('portrait')!='child_completed':
+                call r13_lines(r13_nw_block('family_portrait_finish14'),'nw:family_portrait_finish14')
+                $ r13_v111_set('portrait','child_completed')
+                $ r13_v111_set('portrait_waiting_for_mom',False)
+            elif r13_v111_value('portrait')=='child_completed':
+                call r13_lines(r13_nw_block('family_portrait_seen14'),'nw:family_portrait_seen14')
     jump r13_v111_cookie_scene14
 
 label r13_v111_cookie_gate14:
@@ -3619,6 +3647,8 @@ label r13_v111_cookie_scene14:
     call r13_lines(r13_v111_lines(['MS14_D14_S05_L0019']),'v111:MS14_D14_S05_L0019')
     call r13_lines(r13_v111_lines(['MS14_D14_S05_L0020']),'v111:MS14_D14_S05_L0020')
     call r13_lines(r13_v111_lines(['MS14_D14_S05_L0021']),'v111:MS14_D14_S05_L0021')
+    if r13_v111_value('ending14')=='morning' and r13_v111_value('night14_lodging')=='school' and r13_v111_actor_ready('mom') and r13_v111_actor_ready('daram'):
+        call r13_lines(r13_nw_block('family_wait_together14'),'nw:family_wait_together14')
     call r13_lines(r13_v111_lines(['MS14_D14_S05_L0022']),'v111:MS14_D14_S05_L0022')
     if r13_v111_value('ending14')=='morning' and r13_v111_value('meeting:hypothesis')=='lose' and r13_v111_value('meeting:altar')=='lose':
         jump r13_v111_wild_night14

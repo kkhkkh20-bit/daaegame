@@ -94,7 +94,7 @@ label r13_v111_owl_well7:
     $ r13_v111_set('D07_medical_care','none')
     jump r13_v111_sleep7
 
-# 다짐만 받은 판: 부엉이는 무너지고 아빠는 서리를 부르러 간다(다람은 걷지 못해 도토에게 맡긴다).
+# 다짐만 받은 판: 부엉이는 무너지고 아빠는 서리를 부르러 간다. 다람은 복도에서 도토에게 맡긴다.
 # 계단 아래 거짓 부름에 도토가 내려가지 않아 할머니는 돌아간다. 돌은 밤새 남고 8일 서리가 꺼낸다(예전 B 판과 같다).
 label r13_v111_promise_night7:
     $ r13_owl_tok_release7()
@@ -102,9 +102,19 @@ label r13_v111_promise_night7:
     call r13_v111_travel('clinic','incident7',[])
     $ r13_v111_arrive(['karo','resident_seori'])
     call r13_lines(r13_nw_block('promise_clinic7'),'nw:promise_clinic7')
-    call r13_v111_travel('room13','promise_room7',[],True)
-    $ r13_v111_arrive(['daram','doto','resident_owlgp','resident_seori','karo'])
-    call r13_lines(r13_nw_block('promise_room7'),'nw:promise_room7')
+    if r13_v111_value('corridor_handover7'):
+        call r13_v111_travel('hall','promise_hall7',[],True)
+        $ r13_v111_arrive(['daram','doto','resident_seori','karo'])
+        call r13_lines(r13_nw_block('promise_hall7'),'nw:promise_hall7')
+        call r13_v111_travel('room13','promise_care7',['resident_seori','karo'],True)
+        $ r13_v111_arrive(['resident_owlgp','resident_seori','karo'])
+        call r13_lines(r13_nw_block('promise_care7'),'nw:promise_care7')
+        call r13_v111_travel('hall','promise_wait7',[],True)
+        $ r13_v111_arrive(['daram','doto'])
+    else:
+        call r13_v111_travel('room13','promise_room7',[],True)
+        $ r13_v111_arrive(['daram','doto','resident_owlgp','resident_seori','karo'])
+        call r13_lines(r13_nw_block('promise_room7'),'nw:promise_room7')
     $ r13_v111_set('route7','prevented')
     $ r13_v111_set('prevention','promise')
     $ r13_v111_set('choice:MS14_D07_S03','promise')
@@ -147,9 +157,19 @@ label r13_v111_tok_night7:
     call r13_v111_travel('clinic','incident7',[])
     $ r13_v111_arrive(['karo','resident_seori'])
     call r13_lines(r13_nw_block('promise_clinic7'),'nw:promise_clinic7')
-    call r13_v111_travel('room13','tok_room7',[],True)
-    $ r13_v111_arrive(['daram','doto','resident_owlgp','resident_seori','karo','resident_tok'])
-    call r13_lines(r13_nw_block('owl_tok_return7'),'nw:owl_tok_return7')
+    if r13_v111_value('corridor_handover7'):
+        call r13_v111_travel('hall','tok_hall7',[],True)
+        $ r13_v111_arrive(['daram','doto','resident_seori','karo','resident_tok'])
+        call r13_lines(r13_nw_block('tok_hall7'),'nw:tok_hall7')
+        call r13_v111_travel('room13','tok_care7',['resident_seori','karo','resident_tok'],True)
+        $ r13_v111_arrive(['resident_owlgp','resident_seori','karo','resident_tok'])
+        call r13_lines(r13_nw_block('tok_care7'),'nw:tok_care7')
+        call r13_v111_travel('hall','tok_wait7',[],True)
+        $ r13_v111_arrive(['daram','doto','resident_tok'])
+    else:
+        call r13_v111_travel('room13','tok_room7',[],True)
+        $ r13_v111_arrive(['daram','doto','resident_owlgp','resident_seori','karo','resident_tok'])
+        call r13_lines(r13_nw_block('owl_tok_return7'),'nw:owl_tok_return7')
     $ r13_v111_set('route7','prevented')
     $ r13_v111_set('prevention','repair')
     $ r13_v111_set('choice:MS14_D07_S03','repair')

@@ -1,0 +1,1420 @@
+{
+  "title": "다람탐정 연결 개정판 게임 적용 설계",
+  "date": "2026-11-05",
+  "status": "소설 연결 개정 완료 / 게임 미반영 / 실행 패치 아님",
+  "basis": "기존 본편 14일 중 피코·부엉이 사망, 다람 누명 해소, 가족 재회·학교 일반결말 한 경로",
+  "priority": [
+    "7~10일 안전 인계·통로·촛대 연결",
+    "10~11일 엄마 연락 복구",
+    "1·3·5·13일 감정과 다람의 관찰",
+    "11·14일 원리 관찰과 결론 분리",
+    "후반 반복 설명 압축"
+  ],
+  "early_game_items": [
+    {
+      "id": "A01",
+      "day": 1,
+      "scope": "기존 정보·되묻기 보존",
+      "already_implemented": "이미 반영, 반응 한정 보완",
+      "source": {
+        "file": "experiments/renpy-ch1/game/room13_v111_days123.rpy",
+        "label": "r13_v111_registered_depart",
+        "dialogue_ids": [
+          "MS14_D01_S04_L0020",
+          "NW_D01_SR04",
+          "NW_D01_SR05"
+        ],
+        "insertion_or_replacement": "d01.json after[MS14_D01_S04_L0020]의 SR04~05 뒤에 짧은 감정 반응만 추가. 경고의 호출 위치/commit은 유지."
+      },
+      "current": "너울의 경고는 여관 첫 방문 전이다. 아빠의 누가 부탁했나/왜 아내를 찾나 되묻기와 너울의 규칙 답변은 이미 있다.",
+      "proposed_dialogue": [
+        {
+          "speaker": "다람",
+          "text": "아빠, 엄마 어디 갔대?"
+        },
+        {
+          "speaker": "아빠",
+          "text": "어디 갔다고 들은 건 아니야. 여관에 가서 직접 물어보자."
+        }
+      ],
+      "when": "기존 daram_ready. 여관 부재 소식은 아직 얻지 않은 시점이다.",
+      "player_action_to_preserve": "입장 정정 수사와 등록 끝내기를 통과해야 이 장면에 온다. 경고만으로 실종/할머니 범행을 자동 판정하지 않는다.",
+      "acquisition_and_judgment": "L0020 commit의 gate_mother_report_instruction_heard=true와 r13_v111_set(heard_inn_order1,True) 시점 유지. 새 자료/판정 없음.",
+      "preserve_retry_cancel_failure": "gate_daram_listed/unlisted 양쪽에서 아내 부재를 미리 확정하지 않음. SR04~05를 중복 삽입하지 않는다.",
+      "novel_compression": "소설은 첫날 초소 너울 경고를 생략할 수 있지만 게임에서 통째로 삭제하면 후속 heard_inn_order1 회상까지 점검해야 한다."
+    },
+    {
+      "id": "A02",
+      "day": 1,
+      "scope": "대사·행동 호흡",
+      "already_implemented": "일부 반영",
+      "source": {
+        "file": "experiments/renpy-ch1/game/room13_v111_days123.rpy",
+        "label": "r13_v111_inn",
+        "dialogue_ids": [
+          "MS14_D01_S05_L0005",
+          "MS14_D01_S05_L0006",
+          "MS14_D01_S05_L0007",
+          "MS14_D01_S05_L0008"
+        ],
+        "insertion_or_replacement": "d01.json after[L0007]에 삽입. 기존 다람 L0008을 읽기 전."
+      },
+      "current": "아빠는 편지를 꺼내고 아내 위치를 물으며, 할머니는 며칠째 안 보인다고 답한다. 다람의 기다린댔는데 한 줄은 있으나 몸/아빠 응답은 짧다.",
+      "proposed_dialogue": [
+        {
+          "speaker": "다람",
+          "text": "엄마가? 아빠는 알고 있었어?"
+        },
+        {
+          "speaker": "아빠",
+          "text": "아빠도 지금 들었어. 어디로 가셨는지 물어볼게."
+        },
+        {
+          "speaker": null,
+          "text": "다람이 내 외투를 잡는다. 나는 아이 곁에 앉는다."
+        }
+      ],
+      "when": "daram_ready. 첫 r13_v111_inn 호출에서 기존 흐름대로 1회 표시. 새로운 부재 여부 상태는 만들지 않는다.",
+      "player_action_to_preserve": "아빠 L0006 질문→할머니 L0007 답→다람 충격→아빠 응답 순서.",
+      "acquisition_and_judgment": "생사/초대 진위/엄마 위치/증거 소지 변화 없음.",
+      "preserve_retry_cancel_failure": "실제 부재 확인 전에 울음이나 내일도 안 오면을 앞당기지 않는다. 단일 손 감싸기 연출과 중복 반복 줄을 늘리지 않는다.",
+      "novel_compression": ""
+    },
+    {
+      "id": "A03",
+      "day": 1,
+      "scope": "기존 질문 보존",
+      "already_implemented": "이미 반영",
+      "source": {
+        "file": "experiments/renpy-ch1/game/room13_v111_days123.rpy",
+        "label": "r13_v111_inn",
+        "dialogue_ids": [
+          "MS14_D01_S05_L0010",
+          "MS14_D01_S05_L0011",
+          "MS14_D01_S05_L0012",
+          "MS14_D01_S05_L0013"
+        ],
+        "insertion_or_replacement": "추가하지 않고 현재 네 줄을 유지. L0013의 when 배열 유지."
+      },
+      "current": "마지막 행선지/돌아온 날짜를 아빠가 각각 묻고 할머니가 모른다고 답한다. L0013은 room13_checked_d1/unchecked_d1에 따라 답이 다르다.",
+      "proposed_dialogue": [],
+      "when": "room13_checked_d1 = E06 보유, room13_unchecked_d1 = E06 미보유. 새 경로가 방을 먼저 방문해도 맞는 답 유지.",
+      "player_action_to_preserve": "부재를 듣고 구체적으로 마지막 목격·행선지를 확인하는 현재 주고받기를 생략하지 않음.",
+      "acquisition_and_judgment": "질문/응답 자체는 획득·판정 영향 없음. E06 획득은 방 메모를 읽는 기존 commit에 남긴다.",
+      "preserve_retry_cancel_failure": "방을 이미 본 경로에서 다시 방부터 보라 강요하지 않는 현재 when을 소설 단일 문장으로 덮지 않는다.",
+      "novel_compression": ""
+    },
+    {
+      "id": "A04",
+      "day": 1,
+      "scope": "대사·감정 행동",
+      "already_implemented": "미반영 보완",
+      "source": {
+        "file": "experiments/renpy-ch1/game/room13_v111_days123.rpy",
+        "label": "r13_v111_room_empty",
+        "dialogue_ids": [
+          "NW_D01_S05_A01",
+          "MS14_D01_S05_L0016",
+          "MS14_D01_S05_L0017"
+        ],
+        "insertion_or_replacement": "d01.json after[L0017], note_pick 관문을 열기 직전."
+      },
+      "current": "찬 방 관찰과 엄마 호출·침대 아래 확인은 있다. 즉시 메모 찾기로 이어져 실제 빈방 충격이 짧다.",
+      "proposed_dialogue": [
+        {
+          "speaker": "다람",
+          "text": "여기서 기다린다며. 엄마 없어."
+        },
+        {
+          "speaker": null,
+          "text": "다람이 내 허리에 매달린다. 나는 아이가 소매에서 얼굴을 뗄 때까지 안고 있다."
+        },
+        {
+          "speaker": "아빠",
+          "text": "엄마가 남긴 말이 있는지 같이 보자."
+        }
+      ],
+      "when": "daram_ready. L0017 이후이므로 방에 아내가 없다는 직접 확인 뒤에만.",
+      "player_action_to_preserve": "추가 대사 뒤 기존 note_pick의 책상 메모를 플레이어가 직접 누른다. 메모를 자동 지급하지 않는다.",
+      "acquisition_and_judgment": "E06은 r13_v111_room_note의 L0019 commit에서만 획득. 삽입은 상태 변경 없음.",
+      "preserve_retry_cancel_failure": "메모를 보기 전 초롱 이름·행선지를 말하지 않는다. 아직 확인하지 못한 귀환 약속도 하지 않는다.",
+      "novel_compression": "소설은 빈방 탐색 동작을 한 장면으로 엮되 메모에서 처음 초롱을 안다는 정보 순서를 유지한다."
+    },
+    {
+      "id": "A05",
+      "day": 1,
+      "scope": "플레이어 관찰 우선",
+      "already_implemented": "이미 반영, 확대 금지",
+      "source": {
+        "file": "experiments/renpy-ch1/game/room13_v111_days123.rpy",
+        "label": "r13_v111_letter_observe",
+        "dialogue_ids": [
+          "NW_D01_OB01",
+          "NW_D01_OB02",
+          "NW_D01_OB03",
+          "NW_D01_OB04",
+          "NW_D01_OB08"
+        ],
+        "insertion_or_replacement": "현행 spot==tail 응답 안에서만 도토리 발화를 유지. 비교 전 자동 대사로 복사하지 않는다."
+      },
+      "current": "E01/E06을 플레이어가 나란히 두고 끝부분을 짚은 뒤 다람이 표식 유무를 말한다. 다른 세 구역을 짚을 수 있고 세 번 빗나갈 때 위치만 알려 준다.",
+      "proposed_dialogue": [
+        {
+          "speaker": "다람",
+          "text": "메모에는 도토리가 있어. 그런데 편지 끝은 비었어."
+        }
+      ],
+      "when": "교체 후보는 spot==tail일 때 OB02~OB04 축약용 한 줄이다. 자동 삽입 아님. letter_tail_observed 상태·miss 조건 그대로.",
+      "player_action_to_preserve": "자료 E01+E06 선택/끝부분 직접 클릭을 반드시 보존. 다람은 관찰값만 말하고 위조 범인을 말하지 않는다.",
+      "acquisition_and_judgment": "관찰 오선택은 기회 소비 없음. E01+E06 실패는 letter_retry→재선택, 회의 패배 아님. letter_tail_observed를 새 필수 합격조건으로 추가하지 않는다. 현재 기능은 직접 관찰을 선택할 수 있게 하는 것으로, 기존 자료 대조 판정과 구분한다.",
+      "preserve_retry_cancel_failure": "세 번 실패 힌트 OB08은 끝부분 위치만. 새 정답 자료명/위조 단정/관찰 실패 즉시 정답 공개 금지.",
+      "novel_compression": "소설에서는 다람이 자발적으로 두 종이를 대보아도 된다. 게임은 이미 있는 직접 관찰 절차를 없애지 않는다."
+    },
+    {
+      "id": "A06",
+      "day": 1,
+      "scope": "아빠의 착각과 다람의 교정",
+      "already_implemented": "미반영 보완",
+      "source": {
+        "file": "experiments/renpy-ch1/game/room13_v111_days123.rpy",
+        "label": "r13_v111_room_compare",
+        "dialogue_ids": [
+          "MS14_D01_S05_L0040",
+          "MS14_D01_S05_L0041",
+          "MS14_D01_S05_L0042"
+        ],
+        "insertion_or_replacement": "L0040 이후 L0042 이전의 L0041 지문을 감정 주고받기로 보완. 기존 L0042 계획 대사 유지."
+      },
+      "current": "다람은 내일도 안 오면을 묻고 아빠는 아침 초롱/마차 계획을 말한다. 기다림에 대한 부녀 갈등을 조금 늘릴 수 있다.",
+      "proposed_dialogue": [
+        {
+          "speaker": "아빠",
+          "text": "조금만 더 기다려 보자."
+        },
+        {
+          "speaker": "다람",
+          "text": "오늘도 기다렸잖아. 내일은 물어보러 가야 해."
+        },
+        {
+          "speaker": "아빠",
+          "text": "응. 기다리기만 하진 않을게."
+        }
+      ],
+      "when": "daram_ready. 초롱 이름은 메모에서 안 뒤이며, 다음날 실제 연락 전이다.",
+      "player_action_to_preserve": "다람이 어른의 약속을 바로잡지만 사건 정답을 알려 주지는 않는다. 초롱/마차 계획은 기존 L0042가 말한다.",
+      "acquisition_and_judgment": "새 목적지 자동 이동/시간 소비/증거 없음. 취침 관문 유지.",
+      "preserve_retry_cancel_failure": "마차 고장을 이미 직접 본 정보 이상으로 탈출 가능성을 확언하지 않는다. 현재 L0042의 중복 문장은 적용 시 한 번만 남긴다.",
+      "novel_compression": ""
+    },
+    {
+      "id": "B01",
+      "day": 4,
+      "scope": "다람의 독립적인 질문",
+      "already_implemented": "이미 반영",
+      "source": {
+        "file": "experiments/renpy-ch1/game/room13_v111_days45.rpy",
+        "label": "r13_v111_eaves4",
+        "dialogue_ids": [
+          "MS14_D04_S02_L0002",
+          "MS14_D04_S02_L0003",
+          "MS14_D04_S02_L0004",
+          "MS14_D04_S02_L0005",
+          "MS14_D04_S02_L0010"
+        ],
+        "insertion_or_replacement": "현행 유지. 새 아빠 강의 대사 삽입 금지."
+      },
+      "current": "다람이 콩이에게 직접 봤느냐고 물어 소문과 목격을 나눈다. 토실의 모른다는 답도 수용한다.",
+      "proposed_dialogue": [],
+      "when": "기존 공통 장면. 실룩 처분에 따른 bami_cold4 상태와 독립.",
+      "player_action_to_preserve": "다람이 질문의 주체다. 밤이가 무죄라는 최종 결론은 여기서 말하지 않는다.",
+      "acquisition_and_judgment": "자료 E21 획득은 이후 밤이 본인에게 묻는 L0018 commit까지 기다린다.",
+      "preserve_retry_cancel_failure": "감독조건 석방/작업대기소 인계 경로 모두 보존. 피코 생사/등 도난/절도미수 갈래도 강제하지 않는다.",
+      "novel_compression": "소설은 도토리 흥정의 반복을 줄일 수 있으나 다람이 직접 질문하는 장면은 남긴다."
+    },
+    {
+      "id": "B02",
+      "day": 4,
+      "scope": "동기·부작용 보존",
+      "already_implemented": "이미 반영",
+      "source": {
+        "file": "experiments/renpy-ch1/game/room13_v111_days45.rpy",
+        "label": "r13_v111_eaves4",
+        "dialogue_ids": [
+          "NW_D04_SL01",
+          "NW_D04_SL02",
+          "NW_D04_SL02_ATTEMPT",
+          "NW_D04_SL05",
+          "NW_D04_SL06"
+        ],
+        "insertion_or_replacement": "silluk_lamp4 블록 기존 호출 그대로."
+      },
+      "current": "실룩 reporting_obligation일 때만 5번 등이 비고 밤이가 추워 내려오는 연쇄가 나온다.",
+      "proposed_dialogue": [],
+      "when": "silluk_status==reporting_obligation && !bami_cold4. 블록 안 lamp_stolen/lamp_attempt별 원문 유지.",
+      "player_action_to_preserve": "아빠가 한 선택의 불리한 결과를 경험한다. 다람은 아빠 결정을 비판할 수 있으나 실룩 재범 직접 목격으로 단정하지 않음.",
+      "acquisition_and_judgment": "bami_cold4=true는 현재 코드만 설정. 5일 최초 proof에서 gate_post_cold_cost가 tries를 1회 증가시키는 판정 그대로.",
+      "preserve_retry_cancel_failure": "사정이 나빴다는 이유로 기회 차감/밤이 위치를 삭제하지 않는다. 따뜻한 처마판 bami_warm4도 유지.",
+      "novel_compression": ""
+    },
+    {
+      "id": "B03",
+      "day": 4,
+      "scope": "아빠 조급함을 다람이 교정",
+      "already_implemented": "미반영 보완",
+      "source": {
+        "file": "experiments/renpy-ch1/game/room13_v111_days45.rpy",
+        "label": "r13_v111_bami_night4",
+        "dialogue_ids": [
+          "MS14_D04_S04_L0012",
+          "MS14_D04_S04_L0013",
+          "MS14_D04_S04_L0014",
+          "MS14_D04_S04_L0015",
+          "MS14_D04_S04_L0016"
+        ],
+        "insertion_or_replacement": "d04.json before[L0015]에 삽입. L0012~14 목격 답변을 먼저 들은 뒤."
+      },
+      "current": "밤이가 맨발·구부림·얼굴/키 모름을 말하고 다람이 수첩에 키 모름을 적는다.",
+      "proposed_dialogue": [
+        {
+          "speaker": "아빠",
+          "text": "작은 그림자였다고 적으면—"
+        },
+        {
+          "speaker": "다람",
+          "text": "키는 모른댔어. 숙이고 있었다고 했잖아."
+        },
+        {
+          "speaker": "아빠",
+          "text": "그래. 작다고 쓰면 내가 더한 말이네."
+        }
+      ],
+      "when": "daram_ready. bami_cold4/warm4 양쪽 공통. 피코 그림을 아직 받기 전에도 성립.",
+      "player_action_to_preserve": "다람은 방금 들은 증언의 범위만 교정. 밤이 대신 누군지 지목하거나 E20/E22/E23/E24를 제출하라고 말하지 않음.",
+      "acquisition_and_judgment": "E21 획득은 기존 L0018 commit 그대로. 새 증거·교정점수 없음.",
+      "preserve_retry_cancel_failure": "가설을 잘못 세운 장면과 플레이어 회의 오답을 연결해 혼자 기회를 빼앗지 않는다. 이 대사는 tries를 바꾸지 않는다.",
+      "novel_compression": ""
+    },
+    {
+      "id": "B04",
+      "day": 4,
+      "scope": "직접 현장 관찰",
+      "already_implemented": "이미 반영, 게임 압축 금지",
+      "source": {
+        "file": "experiments/renpy-ch1/game/room13_v111_days45.rpy",
+        "label": "r13_v111_inspect_gate4 / r13_v111_inspection_ready4",
+        "dialogue_ids": [
+          "(직접작성) v111:fence_seen4",
+          "(직접작성) v111:tracks_seen4",
+          "(직접작성) v111:bucket_seen4",
+          "MS14_D04_S04_L0035",
+          "MS14_D04_S04_L0037"
+        ],
+        "insertion_or_replacement": "기존 관문 세 물건 선택 유지. 다람 발견 대사는 세 확인이 끝난 r13_v111_tracks_talk4에 둠."
+      },
+      "current": "플레이어가 울타리 천/겹친 발자국/양동이를 각각 눌러야 d4_*_seen 세 값이 모두 true가 된다.",
+      "proposed_dialogue": [],
+      "when": "all(d4_fence_seen,d4_tracks_seen,d4_bucket_seen) 후 다람 L0035/37 발화. 각 물건 선택 취소/다른 반환은 inspect_gate4로 복귀.",
+      "player_action_to_preserve": "직접 확인 전에 다람이 세 물건을 자동 발견·수거하게 하지 않음.",
+      "acquisition_and_judgment": "세 관찰은 기존 d4_*_seen만. E22 획득은 별도 collect4 요청 뒤 L0044 commit.",
+      "preserve_retry_cancel_failure": "관찰 순서 자유/읽음 상태/관문 복귀 유지. 단서 누르기 하나로 세 상태를 모두 참으로 만드는 압축 금지.",
+      "novel_compression": "소설은 세 확인을 연속 산책 장면으로 압축 가능. 게임에서는 물건 선택권과 조건을 남긴다."
+    },
+    {
+      "id": "B05",
+      "day": 4,
+      "scope": "행동을 통한 증거 확보",
+      "already_implemented": "이미 반영",
+      "source": {
+        "file": "experiments/renpy-ch1/game/room13_v111_days45.rpy",
+        "label": "r13_v111_collect4 / r13_v111_cloth4",
+        "dialogue_ids": [
+          "MS14_D04_S04_L0042",
+          "MS14_D04_S04_L0043",
+          "MS14_D04_S04_L0044"
+        ],
+        "insertion_or_replacement": "바둑이에게 같이 수거해 달라는 현재 선택 유지."
+      },
+      "current": "관찰 후 바둑이/밤이와 수거한다. 밤이는 함께 갈지 기다릴지 질문받고 함께 간다.",
+      "proposed_dialogue": [],
+      "when": "collect4 _return==0 뒤에만 L0044 commit.",
+      "player_action_to_preserve": "수거 전 기록/위치 관찰과 증거 확보를 다른 행동으로 유지.",
+      "acquisition_and_judgment": "L0044→E22 observed. 바둑이와 함께 수거했다는 기록 정합성 보존.",
+      "preserve_retry_cancel_failure": "취소·다른 반환은 collect4로 복귀. 대사 추가만으로 E22 자동 선지급 금지.",
+      "novel_compression": "소설에서 수거 버튼/돌아감은 생략 가능하지만 바둑이 입회·기록 후 채취는 남긴다."
+    },
+    {
+      "id": "B06",
+      "day": 4,
+      "scope": "다람 관찰과 목격 취득",
+      "already_implemented": "이미 반영",
+      "source": {
+        "file": "experiments/renpy-ch1/game/room13_v111_days45.rpy",
+        "label": "r13_v111_cloth4",
+        "dialogue_ids": [
+          "NW_D04_S04_A01",
+          "MS14_D04_S04_L0047",
+          "MS14_D04_S04_L0048",
+          "NW_D04_S04_N01",
+          "NW_D04_S04_N02",
+          "NW_D04_S04_N03"
+        ],
+        "insertion_or_replacement": "기존 d04.json 신발/기침/식당 주고받기 유지."
+      },
+      "current": "다람은 기침과 천막 말의 불일치를 먼저 의심하고 아빠는 얼굴은 못 봤다고 범위를 제한한다. 네로의 젖은 신발 관찰→나비의 식당 알리바이 증언은 이미 있다.",
+      "proposed_dialogue": [],
+      "when": "첫 정보는 현재 장면에서만. 여기서 무쇠를 범인/야생화 환자로 확정하지 않는다.",
+      "player_action_to_preserve": "다람의 자기 관찰을 보존. 알리바이 주장은 네로가 아니라 나비가 답한 독립 목격임을 남김.",
+      "acquisition_and_judgment": "새 증거자료 불필요. E23/E24 취득 전 정답 결론 선취 금지.",
+      "preserve_retry_cancel_failure": "5일 E24 미제출 대체 정답에서 나비 목격을 이미 들었다는 사실을 보존.",
+      "novel_compression": "소설에서 나비의 같은 설명을 거듭 인용하는 것은 한 번만 남겨도 된다."
+    },
+    {
+      "id": "B07",
+      "day": 4,
+      "scope": "생존판 대체 증거 보존",
+      "already_implemented": "이미 반영",
+      "source": {
+        "file": "experiments/renpy-ch1/game/room13_v111_days45.rpy",
+        "label": "r13_v111_piko_sketch4",
+        "dialogue_ids": [
+          "NW_D04_PK01",
+          "NW_D04_PK05",
+          "NW_D04_PK07",
+          "NW_D04_PK08"
+        ],
+        "insertion_or_replacement": "기존 호출 위치/생존 검사 유지. 소설의 피코 사망판으로 삭제 금지."
+      },
+      "current": "살아 있는 피코의 그림은 얼굴 없이 키·소매·맨발을 보인다. 다람이 밤이가 아니라고 말한 뒤 아빠가 신원은 아직 모른다고 제한.",
+      "proposed_dialogue": [],
+      "when": "piko_alive==True && !owned(NW_PIKO_SKETCH4), 그림 후 피코는 clinic으로 복귀.",
+      "player_action_to_preserve": "그림이 뜻하는 관찰 범위만 발화. 5일엔 플레이어가 실제 제출해야 대체 승리.",
+      "acquisition_and_judgment": "기존 NW_PIKO_SKETCH4 취득/대체 세트/그림 기반 승리 when 유지. 새 그림/자료 생성 금지.",
+      "preserve_retry_cancel_failure": "피코 사망판에는 이 블록/자료를 넣지 않는다. 식당 위치 변경과 clinic 복귀도 유지.",
+      "novel_compression": ""
+    },
+    {
+      "id": "C01",
+      "day": 5,
+      "scope": "그럴듯한 가설의 반론",
+      "already_implemented": "미반영 보완",
+      "source": {
+        "file": "experiments/renpy-ch1/game/room13_v111_days45.rpy",
+        "label": "r13_v111_somi5",
+        "dialogue_ids": [
+          "MS14_D05_S01_L0015",
+          "MS14_D05_S01_L0016",
+          "NW_D05_S01_A02",
+          "MS14_D05_S01_L0017"
+        ],
+        "insertion_or_replacement": "d05.json after[L0016] 배열의 NW_D05_S01_A02 뒤, 아빠 대조 요청 L0017 전에 삽입."
+      },
+      "current": "회색 옷 찢김→어제 착용 질문→네로와 무쇠가 번갈아 입는다는 반론은 이미 있다. 아빠의 첫 착각을 명시적으로 교정할 수 있다.",
+      "proposed_dialogue": [
+        {
+          "speaker": "아빠",
+          "text": "같은 옷이면 그날 입은 사람도—"
+        },
+        {
+          "speaker": "다람",
+          "text": "둘이 입는다잖아. 어제 누가 입었는지도 물어봐야지."
+        },
+        {
+          "speaker": "아빠",
+          "text": "응. 옷만 보고 사람까지 정하면 안 되겠네."
+        }
+      ],
+      "when": "daram_ready. 대조를 아직 하지 않았으므로 천이 맞는다고 말하지 않는다.",
+      "player_action_to_preserve": "이후 어르신 외출/귀환 증언과 옷 대조는 기존 장면·플레이어 행동으로 확보. 다람이 네로 알리바이를 먼저 완성하지 않는다.",
+      "acquisition_and_judgment": "대사만 보완, E23/E24 선지급 없음.",
+      "preserve_retry_cancel_failure": "같은 옷 두 착용자라는 이미 들은 사실만 말한다. 피코 그림판도 논리상 성립하지만 그림의 결론을 미리 덧붙이지 않는다.",
+      "novel_compression": ""
+    },
+    {
+      "id": "C02",
+      "day": 5,
+      "scope": "동의·물증 대조",
+      "already_implemented": "이미 반영, 자동화 금지",
+      "source": {
+        "file": "experiments/renpy-ch1/game/room13_v111_days45.rpy",
+        "label": "r13_v111_wait_cloth5 / r13_v111_compare_cloth5 / r13_v111_cloth_match5",
+        "dialogue_ids": [
+          "MS14_D05_S02_L0013",
+          "MS14_D05_S02_L0014",
+          "MS14_D05_S02_L0015",
+          "MS14_D05_S02_L0016",
+          "MS14_D05_S02_L0025"
+        ],
+        "insertion_or_replacement": "솜이 허락 뒤 compare_cloth5의 기존 v111_coat 선택에 둠."
+      },
+      "current": "옷을 벗긴 뒤 솜이 허락을 받고 나란히 대조한다. 잘린 선·두 줄 수선실의 연결이 자료 E23이다.",
+      "proposed_dialogue": [],
+      "when": "compare_cloth5 _return==0에서만 cloth_match5 진입. 거부 중 강제로 옷을 벗기지 않음.",
+      "player_action_to_preserve": "자료는 듣기만 해서 생기는 것이 아니라 플레이어가 현물 대조를 선택한 뒤 취득.",
+      "acquisition_and_judgment": "L0016 commit=E23. 귀환 증언 뒤 L0025 commit=E24. ENTRY가 회의 기본자료를 보충하는 현행도 별도 표기하며 획득 로직은 바꾸지 않음.",
+      "preserve_retry_cancel_failure": "compare_cloth5 취소/다른 반환은 원 관문 복귀. 대사만 교체해 허락/대조 선택을 제거하지 않는다.",
+      "novel_compression": "소설은 손끝으로 실제 맞추는 장면으로 버튼을 바꿀 수 있다."
+    },
+    {
+      "id": "C03",
+      "day": 5,
+      "scope": "플레이어의 종합 추리",
+      "already_implemented": "이미 반영, 정답 선취 방지",
+      "source": {
+        "file": "experiments/renpy-ch1/game/room13_v111_days45.rpy",
+        "label": "r13_v111_proof5 / r13_v111_bami_clear5",
+        "dialogue_ids": [
+          "MS14_D05_S03_L0013",
+          "MS14_D05_S03_L0015",
+          "NW_D05_S03_A01B",
+          "NW_D05_S03_A01C",
+          "NW_D05_S03_A02"
+        ],
+        "insertion_or_replacement": "다람의 종합 결론을 넣으려면 성공 라벨 L0013 이후에만. 실패·제출 전에는 넣지 않음."
+      },
+      "current": "기본 E20+E22+E23+E24, 실제 대체 E20+E23+E24 및 피코 그림 세트가 있다. 성공 뒤 네로 알리바이 답변이 E24 제출 여부별로 갈린다.",
+      "proposed_dialogue": [
+        {
+          "speaker": "다람",
+          "text": "밤이가 거기 있었다는 거랑, 밤이가 물었다는 건 달라."
+        }
+      ],
+      "when": "기존 gate_post_win에서만. 본 대사만 추가할 경우 daram_ready도 적용. gate_post_won_with_e24/without_e24 및 sketch_only 가지는 원문 유지.",
+      "player_action_to_preserve": "플레이어가 조합·자료 제출한 뒤 다람이 의미를 자기 말로 확인. 제출 전에 자료 네 개를 열거하지 않는다.",
+      "acquisition_and_judgment": "새 자동승리/추리 점수 없음. proof_given 및 accepted_sets 변경 금지. E21/그림 덧붙임 허용도 유지.",
+      "preserve_retry_cancel_failure": "현재 proof5에는 review_return이 없다. 조사 복귀 기능이 원래 있다고 보고하거나 새로 넣지 않는다. 취소는 공통 대조 화면으로 돌아감.",
+      "novel_compression": "소설에서는 모든 논증을 부녀 대화로 나눌 수 있지만 게임 성공 발표를 제출 전에 당기면 안 된다."
+    },
+    {
+      "id": "C04",
+      "day": 5,
+      "scope": "오답과 아빠의 한계",
+      "already_implemented": "이미 반영, 감정만 보완",
+      "source": {
+        "file": "experiments/renpy-ch1/game/room13_v111_days45.rpy",
+        "label": "r13_v111_wrong5 / r13_v111_hint5",
+        "dialogue_ids": [
+          "MS14_D05_S03_L0038",
+          "MS14_D05_S03_L0039",
+          "MS14_D05_S03_L0040"
+        ],
+        "insertion_or_replacement": "재시도 가능한 wrong5의 L0038~39 뒤 한 줄 감정 보완 후보. 마지막 패배에는 별도 상태 문장 사용."
+      },
+      "current": "half_height/wearer/match/cloth/fence별 미연결 지점 반론이 이미 다르다. 실패 누적 뒤 밤이가 명단에 오른다.",
+      "proposed_dialogue": [
+        {
+          "speaker": "아빠",
+          "text": "내가 본 데까지만 말해야 했는데. 다시 보겠습니다."
+        }
+      ],
+      "when": "재시도 가능한 r13_nw_retry 분기 안에서만. 마지막 gate_post_lose에는 그대로 반복하지 않음.",
+      "player_action_to_preserve": "어느 인물이 어느 자료를 내라고 대신 말하지 않음. 힌트는 자료 비교 범위만.",
+      "acquisition_and_judgment": "gate_post 최대기회=현행 R13_NW_TRIES_BY_MEETING의 3. bami_cold4 시작비용 1회 별도. 취소/빈 제출/자료 회수는 기회 소비 없음.",
+      "preserve_retry_cancel_failure": "마지막 오답은 meeting:gate_post=lose, listed:bami, bami_status=listed 유지. 다람이 교정했다는 이유로 무효/되감기/자동 승리 금지.",
+      "novel_compression": "소설의 채택한 승리판에서는 회의 오답을 만들지 않아도 아빠의 조급한 가설을 대화로 보여 줄 수 있다."
+    },
+    {
+      "id": "C05",
+      "day": 5,
+      "scope": "공정한 추리의 감정 비용",
+      "already_implemented": "이미 반영",
+      "source": {
+        "file": "experiments/renpy-ch1/game/room13_v111_days45.rpy",
+        "label": "r13_v111_night5",
+        "dialogue_ids": [
+          "MS14_D05_S05_L0005",
+          "MS14_D05_S05_L0006",
+          "MS14_D05_S05_L0007",
+          "MS14_D05_S05_L0008",
+          "NW_AR_D05_02",
+          "NW_AR_D05_03",
+          "NW_AR_D05_04"
+        ],
+        "insertion_or_replacement": "기존 gate_post_win/lose별 후속을 유지. 사과를 무조건 공통으로 복사하지 않음."
+      },
+      "current": "승리판은 솜이의 비밀 노출과 아빠의 사과, 실패판은 밤이 명단과 솜이의 질문이 다르다. 두 아이 즉시 화해하지 않는다.",
+      "proposed_dialogue": [],
+      "when": "gate_post_win/lose 기존 when. 무쇠를 시설로 이미 보냈다는 새 대사 금지.",
+      "player_action_to_preserve": "정답 제출 성공을 감정적 만능 해결로 만들지 않는다.",
+      "acquisition_and_judgment": "L0037 성공에서 bami_status=cleared, musoe_care=nero_badugi_night_rotation. 패배 후 warning5의 ENTRY가 밤이를 cleared로 덮지 않는 newworld_rules override 유지.",
+      "preserve_retry_cancel_failure": "승리판 솜이 사과 장면을 실패판에 넣거나 밤이 학교 후속을 unconditional로 바꾸지 않는다.",
+      "novel_compression": ""
+    },
+    {
+      "id": "D01",
+      "day": 6,
+      "scope": "현재 관찰로 시작하는 구호",
+      "already_implemented": "이미 반영",
+      "source": {
+        "file": "experiments/renpy-ch1/game/room13_v111_days610.rpy",
+        "label": "r13_v111_day6 / r13_v111_nabi_supply6 / r13_v111_board6",
+        "dialogue_ids": [
+          "MS14_D06_S01_L0017",
+          "MS14_D06_S01_L0018",
+          "MS14_D06_S01_L0019",
+          "MS14_D06_S01_L0020",
+          "MS14_D06_S01_L0026",
+          "MS14_D06_S01_L0030",
+          "MS14_D06_S01_L0040",
+          "MS14_D06_S01_L0042"
+        ],
+        "insertion_or_replacement": "기존 그릇 동행/먹었니 두 선택과 보급판 클릭 유지."
+      },
+      "current": "다람이 내 의자만 놓으면 저 애들은을 묻고 꼬미의 빈그릇을 발견한다. 아빠는 두 돌봄 선택 중 고른 뒤 나비에게 묻는다. 공급 기록은 사람 이름 없이 수량뿐이다.",
+      "proposed_dialogue": [],
+      "when": "choice:MS14_D06_S01=together/eat_first. d06_bowl_together 전용 중복 질문만 현행 when으로.",
+      "player_action_to_preserve": "빈그릇→아이 처지 질문→표/공급 규칙 확인. 엄마가 가져갔다고 수량만으로 단정하지 않는다.",
+      "acquisition_and_judgment": "E06_CONTACT=public_count_only, mother_route_shared=false, school_day_seat=confirmed 등 기존 L0048 commit 유지.",
+      "preserve_retry_cancel_failure": "두 선택을 선악/예방 정답으로 바꾸거나 함께 간 경로만 생존 가능하게 좁히지 않는다. 보급판 미확인 취소는 board6 복귀.",
+      "novel_compression": "소설은 그릇 반환과 먹었니 질문을 한 대화로 압축 가능."
+    },
+    {
+      "id": "D02",
+      "day": 6,
+      "scope": "다람의 위험 관찰",
+      "already_implemented": "이미 반영, 결론 제한",
+      "source": {
+        "file": "experiments/renpy-ch1/game/room13_v111_days610.rpy",
+        "label": "r13_v111_woodshed6 / r13_v111_woodshed_check6",
+        "dialogue_ids": [
+          "NW_D06_S02_A01",
+          "NW_D06_S02_A02",
+          "NW_D06_S02_A10",
+          "MS14_D06_S02_L0003",
+          "NW_D06_S02_A03",
+          "NW_D06_S02_A04"
+        ],
+        "insertion_or_replacement": "현재 woodshed_check6 클릭 전의 말은 사실 관찰/의문만. 전체 비교는 클릭 응답에서."
+      },
+      "current": "돌난로 없음·등잔 위치·넷 거주·뒤창과 문 문제를 관찰. 다람이 안에서 못 나가면을 묻는다.",
+      "proposed_dialogue": [],
+      "when": "woodshed_check6 _return==0 후 기존 보리 문 앞 장작 대화. 다람은 fire/lost라는 미래를 모른다.",
+      "player_action_to_preserve": "플레이어가 문 앞과 뒤창을 살피는 기존 물건 선택을 남김. 누비 방화/불날 예정/깡통 해법을 다람이 미리 말하지 않는다.",
+      "acquisition_and_judgment": "NW_KKOMI_NOSTONE 획득은 기존 위치 유지. D06_S02_inspect_completed는 L0024 commit에서만.",
+      "preserve_retry_cancel_failure": "단서 관찰을 누르면 FIRE_EVACUATED를 미리 true로 만드는 자동 예방 금지.",
+      "novel_compression": "소설은 여러 관찰을 공간 이동으로 묶되 실제 방 상태만으로 오늘 이동을 선택한다."
+    },
+    {
+      "id": "D03",
+      "day": 6,
+      "scope": "아빠 실수와 아이의 요구",
+      "already_implemented": "미반영 보완",
+      "source": {
+        "file": "experiments/renpy-ch1/game/room13_v111_days610.rpy",
+        "label": "r13_v111_woodshed_seen6",
+        "dialogue_ids": [
+          "MS14_D06_S02_L0018",
+          "MS14_D06_S02_L0019",
+          "MS14_D06_S02_L0020",
+          "MS14_D06_S02_L0021"
+        ],
+        "insertion_or_replacement": "d06.json after[L0021]에 삽입. 학교허락 전의 섣부른 초대를 아이가 지적한 다음."
+      },
+      "current": "다람이 학교로 초대하지만 꼬미가 선생님께 물었느냐고 확인하고 아직 허락이 없다고 지적한다.",
+      "proposed_dialogue": [
+        {
+          "speaker": "다람",
+          "text": "아빠, 나한테는 자리 생겼잖아. 이 애들은 왜 아직이야?"
+        },
+        {
+          "speaker": "아빠",
+          "text": "네 자리만 부탁했어. 아이들한테도 먼저 물어보고, 선생님께 자리가 있는지 여쭤보자."
+        }
+      ],
+      "when": "daram_ready. 피코 생사와 무관한 공통 대사. today/permission 결정 전.",
+      "player_action_to_preserve": "아이의 요구는 왜 구하지 않나라는 동기다. 선생님 대화/깡통보기/줄풀기/오늘 동행이라는 해법 순서를 알려 주는 메뉴 설명은 하지 않는다.",
+      "acquisition_and_judgment": "학교 허락·인계·운명 값 변경 없음. 실제 구호를 고르는 사람은 플레이어.",
+      "preserve_retry_cancel_failure": "현재 내일 아침 선택과 떠난 뒤 화재·꼬미 사망을 보존. 미래를 몰랐던 선택을 악의로 매도하는 대사 금지.",
+      "novel_compression": ""
+    },
+    {
+      "id": "D04",
+      "day": 6,
+      "scope": "경로 한정 상실 감정",
+      "already_implemented": "미반영 보완",
+      "source": {
+        "file": "experiments/renpy-ch1/game/room13_v111_days610.rpy",
+        "label": "r13_v111_woodshed_seen6",
+        "dialogue_ids": [
+          "MS14_D06_S02_L0024"
+        ],
+        "insertion_or_replacement": "L0024 commit 뒤 afternoon6 첫 진입 전에 피코 사망판 생각 한 줄 후보. 재진입 관문 안에는 넣지 않는다."
+      },
+      "current": "소설은 피코를 돕지 못한 기억이 오늘 구호 동기가 된다. 게임 피코 생존판에도 같은 말을 복사하면 모순이다.",
+      "proposed_dialogue": [
+        {
+          "speaker": "아빠",
+          "text": "피코에게도 다음 날 다시 오겠다고 했다. 여기 아이들은 지금 손을 비비고 있다."
+        }
+      ],
+      "when": "기존 when piko_dead + daram_ready가 모두 필요. 둘의 결합은 기존 rpy if로 감싸며 새 when 이름은 구현 시 정의 없이는 쓰지 않음.",
+      "player_action_to_preserve": "원인·미래 결과를 설명하지 않는 현재 감각. 해법/특정 선택 강요 아님.",
+      "acquisition_and_judgment": "아무 상태 변경 없음. piko_alive판은 이 줄을 생략하거나 공통 관찰 지문만.",
+      "preserve_retry_cancel_failure": "피코 생존 대체 그림/진료소 경로를 훼손하지 않는다. 루프마다 상실 대사가 재생되지 않게 최초 진입에만.",
+      "novel_compression": ""
+    },
+    {
+      "id": "D05",
+      "day": 6,
+      "scope": "가족 물자와 학교 물자 분리",
+      "already_implemented": "이미 반영",
+      "source": {
+        "file": "experiments/renpy-ch1/game/room13_v111_days610.rpy",
+        "label": "r13_v111_blankets6 / r13_v111_day6",
+        "dialogue_ids": [
+          "MS14_D06_S01_L0013",
+          "MS14_D06_S01_L0014",
+          "MS14_D06_S01_L0015",
+          "MS14_D06_S01_L0016"
+        ],
+        "insertion_or_replacement": "carried_dry_blankets==2일 때만 기존 blankets6 호출."
+      },
+      "current": "가족 담요 두 장은 따로 있고 다른 아이 몫은 별도로 구해야 한다고 이미 명시한다.",
+      "proposed_dialogue": [],
+      "when": "carried_dry_blankets==2. 담요가 없는 피코 구조 경로에는 가족담요 대사를 넣지 않음.",
+      "player_action_to_preserve": "플레이어가 확보하지 않은 물자를 소설 경로에서 가져와 공짜 지급하지 않는다.",
+      "acquisition_and_judgment": "L0016 family_blankets_not_donated=true 유지. 실제 수령한 담요 수량을 늘리거나 소모하지 않는다.",
+      "preserve_retry_cancel_failure": "미예약/미수령/피코구조 분기를 가족담요2장판으로 합치지 않는다.",
+      "novel_compression": ""
+    },
+    {
+      "id": "D06",
+      "day": 6,
+      "scope": "플레이어의 예방 행동",
+      "already_implemented": "이미 반영, 자동화 금지",
+      "source": {
+        "file": "experiments/renpy-ch1/game/room13_v111_days610.rpy",
+        "label": "r13_v111_afternoon6 / r13_v111_seat6 / r13_v111_fetch6",
+        "dialogue_ids": [
+          "NW_D06_ST01",
+          "NW_D06_FN01",
+          "NW_K2_CAN_LOOK6_0",
+          "NW_K2_CAN_PACK6_0",
+          "NW_K2_CAN_WAIT6_0"
+        ],
+        "insertion_or_replacement": "기존 field-bindings.json afternoon6 option index 0/1/2/80/81과 guard 그대로."
+      },
+      "current": "0=선생님 허락, 80=깡통보기, 81=줄풀기/챙김, 1=지금 동행, 2=내일 약속. 허락만 받아도 오늘 동행을 고르지 않으면 예방되지 않는다.",
+      "proposed_dialogue": [],
+      "when": "0 guard kkomi_seat6 null, 1 guard true, 80 kkomi_can_seen6 null, 81 seen=true && acorn_recovered=null. today 선택 전 회수 없으면 can_wait6로 되묻고 관문 복귀.",
+      "player_action_to_preserve": "소설은 성공 동선을 채택해도 게임은 순서 탐색·못 챙김·내일 약속의 선택권을 남긴다. 다람이 깡통 줄을 풀라고 정답을 먼저 지시하지 않음.",
+      "acquisition_and_judgment": "seat6 L0008 commit은 허락뿐. handoff_done6 L0024에서만 FIRE_EVACUATED=true/KKOMI_ALIVE=true/handover=4. fate saved도 그 뒤에만.",
+      "preserve_retry_cancel_failure": "취소·미지원 반환은 afternoon6 복귀. permission6의 FIRE_EVACUATED=false와 fire6→KKOMI_ALIVE=false/구조3/보리화상을 유지. 옛저장용 today6/permission_today6도 별도.",
+      "novel_compression": "소설의 지도 왕복/메뉴 재진입은 압축할 수 있지만 학교허락·네명 확인·깡통 지참·인수를 생략하지 않는다."
+    },
+    {
+      "id": "D07",
+      "day": 6,
+      "scope": "정보 출처 보완, 대사만 가능",
+      "already_implemented": "미반영 보완",
+      "source": {
+        "file": "experiments/renpy-ch1/game/room13_v111_days610.rpy",
+        "label": "r13_v111_nabi_supply6",
+        "dialogue_ids": [
+          "MS14_D06_S01_L0040",
+          "MS14_D06_S01_L0041",
+          "MS14_D06_S02_L0014",
+          "NW_D06_S02_V01"
+        ],
+        "insertion_or_replacement": "d06.json after[L0040]에 식당 뒷문에서 표를 직접 묻는 주고받기 삽입 후보. 기존 그림에 표시를 새로 그리지 말 것."
+      },
+      "current": "현재 아빠는 보리 수레에서 여관 표를 즉시 알아보지만 앞서 그 표를 안 경로가 명확하지 않다.",
+      "proposed_dialogue": [
+        {
+          "speaker": "아빠",
+          "text": "이 장작 끝의 표는 어디 것입니까?"
+        },
+        {
+          "speaker": "나비",
+          "text": "여관 표예요. 그 표 찍힌 장작은 여관 몫이에요."
+        }
+      ],
+      "when": "현재 나비와 아빠가 함께 식당에 있는 응답 안. 신규 관문/자료/when 없음.",
+      "player_action_to_preserve": "수레에서 숨긴 표를 보기 전에 표의 출처를 질문으로 확인. 이 답만으로 장작 절도/방화 정답을 알려 주지 않는다.",
+      "acquisition_and_judgment": "기존 장작 표 의미를 대사로 보여 줄 뿐 새 정답증거 ID/절도판정 없음.",
+      "preserve_retry_cancel_failure": "현재 배경/기존 장작 설정에 표시를 확인할 시각적 지점이 없으면 지문+말로만 보강할지 동선 검토로 넘긴다. 새 UI/에셋 제작은 이번 범위 밖.",
+      "novel_compression": ""
+    },
+    {
+      "id": "D08",
+      "day": 6,
+      "scope": "스토리 동선·조달 보완 필요",
+      "already_implemented": "일부 반영, 인수 연결 누락",
+      "source": {
+        "file": "experiments/renpy-ch1/game/room13_v111_days610.rpy",
+        "label": "r13_v111_seat6 / r13_v111_children_ready6 / r13_v111_handoff_done6 / r13_v111_after_fire6",
+        "dialogue_ids": [
+          "MS14_D06_P01_L0003",
+          "MS14_D06_P01_L0011",
+          "MS14_D06_P01_L0020",
+          "MS14_D06_S04_L0001",
+          "MS14_D06_S04_L0002",
+          "MS14_D06_S04_L0003",
+          "MS14_D06_S04_L0005"
+        ],
+        "insertion_or_replacement": "즉시 코드 이식 대상 아님. 권장안: today 확정 뒤 children_ready6 L0011 앞에 학교 차용/운반 부탁의 실제 장면 추가, after_fire6의 L0001~3은 그 준비가 있었던 판에서 수량 재확인으로 바꿀 필요. 함께 MS14_D06_P01_L0003의 여관 차용 약속은 아래 학교 차용 요청으로 대체해야 하며 서로 다른 조달처를 동시에 약속하지 않는다."
+      },
+      "current": "현행 선생님 앞에서는 이불은 여관에서 빌려오겠다고 말한 뒤 도토가 담요 수레로 등장한다. 실제 차용·학교함 개봉/기록은 after_fire6 공통 장면에 있어 성공판은 앞뒤 연결이 빈다. 원작 school 함 차용을 앞당기는 것은 대사 치환만으로 끝나지 않는다. 실제 나비와 만나는 장소/도토 요청 시점/성공판·화재판의 중복 처리까지 확인해야 한다.",
+      "proposed_dialogue": [
+        {
+          "speaker": "아빠",
+          "text": "물은 제가 나르겠습니다. 아이들 이불도 빌릴 수 있게 도와주세요. 빌리는 수와 제 이름을 남기겠습니다."
+        },
+        {
+          "speaker": "아빠",
+          "text": "아이들 담요를 빌릴 수 있습니까?"
+        },
+        {
+          "speaker": "나비",
+          "text": "학교 함에서 꺼낼게요. 빌리는 수와 가져가는 분 이름부터 적어요."
+        },
+        {
+          "speaker": null,
+          "text": "나비가 학교 담요함을 열고, 나는 꺼내는 수를 센다. 나비가 수량과 내 이름을 적고 함을 잠근다."
+        },
+        {
+          "speaker": "아빠",
+          "text": "도토 씨, 이 담요를 수레로 학교까지 옮겨 주시겠습니까?"
+        },
+        {
+          "speaker": "도토",
+          "text": "예. 담요 먼저 싣고 물통도 옮기죠."
+        }
+      ],
+      "when": "당일 동행을 플레이어가 이미 택한 choice:MS14_D06_S02==today + kkomi_seat6 + acorn_recovered 경로만. 선생님 허락 직후 자동 rescue로 넘기지 않는다. 새 표시 플래그가 필요한 재개저장 호환은 구현 검토 대상.",
+      "player_action_to_preserve": "학교 보관품(기존 L0001~3/나비열쇠)을 차용, 가족담요는 불변. 요청→허용→실물 개봉·기록→운반자 수락→인수 수량 대조를 실제 공간에서 연결. 여관에 여분 침구가 생겼다고 만들지 않음.",
+      "acquisition_and_judgment": "기존 D06_S04_supplies_completed를 앞당기면 사건 후 완료 의미가 달라지므로 그대로 재사용하지 않는다. 한 번 조달을 보였는지에 따른 중복대사 관리만 필요하며 생사·자료·판정 조건은 변경 금지.",
+      "preserve_retry_cancel_failure": "내일 약속/화재구조판은 기존 after_fire6 학교함 차용을 유지. 옛 today6 저장에서 자동 중복 차용되지 않게 전이 확인. 새 UI·에셋·자료는 필요 없음; 장면 이동/인물 위치 연결은 추가 검토.",
+      "novel_compression": "소설에는 순서 조정으로 해결 가능하다. 게임은 저장/분기별 공급 중복과 장소를 확인한 뒤 적용해야 한다."
+    },
+    {
+      "id": "D09",
+      "day": 6,
+      "scope": "화재 감식은 다음 추리를 남김",
+      "already_implemented": "이미 반영",
+      "source": {
+        "file": "experiments/renpy-ch1/game/room13_v111_days610.rpy",
+        "label": "r13_v111_fire_evidence6 / r13_v111_fire_record6",
+        "dialogue_ids": [
+          "MS14_D06_S04_L0031",
+          "MS14_D06_S04_L0032",
+          "MS14_D06_S04_L0033",
+          "MS14_D06_S04_L0034",
+          "MS14_D06_S04_L0035",
+          "MS14_D06_S04_L0037"
+        ],
+        "insertion_or_replacement": "기존 fire_evidence6에서 불 자리/등잔을 실제 확인한 뒤만 기록 획득."
+      },
+      "current": "나비에게 등잔 위치를 묻고 식은 현장을 확인한다. 문 탄 자국·기름 천과 뒷벽 물통 옆 닫힌 잔유 등잔을 구별한다.",
+      "proposed_dialogue": [],
+      "when": "fire_evacuated이면 도토 기존소개, 아니면 새소개 when 유지. 관문 _return==0만 진행.",
+      "player_action_to_preserve": "다람은 물건 위치를 관찰할 수 있으나 누비 이름·방화 동기·등유 주인을 6일에 결론 내리지 않음.",
+      "acquisition_and_judgment": "L0037 commit에서 E06_FIRE observed. E06_EMPTY는 인계·빈창고진압, E06_RESCUE는 보리의 세아이 구조. 양자는 생존 갈래별 기존 취득 유지.",
+      "preserve_retry_cancel_failure": "취소는 감식 관문 복귀. 증거만으로 다음날 회의가 자동 성공하지 않음. 소설 빈창고판으로 기본 구조실패판을 삭제 금지.",
+      "novel_compression": "소설에서 물건별 반복 버튼은 압축해도 세 위치/상태를 나눠 보여 준다."
+    }
+  ],
+  "new_game_items": [
+    {
+      "id": "E02",
+      "day": 2,
+      "title": "피코의 약속과 선택 당시의 정보",
+      "implementation_status": "기존 장면 유지·호흡 조정 후보",
+      "source_files": [
+        "room13_v111_days123.rpy",
+        "v111/newworld/d02.json"
+      ],
+      "source_labels": [
+        "r13_v111_piko2",
+        "r13_v111_portrait_commission",
+        "r13_v111_afternoon",
+        "r13_v111_evening2_route"
+      ],
+      "existing_dialogue_ids": [],
+      "current": "피코의 그림 약속, 식당 자리 준비와 네로 목격자를 만나는 선택이 이미 있다.",
+      "revision": "떨리는 손과 코를 내일 그려 준다는 약속을 짧은 행동으로 남긴다. 선택 뒤 미래의 죽음으로 선택을 평가하는 독백은 넣지 않는다.",
+      "proposed_dialogue": [
+        "피코: 코는 내일 그려 줄게. 오늘은 엄마 얼굴부터 생각해 와.",
+        "다람: 그러면 내일도 여기 있어?"
+      ],
+      "condition": "실제 피코 대면과 초상화 의뢰 뒤. 현재 선택 시점에 알려진 일정·숙소·물자 조건만 말한다.",
+      "player_action_and_branch_constraints": "숙소 완성과 네로 만남의 선택, 피코 생존/사망 결과를 그대로 둔다. 가족 담요 두 장은 3일 저녁 수령이며 2일 밤 가진 물건으로 바꾸지 않는다."
+    },
+    {
+      "id": "E03",
+      "day": 3,
+      "title": "시신 앞의 감정과 우박에게 성급해지는 아빠",
+      "implementation_status": "감정 보강·추론 위치 분리 후보",
+      "source_files": [
+        "room13_v111_days123.rpy",
+        "v111/newworld/d03.json"
+      ],
+      "source_labels": [
+        "r13_v111_piko_dead3",
+        "r13_v111_measurement_read",
+        "r13_v111_measurement_correct"
+      ],
+      "existing_dialogue_ids": [
+        "MS14_D03_S01_L0002",
+        "MS14_D03_S03_L0033",
+        "MS14_D03_S03_L0035"
+      ],
+      "current": "시신·초상화와 측정기록 조사, 측정 시간 대조의 제출 관문이 있다.",
+      "revision": "사망 장면에서는 아이가 시신과 미완성 초상을 실제로 본 뒤 반응한다. 조사 중 아빠가 과도하게 다그치면 다람은 시간 비교를 요구한다. 정확한 선후관계의 결론은 제출 성공 뒤로 둔다.",
+      "proposed_dialogue": [
+        "아빠: 돌을 꺼냈다는 겁니까? 그 추위에요?",
+        "다람: 아빠, 언제였는지도 물어봐야지.",
+        "아빠: …제가 말이 앞섰습니다. 꺼낸 시각부터 알려 주시겠습니까?"
+      ],
+      "condition": "피코 사망판의 반응과 생존판의 재회는 분리한다. 우박을 만난 조사 구간에 질문을 넣고, 확정된 시간 설명은 measurement_correct 이후만 쓴다.",
+      "player_action_and_branch_constraints": "측정 대조·파단면·걸쇠 접근·거래 자료를 플레이어가 확보·제출한다. 조사 중 톡이 도난 수법을 먼저 완성하거나 실룩을 자동 지목하지 않는다."
+    },
+    {
+      "id": "E07",
+      "day": 7,
+      "title": "아픈 다람을 복도로 실제 옮기는 안전 인계",
+      "implementation_status": "7~8일 위치·연출 함께 수정 필요",
+      "source_files": [
+        "room13_v111_days610.rpy",
+        "room13_v111_owl_prevent.rpy",
+        "v111/newworld/d07.json",
+        "v111/newworld/d08.json"
+      ],
+      "source_labels": [
+        "r13_v111_room_visit7",
+        "r13_v111_handover7",
+        "r13_v111_incident7",
+        "r13_v111_promise_night7"
+      ],
+      "existing_dialogue_ids": [
+        "MS14_D07_S03_L0023",
+        "MS14_D07_S03_L0024",
+        "MS14_D07_S03_L0025",
+        "MS14_D07_S03_L0026",
+        "MS14_D07_S03_L0031"
+      ],
+      "current": "방 안에서 도토에게 아이를 부탁하는 흐름이다. 별도 예방 약속은 doto_promise7로 판정한다.",
+      "revision": "L0023~0026 부근의 기본 인계는 아이를 복도 의자로 안아 옮긴 뒤 한다. 아이·도토 배우 위치와 8일 재입실 진술을 함께 맞춘다. 재구성판처럼 아빠의 선택을 설명한다. 현 게임에 있는 까로 말만으로 의사가 안 나온다는 조건과 업고 갈 수 없다는 조건은 이식 때 삭제·대체 대상으로 삼는다. 조건을 그대로 둔 채 새 대사만 더하지 않는다.",
+      "proposed_dialogue": [
+        "서술: 다람을 안아 복도 의자에 앉히고 담요를 두른다.",
+        "아빠: 방에는 다시 들이지 말아 주세요. 아이 옆에 계시다가 더 아파하면 도움을 불러 주세요.",
+        "도토: 예. 여기서 보고 있겠습니다."
+      ],
+      "condition": "방에서 아이가 악화된 현재 분기에서만. 일반 인계로 doto_promise7을 새로 켜지 않는다.",
+      "player_action_and_branch_constraints": "누가 불러도 내려가지 않겠다는 별도 예방 약속·톡 도움·돌 예방 분기는 유지한다. 살인 본편의 재입실/거짓 호출은 8일 당사자 증언으로 제시한다. L0031의 기존 완료 효과 DOTO_location=inside_room13도 복도 인계·배우 배치와 함께 보정 대상이다. records 원문을 직접 고치지 않고 기존 호출 위치와 상태 처리에서 맞춘다. 위치 효과를 방 안에 둔 채 문장만 복도로 바꾸면 적용 완료가 아니다."
+    },
+    {
+      "id": "E08A",
+      "day": 8,
+      "title": "재입실 이유와 도토의 인계 위반",
+      "implementation_status": "7일 인계와 묶어 적용할 새 연결 대사",
+      "source_files": [
+        "room13_v111_days610.rpy",
+        "v111/newworld/d08.json"
+      ],
+      "source_labels": [
+        "r13_v111_custody8",
+        "r13_v111_room_evidence8"
+      ],
+      "existing_dialogue_ids": [
+        "MS14_D08_S01_L0013",
+        "MS14_D08_S01_L0016",
+        "MS14_D08_S02_L0027"
+      ],
+      "current": "다람의 방 안 공격 기억, 도토의 거짓 호출과 문틈 목격 진술이 있다.",
+      "revision": "왜 복도의 아이가 방 안으로 들어갔는지 질문하고, 도토가 이를 허용한 잘못을 인정한다. 엄마 글씨를 보고 싶었다는 동기를 새 결정증거로 만들지 않는다.",
+      "proposed_dialogue": [
+        "아빠: 복도에 있었잖아. 방에는 왜 들어갔어?",
+        "다람: 어르신이 엄마 글씨냐고 물었어. 문밖에서는 안 보여서 조금만 들어갔어.",
+        "도토: 글씨만 보고 나오겠다고 해서 허락했습니다. 제가 바로 앞에 있으니 괜찮을 줄 알았습니다."
+      ],
+      "condition": "부엉이 사망·다람 구금 경로의 면회와 도토 진술에서만. 아빠가 7일 떠난 뒤의 일을 전지적으로 보았다고 말하지 않는다.",
+      "player_action_and_branch_constraints": "위험 책임을 아이에게 전가하지 않는다. 도토가 끝까지 지킨 예방판에서는 재입실→공격→구금 연쇄를 공통 회상으로 내보내지 않는다."
+    },
+    {
+      "id": "E08B",
+      "day": 8,
+      "title": "촛대의 놓침·파손·아랫조각 재취득",
+      "implementation_status": "기억의 순서를 보완하는 대사 후보",
+      "source_files": [
+        "room13_v111_days610.rpy",
+        "v111/newworld/d08.json"
+      ],
+      "source_labels": [
+        "r13_v111_custody8",
+        "r13_v111_room_evidence8",
+        "r13_v111_tool_faces_seen8"
+      ],
+      "existing_dialogue_ids": [
+        "MS14_D08_S01_L0013",
+        "MS14_D08_S01_L0016",
+        "NW_D08_S01_T26",
+        "NW_D08_S01_A05",
+        "MS14_D08_S02_L0031",
+        "MS14_D08_S02_L0033"
+      ],
+      "current": "손목 방어, 두 조각과 손 위치 자료가 있으나 낙하 뒤 짧아진 손잡이를 다시 집는 과정이 끊겨 읽힐 수 있다.",
+      "revision": "면회 진술은 직접 기억한 동작과 소리만 연결한다. 파손 순간이나 머리 타격을 보았다는 진술을 새로 만들지 않는다.",
+      "proposed_dialogue": [
+        "다람: 두 손으로 밑을 잡고 손목을 쳤어. 그러고 놓쳤어. 바닥에서 쨍 했어.",
+        "다람: 천에서 연기가 나서 무서웠어. 발 옆에 손잡이가 있어서 집었는데 짧아져 있었어.",
+        "아빠: 위가 부러지는 걸 본 거야?",
+        "다람: 아니. 집었을 때 그랬어. 그걸 들고 침대 밑으로 갔어."
+      ],
+      "condition": "해당 공격을 겪은 사망·구금 경로의 기존 진술 자리. 하단 도구 소지는 새 물건 보상으로 처리하지 않는다.",
+      "player_action_and_branch_constraints": "손목 상처와 머리 상처의 차이, 핀/구리/천/양손 위치의 독립 입증은 기존 자료 조사와 제출에 남긴다. 두 번째 쿵 소리만으로 치명 타격의 시각·주체를 확정하지 않는다."
+    },
+    {
+      "id": "E09",
+      "day": 9,
+      "title": "책장판과 별도 판자문을 분명하게 구별",
+      "implementation_status": "정본 규칙 명시·양쪽 경로 동기화 필요",
+      "source_files": [
+        "room13_v111_days610.rpy",
+        "room13_revision.rpy",
+        "v111/newworld/d09.json"
+      ],
+      "source_labels": [
+        "r13_v111_passage_walk9",
+        "r13_v111_prevent_walk9"
+      ],
+      "existing_dialogue_ids": [
+        "NW_AUD_D09_01",
+        "MS14_D09_S01_L0015",
+        "MS14_D09_P01_L0003",
+        "MS14_D09_P01_L0006"
+      ],
+      "current": "책장 뒤 문에 안쪽 손잡이가 없다는 일부 문장은 수동 손잡이가 있는 책장판과 별도 판자문을 섞어 읽게 한다.",
+      "revision": "안쪽 손잡이가 없는 대상은 별도 판자문으로 명시한다. 현재 장치 확인에서 레버 고정→안쪽 수동 해제→방 쪽 책손잡이→혼자 왕복을 나누어 보여 준다. 소설의 설명 압축은 게임 안전 준비·통로 조작·자료 획득을 생략한다는 뜻이 아니다. E09_PASSAGE.observed의 안쪽 손잡이 없음 문장도 대사와 함께 고쳐야 한다. d09.json evidence[E09_PASSAGE].variants.observed 오버레이에서 책장판 수동 출구와 별도 판자문을 구분하고 같은 자료 ID를 유지한다.",
+      "proposed_dialogue": [
+        "따닥: 책장판 뒤에는 수동 손잡이가 있어요. 주방 레버가 내려가도 이쪽에서 밀어 나갈 수 있어요.",
+        "따닥: 안에서 못 여는 건 저 안쪽 판자문이에요. 책장판과 다른 문입니다.",
+        "서술: 레버를 올리고 손을 뗀다. 걸림턱에 걸린 채 그대로 있다."
+      ],
+      "condition": "안전 장비·동행 성인을 확보한 기존 통로 확인 경로. 살인판 passage_walk9와 예방판 prevent_walk9에 같은 기계 규칙을 적용한다.",
+      "player_action_and_branch_constraints": "플레이어의 안전 준비와 실제 통로 확인을 생략하지 않는다. 혼자 가능한 경로는 입증해도 할머니의 정확한 당시 손동작을 목격한 사실로 바꾸지 않는다. 별도 판자문을 반드시 지나야 하는 직렬 구조라는 새 평면도는 만들지 않는다. MS14_D09_S01_L0014/P01_L0012 완료 커밋의 E09_PASSAGE 획득·TTADAK_ALIVE·통로 완료와 쐐기·줄·문밖 성인의 안전 관문은 보존한다."
+    },
+    {
+      "id": "E10A",
+      "day": 10,
+      "title": "아빠가 아이 진술을 앞질러 단정하는 순간",
+      "implementation_status": "기존 청문 문답 안의 보강 후보",
+      "source_files": [
+        "room13_v111_days610.rpy",
+        "v111/newworld/d10.json"
+      ],
+      "source_labels": [
+        "r13_v111_hearing10",
+        "r13_v111_time10",
+        "r13_v111_contact_answer10"
+      ],
+      "existing_dialogue_ids": [],
+      "current": "증언과 여러 물증을 조합해 누명을 벗긴다. 두 번째 소리와 머리 타격을 곧바로 등치하면 증언 한계를 넘는다.",
+      "revision": "아빠의 조급한 질문을 아이가 바로잡고, 아빠가 양손 위치처럼 확인 가능한 질문으로 바꾼다.",
+      "proposed_dialogue": [
+        "아빠: 그 쿵 소리가 머리를—",
+        "다람: 아빠. 못 봤다고 했어.",
+        "아빠: 그래. 네가 본 것만 말해 줘. 그때 왼손은 어디 있었니?"
+      ],
+      "condition": "이미 면회에서 들은 소리 진술을 다시 묻는 청문 자리. 아이 양손 관찰 자료를 아직 제출하지 않았다면 결론을 덧붙이지 않는다.",
+      "player_action_and_branch_constraints": "상처·통로·소유·시각·포장체의 기존 증거 제출을 유지한다. 화를 내는 아빠의 행동으로 범행이나 고의가 자동 확정되지 않는다."
+    },
+    {
+      "id": "E10B",
+      "day": 10,
+      "title": "엄마의 연락 경로를 실제로 복구",
+      "implementation_status": "소설에 추가한 연결 각색·게임 미구현",
+      "source_files": [
+        "room13_v111_days610.rpy",
+        "room13_v111_days1114.rpy",
+        "v111/newworld/d10.json",
+        "v111/newworld/d11.json"
+      ],
+      "source_labels": [
+        "r13_v111_bench10",
+        "r13_v111_mother_life11",
+        "r13_v111_mother_last11"
+      ],
+      "existing_dialogue_ids": [
+        "MS14_D10_S04_L0011",
+        "MS14_D10_S04_L0014",
+        "MS14_D11_S02B_L0031",
+        "MS14_D11_S02B_L0035"
+      ],
+      "current": "부리 별지의 통 주소와 11일 엄마의 연락 회고가 있다. 9일 부탁→10일 초롱 구두 확인은 현재 실행 대본에 없다.",
+      "revision": "10일 별지를 필사한 뒤 초롱이 같은 통 위치를 직접 확인해 준다. 11일 엄마 문답도 사건 인지 9일→즉시 직접 전달 부탁으로 맞춘다. 초롱의 전언은 다람도 같은 자리에서 직접 듣는다. 10일 가족의 도착을 엄마가 몰랐다는 옛 질문은 5일 공개와 모순되므로 초대 위조 사실을 엄마에게 전하자는 말로 대체한다.",
+      "proposed_dialogue": [
+        "초롱: 어제 부인께 아이 소식을 전했습니다. 펌프집 셋째 말뚝 통에 만날 곳을 적어 두셨다고, 가족에게 직접 알려 달라셨습니다.",
+        "다람: 거기에 엄마가 있어요?",
+        "초롱: 쪽지를 둔 곳이에요. 그걸 따라가면 있는 곳을 알 수 있어요."
+      ],
+      "condition": "부엉이 사망·청문 승리·다람 석방·부리 별지 필사 뒤이며 초롱이 생존하고 연락 가능한 상태에서만. 현재 bench10 출연자에는 초롱이 없어 등장/이동도 함께 설계해야 한다.",
+      "player_action_and_branch_constraints": "기존 통·뿌리집·이전쪽지·토실 안전 인계·온실 조사 동선은 유지한다. 새 자료ID 없음. 다른 승패/생존판에는 무조건 붙이지 않는다. 구 r13_mother_intervention 재활성화가 아니다."
+    },
+    {
+      "id": "E11A",
+      "day": 11,
+      "title": "재회 때 원망과 연락 확인의 약속",
+      "implementation_status": "문답 보강·단일 경로 날짜 분리",
+      "source_files": [
+        "room13_v111_days1114.rpy",
+        "v111/newworld/d11.json"
+      ],
+      "source_labels": [
+        "r13_v111_mother_life11",
+        "r13_v111_mother_invitation11",
+        "r13_v111_mother_last11"
+      ],
+      "existing_dialogue_ids": [
+        "MS14_D11_S02B_L0023",
+        "MS14_D11_S02B_L0031",
+        "NW_D11_S02B_A01"
+      ],
+      "current": "첫날 마차 목격과 연락 시도는 있으나 독자가 왜 가족을 만나지 않았는지 충분히 납득하기 어렵다.",
+      "revision": "다람이 먼저 그때도 안 왔다는 원망을 말한다. 엄마는 보낸 일과 받은 일을 구분하고, 앞으로 이동 장소·받은 사람을 가족끼리 확인한다. 이번 연결 개정에서는 첫날 목격/입구 통제를 5일 첫 답장에 앞당겼다. 이를 적용하는 경로의 11일은 처음 듣고 놀라는 문답 대신 기다림·구금의 상처를 다룬다. 기존 저장에 추가 대사를 읽었다고 소급하지 않는다.",
+      "proposed_dialogue": [
+        "다람: 그때도 안 왔잖아.",
+        "엄마: 응. 안전한 방법만 찾다가 네가 기다리는 걸 뒤로 미뤘어.",
+        "다람: 다음에는 나도 어디 있는지 들어야 해.",
+        "엄마: 그래. 너한테도 직접 말할게."
+      ],
+      "condition": "실제 재회 이후. 첫날 마차를 봤다는 사실을 가족의 이후 위치·안전까지 알았다는 사실로 확대하지 않는다. 9일 구금 소식은 이번 소설 사망판에만 해당한다.",
+      "player_action_and_branch_constraints": "부엉이 생존판, 위조 확인 여부, 가족 구금·이송의 정보차를 보존한다. 기존 문답에서 이미 한 질문을 새 독백으로 또 설명하지 않는다."
+    },
+    {
+      "id": "E11B",
+      "day": 11,
+      "title": "엄마의 해설 앞에 실제 관찰을 놓기",
+      "implementation_status": "기존 관찰·자료를 활용하는 배치안",
+      "source_files": [
+        "room13_v111_days1114.rpy",
+        "v111/newworld/d11.json"
+      ],
+      "source_labels": [
+        "r13_v111_heat_seen11"
+      ],
+      "existing_dialogue_ids": [
+        "NW_D11_WARM_A01",
+        "NW_D11_WARM_A02"
+      ],
+      "current": "11일에는 실제 벽화·석판·이름 조사와 이전 받침 온기 회상이 이미 있다.",
+      "revision": "다람이 3일 돌 반환 뒤 받침이 따뜻해진 일을 먼저 질문한다. 엄마의 연구 해석은 관찰과 나누고, 전체 원리의 입증은 기존 가설 제출 뒤로 둔다.",
+      "proposed_dialogue": [
+        "다람: 그 돌을 제자리에 넣었을 때는 따뜻했잖아. 그런데 방에서는 왜 아팠어?",
+        "엄마: 제자리에 둔 돌과 꺼내 쓰는 돌을 나눠 보자. 우리가 직접 본 것부터."
+      ],
+      "condition": "해당 3일 관찰을 실제로 본 상태일 때만 회상한다. 보지 않은 저장판에서는 엄마/톡의 증언 등 현재 획득 경로를 먼저 거친다. 실제 회상 조건은 stone_warm_felt3==True이며 restore3에서 설정된다.",
+      "player_action_and_branch_constraints": "벽화→석판→이름의 조사와 NW_TABLET_A/NW_NAMES 획득 커밋 유지. 기존 증거 묶음·원리 판정 변경 없음. 새 실험, 측정장부, 희생 장면을 만들지 않는다."
+    },
+    {
+      "id": "E12",
+      "day": 12,
+      "title": "독극물 범인 확정보다 먼저 배식을 멈추기",
+      "implementation_status": "기존 예방 행동 유지·감정 호흡 보강",
+      "source_files": [
+        "room13_v111_days1114.rpy",
+        "v111/newworld/d12.json"
+      ],
+      "source_labels": [
+        "r13_v111_meal_choice12",
+        "r13_v111_meal_inspect12",
+        "r13_v111_premeal12"
+      ],
+      "existing_dialogue_ids": [
+        "MS14_D12_A_L0002",
+        "MS14_D12_A_L0008"
+      ],
+      "current": "작은 냄비·흰 그릇·약병 관찰, 배식 전 분리 행동, 병 조각 대조의 순서와 경로가 있다.",
+      "revision": "소설은 조사 반복을 줄였지만 게임에서는 관찰과 배식 중단을 플레이어가 실행한다. 인물은 불안과 아이 확인에 반응하며 범인을 미리 말하지 않는다.",
+      "proposed_dialogue": [
+        "다람: 그 그릇, 아까 가져온 거야?",
+        "아빠: 잠깐만요. 확인할 때까지 아이들한테 주지 마세요.",
+        "서술: 아이들 앞의 그릇을 한쪽으로 옮긴다."
+      ],
+      "condition": "meal_inspect12에서 작은 냄비·흰 그릇·약병을 실제 확인하고 분리 행동을 고른 배식 전 경로. sp_separate12 또는 premeal12에 배치한다. bottle_match12와 soup_final12는 중단 행동 이후의 조사·입증 지점이며 중단 대사를 삽입할 위치가 아니다.",
+      "player_action_and_branch_constraints": "soup_smallpot_seen12/soup_bowls_seen12/soup_bottle_seen12, fate_soup/route12의 기존 판정을 유지한다. 선생님은 guard 감독 경로에서 너울·수레로 넘기지 않는다."
+    },
+    {
+      "id": "E13",
+      "day": 13,
+      "title": "다람의 담요 추리와 플레이어 제출을 함께 살리기",
+      "implementation_status": "제출 전 질문·제출 뒤 결론 분리",
+      "source_files": [
+        "room13_v111_days1114.rpy",
+        "v111/newworld/d13.json"
+      ],
+      "source_labels": [
+        "r13_v111_blanket_mended13",
+        "r13_v111_blanket_lie13",
+        "r13_v111_mending_proof13",
+        "r13_v111_mending_answer13"
+      ],
+      "existing_dialogue_ids": [
+        "MS14_D13_S01_L0011",
+        "MS14_D13_S03_L0017",
+        "MS14_D13_S03_L0019"
+      ],
+      "current": "아침 수선 후 E13_MENDING을 얻고 광장에서 해당 증거를 제출한다.",
+      "revision": "소설에서는 다람이 모순을 먼저 알아채 탑승을 막는다. 게임에서는 새 무늬라는 주장 범위를 다람이 되묻고, 플레이어가 수선 자료를 제출한 뒤 아이가 결론을 말한다.",
+      "proposed_dialogue": [
+        "[제출 전] 다람: 담요를 보셨다는 거예요? 여기 붙인 새를 보셨다는 거예요?",
+        "[E13_MENDING 제출 성공 뒤] 다람: 이 새는 오늘 아침에 내가 잡고 붙였어. 어제는 없었어.",
+        "[입증 뒤] 다람: 나도 기다린다는 편지 믿고 왔는데 엄마가 없었어. 그냥 타면 안 돼."
+      ],
+      "condition": "아침 수선 참여/자료 획득 이후이며 정답 결론은 mending_answer13 진입 뒤에만.",
+      "player_action_and_branch_constraints": "meeting:blanket 승/부분/패, 오답·취소·재시도 유지. 수선만으로 촌장 전날 소재까지 확정하지 않고 NW_HALL_WINDOW 등 다음 제출을 거친다. 실제 수레 3명/추가 인원 조건과 각 학교 인수도 유지."
+    },
+    {
+      "id": "E14A",
+      "day": 14,
+      "title": "제단 원리와 할머니 동기",
+      "implementation_status": "기존 관찰 회수·정본 충돌 조정 필요",
+      "source_files": [
+        "room13_v111_days1114.rpy",
+        "v111/newworld/d14.json"
+      ],
+      "source_labels": [
+        "r13_v111_altar14",
+        "r13_v111_altar2_won14",
+        "r13_v111_device14"
+      ],
+      "existing_dialogue_ids": [
+        "MS14_D14_S02_L0007",
+        "NW_A2_W01",
+        "NW_A2_W04",
+        "NW_D14_S03_P02"
+      ],
+      "current": "도면·석판·덧쇠·인수장·배급 기록이 있다. NW_D14_S03_P02의 노인만 밤새 두려 했다는 말은 최신 서사 결정의 최초 의도와 충돌한다.",
+      "revision": "현장과 옛 도면의 같은 아래몸체/나중 쇠를 먼저 비교한다. 역운용 결론은 해당 자료 제출 뒤. 할머니 최초 의도와 이후 누명 계획은 최신 정본에 맞춰 관련 문답을 함께 수정해야 한다.",
+      "proposed_dialogue": [
+        "[관찰] 아빠: 도면에 있는 아래몸체는 그대로군요. 여기 덧댄 쇠는 그려져 있지 않습니다.",
+        "[입증 뒤] 엄마: 원래 기능과 반대 방향으로 쓰고 있어. 다만 이 기록만으로 모과 씨의 마지막까지 알 수는 없어."
+      ],
+      "condition": "관찰은 실제 현장 조사 이후, 결론은 altar 증명 성공 뒤. 이번 소설의 사망·가족 생존 일반결말 경로에 한정한 고백을 공통 대사로 만들지 않는다.",
+      "player_action_and_branch_constraints": "수첩 소각자 미확인·모과 현재 생사 미확인 유지. 보미의 죽음은 기존 목격 확인으로 좁힌다. 최신 정본과 충돌하는 P02는 문장 하나 덧붙여 양립시키지 말고 관련 진술 전체를 맞춘다. 새 피해자나 실험·증거ID 없음."
+    },
+    {
+      "id": "E14B",
+      "day": 14,
+      "title": "행정 절차를 줄여도 실제 마무리는 남기기",
+      "implementation_status": "소설 압축·게임 행동 유지",
+      "source_files": [
+        "room13_v111_days1114.rpy",
+        "v111/newworld/d14.json"
+      ],
+      "source_labels": [
+        "r13_v111_device_detached14",
+        "r13_v111_device_locked14",
+        "r13_v111_supply_inventory_done14",
+        "r13_v111_lamp_assignment14",
+        "r13_v111_cookie14",
+        "r13_v111_cookie_scene14"
+      ],
+      "existing_dialogue_ids": [],
+      "current": "장치 분리·공동 보관·학교 생활·가족 결말에 각각 상태 변화가 있다.",
+      "revision": "반복 설명은 짧게 하고 가족의 행동으로 끝낸다. 다람은 다음날 어디서 기다릴지 자신도 직접 듣겠다고 결정한다. 후속 연구의 절차 목록은 덜고 아직 검증 전이며 총량 증가가 없다는 한계만 짧게 둔다.",
+      "proposed_dialogue": [
+        "다람: 내일 길 물어보러 갈 때 나도 갈래. 어디서 기다려야 하는지 내가 들을 거야.",
+        "엄마: 같이 가자. 가기 전에 셋이 다시 이야기하고."
+      ],
+      "condition": "ending14=='morning'이고 night14_lodging=='school'이며 엄마·다람이 현재 함께 있는 경로. cookie_scene14의 MS14_D14_S05_L0021 뒤~L0022 또는 ending_last14 앞에 배치한다. cookie_scene14는 다른 결말도 합류하므로 학교 숙박을 무조건 출력하지 않는다. family_ending14/family_lodging14는 별도 가족 우선 결말이며 이번 일반 학교 마무리의 삽입점으로 쓰지 않는다.",
+      "player_action_and_branch_constraints": "current_transport_chain_stopped/device_detached/device_joint_control, 실제 잠금함·열쇠·입회와 학교 열원 연결 행동 유지. 산길을 열거나 즉시 귀향하지 않는다. 잔량 집중 성공·모두 회복·총에너지 증가를 새 결말로 쓰지 않는다."
+    }
+  ],
+  "global_invariants": [
+    "새 UI/에셋/정답자료 ID/판정·생사 변경 없음",
+    "신규 대사는 dNN.json before/after/blocks로 작성. 제안 ID는 실제 구현 시 충돌 없는 새 대사 ID를 부여하되 자료 ID는 만들지 않음",
+    "기존 records.json 원문/operations 직접 수정 금지",
+    "r13_v111_proof의 자료선택취소/자료회수/빈제출/되묻기/오답후재시도 및 마지막실패 보존",
+    "새 결합 when은 정의 없이 쓰지 말고 기존 rpy if로 범위를 묶거나 R13_NW_WHEN 정의와 함께 구현 검토",
+    "소설의 피코사망·실룩석방·네아이인계·모든회의승리 한 경로를 공통 게임 대사로 복사하지 않음",
+    "노벨의 아빠 1인칭 과거 서술은 게임 대사로 그대로 복사하지 않는다. 게임의 현재 장면과 배우 위치에 맞춘다.",
+    "생존/사망/예방/실패/재시도/자료 취소/정답 미보유/저장 복원 상태별 출력 조건을 확인한다.",
+    "실제 구현 때 신규 대사 ID는 중복 없이 부여할 수 있지만 새 증거 ID와 판정은 만들지 않는다. 이 JSON은 게임에서 곧바로 실행하는 패치가 아니다."
+  ],
+  "structure_revision_items": [
+    {
+      "day": 3,
+      "title": "다람의 발견이 다음 확인을 시작한다",
+      "before": "다람이 쇳조각을 발견한 뒤 다음 확인의 질문은 아빠에게 넘어간다.",
+      "after": "다람이 초롱의 청소 때도 조각이 있었는지 먼저 묻는다. 아빠는 질문을 이어받아 시각과 기록을 비교한다.",
+      "game": "조사 중에는 조각 유무를 묻는 질문만 준다. 수리·측정·청소의 선후관계와 혐의 결론은 기존 자료 제출 뒤에 둔다.",
+      "labels": [
+        "r13_v111_lamp_log3",
+        "r13_v111_measurement_proof",
+        "r13_v111_measurement_correct"
+      ]
+    },
+    {
+      "day": 5,
+      "title": "반박에서 다음 조사로 이어지는 다람",
+      "before": "다람이 네로의 알리바이를 상기시킨 뒤 아빠가 다음 조사를 이어 간다.",
+      "after": "다람이 나비에게 함께 확인하자고 제안한다. 실제 확인을 거쳐 초소에서 공유 겉옷의 주인과 착용자를 구별한다.",
+      "game": "NW_D04_S04_N02 등 실제 들은 나비의 목격을 회상한다. 아이의 질문으로 정답 자료를 자동 지급하거나 네로 무혐의를 선판정하지 않는다.",
+      "labels": [
+        "r13_v111_somi5",
+        "r13_v111_proof5",
+        "r13_v111_bami_clear5"
+      ]
+    },
+    {
+      "day": 6,
+      "title": "오늘 밤을 바꾸려는 아이의 선택",
+      "before": "위험한 문과 뒤창을 본 뒤 아빠가 학교 자리를 부탁한다.",
+      "after": "다람이 담요만 두고 가면 다시 창고에서 자야 한다는 점을 짚고 오늘 학교 자리를 구하자고 한다. 허락·담요 조달·네 아이 이동으로 이어진다.",
+      "game": "문·창의 관찰은 플레이어가 직접 한다. 기존 학교 허락과 실제 아이 인수는 유지한다. 학교 담요 차용은 현행 선후 연결이 비어 있어 별도 동선 보완 대상으로 남긴다. 구조 성공 상태를 다람의 말만으로 켜지 않는다.",
+      "labels": [
+        "r13_v111_woodshed_seen6",
+        "r13_v111_seat6",
+        "r13_v111_children_ready6",
+        "r13_v111_handoff_done6"
+      ]
+    },
+    {
+      "day": 7,
+      "title": "조건으로 강요된 이별을 아빠의 판단으로 바꾼다",
+      "before": "까로의 말만으로 의사가 나오지 않는다는 이유와 얼음길 때문에 업고 갈 수 없다는 이유가 겹친다.",
+      "after": "아빠가 도토를 믿고 아이를 복도에 잠시 맡겨 직접 도움을 구하러 간다. 그 선택을 불가피한 정답으로 변호하지 않고, 이후 아이의 말 앞에서 실패를 감당한다.",
+      "game": "기본 복도 인계는 별도 예방 약속과 다르다. doto_promise7을 자동으로 켜지 않는다. 7일 배우 위치와 8일 재입실·도토 진술을 묶어 수정한다.",
+      "labels": [
+        "r13_v111_handover7",
+        "r13_v111_incident7",
+        "r13_v111_custody8",
+        "r13_v111_promise_night7"
+      ]
+    },
+    {
+      "day": 9,
+      "title": "장치 설명보다 실제 길을 따라간다",
+      "before": "기계 조건 확인과 통행·요약이 반복되며 기억할 문 이름이 많다.",
+      "after": "감독하 단독 왕복 동작을 중심으로 방 쪽 책손잡이와 통로 쪽 수동 손잡이의 차이를 보여 준다. 별도 판자문은 같은 문처럼 섞어 쓰지 않는다.",
+      "game": "안전 준비와 실제 통로 조사는 플레이어가 한다. 유지식 레버, 레버와 독립된 안쪽 수동 출구, 레버가 필요할 때의 방 쪽 조작을 보존한다. 별도 판자문의 새 평면도는 만들지 않는다.",
+      "labels": [
+        "r13_v111_passage_walk9",
+        "r13_v111_prevent_walk9"
+      ]
+    },
+    {
+      "day": 11,
+      "title": "엄마 설명을 듣기 전에 가설을 갖게 한다",
+      "before": "재회 뒤 연구 설명과 관찰 목록을 연속으로 듣는 비중이 높다.",
+      "after": "다람이 돌을 제자리에 놓았을 때의 온기와 방 안에서 아팠던 경험을 연결해 묻는다. 현장·도면을 보고 범위를 좁힌 뒤 엄마가 연구 해석과 아직 모르는 점을 구별한다.",
+      "game": "stone_warm_felt3==True일 때만 3일 받침 온기를 회상한다. 벽화·석판·이름을 직접 조사하고 기존 가설 제출을 거친다. 새로운 실험·측정 장부·자료ID는 추가하지 않는다.",
+      "labels": [
+        "r13_v111_mother_life11",
+        "r13_v111_mother_last11",
+        "r13_v111_heat_seen11"
+      ]
+    },
+    {
+      "day": 12,
+      "title": "설명보다 배식 중단 행동을 앞세운다",
+      "before": "봉인·병·취급 시각을 거듭 묻는 동안 사건의 긴장이 나뉜다.",
+      "after": "아직 먹지 않은 그릇과 작은 냄비를 확인하는 행동에 집중한다. 선생님의 아이 돌봄과 내일을 말하기 어려워하는 반응을 범행 해명 전에 보인다.",
+      "game": "관찰과 분리 행동은 기존 입력으로 남긴다. 범인 확정 전에 먹는 일을 멈추되, 이미 먹은 피해판과 예방판의 대사를 섞지 않는다.",
+      "labels": [
+        "r13_v111_meal_choice12",
+        "r13_v111_meal_inspect12",
+        "r13_v111_premeal12"
+      ]
+    },
+    {
+      "day": 14,
+      "title": "반복 설명을 줄이고 가족의 장면으로 끝낸다",
+      "before": "원리·장치 보관·후속 연구 절차의 설명이 가족의 마무리 사이에 길게 들어간다.",
+      "after": "앞서 본 도면과 현장 덧쇠의 차이로 질문을 만들고, 입증한 사실의 재열거를 덜어 낸다. 잔량 활용은 아직 연구라는 한계를 남기고 코 완성과 과자 장면을 잇는다.",
+      "game": "제단 입증, 운송 중단, 쇠 분리·공동 보관의 커밋은 유지한다. NPC가 답을 먼저 말하지 않는다. 새로운 열원 성공·전원 회복·즉시 귀향 결말을 추가하지 않는다.",
+      "labels": [
+        "r13_v111_altar2_proof14",
+        "r13_v111_altar2_won14",
+        "r13_v111_device_detached14",
+        "r13_v111_device_locked14",
+        "r13_v111_cookie14",
+        "r13_v111_cookie_scene14"
+      ]
+    }
+  ],
+  "contact_distribution_items": [
+    {
+      "day": 2,
+      "novel": "교환함 쪽지에 아내 이름으로 받은 편지를 보고 왔다고 쓴다. 엄마가 5일 답장에서 그 편지는 자신이 쓰지 않았다고 답할 근거를 보완한다.",
+      "source_labels": [
+        "r13_v111_box_note",
+        "r13_v111_box_written"
+      ],
+      "source_ids": [
+        "MS14_D02_S01_L0039"
+      ],
+      "game": "기존 직접 쪽지 작성 행동은 유지한다. 실제 표시되는 쪽지/작성 문구를 먼저 대조해 초대 편지를 받았다는 말을 보완하며, 완료 커밋과 새 자료 지급은 바꾸지 않는다."
+    },
+    {
+      "day": 5,
+      "novel": "엄마가 첫날 마차를 봤고, 입구 지시를 듣고 돌아섰으며, 초롱 길목·교환함에도 안전하게 접근하지 못했던 일을 첫 답장에서 알린다. 가족은 이때 그 사실을 처음 안다.",
+      "source_labels": [
+        "r13_v111_warning_read5"
+      ],
+      "source_ids": [
+        "MS14_D05_S04_L0005",
+        "MS14_D05_S04_L0006",
+        "MS14_D05_S04_L0014",
+        "MS14_D05_S04_L0027"
+      ],
+      "game": "실제 편지 전문은 days45.rpy warning_read5의 L0006:first/rest 직접 출력문도 거친다. d05의 E27 설명만 바꾸지 말고 표시 본문·증거 설명·가족 반응을 함께 맞춘다. 초대위조 비교와 mother_denies_invitation은 기존 플레이어 제출 뒤에 남긴다."
+    },
+    {
+      "day": 8,
+      "novel": "6일 발신 경고에 숨은 곳 앞 발소리 때문에 옮겼다는 사정을 넣는다. 현재 주소와 7일 이후 사건은 쓰지 않는다. 이미 여관에 묵는 가족에게 자연스럽게 경고하도록 머물지 말라는 문장으로 고친다.",
+      "source_labels": [
+        "r13_v111_mother_letter8",
+        "r13_v111_letter_murder8",
+        "r13_v111_letter_prevent8"
+      ],
+      "source_ids": [
+        "MS14_D08_S04_L0012",
+        "MS14_D08_S04_L0020",
+        "MS14_D08_S04_L0033"
+      ],
+      "game": "살인/예방 경로의 실제 편지 본문과 E08_RECENT_LETTER 설명을 함께 맞춘다. written_day6_received_day8, mother_location=unknown, mother_secret_shared=False를 유지한다. 소설의 사망·구금 경로 정보를 생존판 편지에 넣지 않는다."
+    },
+    {
+      "day": 9,
+      "novel": "아빠가 다람에게 경고를 직접 읽어 준다. 아이가 독자처럼 먼저 전문을 안 것으로 취급하지 않는다.",
+      "source_labels": [
+        "r13_v111_custody_night9"
+      ],
+      "source_ids": [],
+      "game": "편지의 실제 수신·가족 재독 여부와 구금 경로를 확인한다. 새 경고 문구를 바꾸면 뒤의 인용·요약도 함께 맞춘다."
+    },
+    {
+      "day": 10,
+      "novel": "초롱이 전날 엄마에게 부엉이 사망·다람 구금을 알렸다고 아이 앞에서 말한다. 엄마의 통 위치 직접 전달 부탁과 부리 별지의 같은 주소를 확인한다.",
+      "source_labels": [
+        "r13_v111_bench10"
+      ],
+      "source_ids": [
+        "MS14_D10_S04_L0011",
+        "MS14_D10_S04_L0014",
+        "MS14_D10_S04_L0027"
+      ],
+      "game": "9일 인지→10일 구두전언은 이전 개정판부터 추가한 소설 연결이다. 현 게임에 이미 있는 대사라고 보고하지 않는다. 부리 원본/아빠 필사, 통 주소 최초 공개, 다음날 기존 조사 경로는 유지한다. E10_PUMP의 last_used_day6는 별지의 마지막 기재 날짜로 의미를 한정해야 9일 쪽지와 모순이 없다."
+    },
+    {
+      "day": 11,
+      "novel": "첫날 목격에 다시 놀라거나 연락 날짜를 재연하지 않는다. 엄마가 아이의 멍을 보고, 가족의 기다림과 구금을 마주한 뒤 두려움·판단 실패를 인정한다.",
+      "source_labels": [
+        "r13_v111_mother_life11",
+        "r13_v111_mother_last11"
+      ],
+      "source_ids": [
+        "MS14_D11_S02B_L0023",
+        "MS14_D11_S02B_L0031",
+        "MS14_D11_S02B_L0037"
+      ],
+      "game": "mother_q_life/invitation/return의 진행 완료는 정보 분산과 별개다. 질문 대사만 줄이다 mother_ready11 진입을 막지 않는다. E27 소지/mother_warning_received는 기존 저장에서 새 편지 추가정보까지 읽었다는 보장이 아니다. 알았다는 회상을 강요하지 않는 짧은 재확인 또는 의미별 읽음 처리와 저장 호환을 검토한다."
+    }
+  ],
+  "latest_editorial_scope": "사건·생사·진상·증거 정답은 유지하고 기존 사실의 공개 시점과 장면의 목적을 바꿨다. 이전 49항목의 게임 소스 현황과 이번 소설 공개 순서는 구별한다.",
+  "prose_polish_note": {
+    "scope": "소설 문장의 반복 확인을 압축한 퇴고. 게임 본편에는 미반영.",
+    "adaptation_rule": "소설에서 묶어 서술한 조달·운반·인수·보관도 게임에서는 필요한 플레이어 선택, 실제 행동, 상태 저장과 완료 조건을 유지한다. 기존 대사안의 증거·플래그·시점 조건을 삭제하는 근거로 사용하지 않는다."
+  }
+}

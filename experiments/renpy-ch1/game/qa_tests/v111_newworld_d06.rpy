@@ -40,6 +40,14 @@ testcase v111_nw_d06_afternoon_today:
     click "꼬미"
     pause 1.0
     click "학교에 자리가 났어. 같이 갈래?"
+    # 학교 담요를 실제로 빌린 뒤, 아이들이 기다리는 창고로 지도에서 돌아간다.
+    click pos (900,600) until eval (renpy.get_screen("r13_hub") and room13["v111"].get("travel_to")=="v111_woodshed") timeout 40
+    assert eval (room13["location"]=="school" and r13_v111_value("school_blankets_prepared6") is True)
+    assert eval (r13_v111_value("warehouse_children_school_handover")!=4 and r13_v111_value("FIRE_EVACUATED") is not True)
+    click "지도" until screen "r13_map" timeout 30
+    pause until eval renpy.get_screen("r13_map").scope["ready"] timeout 30
+    assert eval (renpy.get_screen("r13_map").scope["selected"]=="v111_woodshed")
+    click id "r13_map_travel"
     click pos (900,600) until eval (qa_nw_seen("가서 또 쫓겨나는 거 아니지")) timeout 30
     assert eval (r13_v111_value("choice:MS14_D06_S02")=="today" and r13_v111_value("evacuation_requested") is True)
     screenshot "v111_nw_d06_fetch.png"

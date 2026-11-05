@@ -466,6 +466,14 @@ label r13_v111_cloth_match5:
     call r13_lines(r13_v111_lines(['MS14_D05_S02_L0030']),'v111:MS14_D05_S02_L0030')
     $ r13_v111_commit('MS14_D05_S02_L0031')
     call r13_lines(r13_nw_block('clinic_next5'),'nw:clinic_next5')
+    jump r13_v111_nabi_confirm5
+
+label r13_v111_nabi_confirm5:
+    # 소설 개정: 전날 들은 알리바이를 당사자에게 재확인한다. 자료·회의 판정은 여기서 주지 않는다.
+    $ room13["v111"]["people"]=[]
+    call r13_v111_travel('dining','nabi_confirm5',['daram','resident_nero','resident_badook'])
+    $ r13_v111_arrive(['daram','resident_nero','resident_badook','nabi'])
+    call r13_lines(r13_nw_block('nabi_confirm5'),'nw:nabi_confirm5')
     jump r13_v111_hearing5
 
 label r13_v111_hearing5:
@@ -493,6 +501,7 @@ label r13_v111_proof5:
 label r13_v111_wrong5:
     if r13_nw_retry("gate_post",["E20","E22","E23","E24"],None):
         call r13_lines(r13_v111_lines(["MS14_D05_S03_L0038","MS14_D05_S03_L0039"]),"v111:MS14_D05_S03_L0038")
+        call r13_lines(r13_nw_block('gate_post_retry_feeling5'),'nw:gate_post_retry_feeling5')
         jump r13_v111_proof5
     $ r13_nw_meeting_end("gate_post","lose")
     $ r13_nw_list("bami","gate_post_lose")
@@ -510,6 +519,8 @@ label r13_v111_bami_clear5:
     call r13_lines(r13_v111_lines(['MS14_D05_S03_L0013']),'v111:MS14_D05_S03_L0013')
     call r13_lines(r13_v111_lines(['MS14_D05_S03_L0014']),'v111:MS14_D05_S03_L0014')
     call r13_lines(r13_v111_lines(['MS14_D05_S03_L0015']),'v111:MS14_D05_S03_L0015')
+    $ r13_v111_join(['nabi'])
+    call r13_lines(r13_nw_block('nabi_hearing5'),'nw:nabi_hearing5')
     call r13_lines(r13_v111_lines(['MS14_D05_S03_L0016']),'v111:MS14_D05_S03_L0016')
     call r13_lines(r13_v111_lines(['MS14_D05_S03_L0017']),'v111:MS14_D05_S03_L0017')
     call r13_lines(r13_v111_lines(['MS14_D05_S03_L0018']),'v111:MS14_D05_S03_L0018')
@@ -553,10 +564,12 @@ label r13_v111_envelope5:
 
 label r13_v111_warning_read5:
     $ r13_v111_commit('MS14_D05_S04_L0005')
-    call r13_lines([(None,'“당신과 다람이를 부른 적 없어.',dict(no_lead=True,v111_silence_after=True))],'v111:MS14_D05_S04_L0006:first')
+    call r13_lines(r13_nw_block('warning_first5'),'nw:warning_first5')
     $ renpy.music.stop(fadeout=0.0 if renpy.is_skipping() else .15)
     $ room13["v111"]["music_hold"]=room13["v111"]["scene"]
-    call r13_lines([(None,'그 편지는 내가 쓴 게 아니야. 나를 찾는 곳이나 이 편지 이야기를 여관에 말하지 마. 당장 만나러 내려갈 수 없어. 초롱에게 답을 맡겨 줘. 먹을 것과 마른 천이 필요해. 다람이 손은 괜찮아? 겨울이면 또 트는데.”',dict(no_lead=True))],'v111:MS14_D05_S04_L0006:rest')
+    call r13_lines(r13_nw_block('warning_rest5'),'nw:warning_rest5')
+    # 전문 청취와 기존 봉투 획득은 구분한다. 예전 저장의 E27 보유만으로 새 설명을 들었다고 소급하지 않는다.
+    $ r13_v111_set('mother_first_contact_read5',True)
     call r13_lines(r13_v111_lines(['MS14_D05_S04_L0007']),'v111:MS14_D05_S04_L0007')
     call r13_lines(r13_v111_lines(['MS14_D05_S04_L0008']),'v111:MS14_D05_S04_L0008')
     call r13_lines(r13_v111_lines(['MS14_D05_S04_L0009']),'v111:MS14_D05_S04_L0009')

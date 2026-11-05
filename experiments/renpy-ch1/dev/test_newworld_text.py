@@ -32,6 +32,7 @@ class Layer(unittest.TestCase):
   if art is not None:
    real=stub.loadable;stub.loadable=lambda p:real(p) or p in art
   self.env.update(renpy=stub,json=json,R13_V111=data,MS14_SPEAKERS=SPEAKERS,ROOM13=dict(evidence=evidence),R13_RECORD_SHORT={},
+   r13_v111_actor_ready=lambda person:self.env['r13_v111_person_alive'](person),
    R13_RECORD_CATEGORIES={'물증':'evidence','기록':'evidence','관찰기록':'evidence','증언':'testimony'},
    R13_MEETING_BEATS={k:None for k in re.findall(r'^        "(\w+)": \(',(ROOT/'game/systems/room13_meeting_direction.rpy').read_text(),re.M)},
    R13_FULLBODY_PLAIN={'neutral','joy','anxious','angry','surprise','flustered'},

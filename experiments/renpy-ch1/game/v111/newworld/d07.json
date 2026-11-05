@@ -88,10 +88,17 @@
       "text": "에휴, 제가 길 압니다. 눈 치운 길은 뒤로 돌아요.{w=.3}\n혼자 뛰다간 미끄러져요. ……나도 아까 미끄러졌고.",
       "expression": "flustered"
     },
-    "MS14_D07_S03_L0024": {
-      "text": "제 장부 일도 여기서 할게요.{w=.3} 다람아, 아저씨는 문 바로 밖에 있을게.",
-      "expression": "flustered"
-    },
+    "MS14_D07_S03_L0024": [
+      {
+        "text": "제 장부 일도 여기서 할게요. 다람아, 아저씨가 바로 옆에 있을게.",
+        "expression": "flustered",
+        "when": "corridor_handover7"
+      },
+      {
+        "text": "제 장부 일도 여기서 할게요.{w=.3} 다람아, 아저씨는 문 바로 밖에 있을게.",
+        "expression": "flustered"
+      }
+    ],
     "MS14_D07_S02_L0026": {
       "text": "밤에 누울 자리도 세어 봤어요.\n누비 씨 아이들 셋 자리도 여기 있어요."
     },
@@ -118,7 +125,7 @@
       }
     ],
     "MS14_D07_S04_L0003": {
-      "text": "눈이 발목까지 빠진다. 진료소 안쪽 방에서 서리가 환자의 다리를 움직이지 않게 고정하고 있다. 내가 부엉이의 증상을 전하자, 서리는 도구 가방을 닫고 다른 어른에게 환자를 맡긴다. 우리는 같은 길로 돌아간다."
+      "text": "진료소 안쪽 방에서 서리가 환자의 다리를 고정하고 있다. 나는 부엉이가 가슴을 누르고 손을 떨며 말을 잊었다고 설명한다. 같은 방에 있던 다람도 어지러워해 복도로 옮겼다고 덧붙인다. 서리는 도구 가방을 닫고 곁의 어른에게 환자를 맡긴다. 우리는 함께 여관으로 돌아간다."
     },
     "MS14_D07_S01_L0002": {
       "text": "빨래 맡길 거면 내일 와요.{w=.3}\n누비네 빨래터는 지금 바빠요. 아주 바빠요.",
@@ -335,18 +342,24 @@
       "expression": "anxious"
     },
     "MS14_D07_S03_L0009": {
-      "text": "근데 서리 씨는 밤엔 내 말만 듣고는 안 나와요.{w=.3}\n지난번에 헛걸음시켰거든요. 증상 본 사람이 직접 말해야 해요."
+      "text": "진료소 안쪽 문으로 가면 돼요. 제가 길을 안내할게요."
     },
     "MS14_D07_S03_L0011": {
-      "text": "그럼 아이도 같이 가요.{w=.3} 뒷길은 미끄러우니까 손 꼭 잡고요."
+      "text": "천천히요. 제가 문을 잡겠습니다."
     },
     "MS14_D07_S03_L0013": {
-      "text": "도토 아저씨랑 여기 있을까?{w=.4}\n할아버지 혼자 두면…… 어떡해.",
+      "text": "할아버지도 아프잖아. 의사 선생님, 빨리 데려와.",
       "expression": "anxious"
     },
-    "MS14_D07_S03_L0023": {
-      "text": "복도 바닥은 찹니다. 다람이는 문 가까운 침대에서 이불을 덮고 있게 하죠.{w=.3}\n도토 씨는 문 바로 옆에 있어 주세요. 문은 꼭 열어 두시고요."
-    },
+    "MS14_D07_S03_L0023": [
+      {
+        "text": "도토 씨는 다람이 바로 옆에 계셔 주세요. 방에는 다시 들여보내지 마시고요. 더 아파하면 아래에 도움을 불러 주세요.",
+        "when": "corridor_handover7"
+      },
+      {
+        "text": "복도 바닥은 찹니다. 다람이는 문 가까운 침대에서 이불을 덮고 있게 하죠.{w=.3}\n도토 씨는 문 바로 옆에 있어 주세요. 문은 꼭 열어 두시고요."
+      }
+    ],
     "MS14_D07_S03_L0027": {
       "text": "응.{w=.4} ……빨리 와.",
       "expression": "anxious"
@@ -355,12 +368,19 @@
       "text": "고맙네.{w=.4} 문은……{w=.4} 바람이 세군.",
       "expression": "anxious"
     },
-    "MS14_D07_S03_L0029": {
-      "text": "닫지는 마세요. 제가 이쪽에 앉을게요.\n바람은 제가 막겠습니다.",
-      "expression": "anxious"
-    },
+    "MS14_D07_S03_L0029": [
+      {
+        "text": "예. 문도 여기서 보이고요. 아이 옆에 있겠습니다.",
+        "expression": "anxious",
+        "when": "corridor_handover7"
+      },
+      {
+        "text": "닫지는 마세요. 제가 이쪽에 앉을게요.\n바람은 제가 막겠습니다.",
+        "expression": "anxious"
+      }
+    ],
     "MS14_D07_S04_L0002": {
-      "text": "낮에 얼음이 무너졌어요. 이쪽으로요.",
+      "text": "진료소 안쪽 문이에요. 제가 두드릴게요.",
       "expression": "anxious"
     },
     "MS14_D07_S04_L0005": {
@@ -424,10 +444,10 @@
       "text": "어르신?{w=.3} ……의사를 불러야겠습니다. 어디로 가면 됩니까?"
     },
     "MS14_D07_S03_L0010": {
-      "text": "……다람이를 두고 가긴 싫은데요."
+      "text": "다람아, 너도 어지럽지? 우선 방에서 나가자."
     },
     "MS14_D07_S03_L0012": {
-      "text": "다람아, 일어나.{w=.3} 아빠랑 같이 가자."
+      "text": "다람아, 아빠 손 잡고 일어나 보자."
     },
     "MS14_D07_S04_L0034": {
       "text": "아빠는 아직 무슨 일이 있었는지 몰라.{w=.4}\n네가 말해 줘. 끝까지 들을게."
@@ -450,9 +470,15 @@
     "MS14_D07_S04_L0014": {
       "text": "얼굴은 문에서 떼.{w=.4} 아빠 여기 있어."
     },
-    "MS14_D07_S03_L0026": {
-      "text": "다람아.{w=.3} 글씨는 나중에 봐도 돼.\n무서우면 바로 도토 아저씨한테 가."
-    },
+    "MS14_D07_S03_L0026": [
+      {
+        "text": "여기서 옷 여미고 있어. 엄마 글씨는 아빠 오면 같이 보자.",
+        "when": "corridor_handover7"
+      },
+      {
+        "text": "다람아.{w=.3} 글씨는 나중에 봐도 돼.\n무서우면 바로 도토 아저씨한테 가."
+      }
+    ],
     "MS14_D07_S01_L0010": {
       "text": "보리가 문밖에 선다. 들어오지는 않는다."
     },
@@ -498,9 +524,15 @@
     "MS14_D07_S04_L0028": {
       "text": "까로가 앞으로 나온다. 모자를 벗어 쥐고."
     },
-    "MS14_D07_S03_L0025": {
-      "text": "다람이 문 가까운 침대 끝에 앉아 이불을 끌어당긴다. 도토가 그 의자에 앉는 것까지 보고 나는 가방을 든다."
-    }
+    "MS14_D07_S03_L0025": [
+      {
+        "text": "다람이 복도 의자에서 옷깃을 끌어당긴다. 도토가 아이 곁에 앉는 것까지 보고 나는 가방 손잡이를 놓는다.",
+        "when": "corridor_handover7"
+      },
+      {
+        "text": "다람이 문 가까운 침대 끝에 앉아 이불을 끌어당긴다. 도토가 그 의자에 앉는 것까지 보고 나는 가방을 든다."
+      }
+    ]
   },
   "before": {
     "MS14_D07_S02_L0004": [
@@ -1008,7 +1040,8 @@
         "id": "NW_D07_S03_V02",
         "speaker": null,
         "kind": "narration",
-        "text": "도토가 장부를 떨어뜨렸다가 얼른 줍는다. 장부를 겨드랑이에 끼우고, 복도 의자를 문 바로 옆에 바짝 붙인다."
+        "text": "도토가 장부를 떨어뜨렸다가 얼른 줍는다. 장부를 겨드랑이에 끼우고, 복도 의자를 문 바로 옆에 바짝 붙인다.",
+        "when": "legacy_room_handover7"
       }
     ],
     "MS14_D07_S03_L0030": [
@@ -1016,7 +1049,8 @@
         "id": "NW_D07_S03_V03",
         "speaker": "아빠",
         "kind": "thought",
-        "text": "문은 열어 두라고 했다. 도토 씨도 닫지 않겠다고 했다.\n다람이는 문 바로 안쪽, 도토 씨는 문 바로 바깥이다."
+        "text": "문은 열어 두라고 했다. 도토 씨도 닫지 않겠다고 했다.\n다람이는 문 바로 안쪽, 도토 씨는 문 바로 바깥이다.",
+        "when": "legacy_room_handover7"
       }
     ],
     "MS14_D07_S04_L0035": [
@@ -1099,36 +1133,40 @@
     ],
     "MS14_D07_S03_L0012": [
       {
-        "id": "NW_OP_D07_31",
+        "id": "NW_NOV_D07_SWAY01",
         "speaker": null,
         "kind": "narration",
         "text": "다람이 일어서려다 내 소매를 붙든 채 휘청한다. 얼굴이 하얗다."
       },
       {
-        "id": "NW_OP_D07_32",
+        "id": "NW_NOV_D07_SWAY02",
         "speaker": "다람",
         "kind": "dialogue",
-        "text": "아빠……{w=.4} 다리가 이상해. 머리도 띵해.",
-        "expression": "anxious"
+        "text": "아빠, 다리가 이상해. 머리도 띵해."
       },
       {
-        "id": "NW_OP_D07_33",
+        "id": "NW_NOV_D07_SWAY03",
         "speaker": "아빠",
         "kind": "dialogue",
-        "text": "어, 업고 가겠습니다."
+        "text": "안아 줄게. 우선 복도로 나가자."
       },
       {
-        "id": "NW_OP_D07_34",
-        "speaker": "까로",
-        "kind": "dialogue",
-        "text": "어이쿠, 뒷길은 낮에 얼음이 무너졌어요.{w=.3}\n아이 업고는 못 지나가요. 둘 다 미끄러져요.",
-        "expression": "anxious"
-      },
-      {
-        "id": "NW_OP_D07_35",
+        "id": "NW_NOV_D07_SWAY04",
         "speaker": "도토",
         "kind": "dialogue",
-        "text": "아이는 제가 보죠.{w=.3} 어차피 저녁 내내 이 복도에서 돌을 갈아요.\n문 옆에 있을게요. 어서 다녀오세요."
+        "text": "제가 옆에 있겠습니다. 여기서 장부 일을 하고 있어요."
+      },
+      {
+        "id": "NW_NOV_D07_SWAY05",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "제가 서리 씨에게 두 사람 상태를 말씀드리고 오겠습니다. 그동안 아이 곁에 계셔 주시겠습니까?"
+      },
+      {
+        "id": "NW_NOV_D07_SWAY06",
+        "speaker": "도토",
+        "kind": "dialogue",
+        "text": "예. 제 옆 의자에 앉히세요."
       }
     ],
     "MS14_D07_S03_L0002": [
@@ -1148,16 +1186,32 @@
     ],
     "MS14_D07_S03_L0023": [
       {
+        "id": "NW_NOV_D07_GUARD01",
+        "speaker": "도토",
+        "kind": "dialogue",
+        "text": "예. 여기서 보고 있겠습니다.",
+        "when": "corridor_handover7"
+      },
+      {
+        "id": "NW_NOV_D07_GUARD02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "아이가 부르면 대답만 하지 마시고 얼굴을 봐 주세요. 까로 씨랑 서리 씨 모시고 바로 오겠습니다.",
+        "when": "corridor_handover7"
+      },
+      {
         "id": "NW_D07_S03_T23",
         "speaker": "도토",
         "kind": "dialogue",
-        "text": "예, 예. 열어 두겠습니다.{w=.3} 정확히는, 활짝요."
+        "text": "예, 예. 열어 두겠습니다. 정확히는, 활짝요.",
+        "when": "legacy_room_handover7"
       },
       {
         "id": "NW_D07_S03_T24",
         "speaker": "아빠",
         "kind": "dialogue",
-        "text": "다람이가 더 어지러워하면 기다리지 말고 안아서 복도로 나와 주세요.\n까로 씨랑 서리 씨 데리고 바로 오겠습니다."
+        "text": "다람이가 더 어지러워하면 기다리지 말고 안아서 복도로 나와 주세요. 까로 씨랑 서리 씨 데리고 바로 오겠습니다.",
+        "when": "legacy_room_handover7"
       }
     ],
     "MS14_D07_S02_L0042": [
@@ -1941,7 +1995,7 @@
         "id": "NW_OWL_REPAIR_OWL_TOK_STAYS7_1",
         "speaker": "아빠",
         "kind": "dialogue",
-        "text": "톡 씨, 아이도 부탁드립니다. 서리 씨를 모시고 바로 오겠습니다."
+        "text": "톡 씨, 도토 씨가 자리를 비우면 복도 아이 곁에 있어 주세요. 서리 씨 모시고 바로 오겠습니다."
       }
     ],
     "owl_tok_return7": [
@@ -2081,6 +2135,158 @@
         "text": "누비 쪽 사정은 알겠소.{w=.3}\n그럼 불은 어디서 붙었고, 그 밤 보리는 무얼 했소? 그걸 못 대면 다들 책임이 있는 거요.",
         "expression": "neutral",
         "when": "half_fire_only_who7"
+      }
+    ],
+    "corridor_move7": [
+      {
+        "id": "NW_NOV_D07_CARRY01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "나는 다람을 안아 복도로 나온다. 도토가 벽에 붙여 둔 의자에 아이를 앉히고 겉옷을 여며 준다. 가방을 발밑에 놓아 늘어진 다리를 받친다."
+      }
+    ],
+    "corridor_leave7": [
+      {
+        "id": "NW_NOV_D07_LEAVE01",
+        "speaker": "아빠",
+        "kind": "thought",
+        "text": "학교에서 아이들과 물을 나르던 도토 씨다. 바로 다녀오면 된다고 생각했다."
+      }
+    ],
+    "promise_hall7": [
+      {
+        "id": "NW_NOV_PROMISE_HALL7_00",
+        "speaker": null,
+        "kind": "narration",
+        "text": "13호 문은 열려 있다. 복도 의자에서 다람이 겉옷을 여미고 있고, 도토가 바로 곁에 앉아 있다."
+      },
+      {
+        "id": "NW_NOV_PROMISE_HALL7_01",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "아빠!",
+        "expression": "joy"
+      },
+      {
+        "id": "NW_NOV_PROMISE_HALL7_02",
+        "speaker": "도토",
+        "kind": "dialogue",
+        "text": "아까 계단 아래서 누가 저를 불렀어요.{w=.3}\n학교 애가 다쳤다고요.",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_NOV_PROMISE_HALL7_03",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "……{w=.3}내려가셨습니까?"
+      },
+      {
+        "id": "NW_NOV_PROMISE_HALL7_04",
+        "speaker": "도토",
+        "kind": "dialogue",
+        "text": "아뇨!{w=.3} 낮에 말씀하셨잖아요.\n문간에서 대답만 했더니, 조용해졌어요."
+      },
+      {
+        "id": "NW_NOV_PROMISE_HALL7_05",
+        "speaker": "도토",
+        "kind": "dialogue",
+        "text": "어르신은 빗장을 거시겠다는 걸, 제가 있으니 괜찮다고 말씀드렸습니다."
+      }
+    ],
+    "promise_care7": [
+      {
+        "id": "NW_NOV_PROMISE_CARE7_00",
+        "speaker": null,
+        "kind": "narration",
+        "text": "서리가 부엉이 곁에 무릎을 꿇는다. 방 안은 여전히 차고, 난로 불빛만 푸르다."
+      },
+      {
+        "id": "NW_NOV_PROMISE_CARE7_01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "나는 문간에서 의자 팔걸이에 얹힌 부엉이의 손을 본다. 손끝이 떨린다. 복도 의자에서는 다람이 장갑의 두 땀을 쓸어 본다."
+      },
+      {
+        "id": "NW_NOV_PROMISE_CARE7_02",
+        "speaker": "아빠",
+        "kind": "thought",
+        "text": "그저께 다람의 장갑을 꿰매 주던 손이다."
+      },
+      {
+        "id": "NW_NOV_PROMISE_CARE7_03",
+        "speaker": "서리",
+        "kind": "dialogue",
+        "text": "밖에서 잠시 기다려 주세요. 아이도 같이요. ……문 연 시각, 누가 먼저 들어왔는지. 기억해 두세요. 기록에 들어가요."
+      },
+      {
+        "id": "NW_NOV_PROMISE_CARE7_04",
+        "speaker": null,
+        "kind": "narration",
+        "text": "복도로 나서자 계단 아래 주방 쪽에서, 쇠붙이를 내려놓는 소리가 한 번 난다."
+      }
+    ],
+    "tok_hall7": [
+      {
+        "id": "NW_NOV_TOK_HALL7_00",
+        "speaker": null,
+        "kind": "narration",
+        "text": "13호 문이 열려 있다. 복도 의자에 앉은 다람 곁에 톡과 도토가 서 있다."
+      },
+      {
+        "id": "NW_NOV_TOK_HALL7_01",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "아빠! 할아버지 아직 아프대."
+      },
+      {
+        "id": "NW_NOV_TOK_HALL7_02",
+        "speaker": "톡",
+        "kind": "dialogue",
+        "text": "도토 씨가 아래서 부르는 소리에 내려가길래 제가 아이 곁으로 나왔어요. 문은 닫지 말아 달라고 어르신께 말씀드렸고요."
+      },
+      {
+        "id": "NW_NOV_TOK_HALL7_03",
+        "speaker": "도토",
+        "kind": "dialogue",
+        "text": "아래에는 아무도 없었어요. 돌아오니 톡 씨가 계셨고요."
+      },
+      {
+        "id": "NW_NOV_TOK_HALL7_04",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "……혼자 계시지는 않았군요."
+      }
+    ],
+    "tok_care7": [
+      {
+        "id": "NW_NOV_TOK_CARE7_00",
+        "speaker": null,
+        "kind": "narration",
+        "text": "서리가 부엉이 곁에 앉는다. 톡이 나사와 공구를 천에 싸서 일어선다."
+      },
+      {
+        "id": "NW_NOV_TOK_CARE7_01",
+        "speaker": "톡",
+        "kind": "dialogue",
+        "text": "마, 마지막 나사는 내일 조일게요. 지금은 사람이 먼저예요."
+      },
+      {
+        "id": "NW_NOV_TOK_CARE7_02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "고맙습니다. 공구도 빠뜨리지 마세요."
+      },
+      {
+        "id": "NW_NOV_TOK_CARE7_03",
+        "speaker": "톡",
+        "kind": "dialogue",
+        "text": "네. 다, 다 챙겼어요."
+      },
+      {
+        "id": "NW_NOV_TOK_CARE7_04",
+        "speaker": null,
+        "kind": "narration",
+        "text": "톡이 공구를 챙겨 문밖으로 나간다. 서리가 방을 비워 달라고 하자 나도 복도에서 기다리던 다람 곁으로 돌아간다."
       }
     ]
   },

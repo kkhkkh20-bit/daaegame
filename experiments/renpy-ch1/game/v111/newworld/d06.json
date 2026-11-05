@@ -28,10 +28,17 @@
       "expression": "angry",
       "fx": "shake"
     },
-    "MS14_D06_P01_L0011": {
-      "text": "여관 일 거드는 도토예요. 물이랑 담요는 같이 옮기죠.\n정확히는{w=.3} 담요 먼저, 물은 그다음이요.",
-      "expression": "flustered"
-    },
+    "MS14_D06_P01_L0011": [
+      {
+        "text": "담요랑 물은 같이 옮기죠. 정확히는 담요 먼저, 물은 그다음이요.",
+        "expression": "flustered",
+        "when": "school_blankets_prepared6"
+      },
+      {
+        "text": "여관 일 거드는 도토예요. 물이랑 담요는 같이 옮기죠.\n정확히는{w=.3} 담요 먼저, 물은 그다음이요.",
+        "expression": "flustered"
+      }
+    ],
     "MS14_D06_S03P_L0005": {
       "text": "보리가 한 번 안으로 뛰려다 발을 멈춘다. 그러고는 이를 악물고 문 옆 장작부터 떼어 낸다. 나와 도토도 곁에서 거든다. 셋이서 불이 번지는 것을 막는다."
     },
@@ -207,7 +214,7 @@
       "text": "장작 창고 아이들 말입니다. 꼬미까지 넷이에요.{w=.3}\n오늘 밤 교실 바닥만 내주세요. 이름은 제가 적겠습니다."
     },
     "MS14_D06_P01_L0003": {
-      "text": "무, 물은 제가 나르겠습니다.{w=.3}\n이불은 여관에서 빌려 오고요. 아이들부터 들여보내 주세요."
+      "text": "물은 제가 나르겠습니다. 아이들 이불도 빌릴 수 있게 도와주세요. 빌리는 수와 제 이름을 남기겠습니다."
     },
     "MS14_D06_P01_L0004": {
       "text": "진짜 들어가도 돼요?{w=.3}\n문 닫고 나서…… 쫓아내면 싫어요.",
@@ -998,6 +1005,43 @@
         "kind": "thought",
         "text": "품삯 없는 장작을 혼자 지던 손이다."
       }
+    ],
+    "MS14_D06_S01_L0040": [
+      {
+        "id": "NW_NOV_D06_WOOD01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "이 장작 끝의 표는 어디 것입니까?"
+      },
+      {
+        "id": "NW_NOV_D06_WOOD02",
+        "speaker": "나비",
+        "kind": "dialogue",
+        "text": "여관 표예요. 그 표 찍힌 장작은 여관 몫이에요."
+      }
+    ],
+    "MS14_D06_S02_L0021": [
+      {
+        "id": "NW_NOV_D06_SEAT01",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "아빠, 나한테는 자리 생겼잖아. 이 애들은 왜 아직이야?",
+        "when": "daram_ready"
+      },
+      {
+        "id": "NW_NOV_D06_SEAT02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "네 자리만 부탁했어. 아이들한테도 먼저 물어보고, 선생님께 자리가 있는지 여쭤보자.",
+        "when": "daram_ready"
+      },
+      {
+        "id": "NW_NOV_D06_SEAT03",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "담요만 두고 가면 오늘도 여기서 자잖아. 오늘 잘 자리도 물어보자.",
+        "when": "daram_ready"
+      }
     ]
   },
   "drop": [],
@@ -1163,6 +1207,104 @@
         "speaker": "아빠",
         "kind": "dialogue",
         "text": "아, 문 지키던 그 줄.{w=.3} 문 옆 천장에 매단 거 말이지?\n그것부터 풀자. 먼저 가 버리지는 않을게."
+      }
+    ],
+    "piko_memory6": [
+      {
+        "id": "NW_NOV_D06_PIKO01",
+        "speaker": "아빠",
+        "kind": "thought",
+        "text": "피코에게도 다음 날 다시 오겠다고 했다. 여기 아이들은 지금 손을 비비고 있다."
+      }
+    ],
+    "school_blanket_loan6": [
+      {
+        "id": "NW_NOV_D06_LOAN00",
+        "speaker": null,
+        "kind": "narration",
+        "text": "학교에 돌아와 선생님께 담요함을 부탁한다. 선생님이 식당 뒷문으로 사람을 보내자 나비가 열쇠를 들고 온다."
+      },
+      {
+        "id": "NW_NOV_D06_LOAN01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "아이들 담요를 빌릴 수 있습니까?"
+      },
+      {
+        "id": "NW_NOV_D06_LOAN02",
+        "speaker": "나비",
+        "kind": "dialogue",
+        "text": "학교 함에서 꺼낼게요. 빌리는 수와 가져가는 분 이름부터 적어요."
+      },
+      {
+        "id": "NW_NOV_D06_LOAN03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "나비가 학교 담요함을 연다. 나는 꺼내는 담요 수를 세고, 나비는 수량과 내 이름을 적은 뒤 함을 잠근다."
+      },
+      {
+        "id": "NW_NOV_D06_LOAN04",
+        "speaker": "나비",
+        "kind": "dialogue",
+        "text": "돌려놓을 때도 같이 세 주세요."
+      },
+      {
+        "id": "NW_NOV_D06_LOAN05",
+        "speaker": null,
+        "kind": "narration",
+        "text": "학교 문간에서 여관의 침구를 나르던 일꾼이 수레를 세운다."
+      },
+      {
+        "id": "NW_NOV_D06_LOAN06",
+        "speaker": "도토",
+        "kind": "dialogue",
+        "text": "여관 일 거드는 도토예요. 아이들 데리러 가십니까?"
+      },
+      {
+        "id": "NW_NOV_D06_LOAN07",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "예. 아이들이 오는 데 맞춰 이 담요를 수레로 날라 주시겠습니까?"
+      },
+      {
+        "id": "NW_NOV_D06_LOAN08",
+        "speaker": "도토",
+        "kind": "dialogue",
+        "text": "예. 담요 먼저 싣고, 물통은 그다음에 옮기죠."
+      },
+      {
+        "id": "NW_NOV_D06_LOAN09",
+        "speaker": null,
+        "kind": "narration",
+        "text": "도토가 학교 담요를 수레에 싣는다. 나비는 열쇠를 챙기고, 나는 다람과 창고로 돌아갈 채비를 한다."
+      }
+    ],
+    "school_blanket_receipt6": [
+      {
+        "id": "NW_NOV_D06_RECEIPT01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "도토와 담요를 내려 나비가 적은 대여 수량과 맞춘다. 나비가 아이들 곁에 한 장씩 놓는다."
+      },
+      {
+        "id": "NW_NOV_D06_RECEIPT02",
+        "speaker": "나비",
+        "kind": "dialogue",
+        "text": "맞아요. 반납할 때도 이 수대로 확인할게요."
+      },
+      {
+        "id": "NW_NOV_D06_RECEIPT03",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "예. 물도 더 날라 오겠습니다."
+      }
+    ],
+    "school_blanket_recheck6": [
+      {
+        "id": "NW_NOV_D06_RECHECK01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "나비가 아이들 담요를 살피고 대여 장부를 덮는다. 불을 끄러 가기 전 함께 확인한 수량 그대로다."
       }
     ]
   }

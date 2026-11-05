@@ -588,7 +588,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 172 | `systems/room13_dialogue_context_art.rpy:5` | _r13_nw_context_match |
-| 2 | 319 | `room13_v111_newworld_text.rpy:599` |  |
+| 2 | 319 | `room13_v111_newworld_text.rpy:604` |  |
 
 ## `r13_ending_notes` (2층)
 
@@ -896,13 +896,13 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
 | 1 | 301 | `room13_v111.rpy:61` | _r13_nw_authored_line |
-| 2 | 319 | `room13_v111_newworld_text.rpy:542` |  |
+| 2 | 319 | `room13_v111_newworld_text.rpy:547` |  |
 
 ## `r13_v111_lines` (2층)
 
 | 순서 | init | 위치 | 이전 층 이름 |
 |---|---|---|---|
-| 1 | 319 | `room13_v111_newworld_text.rpy:580` | _r13_followup_heard_lines |
+| 1 | 319 | `room13_v111_newworld_text.rpy:585` | _r13_followup_heard_lines |
 | 2 | 336 | `room13_v111_reactions.rpy:122` |  |
 
 ## `r13_v111_questions` (2층)

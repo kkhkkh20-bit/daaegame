@@ -410,7 +410,7 @@
       "expression": "anxious"
     },
     "MS14_D01_S05_L0042": {
-      "text": "아침에 초롱 씨부터 만나고, 돌아갈 마차도 알아볼게.\n여기서 기다리기만 하진 않을 거야."
+      "text": "응. 아침에 초롱 만나고, 돌아갈 차도 알아볼게. 기다리기만 하진 않을 거야."
     },
     "MS14_D01_S05_L0043": {
       "text": "……마차도 없으면?",
@@ -925,6 +925,21 @@
         "kind": "dialogue",
         "text": "묵는 사람 소식은 여관에 알리게 돼 있소.{w=.4} 규칙이오.",
         "expression": "neutral"
+      },
+      {
+        "id": "NW_NOV_D01_GATE01",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "아빠, 엄마 어디 갔대?",
+        "when": "daram_ready",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_NOV_D01_GATE02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "어디 갔다고 들은 건 아니야. 여관에 가서 직접 물어보자.",
+        "when": "daram_ready"
       }
     ],
     "MS14_D01_S04_L0008": [
@@ -989,6 +1004,71 @@
         "kind": "dialogue",
         "text": "응. 내 이름 옆에 너를 같이 적었다는 뜻이야.",
         "expression": "neutral"
+      }
+    ],
+    "MS14_D01_S05_L0007": [
+      {
+        "id": "NW_NOV_D01_INN01",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "엄마가? 아빠는 알고 있었어?",
+        "when": "daram_ready",
+        "expression": "surprise"
+      },
+      {
+        "id": "NW_NOV_D01_INN02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "아빠도 지금 들었어. 어디로 가셨는지 물어볼게.",
+        "when": "daram_ready"
+      },
+      {
+        "id": "NW_NOV_D01_INN03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "다람이 내 외투를 잡는다. 나는 아이 곁에 앉는다.",
+        "when": "daram_ready"
+      }
+    ],
+    "MS14_D01_S05_L0017": [
+      {
+        "id": "NW_NOV_D01_EMPTY01",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "여기서 기다린다며. 엄마 없어.",
+        "when": "daram_ready",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_NOV_D01_EMPTY02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "다람이 내 허리에 매달린다. 나는 아이가 소매에서 얼굴을 뗄 때까지 안고 있다.",
+        "when": "daram_ready"
+      },
+      {
+        "id": "NW_NOV_D01_EMPTY03",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "엄마가 남긴 말이 있는지 같이 보자.",
+        "when": "daram_ready"
+      }
+    ],
+    "MS14_D01_S05_L0040": [
+      {
+        "id": "NW_NOV_D01_WAIT01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "조금만 더 기다려 보자.",
+        "when": "daram_ready"
+      },
+      {
+        "id": "NW_NOV_D01_WAIT02",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "오늘도 기다렸잖아. 내일은 물어보러 가야 해.",
+        "when": "daram_ready",
+        "expression": "angry"
       }
     ]
   },

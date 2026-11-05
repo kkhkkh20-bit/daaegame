@@ -63,6 +63,11 @@ init 319 python:
     # Named conditions for added lines. Add one line here when an event needs it.
     R13_NW_WHEN={
         "always":lambda:True,
+        # 소설 적용: 실제 행동을 본 새 저장과 이전 장면을 지난 저장을 구별한다.
+        "corridor_handover7":lambda:r13_v111_value("corridor_handover7") is True,
+        "legacy_room_handover7":lambda:r13_v111_value("corridor_handover7") is not True,
+        "school_blankets_prepared6":lambda:r13_v111_value("school_blankets_prepared6") is True,
+        "mother_contact_relay10":lambda:r13_v111_value("mother_contact_relay10") is True,
         "lamp_attempt_sheltered":lambda:bool(r13_v111_value("lamp_bound2")) and bool(r13_v111_value("piko_sheltered")),
         "lamp_attempt_outside":lambda:bool(r13_v111_value("lamp_bound2")) and not r13_v111_value("piko_sheltered"),
         "lamp_stolen_silluk_listed":lambda:not r13_v111_value("lamp_bound2") and bool(r13_v111_value("listed:resident_siluk")),

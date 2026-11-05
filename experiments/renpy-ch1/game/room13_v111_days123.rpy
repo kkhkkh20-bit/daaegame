@@ -518,6 +518,7 @@ label r13_v111_box_written:
     $ r13_v111_scene('MS14_D02_S01')
     call r13_v111_travel('forest','box_written')
     $ r13_v111_score()
+    call r13_lines(r13_nw_block('box_note_written2'),'nw:box_note_written2')
     $ r13_v111_commit('MS14_D02_S01_L0039')
     call r13_lines(r13_v111_lines(['MS14_D02_S01_L0040', 'MS14_D02_S01_L0041', 'MS14_D02_S01_L0042', 'MS14_D02_S01_L0043', 'MS14_D02_S01_L0044', 'MS14_D02_S01_L0045']), 'v111:box_written:MS14_D02_S01_L0040')
     jump r13_v111_post
@@ -1420,6 +1421,9 @@ label r13_v111_piko_memorial:
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D03_S06_L0013', 'MS14_D03_S06_L0014', 'MS14_D03_S06_L0015', 'MS14_D03_S06_L0016', 'MS14_D03_S06_L0018', 'MS14_D03_S06_L0019', 'MS14_D03_S06_L0020', 'MS14_D03_S06_L0021', 'MS14_D03_S06_L0022']), 'v111:piko_memorial:MS14_D03_S06_L0013')
     $ r13_v111_commit('MS14_D03_S06_L0022')
+    # 소설 개정 적용: 추모 장면의 완료 표시는 유지하고, 코를 그리는 행동은 엄마와 재회한 뒤로 미룬다.
+    $ r13_v111_set('portrait','unfinished')
+    $ r13_v111_set('portrait_waiting_for_mom',True)
     jump r13_v111_somi_lead
 
 label r13_v111_somi_lead:

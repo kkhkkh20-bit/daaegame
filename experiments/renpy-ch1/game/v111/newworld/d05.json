@@ -94,10 +94,10 @@
       "expression": "anxious"
     },
     "MS14_D05_S01_L0015": {
-      "text": "이 옷……{w=.3} 어제도 입으셨습니까?"
+      "text": "이 회색 옷은……{w=.3} 어르신 것입니까?"
     },
     "MS14_D05_S01_L0016": {
-      "text": "……입으셨어요.{w=.3} 왜요?",
+      "text": "……빌려 입으신 거예요.{w=.3} 왜요?",
       "expression": "anxious"
     },
     "MS14_D05_S01_L0017": {
@@ -330,11 +330,11 @@
       "expression": "anxious"
     },
     "MS14_D05_S04_L0010": {
-      "text": "그럼……{w=.3} 왜 안 와?",
+      "text": "그런데…… 왜 우리한테는 안 왔어?",
       "expression": "anxious"
     },
     "MS14_D05_S04_L0011": {
-      "text": "못 내려오는 이유가 있나 봐. ……물어볼게."
+      "text": "따라오는 사람이 두려웠대. 그 길목에도, 함 쪽에도 마음 놓고 못 갔고."
     },
     "MS14_D05_S04_L0012": {
       "text": "아빠가 가면 되잖아!",
@@ -740,6 +740,45 @@
         "text": "마차를 고칠 쇠부터 구해야 해. 그때까진 여기서 버텨야지.",
         "when": "karo_heard_iron5"
       }
+    ],
+    "MS14_D05_S04_L0010": [
+      {
+        "id": "NW_NOV_D05_CONTACT01",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "엄마가 우리 마차를 봤대? 첫날에?",
+        "when": "daram_ready",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_NOV_D05_CONTACT02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "응. 입구로 내려오다가 여관에 먼저 알리라는 말을 듣고 돌아섰대.",
+        "when": "daram_ready"
+      },
+      {
+        "id": "NW_NOV_D05_CONTACT03",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "나도 탔는데. 엄마 보려고.",
+        "when": "daram_ready",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_NOV_D05_CONTACT04",
+        "speaker": null,
+        "kind": "narration",
+        "text": "다람의 손가락이 종이 끝을 구긴다. 나는 펴 주려던 손을 멈춘다.",
+        "when": "daram_ready"
+      },
+      {
+        "id": "NW_NOV_D05_CONTACT05",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "아빠도 지금 처음 알았어.",
+        "when": "daram_ready"
+      }
     ]
   },
   "after": {
@@ -758,6 +797,43 @@
         "kind": "dialogue",
         "text": "네로 아저씨 옷이에요. 둘이 번갈아 입는 거예요.",
         "expression": "anxious"
+      },
+      {
+        "id": "NW_NOV_D05_01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "그럼 어젯밤에도 네로 씨가……",
+        "when": "daram_ready"
+      },
+      {
+        "id": "NW_NOV_D05_02",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "둘이 입는다잖아. 어제 누가 입었는지도 물어봐야지.",
+        "when": "daram_ready",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_NOV_D05_03",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "맞아. 옷 주인부터 찾았네. 네로 씨, 제가 앞서갔습니다.",
+        "when": "daram_ready"
+      },
+      {
+        "id": "NW_NOV_D05_04",
+        "speaker": "솜이",
+        "kind": "dialogue",
+        "text": "어젯밤에는 할아버지가 입으셨어요.",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_NOV_D05_05",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "나비 누나가 그때 네로 아저씨를 봤댔잖아. 나비 누나한테도 물어보자.",
+        "when": "daram_ready",
+        "expression": "neutral"
       }
     ],
     "MS14_D05_S01_L0024": [
@@ -855,32 +931,6 @@
         "text": "그 겉옷을 입고 소매가 찢긴 채 돌아온 건 어르신입니다. 네로 씨가 그 모습을 봤다고 했고요.{w=.3} 그 시각 네로 씨는 식당 물통을 날랐습니다. 어젯밤 나비 씨에게 그렇게 들었습니다.",
         "expression": "neutral",
         "when": "gate_post_won_with_e24"
-      },
-      {
-        "id": "NW_AUD_D05_03",
-        "speaker": null,
-        "kind": "narration",
-        "text": "문가로 나비가 들어선다. 콩이를 데리러 온 참인지, 행주를 어깨에 걸친 채다."
-      },
-      {
-        "id": "NW_D05_S03_A02",
-        "speaker": "나비",
-        "kind": "dialogue",
-        "text": "맞아요.{w=.3} 그 시각엔 네로 씨가 제 물통을 날랐어요.\n식당에서요. 그래서 신발도 다 젖었고요.",
-        "expression": "neutral"
-      },
-      {
-        "id": "NW_D05_S03_A03",
-        "speaker": null,
-        "kind": "narration",
-        "text": "너울은 더 말하지 않는다. 네로는 나비 쪽을 보지 않는다."
-      },
-      {
-        "id": "NW_D05_S03_A03N",
-        "speaker": "네로",
-        "kind": "dialogue",
-        "text": "……그 겉옷은 제가 어르신께 걸쳐 드린 거예요.\n그날 저녁, 처마 밑에서 떨고 계셔서요.",
-        "expression": "anxious"
       }
     ],
     "MS14_D05_S03_L0039": [
@@ -958,14 +1008,14 @@
         "id": "NW_D05_S04_A01",
         "speaker": "다람",
         "kind": "dialogue",
-        "text": "너울 아저씨도 입구에서 그랬잖아.{w=.3}\n여관에 먼저 연락하라고.",
+        "text": "엄마가 들은 말, 우리도 입구에서 들었잖아. 여관에 먼저 연락하라고.",
         "expression": "neutral"
       },
       {
         "id": "NW_D05_S04_A02",
         "speaker": "아빠",
         "kind": "dialogue",
-        "text": "응. 너울 씨가 그렇게 말했지. 적어 두자.",
+        "text": "응. 같은 말이야. 그렇다고 누가 편지를 썼는지까지 안 건 아니고.",
         "expression": "neutral"
       }
     ],
@@ -1050,7 +1100,7 @@
         "id": "NW_D05_S04_V01",
         "speaker": "아빠",
         "kind": "thought",
-        "text": "있는 곳은 끝내 안 적었다.{w=.4} 그래도 이 답은 어젯밤 초롱 씨가 들여다본 뒤에 들어왔다.\n엄마 쪽 손이 함까지는 닿는다."
+        "text": "어젯밤까지 비었던 함에 답이 들어왔다. 늦었어도 쪽지는 읽었어. 다음에는 안전하게 만날 방법을 물어야 해."
       }
     ],
     "MS14_D05_S04_L0022": [
@@ -1135,6 +1185,14 @@
         "speaker": "돌목",
         "text": "……그래.{w=.4} 이 소매요.\n내가 움켜쥔 데가 딱 여기였소.",
         "when": "gate_post_won_with_sketch"
+      },
+      {
+        "id": "NW_NOV_D05_06",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "밤이가 거기 있었다는 거랑, 밤이가 물었다는 건 달라.",
+        "when": "daram_ready",
+        "expression": "neutral"
       }
     ],
     "MS14_D05_S05_L0008": [
@@ -1265,7 +1323,7 @@
     },
     "E27": {
       "variants": {
-        "observed": "“당신과 다람이를 부른 적 없어. 그 편지는 내가 쓴 게 아니야. 나를 찾는 곳이나 이 편지 이야기를 여관에 말하지 마. 당장 만나러 내려갈 수 없어. 초롱에게 답을 맡겨 줘. 먹을 것과 마른 천이 필요해. 다람이 손은 괜찮아? 겨울이면 또 트는데. {image=assets/room13-acorn-ink.png}”"
+        "observed": "“당신과 다람이를 부른 적 없어. 그 편지는 내가 쓴 게 아니야. 첫날 숲 끝에서 너희 마차를 봤어. 입구로 내려가다가 너울이 돌목 씨에게 내가 나타나면 여관에 먼저 사람을 보내라고 하는 말을 듣고 돌아섰어. 그날 밤 초롱 씨 오는 길목에도 갔지만, 누가 나를 따라 여관까지 올지 몰라 돌아왔어. 교환함 쪽에서도 너울이 내 발자국을 찾고 있어서 당신 쪽지를 늦게 읽었어. 나를 찾는 곳이나 이 편지 이야기를 여관에 말하지 마. 당장 만나러 내려갈 수 없어. 초롱에게 답을 맡겨 줘. 먹을 것과 마른 천이 필요해. 다람이 손은 괜찮아? 겨울이면 또 트는데. {image=assets/room13-acorn-ink.png}”"
       }
     },
     "E28": {
@@ -1296,7 +1354,7 @@
         "id": "NW_D05_CN01",
         "speaker": "아빠",
         "kind": "thought",
-        "text": "어르신은 진료소에 모셨다. 이제 초소로 가서 그날 밤 일을 다시 맞춰 보자."
+        "text": "어르신은 진료소에 모셨다. 초소로 가기 전에 나비 씨에게 그 시각을 다시 물어보자."
       }
     ],
     "owl_glove5": [
@@ -1468,6 +1526,110 @@
         "speaker": null,
         "kind": "narration",
         "text": "책상 접시에 첫날 마차에서 남긴 과자 봉지가 놓여 있다. 다람이 그쪽을 힐끔 본다. 나도 본다. 우리 둘 다 못 본 척한다."
+      }
+    ],
+    "gate_post_retry_feeling5": [
+      {
+        "id": "NW_NOV_D05_07",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "내가 본 데까지만 말해야 했는데. 다시 보겠습니다."
+      }
+    ],
+    "nabi_confirm5": [
+      {
+        "id": "NW_NOV_D05_08",
+        "speaker": null,
+        "kind": "narration",
+        "text": "식당 문 안에서 나비가 빈 물통을 내려놓는다."
+      },
+      {
+        "id": "NW_NOV_D05_09",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "어젯밤 초소에서 소리 날 때도 네로 씨가 여기 있었습니까?"
+      },
+      {
+        "id": "NW_NOV_D05_10",
+        "speaker": "나비",
+        "kind": "dialogue",
+        "text": "네. 그때도 저한테 물통을 건네고 있었어요. 초소 소리에 둘 다 문밖을 봤고요."
+      },
+      {
+        "id": "NW_NOV_D05_11",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "그 말, 초소에서도 해 줄 수 있어?",
+        "when": "daram_ready",
+        "expression": "anxious"
+      },
+      {
+        "id": "NW_NOV_D05_12",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "직접 말씀해 주시겠습니까? 누가 어디 있었는지부터 확인하려고요."
+      },
+      {
+        "id": "NW_NOV_D05_13",
+        "speaker": "나비",
+        "kind": "dialogue",
+        "text": "행주만 놓고 갈게요. 제가 본 건 말씀드릴 수 있어요."
+      }
+    ],
+    "warning_first5": [
+      {
+        "id": "NW_NOV_D05_LETTER01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "“당신과 다람이를 부른 적 없어."
+      }
+    ],
+    "warning_rest5": [
+      {
+        "id": "NW_NOV_D05_LETTER02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "그 편지는 내가 쓴 게 아니야. 첫날 숲 끝에서 너희 마차를 봤어. 입구로 내려가다가 너울이 돌목 씨에게 내가 나타나면 여관에 먼저 사람을 보내라고 하는 말을 듣고 돌아섰어."
+      },
+      {
+        "id": "NW_NOV_D05_LETTER03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "그날 밤 초롱 씨 오는 길목에도 갔지만, 누가 나를 따라 여관까지 올지 몰라 돌아왔어. 교환함 쪽에서도 너울이 내 발자국을 찾고 있어서 당신 쪽지를 늦게 읽었어."
+      },
+      {
+        "id": "NW_NOV_D05_LETTER04",
+        "speaker": null,
+        "kind": "narration",
+        "text": "나를 찾는 곳이나 이 편지 이야기를 여관에 말하지 마. 당장 만나러 내려갈 수 없어. 초롱에게 답을 맡겨 줘. 먹을 것과 마른 천이 필요해. 다람이 손은 괜찮아? 겨울이면 또 트는데.”"
+      }
+    ],
+    "nabi_hearing5": [
+      {
+        "id": "NW_AUD_D05_03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "문가로 나비가 들어선다. 식당에서 우리에게 약속한 대로, 앞치마를 벗어 놓고 온 참이다."
+      },
+      {
+        "id": "NW_D05_S03_A02",
+        "speaker": "나비",
+        "kind": "dialogue",
+        "text": "맞아요.{w=.3} 그 시각엔 네로 씨가 제 물통을 날랐어요.\n식당에서요. 그래서 신발도 다 젖었고요.",
+        "expression": "neutral"
+      },
+      {
+        "id": "NW_D05_S03_A03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "너울은 더 말하지 않는다. 네로는 나비 쪽을 보지 않는다."
+      },
+      {
+        "id": "NW_D05_S03_A03N",
+        "speaker": "네로",
+        "kind": "dialogue",
+        "text": "……그 겉옷은 제가 어르신께 걸쳐 드린 거예요.\n그날 저녁, 처마 밑에서 떨고 계셔서요.",
+        "expression": "anxious"
       }
     ]
   }

@@ -255,7 +255,7 @@
       "expression": "flustered"
     },
     "MS14_D13_S03_L0021": {
-      "text": "내가 천 잡아 줬어!{w=.3}\n그 새, 뒤집힌 게 아니야. 먹이 먹는 거야.",
+      "text": "이 새는 오늘 아침에 내가 잡고 아빠가 붙였어. 어제는 없었어. 뒤집힌 게 아니라 먹이 먹는 거야.",
       "expression": "angry"
     },
     "MS14_D13_S03_L0022": {
@@ -932,6 +932,13 @@
     ],
     "MS14_D13_S03_L0017": [
       {
+        "id": "NW_NOV_D13_ASK01",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "담요만 보신 거예요? 여기 붙인 새까지 보신 거예요?",
+        "expression": "anxious"
+      },
+      {
         "id": "NW_D13_S03_V07",
         "speaker": "아빠",
         "kind": "thought",
@@ -1133,6 +1140,15 @@
         "text": "할아버지,{w=.3} 이번엔 내가 받칠게요.\n망치보다 안 무거워요.",
         "expression": "neutral",
         "when": "guldol_daram13"
+      }
+    ],
+    "MS14_D13_S03_L0028": [
+      {
+        "id": "NW_NOV_D13_WAIT01",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "나도 엄마가 기다린다는 편지 믿고 왔는데 엄마가 없었어. 판돌 할아버지, 그냥 타면 안 돼.",
+        "expression": "anxious"
       }
     ]
   },

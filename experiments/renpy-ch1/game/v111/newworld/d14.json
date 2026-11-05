@@ -904,8 +904,9 @@
         "id": "NW_D14_S03_A07",
         "speaker": "할머니",
         "kind": "dialogue",
-        "text": "부엉이 영감도 보미처럼 조용히 가면 됐어요.{w=.4}\n명단에 오르면…… 그걸로.",
-        "expression": "anxious"
+        "text": "그 영감과 아이를 그 방에 두면…… 부인이 나오겠지요.",
+        "expression": "anxious",
+        "when": "granny_held_win"
       },
       {
         "id": "NW_D14_S03_P01",
@@ -919,7 +920,7 @@
         "id": "NW_D14_S03_P02",
         "speaker": "할머니",
         "kind": "dialogue",
-        "text": "도토가 그 방에 있으면 난로를 들여다봐요. 돌 갈아 넣는 게 그 애 일이니까. 그래서 떼어 놨어요. 그 노인 혼자, 그 불 곁에 밤새 있게.",
+        "text": "도토가 그 방에 있으면 난로를 들여다봐요. 돌 갈아 넣는 게 그 애 일이니까. 그래서 불러냈어요. 영감과 아이, 둘만 남게.",
         "expression": "anxious",
         "when": "granny_held_win"
       },
@@ -927,7 +928,7 @@
         "id": "NW_D14_S03_P03",
         "speaker": "아빠",
         "kind": "dialogue",
-        "text": "그런데 기다리지 않고, 통로로 직접 들어가셨습니다.",
+        "text": "그 돌 곁에서 상태가 나빠지는 걸 아셨습니다. 다람이에게 무슨 일이 생기기를 바라신 겁니까?",
         "expression": "neutral",
         "when": "granny_held_win"
       },
@@ -935,7 +936,7 @@
         "id": "NW_D14_S03_P04",
         "speaker": "할머니",
         "kind": "dialogue",
-        "text": "아이 비명이 났어요. 문은 안에서 걸려 있었고요. 들어가 보니 아이 손에 촛대가 있었어요.",
+        "text": "그 애가 죽으면 부인이 오겠지요. 어디 숨어 있든.",
         "expression": "anxious",
         "when": "granny_held_win"
       },
@@ -943,8 +944,60 @@
         "id": "NW_D14_S03_P04B",
         "speaker": "할머니",
         "kind": "dialogue",
-        "text": "……그날 학교에서 한 말 그대로예요. 아이 손에 촛대가 있으면, 아무도 늙은이를 안 봐요.",
+        "text": "하지만 불이 날 줄은 몰랐어요. 아이가 어떻게 됐는지 보려고 들어갔어요. 연기하고 가구에 가려 안 보였고, 영감은 쓰러져서 숨을 쉬었어요.",
         "expression": "anxious",
+        "when": "granny_held_win"
+      },
+      {
+        "id": "NW_NOV_D14_MOT01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "그때 아이가 살아 있는지는 못 보신 겁니까?",
+        "when": "granny_held_win"
+      },
+      {
+        "id": "NW_NOV_D14_MOT02",
+        "speaker": "할머니",
+        "kind": "dialogue",
+        "text": "못 봤어요. 영감이 다시 일어나면 나도 어떻게 될지 몰랐고요.",
+        "expression": "anxious",
+        "when": "granny_held_win"
+      },
+      {
+        "id": "NW_NOV_D14_MOT03",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "천을 감고 핀을 채운 윗조각으로 머리를 치셨습니까?",
+        "when": "granny_held_win"
+      },
+      {
+        "id": "NW_NOV_D14_MOT04",
+        "speaker": "할머니",
+        "kind": "dialogue",
+        "text": "내가 쳤어요.",
+        "expression": "anxious",
+        "when": "granny_held_win"
+      },
+      {
+        "id": "NW_NOV_D14_MOT05",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "나와서는 왜 다람이가 죽였다고 하셨습니까?",
+        "when": "granny_held_win"
+      },
+      {
+        "id": "NW_NOV_D14_MOT06",
+        "speaker": "할머니",
+        "kind": "dialogue",
+        "text": "아이가 살아서 나오더군요. 그러면 붙잡아 두면 됐어요. 부인이 딸을 꺼내러 와야 하니까.",
+        "expression": "anxious",
+        "when": "granny_held_win"
+      },
+      {
+        "id": "NW_NOV_D14_MOT07",
+        "speaker": null,
+        "kind": "narration",
+        "text": "탁자 끝을 쥔 내 손에 힘이 들어간다. 나는 손을 펴고, 답을 받은 순서대로 적는다.",
         "when": "granny_held_win"
       },
       {
@@ -960,6 +1013,21 @@
         "speaker": "할머니",
         "kind": "dialogue",
         "text": "문틀이 우는 소리가 났어요. 나비가 밖에서 문을 받치고 있었으니까. 곧 열릴 것 같아서…… 집어 들 틈이 없었어요.",
+        "expression": "anxious",
+        "when": "granny_held_win"
+      },
+      {
+        "id": "NW_NOV_D14_RECORD01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "부엉이 어르신이 갖고 있던 아내의 기록도 가져오려 하셨습니까?",
+        "when": "granny_held_win"
+      },
+      {
+        "id": "NW_NOV_D14_RECORD02",
+        "speaker": "할머니",
+        "kind": "dialogue",
+        "text": "예. 영감이 그걸 계속 갖고 다니면 부인 말이 맞다고들 하겠죠. 보미를 보내길 잘했다는 말도 못 하고.",
         "expression": "anxious",
         "when": "granny_held_win"
       },
@@ -1520,6 +1588,13 @@
         "kind": "dialogue",
         "text": "제단은 말을 주던 장치였습니다. 촌장님은 그걸 거꾸로 돌렸고요.",
         "expression": "neutral"
+      },
+      {
+        "id": "NW_NOV_D14_LIMIT01",
+        "speaker": "엄마",
+        "kind": "dialogue",
+        "text": "이 기록으로 기기의 쓰임은 알 수 있어요. 모과 씨가 여기 왔는지, 마지막에 어떻게 됐는지는 따로 확인해야 해요.",
+        "expression": "anxious"
       }
     ],
     "altar2_lost14": [
@@ -2937,6 +3012,113 @@
         "text": "그해 배급이 어땠든 그게 무슨 상관이오.{w=.3}\n맨 처음 보낸 사람이 누구였는지, 이름 하나 대지 못하면서. 처음부터 그렇게 해 왔소.",
         "expression": "neutral",
         "when": "half_altar4_year14"
+      }
+    ],
+    "altar_observation14": [
+      {
+        "id": "NW_NOV_D14_OBS01",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "옛 시설 벽 그림에 있던 아래몸체가 여기에도 있군요. 위에 덧댄 쇠는 그 그림에 없었습니다."
+      },
+      {
+        "id": "NW_NOV_D14_OBS02",
+        "speaker": "엄마",
+        "kind": "dialogue",
+        "text": "밑돌의 글과 쇠에 찍힌 표시도 따로 봐야 해. 언제 쓰인 건지 같은 것으로 넘기지 말고."
+      }
+    ],
+    "family_research_limit14": [
+      {
+        "id": "NW_NOV_D14_RESEARCH01",
+        "speaker": "엄마",
+        "kind": "dialogue",
+        "text": "남은 돌의 양을 한데 모을 수 있을지 더 알아볼게. 양이 새로 늘어나는 건 아니야. 옮기다 줄 수도 있고."
+      },
+      {
+        "id": "NW_NOV_D14_RESEARCH02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "오늘 쓸 불은 아니구나."
+      },
+      {
+        "id": "NW_NOV_D14_RESEARCH03",
+        "speaker": "엄마",
+        "kind": "dialogue",
+        "text": "응. 아직은 약속 못 해. 오늘 밤은 여기 마련한 것으로 지내자."
+      }
+    ],
+    "family_portrait_finish14": [
+      {
+        "id": "NW_NOV_D14_NOSE01",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "엄마, 이것 봐. 엄마한테 먼저 보여 주고 그리려고 했어."
+      },
+      {
+        "id": "NW_NOV_D14_NOSE02",
+        "speaker": null,
+        "kind": "narration",
+        "text": "다람이 초상 판자의 빈 코 자리를 가리킨다. 엄마 얼굴을 보고, 판자를 보고, 다시 엄마를 본다. 나는 판자 한쪽을 잡아 준다."
+      },
+      {
+        "id": "NW_NOV_D14_NOSE03",
+        "speaker": null,
+        "kind": "narration",
+        "text": "아이가 조그만 코를 그려 넣는다. 조금 삐뚤었다."
+      },
+      {
+        "id": "NW_NOV_D14_NOSE04",
+        "speaker": "엄마",
+        "kind": "dialogue",
+        "text": "이렇게 생겼어?"
+      },
+      {
+        "id": "NW_NOV_D14_NOSE05",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "응. 이제 엄마가 보고 있잖아.",
+        "expression": "joy"
+      },
+      {
+        "id": "NW_NOV_D14_NOSE06",
+        "speaker": null,
+        "kind": "narration",
+        "text": "엄마는 고치지 않고 아이 옆에 앉는다."
+      }
+    ],
+    "family_portrait_seen14": [
+      {
+        "id": "NW_NOV_D14_SEEN01",
+        "speaker": null,
+        "kind": "narration",
+        "text": "다람이 엄마의 초상을 꺼내 무릎 위에 세운다. 엄마가 코 자리를 들여다본다."
+      },
+      {
+        "id": "NW_NOV_D14_SEEN02",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "엄마 보여 주려고 안 구겨지게 들고 왔어."
+      },
+      {
+        "id": "NW_NOV_D14_SEEN03",
+        "speaker": "엄마",
+        "kind": "dialogue",
+        "text": "잘 가져왔네. 옆에서 같이 볼까?"
+      }
+    ],
+    "family_wait_together14": [
+      {
+        "id": "NW_NOV_D14_WAIT01",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "내일 길 물어보러 갈 때 나도 갈래. 어디서 기다려야 하는지 내가 들을 거야."
+      },
+      {
+        "id": "NW_NOV_D14_WAIT02",
+        "speaker": "엄마",
+        "kind": "dialogue",
+        "text": "같이 가자. 가기 전에 셋이 다시 이야기하고."
       }
     ]
   }
