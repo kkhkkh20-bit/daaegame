@@ -1,0 +1,201 @@
+{
+  "버전": "0.20.95",
+  "대상": "기존 본편 1~3일차 첫 플레이 동선·자료 대조·저장 UI",
+  "승인": "2026-11-05 자료 대조·저장칸 렌더 시안 제시 후 소유자 두 시안 모두 적용 선택",
+  "전체단위": {
+    "개수": 1176,
+    "결과": "통과"
+  },
+  "최종표시조정_관련단위": {
+    "개수": 28,
+    "결과": "통과"
+  },
+  "최종lint": "통과",
+  "최종대사정적검사": {
+    "A": 0,
+    "B": 0,
+    "C": 0
+  },
+  "관련화면시험": [
+    {
+      "test": "v111_early_portrait_single_question_keeps_conversation_and_time",
+      "passed": true,
+      "seconds": 20.04
+    },
+    {
+      "test": "v111_early_day3_workspace_retry_and_alternate",
+      "passed": true,
+      "seconds": 20.04
+    },
+    {
+      "test": "v111_rules_knife_no_consent",
+      "passed": true,
+      "seconds": 20.03
+    },
+    {
+      "test": "v111_early_day3_phone_quote_fits",
+      "passed": true,
+      "seconds": 18.04
+    },
+    {
+      "test": "v111_early_post_direct_cancel_wrong_and_receiver",
+      "passed": true,
+      "seconds": 20.03
+    }
+  ],
+  "변경전": {
+    "버전": "0.20.94",
+    "범위": "신규 게임부터 1일차 취침 전까지",
+    "완료관문": "sleep1",
+    "page_errors": []
+  },
+  "실제새게임": {
+    "결과": "통과",
+    "버전": "0.20.95",
+    "범위": "신규 게임부터 3일차 취침 전까지. 자료는 알려진 정답·대체 조합을 실제 UI에서 선택.",
+    "완료관문": "sleep3",
+    "오답후재시도": true,
+    "page_errors": [],
+    "읽은대사수": 1221,
+    "날짜별": {
+      "1": 310,
+      "2": 420,
+      "3": 491
+    },
+    "실제통합대조쟁점": [
+      "v111:돌과 매입 기록을 낸다",
+      "v111:두 편지를 나란히 본다",
+      "v111:마지막 점검과 인수한 돌을 연결한다",
+      "v111:바깥 걸쇠 주장과 발견 위치를 대조한다",
+      "v111:수리와 반출을 가릴 자료를 낸다",
+      "v111:측정 종료와 점검 기록을 대조한다",
+      "v111:함께 들어갈 근거를 고른다"
+    ],
+    "최종값": {
+      "day": 3,
+      "meeting:lamp": "win",
+      "piko_alive": true,
+      "carried_dry_blankets": 0,
+      "public_stones": "restored",
+      "silluk_status": "reporting_obligation",
+      "daram_name_written": null
+    },
+    "소지자료": [
+      "V111:E01",
+      "V111:E02",
+      "V111:E03",
+      "V111:E05",
+      "V111:E06",
+      "V111:E30",
+      "V111:E07",
+      "V111:NW_PIKO_TREMOR",
+      "V111:E08",
+      "V111:E09",
+      "V111:E10",
+      "V111:E32",
+      "V111:E11",
+      "V111:E12",
+      "V111:E13",
+      "V111:E14",
+      "V111:E15",
+      "V111:E16",
+      "V111:NW_INNER_PRICE",
+      "V111:NW_KEEPER_DATE",
+      "V111:E33",
+      "V111:E17"
+    ]
+  },
+  "일반저장복원": [
+    {
+      "device": "desktop",
+      "version": "0.20.95",
+      "same": true,
+      "page_errors": [],
+      "ending14": "family",
+      "restored_screens": [
+        "save"
+      ]
+    },
+    {
+      "device": "mobile",
+      "version": "0.20.95",
+      "same": true,
+      "page_errors": [],
+      "ending14": "family",
+      "restored_screens": [
+        "save"
+      ]
+    }
+  ],
+  "설정안저장": [
+    {
+      "device": "desktop",
+      "version": "0.20.95",
+      "same": true,
+      "page_errors": [],
+      "normal_and_large": true
+    },
+    {
+      "device": "mobile",
+      "version": "0.20.95",
+      "same": true,
+      "page_errors": [],
+      "normal_and_large": true
+    }
+  ],
+  "자료대조화면": {
+    "버전": "0.20.95",
+    "상태동일": true,
+    "page_errors": [],
+    "글씨별": [
+      {
+        "기기": "desktop",
+        "큰글씨": false,
+        "발언펼침": true,
+        "발언칸높이": null,
+        "실제필요높이와상하패딩": 49
+      },
+      {
+        "기기": "desktop",
+        "큰글씨": true,
+        "발언펼침": true,
+        "발언칸높이": null,
+        "실제필요높이와상하패딩": 54
+      },
+      {
+        "기기": "mobile",
+        "큰글씨": false,
+        "발언펼침": true,
+        "발언칸높이": 98,
+        "실제필요높이와상하패딩": 94
+      },
+      {
+        "기기": "mobile",
+        "큰글씨": true,
+        "발언펼침": true,
+        "발언칸높이": 102,
+        "실제필요높이와상하패딩": 98
+      }
+    ]
+  },
+  "공개묶음": {
+    "실행원본일치": [
+      "options.rpy",
+      "room13_v111.rpy",
+      "screens.rpy",
+      "room13_save_ui.rpy",
+      "systems/room13_proof_workspace.rpy",
+      "v111/newworld/d03.json"
+    ],
+    "검사파일제외": true,
+    "check_release": "통과"
+  },
+  "검사순서": "전체 검사와 새 게임 주행 뒤 발견한 좁은 저장칸·모바일 발언 높이를 교정했다. 저장 서식 조정 뒤 일반·설정 저장 화면을 재검증하고, 최종 발언 높이 조정 뒤 관련 28개·lint·A/B/C·신규 실제 렌더 경계 시험·웹 화면 4설정을 재검증했다. 대사·정답·시간·승패 흐름은 첫 웹 주행과 동일하다. 이전 질문 화면 저장에 새 임시 UI 값이 없을 경우를 위한 기본값 보강 후 관련 28개와 우체국 네이티브를 다시 통과했다.",
+  "한계": [
+    "초면 인간의 눈가림 사용성 실험이나 재미 점수 측정은 아님",
+    "모든 선택 순열·예방판·4~14일 전체 재주행은 미실행",
+    "기존 전체 네이티브 화면 회귀는 다시 실행하지 않음",
+    "휴대폰은 844×390 브라우저 크기·터치 배치 검사이며 실제 휴대폰 하드웨어 검사는 아님",
+    "공개 도메인 직접 접속은 환경 정책으로 불가. 로컬 공개 묶음, 원격 해시와 Pages 작업으로 공개 확인"
+  ]
+}

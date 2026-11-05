@@ -5,6 +5,7 @@ from playwright.async_api import async_playwright
 from webqa import UIQA
 ROOT=Path(__file__).resolve().parents[1];OUT=Path(os.environ.get('ROOM13_QA_OUT','/workspace/work/v111/browser'));OUT.mkdir(parents=True,exist_ok=True)
 PLAN=json.loads((ROOT/'docs/story-v111/compiled-reference.json').read_text());PROOFS={v['title']:v for v in PLAN.values() if v['kind']=='proof'}
+PROOFS['함께 들어갈 근거를 고른다']['correct']=['E02','E03']  # 실행 라벨 기준: 규칙판은 보강 자료
 class Fast(UIQA):
  async def state(self):
   # 0.20.42 부터 현장 좌우 이동은 글자 없는 그림 버튼이다. 이름(alt)으로 찾아 예전 '‹'/'›' 버튼처럼 보이게 한다.
@@ -33,12 +34,13 @@ class Fast(UIQA):
      await self.press(edge);await asyncio.sleep(.6);return
     await self.input(x+w/2,y+h/2);return
   return await super().value(value)
- async def advance_dialogue(self):
-  st=await self.state()
-  bs=[b for b in st['buttons'] if '건너뛰기' in b['text']]
-  if bs:
-   x,y,w,h=min(bs,key=lambda b:b['rect'][2]*b['rect'][3])['rect'];await self.input(x+w/2,y+h/2)
-  else:await self.input(900,590)
+ async def advance_dialogue(self,st=None):
+  st=st or await self.state()
+  if st.get('say'):
+   room=st.get('room') or {};values=room.get('v111',{}).get('values',{}) or st.get('values',{})
+   row=dict(day=values.get('day'),location=room.get('location') or st.get('location'),gate=room.get('v111',{}).get('gate') or st.get('gate'),text=st['say'])
+   with (self.out/'읽은대사.jsonl').open('a',encoding='utf-8') as f:f.write(json.dumps(row,ensure_ascii=False)+'\n')
+  await self.input(900,590)
  async def click_object(self,key,attempt=0):
   await asyncio.sleep(.35)
   if attempt>=28:raise AssertionError(('Object not reached after sampled UI clicks',key,attempt))
@@ -121,7 +123,7 @@ class Fast(UIQA):
    await self.press(data['name'])
   raise AssertionError(('Material unreachable through notebook',key,data))
  async def press(self,label):
-  label={'근거를 내놓는다':'자료 고르기','논리를 연결한다':'선택한 근거 제출','그만두기':'선택 마치기'}.get(label,label)
+  label={'지난 사건':'지난','이번 사건':'이번','근거를 내놓는다':'자료 고르기','논리를 연결한다':'선택한 근거 제출','그만두기':'선택 마치기'}.get(label,label)
   for attempt in range(40):
    st=await self.state();bs=[b for b in st['buttons'] if ''.join(label.split()) in ''.join(b['text'].split()) and b['rect'][3]>12]
    if bs:
@@ -144,13 +146,16 @@ def shelter_step2(route,v):
  return 2
 async def main():
  route=os.environ.get('V111_ROUTE','shelter');stone=int(os.environ.get('V111_STONE','0'));custody=int(os.environ.get('V111_CUSTODY','0'))
+ if os.environ.get('V111_SIMPLER'):
+  for title,correct in [('수리와 반출을 가릴 자료를 낸다',['E11','E13']),('돌과 매입 기록을 낸다',['E14','E15','E16']),('마지막 점검과 인수한 돌을 연결한다',['E11','E14','E15'])]:
+   PROOFS[title]=dict(PROOFS[title],correct=correct)
  async with async_playwright() as p:
-  b=await p.chromium.launch_persistent_context(str(OUT/('profile-'+os.environ.get('V111_PROFILE',route))),executable_path=os.environ.get('ROOM13_CHROME','/opt/pw-browsers/chromium-1194/chrome-linux/chrome'),viewport={'width':1280,'height':720},args=['--no-sandbox','--remote-debugging-port=9224','--enable-unsafe-swiftshader','--autoplay-policy=no-user-gesture-required'])
+  b=await p.chromium.launch_persistent_context(str(OUT/('profile-'+os.environ.get('V111_PROFILE',route))),executable_path=os.environ.get('ROOM13_CHROME','/opt/pw-browsers/chromium-1194/chrome-linux/chrome'),viewport={'width':1280,'height':720},args=['--no-sandbox','--remote-debugging-port='+os.environ.get('V111_DEBUG_PORT','9224'),'--enable-unsafe-swiftshader','--autoplay-policy=no-user-gesture-required'])
 
   for previous in b.pages:await previous.close()
   pg=await b.new_page();q=Fast(pg,OUT);errors=[];pg.on('pageerror',lambda e:errors.append(str(e)));events=[];shots=set()
   async def snap():
-   return await q.py('import renpy;s=renpy.store;result=dict(screens=[n for n in ("main_menu","say","choice","r13_confirm","r13_hub","r13_topics","r13_map","r13_book","r13_records","r13_crisis_proof","_exception") if renpy.display.screen.get_screen(n)],gate=(s.room13 or {}).get("v111",{}).get("gate"),choice=getattr(s,"v111_menu_owner",None),claim=getattr(s,"v111_claim",None),binding=s.r13_v111_binding() if s.r13_v111_active() else {},values=(s.room13 or {}).get("v111",{}).get("values",{}),evidence=(s.room13 or {}).get("evidence",[]),location=(s.room13 or {}).get("location"),music=renpy.audio.music.get_playing(),people=s.r13_visible_people() if s.r13_v111_active() else [])')
+   return await q.py('import renpy;s=renpy.store;result=dict(screens=[n for n in ("main_menu","say","choice","r13_confirm","r13_hub","r13_topics","r13_map","r13_book","r13_records","r13_crisis_proof","r13_proof_workspace","_exception") if renpy.display.screen.get_screen(n)],gate=(s.room13 or {}).get("v111",{}).get("gate"),choice=getattr(s,"v111_menu_owner",None),claim=getattr(s,"v111_claim",None),binding=s.r13_v111_binding() if s.r13_v111_active() else {},values=(s.room13 or {}).get("v111",{}).get("values",{}),evidence=(s.room13 or {}).get("evidence",[]),location=(s.room13 or {}).get("location"),say=renpy.display.screen.get_screen("say").scope.get("what","") if renpy.display.screen.get_screen("say") else None,music=renpy.audio.music.get_playing(),people=s.r13_visible_people() if s.r13_v111_active() else [])')
   try:
    await pg.goto(os.environ.get('ROOM13_URL','http://localhost:8766/preview/room13-dev/'),wait_until='domcontentloaded',timeout=180000)
    await pg.wait_for_function("typeof renpy_exec==='function'",timeout=180000);await asyncio.sleep(12);await q.input(1100,600);await q.wait('main_menu')
@@ -170,7 +175,7 @@ async def main():
    for step in range(4500):
     st=await snap();sc=st['screens'];assert '_exception' not in sc,st
     state=(st['gate'],tuple(sc),st['choice'],st['claim'])
-    if os.environ.get('V111_STOP_GATE')==st['gate'] and 'r13_hub' in sc:
+    if os.environ.get('V111_STOP_GATE') and os.environ['V111_STOP_GATE']==st['gate'] and 'r13_hub' in sc:
      await q.shot('natural-stop-'+st['gate']);break
     if os.environ.get('V111_SMOKE') and st['gate']=='note_pick' and 'r13_hub' in sc:  # 2026-10-29 13호 도착 뒤 첫 대기가 note_pick 으로 바뀜
      await q.shot('smoke-room-observe');break
@@ -192,21 +197,51 @@ async def main():
      await q.press('메인 화면으로')
      break
     if 'say' in sc:
-     await q.advance_dialogue();continue
+     await q.advance_dialogue(st);continue
     if 'r13_confirm' in sc:
      yes=await q.py('import renpy;result=renpy.display.screen.get_screen("r13_confirm").scope["yes"]')
      await q.press(yes);continue
     if 'choice' in sc:
      if st['choice'] in ('afternoon','stone_choice','custody_choice') and st['choice'] not in shots:
       await q.shot(route+'-'+st['choice']);shots.add(st['choice'])
-     key=st['choice'];pick={'letter_menu':2,'afternoon':0 if route=='shelter' else 1,'stone_choice':stone,'custody_choice':custody}.get(key,0)
+     key=st['choice'];pick={'letter_menu':2,'afternoon':0 if route=='shelter' else 1,'stone_choice':stone,'custody_choice':custody,'trial_knife':1}.get(key,0)
      if st['gate']=='lamp_observe':pick=next(i for i in range(4) if not st['values'].get('lamp_part_'+str(i)))
      # 회의 무대에서는 고르기 창이 다시 그려지는 동안 잠깐 비어 있을 수 있다. 다음 바퀴에서 다시 본다.
-     try:caption=await q.py('import renpy;result=[i.caption for i in renpy.display.screen.get_screen("choice").scope["items"] if i.action is not None]['+str(pick)+']')
+     try:
+      captions=await q.py('import renpy;result=[i.caption for i in renpy.display.screen.get_screen("choice").scope["items"] if i.action is not None]')
+      caption=next((c for c in captions if '금요일 칸' in c),captions[pick])
      except Exception as e:
       if "'NoneType' object has no attribute" not in str(e):raise
       await asyncio.sleep(1);continue
      await asyncio.sleep(.4);await q.press(caption);continue
+    if 'r13_proof_workspace' in sc:
+     title=st['claim'][5:];node=PROOFS[title]
+     if os.environ.get('V111_UI_CAPTURE') and title=='수리와 반출을 가릴 자료를 낸다' and 'day3-ui' not in shots:
+      await q.py('import renpy;renpy.exports.save("v111-early-workspace");result=True')
+      await q.shot('day3-workspace-desktop')
+      await pg.set_viewport_size(dict(width=844,height=390));await asyncio.sleep(1)
+      await q.shot('day3-workspace-mobile')
+      await pg.set_viewport_size(dict(width=1280,height=720));await asyncio.sleep(1);shots.add('day3-ui')
+     selected=await q.py('import renpy;result=list(renpy.store.room13["arguments"].get(renpy.store.v111_claim,[]))')
+     if os.environ.get('V111_WRONG_ONCE') and wrong_probe<2:
+      if wrong_probe==1:
+       assert selected==[],('Wrong proof retained materials',selected);wrong_probe=2
+      else:node=dict(node,correct=['E01'])
+     missing=[x for x in node['correct'] if 'V111:'+x not in selected]
+     if missing:
+      material='V111:'+missing[0]
+      rect=await q.py('import renpy;s=renpy.store;w=renpy.display.screen.get_widget("r13_proof_workspace",s.r13_pw_id("r13_pw_check_",'+repr(material)+'));f=next((f for f in renpy.display.focus.focus_list if f.widget is w and f.x is not None),None);result=[f.x,f.y,f.w,f.h] if f else None')
+      if rect:
+       x,y,w,h=rect;await q.input(x+w/2,y+h/2)
+      else:
+       data=await q.py('import renpy;s=renpy.store;c=renpy.display.screen.get_screen("r13_proof_workspace").scope;k='+repr(material)+';result=dict(page=c["page"],wanted=next((i for i,p in enumerate(c.get("pages",[])) if any(kind!="header" and k in row for kind,row in p)),None))')
+       if data['wanted'] is not None and data['wanted']!=data['page']:await q.press('다음 →' if data['wanted']>data['page'] else '← 이전')
+       else:await q.press('전체')
+     else:
+      await q.shot(route+'-workspace-'+str(len(shots)));shots.add(title)
+      await q.press('비교 마치기' if title=='두 편지를 나란히 본다' else '근거 제시')
+      if os.environ.get('V111_WRONG_ONCE') and wrong_probe==0:wrong_probe=1
+     continue
     if 'r13_crisis_proof' in sc:
      title=st['claim'][5:];node=PROOFS[title]
      selected=await q.py('import renpy;result=list(renpy.store.room13["arguments"].get(renpy.store.v111_claim,[]))')
@@ -224,9 +259,11 @@ async def main():
       await q.press('논리를 연결한다')
      continue
     if 'r13_book' in sc:
+     if not book_target and st['gate']=='envelope_show':book_target='V111:E01'
      if book_target:
       await q.select_material(book_target);book_target=None
-     else:await q.press('그만두기')
+     else:
+      buttons=(await q.state())['buttons'];await q.press('돌아가기' if any('돌아가기' in b['text'] for b in buttons) else '그만두기')
      continue
     if 'r13_records' in sc:
      await q.press('닫기');continue
@@ -239,7 +276,7 @@ async def main():
      gate=st['gate']
      if not eligible and shown and gate!='gate_choice':
       book_target=shown[0]['present'];await q.press('자료 제시');continue
-     if gate=='gate_investigate' and any(k not in st['evidence'] for k in ('V111:E03','V111:E04')):
+     if gate=='gate_investigate' and any(k not in st['evidence'] for k in (('V111:E03',) if os.environ.get('V111_SKIP_RULE') else ('V111:E03','V111:E04'))):
       await q.press('돌아가기');continue
      if gate=='afternoon2':
       wanted=shelter_step2(route,st['values'])
@@ -316,7 +353,7 @@ async def main():
      if gate not in shots and gate in ('gate_investigate','box_inspect','afternoon','sleep2','piko_clean','lamp_inspect3','measurement_read','sleep3'):
       await q.shot(route+'-'+gate);shots.add(gate)
      if gate=='gate_investigate':
-      idx=0 if 'V111:E03' not in st['evidence'] else 1 if 'V111:E04' not in st['evidence'] else 5
+      idx=0 if 'V111:E03' not in st['evidence'] else 1 if 'V111:E04' not in st['evidence'] and not os.environ.get('V111_SKIP_RULE') else 5
       if os.environ.get('V111_AUDIT') and idx==5 and not reread_checked:idx=2;reread_checked=True
       option=next(o for o in options if o['index']==idx)
      elif gate=='lamp_observe':idx=next(i for i in range(4) if not st['values'].get('lamp_part_'+str(i)));option=next(o for o in options if o['index']==idx)
@@ -347,7 +384,7 @@ async def main():
     await asyncio.sleep(.1)
    else:raise AssertionError(('Play did not complete',st))
    assert not errors,errors
-   report=dict(status='passed',route=route,stone=stone,custody=custody,final=st,events=events,page_errors=errors,ambient_audit=audit_rows,wrong_proof_recovered=(wrong_probe==2),resume=os.environ.get('V111_RESUME'),scope='Actual field/map/topic/record clicks; starts new or resumes an actual prior-play save. Only text speed preference changed.')
+   report=dict(status='passed',version=await q.py('import renpy;result=renpy.config.version'),route=route,stone=stone,custody=custody,final=st,events=events,page_errors=errors,ambient_audit=audit_rows,wrong_proof_recovered=(wrong_probe==2),resume=os.environ.get('V111_RESUME'),scope='실제 현장·지도·질문·기록 버튼으로 3일차까지 진행. 대사는 한 쪽씩 읽어 별도 기록하고, 자료 제출은 기존 경로 도우미를 사용했다. 글자 속도만 변경했다.')
    (OUT/(('smoke' if os.environ.get('V111_SMOKE') else route)+'-report.json')).write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n');print('PASSED',route,flush=True)
   except Exception:
    try:await q.py('import renpy;renpy.exports.save("v111-harness-recovery");result=True');await asyncio.sleep(1)

@@ -1,7 +1,7 @@
 # 자료 대조 통합 화면 (2026-10-27 UX 인계서 D01·D02·D03·D06, 구조 시안 A·B·C).
 #   「대조 화면 → 자료함 → 상세 → 자료함 → 대조 화면」 왕복을 없앤다. 한 화면에 실제 발언(왼쪽), 보유 자료 목록
 #   (가운데, 체크로 고르고 이름을 눌러 읽는다), 열어 본 자료 상세(오른쪽), 고른 자료 칩과 주 행동 하나(아래)를 둔다.
-#   시범 쟁점 셋(1일 입구, 1일 두 편지, 7일 화재 첫 추궁)에서만 쓰고, 나머지 쟁점과 옛 캠페인은 기존
+#   1일 입구·두 편지, 3일 진료소·등 회의, 7일 화재 첫 추궁에서 쓰고, 나머지 쟁점과 옛 캠페인은 기존
 #   r13_crisis_proof / r13_book 으로 간다(room13_v111.rpy r13_v111_proof_again).
 #
 #   바꾸지 않는 것(인계서 13장): v111_claim="v111:"+key 와 room13["arguments"][v111_claim], 정답 판정
@@ -20,6 +20,21 @@ init 350 python:
         "함께 들어갈 근거를 고른다":dict(mode="proof",speaker="돌목",
             quote="지금 이 명단에는 다돌 이름만 있소. 다람 이름은 없으니, 다람은 들어갈 수 없소.",
             quote_when=("flag","v111:entered:MS14_D01_S02")),
+        # 2026-11-05 소유자 시안 승인: 3일도 이미 익힌 같은 화면에서 직접 읽고 고른다.
+        # 인용은 각 쟁점 직전에 실제로 들은 발언뿐이며, 진료소에는 질문 제목만 둔다.
+        "측정 종료와 점검 기록을 대조한다":dict(mode="proof",speaker=None,quote=None,quote_when=None),
+        "수리와 반출을 가릴 자료를 낸다":dict(mode="proof",speaker="돌목",
+            quote="어제 3번 등을 연 사람은 톡 하나요. 장부에 그렇게 적혀 있소. 그리고 아침엔 돌이 없소.",
+            quote_when=("flag","v111:entered:MS14_D03_S05")),
+        "돌과 매입 기록을 낸다":dict(mode="proof",speaker="돌목",
+            quote="아침에 없던 그 돌은 지금 어디 있소? 누구 손을 거쳐 갔소?",
+            quote_when=("flag","v111:entered:MS14_D03_S05")),
+        "바깥 걸쇠 주장과 발견 위치를 대조한다":dict(mode="proof",speaker="실룩",
+            quote="새벽에 간 건 맞아요. 걸쇠가 벌어졌길래 칼로 밀어 닫아 줬죠.",
+            quote_when=("flag","v111:entered:MS14_D03_S05")),
+        "마지막 점검과 인수한 돌을 연결한다":dict(mode="proof",speaker="실룩",
+            quote="그, 그래도…… 내가 판 돌이 그 돌인지는…….",
+            quote_when=("flag","v111:entered:MS14_D03_S05")),
         # 두 편지: 인물의 해설 없이 문서 둘을 직접 읽는다. 의문 한 줄만.
         "두 편지를 나란히 본다":dict(mode="compare",speaker=None,
             quote="초대 편지와 방의 메모를 직접 읽고 견준다. 무엇이 같고, 무엇이 다른가.",
@@ -539,7 +554,9 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
     $ title=R13_PROOF_TITLES.get(key,key)
     default big=False
     $ dock=not big and not pair_open
-    $ L=r13_pw_layout(quote_open,quote_text,dock)
+    # 발언 앞 화자 이름도 실제 줄바꿈 폭에 포함한다. 휴대폰에서 한 줄이 더 생겨 틀 밖으로 나가던 문제를 막는다.
+    $ layout_quote=(((ctx["speaker"]+"  ") if ctx["speaker"] else "")+quote_text) if quote_text else None
+    $ L=r13_pw_layout(quote_open,layout_quote,dock)
     $ touch=L["touch"]
     $ small=r13_pw_small()
     $ ink=r13_nb_ink()
@@ -585,7 +602,7 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
         if quote_text and quote_open:
             frame:
                 xpos L["left"] ypos L["quote_y"] xysize (L["width"],L["quote_h"]) padding (16,10) background r13_field_paper()
-                text ((("{color=%s}"%accent)+ctx["speaker"]+"{/color}  ") if ctx["speaker"] else "")+quote_text size r13_nb_emphasis_size() color ink font R13_UI_BOLD_FONT xsize (L["width"]-32)
+                text ((("{color=%s}"%accent)+ctx["speaker"]+"{/color}  ") if ctx["speaker"] else "")+quote_text size r13_nb_emphasis_size() color ink font R13_UI_BOLD_FONT xsize (L["width"]-32) id "r13_pw_quote_text"
     else:
         vbox:
             xpos L["quote_x"] ypos L["top"] xsize L["quote_w"] spacing 10
