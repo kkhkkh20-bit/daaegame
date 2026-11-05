@@ -1,0 +1,131 @@
+{
+  "버전": "0.20.92",
+  "검수일": "2026-11-04~05",
+  "대상": "기존 본편 7~9일차",
+  "수정": 9,
+  "단위": {
+    "개수": 1169,
+    "결과": "통과"
+  },
+  "문법": "통과",
+  "대사자동검사": {
+    "A": 0,
+    "B": 0,
+    "C": 0
+  },
+  "화면시험": [
+    {
+      "test": "v111_nw_d07_fire_lost",
+      "passed": true,
+      "seconds": 26.03
+    },
+    {
+      "test": "v111_nw_d07_fire_partial",
+      "passed": true,
+      "seconds": 18.02
+    },
+    {
+      "test": "v111_d789_day8_custody_stays",
+      "passed": true,
+      "seconds": 18.02
+    },
+    {
+      "test": "v111_d789_day8_school_handoff",
+      "passed": true,
+      "seconds": 20.03
+    },
+    {
+      "test": "v111_d789_day9_returned_papers_people",
+      "passed": true,
+      "seconds": 26.03
+    }
+  ],
+  "실제웹진행": {
+    "수정전": {
+      "버전": "0.20.91",
+      "시작": "실제 6일차 취침 저장",
+      "끝": "9일차 취침 전",
+      "페이지오류": []
+    },
+    "주경로": {
+      "시작": "실제 0.20.91의 6일차 저장",
+      "재개": "수정판 실제 8일차 조사 저장",
+      "끝": "9일차 취침 전",
+      "상태": {
+        "route7": "murder",
+        "prevention": null,
+        "OWL_ALIVE": false,
+        "DARAM_DETAINED": true,
+        "location:daram": "v111_custody",
+        "location:nabi": "dining",
+        "location:resident_teacher": "school",
+        "busy:nabi": null,
+        "meeting:fire": "win",
+        "CHORONG_ALIVE": true
+      },
+      "페이지오류": [],
+      "자료수": 57,
+      "완료후최종묶음확인": "PC·휴대폰에서 같은 9일차 저장 복원"
+    },
+    "예방경로": {
+      "시작": "실제 7일차 낮 저장",
+      "선택": "도토의 다짐",
+      "최종보정후": "실제 8일차 취침 저장에서 9일 전체 재확인",
+      "끝": "9일차 취침 전",
+      "상태": {
+        "route7": "prevented",
+        "prevention": "promise",
+        "OWL_ALIVE": true,
+        "DARAM_DETAINED": false,
+        "location:daram": "school",
+        "location:nabi": "kitchen",
+        "location:resident_teacher": "school",
+        "busy:nabi": null,
+        "meeting:fire": "win",
+        "CHORONG_ALIVE": true
+      },
+      "페이지오류": []
+    },
+    "별도선택": {
+      "시작": "실제 7일차 선택 직전 저장",
+      "선택": [
+        "여기서 계속 묻는다",
+        "등잔 위치를 묻는다"
+      ],
+      "도달": "NW_D07_S01_Q02",
+      "페이지오류": []
+    }
+  },
+  "저장복원": [
+    {
+      "device": "desktop",
+      "version": "0.20.92",
+      "same": true,
+      "page_errors": []
+    },
+    {
+      "device": "mobile",
+      "version": "0.20.92",
+      "same": true,
+      "page_errors": []
+    }
+  ],
+  "공개묶음": {
+    "SHA256": "16628e1bd4f7f7a9621bb9ac752f675c55395b90db7d5a225adbe7244b58dbe0",
+    "원본일치": [
+      "options.rpy",
+      "room13_v111_days610.rpy",
+      "v111/newworld/d07.json",
+      "v111/newworld/d08.json",
+      "v111/newworld/d09.json",
+      "v111/evidence-drawer.json"
+    ],
+    "QA파일제외": true
+  },
+  "제한": [
+    "실행 코드의 기존 정답 목록을 참고한 자동화로, 처음 보는 사람의 눈가림 시험은 아니다.",
+    "도우미의 반복 질문·클릭 가정을 수정하고 실제 저장에서 재개했으며 단일 무중단 실행은 아니다.",
+    "10~14일과 모든 선택 순열은 이번에 진행하지 않았다.",
+    "공개 도메인은 환경 네트워크 정책으로 직접 접속하지 못하며 원격 해시·Pages 작업으로 배포를 확인한다."
+  ]
+}
