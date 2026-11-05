@@ -1,5 +1,6 @@
 # Approved moonlit square cover; menu labels remain real keyboard/touch controls.
 init 60 python:
+    R13_TITLE_ART = json.load(renpy.file("assets/room13-title-layout.json"))
     renpy.register_shader("r13.title_portrait_fade",
         variables="varying vec2 v_tex_coord;",
         fragment_300="gl_FragColor *= 1.0 - smoothstep(0.82, 1.0, v_tex_coord.y);")
@@ -21,26 +22,45 @@ init 60 python:
             super(R13TitleLink,self).__init__(**kwargs)
             self.focused=focused
             self.disabled=disabled
+            self.primary=primary
         def render(self,width,height,st,at):
             w=max(1,int(width));h=max(1,int(height))
             out=renpy.Render(w,h);c=out.canvas()
-            y=h-20;mid=w//2
-            if self.focused and not self.disabled:
-                for spread,alpha in ((5,12),(3,22),(1,40)):
-                    c.rect((255,196,109,alpha),(23,y-spread,w-46,2*spread+2))
-                color=(255,210,132,255)
+            gold="#ffe3a4" if self.focused else "#c9a362"
+            if self.primary:
+                points=[(17,2),(w-17,2),(w-3,16),(w-3,h-18),(w-17,h-4),(17,h-4),(3,h-18),(3,16)]
+                c.polygon("#03112099",[(x,y+4) for x,y in points])
+                c.polygon(gold,points)
+                inner=[(18,5),(w-18,5),(w-6,17),(w-6,h-19),(w-18,h-7),(18,h-7),(6,h-19),(6,17)]
+                c.polygon("#b8362d" if self.focused else "#a52c29",inner)
+                c.lines("#e4bb77",True,[(21,10),(w-21,10),(w-11,20),(w-11,h-22),(w-21,h-12),(21,h-12),(11,h-22),(11,20)],1)
             else:
-                color=(173,182,205,125 if not self.disabled else 55)
-            c.rect(color,(23,y,mid-30,1))
-            c.rect(color,(mid+7,y,w-mid-30,1))
-            for dx,dy in ((0,-3),(-3,0),(3,0),(0,3)):
-                x=mid+dx;yy=y+dy
-                c.polygon(color,[(x,yy-2),(x+2,yy),(x,yy+2),(x-2,yy)])
+                if self.focused and not self.disabled:
+                    c.rect("#f7ddaa12",(14,2,w-28,h-7))
+                    c.polygon(gold,[(18,h//2-5),(25,h//2),(18,h//2+5)])
+                line="#79796b" if self.disabled else gold
+                c.line(line,(32,h-4),(w-32,h-4),1)
+                c.polygon(line,[(w//2,h-7),(w//2+4,h-4),(w//2,h-1),(w//2-4,h-4)])
             return out
 
 screen r13_cover_button(caption,key,icon,width,command,focus,enabled=True,first=False):
-    $ state_icon=Transform(Crop((16,16,32,32),r13_field_icon(icon)),zoom=30.0/32,alpha=1.0 if enabled else .45)
-    use r13_state_button(caption,command,width,76,family="main_primary" if focus==key and enabled else "main_standard",enabled=enabled,icon=state_icon,text_size=28,control_id="r13_cover_"+key,first=first,hover_action=SetScreenVariable("title_focus",key))
+    $ state_icon=Transform(R13AntiqueIcon(icon,size=32) if icon in ("record","settings") else Crop((16,16,32,32),r13_field_icon(icon)),matrixcolor=ColorizeMatrix("#c6a574","#fff0cd"))
+    button:
+        id ("r13_cover_"+key)
+        style "empty"
+        xysize (width,76) padding (0,0)
+        background R13TitleLink(focused=focus==key,disabled=not enabled,primary=key=="new")
+        hover_background R13TitleLink(focused=True,primary=key=="new")
+        insensitive_background R13TitleLink(disabled=True,primary=key=="new")
+        action command sensitive enabled default_focus first alt caption
+        hovered SetScreenVariable("title_focus",key)
+        activate_sound ("<volume 0.65>"+r13_asset_path("file:assets/diary-sounds/paper-selection.mp3"))
+        hbox:
+            align (.5,.5) spacing 20
+            add state_icon alpha (1.0 if enabled else .42) yalign .5
+            text caption:
+                font R13_UI_FONT size r13_type("display") yalign .5
+                color ("#fff0cd" if enabled else "#95978d") hover_color "#fff4db"
 
 # B 메인 전용 스타일. 이전 화면/저장 호환용 스타일.
 init 81:

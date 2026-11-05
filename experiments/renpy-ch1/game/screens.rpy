@@ -61,24 +61,26 @@ screen main_menu():
     $ title_continue = r13_continue_slot()
     $ title_has_save = bool(r13_save_slots())
     default title_focus = ("continue" if r13_continue_slot() else "new")
-    # 소유자 요청: 왼쪽 마을 엽서를 빼고 남색 바탕에 오른쪽 인물 스티커만 둔다.
-    add Solid("#0a2252")
-    add Transform(r13_asset_path("file:assets/ui-b-main/b_logo.png"), zoom=.85) xpos -18 ypos 10
-    # Approved single transparent ensemble sticker; preserve its original ratio.
-    add Transform(r13_asset_path("file:assets/ui-b-main/b_main_cast_poster_plain.png"),zoom=610.0/1402) xpos 754 ypos 80
+    # 승인한 책 표지 구성. 로고·인물은 기존 원본을 그대로 얹는다.
+    add Solid(R13_TITLE_ART["background"])
+    for layer in R13_TITLE_ART["layers"]:
+        add Transform(r13_asset_path("file:"+layer[0]),zoom=layer[1]) pos (layer[2],layer[3])
+    text R13_TITLE_ART["subtitle"]["text"]:
+        pos tuple(R13_TITLE_ART["subtitle"]["center"]) anchor (.5,.5)
+        font R13_UI_FONT size r13_type("subtitle") color "#f2d59a"
     fixed:
         at r13_title_menu_in
-        hbox:
-            xpos 44 ypos 616 spacing 14
-            use r13_cover_button("이어하기","continue","acorn",184,(r13_load_action(title_continue) if title_continue is not None else NullAction()),title_focus,title_continue is not None,title_continue is not None)
-            use r13_cover_button("처음부터","new","book",184,Start(),title_focus,True,title_continue is None)
-            use r13_cover_button("불러오기","load","record",184,ShowMenu("load"),title_focus,title_has_save)
-            use r13_cover_button("설정","settings","settings",184,ShowMenu("pause_menu"),title_focus)
+        vbox:
+            xpos 174 ypos 326 spacing 4
+            use r13_cover_button("처음부터","new","book",380,Start(),title_focus,True,title_continue is None)
+            use r13_cover_button("이어하기","continue","acorn",380,(r13_load_action(title_continue) if title_continue is not None else NullAction()),title_focus,title_continue is not None,title_continue is not None)
+            use r13_cover_button("불러오기","load","record",380,ShowMenu("load"),title_focus,title_has_save)
+            use r13_cover_button("설정","settings","settings",380,ShowMenu("pause_menu"),title_focus)
     textbutton "음악 출처":
-        xpos 44 ypos 696 padding (4,2) background None
-        text_font R13_UI_FONT text_size (r13_type("small")) text_color "#c5c6d2" text_hover_color "#fff0ce"
+        xpos 56 ypos 660 padding (4,2) background None
+        text_font R13_UI_FONT text_size (r13_type("small")) text_color "#dec58e" text_hover_color "#fff0ce"
         action Show("r13_music_credits")
-    text config.version xpos 1172 ypos 674 font r13_ui_font() size (r13_type("small")) color "#b2b8b8"
+    text config.version xpos 1138 ypos 664 font r13_ui_font() size (r13_type("small")) color "#dec58e"
 
 # Two-line panels end 16px above the unchanged shared gameplay footer.
 # Tops are expressed against the historical bottom=632 coordinate.

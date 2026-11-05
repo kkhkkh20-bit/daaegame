@@ -15,11 +15,13 @@ class LoadingScene(unittest.TestCase):
         self.assertEqual(scene.size, make_loading_scene.CANVAS)
         # 메인과 같은 바탕·파일·배율·좌표여야 로딩이 끝날 때 그림이 튀지 않는다.
         menu = (ROOT / 'game/screens.rpy').read_text(encoding='utf-8')
-        for rel, zoom, x, y in make_loading_scene.LAYERS:
-            self.assertIn(Path(rel).name, menu)
-        self.assertEqual([l[1:] for l in make_loading_scene.LAYERS], [(.85, -18, 10), (610.0 / 1402, 754, 80)])
-        self.assertIn('add Solid("'+make_loading_scene.BACKGROUND+'")',menu)
-        self.assertEqual(scene.getpixel((300,400)),(10,34,82))
+        self.assertIn('for layer in R13_TITLE_ART["layers"]',menu)
+        self.assertEqual(make_loading_scene.LAYERS[0][0],'assets/room13-title-book-cover.webp')
+        self.assertEqual(make_loading_scene.LAYERS[1][0],'assets/ui-b-main/b_logo.png')
+        self.assertEqual(make_loading_scene.LAYERS[2][0],'assets/ui-b-main/b_main_cast_poster_plain.png')
+        self.assertEqual(len(make_loading_scene.LAYERS),3)
+        # 남색 천 배경과 오른쪽 크림색 판의 밝기 차이를 확인한다.
+        self.assertGreater(sum(scene.getpixel((1180,330))),sum(scene.getpixel((80,400))))
         shipped = ROOT / 'game' / LOADING_ART[0]
         self.assertTrue(shipped.exists())
         self.assertEqual(Image.open(shipped).size, make_loading_scene.CANVAS)

@@ -1,7 +1,7 @@
-# Approved 2x2 title: transparent margins must not block directional focus.
+# 승인된 세로 메뉴: 비활성 항목을 건너뛰고 키보드로 설정을 연다.
 testcase title_b_navigation:
     pause 3.0
-    move pos (446,506)
+    move pos (360,360)
     pause 0.3
     keysym "K_DOWN"
     pause 0.3

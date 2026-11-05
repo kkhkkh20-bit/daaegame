@@ -10,19 +10,17 @@
     python3 dev/make_loading_scene.py 출력경로    # 다른 자리에 쓸 때
 """
 from pathlib import Path
-import sys
-from PIL import Image
+import sys,json
+from PIL import Image,ImageDraw,ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
 GAME = ROOT / "game"
 OUT = GAME / "assets/room13-loading-scene.webp"
-CANVAS = (1280, 720)
-BACKGROUND = "#0a2252"
-# screens.rpy main_menu 의 두 add Transform 줄: (파일, zoom, xpos, ypos)
-LAYERS = (
-    ("assets/ui-b-main/b_logo.png", .85, -18, 10),
-    ("assets/ui-b-main/b_main_cast_poster_plain.png", 610.0 / 1402, 754, 80),
-)
+ART = json.loads((GAME / "assets/room13-title-layout.json").read_text())
+CANVAS = tuple(ART["canvas"])
+BACKGROUND = ART["background"]
+# 메인과 로딩은 같은 배치 정의를 읽는다.
+LAYERS = ART["layers"]
 
 
 def compose(game=GAME):
@@ -33,6 +31,9 @@ def compose(game=GAME):
         w, h = layer.size
         layer = layer.resize((round(w * zoom), round(h * zoom)), Image.LANCZOS)
         scene.alpha_composite(layer, (x, y))
+    subtitle = ART["subtitle"]
+    font = ImageFont.truetype(str(game / subtitle["font"]), subtitle["size"])
+    ImageDraw.Draw(scene).text(tuple(subtitle["center"]), subtitle["text"],font=font,fill=subtitle["color"],anchor="mm")
     return scene.convert("RGB")
 
 

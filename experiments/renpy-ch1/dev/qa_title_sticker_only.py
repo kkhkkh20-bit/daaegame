@@ -1,4 +1,4 @@
-"""실제 웹 로딩·메인에서 왼쪽 지도 제거와 PC·휴대폰 메뉴를 확인한다."""
+"""실제 책 표지 로딩·메인과 PC·휴대폰 메뉴를 확인한다."""
 import asyncio,json,os
 from pathlib import Path
 from PIL import Image
@@ -24,15 +24,18 @@ async def main():
    await page.screenshot(path=str(OUT/'로딩_PC.png'))
    with Image.open(OUT/'로딩_PC.png') as im:
     pixel=im.convert('RGB').getpixel((300,400))
-   assert max(abs(a-b) for a,b in zip(pixel,(10,34,82)))<6,pixel
+   assert pixel[2]>pixel[0] and sum(pixel)<180,pixel
    await page.set_viewport_size({'width':844,'height':390});await page.screenshot(path=str(OUT/'로딩_휴대폰.png'))
    await page.set_viewport_size({'width':1280,'height':720});release.set()
    await page.wait_for_function("typeof renpy_exec==='function' && !document.getElementById('presplash')",timeout=180000)
-   await q.wait('main_menu');await asyncio.sleep(1)
+   await q.wait('main_menu');await asyncio.sleep(2)
    await page.screenshot(path=str(OUT/'메인_PC.png'))
    st=await q.state()
    assert any('처음부터' in b['text'] for b in st['buttons']),st
-   await q.press('설정');await q.wait('pause_menu');await q.press('닫기');await q.wait('main_menu')
+   menu=[b for b in st['buttons'] if b['text'].strip() in ('처음부터','이어하기','불러오기','설정')]
+   assert menu and len({round(b['rect'][0]) for b in menu})==1,menu
+   await page.mouse.move(360,360);await page.keyboard.press('ArrowDown');await page.keyboard.press('Enter')
+   await q.wait('pause_menu');await q.press('닫기');await q.wait('main_menu')
    await page.set_viewport_size({'width':844,'height':390});q.touch=True
    await page.screenshot(path=str(OUT/'메인_휴대폰.png'))
    await q.press('설정');await q.wait('pause_menu');await q.press('닫기');await q.wait('main_menu')
