@@ -927,7 +927,7 @@ label r13_v111_lamp_fragment3:
     call r13_v111_travel('square','lamp_fragment3')
     $ r13_v111_score()
     $ r13_v111_commit('MS14_D03_S02_L0016')
-    call r13_lines(r13_v111_lines(['MS14_D03_S02_L9102', 'MS14_D03_S02_L0017', 'MS14_D03_S02_L0019', 'MS14_D03_S02_L0020', 'MS14_D03_S02_L0021', 'MS14_D03_S02_L0022', 'MS14_D03_S02_L0023', 'MS14_D03_S02_L0024', 'MS14_D03_S02_L0025']), 'v111:lamp_fragment3:MS14_D03_S02_L9102')
+    call r13_lines(r13_v111_lines(['MS14_D03_S02_L0017', 'MS14_D03_S02_L0018', 'MS14_D03_S02_L9102', 'MS14_D03_S02_L0019', 'MS14_D03_S02_L0020', 'MS14_D03_S02_L0021', 'MS14_D03_S02_L0022', 'MS14_D03_S02_L0023', 'MS14_D03_S02_L0024', 'MS14_D03_S02_L0025']), 'v111:lamp_fragment3:MS14_D03_S02_L9102')
     jump r13_v111_lamp_log_request
 
 label r13_v111_lamp_log_request:
@@ -976,12 +976,7 @@ label r13_v111_clinic3:
     call r13_v111_travel('clinic','clinic3')
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D03_S03_L0013', 'MS14_D03_S03_L0014', 'MS14_D03_S03_L0015', 'MS14_D03_S03_L0016', 'MS14_D03_S03_L0017', 'MS14_D03_S03_L0018', 'MS14_D03_S03_L0019', 'MS14_D03_S03_L0020', 'MS14_D03_S03_L0021', 'MS14_D03_S03_L0022', 'MS14_D03_S03_L0023', 'MS14_D03_S03_L0024']), 'v111:clinic3:MS14_D03_S03_L0013')
-    # 0.20.7 (owner days 2-14 #2): how Dad asks after his apology; both reach the same time and record.
-    $ v111_answer=renpy.display_menu([("(무엇부터 물을까?)",None),("꺼낸 시각부터 묻는다",0),("다시 넣은 게 확실한지 묻는다",1)])
-    if v111_answer==0:
-        call r13_lines(r13_v111_lines(['MS14_D03_S03_L0025', 'MS14_D03_S03_L0026']), 'v111:clinic3:MS14_D03_S03_L0025')
-    else:
-        call r13_lines(r13_nw_block('clinic_returned3'),'nw:clinic_returned3')
+    call r13_lines(r13_v111_lines(['MS14_D03_S03_L0025', 'MS14_D03_S03_L0026']), 'v111:clinic3:MS14_D03_S03_L0025')
     jump r13_v111_measurement_read
 
 label r13_v111_measurement_read:
@@ -1205,8 +1200,23 @@ label r13_v111_knife_wrong:
     jump r13_v111_trial_choices
 
 label r13_v111_trial_latch:
+    if not r13_v111_value("lamp_latch_question3"):
+        call r13_v111_latch_question3
     call r13_v111_proof('바깥 걸쇠 주장과 발견 위치를 대조한다',['E17', 'E32', 'E33'],'r13_v111_trial_latch_ok','r13_v111_trial_wrong_latch','r13_v111_trial_hint_latch')
     jump expression _return
+
+label r13_v111_latch_question3:
+    menu:
+        "걸쇠만 닫았다는 말을 어떻게 확인할까?"
+        "칼끝의 단면을 다시 맞춘다":
+            call r13_lines(r13_nw_block('piko_latch_shape3'),'nw:piko_latch_shape3')
+            jump r13_v111_latch_question3
+        "마지막 점검 시각을 다시 본다":
+            call r13_lines(r13_nw_block('piko_latch_time3'),'nw:piko_latch_time3')
+            jump r13_v111_latch_question3
+        "걸쇠와 파편 발견 위치를 대조한다":
+            $ r13_v111_set("lamp_latch_question3",True)
+    return
 
 label r13_v111_trial_latch_ok:
     $ r13_v111_scene('MS14_D03_S05')
@@ -1302,6 +1312,7 @@ label r13_v111_silluk_report:
     $ r13_v111_scene('MS14_D03_S05')
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D03_S05_L0057', 'MS14_D03_S05_L0058', 'MS14_D03_S05_L0059', 'MS14_D03_S05_L0060', 'MS14_D03_S05_L0061', 'MS14_D03_S05_L0062']), 'v111:silluk_report:MS14_D03_S05_L0057')
+    call r13_v111_piko_children_response3('report')
     $ r13_v111_commit('MS14_D03_S05_L0062')
     jump r13_v111_restore_route
 
@@ -1309,10 +1320,25 @@ label r13_v111_silluk_transfer:
     $ r13_v111_scene('MS14_D03_S05')
     $ r13_v111_score()
     call r13_lines(r13_v111_lines(['MS14_D03_S05_L0063', 'MS14_D03_S05_L0064', 'MS14_D03_S05_L0065', 'MS14_D03_S05_L0066']), 'v111:silluk_transfer:MS14_D03_S05_L0063')
+    call r13_v111_piko_children_response3('transfer')
     $ r13_v111_commit('MS14_D03_S05_L0067')
     # Neoul lists Silluk the same night to keep him quiet (plan 사건 03).
     $ r13_nw_list('resident_siluk','lamp_transfer')
     jump r13_v111_restore_route
+
+label r13_v111_piko_children_response3(decision):
+    # 같은 공방의 실제 돌봄 담당자에게 직접 말한다. 식사·귀가·인수를 완료 처리하지 않는다.
+    if r13_v111_value('lamp_bound2') or room13.get('location')!='workshop' or r13_v111_value('meeting:lamp')!='win':
+        return
+    if r13_v111_value('silluk.children.location')!='workshop_with_buri' or not r13_v111_actor_ready('buri'):
+        return
+    $ r13_v111_join(['buri'])
+    if decision=='report':
+        call r13_lines(r13_nw_block('piko_children_report3'),'nw:piko_children_report3')
+    else:
+        call r13_lines(r13_nw_block('piko_children_transfer3'),'nw:piko_children_transfer3')
+    $ r13_v111_set('piko_custody_heard3:buri',decision)
+    return
 
 label r13_v111_trial_wrong:
     $ r13_v111_scene('MS14_D03_S05')

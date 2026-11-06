@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>다람탐정 · 자료 읽기 시안</title>
+<style>
+@font-face{font-family:Pretendard;src:url('../../../game/assets/Pretendard-Regular.otf') format('opentype');font-weight:400}
+@font-face{font-family:Pretendard;src:url('../../../game/assets/Pretendard-Bold.otf') format('opentype');font-weight:700}
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#111820;font-family:Pretendard,sans-serif}
+button{font:inherit;cursor:pointer}
+button:focus-visible{outline:4px solid #a63a2e;outline-offset:4px}
+#game{position:absolute;width:1280px;height:720px;transform-origin:0 0;color:#263b4d;--small:20px;--body:22px;--fact:24px;--title:28px;--button:64px}
+#game.touch{--small:26px;--body:28px;--fact:30px;--title:34px;--button:88px}
+.notebook{position:absolute;left:-4px;top:-4px;width:1288px;height:728px;pointer-events:none}
+.heading{position:absolute;left:132px;top:63px;display:flex;align-items:center;gap:24px;height:48px}
+h1{font-size:30px;font-weight:400;margin:0}
+.badge{color:#a63a2e;border:1px solid #a63a2e;padding:5px 11px;font-size:20px}
+.stamp{position:absolute;right:74px;top:77px;font-size:20px;color:#6b5641}
+.rule{position:absolute;left:132px;top:128px;width:1074px;border-top:1px solid #c9a86a}
+.context{position:absolute;left:132px;top:143px;width:1074px;height:39px;display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:var(--fact)}
+.context small{font-size:var(--small);color:#6b5641;white-space:nowrap}
+#content{position:absolute;left:132px;top:194px;width:1074px;height:342px;display:grid;gap:24px;grid-template-columns:1fr 1fr}
+.paper{min-width:0;min-height:0;background:#f5ecd9;border:1px solid #c9a86a;border-radius:5px;padding:18px 22px;overflow:auto;scrollbar-color:#9c7d51 #e9dec6;scrollbar-width:thin}
+.touch .paper{padding:14px 20px}
+.card-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px;min-height:38px}
+.card-head h2{font-size:var(--title);line-height:1.2;font-weight:400;margin:0}
+.doc-icon{display:block;flex:none;width:28px;height:34px;border:2px solid #9a7953;border-radius:2px;position:relative;background:repeating-linear-gradient(to bottom,transparent 0 6px,#9a795355 7px 8px);background-clip:content-box;padding:6px 4px}
+.group-title{font-size:var(--small);line-height:1.2;color:#6b5641;font-weight:400;margin:0 0 5px}
+.fact{font-size:var(--fact);line-height:1.28;margin:0;word-break:keep-all;overflow-wrap:break-word}
+.speech{border-top:1px solid #c9a86a77;margin-top:12px;padding-top:10px}
+.speech .fact{max-width:100%}
+.original{border-top:1px solid #c9a86a77;margin-top:16px;padding-top:14px;font-size:var(--body);line-height:1.4;word-break:keep-all}
+.original p{margin:6px 0 0}
+.original .group-title{margin:12px 0 0}
+.read-tabs{position:absolute;left:500px;top:54px;display:flex;gap:16px;height:64px}
+.read-tabs .control{height:64px}
+.touch .read-tabs{top:54px;height:88px}
+.touch .read-tabs .control{height:88px}
+.touch .rule{top:148px}
+.touch .context{top:156px}
+.touch #content{top:206px;height:330px}
+.toolbar{position:absolute;left:132px;bottom:84px;width:1074px;display:flex;align-items:center;gap:16px;height:var(--button)}
+.control{height:var(--button);background:#f5ecd9;color:#263b4d;border:2px solid #263b4d;box-shadow:inset 0 0 0 2px #c9a86a;border-radius:5px;font-size:var(--body);font-weight:400;flex:none;padding:0 16px;display:flex;align-items:center;justify-content:center;gap:8px}
+.control:hover{background:#eee0c4}
+.control[aria-pressed=true]{background:#263b4d;color:#fff3df;box-shadow:inset 0 0 0 2px #c9a86a}
+#list{width:176px}#single{width:208px}#pair{width:240px}#source{width:200px}#submit{width:240px}
+.control:disabled{cursor:default;background:#e6dac6;border-color:#9b8b78;color:#756958;box-shadow:inset 0 0 0 2px #c8b69c}
+.control.primary{background:#a63a2e;color:#fff3df;border-color:#763a2a;box-shadow:inset 0 0 0 2px #c9a86a}
+.control.primary:disabled{opacity:.55}
+.selection-count{flex:1;min-width:0;font-size:var(--body);line-height:1.3}
+.selection-count small{display:block;font-size:var(--small);color:#6b5641;margin-top:4px}
+.touch .toolbar{bottom:84px}
+.catalogue{padding:14px;display:flex;flex-direction:column;gap:12px}
+.entry{width:100%;min-width:0;border:1px solid #c9a86a;border-radius:4px;background:#f5ecd9;color:#263b4d;text-align:left;display:flex;align-items:stretch;font-size:var(--title);line-height:1.3;min-height:116px}
+.entry[data-chosen=true]{border:2px solid #a63a2e}
+.entry-check{width:64px;flex:none;min-height:88px;border:0;border-right:1px solid #c9a86a77;background:transparent;color:#a63a2e;display:flex;align-items:center;justify-content:center}
+.touch .entry-check{width:88px}
+.check-mark{width:30px;height:30px;border:2px solid #263b4d;display:flex;align-items:center;justify-content:center;font-size:26px;line-height:1}
+.entry-name{flex:1;min-width:0;border:0;background:transparent;text-align:left;padding:14px 16px;display:flex;align-items:center;gap:12px;color:#263b4d;font-size:var(--title);line-height:1.3}
+.entry-name:hover,.entry-check:hover{background:#eee0c4}
+.entry-name[aria-current=true]{background:#eee0c4}
+.catalogue .entry-name .doc-icon{display:none}
+.entry .meta{font-size:var(--small);color:#6b5641;margin-top:7px}
+.entry span.text{min-width:0}
+.list-hint{font-size:var(--body);color:#6b5641;line-height:1.4;padding:2px 4px}
+#content.single{grid-template-columns:300px 750px}
+#game.touch #content.single{grid-template-columns:1fr}
+#game.touch #content.single .catalogue{display:none}
+#content.list{grid-template-columns:1fr 1fr}
+#content.list .entry{height:160px;align-self:start}
+#content.list .list-hint{grid-column:1/-1;margin:0}
+.single .paper:not(.catalogue) .fact{max-width:660px}
+.single .paper:not(.catalogue) .speech .fact{max-width:660px}
+@media(prefers-reduced-motion:no-preference){.control{transition:background .1s}}
+</style>
+</head>
+<body>
+<main id="game" aria-label="자료 읽기 시안">
+  <img class="notebook" src="../../../game/assets/ui-b-options/b_opt_panel.png" alt="">
+  <header class="heading"><h1>자료 대조</h1><span class="badge">읽기 시안</span></header>
+  <nav class="read-tabs" aria-label="자료 읽는 방식">
+    <button class="control" id="single" data-mode="single" aria-pressed="false">한 장만 보기</button>
+    <button class="control" id="pair" data-mode="pair" aria-pressed="true">나란히 읽기</button>
+  </nav>
+  <div class="stamp">3일째 · 진료소</div><div class="rule"></div>
+  <div class="context"><span>측정 종료와 점검 기록을 대조한다</span><small id="mode-caption">두 자료를 함께 읽기</small></div>
+  <section id="content" aria-label="보유 자료 읽기"></section>
+  <nav class="toolbar" aria-label="자료 선택과 근거 제시">
+    <button class="control" id="list" data-mode="list" aria-pressed="false">목록</button>
+    <output class="selection-count" aria-live="polite"><span id="selection-count">선택 자료 0장</span><small>읽는 자료와 별개</small></output>
+    <button class="control" id="source" aria-expanded="false">출처 펼치기</button>
+    <button class="control primary" id="submit" disabled>근거 제시</button>
+  </nav>
+</main>
+<script>
+/* 독립 읽기 시안. 게임 저장·선택·정답 판정 함수와 연결하지 않는다.
+   근거: game/v111/records.json E11/E13 및 evidence-facts.json.
+   문서와 별도 진술을 나눈 표시이며, 특정 답을 고르는 표시는 넣지 않는다. */
+const records={
+ E11:{title:'초롱의 점검장',person:'초롱',doc:['3번 등 · 돌 표식 3','새벽 종 직전 점검 완료'],heard:['받침을 청소했고,','당시 파편은 없었다.'],body:'점검장: 3번 / 돌 3 / 새벽 종 직전 점검 완료. 받침 청소와 당시 파편이 없었다는 것은 초롱의 별도 말이다.'},
+ E13:{title:'우박의 측정지',person:'우박',doc:['3번 등 · 돌 표식 3','측정 시작·종료 기록'],heard:['새벽 종보다 한참 전에','측정을 끝냈다.'],body:'측정지: 등번호 3 / 돌표식 3 / 측정 시작·종료 기록. 우박은 새벽 종 전보다 한참 앞에 끝났다고 말했다.'}
+};
+const game=document.querySelector('#game'),content=document.querySelector('#content');
+let mode=new URLSearchParams(location.search).get('view')||'pair',active='E11',origin=false;
+const selected=new Set();
+if(!['list','single','pair'].includes(mode))mode='pair';
+function icon(){return '<i class="doc-icon" aria-hidden="true"></i>'}
+function card(key){const r=records[key];return `<article class="paper" data-record="${key}" aria-label="${r.title}"><div class="card-head"><h2>${r.title}</h2>${icon()}</div><section><h3 class="group-title">문서</h3>${r.doc.map(t=>`<p class="fact">${t}</p>`).join('')}</section><section class="speech"><h3 class="group-title">직접 들은 말 · ${r.person}</h3><p class="fact">${r.heard.join('<br>')}</p></section>${origin?`<section class="original"><h3 class="group-title">출처 내용</h3><p>${r.body}</p></section>`:''}</article>`}
+function entry(key){const r=records[key],chosen=selected.has(key);return `<div class="entry" data-chosen="${chosen}"><button class="entry-check" data-select="${key}" role="checkbox" aria-checked="${chosen}" aria-label="${r.title} 근거 선택"><span class="check-mark" aria-hidden="true">${chosen?'✓':''}</span></button><button class="entry-name" data-key="${key}" aria-current="${active===key}">${icon()}<span class="text">${r.title}<span class="meta" style="display:block">3일 · 보유 자료</span></span></button></div>`}
+function render(){content.className=mode;
+ if(mode==='pair')content.innerHTML=card('E11')+card('E13');
+ if(mode==='single')content.innerHTML='<aside class="paper catalogue" aria-label="자료 목록">'+Object.keys(records).map(entry).join('')+'</aside>'+card(active);
+ if(mode==='list')content.innerHTML=Object.keys(records).map(entry).join('')+'<p class="list-hint">체크는 근거 선택 · 이름은 자료 읽기<br>나란히 읽어도 두 자료가 자동으로 선택되지 않습니다.</p>';
+ document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===mode)));
+ document.querySelector('#source').textContent=origin?'출처 접기':'출처 펼치기';document.querySelector('#source').setAttribute('aria-expanded',String(origin));
+ document.querySelector('#source').disabled=mode==='list';
+ document.querySelector('#selection-count').textContent=`선택 자료 ${selected.size}장`;
+ document.querySelector('#submit').disabled=selected.size===0;
+ document.querySelector('#mode-caption').textContent={pair:'두 자료를 함께 읽기',single:'한 장씩 읽기',list:'보유 자료'}[mode];
+ content.querySelectorAll('[data-key]').forEach(b=>b.addEventListener('click',()=>{active=b.dataset.key;mode='single';render()}));
+ content.querySelectorAll('[data-select]').forEach(b=>b.addEventListener('click',()=>{selected.has(b.dataset.select)?selected.delete(b.dataset.select):selected.add(b.dataset.select);render()}));
+ window.prototypeState={mode,active,origin,selected:[...selected]};
+}
+document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>{mode=b.dataset.mode;render()}));
+document.querySelector('#source').addEventListener('click',()=>{origin=!origin;render()});
+document.querySelector('#submit').addEventListener('click',()=>{document.querySelector('#mode-caption').textContent=`${selected.size}장 제출 시안 · 판정 없음`});
+function fit(){const scale=Math.min(innerWidth/1280,innerHeight/720);game.style.transform=`scale(${scale})`;game.style.left=`${(innerWidth-1280*scale)/2}px`;game.style.top=`${(innerHeight-720*scale)/2}px`;game.classList.toggle('touch',innerWidth<1000||innerHeight<600);window.prototypeFit={canvas:[1280,720],viewport:[innerWidth,innerHeight],scale,left:(innerWidth-1280*scale)/2,top:(innerHeight-720*scale)/2};}
+addEventListener('resize',fit);fit();render();
+</script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+{
+  "kind": "독립 HTML 시안 · 실행 UI 미적용",
+  "revision": 2,
+  "capture_method": "file:// 탐색 정책 차단으로 같은 로컬 HTML/기존 자산만 메모리에 삽입한 Chromium set_content 렌더. 외부 네트워크/게임 실행 없음.",
+  "canvas": [
+    1280,
+    720
+  ],
+  "sources": [
+    "game/systems/room13_proof_workspace.rpy",
+    "game/systems/room13_notebook_shell.rpy",
+    "game/systems/room13_type_scale.rpy",
+    "game/v111/records.json:E11/E13",
+    "game/v111/evidence-facts.json:E11/E13"
+  ],
+  "images": {
+    "pc": {
+      "file": "mock-pc.png",
+      "fit": {
+        "canvas": [
+          1280,
+          720
+        ],
+        "viewport": [
+          1280,
+          720
+        ],
+        "scale": 1,
+        "left": 0,
+        "top": 0
+      },
+      "state": {
+        "mode": "pair",
+        "active": "E11",
+        "origin": false,
+        "selected": []
+      },
+      "fonts": true,
+      "images": [
+        {
+          "loaded": true
+        }
+      ],
+      "papers": [
+        {
+          "record": "E11",
+          "client": 340,
+          "scroll": 340
+        },
+        {
+          "record": "E13",
+          "client": 340,
+          "scroll": 340
+        }
+      ],
+      "buttons": [
+        {
+          "text": "한 장만 보기",
+          "disabled": false,
+          "rect": {
+            "x": 500,
+            "y": 54,
+            "width": 208,
+            "height": 64
+          },
+          "overflow": false
+        },
+        {
+          "text": "나란히 읽기",
+          "disabled": false,
+          "rect": {
+            "x": 724,
+            "y": 54,
+            "width": 240,
+            "height": 64
+          },
+          "overflow": false
+        },
+        {
+          "text": "목록",
+          "disabled": false,
+          "rect": {
+            "x": 132,
+            "y": 572,
+            "width": 176,
+            "height": 64
+          },
+          "overflow": false
+        },
+        {
+          "text": "출처 펼치기",
+          "disabled": false,
+          "rect": {
+            "x": 750,
+            "y": 572,
+            "width": 200,
+            "height": 64
+          },
+          "overflow": false
+        },
+        {
+          "text": "근거 제시",
+          "disabled": true,
+          "rect": {
+            "x": 966,
+            "y": 572,
+            "width": 240,
+            "height": 64
+          },
+          "overflow": false
+        }
+      ]
+    },
+    "mobile": {
+      "file": "mock-mobile.png",
+      "fit": {
+        "canvas": [
+          1280,
+          720
+        ],
+        "viewport": [
+          844,
+          390
+        ],
+        "scale": 0.5416666666666666,
+        "left": 75.33333333333337,
+        "top": 0
+      },
+      "state": {
+        "mode": "pair",
+        "active": "E11",
+        "origin": false,
+        "selected": []
+      },
+      "fonts": true,
+      "images": [
+        {
+          "loaded": true
+        }
+      ],
+      "papers": [
+        {
+          "record": "E11",
+          "client": 328,
+          "scroll": 328
+        },
+        {
+          "record": "E13",
+          "client": 328,
+          "scroll": 328
+        }
+      ],
+      "buttons": [
+        {
+          "text": "한 장만 보기",
+          "disabled": false,
+          "rect": {
+            "x": 346.1614685058594,
+            "y": 29.250001907348633,
+            "width": 112.66665649414062,
+            "height": 47.66667175292969
+          },
+          "overflow": false
+        },
+        {
+          "text": "나란히 읽기",
+          "disabled": false,
+          "rect": {
+            "x": 467.49481201171875,
+            "y": 29.250001907348633,
+            "width": 130,
+            "height": 47.66667175292969
+          },
+          "overflow": false
+        },
+        {
+          "text": "목록",
+          "disabled": false,
+          "rect": {
+            "x": 146.828125,
+            "y": 296.8333435058594,
+            "width": 95.33334350585938,
+            "height": 47.666656494140625
+          },
+          "overflow": false
+        },
+        {
+          "text": "출처 펼치기",
+          "disabled": false,
+          "rect": {
+            "x": 481.578125,
+            "y": 296.8333435058594,
+            "width": 108.3333740234375,
+            "height": 47.666656494140625
+          },
+          "overflow": false
+        },
+        {
+          "text": "근거 제시",
+          "disabled": true,
+          "rect": {
+            "x": 598.578125,
+            "y": 296.8333435058594,
+            "width": 130,
+            "height": 47.666656494140625
+          },
+          "overflow": false
+        }
+      ]
+    }
+  },
+  "checks": [
+    {
+      "viewport": "pc",
+      "result": "통과",
+      "tested": [
+        "기본 비교 2장 읽기/선택 0장/제출 비활성",
+        "문서·직접 들은 말 스크롤 없이 표시",
+        "체크만 선택하고 읽기 모드 유지",
+        "자료 이름 클릭은 읽기만 바꾸고 선택 보존",
+        "출처·한 장·나란히 전환 중 선택 보존",
+        "시안 제출은 정답 검사 없이 선택 개수만 표시",
+        "선택 해제 후 제출 비활성 복원",
+        "헤더/하단 버튼 내부 넘침·화면 밖 돌출 없음",
+        "모바일 모든 조작 버튼 실제 높이 47.67px",
+        "Pretendard·수첩 로딩/스크립트 오류 없음",
+        "모든 버튼이 수첩 종이 안쪽에 위치"
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "result": "통과",
+      "tested": [
+        "기본 비교 2장 읽기/선택 0장/제출 비활성",
+        "문서·직접 들은 말 스크롤 없이 표시",
+        "체크만 선택하고 읽기 모드 유지",
+        "자료 이름 클릭은 읽기만 바꾸고 선택 보존",
+        "출처·한 장·나란히 전환 중 선택 보존",
+        "시안 제출은 정답 검사 없이 선택 개수만 표시",
+        "선택 해제 후 제출 비활성 복원",
+        "헤더/하단 버튼 내부 넘침·화면 밖 돌출 없음",
+        "모바일 모든 조작 버튼 실제 높이 47.67px",
+        "Pretendard·수첩 로딩/스크립트 오류 없음",
+        "모든 버튼이 수첩 종이 안쪽에 위치"
+      ]
+    }
+  ]
+}

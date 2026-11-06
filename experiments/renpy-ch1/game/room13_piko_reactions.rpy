@@ -44,7 +44,15 @@ init 354 python:
         if not r13_v111_value("piko_news3:"+person):return []
         # 현재 사건·필수 질문·자료 반응·바쁜 일은 짧은 잔향보다 먼저다.
         if r13_v111_tense_context() or r13_v111_has_business(person):return []
-        if person=="nabi":
+        custody=r13_v111_value("piko_custody_heard3:buri") if person=="buri" and day==3 else None
+        if custody not in ("report","transfer"):custody=None
+        if custody=="report":
+            rows=[dict(speaker="아빠",text="실룩 씨 일은…… 내일 다시 확인하게 됐습니다."),
+                  dict(speaker="부리",text="돌 가져간 일은 남겨 둬요. 아이들한테 돌아가게 했다고 없던 일이 되는 건 아니니까.")]
+        elif custody=="transfer":
+            rows=[dict(speaker="아빠",text="실룩 씨 아이들 생각이 납니다."),
+                  dict(speaker="부리",text="대기소에서 언제 돌아오는지 알게 되면 저한테도 알려 줘요. 아이들한테는 아는 것만 말할게요.")]
+        elif person=="nabi":
             if day==3:
                 rows=[dict(speaker=None,text="나비가 빈 의자를 탁자에 밀어 넣으려다 그대로 둔다."),
                       dict(speaker="나비",text="잠깐 앉으셔도 돼요. 치우는 건 제가 할게요.")]
@@ -58,7 +66,7 @@ init 354 python:
             else:
                 rows=[dict(speaker=None,text="부리가 문을 닫으려다 나를 보고 손잡이를 놓는다."),
                       dict(speaker="부리",text="말할 거면 해요. 문은 나중에 닫을게요.")]
-        return [r13_nw_added_line(dict(row,id="NW_PIKO_ECHO_%s_%s_%02d"%(person.upper(),day,i),
+        return [r13_nw_added_line(dict(row,id="NW_PIKO_ECHO_%s_%s%s_%02d"%(person.upper(),day,("_"+custody.upper()) if custody else "",i),
                                      kind="narration" if row["speaker"] is None else "dialogue",
                                      expression="anxious")) for i,row in enumerate(rows)]
 

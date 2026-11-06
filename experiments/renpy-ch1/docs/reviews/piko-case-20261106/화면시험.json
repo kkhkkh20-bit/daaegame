@@ -1,0 +1,61 @@
+{
+  "scope": "준비 상태로 실제 엔진 라벨/버튼·저장복원을 실행. 초면 인간 재미 검증 아님.",
+  "tests": {
+    "piko112_latch_hypothesis_and_retry": {
+      "status": "통과",
+      "seconds": 17.996,
+      "log": "piko112-capture.txt"
+    },
+    "piko112_absent_caregiver": {
+      "status": "통과",
+      "seconds": 9.437,
+      "log": "piko112-native.txt"
+    },
+    "piko_scene_actions_order_restore_and_leave": {
+      "status": "통과",
+      "seconds": 18.981,
+      "log": "piko112-native.txt"
+    },
+    "v111_piko_scene_saved_has_no_death_cut": {
+      "status": "통과",
+      "seconds": 9.541,
+      "log": "piko112-native.txt"
+    },
+    "v111_nw_d03_lamp_lost": {
+      "status": "통과",
+      "seconds": 14.621,
+      "log": "piko112-native.txt"
+    },
+    "v111_nw_d03_lamp_partial": {
+      "status": "통과",
+      "seconds": 12.874,
+      "log": "piko112-native.txt"
+    },
+    "v111_nw_d03_lamp_won": {
+      "status": "통과",
+      "seconds": 15.252,
+      "log": "piko112-native.txt"
+    },
+    "lamp_attempt_field_and_win": {
+      "status": "통과",
+      "seconds": 24.141,
+      "log": "piko112-native.txt"
+    },
+    "piko112_children_transfer": {
+      "status": "통과",
+      "seconds": 10.479,
+      "log": "piko112-native-fixed.txt"
+    },
+    "piko112_children_report": {
+      "status": "통과",
+      "seconds": 10.882,
+      "log": "piko112-native-fixed.txt"
+    },
+    "piko112_daram_at_body": {
+      "status": "통과",
+      "seconds": 11.075,
+      "log": "piko112-native-fixed.txt"
+    }
+  },
+  "fixture_correction": "처리 갈래 시험의 첫 준비 상태는 직전 돌 반환 선택을 누락해 다음 장면에 잘못 진입했다. prior stone-choice 상태를 보완한 뒤 보고/대기소 2개 모두 재검사 통과. 제품 진행 불능으로 집계하지 않는다."
+}

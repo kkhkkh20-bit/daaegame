@@ -364,7 +364,13 @@ def parse_menu(lines, i, ind, path):
             if m:
                 opts.append([m.group(2), m.group(3) or '', '', j + 1])
             else:
-                fail(path, j + 1, '메뉴 보기를 읽지 못함: ' + st[:60])
+                # 콜론 없는 문자열은 선택지가 아니라 Ren'Py 메뉴의 질문 제목이다.
+                try:
+                    caption = ast.literal_eval(strip_comment(st))
+                except (ValueError, SyntaxError):
+                    caption = None
+                if not isinstance(caption, str):
+                    fail(path, j + 1, '메뉴 보기를 읽지 못함: ' + st[:60])
         elif opts and not opts[-1][2]:
             mm = re.match(r'jump (\w+)', st)
             if mm:

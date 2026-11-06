@@ -38,6 +38,14 @@ class StoryMaster(unittest.TestCase):
         for piece in ('`MS14_D07_S04`', 'fate_owl', '`hypothesis`', 'menu:hyp0', 'menu:trial_knife', '`R13_NW_WHEN`'):
             self.assertIn(piece, self.text)
 
+    def test_menu_caption_is_not_an_option_or_an_extraction_failure(self):
+        before=list(sm.FAIL)
+        lines=['menu:', '    "무엇을 확인할까?"', '    "위치를 대조한다":', '        jump checked']
+        opts,end=sm.parse_menu(lines,0,0,Path('메뉴_시험.rpy'))
+        self.assertEqual([(o[0],o[2]) for o in opts],[('위치를 대조한다','checked')])
+        self.assertEqual(end,4)
+        self.assertEqual(sm.FAIL,before)
+
     def test_failures_are_few_and_written_down(self):
         # 못 읽은 곳은 숨기지 않고 적는다. 갑자기 늘면 코드 꼴이 바뀐 것이니 도구를 손본다.
         self.assertLess(len(set(self.fails)), 10)

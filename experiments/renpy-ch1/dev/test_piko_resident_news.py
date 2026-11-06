@@ -107,6 +107,26 @@ class PikoResidentNews(unittest.TestCase):
                     s.room13["day"]=5
                     self.assertEqual(env["r13_v111_idle_lines"](person),[("original",person)])
 
+    def test_custody_reaction_uses_only_buris_completed_personal_hearing(self):
+        ids=[]
+        for decision in (None,'report','transfer'):
+            env,s,_,_,business,_,writes=self.make()
+            s.room13['v111']['values']['piko_news3:buri']=True
+            if decision:s.room13['v111']['values']['piko_custody_heard3:buri']=decision
+            before=copy.deepcopy(s.room13)
+            rows=env['r13_piko_echo_lines']('buri')
+            text=' '.join(r['text'] for r in rows)
+            ids.append(rows[0]['id'])
+            if decision=='report':self.assertIn('돌 가져간 일은 남겨',text)
+            elif decision=='transfer':self.assertIn('언제 돌아오는지',text)
+            else:self.assertNotIn('실룩',text)
+            self.assertEqual(s.room13,before)
+            self.assertEqual(writes,[])
+            self.assertEqual(env['r13_piko_echo_lines']('nabi'),[])
+            business.add('buri')
+            self.assertEqual(env['r13_v111_idle_lines']('buri'),[('original','buri')])
+        self.assertEqual(len(set(ids)),3)
+
     def test_busy_resident_current_event_and_required_business_outrank_echo(self):
         for case in ("unheard","busy","business","tense","meeting","missing","alive"):
             with self.subTest(case=case):

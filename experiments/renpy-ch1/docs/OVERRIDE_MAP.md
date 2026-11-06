@@ -174,7 +174,7 @@ Ren'Py는 init 우선순위 → 파일 경로 → 줄 순서로 실행한다. �
 | 3 | 348 | `room13_v111_idle.rpy:163` | _r13_guard_idle_lines |
 | 4 | 349 | `room13_v111_idle.rpy:183` | _r13_scene_idle_lines |
 | 5 | 351 | `room13_v111_idle.rpy:232` | _r13_piko_news_idle_lines |
-| 6 | 354 | `room13_piko_reactions.rpy:66` |  |
+| 6 | 354 | `room13_piko_reactions.rpy:74` |  |
 
 ## `r13_finish_topic` (5층)
 
