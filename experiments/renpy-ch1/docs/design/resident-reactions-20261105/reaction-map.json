@@ -2,9 +2,9 @@
   "schema": "room13.resident-reaction-plan.v1",
   "status": "proposal_not_runtime",
   "date": "2026-11-06",
-  "game_baseline": "0.20.104",
+  "game_baseline": "0.20.105",
   "language": "ko",
-  "scope": "공통 14일 시간표와 피코 사건 4시점·7장면 개정 원고. 욕구·꺼리는 것·선택과 대가를 구별하고 기존 관계를 보강함.",
+  "scope": "14일 공통 시간표와 피코 사건 4시점·7장면의 행동·장면 개정. 생활 목적의 충돌, 부녀의 반응, 짝 시점의 오해를 중심에 둠.",
   "runtime_changes": false,
   "declarative_conditions_only": true,
   "read_completion_gates_are_implementation_proposals": true,
@@ -277,15 +277,17 @@
         ]
       },
       "valid_until": "3일 발견 직후; 이후에는 날짜가 붙은 회상",
-      "revisit_echo": "초롱은 다람이 아빠 곁에 있는지 먼저 살핀다.",
+      "revisit_echo": "그림을 받는 아버지와 다람의 손이 정리될 때까지 서두르지 않음.",
       "new_evidence": false,
       "characterization": {
-        "want": "자기 일을 제대로 했다는 설명으로 자신을 지키고 싶음",
-        "resistance": "부녀의 슬픔 앞에서 자기 변명을 하는 사람으로 보일까 두려움",
-        "choice": "변호 문장을 삼키고 부녀가 받칠 때까지 판자를 건넴",
-        "cost": "일 처리로 피할 수 없는 자리에 남는 불편함",
+        "want": "판자를 건네고 현장을 정리하고 싶음",
+        "resistance": "딸의 곁을 떠나지 않으려는 아버지에게 빨리 인계할 수 없음",
+        "choice": "아버지가 앉은 자세로 받을 때까지 판자를 낮춰 함께 받침",
+        "cost": "진료소에 가거나 점검으로 자리를 피하지 못하고 기다림",
         "relationship_anchor": "D02_S03_L0027~30의 직접 대화",
-        "status": "literary_proposal_not_new_evidence"
+        "status": "literary_proposal_not_new_evidence",
+        "collision": "딸의 손을 놓지 못하는 아버지 때문에 그림 인수가 늦어짐",
+        "reader_change": "변명을 준비하던 초롱의 마음에서 부녀가 그림을 받는 실제 행동으로 중심을 옮김"
       }
     },
     {
@@ -326,15 +328,17 @@
         ]
       },
       "valid_until": "3일 첫 조사 구간; 이후 회상",
-      "revisit_echo": "초롱은 식당에서 본 피코의 얼굴을 떠올리고 점검장을 편다.",
+      "revisit_echo": "수리 의뢰자 자신도 질문할 수 있는 자리에 남음.",
       "new_evidence": false,
       "characterization": {
-        "want": "등을 빨리 다시 켜고 일을 진행하고 싶음",
-        "resistance": "수리를 맡긴 자기 판단도 질문받는 것",
-        "choice": "톡을 부른 본인도 질문의 대상이라고 나섬",
-        "cost": "자신의 의뢰 판단을 남 앞에 세움",
+        "want": "빈 등의 문제를 해결하려고 수리공에게 일을 넘기고 싶음",
+        "resistance": "너울이 수리공의 접촉을 막고 수리 의뢰 설명도 혐의를 풀어 주지 않음",
+        "choice": "자기에게도 물으라고 나서고, 조사하려는 아버지에게 자리를 비킴",
+        "cost": "다른 점검으로 빠져나가지 않고 현장 질문을 기다림",
         "relationship_anchor": "D03_S01_L0028~30 식당 생존 확인과 전날 수리 의뢰",
-        "status": "literary_proposal_not_new_evidence"
+        "status": "literary_proposal_not_new_evidence",
+        "collision": "빨리 수리하려는 초롱·대상을 조사하려는 너울·안부터 보려는 아버지가 부딪힘",
+        "reader_change": "초롱의 의뢰 설명이 곧바로 톡을 구하지 못하고 본인도 현장에 남게 됨"
       }
     },
     {
@@ -369,15 +373,17 @@
         ]
       },
       "valid_until": "3일 미수 첫 현장; 이후 미수판 회상",
-      "revisit_echo": "초롱은 켜진 등을 보고도 덮개를 한 번 더 살핀다.",
+      "revisit_echo": "기록을 먼저 쓰지 않고 상대가 가리키는 위치로 자리를 옮김.",
       "new_evidence": false,
       "characterization": {
-        "want": "문제없이 점검을 마치고 싶음",
-        "resistance": "수리공을 불필요하게 의심하는 사람처럼 보이는 것",
-        "choice": "켜진 등이어도 새 흠집 설명을 청함",
-        "cost": "말다툼과 불쾌함을 피하지 못함",
+        "want": "새 흠집과 어제 수리를 직접 구별해 점검하고 싶음",
+        "resistance": "톡이 새 수리까지 맡기는 요청으로 받아들여 설명을 거절함",
+        "choice": "문장을 쓰기 전에 점검장을 닫고 톡이 가리키는 쪽으로 이동함",
+        "cost": "편한 일괄 확인 대신 수리공과 말을 맞추는 시간이 듦",
         "relationship_anchor": "현재 미수 현장의 피코·톡과 실제 같은 자리",
-        "status": "literary_proposal_not_new_evidence"
+        "status": "literary_proposal_not_new_evidence",
+        "collision": "보여 달라는 점검과 고쳐 달라는 주문의 뜻이 엇갈림",
+        "reader_change": "03의 장부 닫기는 점검 종료처럼 보임. 06에서 직접 보려고 장부를 치우는 행동임이 드러남"
       }
     },
     {
@@ -419,15 +425,17 @@
         ]
       },
       "valid_until": "식당 발표를 들은 같은 아침; 식당을 떠난 뒤에는 그 아침의 회상",
-      "revisit_echo": "나비는 자리를 정리하려다 피코가 챙길 때까지 손을 멈춘다.",
+      "revisit_echo": "그림을 놓을 자리는 알려 주되 아침 장사를 위한 정리는 계속함.",
       "new_evidence": false,
       "characterization": {
-        "want": "자리를 치우고 아침 장사를 시작하고 싶음",
-        "resistance": "또 물감과 정리를 자기 일로 떠안는 것",
-        "choice": "자기 준비 시간을 써서 기존 정리를 함께 함",
-        "cost": "손을 다시 씻고 그릇 준비가 남는 실제 번거로움",
+        "want": "아침 장사를 위한 공간을 실제로 비우고 싶음",
+        "resistance": "엄마 얼굴을 완성하려는 아이·아직 젖은 그림·옮겨야 할 포대가 충돌함",
+        "choice": "역할을 나눠 피코에게 그림, 아버지에게 포대 반대편을 맡기고 직접 함께 옮김",
+        "cost": "아침 준비가 남은 채 손을 다시 씻어야 함",
         "relationship_anchor": "D02_S04_L0005·L0007·L0010 노란 자국과 천 조건",
-        "status": "literary_proposal_not_new_evidence"
+        "status": "literary_proposal_not_new_evidence",
+        "collision": "그림을 받은 아버지는 포대를 들 수 없고 피코가 다시 그림을 받아야 정리가 진행됨",
+        "reader_change": "04에서 본 정리 요구가 02의 살아 있는 피코 확인과 이어짐. 장사 조건은 유지됨"
       }
     },
     {
@@ -472,15 +480,17 @@
         ]
       },
       "valid_until": "3일 의심받는 첫 현장; 입증 뒤에는 회상",
-      "revisit_echo": "톡은 공구를 아이 얼굴 높이로 들지 않는다.",
+      "revisit_echo": "공구부터 내미는 대신 무엇을 물을지 먼저 들음.",
       "new_evidence": false,
       "characterization": {
-        "want": "능숙한 수리공으로 인정받고 싶음",
-        "resistance": "정직한 기술 설명이 혐의로 바뀜",
-        "choice": "다른 공구를 쓸 수 있다는 사실을 부인하지 않고 남음",
-        "cost": "억울함과 의심을 감수하고 후속 질문을 받음",
+        "want": "공구와 솜씨를 보여 주어 의심을 빨리 끝내고 싶음",
+        "resistance": "능력의 사실 설명이 범행 가능성의 인정으로 바뀜",
+        "choice": "다른 공구도 쓸 수 있음을 인정한 뒤 공구를 넣고 말로 다음 질문을 받음",
+        "cost": "기술 시연으로 결론 내리지 못하고 불리한 문답에 계속 참여함",
         "relationship_anchor": "D02_TKA2/TKB2의 다람 만남. 피코와 사적 친분은 추가하지 않음",
-        "status": "literary_proposal_not_new_evidence"
+        "status": "literary_proposal_not_new_evidence",
+        "collision": "도구를 내보여 설명하려는 톡과 도구로 범행 가능성을 묻는 아버지가 부딪힘",
+        "reader_change": "능숙하게 보여 주던 손을 거두어 자루를 묶는 어색함으로 마침"
       }
     },
     {
@@ -514,15 +524,17 @@
         ]
       },
       "valid_until": "3일 미수 첫 현장; 이후 미수판 회상",
-      "revisit_echo": "톡은 고친 자리와 새 흠집을 나누어 가리킨다.",
+      "revisit_echo": "자기가 가리키는 곳을 상대도 보고 있는지 확인하고 설명함.",
       "new_evidence": false,
       "characterization": {
-        "want": "어제 끝낸 일과 새 파손을 구별하고 돌아가고 싶음",
-        "resistance": "남이 한 일까지 자기 수리로 묶이는 것",
-        "choice": "현장을 만지지 않고 자신이 고친 범위를 설명하기로 함",
-        "cost": "끝낸 일을 다시 설명하는 시간. 새 품삯 약정 없음",
+        "want": "완료한 작업을 설명하고 새 수리까지 떠맡지 않고 싶음",
+        "resistance": "초롱은 안쪽만 보고 톡은 자기 작업이 아니란 말만 되풀이함",
+        "choice": "공구를 꺼내지 않고 바깥 수리 위치를 가리키며 상대가 볼 때까지 기다림",
+        "cost": "자신도 먼저 작업 위치를 가리키지 않았다는 핀잔을 듣고 설명을 다시 시작함",
         "relationship_anchor": "D02_TKA3/TKB3 품삯 불평과 기존 수리",
-        "status": "literary_proposal_not_new_evidence"
+        "status": "literary_proposal_not_new_evidence",
+        "collision": "각자 보는 위치와 부탁의 범위가 달라 같은 문답이 맴돎",
+        "reader_change": "03의 반항처럼 보인 말 뒤에 서로 다른 곳을 보고 있었다는 원인이 드러남. 초롱의 빈 장부는 기록 회피가 아님"
       }
     },
     {
@@ -541,7 +553,8 @@
         "days123: r13_v111_workshop3",
         "MS14_D03_S03_L0002~06",
         "MS14_D03_S03_L0009~L0011",
-        "days123: r13_v111_loan3"
+        "days123: r13_v111_loan3",
+        "d03.json: NW_AR_D03_02~03(우박은 진료소에 있음)"
       ],
       "proposed_trigger": {
         "after_sequence": "r13_v111_loan3의 MS14_D03_S03_L0011 문답 완료 뒤",
@@ -557,7 +570,8 @@
         "heard": [
           "온도를 재려고 가져간다는 말",
           "톡이 확인해 달라고 했다는 아빠 말",
-          "아빠가 집게의 사용 여부를 확인하려 한다는 설명"
+          "아빠가 집게의 사용 여부를 확인하려 한다는 설명",
+          "아빠가 읽어 준 자신의 대여 사실 기록"
         ],
         "unknown": [
           "피코 사망 소식의 청취 여부",
@@ -566,15 +580,17 @@
         ]
       },
       "valid_until": "3일 공방 문답 뒤; 이후에는 당시 모른 채였던 회상",
-      "revisit_echo": "부리는 집게가 돌아오면 둘 칸을 비워 둔다.",
+      "revisit_echo": "사실 확인과 단순 전달 부탁을 서로 다르게 말함.",
       "new_evidence": false,
       "characterization": {
-        "want": "닫은 가게에 더 일을 들이지 않고 싶음",
-        "resistance": "빌려준 일이 훔치게 해 준 일로 기록되는 것",
-        "choice": "돌려보내려다 자기 말을 어떻게 적었는지 다시 확인함",
-        "cost": "끊으려던 문답을 스스로 늘리는 수고",
+        "want": "손님을 돌려보내고 우박에게 빌려준 집게를 되찾고 싶음",
+        "resistance": "대여가 범행 가담으로 기록되고 집게 반환은 뒷전이 되는 것",
+        "choice": "자기 말의 뜻을 확인한 뒤 집게 반환 요청까지 직접 전해 달라고 함",
+        "cost": "닫으려던 문 앞에서 자기 쪽이 대화를 두 번 늘림",
         "relationship_anchor": "D03_S03_L0002~11 대여 문답. 피코와 관계·사망 인지 추가 없음",
-        "status": "literary_proposal_not_new_evidence"
+        "status": "literary_proposal_not_new_evidence",
+        "collision": "수사로 떠나려는 아버지에게 집게 반환 부탁까지 얹는 부리",
+        "reader_change": "앞에서는 정확히 적으라던 사람이 끝에서는 부탁까지 적지 말고 전하라고 함"
       }
     }
   ],
@@ -603,10 +619,31 @@
       ],
       "status": "추가 대화 기획·게임 미반영",
       "shared_lines": [
+        "끝났다는 뜻 아니에요. 먼저 볼게요.",
+        "안 고칠 거예요.",
+        "알겠어요.",
+        "새로 생긴 데까지 나한테 맡기지도 말고요.",
         "보고 있는 데 말고요. 바깥쪽.",
         "네. 거기부터요."
       ],
-      "purpose": "같은 순간을 초롱의 점검 목표와 톡의 작업 경계에서 각각 읽음"
+      "purpose": "03은 초롱이 자기 기록을 미루고 먼저 보려는 과정. 06은 톡이 점검 종료로 오해했다가 서로 다른 곳을 보고 있었음을 깨닫는 짧은 보충 시점. 장면 처음부터 재서술하지 않음."
     }
-  ]
+  ],
+  "reading_orders": {
+    "dead_stolen": [
+      "RR_PIKO_01",
+      "RR_PIKO_05",
+      "RR_PIKO_07"
+    ],
+    "sheltered_stolen": [
+      "RR_PIKO_04",
+      "RR_PIKO_02",
+      "RR_PIKO_05",
+      "RR_PIKO_07"
+    ],
+    "attempt": [
+      "RR_PIKO_03",
+      "RR_PIKO_06"
+    ]
+  }
 }
