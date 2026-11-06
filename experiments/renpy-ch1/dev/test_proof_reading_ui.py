@@ -24,7 +24,7 @@ def load_function(path, name, namespace):
     end = start + 1
     while end < len(lines):
         line = lines[end]
-        if line.startswith("    def ") or (line.strip() and not line.startswith((" ", "#"))):
+        if line.strip() and not line.startswith("        "):
             break
         end += 1
     exec(compile(textwrap.dedent("\n".join(lines[start:end])), str(path), "exec"), namespace)
@@ -72,7 +72,7 @@ class ProofReadingGroups(unittest.TestCase):
             "r13_v111_value": lambda key: values.get(key),
             "r13_catalog_record": lambda key: None,
         }
-        for name in ("_r13_ev_is_lines", "r13_evidence_base_key", "r13_evidence_variant", "r13_evidence_split", "r13_evidence_facts"):
+        for name in ("_r13_ev_is_lines", "r13_evidence_base_key", "r13_evidence_variant", "r13_evidence_split", "r13_evidence_facts", "r13_evidence_read_groups"):
             load_function(EVIDENCE_VIEW, name, ns)
         return load_function(WORKSPACE, "r13_pw_read_groups", ns), ns
 
@@ -112,6 +112,18 @@ class ProofReadingGroups(unittest.TestCase):
         self.assertEqual(groups("V111:E13"), [("확인한 내용", ["다른 변형에서 확보한 내용만 남는다."])])
         ns["R13_EVIDENCE_FACTS"]["E13"]["other"] = ["첫 관찰", "둘째 관찰", "새 관찰"]
         self.assertEqual(groups("V111:E13"), [("확인한 내용", ["첫 관찰", "둘째 관찰", "새 관찰"])])
+
+
+class SmallFinishGeometry(unittest.TestCase):
+    def test_mobile_settings_thumbnail_fits_inside_existing_slot(self):
+        thumb = load_function(ROOT / "game/screens.rpy", "r13_settings_save_thumb", {})
+        for touch, area, controls in ((False, 460, 52), (True, 436, 88)):
+            slot_h = (area - 24 - controls - 12 - 28) // 3
+            width, height = thumb(slot_h)
+            self.assertLessEqual(height, slot_h - 20)
+            self.assertLessEqual(width, 160)
+            self.assertLess(abs(width / height - 16 / 9), .02)
+            self.assertEqual((width, height), (131, 74) if touch else (160, 90))
 
 
 if __name__ == "__main__":

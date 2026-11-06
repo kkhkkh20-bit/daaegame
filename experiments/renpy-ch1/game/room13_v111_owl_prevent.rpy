@@ -76,6 +76,8 @@ label r13_v111_free_day7_pick(n):
     return
 
 label r13_v111_free_evening7:
+    # 1부 공개판의 경계. 후속판은 같은 완료 저장에서 아래의 기존 저녁으로 이어진다.
+    call r13_part1_finish
     call r13_lines(r13_nw_block('free_evening7'),'nw:free_evening7')
     jump r13_v111_room_visit7
 

@@ -2,7 +2,7 @@
 
 > 이 파일은 손으로 고치지 않는다. 다시 만들기: `python3 dev/story_master.py --write` (`experiments/renpy-ch1` 에서).
 > 사람이 쓰는 부분(사건 여섯 칸 · 감정선 · 퍼즐 · 현행/설계)은 `docs/design/story_master.md`.
-> 읽은 곳: `game/room13_v111_days123.rpy`, `game/room13_v111_days45.rpy`, `game/room13_v111_days610.rpy`, `game/room13_v111_days1114.rpy`, `game/room13_v111_owl_prevent.rpy`, `game/room13_hidden_pandol.rpy`, `game/room13_hidden_base.rpy`, `game/room13_lamp_attempt.rpy`, `game/room13_v111_newworld_rules.rpy`, `game/room13_v111_newworld_text.rpy`, `game/room13_fork_screen.rpy`, 장면 제목은 `docs/story-ms14/source/` 원본.
+> 읽은 곳: `game/room13_v111_days123.rpy`, `game/room13_v111_days45.rpy`, `game/room13_v111_days610.rpy`, `game/room13_v111_days1114.rpy`, `game/room13_v111_owl_prevent.rpy`, `game/room13_hidden_pandol.rpy`, `game/room13_hidden_base.rpy`, `game/room13_lamp_attempt.rpy`, `game/room13_part1.rpy`, `game/room13_v111_newworld_rules.rpy`, `game/room13_v111_newworld_text.rpy`, `game/room13_fork_screen.rpy`, 장면 제목은 `docs/story-ms14/source/` 원본.
 > 글자로 읽은 것이라 갈래 순서·조건이 실제 재생과 다를 수 있다. 의심스러우면 표에 적힌 파일:줄을 연다.
 
 자동 추출 실패: 9곳 (맨 아래 목록)
@@ -1423,6 +1423,7 @@
 | `(장면 전) room13_hidden_pandol.rpy` | — | 판돌 집(hidden_pandol) | 판돌, 다람, 나비, 사자 선생님, (+식) | `r13_hp_meal6`, `r13_hp_meal6_wait`, `r13_hp_pick7`, `r13_hp_wood11`, `r13_hp_visit11`, `r13_hp_house11_wait` 외 3 |
 | `(장면 전) room13_hidden_base.rpy` | — | — | 엄마, 다람 | `r13_hidden_base_paper1`, `r13_hidden_base_pick7`, `r13_hidden_base_marks11`, `r13_hidden_base14`, `r13_hidden_base_door14`, `r13_hidden_base_room14` 외 1 |
 | `(장면 전) room13_lamp_attempt.rpy` | — | — | — | `r13_lamp_prep2` |
+| `(장면 전) room13_part1.rpy` | — | 마을 학교(school) | 다람 | `r13_part1_finish` |
 
 #### `(장면 전) room13_v111_days45.rpy` 갈림 · 값 (room13_v111_days45.rpy:4)
 
@@ -1528,6 +1529,13 @@
   - `lamp_cord2` = `true` (`r13_lamp_prep2`)
   - `lamp_latch_seen2` = `true` (`r13_lamp_prep2`)
   - `lamp_bound2` = `true` (`r13_lamp_prep2`)
+
+#### `(장면 전) room13_part1.rpy` 갈림 · 값 (room13_part1.rpy:60)
+
+- `r13_part1_finish` if `not r13_v111_value("part1_completed")` `$ r13_v111_join(['daram'])`
+- `r13_part1_finish` if `not r13_v111_value("DARAM_DETAINED") and r13_v111_actor_ready("daram") and r13_v111_value("location:daram") in (None,"school")` `$ r13_v111_join(['daram'])`
+- 값
+  - `part1_completed` = `true` (`r13_part1_finish`)
 
 ## 2. 회의
 
@@ -1847,9 +1855,9 @@ def r13_nw_true_ending_ready():
 | `fate_piko` | `lost` 꺼진 등 | `r13_v111_day3` (room13_v111_days123.rpy:828) |
 | `fate_kkomi` | `saved` 넷 인계 | `r13_v111_handoff_done6` (room13_v111_days610.rpy:282) |
 | `fate_kkomi` | `lost` 타 버린 창고 | `r13_v111_afternoon6` (room13_v111_days610.rpy:175) |
-| `fate_owl` | `stone` 식은 돌 | `r13_v111_owl_well7` (room13_v111_owl_prevent.rpy:91) |
-| `fate_owl` | `promise` 내려가지 않은 당번 | `r13_v111_promise_night7` (room13_v111_owl_prevent.rpy:121) |
-| `fate_owl` | `repair` 곁에 남은 수리공 | `r13_v111_tok_night7` (room13_v111_owl_prevent.rpy:176) |
+| `fate_owl` | `stone` 식은 돌 | `r13_v111_owl_well7` (room13_v111_owl_prevent.rpy:93) |
+| `fate_owl` | `promise` 내려가지 않은 당번 | `r13_v111_promise_night7` (room13_v111_owl_prevent.rpy:123) |
+| `fate_owl` | `repair` 곁에 남은 수리공 | `r13_v111_tok_night7` (room13_v111_owl_prevent.rpy:178) |
 | `fate_owl` | `lost` 닫힌 문 | `r13_v111_handover7` (room13_v111_days610.rpy:807) |
 | `fate_nero` | `handover` 인계 | `r13_v111_lower_safe11` (room13_v111_days1114.rpy:895), `r13_v111_rescue_handoff11` (room13_v111_days1114.rpy:969) |
 | `fate_nero` | `rescue` 구조 | `r13_v111_rescue_handoff11` (room13_v111_days1114.rpy:971) |

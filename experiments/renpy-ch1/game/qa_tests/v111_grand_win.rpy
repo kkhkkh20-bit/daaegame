@@ -99,18 +99,14 @@ testcase v111_gw_fire_grand:
     run Function(r13_v111_arrive,["nabi","resident_bori","resident_nubi","neoul"])
     run Jump("r13_v111_rescue_fire_basis7")
     pause 1.5
-    assert screen "r13_crisis_proof"
-    click "자료 고르기"
-    pause 0.5
-    click "QA V111:E06_FIRE"
+    assert screen "r13_proof_workspace"
+    click id "r13_pw_check_E06_FIRE"
     pause 0.8
-    click "QA V111:E06_RESCUE"
+    click id "r13_pw_check_E06_RESCUE"
     pause 0.8
-    click "QA V111:NW_NUBI_TICKET"
+    click id "r13_pw_check_NW_NUBI_TICKET"
     pause 0.8
-    click "QA 닫기"
-    pause 0.5
-    click "선택한 근거 제출"
+    click id "r13_pw_submit"
     click pos (900,600) until eval (qa_nw_seen("너울이 이번에는 그 종이를 본다")) timeout 120
     assert eval (r13_v111_value("meeting:fire")=="win" and r13_v111_value("grand:fire") is True and r13_v111_value("neoul_promise_proven") is True)
     assert eval (qa_nw_seen("기록철 사이에 끼운다") and not qa_nw_seen("끝까지 그 종이를 보지 않는다"))
@@ -127,17 +123,13 @@ testcase v111_gw_fire_plain:
     run Function(r13_v111_arrive,["nabi","resident_bori","resident_nubi","neoul"])
     run Jump("r13_v111_rescue_fire_basis7")
     pause 1.5
-    click "자료 고르기"
-    pause 0.5
-    click "QA V111:E06_FIRE"
+    click id "r13_pw_check_E06_FIRE"
     pause 0.8
-    click "QA V111:E06_RESCUE"
+    click id "r13_pw_check_E06_RESCUE"
     pause 0.8
-    click "QA V111:E07_NUBI"
+    click id "r13_pw_check_E07_NUBI"
     pause 0.8
-    click "QA 닫기"
-    pause 0.5
-    click "선택한 근거 제출"
+    click id "r13_pw_submit"
     click pos (900,600) until eval (qa_nw_seen("끝까지 그 종이를 보지 않는다")) timeout 120
     assert eval (r13_v111_value("meeting:fire")=="win" and r13_v111_value("grand:fire") is not True and r13_v111_value("neoul_promise_proven") is not True)
     assert eval (not qa_nw_seen("기록철 사이에 끼운다"))

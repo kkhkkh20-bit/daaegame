@@ -112,6 +112,14 @@ init 330 python:
         record=r13_catalog_record(key)
         return r13_evidence_split(r13_material_body(record)) if record else []
 
+    def r13_evidence_read_groups(key):
+        """현재 자료의 기존 사실만 분류한다. 추론·새 진술·다른 변형을 보태지 않는다."""
+        facts=list(r13_evidence_facts(key))
+        if key=="V111:E11":return [("점검장에 적힌 내용",facts)]
+        if key=="V111:E13" and len(facts)>2 and facts[-1].startswith("우박은"):
+            return [("측정지에 적힌 내용",facts[:-1]),("함께 들은 말",facts[-1:])]
+        return [("확인한 내용",facts)]
+
     _r13_evidence_art_cache={}
     def r13_evidence_art_path(key):
         base=r13_evidence_base_key(key)
@@ -438,6 +446,17 @@ screen r13_evidence_fact_list(key,width):
                 add r13_asset_path("file:"+(R13_NIGHT_UI+"diamond.png")) yoffset ((r13_ev_fact_size()-8)//2+2)
                 text line size r13_ev_fact_size() color (r13_type_color("ink")) font R13_UI_BOLD_FONT xsize (width-18)
 
+# 자료함도 회의와 같은 사실·진술 구분을 쓴다. 길어진 문장은 각 읽기 칸 안에서만 스크롤한다.
+screen r13_evidence_read_facts(key,width):
+    vbox:
+        spacing 8 xsize width
+        for group,lines in r13_evidence_read_groups(key):
+            vbox:
+                spacing 4 xsize width
+                text group size r13_type("small") color r13_type_color("muted") font R13_UI_BOLD_FONT xsize width
+                for line in lines:
+                    text line size r13_ev_fact_size() color r13_type_color("ink") font R13_UI_FONT xsize width
+
 # One record: big picture, facts, and on the right the hint or the folded original text.
 screen r13_evidence_single(detail,owner,archive=False,view_context=("records",),can_compare=False,present=False,present_label="",present_ok=False,present_action=None,stop_action=None,ready=True,statement=None,present_note=None,empty=False,stop_label="돌아가기",present_help=None):
     default origin_open=False
@@ -460,14 +479,16 @@ screen r13_evidence_single(detail,owner,archive=False,view_context=("records",),
             vscrollbar_unscrollable "hide"
             vbox:
                 xsize cw spacing 12
-                use r13_evidence_heading(detail,cw,(r13_type("title")))
-                $ picture=280 if touch else 360
-                fixed:
-                    xsize cw ysize picture
-                    fixed:
-                        xpos ((cw-picture)//2) xysize (picture,picture)
-                        use r13_evidence_picture_box(detail,picture)
-                use r13_evidence_fact_list(detail,cw)
+                $ picture_hit=88 if touch else 64
+                hbox:
+                    spacing 12
+                    use r13_evidence_heading(detail,cw-picture_hit-12,(r13_type("title")))
+                    button:
+                        id "r13_ev_picture"
+                        xysize (picture_hit,picture_hit) padding (0,0) background None
+                        action Show("r13_pw_picture",key=detail) alt "자료 그림 확대"
+                        add r13_evidence_picture(detail,48) align (.5,.5)
+                use r13_evidence_read_facts(detail,cw)
                 # 2026-10-24 증거 서랍: 접힌 쪽지(정정·결과 기록)는 원래 카드 내용 아래에 이어 읽는다.
                 if not archive:
                     use r13_drawer_note_blocks(detail,cw)
@@ -491,7 +512,7 @@ screen r13_evidence_single(detail,owner,archive=False,view_context=("records",),
                             text present_note size small color (r13_type_color("accent")) font R13_UI_BOLD_FONT xsize rw
                         text (present_help or "먼저 보여주고, 건넬지는 대화 후 결정합니다.") size small color (r13_type_color("muted")) font R13_UI_BOLD_FONT xsize rw
                 elif can_compare and not origin_open:
-                    text "「나란히 놓기」를 누른 뒤 왼쪽에서 함께 볼 자료를 고르세요." size small color (r13_type_color("muted")) font R13_UI_BOLD_FONT xsize rw
+                    text "「나란히 읽기」를 누른 뒤 왼쪽에서 함께 볼 자료를 고르세요." size small color (r13_type_color("muted")) font R13_UI_BOLD_FONT xsize rw
                 if detail and origin_open:
                     $ ev=r13_catalog_record(detail)
                     text ("들은 말" if ev.get("kind")=="증언" else "확인한 내용") size small color (r13_type_color("accent")) font R13_UI_BOLD_FONT
@@ -520,7 +541,7 @@ screen r13_evidence_single(detail,owner,archive=False,view_context=("records",),
     elif can_compare:
         fixed:
             xpos rx ypos by xysize (R13_EV_RIGHT_W,bh)
-            use r13_control("⇆ 나란히 놓기",None,[Function(r13_record_select,owner,"pair",r13_compare_begin(detail),False),Function(r13_record_select,owner,"pair_slot",1,False)],enabled=bool(detail),primary=True,width=R13_EV_RIGHT_W,height=bh,label_size=r13_ev_label_size("⇆ 나란히 놓기",R13_EV_RIGHT_W),control_id="r13_ev_pair")
+            use r13_control("나란히 읽기",None,[Function(r13_record_select,owner,"pair",r13_compare_begin(detail),False),Function(r13_record_select,owner,"pair_slot",1,False)],enabled=bool(detail),primary=True,width=R13_EV_RIGHT_W,height=bh,label_size=r13_ev_label_size("나란히 읽기",R13_EV_RIGHT_W),control_id="r13_ev_pair")
         $ by=by-bh-12
     if detail:
         # 0.20.7 (Codex design 08, owner "다 해줘"): the same button folds the source again.
@@ -536,11 +557,11 @@ screen r13_evidence_pair(entries,pair,pair_slot,owner,archive=False):
     $ col_w=(R13_EV_RIGHT-R13_EV_CENTER_X-26)//2
     $ col1=R13_EV_RIGHT-col_w
     $ top=R13_EV_TOP+30
-    text "나란히 놓기 · 두 자료를 함께 봅니다. 맞는지 아닌지는 표시하지 않습니다." xpos R13_EV_CENTER_X ypos (R13_EV_TOP-4) xsize (R13_EV_RIGHT-R13_EV_CENTER_X) size r13_ev_small_size() color (r13_type_color("muted")) font R13_UI_BOLD_FONT
+    text "나란히 읽기 · 두 자료를 함께 봅니다. 맞는지 아닌지는 표시하지 않습니다." xpos R13_EV_CENTER_X ypos (R13_EV_TOP-4) xsize (R13_EV_RIGHT-R13_EV_CENTER_X) size r13_ev_small_size() color (r13_type_color("muted")) font R13_UI_BOLD_FONT
     add Solid("#c9a86a66") xpos (R13_EV_CENTER_X+col_w+12) ypos (top+8) xsize 1 ysize (by-top-20)
     add r13_asset_path("file:"+(R13_NIGHT_UI+"diamond.png")) xpos (R13_EV_CENTER_X+col_w+8) ypos ((top+8+by-12)//2)
     $ pair_title=(r13_type("title"))
-    $ pic=r13_ev_pair_picture(pair,by,pair_title,top)
+    $ pic=64
     for column,key index (column,key) in enumerate(r13_compare_slots(pair)):
         viewport:
             id ("r13_ev_pair_reading_%d"%column)
@@ -551,16 +572,16 @@ screen r13_evidence_pair(entries,pair,pair_slot,owner,archive=False):
                 xsize (col_w-12) spacing 10
                 if key is not None:
                     use r13_evidence_heading(key,col_w-12,pair_title)
-                    fixed:
-                        xsize (col_w-12) ysize pic
-                        fixed:
-                            xpos ((col_w-12-pic)//2) xysize (pic,pic)
-                            use r13_evidence_picture_box(key,pic)
-                    use r13_evidence_fact_list(key,col_w-12)
+                    use r13_evidence_read_facts(key,col_w-12)
+                    button:
+                        id ("r13_ev_pair_picture_%d"%column)
+                        xysize (88 if touch else 64,88 if touch else 64) padding (0,0) background None
+                        action Show("r13_pw_picture",key=key) alt "자료 그림 확대"
+                        add r13_evidence_picture(key,48) align (.5,.5)
                 else:
                     text ("%d번 자리"%(column+1)) size pair_title color (r13_type_color("muted")) font R13_UI_BOLD_FONT
                     frame:
-                        xsize pic ysize pic xoffset ((col_w-12-pic)//2) padding (24,24) background R13PaperFrame()
+                        xsize (col_w-12) padding (16,16) background R13PaperFrame()
                         text "왼쪽에서 함께 볼 자료를 고르세요." align (.5,.5) text_align .5 size r13_ev_fact_size() color (r13_type_color("muted")) font R13_UI_BOLD_FONT
     $ single=r13_compare_single(pair)
     fixed:

@@ -1,7 +1,7 @@
 # 자료 대조 통합 화면. 2026-11-06 소유자 지시로 읽기 시안을 본편에 적용했다.
 #   같은 수첩 틀에서 목록·한 장 읽기·두 장 읽기를 바꾼다. 체크한 제출 묶음은 읽는 자료와 별개다.
 #   발언은 위에서 펼치고, 기존 사실은 본문 앞에 두며 긴 원문·출처는 펼쳐서 읽는다.
-#   1일 입구·두 편지, 3일 진료소·등 회의, 7일 화재 첫 추궁에서 쓰고, 나머지 쟁점과 옛 캠페인은 기존
+#   1~7일의 실제 자료 대조에서 쓰고, 8~14일 쟁점과 옛 캠페인은 기존
 #   r13_crisis_proof / r13_book 으로 간다(room13_v111.rpy r13_v111_proof_again).
 #
 #   바꾸지 않는 것(인계서 13장): v111_claim="v111:"+key 와 room13["arguments"][v111_claim], 정답 판정
@@ -43,6 +43,13 @@ init 350 python:
         "불이 시작된 곳과 진술을 대조한다":dict(mode="proof",speaker="누비",
             quote="창고 안에 등잔 있었잖아요. 거기서 불이 번졌을 수도 있죠. 제가 거기 있었다고 불을 놓은 건 아니에요.",
             quote_when=("value","fire_lamp_defense_heard")),
+        # 1부의 나머지 경로. 인용을 새로 만들거나 자료 이름으로 정답을 알려 주지 않는다.
+        "수리 뒤 새로 생긴 파손을 가린다":dict(mode="proof",speaker=None,quote=None,quote_when=None),
+        "남아 있는 돌과 칼의 사용을 연결한다":dict(mode="proof",speaker=None,quote=None,quote_when=None),
+        "밤이 혐의의 근거를 확인한다":dict(mode="proof",speaker=None,quote=None,quote_when=None),
+        "두 편지의 초대를 대조한다":dict(mode="compare",speaker=None,quote=None,quote_when=None),
+        "불의 원인과 빈 창고 진압을 구분한다":dict(mode="proof",speaker=None,quote=None,quote_when=None),
+        "불의 원인과 아이 구조를 구분한다":dict(mode="proof",speaker=None,quote=None,quote_when=None),
     }
     R13_PW_TABS=(("all","전체"),("now","이번 사건"),("past","지난 사건"),("person","사람별"))
     R13_PW_COMPARE_LIMIT=2
@@ -237,12 +244,8 @@ init 351 python:
         renpy.restart_interaction()
 
     def r13_pw_read_groups(key):
-        """현재 변형의 기존 사실만 나눈다. 종류가 기록이라는 이유로 전부 문서라고 부르지 않는다."""
-        facts=list(r13_evidence_facts(key))
-        if key=="V111:E11":return [("점검장에 적힌 내용",facts)]
-        if key=="V111:E13" and len(facts)>2 and facts[-1].startswith("우박은"):
-            return [("측정지에 적힌 내용",facts[:-1]),("함께 들은 말",facts[-1:])]
-        return [("확인한 내용",facts)]
+        """일반 기록과 같은 현재 변형의 사실을 읽는다. 기존 저장·호출 이름은 유지한다."""
+        return r13_evidence_read_groups(key)
 
     def r13_pw_read_layout(title,quote_open,quote_text):
         """수첩 종이 안의 제목·본문·하단을 계산한다. 긴 발언은 펼쳤을 때만 자리를 쓴다."""
@@ -374,7 +377,7 @@ init 351 python:
 # 체크 상자: 선택은 체크 + 테두리로 보인다(색만으로 구별하지 않는다). 새 재질 없이 잉크 선과 크림 면.
 screen r13_pw_checkbox(on,size=30):
     frame:
-        xysize (size,size) padding (2,2) background Solid(r13_nb_accent() if on else r13_nb_ink()) yalign .5
+        xysize (size,size) padding (2,2) background Solid(r13_nb_accent() if on else r13_nb_ink()) align (.5,.5)
         frame:
             xysize (size-4,size-4) padding (0,0) background Solid("#f5ecd9")
             if on:
@@ -470,7 +473,7 @@ init 350 python:
     # 2026-10-29 피드백 M: 나란히 보기에서 편지 두 장이 종이 그림과 요약(「…라고 적혔다」)으로만 보여, 「직접 읽고 견준다」는
     # 안내와 달리 원문이 앞에 없었다. 편지·메모처럼 글 자체가 자료인 것은 원문을 제목 바로 아래 먼저 보이고 그림은 그 아래에 둔다.
     # 맞는지 아닌지는 여전히 표시하지 않는다.
-    R13_PW_ORIGINAL_FIRST=("V111:E01","V111:E06")
+    R13_PW_ORIGINAL_FIRST=("V111:E01","V111:E06","V111:E27")
     def r13_pw_observe_available(key,pair):
         return key==R13_PW_OBSERVE_KEY and bool(pair) and len(pair)==2 and all(k in ("V111:E01","V111:E06") for k in pair)
 
@@ -583,12 +586,7 @@ screen r13_pw_read_card(key,x,y,w,h,origin_open,ready,slot=None):
                         if key in R13_PW_ORIGINAL_FIRST:
                             text "원문" size r13_type("small") color r13_nb_muted() font R13_UI_BOLD_FONT
                             text r13_material_body(r13_catalog_record(key)) size r13_ev_fact_size() color r13_nb_ink() font R13_UI_FONT xsize (inner-12)
-                        for group,lines in r13_pw_read_groups(key):
-                            vbox:
-                                spacing 4 xsize (inner-12)
-                                text group size r13_type("small") color r13_nb_muted() font R13_UI_BOLD_FONT
-                                for fact in lines:
-                                    text fact size r13_ev_fact_size() color r13_nb_ink() font R13_UI_FONT xsize (inner-12)
+                        use r13_evidence_read_facts(key,inner-12)
                         if r13_drawer_active():
                             use r13_drawer_note_blocks(key,inner-12)
                         if origin_open:

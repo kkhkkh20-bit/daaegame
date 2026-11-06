@@ -15,7 +15,7 @@ testcase v111_nw_d05_half_then_lost:
     run Function(r13_v111_set,"tries:gate_post",r13_nw_tries_max("gate_post")-2)
     run Jump("r13_v111_wrong5")
     pause 1.0
-    click pos (900,600) until screen "r13_crisis_proof" timeout 60
+    click pos (900,600) until screen "r13_proof_workspace" timeout 60
     assert eval (r13_v111_value("tries:gate_post")==r13_nw_tries_max("gate_post")-1 and r13_v111_value("meeting:gate_post") is None)
     assert eval (qa_nw_seen("무언가 말하려다 입을 다문다") and not qa_nw_seen("명단에 올리시오"))
     run Function(qa_nw_day5,["V111:E20"])
@@ -42,22 +42,38 @@ testcase v111_nw_d05_extra_e21_wins:
     assert eval (not r13_v111_proof_accepts("밤이 혐의의 근거를 확인한다",["E20","E22","E23","E24"],["V111:E20","V111:E21","V111:E22","V111:E23"]))
     run Jump("r13_v111_proof5")
     pause 1.5
-    assert screen "r13_crisis_proof"
-    click "자료 고르기"
-    pause 0.5
-    click "QA V111:E20"
-    pause 0.8
-    click "QA V111:E21"
-    pause 0.8
-    click "QA V111:E22"
-    pause 0.8
-    click "QA V111:E23"
-    pause 0.8
-    click "QA V111:E24"
-    pause 0.8
-    click "QA 닫기"  # 0.20.7: the proof book stays open between picks
-    pause 0.5
-    click "선택한 근거 제출"
+    assert screen "r13_proof_workspace"
+    if eval (renpy.get_widget("r13_proof_workspace","r13_pw_check_E20") is None):
+        if eval (renpy.get_screen("r13_proof_workspace").scope["page"]>0):
+            click id "r13_pw_prev" until eval (renpy.get_screen("r13_proof_workspace").scope["page"]==0) timeout 20
+        if eval (renpy.get_widget("r13_proof_workspace","r13_pw_check_E20") is None):
+            click id "r13_pw_next" until eval (renpy.get_widget("r13_proof_workspace","r13_pw_check_E20") is not None) timeout 20
+    click id "r13_pw_check_E20"
+    if eval (renpy.get_widget("r13_proof_workspace","r13_pw_check_E21") is None):
+        if eval (renpy.get_screen("r13_proof_workspace").scope["page"]>0):
+            click id "r13_pw_prev" until eval (renpy.get_screen("r13_proof_workspace").scope["page"]==0) timeout 20
+        if eval (renpy.get_widget("r13_proof_workspace","r13_pw_check_E21") is None):
+            click id "r13_pw_next" until eval (renpy.get_widget("r13_proof_workspace","r13_pw_check_E21") is not None) timeout 20
+    click id "r13_pw_check_E21"
+    if eval (renpy.get_widget("r13_proof_workspace","r13_pw_check_E22") is None):
+        if eval (renpy.get_screen("r13_proof_workspace").scope["page"]>0):
+            click id "r13_pw_prev" until eval (renpy.get_screen("r13_proof_workspace").scope["page"]==0) timeout 20
+        if eval (renpy.get_widget("r13_proof_workspace","r13_pw_check_E22") is None):
+            click id "r13_pw_next" until eval (renpy.get_widget("r13_proof_workspace","r13_pw_check_E22") is not None) timeout 20
+    click id "r13_pw_check_E22"
+    if eval (renpy.get_widget("r13_proof_workspace","r13_pw_check_E23") is None):
+        if eval (renpy.get_screen("r13_proof_workspace").scope["page"]>0):
+            click id "r13_pw_prev" until eval (renpy.get_screen("r13_proof_workspace").scope["page"]==0) timeout 20
+        if eval (renpy.get_widget("r13_proof_workspace","r13_pw_check_E23") is None):
+            click id "r13_pw_next" until eval (renpy.get_widget("r13_proof_workspace","r13_pw_check_E23") is not None) timeout 20
+    click id "r13_pw_check_E23"
+    if eval (renpy.get_widget("r13_proof_workspace","r13_pw_check_E24") is None):
+        if eval (renpy.get_screen("r13_proof_workspace").scope["page"]>0):
+            click id "r13_pw_prev" until eval (renpy.get_screen("r13_proof_workspace").scope["page"]==0) timeout 20
+        if eval (renpy.get_widget("r13_proof_workspace","r13_pw_check_E24") is None):
+            click id "r13_pw_next" until eval (renpy.get_widget("r13_proof_workspace","r13_pw_check_E24") is not None) timeout 20
+    click id "r13_pw_check_E24"
+    click id "r13_pw_submit"
     click pos (900,600) until screen "r13_hub" timeout 120
     assert eval (r13_v111_value("meeting:gate_post")=="win" and r13_v111_value("listed:bami") is not True)
     assert eval (qa_nw_seen("아이 말은 그렇다 치고") and not qa_nw_seen("의심받는 아이 말로"))

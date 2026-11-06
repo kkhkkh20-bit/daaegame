@@ -238,6 +238,20 @@ class EvidenceView(unittest.TestCase):
         self.assertIn("r13_record_scroll_adjustment(view_context,detail,archive)", single)
         self.assertIn("r13_material_body(ev)", single)   # the long original text lives in the fold
 
+    def test_regular_records_use_the_same_current_facts_groups_as_proof(self):
+        env = self.build(files={"v111/evidence-facts.json": FACTS.read_text()}, values={"E11.variant": "observed", "E13.variant": "observed"})
+        read = env["r13_evidence_read_groups"]
+        self.assertEqual(read("V111:E11"), [("점검장에 적힌 내용", json.loads(FACTS.read_text())["E11"]["observed"])])
+        self.assertEqual(read("V111:E13")[-1], ("함께 들은 말", json.loads(FACTS.read_text())["E13"]["observed"][-1:]))
+        single = VIEW.split("screen r13_evidence_single(", 1)[1].split("\nscreen ", 1)[0]
+        pair = VIEW.split("screen r13_evidence_pair(", 1)[1].split("\nscreen ", 1)[0]
+        self.assertIn("use r13_evidence_read_facts(detail,cw)", single)
+        self.assertIn("use r13_evidence_read_facts(key,col_w-12)", pair)
+        self.assertIn("r13_evidence_picture(detail,48)", single)
+        self.assertLess(pair.index("use r13_evidence_read_facts"), pair.index("r13_evidence_picture(key,48)"))
+        self.assertIn('Show("r13_pw_picture",key=detail)', single)
+        self.assertNotIn("$ picture=280 if touch else 360", single)
+
     def test_dead_compare_tab_removed_and_old_save_screen_kept(self):
         self.assertNotIn("screen r13_compare_content", COMPARE)
         self.assertNotIn('tab=="compare"', NOTE)

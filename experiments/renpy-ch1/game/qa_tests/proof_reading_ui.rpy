@@ -121,6 +121,144 @@ testcase proof_reading_pc_selection_independent:
     click id "r13_pw_check_E11"
     assert eval (qa_pw_read_selection([]) and qa_pw_read_domain()==qa_pw_read_before)
     assert eval (not r13_pw_submit_ok(qa_pw_read_scope()["chosen"],qa_pw_read_scope()["mode"]))
+
+    run Function(qa_pw_read_restore)
+
+init python:
+    def qa_pw_part1_fire(empty=False):
+        # 분기별 후속 논증 직전 자료만 갖춘 UI fixture. 자백·결말·생사 판정은 실행하지 않는다.
+        r13_v111_set("day",7)
+        r13_v111_set("FIRE_EVACUATED",bool(empty))
+        r13_edit(location="school")
+        r13_grant(["V111:E06_FIRE","V111:E07_NUBI","V111:"+("E06_EMPTY" if empty else "E06_RESCUE")],"qa-part1-proof")
+        store.r13_pw_views={}
+
+testcase proof_reading_day5_bami_shared:
+    pause 1.0
+    click "처음부터"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
+    click pos (900,600) until screen "r13_hub" timeout 90
+    run Function(qa_nw_day5,[])
+    run Jump("r13_v111_proof5")
+    pause until screen "r13_proof_workspace" timeout 40
+    pause .5
+    $ qa_pw_read_before=qa_pw_read_domain()
+    assert eval (v111_claim=="v111:밤이 혐의의 근거를 확인한다" and qa_pw_read_scope()["view"]=="list")
+    assert eval (qa_pw_read_scope()["L"]["quote_h"]==0 and not qa_pw_read_has("r13_pw_fold"))
+    assert eval (qa_pw_read_selection([]))
+    screenshot "part1-day5-bami-list.png"
+    if eval (not qa_pw_read_has("r13_pw_open_E20")):
+        click id "r13_pw_next" until eval qa_pw_read_has("r13_pw_open_E20") timeout 20
+    click id "r13_pw_open_E20"
+    pause .3
+    assert eval (qa_pw_read_scope()["view"]=="single" and qa_pw_read_selection([]))
+    assert eval (qa_pw_read_domain()==qa_pw_read_before)
+    screenshot "part1-day5-bami-read.png"
+
+testcase proof_reading_day5_letters_shared:
+    pause 1.0
+    click "처음부터"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
+    click pos (900,600) until screen "r13_hub" timeout 90
+    # 실제 5일 두 번째 편지 확보 뒤에 해당하는 보유 자료 fixture.
+    run Function(r13_v111_set,"day",5)
+    run Function(r13_grant,["V111:E27"],"qa-part1-letters")
+    run Jump("r13_v111_warning_compare5")
+    pause until screen "r13_proof_workspace" timeout 40
+    pause .5
+    $ qa_pw_read_before=qa_pw_read_domain()
+    assert eval (qa_pw_read_scope()["mode"]=="compare" and not qa_pw_read_has("r13_pw_fold"))
+    click id "r13_pw_pair"
+    click id "r13_pw_pick_0"
+    if eval (not qa_pw_read_has("r13_pw_open_E01")):
+        click id "r13_pw_next" until eval qa_pw_read_has("r13_pw_open_E01") timeout 20
+    click id "r13_pw_open_E01"
+    click id "r13_pw_pick_1"
+    if eval (not qa_pw_read_has("r13_pw_open_E27")):
+        click id "r13_pw_prev" until eval qa_pw_read_has("r13_pw_open_E27") timeout 20
+    click id "r13_pw_open_E27"
+    pause .5
+    assert eval (qa_pw_read_scope()["live_pair"]==("V111:E01","V111:E27") and qa_pw_read_selection([]))
+    assert eval (not r13_pw_submit_ok(qa_pw_read_scope()["chosen"],"compare"))
+    assert eval (qa_pw_read_domain()==qa_pw_read_before)
+    screenshot "part1-day5-letters-read-without-select.png"
+
+testcase proof_reading_fire_empty_shared:
+    pause 1.0
+    click "처음부터"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
+    click pos (900,600) until screen "r13_hub" timeout 90
+    run Function(qa_pw_part1_fire,True)
+    run Jump("r13_v111_empty_fire_basis7")
+    pause until screen "r13_proof_workspace" timeout 40
+    pause .5
+    $ qa_pw_read_before=qa_pw_read_domain()
+    assert eval (v111_claim=="v111:불의 원인과 빈 창고 진압을 구분한다" and qa_pw_read_scope()["view"]=="list")
+    assert eval (not qa_pw_read_has("r13_pw_fold") and qa_pw_read_scope()["L"]["quote_h"]==0)
+    if eval (not qa_pw_read_has("r13_pw_check_E06_FIRE")):
+        click id "r13_pw_next" until eval qa_pw_read_has("r13_pw_check_E06_FIRE") timeout 20
+    click id "r13_pw_check_E06_FIRE"
+    assert eval (qa_pw_read_selection(["V111:E06_FIRE"]))
+    click id "r13_pw_open_E06_FIRE"
+    click id "r13_pw_origin"
+    pause .3
+    assert eval (qa_pw_read_selection(["V111:E06_FIRE"]) and qa_pw_read_scope()["origin_open"])
+    assert eval (qa_pw_read_domain()==qa_pw_read_before and r13_v111_value("meeting:fire") is None)
+    screenshot "part1-fire-empty-read-keeps-selection.png"
+
+testcase proof_reading_fire_rescue_shared:
+    pause 1.0
+    click "처음부터"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
+    click pos (900,600) until screen "r13_hub" timeout 90
+    run Function(qa_pw_part1_fire,False)
+    run Jump("r13_v111_rescue_fire_basis7")
+    pause until screen "r13_proof_workspace" timeout 40
+    pause .5
+    $ qa_pw_read_before=qa_pw_read_domain()
+    assert eval (v111_claim=="v111:불의 원인과 아이 구조를 구분한다" and qa_pw_read_scope()["view"]=="list")
+    assert eval (not qa_pw_read_has("r13_pw_fold") and qa_pw_read_scope()["L"]["quote_h"]==0)
+    if eval (not qa_pw_read_has("r13_pw_check_E06_FIRE")):
+        click id "r13_pw_next" until eval qa_pw_read_has("r13_pw_check_E06_FIRE") timeout 20
+    click id "r13_pw_check_E06_FIRE"
+    assert eval (qa_pw_read_selection(["V111:E06_FIRE"]))
+    click id "r13_pw_open_E06_FIRE"
+    click id "r13_pw_origin"
+    pause .3
+    assert eval (qa_pw_read_selection(["V111:E06_FIRE"]) and qa_pw_read_scope()["origin_open"])
+    assert eval (qa_pw_read_domain()==qa_pw_read_before and r13_v111_value("meeting:fire") is None)
+    screenshot "part1-fire-rescue-read-keeps-selection.png"
+
+testcase proof_reading_regular_records_touch:
+    pause 1.0
+    click "처음부터"
+    click pos (900,600) until "편지를 외투 안에" timeout 60
+    click pos (900,600) until screen "r13_hub" timeout 90
+    run Function(qa_pw_read_prepare,True,False)
+    $ r13_records_view={"tab":"all","detail":"V111:E13","drawer":"now"}
+    $ qa_pw_read_before=qa_pw_read_domain()
+    run Show("r13_records")
+    pause .8
+    assert eval (renpy.get_widget("r13_records","r13_ev_picture") is not None)
+    assert eval (renpy.get_widget("r13_records","r13_ev_single_reading").yadjustment.range<=1)
+    screenshot "part1-records-body-first-touch.png"
+    click id "r13_ev_picture"
+    pause until screen "r13_pw_picture" timeout 5
+    assert eval (qa_pw_read_domain()==qa_pw_read_before)
+    click "닫기"
+    pause .3
+    click id "r13_ev_origin"
+    pause .3
+    screenshot "part1-records-source-touch.png"
+    click id "r13_ev_pair"
+    pause .3
+    click "초롱의 점검장"
+    pause .5
+    assert eval (set(renpy.get_screen("r13_records").scope["pair"])=={"V111:E11","V111:E13"})
+    assert eval (renpy.get_widget("r13_records","r13_ev_pair_reading_0") is not None)
+    assert eval (qa_pw_read_domain()==qa_pw_read_before)
+    screenshot "part1-records-pair-body-first-touch.png"
+    run Hide("r13_records")
     run Function(qa_pw_read_restore)
 
 testcase proof_reading_touch_selection_independent:

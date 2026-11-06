@@ -310,6 +310,11 @@ init python:
         # Match the rendered button in both native touch and short browser windows.
         return 88 if r13_touch_ui() else 52
 
+    def r13_settings_save_thumb(slot_h):
+        """기존 16:9 저장 그림을 칸 안쪽에 맞춘다. PC 크기는 유지한다."""
+        height=min(90,max(1,slot_h-20))
+        return (height*16//9,height)
+
 # 2026-10-27 소유자: 부제 설명·안내 글은 다 아는 내용이라 뺐다. 항목 이름 한 줄만 둔다.
 screen r13_opt_row(label):
     fixed:
@@ -507,6 +512,7 @@ screen r13_settings_save_tab(saving):
     # 소유자 2026-10-27: 쪽 없이 여섯 칸만, 빈 칸은 「빈 칸」만 적는다. 칸 글은 굵은 글꼴.
     $ ch=r13_opt_button_height()
     $ slot_h=((436 if r13_touch_ui() else 460)-24-ch-12-28)//3
+    $ thumb_w,thumb_h=r13_settings_save_thumb(slot_h)
     null height 24
     hbox:
         spacing 12
@@ -515,6 +521,8 @@ screen r13_settings_save_tab(saving):
             textbutton "불러오기" xsize 136 ysize ch selected (not saving) action SetScreenVariable("save_mode",False) text_size r13_opt_size()
         if not saving:
             textbutton "자동저장" xsize 136 ysize ch action r13_load_confirm("auto-1") sensitive FileLoadable(1,page="auto") text_size r13_opt_size()
+            if renpy.can_load("part1-clear"):
+                textbutton "1부 완료" id "r13_save_part1" xsize 160 ysize ch action r13_load_confirm("part1-clear") text_size r13_opt_size()
             textbutton "정리" xsize 88 ysize ch action Show("r13_save_cleanup",scope="old") text_size r13_opt_size()
     null height 12
     grid 2 3:
@@ -528,7 +536,7 @@ screen r13_settings_save_tab(saving):
                 if renpy.can_load(slot):
                     hbox:
                         spacing 14 xalign 0.0 yalign .5
-                        add FileScreenshot(i+1,page="1") xsize 160 ysize 90 yalign .5
+                        add FileScreenshot(i+1,page="1") xsize thumb_w ysize thumb_h yalign .5
                         use r13_save_slot_copy(slot,i+1,210,settings=True)
                 else:
                     text "빈 칸" size r13_nb_body_size() color r13_nb_muted() align (.5,.5) font R13_UI_BOLD_FONT
@@ -566,6 +574,8 @@ screen file_slots(title,saving):
             use r13_control("불러오기로" if saving else "저장으로",None,ShowMenu("load" if saving else "save"),width=184,control_id="r13_save_switch")
         if not saving:
             use r13_control("자동저장",None,r13_load_confirm("auto-1"),enabled=FileLoadable(1,page="auto"),width=136,control_id="r13_save_auto")
+            if renpy.can_load("part1-clear"):
+                use r13_control("1부 완료",None,r13_load_confirm("part1-clear"),width=160,control_id="r13_save_part1")
     add Solid("#c9a86a99") xpos (R13_NB_TITLE_X-10) ypos R13_NB_RULE_Y xsize (R13_NB_RIGHT-(R13_NB_TITLE_X-10)) ysize 1
     $ slot_h=(r13_nb_body_bottom()-R13_NB_TOP-2*14)//3
     grid 2 3:

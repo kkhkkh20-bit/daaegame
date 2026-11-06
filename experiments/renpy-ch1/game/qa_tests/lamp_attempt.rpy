@@ -57,7 +57,7 @@ testcase lamp_attempt_field_and_win:
     click 'QA 행동'
     pause 0.5
     click '톡 씨, 공방에서 같이 확인해 주시겠습니까?'
-    click pos (900,600) until screen 'r13_crisis_proof' timeout 60
+    click pos (900,600) until screen 'r13_proof_workspace' timeout 60
     run Function(qa_la_submit,['NW_LA_CHECK','NW_LA_FIELD'])
     run Show('qa_hidden_base_return',value='argue')
     pause 0.3
@@ -88,7 +88,7 @@ testcase lamp_attempt_lose:
     click pos (900,600) until screen 'r13_hub' timeout 90
     run Function(qa_la_meeting_setup)
     run Jump('r13_lamp_attempt_open3')
-    click pos (900,600) until screen 'r13_crisis_proof' timeout 60
+    click pos (900,600) until screen 'r13_proof_workspace' timeout 60
     run Function(r13_v111_set,'tries:lamp',r13_nw_tries_max('lamp')-1)
     run Function(qa_la_submit,['NW_LA_OFFER'])
     run Show('qa_hidden_base_return',value='argue')
@@ -96,7 +96,7 @@ testcase lamp_attempt_lose:
     click 'QA 행동'
     click pos (900,600) until '회의를 처음부터 다시' timeout 30
     click '회의를 처음부터 다시'
-    click pos (900,600) until screen 'r13_crisis_proof' timeout 30
+    click pos (900,600) until screen 'r13_proof_workspace' timeout 30
     assert eval (key=='수리 뒤 새로 생긴 파손을 가린다' and r13_v111_value('tries:lamp') in (None,0) and not r13_v111_owned('E15'))
     run Function(r13_v111_set,'tries:lamp',r13_nw_tries_max('lamp')-1)
     run Function(qa_la_submit,['NW_LA_OFFER'])
@@ -115,7 +115,7 @@ testcase lamp_attempt_partial:
     click pos (900,600) until screen 'r13_hub' timeout 90
     run Function(qa_la_meeting_setup)
     run Jump('r13_lamp_attempt_open3')
-    click pos (900,600) until screen 'r13_crisis_proof' timeout 60
+    click pos (900,600) until screen 'r13_proof_workspace' timeout 60
     run Function(qa_la_submit,['NW_LA_CHECK','NW_LA_FIELD'])
     run Show('qa_hidden_base_return',value='argue')
     pause 0.3

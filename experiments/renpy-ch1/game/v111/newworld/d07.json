@@ -29,7 +29,7 @@
     ],
     "MS14_D07_S02_L0022": [
       {
-        "text": "엄마는 곧 데리러 올 거야. 오늘은 선생님하고 나비 누나가 같이 있을 거야.",
+        "text": "엄마는 지금 저쪽 회의하던 교실에 있어. 오늘은 선생님하고 나비 누나가 같이 있을 거야.",
         "when": "fire_lose"
       },
       {
@@ -257,7 +257,7 @@
       "expression": "anxious"
     },
     "MS14_D07_S02_L0010": {
-      "text": "학교에 아이들 자리가 있는 건 확인했습니다.\n오늘 저녁을 먹는 것까지 보고 오겠습니다."
+      "text": "학교에 아이들 자리가 있는 건 확인했습니다. 선생님과 나비 씨에게 맡기는 것까지 보고 오겠습니다."
     },
     "MS14_D07_S02_L0011": {
       "text": "내 애들한테 제가—",
@@ -2381,6 +2381,55 @@
         "kind": "dialogue",
         "text": "등잔에서 번졌다는 설명만으로는 문 앞 흔적을 설명할 수 없습니다.",
         "expression": "neutral"
+      }
+    ],
+    "part1_fire_won": [
+      {
+        "id": "NW_PART1_WIN01",
+        "kind": "thought",
+        "speaker": "아빠",
+        "text": "누비가 불을 놓았다는 말은 기록에 남았다. 그 일을 누가 시켰는지까지 밝혀진 것은 아니다."
+      }
+    ],
+    "part1_fire_partial": [
+      {
+        "id": "NW_PART1_PART01",
+        "kind": "thought",
+        "speaker": "아빠",
+        "text": "누비가 한 말은 남겼다. 하지만 보리의 이름은 명단에서 빠지지 않았다."
+      }
+    ],
+    "part1_fire_lost": [
+      {
+        "id": "NW_PART1_LOSE01",
+        "kind": "thought",
+        "speaker": "아빠",
+        "text": "수첩을 덮으려다 오늘 적은 이름들을 다시 보았다. 끝내 확인하지 못한 것이 남아 있었다."
+      }
+    ],
+    "part1_family_close": [
+      {
+        "id": "NW_PART1_FAM01",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "아빠, 엄마 만나면 오늘 일도 말해 줄 거지?"
+      },
+      {
+        "id": "NW_PART1_FAM02",
+        "speaker": "아빠",
+        "kind": "dialogue",
+        "text": "응. 우리 둘이 본 걸 말해 주자."
+      },
+      {
+        "id": "NW_PART1_FAM03",
+        "speaker": "다람",
+        "kind": "dialogue",
+        "text": "그럼 나도 같이 말할래."
+      },
+      {
+        "id": "NW_PART1_FAM04",
+        "kind": "narration",
+        "text": "다람이 내 소매를 놓고 손을 잡았다. 나는 다른 손으로 수첩을 여몄다."
       }
     ]
   },

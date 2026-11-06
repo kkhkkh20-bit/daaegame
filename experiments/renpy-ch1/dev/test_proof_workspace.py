@@ -22,7 +22,7 @@ class ProofWorkspacePure(unittest.TestCase):
 
     def test_context_table_covers_approved_issues_only(self):
         ctx=self.ns['R13_PW_CONTEXT']
-        self.assertEqual(set(ctx),{'함께 들어갈 근거를 고른다','두 편지를 나란히 본다','불이 시작된 곳과 진술을 대조한다','측정 종료와 점검 기록을 대조한다','수리와 반출을 가릴 자료를 낸다','돌과 매입 기록을 낸다','바깥 걸쇠 주장과 발견 위치를 대조한다','마지막 점검과 인수한 돌을 연결한다'})
+        self.assertEqual(set(ctx),{'함께 들어갈 근거를 고른다','두 편지를 나란히 본다','불이 시작된 곳과 진술을 대조한다','측정 종료와 점검 기록을 대조한다','수리와 반출을 가릴 자료를 낸다','돌과 매입 기록을 낸다','바깥 걸쇠 주장과 발견 위치를 대조한다','마지막 점검과 인수한 돌을 연결한다','수리 뒤 새로 생긴 파손을 가린다','남아 있는 돌과 칼의 사용을 연결한다','밤이 혐의의 근거를 확인한다','두 편지의 초대를 대조한다','불의 원인과 빈 창고 진압을 구분한다','불의 원인과 아이 구조를 구분한다'})
         self.assertEqual(ctx['두 편지를 나란히 본다']['mode'],'compare')
         self.assertEqual(ctx['함께 들어갈 근거를 고른다']['speaker'],'돌목')
         self.assertEqual(ctx['불이 시작된 곳과 진술을 대조한다']['quote_when'],('value','fire_lamp_defense_heard'))
@@ -32,6 +32,22 @@ class ProofWorkspacePure(unittest.TestCase):
             for field in ('speaker','quote'):
                 self.assertNotRegex(str(spec.get(field) or ''),r'V111:|E0\d|E06_FIRE')
             self.assertNotIn('correct',spec)
+
+    def test_every_actual_part_one_issue_uses_workspace_but_later_issues_do_not(self):
+        paths=['room13_v111_days123.rpy','room13_v111_days45.rpy','room13_lamp_attempt.rpy']
+        early='\n'.join((ROOT/'game'/p).read_text() for p in paths)
+        middle=(ROOT/'game/room13_v111_days610.rpy').read_text()
+        day67,later=middle.split('label r13_v111_day8:',1)
+        extract=lambda text:set(re.findall(r'call r13_v111_proof\([\'\"]([^\'\"]+)',text))
+        self.assertEqual(extract(early+day67),set(self.ns['R13_PW_CONTEXT']))
+        later+='\n'+(ROOT/'game/room13_v111_days1114.rpy').read_text()
+        self.assertTrue(extract(later))
+        self.assertTrue(extract(later).isdisjoint(self.ns['R13_PW_CONTEXT']))
+        # 5일 두 편지는 읽기 쌍과 제출 선택을 분리하는 기존 compare 규칙을 쓴다.
+        self.assertEqual(self.ns['R13_PW_CONTEXT']['두 편지의 초대를 대조한다']['mode'],'compare')
+        for key in extract((ROOT/'game/room13_lamp_attempt.rpy').read_text())|{'밤이 혐의의 근거를 확인한다','두 편지의 초대를 대조한다','불의 원인과 빈 창고 진압을 구분한다','불의 원인과 아이 구조를 구분한다'}:
+            self.assertIsNone(self.ns['R13_PW_CONTEXT'][key]['quote'])
+            self.assertIsNone(self.ns['R13_PW_CONTEXT'][key]['speaker'])
 
     def test_day3_quotes_only_repeat_already_spoken_lines(self):
         import json

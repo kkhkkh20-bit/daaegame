@@ -5,7 +5,7 @@ init 100 python:
     # 0.18.92: saves written by 0.18.89-0.18.90 carry "pixel-b-acting-v2" (portrait-count bug); the
     # load path already moves that revision to the front set, so those saves stay usable.
     R13_SAVE_VISUALS=("pixel-b-front-v3","pixel-b-acting-v2")
-    R13_SAVE_SLOTS=r"^(?:[0-9]+|auto|quick)-[0-9]+$"
+    R13_SAVE_SLOTS=r"^(?:(?:[0-9]+|auto|quick)-[0-9]+|part1-clear)$"
 
     def r13_save_metadata(data):
         state=getattr(store,"room13",None) or {}
@@ -15,6 +15,7 @@ init 100 python:
             data["r13_story"]=state.get("story_revision")
             data["r13_visual"]=state.get("visual_revision")
             data["r13_day"]=state.get("day")
+            data["r13_part1_complete"]=bool((state.get("v111",{}).get("values") or {}).get("part1_completed"))
     config.save_json_callbacks.append(r13_save_metadata)
 
     def r13_save_status(data):
