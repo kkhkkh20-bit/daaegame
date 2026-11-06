@@ -386,7 +386,7 @@ STATE 1035 3 1 travel ['say'] trial_knife workshop 사람= ['buri', 'resident_to
 STATE 1065 3 1 travel ['r13_proof_workspace'] trial_knife workshop 사람= ['buri', 'resident_tok', 'resident_bori', 'resident_siluk', 'neoul', 'resident_lamplighter']
 SHOT 121-proof-travel
   제출 묶음 마지막 점검과 인수한 돌을 연결한다 ['E11', 'E15', 'E16']
-SHOT 122-proof-checked-마지막 점검과 인수한 
+SHOT 122-proof-checked-마지막 점검과 인수한
 STATE 1066 3 1 travel ['say'] trial_knife workshop 사람= ['buri', 'resident_tok', 'resident_bori', 'resident_siluk', 'neoul', 'resident_lamplighter']
   값 meeting:lamp None → win
 STATE 1100 3 1 travel ['choice'] stone_choice workshop 사람= ['buri', 'resident_tok', 'resident_bori', 'resident_siluk', 'neoul', 'resident_lamplighter', 'resident_madam', 'resident_badook']

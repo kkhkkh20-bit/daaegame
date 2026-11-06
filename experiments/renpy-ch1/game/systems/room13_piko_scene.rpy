@@ -64,4 +64,3 @@ screen r13_piko_scene():
         text ("그림을 접고 설명으로 듣는다" if r13_piko_scene_near else "피코가 있는 쪽을 다시 본다") yalign .5 size r13_type("body") color r13_type_color("ink") font R13_UI_BOLD_FONT
     if ready:
         key "game_menu" action Return("leave")
-
