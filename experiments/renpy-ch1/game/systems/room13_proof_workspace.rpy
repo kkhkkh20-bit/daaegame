@@ -1,6 +1,6 @@
-# 자료 대조 통합 화면 (2026-10-27 UX 인계서 D01·D02·D03·D06, 구조 시안 A·B·C).
-#   「대조 화면 → 자료함 → 상세 → 자료함 → 대조 화면」 왕복을 없앤다. 한 화면에 실제 발언(왼쪽), 보유 자료 목록
-#   (가운데, 체크로 고르고 이름을 눌러 읽는다), 열어 본 자료 상세(오른쪽), 고른 자료 칩과 주 행동 하나(아래)를 둔다.
+# 자료 대조 통합 화면. 2026-11-06 소유자 지시로 읽기 시안을 본편에 적용했다.
+#   같은 수첩 틀에서 목록·한 장 읽기·두 장 읽기를 바꾼다. 체크한 제출 묶음은 읽는 자료와 별개다.
+#   발언은 위에서 펼치고, 기존 사실은 본문 앞에 두며 긴 원문·출처는 펼쳐서 읽는다.
 #   1일 입구·두 편지, 3일 진료소·등 회의, 7일 화재 첫 추궁에서 쓰고, 나머지 쟁점과 옛 캠페인은 기존
 #   r13_crisis_proof / r13_book 으로 간다(room13_v111.rpy r13_v111_proof_again).
 #
@@ -118,6 +118,14 @@ init 350 python:
         if a is None and b is None:return None
         return (a,b)
 
+    def r13_pw_read_pair(pair,key,slot):
+        """읽을 자리만 바꾼다. 중복 자료는 다른 자리에서 비우며 제출 선택은 받지 않는다."""
+        items=list((tuple(pair or ())+(None,None))[:2])
+        if slot not in (0,1):return tuple(items)
+        items[slot]=key
+        if items[1-slot]==key:items[1-slot]=None
+        return tuple(items)
+
     def r13_pw_main_label(mode):
         return "비교 마치기" if mode=="compare" else "근거 제시"
 
@@ -204,22 +212,51 @@ init 351 python:
     def r13_pw_remember_pair(claim,pair):
         # D08: 관찰 뒤 대사를 보이고 돌아오면 같은 쌍이 펼쳐져 있어야 한다. 「목록으로」가 지운다.
         views=dict(store.r13_pw_views or {});row=dict(views.get(claim,{}));row["pair"]=tuple(pair) if pair else None;views[claim]=row;store.r13_pw_views=views
-    def r13_pw_remember(claim,tab,detail,quote_open):
+    def r13_pw_remember(claim,tab,detail,quote_open,view=None,pair=None,origin_open=False):
         views=dict(store.r13_pw_views or {})
-        row=dict(views.get(claim,{}));row.update(tab=tab,detail=detail,quote_open=quote_open);views[claim]=row  # D08 의 pair 기억은 남긴다
+        row=dict(views.get(claim,{}));row.update(tab=tab,detail=detail,quote_open=quote_open,view=view,pair=tuple(pair) if pair else None,origin_open=origin_open);views[claim]=row
         store.r13_pw_views=views
 
     def r13_pw_open_detail(key):
-        """이름을 누르면 읽는다. 읽어도 선택되지 않는다. 읽기용 쌍의 빈 자리가 있으면 그 자리에 채운다."""
+        """이름은 읽기만 연다. 비교 자리 선택 중에는 그 자리만 채운다."""
+        if key not in r13_pw_entries():return
         persistent.room13_pw_controls_seen=True
-        pair=renpy.get_screen("r13_proof_workspace").scope.get("pair")
-        if pair and None in (tuple(pair)+(None,None))[:2]:
-            renpy.set_screen_variable("pair",r13_pw_pair_fill(pair,key),screen="r13_proof_workspace")
+        screen=renpy.get_screen("r13_proof_workspace")
+        if not screen:return
+        slot=screen.scope.get("pick_slot")
+        if slot in (0,1):
+            pair=r13_pw_read_pair(screen.scope.get("pair"),key,slot)
+            renpy.set_screen_variable("pair",pair,screen="r13_proof_workspace")
+            renpy.set_screen_variable("view","pair",screen="r13_proof_workspace")
+            renpy.set_screen_variable("pick_slot",None,screen="r13_proof_workspace")
         else:
-            renpy.set_screen_variable("detail",key,screen="r13_proof_workspace")
+            renpy.set_screen_variable("view","single",screen="r13_proof_workspace")
+        renpy.set_screen_variable("detail",key,screen="r13_proof_workspace")
         renpy.set_screen_variable("origin_open",False,screen="r13_proof_workspace")
         if key in (store.room13 or {}).get("evidence",[]):r13_record_update_ui("seen",key,True)
         renpy.restart_interaction()
+
+    def r13_pw_read_groups(key):
+        """현재 변형의 기존 사실만 나눈다. 종류가 기록이라는 이유로 전부 문서라고 부르지 않는다."""
+        facts=list(r13_evidence_facts(key))
+        if key=="V111:E11":return [("점검장에 적힌 내용",facts)]
+        if key=="V111:E13" and len(facts)>2 and facts[-1].startswith("우박은"):
+            return [("측정지에 적힌 내용",facts[:-1]),("함께 들은 말",facts[-1:])]
+        return [("확인한 내용",facts)]
+
+    def r13_pw_read_layout(title,quote_open,quote_text):
+        """수첩 종이 안의 제목·본문·하단을 계산한다. 긴 발언은 펼쳤을 때만 자리를 쓴다."""
+        touch=r13_touch_ui();left=R13_NB_LEFT;width=R13_NB_WIDTH
+        footer=r13_nb_footer_y();context_y=156 if touch else 144
+        title_w=width
+        title_h=r13_proof_text_size(title,r13_type("emphasis"),title_w)[1]
+        quote_h=(r13_pw_quote_height(quote_text,width-32)+24) if quote_open and quote_text else 0
+        quote_y=context_y+max(36,title_h)+8
+        top=quote_y+(quote_h+8 if quote_h else 0)
+        return dict(touch=touch,left=left,right=R13_NB_RIGHT,width=width,top=R13_NB_TOP,
+                    footer_y=footer,footer_h=r13_control_height(),context_y=context_y,title_w=title_w,
+                    quote_y=quote_y,quote_h=quote_h,body_top=top,body_h=max(80,footer-12-top),
+                    tab_h=88 if touch else 40,card_h=88 if touch else 80,cols=2 if touch else 3)
 
     def r13_pw_id(prefix,key):
         return prefix+str(key).replace("V111:","").replace(":","_")
@@ -345,11 +382,11 @@ screen r13_pw_checkbox(on,size=30):
 
 # 자료 한 장: 왼쪽 체크 영역(선택), 나머지(그림·이름)는 상세를 읽는 영역. 둘은 시각적으로 갈라져 있다.
 screen r13_pw_card(claim,key,mode,w,h,chosen,is_detail,ready):
-    $ check_w=56
+    $ check_w=88 if r13_touch_ui() else 56
     $ thumb=h-28
     $ name_w=w-check_w-thumb-30
     # 64 칸(세 줄 목록)에서는 이름 두 줄이 테두리에 붙지 않게 한 단계 작게.
-    $ label_size=min(20 if h<=64 else 22,r13_pw_small())
+    $ label_size=r13_type("body")
     frame:
         xysize (w,h) padding (0,0) background (Solid(r13_nb_accent()) if chosen else (Solid("#c9a86a99") if is_detail else None))
         frame:
@@ -359,7 +396,7 @@ screen r13_pw_card(claim,key,mode,w,h,chosen,is_detail,ready):
                 xpos 0 ypos 0 xysize (check_w,h-6) padding (0,0) background None hover_background Solid("#8d4b2d14")
                 action Function(r13_pw_toggle_action,claim,key,mode) sensitive ready
                 alt (("선택 해제 · " if chosen else "선택 · ")+r13_catalog_title(key))
-                use r13_pw_checkbox(chosen,30)
+                use r13_pw_checkbox(chosen,40 if r13_touch_ui() else 30)
             add Solid("#c9a86a66") xpos check_w ypos 8 xsize 1 ysize (h-22)
             button:
                 id r13_pw_id("r13_pw_open_",key)
@@ -518,6 +555,58 @@ screen r13_pw_chips(claim,chosen,mode,L,replace_pending,ready):
                         id "r13_pw_chip_more" ysize ch padding (12,0) background r13_field_paper()
                         text ("+%d개"%(len(chosen)-fit)) size small color r13_nb_muted() font R13_UI_BOLD_FONT yalign .5
 
+# 읽는 화면과 제출할 묶음은 독립이다. 원문·그림은 사실 다음에 펼치며 판단 함수는 호출하지 않는다.
+screen r13_pw_read_card(key,x,y,w,h,origin_open,ready,slot=None):
+    $ inner=w-32
+    frame:
+        area (x,y,w,h) padding (1,1) background Solid("#c9a86a")
+        frame:
+            xfill True yfill True padding (15,12) background Solid("#f5ecd9")
+            viewport:
+                id ("r13_pw_read_"+str(slot) if slot is not None else "r13_pw_detail")
+                xysize (inner,h-26) mousewheel True draggable True scrollbars "vertical"
+                vscrollbar_unscrollable "hide"
+                vbox:
+                    xsize (inner-12) spacing 8
+                    if key:
+                        button:
+                            xsize (inner-12) yminimum 48 padding (0,0) background None hover_background Solid("#c9a86a22")
+                            action ([SetScreenVariable("pick_slot",slot),SetScreenVariable("view","list")] if slot is not None else Show("r13_pw_picture",key=key)) sensitive ready
+                            alt (("%d번 자료 변경 · "%(slot+1)) if slot is not None else "자료 그림 확대 · ")+r13_catalog_title(key)
+                            hbox:
+                                spacing 12
+                                text r13_catalog_title(key) size r13_type("title") color r13_nb_ink() font R13_UI_BOLD_FONT xsize (inner-112 if slot is not None else inner-64)
+                                if slot is not None:
+                                    text "변경" size r13_type("small") color r13_nb_accent() font R13_UI_FONT yalign .5
+                                else:
+                                    add r13_evidence_picture(key,32) yalign .5
+                        if key in R13_PW_ORIGINAL_FIRST:
+                            text "원문" size r13_type("small") color r13_nb_muted() font R13_UI_BOLD_FONT
+                            text r13_material_body(r13_catalog_record(key)) size r13_ev_fact_size() color r13_nb_ink() font R13_UI_FONT xsize (inner-12)
+                        for group,lines in r13_pw_read_groups(key):
+                            vbox:
+                                spacing 4 xsize (inner-12)
+                                text group size r13_type("small") color r13_nb_muted() font R13_UI_BOLD_FONT
+                                for fact in lines:
+                                    text fact size r13_ev_fact_size() color r13_nb_ink() font R13_UI_FONT xsize (inner-12)
+                        if r13_drawer_active():
+                            use r13_drawer_note_blocks(key,inner-12)
+                        if origin_open:
+                            add Solid("#c9a86a99") xsize (inner-12) ysize 1
+                            text "출처와 전체 내용" size r13_type("small") color r13_nb_accent() font R13_UI_BOLD_FONT
+                            if key not in R13_PW_ORIGINAL_FIRST:
+                                text r13_material_body(r13_catalog_record(key)) size r13_ev_fact_size() color r13_nb_ink() font R13_UI_FONT xsize (inner-12)
+                            text r13_catalog_origin(key) size r13_type("small") color r13_nb_muted() font R13_UI_FONT xsize (inner-12)
+                            if key in room13.get("records",{}):
+                                text ("얻은 곳: "+r13_record_source_label(key)) size r13_type("small") color r13_nb_muted() font R13_UI_FONT xsize (inner-12)
+                    else:
+                        text ("%d번 자료"%(slot+1)) size r13_type("title") color r13_nb_muted() font R13_UI_BOLD_FONT
+                        text "함께 읽을 자료를 목록에서 고르세요." size r13_type("emphasis") color r13_nb_ink() font R13_UI_FONT xsize (inner-12)
+    if slot is not None and key is None:
+        fixed:
+            xpos (x+16) ypos (y+140) xysize (240,88)
+            use r13_control("자료 고르기",None,[SetScreenVariable("pick_slot",slot),SetScreenVariable("view","list")],enabled=ready,width=240,height=88,control_id=("r13_pw_pick_%d"%slot))
+
 screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=None):
     style_prefix "r13"
     modal True
@@ -527,200 +616,139 @@ screen r13_proof_workspace(claim,key,can_press=False,investigate=False,chances=N
     $ ctx=r13_pw_context(key) or dict(mode="proof",speaker=None,quote=None,quote_when=None)
     $ mode=ctx["mode"]
     $ remembered=(r13_pw_views or {}).get(claim,{})
-    # 2026-10-27 14일 자동 플레이 7일: 「전체」로 열면 자료 39개가 13쪽이 된다. 처음 열 때는 「이번 사건」(있을 때)으로 연다. 기억된 탭은 그대로.
-    # 2026-10-28 다른 길 플레이 1일: 13호 「두 편지」는 초대 편지가 「지난 사건」(입구 회의가 끝남)에 있어 「이번 사건」 탭에는
-    # 방의 메모 하나만 보였다. 자료가 세 쪽을 넘을 만큼(13개 이상) 쌓였을 때만 「이번 사건」으로 연다. 그 전에는 「전체」가 한눈에 들어온다.
     default tab=remembered.get("tab",("now" if (r13_drawer_active() and len(r13_pw_entries())>=13 and r13_drawer_now(r13_pw_entries())) else "all"))
     default detail=remembered.get("detail")
-    default page=0
-    # 2026-10-27 외부 리뷰 R03(확인): 휴대폰 844x390 「나란히 보기」에서 본문 읽기 영역이 약 95px 뿐이었다. 휴대폰은 발언 틀을 접은 채 열어
-    # 본문이 그만큼 늘어나게 한다(접힘이면 r13_pw_layout 의 quote_h 가 0). PC 는 왼쪽 열이라 그대로. 펼친 기억은 그대로 따른다.
-    default quote_open=remembered.get("quote_open",not r13_touch_ui())
     default pair=remembered.get("pair")
+    default view=remembered.get("view") or ("pair" if pair else ("single" if detail else "list"))
+    default quote_open=remembered.get("quote_open",False)
+    default origin_open=remembered.get("origin_open",False)
+    default page=0
+    default pick_slot=None
     default observe=False
-    default origin_open=False
     default replace_pending=None
-    on "hide" action Function(r13_pw_remember,claim,tab,detail,quote_open)
+    on "hide" action Function(r13_pw_remember,claim,tab,detail,quote_open,view,pair,origin_open)
     $ owned=r13_pw_entries()
     $ stored=list(room13["arguments"].get(claim,[]))
     $ chosen=[k for k in stored if k in owned]
     $ detail=detail if detail in owned else None
-    $ live_pair=r13_pw_pair_live(pair,owned)
-    $ pair_open=bool(live_pair and None not in live_pair)
-    $ pair_waiting=bool(live_pair and not pair_open)
-    $ replace_pending=replace_pending if (replace_pending in owned and mode=="compare") else None
-    $ quote_text=ctx["quote"] if (ctx["quote"] and r13_pw_quote_visible_now(key)) else None
-    $ title=R13_PROOF_TITLES.get(key,key)
-    default big=False
-    default last_touch=r13_touch_ui()
-    # PC에서 읽던 화면을 좁히면 펼친 발언이 자료 본문을 밀어낸다. 휴대폰으로 바뀔 때 한 번만 접는다.
-    if last_touch != r13_touch_ui():
-        $ last_touch=r13_touch_ui()
-        if last_touch:
-            $ quote_open=False
-    $ dock=not big and not pair_open
-    # 발언 앞 화자 이름도 실제 줄바꿈 폭에 포함한다. 휴대폰에서 한 줄이 더 생겨 틀 밖으로 나가던 문제를 막는다.
+    $ pair=r13_pw_pair_live(pair,owned)
+    $ live_pair=(tuple(pair or ())+(None,None))[:2]
+    $ pair_open=view=="pair" and None not in live_pair
+    $ replace_pending=replace_pending if replace_pending in owned and mode=="compare" else None
+    $ quote_text=ctx["quote"] if ctx["quote"] and r13_pw_quote_visible_now(key) else None
     $ layout_quote=(((ctx["speaker"]+"  ") if ctx["speaker"] else "")+quote_text) if quote_text else None
-    $ L=r13_pw_layout(quote_open,layout_quote,dock)
+    $ title=R13_PROOF_TITLES.get(key,key)
+    $ L=r13_pw_read_layout(title,quote_open,layout_quote)
     $ touch=L["touch"]
-    $ small=r13_pw_small()
+    $ small=r13_type("small")
     $ ink=r13_nb_ink()
     $ muted=r13_nb_muted()
     $ accent=r13_nb_accent()
-    $ sections=r13_pw_sections(tab,owned)
-    $ show_list=not pair_open and not (touch and detail)
-    if L["dock"]:
+    use r13_notebook_shell("자료 대조",close_action=(Return("investigate") if investigate else None),rule_y=(148 if touch else 128))
+    if chances:
+        text chances.replace("회의 기회","기회") xpos R13_NB_TITLE_X ypos (108 if touch else 104) xsize 370 size small color muted font R13_UI_BOLD_FONT
+    fixed:
+        xpos 500 ypos 54 xysize (208,88 if touch else 64)
+        use r13_control("한 장만 보기",None,[SetScreenVariable("detail",detail or (live_pair[0] if live_pair[0] else (owned[0] if owned else None))),SetScreenVariable("view","single"),SetScreenVariable("pick_slot",None),SetScreenVariable("observe",False)],enabled=ready and bool(owned),chosen=view=="single",width=208,height=(88 if touch else 64),label_size=r13_type("body"),control_id="r13_pw_single")
+    fixed:
+        xpos 724 ypos 54 xysize (240,88 if touch else 64)
+        use r13_control("나란히 읽기",None,[SetScreenVariable("pair",pair or (detail,None)),SetScreenVariable("view","pair"),SetScreenVariable("pick_slot",None)],enabled=ready and len(owned)>1,chosen=view=="pair",width=240,height=(88 if touch else 64),label_size=r13_type("body"),control_id="r13_pw_pair")
+    text title xpos L["left"] ypos L["context_y"] xsize L["title_w"] size r13_type("emphasis") color ink font R13_UI_BOLD_FONT
+    if quote_text:
+        fixed:
+            xpos 982 ypos 54 xysize (176,64 if not touch else 88)
+            use r13_control("발언 접기" if quote_open else "발언 보기",None,ToggleScreenVariable("quote_open"),enabled=ready,width=176,height=(64 if not touch else 88),label_size=small,control_id="r13_pw_fold")
+    if quote_open and layout_quote:
         frame:
-            area L["panel"] padding (0,0) background R13DiaryPanel()
-        hbox:
-            xpos L["left"] ypos L["top"] xsize L["width"] spacing 16
-            text title font R13_UI_BOLD_FONT size r13_type("title") color ink xsize (L["width"]-220) yalign .5
-            if chances:
-                frame:
-                    padding (0,0) background None yalign .5 xalign 1.0
-                    use r13_proof_chip(chances)
-        if quote_text:
-            hbox:
-                xpos L["left"] ypos L["quote_y"] spacing 12
-                text ((ctx["speaker"]+"의 말") if ctx["speaker"] else "의문") font R13_UI_BOLD_FONT size small color accent yalign .5
-                text (("“"+quote_text+"”") if ctx["speaker"] else quote_text) font R13_UI_BOLD_FONT size r13_type("body") color ink yalign .5 xsize (L["width"]-120)
-        elif pair_waiting:
-            text "목록에서 함께 볼 자료의 이름을 누르세요." xpos L["left"] ypos L["quote_y"] size small color accent font R13_UI_BOLD_FONT
-        add Solid("#c9a86a99") xpos L["left"] ypos L["rule_y"] xsize L["width"] ysize 1
-        add Solid("#c9a86a66") xpos (L["detail_x"]-12) ypos L["tab_y"] xsize 1 ysize (L["body_bottom"]-L["tab_y"])
-    else:
-        use r13_notebook_shell("자료 대조",close_action=(Return("investigate") if investigate else None),stamp=chances)
-    # 발언 ------------------------------------------------------------
-    if L["dock"]:
-        pass
-    elif touch:
-        # 휴대폰: 위 한 줄에 발언 접기 버튼과 탭. 발언은 펼치면 아래 틀에 보이고 본문이 그만큼 내려간다.
-        button:
-            id "r13_pw_fold"
-            xpos L["left"] ypos L["top"] xysize (L["fold_w"],L["tab_h"]) padding (12,4) background r13_field_paper() hover_background r13_field_paper(hover=True)
-            action SetScreenVariable("quote_open",not quote_open) sensitive (ready and bool(quote_text)) alt "발언 펼치기"
-            vbox:
-                yalign .5 spacing 2
-                text r13_ev_two_lines(title,L["fold_w"]-32,small,1) xsize (L["fold_w"]-32) size small color ink font R13_UI_BOLD_FONT line_spacing -1
-                if quote_text:
-                    text ((ctx["speaker"]+"의 말 · " if ctx["speaker"] else "의문 · ")+("접기" if quote_open else "펼치기")) size max(14,small-6) color accent font R13_UI_BOLD_FONT
-        if quote_text and quote_open:
-            frame:
-                xpos L["left"] ypos L["quote_y"] xysize (L["width"],L["quote_h"]) padding (16,10) background r13_field_paper()
-                text ((("{color=%s}"%accent)+ctx["speaker"]+"{/color}  ") if ctx["speaker"] else "")+quote_text size r13_nb_emphasis_size() color ink font R13_UI_BOLD_FONT xsize (L["width"]-32) id "r13_pw_quote_text"
-    else:
-        vbox:
-            xpos L["quote_x"] ypos L["top"] xsize L["quote_w"] spacing 10
-            text title size r13_nb_heading_size() color ink font R13_UI_BOLD_FONT xsize L["quote_w"]
-            add Solid("#c9a86a99") xsize L["quote_w"] ysize 1
-            if quote_text:
-                text ((ctx["speaker"]+"의 말") if ctx["speaker"] else "의문") size small color accent font R13_UI_BOLD_FONT
-                text quote_text size r13_nb_body_size() color ink font R13_UI_BOLD_FONT xsize L["quote_w"]
-            # 왼쪽 열이 길면(쟁점 제목 세 줄 + 발언) 도움말이 아래 칩 줄과 겹쳤다. 고른 자료가 없을 때의 도움말은
-            # 칩 줄(「고른 자료 없음 · 체크로 여러 장 고릅니다」)이 이미 말하므로 여기서는 뺀다.
-            if r13_pw_help(mode,chances,len(chosen)) and (mode=="compare" or chosen):
-                text r13_pw_help(mode,chances,len(chosen)) size small color muted font R13_UI_BOLD_FONT xsize L["quote_w"]
-            if pair_waiting:
-                text "목록에서 함께 볼 자료의 이름을 누르세요." size small color accent font R13_UI_BOLD_FONT xsize L["quote_w"]
-        add Solid("#c9a86a66") xpos 412 ypos L["top"] xsize 1 ysize (L["body_bottom"]-L["top"])
-        add Solid("#c9a86a66") xpos 776 ypos L["body_top"] xsize 1 ysize (L["body_bottom"]-L["body_top"])
-    # 탭 ------------------------------------------------------------
-    if show_list or (touch and not pair_open):
-        for tab_key,tab_title,tx,tw in r13_pw_tab_boxes(L):
-            textbutton tab_title:
-                id ("r13_pw_tab_"+tab_key)
-                style "r13ev_chip_button" text_style "r13ev_chip_button_text"
-                xpos tx ypos L.get("tab_y",L["top"]) xsize tw ysize L["tab_h"]
-                text_size min(small,(tw-12)//max(1,len(tab_title))) selected (tab_key==tab)
-                action [SetScreenVariable("tab",tab_key),SetScreenVariable("page",0)]+([SetScreenVariable("detail",None)] if touch else []) sensitive ready
-    # 본문 ------------------------------------------------------------
-    if pair_open:
-        use r13_pw_pair(live_pair,L["list_x"],L["body_top"],(L["right"]-L["list_x"]),L["body_h"],observe,ready)
-    elif touch and detail:
-        use r13_pw_detail(claim,detail,mode,L["detail_x"],L["body_top"],L["detail_w"],L["body_h"],origin_open,(mode=="proof" and len(owned)>1),ready)
-    else:
-        $ tip_open=not persistent.room13_pw_controls_seen
-        $ tip_h=40 if tip_open else 0
-        $ list_y=L["body_top"]+(tip_h+8 if tip_open else 0)
-        $ list_h=L["body_h"]-(tip_h+8 if tip_open else 0)
-        if tip_open:
-            frame:
-                area (L["list_x"],L["body_top"],L["list_w"],tip_h) padding (10,4) background r13_field_paper()
-                text "체크는 선택 · 이름은 내용 읽기" size small color ink font R13_UI_FONT yalign .5
-        $ cols=L["cols"]
-        $ card_w=(L["list_w"]-8*(cols-1))//cols
-        $ pager_h=(48 if touch else 36)
-        $ pages=r13_pw_pages(sections,cols,list_h,L["card_h"],small+6,8,pager_h)
+            area (L["left"],L["quote_y"],L["width"],L["quote_h"]) padding (16,10) background r13_field_paper()
+            text layout_quote id "r13_pw_quote_text" size r13_type("emphasis") color ink font R13_UI_FONT xsize (L["width"]-32)
+    $ sections=r13_pw_sections(tab,owned)
+    $ pages=[[]]
+    if view=="list":
+        $ tab_w=170 if touch else 140
+        for ti,(tab_key,tab_title) in enumerate(R13_PW_TABS):
+            fixed:
+                xpos (L["left"]+ti*(tab_w+8)) ypos L["body_top"] xysize (tab_w,L["tab_h"])
+                use r13_control(tab_title,None,[SetScreenVariable("tab",tab_key),SetScreenVariable("page",0)],enabled=ready,chosen=tab==tab_key,width=tab_w,height=L["tab_h"],label_size=small,control_id=("r13_pw_tab_"+tab_key))
+        $ tip_h=(small+12) if pick_slot is not None or not persistent.room13_pw_controls_seen else 0
+        if tip_h:
+            text ((("왼쪽" if pick_slot==0 else "오른쪽")+"에 읽을 자료의 이름을 누르세요.") if pick_slot is not None else "체크는 선택 · 이름은 내용 읽기") xpos L["left"] ypos (L["body_top"]+L["tab_h"]+8) size small color muted font R13_UI_FONT
+        $ list_y=L["body_top"]+L["tab_h"]+8+tip_h
+        $ list_h=L["body_h"]-L["tab_h"]-8-tip_h
+        $ card_w=(L["width"]-8*(L["cols"]-1))//L["cols"]
+        $ pages=r13_pw_pages(sections,L["cols"],list_h,L["card_h"],small+6,8,0)
         $ page=min(page,len(pages)-1)
+        text ("%d / %d쪽"%(page+1,len(pages))) xpos L["right"] xanchor 1.0 ypos (L["body_top"]+12) size small color muted font R13_UI_BOLD_FONT
         fixed:
             id "r13_pw_list"
-            area (L["list_x"],list_y,L["list_w"],list_h)
+            area (L["left"],list_y,L["width"],list_h)
             vbox:
-                xsize L["list_w"] spacing 8
+                spacing 8 xsize L["width"]
                 for kind,value in pages[page]:
                     if kind=="header":
-                        text value size small color accent font R13_UI_BOLD_FONT xsize L["list_w"]
+                        text value size small color accent font R13_UI_BOLD_FONT xsize L["width"]
                     else:
                         hbox:
                             spacing 8
                             for k in value:
-                                use r13_pw_card(claim,k,mode,card_w,L["card_h"],(k in chosen),(k==detail and not touch),ready)
+                                use r13_pw_card(claim,k,mode,card_w,L["card_h"],k in chosen,k==detail,ready)
                 if not any(keys for _,keys in sections):
-                    text ("아직 모은 자료가 없습니다." if not owned else "이 분류에 해당하는 자료가 없습니다.") size small color muted font R13_UI_BOLD_FONT xsize L["list_w"]
-            if len(pages)>1:
-                # 쪽 넘김 줄: 질문 화면과 같은 꼴(← 이전 · N / M쪽 · 다음 →). 목록 칸 맨 아래에 둔다.
-                hbox:
-                    ypos (list_h-pager_h) xsize L["list_w"] ysize pager_h
-                    textbutton "← 이전":
-                        id "r13_pw_prev"
-                        xsize (L["list_w"]//3) ysize pager_h background None hover_background None
-                        text_color muted text_hover_color accent text_insensitive_color (r13_type_color("disabled")) text_font R13_UI_BOLD_FONT text_size small text_yalign .5 text_xalign 0.0 padding (4,0)
-                        action SetScreenVariable("page",page-1) sensitive ready and page>0
-                    text ("%d / %d쪽"%(page+1,len(pages))) xsize (L["list_w"]-2*(L["list_w"]//3)) ysize pager_h yalign .5 text_align .5 size small color muted font R13_UI_BOLD_FONT
-                    textbutton "다음 →":
-                        id "r13_pw_next"
-                        xsize (L["list_w"]//3) ysize pager_h background None hover_background None
-                        text_color muted text_hover_color accent text_insensitive_color (r13_type_color("disabled")) text_font R13_UI_BOLD_FONT text_size small text_yalign .5 text_xalign 1.0 padding (4,0)
-                        action SetScreenVariable("page",page+1) sensitive ready and page<len(pages)-1
-        if not touch:
-            if detail:
-                use r13_pw_detail(claim,detail,mode,L["detail_x"],L["body_top"],L["detail_w"],L["body_h"],origin_open,(mode=="proof" and len(owned)>1 and not pair_waiting),ready)
-            else:
-                text ("목록에서 자료 이름을 누르면 여기서 읽습니다.\n\n체크로 여러 장을 함께 고를 수 있습니다." if not pair_waiting else "함께 볼 자료의 이름을 목록에서 누르세요.") xpos L["detail_x"] ypos (L["body_top"]+40) xsize L["detail_w"] text_align .5 size r13_ev_fact_size() color muted font R13_UI_BOLD_FONT
-    # 고른 자료 칩 ----------------------------------------------------
-    # 붙임 판은 목록의 체크가 고른 것을 보여 준다(칩 줄을 두면 목록이 한 줄 줄어든다). 바꿀 자료 고르기만 칩 줄을 쓴다.
-    if not L["dock"] or replace_pending:
-        use r13_pw_chips(claim,chosen,mode,dict(L,chips_y=(L["footer_y"]-L["chip_h"]-8) if L["dock"] else L["chips_y"]),replace_pending,ready)
-    # 버튼 줄: 주 행동은 하나(빨강). 나머지는 공통 부품. 빈 선택이면 주 행동은 비활성이고 키 입력도 받지 않는다.
-    $ buttons=[]
-    if pair_open or (touch and detail):
-        $ buttons.append(("목록으로",[Function(r13_pw_remember_pair,claim,None),SetScreenVariable("observe",False),SetScreenVariable("pair",None),SetScreenVariable("detail",(live_pair[0] if (pair_open and not touch) else None))],True,False,"r13_pw_back_list"))
-    if can_press:
-        $ buttons.append(("되묻는다",Return("press"),True,False,"r13_pw_press"))
-    if investigate:
-        $ buttons.append(("조사 계속",Return("investigate"),True,False,"r13_pw_investigate"))
-    if pair_open and r13_pw_observe_available(key,live_pair if live_pair else pair):
-        $ buttons.append((("다시 본다" if r13_v111_value("letter_tail_observed") else "눈에 띄는 부분을 짚어 본다") if not observe else "짚기 그만",[Function(r13_pw_remember_pair,claim,pair),ToggleScreenVariable("observe")],True,False,"r13_pw_observe"))
-    if mode=="compare" and not pair_open:
-        $ buttons.append(("나란히 보기",SetScreenVariable("pair",r13_pw_pair_from_chosen(chosen,mode)),bool(r13_pw_pair_from_chosen(chosen,mode)),False,"r13_pw_side"))
-    $ buttons.append((r13_pw_main_label(mode),Return("argue"),r13_pw_submit_ok(stored,mode) and r13_pw_submit_ok(chosen,mode),True,"r13_pw_submit"))
-    if L["dock"]:
-        # B안과 같은 줄: 첫 칸 「목록 크게 보기」(예전 큰 화면), 끝 칸 「자료 다시 보기」. 칸 폭·간격은 B안과 같다.
-        $ buttons=[("목록 크게 보기",SetScreenVariable("big",True),True,False,"r13_pw_big")]+buttons
-        if len(buttons)<4:
-            $ buttons.append(("자료 다시 보기",Return("leave"),True,False,"r13_pw_leave"))
-    elif big and not touch:
-        $ buttons=[("판으로 줄이기",SetScreenVariable("big",False),True,False,"r13_pw_small")]+buttons
-    $ bw=((L["width"]-16*(len(buttons)-1))//len(buttons)) if touch else (200 if len(buttons)>3 else 232)
-    $ bw=((L["width"]-R13_CONTROL["gap"]*(len(buttons)-1))//len(buttons)) if L["dock"] else bw
-    $ bw=min(bw,264) if touch else bw
-    $ gap=R13_CONTROL["gap"] if L["dock"] else 16
-    $ bx=L["right"]-(bw*len(buttons)+gap*(len(buttons)-1))
-    # 버튼 줄 왼쪽에는 글을 두지 않는다 — 안내는 왼쪽 발언 열(PC)·발언 틀(휴대폰)에 있고, 짧은 폭에 넣으면 종이 밖으로 넘친다.
-    for index,(caption,action,enabled,primary,control_id) in enumerate(buttons):
+                    text ("아직 모은 자료가 없습니다." if not owned else "이 분류에는 자료가 없습니다.") size small color muted font R13_UI_FONT xsize L["width"]
+    elif view=="pair":
+        if observe and r13_pw_observe_available(key,live_pair):
+            use r13_pw_pair(live_pair,L["left"],L["body_top"],L["width"],L["body_h"],True,ready)
+        else:
+            $ col=(L["width"]-24)//2
+            for slot,k in enumerate(live_pair):
+                use r13_pw_read_card(k,L["left"]+slot*(col+24),L["body_top"],col,L["body_h"],origin_open,ready,slot)
+    elif detail:
+        use r13_pw_read_card(detail,L["left"],L["body_top"],L["width"],L["body_h"],origin_open,ready)
+    else:
+        text "목록에서 읽을 자료의 이름을 누르세요." xpos L["left"] ypos L["body_top"] size r13_type("emphasis") color muted font R13_UI_FONT
+    # 목록 쪽 넘김은 아래 고정한다. 이름으로 읽은 뒤에도 체크한 묶음은 그대로다.
+    if view=="list":
+        for bi,(caption,target,cid,enabled) in enumerate((("‹",page-1,"r13_pw_prev",page>0),("›",page+1,"r13_pw_next",page<len(pages)-1))):
+            fixed:
+                xpos (L["left"]+bi*94) ypos L["footer_y"] xysize (82,L["footer_h"])
+                use r13_control(caption,None,SetScreenVariable("page",target),enabled=ready and enabled,width=82,control_id=cid)
+    else:
         fixed:
-            xpos (bx+index*(bw+gap)) ypos L["footer_y"] xysize (bw,r13_control_height())
-            use r13_control(caption,None,action,enabled=(ready and enabled),primary=primary,width=bw,control_id=control_id)
+            xpos L["left"] ypos L["footer_y"] xysize (176,L["footer_h"])
+            use r13_control("목록",None,[SetScreenVariable("view","list"),SetScreenVariable("observe",False),SetScreenVariable("pick_slot",None)],enabled=ready,width=176,control_id="r13_pw_back_list")
+    vbox:
+        xpos 324 ypos (L["footer_y"]+6) xsize 144 spacing 2
+        text ("%d장 선택"%len(chosen)) size small color ink font R13_UI_BOLD_FONT
+        text ("제출 자료" if persistent.room13_pw_controls_seen else "체크로 선택") size small color muted font R13_UI_FONT
+    $ secondary=[]
+    if can_press:
+        $ secondary.append(("되묻는다",Return("press"),"r13_pw_press"))
+    if investigate:
+        $ secondary.append(("조사 계속",Return("investigate"),"r13_pw_investigate"))
+    if view=="pair" and r13_pw_observe_available(key,live_pair):
+        $ secondary.append(("짚기 그만" if observe else "문서 짚기",[Function(r13_pw_remember_pair,claim,pair),ToggleScreenVariable("observe")],"r13_pw_observe"))
+    for si,(caption,action,cid) in enumerate(secondary[:2]):
+        fixed:
+            xpos (480+si*164) ypos L["footer_y"] xysize (156,L["footer_h"])
+            use r13_control(caption,None,action,enabled=ready,width=156,label_size=small,control_id=cid)
+    fixed:
+        xpos 822 ypos L["footer_y"] xysize (128,L["footer_h"])
+        use r13_control("접기" if origin_open else "출처",None,ToggleScreenVariable("origin_open"),enabled=ready and view!="list",width=128,label_size=small,control_id="r13_pw_origin")
+    fixed:
+        xpos 966 ypos L["footer_y"] xysize (240,L["footer_h"])
+        use r13_control(r13_pw_main_label(mode),None,Return("argue"),enabled=ready and r13_pw_submit_ok(stored,mode) and r13_pw_submit_ok(chosen,mode),primary=True,width=240,control_id="r13_pw_submit")
+    if replace_pending:
+        button:
+            xysize (1280,720) background Solid("#05070f88") action NullAction()
+        frame:
+            area (240,210,800,300) padding (24,24) background R13ConfirmPaper()
+            vbox:
+                spacing 20
+                text ("「"+r13_catalog_title(replace_pending)+"」와 바꿀 자료") xsize 748 size r13_type("emphasis") color ink font R13_UI_BOLD_FONT
+                hbox:
+                    spacing 16
+                    for old in chosen:
+                        use r13_control(r13_ev_two_lines(r13_catalog_title(old),320,small,2),None,Function(r13_pw_replace_action,claim,old,replace_pending),width=352,label_size=small,control_id=r13_pw_id("r13_pw_swap_",old))
+                use r13_control("취소",None,SetScreenVariable("replace_pending",None),width=144,control_id="r13_pw_swap_cancel")
 
 # 작은 머리글 그림은 필요할 때 기존 수첩 판에서 확대해 본다.
 screen r13_pw_picture(key,called=False):

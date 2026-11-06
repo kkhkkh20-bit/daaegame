@@ -125,6 +125,7 @@ testcase v111_early_day3_workspace_retry_and_alternate:
     click id "r13_pw_open_E13"
     pause .3
     assert eval (r13_v111_value("tries:lamp")==1)
+    click id "r13_pw_back_list"
     click id "r13_pw_check_E11"
     click id "r13_pw_check_E13"
     pause .3

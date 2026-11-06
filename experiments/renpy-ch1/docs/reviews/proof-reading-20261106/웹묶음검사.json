@@ -1,0 +1,29 @@
+{
+  "version": "0.20.113",
+  "archive_sha256": "8820857cf74f24d20abac1cb1284a47ad4fa3531445c6b19564129ab0c54bf1e",
+  "parts": [
+    {
+      "file": "game.part01",
+      "bytes": 10485760,
+      "sha256": "98162723477403cf3c68c91b4501cff13147d93144f700c98a9a3b73abf0c543"
+    },
+    {
+      "file": "game.part02",
+      "bytes": 6755249,
+      "sha256": "c5bc4bc9abbd3a72dd514bfeb5657251cb43ebd9723250dcbd7f0a4f26f7a8c3"
+    }
+  ],
+  "sources_equal": true,
+  "qa_excluded": true,
+  "build_report": {
+    "core_zip_bytes": 17241009,
+    "archive_sha256": "8820857cf74f24d20abac1cb1284a47ad4fa3531445c6b19564129ab0c54bf1e",
+    "parts": 2,
+    "preload_files": 33,
+    "first_load_bytes": 36374427,
+    "prefetch_files": 107,
+    "transparent_placeholders": 3148,
+    "remote_files": 4626,
+    "removed_from_release": []
+  }
+}

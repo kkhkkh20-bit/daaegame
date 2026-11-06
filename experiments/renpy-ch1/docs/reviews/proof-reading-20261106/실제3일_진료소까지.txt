@@ -1,0 +1,88 @@
+BUILD 0.20.113
+RESUME br-piko_lost-day3
+==== 3일
+SAVED br-piko_lost-day3
+  값 DARAM_DETAINED None → False
+  값 KKOMI_ALIVE None → True
+  값 OWL_ALIVE None → True
+  값 bami_status None → free
+  값 carried_dry_blankets None → 0
+  값 fate:fate_piko None → lost
+  값 meeting:gate None → win
+  값 piko_alive None → True
+  값 route7 None → uncommitted
+  값 silluk_status None → free
+STATE 0 3 0 travel ['r13_hub'] None room13 사람= []
+  배치 []
+  층15 [True, 0, 2160, [[1700, 375, 35, 67], [863, 552, 215, 64], [842, 498, 438, 57], [1541, 419, 150, 126]], []]
+  층16직접 [['층16출력', []]]
+STATE 1 3 0 travel ['r13_map'] None room13 사람= []
+STATE 2 3 0 travel [] None square 사람= ['doto', 'resident_owlgp', 'resident_seol', 'resident_badook']
+STATE 7 3 0 travel ['say'] None square 사람= ['doto', 'resident_owlgp', 'resident_seol', 'resident_badook']
+대화 건너뛰기 버튼 3 travel
+  값 piko_alive True → False
+STATE 8 3 0 travel ['r13_piko_scene'] None square 사람= ['doto', 'resident_owlgp', 'resident_seol', 'resident_badook']
+STATE 9 3 0 travel ['say'] None square 사람= ['doto', 'resident_owlgp', 'resident_seol', 'resident_badook']
+대화 건너뛰기 버튼 3 travel
+STATE 10 3 0 travel ['r13_piko_scene'] None square 사람= ['doto', 'resident_owlgp', 'resident_seol', 'resident_badook']
+STATE 11 3 0 travel ['r13_pw_picture'] None square 사람= ['doto', 'resident_owlgp', 'resident_seol', 'resident_badook']
+STATE 12 3 0 travel ['say'] None square 사람= ['doto', 'resident_owlgp', 'resident_seol', 'resident_badook']
+대화 건너뛰기 버튼 3 travel
+STATE 13 3 0 travel ['r13_piko_scene'] None square 사람= ['doto', 'resident_owlgp', 'resident_seol', 'resident_badook']
+STATE 14 3 0 travel ['say'] None square 사람= ['doto', 'resident_owlgp', 'resident_seol', 'resident_badook']
+대화 건너뛰기 버튼 3 travel
+STATE 15 3 0 travel ['r13_piko_scene'] None square 사람= ['doto', 'resident_owlgp', 'resident_seol', 'resident_badook']
+STATE 16 3 0 travel ['say'] None square 사람= ['doto', 'resident_owlgp', 'resident_seol', 'resident_badook']
+대화 건너뛰기 버튼 3 travel
+STATE 17 3 0 lamp_inspect3 ['r13_hub'] None square 사람= ['doto', 'resident_owlgp', 'resident_seol', 'resident_badook', 'resident_tok', 'neoul', 'resident_lamplighter']
+  배치 [['doto', 776, 410, 109, 211, False], ['resident_tok', 1381, 452, 175, 186, True], ['resident_badook', 1039, 506, 200, 159, True], ['resident_seol', 458, 456, 115, 210, False], ['resident_owlgp', 175, 523, 93, 152, True], ['neoul', 1635, 497, 129, 210, True], ['resident_lamplighter', 365, 498, 101, 211, True]]
+  층15 [True, 0, 1920, [[598, 269, 170, 236], [861, 475, 121, 52], [904, 270, 187, 201]], [['doto', [835, 376, 132, 245], False, 621], ['resident_tok', [1355, 399, 228, 242], True, 641], ['resident_seol', [602, 456, 116, 210], False, 665], ['resident_badook', [1008, 457, 263, 211], True, 668], ['resident_owlgp', [150, 478, 127, 198], True, 676], ['resident_lamplighter', [644, 437, 129, 270], True, 707], ['neoul', [1592, 439, 180, 269], True, 708]]]
+  층16직접 [['doto', [835, 376, 132, 245]], ['resident_tok', [1355, 399, 228, 242]], ['resident_seol', [602, 456, 116, 210]], ['resident_badook', [1008, 457, 263, 211]], ['resident_owlgp', [150, 478, 127, 198]], ['resident_lamplighter', [732, 438, 129, 270]], ['neoul', [1592, 439, 180, 269]], ['층16출력', [['doto', [835, 376, 132, 245]], ['resident_tok', [1355, 399, 228, 242]], ['resident_seol', [458, 457, 115, 210]], ['resident_badook', [1008, 457, 263, 211]], ['resident_owlgp', [150, 478, 127, 198]], ['neoul', [1592, 439, 180, 269]], ['resident_lamplighter', [351, 439, 129, 270]]]]]
+STATE 18 3 0 lamp_inspect3 ['say'] None square 사람= ['doto', 'resident_owlgp', 'resident_seol', 'resident_badook', 'resident_tok', 'neoul', 'resident_lamplighter']
+대화 건너뛰기 버튼 3 lamp_inspect3
+STATE 19 3 0 fragment_request ['r13_hub'] None square 사람= ['doto', 'resident_owlgp', 'resident_seol', 'resident_badook', 'resident_tok', 'resident_lamplighter']
+  배치 [['doto', 760, 410, 109, 211, False], ['resident_tok', 1381, 452, 175, 186, True], ['resident_badook', 1039, 506, 200, 159, True], ['resident_seol', 458, 456, 115, 210, False], ['resident_owlgp', 175, 523, 93, 152, True], ['resident_lamplighter', 1648, 497, 101, 211, True]]
+  층15 [True, 0, 1920, [[598, 269, 170, 236], [861, 475, 121, 52], [904, 270, 187, 201]], [['doto', [835, 376, 132, 245], False, 621], ['resident_tok', [1355, 399, 228, 242], True, 641], ['resident_seol', [602, 456, 116, 210], False, 665], ['resident_badook', [1008, 457, 263, 211], True, 668], ['resident_owlgp', [150, 478, 127, 198], True, 676], ['resident_lamplighter', [1634, 439, 128, 269], True, 708]]]
+  층16직접 [['doto', [835, 376, 132, 245]], ['resident_tok', [1355, 399, 228, 242]], ['resident_seol', [602, 456, 116, 210]], ['resident_badook', [1008, 457, 263, 211]], ['resident_owlgp', [150, 478, 127, 198]], ['resident_lamplighter', [1634, 439, 128, 269]], ['층16출력', [['doto', [749, 376, 131, 245]], ['resident_tok', [1355, 399, 228, 242]], ['resident_seol', [458, 457, 115, 210]], ['resident_badook', [1008, 457, 263, 211]], ['resident_owlgp', [150, 478, 127, 198]], ['resident_lamplighter', [1634, 439, 128, 269]]]]]
+STATE 22 3 0 fragment_request ['r13_topics'] None square 사람= ['doto', 'resident_owlgp', 'resident_seol', 'resident_badook', 'resident_tok', 'resident_lamplighter']
+  질문 톡 씨, 안쪽 조각 좀 봐 주시겠습니까?
+STATE 23 3 0 fragment_request ['say'] None square 사람= ['doto', 'resident_owlgp', 'resident_seol', 'resident_badook', 'resident_tok', 'resident_lamplighter']
+대화 건너뛰기 버튼 3 fragment_request
+STATE 24 3 0 lamp_log_request ['r13_hub'] None square 사람= ['doto', 'resident_owlgp', 'resident_seol', 'resident_badook', 'resident_lamplighter']
+  배치 [['doto', 120, 410, 109, 211, False], ['resident_lamplighter', 778, 430, 101, 211, True], ['resident_seol', -38, 455, 115, 210, False], ['resident_badook', 505, 506, 200, 159, True], ['resident_owlgp', -465, 523, 93, 152, True]]
+  층15 [True, 640, 1920, [[598, 269, 170, 236], [861, 475, 121, 52], [904, 270, 187, 201]], [['doto', [835, 376, 132, 245], False, 621], ['resident_lamplighter', [1410, 398, 116, 243], True, 641], ['resident_seol', [602, 456, 116, 210], False, 665], ['resident_badook', [1008, 457, 263, 211], True, 668], ['resident_owlgp', [150, 478, 127, 198], True, 676]]]
+  층16직접 [['doto', [835, 376, 132, 245]], ['resident_lamplighter', [1410, 398, 116, 243]], ['resident_seol', [602, 456, 116, 210]], ['resident_badook', [1008, 457, 263, 211]], ['resident_owlgp', [150, 478, 127, 198]], ['층16출력', [['doto', [749, 376, 131, 245]], ['resident_lamplighter', [1410, 398, 116, 243]], ['resident_seol', [602, 456, 116, 210]], ['resident_badook', [1114, 457, 262, 211]], ['resident_owlgp', [150, 478, 127, 198]]]]]
+STATE 25 3 0 lamp_log_request ['r13_topics'] None square 사람= ['doto', 'resident_owlgp', 'resident_seol', 'resident_badook', 'resident_lamplighter']
+  질문 점검장을 보여 주시겠어요?
+STATE 26 3 0 lamp_log_request ['say'] None square 사람= ['doto', 'resident_owlgp', 'resident_seol', 'resident_badook', 'resident_lamplighter']
+대화 건너뛰기 버튼 3 lamp_log_request
+STATE 27 3 0 travel ['r13_hub'] None square 사람= ['doto', 'resident_owlgp', 'resident_seol', 'resident_badook', 'resident_tok']
+  배치 [['doto', 77, 410, 109, 211, False], ['resident_tok', 741, 452, 175, 186, True], ['resident_badook', 399, 506, 200, 159, True], ['resident_seol', 332, 456, 115, 210, False], ['resident_owlgp', -465, 523, 93, 152, True]]
+  층15 [True, 640, 1920, [[598, 269, 170, 236], [861, 475, 121, 52], [904, 270, 187, 201]], [['doto', [835, 376, 132, 245], False, 621], ['resident_tok', [1355, 399, 228, 242], True, 641], ['resident_seol', [602, 456, 116, 210], False, 665], ['resident_badook', [1008, 457, 263, 211], True, 668], ['resident_owlgp', [150, 478, 127, 198], True, 676]]]
+  층16직접 [['doto', [835, 376, 132, 245]], ['resident_tok', [1355, 399, 228, 242]], ['resident_seol', [602, 456, 116, 210]], ['resident_badook', [1008, 457, 263, 211]], ['resident_owlgp', [150, 478, 127, 198]], ['층16출력', [['doto', [706, 376, 131, 245]], ['resident_tok', [1355, 399, 228, 242]], ['resident_seol', [792, 457, 115, 210]], ['resident_badook', [1008, 457, 263, 211]], ['resident_owlgp', [150, 478, 127, 198]]]]]
+STATE 28 3 0 travel ['r13_map'] None square 사람= ['doto', 'resident_owlgp', 'resident_seol', 'resident_badook', 'resident_tok']
+STATE 29 3 0 travel [] None workshop 사람= ['buri', 'resident_tok', 'resident_lamplighter', 'resident_ttadak', 'resident_musoe', 'resident_guldol']
+STATE 35 3 0 travel ['say'] None workshop 사람= ['buri', 'resident_tok', 'resident_lamplighter', 'resident_ttadak', 'resident_musoe', 'resident_guldol']
+대화 건너뛰기 버튼 3 travel
+STATE 36 3 0 loan_read ['r13_hub'] None workshop 사람= ['buri', 'resident_tok', 'resident_lamplighter', 'resident_ttadak', 'resident_musoe', 'resident_guldol']
+  배치 [['resident_tok', 1530, 276, 131, 210, False], ['buri', 147, 335, 117, 185, False], ['resident_guldol', 965, 324, 119, 231, False], ['resident_lamplighter', 1154, 360, 106, 210, False], ['resident_ttadak', 1334, 387, 182, 193, True], ['resident_musoe', 270, 460, 122, 230, False]]
+  층15 [True, 0, 1800, [[470, 438, 145, 54], [696, 113, 219, 203], [0, 56, 237, 281]], [['resident_tok', [1532, 271, 123, 196], False, 467], ['buri', [561, 335, 117, 185], False, 520], ['resident_guldol', [678, 273, 187, 280], False, 553], ['resident_lamplighter', [1149, 350, 116, 220], False, 570], ['resident_ttadak', [1316, 352, 217, 230], True, 582], ['resident_musoe', [47, 410, 152, 280], False, 690]]]
+  층16직접 [['resident_tok', [1532, 271, 123, 196]], ['buri', [561, 335, 117, 185]], ['resident_guldol', [678, 273, 187, 280]], ['resident_lamplighter', [1149, 350, 116, 220]], ['resident_ttadak', [1316, 352, 217, 230]], ['resident_musoe', [47, 410, 152, 280]], ['층16출력', [['resident_tok', [1532, 271, 123, 196]], ['buri', [147, 335, 117, 185]], ['resident_guldol', [930, 278, 186, 280]], ['resident_lamplighter', [1149, 350, 116, 220]], ['resident_ttadak', [1316, 352, 217, 230]], ['resident_musoe', [254, 410, 151, 280]]]]]
+STATE 37 3 0 loan_read ['say'] None workshop 사람= ['buri', 'resident_tok', 'resident_lamplighter', 'resident_ttadak', 'resident_musoe', 'resident_guldol']
+대화 건너뛰기 버튼 3 loan_read
+STATE 38 3 0 travel ['r13_hub'] None workshop 사람= ['buri', 'resident_tok', 'resident_lamplighter', 'resident_ttadak', 'resident_musoe', 'resident_guldol']
+  배치 [['resident_tok', 1530, 276, 131, 210, False], ['buri', 328, 335, 117, 185, False], ['resident_guldol', 965, 324, 119, 231, False], ['resident_lamplighter', 1154, 360, 106, 210, False], ['resident_ttadak', 1334, 387, 182, 193, True], ['resident_musoe', 63, 460, 122, 230, False]]
+  층15 [True, 0, 1800, [[470, 438, 145, 54], [696, 113, 219, 203]], [['resident_tok', [1532, 271, 123, 196], False, 467], ['buri', [561, 335, 117, 185], False, 520], ['resident_guldol', [678, 273, 187, 280], False, 553], ['resident_lamplighter', [1149, 350, 116, 220], False, 570], ['resident_ttadak', [1316, 352, 217, 230], True, 582], ['resident_musoe', [47, 410, 152, 280], False, 690]]]
+  층16직접 [['resident_tok', [1532, 271, 123, 196]], ['buri', [561, 335, 117, 185]], ['resident_guldol', [678, 273, 187, 280]], ['resident_lamplighter', [1149, 350, 116, 220]], ['resident_ttadak', [1316, 352, 217, 230]], ['resident_musoe', [47, 410, 152, 280]], ['층16출력', [['resident_tok', [1532, 271, 123, 196]], ['buri', [328, 335, 117, 185]], ['resident_guldol', [930, 278, 186, 280]], ['resident_lamplighter', [1149, 350, 116, 220]], ['resident_ttadak', [1316, 352, 217, 230]], ['resident_musoe', [47, 410, 152, 280]]]]]
+STATE 39 3 0 travel ['r13_map'] None workshop 사람= ['buri', 'resident_tok', 'resident_lamplighter', 'resident_ttadak', 'resident_musoe', 'resident_guldol']
+STATE 40 3 0 travel [] None clinic 사람= ['resident_seori']
+STATE 45 3 0 travel ['say'] None clinic 사람= ['resident_seori', 'resident_ubak']
+대화 건너뛰기 버튼 3 travel
+STATE 46 3 0 measurement_read ['r13_hub'] None clinic 사람= ['resident_seori', 'resident_ubak']
+  배치 [['resident_seori', 965, 285, 134, 210, False], ['resident_ubak', 176, 475, 191, 180, True]]
+  층15 [True, 0, 1920, [[625, 463, 316, 79], [598, 344, 142, 60], [1012, 322, 431, 221]], [['resident_seori', [753, 285, 134, 210], False, 495], ['resident_ubak', [157, 440, 230, 217], True, 657]]]
+  층16직접 [['resident_seori', [753, 285, 134, 210]], ['resident_ubak', [157, 440, 230, 217]], ['층16출력', [['resident_seori', [965, 285, 134, 210]], ['resident_ubak', [157, 440, 230, 217]]]]]
+STATE 47 3 0 measurement_read ['say'] None clinic 사람= ['resident_seori', 'resident_ubak']
+대화 건너뛰기 버튼 3 measurement_read
+실제 조사에서 진료소 자료 대조 도착·저장
+ERRORS [] 시간 39

@@ -80,17 +80,17 @@ class R01FenceFollowsWideGate(unittest.TestCase):
 class R03PhoneQuoteFolded(unittest.TestCase):
     def test_phone_opens_with_the_quote_folded(self):
         source = (ROOT / 'game/systems/room13_proof_workspace.rpy').read_text()
-        self.assertIn('default quote_open=remembered.get("quote_open",not r13_touch_ui())', source)
-        # 접힘이면 본문이 발언 틀 자리까지 올라온다.
-        ns = dict(r13_touch_ui=lambda: True, R13_NB_LEFT=20, R13_NB_RIGHT=824, R13_NB_WIDTH=804, R13_NB_TOP=60,
-                  r13_nb_footer_y=lambda: 330, r13_pw_chip_height=lambda: 40, r13_pw_tab_height=lambda: 44,
-                  r13_pw_quote_height=lambda text, width: 60, r13_pw_card_height=lambda: 80,
-                  persistent=SimpleNamespace(room13_large_text=False))
-        layout = load_function('game/systems/room13_proof_workspace.rpy', 'r13_pw_layout', ns)
-        folded = layout(False, '발언')
-        opened = layout(True, '발언')
+        self.assertIn('default quote_open=remembered.get("quote_open",False)', source)
+        ns = dict(r13_touch_ui=lambda: True, R13_NB_LEFT=132, R13_NB_RIGHT=1206, R13_NB_WIDTH=1074,
+                  R13_NB_TOP=140, r13_nb_footer_y=lambda: 548, r13_control_height=lambda: 88,
+                  r13_proof_text_size=lambda *args: (600,36), r13_type=lambda level: 30,
+                  r13_pw_quote_height=lambda text, width: 60)
+        layout = load_function('game/systems/room13_proof_workspace.rpy', 'r13_pw_read_layout', ns)
+        folded = layout('쟁점',False,'발언')
+        opened = layout('쟁점',True,'발언')
         self.assertEqual(folded['quote_h'], 0)
         self.assertEqual(opened['body_top'] - folded['body_top'], 60 + 24 + 8)
+        self.assertLessEqual(opened['body_top']+opened['body_h'],opened['footer_y']-12)
 
 
 class R04RegisteredThought(unittest.TestCase):
